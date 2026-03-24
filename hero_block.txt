@@ -1,0 +1,53 @@
+      <section id="anasayfa" className="bg-white px-6 pb-10 pt-6 sm:px-10 sm:pb-16" aria-label="Pro Makina ana tanitim bolumu">
+        <div className="mx-auto grid min-h-[780px] max-w-[1880px] overflow-hidden lg:grid-cols-[0.42fr_0.58fr]">
+          <div className="relative flex items-center bg-[#071d44] px-8 py-14 text-white sm:px-14 lg:px-20">
+            <div className="absolute inset-0 opacity-20 [background-image:radial-gradient(circle_at_center,transparent_0,transparent_58%,rgba(255,255,255,0.12)_59%,transparent_60%),radial-gradient(circle_at_center,transparent_0,transparent_37%,rgba(255,255,255,0.08)_38%,transparent_39%)] [background-size:360px_360px,620px_620px]" />
+            <div className="relative max-w-[560px]">
+              <div className="mb-8 max-w-max border-b border-white/35 pb-3 text-sm font-semibold uppercase tracking-[0.08em] text-white">
+                Kompost • Gubre • Geri Donusum • Proses • Makina Imalati
+              </div>
+
+              <h1 className="text-4xl font-semibold leading-[0.96] tracking-tight text-white sm:text-5xl lg:text-6xl xl:text-[72px]">
+                Kompost, Gubre ve Proses Tesisleri Icin Anahtar Teslim Endustriyel Cozumler
+              </h1>
+
+              <p className="mt-6 max-w-2xl text-base leading-7 text-white/82 sm:text-lg sm:leading-8">
+                Pro Makina; kompost tesisi, organomineral gubre uretim hatti, konveyor sistemleri, kiricilar, reaktorler ve ozel proses ekipmanlari alaninda muhendislik, imalat, kurulum ve devreye alma hizmetleri sunar.
+              </p>
+
+              <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center">
+                <Link
+                  href="/iletisim"
+                  className="inline-flex min-h-[58px] items-center justify-center bg-white px-8 text-base font-semibold text-slate-950 transition hover:bg-slate-100"
+                >
+                  Teklif Al
+                </Link>
+                <a
+                  href="#projeler"
+                  className="inline-flex items-center justify-center text-lg font-semibold text-white transition hover:text-blue-200"
+                >
+                  Projeleri Incele
+                </a>
+              </div>
+
+              <div className="mt-20 flex items-center gap-8 text-xl text-white/65">
+                {["01", "02", "03", "04"].map((item, index) => (
+                  <div key={item} className="flex items-center gap-4">
+                    <span className={index === 0 ? "text-white" : ""}>{item}</span>
+                    {index !== 3 ? <span className="h-px w-14 bg-white/25" /> : null}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <div
+            className="min-h-[420px] bg-cover bg-center"
+            style={{
+              backgroundImage:
+                "url('https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1800&q=80')",
+            }}
+          />
+        </div>
+      </section>
+
