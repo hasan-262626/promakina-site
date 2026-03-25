@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useId, useMemo, useRef, useState, type KeyboardEvent, type ReactNode } from "react";
+import { useEffect, useId, useMemo, useRef, useState, type KeyboardEvent as ReactKeyboardEvent, type ReactNode } from "react";
 
 type TabKey = "geometry" | "ratio" | "reference" | "speed";
 type Severity = "critical" | "warning" | "info";
@@ -249,7 +249,7 @@ export function InternalPlanetGearCalculator() {
   const ratioResult = useMemo(() => ratioCalc(ratio), [ratio]);
   const speedResult = useMemo(() => speedCalc(speed), [speed]);
 
-  const onKey = (event: KeyboardEvent<HTMLButtonElement>, index: number) => {
+  const onKey = (event: ReactKeyboardEvent<HTMLButtonElement>, index: number) => {
     let next = index;
     if (event.key === "ArrowRight") next = (index + 1) % TABS.length;
     else if (event.key === "ArrowLeft") next = (index - 1 + TABS.length) % TABS.length;

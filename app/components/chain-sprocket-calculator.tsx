@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useId, useMemo, useRef, useState, type KeyboardEvent, type ReactNode } from "react";
+import { useEffect, useId, useMemo, useRef, useState, type KeyboardEvent as ReactKeyboardEvent, type ReactNode } from "react";
 
 type TabKey = "din8187" | "asa" | "conveyor" | "customPitch" | "ratio" | "chainLength";
 type Tone = "success" | "warning" | "danger";
@@ -392,7 +392,7 @@ export function ChainSprocketCalculator() {
     </div>
   );
 
-  const onKey = (event: KeyboardEvent<HTMLButtonElement>, index: number) => {
+  const onKey = (event: ReactKeyboardEvent<HTMLButtonElement>, index: number) => {
     let next = index;
     if (event.key === "ArrowRight") next = (index + 1) % TABS.length;
     else if (event.key === "ArrowLeft") next = (index - 1 + TABS.length) % TABS.length;

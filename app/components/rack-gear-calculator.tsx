@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useId, useMemo, useRef, useState, type KeyboardEvent, type ReactNode } from "react";
+import { useEffect, useId, useMemo, useRef, useState, type KeyboardEvent as ReactKeyboardEvent, type ReactNode } from "react";
 
 type TabKey = "rack" | "gate";
 
@@ -151,7 +151,7 @@ function Field({
     <label className="grid gap-2">
       <span className="flex items-center text-sm font-medium text-slate-700">
         {label}
-        {tip ? <Tip id={tipId} text={tip} openTip={openTip} setOpenTip={setOpenTip} /> : null}
+        {tip && tipId ? <Tip id={tipId} text={tip} openTip={openTip} setOpenTip={setOpenTip} /> : null}
       </span>
       {helperText ? <span className="text-xs font-medium text-slate-600">{helperText}</span> : null}
       {limitText ? <span className="text-xs leading-5 text-slate-500">{limitText}</span> : null}
@@ -196,7 +196,7 @@ function SelectField({
     <label className="grid gap-2">
       <span className="flex items-center text-sm font-medium text-slate-700">
         {label}
-        {tip ? <Tip id={tipId} text={tip} openTip={openTip} setOpenTip={setOpenTip} /> : null}
+        {tip && tipId ? <Tip id={tipId} text={tip} openTip={openTip} setOpenTip={setOpenTip} /> : null}
       </span>
       {helperText ? <span className="text-xs font-medium text-slate-600">{helperText}</span> : null}
       {limitText ? <span className="text-xs leading-5 text-slate-500">{limitText}</span> : null}
@@ -476,7 +476,7 @@ export function RackGearCalculator() {
     };
   }, [gate]);
 
-  const handleKeyDown = (event: KeyboardEvent<HTMLButtonElement>, currentIndex: number) => {
+  const handleKeyDown = (event: ReactKeyboardEvent<HTMLButtonElement>, currentIndex: number) => {
     let nextIndex = currentIndex;
     if (event.key === "ArrowRight") nextIndex = (currentIndex + 1) % tabs.length;
     else if (event.key === "ArrowLeft") nextIndex = (currentIndex - 1 + tabs.length) % tabs.length;

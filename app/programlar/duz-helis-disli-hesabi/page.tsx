@@ -1,5 +1,5 @@
 import { ProgramPageHero } from "../../components/program-page-hero";
-import { SpurHelicalGearCalculator } from "../../components/spur-helical-gear-calculator";
+import SpurHelicalGearCalculator from "../../components/spur-helical-gear-calculator";
 
 export default function SpurHelicalGearPage() {
   return (
