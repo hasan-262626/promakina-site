@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import { CookiePreferences } from "./components/cookie-preferences";
+import { FloatingWhatsApp, SiteFooterCta } from "./components/site-footer-cta";
 import { SiteHeader } from "./components/site-header";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Progroup | Danışmanlık ve Makina Çözümleri",
+  title: "Pro Makina | Danışmanlık ve Makina Çözümleri",
   description:
-    "Progroup için hazırlanan kurumsal ana sayfa: danışmanlık, çözümler, makinalar ve iletişim bölümleri.",
+    "Pro Makina için hazırlanan kurumsal site: danışmanlık, çözümler, makinalar ve iletişim bölümleri.",
 };
 
 export default function RootLayout({
@@ -19,6 +20,8 @@ export default function RootLayout({
       <body>
         <SiteHeader />
         {children}
+        <SiteFooterCta />
+        <FloatingWhatsApp />
         <CookiePreferences />
       </body>
     </html>

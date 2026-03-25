@@ -1,6 +1,7 @@
 export type HomeMachineGroupCard = {
   title: string;
   description: string;
+  products: string[];
   buttonLabel: string;
   href: string;
   image: string;
@@ -11,78 +12,101 @@ export const homeMachineGroupCards: HomeMachineGroupCard[] = [
   {
     title: "Tambur Sistemleri",
     description:
-      "Kurutma tamburlari, kompost tamburlari ve granulasyon tamburlari gibi yuksek kapasiteli proses ekipmanlarini inceleyin.",
-    buttonLabel: "Hemen Incele",
+      "Kurutma, kompost, granülasyon ve soğutma proseslerinde kullanılan tambur sistemlerini tek kategori altında sunuyoruz. Farklı kapasite ve uygulama ihtiyaçlarına uygun çözümleri birlikte inceleyebilirsiniz.",
+    products: [
+      "Kurutma Tamburları",
+      "Kompost Tamburları",
+      "Granülasyon Tamburları",
+      "Soğutma Tamburları",
+    ],
+    buttonLabel: "Kategoriyi İncele",
     href: "/makinalar-ekipman/tambur-sistemleri",
     image:
       "https://images.unsplash.com/photo-1565793298595-6a879b1d9492?auto=format&fit=crop&w=1400&q=80",
-    alt: "Rotary drum ve endustriyel tambur sistemleri",
+    alt: "Tambur sistemleri ve rotary drum ekipmanları",
   },
   {
-    title: "Tasima Ekipmanlari",
+    title: "Taşıma Ekipmanları",
     description:
-      "Bant konveyorler, helezon konveyorler, kovali elevatOrler ve zincirli konveyorlerle malzeme akisina yon veren sistemleri kesfedin.",
-    buttonLabel: "Hemen Incele",
+      "Malzeme akışını kontrollü ve verimli şekilde yönetmek için kullanılan taşıma ekipmanlarını aynı kategori içinde topluyoruz. Farklı proseslere uygun konveyör ve elevatör seçeneklerini bir arada sunuyoruz.",
+    products: [
+      "Bant Konveyörler",
+      "Helezon Konveyörler",
+      "Kovalı Elevatörler",
+      "Zincirli Konveyörler",
+    ],
+    buttonLabel: "Kategoriyi İncele",
     href: "/makinalar-ekipman/tasima-sistemleri",
     image:
       "https://images.unsplash.com/photo-1581092919535-7146ff1a5902?auto=format&fit=crop&w=1400&q=80",
-    alt: "Konveyor hatti ve tasima ekipmanlari",
+    alt: "Taşıma ekipmanları ve konveyör hattı",
   },
   {
-    title: "Eleme Sistemleri",
+    title: "Kırıcılar ve Parçalayıcılar",
     description:
-      "Doner elek, vibrasyonlu elek ve trommel sistemleri ile urun siniflandirma ve ayirma cozumlerine ulasin.",
-    buttonLabel: "Hemen Incele",
-    href: "/makinalar-ekipman/eleme-ve-siniflandirma-sistemleri",
-    image:
-      "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1400&q=80",
-    alt: "Eleme ve siniflandirma sistemleri",
-  },
-  {
-    title: "Kiricilar ve Parcalayicilar",
-    description:
-      "Cekicli degirmen, zincirli kirici, primer kirici ve tek cift milli parcalayici sistemlerle boyut kucultme cozumlerini goruntuleyin.",
-    buttonLabel: "Hemen Incele",
+      "Farklı malzemelerin boyut küçültme ihtiyaçlarına yönelik kırıcı ve parçalayıcı sistemleri uygulama türüne göre bir arada sunuyoruz. Sürece uygun ekipman seçimini daha kolay karşılaştırabilirsiniz.",
+    products: ["Çekiçli Değirmen", "Zincirli Kırıcı", "Çeneli Kırıcı", "Primer Kırıcı"],
+    buttonLabel: "Kategoriyi İncele",
     href: "/makinalar-ekipman/kiricilar-ve-parcalayicilar",
     image:
       "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1400&q=80",
-    alt: "Endustriyel kirma ve parcalama hatti",
+    alt: "Kırıcılar ve parçalayıcılar için endüstriyel kırma hattı",
   },
   {
-    title: "Reaktorler ve Tanklar",
+    title: "Reaktörler ve Tanklar",
     description:
-      "Karistiricili reaktorler, cozumdurme tanklari, stok tanklari ve basincli proses ekipmanlarini inceleyin.",
-    buttonLabel: "Hemen Incele",
+      "Karıştırma, çözündürme, stoklama ve basınçlı proses ihtiyaçları için kullanılan reaktör ve tank çözümlerini aynı proses ailesi içinde sunuyoruz.",
+    products: [
+      "Karıştırıcılı Reaktörler",
+      "Çözündürme Tankları",
+      "Stok Tankları",
+      "Basınçlı Reaktörler",
+    ],
+    buttonLabel: "Kategoriyi İncele",
     href: "/makinalar-ekipman/reaktorler-ve-tanklar",
     image:
       "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=1400&q=80",
-    alt: "Endustriyel tank ve reaktor sistemleri",
+    alt: "Reaktörler ve tanklar için endüstriyel proses ekipmanları",
+  },
+  {
+    title: "Eleme ve Sınıflandırma Sistemleri",
+    description:
+      "Ürünün ayrıştırılması, sınıflandırılması ve proses veriminin artırılması için kullanılan eleme sistemlerini tek grupta sunuyoruz.",
+    products: ["Döner Elek", "Vibrasyonlu Elek", "Trommel Sistemleri"],
+    buttonLabel: "Kategoriyi İncele",
+    href: "/makinalar-ekipman/eleme-ve-siniflandirma-sistemleri",
+    image:
+      "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1400&q=80",
+    alt: "Eleme ve sınıflandırma sistemleri",
   },
   {
     title: "Toz Toplama Sistemleri",
     description:
-      "Jet pulse filtreler, siklonlar ve torba filtrelerle tesis icinde verimli ve kontrollu toz yonetimi saglayan cozumleri gorun.",
-    buttonLabel: "Hemen Incele",
+      "Tesis içinde toz kontrolü, filtreleme ve çevresel yönetim için kullanılan ekipmanları ortak bir sistem yaklaşımıyla sunuyoruz.",
+    products: ["Jet Pulse Filtreler", "Siklonlar", "Torba Filtreler"],
+    buttonLabel: "Kategoriyi İncele",
     href: "/makinalar-ekipman/toz-toplama-sistemleri",
     image:
       "https://images.unsplash.com/photo-1513828742140-ccaa28f3eda0?auto=format&fit=crop&w=1400&q=80",
-    alt: "Filtre ve toz toplama sistemleri",
+    alt: "Toz toplama sistemleri ve filtre ekipmanları",
   },
   {
     title: "Paketleme ve Dolum Sistemleri",
     description:
-      "Acik agiz torbalama, big bag dolum ve farkli dolum hatlariyla sevkiyata hazir urun akislarini yoneten ekipmanlari inceleyin.",
-    buttonLabel: "Hemen Incele",
+      "Torbalama, dolum ve son ürün hazırlama süreçlerinde kullanılan sistemleri tek kategori altında bir araya getiriyoruz.",
+    products: ["Açık Ağız Torbalama", "Big Bag Dolum", "Şişeleme ve Dolum Hatları"],
+    buttonLabel: "Kategoriyi İncele",
     href: "/makinalar-ekipman/paketleme-ve-dolum-sistemleri",
     image:
       "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1400&q=80",
-    alt: "Paketleme ve dolum hatlari",
+    alt: "Paketleme ve dolum sistemleri",
   },
   {
     title: "Depolama ve Besleme Sistemleri",
     description:
-      "Silo sistemleri, bunkerler ve urun alma besleme ekipmanlariyla surekli malzeme yonetimi saglayan gruplari kesfedin.",
-    buttonLabel: "Hemen Incele",
+      "Depolama, ürün alma ve besleme süreçlerinde birlikte çalışan ekipmanları aynı grup altında sunuyoruz.",
+    products: ["Silo Sistemleri", "Bunkerler", "Ürün Alma ve Besleme Sistemleri"],
+    buttonLabel: "Kategoriyi İncele",
     href: "/makinalar-ekipman/depolama-sistemleri",
     image:
       "https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&w=1400&q=80",

@@ -734,47 +734,105 @@ export const services: ServiceItem[] = [
     slug: "anahtar-teslim-tesis-kurulumu",
     title: "Anahtar Teslim Tesis Kurulumu",
     summary:
-      "Muhendislikten imalata, saha kurulumundan devreye almaya kadar tum tesis surecini tek elde yonetiyoruz.",
-    heroTitle: "Anahtar teslim tesis kurulumunda tum sureci tek bir koordinasyonla yonetin.",
+      "Mühendislikten imalata, saha kurulumundan devreye almaya kadar tüm tesis sürecini tek elden yönetiyoruz.",
+    heroTitle: "Anahtar Teslim Tesis Kurulumu",
     heroDescription:
-      "Kompost, gubre, geri donusum ve proses tesisleri icin planlama, imalat, montaj ve devreye alma adimlarini tek cati altinda topluyoruz.",
+      "Anahtar teslim tesis kurulumunda tüm süreci tek bir koordinasyonla yönetiyoruz. Kompost, gübre, geri dönüşüm ve proses tesisleri için planlama, imalat, montaj ve devreye alma adımlarını tek çatı altında topluyoruz.",
     image:
       "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1400&q=80",
-    scope: ["Tesis yerlesim plani", "Ekipman secimi", "Saha montaji", "Devreye alma organizasyonu"],
-    outputs: ["Tek merkezden yonetilen proje", "Zaman kaybinin azalmasi", "Daha net maliyet ve koordinasyon"],
-    advantages: ["Tek muhatap", "Saha uyumu", "Daha kontrollu kurulum", "Surec butunlugu"],
-    relatedSectors: ["Gubre ve Granulasyon Tesisleri", "Kompost ve Organik Atik Tesisleri"],
+    scope: [
+      "Tesis yerleşim planı",
+      "Ekipman seçimi",
+      "Makina imalatı",
+      "Saha montajı",
+      "Devreye alma organizasyonu",
+      "Teknik danışmanlık",
+    ],
+    outputs: [
+      "Tek merkezden yönetilen proje süreci",
+      "Zaman kaybının azaltılması",
+      "Daha net maliyet ve koordinasyon yönetimi",
+    ],
+    advantages: [
+      "Tek muhatap",
+      "Sahaya uygun çözüm",
+      "Daha kontrollü kurulum",
+      "Süreç bütünlüğü",
+    ],
+    relatedSectors: [
+      "Gübre ve Granülasyon Tesisleri",
+      "Kompost ve Organik Atık Tesisleri",
+      "Atık Su Çamuru ve Arıtma Çözümleri",
+      "Geri Dönüşüm ve Atık Yönetimi",
+      "Enerji ve Biyogaz Sistemleri",
+      "Madencilik ve Mineral İşleme",
+      "Kimya ve Proses Endüstrisi",
+      "Yem, Toz ve Dökme Katı Malzeme İşleme Sistemleri",
+    ],
     relatedMachines: ["Tambur Sistemleri", "Tasima Ekipmanlari", "Depolama ve Besleme Sistemleri"],
     relatedProjects: ["Kompost Tesisi Projeleri", "Organomineral Gubre Tesisi Projeleri"],
     faqs: [
       {
-        question: "Anahtar teslim kapsaminda neler oluyor?",
+        question: "Anahtar teslim kapsamına neler dahildir?",
         answer:
-          "Muhendislik, ekipman, saha koordinasyonu, montaj ve devreye alma gibi ana kalemler tek proje yapisi icinde yonetilir.",
+          "Projenin kapsamına göre proses tasarımı, ekipman seçimi, makina imalatı, saha montajı, devreye alma ve teknik danışmanlık hizmetleri sunulabilir.",
       },
     ],
   },
   {
     slug: "proses-tasarimi-ve-muhendislik",
-    title: "Proses Tasarimi ve Muhendislik",
+    title: "Proses Tasarımı ve Mühendislik",
     summary:
-      "Kapasite, urun tipi ve saha kosullarina gore proses akislarini ve ekipman dizilimini tasarliyoruz.",
-    heroTitle: "Dogru proses tasarimi ile tesis performansini daha en bastan guclendirin.",
+      "Kapasite, ürün tipi ve saha koşullarına göre proses akışlarını, ekipman dizilimini ve teknik altyapıyı tasarlıyoruz.",
+    heroTitle: "Doğru proses tasarımı ile tesis performansını en baştan güçlendirin",
     heroDescription:
-      "Malzeme akisi, kapasite ihtiyaci, urun hedefi ve saha gercegini birlikte ele alarak verimli muhendislik kurgusu sunuyoruz.",
+      "Malzeme akışı, kapasite ihtiyacı, ürün hedefi ve saha gerçeklerini birlikte değerlendirerek verimli ve uygulanabilir bir mühendislik kurgusu sunuyoruz.",
     image:
       "https://images.unsplash.com/photo-1581092918484-8313b2f1141c?auto=format&fit=crop&w=1400&q=80",
-    scope: ["Proses akisi", "Hat yerlesimi", "Ekipman boyutlandirma", "Teknik muhendislik kurgusu"],
-    outputs: ["Daha net yatirim karari", "Hat verimi", "Dogru ekipman secimi"],
-    advantages: ["Verim odakli kurgu", "Sahaya uygunluk", "Kapasite uyumu", "Gelecek buyumeye acik altyapi"],
-    relatedSectors: ["Kimya ve Proses Endustrisi", "Yem, Toz ve Dokme Kati Malzeme Isleme Sistemleri"],
+    scope: [
+      "Proses akışı",
+      "Hat yerleşimi",
+      "Ekipman boyutlandırma",
+      "Teknik mühendislik kurgusu",
+    ],
+    outputs: [
+      "Daha net yatırım kararı",
+      "Daha verimli hat kurgusu",
+      "Doğru ekipman seçimi",
+    ],
+    advantages: [
+      "Verim odaklı kurgu",
+      "Sahaya uygunluk",
+      "Kapasite uyumu",
+      "Gelecek büyümeye açık altyapı",
+    ],
+    relatedSectors: [
+      "Gübre ve Granülasyon Tesisleri",
+      "Kompost ve Organik Atık Tesisleri",
+      "Atık Su Çamuru ve Arıtma Çözümleri",
+      "Geri Dönüşüm ve Atık Yönetimi",
+      "Enerji ve Biyogaz Sistemleri",
+      "Madencilik ve Mineral İşleme",
+      "Kimya ve Proses Endüstrisi",
+      "Yem, Toz ve Dökme Katı Malzeme İşleme Sistemleri",
+    ],
     relatedMachines: ["Reaktorler ve Tanklar", "Eleme ve Siniflandirma Sistemleri", "Toz Toplama Sistemleri"],
     relatedProjects: ["Ozel Proses ve Makine Imalati"],
     faqs: [
       {
-        question: "Proses tasarimi neden kritik?",
+        question: "Proses tasarımı neden kritiktir?",
         answer:
-          "Dogru proses akisi, hem yatirim maliyetini hem de uzun vadeli isletme verimini dogrudan etkiler.",
+          "Doğru proses tasarımı; kapasite planlaması, ekipman seçimi, hat verimi ve işletme sürekliliği açısından yatırımın temelini oluşturur.",
+      },
+      {
+        question: "Proses tasarımında hangi veriler dikkate alınır?",
+        answer:
+          "Hammadde yapısı, ürün hedefi, kapasite ihtiyacı, saha koşulları, enerji kullanımı ve işletme beklentileri birlikte değerlendirilir.",
+      },
+      {
+        question: "Bu hizmet yalnızca yeni tesisler için mi uygundur?",
+        answer:
+          "Hayır. Yeni yatırımların yanı sıra mevcut tesislerin revizyonu, kapasite artışı ve proses iyileştirme çalışmaları için de uygundur.",
       },
     ],
   },

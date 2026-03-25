@@ -48,6 +48,7 @@ export function SiteHeader() {
     { label: "Video İçerikler", href: "/kutuphane#video-icerikler" },
     { label: "Sık Sorulan Sorular", href: "/kutuphane#sik-sorulan-sorular" },
     { label: "Terimler Sözlüğü", href: "/kutuphane#terimler-sozlugu" },
+    { label: "Programlar", href: "/programlar" },
   ];
 
   return (
