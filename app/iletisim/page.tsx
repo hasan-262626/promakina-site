@@ -1,21 +1,23 @@
+﻿import { Hero } from "../components/Hero";
+
 const contacts = [
   {
-    role: "Makine Mühendisi",
-    name: "Ahmet Yılmaz",
+    role: "Makine MÃ¼hendisi",
+    name: "Ahmet YÄ±lmaz",
     phone: "+90 538 063 11 63",
     whatsapp: "https://wa.me/905380631163",
     email: "ahmet@promakina.com.tr",
   },
   {
-    role: "Türkiye Bölge Müdürü",
+    role: "TÃ¼rkiye BÃ¶lge MÃ¼dÃ¼rÃ¼",
     name: "Mehmet Demir",
     phone: "+90 532 456 78 90",
     whatsapp: "https://wa.me/905324567890",
     email: "mehmet@promakina.com.tr",
   },
   {
-    role: "Satış Temsilcisi",
-    name: "Ayşe Kaya",
+    role: "SatÄ±ÅŸ Temsilcisi",
+    name: "AyÅŸe Kaya",
     phone: "+90 533 987 65 43",
     whatsapp: "https://wa.me/905339876543",
     email: "ayse@promakina.com.tr",
@@ -24,29 +26,20 @@ const contacts = [
 
 const interestAreas = [
   "Kompost Tesisi",
-  "Gübre Tesisi",
+  "GÃ¼bre Tesisi",
   "Makina ve Ekipman",
   "Biyogaz",
-  "Teknik Danışmanlık",
+  "Teknik DanÄ±ÅŸmanlÄ±k",
 ];
 
 export default function ContactPage() {
   return (
     <main className="min-h-screen overflow-x-hidden bg-white text-slate-900">
-      <section className="bg-slate-950 py-16 text-white sm:py-20">
-        <div className="site-container">
-          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-400">
-            İletişim
-          </p>
-          <h1 className="mt-3 max-w-4xl text-4xl font-semibold tracking-tight sm:text-5xl lg:text-6xl">
-            Sadece iletişim değil, doğrudan dönüşüm odaklı teklif ve yönlendirme sayfası.
-          </h1>
-          <p className="mt-6 max-w-3xl text-lg leading-8 text-white/76">
-            Projenizi, ilgi alanınızı ve ülke bilginizi bırakmanız; talebin daha hızlı doğru
-            kişiye ve doğru hizmet hattına yönlendirilmesini sağlar.
-          </p>
-        </div>
-      </section>
+      <Hero
+        title="İletişim"
+        description="Makina, tesis, proses tasarımı, teknik danışmanlık veya proje talepleriniz için bizimle iletişime geçin. İhtiyacınıza uygun çözüm yapısını, kapasite yaklaşımını ve teknik kapsamı birlikte netleştirelim."
+        image="/images/fabrika1.jpg"
+      />
 
       <section className="section-space">
         <div className="site-container">
@@ -66,18 +59,18 @@ export default function ContactPage() {
 
               <div className="rounded-3xl border border-slate-200 bg-slate-50 p-6 sm:p-8">
                 <h2 className="text-2xl font-semibold text-slate-950">
-                  Kurumsal iletişim bilgileri
+                  Kurumsal iletiÅŸim bilgileri
                 </h2>
                 <div className="mt-6 grid gap-4">
                   <div className="rounded-2xl bg-white px-5 py-4">
                     <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">
                       Adres
                     </p>
-                    <p className="mt-2 text-slate-800">İstanbul, Türkiye</p>
+                    <p className="mt-2 text-slate-800">Ä°stanbul, TÃ¼rkiye</p>
                   </div>
                   <div className="rounded-2xl bg-white px-5 py-4">
                     <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">
-                      Çalışma saatleri
+                      Ã‡alÄ±ÅŸma saatleri
                     </p>
                     <p className="mt-2 text-slate-800">Pazartesi - Cuma / 09:00 - 18:00</p>
                   </div>
@@ -112,7 +105,7 @@ export default function ContactPage() {
             <div className="rounded-3xl border border-slate-200 bg-white p-6 sm:p-8">
               <h2 className="text-2xl font-semibold text-slate-950">Teklif formu</h2>
               <p className="mt-4 leading-8 text-slate-600">
-                Talebinizi doğru birime hızlı yönlendirmek için aşağıdaki bilgileri doldurun.
+                Talebinizi doÄŸru birime hÄ±zlÄ± yÃ¶nlendirmek iÃ§in aÅŸaÄŸÄ±daki bilgileri doldurun.
               </p>
 
               <div className="mt-6 grid gap-4 sm:grid-cols-2">
@@ -122,7 +115,7 @@ export default function ContactPage() {
                 />
                 <input
                   className="rounded-2xl border border-slate-200 px-4 py-3 outline-none transition focus:border-blue-500"
-                  placeholder="Firma Adı"
+                  placeholder="Firma AdÄ±"
                 />
                 <input
                   className="rounded-2xl border border-slate-200 px-4 py-3 outline-none transition focus:border-blue-500"
@@ -134,10 +127,10 @@ export default function ContactPage() {
                 />
                 <input
                   className="rounded-2xl border border-slate-200 px-4 py-3 outline-none transition focus:border-blue-500 sm:col-span-2"
-                  placeholder="Ülke"
+                  placeholder="Ãœlke"
                 />
                 <select className="rounded-2xl border border-slate-200 px-4 py-3 outline-none transition focus:border-blue-500 sm:col-span-2">
-                  <option>İlgilendiği alan</option>
+                  <option>Ä°lgilendiÄŸi alan</option>
                   {interestAreas.map((item) => (
                     <option key={item}>{item}</option>
                   ))}
@@ -149,7 +142,7 @@ export default function ContactPage() {
               </div>
 
               <button className="mt-6 rounded-full bg-blue-700 px-6 py-3 text-sm font-semibold text-white transition hover:bg-blue-800">
-                Teklif Gönder
+                Teklif GÃ¶nder
               </button>
             </div>
           </div>
@@ -159,7 +152,7 @@ export default function ContactPage() {
       <section className="pb-16 sm:pb-20">
         <div className="site-container">
           <h2 className="text-3xl font-semibold tracking-tight text-slate-950 md:text-4xl">
-            İletişim kişileri
+            Ä°letiÅŸim kiÅŸileri
           </h2>
 
           <div className="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
@@ -196,3 +189,5 @@ export default function ContactPage() {
     </main>
   );
 }
+
+

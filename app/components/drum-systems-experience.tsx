@@ -1,6 +1,7 @@
 ﻿"use client";
 
 import Link from "next/link";
+import { Hero } from "./Hero";
 import { useEffect, useMemo, useState } from "react";
 import {
   ToolkitInfo,
@@ -620,36 +621,14 @@ export default function DrumSystemsExperience() {
   }, [activeProfile.id, errors.dryMatter, errors.moisture, form.applicationType, form.thermalNeed]);
   return (
     <main className="min-h-screen overflow-x-hidden bg-white text-slate-900">
-      <section className="relative isolate overflow-hidden border-b border-slate-200 text-white">
-        <div
-          className="absolute inset-0 bg-cover bg-[position:65%_center] bg-no-repeat sm:bg-center"
-          style={{ backgroundImage: "url('/images/kurutmatam2.jpg')" }}
-        />
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(3,10,30,0.82)_0%,rgba(3,10,30,0.72)_40%,rgba(3,10,30,0.55)_70%,rgba(3,10,30,0.45)_100%)]" />
-        <div className="relative mx-auto flex min-h-[320px] max-w-7xl items-center px-4 py-10 sm:min-h-[360px] sm:px-6 lg:min-h-[460px] lg:px-10 lg:py-[60px]">
-          <div className="w-full max-w-[720px] py-6 lg:py-10">
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-300">Makinalar &amp; Ekipman</p>
-            <h1 className="mt-4 text-[32px] font-semibold leading-[1.2] tracking-tight text-white sm:text-[36px] lg:text-[42px]">
-              Tambur Sistemleri
-            </h1>
-            <p className="mt-4 max-w-[600px] text-base leading-[1.6] text-white/90">
-              Tambur sistemlerinde doğru proses kurgusu, doğru kapasite seçimi ve doğru iç geometri ile yüksek verim elde edilir.
-            </p>
-            <div className="mt-4 max-w-[640px] space-y-4 text-base leading-[1.6] text-white/82">
-              <p>
-                Kurutma tamburu, kompost tamburu, granülasyon tamburu, kaplama tamburu ve soğutma tamburu çözümlerini aynı yapı içinde sunuyoruz. Malzeme tipi, nem durumu, kapasite ihtiyacı ve saha koşullarına göre en uygun tambur tipini belirlemenize yardımcı oluyoruz.
-              </p>
-              <p>
-                Tambur sistemleri, rotary drum dryer, rotary drum cooler, granulation drum, compost rotary drum ve coating drum aramalarında karar vermeyi kolaylaştıran teknik bir kategori merkezi olarak kurgulandı.
-              </p>
-            </div>
-            <div className="mt-6 flex flex-wrap gap-3">
-              <a href="#tambur-hesaplama" className="rounded-full bg-blue-600 px-7 py-4 text-center text-sm font-semibold text-white transition hover:bg-blue-500">Teklif Al</a>
-              <Link href="/makinalar-ekipman" className="rounded-full border border-white/30 bg-slate-950/30 px-7 py-4 text-center text-sm font-semibold text-white backdrop-blur transition hover:bg-slate-950/45">Tüm Gruplara Dön</Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      <Hero
+        title="Tambur Sistemleri"
+        description="Kurutma, kompost, granülasyon ve soğutma gibi farklı proses ihtiyaçları için geliştirilen tambur sistemlerini tek çatı altında sunuyoruz. Kapasite, malzeme yapısı ve çalışma karakterine göre uygun tambur tipini karşılaştırmalı olarak inceleyebilirsiniz."
+        image="/images/kurutmatam2.jpg"
+      >
+        <a href="#tambur-hesaplama" className="rounded-full bg-blue-600 px-7 py-4 text-center text-sm font-semibold text-white transition hover:bg-blue-500">Teklif Al</a>
+        <Link href="/makinalar-ekipman" className="rounded-full border border-white/30 bg-slate-950/30 px-7 py-4 text-center text-sm font-semibold text-white backdrop-blur transition hover:bg-slate-950/45">Tüm Gruplara Dön</Link>
+      </Hero>
 
       <section id="tambur-gruplari" className="relative z-10 mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-10">
         <div className="rounded-[32px] border border-slate-200 bg-white p-7 shadow-[0_24px_80px_rgba(15,23,42,0.06)] sm:p-10">
@@ -850,6 +829,8 @@ export default function DrumSystemsExperience() {
       </section>
     </main>
   );}
+
+
 
 
 

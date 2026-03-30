@@ -1,82 +1,70 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
+import { Hero } from "./Hero";
 import { ToolkitLead } from "./technical-toolkit";
 
 const projectCards = [
   {
     title: "Kompost Tesisi Projeleri",
     href: "/projeler/kompost-tesisi-projeleri",
-    eyebrow: "organik atık kompost tesisi",
+    eyebrow: "organik atÄ±k kompost tesisi",
     description:
-      "Evsel atık, organik atık, hayvansal atık, arıtma çamuru ve digestat gibi farklı organik fraksiyonlar için kompostlaştırma, stabilizasyon, kurutma ve nihai ürün hazırlama odaklı tesis kurguları.",
-    bullets: ["Girdi karakterizasyonu", "Kompost proses tasarımı", "Koku ve hijyenizasyon yönetimi"],
+      "Evsel atÄ±k, organik atÄ±k, hayvansal atÄ±k, arÄ±tma Ã§amuru ve digestat gibi farklÄ± organik fraksiyonlar iÃ§in kompostlaÅŸtÄ±rma, stabilizasyon, kurutma ve nihai Ã¼rÃ¼n hazÄ±rlama odaklÄ± tesis kurgularÄ±.",
+    bullets: ["Girdi karakterizasyonu", "Kompost proses tasarÄ±mÄ±", "Koku ve hijyenizasyon yÃ¶netimi"],
   },
   {
-    title: "Organomineral Gübre Tesisi Projeleri",
+    title: "Organomineral GÃ¼bre Tesisi Projeleri",
     href: "/projeler/organomineral-gubre-tesisi-projeleri",
-    eyebrow: "organomineral gübre tesisi",
+    eyebrow: "organomineral gÃ¼bre tesisi",
     description:
-      "Granül, mikro granül, toz ve sıvı organomineral gübre üretiminde ürün kalitesi, kapasite ve sürdürülebilir işletme odaklı proje çözümleri.",
-    bullets: ["Granülasyon ve kurutma", "Mikro granül hatları", "Paketleme ve son ürün hazırlığı"],
+      "GranÃ¼l, mikro granÃ¼l, toz ve sÄ±vÄ± organomineral gÃ¼bre Ã¼retiminde Ã¼rÃ¼n kalitesi, kapasite ve sÃ¼rdÃ¼rÃ¼lebilir iÅŸletme odaklÄ± proje Ã§Ã¶zÃ¼mleri.",
+    bullets: ["GranÃ¼lasyon ve kurutma", "Mikro granÃ¼l hatlarÄ±", "Paketleme ve son Ã¼rÃ¼n hazÄ±rlÄ±ÄŸÄ±"],
   },
   {
-    title: "Deri Atık İşleme Tesisi Projeleri",
+    title: "Deri AtÄ±k Ä°ÅŸleme Tesisi Projeleri",
     href: "/projeler/deri-atik-isleme-tesisi-projeleri",
-    eyebrow: "endüstriyel atık işleme",
+    eyebrow: "endÃ¼striyel atÄ±k iÅŸleme",
     description:
-      "Deri endüstrisi kaynaklı atıkların parçalama, ayrıştırma, taşıma, hidroliz ve geri kazanım odaklı işlenmesine uygun tesis kurguları.",
-    bullets: ["Parçalama ve küçültme", "Taşıma ve bunker altyapısı", "Geri kazanım odaklı proje yapısı"],
+      "Deri endÃ¼strisi kaynaklÄ± atÄ±klarÄ±n parÃ§alama, ayrÄ±ÅŸtÄ±rma, taÅŸÄ±ma, hidroliz ve geri kazanÄ±m odaklÄ± iÅŸlenmesine uygun tesis kurgularÄ±.",
+    bullets: ["ParÃ§alama ve kÃ¼Ã§Ã¼ltme", "TaÅŸÄ±ma ve bunker altyapÄ±sÄ±", "Geri kazanÄ±m odaklÄ± proje yapÄ±sÄ±"],
   },
   {
-    title: "Biyogaz ve Atık Yönetimi Projeleri",
+    title: "Biyogaz ve AtÄ±k YÃ¶netimi Projeleri",
     href: "/projeler/biyogaz-ve-atik-yonetimi-projeleri",
     eyebrow: "biyogaz projesi",
     description:
-      "Biyogaz besleme, organik madde hazırlama, digestat yönetimi, atık işleme ve yan ürün değerlendirme odaklı entegre proje yapıları.",
-    bullets: ["Besleme ve ön işleme", "Digestat yönetimi", "Entegre atık yönetimi"],
+      "Biyogaz besleme, organik madde hazÄ±rlama, digestat yÃ¶netimi, atÄ±k iÅŸleme ve yan Ã¼rÃ¼n deÄŸerlendirme odaklÄ± entegre proje yapÄ±larÄ±.",
+    bullets: ["Besleme ve Ã¶n iÅŸleme", "Digestat yÃ¶netimi", "Entegre atÄ±k yÃ¶netimi"],
   },
   {
-    title: "Özel Proses ve Makine İmalatı Projeleri",
+    title: "Ã–zel Proses ve Makine Ä°malatÄ± Projeleri",
     href: "/projeler/ozel-proses-ve-makine-imalati-projeleri",
-    eyebrow: "özel endüstriyel proje",
+    eyebrow: "Ã¶zel endÃ¼striyel proje",
     description:
-      "Sahaya özel ölçü, kapasite ve proses ihtiyacına göre uyarlanmış özel makina, proses hattı ve endüstriyel sistem çözümleri.",
-    bullets: ["Özel makina tasarımı", "Sahaya özel entegrasyon", "Standart dışı proses çözümleri"],
+      "Sahaya Ã¶zel Ã¶lÃ§Ã¼, kapasite ve proses ihtiyacÄ±na gÃ¶re uyarlanmÄ±ÅŸ Ã¶zel makina, proses hattÄ± ve endÃ¼striyel sistem Ã§Ã¶zÃ¼mleri.",
+    bullets: ["Ã–zel makina tasarÄ±mÄ±", "Sahaya Ã¶zel entegrasyon", "Standart dÄ±ÅŸÄ± proses Ã§Ã¶zÃ¼mleri"],
   },
   {
-    title: "Mineral ve Dökme Katı İşleme Projeleri",
+    title: "Mineral ve DÃ¶kme KatÄ± Ä°ÅŸleme Projeleri",
     href: "/projeler/mineral-ve-dokme-kati-isleme-projeleri",
-    eyebrow: "mineral işleme projesi",
+    eyebrow: "mineral iÅŸleme projesi",
     description:
-      "Kırma, eleme, taşıma, kurutma, sınıflandırma ve stoklama süreçlerine uygun mineral ve dökme katı malzeme proje çözümleri.",
-    bullets: ["Kırma ve eleme", "Kurutma ve sınıflandırma", "Stoklama ve transfer altyapısı"],
+      "KÄ±rma, eleme, taÅŸÄ±ma, kurutma, sÄ±nÄ±flandÄ±rma ve stoklama sÃ¼reÃ§lerine uygun mineral ve dÃ¶kme katÄ± malzeme proje Ã§Ã¶zÃ¼mleri.",
+    bullets: ["KÄ±rma ve eleme", "Kurutma ve sÄ±nÄ±flandÄ±rma", "Stoklama ve transfer altyapÄ±sÄ±"],
   },
 ];
 
 export default function ProjectsHubExperience() {
   return (
     <main className="min-h-screen bg-white text-slate-900">
-      <section className="relative isolate overflow-hidden border-b border-slate-200 bg-[radial-gradient(circle_at_top_left,_rgba(37,99,235,0.18),_transparent_32%),linear-gradient(135deg,#0f172a_0%,#1e3a8a_45%,#0f172a_100%)]">
-        <div className="mx-auto min-h-[300px] max-w-7xl px-4 py-10 sm:min-h-[360px] sm:px-6 sm:py-[50px] lg:min-h-[420px] lg:px-10 lg:py-[60px]">
-          <div className="max-w-4xl">
-            <div className="inline-flex rounded-full border border-white/15 bg-white/10 px-4 py-2 text-xs font-medium tracking-[0.16em] text-white/80 backdrop-blur">
-              PROJELER
-            </div>
-            <h1 className="mt-4 text-[28px] font-semibold leading-[1.05] tracking-tight text-white sm:text-[34px] md:text-[38px] lg:text-[42px]">
-              Projeler
-            </h1>
-            <p className="mt-5 max-w-3xl text-sm leading-7 text-white/80 sm:text-base sm:leading-8">
-              Referans değil, teknik kanıt niteliğinde proje kategorileri sunuyoruz. Her proje sayfası; lokasyon, kapasite, sistem yapısı, süreç özeti, teknik kapsam ve ön değerlendirme alanları ile birlikte aynı profesyonel düzende hazırlanır.
-            </p>
-            <p className="mt-4 max-w-3xl text-sm leading-7 text-blue-100 sm:text-base sm:leading-8">
-              Kompost tesislerinden organomineral gübre hatlarına, biyogaz ve atık yönetimi projelerinden özel proses ve makina imalat çözümlerine kadar farklı proje tiplerini teknik yaklaşım ile sunuyoruz.
-            </p>
-          </div>
-        </div>
-      </section>
+      <Hero
+        title="Projeler"
+        description="Projeler bölümünde farklı sektörler için geliştirdiğimiz tesis kurgularını, proses yaklaşımlarını ve teknik çözüm yapılarını bir arada sunuyoruz. Kompost, organomineral gübre, biyogaz, atık yönetimi ve özel proses uygulamalarına yönelik proje tiplerini inceleyebilirsiniz."
+        image="/images/fabrika1.jpg"
+      />
 
-      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-10">
+      <section className="mx-auto max-w-7xl px-4 pt-10 pb-16 sm:px-6 sm:pt-12 lg:px-10 lg:pt-14">
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {projectCards.map((card) => (
             <Link
@@ -96,7 +84,7 @@ export default function ProjectsHubExperience() {
                 ))}
               </ul>
               <span className="mt-6 inline-flex items-center text-sm font-semibold text-blue-700">
-                Projeyi İncele
+                Projeyi Ä°ncele
               </span>
             </Link>
           ))}
@@ -105,10 +93,12 @@ export default function ProjectsHubExperience() {
 
       <section className="mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-10">
         <ToolkitLead
-          title="Projeniz için teknik görüşme veya teklif talep edin"
-          text="Kompost tesisi, organomineral gübre tesisi, biyogaz, atık yönetimi veya özel proses projeniz için teknik yaklaşımı birlikte netleştirelim."
+          title="Projeniz iÃ§in teknik gÃ¶rÃ¼ÅŸme veya teklif talep edin"
+          text="Kompost tesisi, organomineral gÃ¼bre tesisi, biyogaz, atÄ±k yÃ¶netimi veya Ã¶zel proses projeniz iÃ§in teknik yaklaÅŸÄ±mÄ± birlikte netleÅŸtirelim."
         />
       </section>
     </main>
   );
 }
+
+

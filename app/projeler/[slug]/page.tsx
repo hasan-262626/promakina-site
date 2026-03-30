@@ -1,7 +1,8 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import { notFound } from "next/navigation";
 import CompostProjectExperience from "../../components/compost-project-experience";
 import GenericProjectExperience from "../../components/generic-project-experience";
+import { Hero } from "../../components/Hero";
 import { projects } from "../../data";
 import { trText } from "../../lib/tr-text";
 
@@ -35,30 +36,30 @@ export default async function ProjectDetailPage({ params }: PageProps) {
     return (
       <GenericProjectExperience
         config={{
-          title: "Organomineral Gübre Tesisi Projeleri",
-          hero: "Granül, mikro granül, toz ve sıvı organomineral gübre üretiminde ürün kalitesi, kapasite ve sürdürülebilir işletme odaklı proje çözümleri geliştiriyoruz.",
-          scenariosTitle: "Kapsanan Proje Senaryoları",
-          scenarios: ["Granül organomineral hatlar", "Mikro granül üretim sistemleri", "Toz ve karışım gübre hatları", "Sıvı organomineral çözümler", "Zenginleştirilmiş özel ürün senaryoları"],
-          summary: "Organomineral gübre tesisi projelerinde hammadde hazırlama, karışım, granülasyon, kurutma, eleme, soğutma ve paketleme adımlarını ürün tipine göre kurguluyoruz. Ürün kalitesi, granül dayanımı ve sürekli işletme yaklaşımı birlikte ele alınır.",
-          processFlow: "Hammadde alma → dozajlama → karışım hazırlama → granülasyon / formülasyon → kurutma → soğutma → eleme → geri dönüş → paketleme / depolama",
-          technicalScope: ["Ürün reçetesi ve proses kurgusu", "Granülasyon ve kurutma hattı", "Eleme ve geri dönüş sistemi", "Paketleme ve son ürün hazırlığı", "Toz kontrolü ve çevresel yönetim"],
-          capacity: ["Düşük kapasiteli özel üretim hatları", "Orta kapasiteli yarı otomatik sistemler", "Yüksek kapasiteli sürekli üretim hatları", "Modüler tesis çözümleri"],
-          critical: ["Granül dayanımı", "Nem kontrolü", "Mikro granül hassasiyeti", "Geri dönüş dengesi", "Son ürün akışkanlığı", "Paketleme uyumu"],
-          machines: ["Granülasyon tamburları", "Kurutma tamburları", "Soğutma tamburları", "Eleme sistemleri", "Reaktörler ve tanklar", "Paketleme ve dolum sistemleri"],
-          services: ["Proses Tasarımı ve Mühendislik", "Makine İmalatı", "Anahtar Teslim Tesis Kurulumu", "Teknik Danışmanlık", "Modernizasyon ve Revizyon"],
+          title: "Organomineral GÃ¼bre Tesisi Projeleri",
+          hero: "GranÃ¼l, mikro granÃ¼l, toz ve sÄ±vÄ± organomineral gÃ¼bre Ã¼retiminde Ã¼rÃ¼n kalitesi, kapasite ve sÃ¼rdÃ¼rÃ¼lebilir iÅŸletme odaklÄ± proje Ã§Ã¶zÃ¼mleri geliÅŸtiriyoruz.",
+          scenariosTitle: "Kapsanan Proje SenaryolarÄ±",
+          scenarios: ["GranÃ¼l organomineral hatlar", "Mikro granÃ¼l Ã¼retim sistemleri", "Toz ve karÄ±ÅŸÄ±m gÃ¼bre hatlarÄ±", "SÄ±vÄ± organomineral Ã§Ã¶zÃ¼mler", "ZenginleÅŸtirilmiÅŸ Ã¶zel Ã¼rÃ¼n senaryolarÄ±"],
+          summary: "Organomineral gÃ¼bre tesisi projelerinde hammadde hazÄ±rlama, karÄ±ÅŸÄ±m, granÃ¼lasyon, kurutma, eleme, soÄŸutma ve paketleme adÄ±mlarÄ±nÄ± Ã¼rÃ¼n tipine gÃ¶re kurguluyoruz. ÃœrÃ¼n kalitesi, granÃ¼l dayanÄ±mÄ± ve sÃ¼rekli iÅŸletme yaklaÅŸÄ±mÄ± birlikte ele alÄ±nÄ±r.",
+          processFlow: "Hammadde alma â†’ dozajlama â†’ karÄ±ÅŸÄ±m hazÄ±rlama â†’ granÃ¼lasyon / formÃ¼lasyon â†’ kurutma â†’ soÄŸutma â†’ eleme â†’ geri dÃ¶nÃ¼ÅŸ â†’ paketleme / depolama",
+          technicalScope: ["ÃœrÃ¼n reÃ§etesi ve proses kurgusu", "GranÃ¼lasyon ve kurutma hattÄ±", "Eleme ve geri dÃ¶nÃ¼ÅŸ sistemi", "Paketleme ve son Ã¼rÃ¼n hazÄ±rlÄ±ÄŸÄ±", "Toz kontrolÃ¼ ve Ã§evresel yÃ¶netim"],
+          capacity: ["DÃ¼ÅŸÃ¼k kapasiteli Ã¶zel Ã¼retim hatlarÄ±", "Orta kapasiteli yarÄ± otomatik sistemler", "YÃ¼ksek kapasiteli sÃ¼rekli Ã¼retim hatlarÄ±", "ModÃ¼ler tesis Ã§Ã¶zÃ¼mleri"],
+          critical: ["GranÃ¼l dayanÄ±mÄ±", "Nem kontrolÃ¼", "Mikro granÃ¼l hassasiyeti", "Geri dÃ¶nÃ¼ÅŸ dengesi", "Son Ã¼rÃ¼n akÄ±ÅŸkanlÄ±ÄŸÄ±", "Paketleme uyumu"],
+          machines: ["GranÃ¼lasyon tamburlarÄ±", "Kurutma tamburlarÄ±", "SoÄŸutma tamburlarÄ±", "Eleme sistemleri", "ReaktÃ¶rler ve tanklar", "Paketleme ve dolum sistemleri"],
+          services: ["Proses TasarÄ±mÄ± ve MÃ¼hendislik", "Makine Ä°malatÄ±", "Anahtar Teslim Tesis Kurulumu", "Teknik DanÄ±ÅŸmanlÄ±k", "Modernizasyon ve Revizyon"],
           faqs: [
-            { q: "Organomineral gübre hattı hangi ürünleri kapsar?", a: "Granül, mikro granül, toz ve sıvı organomineral ürün senaryoları farklı proses çözümleri ile kapsanabilir." },
-            { q: "Mikro granül hat için özel ekipman gerekir mi?", a: "Evet. Tane boyutu kontrolü ve hassas eleme nedeniyle daha özel ekipman yaklaşımı gerekir." },
-            { q: "Organomineral ve mineral hatlar aynı mı?", a: "Temel bazı adımlar benzer olsa da organik içerik ve granül karakteri nedeniyle hat kurgusu farklılaşır." },
-            { q: "Paketleme sistemi de bu kapsama dahil mi?", a: "Evet. Torbalama, big bag dolum ve son ürün depolama çözümleri proje kapsamına alınabilir." },
-            { q: "Mevcut hat modernize edilebilir mi?", a: "Evet. Kapasite artışı, kurutma optimizasyonu ve eleme iyileştirmeleri uygulanabilir." },
-            { q: "Ön fizibilite sonucu kesin midir?", a: "Hayır. Sayfadaki sonuçlar yaklaşık ön değerlendirme niteliğindedir." },
+            { q: "Organomineral gÃ¼bre hattÄ± hangi Ã¼rÃ¼nleri kapsar?", a: "GranÃ¼l, mikro granÃ¼l, toz ve sÄ±vÄ± organomineral Ã¼rÃ¼n senaryolarÄ± farklÄ± proses Ã§Ã¶zÃ¼mleri ile kapsanabilir." },
+            { q: "Mikro granÃ¼l hat iÃ§in Ã¶zel ekipman gerekir mi?", a: "Evet. Tane boyutu kontrolÃ¼ ve hassas eleme nedeniyle daha Ã¶zel ekipman yaklaÅŸÄ±mÄ± gerekir." },
+            { q: "Organomineral ve mineral hatlar aynÄ± mÄ±?", a: "Temel bazÄ± adÄ±mlar benzer olsa da organik iÃ§erik ve granÃ¼l karakteri nedeniyle hat kurgusu farklÄ±laÅŸÄ±r." },
+            { q: "Paketleme sistemi de bu kapsama dahil mi?", a: "Evet. Torbalama, big bag dolum ve son Ã¼rÃ¼n depolama Ã§Ã¶zÃ¼mleri proje kapsamÄ±na alÄ±nabilir." },
+            { q: "Mevcut hat modernize edilebilir mi?", a: "Evet. Kapasite artÄ±ÅŸÄ±, kurutma optimizasyonu ve eleme iyileÅŸtirmeleri uygulanabilir." },
+            { q: "Ã–n fizibilite sonucu kesin midir?", a: "HayÄ±r. Sayfadaki sonuÃ§lar yaklaÅŸÄ±k Ã¶n deÄŸerlendirme niteliÄŸindedir." },
           ],
-          cta: "Organomineral, granül, mikro granül ve özel formülasyon gübre projeleri için teknik yaklaşımı birlikte netleştirelim.",
-          calculatorTitle: "Organomineral Gübre Tesisi Ön Değerlendirme Aracı",
-          productOptions: ["Granül organomineral", "Mikro granül", "Toz gübre", "Sıvı organomineral"],
-          processOptions: ["Ürün kalitesi", "Kapasite artışı", "Mikro granül hassasiyeti", "Paketleme uyumu"],
-          auto: ["Önerilen granülasyon sınıfı", "Önerilen kurutma / soğutma yapısı", "Önerilen eleme hassasiyeti", "Önerilen paketleme sınıfı", "Önerilen proses karakteri", "Ön teknik not"],
+          cta: "Organomineral, granÃ¼l, mikro granÃ¼l ve Ã¶zel formÃ¼lasyon gÃ¼bre projeleri iÃ§in teknik yaklaÅŸÄ±mÄ± birlikte netleÅŸtirelim.",
+          calculatorTitle: "Organomineral GÃ¼bre Tesisi Ã–n DeÄŸerlendirme AracÄ±",
+          productOptions: ["GranÃ¼l organomineral", "Mikro granÃ¼l", "Toz gÃ¼bre", "SÄ±vÄ± organomineral"],
+          processOptions: ["ÃœrÃ¼n kalitesi", "Kapasite artÄ±ÅŸÄ±", "Mikro granÃ¼l hassasiyeti", "Paketleme uyumu"],
+          auto: ["Ã–nerilen granÃ¼lasyon sÄ±nÄ±fÄ±", "Ã–nerilen kurutma / soÄŸutma yapÄ±sÄ±", "Ã–nerilen eleme hassasiyeti", "Ã–nerilen paketleme sÄ±nÄ±fÄ±", "Ã–nerilen proses karakteri", "Ã–n teknik not"],
         }}
       />
     );
@@ -68,30 +69,30 @@ export default async function ProjectDetailPage({ params }: PageProps) {
     return (
       <GenericProjectExperience
         config={{
-          title: "Deri Atık İşleme Tesisi Projeleri",
-          hero: "Deri endüstrisi kaynaklı atıkların parçalama, ayrıştırma, taşıma, hidroliz ve geri kazanım odaklı işlenmesine uygun tesis kurguları geliştiriyoruz.",
-          scenariosTitle: "Kapsanan Proje Senaryoları",
-          scenarios: ["Parçalama ve küçültme hatları", "Taşıma ve bunker çözümleri", "Hidroliz ön hazırlık sistemleri", "Geri kazanım odaklı hat kurgusu", "Toz ve koku kontrol altyapısı"],
-          summary: "Deri atık işleme projelerinde malzeme karakteri, lifli yapı, nem, koku ve sonraki geri kazanım adımı birlikte değerlendirilir. Sürece uygun kırıcı, taşıma ve kontrol sistemleri ile hat kurgusu oluşturulur.",
-          processFlow: "Atık kabulü → parçalama / küçültme → taşıma → ayırma / hazırlık → hidroliz / geri kazanım öncesi hazırlık → depolama / sevk",
-          technicalScope: ["Atık karakterizasyonu", "Parçalama ve küçültme", "Taşıma ve bunker kurgusu", "Toz / koku kontrolü", "Saha yerleşim ve güvenlik yaklaşımı"],
-          capacity: ["Düşük kapasiteli özel hatlar", "Orta kapasiteli yarı otomatik sistemler", "Sürekli çalışan endüstriyel hatlar", "Projeye özel modüler çözümler"],
-          critical: ["Lifli ve düzensiz besleme", "Nem ve koku yönetimi", "Parçalama karakteri", "Geri kazanım adımına uygun ürün hazırlığı", "Bakım erişimi", "İş güvenliği"],
-          machines: ["Parçalayıcı sistemler", "Kırıcılar", "Taşıma ekipmanları", "Bunker ve besleme sistemleri", "Toz toplama sistemleri"],
-          services: ["Makine İmalatı", "Anahtar Teslim Tesis Kurulumu", "Teknik Danışmanlık", "Proje Yönetimi ve Saha Koordinasyonu"],
+          title: "Deri AtÄ±k Ä°ÅŸleme Tesisi Projeleri",
+          hero: "Deri endÃ¼strisi kaynaklÄ± atÄ±klarÄ±n parÃ§alama, ayrÄ±ÅŸtÄ±rma, taÅŸÄ±ma, hidroliz ve geri kazanÄ±m odaklÄ± iÅŸlenmesine uygun tesis kurgularÄ± geliÅŸtiriyoruz.",
+          scenariosTitle: "Kapsanan Proje SenaryolarÄ±",
+          scenarios: ["ParÃ§alama ve kÃ¼Ã§Ã¼ltme hatlarÄ±", "TaÅŸÄ±ma ve bunker Ã§Ã¶zÃ¼mleri", "Hidroliz Ã¶n hazÄ±rlÄ±k sistemleri", "Geri kazanÄ±m odaklÄ± hat kurgusu", "Toz ve koku kontrol altyapÄ±sÄ±"],
+          summary: "Deri atÄ±k iÅŸleme projelerinde malzeme karakteri, lifli yapÄ±, nem, koku ve sonraki geri kazanÄ±m adÄ±mÄ± birlikte deÄŸerlendirilir. SÃ¼rece uygun kÄ±rÄ±cÄ±, taÅŸÄ±ma ve kontrol sistemleri ile hat kurgusu oluÅŸturulur.",
+          processFlow: "AtÄ±k kabulÃ¼ â†’ parÃ§alama / kÃ¼Ã§Ã¼ltme â†’ taÅŸÄ±ma â†’ ayÄ±rma / hazÄ±rlÄ±k â†’ hidroliz / geri kazanÄ±m Ã¶ncesi hazÄ±rlÄ±k â†’ depolama / sevk",
+          technicalScope: ["AtÄ±k karakterizasyonu", "ParÃ§alama ve kÃ¼Ã§Ã¼ltme", "TaÅŸÄ±ma ve bunker kurgusu", "Toz / koku kontrolÃ¼", "Saha yerleÅŸim ve gÃ¼venlik yaklaÅŸÄ±mÄ±"],
+          capacity: ["DÃ¼ÅŸÃ¼k kapasiteli Ã¶zel hatlar", "Orta kapasiteli yarÄ± otomatik sistemler", "SÃ¼rekli Ã§alÄ±ÅŸan endÃ¼striyel hatlar", "Projeye Ã¶zel modÃ¼ler Ã§Ã¶zÃ¼mler"],
+          critical: ["Lifli ve dÃ¼zensiz besleme", "Nem ve koku yÃ¶netimi", "ParÃ§alama karakteri", "Geri kazanÄ±m adÄ±mÄ±na uygun Ã¼rÃ¼n hazÄ±rlÄ±ÄŸÄ±", "BakÄ±m eriÅŸimi", "Ä°ÅŸ gÃ¼venliÄŸi"],
+          machines: ["ParÃ§alayÄ±cÄ± sistemler", "KÄ±rÄ±cÄ±lar", "TaÅŸÄ±ma ekipmanlarÄ±", "Bunker ve besleme sistemleri", "Toz toplama sistemleri"],
+          services: ["Makine Ä°malatÄ±", "Anahtar Teslim Tesis Kurulumu", "Teknik DanÄ±ÅŸmanlÄ±k", "Proje YÃ¶netimi ve Saha Koordinasyonu"],
           faqs: [
-            { q: "Deri atıklar için hangi parçalayıcı tipi seçilir?", a: "Lifli yapı, nem ve hedef parça boyutuna göre tek milli, çift milli veya kırıcı kombinasyonları değerlendirilir." },
-            { q: "Toz kontrolü gerekli midir?", a: "Evet. Kırma ve taşıma adımlarında toz kontrolü çoğu zaman kritik hale gelir." },
-            { q: "Hidroliz öncesi hazırlık hattı kurulabilir mi?", a: "Evet. Sonraki proses ihtiyacına göre özel hazırlık hattı kurgulanabilir." },
-            { q: "Koku yönetimi nasıl ele alınır?", a: "Kapalı alan kurgusu, lokal emiş ve proses akışı birlikte değerlendirilir." },
-            { q: "Hat kapasitesi neye göre belirlenir?", a: "Günlük atık miktarı, çalışma süresi ve sonraki proses adımının kabul kapasitesine göre belirlenir." },
-            { q: "Bu sayfadaki sonuçlar kesin midir?", a: "Hayır. Sonuçlar ön fizibilite niteliğinde değerlendirilmelidir." },
+            { q: "Deri atÄ±klar iÃ§in hangi parÃ§alayÄ±cÄ± tipi seÃ§ilir?", a: "Lifli yapÄ±, nem ve hedef parÃ§a boyutuna gÃ¶re tek milli, Ã§ift milli veya kÄ±rÄ±cÄ± kombinasyonlarÄ± deÄŸerlendirilir." },
+            { q: "Toz kontrolÃ¼ gerekli midir?", a: "Evet. KÄ±rma ve taÅŸÄ±ma adÄ±mlarÄ±nda toz kontrolÃ¼ Ã§oÄŸu zaman kritik hale gelir." },
+            { q: "Hidroliz Ã¶ncesi hazÄ±rlÄ±k hattÄ± kurulabilir mi?", a: "Evet. Sonraki proses ihtiyacÄ±na gÃ¶re Ã¶zel hazÄ±rlÄ±k hattÄ± kurgulanabilir." },
+            { q: "Koku yÃ¶netimi nasÄ±l ele alÄ±nÄ±r?", a: "KapalÄ± alan kurgusu, lokal emiÅŸ ve proses akÄ±ÅŸÄ± birlikte deÄŸerlendirilir." },
+            { q: "Hat kapasitesi neye gÃ¶re belirlenir?", a: "GÃ¼nlÃ¼k atÄ±k miktarÄ±, Ã§alÄ±ÅŸma sÃ¼resi ve sonraki proses adÄ±mÄ±nÄ±n kabul kapasitesine gÃ¶re belirlenir." },
+            { q: "Bu sayfadaki sonuÃ§lar kesin midir?", a: "HayÄ±r. SonuÃ§lar Ã¶n fizibilite niteliÄŸinde deÄŸerlendirilmelidir." },
           ],
-          cta: "Deri atık işleme projeniz için parçalama, taşıma ve geri kazanım odaklı teknik yaklaşımı birlikte netleştirelim.",
-          calculatorTitle: "Deri Atık İşleme Ön Değerlendirme Aracı",
-          productOptions: ["Lifli deri atığı", "Karışık proses atığı", "Nemli deri fraksiyonu", "Geri kazanım ön ürünü"],
-          processOptions: ["Parçalama önceliği", "Toz kontrolü", "Geri kazanım hazırlığı", "Sürekli işletme"],
-          auto: ["Önerilen parçalama sınıfı", "Önerilen taşıma karakteri", "Önerilen bunker yapısı", "Önerilen toz kontrol notu", "Önerilen servis sınıfı", "Ön teknik not"],
+          cta: "Deri atÄ±k iÅŸleme projeniz iÃ§in parÃ§alama, taÅŸÄ±ma ve geri kazanÄ±m odaklÄ± teknik yaklaÅŸÄ±mÄ± birlikte netleÅŸtirelim.",
+          calculatorTitle: "Deri AtÄ±k Ä°ÅŸleme Ã–n DeÄŸerlendirme AracÄ±",
+          productOptions: ["Lifli deri atÄ±ÄŸÄ±", "KarÄ±ÅŸÄ±k proses atÄ±ÄŸÄ±", "Nemli deri fraksiyonu", "Geri kazanÄ±m Ã¶n Ã¼rÃ¼nÃ¼"],
+          processOptions: ["ParÃ§alama Ã¶nceliÄŸi", "Toz kontrolÃ¼", "Geri kazanÄ±m hazÄ±rlÄ±ÄŸÄ±", "SÃ¼rekli iÅŸletme"],
+          auto: ["Ã–nerilen parÃ§alama sÄ±nÄ±fÄ±", "Ã–nerilen taÅŸÄ±ma karakteri", "Ã–nerilen bunker yapÄ±sÄ±", "Ã–nerilen toz kontrol notu", "Ã–nerilen servis sÄ±nÄ±fÄ±", "Ã–n teknik not"],
         }}
       />
     );
@@ -101,30 +102,30 @@ export default async function ProjectDetailPage({ params }: PageProps) {
     return (
       <GenericProjectExperience
         config={{
-          title: "Biyogaz ve Atık Yönetimi Projeleri",
-          hero: "Biyogaz besleme, organik madde hazırlama, digestat yönetimi, atık işleme ve yan ürün değerlendirme odaklı entegre proje yapıları geliştiriyoruz.",
-          scenariosTitle: "Kapsanan Proje Senaryoları",
-          scenarios: ["Besleme ve ön işleme hatları", "Digestat yönetimi", "Organik madde hazırlama", "Atık yönetimi entegrasyonu", "Yan ürün değerlendirme çözümleri"],
-          summary: "Biyogaz ve atık yönetimi projelerinde düzenli besleme, malzeme homojenliği, tampon stok, taşıma altyapısı ve digestat sonrası yönetim birlikte değerlendirilir.",
-          processFlow: "Atık kabulü → ön parçalama / ayırma → tampon stok → dozajlı besleme → biyogaz / proses hattı → digestat yönetimi → yan ürün değerlendirme",
-          technicalScope: ["Atık ve organik madde karakterizasyonu", "Besleme ve tampon stok planlaması", "Parçalama ve hazırlık hattı", "Digestat yönetimi", "Koku ve saha yönetimi"],
-          capacity: ["Küçük ölçekli organik madde hazırlık sistemleri", "Orta kapasiteli yarı otomatik besleme hatları", "Yüksek kapasiteli entegre biyogaz altyapıları", "Projeye özel modüler tesis çözümleri"],
-          critical: ["Besleme sürekliliği", "Malzeme homojenliği", "Digestat sonrası akış", "Koku ve çevresel yönetim", "Tampon stok kapasitesi", "Bakım erişimi"],
-          machines: ["Depolama ve besleme sistemleri", "Taşıma ekipmanları", "Kırıcılar ve parçalayıcılar", "Toz ve koku kontrol sistemleri", "Reaktör ve tank altyapısı"],
-          services: ["Anahtar Teslim Tesis Kurulumu", "Proses Tasarımı ve Mühendislik", "Teknik Danışmanlık", "Proje Yönetimi ve Saha Koordinasyonu"],
+          title: "Biyogaz ve AtÄ±k YÃ¶netimi Projeleri",
+          hero: "Biyogaz besleme, organik madde hazÄ±rlama, digestat yÃ¶netimi, atÄ±k iÅŸleme ve yan Ã¼rÃ¼n deÄŸerlendirme odaklÄ± entegre proje yapÄ±larÄ± geliÅŸtiriyoruz.",
+          scenariosTitle: "Kapsanan Proje SenaryolarÄ±",
+          scenarios: ["Besleme ve Ã¶n iÅŸleme hatlarÄ±", "Digestat yÃ¶netimi", "Organik madde hazÄ±rlama", "AtÄ±k yÃ¶netimi entegrasyonu", "Yan Ã¼rÃ¼n deÄŸerlendirme Ã§Ã¶zÃ¼mleri"],
+          summary: "Biyogaz ve atÄ±k yÃ¶netimi projelerinde dÃ¼zenli besleme, malzeme homojenliÄŸi, tampon stok, taÅŸÄ±ma altyapÄ±sÄ± ve digestat sonrasÄ± yÃ¶netim birlikte deÄŸerlendirilir.",
+          processFlow: "AtÄ±k kabulÃ¼ â†’ Ã¶n parÃ§alama / ayÄ±rma â†’ tampon stok â†’ dozajlÄ± besleme â†’ biyogaz / proses hattÄ± â†’ digestat yÃ¶netimi â†’ yan Ã¼rÃ¼n deÄŸerlendirme",
+          technicalScope: ["AtÄ±k ve organik madde karakterizasyonu", "Besleme ve tampon stok planlamasÄ±", "ParÃ§alama ve hazÄ±rlÄ±k hattÄ±", "Digestat yÃ¶netimi", "Koku ve saha yÃ¶netimi"],
+          capacity: ["KÃ¼Ã§Ã¼k Ã¶lÃ§ekli organik madde hazÄ±rlÄ±k sistemleri", "Orta kapasiteli yarÄ± otomatik besleme hatlarÄ±", "YÃ¼ksek kapasiteli entegre biyogaz altyapÄ±larÄ±", "Projeye Ã¶zel modÃ¼ler tesis Ã§Ã¶zÃ¼mleri"],
+          critical: ["Besleme sÃ¼rekliliÄŸi", "Malzeme homojenliÄŸi", "Digestat sonrasÄ± akÄ±ÅŸ", "Koku ve Ã§evresel yÃ¶netim", "Tampon stok kapasitesi", "BakÄ±m eriÅŸimi"],
+          machines: ["Depolama ve besleme sistemleri", "TaÅŸÄ±ma ekipmanlarÄ±", "KÄ±rÄ±cÄ±lar ve parÃ§alayÄ±cÄ±lar", "Toz ve koku kontrol sistemleri", "ReaktÃ¶r ve tank altyapÄ±sÄ±"],
+          services: ["Anahtar Teslim Tesis Kurulumu", "Proses TasarÄ±mÄ± ve MÃ¼hendislik", "Teknik DanÄ±ÅŸmanlÄ±k", "Proje YÃ¶netimi ve Saha Koordinasyonu"],
           faqs: [
-            { q: "Biyogaz besleme sistemi neye göre belirlenir?", a: "Girdi tipi, günlük tonaj, homojenlik ihtiyacı ve besleme sürekliliğine göre belirlenir." },
-            { q: "Digestat yönetimi proje kapsamına alınabilir mi?", a: "Evet. Digestat depolama, taşıma ve sonrası değerlendirme çözümleri proje kapsamına dahil edilebilir." },
-            { q: "Karışık organik fraksiyonlar için ön işleme gerekir mi?", a: "Çoğu zaman evet. Parçalama, ayırma ve homojenizasyon adımları önemlidir." },
-            { q: "Bunker ve tampon stok neden önemlidir?", a: "Besleme sürekliliği ve proses kararlılığı için kritik rol oynar." },
-            { q: "Açık ve kapalı sistem birlikte çalışabilir mi?", a: "Evet. Prosesin farklı bölümlerinde farklı sistem karakterleri kullanılabilir." },
-            { q: "Bu araç kesin proje hesabı verir mi?", a: "Hayır. Yaklaşık ön fizibilite desteği sağlar." },
+            { q: "Biyogaz besleme sistemi neye gÃ¶re belirlenir?", a: "Girdi tipi, gÃ¼nlÃ¼k tonaj, homojenlik ihtiyacÄ± ve besleme sÃ¼rekliliÄŸine gÃ¶re belirlenir." },
+            { q: "Digestat yÃ¶netimi proje kapsamÄ±na alÄ±nabilir mi?", a: "Evet. Digestat depolama, taÅŸÄ±ma ve sonrasÄ± deÄŸerlendirme Ã§Ã¶zÃ¼mleri proje kapsamÄ±na dahil edilebilir." },
+            { q: "KarÄ±ÅŸÄ±k organik fraksiyonlar iÃ§in Ã¶n iÅŸleme gerekir mi?", a: "Ã‡oÄŸu zaman evet. ParÃ§alama, ayÄ±rma ve homojenizasyon adÄ±mlarÄ± Ã¶nemlidir." },
+            { q: "Bunker ve tampon stok neden Ã¶nemlidir?", a: "Besleme sÃ¼rekliliÄŸi ve proses kararlÄ±lÄ±ÄŸÄ± iÃ§in kritik rol oynar." },
+            { q: "AÃ§Ä±k ve kapalÄ± sistem birlikte Ã§alÄ±ÅŸabilir mi?", a: "Evet. Prosesin farklÄ± bÃ¶lÃ¼mlerinde farklÄ± sistem karakterleri kullanÄ±labilir." },
+            { q: "Bu araÃ§ kesin proje hesabÄ± verir mi?", a: "HayÄ±r. YaklaÅŸÄ±k Ã¶n fizibilite desteÄŸi saÄŸlar." },
           ],
-          cta: "Biyogaz ve atık yönetimi projeniz için besleme, hazırlama ve digestat yönetimi odaklı yaklaşımı birlikte netleştirelim.",
-          calculatorTitle: "Biyogaz ve Atık Yönetimi Ön Değerlendirme Aracı",
-          productOptions: ["Organik atık hazırlama", "Biyogaz besleme hattı", "Digestat yönetimi", "Entegre atık işleme"],
-          processOptions: ["Besleme sürekliliği", "Homojenizasyon", "Koku kontrolü", "Yan ürün değerlendirme"],
-          auto: ["Önerilen besleme sınıfı", "Önerilen tampon stok notu", "Önerilen parçalama yaklaşımı", "Önerilen digestat yönetimi", "Önerilen sistem karakteri", "Ön teknik not"],
+          cta: "Biyogaz ve atÄ±k yÃ¶netimi projeniz iÃ§in besleme, hazÄ±rlama ve digestat yÃ¶netimi odaklÄ± yaklaÅŸÄ±mÄ± birlikte netleÅŸtirelim.",
+          calculatorTitle: "Biyogaz ve AtÄ±k YÃ¶netimi Ã–n DeÄŸerlendirme AracÄ±",
+          productOptions: ["Organik atÄ±k hazÄ±rlama", "Biyogaz besleme hattÄ±", "Digestat yÃ¶netimi", "Entegre atÄ±k iÅŸleme"],
+          processOptions: ["Besleme sÃ¼rekliliÄŸi", "Homojenizasyon", "Koku kontrolÃ¼", "Yan Ã¼rÃ¼n deÄŸerlendirme"],
+          auto: ["Ã–nerilen besleme sÄ±nÄ±fÄ±", "Ã–nerilen tampon stok notu", "Ã–nerilen parÃ§alama yaklaÅŸÄ±mÄ±", "Ã–nerilen digestat yÃ¶netimi", "Ã–nerilen sistem karakteri", "Ã–n teknik not"],
         }}
       />
     );
@@ -134,50 +135,50 @@ export default async function ProjectDetailPage({ params }: PageProps) {
     return (
       <GenericProjectExperience
         config={{
-          title: slug === "ozel-proses-ve-makine-imalati-projeleri" ? "Özel Proses ve Makine İmalatı Projeleri" : "Mineral ve Dökme Katı İşleme Projeleri",
+          title: slug === "ozel-proses-ve-makine-imalati-projeleri" ? "Ã–zel Proses ve Makine Ä°malatÄ± Projeleri" : "Mineral ve DÃ¶kme KatÄ± Ä°ÅŸleme Projeleri",
           hero: slug === "ozel-proses-ve-makine-imalati-projeleri"
-            ? "Sahaya özel ölçü, kapasite ve proses ihtiyacına göre uyarlanmış özel makina, proses hattı ve endüstriyel sistem çözümleri geliştiriyoruz."
-            : "Kırma, eleme, taşıma, kurutma, sınıflandırma ve stoklama süreçlerine uygun mineral ve dökme katı malzeme proje çözümleri geliştiriyoruz.",
-          scenariosTitle: "Kapsanan Proje Senaryoları",
+            ? "Sahaya Ã¶zel Ã¶lÃ§Ã¼, kapasite ve proses ihtiyacÄ±na gÃ¶re uyarlanmÄ±ÅŸ Ã¶zel makina, proses hattÄ± ve endÃ¼striyel sistem Ã§Ã¶zÃ¼mleri geliÅŸtiriyoruz."
+            : "KÄ±rma, eleme, taÅŸÄ±ma, kurutma, sÄ±nÄ±flandÄ±rma ve stoklama sÃ¼reÃ§lerine uygun mineral ve dÃ¶kme katÄ± malzeme proje Ã§Ã¶zÃ¼mleri geliÅŸtiriyoruz.",
+          scenariosTitle: "Kapsanan Proje SenaryolarÄ±",
           scenarios: slug === "ozel-proses-ve-makine-imalati-projeleri"
-            ? ["Özel makina imalatı", "Standart dışı proses hatları", "Sahaya özel entegrasyon", "Modifikasyon ve uyarlama", "Pilot ölçekten üretime geçiş"]
-            : ["Kırma ve eleme hatları", "Kurutma ve sınıflandırma", "Taşıma ve stoklama", "Dökme katı hazırlama", "Mineral proses entegrasyonu"],
+            ? ["Ã–zel makina imalatÄ±", "Standart dÄ±ÅŸÄ± proses hatlarÄ±", "Sahaya Ã¶zel entegrasyon", "Modifikasyon ve uyarlama", "Pilot Ã¶lÃ§ekten Ã¼retime geÃ§iÅŸ"]
+            : ["KÄ±rma ve eleme hatlarÄ±", "Kurutma ve sÄ±nÄ±flandÄ±rma", "TaÅŸÄ±ma ve stoklama", "DÃ¶kme katÄ± hazÄ±rlama", "Mineral proses entegrasyonu"],
           summary: slug === "ozel-proses-ve-makine-imalati-projeleri"
-            ? "Standart katalog çözümlerinin yeterli olmadığı projelerde; proses ihtiyacı, saha sınırları ve hedef kapasiteye göre özel mühendislik yaklaşımı geliştiriyoruz."
-            : "Mineral ve dökme katı işleme projelerinde ürün karakteri, aşınma, toz, kurutma ihtiyacı ve stoklama yaklaşımı birlikte değerlendirilir.",
+            ? "Standart katalog Ã§Ã¶zÃ¼mlerinin yeterli olmadÄ±ÄŸÄ± projelerde; proses ihtiyacÄ±, saha sÄ±nÄ±rlarÄ± ve hedef kapasiteye gÃ¶re Ã¶zel mÃ¼hendislik yaklaÅŸÄ±mÄ± geliÅŸtiriyoruz."
+            : "Mineral ve dÃ¶kme katÄ± iÅŸleme projelerinde Ã¼rÃ¼n karakteri, aÅŸÄ±nma, toz, kurutma ihtiyacÄ± ve stoklama yaklaÅŸÄ±mÄ± birlikte deÄŸerlendirilir.",
           processFlow: slug === "ozel-proses-ve-makine-imalati-projeleri"
-            ? "İhtiyaç analizi → özel tasarım → mühendislik doğrulama → imalat → saha entegrasyonu → devreye alma"
-            : "Hammadde kabulü → kırma / eleme → taşıma → kurutma / sınıflandırma → stoklama / sevk",
+            ? "Ä°htiyaÃ§ analizi â†’ Ã¶zel tasarÄ±m â†’ mÃ¼hendislik doÄŸrulama â†’ imalat â†’ saha entegrasyonu â†’ devreye alma"
+            : "Hammadde kabulÃ¼ â†’ kÄ±rma / eleme â†’ taÅŸÄ±ma â†’ kurutma / sÄ±nÄ±flandÄ±rma â†’ stoklama / sevk",
           technicalScope: slug === "ozel-proses-ve-makine-imalati-projeleri"
-            ? ["Özel tasarım ekipman", "Mühendislik ve projelendirme", "Atölye imalat süreci", "Saha uyarlama ve entegrasyon", "Test ve devreye alma"]
-            : ["Ürün karakterizasyonu", "Kırma ve eleme yaklaşımı", "Taşıma ve stoklama kurgusu", "Toz ve aşınma yönetimi", "Kurutma / son işlem yaklaşımı"],
-          capacity: ["Düşük kapasiteli özel çözümler", "Orta kapasiteli modüler hatlar", "Yüksek kapasiteli sürekli sistemler", "Projeye özel ölçekleme"],
+            ? ["Ã–zel tasarÄ±m ekipman", "MÃ¼hendislik ve projelendirme", "AtÃ¶lye imalat sÃ¼reci", "Saha uyarlama ve entegrasyon", "Test ve devreye alma"]
+            : ["ÃœrÃ¼n karakterizasyonu", "KÄ±rma ve eleme yaklaÅŸÄ±mÄ±", "TaÅŸÄ±ma ve stoklama kurgusu", "Toz ve aÅŸÄ±nma yÃ¶netimi", "Kurutma / son iÅŸlem yaklaÅŸÄ±mÄ±"],
+          capacity: ["DÃ¼ÅŸÃ¼k kapasiteli Ã¶zel Ã§Ã¶zÃ¼mler", "Orta kapasiteli modÃ¼ler hatlar", "YÃ¼ksek kapasiteli sÃ¼rekli sistemler", "Projeye Ã¶zel Ã¶lÃ§ekleme"],
           critical: slug === "ozel-proses-ve-makine-imalati-projeleri"
-            ? ["Standart dışı gereksinimler", "Saha ölçüleri", "Entegrasyon uyumu", "Özel malzeme seçimi", "Test ve doğrulama", "Bakım erişimi"]
-            : ["Aşınma ve toz yönetimi", "Kırma karakteri", "Kurutma ihtiyacı", "Stoklama yaklaşımı", "Ürün ayrıştırma verimi", "Hat sürekliliği"],
+            ? ["Standart dÄ±ÅŸÄ± gereksinimler", "Saha Ã¶lÃ§Ã¼leri", "Entegrasyon uyumu", "Ã–zel malzeme seÃ§imi", "Test ve doÄŸrulama", "BakÄ±m eriÅŸimi"]
+            : ["AÅŸÄ±nma ve toz yÃ¶netimi", "KÄ±rma karakteri", "Kurutma ihtiyacÄ±", "Stoklama yaklaÅŸÄ±mÄ±", "ÃœrÃ¼n ayrÄ±ÅŸtÄ±rma verimi", "Hat sÃ¼rekliliÄŸi"],
           machines: slug === "ozel-proses-ve-makine-imalati-projeleri"
-            ? ["Reaktörler ve tanklar", "Tambur sistemleri", "Taşıma ekipmanları", "Kırıcılar ve parçalayıcılar", "Özel yardımcı ekipmanlar"]
-            : ["Kırıcılar ve parçalayıcılar", "Eleme ve sınıflandırma sistemleri", "Taşıma ekipmanları", "Tambur sistemleri", "Depolama ve besleme sistemleri"],
-          services: ["Makine İmalatı", "Proses Tasarımı ve Mühendislik", "Anahtar Teslim Tesis Kurulumu", "Teknik Danışmanlık", "Modernizasyon ve Revizyon"],
+            ? ["ReaktÃ¶rler ve tanklar", "Tambur sistemleri", "TaÅŸÄ±ma ekipmanlarÄ±", "KÄ±rÄ±cÄ±lar ve parÃ§alayÄ±cÄ±lar", "Ã–zel yardÄ±mcÄ± ekipmanlar"]
+            : ["KÄ±rÄ±cÄ±lar ve parÃ§alayÄ±cÄ±lar", "Eleme ve sÄ±nÄ±flandÄ±rma sistemleri", "TaÅŸÄ±ma ekipmanlarÄ±", "Tambur sistemleri", "Depolama ve besleme sistemleri"],
+          services: ["Makine Ä°malatÄ±", "Proses TasarÄ±mÄ± ve MÃ¼hendislik", "Anahtar Teslim Tesis Kurulumu", "Teknik DanÄ±ÅŸmanlÄ±k", "Modernizasyon ve Revizyon"],
           faqs: [
-            { q: "Projeye özel tasarım yapılabilir mi?", a: "Evet. Standart dışı kapasite, ölçü ve proses ihtiyaçlarına göre özel çözüm geliştirilebilir." },
-            { q: "Saha kısıtlarına göre proje uyarlanır mı?", a: "Evet. Yerleşim, erişim ve entegrasyon kısıtları proje kurgusuna dahil edilir." },
-            { q: "Test ve doğrulama yapılır mı?", a: "Proje kapsamına göre test, pilot çalışma veya saha doğrulama yaklaşımı uygulanabilir." },
-            { q: "Mevcut hatlara entegrasyon mümkün mü?", a: "Evet. Mevcut sistemlerle uyumlu entegrasyon çözümleri geliştirilebilir." },
-            { q: "Ön fizibilite hangi bilgileri verir?", a: "Kapasite sınıfı, proses karakteri ve genel sistem yaklaşımı hakkında ön karar desteği sağlar." },
-            { q: "Bu sonuçlar kesin midir?", a: "Hayır. Nihai mühendislik doğrulaması gereklidir." },
+            { q: "Projeye Ã¶zel tasarÄ±m yapÄ±labilir mi?", a: "Evet. Standart dÄ±ÅŸÄ± kapasite, Ã¶lÃ§Ã¼ ve proses ihtiyaÃ§larÄ±na gÃ¶re Ã¶zel Ã§Ã¶zÃ¼m geliÅŸtirilebilir." },
+            { q: "Saha kÄ±sÄ±tlarÄ±na gÃ¶re proje uyarlanÄ±r mÄ±?", a: "Evet. YerleÅŸim, eriÅŸim ve entegrasyon kÄ±sÄ±tlarÄ± proje kurgusuna dahil edilir." },
+            { q: "Test ve doÄŸrulama yapÄ±lÄ±r mÄ±?", a: "Proje kapsamÄ±na gÃ¶re test, pilot Ã§alÄ±ÅŸma veya saha doÄŸrulama yaklaÅŸÄ±mÄ± uygulanabilir." },
+            { q: "Mevcut hatlara entegrasyon mÃ¼mkÃ¼n mÃ¼?", a: "Evet. Mevcut sistemlerle uyumlu entegrasyon Ã§Ã¶zÃ¼mleri geliÅŸtirilebilir." },
+            { q: "Ã–n fizibilite hangi bilgileri verir?", a: "Kapasite sÄ±nÄ±fÄ±, proses karakteri ve genel sistem yaklaÅŸÄ±mÄ± hakkÄ±nda Ã¶n karar desteÄŸi saÄŸlar." },
+            { q: "Bu sonuÃ§lar kesin midir?", a: "HayÄ±r. Nihai mÃ¼hendislik doÄŸrulamasÄ± gereklidir." },
           ],
           cta: slug === "ozel-proses-ve-makine-imalati-projeleri"
-            ? "Özel proses ve makine imalat projeniz için saha, kapasite ve entegrasyon ihtiyaçlarını birlikte netleştirelim."
-            : "Mineral ve dökme katı işleme projeniz için kırma, eleme, taşıma ve stoklama yaklaşımını birlikte netleştirelim.",
-          calculatorTitle: slug === "ozel-proses-ve-makine-imalati-projeleri" ? "Özel Proses Projesi Ön Değerlendirme Aracı" : "Mineral ve Dökme Katı İşleme Ön Değerlendirme Aracı",
+            ? "Ã–zel proses ve makine imalat projeniz iÃ§in saha, kapasite ve entegrasyon ihtiyaÃ§larÄ±nÄ± birlikte netleÅŸtirelim."
+            : "Mineral ve dÃ¶kme katÄ± iÅŸleme projeniz iÃ§in kÄ±rma, eleme, taÅŸÄ±ma ve stoklama yaklaÅŸÄ±mÄ±nÄ± birlikte netleÅŸtirelim.",
+          calculatorTitle: slug === "ozel-proses-ve-makine-imalati-projeleri" ? "Ã–zel Proses Projesi Ã–n DeÄŸerlendirme AracÄ±" : "Mineral ve DÃ¶kme KatÄ± Ä°ÅŸleme Ã–n DeÄŸerlendirme AracÄ±",
           productOptions: slug === "ozel-proses-ve-makine-imalati-projeleri"
-            ? ["Özel makina", "Özel proses hattı", "Saha entegrasyon projesi", "Pilot ölçek proje"]
-            : ["Mineral kurutma", "Kırma ve eleme", "Dökme katı taşıma", "Stoklama ve sınıflandırma"],
+            ? ["Ã–zel makina", "Ã–zel proses hattÄ±", "Saha entegrasyon projesi", "Pilot Ã¶lÃ§ek proje"]
+            : ["Mineral kurutma", "KÄ±rma ve eleme", "DÃ¶kme katÄ± taÅŸÄ±ma", "Stoklama ve sÄ±nÄ±flandÄ±rma"],
           processOptions: slug === "ozel-proses-ve-makine-imalati-projeleri"
-            ? ["Entegrasyon", "Performans artışı", "Özel imalat", "Saha uyumu"]
-            : ["Aşınma yönetimi", "Toz kontrolü", "Kapasite artışı", "Ürün ayrıştırma"],
-          auto: ["Önerilen sistem sınıfı", "Önerilen proses karakteri", "Önerilen servis sınıfı", "Önerilen makina yaklaşımı", "Önerilen entegrasyon notu", "Ön teknik not"],
+            ? ["Entegrasyon", "Performans artÄ±ÅŸÄ±", "Ã–zel imalat", "Saha uyumu"]
+            : ["AÅŸÄ±nma yÃ¶netimi", "Toz kontrolÃ¼", "Kapasite artÄ±ÅŸÄ±", "ÃœrÃ¼n ayrÄ±ÅŸtÄ±rma"],
+          auto: ["Ã–nerilen sistem sÄ±nÄ±fÄ±", "Ã–nerilen proses karakteri", "Ã–nerilen servis sÄ±nÄ±fÄ±", "Ã–nerilen makina yaklaÅŸÄ±mÄ±", "Ã–nerilen entegrasyon notu", "Ã–n teknik not"],
         }}
       />
     );
@@ -191,42 +192,25 @@ export default async function ProjectDetailPage({ params }: PageProps) {
 
   return (
     <main className="min-h-screen overflow-x-hidden bg-white text-slate-900">
-      <section className="relative isolate overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url('${project.image}')` }}
-        />
-        <div className="absolute inset-0 bg-slate-950/65" />
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-950/85 via-slate-950/65 to-transparent" />
-
-        <div className="relative mx-auto flex min-h-[300px] max-w-7xl items-start justify-center px-4 py-10 sm:min-h-[360px] sm:px-6 sm:py-[50px] lg:min-h-[420px] lg:px-10 lg:py-[60px]">
-          <div className="max-w-4xl">
-            <div className="mb-5 inline-flex rounded-full border border-white/15 bg-white/10 px-4 py-2 text-xs text-white/85 backdrop-blur sm:text-sm">
-              Projeler
-            </div>
-            <h1 className="max-w-4xl text-[28px] font-semibold leading-[1.08] tracking-tight text-white sm:text-[34px] md:text-[38px] lg:text-[42px]">
-              {trText(project.title)}
-            </h1>
-            <p className="mt-5 max-w-3xl text-sm leading-7 text-white/82 sm:text-base sm:leading-8 lg:text-lg">
-              {trText(project.summary)}
-            </p>
-          </div>
-        </div>
-      </section>
+            <Hero
+        title={trText(project.title)}
+        description={trText(project.summary)}
+        image={project.image}
+      />
 
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-10">
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-          <MetaBox label="Proje adı" value={trText(project.projectName)} />
+          <MetaBox label="Proje adÄ±" value={trText(project.projectName)} />
           <MetaBox label="Lokasyon" value={project.location} />
           <MetaBox label="Kapasite" value={project.capacity} />
-          <MetaBox label="Müşteri tipi" value={trText(project.customerType)} />
+          <MetaBox label="MÃ¼ÅŸteri tipi" value={trText(project.customerType)} />
         </div>
       </section>
 
       <section className="mx-auto grid max-w-7xl gap-10 px-4 pb-16 sm:px-6 sm:pb-20 lg:grid-cols-[1.1fr_0.9fr] lg:px-10">
         <div>
           <div className="rounded-3xl border border-slate-200 bg-white p-6 sm:p-8">
-            <h2 className="text-2xl font-semibold text-slate-950">Süreç özeti</h2>
+            <h2 className="text-2xl font-semibold text-slate-950">SÃ¼reÃ§ Ã¶zeti</h2>
             <p className="mt-4 leading-8 text-slate-600">{trText(project.processSummary)}</p>
           </div>
 
@@ -240,17 +224,17 @@ export default async function ProjectDetailPage({ params }: PageProps) {
           </div>
 
           <div className="mt-6 rounded-3xl border border-slate-200 bg-white p-6 sm:p-8">
-            <h2 className="text-2xl font-semibold text-slate-950">Fotoğraflar</h2>
+            <h2 className="text-2xl font-semibold text-slate-950">FotoÄŸraflar</h2>
             <p className="mt-4 leading-8 text-slate-600">{trText(project.photosNote)}</p>
             <div className="mt-6 rounded-3xl border border-dashed border-slate-300 bg-slate-50 px-6 py-12 text-center text-slate-500">
-              Proje fotoğrafları alanı
+              Proje fotoÄŸraflarÄ± alanÄ±
             </div>
           </div>
         </div>
 
         <div>
           <div className="rounded-3xl border border-slate-200 bg-slate-50 p-6 sm:p-8">
-            <h2 className="text-2xl font-semibold text-slate-950">Kullanılan sistemler</h2>
+            <h2 className="text-2xl font-semibold text-slate-950">KullanÄ±lan sistemler</h2>
             <div className="mt-4 grid gap-3">
               {project.systems.map((item) => (
                 <div key={item} className="rounded-2xl bg-white px-4 py-3 text-sm text-slate-700">
@@ -261,7 +245,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
           </div>
 
           <div className="mt-6 rounded-3xl border border-slate-200 bg-slate-50 p-6 sm:p-8">
-            <h2 className="text-2xl font-semibold text-slate-950">Sonuç / kazanımlar</h2>
+            <h2 className="text-2xl font-semibold text-slate-950">SonuÃ§ / kazanÄ±mlar</h2>
             <ul className="mt-4 space-y-3 text-slate-600">
               {project.outcomes.map((item) => (
                 <li key={item}>{trText(item)}</li>
@@ -277,7 +261,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
                 href="/projeler"
                 className="inline-flex rounded-full bg-white px-6 py-3 text-sm font-semibold text-blue-700 transition hover:bg-slate-100"
               >
-                Diğer Projeleri İncele
+                DiÄŸer Projeleri Ä°ncele
               </Link>
             </div>
           </div>
@@ -287,7 +271,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
       <section className="mx-auto max-w-7xl px-4 pb-16 sm:px-6 sm:pb-20 lg:px-10">
         <div className="grid gap-6 lg:grid-cols-3">
           <div className="rounded-3xl border border-slate-200 bg-slate-50 p-6">
-            <h3 className="text-xl font-semibold text-slate-950">Bu projede kullanılan makinalar</h3>
+            <h3 className="text-xl font-semibold text-slate-950">Bu projede kullanÄ±lan makinalar</h3>
             <div className="mt-4 grid gap-3">
               {project.relatedMachines.map((item) => (
                 <div key={item} className="rounded-2xl bg-white px-4 py-3 text-sm text-slate-700">
@@ -298,14 +282,14 @@ export default async function ProjectDetailPage({ params }: PageProps) {
           </div>
 
           <div className="rounded-3xl border border-slate-200 bg-slate-50 p-6">
-            <h3 className="text-xl font-semibold text-slate-950">İlgili sektör</h3>
+            <h3 className="text-xl font-semibold text-slate-950">Ä°lgili sektÃ¶r</h3>
             <div className="mt-4 rounded-2xl bg-white px-4 py-3 text-sm text-slate-700">
               {trText(project.relatedSector)}
             </div>
           </div>
 
           <div className="rounded-3xl border border-slate-200 bg-slate-50 p-6">
-            <h3 className="text-xl font-semibold text-slate-950">Benzer çözümler</h3>
+            <h3 className="text-xl font-semibold text-slate-950">Benzer Ã§Ã¶zÃ¼mler</h3>
             <div className="mt-4 grid gap-3">
               {project.relatedSolutions.map((item) => (
                 <div key={item} className="rounded-2xl bg-white px-4 py-3 text-sm text-slate-700">
@@ -323,17 +307,17 @@ export default async function ProjectDetailPage({ params }: PageProps) {
             CTA
           </p>
           <h2 className="mt-3 max-w-3xl text-3xl font-semibold tracking-tight md:text-4xl">
-            Benzer proje ihtiyacınız için bizimle iletişime geçin.
+            Benzer proje ihtiyacÄ±nÄ±z iÃ§in bizimle iletiÅŸime geÃ§in.
           </h2>
           <p className="mt-4 max-w-2xl leading-8 text-white/82">
-            Lokasyon, kapasite ve proses hedeflerinizi paylaşın; size uygun proje yapısını birlikte netleştirelim.
+            Lokasyon, kapasite ve proses hedeflerinizi paylaÅŸÄ±n; size uygun proje yapÄ±sÄ±nÄ± birlikte netleÅŸtirelim.
           </p>
           <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:flex-wrap">
             <a
               href="mailto:info@promakina.com.tr"
               className="rounded-full bg-white px-6 py-3 text-center text-sm font-semibold text-blue-700 transition hover:bg-slate-100"
             >
-              E-posta Gönder
+              E-posta GÃ¶nder
             </a>
             <a
               href="tel:+905380631163"
@@ -347,3 +331,5 @@ export default async function ProjectDetailPage({ params }: PageProps) {
     </main>
   );
 }
+
+

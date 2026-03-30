@@ -1,43 +1,16 @@
 ﻿import Image from "next/image";
 import Link from "next/link";
+import { Hero } from "../components/Hero";
 import { homeMachineGroupCards } from "../home-machine-groups-data";
 
 export default function MachinesIndexPage() {
   return (
     <main className="min-h-screen bg-white text-slate-900">
-      <section className="relative isolate overflow-hidden border-b border-slate-200 text-white">
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: "url('/images/makinalar1.png')" }}
-        />
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(5,15,35,0.85),rgba(5,15,35,0.85))]" />
-        <div className="relative site-container flex min-h-[420px] items-center py-[80px]">
-          <div className="w-full max-w-4xl">
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-300">
-              Makinalar &amp; Ekipman
-            </p>
-            <h1 className="mt-4 text-[28px] font-semibold tracking-tight text-white sm:text-[34px] md:text-[38px] lg:text-[42px]">
-              Makinalar &amp; Ekipman
-            </h1>
-            <div className="mt-6 max-w-4xl space-y-4 text-base leading-8 text-white/82 sm:text-lg">
-              <p>
-                Endüstriyel tesisler için geliştirilen makina ve ekipman gruplarını tek çatı
-                altında sunuyoruz. Kompost, gübre, geri dönüşüm, biyogaz, madencilik ve proses
-                endüstrisi uygulamaları için tasarlanan sistemleri kategori bazlı
-                inceleyebilirsiniz.
-              </p>
-              <p>
-                Tambur sistemlerinden taşıma ekipmanlarına, kırıcı ve parçalayıcılardan reaktör
-                ve tank çözümlerine kadar farklı proses ihtiyaçlarına uygun makina ailelerini
-                bir arada sunuyoruz. Endüstriyel makina, proses ekipmanları, kompost tesisi
-                ekipmanları, gübre tesisi makinaları, konveyör sistemleri, reaktör ve tank
-                sistemleri ile endüstriyel üretim ekipmanları için doğru kategoriye buradan
-                ulaşabilirsiniz.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <Hero
+        title="Makinalar & Ekipman"
+        description="Prosese, kapasiteye ve malzeme yapısına uygun makina gruplarını tek çatı altında sunuyoruz. Tambur sistemlerinden taşıma ekipmanlarına, kırıcı ve parçalayıcılardan reaktör, tank, eleme, dolum ve depolama çözümlerine kadar farklı endüstriyel ihtiyaçlara uygun ekipman ailelerini kategori bazlı inceleyebilirsiniz."
+        image="/images/makinalar1.png"
+      />
 
       <section className="section-space">
         <div className="site-container">

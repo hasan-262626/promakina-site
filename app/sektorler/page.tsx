@@ -1,42 +1,32 @@
 ﻿import Image from "next/image";
 import Link from "next/link";
+import { Hero } from "../components/Hero";
 import { sectors } from "../data";
-import { quickAccessItems } from "../home-quick-access-data";
 import { trText } from "../lib/tr-text";
 
-const sectorImageMap = new Map(
-  quickAccessItems.map((item) => [item.href.replace("/sektorler/", ""), item]),
-);
+const sectorImageMap = new Map([
+  ["gubre-ve-granulasyon-tesisleri", { image: "/images/granul1.jpg", alt: "Gübre ve granülasyon tesisleri" }],
+  ["kompost-ve-organik-atik-tesisleri", { image: "/images/kompost1.jpg", alt: "Kompost ve organik atık tesisleri" }],
+  ["atik-su-camuru-ve-aritma-cozumleri", { image: "/images/sucamuru1.jpg", alt: "Atık su çamuru ve arıtma çözümleri" }],
+  ["geri-donusum-ve-atik-yonetimi", { image: "/images/geridonusum1.jpg", alt: "Geri dönüşüm ve atık yönetimi" }],
+  ["enerji-ve-biyogaz-sistemleri", { image: "/images/biogaz1.jpg", alt: "Enerji ve biyogaz sistemleri" }],
+  ["madencilik-ve-mineral-isleme", { image: "/images/maden1.jpg", alt: "Madencilik ve mineral işleme" }],
+  ["kimya-ve-proses-endustrisi", { image: "/images/kimya1.jpg", alt: "Kimya ve proses endüstrisi" }],
+  ["yem-toz-ve-dokme-kati-malzeme-isleme-sistemleri", { image: "/images/yem1.jpg", alt: "Yem ve dökme katı malzeme işleme sistemleri" }],
+]);
 
 export default function SectorsIndexPage() {
   return (
     <main className="min-h-screen bg-white text-slate-900">
-      <section className="relative isolate overflow-hidden border-b border-slate-200 text-white">
-        <div
-          className="absolute inset-0 bg-cover bg-[position:65%_center] bg-no-repeat sm:bg-center"
-          style={{ backgroundImage: "url('/images/sektorler1.png')" }}
-        />
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(3,10,30,0.85)_0%,rgba(3,10,30,0.75)_40%,rgba(3,10,30,0.55)_70%,rgba(3,10,30,0.45)_100%)]" />
-        <div className="relative site-container flex min-h-[360px] items-center py-12">
-          <div className="max-w-4xl">
-            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-300">
-              Sektörler
-            </p>
-            <h1 className="mt-3 text-4xl font-semibold tracking-tight text-white md:text-5xl">
-              Kapasiteye, malzemeye ve prosese göre uzmanlaştığımız sektörler
-            </h1>
-            <p className="mt-5 max-w-3xl text-base leading-8 text-white/85">
-              Gübre, kompost, biyogaz, madencilik, kimya, geri dönüşüm ve dökme katı malzeme
-              işleme gibi farklı alanlarda, sahaya ve üretim hedeflerine göre şekillenen
-              mühendislik yaklaşımımızı sektör bazlı sayfalarda topluyoruz.
-            </p>
-          </div>
-        </div>
-      </section>
+      <Hero
+        title="Sektörler"
+        description="Gübre, kompost, biyogaz, geri dönüşüm, kimya, madencilik ve dökme katı malzeme işleme gibi farklı alanlara özel mühendislik çözümleri sunuyoruz. Her sektör için kapasite, proses ve saha koşullarına göre şekillenen uygun tesis ve ekipman yaklaşımını ayrı sayfalarda topluyoruz."
+        image="/images/sektorler1.png"
+      />
 
-      <section className="section-space">
-        <div className="site-container">
-          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+      <section className="px-4 pt-8 pb-16 sm:px-6 sm:pt-10 sm:pb-20 xl:px-8">
+        <div className="mx-auto w-full max-w-[1600px]">
+          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3 xl:gap-7">
             {sectors.map((sector) => {
               const sectorImage = sectorImageMap.get(sector.slug);
 
@@ -44,7 +34,7 @@ export default function SectorsIndexPage() {
                 <Link
                   key={sector.slug}
                   href={`/sektorler/${sector.slug}`}
-                  className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-blue-200 hover:shadow-[0_20px_50px_rgba(15,23,42,0.08)] sm:p-7"
+                  className="group min-h-[228px] rounded-[30px] border border-slate-200 bg-white p-7 shadow-[0_18px_45px_rgba(15,23,42,0.05)] transition duration-200 hover:-translate-y-1 hover:border-blue-200 hover:shadow-[0_22px_55px_rgba(15,23,42,0.08)] sm:min-h-[240px] sm:p-8"
                 >
                   <div className="flex items-start gap-4">
                     {sectorImage ? (
@@ -59,10 +49,12 @@ export default function SectorsIndexPage() {
                       </span>
                     ) : null}
                     <div className="min-w-0 flex-1">
-                      <h2 className="text-2xl font-semibold tracking-tight text-slate-950">
+                      <h2 className="max-w-[420px] text-2xl font-semibold leading-[1.18] tracking-tight text-slate-950 sm:text-[30px]">
                         {trText(sector.title)}
                       </h2>
-                      <p className="mt-3 leading-7 text-slate-600">{trText(sector.summary)}</p>
+                      <p className="mt-4 max-w-[500px] text-[15px] leading-7 text-slate-600">
+                        {trText(sector.summary)}
+                      </p>
                     </div>
                   </div>
                 </Link>

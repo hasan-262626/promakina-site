@@ -1,6 +1,7 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
+import { Hero } from "./Hero";
 import { useMemo, useState } from "react";
 import {
   ToolkitInfo,
@@ -40,252 +41,252 @@ type EquipmentProfile = {
 const equipmentProfiles: EquipmentProfile[] = [
   {
     id: "belt",
-    label: "Bant Konveyörler",
-    shortLabel: "Bant Konveyör",
-    seo: "bant konveyör",
+    label: "Bant KonveyÃ¶rler",
+    shortLabel: "Bant KonveyÃ¶r",
+    seo: "bant konveyÃ¶r",
     heroNote:
-      "Taşıma ekipmanlarında doğru kapasite, doğru hat kurgusu ve doğru ekipman seçimi; dengeli akış, güvenli transfer ve sürekli üretim için kritik öneme sahiptir.",
+      "TaÅŸÄ±ma ekipmanlarÄ±nda doÄŸru kapasite, doÄŸru hat kurgusu ve doÄŸru ekipman seÃ§imi; dengeli akÄ±ÅŸ, gÃ¼venli transfer ve sÃ¼rekli Ã¼retim iÃ§in kritik Ã¶neme sahiptir.",
     description:
-      "Bant konveyör sistemleri, farklı hat uzunluklarında ve düzenli akış gereken proseslerde güvenli ve verimli ürün transferi sağlar.",
+      "Bant konveyÃ¶r sistemleri, farklÄ± hat uzunluklarÄ±nda ve dÃ¼zenli akÄ±ÅŸ gereken proseslerde gÃ¼venli ve verimli Ã¼rÃ¼n transferi saÄŸlar.",
     intro:
-      "Bant konveyör seçimi yapılırken kapasite, malzeme yoğunluğu, bant genişliği, eğim ve hat boyu birlikte ele alınmalıdır.",
+      "Bant konveyÃ¶r seÃ§imi yapÄ±lÄ±rken kapasite, malzeme yoÄŸunluÄŸu, bant geniÅŸliÄŸi, eÄŸim ve hat boyu birlikte ele alÄ±nmalÄ±dÄ±r.",
     auto: {
-      speedRange: "0.6 – 2.5 m/s",
-      fillRange: "%25 – %45",
-      sectionNote: "400 – 1200 mm bant genişliği aralığında ön değerlendirme",
-      bodyType: "Açık şase veya kapalı gövde bant sistemi",
-      driveClass: "Standart / ağır hizmet sürücü sınıfı",
-      className: "Yatay ve eğimli transfer sınıfı",
-      note: "Uzun hatlarda taşıma kararlılığı, bant kalitesi ve toz kontrolü birlikte değerlendirilmelidir.",
+      speedRange: "0.6 â€“ 2.5 m/s",
+      fillRange: "%25 â€“ %45",
+      sectionNote: "400 â€“ 1200 mm bant geniÅŸliÄŸi aralÄ±ÄŸÄ±nda Ã¶n deÄŸerlendirme",
+      bodyType: "AÃ§Ä±k ÅŸase veya kapalÄ± gÃ¶vde bant sistemi",
+      driveClass: "Standart / aÄŸÄ±r hizmet sÃ¼rÃ¼cÃ¼ sÄ±nÄ±fÄ±",
+      className: "Yatay ve eÄŸimli transfer sÄ±nÄ±fÄ±",
+      note: "Uzun hatlarda taÅŸÄ±ma kararlÄ±lÄ±ÄŸÄ±, bant kalitesi ve toz kontrolÃ¼ birlikte deÄŸerlendirilmelidir.",
     },
     technicalSpecs: [
-      "Farklı hat uzunluğu ve eğim seçenekleri",
-      "Aşınmaya dayanıklı taşıyıcı yüzey ve gövde yapısı",
-      "Değişken hız kontrollü sürücü opsiyonu",
-      "Açık veya kapalı sistem seçenekleri",
-      "Toz kontrollü ve proses uyumlu hat tasarımı",
-      "Ağır hizmet ve özel malzeme koşullarına uygun çözümler",
+      "FarklÄ± hat uzunluÄŸu ve eÄŸim seÃ§enekleri",
+      "AÅŸÄ±nmaya dayanÄ±klÄ± taÅŸÄ±yÄ±cÄ± yÃ¼zey ve gÃ¶vde yapÄ±sÄ±",
+      "DeÄŸiÅŸken hÄ±z kontrollÃ¼ sÃ¼rÃ¼cÃ¼ opsiyonu",
+      "AÃ§Ä±k veya kapalÄ± sistem seÃ§enekleri",
+      "Toz kontrollÃ¼ ve proses uyumlu hat tasarÄ±mÄ±",
+      "AÄŸÄ±r hizmet ve Ã¶zel malzeme koÅŸullarÄ±na uygun Ã§Ã¶zÃ¼mler",
     ],
     applications: [
-      "Gübre ve granül üretim hatları",
-      "Kompost ve organik atık işleme sistemleri",
-      "Mineral ve dökme katı malzeme taşınması",
-      "Yem, tahıl ve toz ürün transfer sistemleri",
+      "GÃ¼bre ve granÃ¼l Ã¼retim hatlarÄ±",
+      "Kompost ve organik atÄ±k iÅŸleme sistemleri",
+      "Mineral ve dÃ¶kme katÄ± malzeme taÅŸÄ±nmasÄ±",
+      "Yem, tahÄ±l ve toz Ã¼rÃ¼n transfer sistemleri",
     ],
-    materials: ["Toz ürünler", "Granül ürünler", "Organik malzemeler", "Mineral ve dökme katılar"],
+    materials: ["Toz Ã¼rÃ¼nler", "GranÃ¼l Ã¼rÃ¼nler", "Organik malzemeler", "Mineral ve dÃ¶kme katÄ±lar"],
     advantages: [
-      "Hat içinde düzenli ve dengeli transfer",
-      "Düşük işletme kaybı",
-      "Sahaya göre esnek yerleşim",
-      "Farklı ekipmanlarla kolay entegrasyon",
-      "Malzemeye özel taşıma kurgusu",
-      "Sürekli üretime uygun güvenli akış yönetimi",
+      "Hat iÃ§inde dÃ¼zenli ve dengeli transfer",
+      "DÃ¼ÅŸÃ¼k iÅŸletme kaybÄ±",
+      "Sahaya gÃ¶re esnek yerleÅŸim",
+      "FarklÄ± ekipmanlarla kolay entegrasyon",
+      "Malzemeye Ã¶zel taÅŸÄ±ma kurgusu",
+      "SÃ¼rekli Ã¼retime uygun gÃ¼venli akÄ±ÅŸ yÃ¶netimi",
     ],
     faqs: [
       {
-        question: "Bant konveyör hangi durumda tercih edilir?",
+        question: "Bant konveyÃ¶r hangi durumda tercih edilir?",
         answer:
-          "Düzenli akış, uzun hat boyu ve malzemenin kontrollü şekilde yatay veya sınırlı eğimli taşınması gerektiğinde bant konveyör öncelikli çözümdür.",
+          "DÃ¼zenli akÄ±ÅŸ, uzun hat boyu ve malzemenin kontrollÃ¼ ÅŸekilde yatay veya sÄ±nÄ±rlÄ± eÄŸimli taÅŸÄ±nmasÄ± gerektiÄŸinde bant konveyÃ¶r Ã¶ncelikli Ã§Ã¶zÃ¼mdÃ¼r.",
       },
       {
-        question: "Kapalı bant konveyör gerekir mi?",
+        question: "KapalÄ± bant konveyÃ¶r gerekir mi?",
         answer:
-          "Tozlu, kokulu veya çevresel kontrol gerektiren uygulamalarda kapalı gövde ve toz kontrollü çözümler tercih edilir.",
+          "Tozlu, kokulu veya Ã§evresel kontrol gerektiren uygulamalarda kapalÄ± gÃ¶vde ve toz kontrollÃ¼ Ã§Ã¶zÃ¼mler tercih edilir.",
       },
     ],
   },
   {
     id: "screw",
-    label: "Helezon Konveyörler",
-    shortLabel: "Helezon Konveyör",
-    seo: "helezon konveyör",
+    label: "Helezon KonveyÃ¶rler",
+    shortLabel: "Helezon KonveyÃ¶r",
+    seo: "helezon konveyÃ¶r",
     heroNote:
-      "Taşıma ekipmanlarında doğru kapasite, doğru hat kurgusu ve doğru ekipman seçimi; dengeli akış, güvenli transfer ve sürekli üretim için kritik öneme sahiptir.",
+      "TaÅŸÄ±ma ekipmanlarÄ±nda doÄŸru kapasite, doÄŸru hat kurgusu ve doÄŸru ekipman seÃ§imi; dengeli akÄ±ÅŸ, gÃ¼venli transfer ve sÃ¼rekli Ã¼retim iÃ§in kritik Ã¶neme sahiptir.",
     description:
-      "Helezon konveyör çözümleri, kontrollü doluluk ve kapalı transfer gerektiren hatlarda kompakt ve proses uyumlu taşıma sağlar.",
+      "Helezon konveyÃ¶r Ã§Ã¶zÃ¼mleri, kontrollÃ¼ doluluk ve kapalÄ± transfer gerektiren hatlarda kompakt ve proses uyumlu taÅŸÄ±ma saÄŸlar.",
     intro:
-      "Helezon konveyör seçimi yapılırken çap, hat boyu, eğim, devir ve malzemenin nem veya yapışkanlık karakteri birlikte değerlendirilmelidir.",
+      "Helezon konveyÃ¶r seÃ§imi yapÄ±lÄ±rken Ã§ap, hat boyu, eÄŸim, devir ve malzemenin nem veya yapÄ±ÅŸkanlÄ±k karakteri birlikte deÄŸerlendirilmelidir.",
     auto: {
-      speedRange: "40 – 120 rpm",
-      fillRange: "%15 – %35",
-      sectionNote: "200 – 800 mm helezon çapı aralığında ön değerlendirme",
-      bodyType: "U tipi veya boru helezon gövdesi",
-      driveClass: "Tork kontrollü redüktörlü tahrik",
-      className: "Kapalı ve kontrollü transfer sınıfı",
-      note: "Yüksek nemli veya yapışkan ürünlerde doluluk düşürülmeli ve iç yüzey seçimi dikkatle yapılmalıdır.",
+      speedRange: "40 â€“ 120 rpm",
+      fillRange: "%15 â€“ %35",
+      sectionNote: "200 â€“ 800 mm helezon Ã§apÄ± aralÄ±ÄŸÄ±nda Ã¶n deÄŸerlendirme",
+      bodyType: "U tipi veya boru helezon gÃ¶vdesi",
+      driveClass: "Tork kontrollÃ¼ redÃ¼ktÃ¶rlÃ¼ tahrik",
+      className: "KapalÄ± ve kontrollÃ¼ transfer sÄ±nÄ±fÄ±",
+      note: "YÃ¼ksek nemli veya yapÄ±ÅŸkan Ã¼rÃ¼nlerde doluluk dÃ¼ÅŸÃ¼rÃ¼lmeli ve iÃ§ yÃ¼zey seÃ§imi dikkatle yapÄ±lmalÄ±dÄ±r.",
     },
     technicalSpecs: [
-      "Farklı hat uzunluğu ve eğim seçenekleri",
-      "Aşınmaya dayanıklı helezon ve gövde yapısı",
-      "Değişken devir kontrollü sürücü opsiyonu",
-      "Açık veya kapalı sistem seçenekleri",
-      "Toz kontrollü ve proses uyumlu hat tasarımı",
-      "Ağır hizmet ve özel malzeme koşullarına uygun çözümler",
+      "FarklÄ± hat uzunluÄŸu ve eÄŸim seÃ§enekleri",
+      "AÅŸÄ±nmaya dayanÄ±klÄ± helezon ve gÃ¶vde yapÄ±sÄ±",
+      "DeÄŸiÅŸken devir kontrollÃ¼ sÃ¼rÃ¼cÃ¼ opsiyonu",
+      "AÃ§Ä±k veya kapalÄ± sistem seÃ§enekleri",
+      "Toz kontrollÃ¼ ve proses uyumlu hat tasarÄ±mÄ±",
+      "AÄŸÄ±r hizmet ve Ã¶zel malzeme koÅŸullarÄ±na uygun Ã§Ã¶zÃ¼mler",
     ],
     applications: [
-      "Kompost ve organik atık işleme sistemleri",
-      "Çamur ve yarı nemli malzeme transferi",
+      "Kompost ve organik atÄ±k iÅŸleme sistemleri",
+      "Ã‡amur ve yarÄ± nemli malzeme transferi",
       "Kimyasal ve proses hammaddesi besleme sistemleri",
-      "Toz ürün ve granül ürün transfer hatları",
+      "Toz Ã¼rÃ¼n ve granÃ¼l Ã¼rÃ¼n transfer hatlarÄ±",
     ],
-    materials: ["Toz ürünler", "Kompost ve yarı nemli ürünler", "Gübre ve mineral karışımları", "Prosese özel karışımlar"],
+    materials: ["Toz Ã¼rÃ¼nler", "Kompost ve yarÄ± nemli Ã¼rÃ¼nler", "GÃ¼bre ve mineral karÄ±ÅŸÄ±mlarÄ±", "Prosese Ã¶zel karÄ±ÅŸÄ±mlar"],
     advantages: [
-      "Kompakt ve kapalı transfer yapısı",
-      "Düşük toz yayılımı",
-      "Sahaya göre esnek yerleşim",
-      "Farklı ekipmanlarla kolay entegrasyon",
-      "Malzemeye özel taşıma kurgusu",
-      "Sürekli üretime uygun güvenli akış yönetimi",
+      "Kompakt ve kapalÄ± transfer yapÄ±sÄ±",
+      "DÃ¼ÅŸÃ¼k toz yayÄ±lÄ±mÄ±",
+      "Sahaya gÃ¶re esnek yerleÅŸim",
+      "FarklÄ± ekipmanlarla kolay entegrasyon",
+      "Malzemeye Ã¶zel taÅŸÄ±ma kurgusu",
+      "SÃ¼rekli Ã¼retime uygun gÃ¼venli akÄ±ÅŸ yÃ¶netimi",
     ],
     faqs: [
       {
-        question: "Helezon konveyör hangi malzemelerde uygundur?",
+        question: "Helezon konveyÃ¶r hangi malzemelerde uygundur?",
         answer:
-          "Toz, granül ve belirli oranda nemli ürünlerde kontrollü besleme veya kapalı transfer gerektiğinde helezon konveyör güçlü bir çözümdür.",
+          "Toz, granÃ¼l ve belirli oranda nemli Ã¼rÃ¼nlerde kontrollÃ¼ besleme veya kapalÄ± transfer gerektiÄŸinde helezon konveyÃ¶r gÃ¼Ã§lÃ¼ bir Ã§Ã¶zÃ¼mdÃ¼r.",
       },
       {
-        question: "Yapışkan malzemede helezon kullanılabilir mi?",
+        question: "YapÄ±ÅŸkan malzemede helezon kullanÄ±labilir mi?",
         answer:
-          "Kullanılabilir; ancak doluluk, devir, iç yüzey ve bakım erişimi malzemenin yapışkanlık karakterine göre özel değerlendirilmelidir.",
+          "KullanÄ±labilir; ancak doluluk, devir, iÃ§ yÃ¼zey ve bakÄ±m eriÅŸimi malzemenin yapÄ±ÅŸkanlÄ±k karakterine gÃ¶re Ã¶zel deÄŸerlendirilmelidir.",
       },
     ],
   },
   {
     id: "bucket",
-    label: "Kovalı Elevatörler",
-    shortLabel: "Kovalı Elevatör",
-    seo: "kovalı elevatör",
+    label: "KovalÄ± ElevatÃ¶rler",
+    shortLabel: "KovalÄ± ElevatÃ¶r",
+    seo: "kovalÄ± elevatÃ¶r",
     heroNote:
-      "Taşıma ekipmanlarında doğru kapasite, doğru hat kurgusu ve doğru ekipman seçimi; dengeli akış, güvenli transfer ve sürekli üretim için kritik öneme sahiptir.",
+      "TaÅŸÄ±ma ekipmanlarÄ±nda doÄŸru kapasite, doÄŸru hat kurgusu ve doÄŸru ekipman seÃ§imi; dengeli akÄ±ÅŸ, gÃ¼venli transfer ve sÃ¼rekli Ã¼retim iÃ§in kritik Ã¶neme sahiptir.",
     description:
-      "Kovalı elevatör sistemleri, dikey taşıma gereken hatlarda kontrollü ürün yükseltme ve temiz transfer sağlar.",
+      "KovalÄ± elevatÃ¶r sistemleri, dikey taÅŸÄ±ma gereken hatlarda kontrollÃ¼ Ã¼rÃ¼n yÃ¼kseltme ve temiz transfer saÄŸlar.",
     intro:
-      "Kovalı elevatör seçiminde hedef kapasite, dikey yükseklik, ürün yapısı, kova aralığı ve hat hızı birlikte değerlendirilmelidir.",
+      "KovalÄ± elevatÃ¶r seÃ§iminde hedef kapasite, dikey yÃ¼kseklik, Ã¼rÃ¼n yapÄ±sÄ±, kova aralÄ±ÄŸÄ± ve hat hÄ±zÄ± birlikte deÄŸerlendirilmelidir.",
     auto: {
-      speedRange: "0.8 – 1.8 m/s",
-      fillRange: "%45 – %75",
-      sectionNote: "200 – 630 mm kova genişliği aralığında ön değerlendirme",
-      bodyType: "Kapalı elevatör gövdesi ve kontrollü boşaltma yapısı",
-      driveClass: "Dikey transfer için redüktörlü tahrik sınıfı",
-      className: "Dikey taşıma sınıfı",
-      note: "Yüksek kaldırma uygulamalarında kova tipi, zincir veya kayış taşıyıcı yapısı ve ürün darbe davranışı birlikte ele alınmalıdır.",
+      speedRange: "0.8 â€“ 1.8 m/s",
+      fillRange: "%45 â€“ %75",
+      sectionNote: "200 â€“ 630 mm kova geniÅŸliÄŸi aralÄ±ÄŸÄ±nda Ã¶n deÄŸerlendirme",
+      bodyType: "KapalÄ± elevatÃ¶r gÃ¶vdesi ve kontrollÃ¼ boÅŸaltma yapÄ±sÄ±",
+      driveClass: "Dikey transfer iÃ§in redÃ¼ktÃ¶rlÃ¼ tahrik sÄ±nÄ±fÄ±",
+      className: "Dikey taÅŸÄ±ma sÄ±nÄ±fÄ±",
+      note: "YÃ¼ksek kaldÄ±rma uygulamalarÄ±nda kova tipi, zincir veya kayÄ±ÅŸ taÅŸÄ±yÄ±cÄ± yapÄ±sÄ± ve Ã¼rÃ¼n darbe davranÄ±ÅŸÄ± birlikte ele alÄ±nmalÄ±dÄ±r.",
     },
     technicalSpecs: [
-      "Farklı dikey yükseklik ve kapasite seçenekleri",
-      "Aşınmaya dayanıklı kova ve gövde yapısı",
-      "Değişken hız kontrollü sürücü opsiyonu",
-      "Kapalı sistem ve toz kontrollü gövde seçenekleri",
-      "Proses uyumlu yükleme ve boşaltma tasarımı",
-      "Ağır hizmet ve özel malzeme koşullarına uygun çözümler",
+      "FarklÄ± dikey yÃ¼kseklik ve kapasite seÃ§enekleri",
+      "AÅŸÄ±nmaya dayanÄ±klÄ± kova ve gÃ¶vde yapÄ±sÄ±",
+      "DeÄŸiÅŸken hÄ±z kontrollÃ¼ sÃ¼rÃ¼cÃ¼ opsiyonu",
+      "KapalÄ± sistem ve toz kontrollÃ¼ gÃ¶vde seÃ§enekleri",
+      "Proses uyumlu yÃ¼kleme ve boÅŸaltma tasarÄ±mÄ±",
+      "AÄŸÄ±r hizmet ve Ã¶zel malzeme koÅŸullarÄ±na uygun Ã§Ã¶zÃ¼mler",
     ],
     applications: [
-      "Gübre ve granül üretim hatları",
-      "Yem, tahıl ve toz ürün transfer sistemleri",
-      "Mineral ve dökme katı malzeme taşınması",
-      "Biyogaz ve proses hammaddesi besleme hatları",
+      "GÃ¼bre ve granÃ¼l Ã¼retim hatlarÄ±",
+      "Yem, tahÄ±l ve toz Ã¼rÃ¼n transfer sistemleri",
+      "Mineral ve dÃ¶kme katÄ± malzeme taÅŸÄ±nmasÄ±",
+      "Biyogaz ve proses hammaddesi besleme hatlarÄ±",
     ],
-    materials: ["Granül ürünler", "Toz ürünler", "Yem ve tahıl ürünleri", "Dökme katı karışımlar"],
+    materials: ["GranÃ¼l Ã¼rÃ¼nler", "Toz Ã¼rÃ¼nler", "Yem ve tahÄ±l Ã¼rÃ¼nleri", "DÃ¶kme katÄ± karÄ±ÅŸÄ±mlar"],
     advantages: [
-      "Dikey transferde kompakt yerleşim",
-      "Hat içinde düzenli ürün yükseltme",
-      "Düşük işletme kaybı",
-      "Farklı ekipmanlarla kolay entegrasyon",
-      "Malzemeye özel kova ve gövde seçimi",
-      "Sürekli üretime uygun güvenli akış yönetimi",
+      "Dikey transferde kompakt yerleÅŸim",
+      "Hat iÃ§inde dÃ¼zenli Ã¼rÃ¼n yÃ¼kseltme",
+      "DÃ¼ÅŸÃ¼k iÅŸletme kaybÄ±",
+      "FarklÄ± ekipmanlarla kolay entegrasyon",
+      "Malzemeye Ã¶zel kova ve gÃ¶vde seÃ§imi",
+      "SÃ¼rekli Ã¼retime uygun gÃ¼venli akÄ±ÅŸ yÃ¶netimi",
     ],
     faqs: [
       {
-        question: "Kovalı elevatör hangi hatlarda tercih edilir?",
+        question: "KovalÄ± elevatÃ¶r hangi hatlarda tercih edilir?",
         answer:
-          "Dikey taşıma ihtiyacı olan, ürünün kontrollü şekilde üst seviyeye çıkarılması gereken proseslerde kovalı elevatör tercih edilir.",
+          "Dikey taÅŸÄ±ma ihtiyacÄ± olan, Ã¼rÃ¼nÃ¼n kontrollÃ¼ ÅŸekilde Ã¼st seviyeye Ã§Ä±karÄ±lmasÄ± gereken proseslerde kovalÄ± elevatÃ¶r tercih edilir.",
       },
       {
-        question: "Kova tipi seçimi neden önemlidir?",
+        question: "Kova tipi seÃ§imi neden Ã¶nemlidir?",
         answer:
-          "Ürünün tane yapısı, akış karakteri ve boşaltma davranışı kova tipini doğrudan etkiler; bu da kapasite ve ürün kaybı üzerinde belirleyicidir.",
+          "ÃœrÃ¼nÃ¼n tane yapÄ±sÄ±, akÄ±ÅŸ karakteri ve boÅŸaltma davranÄ±ÅŸÄ± kova tipini doÄŸrudan etkiler; bu da kapasite ve Ã¼rÃ¼n kaybÄ± Ã¼zerinde belirleyicidir.",
       },
     ],
   },
   {
     id: "chain",
-    label: "Zincirli Konveyörler",
-    shortLabel: "Zincirli Konveyör",
-    seo: "zincirli konveyör",
+    label: "Zincirli KonveyÃ¶rler",
+    shortLabel: "Zincirli KonveyÃ¶r",
+    seo: "zincirli konveyÃ¶r",
     heroNote:
-      "Taşıma ekipmanlarında doğru kapasite, doğru hat kurgusu ve doğru ekipman seçimi; dengeli akış, güvenli transfer ve sürekli üretim için kritik öneme sahiptir.",
+      "TaÅŸÄ±ma ekipmanlarÄ±nda doÄŸru kapasite, doÄŸru hat kurgusu ve doÄŸru ekipman seÃ§imi; dengeli akÄ±ÅŸ, gÃ¼venli transfer ve sÃ¼rekli Ã¼retim iÃ§in kritik Ã¶neme sahiptir.",
     description:
-      "Zincirli konveyör sistemleri, ağır hizmet ve kapalı hat gerektiren uygulamalarda yüksek dayanım ve kontrollü transfer sağlar.",
+      "Zincirli konveyÃ¶r sistemleri, aÄŸÄ±r hizmet ve kapalÄ± hat gerektiren uygulamalarda yÃ¼ksek dayanÄ±m ve kontrollÃ¼ transfer saÄŸlar.",
     intro:
-      "Zincirli konveyör seçimi yapılırken kapasite, kanal genişliği, hız, hat boyu ve malzemenin aşındırıcı veya iri taneli karakteri birlikte değerlendirilmelidir.",
+      "Zincirli konveyÃ¶r seÃ§imi yapÄ±lÄ±rken kapasite, kanal geniÅŸliÄŸi, hÄ±z, hat boyu ve malzemenin aÅŸÄ±ndÄ±rÄ±cÄ± veya iri taneli karakteri birlikte deÄŸerlendirilmelidir.",
     auto: {
-      speedRange: "0.15 – 0.8 m/s",
-      fillRange: "%20 – %50",
-      sectionNote: "250 – 800 mm kanal genişliği aralığında ön değerlendirme",
-      bodyType: "Kapalı kanal veya ağır hizmet taşıyıcı kanal",
-      driveClass: "Yüksek torklu ağır hizmet tahrik sınıfı",
-      className: "Ağır hizmet transfer sınıfı",
-      note: "Aşındırıcı, iri taneli veya zorlu malzemelerde zincirli konveyör gövde yapısı ve zincir seçimi özel olarak belirlenmelidir.",
+      speedRange: "0.15 â€“ 0.8 m/s",
+      fillRange: "%20 â€“ %50",
+      sectionNote: "250 â€“ 800 mm kanal geniÅŸliÄŸi aralÄ±ÄŸÄ±nda Ã¶n deÄŸerlendirme",
+      bodyType: "KapalÄ± kanal veya aÄŸÄ±r hizmet taÅŸÄ±yÄ±cÄ± kanal",
+      driveClass: "YÃ¼ksek torklu aÄŸÄ±r hizmet tahrik sÄ±nÄ±fÄ±",
+      className: "AÄŸÄ±r hizmet transfer sÄ±nÄ±fÄ±",
+      note: "AÅŸÄ±ndÄ±rÄ±cÄ±, iri taneli veya zorlu malzemelerde zincirli konveyÃ¶r gÃ¶vde yapÄ±sÄ± ve zincir seÃ§imi Ã¶zel olarak belirlenmelidir.",
     },
     technicalSpecs: [
-      "Farklı hat uzunluğu ve eğim seçenekleri",
-      "Aşınmaya dayanıklı taşıyıcı kanal ve gövde yapısı",
-      "Değişken hız kontrollü sürücü opsiyonu",
-      "Açık veya kapalı sistem seçenekleri",
-      "Toz kontrollü ve proses uyumlu hat tasarımı",
-      "Ağır hizmet ve özel malzeme koşullarına uygun çözümler",
+      "FarklÄ± hat uzunluÄŸu ve eÄŸim seÃ§enekleri",
+      "AÅŸÄ±nmaya dayanÄ±klÄ± taÅŸÄ±yÄ±cÄ± kanal ve gÃ¶vde yapÄ±sÄ±",
+      "DeÄŸiÅŸken hÄ±z kontrollÃ¼ sÃ¼rÃ¼cÃ¼ opsiyonu",
+      "AÃ§Ä±k veya kapalÄ± sistem seÃ§enekleri",
+      "Toz kontrollÃ¼ ve proses uyumlu hat tasarÄ±mÄ±",
+      "AÄŸÄ±r hizmet ve Ã¶zel malzeme koÅŸullarÄ±na uygun Ã§Ã¶zÃ¼mler",
     ],
     applications: [
-      "Geri dönüşüm ve atık işleme hatları",
-      "Mineral ve dökme katı malzeme taşınması",
-      "Gübre ve granül üretim hatları",
-      "Kompost ve organik atık işleme sistemleri",
+      "Geri dÃ¶nÃ¼ÅŸÃ¼m ve atÄ±k iÅŸleme hatlarÄ±",
+      "Mineral ve dÃ¶kme katÄ± malzeme taÅŸÄ±nmasÄ±",
+      "GÃ¼bre ve granÃ¼l Ã¼retim hatlarÄ±",
+      "Kompost ve organik atÄ±k iÅŸleme sistemleri",
     ],
-    materials: ["Granül ürünler", "Mineral ve dökme katılar", "RDF ve atık türevi malzemeler", "Organik malzemeler"],
+    materials: ["GranÃ¼l Ã¼rÃ¼nler", "Mineral ve dÃ¶kme katÄ±lar", "RDF ve atÄ±k tÃ¼revi malzemeler", "Organik malzemeler"],
     advantages: [
-      "Zor malzemede güvenli transfer",
-      "Düşük işletme kaybı",
-      "Sahaya göre esnek yerleşim",
-      "Farklı ekipmanlarla kolay entegrasyon",
-      "Malzemeye özel taşıma kurgusu",
-      "Sürekli üretime uygun güvenli akış yönetimi",
+      "Zor malzemede gÃ¼venli transfer",
+      "DÃ¼ÅŸÃ¼k iÅŸletme kaybÄ±",
+      "Sahaya gÃ¶re esnek yerleÅŸim",
+      "FarklÄ± ekipmanlarla kolay entegrasyon",
+      "Malzemeye Ã¶zel taÅŸÄ±ma kurgusu",
+      "SÃ¼rekli Ã¼retime uygun gÃ¼venli akÄ±ÅŸ yÃ¶netimi",
     ],
     faqs: [
       {
-        question: "Zincirli konveyör hangi durumda avantaj sağlar?",
+        question: "Zincirli konveyÃ¶r hangi durumda avantaj saÄŸlar?",
         answer:
-          "Ağır hizmet, kapalı kanal veya aşındırıcı malzeme taşıma ihtiyacı olan hatlarda zincirli konveyör güçlü bir çözümdür.",
+          "AÄŸÄ±r hizmet, kapalÄ± kanal veya aÅŸÄ±ndÄ±rÄ±cÄ± malzeme taÅŸÄ±ma ihtiyacÄ± olan hatlarda zincirli konveyÃ¶r gÃ¼Ã§lÃ¼ bir Ã§Ã¶zÃ¼mdÃ¼r.",
       },
       {
-        question: "Kapalı kanal neden önemlidir?",
+        question: "KapalÄ± kanal neden Ã¶nemlidir?",
         answer:
-          "Toz kontrolü, çevresel güvenlik ve malzemenin kontrollü transferi için kapalı kanal yapısı birçok projede önemli avantaj sağlar.",
+          "Toz kontrolÃ¼, Ã§evresel gÃ¼venlik ve malzemenin kontrollÃ¼ transferi iÃ§in kapalÄ± kanal yapÄ±sÄ± birÃ§ok projede Ã¶nemli avantaj saÄŸlar.",
       },
     ],
   },
 ];
 
 const materialDensity: Record<string, number> = {
-  "Toz Ürün": 720,
-  "Granül Ürün": 860,
+  "Toz ÃœrÃ¼n": 720,
+  "GranÃ¼l ÃœrÃ¼n": 860,
   "Organik Malzeme": 580,
-  Kompost: 650,
-  Gübre: 980,
-  Mineral: 1450,
-  "Çamur / Yarı Nemli Malzeme": 980,
-  "Yem / Tahıl": 760,
-  "RDF / Atık Türevi Yakıt": 240,
-  "Dökme Katı Karışım": 900,
-  "Özel Malzeme": 1000,
+  "Kompost": 650,
+  "GÃ¼bre": 980,
+  "Mineral": 1450,
+  "Ã‡amur / YarÄ± Nemli Malzeme": 980,
+  "Yem / TahÄ±l": 760,
+  "RDF / AtÄ±k TÃ¼revi YakÄ±t": 240,
+  "DÃ¶kme KatÄ± KarÄ±ÅŸÄ±m": 900,
+  "Ã–zel Malzeme": 1000,
 };
 
 const materialOptions = Object.keys(materialDensity);
 const applicationOptions = [
   "Standart",
-  "Ağır Hizmet",
-  "Yüksek Nemli Malzeme",
-  "Aşındırıcı Malzeme",
-  "Yapışkan Malzeme",
-  "Toz Kontrollü Transfer",
+  "AÄŸÄ±r Hizmet",
+  "YÃ¼ksek Nemli Malzeme",
+  "AÅŸÄ±ndÄ±rÄ±cÄ± Malzeme",
+  "YapÄ±ÅŸkan Malzeme",
+  "Toz KontrollÃ¼ Transfer",
 ];
 
 function toNumber(value: string) {
@@ -295,7 +296,7 @@ function toNumber(value: string) {
 }
 
 function formatNumber(value: number, digits = 2) {
-  if (!Number.isFinite(value)) return "—";
+  if (!Number.isFinite(value)) return "â€”";
   return new Intl.NumberFormat("tr-TR", {
     minimumFractionDigits: 0,
     maximumFractionDigits: digits,
@@ -325,7 +326,7 @@ function ListCard({ title, items }: { title: string; items: string[] }) {
 export default function TransportEquipmentExperience() {
   const [activeTab, setActiveTab] = useState<EquipmentKey>("belt");
   const [openTip, setOpenTip] = useState<string | null>(null);
-  const [materialType, setMaterialType] = useState("Granül Ürün");
+  const [materialType, setMaterialType] = useState("GranÃ¼l ÃœrÃ¼n");
   const [capacity, setCapacity] = useState("25");
   const [density, setDensity] = useState("860");
   const [densityManual, setDensityManual] = useState(false);
@@ -337,10 +338,10 @@ export default function TransportEquipmentExperience() {
   const [particleSize, setParticleSize] = useState("8");
   const [moisture, setMoisture] = useState("");
   const [applicationType, setApplicationType] = useState("Standart");
-  const [systemType, setSystemType] = useState("Açık Sistem");
+  const [systemType, setSystemType] = useState("AÃ§Ä±k Sistem");
   const [dustControl, setDustControl] = useState("Evet");
-  const [abrasive, setAbrasive] = useState("Hayır");
-  const [sticky, setSticky] = useState("Hayır");
+  const [abrasive, setAbrasive] = useState("HayÄ±r");
+  const [sticky, setSticky] = useState("HayÄ±r");
   const [beltType, setBeltType] = useState("");
   const [carryAngle, setCarryAngle] = useState("");
   const [rpm, setRpm] = useState("80");
@@ -356,13 +357,13 @@ export default function TransportEquipmentExperience() {
 
   const errors = useMemo(() => {
     const next: string[] = [];
-    if (!(toNumber(capacity) > 0)) next.push("Kapasite 0'dan büyük olmalıdır");
-    if (!(toNumber(lineLength) > 0) && activeTab !== "bucket") next.push("Hat boyu geçerli bir değer olmalıdır");
-    if (!(toNumber(fillRate) >= 0 && toNumber(fillRate) <= 100)) next.push("Doluluk oranı %0 ile %100 arasında olmalıdır");
-    if (!(toNumber(density) > 0)) next.push("Yoğunluk 0'dan büyük olmalıdır");
-    if (!(toNumber(mainSize) > 0) && activeTab !== "chain") next.push("Hat genişliği / çap geçerli bir değer olmalıdır");
-    if (activeTab === "chain" && !(toNumber(chainWidth) > 0)) next.push("Hat genişliği / çap geçerli bir değer olmalıdır");
-    if (activeTab === "bucket" && !(toNumber(verticalHeight) > 0)) next.push("Hat boyu geçerli bir değer olmalıdır");
+    if (!(toNumber(capacity) > 0)) next.push("Kapasite 0'dan bÃ¼yÃ¼k olmalÄ±dÄ±r");
+    if (!(toNumber(lineLength) > 0) && activeTab !== "bucket") next.push("Hat boyu geÃ§erli bir deÄŸer olmalÄ±dÄ±r");
+    if (!(toNumber(fillRate) >= 0 && toNumber(fillRate) <= 100)) next.push("Doluluk oranÄ± %0 ile %100 arasÄ±nda olmalÄ±dÄ±r");
+    if (!(toNumber(density) > 0)) next.push("YoÄŸunluk 0'dan bÃ¼yÃ¼k olmalÄ±dÄ±r");
+    if (!(toNumber(mainSize) > 0) && activeTab !== "chain") next.push("Hat geniÅŸliÄŸi / Ã§ap geÃ§erli bir deÄŸer olmalÄ±dÄ±r");
+    if (activeTab === "chain" && !(toNumber(chainWidth) > 0)) next.push("Hat geniÅŸliÄŸi / Ã§ap geÃ§erli bir deÄŸer olmalÄ±dÄ±r");
+    if (activeTab === "bucket" && !(toNumber(verticalHeight) > 0)) next.push("Hat boyu geÃ§erli bir deÄŸer olmalÄ±dÄ±r");
     return next;
   }, [activeTab, capacity, lineLength, fillRate, density, mainSize, chainWidth, verticalHeight]);
 
@@ -396,82 +397,64 @@ export default function TransportEquipmentExperience() {
 
     const suitability =
       !Number.isFinite(approxCapacity) || !(approxCapacity > 0) || !(capacityValue > 0)
-        ? "Seçilen veriler için ön değerlendirme yapılamadı"
+        ? "SeÃ§ilen veriler iÃ§in Ã¶n deÄŸerlendirme yapÄ±lamadÄ±"
         : approxCapacity >= capacityValue * 1.1
-          ? "Seçilen geometri yaklaşık ön hesapta kapasite hedefini karşılıyor."
+          ? "SeÃ§ilen geometri yaklaÅŸÄ±k Ã¶n hesapta kapasite hedefini karÅŸÄ±lÄ±yor."
           : approxCapacity >= capacityValue * 0.85
-            ? "Seçilen geometri sınırda görünüyor; nihai mühendislik doğrulaması önerilir."
-            : "Seçilen geometri yaklaşık ön hesapta yetersiz olabilir; boyut veya hız revizyonu gerekebilir.";
+            ? "SeÃ§ilen geometri sÄ±nÄ±rda gÃ¶rÃ¼nÃ¼yor; nihai mÃ¼hendislik doÄŸrulamasÄ± Ã¶nerilir."
+            : "SeÃ§ilen geometri yaklaÅŸÄ±k Ã¶n hesapta yetersiz olabilir; boyut veya hÄ±z revizyonu gerekebilir.";
 
     const geometryNote =
       activeTab === "bucket"
-        ? `${formatNumber(verticalValue, 1)} m dikey transfer için ${systemType.toLowerCase()} yapı değerlendirilmelidir.`
-        : `${formatNumber(lineValue, 1)} m hat boyu ve ${formatNumber(slopeValue, 1)}° eğim için ${profile.shortLabel.toLowerCase()} karakteri değerlendirilmiştir.`;
+        ? `${formatNumber(verticalValue, 1)} m dikey transfer iÃ§in ${systemType.toLowerCase()} yapÄ± deÄŸerlendirilmelidir.`
+        : `${formatNumber(lineValue, 1)} m hat boyu ve ${formatNumber(slopeValue, 1)}Â° eÄŸim iÃ§in ${profile.shortLabel.toLowerCase()} karakteri deÄŸerlendirilmiÅŸtir.`;
 
     const processNote = [
-      moisture ? `Nem oranı %${formatNumber(toNumber(moisture), 0)} olarak girildi.` : null,
-      sticky === "Evet" ? "Yapışkan malzeme nedeniyle düşük doluluk ve bakım erişimi önerilir." : null,
-      abrasive === "Evet" ? "Aşındırıcı malzeme için dayanımlı iç yüzey ve ağır hizmet tahrik önerilir." : null,
-      dustControl === "Evet" ? "Toz kontrol ihtiyacı kapalı hat ve filtre entegrasyonu gerektirebilir." : null,
+      moisture ? `Nem oranÄ± %${formatNumber(toNumber(moisture), 0)} olarak girildi.` : null,
+      sticky === "Evet" ? "YapÄ±ÅŸkan malzeme nedeniyle dÃ¼ÅŸÃ¼k doluluk ve bakÄ±m eriÅŸimi Ã¶nerilir." : null,
+      abrasive === "Evet" ? "AÅŸÄ±ndÄ±rÄ±cÄ± malzeme iÃ§in dayanÄ±mlÄ± iÃ§ yÃ¼zey ve aÄŸÄ±r hizmet tahrik Ã¶nerilir." : null,
+      dustControl === "Evet" ? "Toz kontrol ihtiyacÄ± kapalÄ± hat ve filtre entegrasyonu gerektirebilir." : null,
     ]
       .filter(Boolean)
       .join(" ");
 
-    const summary = `${profile.shortLabel}, ${materialType.toLowerCase()} için yaklaşık ${formatNumber(capacityValue, 1)} ton/saat hedef kapasite, ${activeTab === "bucket" ? `${formatNumber(verticalValue, 1)} m dikey yükseklik` : `${formatNumber(lineValue, 1)} m hat boyu`} ve ${density} kg/m³ yoğunluk üzerinden ön değerlendirilmiştir.`;
+    const summary = `${profile.shortLabel}, ${materialType.toLowerCase()} iÃ§in yaklaÅŸÄ±k ${formatNumber(capacityValue, 1)} ton/saat hedef kapasite, ${activeTab === "bucket" ? `${formatNumber(verticalValue, 1)} m dikey yÃ¼kseklik` : `${formatNumber(lineValue, 1)} m hat boyu`} ve ${density} kg/mÂ³ yoÄŸunluk Ã¼zerinden Ã¶n deÄŸerlendirilmiÅŸtir.`;
 
     return {
       approxCapacity,
       suitability,
       geometryNote,
-      processNote: processNote || "Sonuçlar yaklaşık ön değerlendirme niteliğindedir. Nihai mühendislik doğrulaması gerekir.",
+      processNote: processNote || "SonuÃ§lar yaklaÅŸÄ±k Ã¶n deÄŸerlendirme niteliÄŸindedir. Nihai mÃ¼hendislik doÄŸrulamasÄ± gerekir.",
       summary,
     };
   }, [activeTab, capacity, chainWidth, density, dustControl, fillRate, lineLength, mainSize, materialType, moisture, profile.shortLabel, rpm, slope, speed, sticky, abrasive, bucketSpacing, systemType, verticalHeight]);
 
-  const quoteMessage = `${profile.shortLabel} için ${capacity || "—"} ton/saat hedef kapasite, ${materialType || "—"} malzeme tipi, ${activeTab === "bucket" ? `${verticalHeight || "—"} m dikey yükseklik` : `${lineLength || "—"} m hat boyu`} ve ${slope || "—"}° eğim ile teklif talep ediyorum.`;
+  const quoteMessage = `${profile.shortLabel} iÃ§in ${capacity || "â€”"} ton/saat hedef kapasite, ${materialType || "â€”"} malzeme tipi, ${activeTab === "bucket" ? `${verticalHeight || "â€”"} m dikey yÃ¼kseklik` : `${lineLength || "â€”"} m hat boyu`} ve ${slope || "â€”"}Â° eÄŸim ile teklif talep ediyorum.`;
 
   return (
     <main className="min-h-screen bg-white text-slate-900">
-      <section className="relative isolate overflow-hidden border-b border-slate-200 text-white">
-        <div
-          className="absolute inset-0 bg-cover bg-[position:65%_center] bg-no-repeat sm:bg-center"
-          style={{ backgroundImage: "url('/images/konveyor2.jpg')" }}
-        />
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(3,10,30,0.82)_0%,rgba(3,10,30,0.72)_40%,rgba(3,10,30,0.55)_70%,rgba(3,10,30,0.45)_100%)]" />
-        <div className="relative mx-auto grid min-h-[320px] max-w-7xl grid-cols-1 px-4 py-10 sm:min-h-[360px] sm:px-6 sm:py-10 lg:min-h-[360px] lg:px-10 lg:py-[60px]">
-          <div className="self-center">
-            <div className="inline-flex rounded-full border border-white/15 bg-white/10 px-4 py-2 text-xs font-medium tracking-[0.16em] text-white/80 backdrop-blur">
-              TAŞIMA EKİPMANLARI
-            </div>
-            <p className="mt-5 text-sm font-medium text-blue-200">{profile.heroNote}</p>
-            <h1 className="mt-3 max-w-[700px] text-[32px] font-semibold leading-[1.2] tracking-tight text-white sm:text-[36px] lg:text-[42px]">
-              Taşıma Ekipmanları
-            </h1>
-            <p className="mt-4 max-w-[600px] text-base leading-[1.6] text-white/90">
-              Bant konveyörler, helezon konveyörler, kovalı elevatörler ve zincirli konveyörler ile hammadde ve ürün transferini prosese, malzeme yapısına ve saha koşullarına uygun hale getiriyoruz. Farklı taşıma ihtiyaçları için doğru sistemi belirlemenize yardımcı olacak ürün ve ön hesaplama altyapısını aynı sayfada sunuyoruz.
-            </p>
-            <div className="mt-6 flex flex-wrap gap-3">
-              <a href="#teklif-formu" className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-blue-600 px-6 text-sm font-semibold text-white transition hover:bg-blue-700">Teklif Al</a>
-              <Link href="/makinalar-ekipman" className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/20 bg-white/10 px-6 text-sm font-semibold text-white backdrop-blur transition hover:bg-white/15">Tüm Gruplara Dön</Link>
-            </div>
-          </div>
-
-        </div>
-      </section>
+      <Hero
+        title="Taşıma Ekipmanları"
+        description="Bant konveyörler, helezon konveyörler, kovalı elevatörler ve zincirli konveyörler ile farklı taşıma ihtiyaçlarına uygun çözümleri tek çatı altında sunuyoruz. Kapasite, hat boyu, eğim ve malzeme yapısına göre uygun sistemi karşılaştırmalı olarak inceleyebilirsiniz."
+        image="/images/konveyor2.jpg"
+      >
+        <a href="#teklif-formu" className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-blue-600 px-6 text-sm font-semibold text-white transition hover:bg-blue-700">Teklif Al</a>
+        <Link href="/makinalar-ekipman" className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/20 bg-white/10 px-6 text-sm font-semibold text-white backdrop-blur transition hover:bg-white/15">Tüm Gruplara Dön</Link>
+      </Hero>
 
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-10">
         <div className="rounded-3xl border border-slate-200 bg-slate-50 p-6 sm:p-8">
-          <p className="text-sm font-semibold uppercase tracking-[0.16em] text-blue-700">Kısa Tanım</p>
+          <p className="text-sm font-semibold uppercase tracking-[0.16em] text-blue-700">KÄ±sa TanÄ±m</p>
           <p className="mt-4 max-w-4xl text-base leading-8 text-slate-600">
-            Bant konveyör, helezon konveyör, kovalı elevatör ve zincirli konveyör gibi taşıma ekipmanlarını tek çatı altında sunuyoruz. Her sistem; malzeme tipi, hat uzunluğu, eğim, kapasite ihtiyacı ve proses yapısına göre özel olarak değerlendirilir.
+            Bant konveyÃ¶r, helezon konveyÃ¶r, kovalÄ± elevatÃ¶r ve zincirli konveyÃ¶r gibi taÅŸÄ±ma ekipmanlarÄ±nÄ± tek Ã§atÄ± altÄ±nda sunuyoruz. Her sistem; malzeme tipi, hat uzunluÄŸu, eÄŸim, kapasite ihtiyacÄ± ve proses yapÄ±sÄ±na gÃ¶re Ã¶zel olarak deÄŸerlendirilir.
           </p>
         </div>
       </section>
 
       <section className="mx-auto max-w-7xl px-4 pb-16 sm:px-6 lg:px-10">
         <div>
-          <p className="text-sm font-semibold uppercase tracking-[0.16em] text-blue-700">Alt Taşıma Ekipmanı Grupları</p>
-          <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950">Prosese uygun ekipmanı seçin</h2>
+          <p className="text-sm font-semibold uppercase tracking-[0.16em] text-blue-700">Alt TaÅŸÄ±ma EkipmanÄ± GruplarÄ±</p>
+          <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950">Prosese uygun ekipmanÄ± seÃ§in</h2>
         </div>
         <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
           {equipmentProfiles.map((item) => (
@@ -493,57 +476,57 @@ export default function TransportEquipmentExperience() {
         <div className="grid gap-8 xl:grid-cols-[1.05fr_0.95fr]">
           <div className="space-y-6">
             <div className="rounded-3xl border border-blue-100 bg-blue-50 p-6 sm:p-8">
-              <p className="text-sm font-semibold uppercase tracking-[0.16em] text-blue-700">Taşıma Ekipmanı Seçim ve Ön Kapasite Hesabı</p>
+              <p className="text-sm font-semibold uppercase tracking-[0.16em] text-blue-700">TaÅŸÄ±ma EkipmanÄ± SeÃ§im ve Ã–n Kapasite HesabÄ±</p>
               <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950">{profile.label}</h2>
               <p className="mt-4 text-base leading-8 text-slate-600">{profile.intro}</p>
             </div>
 
             <div className="rounded-3xl border border-slate-200 bg-white p-6 sm:p-8">
-              <h3 className="text-xl font-semibold text-slate-950">Müşteri Seçimi</h3>
-              <p className="mt-2 text-sm leading-7 text-slate-600">Taşıma tipi, kapasite ve malzeme verilerini tek seferde girin. Sonuçlar ve öneri değerleri otomatik güncellenecektir.</p>
-              <p className="mt-2 text-xs font-medium text-slate-500">Lütfen gerekli alanları doldurun. Sonuçlar ve standart veriler otomatik güncellenecektir.</p>
+              <h3 className="text-xl font-semibold text-slate-950">MÃ¼ÅŸteri SeÃ§imi</h3>
+              <p className="mt-2 text-sm leading-7 text-slate-600">TaÅŸÄ±ma tipi, kapasite ve malzeme verilerini tek seferde girin. SonuÃ§lar ve Ã¶neri deÄŸerleri otomatik gÃ¼ncellenecektir.</p>
+              <p className="mt-2 text-xs font-medium text-slate-500">LÃ¼tfen gerekli alanlarÄ± doldurun. SonuÃ§lar ve standart veriler otomatik gÃ¼ncellenecektir.</p>
 
               <div className="mt-6 grid gap-5 md:grid-cols-2">
-                <ToolkitSelect label="Ekipman Tipi" value={profile.shortLabel} onChange={(value) => setActiveTab(equipmentProfiles.find((item) => item.shortLabel === value)?.id ?? "belt")} options={equipmentProfiles.map((item) => item.shortLabel)} tip="Malzeme transferi için değerlendirmek istediğiniz ana taşıma ekipmanı türüdür." tipId="transport-type" openTip={openTip} setOpenTip={setOpenTip} />
-                <ToolkitSelect label="Malzeme Türü" value={materialType} onChange={(value) => { setMaterialType(value); if (!densityManual) setDensity(String(materialDensity[value] ?? 1000)); }} options={materialOptions} tip="Taşınacak ürünün genel akış karakterini belirleyen malzeme sınıfıdır." tipId="transport-material" openTip={openTip} setOpenTip={setOpenTip} />
-                <ToolkitInput label="Hedef Kapasite" value={capacity} onChange={setCapacity} unit="ton/saat" tip="Saatlik taşınması hedeflenen ürün miktarıdır." tipId="transport-capacity" openTip={openTip} setOpenTip={setOpenTip} />
-                <ToolkitInput label="Malzeme Yoğunluğu" value={density} onChange={(value) => { setDensityManual(true); setDensity(value); }} unit="kg/m³" helperText="Malzeme seçimine göre otomatik gelir, istenirse değiştirilebilir." tip="Malzemenin birim hacimdeki yaklaşık kütlesidir." tipId="transport-density" openTip={openTip} setOpenTip={setOpenTip} />
-                <ToolkitInput label="Hat Boyu" value={lineLength} onChange={setLineLength} unit="m" tip="Malzemenin taşınacağı toplam hat uzunluğudur." tipId="transport-length" openTip={openTip} setOpenTip={setOpenTip} />
-                <ToolkitInput label="Eğim" value={slope} onChange={setSlope} unit="°" tip="Yatay hatta göre yükselme açısı veya eğim oranıdır." tipId="transport-slope" openTip={openTip} setOpenTip={setOpenTip} />
-                <ToolkitInput label="Doluluk Oranı" value={fillRate} onChange={setFillRate} unit="%" tip="Taşıma kesitinin malzeme ile dolu olan yaklaşık oranıdır." tipId="transport-fill" openTip={openTip} setOpenTip={setOpenTip} />
-                <ToolkitInput label={activeTab === "belt" ? "Bant Genişliği" : activeTab === "screw" ? "Helezon Çapı" : activeTab === "bucket" ? "Kova Genişliği" : "Zincir Kanal Genişliği"} value={activeTab === "chain" ? chainWidth : mainSize} onChange={activeTab === "chain" ? setChainWidth : setMainSize} unit="mm" tip="Seçilen ekipman tipine göre bant genişliği, helezon çapı veya ilgili ana kesit ölçüsüdür." tipId="transport-main-size" openTip={openTip} setOpenTip={setOpenTip} />
-                <ToolkitInput label={activeTab === "screw" ? "Devir" : "Hat Hızı"} value={activeTab === "screw" ? rpm : speed} onChange={activeTab === "screw" ? setRpm : setSpeed} unit={activeTab === "screw" ? "rpm" : "m/s"} tip="Hat kapasitesini ve malzemenin taşıma karakterini etkileyen temel hız verisidir." tipId="transport-speed" openTip={openTip} setOpenTip={setOpenTip} />
-                <ToolkitInput label="Parça Boyutu / Dane Yapısı" value={particleSize} onChange={setParticleSize} unit="mm" tip="Malzemenin ortalama tane veya parça boyutudur." tipId="transport-particle" openTip={openTip} setOpenTip={setOpenTip} />
-                <ToolkitInput label="Nem Oranı" value={moisture} onChange={setMoisture} unit="%" helperText="Opsiyonel" tip="Malzeme içindeki su miktarının yaklaşık oranıdır." tipId="transport-moisture" openTip={openTip} setOpenTip={setOpenTip} />
-                <ToolkitSelect label="Uygulama Tipi" value={applicationType} onChange={setApplicationType} options={applicationOptions} tip="Taşıma hattının kullanım sınıfını ve servis koşullarını belirtir." tipId="transport-application" openTip={openTip} setOpenTip={setOpenTip} />
-                <ToolkitSelect label="Sistem Tipi" value={systemType} onChange={setSystemType} options={["Açık Sistem", "Kapalı Sistem"]} tip="Hat gövdesinin açık veya kapalı yapıda düşünülmesini sağlar." tipId="transport-system" openTip={openTip} setOpenTip={setOpenTip} />
-                <ToolkitSelect label="Toz Kontrol İhtiyacı" value={dustControl} onChange={setDustControl} options={["Evet", "Hayır"]} tip="Toz kontrollü transfer gerekip gerekmediğini belirtir." tipId="transport-dust" openTip={openTip} setOpenTip={setOpenTip} />
-                <ToolkitSelect label="Aşındırıcı Malzeme mi?" value={abrasive} onChange={setAbrasive} options={["Hayır", "Evet"]} tip="Malzemenin yüzey aşındırma etkisinin yüksek olup olmadığını belirtir." tipId="transport-abrasive" openTip={openTip} setOpenTip={setOpenTip} />
-                <ToolkitSelect label="Yapışkan Malzeme mi?" value={sticky} onChange={setSticky} options={["Hayır", "Evet"]} tip="Malzemenin yapışma eğiliminde olup olmadığını belirtir." tipId="transport-sticky" openTip={openTip} setOpenTip={setOpenTip} />
+                <ToolkitSelect label="Ekipman Tipi" value={profile.shortLabel} onChange={(value) => setActiveTab(equipmentProfiles.find((item) => item.shortLabel === value)?.id ?? "belt")} options={equipmentProfiles.map((item) => item.shortLabel)} tip="Malzeme transferi iÃ§in deÄŸerlendirmek istediÄŸiniz ana taÅŸÄ±ma ekipmanÄ± tÃ¼rÃ¼dÃ¼r." tipId="transport-type" openTip={openTip} setOpenTip={setOpenTip} />
+                <ToolkitSelect label="Malzeme TÃ¼rÃ¼" value={materialType} onChange={(value) => { setMaterialType(value); if (!densityManual) setDensity(String(materialDensity[value] ?? 1000)); }} options={materialOptions} tip="TaÅŸÄ±nacak Ã¼rÃ¼nÃ¼n genel akÄ±ÅŸ karakterini belirleyen malzeme sÄ±nÄ±fÄ±dÄ±r." tipId="transport-material" openTip={openTip} setOpenTip={setOpenTip} />
+                <ToolkitInput label="Hedef Kapasite" value={capacity} onChange={setCapacity} unit="ton/saat" tip="Saatlik taÅŸÄ±nmasÄ± hedeflenen Ã¼rÃ¼n miktarÄ±dÄ±r." tipId="transport-capacity" openTip={openTip} setOpenTip={setOpenTip} />
+                <ToolkitInput label="Malzeme YoÄŸunluÄŸu" value={density} onChange={(value) => { setDensityManual(true); setDensity(value); }} unit="kg/mÂ³" helperText="Malzeme seÃ§imine gÃ¶re otomatik gelir, istenirse deÄŸiÅŸtirilebilir." tip="Malzemenin birim hacimdeki yaklaÅŸÄ±k kÃ¼tlesidir." tipId="transport-density" openTip={openTip} setOpenTip={setOpenTip} />
+                <ToolkitInput label="Hat Boyu" value={lineLength} onChange={setLineLength} unit="m" tip="Malzemenin taÅŸÄ±nacaÄŸÄ± toplam hat uzunluÄŸudur." tipId="transport-length" openTip={openTip} setOpenTip={setOpenTip} />
+                <ToolkitInput label="EÄŸim" value={slope} onChange={setSlope} unit="Â°" tip="Yatay hatta gÃ¶re yÃ¼kselme aÃ§Ä±sÄ± veya eÄŸim oranÄ±dÄ±r." tipId="transport-slope" openTip={openTip} setOpenTip={setOpenTip} />
+                <ToolkitInput label="Doluluk OranÄ±" value={fillRate} onChange={setFillRate} unit="%" tip="TaÅŸÄ±ma kesitinin malzeme ile dolu olan yaklaÅŸÄ±k oranÄ±dÄ±r." tipId="transport-fill" openTip={openTip} setOpenTip={setOpenTip} />
+                <ToolkitInput label={activeTab === "belt" ? "Bant GeniÅŸliÄŸi" : activeTab === "screw" ? "Helezon Ã‡apÄ±" : activeTab === "bucket" ? "Kova GeniÅŸliÄŸi" : "Zincir Kanal GeniÅŸliÄŸi"} value={activeTab === "chain" ? chainWidth : mainSize} onChange={activeTab === "chain" ? setChainWidth : setMainSize} unit="mm" tip="SeÃ§ilen ekipman tipine gÃ¶re bant geniÅŸliÄŸi, helezon Ã§apÄ± veya ilgili ana kesit Ã¶lÃ§Ã¼sÃ¼dÃ¼r." tipId="transport-main-size" openTip={openTip} setOpenTip={setOpenTip} />
+                <ToolkitInput label={activeTab === "screw" ? "Devir" : "Hat HÄ±zÄ±"} value={activeTab === "screw" ? rpm : speed} onChange={activeTab === "screw" ? setRpm : setSpeed} unit={activeTab === "screw" ? "rpm" : "m/s"} tip="Hat kapasitesini ve malzemenin taÅŸÄ±ma karakterini etkileyen temel hÄ±z verisidir." tipId="transport-speed" openTip={openTip} setOpenTip={setOpenTip} />
+                <ToolkitInput label="ParÃ§a Boyutu / Dane YapÄ±sÄ±" value={particleSize} onChange={setParticleSize} unit="mm" tip="Malzemenin ortalama tane veya parÃ§a boyutudur." tipId="transport-particle" openTip={openTip} setOpenTip={setOpenTip} />
+                <ToolkitInput label="Nem OranÄ±" value={moisture} onChange={setMoisture} unit="%" helperText="Opsiyonel" tip="Malzeme iÃ§indeki su miktarÄ±nÄ±n yaklaÅŸÄ±k oranÄ±dÄ±r." tipId="transport-moisture" openTip={openTip} setOpenTip={setOpenTip} />
+                <ToolkitSelect label="Uygulama Tipi" value={applicationType} onChange={setApplicationType} options={applicationOptions} tip="TaÅŸÄ±ma hattÄ±nÄ±n kullanÄ±m sÄ±nÄ±fÄ±nÄ± ve servis koÅŸullarÄ±nÄ± belirtir." tipId="transport-application" openTip={openTip} setOpenTip={setOpenTip} />
+                <ToolkitSelect label="Sistem Tipi" value={systemType} onChange={setSystemType} options={["AÃ§Ä±k Sistem", "KapalÄ± Sistem"]} tip="Hat gÃ¶vdesinin aÃ§Ä±k veya kapalÄ± yapÄ±da dÃ¼ÅŸÃ¼nÃ¼lmesini saÄŸlar." tipId="transport-system" openTip={openTip} setOpenTip={setOpenTip} />
+                <ToolkitSelect label="Toz Kontrol Ä°htiyacÄ±" value={dustControl} onChange={setDustControl} options={["Evet", "HayÄ±r"]} tip="Toz kontrollÃ¼ transfer gerekip gerekmediÄŸini belirtir." tipId="transport-dust" openTip={openTip} setOpenTip={setOpenTip} />
+                <ToolkitSelect label="AÅŸÄ±ndÄ±rÄ±cÄ± Malzeme mi?" value={abrasive} onChange={setAbrasive} options={["HayÄ±r", "Evet"]} tip="Malzemenin yÃ¼zey aÅŸÄ±ndÄ±rma etkisinin yÃ¼ksek olup olmadÄ±ÄŸÄ±nÄ± belirtir." tipId="transport-abrasive" openTip={openTip} setOpenTip={setOpenTip} />
+                <ToolkitSelect label="YapÄ±ÅŸkan Malzeme mi?" value={sticky} onChange={setSticky} options={["HayÄ±r", "Evet"]} tip="Malzemenin yapÄ±ÅŸma eÄŸiliminde olup olmadÄ±ÄŸÄ±nÄ± belirtir." tipId="transport-sticky" openTip={openTip} setOpenTip={setOpenTip} />
 
                 {activeTab === "belt" ? (
                   <>
-                    <ToolkitSelect label="Bant Tipi" value={beltType} onChange={setBeltType} options={["Düz Bant", "Chevron Bant", "Kapalı Bant"]} tip="Taşıma açısı ve ürün karakterine göre seçilecek bant sınıfıdır." tipId="transport-belt-type" openTip={openTip} setOpenTip={setOpenTip} />
-                    <ToolkitInput label="Taşıma Açısı" value={carryAngle} onChange={setCarryAngle} unit="°" helperText="Opsiyonel" tip="Bant üzerindeki malzemenin oluk veya taşıma açısı yaklaşımıdır." tipId="transport-carry-angle" openTip={openTip} setOpenTip={setOpenTip} />
+                    <ToolkitSelect label="Bant Tipi" value={beltType} onChange={setBeltType} options={["DÃ¼z Bant", "Chevron Bant", "KapalÄ± Bant"]} tip="TaÅŸÄ±ma aÃ§Ä±sÄ± ve Ã¼rÃ¼n karakterine gÃ¶re seÃ§ilecek bant sÄ±nÄ±fÄ±dÄ±r." tipId="transport-belt-type" openTip={openTip} setOpenTip={setOpenTip} />
+                    <ToolkitInput label="TaÅŸÄ±ma AÃ§Ä±sÄ±" value={carryAngle} onChange={setCarryAngle} unit="Â°" helperText="Opsiyonel" tip="Bant Ã¼zerindeki malzemenin oluk veya taÅŸÄ±ma aÃ§Ä±sÄ± yaklaÅŸÄ±mÄ±dÄ±r." tipId="transport-carry-angle" openTip={openTip} setOpenTip={setOpenTip} />
                   </>
                 ) : null}
 
                 {activeTab === "screw" ? (
-                  <ToolkitSelect label="Tek / Çift Helezon" value={screwConfig} onChange={setScrewConfig} options={["Tek Helezon", "Çift Helezon"]} tip="Taşıma hattında tek veya çift helezon kurgusu kullanılıp kullanılmayacağını belirtir." tipId="transport-screw-config" openTip={openTip} setOpenTip={setOpenTip} />
+                  <ToolkitSelect label="Tek / Ã‡ift Helezon" value={screwConfig} onChange={setScrewConfig} options={["Tek Helezon", "Ã‡ift Helezon"]} tip="TaÅŸÄ±ma hattÄ±nda tek veya Ã§ift helezon kurgusu kullanÄ±lÄ±p kullanÄ±lmayacaÄŸÄ±nÄ± belirtir." tipId="transport-screw-config" openTip={openTip} setOpenTip={setOpenTip} />
                 ) : null}
 
                 {activeTab === "bucket" ? (
                   <>
-                    <ToolkitInput label="Dikey Yükseklik" value={verticalHeight} onChange={setVerticalHeight} unit="m" tip="Malzemenin taşınacağı toplam dikey yükselme mesafesidir." tipId="transport-vertical-height" openTip={openTip} setOpenTip={setOpenTip} />
-                    <ToolkitInput label="Kova Aralığı" value={bucketSpacing} onChange={setBucketSpacing} unit="mm" helperText="Opsiyonel" tip="Ardışık kova merkezleri arasındaki yaklaşık mesafedir." tipId="transport-bucket-spacing" openTip={openTip} setOpenTip={setOpenTip} />
-                    <ToolkitSelect label="Ürün Tipi" value={productType} onChange={setProductType} options={["Kırılgan Ürün", "Granül Ürün", "Toz Ürün", "Genel Dökme Katı"]} tip="Kova tipi ve boşaltma karakterini etkileyen ürün sınıfıdır." tipId="transport-product-type" openTip={openTip} setOpenTip={setOpenTip} />
+                    <ToolkitInput label="Dikey YÃ¼kseklik" value={verticalHeight} onChange={setVerticalHeight} unit="m" tip="Malzemenin taÅŸÄ±nacaÄŸÄ± toplam dikey yÃ¼kselme mesafesidir." tipId="transport-vertical-height" openTip={openTip} setOpenTip={setOpenTip} />
+                    <ToolkitInput label="Kova AralÄ±ÄŸÄ±" value={bucketSpacing} onChange={setBucketSpacing} unit="mm" helperText="Opsiyonel" tip="ArdÄ±ÅŸÄ±k kova merkezleri arasÄ±ndaki yaklaÅŸÄ±k mesafedir." tipId="transport-bucket-spacing" openTip={openTip} setOpenTip={setOpenTip} />
+                    <ToolkitSelect label="ÃœrÃ¼n Tipi" value={productType} onChange={setProductType} options={["KÄ±rÄ±lgan ÃœrÃ¼n", "GranÃ¼l ÃœrÃ¼n", "Toz ÃœrÃ¼n", "Genel DÃ¶kme KatÄ±"]} tip="Kova tipi ve boÅŸaltma karakterini etkileyen Ã¼rÃ¼n sÄ±nÄ±fÄ±dÄ±r." tipId="transport-product-type" openTip={openTip} setOpenTip={setOpenTip} />
                   </>
                 ) : null}
 
                 {activeTab === "chain" ? (
                   <>
-                    <ToolkitSelect label="Ağır Hizmet Seçimi" value={heavyDuty} onChange={setHeavyDuty} options={["Evet", "Hayır"]} tip="Ağır hizmet zincirli konveyör sınıfının gerekip gerekmediğini belirtir." tipId="transport-heavy-duty" openTip={openTip} setOpenTip={setOpenTip} />
-                    <ToolkitSelect label="Kapalı Hat Seçimi" value={closedLine} onChange={setClosedLine} options={["Evet", "Hayır"]} tip="Kapalı kanal yapısına ihtiyaç olup olmadığını belirtir." tipId="transport-closed-line" openTip={openTip} setOpenTip={setOpenTip} />
+                    <ToolkitSelect label="AÄŸÄ±r Hizmet SeÃ§imi" value={heavyDuty} onChange={setHeavyDuty} options={["Evet", "HayÄ±r"]} tip="AÄŸÄ±r hizmet zincirli konveyÃ¶r sÄ±nÄ±fÄ±nÄ±n gerekip gerekmediÄŸini belirtir." tipId="transport-heavy-duty" openTip={openTip} setOpenTip={setOpenTip} />
+                    <ToolkitSelect label="KapalÄ± Hat SeÃ§imi" value={closedLine} onChange={setClosedLine} options={["Evet", "HayÄ±r"]} tip="KapalÄ± kanal yapÄ±sÄ±na ihtiyaÃ§ olup olmadÄ±ÄŸÄ±nÄ± belirtir." tipId="transport-closed-line" openTip={openTip} setOpenTip={setOpenTip} />
                   </>
                 ) : null}
               </div>
@@ -551,41 +534,41 @@ export default function TransportEquipmentExperience() {
 
             <div className="rounded-3xl border border-slate-200 bg-slate-50 p-6 sm:p-8">
               <h3 className="text-xl font-semibold text-slate-950">Standarttan Otomatik Gelen Alanlar</h3>
-              <p className="mt-2 text-sm leading-7 text-slate-600">Bu bölümdeki değerler seçtiğiniz ekipman tipi ve malzeme sınıfına göre otomatik oluşur.</p>
+              <p className="mt-2 text-sm leading-7 text-slate-600">Bu bÃ¶lÃ¼mdeki deÄŸerler seÃ§tiÄŸiniz ekipman tipi ve malzeme sÄ±nÄ±fÄ±na gÃ¶re otomatik oluÅŸur.</p>
               <div className="mt-6 grid gap-5 md:grid-cols-2">
-                <ToolkitReadonly label="Önerilen Hat Hızı Aralığı" value={profile.auto.speedRange} helperText="Seçilen ekipman ve malzeme karakterine göre otomatik gelir" />
-                <ToolkitReadonly label="Önerilen Doluluk Aralığı" value={profile.auto.fillRange} helperText="Seçilen ekipman ve malzeme karakterine göre otomatik gelir" />
-                <ToolkitReadonly label="Önerilen Kesit / Genişlik / Çap Notu" value={profile.auto.sectionNote} helperText="Ön mühendislik yaklaşımına göre otomatik oluşur" />
-                <ToolkitReadonly label="Önerilen Gövde Tipi" value={profile.auto.bodyType} helperText="Seçilen sistem tipine göre otomatik gelir" />
-                <ToolkitReadonly label="Önerilen Tahrik Sınıfı" value={profile.auto.driveClass} helperText="Hesap sonucuna göre otomatik oluşur" />
-                <ToolkitReadonly label="Uygulama Sınıfı" value={profile.auto.className} helperText="Seçilen proses karakterine göre otomatik gelir" />
-                <ToolkitReadonly label="Ön Teknik Not" value={profile.auto.note} helperText="Seçilen ekipman ve malzeme sınıfına göre otomatik oluşur" />
+                <ToolkitReadonly label="Ã–nerilen Hat HÄ±zÄ± AralÄ±ÄŸÄ±" value={profile.auto.speedRange} helperText="SeÃ§ilen ekipman ve malzeme karakterine gÃ¶re otomatik gelir" />
+                <ToolkitReadonly label="Ã–nerilen Doluluk AralÄ±ÄŸÄ±" value={profile.auto.fillRange} helperText="SeÃ§ilen ekipman ve malzeme karakterine gÃ¶re otomatik gelir" />
+                <ToolkitReadonly label="Ã–nerilen Kesit / GeniÅŸlik / Ã‡ap Notu" value={profile.auto.sectionNote} helperText="Ã–n mÃ¼hendislik yaklaÅŸÄ±mÄ±na gÃ¶re otomatik oluÅŸur" />
+                <ToolkitReadonly label="Ã–nerilen GÃ¶vde Tipi" value={profile.auto.bodyType} helperText="SeÃ§ilen sistem tipine gÃ¶re otomatik gelir" />
+                <ToolkitReadonly label="Ã–nerilen Tahrik SÄ±nÄ±fÄ±" value={profile.auto.driveClass} helperText="Hesap sonucuna gÃ¶re otomatik oluÅŸur" />
+                <ToolkitReadonly label="Uygulama SÄ±nÄ±fÄ±" value={profile.auto.className} helperText="SeÃ§ilen proses karakterine gÃ¶re otomatik gelir" />
+                <ToolkitReadonly label="Ã–n Teknik Not" value={profile.auto.note} helperText="SeÃ§ilen ekipman ve malzeme sÄ±nÄ±fÄ±na gÃ¶re otomatik oluÅŸur" />
               </div>
             </div>
 
-            <ToolkitInfo title="Nasıl Kullanılır?" text="Önce alt taşıma ekipmanı grubunu seçin. Ardından kapasite, malzeme türü, hat boyu, eğim ve ilgili boyut verilerini girin. Sistem, yaklaşık ön hesap ile uygunluk yorumunu ve standart önerileri otomatik olarak güncelleyecektir." />
-            <ToolkitInfo title="Teknik Bilgi" text={`${profile.description} Bu araç, konveyör kapasite hesabı ve dökme katı taşıma sistemleri için hızlı ön değerlendirme sunar; nihai mühendislik doğrulaması proje verilerine göre yapılmalıdır.`} />
+            <ToolkitInfo title="NasÄ±l KullanÄ±lÄ±r?" text="Ã–nce alt taÅŸÄ±ma ekipmanÄ± grubunu seÃ§in. ArdÄ±ndan kapasite, malzeme tÃ¼rÃ¼, hat boyu, eÄŸim ve ilgili boyut verilerini girin. Sistem, yaklaÅŸÄ±k Ã¶n hesap ile uygunluk yorumunu ve standart Ã¶nerileri otomatik olarak gÃ¼ncelleyecektir." />
+            <ToolkitInfo title="Teknik Bilgi" text={`${profile.description} Bu araÃ§, konveyÃ¶r kapasite hesabÄ± ve dÃ¶kme katÄ± taÅŸÄ±ma sistemleri iÃ§in hÄ±zlÄ± Ã¶n deÄŸerlendirme sunar; nihai mÃ¼hendislik doÄŸrulamasÄ± proje verilerine gÃ¶re yapÄ±lmalÄ±dÄ±r.`} />
           </div>
 
           <div className="space-y-6">
             <div className="sticky top-24 rounded-3xl border border-slate-200 bg-white p-6 sm:p-8">
-              <h3 className="text-xl font-semibold text-slate-950">Sonuçlar</h3>
-              <p className="mt-2 text-sm leading-7 text-slate-600">Sonuçlar yaklaşık ön değerlendirme niteliğindedir. Nihai mühendislik doğrulaması gerekir.</p>
+              <h3 className="text-xl font-semibold text-slate-950">SonuÃ§lar</h3>
+              <p className="mt-2 text-sm leading-7 text-slate-600">SonuÃ§lar yaklaÅŸÄ±k Ã¶n deÄŸerlendirme niteliÄŸindedir. Nihai mÃ¼hendislik doÄŸrulamasÄ± gerekir.</p>
               <div className="mt-6 grid gap-4 md:grid-cols-2">
-                <ToolkitResult label="Seçilen Ekipman Tipi" value={profile.shortLabel} tone="info" />
-                <ToolkitResult label="Tahmini Ön Kapasite Uygunluğu" value={results.suitability} tone={errors.length ? "critical" : "warning"} />
-                <ToolkitResult label="Yaklaşık Ön Kapasite" value={`${formatNumber(results.approxCapacity, 1)} ton/saat`} />
-                <ToolkitResult label="Hat Geometrisi Uygunluğu" value={results.geometryNote} />
-                <ToolkitResult label="Önerilen Sistem Karakteri" value={`${systemType}, ${applicationType}`} />
-                <ToolkitResult label="Toz / Nem / Aşındırıcılık Notu" value={results.processNote} tone="warning" />
-                <ToolkitResult label="Ön Teknik Değerlendirme" value={profile.auto.note} />
-                <ToolkitResult label="İletişime Uygun Teknik Özet" value={results.summary} />
+                <ToolkitResult label="SeÃ§ilen Ekipman Tipi" value={profile.shortLabel} tone="info" />
+                <ToolkitResult label="Tahmini Ã–n Kapasite UygunluÄŸu" value={results.suitability} tone={errors.length ? "critical" : "warning"} />
+                <ToolkitResult label="YaklaÅŸÄ±k Ã–n Kapasite" value={`${formatNumber(results.approxCapacity, 1)} ton/saat`} />
+                <ToolkitResult label="Hat Geometrisi UygunluÄŸu" value={results.geometryNote} />
+                <ToolkitResult label="Ã–nerilen Sistem Karakteri" value={`${systemType}, ${applicationType}`} />
+                <ToolkitResult label="Toz / Nem / AÅŸÄ±ndÄ±rÄ±cÄ±lÄ±k Notu" value={results.processNote} tone="warning" />
+                <ToolkitResult label="Ã–n Teknik DeÄŸerlendirme" value={profile.auto.note} />
+                <ToolkitResult label="Ä°letiÅŸime Uygun Teknik Ã–zet" value={results.summary} />
               </div>
             </div>
 
             {errors.length ? (
               <div className="rounded-3xl border border-rose-200 bg-rose-50 p-6">
-                <h3 className="text-lg font-semibold text-rose-800">Teknik Uyarılar</h3>
+                <h3 className="text-lg font-semibold text-rose-800">Teknik UyarÄ±lar</h3>
                 <ul className="mt-4 space-y-2 text-sm leading-7 text-rose-700">
                   {errors.map((error) => (
                     <li key={error}>{error}</li>
@@ -594,9 +577,9 @@ export default function TransportEquipmentExperience() {
               </div>
             ) : (
               <div className="rounded-3xl border border-amber-200 bg-amber-50 p-6">
-                <h3 className="text-lg font-semibold text-amber-900">Teknik Değerlendirme</h3>
+                <h3 className="text-lg font-semibold text-amber-900">Teknik DeÄŸerlendirme</h3>
                 <p className="mt-3 text-sm leading-7 text-amber-900/85">
-                  {profile.shortLabel}, {materialType.toLowerCase()} ve {applicationType.toLowerCase()} senaryosu için yaklaşık ön değerlendirme üretilmiştir. Bu çalışma, endüstriyel konveyör sistemleri ve taşıma hattı ekipmanları için hızlı karar desteği sağlar.
+                  {profile.shortLabel}, {materialType.toLowerCase()} ve {applicationType.toLowerCase()} senaryosu iÃ§in yaklaÅŸÄ±k Ã¶n deÄŸerlendirme Ã¼retilmiÅŸtir. Bu Ã§alÄ±ÅŸma, endÃ¼striyel konveyÃ¶r sistemleri ve taÅŸÄ±ma hattÄ± ekipmanlarÄ± iÃ§in hÄ±zlÄ± karar desteÄŸi saÄŸlar.
                 </p>
               </div>
             )}
@@ -607,35 +590,35 @@ export default function TransportEquipmentExperience() {
       <section id="teklif-formu" className="mx-auto max-w-7xl px-4 pb-16 sm:px-6 lg:px-10">
         <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr]">
           <div className="rounded-3xl border border-slate-200 bg-slate-50 p-6 sm:p-8">
-            <p className="text-sm font-semibold uppercase tracking-[0.16em] text-blue-700">Bu grup için teklif alın</p>
-            <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950">Prosesinize uygun taşıma çözümünü birlikte netleştirelim</h2>
+            <p className="text-sm font-semibold uppercase tracking-[0.16em] text-blue-700">Bu grup iÃ§in teklif alÄ±n</p>
+            <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950">Prosesinize uygun taÅŸÄ±ma Ã§Ã¶zÃ¼mÃ¼nÃ¼ birlikte netleÅŸtirelim</h2>
             <p className="mt-4 text-base leading-8 text-slate-600">
-              Kapasite, malzeme tipi, hat uzunluğu ve saha bilgilerinizi paylaşın; prosesinize en uygun taşıma sistemi çözümünü birlikte netleştirelim.
+              Kapasite, malzeme tipi, hat uzunluÄŸu ve saha bilgilerinizi paylaÅŸÄ±n; prosesinize en uygun taÅŸÄ±ma sistemi Ã§Ã¶zÃ¼mÃ¼nÃ¼ birlikte netleÅŸtirelim.
             </p>
             <div className="mt-6 grid gap-4">
               <input className="rounded-2xl border border-slate-300 bg-white px-4 py-3 outline-none transition focus:border-blue-400" placeholder="Ad Soyad" />
-              <input className="rounded-2xl border border-slate-300 bg-white px-4 py-3 outline-none transition focus:border-blue-400" placeholder="Firma Adı" />
+              <input className="rounded-2xl border border-slate-300 bg-white px-4 py-3 outline-none transition focus:border-blue-400" placeholder="Firma AdÄ±" />
               <input className="rounded-2xl border border-slate-300 bg-white px-4 py-3 outline-none transition focus:border-blue-400" placeholder="Telefon" />
               <input className="rounded-2xl border border-slate-300 bg-white px-4 py-3 outline-none transition focus:border-blue-400" placeholder="E-posta" />
               <input className="rounded-2xl border border-slate-200 bg-slate-100 px-4 py-3 text-slate-700 outline-none" value={profile.shortLabel} readOnly />
-              <input className="rounded-2xl border border-slate-200 bg-slate-100 px-4 py-3 text-slate-700 outline-none" value={`${capacity || "—"} ton/saat`} readOnly />
+              <input className="rounded-2xl border border-slate-200 bg-slate-100 px-4 py-3 text-slate-700 outline-none" value={`${capacity || "â€”"} ton/saat`} readOnly />
               <input className="rounded-2xl border border-slate-200 bg-slate-100 px-4 py-3 text-slate-700 outline-none" value={materialType} readOnly />
-              <input className="rounded-2xl border border-slate-200 bg-slate-100 px-4 py-3 text-slate-700 outline-none" value={activeTab === "bucket" ? `${verticalHeight || "—"} m / ${slope || "—"}°` : `${lineLength || "—"} m / ${slope || "—"}°`} readOnly />
+              <input className="rounded-2xl border border-slate-200 bg-slate-100 px-4 py-3 text-slate-700 outline-none" value={activeTab === "bucket" ? `${verticalHeight || "â€”"} m / ${slope || "â€”"}Â°` : `${lineLength || "â€”"} m / ${slope || "â€”"}Â°`} readOnly />
               <textarea className="min-h-[150px] rounded-2xl border border-slate-300 bg-white px-4 py-3 outline-none transition focus:border-blue-400" defaultValue={quoteMessage} />
-              <button className="inline-flex min-h-[48px] items-center justify-center rounded-full bg-blue-700 px-6 text-sm font-semibold text-white transition hover:bg-blue-800">Teklif Gönder</button>
+              <button className="inline-flex min-h-[48px] items-center justify-center rounded-full bg-blue-700 px-6 text-sm font-semibold text-white transition hover:bg-blue-800">Teklif GÃ¶nder</button>
             </div>
           </div>
 
           <div className="rounded-3xl border border-slate-200 bg-white p-6 sm:p-8">
-            <h3 className="text-2xl font-semibold text-slate-950">Teknik özet</h3>
+            <h3 className="text-2xl font-semibold text-slate-950">Teknik Ã¶zet</h3>
             <p className="mt-4 text-sm leading-7 text-slate-600">
-              {results.summary} Bu özet, proje görüşmesinde ekipman tipi, kapasite hedefi, malzeme sınıfı ve hat geometrisi açısından başlangıç teknik çerçeve sağlar.
+              {results.summary} Bu Ã¶zet, proje gÃ¶rÃ¼ÅŸmesinde ekipman tipi, kapasite hedefi, malzeme sÄ±nÄ±fÄ± ve hat geometrisi aÃ§Ä±sÄ±ndan baÅŸlangÄ±Ã§ teknik Ã§erÃ§eve saÄŸlar.
             </p>
             <div className="mt-6 grid gap-4">
               <ToolkitResult label="Ekipman Tipi" value={profile.shortLabel} />
-              <ToolkitResult label="Malzeme Türü" value={materialType} />
-              <ToolkitResult label="Hedef Kapasite" value={`${capacity || "—"} ton/saat`} />
-              <ToolkitResult label="Hat Özeti" value={activeTab === "bucket" ? `${verticalHeight || "—"} m dikey yükseklik` : `${lineLength || "—"} m hat boyu / ${slope || "—"}° eğim`} />
+              <ToolkitResult label="Malzeme TÃ¼rÃ¼" value={materialType} />
+              <ToolkitResult label="Hedef Kapasite" value={`${capacity || "â€”"} ton/saat`} />
+              <ToolkitResult label="Hat Ã–zeti" value={activeTab === "bucket" ? `${verticalHeight || "â€”"} m dikey yÃ¼kseklik` : `${lineLength || "â€”"} m hat boyu / ${slope || "â€”"}Â° eÄŸim`} />
             </div>
           </div>
         </div>
@@ -643,31 +626,31 @@ export default function TransportEquipmentExperience() {
 
       <section className="mx-auto max-w-7xl px-4 pb-16 sm:px-6 lg:px-10">
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-          <ListCard title="Teknik Özellikler" items={profile.technicalSpecs} />
-          <ListCard title="Kapasite Seçenekleri" items={["1–250 ton/saat arası farklı kapasite seçenekleri", "Malzeme yoğunluğuna ve akış karakterine göre özel projelendirme", "Hat uzunluğu, eğim ve proses tipine göre optimize edilmiş tasarım"]} />
-          <ListCard title="Kullanım Alanları" items={["Gübre ve granül üretim hatları", "Kompost ve organik atık işleme sistemleri", "Biyogaz besleme ve transfer hatları", "Mineral ve dökme katı malzeme taşınması", "Yem, tahıl ve toz ürün transfer sistemleri", "Geri dönüşüm ve atık işleme hatları", "Kimyasal ve proses hammaddesi besleme sistemleri"]} />
-          <ListCard title="Opsiyonel Ekipmanlar" items={["Manyetik ayırıcı entegrasyonu", "Tartım ve dozaj sistemleri", "Kapalı ve toz kontrollü hat çözümleri", "Platform ve yürüme yolları", "Otomasyon ve sensör paketleri", "Besleme bunkerleri ve ara stok çözümleri"]} />
-          <ListCard title="Malzeme Türleri" items={["Toz ürünler", "Granül ürünler", "Organik malzemeler", "Kompost ve yarı nemli ürünler", "Mineral ve dökme katılar", "Yem ve tahıl ürünleri", "RDF ve atık türevi malzemeler", "Prosese özel karışımlar"]} />
+          <ListCard title="Teknik Ã–zellikler" items={profile.technicalSpecs} />
+          <ListCard title="Kapasite SeÃ§enekleri" items={["1â€“250 ton/saat arasÄ± farklÄ± kapasite seÃ§enekleri", "Malzeme yoÄŸunluÄŸuna ve akÄ±ÅŸ karakterine gÃ¶re Ã¶zel projelendirme", "Hat uzunluÄŸu, eÄŸim ve proses tipine gÃ¶re optimize edilmiÅŸ tasarÄ±m"]} />
+          <ListCard title="KullanÄ±m AlanlarÄ±" items={["GÃ¼bre ve granÃ¼l Ã¼retim hatlarÄ±", "Kompost ve organik atÄ±k iÅŸleme sistemleri", "Biyogaz besleme ve transfer hatlarÄ±", "Mineral ve dÃ¶kme katÄ± malzeme taÅŸÄ±nmasÄ±", "Yem, tahÄ±l ve toz Ã¼rÃ¼n transfer sistemleri", "Geri dÃ¶nÃ¼ÅŸÃ¼m ve atÄ±k iÅŸleme hatlarÄ±", "Kimyasal ve proses hammaddesi besleme sistemleri"]} />
+          <ListCard title="Opsiyonel Ekipmanlar" items={["Manyetik ayÄ±rÄ±cÄ± entegrasyonu", "TartÄ±m ve dozaj sistemleri", "KapalÄ± ve toz kontrollÃ¼ hat Ã§Ã¶zÃ¼mleri", "Platform ve yÃ¼rÃ¼me yollarÄ±", "Otomasyon ve sensÃ¶r paketleri", "Besleme bunkerleri ve ara stok Ã§Ã¶zÃ¼mleri"]} />
+          <ListCard title="Malzeme TÃ¼rleri" items={["Toz Ã¼rÃ¼nler", "GranÃ¼l Ã¼rÃ¼nler", "Organik malzemeler", "Kompost ve yarÄ± nemli Ã¼rÃ¼nler", "Mineral ve dÃ¶kme katÄ±lar", "Yem ve tahÄ±l Ã¼rÃ¼nleri", "RDF ve atÄ±k tÃ¼revi malzemeler", "Prosese Ã¶zel karÄ±ÅŸÄ±mlar"]} />
           <ListCard title="Avantajlar" items={profile.advantages} />
         </div>
       </section>
 
       <section className="mx-auto max-w-7xl px-4 pb-16 sm:px-6 lg:px-10">
         <div className="grid gap-6 lg:grid-cols-3">
-          <ListCard title="İlgili Sektörler" items={["Gübre ve granülasyon tesisleri", "Kompost ve organik atık tesisleri", "Atık su çamuru ve arıtma sistemleri", "Geri dönüşüm ve atık yönetimi", "Enerji ve biyogaz sistemleri", "Madencilik ve mineral işleme", "Kimya ve proses endüstrisi", "Yem, toz ve dökme katı malzeme işleme sistemleri"]} />
-          <ListCard title="İlgili Hizmetler" items={["Proses Tasarımı ve Mühendislik", "Makine İmalatı", "Anahtar Teslim Tesis Kurulumu", "Kurulum ve Devreye Alma", "Modernizasyon ve Revizyon", "Teknik Danışmanlık"]} />
-          <ListCard title="İlgili Projeler" items={["Kompost tesisi projeleri", "Organomineral gübre tesisi projeleri", "Geri dönüşüm ve atık işleme projeleri", "Biyogaz ve enerji tesisi projeleri", "Dökme katı malzeme taşıma hattı projeleri", "Özel proses ve makine imalat projeleri"]} />
+          <ListCard title="Ä°lgili SektÃ¶rler" items={["GÃ¼bre ve granÃ¼lasyon tesisleri", "Kompost ve organik atÄ±k tesisleri", "AtÄ±k su Ã§amuru ve arÄ±tma sistemleri", "Geri dÃ¶nÃ¼ÅŸÃ¼m ve atÄ±k yÃ¶netimi", "Enerji ve biyogaz sistemleri", "Madencilik ve mineral iÅŸleme", "Kimya ve proses endÃ¼strisi", "Yem, toz ve dÃ¶kme katÄ± malzeme iÅŸleme sistemleri"]} />
+          <ListCard title="Ä°lgili Hizmetler" items={["Proses TasarÄ±mÄ± ve MÃ¼hendislik", "Makine Ä°malatÄ±", "Anahtar Teslim Tesis Kurulumu", "Kurulum ve Devreye Alma", "Modernizasyon ve Revizyon", "Teknik DanÄ±ÅŸmanlÄ±k"]} />
+          <ListCard title="Ä°lgili Projeler" items={["Kompost tesisi projeleri", "Organomineral gÃ¼bre tesisi projeleri", "Geri dÃ¶nÃ¼ÅŸÃ¼m ve atÄ±k iÅŸleme projeleri", "Biyogaz ve enerji tesisi projeleri", "DÃ¶kme katÄ± malzeme taÅŸÄ±ma hattÄ± projeleri", "Ã–zel proses ve makine imalat projeleri"]} />
         </div>
       </section>
 
       <section className="mx-auto max-w-7xl px-4 pb-16 sm:px-6 lg:px-10">
         <div className="grid gap-6 lg:grid-cols-[1.05fr_0.95fr]">
           <div className="rounded-3xl border border-slate-200 bg-white p-6 sm:p-8">
-            <h2 className="text-2xl font-semibold text-slate-950">Görseller ve Teknik Çizimler</h2>
+            <h2 className="text-2xl font-semibold text-slate-950">GÃ¶rseller ve Teknik Ã‡izimler</h2>
             <p className="mt-4 text-sm leading-7 text-slate-600">
-              Bu alanda ürün görselleri, teknik çizim PDF&apos;leri, kesit detayları, taşıma hat planları ve saha uygulama fotoğrafları sunulabilir. Sayfa yapısı, teknik döküman ve görsel içerik yüklemeye hazır olacak şekilde kurgulanmıştır.
+              Bu alanda Ã¼rÃ¼n gÃ¶rselleri, teknik Ã§izim PDF&apos;leri, kesit detaylarÄ±, taÅŸÄ±ma hat planlarÄ± ve saha uygulama fotoÄŸraflarÄ± sunulabilir. Sayfa yapÄ±sÄ±, teknik dÃ¶kÃ¼man ve gÃ¶rsel iÃ§erik yÃ¼klemeye hazÄ±r olacak ÅŸekilde kurgulanmÄ±ÅŸtÄ±r.
             </p>
-            <h3 className="mt-6 text-lg font-semibold text-slate-950">Teknik çizim ve ürün görselleri alanı</h3>
+            <h3 className="mt-6 text-lg font-semibold text-slate-950">Teknik Ã§izim ve Ã¼rÃ¼n gÃ¶rselleri alanÄ±</h3>
             <div className="mt-5 grid gap-4 sm:grid-cols-2">
               {[1, 2, 3, 4].map((item) => (
                 <div key={item} className="rounded-3xl border border-dashed border-slate-300 bg-slate-50 px-6 py-12 text-center text-sm text-slate-500">Premium placeholder #{item}</div>
@@ -676,15 +659,15 @@ export default function TransportEquipmentExperience() {
           </div>
 
           <div className="rounded-3xl border border-slate-200 bg-slate-50 p-6 sm:p-8">
-            <h2 className="text-2xl font-semibold text-slate-950">Sık Sorulan Sorular</h2>
+            <h2 className="text-2xl font-semibold text-slate-950">SÄ±k Sorulan Sorular</h2>
             <div className="mt-6 space-y-4">
               {[
-                { question: "Hangi taşıma ekipmanı seçilmeli?", answer: "Ekipman seçimi; malzeme tipi, kapasite, hat boyu, eğim ve proses yapısına göre belirlenir." },
-                { question: "Kapalı sistem çözümleri sunuyor musunuz?", answer: "Evet. Toz kontrollü, kapalı ve çevresel yönetimi destekleyen taşıma sistemleri sunuyoruz." },
-                { question: "Yüksek nemli veya yapışkan malzemeler için hangi sistem uygundur?", answer: "Malzeme davranışına göre helezon, zincirli konveyör veya özel iç yapılı sistemler tercih edilebilir." },
-                { question: "Aynı tesiste farklı taşıma ekipmanları birlikte kullanılabilir mi?", answer: "Evet. Çoğu projede bant konveyör, elevatör, helezon ve zincirli sistemler entegre şekilde çalışır." },
-                { question: "Eğimli hatlarda kapasite nasıl etkilenir?", answer: "Eğim arttıkça ekipman tipi, hız ve taşıma karakteri yeniden değerlendirilmelidir." },
-                { question: "Taşıma sistemleri otomasyon ile desteklenebilir mi?", answer: "Evet. Hız kontrolü, seviye sensörleri, tartım entegrasyonu ve otomatik kontrol sistemleri eklenebilir." },
+                { question: "Hangi taÅŸÄ±ma ekipmanÄ± seÃ§ilmeli?", answer: "Ekipman seÃ§imi; malzeme tipi, kapasite, hat boyu, eÄŸim ve proses yapÄ±sÄ±na gÃ¶re belirlenir." },
+                { question: "KapalÄ± sistem Ã§Ã¶zÃ¼mleri sunuyor musunuz?", answer: "Evet. Toz kontrollÃ¼, kapalÄ± ve Ã§evresel yÃ¶netimi destekleyen taÅŸÄ±ma sistemleri sunuyoruz." },
+                { question: "YÃ¼ksek nemli veya yapÄ±ÅŸkan malzemeler iÃ§in hangi sistem uygundur?", answer: "Malzeme davranÄ±ÅŸÄ±na gÃ¶re helezon, zincirli konveyÃ¶r veya Ã¶zel iÃ§ yapÄ±lÄ± sistemler tercih edilebilir." },
+                { question: "AynÄ± tesiste farklÄ± taÅŸÄ±ma ekipmanlarÄ± birlikte kullanÄ±labilir mi?", answer: "Evet. Ã‡oÄŸu projede bant konveyÃ¶r, elevatÃ¶r, helezon ve zincirli sistemler entegre ÅŸekilde Ã§alÄ±ÅŸÄ±r." },
+                { question: "EÄŸimli hatlarda kapasite nasÄ±l etkilenir?", answer: "EÄŸim arttÄ±kÃ§a ekipman tipi, hÄ±z ve taÅŸÄ±ma karakteri yeniden deÄŸerlendirilmelidir." },
+                { question: "TaÅŸÄ±ma sistemleri otomasyon ile desteklenebilir mi?", answer: "Evet. HÄ±z kontrolÃ¼, seviye sensÃ¶rleri, tartÄ±m entegrasyonu ve otomatik kontrol sistemleri eklenebilir." },
                 ...profile.faqs,
               ].map((faq) => (
                 <details key={faq.question} className="rounded-2xl border border-slate-200 bg-white px-5 py-4">
@@ -698,8 +681,10 @@ export default function TransportEquipmentExperience() {
       </section>
 
       <section className="mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-10">
-        <ToolkitLead title="Projeniz için doğru ekipman seçimini birlikte yapalım" text="Taşıma ekipmanları, bant konveyör, helezon konveyör, kovalı elevatör, zincirli konveyör ve konveyör kapasite hesabı başlıklarında projenize en uygun çözümü birlikte netleştirelim." />
+        <ToolkitLead title="Projeniz iÃ§in doÄŸru ekipman seÃ§imini birlikte yapalÄ±m" text="TaÅŸÄ±ma ekipmanlarÄ±, bant konveyÃ¶r, helezon konveyÃ¶r, kovalÄ± elevatÃ¶r, zincirli konveyÃ¶r ve konveyÃ¶r kapasite hesabÄ± baÅŸlÄ±klarÄ±nda projenize en uygun Ã§Ã¶zÃ¼mÃ¼ birlikte netleÅŸtirelim." />
       </section>
     </main>
   );
 }
+
+
