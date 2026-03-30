@@ -1167,6 +1167,51 @@ export const projects: ProjectItem[] = [
     image:
       "https://images.unsplash.com/photo-1565008447742-97f6f38c985c?auto=format&fit=crop&w=1400&q=80",
   },
+  {
+    slug: "mineral-ve-dokme-kati-isleme-projeleri",
+    title: "Mineral ve Dokme Kati Isleme Projeleri",
+    summary:
+      "Kirma, eleme, tasima, kurutma, siniflandirma ve stoklama sureclerine uygun mineral ve dokme kati malzeme proje cozumleri.",
+    projectName: "Mineral ve Dokme Kati Isleme Projesi",
+    location: "Turkiye / Farkli saha senaryolari",
+    capacity: "Projeye gore ozel",
+    customerType: "Madencilik ve proses yatirimlari",
+    systems: [
+      "Kiricilar ve Parcalayicilar",
+      "Eleme ve Siniflandirma Sistemleri",
+      "Tasima Ekipmanlari",
+      "Depolama ve Besleme Sistemleri",
+    ],
+    processSummary:
+      "Mineral ve dokme kati malzemenin kabulunden kirma, eleme, kurutma, siniflandirma ve stoklamaya kadar uzanan hat yapisi proses ve saha verilerine gore kurgulanir.",
+    technicalScope: [
+      "Urun karakterizasyonu ve proses analizi",
+      "Kirma, eleme ve siniflandirma kurgusu",
+      "Tasima, stoklama ve transfer altyapisi",
+      "Toz, asinma ve kapasite yonetimi",
+    ],
+    photosNote:
+      "Bu alana kirma-eleme hatlari, tasima sistemleri, stoklama cozumleri ve saha uygulama gorselleri eklenebilir.",
+    outcomes: [
+      "Proses akisina uygun hat kurgusu",
+      "Kapasiteye uygun ekipman secimi",
+      "Asinma ve toz yonetimi odakli tesis yaklasimi",
+    ],
+    similarProject: "Ozel Proses ve Makine Imalati Projeleri",
+    relatedMachines: [
+      "Kiricilar ve Parcalayicilar",
+      "Eleme ve Siniflandirma Sistemleri",
+      "Tasima Ekipmanlari",
+    ],
+    relatedSector: "Madencilik ve Mineral Isleme",
+    relatedSolutions: [
+      "Proses Tasarimi ve Muhendislik",
+      "Makine Imalati",
+      "Anahtar Teslim Tesis Kurulumu",
+    ],
+    image:
+      "https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&w=1400&q=80",
+  },
 ];
 
 export const librarySections: { title: LibraryCategory; description: string }[] = [

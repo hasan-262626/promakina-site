@@ -190,7 +190,7 @@ export function HomeQuickAccessSection() {
                   priority={index < 5}
                   draggable={false}
                   sizes="(min-width: 1280px) calc((1280px - 96px) / 5.5), (min-width: 768px) calc((100vw - 48px - 40px) / 3.5), calc((100vw - 32px - 32px) / 2.5)"
-                  className="object-cover transition duration-300 group-hover:scale-[1.02]"
+                  className="object-cover object-center transition duration-300 group-hover:scale-[1.02]"
                 />
               </span>
               <h3 className="mt-5 max-w-[18ch] text-sm font-semibold leading-6 tracking-tight text-slate-950 sm:text-[15px]">

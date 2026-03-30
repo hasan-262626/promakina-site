@@ -1,5 +1,8 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import DrumSystemsExperience from "../../components/drum-systems-experience";
+import MachineCategoryExperience from "../../components/machine-category-experience";
+import TransportEquipmentExperience from "../../components/transport-equipment-experience";
 import { machineGroups } from "../../data";
 import { trText } from "../../lib/tr-text";
 
@@ -40,6 +43,25 @@ export default async function MachineDetailPage({ params }: PageProps) {
     notFound();
   }
 
+  if (slug === "tambur-sistemleri") {
+    return <DrumSystemsExperience />;
+  }
+
+  if (slug === "tasima-ekipmanlari") {
+    return <TransportEquipmentExperience />;
+  }
+
+  if (
+    slug === "kiricilar-ve-parcalayicilar" ||
+    slug === "reaktorler-ve-tanklar" ||
+    slug === "eleme-ve-siniflandirma-sistemleri" ||
+    slug === "toz-toplama-sistemleri" ||
+    slug === "paketleme-ve-dolum-sistemleri" ||
+    slug === "depolama-ve-besleme-sistemleri"
+  ) {
+    return <MachineCategoryExperience slug={slug} />;
+  }
+
   return (
     <main className="min-h-screen overflow-x-hidden bg-white text-slate-900">
       <section className="relative isolate overflow-hidden">
@@ -50,17 +72,17 @@ export default async function MachineDetailPage({ params }: PageProps) {
         <div className="absolute inset-0 bg-slate-950/65" />
         <div className="absolute inset-0 bg-gradient-to-r from-slate-950/85 via-slate-950/65 to-transparent" />
 
-        <div className="relative mx-auto flex min-h-[78vh] max-w-7xl items-end px-4 pb-16 pt-24 sm:px-6 sm:pb-24 sm:pt-28 lg:px-10">
+        <div className="relative mx-auto flex min-h-[300px] max-w-7xl items-start justify-center px-4 py-10 sm:min-h-[360px] sm:px-6 sm:py-[50px] lg:min-h-[420px] lg:px-10 lg:py-[60px]">
           <div className="max-w-4xl">
             <div className="mb-5 inline-flex rounded-full border border-white/15 bg-white/10 px-4 py-2 text-xs text-white/85 backdrop-blur sm:text-sm">
               Makinalar & Ekipman
             </div>
 
-            <h1 className="max-w-4xl text-3xl font-semibold leading-[1.05] tracking-tight text-white sm:text-4xl md:text-6xl xl:text-7xl">
+            <h1 className="max-w-4xl text-[28px] font-semibold leading-[1.08] tracking-tight text-white sm:text-[34px] md:text-[38px] lg:text-[42px]">
               {trText(group.heroTitle)}
             </h1>
 
-            <p className="mt-6 max-w-3xl text-base leading-7 text-white/82 sm:text-lg sm:leading-8 md:text-xl">
+            <p className="mt-5 max-w-3xl text-sm leading-7 text-white/82 sm:text-base sm:leading-8 lg:text-lg">
               {trText(group.heroDescription)}
             </p>
 

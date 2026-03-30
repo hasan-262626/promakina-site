@@ -8,6 +8,30 @@ export type ProgramItem = {
 
 export const programItems: ProgramItem[] = [
   {
+    slug: "helezon-kapasite-ve-mekanik-secim-programi",
+    title: "Helezon (Screw Conveyor) Kapasite ve Mekanik Seçim Programı",
+    description:
+      "Helezon çapı, hatve, rpm, doluluk, kapasite uygunluğu, motor gücü ve mekanik seçim tavsiyeleri için profesyonel ön seçim aracı.",
+    image: "/images/konveyor2.jpg",
+    alt: "Helezon kapasite ve mekanik seçim programı için endüstriyel taşıma sistemi görseli",
+  },
+  {
+    slug: "elevator-kapasite-ve-secim-programi",
+    title: "Elevatör Kapasite ve Seçim Programı",
+    description:
+      "Bantlı veya zincirli elevatör seçimi, kova ölçüsü, doluluk oranı, hız aralığı ve mekanik tavsiyeler için profesyonel ön seçim aracı.",
+    image: "/images/konveyor2.jpg",
+    alt: "Elevatör kapasite ve seçim programı için endüstriyel taşıma sistemi görseli",
+  },
+  {
+    slug: "konveyor-kapasite-ve-secim-hesap-programi",
+    title: "Konveyör Kapasite ve Seçim Hesap Programı",
+    description:
+      "Bantlı konveyör kapasitesi, bant genişliği, bant hızı, redüktör çıkış devri, tambur çapı ve mekanik seçim tavsiyeleri için profesyonel ön seçim aracı.",
+    image: "/images/konveyor2.jpg",
+    alt: "Konveyör kapasite ve seçim hesap programı için bantlı taşıma hattı görseli",
+  },
+  {
     slug: "mil-capi-hesabi",
     title: "Mil Çapı Hesabı",
     description:

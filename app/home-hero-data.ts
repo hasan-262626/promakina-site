@@ -1,4 +1,4 @@
-export type HomeHeroSlide = {
+﻿export type HomeHeroSlide = {
   id: string;
   tabLabel: string;
   eyebrow: string;
@@ -24,10 +24,8 @@ export const homeHeroSlides: HomeHeroSlide[] = [
     primaryLink: "/sektorler",
     secondaryButton: "Çözümleri Gör",
     secondaryLink: "/sektorler",
-    image:
-      "https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=1800&q=80",
-    imageAlt:
-      "Farklı endüstriyel sektörlerde kullanılan proses ve üretim çözümleri",
+    image: "/images/sektorler2.png",
+    imageAlt: "Sektörel proses ve tesis çözümleri",
   },
   {
     id: "hizmetler",
@@ -40,10 +38,8 @@ export const homeHeroSlides: HomeHeroSlide[] = [
     primaryLink: "/hizmetler",
     secondaryButton: "Teklif Al",
     secondaryLink: "/iletisim",
-    image:
-      "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1800&q=80",
-    imageAlt:
-      "Endüstriyel tesis yatırımı için mühendislik ve uygulama planlaması yapan ekip",
+    image: "/images/hizmetler1.png",
+    imageAlt: "Endüstriyel tesis mühendislik hizmetleri",
   },
   {
     id: "makinalar-ekipman",
@@ -56,9 +52,7 @@ export const homeHeroSlides: HomeHeroSlide[] = [
     primaryLink: "/makinalar-ekipman",
     secondaryButton: "Kategoriye Git",
     secondaryLink: "/makinalar-ekipman",
-    image:
-      "https://images.unsplash.com/photo-1581092919535-7146ff1a5902?auto=format&fit=crop&w=1800&q=80",
-    imageAlt:
-      "Endüstriyel makina ve ekipman üretim sahasında ağır hizmet tipi proses sistemleri",
+    image: "/images/makinalar1.png",
+    imageAlt: "Endüstriyel makina ve ekipman üretim sistemleri",
   },
 ];

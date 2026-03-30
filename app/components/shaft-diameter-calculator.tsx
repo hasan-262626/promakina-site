@@ -79,10 +79,13 @@ export function ShaftDiameterCalculator() {
         </div>
 
         {activeTab !== "reference" ? (
+          <>
           <div className="mt-6 grid gap-6 xl:grid-cols-[1.02fr_0.98fr]">
-            <div className="space-y-6">
+            <div className="order-1 space-y-6 xl:col-start-1">
               <div className="rounded-3xl border border-blue-100 bg-white p-6 shadow-[0_18px_50px_rgba(15,23,42,0.06)]">
-                <h2 className="text-2xl font-semibold text-slate-950">Müşteri Girişleri</h2>
+                <h2 className="text-2xl font-semibold text-slate-950">Müşteri Seçimi</h2>
+                <p className="mt-3 text-sm leading-7 text-slate-600">Bu bölümde gerekli tüm seçim ve girişleri tek seferde doldurun.</p>
+                <p className="mt-2 text-xs font-medium text-slate-500">Lütfen gerekli alanları doldurun. Sonuçlar ve standart veriler otomatik güncellenecektir.</p>
                 <div className="mt-6 grid gap-5 md:grid-cols-2">
                   <ToolkitInput label="Tork" value={torque} onChange={setTorque} unit="N·m" helperText="Bu alanı siz doldurun" limitText="0’dan büyük olmalıdır" tip="Mil çapı hesabında esas alınan tork değeridir." tipId="shaft-torque" openTip={openTip} setOpenTip={setOpenTip} />
                   <ToolkitInput label="Devir (opsiyonel)" value={rpm} onChange={setRpm} unit="dev/dk" helperText="Opsiyonel" limitText="Girilirse güç bilgisi üretir" tip="Mil üzerindeki dakikadaki dönüş sayısıdır." tipId="shaft-rpm" openTip={openTip} setOpenTip={setOpenTip} />
@@ -94,14 +97,15 @@ export function ShaftDiameterCalculator() {
                 </div>
               </div>
               <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-[0_18px_50px_rgba(15,23,42,0.05)]">
-                <h2 className="text-xl font-semibold text-slate-950">Otomatik Gelen Alanlar</h2>
+                <h2 className="text-xl font-semibold text-slate-950">Standarttan Otomatik Gelen Alanlar</h2>
+                <p className="mt-3 text-sm leading-7 text-slate-600">Bu bölümdeki değerler seçiminize ve standarda göre otomatik oluşturulur.</p>
                 <div className="mt-5 grid gap-4 sm:grid-cols-2">
                   <ToolkitReadonly label="İzin Verilen Kayma Gerilmesi" value={`${fmt(model.allow, 2)} MPa`} />
                   <ToolkitReadonly label="Hesap Türü" value={activeTab === "torsion" ? "Burulma ön hesabı" : activeTab === "combined" ? "Eğilme + burulma ön hesabı" : "Katı / boru karşılaştırması"} />
                 </div>
               </div>
             </div>
-            <div className="space-y-6">
+            <div className="order-2 space-y-6 xl:col-start-2">
               <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-[0_18px_50px_rgba(15,23,42,0.06)]">
                 <h2 className="text-2xl font-semibold text-slate-950">Sonuçlar</h2>
                 <div className="mt-6 grid gap-4 sm:grid-cols-2">
@@ -112,10 +116,16 @@ export function ShaftDiameterCalculator() {
                 </div>
               </div>
               <ToolkitInfo title="Teknik Değerlendirme" text={shaftType === "Boru Mil" ? "Boru mil için iç çap büyüdükçe burulma dayanımı düşebilir. İç çap ve et kalınlığı birlikte değerlendirilmelidir." : "Seçilen emniyet katsayısı ile mil çapı ön boyutlandırma amacıyla oluşturuldu."} />
-              <ToolkitInfo title="SEO ve Teknik Bilgi" text="Mil çapı hesabı, burulma momentine göre mil çapı, eğilme + burulma ön hesabı ve katı mil / boru mil karşılaştırması için hızlı teknik destek sunar." />
-              <ToolkitLead title="Projenize Uygun Mil Hesabı mı Arıyorsunuz?" text="Mil çapı, göbek ve bağlantı detayları için teknik destek veya özel mühendislik yaklaşımı konusunda bizimle iletişime geçin." />
+            </div>
+            <div className="order-3 space-y-6 xl:col-start-1">
+              <ToolkitInfo title="Nasıl Kullanılır?" text="1. Tork, malzeme ve emniyet katsayısını girin. 2. Boru mil seçildiğinde iç çapı da doldurun. 3. Sonuç kartlarındaki önerilen mil çaplarını karşılaştırın. 4. Teknik değerlendirme ile ön seçimi doğrulayın." />
+              <ToolkitInfo title="Teknik Bilgi" text="Mil çapı hesabı, burulma momentine göre mil çapı, eğilme + burulma ön hesabı ve katı mil / boru mil karşılaştırması için hızlı teknik destek sunar." />
             </div>
           </div>
+          <div className="mt-6">
+            <ToolkitLead title="Projenize Uygun Mil Hesabı mı Arıyorsunuz?" text="Mil çapı, göbek ve bağlantı detayları için teknik destek veya özel mühendislik yaklaşımı konusunda bizimle iletişime geçin." />
+          </div>
+          </>
         ) : (
           <div className="mt-6 grid gap-6 lg:grid-cols-2">
             <ToolkitInfo title="Mil çapı hesabı ne işe yarar?" text="Mil çapı hesabı, tork ve malzeme bilgisine göre önerilen kesit çapını ön boyutlandırma mantığıyla belirler." />

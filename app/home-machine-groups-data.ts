@@ -1,4 +1,5 @@
 export type HomeMachineGroupCard = {
+  eyebrow: string;
   title: string;
   description: string;
   products: string[];
@@ -10,9 +11,10 @@ export type HomeMachineGroupCard = {
 
 export const homeMachineGroupCards: HomeMachineGroupCard[] = [
   {
+    eyebrow: "Tambur sistemleri ve rotary drum ekipmanları",
     title: "Tambur Sistemleri",
     description:
-      "Kurutma, kompost, granülasyon ve soğutma proseslerinde kullanılan tambur sistemlerini tek kategori altında sunuyoruz. Farklı kapasite ve uygulama ihtiyaçlarına uygun çözümleri birlikte inceleyebilirsiniz.",
+      "Kurutma, kompost, granülasyon ve soğutma proseslerinde kullanılan tambur sistemlerini tek kategori altında sunuyoruz. Farklı kapasite ve uygulama ihtiyaçlarına uygun çözümleri karşılaştırmalı olarak inceleyebilirsiniz.",
     products: [
       "Kurutma Tamburları",
       "Kompost Tamburları",
@@ -26,9 +28,10 @@ export const homeMachineGroupCards: HomeMachineGroupCard[] = [
     alt: "Tambur sistemleri ve rotary drum ekipmanları",
   },
   {
+    eyebrow: "Taşıma ekipmanları ve konveyör sistemleri",
     title: "Taşıma Ekipmanları",
     description:
-      "Malzeme akışını kontrollü ve verimli şekilde yönetmek için kullanılan taşıma ekipmanlarını aynı kategori içinde topluyoruz. Farklı proseslere uygun konveyör ve elevatör seçeneklerini bir arada sunuyoruz.",
+      "Malzeme akışını kontrollü, güvenli ve verimli şekilde yönetmek için kullanılan taşıma ekipmanlarını tek kategori altında topluyoruz. Farklı proseslere uygun konveyör ve elevatör çözümlerini birlikte inceleyebilirsiniz.",
     products: [
       "Bant Konveyörler",
       "Helezon Konveyörler",
@@ -39,12 +42,13 @@ export const homeMachineGroupCards: HomeMachineGroupCard[] = [
     href: "/makinalar-ekipman/tasima-sistemleri",
     image:
       "https://images.unsplash.com/photo-1581092919535-7146ff1a5902?auto=format&fit=crop&w=1400&q=80",
-    alt: "Taşıma ekipmanları ve konveyör hattı",
+    alt: "Taşıma ekipmanları ve konveyör sistemleri",
   },
   {
+    eyebrow: "Endüstriyel kırma ve boyut küçültme sistemleri",
     title: "Kırıcılar ve Parçalayıcılar",
     description:
-      "Farklı malzemelerin boyut küçültme ihtiyaçlarına yönelik kırıcı ve parçalayıcı sistemleri uygulama türüne göre bir arada sunuyoruz. Sürece uygun ekipman seçimini daha kolay karşılaştırabilirsiniz.",
+      "Farklı malzemelerin boyut küçültme ihtiyaçlarına yönelik kırıcı ve parçalayıcı sistemleri uygulama türüne göre sunuyoruz. Prosese uygun ekipman seçimini kolaylaştırıyoruz.",
     products: ["Çekiçli Değirmen", "Zincirli Kırıcı", "Çeneli Kırıcı", "Primer Kırıcı"],
     buttonLabel: "Kategoriyi İncele",
     href: "/makinalar-ekipman/kiricilar-ve-parcalayicilar",
@@ -53,9 +57,10 @@ export const homeMachineGroupCards: HomeMachineGroupCard[] = [
     alt: "Kırıcılar ve parçalayıcılar için endüstriyel kırma hattı",
   },
   {
+    eyebrow: "Endüstriyel proses ekipmanları",
     title: "Reaktörler ve Tanklar",
     description:
-      "Karıştırma, çözündürme, stoklama ve basınçlı proses ihtiyaçları için kullanılan reaktör ve tank çözümlerini aynı proses ailesi içinde sunuyoruz.",
+      "Karıştırma, çözündürme, stoklama ve basınçlı proses ihtiyaçları için kullanılan reaktör ve tank çözümlerini tek sistem altında sunuyoruz.",
     products: [
       "Karıştırıcılı Reaktörler",
       "Çözündürme Tankları",
@@ -66,9 +71,10 @@ export const homeMachineGroupCards: HomeMachineGroupCard[] = [
     href: "/makinalar-ekipman/reaktorler-ve-tanklar",
     image:
       "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=1400&q=80",
-    alt: "Reaktörler ve tanklar için endüstriyel proses ekipmanları",
+    alt: "Reaktör ve tank sistemleri için endüstriyel proses ekipmanları",
   },
   {
+    eyebrow: "Ürün ayrıştırma ve proses verim sistemleri",
     title: "Eleme ve Sınıflandırma Sistemleri",
     description:
       "Ürünün ayrıştırılması, sınıflandırılması ve proses veriminin artırılması için kullanılan eleme sistemlerini tek grupta sunuyoruz.",
@@ -80,9 +86,10 @@ export const homeMachineGroupCards: HomeMachineGroupCard[] = [
     alt: "Eleme ve sınıflandırma sistemleri",
   },
   {
+    eyebrow: "Filtrasyon ve çevresel kontrol ekipmanları",
     title: "Toz Toplama Sistemleri",
     description:
-      "Tesis içinde toz kontrolü, filtreleme ve çevresel yönetim için kullanılan ekipmanları ortak bir sistem yaklaşımıyla sunuyoruz.",
+      "Tesis içinde toz kontrolü, filtreleme ve çevresel yönetim için kullanılan sistemleri entegre yaklaşım ile sunuyoruz.",
     products: ["Jet Pulse Filtreler", "Siklonlar", "Torba Filtreler"],
     buttonLabel: "Kategoriyi İncele",
     href: "/makinalar-ekipman/toz-toplama-sistemleri",
@@ -91,9 +98,10 @@ export const homeMachineGroupCards: HomeMachineGroupCard[] = [
     alt: "Toz toplama sistemleri ve filtre ekipmanları",
   },
   {
+    eyebrow: "Son ürün hazırlama ve dolum çözümleri",
     title: "Paketleme ve Dolum Sistemleri",
     description:
-      "Torbalama, dolum ve son ürün hazırlama süreçlerinde kullanılan sistemleri tek kategori altında bir araya getiriyoruz.",
+      "Torbalama, dolum ve son ürün hazırlama süreçlerinde kullanılan sistemleri tek kategori altında sunuyoruz.",
     products: ["Açık Ağız Torbalama", "Big Bag Dolum", "Şişeleme ve Dolum Hatları"],
     buttonLabel: "Kategoriyi İncele",
     href: "/makinalar-ekipman/paketleme-ve-dolum-sistemleri",
@@ -102,9 +110,10 @@ export const homeMachineGroupCards: HomeMachineGroupCard[] = [
     alt: "Paketleme ve dolum sistemleri",
   },
   {
+    eyebrow: "Silo ve besleme sistemleri",
     title: "Depolama ve Besleme Sistemleri",
     description:
-      "Depolama, ürün alma ve besleme süreçlerinde birlikte çalışan ekipmanları aynı grup altında sunuyoruz.",
+      "Depolama, ürün alma ve besleme süreçlerinde birlikte çalışan ekipmanları tek sistem yaklaşımı ile sunuyoruz.",
     products: ["Silo Sistemleri", "Bunkerler", "Ürün Alma ve Besleme Sistemleri"],
     buttonLabel: "Kategoriyi İncele",
     href: "/makinalar-ekipman/depolama-sistemleri",

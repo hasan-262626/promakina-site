@@ -1,7 +1,7 @@
 "use client";
 
 import { useId, useMemo, useRef, useState, type KeyboardEvent as ReactKeyboardEvent } from "react";
-import { ToolkitInfo, ToolkitInput, ToolkitLead, ToolkitResult } from "./technical-toolkit";
+import { ToolkitInfo, ToolkitInput, ToolkitLead, ToolkitReadonly, ToolkitResult } from "./technical-toolkit";
 
 type TabKey = "ratio" | "diameter" | "speed" | "length" | "reference";
 const TABS = [
@@ -51,10 +51,13 @@ export function BeltPulleyCalculator() {
           </div>
         </div>
         {activeTab !== "reference" ? (
+          <>
           <div className="mt-6 grid gap-6 xl:grid-cols-[1.02fr_0.98fr]">
-            <div className="space-y-6">
+            <div className="order-1 space-y-6 xl:col-start-1">
               <div className="rounded-3xl border border-blue-100 bg-white p-6 shadow-[0_18px_50px_rgba(15,23,42,0.06)]">
-                <h2 className="text-2xl font-semibold text-slate-950">Müşteri Girişleri</h2>
+                <h2 className="text-2xl font-semibold text-slate-950">Müşteri Seçimi</h2>
+                <p className="mt-3 text-sm leading-7 text-slate-600">Bu bölümde gerekli tüm seçim ve girişleri tek seferde doldurun.</p>
+                <p className="mt-2 text-xs font-medium text-slate-500">Lütfen gerekli alanları doldurun. Sonuçlar ve standart veriler otomatik güncellenecektir.</p>
                 <div className="mt-6 grid gap-5 md:grid-cols-2">
                   <ToolkitInput label="Döndüren Kasnak Çapı" value={d1} onChange={setD1} unit="mm" helperText="Bu alanı siz doldurun" limitText="Kasnak çapı temel giriş alanıdır" tip="Döndüren kasnağın nominal çapıdır." tipId="belt-d1" openTip={openTip} setOpenTip={setOpenTip} />
                   <ToolkitInput label="Döndürülen Kasnak Çapı" value={d2} onChange={setD2} unit="mm" helperText="Bu alanı siz doldurun" limitText="Çıkış oranını etkiler" tip="Döndürülen kasnağın nominal çapıdır." tipId="belt-d2" openTip={openTip} setOpenTip={setOpenTip} />
@@ -63,8 +66,16 @@ export function BeltPulleyCalculator() {
                   {activeTab === "speed" ? <ToolkitInput label="Motor Gücü" value={power} onChange={setPower} unit="kW" helperText="Opsiyonel" limitText="Teknik yoruma destek verir" tip="Kayış hızı yorumuna destek amaçlı kullanılabilir." tipId="belt-power" openTip={openTip} setOpenTip={setOpenTip} /> : null}
                 </div>
               </div>
+              <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-[0_18px_50px_rgba(15,23,42,0.05)]">
+                <h2 className="text-xl font-semibold text-slate-950">Standarttan Otomatik Gelen Alanlar</h2>
+                <p className="mt-3 text-sm leading-7 text-slate-600">Bu bölümdeki değerler seçiminize ve standarda göre otomatik oluşturulur.</p>
+                <div className="mt-5 grid gap-4 sm:grid-cols-2">
+                  <ToolkitReadonly label="Hesap Türü" value={TABS.find((tab) => tab.key === activeTab)?.label ?? "Oran ve Devir Hesabı"} />
+                  <ToolkitReadonly label="Oran Formülü" value="i = D2 / D1" />
+                </div>
+              </div>
             </div>
-            <div className="space-y-6">
+            <div className="order-2 space-y-6 xl:col-start-2">
               <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-[0_18px_50px_rgba(15,23,42,0.06)]">
                 <h2 className="text-2xl font-semibold text-slate-950">Sonuçlar</h2>
                 <div className="mt-6 grid gap-4 sm:grid-cols-2">
@@ -75,9 +86,16 @@ export function BeltPulleyCalculator() {
                 </div>
               </div>
               <ToolkitInfo title="Teknik Değerlendirme" text={activeTab === "speed" ? "Kayış hızı ön değerlendirmesi, kasnak çevresel hızı ve güç aktarımı açısından ön fikir verir." : "Kasnak çapı ve oran ilişkisi çıkış devrini doğrudan belirler. Merkez mesafesi verilirse yaklaşık kayış boyu hesaplanır."} />
-              <ToolkitLead title="Projenize Uygun Kayış-Kasnak Çözümü mü Arıyorsunuz?" text="Oran, kayış boyu ve hız değerlendirmeleri için teknik destek veya özel tasarım konusunda bizimle iletişime geçin." />
+            </div>
+            <div className="order-3 space-y-6 xl:col-start-1">
+              <ToolkitInfo title="Nasıl Kullanılır?" text="1. Gerekli seçim ve girişleri doldurun. 2. Seçenekli alanları dropdown üzerinden belirleyin. 3. Sonuç kartlarını ve teknik değerlendirmeyi kontrol edin. 4. Gerekirse teknik destek için özet değerlerle iletişime geçin." />
+              <ToolkitInfo title="Teknik Bilgi" text="Kayış-kasnak oran hesabında döndüren ve döndürülen kasnak çapları ile giriş devri birlikte değerlendirilir. Merkez mesafesi girildiğinde yaklaşık kayış boyu ön boyutlandırma için otomatik oluşur." />
             </div>
           </div>
+          <div className="mt-6">
+            <ToolkitLead title="Projenize Uygun Kayış-Kasnak Çözümü mü Arıyorsunuz?" text="Oran, kayış boyu ve hız değerlendirmeleri için teknik destek veya özel tasarım konusunda bizimle iletişime geçin." />
+          </div>
+          </>
         ) : (
           <div className="mt-6 grid gap-6 lg:grid-cols-2">
             <ToolkitInfo title="Kayış-kasnak oran hesabı ne işe yarar?" text="Kayış-kasnak oran hesabı, kasnak çapları ve giriş devrine göre çıkış devrini, kayış hızını ve yaklaşık kayış boyunu ön boyutlandırma mantığıyla gösterir." />

@@ -1,7 +1,7 @@
 "use client";
 
 import { useId, useMemo, useRef, useState, type KeyboardEvent as ReactKeyboardEvent } from "react";
-import { ToolkitInfo, ToolkitInput, ToolkitLead, ToolkitResult, ToolkitSelect } from "./technical-toolkit";
+import { ToolkitInfo, ToolkitInput, ToolkitLead, ToolkitReadonly, ToolkitResult, ToolkitSelect } from "./technical-toolkit";
 
 type TabKey = "torque" | "conveyor" | "gearbox" | "reference";
 const TABS = [
@@ -52,10 +52,13 @@ export function MotorPowerCalculator() {
           </div>
         </div>
         {activeTab !== "reference" ? (
+          <>
           <div className="mt-6 grid gap-6 xl:grid-cols-[1.02fr_0.98fr]">
-            <div className="space-y-6">
+            <div className="order-1 space-y-6 xl:col-start-1">
               <div className="rounded-3xl border border-blue-100 bg-white p-6 shadow-[0_18px_50px_rgba(15,23,42,0.06)]">
-                <h2 className="text-2xl font-semibold text-slate-950">Müşteri Girişleri</h2>
+                <h2 className="text-2xl font-semibold text-slate-950">Müşteri Seçimi</h2>
+                <p className="mt-3 text-sm leading-7 text-slate-600">Bu bölümde gerekli tüm seçim ve girişleri tek seferde doldurun.</p>
+                <p className="mt-2 text-xs font-medium text-slate-500">Lütfen gerekli alanları doldurun. Sonuçlar ve standart veriler otomatik güncellenecektir.</p>
                 <div className="mt-6 grid gap-5 md:grid-cols-2">
                   <ToolkitInput label="Tork" value={torque} onChange={setTorque} unit="N·m" helperText="Bu alanı siz doldurun" limitText="0’dan büyük olmalıdır" tip="Güç hesabında kullanılan tork değeridir." tipId="motor-torque" openTip={openTip} setOpenTip={setOpenTip} />
                   <ToolkitInput label="Devir" value={rpm} onChange={setRpm} unit="dev/dk" helperText="Bu alanı siz doldurun" limitText="0’dan büyük olmalıdır" tip="Dakikadaki dönüş sayısıdır." tipId="motor-rpm" openTip={openTip} setOpenTip={setOpenTip} />
@@ -69,8 +72,16 @@ export function MotorPowerCalculator() {
                   </> : null}
                 </div>
               </div>
+              <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-[0_18px_50px_rgba(15,23,42,0.05)]">
+                <h2 className="text-xl font-semibold text-slate-950">Standarttan Otomatik Gelen Alanlar</h2>
+                <p className="mt-3 text-sm leading-7 text-slate-600">Bu bölümdeki değerler seçiminize ve standarda göre otomatik oluşturulur.</p>
+                <div className="mt-5 grid gap-4 sm:grid-cols-2">
+                  <ToolkitReadonly label="Güç Formülü" value="P(kW) = (T × n) / 9550" />
+                  <ToolkitReadonly label="Aktif Hesap Türü" value={TABS.find((tab) => tab.key === activeTab)?.label ?? "Tork / Devir / Güç"} />
+                </div>
+              </div>
             </div>
-            <div className="space-y-6">
+            <div className="order-2 space-y-6 xl:col-start-2">
               <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-[0_18px_50px_rgba(15,23,42,0.06)]">
                 <h2 className="text-2xl font-semibold text-slate-950">Sonuçlar</h2>
                 <div className="mt-6 grid gap-4 sm:grid-cols-2">
@@ -81,9 +92,16 @@ export function MotorPowerCalculator() {
                 </div>
               </div>
               <ToolkitInfo title="Teknik Değerlendirme" text={activeTab === "conveyor" ? `${materialType} için kapasite, eğim ve hat hızı dikkate alınarak konveyör motor gücü ön hesabı üretildi.` : "P(kW) = (T × n) / 9550 bağıntısı esas alınarak servis faktörü ve verim ile düzeltilmiş sonuç verildi."} />
-              <ToolkitLead title="Projenize Uygun Motor Gücü Hesabı mı Arıyorsunuz?" text="Motor gücü, redüktör çıkışı ve konveyör tahrik ihtiyacı için özel teknik destek konusunda bizimle iletişime geçin." />
+            </div>
+            <div className="order-3 space-y-6 xl:col-start-1">
+              <ToolkitInfo title="Nasıl Kullanılır?" text="1. Tork, devir, verim ve servis faktörünü girin. 2. Konveyör hesabında ek kapasite ve eğim alanlarını doldurun. 3. Otomatik gelen formül kartını referans alın. 4. Sonuçlar ve teknik değerlendirme ile ön gücü doğrulayın." />
+              <ToolkitInfo title="Teknik Bilgi" text="Motor gücü ön hesabı; tork, devir, verim ve servis faktörü üzerinden temel ve düzeltilmiş güç ihtiyacını ön değerlendirme olarak üretir. Konveyör ve redüktör senaryolarında ek yorumlar otomatik oluşur." />
             </div>
           </div>
+          <div className="mt-6">
+            <ToolkitLead title="Projenize Uygun Motor Gücü Hesabı mı Arıyorsunuz?" text="Motor gücü, redüktör çıkışı ve konveyör tahrik ihtiyacı için özel teknik destek konusunda bizimle iletişime geçin." />
+          </div>
+          </>
         ) : (
           <div className="mt-6 grid gap-6 lg:grid-cols-2">
             <ToolkitInfo title="Motor gücü ön hesabı ne işe yarar?" text="Motor gücü ön hesabı, tork, devir, servis faktörü ve verim bilgilerine göre gerekli motor gücünü hızlıca tahmin etmeyi sağlar." />

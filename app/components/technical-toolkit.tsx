@@ -131,7 +131,7 @@ export function ToolkitInput({
       openTip={openTip}
       setOpenTip={setOpenTip}
     >
-      <div className={`flex items-center rounded-2xl border px-4 py-3 transition ${error ? "border-rose-300 bg-rose-50" : "border-blue-100 bg-blue-50 focus-within:border-blue-300 focus-within:bg-white"}`}>
+      <div className={`customer-field user-field input-user user-input flex items-center rounded-2xl border px-4 py-3 shadow-sm transition ${error ? "border-rose-300 bg-rose-50" : "border-slate-300 bg-white hover:border-blue-300 focus-within:border-blue-500 focus-within:bg-blue-50/30 focus-within:shadow-[0_0_0_4px_rgba(59,130,246,0.08)]"}`}>
         <input
           inputMode="decimal"
           value={value}
@@ -180,7 +180,7 @@ export function ToolkitSelect({
       <select
         value={value}
         onChange={(event) => onChange(event.target.value)}
-        className="rounded-2xl border border-blue-100 bg-blue-50 px-4 py-3 text-slate-900 outline-none transition focus:border-blue-300 focus:bg-white"
+        className="select-user user-field user-select rounded-2xl border border-slate-300 bg-white px-4 py-3 text-slate-900 shadow-sm outline-none transition hover:border-blue-300 focus:border-blue-500 focus:bg-blue-50/30 focus:shadow-[0_0_0_4px_rgba(59,130,246,0.08)]"
       >
         <option value="">Seçiniz</option>
         {options.map((option) => (
@@ -206,7 +206,7 @@ export function ToolkitReadonly({
     <div className="grid gap-2">
       <span className="text-sm font-medium text-slate-700">{label}</span>
       <span className="text-xs leading-5 text-slate-500">{helperText}</span>
-      <div className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm font-medium text-slate-700">
+      <div className="readonly-field auto-field rounded-2xl border border-slate-200 bg-slate-50/90 px-4 py-3 text-sm font-medium text-slate-700">
         {value}
       </div>
     </div>
