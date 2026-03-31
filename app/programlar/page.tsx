@@ -1,4 +1,4 @@
-﻿import Link from "next/link";
+import Link from "next/link";
 import { ProgramPageHero } from "../components/program-page-hero";
 
 type ToolItem = {
@@ -16,99 +16,99 @@ type CategoryItem = {
 const categories: CategoryItem[] = [
   {
     id: "guc-aktarim-hesaplari",
-    title: "GÃƒÂ¼ÃƒÂ§ AktarÃ„Â±m HesaplarÃ„Â±",
+    title: "Güç Aktarım Hesapları",
     description:
-      "DiÃ…Å¸li, zincir, kayÃ„Â±Ã…Å¸-kasnak, kaplin ve motor aktarÃ„Â±m hesaplarÃ„Â±nÃ„Â± tek yerde toplayÃ„Â±n.",
+      "Dişli, zincir, kayış-kasnak, kaplin ve motor aktarım hesaplarını tek yerde toplayın.",
     tools: [
       { slug: "helezon-kapasite-ve-mekanik-secim-programi", title: "Helezon (Screw Conveyor) Kapasite ve Mekanik Seçim Programı" },
-      { slug: "elevator-kapasite-ve-secim-programi", title: "Elevatör Kapasite ve Seçim Programi" },
-      { slug: "konveyor-kapasite-ve-secim-hesap-programi", title: "Konveyör Kapasite ve Seçim Hesap Programi" },
-      { slug: "zincir-disli-hesabi", title: "Zincir ve DiÃ…Å¸li HesaplarÃ„Â±" },
-      { slug: "duz-helis-disli-hesabi", title: "DÃƒÂ¼z / Helis DiÃ…Å¸li HesabÃ„Â±" },
-      { slug: "ic-planet-disli-hesabi", title: "DÃƒÂ¼z-Helis Ã„Â°ÃƒÂ§ (Planet) DiÃ…Å¸li HesabÃ„Â±" },
-      { slug: "duz-helis-konik-disli-hesabi", title: "DÃƒÂ¼z Helis Konik DiÃ…Å¸li HesabÃ„Â±" },
-      { slug: "kremayer-disli-hesabi", title: "Kremayer DiÃ…Å¸li HesabÃ„Â±" },
-      { slug: "kayis-kasnak-oran-hesabi", title: "KayÃ„Â±Ã…Å¸-Kasnak Oran HesabÃ„Â±" },
-      { slug: "motor-gucu-on-hesabi", title: "Motor GÃƒÂ¼cÃƒÂ¼ Ãƒâ€“n HesabÃ„Â±" },
+      { slug: "elevator-kapasite-ve-secim-programi", title: "Elevatör Kapasite ve Seçim Programı" },
+      { slug: "konveyor-kapasite-ve-secim-hesap-programi", title: "Konveyör Kapasite ve Seçim Hesap Programı" },
+      { slug: "zincir-disli-hesabi", title: "Zincir ve Dişli Hesapları" },
+      { slug: "duz-helis-disli-hesabi", title: "Düz / Helis Dişli Hesabı" },
+      { slug: "ic-planet-disli-hesabi", title: "Düz-Helis İç (Planet) Dişli Hesabı" },
+      { slug: "duz-helis-konik-disli-hesabi", title: "Düz Helis Konik Dişli Hesabı" },
+      { slug: "kremayer-disli-hesabi", title: "Kremayer Dişli Hesabı" },
+      { slug: "kayis-kasnak-oran-hesabi", title: "Kayış-Kasnak Oran Hesabı" },
+      { slug: "motor-gucu-on-hesabi", title: "Motor Gücü Ön Hesabı" },
     ],
   },
   {
     id: "mil-kaplin-ve-baglanti-hesaplari",
-    title: "Mil, Kaplin ve BaÃ„Å¸lantÃ„Â± HesaplarÃ„Â±",
+    title: "Mil, Kaplin ve Bağlantı Hesapları",
     description:
-      "Mil ÃƒÂ§apÃ„Â±, kaplin seÃƒÂ§imi, kama baÃ„Å¸lantÃ„Â±sÃ„Â± ve gÃƒÂ¶bek uyumluluÃ„Å¸u iÃƒÂ§in ÃƒÂ¶n mÃƒÂ¼hendislik araÃƒÂ§larÃ„Â±nÃ„Â± birlikte kullanÃ„Â±n.",
+      "Mil çapı, kaplin seçimi, kama bağlantısı ve göbek uyumluluğu için ön mühendislik araçlarını birlikte kullanın.",
     tools: [
       { slug: "helezon-kapasite-ve-mekanik-secim-programi", title: "Helezon (Screw Conveyor) Kapasite ve Mekanik Seçim Programı" },
-      { slug: "elevator-kapasite-ve-secim-programi", title: "Elevatör Kapasite ve Seçim Programi" },
-      { slug: "konveyor-kapasite-ve-secim-hesap-programi", title: "Konveyör Kapasite ve Seçim Hesap Programi" },
-      { slug: "mil-capi-hesabi", title: "Mil Ãƒâ€¡apÃ„Â± HesabÃ„Â±" },
-      { slug: "kaplin-secimi-on-hesabi", title: "Kaplin SeÃƒÂ§imi Ãƒâ€“n HesabÃ„Â±" },
-      { slug: "kama-kanali-acim-olculeri", title: "Kama KanalÃ„Â± AÃƒÂ§Ã„Â±m Ãƒâ€“lÃƒÂ§ÃƒÂ¼leri" },
-      { slug: "segman-ve-kanal-olculeri", title: "Segman ve Kanal Ãƒâ€“lÃƒÂ§ÃƒÂ¼leri" },
+      { slug: "elevator-kapasite-ve-secim-programi", title: "Elevatör Kapasite ve Seçim Programı" },
+      { slug: "konveyor-kapasite-ve-secim-hesap-programi", title: "Konveyör Kapasite ve Seçim Hesap Programı" },
+      { slug: "mil-capi-hesabi", title: "Mil Çapı Hesabı" },
+      { slug: "kaplin-secimi-on-hesabi", title: "Kaplin Seçimi Ön Hesabı" },
+      { slug: "kama-kanali-acim-olculeri", title: "Kama Kanalı Açım Ölçüleri" },
+      { slug: "segman-ve-kanal-olculeri", title: "Segman ve Kanal Ölçüleri" },
     ],
   },
   {
     id: "talasli-imalat-hesaplari",
-    title: "TalaÃ…Å¸lÃ„Â± Ã„Â°malat HesaplarÃ„Â±",
+    title: "Talaşlı İmalat Hesapları",
     description:
-      "Vida aÃƒÂ§Ã„Â±m, kÃ„Â±lavuz delik, kesme hÃ„Â±zÃ„Â±, devir ve freze-torna ÃƒÂ¶n hesaplarÃ„Â± iÃƒÂ§in ÃƒÂ§ok kullanÃ„Â±lan yardÃ„Â±mcÃ„Â± araÃƒÂ§larÃ„Â± tek yerde toplayÃ„Â±n.",
+      "Vida açım, kılavuz delik, kesme hızı, devir ve freze-torna ön hesaplarını tek yerde kullanın.",
     tools: [
       { slug: "helezon-kapasite-ve-mekanik-secim-programi", title: "Helezon (Screw Conveyor) Kapasite ve Mekanik Seçim Programı" },
-      { slug: "elevator-kapasite-ve-secim-programi", title: "Elevatör Kapasite ve Seçim Programi" },
-      { slug: "konveyor-kapasite-ve-secim-hesap-programi", title: "Konveyör Kapasite ve Seçim Hesap Programi" },
-      { slug: "vida-acim-olculeri", title: "Vida AÃƒÂ§Ã„Â±m Ãƒâ€“lÃƒÂ§ÃƒÂ¼leri" },
-      { slug: "talasli-imalat-hesaplari", title: "KÃ„Â±lavuz Delik HesabÃ„Â±" },
-      { slug: "talasli-imalat-hesaplari", title: "Kesme HÃ„Â±zÃ„Â± / Devir HesabÃ„Â±" },
-      { slug: "talasli-imalat-hesaplari", title: "Freze / Torna Ãƒâ€“n HesaplarÃ„Â±" },
+      { slug: "elevator-kapasite-ve-secim-programi", title: "Elevatör Kapasite ve Seçim Programı" },
+      { slug: "konveyor-kapasite-ve-secim-hesap-programi", title: "Konveyör Kapasite ve Seçim Hesap Programı" },
+      { slug: "vida-acim-olculeri", title: "Vida Açım Ölçüleri" },
+      { slug: "talasli-imalat-hesaplari", title: "Kılavuz Delik Hesabı" },
+      { slug: "talasli-imalat-hesaplari", title: "Kesme Hızı / Devir Hesabı" },
+      { slug: "talasli-imalat-hesaplari", title: "Freze / Torna Ön Hesapları" },
     ],
   },
   {
     id: "sac-kaynak-ve-imalat-hesaplari",
-    title: "Sac, Kaynak ve Ã„Â°malat HesaplarÃ„Â±",
+    title: "Sac, Kaynak ve İmalat Hesapları",
     description:
-      "Sac, profil, boru, bÃƒÂ¼kÃƒÂ¼m ve kaynak ÃƒÂ¶n hesaplarÃ„Â±nÃ„Â± aynÃ„Â± sade ve premium imalat ÃƒÂ§atÃ„Â±sÃ„Â± altÃ„Â±nda kullanÃ„Â±n.",
+      "Sac, profil, boru, büküm ve kaynak ön hesaplarını aynı sade ve premium imalat çatısı altında kullanın.",
     tools: [
       { slug: "helezon-kapasite-ve-mekanik-secim-programi", title: "Helezon (Screw Conveyor) Kapasite ve Mekanik Seçim Programı" },
-      { slug: "elevator-kapasite-ve-secim-programi", title: "Elevatör Kapasite ve Seçim Programi" },
-      { slug: "konveyor-kapasite-ve-secim-hesap-programi", title: "Konveyör Kapasite ve Seçim Hesap Programi" },
-      { slug: "malzeme-agirlik-hesabi", title: "Sac AÃ„Å¸Ã„Â±rlÃ„Â±k HesabÃ„Â±" },
-      { slug: "malzeme-agirlik-hesabi", title: "Profil / Boru AÃ„Å¸Ã„Â±rlÃ„Â±k HesabÃ„Â±" },
-      { slug: "sac-kaynak-hesaplari", title: "BÃƒÂ¼kÃƒÂ¼m AÃƒÂ§Ã„Â±lÃ„Â±m Boyu" },
-      { slug: "sac-kaynak-hesaplari", title: "Abkant Tonaj HesabÃ„Â±" },
-      { slug: "sac-kaynak-hesaplari", title: "Kaynak MetrajÃ„Â± ve Dolgu HesabÃ„Â±" },
+      { slug: "elevator-kapasite-ve-secim-programi", title: "Elevatör Kapasite ve Seçim Programı" },
+      { slug: "konveyor-kapasite-ve-secim-hesap-programi", title: "Konveyör Kapasite ve Seçim Hesap Programı" },
+      { slug: "malzeme-agirlik-hesabi", title: "Sac Ağırlık Hesabı" },
+      { slug: "malzeme-agirlik-hesabi", title: "Profil / Boru Ağırlık Hesabı" },
+      { slug: "sac-kaynak-hesaplari", title: "Büküm Açılım Boyu" },
+      { slug: "sac-kaynak-hesaplari", title: "Abkant Tonaj Hesabı" },
+      { slug: "sac-kaynak-hesaplari", title: "Kaynak Metrajı ve Dolgu Hesabı" },
     ],
   },
   {
     id: "tolerans-gecme-ve-kanal-hesaplari",
-    title: "Tolerans, GeÃƒÂ§me ve Kanal HesaplarÃ„Â±",
+    title: "Tolerans, Geçme ve Kanal Hesapları",
     description:
-      "ISO geÃƒÂ§me, kama kanalÃ„Â± ve segman-kanal verilerini standart tabanlÃ„Â± olarak aynÃ„Â± premium sistem altÃ„Â±nda inceleyin.",
+      "ISO geçme, kama kanalı ve segman-kanal verilerini standart tabanlı olarak aynı premium sistem altında inceleyin.",
     tools: [
       { slug: "helezon-kapasite-ve-mekanik-secim-programi", title: "Helezon (Screw Conveyor) Kapasite ve Mekanik Seçim Programı" },
-      { slug: "elevator-kapasite-ve-secim-programi", title: "Elevatör Kapasite ve Seçim Programi" },
-      { slug: "konveyor-kapasite-ve-secim-hesap-programi", title: "Konveyör Kapasite ve Seçim Hesap Programi" },
-      { slug: "iso-gecme-toleranslari", title: "ISO GeÃƒÂ§me ToleranslarÃ„Â±" },
-      { slug: "kama-kanali-acim-olculeri", title: "Kama KanalÃ„Â± AÃƒÂ§Ã„Â±m Ãƒâ€“lÃƒÂ§ÃƒÂ¼leri" },
-      { slug: "segman-ve-kanal-olculeri", title: "Segman ve Kanal Ãƒâ€“lÃƒÂ§ÃƒÂ¼leri" },
+      { slug: "elevator-kapasite-ve-secim-programi", title: "Elevatör Kapasite ve Seçim Programı" },
+      { slug: "konveyor-kapasite-ve-secim-hesap-programi", title: "Konveyör Kapasite ve Seçim Hesap Programı" },
+      { slug: "iso-gecme-toleranslari", title: "ISO Geçme Toleransları" },
+      { slug: "kama-kanali-acim-olculeri", title: "Kama Kanalı Açım Ölçüleri" },
+      { slug: "segman-ve-kanal-olculeri", title: "Segman ve Kanal Ölçüleri" },
     ],
   },
   {
     id: "donusum-araclari",
-    title: "DÃƒÂ¶nÃƒÂ¼Ã…Å¸ÃƒÂ¼m AraÃƒÂ§larÃ„Â±",
+    title: "Dönüşüm Araçları",
     description:
-      "Teknik dÃƒÂ¶nÃƒÂ¼Ã…Å¸ÃƒÂ¼m araÃƒÂ§larÃ„Â± ile birim, gÃƒÂ¼ÃƒÂ§, tork, basÃ„Â±nÃƒÂ§, sÃ„Â±caklÃ„Â±k ve yoÃ„Å¸unluk-hacim-aÃ„Å¸Ã„Â±rlÃ„Â±k dÃƒÂ¶nÃƒÂ¼Ã…Å¸ÃƒÂ¼mlerini tek ekranda kullanÃ„Â±n.",
+      "Teknik dönüşüm araçları ile birim, güç, tork, basınç, sıcaklık ve yoğunluk-hacim-ağırlık dönüşümlerini tek ekranda kullanın.",
     tools: [
       { slug: "helezon-kapasite-ve-mekanik-secim-programi", title: "Helezon (Screw Conveyor) Kapasite ve Mekanik Seçim Programı" },
-      { slug: "elevator-kapasite-ve-secim-programi", title: "Elevatör Kapasite ve Seçim Programi" },
-      { slug: "konveyor-kapasite-ve-secim-hesap-programi", title: "Konveyör Kapasite ve Seçim Hesap Programi" },
+      { slug: "elevator-kapasite-ve-secim-programi", title: "Elevatör Kapasite ve Seçim Programı" },
+      { slug: "konveyor-kapasite-ve-secim-hesap-programi", title: "Konveyör Kapasite ve Seçim Hesap Programı" },
       { slug: "donusum-araclari", title: "mm / inch" },
       { slug: "donusum-araclari", title: "kW / HP" },
-      { slug: "donusum-araclari", title: "NÃ‚Â·m / kgfÃ‚Â·m" },
-      { slug: "donusum-araclari", title: "dev/dk Ã¢â‚¬â€œ m/s" },
-      { slug: "donusum-araclari", title: "YoÃ„Å¸unluk Ã¢â‚¬â€œ Hacim Ã¢â‚¬â€œ AÃ„Å¸Ã„Â±rlÃ„Â±k" },
+      { slug: "donusum-araclari", title: "N·m / kgf·m" },
+      { slug: "donusum-araclari", title: "dev/dk – m/s" },
+      { slug: "donusum-araclari", title: "Yoğunluk – Hacim – Ağırlık" },
       { slug: "donusum-araclari", title: "bar / psi" },
-      { slug: "donusum-araclari", title: "SÃ„Â±caklÃ„Â±k" },
-      { slug: "donusum-araclari", title: "AÃƒÂ§Ã„Â± DÃƒÂ¶nÃƒÂ¼Ã…Å¸ÃƒÂ¼mÃƒÂ¼" },
+      { slug: "donusum-araclari", title: "Sıcaklık" },
+      { slug: "donusum-araclari", title: "Açı Dönüşümü" },
     ],
   },
 ];
@@ -142,7 +142,7 @@ function CategoryCard({ category }: { category: CategoryItem }) {
           href={`#${category.id}`}
           className="inline-flex items-center text-sm font-semibold text-slate-900 transition hover:text-blue-700"
         >
-          AraÃƒÂ§larÃ„Â± GÃƒÂ¶r
+          Araçları Gör
         </a>
       </div>
     </article>
@@ -154,7 +154,7 @@ export default function ProgramsPage() {
     <main className="min-h-screen bg-white text-slate-900">
       <ProgramPageHero
         title="Programlar"
-        description="Makine imalat hesap programlarÃ„Â±, diÃ…Å¸li hesaplama araÃƒÂ§larÃ„Â±, mil ÃƒÂ§apÃ„Â± hesabÃ„Â±, kayÃ„Â±Ã…Å¸ kasnak oran hesabÃ„Â±, motor gÃƒÂ¼cÃƒÂ¼ hesabÃ„Â±, kaplin seÃƒÂ§imi, sac ve kaynak hesaplarÃ„Â±, talaÃ…Å¸lÃ„Â± imalat hesaplarÃ„Â± ve teknik dÃƒÂ¶nÃƒÂ¼Ã…Å¸ÃƒÂ¼m araÃƒÂ§larÃ„Â±nÃ„Â± tek sistem altÃ„Â±nda kullanÃ„Â±n."
+        description="Makine imalat hesap programları, dişli hesaplama araçları, mil çapı hesabı, kayış kasnak oran hesabı, motor gücü hesabı, kaplin seçimi, sac ve kaynak hesapları, talaşlı imalat hesapları ve teknik dönüşüm araçlarını tek sistem altında kullanın."
         showBackToPrograms={false}
       />
 
@@ -170,9 +170,3 @@ export default function ProgramsPage() {
     </main>
   );
 }
-
-
-
-
-
-

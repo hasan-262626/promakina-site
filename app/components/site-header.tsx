@@ -52,7 +52,7 @@ export function SiteHeader() {
   ];
 
   return (
-    <header className="sticky top-0 z-50 bg-white">
+    <header className="sticky top-0 z-[70] bg-white">
       <div className="border-b border-slate-200/80">
         <div className="site-container flex items-center justify-between gap-4 py-3 text-[12px] text-slate-700 sm:text-[13px]">
           <p className="truncate">Endüstriyel Tesis Çözümleri</p>
@@ -121,7 +121,7 @@ export function SiteHeader() {
                       {menuMachines.map((machine) => (
                         <Link
                           key={machine.slug}
-                          href={`/makinalar/${machine.slug}`}
+                          href={`/makinalar-ekipman/${machine.slug}`}
                           className="rounded-xl px-4 py-3 transition hover:bg-slate-50 hover:text-blue-700"
                         >
                           {trText(machine.title)}

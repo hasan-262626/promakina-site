@@ -9,6 +9,7 @@ function shouldHideGlobalCta(pathname: string) {
     pathname === "/iletisim" ||
     pathname.startsWith("/hizmetler/") ||
     pathname.startsWith("/makinalar/") ||
+    pathname.startsWith("/makinalar-ekipman/") ||
     pathname.startsWith("/projeler/") ||
     pathname.startsWith("/sektorler/") ||
     pathname.startsWith("/cozumler/")

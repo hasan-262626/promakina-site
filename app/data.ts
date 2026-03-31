@@ -81,7 +81,8 @@ export type LibraryCategory =
   | "PDF Kataloglar"
   | "Video Icerikler"
   | "Sik Sorulan Sorular"
-  | "Terimler Sozlugu";
+  | "Terimler Sozlugu"
+  | "Programlar";
 
 export type LibraryItem = {
   slug: string;
@@ -1238,6 +1239,10 @@ export const librarySections: { title: LibraryCategory; description: string }[] 
   {
     title: "Terimler Sozlugu",
     description: "Google icin yuksek potansiyelli, temel kavramlari aciklayan otorite sayfalari.",
+  },
+  {
+    title: "Programlar",
+    description: "Hesaplama araçlari, seçim programlari ve teknik yardimci ekranlari tek merkezde inceleyin.",
   },
 ];
 

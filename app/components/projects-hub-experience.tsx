@@ -1,5 +1,6 @@
-﻿"use client";
+"use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { Hero } from "./Hero";
 import { ToolkitLead } from "./technical-toolkit";
@@ -8,97 +9,109 @@ const projectCards = [
   {
     title: "Kompost Tesisi Projeleri",
     href: "/projeler/kompost-tesisi-projeleri",
-    eyebrow: "organik atÄ±k kompost tesisi",
-    description:
-      "Evsel atÄ±k, organik atÄ±k, hayvansal atÄ±k, arÄ±tma Ã§amuru ve digestat gibi farklÄ± organik fraksiyonlar iÃ§in kompostlaÅŸtÄ±rma, stabilizasyon, kurutma ve nihai Ã¼rÃ¼n hazÄ±rlama odaklÄ± tesis kurgularÄ±.",
-    bullets: ["Girdi karakterizasyonu", "Kompost proses tasarÄ±mÄ±", "Koku ve hijyenizasyon yÃ¶netimi"],
+    summary:
+      "Evsel, organik ve hayvansal atık akışları için kompostlaştırma, stabilizasyon ve nihai ürün hazırlama kurguları sunuyoruz.",
+    image: "/images/kompost1.jpg",
+    imageAlt: "Kompost tesisi projeleri",
   },
   {
-    title: "Organomineral GÃ¼bre Tesisi Projeleri",
+    title: "Organomineral Gübre Tesisi Projeleri",
     href: "/projeler/organomineral-gubre-tesisi-projeleri",
-    eyebrow: "organomineral gÃ¼bre tesisi",
-    description:
-      "GranÃ¼l, mikro granÃ¼l, toz ve sÄ±vÄ± organomineral gÃ¼bre Ã¼retiminde Ã¼rÃ¼n kalitesi, kapasite ve sÃ¼rdÃ¼rÃ¼lebilir iÅŸletme odaklÄ± proje Ã§Ã¶zÃ¼mleri.",
-    bullets: ["GranÃ¼lasyon ve kurutma", "Mikro granÃ¼l hatlarÄ±", "Paketleme ve son Ã¼rÃ¼n hazÄ±rlÄ±ÄŸÄ±"],
+    summary:
+      "Granül, mikro granül ve toz organomineral üretimi için proses, kapasite ve ürün kalitesi odaklı proje yapıları geliştiriyoruz.",
+    image: "/images/granul1.jpg",
+    imageAlt: "Organomineral gübre tesisi projeleri",
   },
   {
-    title: "Deri AtÄ±k Ä°ÅŸleme Tesisi Projeleri",
+    title: "Deri Atık İşleme Tesisi Projeleri",
     href: "/projeler/deri-atik-isleme-tesisi-projeleri",
-    eyebrow: "endÃ¼striyel atÄ±k iÅŸleme",
-    description:
-      "Deri endÃ¼strisi kaynaklÄ± atÄ±klarÄ±n parÃ§alama, ayrÄ±ÅŸtÄ±rma, taÅŸÄ±ma, hidroliz ve geri kazanÄ±m odaklÄ± iÅŸlenmesine uygun tesis kurgularÄ±.",
-    bullets: ["ParÃ§alama ve kÃ¼Ã§Ã¼ltme", "TaÅŸÄ±ma ve bunker altyapÄ±sÄ±", "Geri kazanÄ±m odaklÄ± proje yapÄ±sÄ±"],
+    summary:
+      "Deri kaynaklı atıkların parçalama, taşıma, ayrıştırma ve geri kazanım adımlarını kapsayan tesis çözümleri kurguluyoruz.",
+    image: "/images/geridonusum1.jpg",
+    imageAlt: "Deri atık işleme tesisi projeleri",
   },
   {
-    title: "Biyogaz ve AtÄ±k YÃ¶netimi Projeleri",
+    title: "Biyogaz ve Atık Yönetimi Projeleri",
     href: "/projeler/biyogaz-ve-atik-yonetimi-projeleri",
-    eyebrow: "biyogaz projesi",
-    description:
-      "Biyogaz besleme, organik madde hazÄ±rlama, digestat yÃ¶netimi, atÄ±k iÅŸleme ve yan Ã¼rÃ¼n deÄŸerlendirme odaklÄ± entegre proje yapÄ±larÄ±.",
-    bullets: ["Besleme ve Ã¶n iÅŸleme", "Digestat yÃ¶netimi", "Entegre atÄ±k yÃ¶netimi"],
+    summary:
+      "Biyogaz besleme, digestat yönetimi ve entegre organik atık işleme süreçleri için mühendislik odaklı proje çözümleri sunuyoruz.",
+    image: "/images/biogaz1.jpg",
+    imageAlt: "Biyogaz ve atık yönetimi projeleri",
   },
   {
-    title: "Ã–zel Proses ve Makine Ä°malatÄ± Projeleri",
+    title: "Özel Proses ve Makine İmalatı Projeleri",
     href: "/projeler/ozel-proses-ve-makine-imalati-projeleri",
-    eyebrow: "Ã¶zel endÃ¼striyel proje",
-    description:
-      "Sahaya Ã¶zel Ã¶lÃ§Ã¼, kapasite ve proses ihtiyacÄ±na gÃ¶re uyarlanmÄ±ÅŸ Ã¶zel makina, proses hattÄ± ve endÃ¼striyel sistem Ã§Ã¶zÃ¼mleri.",
-    bullets: ["Ã–zel makina tasarÄ±mÄ±", "Sahaya Ã¶zel entegrasyon", "Standart dÄ±ÅŸÄ± proses Ã§Ã¶zÃ¼mleri"],
+    summary:
+      "Sahaya özel kapasite, ölçü ve proses ihtiyacına göre şekillenen özel makina ve hat projeleri geliştiriyoruz.",
+    image: "/images/makinalar1.png",
+    imageAlt: "Özel proses ve makine imalatı projeleri",
   },
   {
-    title: "Mineral ve DÃ¶kme KatÄ± Ä°ÅŸleme Projeleri",
+    title: "Mineral ve Dökme Katı İşleme Projeleri",
     href: "/projeler/mineral-ve-dokme-kati-isleme-projeleri",
-    eyebrow: "mineral iÅŸleme projesi",
-    description:
-      "KÄ±rma, eleme, taÅŸÄ±ma, kurutma, sÄ±nÄ±flandÄ±rma ve stoklama sÃ¼reÃ§lerine uygun mineral ve dÃ¶kme katÄ± malzeme proje Ã§Ã¶zÃ¼mleri.",
-    bullets: ["KÄ±rma ve eleme", "Kurutma ve sÄ±nÄ±flandÄ±rma", "Stoklama ve transfer altyapÄ±sÄ±"],
+    summary:
+      "Kırma, eleme, taşıma, kurutma ve stoklama adımlarına uygun mineral ve dökme katı proses projeleri tasarlıyoruz.",
+    image: "/images/maden1.jpg",
+    imageAlt: "Mineral ve dökme katı işleme projeleri",
   },
-];
+] as const;
 
 export default function ProjectsHubExperience() {
   return (
-    <main className="min-h-screen bg-white text-slate-900">
+    <main className="min-h-screen overflow-x-hidden bg-white text-slate-900">
       <Hero
         title="Projeler"
         description="Projeler bölümünde farklı sektörler için geliştirdiğimiz tesis kurgularını, proses yaklaşımlarını ve teknik çözüm yapılarını bir arada sunuyoruz. Kompost, organomineral gübre, biyogaz, atık yönetimi ve özel proses uygulamalarına yönelik proje tiplerini inceleyebilirsiniz."
         image="/images/fabrika1.jpg"
       />
 
-      <section className="mx-auto max-w-7xl px-4 pt-10 pb-16 sm:px-6 sm:pt-12 lg:px-10 lg:pt-14">
-        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-          {projectCards.map((card) => (
-            <Link
-              key={card.title}
-              href={card.href}
-              className="flex h-full flex-col rounded-3xl border border-slate-200 bg-white p-7 shadow-sm transition hover:-translate-y-1 hover:border-blue-200 hover:shadow-[0_18px_45px_rgba(15,23,42,0.08)]"
-            >
-              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-blue-700">{card.eyebrow}</p>
-              <h2 className="mt-3 text-2xl font-semibold text-slate-950">{card.title}</h2>
-              <p className="mt-4 text-sm leading-7 text-slate-600">{card.description}</p>
-              <ul className="mt-5 space-y-2 text-sm leading-7 text-slate-600">
-                {card.bullets.map((item) => (
-                  <li key={item} className="flex gap-3">
-                    <span className="mt-2 h-1.5 w-1.5 rounded-full bg-blue-700" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-              <span className="mt-6 inline-flex items-center text-sm font-semibold text-blue-700">
-                Projeyi Ä°ncele
-              </span>
-            </Link>
-          ))}
+      <section
+        id="proje-basliklari"
+        className="section-space"
+      >
+        <div className="site-container">
+          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+            {projectCards.map((project) => (
+              <Link
+                key={project.href}
+                href={project.href}
+                className="group flex min-h-[240px] flex-col rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition duration-200 hover:-translate-y-1 hover:border-blue-200 hover:shadow-[0_20px_50px_rgba(15,23,42,0.08)] sm:p-7"
+              >
+                <div className="flex flex-1 items-start gap-4">
+                  <span className="relative mt-1 h-16 w-16 shrink-0 overflow-hidden rounded-2xl border border-slate-200 bg-slate-100 shadow-[0_8px_24px_rgba(15,23,42,0.08)]">
+                    <Image
+                      src={project.image}
+                      alt={project.imageAlt}
+                      fill
+                      sizes="64px"
+                      className="object-cover object-center"
+                    />
+                  </span>
+
+                  <div className="flex min-w-0 flex-1 flex-col">
+                    <h2 className="text-2xl font-semibold tracking-tight text-slate-950">
+                      {project.title}
+                    </h2>
+                    <p className="mt-3 flex-1 leading-7 text-slate-600">
+                      {project.summary}
+                    </p>
+                    <span className="mt-5 inline-flex items-center text-sm font-semibold text-blue-700 transition group-hover:text-blue-800">
+                      Projeyi İncele
+                    </span>
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-10">
+      <section className="site-container pb-20">
         <ToolkitLead
-          title="Projeniz iÃ§in teknik gÃ¶rÃ¼ÅŸme veya teklif talep edin"
-          text="Kompost tesisi, organomineral gÃ¼bre tesisi, biyogaz, atÄ±k yÃ¶netimi veya Ã¶zel proses projeniz iÃ§in teknik yaklaÅŸÄ±mÄ± birlikte netleÅŸtirelim."
+          title="Projeniz için teknik görüşme veya teklif talep edin"
+          text="Kompost tesisi, organomineral gübre tesisi, biyogaz, atık yönetimi veya özel proses projeniz için teknik yaklaşımı birlikte netleştirelim."
         />
       </section>
     </main>
   );
 }
-
-
