@@ -27,6 +27,6 @@ export const homeMachineGroupCards: HomeMachineGroupCard[] = machineCategoryPage
   seoNote: category.seoNote,
   buttonLabel: "Kategoriyi İncele",
   href: `/makinalar-ekipman/${category.slug}`,
-  image: category.heroImage,
+  image: category.cardImage ?? category.heroImage,
   alt: category.title,
 }));

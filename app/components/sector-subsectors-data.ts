@@ -29,13 +29,13 @@ const sectorImageMap = new Map(
 export const sectorCards: SectorCardItem[] = [
   {
     slug: "gubre-ve-granulasyon-tesisleri",
-    title: "Gübre ve Granülasyon Tesisleri",
+    title: "Gübre Üretim Tesisleri",
     summary:
-      "Sıvı, granül ve toz gübre üretim tesisleri için proses, ekipman ve anahtar teslim çözüm seçenekleri sunuyoruz.",
+      "Sıvı, toz ve granül gübre üretim tesisleri için proses tasarımı, ekipman seçimi, makine imalatı ve anahtar teslim çözüm seçenekleri sunuyoruz.",
     image: sectorImageMap.get("gubre-ve-granulasyon-tesisleri")?.image ?? "/images/granul1.jpg",
     alt:
       sectorImageMap.get("gubre-ve-granulasyon-tesisleri")?.alt ??
-      "Gübre ve granülasyon tesisleri için granül gübre görseli",
+      "Gübre üretim tesisleri için granül gübre görseli",
     subLinks: [
       {
         slug: "sivi-organomineral",

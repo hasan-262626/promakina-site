@@ -14,7 +14,9 @@ type CalculatorFamily =
   | "screening"
   | "dust"
   | "packaging"
-  | "storage";
+  | "storage"
+  | "auxiliary"
+  | "dosage";
 
 type ProductDetailSystemProps = {
   categoryLabel: string;
@@ -166,6 +168,20 @@ const calculatorFields: Record<CalculatorFamily, FieldConfig[]> = {
     { key: "feedType", label: "Besleme tipi", type: "select", options: ["Silo", "Bunker", "Vidalı besleyici", "Rotary valf", "Sürgülü klape"] },
     { key: "notes", label: "Notlar", type: "textarea", placeholder: "Akış ve saha notları" },
   ],
+  auxiliary: [
+    { key: "material", label: "Ürün tipi", type: "select", options: materialOptions },
+    { key: "capacity", label: "Kapasite / akış ihtiyacı", placeholder: "20 ton/saat" },
+    { key: "lineLength", label: "Hat / boşaltma mesafesi", placeholder: "12 m" },
+    { key: "feedType", label: "Uygulama tipi", type: "select", options: ["Silobas yükleme", "Hat yönlendirme", "Akış kontrolü", "Boşaltma kontrolü"] },
+    { key: "notes", label: "Notlar", type: "textarea", placeholder: "Saha ve ürün akışı notları" },
+  ],
+  dosage: [
+    { key: "material", label: "Ürün tipi", type: "select", options: materialOptions },
+    { key: "capacity", label: "Kapasite / reçete ihtiyacı", placeholder: "12 ton/saat" },
+    { key: "bulkDensity", label: "Yoğunluk (kg/m³)", type: "number", placeholder: "950" },
+    { key: "feedType", label: "Dozaj tipi", type: "select", options: ["Mikro dozajlama", "Makro dozajlama", "Dozaj bant kantarı"] },
+    { key: "notes", label: "Notlar", type: "textarea", placeholder: "Reçete, hammadde ve proses notları" },
+  ],
 };
 
 const familyLabels: Record<CalculatorFamily, string> = {
@@ -177,6 +193,8 @@ const familyLabels: Record<CalculatorFamily, string> = {
   dust: "toz toplama sistemi",
   packaging: "paketleme sistemi",
   storage: "depolama / besleme sistemi",
+  auxiliary: "yardımcı ekipman / akış sistemi",
+  dosage: "dozajlama sistemi",
 };
 
 function DetailListCard({ title, items }: { title: string; items: string[] }) {

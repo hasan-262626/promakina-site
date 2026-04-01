@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { trText } from "../lib/tr-text";
-import { machineGroups, sectors, services } from "../data";
+import { sectors, services } from "../data";
+import { machineCategoryPages } from "./machine-group-data";
 
 export function SiteHeader() {
   const menuServices = services.filter((service) =>
@@ -15,7 +16,7 @@ export function SiteHeader() {
     ].includes(service.slug),
   );
 
-  const menuMachines = machineGroups.filter((machine) =>
+  const menuMachines = machineCategoryPages.filter((machine) =>
     [
       "tambur-sistemleri",
       "tasima-ekipmanlari",
@@ -25,6 +26,8 @@ export function SiteHeader() {
       "toz-toplama-sistemleri",
       "paketleme-ve-dolum-sistemleri",
       "depolama-ve-besleme-sistemleri",
+      "yardimci-ekipmanlar-ve-akis-sistemleri",
+      "dozajlama-sistemleri",
     ].includes(machine.slug),
   );
 
@@ -116,7 +119,7 @@ export function SiteHeader() {
                   >
                     Makinalar & Ekipman
                   </Link>
-                  <div className="invisible absolute left-1/2 top-full z-50 mt-4 w-[320px] -translate-x-1/2 rounded-2xl border border-slate-200 bg-white p-3 opacity-0 shadow-xl transition-all duration-200 group-hover:visible group-hover:opacity-100">
+                  <div className="invisible absolute left-1/2 top-full z-50 mt-4 max-h-[70vh] w-[320px] -translate-x-1/2 overflow-y-auto rounded-2xl border border-slate-200 bg-white p-3 opacity-0 shadow-xl transition-all duration-200 group-hover:visible group-hover:opacity-100">
                     <div className="grid gap-1 text-[15px] text-slate-700">
                       {menuMachines.map((machine) => (
                         <Link
