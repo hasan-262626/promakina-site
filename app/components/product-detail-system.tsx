@@ -461,7 +461,15 @@ export function ProductDetailSystem({
               <span className="px-2 text-white/40">/</span>
               <span className="text-white">{title}</span>
             </nav>
-            <h1 className="mt-4 text-4xl font-semibold tracking-tight md:text-5xl">{title}</h1>
+            <div className="mt-4 flex flex-wrap items-center gap-3">
+              <Link
+                href={categoryHref}
+                className="inline-flex min-h-[40px] items-center justify-center rounded-full border border-white/18 bg-white/10 px-4 text-sm font-semibold text-white backdrop-blur transition hover:bg-white/15"
+              >
+                ← Geri
+              </Link>
+              <h1 className="text-4xl font-semibold tracking-tight md:text-5xl">{title}</h1>
+            </div>
             <p className="mt-4 max-w-2xl text-sm leading-7 text-white/82 sm:text-base sm:leading-8">{heroDescription}</p>
             <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <button type="button" onClick={() => setIsCalculatorOpen(true)} className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-blue-600 px-6 text-sm font-semibold text-white transition hover:bg-blue-500">
@@ -481,7 +489,15 @@ export function ProductDetailSystem({
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
           <div className="rounded-[24px] border border-slate-200/90 bg-white shadow-[0_16px_40px_rgba(15,23,42,0.12)] supports-[backdrop-filter]:bg-white/96 supports-[backdrop-filter]:backdrop-blur-md">
             <div className="product-sticky-inner px-4 pb-4 pt-4 sm:px-5 lg:px-6">
-              <div className="product-sticky-title relative z-[1] border-b border-slate-200/80 pb-3 text-left text-base font-semibold tracking-tight text-slate-950 sm:text-lg">{title}</div>
+              <div className="product-sticky-title relative z-[1] flex items-center gap-3 border-b border-slate-200/80 pb-3 text-left text-base font-semibold tracking-tight text-slate-950 sm:text-lg">
+                <Link
+                  href={categoryHref}
+                  className="inline-flex min-h-[34px] items-center justify-center rounded-full border border-slate-200 bg-slate-50 px-3 text-xs font-semibold text-slate-700 transition hover:border-blue-200 hover:bg-blue-50 hover:text-blue-700 sm:text-sm"
+                >
+                  ← Geri
+                </Link>
+                <span>{title}</span>
+              </div>
               <div className="mt-3 flex items-center justify-between gap-4">
                 <div className="product-sticky-tabs flex gap-3 overflow-x-auto pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
                   {sections.map((section) => {

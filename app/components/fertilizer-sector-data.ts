@@ -2,6 +2,10 @@ export type PlantCard = {
   title: string;
   text: string;
   href: string;
+  links: Array<{
+    label: string;
+    href: string;
+  }>;
 };
 
 export type SimpleCard = {
@@ -17,56 +21,135 @@ export type FaqItem = {
 export const fertilizerPlantCards: PlantCard[] = [
   {
     title: "Sıvı Gübre Tesisleri",
-    text: "Sıvı organomineral, sıvı NPK, sıvı amino asit ve özel sıvı formülasyonlar için proses ve tesis çözümleri.",
+    text: "Sıvı gübre üretimi için ilgili alt çözüm başlıklarını doğrudan inceleyebilirsiniz.",
     href: "/sektorler/gubre-ve-granulasyon-tesisleri/sivi-organomineral",
+    links: [
+      {
+        label: "Sıvı Organomineral",
+        href: "/sektorler/gubre-ve-granulasyon-tesisleri/sivi-organomineral",
+      },
+      {
+        label: "Sıvı NPK",
+        href: "/sektorler/gubre-ve-granulasyon-tesisleri/sivi-npk",
+      },
+      {
+        label: "Sıvı Amino Asit",
+        href: "/sektorler/gubre-ve-granulasyon-tesisleri/sivi-amino-asit",
+      },
+      {
+        label: "Organik Sıvı Gübre",
+        href: "/sektorler/gubre-ve-granulasyon-tesisleri/organik-sivi-gubre",
+      },
+      {
+        label: "Organik Biyostimülan",
+        href: "/sektorler/gubre-ve-granulasyon-tesisleri/organik-biyostimulan",
+      },
+    ],
   },
   {
     title: "Granül Gübre Tesisleri",
-    text: "Granül organomineral, granül NPK ve özel granül ürün hatları için üretim tesisi çözümleri.",
+    text: "Granül gübre üretimi için ilgili alt çözüm başlıklarını doğrudan seçebilirsiniz.",
     href: "/sektorler/gubre-ve-granulasyon-tesisleri/granul-organomineral",
+    links: [
+      {
+        label: "Granül Organomineral",
+        href: "/sektorler/gubre-ve-granulasyon-tesisleri/granul-organomineral",
+      },
+      {
+        label: "Granül NPK",
+        href: "/sektorler/gubre-ve-granulasyon-tesisleri/granul-npk",
+      },
+      {
+        label: "Gran\u00FCl Kompost Tesisleri",
+        href: "/sektorler/gubre-ve-granulasyon-tesisleri/granul-kompost",
+      },
+    ],
   },
   {
     title: "Toz Gübre Tesisleri",
-    text: "Toz organomineral, toz NPK ve özel toz karışım gübre hatları için tesis çözümleri.",
+    text: "Toz gübre üretimi için ilgili alt çözüm başlıklarını doğrudan inceleyebilirsiniz.",
     href: "/sektorler/gubre-ve-granulasyon-tesisleri/toz-organomineral",
-  },
-  {
-    title: "Organomineral Gübre Tesisleri",
-    text: "Organik ve mineral hammaddelerin birlikte işlendiği entegre organomineral gübre tesisi çözümleri.",
-    href: "/sektorler/gubre-ve-granulasyon-tesisleri/granul-organomineral",
-  },
-  {
-    title: "Mikro / Özel Formülasyon Hatları",
-    text: "Özel reçeteli, mikro elementli ve farklı ürün kombinasyonlarına uygun üretim hatları.",
-    href: "/sektorler/gubre-ve-granulasyon-tesisleri/sivi-amino-asit",
-  },
-  {
-    title: "Paketleme ve Son Hat Sistemleri",
-    text: "Torbalama, paletleme, etiketleme ve son hat ekipmanları ile entegre tamamlayıcı çözümler.",
-    href: "/makinalar-ekipman/paketleme-ve-dolum-sistemleri",
+    links: [
+      {
+        label: "Toz Organomineral",
+        href: "/sektorler/gubre-ve-granulasyon-tesisleri/toz-organomineral",
+      },
+      {
+        label: "Toz NPK",
+        href: "/sektorler/gubre-ve-granulasyon-tesisleri/toz-npk",
+      },
+    ],
   },
 ];
 
 export const fertilizerServiceCards: SimpleCard[] = [
-  { title: "Proses Tasarımı", text: "Ürün tipi, kapasite ve saha şartlarına göre hat akışını teknik olarak kurguluyoruz." },
-  { title: "Makine Seçimi", text: "Doğru tambur, dozajlama, karıştırma, eleme ve son hat ekipmanlarını birlikte belirliyoruz." },
-  { title: "Makine İmalatı", text: "Projeye özel ölçü, malzeme ve kapasiteye uygun makina imalatı gerçekleştiriyoruz." },
-  { title: "Tesis Yerleşim Planı", text: "Saha içi akış, bakım erişimi ve büyüme ihtiyacını destekleyen yerleşim planları hazırlıyoruz." },
-  { title: "Otomasyon ve Kontrol Altyapısı", text: "Reçete, tartım, dozajlama ve proses kontrolünü merkezi otomasyon mantığıyla tasarlıyoruz." },
-  { title: "Kurulum ve Devreye Alma", text: "İmalat sonrası saha kurulumu, entegrasyon ve devreye alma süreçlerini yönetiyoruz." },
-  { title: "Revizyon ve Kapasite Artırımı", text: "Mevcut hatları analiz ederek verim, kalite ve kapasite iyileştirme çözümleri sunuyoruz." },
-  { title: "Anahtar Teslim Tesis Kurulumu", text: "Mühendislikten imalata, kurulumdan devreye almaya kadar tüm süreci tek merkezden yürütüyoruz." },
+  {
+    title: "Proses Tasarımı",
+    text: "Ürün tipi, kapasite ve saha şartlarına göre hat akışını teknik olarak kurguluyoruz.",
+  },
+  {
+    title: "Makine Seçimi",
+    text: "Doğru tambur, dozajlama, karıştırma, eleme ve son hat ekipmanlarını birlikte belirliyoruz.",
+  },
+  {
+    title: "Makine İmalatı",
+    text: "Projeye özel ölçü, malzeme ve kapasiteye uygun makina imalatı gerçekleştiriyoruz.",
+  },
+  {
+    title: "Tesis Yerleşim Planı",
+    text: "Saha içi akış, bakım erişimi ve büyüme ihtiyacını destekleyen yerleşim planları hazırlıyoruz.",
+  },
+  {
+    title: "Otomasyon ve Kontrol Altyapısı",
+    text: "Reçete, tartım, dozajlama ve proses kontrolünü merkezi otomasyon mantığıyla tasarlıyoruz.",
+  },
+  {
+    title: "Kurulum ve Devreye Alma",
+    text: "İmalat sonrası saha kurulumu, entegrasyon ve devreye alma süreçlerini yönetiyoruz.",
+  },
+  {
+    title: "Revizyon ve Kapasite Artırımı",
+    text: "Mevcut hatları analiz ederek verim, kalite ve kapasite iyileştirme çözümleri sunuyoruz.",
+  },
+  {
+    title: "Anahtar Teslim Tesis Kurulumu",
+    text: "Mühendislikten imalata, kurulumdan devreye almaya kadar tüm süreci tek merkezden yürütüyoruz.",
+  },
 ];
 
 export const fertilizerCriticalCards: SimpleCard[] = [
-  { title: "Doğru proses kurgusu", text: "Ürün tipine göre sıvı, granül ve toz hatlarının proses akışı doğru belirlenmelidir." },
-  { title: "Kapasiteye uygun makine seçimi", text: "Yetersiz veya fazla büyük ekipman seçimi işletme verimini doğrudan etkiler." },
-  { title: "Hammadde karakteri", text: "Nem, tane boyutu, yoğunluk, akış davranışı ve kimyasal yapı ekipman seçiminde kritiktir." },
-  { title: "Toz kontrolü ve çevresel güvenlik", text: "Özellikle toz ve granül ürünlerde emiş, filtrasyon ve sızdırmazlık sistemleri doğru kurulmalıdır." },
-  { title: "Otomasyon ve reçete yönetimi", text: "Kararlı kalite için dozajlama, tartım, sıralama ve reçete otomasyonu güçlü olmalıdır." },
-  { title: "Son ürün kalitesi", text: "Granül dayanımı, akışkanlık, homojenlik, nem ve paketleme performansı birlikte değerlendirilmelidir." },
-  { title: "Bakım ve servis kolaylığı", text: "Tesis tasarımı sadece çalışmayı değil, bakım erişimini ve uzun ömürlü kullanımı da desteklemelidir." },
-  { title: "Gelecekte kapasite artışı", text: "Tesis kurulurken ileride büyümeye uygun altyapı kurgusu yapılmalıdır." },
+  {
+    title: "Doğru proses kurgusu",
+    text: "Ürün tipine göre sıvı, granül ve toz hatlarının proses akışı doğru belirlenmelidir.",
+  },
+  {
+    title: "Kapasiteye uygun makine seçimi",
+    text: "Yetersiz veya fazla büyük ekipman seçimi işletme verimini doğrudan etkiler.",
+  },
+  {
+    title: "Hammadde karakteri",
+    text: "Nem, tane boyutu, yoğunluk, akış davranışı ve kimyasal yapı ekipman seçiminde kritiktir.",
+  },
+  {
+    title: "Toz kontrolü ve çevresel güvenlik",
+    text: "Özellikle toz ve granül ürünlerde emiş, filtrasyon ve sızdırmazlık sistemleri doğru kurulmalıdır.",
+  },
+  {
+    title: "Otomasyon ve reçete yönetimi",
+    text: "Kararlı kalite için dozajlama, tartım, sıralama ve reçete otomasyonu güçlü olmalıdır.",
+  },
+  {
+    title: "Son ürün kalitesi",
+    text: "Granül dayanımı, akışkanlık, homojenlik, nem ve paketleme performansı birlikte değerlendirilmelidir.",
+  },
+  {
+    title: "Bakım ve servis kolaylığı",
+    text: "Tesis tasarımı sadece çalışmayı değil, bakım erişimini ve uzun ömürlü kullanımı da desteklemelidir.",
+  },
+  {
+    title: "Gelecekte kapasite artışı",
+    text: "Tesis kurulurken ileride büyümeye uygun altyapı kurgusu yapılmalıdır.",
+  },
 ];
 
 export const fertilizerFaqItems: FaqItem[] = [
@@ -101,3 +184,5 @@ export const fertilizerFaqItems: FaqItem[] = [
       "Evet, mevcut makine parkı ve saha yapısı incelenerek revizyon, ek hat kurulumu ve kapasite artışı çözümleri geliştirilebilir.",
   },
 ];
+
+

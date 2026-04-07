@@ -893,25 +893,25 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                 {trText(service.title)}
               </p>
               <h2 className="text-3xl font-semibold tracking-tight text-slate-950 md:text-4xl">
-                Uzmanlik Kapsami
+                Uzmanlık Kapsamı
               </h2>
               <div className="space-y-5 text-base leading-8 text-slate-600 sm:text-lg">
                 {introParagraphs.map((paragraph) => (
-                  <p key={paragraph}>{paragraph}</p>
+                  <p key={paragraph}>{trText(paragraph)}</p>
                 ))}
-                <p>{scopeIntro}</p>
+                <p>{trText(scopeIntro)}</p>
               </div>
             </div>
 
             <div className="rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-sm sm:p-8">
               <h3 className="text-2xl font-semibold text-slate-950">
-                Bu Hizmet Size Ne Sa?Ylar?
+                Bu Hizmet Size Ne Sağlar?
               </h3>
               <ul className="mt-6 space-y-4 text-base leading-7 text-slate-600">
                 {outputs.map((item) => (
                   <li key={item} className="flex gap-3">
                     <span className="mt-2 h-1.5 w-1.5 rounded-full bg-blue-600" />
-                    <span>{item}</span>
+                    <span>{trText(item)}</span>
                   </li>
                 ))}
               </ul>
@@ -923,22 +923,22 @@ export default async function ServiceDetailPage({ params }: PageProps) {
       <section className="py-16 sm:py-20">
         <div className="site-container">
           <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-            <ServiceList title="Hizmet Kapsami" items={scope} />
+            <ServiceList title="Hizmet Kapsamı" items={scope} />
             <ServiceList title="Avantajlar" items={advantages} />
             <RelatedSectorLinks items={sectors} />
             {isMachineManufacturing ? (
               <>
-                <ServiceList title="Ilgili Makinalar" items={relatedMachines} />
-                <ServiceList title="Ilgili Projeler" items={relatedProjects} />
+                <ServiceList title="İlgili Makinalar" items={relatedMachines} />
+                <ServiceList title="İlgili Projeler" items={relatedProjects} />
               </>
             ) : isCommissioning ? (
-              <ServiceList title="Ilgili Projeler" items={relatedProjects} />
+              <ServiceList title="İlgili Projeler" items={relatedProjects} />
             ) : isModernization ? (
               <>
-                <ServiceList title="Ilgili Makinalar" items={relatedMachines} />
-                <ServiceList title="Ilgili Projeler" items={relatedProjects} />
+                <ServiceList title="İlgili Makinalar" items={relatedMachines} />
+                <ServiceList title="İlgili Projeler" items={relatedProjects} />
               </>
-            ) : isConsulting ? null : isMaintenance ? <ServiceList title="Ilgili Projeler" items={relatedProjects} /> : null}
+            ) : isConsulting ? null : isMaintenance ? <ServiceList title="İlgili Projeler" items={relatedProjects} /> : null}
           </div>
         </div>
       </section>
@@ -947,10 +947,10 @@ export default async function ServiceDetailPage({ params }: PageProps) {
         <div className="site-container">
           <div className="rounded-[32px] border border-slate-200 bg-slate-50 p-6 shadow-sm sm:p-8 md:p-10">
             <p className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-700">
-              Nasil ?ali?Yiyoruz?
+              Nasıl Çalışıyoruz?
             </p>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950 md:text-4xl">
-              5 adimda proje s?reci
+              5 adımda proje süreci
             </h2>
             <div className="mt-8 grid gap-5 lg:grid-cols-5">
               {(isTurnkey
@@ -975,10 +975,10 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                   className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"
                 >
                   <h3 className="text-xl font-semibold leading-7 text-slate-950">
-                    {step.title}
+                    {trText(step.title)}
                   </h3>
                   <p className="mt-4 text-base leading-7 text-slate-600">
-                    {step.description}
+                    {trText(step.description)}
                   </p>
                 </article>
               ))}
@@ -991,7 +991,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
         <div className="site-container">
           <div className="rounded-[32px] border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
             <h2 className="text-3xl font-semibold tracking-tight text-slate-950 md:text-4xl">
-              Sik Sorulan Sorular
+              Sık Sorulan Sorular
             </h2>
             <div className="mt-8 space-y-4">
               {faqs.map((faq) => (
@@ -1000,9 +1000,9 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                   className="rounded-2xl border border-slate-200 px-5 py-4"
                 >
                   <summary className="cursor-pointer list-none text-lg font-semibold text-slate-950 [&::-webkit-details-marker]:hidden">
-                    {faq.question}
+                    {trText(faq.question)}
                   </summary>
-                  <p className="mt-3 text-base leading-7 text-slate-600">{faq.answer}</p>
+                  <p className="mt-3 text-base leading-7 text-slate-600">{trText(faq.answer)}</p>
                 </details>
               ))}
             </div>

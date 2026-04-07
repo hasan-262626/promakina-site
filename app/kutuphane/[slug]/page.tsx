@@ -48,7 +48,7 @@ export default async function LibraryDetailPage({ params }: PageProps) {
 
       <section className="mx-auto max-w-5xl px-4 pb-16 sm:px-6 sm:pb-20 lg:px-0">
         <div className="rounded-3xl border border-slate-200 bg-slate-50 p-6 sm:p-8">
-          <h2 className="text-2xl font-semibold text-slate-950">Ilgili i?erikler</h2>
+          <h2 className="text-2xl font-semibold text-slate-950">İlgili içerikler</h2>
           <div className="mt-6 grid gap-4 sm:grid-cols-2">
             {item.relatedLinks.map((link) => (
               <div key={link} className="rounded-2xl bg-white px-4 py-4 text-sm text-slate-700">
@@ -62,7 +62,7 @@ export default async function LibraryDetailPage({ params }: PageProps) {
               href="/kutuphane"
               className="inline-flex rounded-full bg-blue-700 px-6 py-3 text-sm font-semibold text-white transition hover:bg-blue-800"
             >
-              K?t?phaneye D?n
+              Kütüphaneye Dön
             </Link>
           </div>
         </div>

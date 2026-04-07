@@ -7,8 +7,8 @@ export default function SectorsIndexPage() {
   return (
     <main className="min-h-screen overflow-x-hidden bg-white text-slate-900">
       <Hero
-        title="Sektörler"
-        description="Gübre, kompost, biyogaz, geri dönüşüm, kimya, madencilik ve dökme katı malzeme işleme gibi farklı alanlara özel mühendislik çözümleri sunuyoruz. Her sektör için kapasite, proses ve saha koşullarına göre şekillenen uygun tesis ve ekipman yaklaşımını ayrı sayfalarda topluyoruz."
+        title="Sekt�rler"
+        description="G�bre, kompost, biyogaz, geri d�n���m, kimya, madencilik ve d�kme kat� malzeme i�leme gibi farkl� alanlara �zel m�hendislik ��z�mleri sunuyoruz. Her sekt�r i�in kapasite, proses ve saha ko�ullar�na g�re �ekillenen uygun tesis ve ekipman yakla��m�n� ayr� sayfalarda topluyoruz."
         image="/images/sektorler1.png"
       />
 
@@ -28,6 +28,13 @@ export default function SectorsIndexPage() {
                   <div className="flex min-w-0 flex-1 flex-col">
                     <h2 className="text-2xl font-semibold tracking-tight text-slate-950">{sector.title}</h2>
 
+                    <Link
+                      href={`/sektorler/${sector.slug}`}
+                      className="mt-4 inline-flex min-h-[44px] w-fit items-center justify-center rounded-full bg-slate-950 px-5 text-sm font-semibold text-white transition hover:bg-blue-700"
+                    >
+                      {sector.title}
+                    </Link>
+
                     <div className="mt-4 space-y-2">
                       {sector.subLinks.map((item) => (
                         <Link
@@ -41,13 +48,6 @@ export default function SectorsIndexPage() {
                     </div>
 
                     <p className="mt-4 flex-1 text-sm leading-7 text-slate-600">{sector.summary}</p>
-
-                    <Link
-                      href={`/sektorler/${sector.slug}`}
-                      className="mt-5 inline-flex items-center text-sm font-semibold text-blue-700 transition group-hover:text-blue-800"
-                    >
-                      Sektörü İncele
-                    </Link>
                   </div>
                 </div>
               </article>
