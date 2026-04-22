@@ -487,7 +487,7 @@ function StandardPanel({
               value={selectedSize}
               onChange={onSelect}
               options={meta.data.map((item) => item.label)}
-              helperText="Bu alanı siz doldurun"
+              helperText="Bu alanı siz doldürün"
               limitText="Standart ölçü seçiniz"
               tip="Seçilen vida ölçüsüne göre standart adım, dış vida ve iç vida açım ölçüleri otomatik getirilir."
               tipId={`${standard}-size`}
@@ -499,7 +499,7 @@ function StandardPanel({
 
         <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-[0_18px_50px_rgba(15,23,42,0.05)]">
           <h2 className="text-xl font-semibold text-slate-950">Standarttan Otomatik Gelen Alanlar</h2>
-          <div className="mt-5 grid gap-4 sm:grid-cols-2">
+          <div className="mt-4 grid gap-x-4 gap-y-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
             <ReadonlyField label="Adım" value={values ? `${formatNumber(values.pitch, 3)} mm` : "Ölçü seçildiğinde otomatik gelir"} />
             <ReadonlyField label="Profil" value={record ? meta.angleLabel : "Standart seçimine göre otomatik gelir"} />
             <ReadonlyField label="Dış Vida Dış Çapı" value={values ? `${formatNumber(values.majorDiameter, 3)} mm` : "-"} />
@@ -519,7 +519,7 @@ function StandardPanel({
             Vida açım ölçüleri, dış vida ölçüleri ve iç vida matkap çapı bilgileri seçtiğiniz standarda
             göre burada net şekilde gösterilir.
           </p>
-          <div className="mt-6 grid gap-4 sm:grid-cols-2">
+          <div className="mt-6 grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
             <ResultCard label="Adım" value={values ? `${formatNumber(values.pitch, 3)} mm` : "Sonuçlar burada görüntülenecektir"} />
             <ResultCard label="Matkap Çapı" value={values ? `${formatNumber(values.internalDrill, 3)} mm` : "Sonuçlar burada görüntülenecektir"} />
             <ResultCard label="Dış Vida Diş Dibi" value={values ? `${formatNumber(values.externalRoot, 3)} mm` : "Sonuçlar burada görüntülenecektir"} />
@@ -635,7 +635,7 @@ function ComparisonPanel({
               value={STANDARD_META[compareAStandard].title}
               onChange={(value) => onChange("compareAStandard", value)}
               options={Object.values(STANDARD_META).map((item) => item.title)}
-              helperText="Bu alanı siz doldurun"
+              helperText="Bu alanı siz doldürün"
               limitText="Karşılaştırılacak ilk standardı seçin"
               tip="İlk standart olarak metrik normal vida, metrik ince vida veya Whitworth 55° seçebilirsiniz."
               tipId="compare-standard-a"
@@ -647,7 +647,7 @@ function ComparisonPanel({
               value={compareASize}
               onChange={(value) => onChange("compareASize", value)}
               options={STANDARD_META[compareAStandard].data.map((item) => item.label)}
-              helperText="Bu alanı siz doldurun"
+              helperText="Bu alanı siz doldürün"
               limitText="Standart 1 için ölçü seçin"
               tip="Karşılaştırılacak ilk ölçüyü seçtiğinizde standart veriler otomatik gelir."
               tipId="compare-size-a"
@@ -659,7 +659,7 @@ function ComparisonPanel({
               value={STANDARD_META[compareBStandard].title}
               onChange={(value) => onChange("compareBStandard", value)}
               options={Object.values(STANDARD_META).map((item) => item.title)}
-              helperText="Bu alanı siz doldurun"
+              helperText="Bu alanı siz doldürün"
               limitText="Karşılaştırılacak ikinci standardı seçin"
               tip="İkinci standart olarak farklı bir vida ailesi veya aynı ailenin başka bir serisini seçebilirsiniz."
               tipId="compare-standard-b"
@@ -671,7 +671,7 @@ function ComparisonPanel({
               value={compareBSize}
               onChange={(value) => onChange("compareBSize", value)}
               options={STANDARD_META[compareBStandard].data.map((item) => item.label)}
-              helperText="Bu alanı siz doldurun"
+              helperText="Bu alanı siz doldürün"
               limitText="Standart 2 için ölçü seçin"
               tip="Karşılaştırılacak ikinci ölçüyü seçtiğinizde sonuçlar yan yana üretilir."
               tipId="compare-size-b"
@@ -683,7 +683,7 @@ function ComparisonPanel({
 
         <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-[0_18px_50px_rgba(15,23,42,0.05)]">
           <h2 className="text-xl font-semibold text-slate-950">Standarttan Otomatik Gelen Alanlar</h2>
-          <div className="mt-5 grid gap-4 sm:grid-cols-2">
+          <div className="mt-4 grid gap-x-4 gap-y-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
             <ReadonlyField label="Standart 1 Profili" value={recordA ? STANDARD_META[compareAStandard].angleLabel : "-"} />
             <ReadonlyField label="Standart 2 Profili" value={recordB ? STANDARD_META[compareBStandard].angleLabel : "-"} />
             <ReadonlyField label="Standart 1 Adımı" value={valuesA ? `${formatNumber(valuesA.pitch, 3)} mm` : "-"} />
@@ -706,7 +706,7 @@ function ComparisonPanel({
               label="Adım Karşılaştırması"
               value={valuesA && valuesB ? compareLabel(valuesA.pitch, valuesB.pitch, "mm") : "Sonuçlar burada görüntülenecektir"}
             />
-            <div className="grid gap-4 sm:grid-cols-2">
+            <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
               <ResultCard label="Standart 1 Dış Çap" value={valuesA ? `${formatNumber(valuesA.majorDiameter, 3)} mm` : "-"} />
               <ResultCard label="Standart 2 Dış Çap" value={valuesB ? `${formatNumber(valuesB.majorDiameter, 3)} mm` : "-"} />
               <ResultCard label="Standart 1 Matkap Çapı" value={valuesA ? `${formatNumber(valuesA.internalDrill, 3)} mm` : "-"} />

@@ -1,7 +1,8 @@
-"use client";
+﻿"use client";
 
 import { useMemo, useRef, useState } from "react";
 import type { FertilizerSubsolutionConfig } from "./fertilizer-subsolution-config";
+import { trText } from "../lib/tr-text";
 
 type Props = {
   title: string;
@@ -28,7 +29,7 @@ export function FertilizerSubsolutionForm({ title, config }: Props) {
 
   const messageBody = useMemo(() => {
     const rows = [
-      `Merhaba, ${title} için bilgi / teklif talep ediyorum.`,
+      `Merhaba, ${trText(title)} için bilgi / teklif talep ediyorum.`,
       "",
       `Firma Adı: ${common.companyName}`,
       `Ad Soyad: ${common.fullName}`,
@@ -40,8 +41,8 @@ export function FertilizerSubsolutionForm({ title, config }: Props) {
       `Kurulum Modeli: ${common.installationModel}`,
       ...config.formFields.map((field) => {
         const value = values[field.id];
-        const suffix = field.unit && value ? ` ${field.unit}` : "";
-        return `${field.label}: ${value || "-"}${suffix}`;
+        const suffix = field.unit && value ? ` ${trText(field.unit)}` : "";
+        return `${trText(field.label)}: ${value || "-"}${suffix}`;
       }),
       `Mesaj / Teknik Açıklama: ${common.message || "Belirtilmedi"}`,
       "",
@@ -60,7 +61,7 @@ export function FertilizerSubsolutionForm({ title, config }: Props) {
     }
 
     window.location.href = `mailto:info@promakina.com.tr?subject=${encodeURIComponent(
-      `${title} - Teklif / Teknik Görüşme`,
+      `${trText(title)} - Teklif / Teknik Görüşme`,
     )}&body=${encodeURIComponent(messageBody)}`;
   }
 
@@ -138,7 +139,7 @@ export function FertilizerSubsolutionForm({ title, config }: Props) {
         {config.formFields.map((field) => (
           <label key={field.id} className="space-y-2">
             <span className="text-sm font-semibold text-slate-900">
-              {field.label}
+              {trText(field.label)}
               {field.required ? " *" : ""}
             </span>
             {field.type === "select" ? (
@@ -149,7 +150,7 @@ export function FertilizerSubsolutionForm({ title, config }: Props) {
                 className="w-full rounded-2xl border border-slate-300 px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-blue-500"
               >
                 {(field.options ?? []).map((option) => (
-                  <option key={option}>{option}</option>
+                  <option key={option}>{trText(option)}</option>
                 ))}
               </select>
             ) : field.type === "number" ? (
@@ -165,7 +166,7 @@ export function FertilizerSubsolutionForm({ title, config }: Props) {
                 />
                 {field.unit ? (
                   <span className="pointer-events-none absolute inset-y-0 right-4 flex items-center text-xs font-semibold text-slate-500">
-                    {field.unit}
+                    {trText(field.unit)}
                   </span>
                 ) : null}
               </div>

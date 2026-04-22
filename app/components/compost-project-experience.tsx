@@ -283,7 +283,7 @@ export default function CompostProjectExperience() {
             <div className="rounded-3xl border border-slate-200 bg-white p-6 sm:p-8">
               <h3 className="text-xl font-semibold text-slate-950">Müşteri Seçimi</h3>
               <p className="mt-2 text-sm leading-7 text-slate-600">Girdi türü, miktar ve saha verilerini tek seferde girin. Sonuçlar ve ön teknik değerlendirme otomatik güncellenecektir.</p>
-              <p className="mt-2 text-xs font-medium text-slate-500">Lütfen gerekli alanları doldurun. Sonuçlar ve standart veriler otomatik güncellenecektir.</p>
+              <p className="mt-2 text-xs font-medium text-slate-500">Lütfen gerekli alanları doldürün. Sonuçlar ve standart veriler otomatik güncellenecektir.</p>
               <div className="mt-6 grid gap-5 md:grid-cols-2">
                 <ToolkitSelect label="Girdi Tipi" value={feedType} onChange={setFeedType} options={Object.keys(feedDefaults)} tip="Tesise girecek ana organik fraksiyonu seçin." tipId="compost-feed" openTip={openTip} setOpenTip={setOpenTip} />
                 <ToolkitSelect label="Hesaplama Modu" value={mode} onChange={setMode} options={["Günlük tonaja göre", "Nüfusa göre", "Hayvan sayısına göre"]} tip="Günlük girdi tonajını hangi yöntemle değerlendireceğinizi seçin." tipId="compost-mode" openTip={openTip} setOpenTip={setOpenTip} />

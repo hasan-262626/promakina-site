@@ -327,9 +327,9 @@ function ResultCard({
   value: string;
 }) {
   return (
-    <div className="rounded-2xl border border-slate-200 bg-white px-5 py-4">
+    <div className="rounded-2xl border border-slate-200 bg-white px-4 py-3.5">
       <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">{label}</p>
-      <p className="mt-2 text-lg font-semibold text-slate-950">{value}</p>
+      <p className="mt-1.5 text-base font-semibold text-slate-950">{value}</p>
     </div>
   );
 }
@@ -483,19 +483,19 @@ export function ConversionToolsCalculator() {
     results: Array<{ label: string; value: string }>;
     info: string;
   }) => (
-    <div className="grid gap-6 xl:grid-cols-[1.02fr_0.98fr]">
+    <div className="grid gap-6">
       <div className="space-y-6">
         <div className="rounded-3xl border border-blue-100 bg-white p-6 shadow-[0_18px_50px_rgba(15,23,42,0.06)]">
           <h2 className="text-2xl font-semibold text-slate-950">Müşteri Girişleri</h2>
           <p className="mt-3 text-sm leading-7 text-slate-600">{content.description}</p>
-          <div className="mt-6 grid gap-5 md:grid-cols-2">{content.fields}</div>
+          <div className="mt-5 grid gap-x-4 gap-y-4 md:grid-cols-2 xl:grid-cols-3">{content.fields}</div>
         </div>
         <GuideBox />
       </div>
       <div className="space-y-6">
         <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-[0_18px_50px_rgba(15,23,42,0.06)]">
           <h2 className="text-2xl font-semibold text-slate-950">Sonuçlar</h2>
-          <div className="mt-6 grid gap-4 sm:grid-cols-2">
+          <div className="mt-6 grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
             {content.results.map((item) => (
               <ResultCard key={item.label} label={item.label} value={item.value} />
             ))}
@@ -544,8 +544,8 @@ export function ConversionToolsCalculator() {
               description: "mm inch dönüşümü, milimetre inch çevirme ve teknik ölçü dönüşümü ihtiyaçlarında hızlı sonuç üretir.",
               fields: (
                 <>
-                  <InputField label="Milimetre (mm)" value={mm} onChange={(value) => { setMm(value); setInch(value ? String(parseNum(value) / 25.4) : ""); }} unit="mm" helperText="Bu alanı siz doldurun" limitText="Metrik uzunluk birimidir" tip="Metrik uzunluk birimidir." tipId="mm" openTip={openTip} setOpenTip={setOpenTip} />
-                  <InputField label="Inch (in)" value={inch} onChange={(value) => { setInch(value); setMm(value ? String(parseNum(value) * 25.4) : ""); }} unit="in" helperText="Bu alanı siz doldurun" limitText="Imperial uzunluk birimidir" tip="İnç tabanlı imperial uzunluk birimidir." tipId="inch" openTip={openTip} setOpenTip={setOpenTip} />
+                  <InputField label="Milimetre (mm)" value={mm} onChange={(value) => { setMm(value); setInch(value ? String(parseNum(value) / 25.4) : ""); }} unit="mm" helperText="Bu alanı siz doldürün" limitText="Metrik uzunluk birimidir" tip="Metrik uzunluk birimidir." tipId="mm" openTip={openTip} setOpenTip={setOpenTip} />
+                  <InputField label="Inch (in)" value={inch} onChange={(value) => { setInch(value); setMm(value ? String(parseNum(value) * 25.4) : ""); }} unit="in" helperText="Bu alanı siz doldürün" limitText="Imperial uzunluk birimidir" tip="İnç tabanlı imperial uzunluk birimidir." tipId="inch" openTip={openTip} setOpenTip={setOpenTip} />
                 </>
               ),
               results: [
@@ -561,8 +561,8 @@ export function ConversionToolsCalculator() {
               description: "Motor ve redüktör seçimlerinde kW HP çevirme ihtiyacını hızlıca karşılar.",
               fields: (
                 <>
-                  <InputField label="Güç (kW)" value={kw} onChange={(value) => { setKw(value); setHp(value ? String(parseNum(value) * 1.34102209) : ""); }} unit="kW" helperText="Bu alanı siz doldurun" limitText="Kilowatt cinsinden güç değeridir" tip="Kilowatt cinsinden güç değeridir." tipId="kw" openTip={openTip} setOpenTip={setOpenTip} />
-                  <InputField label="Güç (HP)" value={hp} onChange={(value) => { setHp(value); setKw(value ? String(parseNum(value) / 1.34102209) : ""); }} unit="HP" helperText="Bu alanı siz doldurun" limitText="Horsepower / beygir gücü" tip="Horsepower / beygir gücü cinsinden güç değeridir." tipId="hp" openTip={openTip} setOpenTip={setOpenTip} />
+                  <InputField label="Güç (kW)" value={kw} onChange={(value) => { setKw(value); setHp(value ? String(parseNum(value) * 1.34102209) : ""); }} unit="kW" helperText="Bu alanı siz doldürün" limitText="Kilowatt cinsinden güç değeridir" tip="Kilowatt cinsinden güç değeridir." tipId="kw" openTip={openTip} setOpenTip={setOpenTip} />
+                  <InputField label="Güç (HP)" value={hp} onChange={(value) => { setHp(value); setKw(value ? String(parseNum(value) / 1.34102209) : ""); }} unit="HP" helperText="Bu alanı siz doldürün" limitText="Horsepower / beygir gücü" tip="Horsepower / beygir gücü cinsinden güç değeridir." tipId="hp" openTip={openTip} setOpenTip={setOpenTip} />
                 </>
               ),
               results: [
@@ -578,8 +578,8 @@ export function ConversionToolsCalculator() {
               description: "Tork dönüşümü, makina ve aktarma organlarında farklı katalog birimlerini karşılaştırmak için kullanılır.",
               fields: (
                 <>
-                  <InputField label="Tork (N·m)" value={nm} onChange={(value) => { setNm(value); setKgfm(value ? String(parseNum(value) / 9.80665) : ""); }} unit="N·m" helperText="Bu alanı siz doldurun" limitText="Newton metre cinsinden tork" tip="Newton metre cinsinden tork birimidir." tipId="nm" openTip={openTip} setOpenTip={setOpenTip} />
-                  <InputField label="Tork (kgf·m)" value={kgfm} onChange={(value) => { setKgfm(value); setNm(value ? String(parseNum(value) * 9.80665) : ""); }} unit="kgf·m" helperText="Bu alanı siz doldurun" limitText="Kilogram-kuvvet metre cinsinden tork" tip="Kilogram-kuvvet metre cinsinden tork birimidir." tipId="kgfm" openTip={openTip} setOpenTip={setOpenTip} />
+                  <InputField label="Tork (N·m)" value={nm} onChange={(value) => { setNm(value); setKgfm(value ? String(parseNum(value) / 9.80665) : ""); }} unit="N·m" helperText="Bu alanı siz doldürün" limitText="Newton metre cinsinden tork" tip="Newton metre cinsinden tork birimidir." tipId="nm" openTip={openTip} setOpenTip={setOpenTip} />
+                  <InputField label="Tork (kgf·m)" value={kgfm} onChange={(value) => { setKgfm(value); setNm(value ? String(parseNum(value) * 9.80665) : ""); }} unit="kgf·m" helperText="Bu alanı siz doldürün" limitText="Kilogram-kuvvet metre cinsinden tork" tip="Kilogram-kuvvet metre cinsinden tork birimidir." tipId="kgfm" openTip={openTip} setOpenTip={setOpenTip} />
                 </>
               ),
               results: [
@@ -595,9 +595,9 @@ export function ConversionToolsCalculator() {
               description: "Devir hız dönüşümü, referans çap üzerinden çevresel hız veya dev/dk değeri üretir.",
               fields: (
                 <>
-                  <InputField label="Devir Sayısı (dev/dk)" value={rpm} onChange={(value) => { setRpm(value); const d = parseNum(diameter); setSpeed(value && d ? String((Math.PI * d * parseNum(value)) / 60000) : ""); }} unit="dev/dk" helperText="Bu alanı siz doldurun" limitText="Dakikadaki dönüş sayısıdır" tip="Dakikadaki dönüş sayısıdır." tipId="rpm" openTip={openTip} setOpenTip={setOpenTip} />
-                  <InputField label="Çap / Referans Çapı (mm)" value={diameter} onChange={(value) => { setDiameter(value); const d = parseNum(value); setSpeed(rpm && d ? String((Math.PI * d * parseNum(rpm)) / 60000) : ""); }} unit="mm" helperText="Bu alanı siz doldurun" limitText="Çap zorunlu temel alandır" tip="Çevresel hız hesabında kullanılan referans çapıdır." tipId="rpm-diameter" openTip={openTip} setOpenTip={setOpenTip} />
-                  <InputField label="Çevresel Hız (m/s)" value={speed} onChange={(value) => { setSpeed(value); const d = parseNum(diameter); setRpm(value && d ? String((parseNum(value) * 60000) / (Math.PI * d)) : ""); }} unit="m/s" helperText="Bu alanı siz doldurun" limitText="Çevresel hız birimidir" tip="Çevresel hız birimidir." tipId="speed" openTip={openTip} setOpenTip={setOpenTip} />
+                  <InputField label="Devir Sayısı (dev/dk)" value={rpm} onChange={(value) => { setRpm(value); const d = parseNum(diameter); setSpeed(value && d ? String((Math.PI * d * parseNum(value)) / 60000) : ""); }} unit="dev/dk" helperText="Bu alanı siz doldürün" limitText="Dakikadaki dönüş sayısıdır" tip="Dakikadaki dönüş sayısıdır." tipId="rpm" openTip={openTip} setOpenTip={setOpenTip} />
+                  <InputField label="Çap / Referans Çapı (mm)" value={diameter} onChange={(value) => { setDiameter(value); const d = parseNum(value); setSpeed(rpm && d ? String((Math.PI * d * parseNum(rpm)) / 60000) : ""); }} unit="mm" helperText="Bu alanı siz doldürün" limitText="Çap zorunlu temel alandır" tip="Çevresel hız hesabında kullanılan referans çapıdır." tipId="rpm-diameter" openTip={openTip} setOpenTip={setOpenTip} />
+                  <InputField label="Çevresel Hız (m/s)" value={speed} onChange={(value) => { setSpeed(value); const d = parseNum(diameter); setRpm(value && d ? String((parseNum(value) * 60000) / (Math.PI * d)) : ""); }} unit="m/s" helperText="Bu alanı siz doldürün" limitText="Çevresel hız birimidir" tip="Çevresel hız birimidir." tipId="speed" openTip={openTip} setOpenTip={setOpenTip} />
                 </>
               ),
               results: [
@@ -609,14 +609,14 @@ export function ConversionToolsCalculator() {
             })}
 
           {activeTab === "density" && (
-            <div className="grid gap-6 xl:grid-cols-[1.02fr_0.98fr]">
+            <div className="grid gap-6">
               <div className="space-y-6">
                 <div className="rounded-3xl border border-blue-100 bg-white p-6 shadow-[0_18px_50px_rgba(15,23,42,0.06)]">
                   <h2 className="text-2xl font-semibold text-slate-950">Müşteri Girişleri</h2>
                   <p className="mt-3 text-sm leading-7 text-slate-600">
                     Yoğunluk hacim ağırlık hesabı; gübre, kompost, geri dönüşüm, proses ve endüstriyel katı uygulamalarında hızlı ön hesap için tasarlandı.
                   </p>
-                  <div className="mt-6 grid gap-5 md:grid-cols-2">
+                  <div className="mt-5 grid gap-x-4 gap-y-4 md:grid-cols-2 xl:grid-cols-3">
                     <SelectField label="Sektör" value={sector} onChange={(value) => { setSector(value); const next = DENSITY_DATA[value]?.[0]; if (next) { setMaterial(next.label); setDensity(String(next.density)); } }} options={SECTOR_OPTIONS} helperText="Bu alanı siz seçin" limitText="Ana proses grubunu seçin" tip="Malzemenin ait olduğu ana proses veya uygulama grubunu seçin." tipId="density-sector" openTip={openTip} setOpenTip={setOpenTip} />
                     <SelectField label="Alt Malzeme" value={material} onChange={(value) => { setMaterial(value); const next = (DENSITY_DATA[sector] ?? []).find((item) => item.label === value); if (next) setDensity(String(next.density)); }} options={materials.map((item) => item.label)} helperText="Bu alanı siz seçin" limitText="Yoğunluk buna göre otomatik gelir" tip="Seçilen sektöre ait alt malzeme türüdür. Yoğunluk buna göre otomatik gelir." tipId="density-material" openTip={openTip} setOpenTip={setOpenTip} />
                     <SelectField label="Hesap Türü" value={calcType} onChange={setCalcType} options={DENSITY_CALC_OPTIONS} helperText="Bu alanı siz seçin" limitText="İstenen sonuç tipini belirler" tip="Hacimden ağırlık, ağırlıktan hacim veya ton hesabı akışını seçin." tipId="density-calc" openTip={openTip} setOpenTip={setOpenTip} />
@@ -624,9 +624,9 @@ export function ConversionToolsCalculator() {
                     <SelectField label="Baz Türü" value={densityMode} onChange={setDensityMode} options={DENSITY_MODE_OPTIONS} helperText="Bu alanı siz seçin" limitText="Nem / kuru madde etkisi için kullanılır" tip="Yaş baz, kuru madde bazlı veya nem bazlı düzeltme modunu belirler." tipId="density-mode" openTip={openTip} setOpenTip={setOpenTip} />
                     <InputField label="Nem Oranı (%)" value={moisture} onChange={(value) => { setMoisture(value); if (value) setDryMatter(String(Math.max(0, 100 - parseNum(value)))); }} unit="%" helperText="Opsiyonel" limitText="0–100 aralığında olmalıdır" tip="Malzemedeki su miktarının yüzde cinsinden ifadesidir." tipId="density-moisture" openTip={openTip} setOpenTip={setOpenTip} />
                     <InputField label="Kuru Madde Oranı (%)" value={dryMatter} onChange={(value) => { setDryMatter(value); if (value) setMoisture(String(Math.max(0, 100 - parseNum(value)))); }} unit="%" helperText="Opsiyonel" limitText="0–100 aralığında olmalıdır" tip="Malzemenin sudan arındırılmış kuru kısmının yüzde oranıdır." tipId="density-dry" openTip={openTip} setOpenTip={setOpenTip} />
-                    <InputField label="Hacim (m³)" value={volume} onChange={setVolume} unit="m³" helperText="Bu alanı siz doldurun" limitText="Hacimden ağırlık hesabında kullanılır" tip="Malzemenin kapladığı toplam hacimdir." tipId="density-volume" openTip={openTip} setOpenTip={setOpenTip} />
-                    <InputField label="Ağırlık (kg)" value={weightKg} onChange={setWeightKg} unit="kg" helperText="Bu alanı siz doldurun" limitText="Ağırlıktan hacim hesabında kullanılır" tip="Malzemenin toplam kütlesidir." tipId="density-kg" openTip={openTip} setOpenTip={setOpenTip} />
-                    <InputField label="Ağırlık (ton)" value={weightTon} onChange={setWeightTon} unit="ton" helperText="Bu alanı siz doldurun" limitText="Ton hesabında kullanılır" tip="Malzemenin ton cinsinden toplam kütlesidir." tipId="density-ton" openTip={openTip} setOpenTip={setOpenTip} />
+                    <InputField label="Hacim (m³)" value={volume} onChange={setVolume} unit="m³" helperText="Bu alanı siz doldürün" limitText="Hacimden ağırlık hesabında kullanılır" tip="Malzemenin kapladığı toplam hacimdir." tipId="density-volume" openTip={openTip} setOpenTip={setOpenTip} />
+                    <InputField label="Ağırlık (kg)" value={weightKg} onChange={setWeightKg} unit="kg" helperText="Bu alanı siz doldürün" limitText="Ağırlıktan hacim hesabında kullanılır" tip="Malzemenin toplam kütlesidir." tipId="density-kg" openTip={openTip} setOpenTip={setOpenTip} />
+                    <InputField label="Ağırlık (ton)" value={weightTon} onChange={setWeightTon} unit="ton" helperText="Bu alanı siz doldürün" limitText="Ton hesabında kullanılır" tip="Malzemenin ton cinsinden toplam kütlesidir." tipId="density-ton" openTip={openTip} setOpenTip={setOpenTip} />
                   </div>
                 </div>
                 <GuideBox />
@@ -634,7 +634,7 @@ export function ConversionToolsCalculator() {
               <div className="space-y-6">
                 <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-[0_18px_50px_rgba(15,23,42,0.06)]">
                   <h2 className="text-2xl font-semibold text-slate-950">Sonuçlar</h2>
-                  <div className="mt-6 grid gap-4 sm:grid-cols-2">
+                  <div className="mt-6 grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
                     <ResultCard label="Seçilen Sektör" value={sector} />
                     <ResultCard label="Seçilen Alt Malzeme" value={material} />
                     <ResultCard label="Varsayılan Yoğunluk" value={`${fmt(parseNum(density), 2)} kg/m³`} />
@@ -658,8 +658,8 @@ export function ConversionToolsCalculator() {
               description: "Basınç dönüşümü, proses ve ekipman seçimlerinde bar psi dönüşümü için hızlı sonuç verir.",
               fields: (
                 <>
-                  <InputField label="Basınç (bar)" value={bar} onChange={(value) => { setBar(value); setPsi(value ? String(parseNum(value) * 14.5037738) : ""); }} unit="bar" helperText="Bu alanı siz doldurun" limitText="Basınç birimidir" tip="bar cinsinden basınç değeridir." tipId="bar" openTip={openTip} setOpenTip={setOpenTip} />
-                  <InputField label="Basınç (psi)" value={psi} onChange={(value) => { setPsi(value); setBar(value ? String(parseNum(value) / 14.5037738) : ""); }} unit="psi" helperText="Bu alanı siz doldurun" limitText="Imperial basınç birimidir" tip="psi cinsinden basınç değeridir." tipId="psi" openTip={openTip} setOpenTip={setOpenTip} />
+                  <InputField label="Basınç (bar)" value={bar} onChange={(value) => { setBar(value); setPsi(value ? String(parseNum(value) * 14.5037738) : ""); }} unit="bar" helperText="Bu alanı siz doldürün" limitText="Basınç birimidir" tip="bar cinsinden basınç değeridir." tipId="bar" openTip={openTip} setOpenTip={setOpenTip} />
+                  <InputField label="Basınç (psi)" value={psi} onChange={(value) => { setPsi(value); setBar(value ? String(parseNum(value) / 14.5037738) : ""); }} unit="psi" helperText="Bu alanı siz doldürün" limitText="Imperial basınç birimidir" tip="psi cinsinden basınç değeridir." tipId="psi" openTip={openTip} setOpenTip={setOpenTip} />
                 </>
               ),
               results: [
@@ -675,9 +675,9 @@ export function ConversionToolsCalculator() {
               description: "Sıcaklık dönüşümü, °C, °F ve Kelvin değerlerini anlık olarak birbirine çevirir.",
               fields: (
                 <>
-                  <InputField label="°C" value={celsius} onChange={(value) => { setCelsius(value); const c = parseNum(value); setFahrenheit(value ? String((c * 9) / 5 + 32) : ""); setKelvin(value ? String(c + 273.15) : ""); }} unit="°C" helperText="Bu alanı siz doldurun" limitText="Santigrat sıcaklık birimidir" tip="Santigrat sıcaklık birimidir." tipId="celsius" openTip={openTip} setOpenTip={setOpenTip} />
-                  <InputField label="°F" value={fahrenheit} onChange={(value) => { setFahrenheit(value); const c = value ? ((parseNum(value) - 32) * 5) / 9 : 0; setCelsius(value ? String(c) : ""); setKelvin(value ? String(c + 273.15) : ""); }} unit="°F" helperText="Bu alanı siz doldurun" limitText="Fahrenheit sıcaklık birimidir" tip="Fahrenheit sıcaklık birimidir." tipId="fahrenheit" openTip={openTip} setOpenTip={setOpenTip} />
-                  <InputField label="K" value={kelvin} onChange={(value) => { setKelvin(value); const c = value ? parseNum(value) - 273.15 : 0; setCelsius(value ? String(c) : ""); setFahrenheit(value ? String((c * 9) / 5 + 32) : ""); }} unit="K" helperText="Bu alanı siz doldurun" limitText="Kelvin mutlak sıcaklık birimidir" tip="Kelvin mutlak sıcaklık birimidir." tipId="kelvin" openTip={openTip} setOpenTip={setOpenTip} />
+                  <InputField label="°C" value={celsius} onChange={(value) => { setCelsius(value); const c = parseNum(value); setFahrenheit(value ? String((c * 9) / 5 + 32) : ""); setKelvin(value ? String(c + 273.15) : ""); }} unit="°C" helperText="Bu alanı siz doldürün" limitText="Santigrat sıcaklık birimidir" tip="Santigrat sıcaklık birimidir." tipId="celsius" openTip={openTip} setOpenTip={setOpenTip} />
+                  <InputField label="°F" value={fahrenheit} onChange={(value) => { setFahrenheit(value); const c = value ? ((parseNum(value) - 32) * 5) / 9 : 0; setCelsius(value ? String(c) : ""); setKelvin(value ? String(c + 273.15) : ""); }} unit="°F" helperText="Bu alanı siz doldürün" limitText="Fahrenheit sıcaklık birimidir" tip="Fahrenheit sıcaklık birimidir." tipId="fahrenheit" openTip={openTip} setOpenTip={setOpenTip} />
+                  <InputField label="K" value={kelvin} onChange={(value) => { setKelvin(value); const c = value ? parseNum(value) - 273.15 : 0; setCelsius(value ? String(c) : ""); setFahrenheit(value ? String((c * 9) / 5 + 32) : ""); }} unit="K" helperText="Bu alanı siz doldürün" limitText="Kelvin mutlak sıcaklık birimidir" tip="Kelvin mutlak sıcaklık birimidir." tipId="kelvin" openTip={openTip} setOpenTip={setOpenTip} />
                 </>
               ),
               results: [
@@ -694,10 +694,10 @@ export function ConversionToolsCalculator() {
               description: "Açı dönüşümü, derece dakika saniye ile ondalık derece arasında anlık dönüşüm yapar.",
               fields: (
                 <>
-                  <InputField label="Derece (°)" value={deg} onChange={(value) => { setDeg(value); const decimal = parseNum(value) + parseNum(minutes) / 60 + parseNum(seconds) / 3600; setDecimalDegree(String(decimal)); }} unit="°" helperText="Bu alanı siz doldurun" limitText="Klasik açı birimidir" tip="Derece cinsinden açı değeridir." tipId="deg" openTip={openTip} setOpenTip={setOpenTip} />
-                  <InputField label="Dakika (')" value={minutes} onChange={(value) => { setMinutes(value); const decimal = parseNum(deg) + parseNum(value) / 60 + parseNum(seconds) / 3600; setDecimalDegree(String(decimal)); }} unit="'" helperText="Bu alanı siz doldurun" limitText="1 derece = 60 dakika" tip="Açı dakikası, derecenin alt birimidir." tipId="min" openTip={openTip} setOpenTip={setOpenTip} />
-                  <InputField label="Saniye ('')" value={seconds} onChange={(value) => { setSeconds(value); const decimal = parseNum(deg) + parseNum(minutes) / 60 + parseNum(value) / 3600; setDecimalDegree(String(decimal)); }} unit="''" helperText="Bu alanı siz doldurun" limitText="1 dakika = 60 saniye" tip="Açı saniyesi, dakikanın alt birimidir." tipId="sec" openTip={openTip} setOpenTip={setOpenTip} />
-                  <InputField label="Ondalık Derece" value={decimalDegree} onChange={(value) => { setDecimalDegree(value); const decimal = parseNum(value); const d = Math.trunc(decimal); const minFloat = (decimal - d) * 60; const m = Math.trunc(minFloat); const s = (minFloat - m) * 60; setDeg(String(d)); setMinutes(String(m)); setSeconds(String(s)); }} helperText="Bu alanı siz doldurun" limitText="Ondalık derece gösterimidir" tip="Ondalık derece, derece dakika saniye yerine kullanılan sade gösterimdir." tipId="decimal-degree" openTip={openTip} setOpenTip={setOpenTip} />
+                  <InputField label="Derece (°)" value={deg} onChange={(value) => { setDeg(value); const decimal = parseNum(value) + parseNum(minutes) / 60 + parseNum(seconds) / 3600; setDecimalDegree(String(decimal)); }} unit="°" helperText="Bu alanı siz doldürün" limitText="Klasik açı birimidir" tip="Derece cinsinden açı değeridir." tipId="deg" openTip={openTip} setOpenTip={setOpenTip} />
+                  <InputField label="Dakika (')" value={minutes} onChange={(value) => { setMinutes(value); const decimal = parseNum(deg) + parseNum(value) / 60 + parseNum(seconds) / 3600; setDecimalDegree(String(decimal)); }} unit="'" helperText="Bu alanı siz doldürün" limitText="1 derece = 60 dakika" tip="Açı dakikası, derecenin alt birimidir." tipId="min" openTip={openTip} setOpenTip={setOpenTip} />
+                  <InputField label="Saniye ('')" value={seconds} onChange={(value) => { setSeconds(value); const decimal = parseNum(deg) + parseNum(minutes) / 60 + parseNum(value) / 3600; setDecimalDegree(String(decimal)); }} unit="''" helperText="Bu alanı siz doldürün" limitText="1 dakika = 60 saniye" tip="Açı saniyesi, dakikanın alt birimidir." tipId="sec" openTip={openTip} setOpenTip={setOpenTip} />
+                  <InputField label="Ondalık Derece" value={decimalDegree} onChange={(value) => { setDecimalDegree(value); const decimal = parseNum(value); const d = Math.trunc(decimal); const minFloat = (decimal - d) * 60; const m = Math.trunc(minFloat); const s = (minFloat - m) * 60; setDeg(String(d)); setMinutes(String(m)); setSeconds(String(s)); }} helperText="Bu alanı siz doldürün" limitText="Ondalık derece gösterimidir" tip="Ondalık derece, derece dakika saniye yerine kullanılan sade gösterimdir." tipId="decimal-degree" openTip={openTip} setOpenTip={setOpenTip} />
                 </>
               ),
               results: [

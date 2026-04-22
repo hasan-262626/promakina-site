@@ -69,7 +69,7 @@ export default function GenericProjectExperience({ config }: { config: GenericPr
             </div>
             <div className="rounded-3xl border border-slate-200 bg-white p-6 sm:p-8">
               <h3 className="text-xl font-semibold text-slate-950">Müşteri Seçimi</h3>
-              <p className="mt-2 text-sm leading-7 text-slate-600">Gerekli seçim ve girişleri bu bölümde tek seferde doldurun.</p>
+              <p className="mt-2 text-sm leading-7 text-slate-600">Gerekli seçim ve girişleri bu bölümde tek seferde doldürün.</p>
               <div className="mt-6 grid gap-5 md:grid-cols-2">
                 <ToolkitSelect label="Proje Senaryosu" value={product} onChange={setProduct} options={config.productOptions.map(trText)} tip="Değerlendirmek istediğiniz ana proje senaryosudur." tipId={`${config.title}-product`} openTip={openTip} setOpenTip={setOpenTip} />
                 <ToolkitSelect label="Proses Önceliği" value={mode} onChange={setMode} options={config.processOptions.map(trText)} tip="Projede öncelikli işletme yaklaşımını seçin." tipId={`${config.title}-mode`} openTip={openTip} setOpenTip={setOpenTip} />

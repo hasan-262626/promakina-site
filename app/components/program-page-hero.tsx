@@ -1,4 +1,5 @@
 import { BackToProgramsButton } from "./back-to-programs-button";
+import { trText } from "../lib/tr-text";
 
 type ProgramPageHeroProps = {
   title: string;
@@ -20,15 +21,15 @@ export function ProgramPageHero({
           <div className="mb-5 flex flex-wrap items-center gap-3">
             <BackToProgramsButton />
             <span className="text-xs text-slate-400">/</span>
-            <span className="text-xs font-medium text-slate-500">{title}</span>
+            <span className="text-xs font-medium text-slate-500">{trText(title)}</span>
           </div>
         ) : null}
-        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-blue-700">Programlar</p>
+        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-blue-700">{trText("Programlar")}</p>
         <h1 className="mt-3 max-w-4xl text-3xl font-semibold tracking-tight text-slate-950 md:text-4xl lg:text-5xl">
-          {title}
+          {trText(title)}
         </h1>
         <p className="mt-4 max-w-4xl text-sm leading-7 text-slate-600 md:text-base md:leading-8">
-          {description}
+          {trText(description)}
         </p>
       </div>
       </section>

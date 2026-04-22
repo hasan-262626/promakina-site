@@ -134,7 +134,7 @@ function SelectField(props: { label: string; value: string; onChange: (value: st
 }
 
 function ResultGrid({ title, items }: { title: string; items: Array<{ label: string; value: string; tone?: Severity }> }) {
-  return <div className="rounded-3xl border border-slate-200 bg-slate-50 p-5 sm:p-6"><h3 className="text-lg font-semibold text-slate-950">{title}</h3><div className="mt-4 grid gap-4 sm:grid-cols-2">{items.map((item) => <div key={item.label} className={`rounded-2xl border px-5 py-4 ${item.tone === "critical" ? "border-rose-100 bg-rose-50" : item.tone === "warning" ? "border-amber-100 bg-amber-50" : item.tone === "info" ? "border-sky-100 bg-sky-50" : "border-slate-200 bg-white"}`}><p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">{item.label}</p><p className="mt-2 text-lg font-semibold text-slate-950">{item.value}</p></div>)}</div></div>;
+  return <div className="rounded-3xl border border-slate-200 bg-slate-50 p-4 sm:p-5"><h3 className="text-lg font-semibold text-slate-950">{title}</h3><div className="mt-4 grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">{items.map((item) => <div key={item.label} className={`rounded-2xl border px-4 py-3.5 ${item.tone === "critical" ? "border-rose-100 bg-rose-50" : item.tone === "warning" ? "border-amber-100 bg-amber-50" : item.tone === "info" ? "border-sky-100 bg-sky-50" : "border-slate-200 bg-white"}`}><p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">{item.label}</p><p className="mt-1.5 text-base font-semibold text-slate-950">{item.value}</p></div>)}</div></div>;
 }
 
 function InfoBox({ title, text }: { title: string; text: string }) {
@@ -151,7 +151,7 @@ function GuideBox() {
 }
 
 function LeadBox() {
-  return <div className="rounded-3xl border border-blue-100 bg-blue-50 px-5 py-6 sm:px-6"><h3 className="text-lg font-semibold text-slate-950">Projenize Uygun Tolerans ve Geçme Çözümü mü Arıyorsunuz?</h3><p className="mt-3 text-sm leading-7 text-slate-600">Mil, delik ve geçme toleransları konusunda teknik destek veya özel imalat danışmanlığı için bizimle iletişime geçin. Projenize uygun tolerans yaklaşımını birlikte netleştirelim.</p><div className="mt-5 flex flex-wrap gap-3"><a href="/iletisim" className="inline-flex min-h-[44px] items-center justify-center rounded-full bg-blue-700 px-5 text-sm font-semibold text-white transition hover:bg-blue-800">Teklif Al</a><a href="/iletisim" className="inline-flex min-h-[44px] items-center justify-center rounded-full border border-slate-200 bg-white px-5 text-sm font-semibold text-slate-700 transition hover:border-blue-200 hover:text-blue-700">İletişime Geç</a></div></div>;
+  return <div className="rounded-3xl border border-blue-100 bg-blue-50 px-5 py-6 sm:px-6"><h3 className="text-lg font-semibold text-slate-950">Teknik özet raporu hazır</h3><p className="mt-3 text-sm leading-7 text-slate-600">Bu sonuçlar yazdırılabilir ve teklif dosyasına aktarılabilir. Mil, delik ve geçme sonuçlarını teknik değerlendirme için kullanabilirsiniz.</p><div className="mt-5 flex flex-wrap gap-3"><a href="/iletisim" className="inline-flex min-h-[44px] items-center justify-center rounded-full bg-blue-700 px-5 text-sm font-semibold text-white transition hover:bg-blue-800">Teklif Al</a><a href="/iletisim" className="inline-flex min-h-[44px] items-center justify-center rounded-full border border-slate-200 bg-white px-5 text-sm font-semibold text-slate-700 transition hover:border-blue-200 hover:text-blue-700">İletişime Geç</a></div></div>;
 }
 
 export function IsoFitTolerancesCalculator() {
@@ -195,16 +195,16 @@ export function IsoFitTolerancesCalculator() {
           </div>
         </div>
 
-        <div className="mt-6 grid gap-6 xl:grid-cols-[1.05fr_0.95fr]">
+        <div className="mt-6 grid gap-6">
           <div className="space-y-6">
             <div className="rounded-3xl border border-blue-100 bg-white p-6 shadow-[0_18px_50px_rgba(15,23,42,0.06)]">
               <h2 className="text-2xl font-semibold text-slate-950">Müşteri Girişleri</h2>
               <p className="mt-3 text-sm leading-7 text-slate-600">Nominal ölçü, mil toleransı ve delik toleransı seçimlerini tek panelde yapın. Sistem limit ölçü hesaplama ve geçme toleransı hesabı sonucunu otomatik üretir.</p>
-              <div className="mt-6 grid gap-5 md:grid-cols-2">
-                <InputField label="Nominal Ölçü (mm)" value={form.nominal} onChange={(value) => setForm((current) => ({ ...current, nominal: value }))} unit="mm" helperText="Bu alanı siz doldurun" limitText="0'dan büyük olmalıdır • Uygun ISO ölçü kademesi otomatik belirlenir" error={model.errors.nominal} tip="Tolerans uygulanacak temel çap ölçüsüdür. Sistem bu değere göre uygun ISO ölçü aralığını otomatik belirler." tipId="iso-nominal" openTip={openTip} setOpenTip={setOpenTip} />
-                <SelectField label="Mil Toleransı" value={form.shaftCode} onChange={(value) => setForm((current) => ({ ...current, shaftCode: value }))} options={SHAFT_CODES} helperText="Bu alanı siz doldurun" limitText="Standart tolerans kodu seçiniz" error={model.errors.shaftCode} tip="Mil için kullanılacak tolerans bölgesini seçin. Küçük harfli kodlar mil toleransını ifade eder." tipId="iso-shaft" openTip={openTip} setOpenTip={setOpenTip} />
-                <SelectField label="Delik Toleransı" value={form.holeCode} onChange={(value) => setForm((current) => ({ ...current, holeCode: value }))} options={HOLE_CODES} helperText="Bu alanı siz doldurun" limitText="Standart tolerans kodu seçiniz" error={model.errors.holeCode} tip="Delik için kullanılacak tolerans bölgesini seçin. Büyük harfli kodlar delik toleransını ifade eder." tipId="iso-hole" openTip={openTip} setOpenTip={setOpenTip} />
-                <SelectField label="Geçme Tipi Beklentisi" value={form.fitIntent} onChange={(value) => setForm((current) => ({ ...current, fitIntent: value }))} options={FIT_INTENTS} helperText="Bu alanı siz doldurun" limitText="Aynı nominal ölçü için mil ve delik birlikte değerlendirilir" tip="İsterseniz hedeflediğiniz montaj karakterini seçebilirsiniz. Sistem yine de gerçek sonuçları teknik olarak yorumlar." tipId="iso-fit" openTip={openTip} setOpenTip={setOpenTip} />
+              <div className="mt-5 grid gap-x-4 gap-y-4 md:grid-cols-2 xl:grid-cols-3">
+                <InputField label="Nominal Ölçü (mm)" value={form.nominal} onChange={(value) => setForm((current) => ({ ...current, nominal: value }))} unit="mm" helperText="Bu alanı siz doldürün" limitText="0'dan büyük olmalıdır • Uygun ISO ölçü kademesi otomatik belirlenir" error={model.errors.nominal} tip="Tolerans uygulanacak temel çap ölçüsüdür. Sistem bu değere göre uygun ISO ölçü aralığını otomatik belirler." tipId="iso-nominal" openTip={openTip} setOpenTip={setOpenTip} />
+                <SelectField label="Mil Toleransı" value={form.shaftCode} onChange={(value) => setForm((current) => ({ ...current, shaftCode: value }))} options={SHAFT_CODES} helperText="Bu alanı siz doldürün" limitText="Standart tolerans kodu seçiniz" error={model.errors.shaftCode} tip="Mil için kullanılacak tolerans bölgesini seçin. Küçük harfli kodlar mil toleransını ifade eder." tipId="iso-shaft" openTip={openTip} setOpenTip={setOpenTip} />
+                <SelectField label="Delik Toleransı" value={form.holeCode} onChange={(value) => setForm((current) => ({ ...current, holeCode: value }))} options={HOLE_CODES} helperText="Bu alanı siz doldürün" limitText="Standart tolerans kodu seçiniz" error={model.errors.holeCode} tip="Delik için kullanılacak tolerans bölgesini seçin. Büyük harfli kodlar delik toleransını ifade eder." tipId="iso-hole" openTip={openTip} setOpenTip={setOpenTip} />
+                <SelectField label="Geçme Tipi Beklentisi" value={form.fitIntent} onChange={(value) => setForm((current) => ({ ...current, fitIntent: value }))} options={FIT_INTENTS} helperText="Bu alanı siz doldürün" limitText="Aynı nominal ölçü için mil ve delik birlikte değerlendirilir" tip="İsterseniz hedeflediğiniz montaj karakterini seçebilirsiniz. Sistem yine de gerçek sonuçları teknik olarak yorumlar." tipId="iso-fit" openTip={openTip} setOpenTip={setOpenTip} />
               </div>
             </div>
             <GuideBox />
@@ -220,7 +220,7 @@ export function IsoFitTolerancesCalculator() {
           </div>
 
           <div className="space-y-6">
-            <ResultGrid title="Geçme Sonucu" items={[
+            <ResultGrid title="Geçme Sonuçu" items={[
               { label: "Geçme Tipi", value: model.fitType || "Veri bekleniyor", tone: toneFromFit(model.fitType) },
               { label: model.minFit >= 0 ? "Minimum Boşluk" : "Minimum Sıkılık", value: model.shaft && model.hole ? fmt(model.minFit, " mm", 3) : "-" , tone: model.shaft && model.hole ? toneFromFit(model.fitType) : undefined},
               { label: model.maxFit >= 0 ? "Maksimum Boşluk" : "Maksimum Sıkılık", value: model.shaft && model.hole ? fmt(model.maxFit, " mm", 3) : "-", tone: model.shaft && model.hole ? toneFromFit(model.fitType) : undefined },

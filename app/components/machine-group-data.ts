@@ -168,9 +168,9 @@ const transportSeed: CategorySeed = {
 };
 
 const crusherSeed: CategorySeed = {
-  slug: "kiricilar-ve-parcalayicilar",
+  slug: "kırıcılar-ve-parcalayicilar",
   title: "Kırıcılar ve Parçalayıcılar",
-  heroImage: "/images/kirici3.jpg",
+  heroImage: "/images/kırıcı3.jpg",
   shortDescription:
     "Kompost, gübre, geri dönüşüm ve endüstriyel proses hatları için çekiçli kırıcı, zincirli kırıcı, shredder, primer kırıcı ve sekonder kırıcı imalatı yapıyoruz.",
   heroDescription:
@@ -212,13 +212,13 @@ const crusherSeed: CategorySeed = {
     "Kapak ve bağlantı parçaları",
   ],
   products: [
-    { slug: "cekicli-kiricilar", title: "Çekiçli Kırıcılar", shortDescription: "Gübre, kompost ve kırılgan mineral hatları için çekiçli kırıcı imalatı yapıyoruz." },
-    { slug: "ceneli-kiricilar", title: "Çeneli Kırıcılar", shortDescription: "Sert ve iri boyutlu malzemelerin ilk kademe kırılması için çeneli kırıcı çözümleri sunuyoruz.", image: "/images/ceneli1.png" },
-    { slug: "dik-milli-kiricilar", title: "Dik Milli Kırıcılar", shortDescription: "Agrega, mineral ve benzeri malzemelerde kontrollü boyut küçültme için dik milli kırıcı çözümleri sunuyoruz.", image: "/images/pim1.png" },
-    { slug: "zincirli-kiricilar", title: "Zincirli Kırıcılar", shortDescription: "Topaklı ve yarı nemli ürünler için zincirli kırıcı imalatı yapıyoruz.", image: "/images/zincirli1.jpg" },
+    { slug: "cekicli-kırıcılar", title: "Çekiçli Kırıcılar", shortDescription: "Gübre, kompost ve kırılgan mineral hatları için çekiçli kırıcı imalatı yapıyoruz." },
+    { slug: "ceneli-kırıcılar", title: "Çeneli Kırıcılar", shortDescription: "Sert ve iri boyutlu malzemelerin ilk kademe kırılması için çeneli kırıcı çözümleri sunuyoruz.", image: "/images/ceneli1.png" },
+    { slug: "dik-milli-kırıcılar", title: "Dik Milli Kırıcılar", shortDescription: "Agrega, mineral ve benzeri malzemelerde kontrollü boyut küçültme için dik milli kırıcı çözümleri sunuyoruz.", image: "/images/pim1.png" },
+    { slug: "zincirli-kırıcılar", title: "Zincirli Kırıcılar", shortDescription: "Topaklı ve yarı nemli ürünler için zincirli kırıcı imalatı yapıyoruz.", image: "/images/zincirli1.jpg" },
     { slug: "shredder-sistemleri", title: "Shredder Sistemleri", shortDescription: "Karma atık ve hacimli malzemeler için shredder sistemleri üretiyoruz.", image: "/images/shredder6.jpg" },
-    { slug: "bicakli-primer-kiricilar", title: "Bıçaklı Primer Kırıcılar", shortDescription: "İlk kademe boyut küçültme için bıçaklı primer kırıcı çözümleri sunuyoruz.", image: "/images/primer1.png" },
-    { slug: "bicakli-sekonder-kiricilar", title: "Bıçaklı Sekonder Kırıcılar", shortDescription: "Kontrollü çıkış boyutu için bıçaklı sekonder kırıcı imalatı yapıyoruz.", image: "/images/primer2.png" },
+    { slug: "bicakli-primer-kırıcılar", title: "Bıçaklı Primer Kırıcılar", shortDescription: "İlk kademe boyut küçültme için bıçaklı primer kırıcı çözümleri sunuyoruz.", image: "/images/primer1.png" },
+    { slug: "bicakli-sekonder-kırıcılar", title: "Bıçaklı Sekonder Kırıcılar", shortDescription: "Kontrollü çıkış boyutu için bıçaklı sekonder kırıcı imalatı yapıyoruz.", image: "/images/primer2.png" },
   ],
 };
 
@@ -740,13 +740,13 @@ const auxiliaryFlowSeed: CategorySeed = {
         "Otomasyon ve kontrol sistemlerine entegre çalışabilir",
       ],
       optionalEquipment: [
-        "Susturucu ve titreşim sönümleme paketi",
+        "Süstürucu ve titreşim sönümleme paketi",
         "Basınç ve sıcaklık izleme sensörleri",
         "Otomasyon paneli entegrasyonu",
         "Özel bağlantı ve emiş hattı adaptörleri",
       ],
       spareParts: [
-        "Filtre ve susturucu elemanları",
+        "Filtre ve süstürucu elemanları",
         "Motor ve fan grupları",
         "Conta ve bağlantı takımları",
         "Sensör ve kontrol elemanları",

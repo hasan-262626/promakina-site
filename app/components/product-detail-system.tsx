@@ -42,13 +42,13 @@ type ProductDetailSystemProps = {
 };
 
 type SectionKey =
-  | "urun-detaylari"
+  | "ürün-detaylari"
   | "teknik-ozellikler"
   | "uygulama-alanlari"
   | "galeri"
   | "opsiyonel-ekipman"
   | "yedek-parca"
-  | "diger-urunler";
+  | "diger-ürünler";
 
 type FieldConfig = {
   key: string;
@@ -59,13 +59,13 @@ type FieldConfig = {
 };
 
 const sections: { id: SectionKey; label: string }[] = [
-  { id: "urun-detaylari", label: "Makine Hakkında" },
+  { id: "ürün-detaylari", label: "Makine Hakkında" },
   { id: "teknik-ozellikler", label: "Teknik Özellikler" },
   { id: "uygulama-alanlari", label: "Uygulama Alanları" },
   { id: "galeri", label: "Galeri" },
   { id: "opsiyonel-ekipman", label: "Opsiyonel Ekipman" },
   { id: "yedek-parca", label: "Yedek Parça" },
-  { id: "diger-urunler", label: "Diğer Ürünler" },
+  { id: "diger-ürünler", label: "Diğer Ürünler" },
 ];
 
 const materialOptions = [
@@ -395,7 +395,7 @@ export function ProductDetailSystem({
   ctaText,
   calculatorFamily,
 }: ProductDetailSystemProps) {
-  const [activeTab, setActiveTab] = useState<SectionKey>("urun-detaylari");
+  const [activeTab, setActiveTab] = useState<SectionKey>("ürün-detaylari");
   const [isCalculatorOpen, setIsCalculatorOpen] = useState(false);
   const [calculatorValues, setCalculatorValues] = useState<Record<string, string>>({});
   const [calculationSummary, setCalculationSummary] = useState("");
@@ -524,7 +524,7 @@ export function ProductDetailSystem({
         </div>
       </div>
 
-      <section id="urun-detaylari" className="scroll-mt-[210px] xl:scroll-mt-[220px]">
+      <section id="ürün-detaylari" className="scroll-mt-[210px] xl:scroll-mt-[220px]">
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-10">
           <div className="grid gap-8 lg:grid-cols-2">
             <div className="overflow-hidden rounded-[30px] border border-slate-200 bg-white shadow-[0_18px_50px_rgba(15,23,42,0.05)]">
@@ -565,7 +565,7 @@ export function ProductDetailSystem({
             <div id="yedek-parca" className="scroll-mt-[210px] xl:scroll-mt-[220px] h-full">
               <DetailListCard title="Yedek Parça" items={spareParts} />
             </div>
-            <div id="diger-urunler" className="scroll-mt-[210px] xl:scroll-mt-[220px] h-full rounded-[28px] border border-slate-200 bg-white p-6 shadow-[0_16px_46px_rgba(15,23,42,0.05)] sm:p-7">
+            <div id="diger-ürünler" className="scroll-mt-[210px] xl:scroll-mt-[220px] h-full rounded-[28px] border border-slate-200 bg-white p-6 shadow-[0_16px_46px_rgba(15,23,42,0.05)] sm:p-7">
               <h2 className="text-2xl font-semibold tracking-tight text-slate-950">Diğer Ürünler</h2>
               <div className="mt-5 grid gap-3">
                 {relatedProducts.map((item) =>

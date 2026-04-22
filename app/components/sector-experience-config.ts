@@ -109,18 +109,19 @@ export const sectorExperienceConfigs: Record<string, SectorExperienceConfig> = {
       "Kırma, eleme, besleme, taşıma ve mineral hazırlama süreçleri için doğru makine kurgusu.",
     heroTitle: "Madencilik ve Mineral İşleme",
     heroDescription:
-      "Agrega, mineral ve cevher hazırlama hatlarında kırma, eleme, sınıflandırma, besleme ve malzeme transferi için sektör ihtiyacına uygun proses ve ekipman çözümleri sunuyoruz.",
+      "Agrega, mineral ve cevher hazırlama hatlarında kırma, eleme, sınıflandırma, besleme, kurutma, soğutma ve malzeme transferi için proses ve ekipman çözümleri sunuyoruz.",
     heroImage: "/images/maden1.jpg",
     solutionEyebrow: "Mineral İşleme",
     solutionTitle: "Hangi madencilik ve mineral işleme çözümlerini sunuyoruz?",
     solutionDescription:
-      "Farklı sertlik, aşındırıcılık ve tane boyutu beklentilerine uygun kırma, eleme ve transfer sistemlerini bir araya getiriyoruz.",
+      "Farklı sertlik, aşındırıcılık ve tane boyutu beklentilerine uygun kırma, eleme, transfer, kurutma ve soğutma sistemlerini bir araya getiriyoruz.",
     solutionCards: [
       { title: "Primer Kırma Hatları", text: "İri boyutlu malzemelerin ilk kademe küçültülmesi için kırıcı ve besleme sistemleri." },
       { title: "Sekonder ve Tersiyer Kırma Çözümleri", text: "Hedef tane boyutuna yaklaşmak için kontrollü ikinci ve üçüncü kademe kırma altyapısı." },
       { title: "Eleme ve Sınıflandırma Sistemleri", text: "Ürün boyutlandırma ve kalite kontrolü için elek ve sınıflandırma hatları." },
       { title: "Besleme ve Depolama Üniteleri", text: "Sürekli ve dengeli malzeme akışı için bunker, silo ve besleme çözümleri." },
       { title: "Konveyör ve Transfer Hatları", text: "Kırılmış ürünlerin hat içinde güvenli ve sürekli taşınması için transfer sistemleri." },
+      { title: "Maden Kurutma ve Soğutma Çözümleri", text: "Mineral ve dökme katı hammaddelerin kurutulması, soğutulması ve prosese uygun son ürün kondisyonuna getirilmesi için kurutma ve soğutma çözümleri." },
       { title: "Toz Kontrol ve Filtrasyon Çözümleri", text: "Toz oluşumunu kontrol altına alan emiş, filtrasyon ve saha güvenliği çözümleri." },
     ],
     servicesDescription:
@@ -134,15 +135,15 @@ export const sectorExperienceConfigs: Record<string, SectorExperienceConfig> = {
       { title: "Kurulum ve Devreye Alma", text: "Saha kurulumu, entegrasyon ve işletmeye alma süreçlerini kontrollü şekilde yönetiyoruz." },
     ],
     criticalDescription:
-      "Madencilik tesislerinde malzeme karakteri ve ekipman uyumu; verim, bakım ihtiyacı ve enerji tüketimi üzerinde doğrudan belirleyicidir.",
+      "Madencilik ve mineral işleme süreçlerinde malzeme karakteri, kurutma-soğutma dengesi ve ekipman uyumu; verim, bakım ihtiyacı ve enerji tüketimi üzerinde doğrudan belirleyicidir.",
     criticalTopics: [
       { title: "Malzeme sertliği", text: "Kırıcı tipi ve aşınma ekipmanlarının seçimi malzeme sertliğine göre yapılmalıdır." },
       { title: "Aşındırıcılık", text: "Aşındırıcı malzemelerde gövde, astar ve sarf malzeme seçimi ömrü belirler." },
       { title: "Giriş-çıkış tane boyutu", text: "Doğru kademe kurgusu için besleme ve hedef ürün boyutu net tanımlanmalıdır." },
       { title: "Kapasite dengesi", text: "Tüm kırma, eleme ve taşıma ekipmanları aynı hat debisine göre dengelenmelidir." },
       { title: "Elek verimi", text: "Eleme yüzeyi, kat sayısı ve titreşim karakteri son ürün doğruluğunu etkiler." },
+      { title: "Kurutma / soğutma dengesi", text: "Kurutma ve soğutma kademeleri son ürün kondisyonu ile enerji tüketimi birlikte düşünülerek kurulmalıdır." },
       { title: "Toz kontrolü", text: "Toz emiş ve filtrasyon çözümleri saha güvenliği ve çevresel uyum için kritik önemdedir." },
-      { title: "Bakım erişimi", text: "Ağır ekipmanlarda servis ve sarf değişimi için erişim kolaylığı planlanmalıdır." },
       { title: "Enerji verimliliği", text: "Doğru makine seçimi ve hat dengesi enerji tüketimini doğrudan etkiler." },
     ],
     faqDescription:

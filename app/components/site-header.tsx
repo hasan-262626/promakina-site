@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import { trText } from "../lib/tr-text";
 import { sectors, services } from "../data";
 import { machineCategoryPages } from "./machine-group-data";
@@ -58,15 +58,15 @@ export function SiteHeader() {
     <header className="sticky top-0 z-[70] bg-white">
       <div className="border-b border-slate-200/80">
         <div className="site-container flex items-center justify-between gap-4 py-3 text-[12px] text-slate-700 sm:text-[13px]">
-          <p className="truncate">Endüstriyel Tesis Çözümleri</p>
+          <p className="truncate">{trText("Endüstriyel Tesis Çözümleri")}</p>
           <div className="flex shrink-0 items-center gap-3 sm:gap-4 lg:gap-5">
             <Link href="/iletisim" className="transition hover:text-blue-700">
-              İletişim
+              {trText("İletişim")}
             </Link>
             <a href="#" className="transition hover:text-blue-700">
               Kariyer
             </a>
-            <button className="transition hover:text-blue-700">Dil Değiştir</button>
+            <button className="transition hover:text-blue-700">{trText("Dil Değiştir")}</button>
           </div>
         </div>
       </div>
@@ -136,7 +136,7 @@ export function SiteHeader() {
               </li>
               <li className="group relative">
                 <Link href="/sektorler" className="whitespace-nowrap transition hover:text-blue-700">
-                  Sektörler
+                  {trText("Sektörler")}
                 </Link>
                 <div className="invisible absolute left-1/2 top-full z-50 mt-4 w-[360px] -translate-x-1/2 rounded-2xl border border-slate-200 bg-white p-3 opacity-0 shadow-xl transition-all duration-200 group-hover:visible group-hover:opacity-100">
                   <div className="grid gap-1 text-[15px] text-slate-700">
@@ -160,7 +160,7 @@ export function SiteHeader() {
               <li>
                 <div className="group relative">
                   <Link href="/kutuphane" className="whitespace-nowrap transition hover:text-blue-700">
-                    Kütüphane
+                    {trText("Kütüphane")}
                   </Link>
                   <div className="invisible absolute left-1/2 top-full z-50 mt-4 w-[320px] -translate-x-1/2 rounded-2xl border border-slate-200 bg-white p-3 opacity-0 shadow-xl transition-all duration-200 group-hover:visible group-hover:opacity-100">
                     <div className="grid gap-1 text-[15px] text-slate-700">
@@ -170,7 +170,7 @@ export function SiteHeader() {
                           href={item.href}
                           className="rounded-xl px-4 py-3 transition hover:bg-slate-50 hover:text-blue-700"
                         >
-                          {item.label}
+                          {trText(item.label)}
                         </Link>
                       ))}
                     </div>
@@ -179,12 +179,12 @@ export function SiteHeader() {
               </li>
               <li>
                 <Link href="/hakkimizda" className="whitespace-nowrap transition hover:text-blue-700">
-                  Hakkımızda
+                  {trText("Hakkımızda")}
                 </Link>
               </li>
               <li>
                 <Link href="/iletisim" className="whitespace-nowrap transition hover:text-blue-700">
-                  İletişim
+                  {trText("İletişim")}
                 </Link>
               </li>
             </ul>
@@ -200,10 +200,11 @@ export function SiteHeader() {
           </div>
 
           <button className="shrink-0 border border-slate-300 px-4 py-2 text-xs font-medium text-slate-700 sm:text-sm xl:hidden">
-            Menü
+            {trText("Menü")}
           </button>
         </div>
       </div>
     </header>
   );
 }
+

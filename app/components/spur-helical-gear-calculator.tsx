@@ -23,6 +23,9 @@ const fmt = (value: number, digits = 2) =>
 
 export default function SpurHelicalGearCalculator() {
   const [openTip, setOpenTip] = useState<string | null>(null);
+  const [customerName, setCustomerName] = useState("Örnek Müşteri");
+  const [projectName, setProjectName] = useState("Dişli Ön Hesabı");
+  const [dateValue, setDateValue] = useState(new Date().toISOString().slice(0, 10));
   const [gearType, setGearType] = useState("Düz Dişli");
   const [moduleValue, setModuleValue] = useState("2");
   const [toothCount, setToothCount] = useState("24");
@@ -52,61 +55,80 @@ export default function SpurHelicalGearCalculator() {
     };
   }, [faceWidth, gearType, helixAngle, moduleValue, rpm, toothCount]);
 
+  const comments = [
+    `${gearType} senaryosunda etkin modül ${fmt(model.effectiveModule, 3)} mm seviyesinde hesaplandı.`,
+    `Bölüm dairesi çapı ${fmt(model.pitchDiameter, 2)} mm ve dış çap ${fmt(model.outerDiameter, 2)} mm olarak oluşuyor.`,
+    `Çevresel hız yaklaşık ${fmt(model.circumferentialSpeed, 3)} m/s seviyesinde görünüyor.`,
+    `Yüz genişliği için önerilen minimum değer ${fmt(model.recommendedFace, 2)} mm olarak hesaplandı.`,
+    "Nihai dişli tasarımında malzeme, ısıl işlem, yük spektrumu ve emniyet katsayıları ayrıca doğrulanmalıdır.",
+  ];
+
   return (
     <section className="bg-[linear-gradient(180deg,#f8fafc_0%,#ffffff_42%,#f8fafc_100%)] pb-14 pt-8 lg:pb-16 lg:pt-10">
       <div className="site-container">
-        <div className="mt-6 grid gap-6 xl:grid-cols-[1.02fr_0.98fr]">
-          <div className="order-1 space-y-6 xl:col-start-1">
-            <div className="rounded-3xl border border-blue-100 bg-white p-6 shadow-[0_18px_50px_rgba(15,23,42,0.06)]">
-              <h2 className="text-2xl font-semibold text-slate-950">Müşteri Seçimi</h2>
-              <p className="mt-3 text-sm leading-7 text-slate-600">Gerekli seçim ve girişleri bu bölümde tek seferde doldurun.</p>
-              <p className="mt-2 text-xs font-medium text-slate-500">Lütfen gerekli seçim ve girişleri doldurun. Sonuçlar ve standart veriler otomatik güncellenecektir.</p>
-              <div className="mt-6 grid gap-5 md:grid-cols-2">
-                <ToolkitSelect label="Dişli Tipi" value={gearType} onChange={setGearType} options={["Düz Dişli", "Helisel Dişli"]} helperText="Bu alanı siz seçin" tip="Düz dişli veya helisel dişli senaryosunu seçin." tipId="gear-type" openTip={openTip} setOpenTip={setOpenTip} />
-                <ToolkitSelect label="Modül" value={moduleValue} onChange={setModuleValue} options={MODULE_OPTIONS} helperText="Bu alanı siz seçin" tip="Dişli boyutlandırmasının temel modül değeridir." tipId="gear-module" openTip={openTip} setOpenTip={setOpenTip} />
-                <ToolkitInput label="Diş Sayısı" value={toothCount} onChange={setToothCount} unit="adet" helperText="Bu alanı siz doldurun" tip="Dişli üzerindeki toplam diş sayısıdır." tipId="gear-teeth" openTip={openTip} setOpenTip={setOpenTip} />
-                <ToolkitSelect label="Basınç Açısı" value={pressureAngle} onChange={setPressureAngle} options={PRESSURE_OPTIONS} helperText="Bu alanı siz seçin" tip="Standart kavrama geometrisini belirler." tipId="gear-pressure" openTip={openTip} setOpenTip={setOpenTip} />
-                <ToolkitSelect label="Helis Açısı" value={helixAngle} onChange={setHelixAngle} options={HELIX_OPTIONS} helperText="Bu alanı siz seçin" tip="Helisel dişlilerde temas karakterini etkiler." tipId="gear-helix" openTip={openTip} setOpenTip={setOpenTip} />
-                <ToolkitInput label="Yüz Genişliği" value={faceWidth} onChange={setFaceWidth} unit="mm" helperText="Bu alanı siz doldurun" tip="Dişli yüzey genişliğidir." tipId="gear-face" openTip={openTip} setOpenTip={setOpenTip} />
-                <ToolkitInput label="Devir Sayısı" value={rpm} onChange={setRpm} unit="rpm" helperText="Bu alanı siz doldurun" tip="Dişli veya tahrik sisteminin dakikadaki dönüş sayısıdır." tipId="gear-rpm" openTip={openTip} setOpenTip={setOpenTip} />
-              </div>
+        <div className="mt-6 space-y-6">
+          <div className="rounded-3xl border border-blue-100 bg-white p-6 shadow-[0_18px_50px_rgba(15,23,42,0.06)]">
+            <h2 className="text-2xl font-semibold text-slate-950">Müşteri Giriş Alanı</h2>
+            <p className="mt-3 text-sm leading-7 text-slate-600">
+              Müşteri bilgilerini ve dişli ön hesabında kullanılacak temel geometrik parametreleri bu alandan girin.
+            </p>
+            <div className="mt-5 grid gap-x-4 gap-y-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+              <ToolkitInput label="Müşteri adı" value={customerName} onChange={setCustomerName} helperText="Özet raporda görünür" limitText="Opsiyoneldir" tip="Teknik özet için müşteri veya firma adı." tipId="gear-customer" openTip={openTip} setOpenTip={setOpenTip} />
+              <ToolkitInput label="Proje adı" value={projectName} onChange={setProjectName} helperText="Rapor başlığı" limitText="Opsiyoneldir" tip="Çalışmaya ait proje veya ürün adı." tipId="gear-project" openTip={openTip} setOpenTip={setOpenTip} />
+              <ToolkitInput label="Tarih" value={dateValue} onChange={setDateValue} helperText="Rapor tarihi" limitText="Opsiyoneldir" tip="Teknik özet tarihi." tipId="gear-date" openTip={openTip} setOpenTip={setOpenTip} />
+              <ToolkitSelect label="Dişli tipi" value={gearType} onChange={setGearType} options={["Düz Dişli", "Helisel Dişli"]} helperText="Bu alanı siz seçin" tip="Düz veya helisel dişli senaryosu." tipId="gear-type" openTip={openTip} setOpenTip={setOpenTip} />
+              <ToolkitSelect label="Modül" value={moduleValue} onChange={setModuleValue} options={MODULE_OPTIONS} helperText="Bu alanı siz seçin" tip="Dişli boyutlandırmasının temel modül değeri." tipId="gear-module" openTip={openTip} setOpenTip={setOpenTip} />
+              <ToolkitInput label="Diş sayısı" value={toothCount} onChange={setToothCount} unit="adet" helperText="Bu alanı siz doldurun" tip="Toplam diş sayısı." tipId="gear-teeth" openTip={openTip} setOpenTip={setOpenTip} />
+              <ToolkitSelect label="Basınç açısı" value={pressureAngle} onChange={setPressureAngle} options={PRESSURE_OPTIONS} helperText="Bu alanı siz seçin" tip="Standart diş profili açısı." tipId="gear-pressure" openTip={openTip} setOpenTip={setOpenTip} />
+              <ToolkitSelect label="Helis açısı" value={helixAngle} onChange={setHelixAngle} options={HELIX_OPTIONS} helperText="Bu alanı siz seçin" tip="Helisel dişlilerde temas karakterini etkiler." tipId="gear-helix" openTip={openTip} setOpenTip={setOpenTip} />
+              <ToolkitInput label="Yüz genişliği" value={faceWidth} onChange={setFaceWidth} unit="mm" helperText="Bu alanı siz doldurun" tip="Dişli yüzeyi genişliği." tipId="gear-face" openTip={openTip} setOpenTip={setOpenTip} />
+              <ToolkitInput label="Devir sayısı" value={rpm} onChange={setRpm} unit="rpm" helperText="Bu alanı siz doldurun" tip="Dakikadaki devir sayısı." tipId="gear-rpm" openTip={openTip} setOpenTip={setOpenTip} />
             </div>
 
-            <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-[0_18px_50px_rgba(15,23,42,0.05)]">
-              <h2 className="text-xl font-semibold text-slate-950">Standarttan Otomatik Gelen Alanlar</h2>
-              <p className="mt-3 text-sm leading-7 text-slate-600">Bu bölümdeki değerler seçiminize ve standarda göre otomatik oluşur.</p>
-              <div className="mt-5 grid gap-4 sm:grid-cols-2">
-                <ToolkitReadonly label="Aktif Dişli Tipi" value={gearType} />
-                <ToolkitReadonly label="Etkin Modül" value={`${fmt(model.effectiveModule, 3)} mm`} />
-                <ToolkitReadonly label="Önerilen Min. Yüz Genişliği" value={`${fmt(model.recommendedFace, 2)} mm`} />
-                <ToolkitReadonly label="Basınç Açısı" value={`${pressureAngle}°`} />
-              </div>
+            <div className="mt-6 grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+              <ToolkitReadonly label="Aktif dişli tipi" value={gearType} />
+              <ToolkitReadonly label="Etkin modül" value={`${fmt(model.effectiveModule, 3)} mm`} />
+              <ToolkitReadonly label="Önerilen min. yüz genişliği" value={`${fmt(model.recommendedFace, 2)} mm`} />
+              <ToolkitReadonly label="Basınç açısı" value={`${pressureAngle}°`} />
             </div>
           </div>
 
-          <div className="order-2 space-y-6 xl:col-start-2">
+          <ToolkitInfo
+            title="Otomatik Sistem Yorumları"
+            text="Girilen verilere göre sistemin oluşturduğu teknik değerlendirme, uygunluk yorumu ve ön öneriler bu alanda gösterilir."
+          />
+
+          <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+            {comments.map((comment) => (
+              <ToolkitInfo key={comment} title="Teknik değerlendirme" text={comment} />
+            ))}
+          </div>
+
+          <div className="grid gap-6 xl:grid-cols-[1.2fr_0.8fr]">
             <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-[0_18px_50px_rgba(15,23,42,0.06)]">
-              <h2 className="text-2xl font-semibold text-slate-950">Sonuçlar</h2>
-              <div className="mt-6 grid gap-4 sm:grid-cols-2">
-                <ToolkitResult label="Bölüm Dairesi Çapı" value={`${fmt(model.pitchDiameter, 2)} mm`} />
-                <ToolkitResult label="Dış Çap" value={`${fmt(model.outerDiameter, 2)} mm`} />
-                <ToolkitResult label="Diş Dibi Çapı" value={`${fmt(model.rootDiameter, 2)} mm`} />
-                <ToolkitResult label="Çevresel Hız" value={`${fmt(model.circumferentialSpeed, 3)} m/s`} />
+              <h2 className="text-2xl font-semibold text-slate-950">Sonuç Ekranı</h2>
+              <div className="mt-6 grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+                <ToolkitResult label="Bölüm dairesi çapı" value={`${fmt(model.pitchDiameter, 2)} mm`} />
+                <ToolkitResult label="Dış çap" value={`${fmt(model.outerDiameter, 2)} mm`} />
+                <ToolkitResult label="Diş dibi çapı" value={`${fmt(model.rootDiameter, 2)} mm`} />
+                <ToolkitResult label="Çevresel hız" value={`${fmt(model.circumferentialSpeed, 3)} m/s`} tone="info" />
               </div>
             </div>
-            <ToolkitInfo title="Teknik Değerlendirme" text={gearType === "Helisel Dişli" ? "Helis açısı nedeniyle etkin modül ve temas karakteri değişir. Nihai imalat öncesinde tam dişli geometrisi doğrulanmalıdır." : "Düz dişli ön hesabında modül, diş sayısı ve yüz genişliği temel geometrik değerlendirme için yeterlidir."} />
-          </div>
 
-          <div className="order-3 space-y-6 xl:col-start-1">
-            <ToolkitInfo title="Nasıl Kullanılır?" text="1. Dişli tipini ve modülü seçin. 2. Diş sayısı, yüz genişliği ve devir bilgisini girin. 3. Otomatik alanlarda etkin modül ve önerilen yüz genişliğini kontrol edin. 4. Sonuç kartları ile ön geometriyi değerlendirin." />
-            <ToolkitInfo title="Teknik Bilgi" text="Düz / helis dişli ön hesabı; modül, diş sayısı, basınç açısı, helis açısı ve yüz genişliği üzerinden temel geometriyi hızlıca kontrol etmek için kullanılır. Nihai mühendislik doğrulaması ayrıca yapılmalıdır." />
+            <div className="space-y-6">
+              <ToolkitLead
+                title="Teknik özet raporu hazır"
+                text={`Müşteri: ${customerName || "Belirtilmedi"} | Proje: ${projectName || "Belirtilmedi"} | Tarih: ${dateValue || "Belirtilmedi"} | Bu sonuçlar yazdırılabilir ve teklif dosyasına aktarılabilir.`}
+              />
+              <ToolkitInfo
+                title="Kısa teknik not"
+                text="Bu ekran ön geometri kontrolü içindir. Nihai imalat öncesinde dayanım, malzeme ve temas analizi ayrıca yapılmalıdır."
+              />
+            </div>
           </div>
-        </div>
-
-        <div className="mt-6">
-          <ToolkitLead title="Projenize Uygun Dişli Çözümü mü Arıyorsunuz?" text="Düz dişli, helisel dişli ve özel geometri ihtiyaçları için teknik destek veya özel imalat çözümü konusunda bizimle iletişime geçin." />
         </div>
       </div>
     </section>
   );
 }
+

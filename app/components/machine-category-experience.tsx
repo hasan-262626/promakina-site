@@ -4,7 +4,7 @@ import { useMemo, useState } from "react";
 import { ProductDetailSystem } from "./product-detail-system";
 
 type CategorySlug =
-  | "kiricilar-ve-parcalayicilar"
+  | "kırıcılar-ve-parcalayicilar"
   | "reaktorler-ve-tanklar"
   | "eleme-ve-siniflandirma-sistemleri"
   | "toz-toplama-sistemleri"
@@ -76,7 +76,7 @@ const commonSpare = [
 ];
 
 const configs: Record<CategorySlug, CategoryConfig> = {
-  "kiricilar-ve-parcalayicilar": {
+  "kırıcılar-ve-parcalayicilar": {
     title: "Kırıcılar ve Parçalayıcılar",
     heroImage: "/images/hammermill2.jpg",
     ctaTitle: "Kırıcı ve parçalayıcı sistemler için doğru çözümü birlikte netleştirelim",
@@ -84,9 +84,9 @@ const configs: Record<CategorySlug, CategoryConfig> = {
       "Çekiçli kırıcı, zincirli kırıcı, shredder, primer kırıcı ve sekonder kırıcı ihtiyaçlarınız için giriş boyutu, kapasite ve ürün karakterine uygun sistemi birlikte belirleyelim.",
     gallery: [
       { src: "/images/hammermill2.jpg", alt: "Kırıcı genel görünüm", caption: "Genel ürün görünümü" },
-      { src: "/images/kirici3.jpg", alt: "Kırıcı imalat detayı", caption: "İmalat ve gövde detayı" },
+      { src: "/images/kırıcı3.jpg", alt: "Kırıcı imalat detayı", caption: "İmalat ve gövde detayı" },
       { src: "/images/hammermill2.jpg", alt: "Rotor detayı", caption: "Rotor ve kırma bölgesi" },
-      { src: "/images/kirici3.jpg", alt: "Saha yerleşimi", caption: "Saha yerleşimi yaklaşımı" },
+      { src: "/images/kırıcı3.jpg", alt: "Saha yerleşimi", caption: "Saha yerleşimi yaklaşımı" },
     ],
     products: [
       makeProduct("Çekiçli Kırıcılar", "Gübre, kompost ve kırılgan mineral hatları için çekiçli kırıcı imalatı yapıyoruz.", "Çekiçli kırıcılarda rotor hızı, elek yapısı ve aşınma yönetimi birlikte çözülür.", ["Projeye özel rotor ve gövde ölçüsü", "Aşınmaya dayanıklı iç yüzey", "Farklı çekiç ve elek seçenekleri", "Bakım kapağı ve servis erişimi", "Besleme ve boşaltma bağlantıları", "Ağır hizmet tahrik yapısı"], ["Granül gübre hatları", "Kompost ön işleme", "Kırılgan mineral hazırlama", "Geri dönüşüm ön hazırlığı"], heavyDutyOptions, ["Çekiç setleri", "Rotor", "Elekler", ...commonSpare]),
@@ -199,7 +199,7 @@ export default function MachineCategoryExperience({ slug }: { slug: CategorySlug
   const config = configs[slug];
   const [activeId, setActiveId] = useState(config.products[0].id);
   const calculatorFamily =
-    slug === "kiricilar-ve-parcalayicilar"
+    slug === "kırıcılar-ve-parcalayicilar"
       ? "crusher"
       : slug === "reaktorler-ve-tanklar"
         ? "reactor"

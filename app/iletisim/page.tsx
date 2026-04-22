@@ -311,7 +311,7 @@ export default function ContactPage() {
             <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-[0_18px_50px_rgba(15,23,42,0.05)] sm:p-8">
               <h2 className="text-2xl font-semibold text-slate-950">Teklif Formu</h2>
               <p className="mt-4 leading-8 text-slate-600">
-                Talebinizi doğru birime hızlı yönlendirmek için aşağıdaki bilgileri doldurun.
+                Talebinizi doğru birime hızlı yönlendirmek için aşağıdaki bilgileri doldürün.
               </p>
 
               <div className="mt-6 grid gap-4 sm:grid-cols-2">

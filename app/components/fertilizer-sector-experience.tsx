@@ -9,6 +9,7 @@ import {
   fertilizerServiceCards,
 } from "./fertilizer-sector-data";
 import { FertilizerSectorForm } from "./fertilizer-sector-form";
+import { trText } from "../lib/tr-text";
 
 function SectionHeading({
   eyebrow,
@@ -21,9 +22,9 @@ function SectionHeading({
 }) {
   return (
     <div className="max-w-3xl">
-      <p className="text-sm font-semibold uppercase tracking-[0.16em] text-blue-700">{eyebrow}</p>
-      <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950 md:text-4xl">{title}</h2>
-      <p className="mt-4 text-sm leading-7 text-slate-600 sm:text-base sm:leading-8">{description}</p>
+      <p className="text-sm font-semibold uppercase tracking-[0.16em] text-blue-700">{trText(eyebrow)}</p>
+      <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950 md:text-4xl">{trText(title)}</h2>
+      <p className="mt-4 text-sm leading-7 text-slate-600 sm:text-base sm:leading-8">{trText(description)}</p>
     </div>
   );
 }
@@ -35,7 +36,7 @@ export default function FertilizerSectorExperience() {
         <div className="absolute inset-0">
           <Image
             src="/images/granul1.jpg"
-            alt="Gübre Üretim Tesisleri hero arka plan görseli"
+            alt={trText("Gübre Üretim Tesisleri hero arka plan görseli")}
             fill
             priority
             sizes="100vw"
@@ -48,19 +49,18 @@ export default function FertilizerSectorExperience() {
         <div className="relative mx-auto flex min-h-[300px] max-w-7xl items-center px-4 py-12 sm:px-6 md:min-h-[380px] md:py-14 lg:px-10">
           <div className="max-w-4xl">
             <div className="inline-flex rounded-full border border-white/15 bg-white/10 px-4 py-2 text-xs font-medium tracking-[0.16em] text-white/80 backdrop-blur">
-              SIVI, TOZ VE GRANÜL GÜBRE TESİSLERİ
+              {trText("SIVI, TOZ VE GRANÜL GÜBRE TESİSLERİ")}
             </div>
             <p className="mt-4 text-sm font-medium text-blue-200">
-              Gübre üretim tesislerinde yüksek verim, sürekli kalite ve prosese uygun doğru makine kurgusu.
+              {trText("Gübre üretim tesislerinde yüksek verim, sürekli kalite ve prosese uygun doğru makine kurgusu.")}
             </p>
             <h1 className="mt-2.5 text-[30px] font-semibold leading-[1.02] tracking-tight text-white sm:text-[38px] md:text-[44px] lg:text-[54px]">
-              Gübre Üretim Tesisleri
+              {trText("Gübre Üretim Tesisleri")}
             </h1>
             <p className="mt-4 max-w-3xl text-sm leading-7 text-white/82 sm:text-base sm:leading-8 lg:max-w-[52rem]">
-              Ham madde hazırlamadan sıvı, toz ve granül gübre üretimine; dozajlamadan karışıma, granülasyondan
-              kurutma ve elemeye, soğutmadan paketlemeye kadar tüm süreci tek sistem mantığı ile planlıyoruz.
-              Organomineral, mineral, sıvı, granül ve toz gübre hatları için proses tasarımı, ekipman seçimi, makine
-              imalatı ve tesis kurgusu sunuyoruz.
+              {trText(
+                "Ham madde hazırlamadan sıvı, toz ve granül gübre üretimine; dozajlamadan karışıma, granülasyondan kurutma ve elemeye, soğutmadan paketlemeye kadar tüm süreci tek sistem mantığı ile planlıyoruz. Organomineral, mineral, sıvı, granül ve toz gübre hatları için proses tasarımı, ekipman seçimi, makine imalatı ve tesis kurgusu sunuyoruz.",
+              )}
             </p>
             <div className="mt-6 flex flex-col gap-3 sm:flex-row">
               <a
@@ -73,7 +73,7 @@ export default function FertilizerSectorExperience() {
                 href="/sektorler"
                 className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/20 bg-white/10 px-6 text-sm font-semibold text-white backdrop-blur transition hover:bg-white/15"
               >
-                Tüm Çözüm Alanlarına Dön
+                {trText("Tüm Çözüm Alanlarına Dön")}
               </Link>
             </div>
           </div>
@@ -92,8 +92,8 @@ export default function FertilizerSectorExperience() {
               key={item.title}
               className="flex h-full flex-col rounded-[28px] border border-slate-200 bg-white p-6 shadow-sm transition duration-200 hover:-translate-y-1 hover:border-blue-200 hover:bg-blue-50/70 hover:shadow-[0_18px_40px_rgba(15,23,42,0.08)]"
             >
-              <h3 className="text-xl font-semibold tracking-tight text-slate-950">{item.title}</h3>
-              <p className="mt-3 text-sm leading-7 text-slate-600">{item.text}</p>
+              <h3 className="text-xl font-semibold tracking-tight text-slate-950">{trText(item.title)}</h3>
+              <p className="mt-3 text-sm leading-7 text-slate-600">{trText(item.text)}</p>
               <div className="mt-5 space-y-2.5">
                 {item.links.map((link) => (
                   <Link
@@ -101,7 +101,7 @@ export default function FertilizerSectorExperience() {
                     href={link.href}
                     className="flex rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm font-medium leading-6 text-slate-700 transition hover:border-blue-200 hover:bg-blue-50 hover:text-blue-700"
                   >
-                    {link.label}
+                    {trText(link.label)}
                   </Link>
                 ))}
               </div>
@@ -119,8 +119,8 @@ export default function FertilizerSectorExperience() {
         <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
           {fertilizerServiceCards.map((item) => (
             <article key={item.title} className="rounded-[28px] border border-slate-200 bg-white p-6 shadow-sm">
-              <h3 className="text-lg font-semibold tracking-tight text-slate-950">{item.title}</h3>
-              <p className="mt-3 text-sm leading-7 text-slate-600">{item.text}</p>
+              <h3 className="text-lg font-semibold tracking-tight text-slate-950">{trText(item.title)}</h3>
+              <p className="mt-3 text-sm leading-7 text-slate-600">{trText(item.text)}</p>
             </article>
           ))}
         </div>
@@ -135,8 +135,8 @@ export default function FertilizerSectorExperience() {
         <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
           {fertilizerCriticalCards.map((item) => (
             <article key={item.title} className="rounded-[28px] border border-slate-200 bg-slate-50 p-6">
-              <h3 className="text-lg font-semibold tracking-tight text-slate-950">{item.title}</h3>
-              <p className="mt-3 text-sm leading-7 text-slate-600">{item.text}</p>
+              <h3 className="text-lg font-semibold tracking-tight text-slate-950">{trText(item.title)}</h3>
+              <p className="mt-3 text-sm leading-7 text-slate-600">{trText(item.text)}</p>
             </article>
           ))}
         </div>
@@ -152,9 +152,9 @@ export default function FertilizerSectorExperience() {
           {fertilizerFaqItems.map((item) => (
             <details key={item.question} className="rounded-[24px] border border-slate-200 bg-white px-5 py-4 shadow-sm">
               <summary className="cursor-pointer list-none text-base font-semibold text-slate-950 [&::-webkit-details-marker]:hidden">
-                {item.question}
+                {trText(item.question)}
               </summary>
-              <p className="mt-3 text-sm leading-7 text-slate-600">{item.answer}</p>
+              <p className="mt-3 text-sm leading-7 text-slate-600">{trText(item.answer)}</p>
             </details>
           ))}
         </div>
@@ -164,13 +164,16 @@ export default function FertilizerSectorExperience() {
         <div className="overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-[0_24px_80px_rgba(15,23,42,0.08)]">
           <div className="grid gap-0 lg:grid-cols-[0.95fr_1.05fr]">
             <div className="border-b border-slate-200 bg-[linear-gradient(180deg,#eff6ff_0%,#ffffff_100%)] p-6 sm:p-8 lg:border-b-0 lg:border-r">
-              <p className="text-sm font-semibold uppercase tracking-[0.16em] text-blue-700">Teklif ve Teknik Görüşme</p>
+              <p className="text-sm font-semibold uppercase tracking-[0.16em] text-blue-700">
+                {trText("Teklif ve Teknik Görüşme")}
+              </p>
               <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950">
-                Gübre Üretim Tesisleri için teklif veya teknik görüşme talep edin
+                {trText("Gübre Üretim Tesisleri için teklif veya teknik görüşme talep edin")}
               </h2>
               <p className="mt-4 text-sm leading-7 text-slate-600 sm:text-base sm:leading-8">
-                Sıvı, granül veya toz gübre üretim tesisleri için kapasite, ürün tipi, proses akışı ve saha şartlarınıza
-                uygun teknik çözümü birlikte değerlendirelim.
+                {trText(
+                  "Sıvı, granül veya toz gübre üretim tesisleri için kapasite, ürün tipi, proses akışı ve saha şartlarınıza uygun teknik çözümü birlikte değerlendirelim.",
+                )}
               </p>
             </div>
             <FertilizerSectorForm />

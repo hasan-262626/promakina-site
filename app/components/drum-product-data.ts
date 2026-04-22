@@ -106,7 +106,7 @@ export const drumProductPages: DrumProductPage[] = [
       "Granül gübre, kompost türevleri, arıtma çamuru, mineral ürünler ve özel proses malzemeleri için farklı L/D oranlarında, özel iç flight tasarımlı ve saha koşullarına uygun kurutma tamburu imalatı yapılabilir.",
     ],
     highlightText:
-      "Kurutma tamburunda verim; termal yük, iç lifter tasarımı ve hava temas karakteri ile doğrudan ilişkilidir. Rotary drum dryer tasarımında tambur ölçüsü kadar proses kontrolü de belirleyicidir.",
+      "Kurutma tambüründa verim; termal yük, iç lifter tasarımı ve hava temas karakteri ile doğrudan ilişkilidir. Rotary drum dryer tasarımında tambur ölçüsü kadar proses kontrolü de belirleyicidir.",
     specs: [
       "Brülör ve sıcak gaz hattına uygun tambur gövdesi",
       "Yüksek verimli lifting flight tasarımı",
@@ -159,7 +159,7 @@ export const drumProductPages: DrumProductPage[] = [
       "Rotary drum cooler sistemleri; granül gübre, mineral granül ve özel partiküllü ürünlerde ürün kırılmasını minimize ederken sıcaklık düşüşünü dengeli biçimde yönetmek için özel iç geometriyle tasarlanır.",
     ],
     highlightText:
-      "Soğutma tamburunda hava akışı, ürün yatağı hareketi ve daha sığ flight geometrisi birlikte çalışır. Ürün stabilizasyonu için kontrollü taşıma karakteri öne çıkar.",
+      "Soğutma tambüründa hava akışı, ürün yatağı hareketi ve daha sığ flight geometrisi birlikte çalışır. Ürün stabilizasyonu için kontrollü taşıma karakteri öne çıkar.",
     specs: [
       "Ürüne uygun soğutma tamburu çap ve boyu",
       "Düşük kırılma riski için kontrollü iç geometri",
@@ -212,7 +212,7 @@ export const drumProductPages: DrumProductPage[] = [
       "Kaplama tamburu sistemlerinde ürün kırılmasını azaltan düşük profilli iç geometri, püskürtme bölgesi tasarımı ve stabil ürün perdesi kritik öneme sahiptir.",
     ],
     highlightText:
-      "Kaplama tamburunda türbülansın kontrollü tutulması ve ürün yüzeyine eşit dağılım sağlanması gerekir. Coating drum tasarımında nozul yerleşimi ve iç flight profili birlikte çözülür.",
+      "Kaplama tambüründa türbülansın kontrollü tutulması ve ürün yüzeyine eşit dağılım sağlanması gerekir. Coating drum tasarımında nozul yerleşimi ve iç flight profili birlikte çözülür.",
     specs: [
       "Kaplama prosesine uygun düşük profilli iç geometri",
       "Nozul ve sprey hattı entegrasyonu",
@@ -265,7 +265,7 @@ export const drumProductPages: DrumProductPage[] = [
       "Compost rotary drum sistemleri özellikle organik atık, digestat, çamur-karışım ve biyogaz yan ürünlerinin daha kararlı ve homojen hale getirilmesinde etkili çözümler sunar.",
     ],
     highlightText:
-      "Kompost tamburunda organik yapının korunması, yeterli karıştırma ve düzenli ilerleme karakteri birlikte ele alınır. Biyolojik proses davranışı mekanik tasarımla uyumlu kurgulanmalıdır.",
+      "Kompost tambüründa organik yapının korunması, yeterli karıştırma ve düzenli ilerleme karakteri birlikte ele alınır. Biyolojik proses davranışı mekanik tasarımla uyumlu kurgulanmalıdır.",
     specs: [
       "Uzun kalış süresine uygun tambur boyu",
       "Karıştırıcı ve havalandırıcı iç geometri",

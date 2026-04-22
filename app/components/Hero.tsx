@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import { trText } from "../lib/tr-text";
 
 type HeroProps = {
   title: string;
@@ -18,10 +19,10 @@ export function Hero({ title, description, image, children }: HeroProps) {
       <div className="relative site-container flex min-h-[320px] items-center py-[60px] md:min-h-[420px] md:py-[80px]">
         <div className="max-w-[800px]">
           <h1 className="max-w-[800px] break-normal text-[32px] font-semibold leading-[1.2] tracking-tight text-white md:text-[48px]">
-            {title}
+            {trText(title)}
           </h1>
           <p className="mt-4 max-w-[600px] text-base leading-[1.6] text-white/84">
-            {description}
+            {trText(description)}
           </p>
           {children ? <div className="mt-8 flex flex-wrap gap-3">{children}</div> : null}
         </div>

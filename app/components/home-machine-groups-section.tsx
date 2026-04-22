@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { homeMachineGroupCards } from "../home-machine-groups-data";
+import { trText } from "../lib/tr-text";
 
 export function HomeMachineGroupsSection() {
   const router = useRouter();
@@ -22,12 +23,12 @@ export function HomeMachineGroupsSection() {
             Makinalar & Ekipman
           </h2>
           <h3 className="mt-3 max-w-4xl text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">
-            Endüstriyel makina ve ekipman gruplarını tek çatı altında inceleyin
+            {trText("Endüstriyel makina ve ekipman gruplarını tek çatı altında inceleyin")}
           </h3>
           <p className="mt-4 w-full max-w-[1120px] text-[15px] leading-[1.65] text-slate-600 sm:text-base">
-            Tambur sistemlerinden taşıma ekipmanlarına, kırıcı ve parçalayıcılardan reaktör ve
-            tank çözümlerine kadar farklı proses ihtiyaçları için geliştirilen makina ailelerini
-            bir arada sunuyoruz.
+            {trText(
+              "Tambur sistemlerinden taşıma ekipmanlarına, kırıcı ve parçalayıcılardan reaktör ve tank çözümlerine kadar farklı proses ihtiyaçları için geliştirilen makina ailelerini bir arada sunuyoruz.",
+            )}
           </p>
         </div>
 
@@ -50,7 +51,7 @@ export function HomeMachineGroupsSection() {
                 <div className="relative min-h-[220px] bg-slate-200">
                   <Image
                     src={card.image}
-                    alt={card.alt}
+                    alt={trText(card.alt)}
                     fill
                     sizes="(min-width: 1536px) 24vw, (min-width: 768px) 48vw, 100vw"
                     className="object-cover transition duration-300 group-hover:scale-[1.02]"
@@ -60,11 +61,11 @@ export function HomeMachineGroupsSection() {
                 <div className="flex min-h-[280px] flex-1 flex-col px-6 py-6 sm:px-7 sm:py-7">
                   <div>
                     <h3 className="text-2xl font-semibold tracking-tight text-slate-950">
-                      {card.title}
+                      {trText(card.title)}
                     </h3>
                     {card.description ? (
                       <p className="mt-4 text-sm leading-7 text-slate-600 sm:text-[15px]">
-                        {card.description}
+                        {trText(card.description)}
                       </p>
                     ) : null}
 
@@ -72,14 +73,14 @@ export function HomeMachineGroupsSection() {
                       {card.products.map((product) => (
                         <li key={typeof product === "string" ? product : product.href}>
                           {typeof product === "string" ? (
-                            product
+                            trText(product)
                           ) : (
                             <Link
                               href={product.href}
                               onClick={(event) => event.stopPropagation()}
                               className="inline-flex rounded-md py-0.5 transition hover:text-blue-700 hover:underline underline-offset-4"
                             >
-                              {product.label}
+                              {trText(product.label)}
                             </Link>
                           )}
                         </li>
@@ -88,14 +89,14 @@ export function HomeMachineGroupsSection() {
 
                     {card.seoNote ? (
                       <p className="mt-4 text-xs leading-6 text-slate-500 sm:text-[13px]">
-                        {card.seoNote}
+                        {trText(card.seoNote)}
                       </p>
                     ) : null}
                   </div>
 
                   <div className="mt-auto pt-8">
                     <span className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-slate-300 px-5 text-sm font-semibold text-slate-900 transition group-hover:border-blue-200 group-hover:text-blue-700">
-                      {card.buttonLabel}
+                      {trText(card.buttonLabel)}
                     </span>
                   </div>
                 </div>

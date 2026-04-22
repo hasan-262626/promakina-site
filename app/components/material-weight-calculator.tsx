@@ -1,6 +1,7 @@
-"use client";
+﻿"use client";
 
 import { useMemo, useState } from "react";
+import { trText } from "../lib/tr-text";
 
 type GeometryKey = "round" | "rect" | "hex" | "sheet";
 
@@ -37,28 +38,44 @@ type SheetState = MaterialState & {
 const MATERIAL_DENSITY: Record<string, string> = {
   "Çelik (1040-St)": "7.85",
   "Paslanmaz Çelik": "7.90",
-  Alüminyum: "2.70",
-  Bronz: "8.80",
-  Bakır: "8.93",
-  Pirinç: "8.50",
+  "Alüminyum": "2.70",
+  "Bronz": "8.80",
+  "Bakır": "8.93",
+  "Pirinç": "8.50",
   "Çelik Döküm": "7.80",
-  Polyamid: "1.14",
-  Kestamid: "1.15",
-  Derlin: "1.42",
-  Fiber: "1.85",
-  Alpolen: "0.92",
-  Teflon: "2.20",
-  Polietilen: "0.95",
+  "Polyamid": "1.14",
+  "Kestamid": "1.15",
+  "Derlin": "1.42",
+  "Fiber": "1.85",
+  "Alpolen": "0.92",
+  "Teflon": "2.20",
+  "Polietilen": "0.95",
 };
 
 const MATERIALS = Object.keys(MATERIAL_DENSITY);
 const DEFAULT_MATERIAL = "Çelik (1040-St)";
 
 const GEOMETRIES: Array<{ key: GeometryKey; label: string; intro: string }> = [
-  { key: "round", label: "Yuvarlak Malzeme", intro: "Çap, iç çap ve boy bilgilerine göre dolu veya boru kesitli malzeme ağırlığını hesaplayın." },
-  { key: "rect", label: "Kare / Lama Malzeme", intro: "Genişlik, kalınlık ve boy bilgilerine göre dikdörtgen kesitli malzeme hesabı yapın." },
-  { key: "hex", label: "Altıköşe Malzeme", intro: "Karşıdan karşıya ölçü ve boy bilgisine göre altıköşe malzeme ağırlığını hesaplayın." },
-  { key: "sheet", label: "Sac / Levha", intro: "Sac eni, boyu ve kalınlığına göre levha ağırlığını hızlıca görün." },
+  {
+    key: "round",
+    label: "Yuvarlak Malzeme",
+    intro: "Çap, iç çap ve boy bilgilerine göre dolu veya boru kesitli malzeme ağırlığını hesaplayın.",
+  },
+  {
+    key: "rect",
+    label: "Kare / Lama Malzeme",
+    intro: "Genişlik, kalınlık ve boy bilgilerine göre dikdörtgen kesitli malzeme hesabı yapın.",
+  },
+  {
+    key: "hex",
+    label: "Altıköşe Malzeme",
+    intro: "Karşıdan karşıya ölçü ve boy bilgisine göre altıköşe malzeme ağırlığını hesaplayın.",
+  },
+  {
+    key: "sheet",
+    label: "Sac / Levha",
+    intro: "Sac eni, boyu ve kalınlığına göre levha ağırlığını hızlıca görün.",
+  },
 ];
 
 const toNumber = (value: string) => {
@@ -72,7 +89,7 @@ const fmt = (value: number, digits = 3) =>
     maximumFractionDigits: digits,
   }).format(value);
 
-const money = (value: number) => `${fmt(value, 2)} ₺`;
+const money = (value: number) => `${fmt(value, 2)} â‚º`;
 
 function Field({
   label,
@@ -87,7 +104,7 @@ function Field({
 }) {
   return (
     <label className="grid gap-2">
-      <span className="text-sm font-medium text-slate-700">{label}</span>
+      <span className="text-sm font-medium text-slate-700">{trText(label)}</span>
       <div className="flex items-center rounded-2xl border border-blue-100 bg-blue-50 px-4 py-3 transition focus-within:border-blue-300 focus-within:bg-white">
         <input
           inputMode="decimal"
@@ -114,7 +131,7 @@ function SelectField({
 }) {
   return (
     <label className="grid gap-2">
-      <span className="text-sm font-medium text-slate-700">{label}</span>
+      <span className="text-sm font-medium text-slate-700">{trText(label)}</span>
       <select
         value={value}
         onChange={(event) => onChange(event.target.value)}
@@ -122,7 +139,7 @@ function SelectField({
       >
         {options.map((option) => (
           <option key={option} value={option}>
-            {option}
+            {trText(option)}
           </option>
         ))}
       </select>
@@ -141,9 +158,9 @@ function ReadonlyField({
 }) {
   return (
     <div className="grid gap-2">
-      <span className="text-sm font-medium text-slate-700">{label}</span>
+      <span className="text-sm font-medium text-slate-700">{trText(label)}</span>
       <div className="flex min-h-[50px] items-center justify-between rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm font-medium text-slate-700">
-        <span>{value}</span>
+        <span>{trText(value)}</span>
         {unit ? <span className="text-sm text-slate-500">{unit}</span> : null}
       </div>
     </div>
@@ -159,8 +176,8 @@ function ResultCard({
 }) {
   return (
     <div className="rounded-2xl border border-slate-200 bg-white px-5 py-4">
-      <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">{label}</p>
-      <p className="mt-2 text-xl font-semibold text-slate-950">{value}</p>
+      <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">{trText(label)}</p>
+      <p className="mt-2 text-xl font-semibold text-slate-950">{trText(value)}</p>
     </div>
   );
 }
@@ -385,15 +402,15 @@ export function MaterialWeightCalculator() {
   return (
     <section className="bg-[linear-gradient(180deg,#f8fafc_0%,#ffffff_42%,#f8fafc_100%)] pb-14 pt-8 lg:pb-16 lg:pt-10">
       <div className="site-container space-y-6">
-        <div className="grid gap-6 xl:grid-cols-[1.02fr_0.98fr]">
+        <div className="grid gap-6">
           <div className="rounded-[28px] border border-blue-100 bg-white p-6 shadow-[0_18px_50px_rgba(15,23,42,0.06)]">
             <div className="flex items-start justify-between gap-4">
               <div>
-                <h2 className="text-2xl font-semibold text-slate-950">Müşteri Seçimi</h2>
+                <h2 className="text-2xl font-semibold text-slate-950">Müşteri Giriş Alanı</h2>
                 <p className="mt-3 text-sm leading-7 text-slate-600">
-                  Bu bölümde gerekli tüm seçim ve girişleri tek seferde doldurun.
+                  Bu bölümde gerekli tüm seçim ve girişleri tek seferde doldürün.
                 </p>
-                <p className="mt-2 text-xs font-medium text-slate-500">Lütfen gerekli alanları doldurun. Sonuçlar ve standart veriler otomatik güncellenecektir.</p>
+                <p className="mt-2 text-xs font-medium text-slate-500">Lütfen gerekli alanları doldürün. Sonuçlar ve standart veriler otomatik güncellenecektir.</p>
               </div>
               <button
                 type="button"
@@ -428,7 +445,7 @@ export function MaterialWeightCalculator() {
 
               <div className="rounded-3xl border border-slate-200 bg-slate-50 p-5">
                 <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-slate-500">Standarttan Otomatik Gelen Alanlar</h3>
-                <div className="mt-4 grid gap-4 md:grid-cols-2">
+                <div className="mt-4 grid gap-x-4 gap-y-3 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
                   <SelectField
                     label="Malzeme"
                     value={currentMaterial}
@@ -448,7 +465,7 @@ export function MaterialWeightCalculator() {
 
               <div className="rounded-3xl border border-slate-200 bg-slate-50 p-5">
                 <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-slate-500">Boyutlar</h3>
-                <div className="mt-4 grid gap-4 md:grid-cols-2">
+                <div className="mt-4 grid gap-x-4 gap-y-3 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
                   {geometry === "round" ? (
                     <>
                       <Field label="Dış Çap (ØD)" value={round.diameter} onChange={(value) => setRound((current) => ({ ...current, diameter: value }))} unit="mm" />
@@ -484,7 +501,7 @@ export function MaterialWeightCalculator() {
 
               <div className="rounded-3xl border border-slate-200 bg-slate-50 p-5">
                 <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-slate-500">Sipariş / Maliyet</h3>
-                <div className="mt-4 grid gap-4 md:grid-cols-2">
+                <div className="mt-4 grid gap-x-4 gap-y-3 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
                   <Field
                     label="Adet"
                     value={
@@ -520,7 +537,7 @@ export function MaterialWeightCalculator() {
                       if (geometry === "hex") setHex((current) => ({ ...current, pricePerKg: value }));
                       if (geometry === "sheet") setSheet((current) => ({ ...current, pricePerKg: value }));
                     }}
-                    unit="₺/kg"
+                    unit="â‚º/kg"
                   />
                 </div>
               </div>
@@ -577,3 +594,7 @@ export function MaterialWeightCalculator() {
     </section>
   );
 }
+
+
+
+

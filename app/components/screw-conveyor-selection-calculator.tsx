@@ -61,11 +61,11 @@ function ResultSection({ title, items }: { title: string; items: Array<{ label: 
   return (
     <div className="rounded-3xl border border-slate-200 bg-white p-5">
       <h3 className="text-lg font-semibold text-slate-950">{title}</h3>
-      <div className="mt-4 grid gap-3 sm:grid-cols-2">
+      <div className="mt-4 grid gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
         {items.map((item) => (
-          <div key={`${title}-${item.label}`} className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3">
+          <div key={`${title}-${item.label}`} className="rounded-2xl border border-slate-200 bg-slate-50 px-3.5 py-3">
             <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-slate-500">{item.label}</p>
-            <p className="mt-2 text-sm font-semibold text-slate-900">{item.value}</p>
+            <p className="mt-1.5 text-sm font-semibold text-slate-900">{item.value}</p>
           </div>
         ))}
       </div>
@@ -192,13 +192,13 @@ export function ScrewConveyorSelectionCalculator() {
   return (
     <section className="bg-[linear-gradient(180deg,#f8fafc_0%,#ffffff_42%,#f8fafc_100%)] pb-14 pt-8 lg:pb-16 lg:pt-10">
       <div className="site-container">
-        <div className="grid gap-6 xl:grid-cols-[1.04fr_0.96fr]">
+        <div className="grid gap-6">
           <div className="space-y-6">
             <div className="rounded-[32px] border border-blue-100 bg-white p-6 shadow-[0_20px_60px_rgba(15,23,42,0.08)]">
               <h2 className="text-2xl font-semibold text-slate-950">Müşteri Giriş Alanı</h2>
               <p className="mt-3 text-sm leading-7 text-slate-600">Tüm müşteri seçimlerini bu panelde tamamlayın. Sistem helezon çapı, hatve, devir ve mekanik önerileri anlık olarak oluşturur.</p>
 
-              <div className="mt-6 grid gap-5 md:grid-cols-2">
+              <div className="mt-5 grid gap-x-4 gap-y-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
                 <ToolkitInput label="Müşteri adı" value={customerName} onChange={setCustomerName} helperText="Rapor özeti için" limitText="Opsiyoneldir" tip="Teklif raporunda gösterilecek müşteri veya firma adıdır." tipId="screw-customer" openTip={openTip} setOpenTip={setOpenTip} />
                 <ToolkitInput label="Proje adı" value={projectName} onChange={setProjectName} helperText="Hat adı" limitText="Opsiyoneldir" tip="Teknik özet içinde yer alacak proje ismidir." tipId="screw-project" openTip={openTip} setOpenTip={setOpenTip} />
                 <ToolkitInput label="Tarih" value={dateValue} onChange={setDateValue} helperText="Rapor tarihi" limitText="Opsiyoneldir" tip="Teknik rapora yazdırılacak tarihtir." tipId="screw-date" openTip={openTip} setOpenTip={setOpenTip} />
@@ -217,7 +217,7 @@ export function ScrewConveyorSelectionCalculator() {
                 <ToolkitInput label="Eğim açısı" value={angle} onChange={setAngle} unit="°" error={errors.angle} helperText="Kapasite kaybı bu değere göre uygulanır" limitText="Her 1° eğimde kapasite düşüşü kabul edilir" tip="Helezonun yataya göre eğim açısıdır." tipId="screw-angle" openTip={openTip} setOpenTip={setOpenTip} />
                 <ToolkitSelect label="Doluluk oranı" value={fillRatio} onChange={setFillRatio} options={[...FILL_RATIO_OPTIONS]} helperText="Ana kapasite parametresi" limitText="Yapışkan ürünlerde düşük doluluk tercih edilir" tip="Helezon içindeki efektif doluluk oranıdır." tipId="screw-fill" openTip={openTip} setOpenTip={setOpenTip} />
                 <ToolkitSelect label="Devir" value={rpmMode} onChange={setRpmMode} options={[...RPM_MODE_OPTIONS]} helperText="Sistem veya manuel" limitText="Manuel modda rpm doğrudan girilir" tip="Helezon devri sistem tarafından önerilebilir veya manuel girilebilir." tipId="screw-rpm-mode" openTip={openTip} setOpenTip={setOpenTip} />
-                {rpmMode === "Manuel RPM gir" ? <ToolkitInput label="Manuel RPM" value={manualRpm} onChange={setManualRpm} unit="rpm" error={errors.manualRpm} helperText="Bu alanı siz doldurun" limitText="Sıfırdan büyük olmalıdır" tip="Helezonun çalışma devrini manuel girin." tipId="screw-manual-rpm" openTip={openTip} setOpenTip={setOpenTip} /> : <ToolkitSelect label="Helezon çapı" value={selectedDiameter} onChange={setSelectedDiameter} options={SCREW_TABLE.map((item) => String(item.diameter))} helperText="Çap seçilirse hatve otomatik eşleşir" limitText="Başlangıç moduna göre sistem bu değeri dikkate alır" tip="Standart veya özel helezon çapını seçin." tipId="screw-diameter" openTip={openTip} setOpenTip={setOpenTip} />}
+                {rpmMode === "Manuel RPM gir" ? <ToolkitInput label="Manuel RPM" value={manualRpm} onChange={setManualRpm} unit="rpm" error={errors.manualRpm} helperText="Bu alanı siz doldürün" limitText="Sıfırdan büyük olmalıdır" tip="Helezonun çalışma devrini manuel girin." tipId="screw-manual-rpm" openTip={openTip} setOpenTip={setOpenTip} /> : <ToolkitSelect label="Helezon çapı" value={selectedDiameter} onChange={setSelectedDiameter} options={SCREW_TABLE.map((item) => String(item.diameter))} helperText="Çap seçilirse hatve otomatik eşleşir" limitText="Başlangıç moduna göre sistem bu değeri dikkate alır" tip="Standart veya özel helezon çapını seçin." tipId="screw-diameter" openTip={openTip} setOpenTip={setOpenTip} />}
                 <ToolkitSelect label="Mil / boru" value={shaftMode} onChange={setShaftMode} options={[...SHAFT_MODE_OPTIONS]} helperText="Sistem veya manuel seçim" limitText="Çapa göre otomatik öneri yapılır" tip="İç taşıyıcı mil / boru çapı sistem tarafından önerilebilir." tipId="screw-shaft-mode" openTip={openTip} setOpenTip={setOpenTip} />
                 {shaftMode === "Manuel seçim" ? <ToolkitInput label="Mil / boru çapı" value={manualShaft} onChange={setManualShaft} unit="mm" helperText="Manuel mil / boru seçimi" limitText="Opsiyonel" tip="İç mil veya boru çapını manuel olarak belirleyin." tipId="screw-manual-shaft" openTip={openTip} setOpenTip={setOpenTip} /> : <ToolkitReadonly label="Önerilen mil / boru" value={model.shaft} />}
                 <ToolkitSelect label="Yatak sistemi" value={bearingType} onChange={setBearingType} options={[...BEARING_OPTIONS]} helperText="Asma yatak ve burç seçimi" limitText="Uzun boylarda sistem önerisi öne çıkar" tip="Yatak sistemi boy, ürün ve doluluk karakterine göre değerlendirilir." tipId="screw-bearing" openTip={openTip} setOpenTip={setOpenTip} />
@@ -264,7 +264,7 @@ export function ScrewConveyorSelectionCalculator() {
             <ToolkitInfo title="Teknik Bilgi" text="Bu araç, helezon konveyörlerde çap, hatve, rpm, doluluk ve eğim etkisini dikkate alarak ön mühendislik seviyesinde seçim önerisi üretir." />
           </div>
 
-          <div className="space-y-6 xl:sticky xl:top-6 xl:self-start">
+          <div className="space-y-6">
             <div className="rounded-[32px] border border-slate-200 bg-white p-6 shadow-[0_18px_50px_rgba(15,23,42,0.08)]">
               <div className="flex flex-wrap items-center justify-between gap-3">
                 <div>
@@ -277,7 +277,7 @@ export function ScrewConveyorSelectionCalculator() {
                 </div>
               </div>
 
-              <div className="mt-6 grid gap-4 sm:grid-cols-2">
+                  <div className="mt-6 grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
                 <ToolkitResult label="Net kapasite" value={`${formatNumber(model.netCapacity, 2)} ton/saat`} />
                 <ToolkitResult label="Tasarım kapasitesi" value={`${formatNumber(model.designCapacity, 2)} ton/saat`} tone="info" />
                 <ToolkitResult label="Helezon çapı" value={`${model.chosen.diameter} mm`} tone="info" />
@@ -340,3 +340,4 @@ export function ScrewConveyorSelectionCalculator() {
     </section>
   );
 }
+

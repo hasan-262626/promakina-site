@@ -304,9 +304,9 @@ function ResultCard({ label, value, tone }: { label: string; value: string; tone
           ? "border-sky-100 bg-sky-50"
           : "border-slate-200 bg-white";
   return (
-    <div className={`rounded-2xl border px-5 py-4 ${classes}`}>
+    <div className={`rounded-2xl border px-4 py-3.5 ${classes}`}>
       <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">{label}</p>
-      <p className="mt-2 text-lg font-semibold text-slate-950">{value}</p>
+      <p className="mt-1.5 text-base font-semibold text-slate-950">{value}</p>
     </div>
   );
 }
@@ -372,11 +372,11 @@ function LeadBox() {
   return (
     <div className="rounded-3xl border border-blue-100 bg-blue-50 px-5 py-6 sm:px-6">
       <h3 className="text-lg font-semibold text-slate-950">
-        Projenize Uygun Segman ve Kanal Çözümü mü Arıyorsunuz?
+        Teknik özet raporu hazır
       </h3>
       <p className="mt-3 text-sm leading-7 text-slate-600">
         Standart veya özel segman, kanal açım ve mil / delik bağlantı detayları için bizimle iletişime
-        geçin. Projenize uygun teknik yaklaşımı birlikte netleştirelim.
+        geçin. Bu sonuçlar yazdırılabilir ve teklif dosyasına aktarılabilir.
       </p>
       <div className="mt-5 flex flex-wrap gap-3">
         <a
@@ -476,7 +476,7 @@ function SegmanPanel({
   }
 
   return (
-    <div className="grid gap-6 xl:grid-cols-[1.02fr_0.98fr]">
+    <div className="grid gap-6">
       <div className="space-y-6">
         <div className="rounded-3xl border border-blue-100 bg-white p-6 shadow-[0_18px_50px_rgba(15,23,42,0.06)]">
           <h2 className="text-2xl font-semibold text-slate-950">Müşteri Girişleri</h2>
@@ -485,8 +485,8 @@ function SegmanPanel({
               ? "Delik çapına göre standart iç segman ölçülerini ve segman için delikte açılacak kanal ölçülerini teknik olarak görüntüleyin."
               : "Mil çapına göre standart dış segman ölçülerini ve segman için milde açılacak kanal ölçülerini teknik olarak görüntüleyin."}
           </p>
-          <div className="mt-6 grid gap-5 md:grid-cols-2">
-            <InputField label={`${isInternal ? "Delik" : "Mil"} Çapı (Ød1)`} value={diameter} onChange={setDiameter} unit="mm" helperText="Bu alanı siz doldurun" limitText={`0'dan büyük olmalıdır • Standart DIN ${isInternal ? "472" : "471"} aralığı otomatik belirlenir`} error={errors.diameter} tip={`${isInternal ? "İç" : "Dış"} segmanın oturacağı nominal ${isInternal ? "delik" : "mil"} çapıdır. Sistem bu değere göre uygun DIN ${isInternal ? "472" : "471"} segman ölçüsünü bulur.`} tipId={`${type}-diameter`} openTip={openTip} setOpenTip={setOpenTip} />
+          <div className="mt-5 grid gap-x-4 gap-y-4 md:grid-cols-2 xl:grid-cols-3">
+            <InputField label={`${isInternal ? "Delik" : "Mil"} Çapı (Ød1)`} value={diameter} onChange={setDiameter} unit="mm" helperText="Bu alanı siz doldürün" limitText={`0'dan büyük olmalıdır • Standart DIN ${isInternal ? "472" : "471"} aralığı otomatik belirlenir`} error={errors.diameter} tip={`${isInternal ? "İç" : "Dış"} segmanın oturacağı nominal ${isInternal ? "delik" : "mil"} çapıdır. Sistem bu değere göre uygun DIN ${isInternal ? "472" : "471"} segman ölçüsünü bulur.`} tipId={`${type}-diameter`} openTip={openTip} setOpenTip={setOpenTip} />
             <InputField label={isInternal ? "Opsiyonel Göbek Dış Çapı" : "Opsiyonel Göbek / Taşıyıcı Parça Çapı"} value={carrierDiameter} onChange={setCarrierDiameter} unit="mm" helperText="Opsiyonel kontrol alanı" limitText={isInternal ? "Delik çapısından büyük olmalıdır" : "Taşıyıcı çap bilgisi ek yorum için kullanılabilir"} error={errors.carrier} tip={isInternal ? "Opsiyonel dış çap kontrol alanıdır. Kanal ve segman sonrası yeterli et kalınlığı hakkında yorum üretmek için kullanılabilir." : "Opsiyonel kontrol alanıdır. Kanal sonrası çevrede kalan et kalınlığı hakkında yorum üretmek için kullanılabilir."} tipId={`${type}-carrier`} openTip={openTip} setOpenTip={setOpenTip} />
             <InputField label={isInternal ? "Opsiyonel Et Kalınlığı / Dış Duvar Payı" : "Opsiyonel Et Kalınlığı / Omuz Payı"} value={wallThickness} onChange={setWallThickness} unit="mm" helperText="Opsiyonel kontrol alanı" limitText="0’dan büyük olmalıdır" error={errors.wall} tip={isInternal ? "Delik dışındaki kalan malzeme kalınlığı için opsiyonel kontrol alanıdır." : "Milde kanal açıldıktan sonra kalan taşıyıcı kesit hakkında ön değerlendirme sağlar."} tipId={`${type}-wall`} openTip={openTip} setOpenTip={setOpenTip} />
             <SelectField label="Uygulama Tipi" value={applicationType} onChange={(value) => setApplicationType(value as ApplicationType)} options={APPLICATION_OPTIONS} helperText="Bu alanı siz seçin" limitText="Sonuçlara ek teknik yorum vermek için kullanılabilir" tip="Sonuçlara ek teknik yorum vermek için kullanılabilir." tipId={`${type}-application`} openTip={openTip} setOpenTip={setOpenTip} />
@@ -495,7 +495,7 @@ function SegmanPanel({
 
         <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-[0_18px_50px_rgba(15,23,42,0.05)]">
           <h2 className="text-xl font-semibold text-slate-950">Standarttan Otomatik Gelen Alanlar</h2>
-          <div className="mt-5 grid gap-4 sm:grid-cols-2">
+          <div className="mt-5 grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
             <ReadonlyField label="Ød1" value={record ? `${fmt(record.nominal, 2)} mm` : "Çap seçildiğinde otomatik gelir"} />
             <ReadonlyField label="Segman Kalınlığı s" value={record ? `${fmt(record.s, 2)} mm` : "-"} />
             <ReadonlyField label="s Toleransı" value={record?.sTol ?? "-"} />
@@ -514,8 +514,8 @@ function SegmanPanel({
 
       <div className="space-y-6">
         <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-[0_18px_50px_rgba(15,23,42,0.06)]">
-          <h2 className="text-2xl font-semibold text-slate-950">Sonuçlar</h2>
-          <div className="mt-6 grid gap-4 sm:grid-cols-2">
+          <h2 className="text-2xl font-semibold text-slate-950">Sonuç Ekranı</h2>
+          <div className="mt-6 grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
             <ResultCard label={`Uygun ${isInternal ? "İç" : "Dış"} Segman Ölçüsü`} value={record ? `DIN ${isInternal ? "472" : "471"} – ${fmt(record.nominal, 0)} mm` : "Sonuçlar burada görüntülenecektir"} tone={record ? "info" : undefined} />
             <ResultCard label="Segman Kalınlığı" value={record ? `${fmt(record.s, 2)} mm` : "-"} />
             <ResultCard label={isInternal ? "Segman Dış Çapı" : "Segman İç Çapı"} value={record ? `${fmt(record.d3, 2)} mm` : "-"} />
@@ -622,20 +622,20 @@ export function CirclipGrooveCalculator() {
           {activeTab === "internal" ? <SegmanPanel type="internal" diameter={internalDiameter} setDiameter={setInternalDiameter} carrierDiameter={internalCarrier} setCarrierDiameter={setInternalCarrier} wallThickness={internalWall} setWallThickness={setInternalWall} applicationType={internalApplication} setApplicationType={setInternalApplication} openTip={openTip} setOpenTip={setOpenTip} /> : null}
           {activeTab === "external" ? <SegmanPanel type="external" diameter={externalDiameter} setDiameter={setExternalDiameter} carrierDiameter={externalCarrier} setCarrierDiameter={setExternalCarrier} wallThickness={externalWall} setWallThickness={setExternalWall} applicationType={externalApplication} setApplicationType={setExternalApplication} openTip={openTip} setOpenTip={setOpenTip} /> : null}
           {activeTab === "channel" ? (
-            <div className="grid gap-6 xl:grid-cols-[1.02fr_0.98fr]">
+            <div className="grid gap-6">
               <div className="space-y-6">
                 <div className="rounded-3xl border border-blue-100 bg-white p-6 shadow-[0_18px_50px_rgba(15,23,42,0.06)]">
                   <h2 className="text-2xl font-semibold text-slate-950">Müşteri Girişleri</h2>
-                  <div className="mt-6 grid gap-5 md:grid-cols-2">
+                  <div className="mt-5 grid gap-x-4 gap-y-4 md:grid-cols-2 xl:grid-cols-3">
                     <SelectField label="Uygulama Türü" value={channelType} onChange={setChannelType} options={CHANNEL_TYPE_OPTIONS} helperText="Bu alanı siz seçin" limitText="İç segman veya dış segman tipini belirler" tip="İç segman (DIN 472) veya dış segman (DIN 471) kanal ölçülerini seçmenizi sağlar." tipId="channel-type" openTip={openTip} setOpenTip={setOpenTip} />
-                    <InputField label="Nominal Çap" value={channelNominal} onChange={setChannelNominal} unit="mm" helperText="Bu alanı siz doldurun" limitText="Standart aralıkta olmalıdır" tip="Segman kanal ölçülerinin alınacağı nominal çap bilgisidir." tipId="channel-nominal" openTip={openTip} setOpenTip={setOpenTip} />
+                    <InputField label="Nominal Çap" value={channelNominal} onChange={setChannelNominal} unit="mm" helperText="Bu alanı siz doldürün" limitText="Standart aralıkta olmalıdır" tip="Segman kanal ölçülerinin alınacağı nominal çap bilgisidir." tipId="channel-nominal" openTip={openTip} setOpenTip={setOpenTip} />
                     <InputField label="Opsiyonel Et Kalınlığı" value={channelWall} onChange={setChannelWall} unit="mm" helperText="Opsiyonel kontrol alanı" limitText="Kanal sonrası kesit için ön yorum üretir" tip="Kanal sonrası kalan et kalınlığı kontrolü için kullanılabilir." tipId="channel-wall" openTip={openTip} setOpenTip={setOpenTip} />
                     <InputField label="Opsiyonel Taşıyıcı Çap / Göbek Çapı" value={channelCarrier} onChange={setChannelCarrier} unit="mm" helperText="Opsiyonel kontrol alanı" limitText="Taşıyıcı parça çevresindeki malzeme için ön yorum üretir" tip="Taşıyıcı çap veya göbek çapı bilgisi girilirse çevresel malzeme kalınlığı açısından ek yorum yapılır." tipId="channel-carrier" openTip={openTip} setOpenTip={setOpenTip} />
                   </div>
                 </div>
                 <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-[0_18px_50px_rgba(15,23,42,0.05)]">
                   <h2 className="text-xl font-semibold text-slate-950">Standarttan Otomatik Gelen Alanlar</h2>
-                  <div className="mt-5 grid gap-4 sm:grid-cols-2">
+                  <div className="mt-5 grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
                     <ReadonlyField label="Uygun Segman Ölçüsü" value={channelRecord ? `${channelType} – ${fmt(channelRecord.nominal, 0)} mm` : "Çap seçildiğinde otomatik gelir"} />
                     <ReadonlyField label="Kanal Çapı" value={channelRecord ? `${fmt(channelRecord.d2, 2)} mm` : "-"} />
                     <ReadonlyField label="Kanal Genişliği" value={channelRecord ? `${fmt(channelRecord.m, 2)} mm` : "-"} />
@@ -648,8 +648,8 @@ export function CirclipGrooveCalculator() {
 
               <div className="space-y-6">
                 <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-[0_18px_50px_rgba(15,23,42,0.06)]">
-                  <h2 className="text-2xl font-semibold text-slate-950">Sonuçlar</h2>
-                  <div className="mt-6 grid gap-4 sm:grid-cols-2">
+                  <h2 className="text-2xl font-semibold text-slate-950">Sonuç Ekranı</h2>
+                  <div className="mt-6 grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
                     <ResultCard label="Uygun Segman Ölçüsü" value={channelRecord ? `${channelType} – ${fmt(channelRecord.nominal, 0)} mm` : "Sonuçlar burada görüntülenecektir"} tone={channelRecord ? "info" : undefined} />
                     <ResultCard label="Kanal Çapı" value={channelRecord ? `${fmt(channelRecord.d2, 2)} mm` : "-"} />
                     <ResultCard label="Kanal Genişliği" value={channelRecord ? `${fmt(channelRecord.m, 2)} mm` : "-"} />
@@ -665,7 +665,7 @@ export function CirclipGrooveCalculator() {
             </div>
           ) : null}
           {activeTab === "reference" ? (
-            <div className="grid gap-6 xl:grid-cols-[1.02fr_0.98fr]">
+            <div className="grid gap-6">
               <div className="space-y-6">
                 <InfoBox title="Segman nedir?" text="Segman ve kanal ölçüleri, mil veya delik üzerinde eksenel emniyet sağlayan segmanların doğru seçimi için kullanılır. İç segman ölçüleri ve dış segman ölçüleri farklı standart tablolarla değerlendirilir." />
                 <InfoBox title="İç segman ile dış segman farkı nedir?" text="İç segman, delik içine yerleşerek elemanı içeriden tutar ve DIN 472 standardı ile değerlendirilir. Dış segman ise mil üzerine yerleşir ve DIN 471 standardı ile tanımlanır." />

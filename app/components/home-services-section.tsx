@@ -1,9 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import { homeServiceCards, homeServiceTags } from "../home-services-data";
+import { trText } from "../lib/tr-text";
 
 const visibleHomeServiceCards = homeServiceCards.filter(
-  (card) => card.title !== "Pilot Tesis ve Proses Test Çalışmaları",
+  (card) => trText(card.title) !== "Pilot Tesis ve Proses Test Çalışmaları",
 );
 
 function ServiceCard({ card }: { card: (typeof homeServiceCards)[number] }) {
@@ -12,21 +13,19 @@ function ServiceCard({ card }: { card: (typeof homeServiceCards)[number] }) {
       <div className="relative h-16 w-16 overflow-hidden rounded-2xl border border-slate-200 bg-slate-100 shadow-[0_8px_24px_rgba(15,23,42,0.08)]">
         <Image
           src={card.image}
-          alt={card.imageAlt}
+          alt={trText(card.imageAlt)}
           fill
           sizes="64px"
           className="object-cover object-center"
         />
       </div>
-      <h3 className="mt-5 text-xl font-semibold tracking-tight text-slate-950">{card.title}</h3>
-      <p className="mt-3 flex-1 text-sm leading-7 text-slate-600 sm:text-[15px]">
-        {card.description}
-      </p>
+      <h3 className="mt-5 text-xl font-semibold tracking-tight text-slate-950">{trText(card.title)}</h3>
+      <p className="mt-3 flex-1 text-sm leading-7 text-slate-600 sm:text-[15px]">{trText(card.description)}</p>
       <Link
         href={card.href}
         className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-blue-700 transition hover:text-blue-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700"
       >
-        {card.buttonLabel}
+        {trText(card.buttonLabel)}
         <span aria-hidden="true">-&gt;</span>
       </Link>
     </article>
@@ -46,14 +45,12 @@ export function HomeServicesSection() {
             id="home-services-title"
             className="text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl"
           >
-            HİZMETLERİMİZ
+            {trText("HİZMETLERİMİZ")}
           </h2>
           <p className="mt-4 max-w-[1180px] text-[15px] leading-[1.7] text-slate-600 sm:text-base">
-            Pro Makina; gübre ve granülasyon, kompost ve organik atık, geri dönüşüm, atık su
-            çamuru, biyogaz, madencilik ve dökme katı malzeme işleme alanlarında projeye özel
-            mühendislik ve uygulama çözümleri sunar. İhtiyaç analizinden proses tasarımına, makina
-            imalatından saha kurulumuna ve devreye almaya kadar tüm süreçler tek merkezden
-            planlanır.
+            {trText(
+              "Pro Makina; gübre ve granülasyon, kompost ve organik atık, geri dönüşüm, atık su çamuru, biyogaz, madencilik ve dökme katı malzeme işleme alanlarında projeye özel mühendislik ve uygulama çözümleri sunar. İhtiyaç analizinden proses tasarımına, makina imalatından saha kurulumuna ve devreye almaya kadar tüm süreçler tek merkezden planlanır.",
+            )}
           </p>
         </div>
 
@@ -62,10 +59,10 @@ export function HomeServicesSection() {
             <Link
               key={tag.href}
               href={tag.href}
-              aria-label={`${tag.label} sektör sayfasına git`}
+              aria-label={`${trText(tag.label)} sektör sayfasına git`}
               className="inline-flex rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-700 shadow-sm transition hover:border-blue-200 hover:text-blue-700 hover:shadow-[0_8px_22px_rgba(15,23,42,0.06)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700"
             >
-              {tag.label}
+              {trText(tag.label)}
             </Link>
           ))}
         </div>
@@ -80,12 +77,12 @@ export function HomeServicesSection() {
           <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
             <div className="max-w-3xl">
               <p className="text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">
-                Projenize uygun doğru sistemi birlikte belirleyelim
+                {trText("Projenize uygun doğru sistemi birlikte belirleyelim")}
               </p>
               <p className="mt-4 text-base leading-8 text-slate-600">
-                Yeni tesis yatırımı, kapasite artışı, proses revizyonu veya özel makina ihtiyacınız
-                için ekibimizle iletişime geçin. Projenize uygun mühendislik yaklaşımını ve doğru
-                ekipman kurgusunu birlikte oluşturalım.
+                {trText(
+                  "Yeni tesis yatırımı, kapasite artışı, proses revizyonu veya özel makina ihtiyacınız için ekibimizle iletişime geçin. Projenize uygun mühendislik yaklaşımını ve doğru ekipman kurgusunu birlikte oluşturalım.",
+                )}
               </p>
             </div>
             <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap lg:justify-end">
@@ -93,7 +90,7 @@ export function HomeServicesSection() {
                 href="/hizmetler"
                 className="inline-flex min-h-[54px] items-center justify-center rounded-full bg-slate-950 px-7 text-sm font-semibold text-white transition hover:bg-slate-800"
               >
-                Tüm Hizmetleri İncele
+                {trText("Tüm Hizmetleri İncele")}
               </Link>
               <Link
                 href="/iletisim"

@@ -373,11 +373,11 @@ function LeadBox() {
   return (
     <div className="rounded-3xl border border-blue-100 bg-blue-50 px-5 py-6 sm:px-6">
       <h3 className="text-lg font-semibold text-slate-950">
-        Projenize Uygun Kama Kanalı Çözümü mü Arıyorsunuz?
+        Teknik özet raporu hazır
       </h3>
       <p className="mt-3 text-sm leading-7 text-slate-600">
         Standart veya özel kama kanalı, mil ve göbek bağlantı detayları için bizimle iletişime geçin.
-        Projenize uygun teknik yaklaşımı birlikte netleştirelim.
+        Bu sonuçlar yazdırılabilir ve teklif dosyasına aktarılabilir. Kama kanalı ölçülerini teknik değerlendirme için kullanabilirsiniz.
       </p>
       <div className="mt-5 flex flex-wrap gap-3">
         <a
@@ -493,7 +493,7 @@ export function KeywayDimensionsCalculator() {
   };
 
   const standardFields = (
-    <div className="grid gap-4 sm:grid-cols-2">
+    <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
       <ReadonlyField label="Uygulanan Ölçü Aralığı" value={model.range?.label ?? "Çap seçildiğinde otomatik gelir"} />
       <ReadonlyField label="Kama Eni (b)" value={model.range ? `${formatNumber(model.range.b, 2)} mm` : "-"} />
       <ReadonlyField label="St. Kama Yüksekliği (h)" value={model.range ? `${formatNumber(model.range.h, 2)} mm` : "-"} />
@@ -538,7 +538,7 @@ export function KeywayDimensionsCalculator() {
         </div>
 
         {activeTab !== "reference" ? (
-          <div className="mt-6 grid gap-6 xl:grid-cols-[1.02fr_0.98fr]">
+          <div className="mt-6 grid gap-6">
             <div className="space-y-6">
               <div className="rounded-3xl border border-blue-100 bg-white p-6 shadow-[0_18px_50px_rgba(15,23,42,0.06)]">
                 <h2 className="text-2xl font-semibold text-slate-950">Müşteri Girişleri</h2>
@@ -547,8 +547,8 @@ export function KeywayDimensionsCalculator() {
                   yüksekliği, mile girilecek t1, deliğe girilecek t2 ve kama toleransları değerlerini
                   standarttan otomatik getirir.
                 </p>
-                <div className="mt-6 grid gap-5 md:grid-cols-2">
-                  <InputField label="Mil / Delik Çapı (ØD)" value={diameter} onChange={setDiameter} unit="mm" helperText="Bu alanı siz doldurun" limitText="0'dan büyük olmalıdır" error={model.errors.diameter} tip="Kama seçimi için esas alınan nominal mil veya delik çapıdır. Sistem bu değere göre uygun standart aralığı bulur." tipId="keyway-diameter" openTip={openTip} setOpenTip={setOpenTip} />
+                <div className="mt-5 grid gap-x-4 gap-y-4 md:grid-cols-2 xl:grid-cols-3">
+                  <InputField label="Mil / Delik Çapı (ØD)" value={diameter} onChange={setDiameter} unit="mm" helperText="Bu alanı siz doldürün" limitText="0'dan büyük olmalıdır" error={model.errors.diameter} tip="Kama seçimi için esas alınan nominal mil veya delik çapıdır. Sistem bu değere göre uygun standart aralığı bulur." tipId="keyway-diameter" openTip={openTip} setOpenTip={setOpenTip} />
                   <SelectField label="Bağlantı Tipi" value={connectionType} onChange={setConnectionType} options={CONNECTION_OPTIONS} helperText="Bu alanı siz seçin" limitText="Mile ait, deliğe ait veya birlikte gösterilecek sonuçları belirler" tip="Sonuçların mile ait, deliğe ait veya birlikte gösterilmesini belirler." tipId="keyway-connection" openTip={openTip} setOpenTip={setOpenTip} />
                   <InputField label="Göbek Çapı" value={hubDiameter} onChange={setHubDiameter} unit="mm" helperText="Opsiyonel" limitText="Göbek çapı girilirse ek geometrik yorum üretilir" error={model.errors.hubDiameter} tip="Göbek çapı girilirse kama kanalı uygulamasının geometrik uygunluğu hakkında ek yorum yapılır." tipId="keyway-hub-diameter" openTip={openTip} setOpenTip={setOpenTip} />
                   <InputField label="Göbek Boyu" value={hubLength} onChange={setHubLength} unit="mm" helperText="Opsiyonel" limitText="Göbek boyu, kama boyu için ön değerlendirme sağlar" error={model.errors.hubLength} tip="Göbek boyu, kama boyu ve bağlantı yeterliliği açısından ön değerlendirme sağlar." tipId="keyway-hub-length" openTip={openTip} setOpenTip={setOpenTip} />
@@ -568,8 +568,8 @@ export function KeywayDimensionsCalculator() {
               {(activeTab === "standard" || activeTab === "range") && (
                 <>
                   <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-[0_18px_50px_rgba(15,23,42,0.06)]">
-                    <h2 className="text-2xl font-semibold text-slate-950">Sonuç Özeti</h2>
-                    <div className="mt-6 grid gap-4 sm:grid-cols-2">
+                    <h2 className="text-2xl font-semibold text-slate-950">Sonuç Ekranı</h2>
+                    <div className="mt-6 grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
                       <ResultCard label="Uygun Kama Ölçüsü" value={model.range ? `${model.range.b} × ${model.range.h}` : "Sonuçlar burada görüntülenecektir"} tone={model.range ? "info" : undefined} />
                       <ResultCard label="Kama Eni (b)" value={model.range ? `${formatNumber(model.range.b, 2)} mm` : "-"} />
                       <ResultCard label="Kama Yüksekliği (h)" value={model.range ? `${formatNumber(model.range.h, 2)} mm` : "-"} />
@@ -602,7 +602,7 @@ export function KeywayDimensionsCalculator() {
                 <>
                   <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-[0_18px_50px_rgba(15,23,42,0.06)]">
                     <h2 className="text-2xl font-semibold text-slate-950">Göbek / Mil Kontrolü</h2>
-                    <div className="mt-6 grid gap-4 sm:grid-cols-2">
+                    <div className="mt-6 grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
                       <ResultCard label="Göbek Çapı Uygunluğu" value={hubDiameter ? (model.errors.hubDiameter ? "Uygun değil" : "Uygun") : "Göbek çapı girilirse değerlendirilir"} tone={hubDiameter ? (model.errors.hubDiameter ? "critical" : "info") : undefined} />
                       <ResultCard label="Göbek Boyu Uygunluğu" value={hubLength ? (model.errors.hubLength ? "Uygun değil" : "Kontrol edildi") : "Göbek boyu girilirse değerlendirilir"} tone={hubLength ? (model.errors.hubLength ? "critical" : "info") : undefined} />
                       <ResultCard label="Et Kalınlığı Ön Yorumu" value={hubDiameter && !model.errors.hubDiameter ? `${formatNumber(model.wall, 2)} mm` : "-"} />
@@ -618,7 +618,7 @@ export function KeywayDimensionsCalculator() {
             </div>
           </div>
         ) : (
-          <div className="mt-6 grid gap-6 xl:grid-cols-[1.02fr_0.98fr]">
+          <div className="mt-6 grid gap-6">
             <div className="space-y-6">
               <InfoBox title="Kama kanalı nedir?" text="Kama kanalı açım ölçüleri, mile ve deliğe açılan yuvanın standart kama ile uyumunu belirler. Doğru ölçü seçimi moment aktarımı ve montaj güvenliği için kritik önem taşır." />
               <InfoBox title="Kama eni ve yüksekliği neyi belirler?" text="Kama eni ve kama yüksekliği, kullanılacak kama kesitini belirler. Bu değerler standart ölçü aralığına göre seçilir ve mil göbek kama bağlantısı kapasitesini doğrudan etkiler." />

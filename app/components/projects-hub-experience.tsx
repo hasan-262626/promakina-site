@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Hero } from "./Hero";
 import { ToolkitLead } from "./technical-toolkit";
+import { trText } from "../lib/tr-text";
 
 const projectCards = [
   {
@@ -61,14 +62,13 @@ export default function ProjectsHubExperience() {
     <main className="min-h-screen overflow-x-hidden bg-white text-slate-900">
       <Hero
         title="Projeler"
-        description="Projeler bölümünde farklı sektörler için geliştirdiğimiz tesis kurgularını, proses yaklaşımlarını ve teknik çözüm yapılarını bir arada sunuyoruz. Kompost, organomineral gübre, biyogaz, atık yönetimi ve özel proses uygulamalarına yönelik proje tiplerini inceleyebilirsiniz."
+        description={trText(
+          "Projeler bölümünde farklı sektörler için geliştirdiğimiz tesis kurgularını, proses yaklaşımlarını ve teknik çözüm yapılarını bir arada sunuyoruz. Kompost, organomineral gübre, biyogaz, atık yönetimi ve özel proses uygulamalarına yönelik proje tiplerini inceleyebilirsiniz.",
+        )}
         image="/images/fabrika1.jpg"
       />
 
-      <section
-        id="proje-basliklari"
-        className="section-space"
-      >
+      <section id="proje-basliklari" className="section-space">
         <div className="site-container">
           <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
             {projectCards.map((project) => (
@@ -81,7 +81,7 @@ export default function ProjectsHubExperience() {
                   <span className="relative mt-1 h-16 w-16 shrink-0 overflow-hidden rounded-2xl border border-slate-200 bg-slate-100 shadow-[0_8px_24px_rgba(15,23,42,0.08)]">
                     <Image
                       src={project.image}
-                      alt={project.imageAlt}
+                      alt={trText(project.imageAlt)}
                       fill
                       sizes="64px"
                       className="object-cover object-center"
@@ -90,13 +90,11 @@ export default function ProjectsHubExperience() {
 
                   <div className="flex min-w-0 flex-1 flex-col">
                     <h2 className="text-2xl font-semibold tracking-tight text-slate-950">
-                      {project.title}
+                      {trText(project.title)}
                     </h2>
-                    <p className="mt-3 flex-1 leading-7 text-slate-600">
-                      {project.summary}
-                    </p>
+                    <p className="mt-3 flex-1 leading-7 text-slate-600">{trText(project.summary)}</p>
                     <span className="mt-5 inline-flex items-center text-sm font-semibold text-blue-700 transition group-hover:text-blue-800">
-                      Projeyi İncele
+                      {trText("Projeyi İncele")}
                     </span>
                   </div>
                 </div>
@@ -108,8 +106,10 @@ export default function ProjectsHubExperience() {
 
       <section className="site-container pb-20">
         <ToolkitLead
-          title="Projeniz için teknik görüşme veya teklif talep edin"
-          text="Kompost tesisi, organomineral gübre tesisi, biyogaz, atık yönetimi veya özel proses projeniz için teknik yaklaşımı birlikte netleştirelim."
+          title={trText("Projeniz için teknik görüşme veya teklif talep edin")}
+          text={trText(
+            "Kompost tesisi, organomineral gübre tesisi, biyogaz, atık yönetimi veya özel proses projeniz için teknik yaklaşımı birlikte netleştirelim.",
+          )}
         />
       </section>
     </main>

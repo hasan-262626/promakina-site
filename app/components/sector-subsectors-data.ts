@@ -1,4 +1,5 @@
 import { quickAccessItems } from "../home-quick-access-data";
+import { trText } from "../lib/tr-text";
 
 export type SectorSubsectorItem = {
   slug: string;
@@ -35,13 +36,13 @@ export const sectorCards: SectorCardItem[] = [
     image: sectorImageMap.get("gubre-ve-granulasyon-tesisleri")?.image ?? "/images/granul1.jpg",
     alt:
       sectorImageMap.get("gubre-ve-granulasyon-tesisleri")?.alt ??
-      "Gübre üretim tesisleri için granül gübre görseli",
+      "Gübre üretim tesisleri görseli",
     subLinks: [
       {
         slug: "sivi-organomineral",
         label: "Sıvı Organomineral",
         title: "Sıvı Organomineral Gübre Üretim Tesisleri",
-        description: "Organik ve mineral içerikleri sıvı formda birleştiren üretim tesisleri.",
+        description: "Organik ve mineral içerikleri sıvı formda bir araya getiren üretim tesisleri.",
       },
       {
         slug: "sivi-npk",
@@ -71,7 +72,7 @@ export const sectorCards: SectorCardItem[] = [
         slug: "granul-organomineral",
         label: "Granül Organomineral",
         title: "Granül Organomineral Gübre Üretim Tesisleri",
-        description: "Organik ve mineral besinleri granül yapıda birleştiren üretim hatları.",
+        description: "Organik ve mineral besinleri granül yapıda bir araya getiren üretim hatları.",
       },
       {
         slug: "granul-npk",
@@ -81,9 +82,9 @@ export const sectorCards: SectorCardItem[] = [
       },
       {
         slug: "granul-kompost",
-        label: "Gran\u00FCl Kompost Tesisleri",
-        title: "Gran\u00FCl Kompost Tesisleri",
-        description: "Kompost bazl\u0131 hammaddelerin gran\u00FCl formda son \u00FCr\u00FCne d\u00F6n\u00FC\u015Ft\u00FCr\u00FCld\u00FC\u011F\u00FC \u00FCretim tesisleri.",
+        label: "Granül Kompost Tesisleri",
+        title: "Granül Kompost Tesisleri",
+        description: "Kompost bazlı hammaddelerin granül formda son ürüne dönüştürüldüğü üretim tesisleri.",
       },
       {
         slug: "toz-organomineral",
@@ -184,6 +185,13 @@ export const sectorCards: SectorCardItem[] = [
         description: "Kırılmış ürünlerin hat içinde güvenli ve sürekli taşınması için transfer sistemleri.",
       },
       {
+        slug: "maden-kurutma-ve-sogutma-cozumleri",
+        label: "Maden Kurutma ve Soğutma Çözümleri",
+        title: "Maden Kurutma ve Soğutma Çözümleri",
+        description:
+          "Mineral ve dökme katı hammaddelerin kurutulması, soğutulması ve prosese uygun son ürün kondisyonuna getirilmesi için kurutma ve soğutma çözümleri sunuyoruz.",
+      },
+      {
         slug: "toz-kontrol-ve-filtrasyon-cozumleri",
         label: "Toz Kontrol ve Filtrasyon Çözümleri",
         title: "Toz Kontrol ve Filtrasyon Çözümleri",
@@ -197,7 +205,7 @@ export const sectorCards: SectorCardItem[] = [
     summary:
       "Kimyasal ve proses hatlarında reaktör, tank, çözündürme, soğutma, dozajlama ve transfer ekipmanları ile kontrollü ve güvenli üretim altyapıları sunuyoruz.",
     image: sectorImageMap.get("kimya-ve-proses-endustrisi")?.image ?? "/images/kimya1.jpg",
-    alt: sectorImageMap.get("kimya-ve-proses-endustrisi")?.alt ?? "Kimya ve proses endüstrisi ekipman çözümleri",
+    alt: sectorImageMap.get("kimya-ve-proses-endustrisi")?.alt ?? "Kimya ve Proses Endüstrisi ekipman çözümleri",
     subLinks: [
       {
         slug: "karistiricili-reaktorler",
@@ -359,7 +367,7 @@ export const sectorCards: SectorCardItem[] = [
         slug: "eleme-ve-ayirma-sistemleri",
         label: "Eleme ve Ayırma Sistemleri",
         title: "Eleme ve Ayırma Sistemleri",
-        description: "Çamur akışında yabancı madde veya fraksiyon ayrımı için destek hatlar.",
+        description: "Çamur akışında yabancı madde veya fraksiyon ayırımı için destek hatlar.",
       },
       {
         slug: "toz-ve-koku-kontrolu",
@@ -425,6 +433,36 @@ export const sectorCards: SectorCardItem[] = [
     ],
   },
 ];
+
+function normalizeTextTree<T>(value: T, key?: string): T {
+  if (typeof value === "string") {
+    if (key === "slug" || key === "image") {
+      return value;
+    }
+
+    return trText(value) as T;
+  }
+
+  if (Array.isArray(value)) {
+    return value.map((item) => normalizeTextTree(item)) as T;
+  }
+
+  if (value && typeof value === "object") {
+    const output: Record<string, unknown> = {};
+
+    for (const [entryKey, entryValue] of Object.entries(value as Record<string, unknown>)) {
+      output[entryKey] = normalizeTextTree(entryValue, entryKey);
+    }
+
+    return output as T;
+  }
+
+  return value;
+}
+
+for (let index = 0; index < sectorCards.length; index += 1) {
+  sectorCards[index] = normalizeTextTree(sectorCards[index]);
+}
 
 export function getSectorCardBySlug(slug: string) {
   return sectorCards.find((sector) => sector.slug === slug);

@@ -4,7 +4,8 @@ import Link from "next/link";
 import { useMemo, useState } from "react";
 import { libraryItems, librarySections } from "../data";
 import { trText } from "../lib/tr-text";
-import { programItems } from "../programs-data";
+import { ProgramGroupCard } from "./program-group-card";
+import { programGroups } from "../program-groups";
 
 const ALL_LIBRARY_ITEMS = "Tum Icerikler";
 const PROGRAMS_TAB = "Programlar";
@@ -43,14 +44,6 @@ export function HomeLibrarySection() {
         : libraryItems.filter((item) => item.category === activeCategory);
 
     return items.slice(0, 3);
-  }, [activeCategory]);
-
-  const featuredPrograms = useMemo(() => {
-    if (activeCategory !== PROGRAMS_TAB) {
-      return [];
-    }
-
-    return programItems.slice(0, 3);
   }, [activeCategory]);
 
   return (
@@ -93,21 +86,14 @@ export function HomeLibrarySection() {
 
         {activeCategory === PROGRAMS_TAB ? (
           <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-            {featuredPrograms.map((item) => (
-              <Link
-                key={item.slug}
-                href={`/programlar/${item.slug}`}
-                className="group flex min-h-[240px] flex-col rounded-3xl border border-slate-200 bg-white p-7 shadow-sm transition hover:-translate-y-1 hover:border-blue-200 hover:shadow-[0_20px_50px_rgba(15,23,42,0.08)]"
-              >
-                <p className="text-sm font-semibold uppercase tracking-[0.14em] text-blue-700">Programlar</p>
-                <h3 className="mt-3 text-2xl font-semibold tracking-tight text-slate-950">
-                  {compactText(item.title, 58)}
-                </h3>
-                <p className="mt-3 flex-1 leading-7 text-slate-600">{compactText(item.description)}</p>
-                <span className="mt-5 inline-flex items-center text-sm font-semibold text-blue-700 transition group-hover:text-blue-800">
-                  Programı İncele
-                </span>
-              </Link>
+            {programGroups.map((group) => (
+              <ProgramGroupCard
+                key={group.id}
+                group={group}
+                titleHref={`/programlar#${group.id}`}
+                footerHref={`/programlar#${group.id}`}
+                footerLabel="Grubu Aç"
+              />
             ))}
           </div>
         ) : (

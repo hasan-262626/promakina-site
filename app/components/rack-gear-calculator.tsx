@@ -38,7 +38,7 @@ const tabs = [
     key: "gate" as const,
     label: "Kremayer Kapı Sistemi",
     description:
-      "Kremayer kapı sistemlerinde kapı ağırlığı, hareket yapısı ve tahrik uyumuna göre teknik değerlendirme yapın. Sürgülü kapı uygulamaları için daha anlaşılır ve sahaya uygun bir yapı kurun.",
+      "Kremayer kapı sistemlerinde kapı ağırlığı, hareket yapısı ve tahrik uyumuna göre teknik değerlendirme yapın. Sürgülü kapı uygulamaları için daha anlaşılır ve sahaya uygun bir yapı kürün.",
   },
 ];
 
@@ -268,7 +268,7 @@ function ResultCard({
   return (
     <div className="rounded-3xl border border-slate-200 bg-slate-50 p-5 sm:p-6">
       <h3 className="text-lg font-semibold text-slate-950">{title}</h3>
-      <div className="mt-4 grid gap-4 sm:grid-cols-2">
+      <div className="mt-4 grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
         {rows.map((row) => {
           const toneClass =
             row.tone === "success"
@@ -279,9 +279,9 @@ function ResultCard({
                   ? "border-rose-100 bg-rose-50"
                   : "border-slate-200 bg-white";
           return (
-            <div key={row.label} className={`rounded-2xl border px-5 py-4 ${toneClass}`}>
+            <div key={row.label} className={`rounded-2xl border px-4 py-3.5 ${toneClass}`}>
               <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">{row.label}</p>
-              <p className="mt-2 text-xl font-semibold text-slate-950">{row.value}</p>
+              <p className="mt-1.5 text-base font-semibold text-slate-950">{row.value}</p>
             </div>
           );
         })}
@@ -302,9 +302,9 @@ function NoteBox({ title, text }: { title: string; text: string }) {
 function LeadBox() {
   return (
     <div className="rounded-3xl border border-blue-100 bg-blue-50 px-5 py-6 sm:px-6">
-      <h3 className="text-lg font-semibold text-slate-950">Projenize Uygun Kremayer Dişli Çözümü mü Arıyorsunuz?</h3>
+      <h3 className="text-lg font-semibold text-slate-950">Teknik özet raporu hazır</h3>
       <p className="mt-3 text-sm leading-7 text-slate-600">
-        Standart veya özel ölçülerde kremayer dişli ve kapı sistemi çözümleri için bizimle iletişime geçin. Projenize uygun teknik yaklaşımı birlikte netleştirelim.
+        Bu sonuçlar yazdırılabilir ve teklif dosyasına aktarılabilir. Kremayer dişli ve kapı sistemi verilerini teknik değerlendirme için kullanabilirsiniz.
       </p>
       <div className="mt-5 flex flex-wrap gap-3">
         <a
@@ -356,7 +356,7 @@ function PanelShell({
         <h2 className="text-3xl font-semibold tracking-tight text-slate-950">{title}</h2>
         <p className="mt-4 max-w-4xl text-base leading-8 text-slate-600">{description}</p>
       </div>
-      <div className="grid gap-6 xl:grid-cols-[1.1fr_0.9fr]">
+      <div className="grid gap-6">
         {form}
         {results}
       </div>

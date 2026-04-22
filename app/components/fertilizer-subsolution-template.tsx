@@ -1,9 +1,10 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import type { FertilizerSubsolutionConfig } from "./fertilizer-subsolution-config";
 import type { SectorCardItem, SectorSubsectorItem } from "./sector-subsectors-data";
 import { FertilizerSubsolutionForm } from "./fertilizer-subsolution-form";
+import { trText } from "../lib/tr-text";
 
-const sectionTitlesByHero: Record<
+const sectionTitlesBySlug: Record<
   string,
   {
     solutions: string;
@@ -11,47 +12,52 @@ const sectionTitlesByHero: Record<
     faq: string;
   }
 > = {
-  "Sıvı Organomineral Gübre Üretim Tesisleri": {
+  "sivi-organomineral": {
     solutions: "Sıvı organomineral gübre üretimi için sunduğumuz çözümler",
     critical: "Sıvı organomineral gübre üretiminde kritik olan konular",
     faq: "Sıvı organomineral gübre üretim tesisleri hakkında sık sorulan sorular",
   },
-  "Sıvı NPK Gübre Üretim Tesisleri": {
+  "sivi-npk": {
     solutions: "Sıvı NPK gübre üretimi için sunduğumuz çözümler",
     critical: "Sıvı NPK gübre üretiminde kritik olan konular",
     faq: "Sıvı NPK gübre üretim tesisleri hakkında sık sorulan sorular",
   },
-  "Sıvı Amino Asit Gübre Üretim Tesisleri": {
+  "sivi-amino-asit": {
     solutions: "Sıvı amino asit gübre üretimi için sunduğumuz çözümler",
     critical: "Sıvı amino asit gübre üretiminde kritik olan konular",
     faq: "Sıvı amino asit gübre üretim tesisleri hakkında sık sorulan sorular",
   },
-  "Organik Sıvı Gübre Tesisleri": {
+  "organik-sivi-gubre": {
     solutions: "Organik sıvı gübre üretimi için sunduğumuz çözümler",
     critical: "Organik sıvı gübre üretiminde kritik olan konular",
     faq: "Organik sıvı gübre tesisleri hakkında sık sorulan sorular",
   },
-  "Biyostimülan Üretim Tesisleri": {
-    solutions: "Biyostimülan üretimi için sunduğumuz çözümler",
-    critical: "Biyostimülan üretiminde kritik olan konular",
-    faq: "Biyostimülan üretim tesisleri hakkında sık sorulan sorular",
+  "organik-biyostimulan": {
+    solutions: "Organik biyostimülan üretimi için sunduğumuz çözümler",
+    critical: "Organik biyostimülan üretiminde kritik olan konular",
+    faq: "Organik biyostimülan üretim tesisleri hakkında sık sorulan sorular",
   },
-  "Granül Organomineral Gübre Üretim Tesisleri": {
+  "granul-organomineral": {
     solutions: "Granül organomineral gübre üretimi için sunduğumuz çözümler",
     critical: "Granül organomineral gübre üretiminde kritik olan konular",
     faq: "Granül organomineral gübre üretim tesisleri hakkında sık sorulan sorular",
   },
-  "NPK Granül Gübre Üretim Tesisleri": {
+  "granul-npk": {
     solutions: "NPK granül gübre üretimi için sunduğumuz çözümler",
     critical: "NPK granül gübre üretiminde kritik olan konular",
     faq: "NPK granül gübre üretim tesisleri hakkında sık sorulan sorular",
   },
-  "Toz Organomineral Gübre Üretim Tesisleri": {
+  "granul-kompost": {
+    solutions: "Granül kompost üretimi için sunduğumuz çözümler",
+    critical: "Granül kompost üretiminde kritik olan konular",
+    faq: "Granül kompost tesisleri hakkında sık sorulan sorular",
+  },
+  "toz-organomineral": {
     solutions: "Toz organomineral gübre üretimi için sunduğumuz çözümler",
     critical: "Toz organomineral gübre üretiminde kritik olan konular",
     faq: "Toz organomineral gübre üretim tesisleri hakkında sık sorulan sorular",
   },
-  "NPK Toz Gübre Üretim Tesisleri": {
+  "toz-npk": {
     solutions: "NPK toz gübre üretimi için sunduğumuz çözümler",
     critical: "NPK toz gübre üretiminde kritik olan konular",
     faq: "NPK toz gübre üretim tesisleri hakkında sık sorulan sorular",
@@ -69,10 +75,10 @@ function SectionTitle({
 }) {
   return (
     <div className="max-w-3xl">
-      <p className="text-sm font-semibold uppercase tracking-[0.16em] text-blue-700">{eyebrow}</p>
-      <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950 md:text-4xl">{title}</h2>
+      <p className="text-sm font-semibold uppercase tracking-[0.16em] text-blue-700">{trText(eyebrow)}</p>
+      <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950 md:text-4xl">{trText(title)}</h2>
       {description ? (
-        <p className="mt-4 text-sm leading-7 text-slate-600 sm:text-base sm:leading-8">{description}</p>
+        <p className="mt-4 text-sm leading-7 text-slate-600 sm:text-base sm:leading-8">{trText(description)}</p>
       ) : null}
     </div>
   );
@@ -90,17 +96,11 @@ export function FertilizerSubsolutionTemplate({
   config: FertilizerSubsolutionConfig;
 }) {
   const sectionTitles =
-    config.heroTitle === "Gran\u00FCl Kompost Tesisleri"
-      ? {
-          solutions: "Gran\u00FCl kompost \u00FCretimi i\u00E7in sundu\u011Fumuz \u00E7\u00F6z\u00FCmler",
-          critical: "Gran\u00FCl kompost \u00FCretiminde kritik olan konular",
-          faq: "Gran\u00FCl kompost tesisleri hakk\u0131nda s\u0131k sorulan sorular",
-        }
-      : sectionTitlesByHero[config.heroTitle] ?? {
-          solutions: "G??bre ??retimi i??in sundu??umuz ????z??mler",
-          critical: "G??bre ??retiminde kritik olan konular",
-          faq: "G??bre ??retim tesisleri hakk??nda s??k sorulan sorular",
-        };
+    sectionTitlesBySlug[current.slug] ?? {
+      solutions: "Gübre üretimi için sunduğumuz çözümler",
+      critical: "Gübre üretiminde kritik olan konular",
+      faq: "Gübre üretim tesisleri hakkında sık sorulan sorular",
+    };
 
   return (
     <main className="min-h-screen overflow-x-hidden bg-white text-slate-900">
@@ -113,12 +113,12 @@ export function FertilizerSubsolutionTemplate({
         <div className="relative site-container flex min-h-[320px] items-center py-[60px] md:min-h-[420px] md:py-[80px]">
           <div className="max-w-[860px]">
             <div className="inline-flex rounded-full border border-white/15 bg-white/10 px-4 py-2 text-xs font-medium tracking-[0.16em] text-white/84 backdrop-blur">
-              {config.heroBadge}
+              {trText(config.heroBadge)}
             </div>
             <h1 className="mt-5 max-w-[800px] break-normal text-[32px] font-semibold leading-[1.2] tracking-tight text-white md:text-[48px]">
-              {config.heroTitle}
+              {trText(config.heroTitle)}
             </h1>
-            <p className="mt-4 max-w-[700px] text-base leading-[1.7] text-white/84">{config.heroDescription}</p>
+            <p className="mt-4 max-w-[700px] text-base leading-[1.7] text-white/84">{trText(config.heroDescription)}</p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
                 href={`/sektorler/${sector.slug}`}
@@ -144,16 +144,16 @@ export function FertilizerSubsolutionTemplate({
                       {config.rawMaterials.map((item) => (
                         <li key={item} className="flex gap-3">
                           <span className="mt-2 h-1.5 w-1.5 rounded-full bg-blue-600" />
-                          <span>{item}</span>
+                          <span>{trText(item)}</span>
                         </li>
                       ))}
                     </ul>
                   </article>
                   <article className="rounded-[28px] border border-slate-200 bg-slate-50 p-6 shadow-sm">
                     <h3 className="text-xl font-semibold tracking-tight text-slate-950">Bu ürün neden bu isimle anılır?</h3>
-                    <p className="mt-5 text-sm leading-8 text-slate-600">{config.namingExplanation}</p>
+                    <p className="mt-5 text-sm leading-8 text-slate-600">{trText(config.namingExplanation)}</p>
                     <div className="mt-5 rounded-[22px] border border-slate-200 bg-white px-5 py-4 text-sm leading-7 text-slate-700">
-                      {config.namingNote}
+                      {trText(config.namingNote)}
                     </div>
                   </article>
                 </div>
@@ -174,7 +174,7 @@ export function FertilizerSubsolutionTemplate({
                           : "border-slate-200 bg-white text-slate-700 hover:border-blue-200 hover:text-blue-700"
                       }`}
                     >
-                      {item.title}
+                      {trText(item.title)}
                     </Link>
                   ))}
                 </div>
@@ -187,20 +187,20 @@ export function FertilizerSubsolutionTemplate({
                 <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
                   {config.offerCards.map((item) => (
                     <article key={item.title} className="rounded-[28px] border border-slate-200 bg-white p-6 shadow-sm">
-                      <h3 className="text-xl font-semibold tracking-tight text-slate-950">{item.title}</h3>
-                      <p className="mt-3 text-sm leading-7 text-slate-600">{item.text}</p>
+                      <h3 className="text-xl font-semibold tracking-tight text-slate-950">{trText(item.title)}</h3>
+                      <p className="mt-3 text-sm leading-7 text-slate-600">{trText(item.text)}</p>
                     </article>
                   ))}
                 </div>
               </section>
 
               <section>
-                <SectionTitle eyebrow="Makine ve Ekipman" title={config.equipmentTitle} />
+                <SectionTitle eyebrow="Makine ve Ekipman" title={trText(config.equipmentTitle)} />
                 <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
                   {config.equipment.map((item) => (
                     <article key={item.title} className="rounded-[24px] border border-slate-200 bg-white p-5 shadow-sm">
-                      <h3 className="text-lg font-semibold text-slate-950">{item.title}</h3>
-                      <p className="mt-2 text-sm leading-7 text-slate-600">{item.text}</p>
+                      <h3 className="text-lg font-semibold text-slate-950">{trText(item.title)}</h3>
+                      <p className="mt-2 text-sm leading-7 text-slate-600">{trText(item.text)}</p>
                     </article>
                   ))}
                 </div>
@@ -211,8 +211,8 @@ export function FertilizerSubsolutionTemplate({
                 <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
                   {config.criticalTopics.map((item) => (
                     <article key={item.title} className="rounded-[24px] border border-slate-200 bg-slate-50 p-5">
-                      <h3 className="text-lg font-semibold text-slate-950">{item.title}</h3>
-                      <p className="mt-2 text-sm leading-7 text-slate-600">{item.text}</p>
+                      <h3 className="text-lg font-semibold text-slate-950">{trText(item.title)}</h3>
+                      <p className="mt-2 text-sm leading-7 text-slate-600">{trText(item.text)}</p>
                     </article>
                   ))}
                 </div>
@@ -224,9 +224,9 @@ export function FertilizerSubsolutionTemplate({
                   {config.faqs.map((item) => (
                     <details key={item.question} className="rounded-[24px] border border-slate-200 bg-white px-5 py-4 shadow-sm">
                       <summary className="cursor-pointer list-none text-base font-semibold text-slate-950 [&::-webkit-details-marker]:hidden">
-                        {item.question}
+                        {trText(item.question)}
                       </summary>
-                      <p className="mt-3 text-sm leading-7 text-slate-600">{item.answer}</p>
+                      <p className="mt-3 text-sm leading-7 text-slate-600">{trText(item.answer)}</p>
                     </details>
                   ))}
                 </div>
@@ -239,10 +239,10 @@ export function FertilizerSubsolutionTemplate({
                 <div className="grid gap-0 lg:grid-cols-[0.95fr_1.05fr]">
                   <div className="border-b border-slate-200 bg-[linear-gradient(180deg,#eff6ff_0%,#ffffff_100%)] p-6 sm:p-8 lg:border-b-0 lg:border-r">
                     <p className="text-sm font-semibold uppercase tracking-[0.16em] text-blue-700">Teklif ve Teknik Görüşme</p>
-                    <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950">{config.formTitle}</h2>
-                    <p className="mt-4 text-sm leading-7 text-slate-600 sm:text-base sm:leading-8">{config.formDescription}</p>
+                    <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950">{trText(config.formTitle)}</h2>
+                    <p className="mt-4 text-sm leading-7 text-slate-600 sm:text-base sm:leading-8">{trText(config.formDescription)}</p>
                   </div>
-                  <FertilizerSubsolutionForm title={config.heroTitle} config={config} />
+                  <FertilizerSubsolutionForm title={trText(config.heroTitle)} config={config} />
                 </div>
               </section>
             </div>

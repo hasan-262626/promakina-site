@@ -24,26 +24,11 @@ export const fertilizerPlantCards: PlantCard[] = [
     text: "Sıvı gübre üretimi için ilgili alt çözüm başlıklarını doğrudan inceleyebilirsiniz.",
     href: "/sektorler/gubre-ve-granulasyon-tesisleri/sivi-organomineral",
     links: [
-      {
-        label: "Sıvı Organomineral",
-        href: "/sektorler/gubre-ve-granulasyon-tesisleri/sivi-organomineral",
-      },
-      {
-        label: "Sıvı NPK",
-        href: "/sektorler/gubre-ve-granulasyon-tesisleri/sivi-npk",
-      },
-      {
-        label: "Sıvı Amino Asit",
-        href: "/sektorler/gubre-ve-granulasyon-tesisleri/sivi-amino-asit",
-      },
-      {
-        label: "Organik Sıvı Gübre",
-        href: "/sektorler/gubre-ve-granulasyon-tesisleri/organik-sivi-gubre",
-      },
-      {
-        label: "Organik Biyostimülan",
-        href: "/sektorler/gubre-ve-granulasyon-tesisleri/organik-biyostimulan",
-      },
+      { label: "Sıvı Organomineral", href: "/sektorler/gubre-ve-granulasyon-tesisleri/sivi-organomineral" },
+      { label: "Sıvı NPK", href: "/sektorler/gubre-ve-granulasyon-tesisleri/sivi-npk" },
+      { label: "Sıvı Amino Asit", href: "/sektorler/gubre-ve-granulasyon-tesisleri/sivi-amino-asit" },
+      { label: "Organik Sıvı Gübre", href: "/sektorler/gubre-ve-granulasyon-tesisleri/organik-sivi-gubre" },
+      { label: "Organik Biyostimülan", href: "/sektorler/gubre-ve-granulasyon-tesisleri/organik-biyostimulan" },
     ],
   },
   {
@@ -51,18 +36,9 @@ export const fertilizerPlantCards: PlantCard[] = [
     text: "Granül gübre üretimi için ilgili alt çözüm başlıklarını doğrudan seçebilirsiniz.",
     href: "/sektorler/gubre-ve-granulasyon-tesisleri/granul-organomineral",
     links: [
-      {
-        label: "Granül Organomineral",
-        href: "/sektorler/gubre-ve-granulasyon-tesisleri/granul-organomineral",
-      },
-      {
-        label: "Granül NPK",
-        href: "/sektorler/gubre-ve-granulasyon-tesisleri/granul-npk",
-      },
-      {
-        label: "Gran\u00FCl Kompost Tesisleri",
-        href: "/sektorler/gubre-ve-granulasyon-tesisleri/granul-kompost",
-      },
+      { label: "Granül Organomineral", href: "/sektorler/gubre-ve-granulasyon-tesisleri/granul-organomineral" },
+      { label: "Granül NPK", href: "/sektorler/gubre-ve-granulasyon-tesisleri/granul-npk" },
+      { label: "Granül Kompost Tesisleri", href: "/sektorler/gubre-ve-granulasyon-tesisleri/granul-kompost" },
     ],
   },
   {
@@ -70,14 +46,8 @@ export const fertilizerPlantCards: PlantCard[] = [
     text: "Toz gübre üretimi için ilgili alt çözüm başlıklarını doğrudan inceleyebilirsiniz.",
     href: "/sektorler/gubre-ve-granulasyon-tesisleri/toz-organomineral",
     links: [
-      {
-        label: "Toz Organomineral",
-        href: "/sektorler/gubre-ve-granulasyon-tesisleri/toz-organomineral",
-      },
-      {
-        label: "Toz NPK",
-        href: "/sektorler/gubre-ve-granulasyon-tesisleri/toz-npk",
-      },
+      { label: "Toz Organomineral", href: "/sektorler/gubre-ve-granulasyon-tesisleri/toz-organomineral" },
+      { label: "Toz NPK", href: "/sektorler/gubre-ve-granulasyon-tesisleri/toz-npk" },
     ],
   },
 ];
@@ -184,5 +154,3 @@ export const fertilizerFaqItems: FaqItem[] = [
       "Evet, mevcut makine parkı ve saha yapısı incelenerek revizyon, ek hat kurulumu ve kapasite artışı çözümleri geliştirilebilir.",
   },
 ];
-
-
