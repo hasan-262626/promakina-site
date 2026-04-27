@@ -8,7 +8,7 @@ import {
   fertilizerPlantCards,
   fertilizerServiceCards,
 } from "./fertilizer-sector-data";
-import { FertilizerSectorForm } from "./fertilizer-sector-form";
+import { SectorInquiryForm } from "./sector-inquiry-form";
 import { trText } from "../lib/tr-text";
 
 function SectionHeading({
@@ -161,24 +161,10 @@ export default function FertilizerSectorExperience() {
       </section>
 
       <section id="gubre-uretim-formu" className="mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-10">
-        <div className="overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-[0_24px_80px_rgba(15,23,42,0.08)]">
-          <div className="grid gap-0 lg:grid-cols-[0.95fr_1.05fr]">
-            <div className="border-b border-slate-200 bg-[linear-gradient(180deg,#eff6ff_0%,#ffffff_100%)] p-6 sm:p-8 lg:border-b-0 lg:border-r">
-              <p className="text-sm font-semibold uppercase tracking-[0.16em] text-blue-700">
-                {trText("Teklif ve Teknik Görüşme")}
-              </p>
-              <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950">
-                {trText("Gübre Üretim Tesisleri için teklif veya teknik görüşme talep edin")}
-              </h2>
-              <p className="mt-4 text-sm leading-7 text-slate-600 sm:text-base sm:leading-8">
-                {trText(
-                  "Sıvı, granül veya toz gübre üretim tesisleri için kapasite, ürün tipi, proses akışı ve saha şartlarınıza uygun teknik çözümü birlikte değerlendirelim.",
-                )}
-              </p>
-            </div>
-            <FertilizerSectorForm />
-          </div>
-        </div>
+        <SectorInquiryForm
+          requestTargetTitle={trText("Gübre Üretim Tesisleri")}
+          initialSectorSlug="gubre-ve-granulasyon-tesisleri"
+        />
       </section>
     </main>
   );

@@ -96,12 +96,22 @@ export function ToolkitField({
     <label className="grid gap-1.5">
       <span className="flex items-center text-sm font-medium text-slate-700">
         {normalizedLabel}
-        {tip ? <ToolkitTooltip id={tipId} text={tip} openId={openTip} setOpenId={setOpenTip} /> : null}
+        {tip ? (
+          <ToolkitTooltip id={tipId} text={tip} openId={openTip} setOpenId={setOpenTip} />
+        ) : null}
       </span>
-      {normalizedHelperText ? <span className="text-[11px] font-medium leading-4 text-slate-600">{normalizedHelperText}</span> : null}
-      {normalizedLimitText ? <span className="text-[11px] leading-4 text-slate-500">{normalizedLimitText}</span> : null}
+      {normalizedHelperText ? (
+        <span className="text-[11px] font-medium leading-4 text-slate-600">
+          {normalizedHelperText}
+        </span>
+      ) : null}
+      {normalizedLimitText ? (
+        <span className="text-[11px] leading-4 text-slate-500">{normalizedLimitText}</span>
+      ) : null}
       {children}
-      {normalizedError ? <span className="text-[11px] leading-4 text-rose-600">{normalizedError}</span> : null}
+      {normalizedError ? (
+        <span className="text-[11px] leading-4 text-rose-600">{normalizedError}</span>
+      ) : null}
     </label>
   );
 }
@@ -111,6 +121,7 @@ export function ToolkitInput({
   value,
   onChange,
   unit,
+  mode,
   helperText,
   limitText,
   error,
@@ -123,6 +134,7 @@ export function ToolkitInput({
   value: string;
   onChange: (value: string) => void;
   unit?: string;
+  mode?: "numeric" | "text" | "date";
   helperText?: string;
   limitText?: string;
   error?: string;
@@ -131,6 +143,15 @@ export function ToolkitInput({
   openTip: string | null;
   setOpenTip: (value: string | null) => void;
 }) {
+  const normalizedLabel = trText(label);
+  const inferredMode =
+    mode ??
+    (/tarih/i.test(normalizedLabel)
+      ? "date"
+      : /(müşteri|musteri|proje|firma|referans|teklif|adı|adi)/i.test(normalizedLabel)
+        ? "text"
+        : "numeric");
+
   return (
     <ToolkitField
       label={label}
@@ -150,9 +171,16 @@ export function ToolkitInput({
         }`}
       >
         <input
-          inputMode="decimal"
+          type={inferredMode === "date" ? "date" : "text"}
+          inputMode={inferredMode === "numeric" ? "decimal" : "text"}
           value={value}
-          onChange={(event) => onChange(event.target.value.replace(/[^0-9.,-]/g, ""))}
+          onChange={(event) =>
+            onChange(
+              inferredMode === "numeric"
+                ? event.target.value.replace(/[^0-9.,-]/g, "")
+                : event.target.value,
+            )
+          }
           className="w-full bg-transparent text-slate-900 outline-none"
         />
         {unit ? <span className="ml-2.5 text-xs text-slate-500">{trText(unit)}</span> : null}
@@ -256,7 +284,9 @@ export function ToolkitResult({
 
   return (
     <div className={`rounded-2xl border px-4 py-3.5 ${classes}`}>
-      <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">{normalizedLabel}</p>
+      <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">
+        {normalizedLabel}
+      </p>
       <p className="mt-1.5 text-base font-semibold text-slate-950">{normalizedValue}</p>
     </div>
   );

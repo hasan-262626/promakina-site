@@ -8,6 +8,8 @@ import { CookieSettingsLink } from "./cookie-preferences";
 function shouldHideGlobalCta(pathname: string) {
   return (
     pathname === "/iletisim" ||
+    pathname === "/kutuphane" ||
+    pathname.startsWith("/kutuphane/") ||
     pathname.startsWith("/hizmetler/") ||
     pathname.startsWith("/makinalar/") ||
     pathname.startsWith("/makinalar-ekipman/") ||

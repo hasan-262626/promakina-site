@@ -53,11 +53,17 @@ export function SectorSubsolutionTemplate({
             </h1>
             <p className="mt-4 max-w-[700px] text-base leading-[1.7] text-white/84">{trText(config.heroDescription)}</p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <Link
-                href={`/sektorler/${sector.slug}`}
+              <a
+                href="#subsolution-form"
                 className="rounded-full bg-blue-700 px-7 py-4 text-center text-sm font-semibold text-white transition hover:bg-blue-800"
               >
-                {trText(sector.title)} sayfasına dön
+                Teklif Al
+              </a>
+              <Link
+                href="/sektorler"
+                className="rounded-full border border-white/20 bg-white/10 px-7 py-4 text-center text-sm font-semibold text-white backdrop-blur transition hover:bg-white/15"
+              >
+                Tüm Sektörlere Dön
               </Link>
             </div>
           </div>
@@ -132,18 +138,6 @@ export function SectorSubsolutionTemplate({
               </section>
 
               <section>
-                <SectionTitle eyebrow={config.criticalEyebrow} title={config.criticalTitle} />
-                <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-                  {config.criticalTopics.map((item) => (
-                    <article key={item.title} className="rounded-[24px] border border-slate-200 bg-slate-50 p-5">
-                      <h3 className="text-lg font-semibold text-slate-950">{trText(item.title)}</h3>
-                      <p className="mt-2 text-sm leading-7 text-slate-600">{trText(item.text)}</p>
-                    </article>
-                  ))}
-                </div>
-              </section>
-
-              <section>
                 <SectionTitle eyebrow={config.faqEyebrow} title={config.faqTitle} />
                 <div className="mt-8 space-y-4">
                   {config.faqs.map((item) => (
@@ -157,18 +151,12 @@ export function SectorSubsolutionTemplate({
                 </div>
               </section>
 
-              <section className="overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-[0_24px_80px_rgba(15,23,42,0.08)]">
-                <div className="grid gap-0 lg:grid-cols-[0.95fr_1.05fr]">
-                  <div className="border-b border-slate-200 bg-[linear-gradient(180deg,#eff6ff_0%,#ffffff_100%)] p-6 sm:p-8 lg:border-b-0 lg:border-r">
-                    <p className="text-sm font-semibold uppercase tracking-[0.16em] text-blue-700">Teklif ve Teknik Görüşme</p>
-                    <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950">{trText(config.formTitle)}</h2>
-                    <p className="mt-4 text-sm leading-7 text-slate-600 sm:text-base sm:leading-8">{trText(config.formDescription)}</p>
-                  </div>
-                  <SectorInquiryForm
-                    sectorTitle={trText(config.heroTitle)}
-                    config={{ formFields: config.formFields, messagePlaceholder: config.messagePlaceholder }}
-                  />
-                </div>
+              <section id="subsolution-form">
+                <SectorInquiryForm
+                  requestTargetTitle={trText(current.title)}
+                  initialSectorSlug={sector.slug}
+                  initialProductSlug={current.slug}
+                />
               </section>
             </div>
           </div>

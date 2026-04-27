@@ -1,8 +1,8 @@
 ﻿import Link from "next/link";
 import type { FertilizerSubsolutionConfig } from "./fertilizer-subsolution-config";
 import type { SectorCardItem, SectorSubsectorItem } from "./sector-subsectors-data";
-import { FertilizerSubsolutionForm } from "./fertilizer-subsolution-form";
 import { trText } from "../lib/tr-text";
+import { SectorInquiryForm } from "./sector-inquiry-form";
 
 const sectionTitlesBySlug: Record<
   string,
@@ -207,18 +207,6 @@ export function FertilizerSubsolutionTemplate({
               </section>
 
               <section>
-                <SectionTitle eyebrow="Kritik Başlıklar" title={sectionTitles.critical} />
-                <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-                  {config.criticalTopics.map((item) => (
-                    <article key={item.title} className="rounded-[24px] border border-slate-200 bg-slate-50 p-5">
-                      <h3 className="text-lg font-semibold text-slate-950">{trText(item.title)}</h3>
-                      <p className="mt-2 text-sm leading-7 text-slate-600">{trText(item.text)}</p>
-                    </article>
-                  ))}
-                </div>
-              </section>
-
-              <section>
                 <SectionTitle eyebrow="SSS" title={sectionTitles.faq} />
                 <div className="mt-8 space-y-4">
                   {config.faqs.map((item) => (
@@ -232,18 +220,12 @@ export function FertilizerSubsolutionTemplate({
                 </div>
               </section>
 
-              <section
-                id="subsolution-form"
-                className="overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-[0_24px_80px_rgba(15,23,42,0.08)]"
-              >
-                <div className="grid gap-0 lg:grid-cols-[0.95fr_1.05fr]">
-                  <div className="border-b border-slate-200 bg-[linear-gradient(180deg,#eff6ff_0%,#ffffff_100%)] p-6 sm:p-8 lg:border-b-0 lg:border-r">
-                    <p className="text-sm font-semibold uppercase tracking-[0.16em] text-blue-700">Teklif ve Teknik Görüşme</p>
-                    <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950">{trText(config.formTitle)}</h2>
-                    <p className="mt-4 text-sm leading-7 text-slate-600 sm:text-base sm:leading-8">{trText(config.formDescription)}</p>
-                  </div>
-                  <FertilizerSubsolutionForm title={trText(config.heroTitle)} config={config} />
-                </div>
+              <section id="subsolution-form">
+                <SectorInquiryForm
+                  requestTargetTitle={trText(current.title)}
+                  initialSectorSlug={sector.slug}
+                  initialProductSlug={current.slug}
+                />
               </section>
             </div>
           </div>

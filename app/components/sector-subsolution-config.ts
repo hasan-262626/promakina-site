@@ -577,7 +577,7 @@ export function getSectorSubsolutionConfig(
 ): SectorSubsolutionConfig | null {
   if (
     sector.slug === "madencilik-ve-mineral-isleme" &&
-    current.slug === "maden-kurutma-ve-sogutma-cozumleri"
+    current.slug === "kurutma-ve-sogutma-cozumleri"
   ) {
     return normalizeTextTree(buildConfig(current, miningDryingCoolingFamily));
   }
