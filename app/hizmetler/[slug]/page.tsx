@@ -29,6 +29,7 @@ const commissioningSlug = "kurulum-ve-devreye-alma";
 const modernizationSlug = "modernizasyon-ve-revizyon";
 const consultingSlug = "teknik-danismanlik";
 const maintenanceSlug = "bakim-ve-servis";
+const liquidFertilizerSlug = "sivi-gubre-uretim-tesisi";
 
 const turnkeyIntro = [
   "Anahtar teslim tesis kurulumu hizmetimiz ile tüm süreci tek bir koordinasyon altinda yönetiyoruz. Kompost, g?bre, geri d?n??m ve end?striyel proses tesisleri için planlama, mühendislik, imalat, montaj ve devreye alma adimlarini entegre şekilde sunuyoruz.",
@@ -761,6 +762,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
   const isModernization = slug === modernizationSlug;
   const isConsulting = slug === consultingSlug;
   const isMaintenance = slug === maintenanceSlug;
+  const isLiquidFertilizer = slug === liquidFertilizerSlug;
   const heroImage = isTurnkey
     ? "/images/anahtar1.jpg"
     : isProcessDesign
@@ -900,6 +902,19 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                   <p key={paragraph}>{trText(paragraph)}</p>
                 ))}
                 <p>{trText(scopeIntro)}</p>
+                {isLiquidFertilizer ? (
+                  <p>
+                    Genel gübre tesisi planlama ve anahtar teslim çözümler hakkında daha
+                    fazla bilgi için{" "}
+                    <Link
+                      href="/hizmetler/gubre-tesisi-kurulumu"
+                      className="font-semibold text-blue-700 transition hover:text-blue-800"
+                    >
+                      gübre tesisi kurulumu
+                    </Link>{" "}
+                    sayfamızı inceleyebilirsiniz.
+                  </p>
+                ) : null}
               </div>
             </div>
 
