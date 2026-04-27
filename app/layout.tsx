@@ -4,14 +4,51 @@ import { CookiePreferences } from "./components/cookie-preferences";
 import { FloatingWhatsApp, SiteFooterCta } from "./components/site-footer-cta";
 import { SiteHeader } from "./components/site-header";
 import { TextNormalizer } from "./components/text-normalizer";
-import { trText } from "./lib/tr-text";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: trText("Pro Makina | Danışmanlık ve Makina Çözümleri"),
-  description: trText(
-    "Pro Makina için hazırlanan kurumsal site: danışmanlık, çözümler, makinalar ve iletişim bölümleri.",
-  ),
+  metadataBase: new URL("https://www.promakina.com.tr"),
+  title: {
+    default: "Endüstriyel Tesis ve Makina Üretimi | Pro Makina",
+    template: "%s | Pro Makina",
+  },
+  description:
+    "Gübre, kompost, biyogaz, geri dönüşüm, madencilik ve endüstriyel proses tesisleri için anahtar teslim mühendislik, makina imalatı ve tesis kurulum çözümleri.",
+  keywords: [
+    "endüstriyel tesis kurulumu",
+    "makina imalatı",
+    "gübre üretim tesisi",
+    "organomineral gübre tesisi",
+    "kompost tesisi",
+    "biyogaz tesisi",
+    "konveyör sistemleri",
+    "kurutma tamburu",
+    "granül gübre tesisi",
+    "Pro Makina",
+  ],
+  alternates: {
+    canonical: "https://www.promakina.com.tr",
+  },
+  openGraph: {
+    title: "Endüstriyel Tesis ve Makina Üretimi | Pro Makina",
+    description:
+      "Gübre, kompost, biyogaz, geri dönüşüm, madencilik ve endüstriyel proses tesisleri için anahtar teslim mühendislik, makina imalatı ve tesis kurulum çözümleri.",
+    url: "https://www.promakina.com.tr",
+    siteName: "Pro Makina",
+    locale: "tr_TR",
+    type: "website",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 };
 
 export default function RootLayout({
