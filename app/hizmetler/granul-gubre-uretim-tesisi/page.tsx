@@ -1,120 +1,90 @@
-import type { Metadata } from "next";
-import Link from "next/link";
-import { Hero } from "../../components/Hero";
+import { ServiceSeoPage, buildServiceMetadata } from "../../components/service-seo-page";
 
-export const metadata: Metadata = {
-  title: "Granül Gübre Üretim Tesisi Kurulumu | Pro Makina",
-  description:
-    "Granül gübre üretim tesisi kurulumu için anahtar teslim mühendislik, makine imalatı, proses tasarımı, montaj ve devreye alma çözümleri.",
-  alternates: {
-    canonical: "https://www.promakina.com.tr/hizmetler/granul-gubre-uretim-tesisi",
-  },
-};
+const title = "Granül Gübre Üretim Tesisi Kurulumu";
+const description =
+  "Granül gübre üretim tesisi kurulumu için Türkiye pazarı ve ihracat hedeflerine uygun anahtar teslim mühendislik, makine imalatı, proses tasarımı ve devreye alma çözümleri sunuyoruz.";
+const canonical = "https://www.promakina.com.tr/hizmetler/granul-gubre-uretim-tesisi";
+
+export const metadata = buildServiceMetadata({
+  title,
+  description,
+  canonical,
+});
 
 const sections = [
   {
-    title: "Üretim Süreci",
+    title: "Proses",
     paragraphs: [
-      "Granül gübre üretim tesisi üretim süreci, hammaddenin kontrollü biçimde hazırlanması ve son ürünün istenen tane boyutunda elde edilmesi üzerine kuruludur. Süreç genellikle dozajlama, karıştırma, granülasyon, kurutma, soğutma, eleme ve paketleme aşamalarından oluşur. Burada kritik nokta, karışımın granülasyona uygun şekilde hazırlanması ve ürünün proses boyunca fiziksel dayanımını korumasıdır. Özellikle nem oranı, bağlayıcı kullanımı ve granül formasyon davranışı üretim performansını doğrudan etkiler.",
-      "Granül gübre tesisi içinde her adım bir sonraki aşamayı besleyecek mantıkla kurgulanmalıdır. Kurutma yükü ile granül çıkış kalitesi, soğutma kapasitesi ile paketleme öncesi ürün dengesi birlikte düşünülür. Eğer bu süreçler kopuk ele alınırsa kapasite kaybı, yüksek geri dönüş oranı ve ürün standardı sorunları ortaya çıkar. Bu nedenle granül gübre üretim süreci, bütünleşik proses mühendisliği ile ele alınmalıdır.",
+      "Granül gübre üretim tesisi, hammaddenin kontrollü biçimde karıştırıldığı, granül forma dönüştürüldüğü, kurutulduğu, soğutulduğu ve sınıflandırıldığı entegre bir gübre üretim hattıdır. Türkiye pazarında granül gübre tesisi yatırımları çoğu zaman yüksek kapasite, paketli sevkiyat ve standart tane boyutu beklentisiyle yapılır. Bu nedenle granül gübre tesisi kurulurken sadece granülatör seçimi değil, tüm proses zinciri birlikte ele alınmalıdır. Hammadde akışı, karışım davranışı, bağlayıcı kullanımı, granül dayanımı ve son ürün nemi birbirine doğrudan bağlıdır. Uyumlu tasarlanmamış bir proses, yüksek geri dönüş oranı ve dengesiz kalite üretir.",
+      "Başarılı bir granül gübre üretim tesisi için süreç; besleme, dozajlama, karıştırma, granülasyon, kurutma, soğutma, eleme ve geri dönüş akışları üzerinden tasarlanmalıdır. Özellikle kurutma tamburu ve soğutma tamburu kapasitesi, granülatör tamburu ile aynı hızda çalışabilmelidir. Aksi halde hatta darboğaz oluşur. Türkiye’de satış yapan veya ihracat planlayan üreticiler için ürünün torbalama öncesindeki akış davranışı ve depolama dayanımı büyük önem taşır. Bu yüzden granül gübre tesisi yalnızca makine yerleşimi ile değil, gerçek üretim davranışı ile kurgulanmalıdır.",
+      "Granül gübre üretim hattı planlanırken ürün reçetesi de belirleyici unsurdur. NPK, organomineral veya özel mineral reçetelerde farklı nem ve bağlayıcı stratejileri gerekir. Bu sebeple proses tasarımı sabit şablonlarla değil, ürünün sahadaki davranışına göre yapılmalıdır. Doğru mühendislik yaklaşımı, yatırımcının hem iç pazarda hem ihracat kanalında daha kararlı kalite sunmasını sağlar.",
     ],
   },
   {
     title: "Kullanılan Makinalar",
     paragraphs: [
-      "Granül gübre üretim tesisi kurulurken kullanılan makinalar, hat verimini ve son ürün kalitesini doğrudan belirler. Hammadde kabul ve besleme bunkerleri, dozajlama sistemleri, helezonlar, bantlı konveyörler ve elevatörler malzeme akışının temel ekipmanlarıdır. Granülatör tamburu ya da disk granülatör, ürünün şekillendiği ana proses ekipmanıdır. Kurutma tamburu ve soğutma tamburu ise ürünün kararlı hale gelmesini sağlar. Elek sistemleri, hedef granül boyutu dışında kalan fraksiyonları ayırarak geri dönüş hattına yönlendirir.",
-      "Bu ekipmanlara ek olarak toz kontrol sistemleri, filtrasyon altyapısı, paketleme ve paletleme çözümleri de üretim hattının vazgeçilmez parçalarıdır. Granül gübre üretim tesisinde makine seçimi yalnızca kapasiteye göre değil, ürün davranışı ve işletme senaryosuna göre yapılmalıdır. Uyumlu seçilmeyen ekipmanlar darboğaz oluşturur ve hat dengesini bozar. Bu nedenle makine imalatı ve proses tasarımı birlikte ele alınmalıdır.",
+      "Granül gübre üretim tesisi içinde kullanılan makinalar, tesisin toplam performansını belirleyen ana omurgayı oluşturur. Besleme bunkerleri, hassas dozajlama sistemleri, helezonlar, bantlı konveyörler ve elevatörler süreç içi malzeme hareketini yönetir. Karıştırıcılar hammaddelerin homojen hale gelmesini sağlarken granülatör tamburu ürünün istenen tane formuna kavuştuğu temel ekipmandır. Kurutma tamburu, granül ürün içindeki fazla nemi kontrollü biçimde uzaklaştırır. Soğutma tamburu ise ürünün depolamaya ve paketlemeye uygun sıcaklığa düşmesini sağlar. Elek sistemleri, ticari ürün standardını belirleyen kritik sınıflandırma aşamasını yönetir.",
+      "Granül gübre üretim hattında makine seçimi yapılırken katalog kapasitesi tek başına yeterli kriter değildir. Ürünün kırılganlığı, akış davranışı, geri dönüş oranı ve hedef tane aralığı da değerlendirilmelidir. Filtre sistemleri ve toz toplama üniteleri hem çevresel performans hem de tesis içi güvenlik için önemli parçalar arasında yer alır. Paketleme sistemleri ise yalnızca çıkış ekipmanı değil, ticari operasyonun devamlılığı için kritik son halka olarak düşünülmelidir.",
+      "Türkiye pazarı için granül gübre üretim tesisi kurulumunda bakım erişimi, yedek parça ulaşılabilirliği ve saha koşullarına uygun gövde yapısı büyük önem taşır. İhracata çalışan tesislerde ise uzun vardiya süreleri ve daha sıkı kalite beklentileri nedeniyle ekipman dayanımı ön plana çıkar. Pro Makina yaklaşımında makina imalatı, granül gübre tesisi prosesine tam uyum sağlayacak şekilde ele alınır. Böylece tesis yalnızca çalışır durumda değil, sürdürülebilir üretim standardı ile devreye alınır.",
     ],
   },
   {
-    title: "Proses Akışı",
+    title: "Kapasite",
     paragraphs: [
-      "Granül gübre üretim tesisinde proses akışı, hammaddenin tesise girişinden son ürünün paketlenmesine kadar kesintisiz ve ölçülebilir şekilde ilerlemelidir. İlk aşamada hammaddeler reçeteye göre beslenir ve karıştırılır. Karışımın granülasyona uygun nem ve bağlayıcılık seviyesine ulaştırılması gerekir. Sonrasında granülatör tamburu devreye girer ve ürün istenen yapıya dönüştürülür. Yeni oluşan granüller, kurutma tamburu ile fazla nemden arındırılır, soğutma tamburu ile stabil hale getirilir.",
-      "Soğuyan ürün daha sonra elek sistemlerine gelir ve hedef boyut dışındaki fraksiyonlar ayrılır. İnce ve iri fraksiyonlar geri dönüş hattına yönlendirilir, uygun ürün ise stoklama veya paketleme aşamasına geçer. Bu akış içinde konveyör sistemleri, helezon ve elevatörler taşıma görevini üstlenir. Proses akışının dengeli tasarlanması, granül kırılmasını azaltır, enerji verimini artırır ve kapasite sürekliliğini korur. Bu yüzden granül gübre üretim tesisi kurgusu, tek tek makinalardan çok bütün proses davranışı üzerinden şekillendirilmelidir.",
+      "Granül gübre üretim tesisi kapasitesi belirlenirken yalnızca ton/saat değeri değil, vardiya yapısı, ürün çeşidi, geri dönüş akışı ve paketleme hızı da birlikte planlanmalıdır. Türkiye’de birçok yatırım ilk aşamada belirli bir kapasite hedeflese de sezonluk talep ve yeni ürün grupları nedeniyle büyüme ihtiyacı kısa sürede doğabilir. Bu yüzden granül gübre üretim hattı modüler düşünülmeli, ileride kapasite artırımı gerektiğinde kritik ekipmanların tamamen değiştirilmesini gerektirmeyen bir mimari kurulmalıdır.",
+      "Granülatör tamburu, kurutma tamburu, soğutma tamburu ve elek sistemleri arasındaki denge, gerçek kapasiteyi belirleyen ana faktördür. Eğer kurutma yükü yetersiz kalırsa ürün akışı yavaşlar; elek alanı küçük kalırsa son ürün standardı düşer; paketleme hattı geride kalırsa tüm tesis verimi azalır. Bu nedenle granül gübre tesisi kurulumunda kapasite çalışması yalnızca bir ekipman değil, tüm hat üzerinden yapılmalıdır. Sahadaki stok alanı, ürün dönüşüm oranı ve bakım süreleri de kapasite hesabına dahil edilmelidir.",
+      "İhracat hedefi olan yatırımlarda kapasite planı ayrıca lojistik senaryolarla uyumlu olmalıdır. Belirli parti büyüklüklerini düzenli çıkarmak, sevkiyat takvimini desteklemek ve ürün standardını korumak için tesisin mekanik ve proses dengesi güçlü kurulmalıdır. Doğru kapasite planlaması ile granül gübre üretim tesisi hem teknik olarak daha verimli çalışır hem de ticari olarak daha öngörülebilir bir yapıya kavuşur.",
     ],
   },
   {
-    title: "Kapasite ve Tasarım",
+    title: "Yatırım",
     paragraphs: [
-      "Granül gübre üretim tesisi kapasitesi belirlenirken yalnızca saatlik tonaj değil, ürün reçetesi, vardiya düzeni, çalışma günü sayısı ve hedef pazar da dikkate alınmalıdır. Karıştırıcı hacmi, granülatör çapı, kurutma tamburu yükü, soğutma kapasitesi, elek alanı ve paketleme hızı birbirleriyle uyumlu seçilmelidir. Eğer kapasite planı sadece tek bir ekipman üzerinden yapılırsa, hatta mutlaka darboğaz oluşur. Bu da ya üretimi yavaşlatır ya da ürün kalitesini düşürür.",
-      "Tasarım aşamasında saha yerleşimi, bakım erişimi, enerji altyapısı ve gelecekte kapasite artırımı ihtimali de düşünülmelidir. Granül gübre üretim tesisi genellikle büyümeye açık bir yatırım modelidir. Bu nedenle modüler tasarım yaklaşımı daha sağlıklı sonuç verir. İyi tasarlanmış bir kapasite ve saha kurgusu, yatırımın sadece bugün değil, orta ve uzun vadede de verimli çalışmasını sağlar.",
+      "Granül gübre üretim tesisi yatırımı yapılırken yalnızca ana makine listesi üzerinden karar vermek çoğu zaman yanıltıcı olur. Çünkü bu tür tesislerde granülasyon ekipmanının yanı sıra kurutma, soğutma, eleme, geri dönüş, filtrasyon, paketleme ve saha lojistiği de toplam yatırımın parçasıdır. Türkiye pazarında granül gübre tesisi kurmak isteyen yatırımcılar için ilk doğru adım, ürün tipi ve satış hedefi ile uyumlu teknik fizibilite oluşturmaktır. Üretilecek granül yapısı, hedef pazarın beklentisi ve ambalaj senaryosu maliyet dağılımını doğrudan etkiler.",
+      "Anahtar teslim granül gübre tesisi yaklaşımı, yatırımın daha net planlanmasını sağlar. Mühendislik, makine imalatı, montaj ve devreye alma tek bir takvim içinde yürütüldüğünde hem uygulama riski hem de maliyet sapması azalır. Özellikle yüksek kapasiteli projelerde enerji ihtiyacı, çelik konstrüksiyon, filtre sistemleri ve son ürün lojistiği baştan doğru planlanmalıdır. Granül gübre üretim hattı için yapılan hatalı boyutlandırmalar, ilk yatırım maliyetini artırdığı gibi işletme giderlerini de gereksiz büyütebilir.",
+      "Doğru planlanmış bir granül gübre tesisi yatırımı, ürün standardını yükseltir, bakım sıklığını düşürür ve Türkiye ile ihracat pazarlarında daha güçlü ticari sürdürülebilirlik sağlar. Bu nedenle yatırım kararı yalnızca bugünkü ihtiyaçlar üzerinden değil, marka büyümesi, yeni ürün geliştirme ve bölgesel dağıtım ağı gibi daha geniş ticari hedefler üzerinden değerlendirilmelidir.",
     ],
   },
+];
+
+const faqs = [
   {
-    title: "Yatırım ve Maliyet",
-    paragraphs: [
-      "Granül gübre üretim tesisi yatırımı, prosesin doğası gereği çok sayıda ekipman ve yardımcı sistem içerir. Bu nedenle maliyet yapısı; kapasite, otomasyon seviyesi, kurutma ihtiyacı, toz kontrolü, depolama alanı, paketleme hattı ve saha montajına göre değişiklik gösterir. Granülatör tamburu, kurutma tamburu, soğutma tamburu ve elek sistemleri çoğu projede ana yatırım kalemlerini oluşturur. Taşıma ekipmanları, filtre sistemleri ve yardımcı konstrüksiyonlar da toplam maliyete doğrudan etki eder.",
-      "Yatırım sürecinde yalnızca ekipman maliyetine odaklanmak yanıltıcı olur. Elektrik ve otomasyon, montaj, devreye alma, saha altyapısı ve operatör ihtiyaçları da toplam proje bütçesine dahil edilmelidir. Anahtar teslim çözüm yaklaşımı burada önemli avantaj sağlar; çünkü proje kapsamı daha net görünür hale gelir ve maliyet sürprizleri azalır. Doğru planlanan bir granül gübre üretim tesisi yatırımı, uzun vadede daha düşük işletme maliyeti ve daha güçlü ürün standardı ile geri döner.",
-    ],
+    question: "Granül gübre üretim tesisi ile organomineral gübre tesisi aynı şey midir?",
+    answer:
+      "Hayır. Organomineral ürünler granül formda üretilebilir ancak reçete yapısı, bağlayıcı ihtiyacı ve kurutma davranışı farklı olabilir. Bu nedenle tesis tasarımı ürün grubuna göre ayrı değerlendirilmelidir.",
+  },
+  {
+    question: "Granül gübre tesisi kurulumunda en kritik ekipman hangisidir?",
+    answer:
+      "Granülatör tamburu kritik bir ekipmandır; ancak tek başına yeterli değildir. Kurutma, soğutma, eleme ve geri dönüş sistemi ile birlikte uyumlu çalışması gerekir.",
+  },
+  {
+    question: "Granül gübre üretim hattı ihracata uygun ürün çıkarabilir mi?",
+    answer:
+      "Evet. Tane boyutu standardı, nem kontrolü, kırılma dayanımı ve paketleme kalitesi doğru kurgulanırsa tesis hem iç pazar hem ihracat için uygun çalışabilir.",
+  },
+  {
+    question: "Yatırım planında kapasite artışı sonradan eklenebilir mi?",
+    answer:
+      "Modüler tasarım yapılırsa evet. Özellikle taşıma ekipmanları, eleme alanı ve paketleme senaryosu gelecekteki büyüme düşünülerek planlanmalıdır.",
   },
 ];
 
 export default function Page() {
   return (
-    <main className="min-h-screen overflow-x-hidden bg-white text-slate-900">
-      <Hero
-        title="Granül Gübre Üretim Tesisi Kurulumu"
-        description="Granül gübre üretimi için anahtar teslim mühendislik, makine imalatı, proses tasarımı, montaj ve devreye alma çözümleri sunuyoruz."
-        image="/images/hizmetler1.png"
-      >
-        <Link
-          href="/iletisim"
-          className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-white px-6 text-sm font-semibold text-slate-950 transition hover:bg-slate-100"
-        >
-          Teklif Al
-        </Link>
-        <a
-          href="https://wa.me/905380631163"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/20 bg-white/10 px-6 text-sm font-semibold text-white transition hover:bg-white/15"
-        >
-          WhatsApp
-        </a>
-      </Hero>
-
-      <section className="seo-content section-space">
-        <div className="site-container">
-          <div className="rounded-[32px] border border-slate-200 bg-slate-50 px-6 py-8 shadow-[0_18px_45px_rgba(15,23,42,0.06)] sm:px-8 sm:py-10 lg:px-12">
-            <div className="space-y-10">
-              {sections.map((section) => (
-                <article key={section.title}>
-                  <h2 className="text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">
-                    {section.title}
-                  </h2>
-                  <div className="mt-5 space-y-5 text-sm leading-8 text-slate-700 sm:text-base">
-                    {section.paragraphs.map((paragraph) => (
-                      <p key={paragraph}>{paragraph}</p>
-                    ))}
-                  </div>
-                </article>
-              ))}
-
-              <div className="rounded-[28px] bg-blue-700 px-6 py-8 text-white shadow-[0_24px_70px_rgba(29,78,216,0.28)] sm:px-8 sm:py-10">
-                <p className="max-w-3xl text-base leading-8 text-white/90 sm:text-lg">
-                  Projeniz için bizimle iletişime geçin.
-                </p>
-                <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-                  <Link
-                    href="/iletisim"
-                    className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-white px-6 text-sm font-semibold text-blue-800 transition hover:bg-slate-100"
-                  >
-                    Teklif Al
-                  </Link>
-                  <a
-                    href="https://wa.me/905380631163"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/25 px-6 text-sm font-semibold text-white transition hover:bg-white/10"
-                  >
-                    WhatsApp
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
+    <ServiceSeoPage
+      title={title}
+      description={description}
+      canonical={canonical}
+      image="/images/hizmetler1.png"
+      serviceName="Granül Gübre Üretim Tesisi Kurulumu"
+      introTitle="Granül Gübre Üretim Tesisi Nedir?"
+      introParagraphs={[
+        "Granül gübre üretim tesisi, toz veya karışım formundaki hammaddelerin kontrollü biçimde granül hale getirilmesini ve ticari sevkiyata uygun son ürün standardına ulaştırılmasını sağlayan entegre üretim yapısıdır. Türkiye’de granül gübre tesisi yatırımları; iç pazarın düzenli ve fiziksel dayanımı yüksek ürün talebi ile birlikte ihracat hedefi olan üreticiler için de önemli bir alan haline gelmiştir.",
+        "Bu tür yatırımlarda proses tasarımı, makina imalatı, montaj ve devreye alma adımlarının aynı mühendislik yaklaşımıyla yürütülmesi gerekir. Doğru kurgulanmış bir granül gübre üretim hattı, ürün kalitesi ile işletme verimini aynı anda güçlendirir ve yatırımın geri dönüş sürecini hızlandırır.",
+      ]}
+      sections={sections}
+      faqs={faqs}
+      ctaText="Projenize özel granül gübre üretim tesisi fizibilitesi ve teklif almak için bizimle iletişime geçin."
+    />
   );
 }

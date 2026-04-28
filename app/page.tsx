@@ -28,14 +28,14 @@ export default function Home() {
                 <p>
                   Pro Makina; gübre üretim tesisleri, kompost tesisleri, organomineral
                   gübre hatları, geri dönüşüm sistemleri, biyogaz ekipmanları ve
-                  endüstriyel proses tesisleri için anahtar teslim mühendislik
-                  çözümleri sunar.
+                  endüstriyel proses tesisleri için anahtar teslim mühendislik çözümleri
+                  sunar.
                 </p>
                 <p>
                   Granül gübre üretim hatlarından kurutma tamburlarına, konveyör
                   sistemlerinden reaktör, tank, bunker, kırıcı, elek ve paketleme
-                  sistemlerine kadar tüm süreçlerde yüksek verimli, uzun ömürlü ve
-                  sahaya özel makina imalatı gerçekleştiriyoruz.
+                  sistemlerine kadar tüm süreçlerde yüksek verimli, uzun ömürlü ve sahaya
+                  özel makina imalatı gerçekleştiriyoruz.
                 </p>
                 <p>
                   Türkiye’de belediyeler, sanayi kuruluşları, gübre üreticileri, maden
@@ -61,6 +61,35 @@ export default function Home() {
               >
                 WhatsApp ile İletişime Geç
               </a>
+            </div>
+
+            <div className="mt-8 rounded-[24px] border border-slate-200 bg-white/80 p-5">
+              <p className="text-sm font-semibold text-slate-950">
+                Öne çıkan hizmet sayfaları:
+              </p>
+              <p className="mt-3 text-sm leading-7 text-slate-600">
+                <Link
+                  href="/hizmetler/organomineral-gubre-tesisi"
+                  className="font-semibold text-blue-700 transition hover:text-blue-800"
+                >
+                  Organomineral Gübre Tesisi Kurulumu
+                </Link>{" "}
+                ,{" "}
+                <Link
+                  href="/hizmetler/granul-gubre-uretim-tesisi"
+                  className="font-semibold text-blue-700 transition hover:text-blue-800"
+                >
+                  Granül Gübre Üretim Tesisi Kurulumu
+                </Link>{" "}
+                ve{" "}
+                <Link
+                  href="/hizmetler/kompost-tesisi-kurulumu"
+                  className="font-semibold text-blue-700 transition hover:text-blue-800"
+                >
+                  Kompost Tesisi Kurulumu
+                </Link>{" "}
+                sayfalarımız üzerinden detaylı teknik kapsamı inceleyebilirsiniz.
+              </p>
             </div>
           </div>
         </div>

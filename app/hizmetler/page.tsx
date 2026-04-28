@@ -44,6 +44,36 @@ export default function ServicesPage() {
               </Link>
             ))}
           </div>
+
+          <div className="mt-10 rounded-[28px] border border-slate-200 bg-slate-50 p-6 shadow-sm sm:p-8">
+            <h2 className="text-2xl font-semibold tracking-tight text-slate-950">
+              Öne Çıkan Üretim ve Kurulum Sayfaları
+            </h2>
+            <p className="mt-4 text-sm leading-8 text-slate-600 sm:text-base">
+              Gübre ve organik atık odaklı yatırım planlıyorsanız{" "}
+              <Link
+                href="/hizmetler/organomineral-gubre-tesisi"
+                className="font-semibold text-blue-700 transition hover:text-blue-800"
+              >
+                Organomineral Gübre Tesisi Kurulumu
+              </Link>
+              ,{" "}
+              <Link
+                href="/hizmetler/granul-gubre-uretim-tesisi"
+                className="font-semibold text-blue-700 transition hover:text-blue-800"
+              >
+                Granül Gübre Üretim Tesisi Kurulumu
+              </Link>{" "}
+              ve{" "}
+              <Link
+                href="/hizmetler/kompost-tesisi-kurulumu"
+                className="font-semibold text-blue-700 transition hover:text-blue-800"
+              >
+                Kompost Tesisi Kurulumu
+              </Link>{" "}
+              sayfalarımız üzerinden detaylı teknik ve yatırım içeriklerini inceleyebilirsiniz.
+            </p>
+          </div>
         </div>
       </section>
     </main>

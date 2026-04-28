@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ReactNode } from "react";
 import { trText } from "../lib/tr-text";
 
@@ -11,9 +12,13 @@ type HeroProps = {
 export function Hero({ title, description, image, children }: HeroProps) {
   return (
     <section className="relative isolate overflow-hidden border-b border-slate-200 text-white">
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url('${image}')` }}
+      <Image
+        src={image}
+        alt={trText(title)}
+        fill
+        priority
+        sizes="100vw"
+        className="object-cover object-center"
       />
       <div className="absolute inset-0 bg-[linear-gradient(rgba(10,20,40,0.75),rgba(10,20,40,0.75))]" />
       <div className="relative site-container flex min-h-[320px] items-center py-[60px] md:min-h-[420px] md:py-[80px]">
