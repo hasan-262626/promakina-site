@@ -1569,6 +1569,126 @@ export const libraryItems: LibraryItem[] = [
     ],
     relatedLinks: ["Kompost ?Sretiminde Tambur Sistemleri", "Kompost Tesisi Nasil Kurulur"],
   },
+  {
+    slug: "organomineral-gubre-tesisi-maliyeti",
+    title: "Organomineral Gübre Tesisi Maliyeti",
+    category: "Blog / Makaleler",
+    summary: "Organomineral gübre tesisi maliyeti, kapasite planı ve yatırım yaklaşımı hakkında kapsamlı içerik.",
+    heroTitle: "Organomineral gübre tesisi maliyeti nasıl planlanır?",
+    heroDescription:
+      "Türkiye pazarı için organomineral gübre tesisi yatırımında ekipman, proses ve saha maliyetlerini değerlendiren uzun form makale.",
+    sections: [
+      {
+        heading: "Yatırım çerçevesi",
+        text: "Kapasite, ürün tipi, granülasyon ihtiyacı ve saha kurgusu toplam yatırım planını belirler.",
+      },
+      {
+        heading: "Maliyet kalemleri",
+        text: "Makina imalatı, çelik konstrüksiyon, otomasyon, montaj ve devreye alma toplam maliyetin ana parçalarıdır.",
+      },
+    ],
+    relatedLinks: ["Gübre Tesisi Kurulumu", "Organomineral Gübre Tesisi Kurulumu"],
+  },
+  {
+    slug: "granul-gubre-uretim-sureci",
+    title: "Granül Gübre Üretim Süreci",
+    category: "Blog / Makaleler",
+    summary: "Granül gübre üretim süreci, kullanılan makinalar ve yatırım mantığını anlatan teknik makale.",
+    heroTitle: "Granül gübre üretim süreci nasıl çalışır?",
+    heroDescription:
+      "Granülasyon, kurutma, soğutma, eleme ve paketleme adımlarını Türkiye pazarı odağında açıklayan detaylı içerik.",
+    sections: [
+      {
+        heading: "Proses yapısı",
+        text: "Hammadde hazırlama, granülasyon, kurutma ve son ürün hazırlama adımları aynı hat dengesi içinde ele alınır.",
+      },
+      {
+        heading: "Makina grupları",
+        text: "Granülatör tamburu, kurutma tamburu, soğutma tamburu ve elek sistemleri ana ekipman grubunu oluşturur.",
+      },
+    ],
+    relatedLinks: ["Granül Gübre Üretim Tesisi", "Gübre Tesisi Kurulumu"],
+  },
+  {
+    slug: "sivi-gubre-uretim-tesisi-nasil-kurulur",
+    title: "Sıvı Gübre Üretim Tesisi Nasıl Kurulur",
+    category: "Blog / Makaleler",
+    summary: "Sıvı gübre üretim tesisi kurulumunda proses, ekipman, kapasite ve yatırım adımlarını anlatan rehber makale.",
+    heroTitle: "Sıvı gübre üretim tesisi nasıl kurulur?",
+    heroDescription:
+      "Sıvı organomineral, amino asitli ve NPK ürünler için proses ve ekipman kurgusunu detaylandıran kapsamlı içerik.",
+    sections: [
+      {
+        heading: "Kurulum mantığı",
+        text: "Ürün tipi, tank yapısı, çözündürme, filtrasyon ve dolum planı proje başlangıcında birlikte değerlendirilir.",
+      },
+      {
+        heading: "Kapasite ve stok",
+        text: "Parti büyüklüğü, dolum hızı ve stok senaryosu sıvı gübre tesislerinde gerçek kapasiteyi belirler.",
+      },
+    ],
+    relatedLinks: ["Sıvı Gübre Üretim Tesisi", "Gübre Tesisi Kurulumu"],
+  },
+  {
+    slug: "kurutma-tamburu-tasarim-kriterleri",
+    title: "Kurutma Tamburu Tasarım Kriterleri",
+    category: "Teknik Rehberler",
+    summary: "Kurutma tamburu tasarımında çap, boy, eğim, devir ve enerji tüketimi kriterlerini anlatan teknik rehber.",
+    heroTitle: "Kurutma tamburu tasarım kriterleri nelerdir?",
+    heroDescription:
+      "Tambur çapı, boyu, iç kanat yapısı, ürün nemi ve sıcak hava dengesini mühendislik perspektifiyle açıklayan rehber içerik.",
+    sections: [
+      {
+        heading: "Geometri ve devir",
+        text: "Çap, boy, eğim ve devir malzemenin tambur içinde ilerleme süresini ve ısı temasını belirler.",
+      },
+      {
+        heading: "Enerji ve proses",
+        text: "Nem yükü, sıcak hava ve ürün davranışı birlikte ele alınmadan sağlıklı kurutma hesabı yapılamaz.",
+      },
+    ],
+    relatedLinks: ["Granül Gübre Üretim Tesisi", "Tambur Sistemleri"],
+  },
+  {
+    slug: "sik-sorulan-sorular",
+    title: "Sık Sorulan Sorular",
+    category: "Sik Sorulan Sorular",
+    summary: "Gübre, kompost, proses ekipmanları ve tesis yatırımları hakkında en çok sorulan soruların kısa cevapları.",
+    heroTitle: "Sık sorulan sorular",
+    heroDescription:
+      "Gübre tesisi kurulumu, ekipman seçimi, kapasite hesabı ve yatırım planlaması hakkında hızlı yanıtlar sunan sayfa.",
+    sections: [
+      {
+        heading: "Hızlı yanıtlar",
+        text: "Yatırım ve teknik karar sürecinde en sık sorulan sorular tek sayfada toplandı.",
+      },
+      {
+        heading: "İlgili bağlantılar",
+        text: "Gerekli durumlarda hizmet sayfalarına geçiş yaparak daha detaylı içeriklere ulaşabilirsiniz.",
+      },
+    ],
+    relatedLinks: ["Gübre Tesisi Kurulumu", "Sıvı Gübre Üretim Tesisi"],
+  },
+  {
+    slug: "terimler-sozlugu",
+    title: "Endüstriyel Proses ve Makina Terimleri Sözlüğü",
+    category: "Terimler Sozlugu",
+    summary: "Granülasyon, kurutma tamburu, reaktör ve kapasite gibi temel kavramları açıklayan sözlük sayfası.",
+    heroTitle: "Endüstriyel proses ve makina terimleri sözlüğü",
+    heroDescription:
+      "Gübre, kompost, taşıma ve proses ekipmanlarında kullanılan temel terimleri kısa tanım ve kullanım alanıyla açıklıyoruz.",
+    sections: [
+      {
+        heading: "Kısa tanımlar",
+        text: "Sektörde sık kullanılan teknik terimler sade ama doğru mühendislik diliyle açıklanır.",
+      },
+      {
+        heading: "Kullanım alanları",
+        text: "Her terim için hangi proseslerde ve hangi ekipman ailelerinde kullanıldığı özetlenir.",
+      },
+    ],
+    relatedLinks: ["Granül Gübre Üretim Süreci", "Kurutma Tamburu Tasarım Kriterleri"],
+  },
 ];
 
 function normalizeTextTree<T>(value: T, key?: string): T {

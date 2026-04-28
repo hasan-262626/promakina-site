@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { RelatedServiceLinks } from "./related-service-links";
 import { SectorInquiryForm } from "./sector-inquiry-form";
 import type { SectorSubsolutionConfig } from "./sector-subsolution-config";
 import type { SectorCardItem, SectorSubsectorItem } from "./sector-subsectors-data";
@@ -150,6 +151,8 @@ export function SectorSubsolutionTemplate({
                   ))}
                 </div>
               </section>
+
+              <RelatedServiceLinks />
 
               <section id="subsolution-form">
                 <SectorInquiryForm

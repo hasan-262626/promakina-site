@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { RelatedServiceLinks } from "./related-service-links";
 import type { SectorExperienceConfig } from "./sector-experience-config";
 import { SectorInquiryForm } from "./sector-inquiry-form";
 import type { SectorCardItem } from "./sector-subsectors-data";
@@ -168,6 +169,8 @@ export function SectorExperienceTemplate({
                   ))}
                 </div>
               </section>
+
+              <RelatedServiceLinks />
 
               <section id={formId}>
                 <SectorInquiryForm requestTargetTitle={trText(config.heroTitle)} initialSectorSlug={sector.slug} />
