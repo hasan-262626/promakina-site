@@ -10,6 +10,24 @@ export const metadata = buildLibraryMetadata({ title, description, canonical });
 
 const relatedServices = [
   {
+    title: "Hizmetler",
+    href: "/hizmetler",
+    description:
+      "Anahtar teslim tesis kurulumu, proses mühendisliği ve devreye alma hizmetlerinin genel yapısını inceleyin.",
+  },
+  {
+    title: "Makinalar",
+    href: "/makinalar",
+    description:
+      "Kurutma tamburu ile birlikte çalışan tambur, konveyör ve diğer proses ekipmanlarını toplu görün.",
+  },
+  {
+    title: "Sektörler",
+    href: "/sektorler",
+    description:
+      "Kurutma tamburunun gübre, kompost, madencilik ve diğer sektörlerde nasıl konumlandığını görün.",
+  },
+  {
     title: "Granül Gübre Üretim Tesisi",
     href: "/hizmetler/granul-gubre-uretim-tesisi",
     description: "Kurutma tamburu, soğutma tamburu ve granülasyon dengesi kuran tesis yapıları.",

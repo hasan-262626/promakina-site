@@ -11,6 +11,33 @@ export const metadata = buildServiceMetadata({
   canonical,
 });
 
+const technicalContents = [
+  {
+    title: "Organomineral Gübre Tesisi Maliyeti",
+    href: "/kutuphane/organomineral-gubre-tesisi-maliyeti",
+    description:
+      "Katı ve sıvı ürün gruplarını birlikte değerlendiren yatırım planlarında maliyet kurgusunu teknik açıdan inceleyin.",
+  },
+  {
+    title: "Granül Gübre Üretim Süreci",
+    href: "/kutuphane/granul-gubre-uretim-sureci",
+    description:
+      "Granül hatların proses mantığını görerek sıvı ve katı ürün yatırımlarını daha doğru kıyaslayın.",
+  },
+  {
+    title: "Sıvı Gübre Üretim Tesisi Nasıl Kurulur?",
+    href: "/kutuphane/sivi-gubre-uretim-tesisi-nasil-kurulur",
+    description:
+      "Sıvı gübre hattı kurgusunda tank, reaktör, dozajlama ve dolum mantığını ayrıntılı biçimde okuyun.",
+  },
+  {
+    title: "Kurutma Tamburu Tasarım Kriterleri",
+    href: "/kutuphane/kurutma-tamburu-tasarim-kriterleri",
+    description:
+      "Ürün portföyünde granül veya kurutmalı hatlar da düşünülüyorsa kurutma tamburu mühendisliğini inceleyin.",
+  },
+];
+
 const cards = [
   {
     title: "Sıvı Organomineral Gübre",
@@ -106,6 +133,7 @@ export default function Page() {
         "Profesyonel bir sıvı gübre üretim tesisi, proses kararlılığı ile ticari hız arasında doğru dengeyi kurmalıdır. Ürünlerin homojenliği, stok ömrü, dolum performansı ve sevkiyat güvenilirliği bir bütün olarak düşünülmelidir. Anahtar teslim yaklaşım sayesinde mühendislik, makine imalatı ve devreye alma süreçleri tek merkezden yönetilir; böylece daha kısa sürede daha güvenli bir yatırım yapısı oluşturulur.",
       ]}
       cards={cards}
+      technicalContents={technicalContents}
       sections={sections}
       faqs={faqs}
       ctaText="Projenize özel sıvı gübre tesisi fizibilitesi ve teklif almak için bizimle iletişime geçin."

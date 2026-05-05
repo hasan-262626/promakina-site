@@ -34,6 +34,30 @@ const cards = [
 
 const technicalContents = [
   {
+    title: "Organomineral Gübre Tesisi Maliyeti",
+    href: "/kutuphane/organomineral-gubre-tesisi-maliyeti",
+    description:
+      "Kapasite, proses yapısı ve makine seçiminin gübre tesisi yatırımına etkisini teknik ve ticari açıdan inceleyin.",
+  },
+  {
+    title: "Granül Gübre Üretim Süreci",
+    href: "/kutuphane/granul-gubre-uretim-sureci",
+    description:
+      "Granül hattın hammadde hazırlama, granülasyon, kurutma ve paketleme akışını adım adım görün.",
+  },
+  {
+    title: "Sıvı Gübre Üretim Tesisi Nasıl Kurulur?",
+    href: "/kutuphane/sivi-gubre-uretim-tesisi-nasil-kurulur",
+    description:
+      "Sıvı ürün gruplarına yönelik proses ve ekipman yaklaşımını okuyarak yatırım kapsamını geniş değerlendirin.",
+  },
+  {
+    title: "Kurutma Tamburu Tasarım Kriterleri",
+    href: "/kutuphane/kurutma-tamburu-tasarim-kriterleri",
+    description:
+      "Granül ve organomineral hatlarda kurutma performansını belirleyen tambur tasarım mantığını teknik açıdan inceleyin.",
+  },
+  {
     title: "Kurutma Tamburu Nasıl Hesaplanır?",
     href: "/kutuphane/blog/kurutma-tamburu-nasil-hesaplanir",
     description:

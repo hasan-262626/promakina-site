@@ -10,6 +10,24 @@ export const metadata = buildLibraryMetadata({ title, description, canonical });
 
 const relatedServices = [
   {
+    title: "Hizmetler",
+    href: "/hizmetler",
+    description:
+      "Anahtar teslim tesis kurulumu, proses tasarımı ve devreye alma hizmetlerinin genel kapsamını inceleyin.",
+  },
+  {
+    title: "Makinalar",
+    href: "/makinalar",
+    description:
+      "Granül gübre üretim hattında görev alan tambur sistemleri, konveyörler ve proses ekipmanlarını toplu görün.",
+  },
+  {
+    title: "Sektörler",
+    href: "/sektorler",
+    description:
+      "Granül gübre üretim çözümlerinin hangi sektör ihtiyaçları içinde konumlandığını detaylı görün.",
+  },
+  {
     title: "Granül Gübre Üretim Tesisi",
     href: "/hizmetler/granul-gubre-uretim-tesisi",
     description: "Granülasyon, kurutma, soğutma ve eleme odaklı üretim hatları.",

@@ -10,6 +10,24 @@ export const metadata = buildLibraryMetadata({ title, description, canonical });
 
 const relatedServices = [
   {
+    title: "Hizmetler",
+    href: "/hizmetler",
+    description:
+      "Anahtar teslim tesis kurulumu, proses tasarımı ve saha uygulama hizmetlerinin genel yapısını inceleyin.",
+  },
+  {
+    title: "Makinalar",
+    href: "/makinalar",
+    description:
+      "Sıvı gübre tesislerinde kullanılan tank, reaktör, taşıma ve yardımcı proses ekipmanlarını toplu görün.",
+  },
+  {
+    title: "Sektörler",
+    href: "/sektorler",
+    description:
+      "Sıvı gübre çözümlerinin gübre, kimya ve proses endüstrileri içindeki uygulama alanlarını inceleyin.",
+  },
+  {
     title: "Sıvı Gübre Üretim Tesisi",
     href: "/hizmetler/sivi-gubre-uretim-tesisi",
     description: "Sıvı organomineral, amino asitli ve NPK ürünler için proses ve dolum altyapısı.",

@@ -11,6 +11,33 @@ export const metadata = buildServiceMetadata({
   canonical,
 });
 
+const technicalContents = [
+  {
+    title: "Organomineral Gübre Tesisi Maliyeti",
+    href: "/kutuphane/organomineral-gubre-tesisi-maliyeti",
+    description:
+      "Kapasite, proses tasarımı, makine seçimi ve saha altyapısının organomineral gübre yatırımına nasıl yansıdığını anlatan teknik yatırım yazısı.",
+  },
+  {
+    title: "Granül Gübre Üretim Süreci",
+    href: "/kutuphane/granul-gubre-uretim-sureci",
+    description:
+      "Granülasyon, kurutma, soğutma ve eleme akışını süreç mantığıyla açıklayan SEO makalesini inceleyin.",
+  },
+  {
+    title: "Sıvı Gübre Üretim Tesisi Nasıl Kurulur?",
+    href: "/kutuphane/sivi-gubre-uretim-tesisi-nasil-kurulur",
+    description:
+      "Sıvı ürün gruplarına geçiş planlayan firmalar için proses, ekipman ve kapasite yaklaşımını görün.",
+  },
+  {
+    title: "Kurutma Tamburu Tasarım Kriterleri",
+    href: "/kutuphane/kurutma-tamburu-tasarim-kriterleri",
+    description:
+      "Organomineral granül ürünlerde kurutma performansını belirleyen tasarım parametrelerini teknik bakışla inceleyin.",
+  },
+];
+
 const sections = [
   {
     title: "Proses",
@@ -82,6 +109,7 @@ export default function Page() {
         "Organomineral gübre tesisi, organik içerik ile mineral hammaddelerin kontrollü biçimde aynı üretim sistemi içinde işlendiği ve yüksek katma değerli gübre ürünlerinin üretildiği tesis modelidir. Türkiye’de organomineral gübre tesisi yatırımları, tarımsal verimlilik kadar ürün çeşitliliği ve marka farklılaşması hedefleyen üreticiler için giderek daha önemli hale gelmektedir.",
         "Başarılı bir organomineral gübre tesisi kurulumu, doğru reçete ile doğru proses tasarımını aynı zeminde buluşturur. Mühendislik, makine imalatı, montaj ve devreye alma süreçlerinin entegre ilerlemesi, hem kalite standardını hem de yatırımın geri dönüş hızını güçlendirir.",
       ]}
+      technicalContents={technicalContents}
       sections={sections}
       faqs={faqs}
       ctaText="Projenize özel organomineral gübre tesisi fizibilitesi ve teklif almak için bizimle iletişime geçin."

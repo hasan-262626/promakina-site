@@ -35,6 +35,25 @@ const knowledgeCenterItems = [
   },
 ];
 
+const featuredKnowledgeArticles = [
+  {
+    title: "Organomineral Gübre Tesisi Maliyeti",
+    href: "/kutuphane/organomineral-gubre-tesisi-maliyeti",
+  },
+  {
+    title: "Granül Gübre Üretim Süreci",
+    href: "/kutuphane/granul-gubre-uretim-sureci",
+  },
+  {
+    title: "Sıvı Gübre Üretim Tesisi Nasıl Kurulur?",
+    href: "/kutuphane/sivi-gubre-uretim-tesisi-nasil-kurulur",
+  },
+  {
+    title: "Kurutma Tamburu Tasarım Kriterleri",
+    href: "/kutuphane/kurutma-tamburu-tasarim-kriterleri",
+  },
+];
+
 const corporateQuickLinks = [
   { label: "Hizmetler", href: "/hizmetler" },
   { label: "Makinalar", href: "/makinalar" },
@@ -196,6 +215,23 @@ export default function Home() {
                   </div>
                 </Link>
               ))}
+            </div>
+
+            <div className="mt-8 rounded-[24px] border border-slate-200 bg-white p-5 sm:p-6">
+              <p className="text-sm font-semibold uppercase tracking-[0.16em] text-blue-700">
+                Öne Çıkan İçerikler
+              </p>
+              <div className="mt-4 flex flex-wrap gap-3">
+                {featuredKnowledgeArticles.map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className="inline-flex rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-blue-200 hover:text-blue-700"
+                  >
+                    {item.title}
+                  </Link>
+                ))}
+              </div>
             </div>
           </div>
         </div>

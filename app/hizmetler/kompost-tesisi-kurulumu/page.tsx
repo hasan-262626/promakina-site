@@ -52,6 +52,30 @@ const sections = [
 
 const technicalContents = [
   {
+    title: "Organomineral Gübre Tesisi Maliyeti",
+    href: "/kutuphane/organomineral-gubre-tesisi-maliyeti",
+    description:
+      "Kompost ve organik girdilerin gübre yatırımlarına nasıl entegre edildiğini maliyet ve proses açısından inceleyin.",
+  },
+  {
+    title: "Granül Gübre Üretim Süreci",
+    href: "/kutuphane/granul-gubre-uretim-sureci",
+    description:
+      "Kompost bazlı veya organik içerikli ürünlerin granül hatlarda nasıl işlendiğini süreç mantığıyla görün.",
+  },
+  {
+    title: "Sıvı Gübre Üretim Tesisi Nasıl Kurulur?",
+    href: "/kutuphane/sivi-gubre-uretim-tesisi-nasil-kurulur",
+    description:
+      "Organik içeriklerin sıvı ürün gruplarında değerlendirilmesi için proses ve ekipman yaklaşımını okuyun.",
+  },
+  {
+    title: "Kurutma Tamburu Tasarım Kriterleri",
+    href: "/kutuphane/kurutma-tamburu-tasarim-kriterleri",
+    description:
+      "Nemli organik ürünlerde kurutma yükünü ve tambur tasarımını teknik bakışla inceleyin.",
+  },
+  {
     title: "Kurutma Tamburu Nasıl Hesaplanır?",
     href: "/kutuphane/blog/kurutma-tamburu-nasil-hesaplanir",
     description:

@@ -11,6 +11,33 @@ export const metadata = buildServiceMetadata({
   canonical,
 });
 
+const technicalContents = [
+  {
+    title: "Organomineral Gübre Tesisi Maliyeti",
+    href: "/kutuphane/organomineral-gubre-tesisi-maliyeti",
+    description:
+      "Granül ve organomineral yatırımlarda maliyet yapısını etkileyen kapasite ve ekipman kararlarını inceleyin.",
+  },
+  {
+    title: "Granül Gübre Üretim Süreci",
+    href: "/kutuphane/granul-gubre-uretim-sureci",
+    description:
+      "Hammadde hazırlama, granülasyon, kurutma, soğutma ve paketleme akışını adım adım görün.",
+  },
+  {
+    title: "Sıvı Gübre Üretim Tesisi Nasıl Kurulur?",
+    href: "/kutuphane/sivi-gubre-uretim-tesisi-nasil-kurulur",
+    description:
+      "Ürün portföyünü sıvı gruplara genişletmek isteyen firmalar için proses ve ekipman yaklaşımını inceleyin.",
+  },
+  {
+    title: "Kurutma Tamburu Tasarım Kriterleri",
+    href: "/kutuphane/kurutma-tamburu-tasarim-kriterleri",
+    description:
+      "Granül gübre hatlarında kurutma tamburunun verimini belirleyen tasarım kriterlerini teknik olarak görün.",
+  },
+];
+
 const sections = [
   {
     title: "Proses",
@@ -82,6 +109,7 @@ export default function Page() {
         "Granül gübre üretim tesisi, toz veya karışım formundaki hammaddelerin kontrollü biçimde granül hale getirilmesini ve ticari sevkiyata uygun son ürün standardına ulaştırılmasını sağlayan entegre üretim yapısıdır. Türkiye’de granül gübre tesisi yatırımları; iç pazarın düzenli ve fiziksel dayanımı yüksek ürün talebi ile birlikte ihracat hedefi olan üreticiler için de önemli bir alan haline gelmiştir.",
         "Bu tür yatırımlarda proses tasarımı, makina imalatı, montaj ve devreye alma adımlarının aynı mühendislik yaklaşımıyla yürütülmesi gerekir. Doğru kurgulanmış bir granül gübre üretim hattı, ürün kalitesi ile işletme verimini aynı anda güçlendirir ve yatırımın geri dönüş sürecini hızlandırır.",
       ]}
+      technicalContents={technicalContents}
       sections={sections}
       faqs={faqs}
       ctaText="Projenize özel granül gübre üretim tesisi fizibilitesi ve teklif almak için bizimle iletişime geçin."

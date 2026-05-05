@@ -14,6 +14,24 @@ export const metadata = buildLibraryMetadata({
 
 const relatedServices = [
   {
+    title: "Hizmetler",
+    href: "/hizmetler",
+    description:
+      "Anahtar teslim tesis kurulumu, proses mühendisliği ve üretim planı hizmetlerini genel çerçevede inceleyin.",
+  },
+  {
+    title: "Makinalar",
+    href: "/makinalar",
+    description:
+      "Organomineral gübre tesisinde çalışan tambur, konveyör, bunker ve diğer ekipman gruplarını toplu görün.",
+  },
+  {
+    title: "Sektörler",
+    href: "/sektorler",
+    description:
+      "Organomineral ve granül gübre yatırımlarının hangi sektör ihtiyaçları ile birlikte değerlendirildiğini görün.",
+  },
+  {
     title: "Gübre Tesisi Kurulumu",
     href: "/hizmetler/gubre-tesisi-kurulumu",
     description: "Anahtar teslim yatırım planı, proses kurgusu ve saha kurulumu çözümleri.",

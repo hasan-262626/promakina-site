@@ -13,6 +13,30 @@ export const metadata = buildServiceMetadata({
 
 const technicalContents = [
   {
+    title: "Organomineral Gübre Tesisi Maliyeti",
+    href: "/kutuphane/organomineral-gubre-tesisi-maliyeti",
+    description:
+      "Kurutma tamburunun yatırım bütçesini etkilediği organomineral gübre projelerini maliyet bakışıyla görün.",
+  },
+  {
+    title: "Granül Gübre Üretim Süreci",
+    href: "/kutuphane/granul-gubre-uretim-sureci",
+    description:
+      "Granül ürünlerde kurutma tamburunun hat içindeki rolünü süreç mantığıyla inceleyin.",
+  },
+  {
+    title: "Sıvı Gübre Üretim Tesisi Nasıl Kurulur?",
+    href: "/kutuphane/sivi-gubre-uretim-tesisi-nasil-kurulur",
+    description:
+      "Ürün portföyünde sıvı ve katı hatları birlikte değerlendiren yatırımcılar için tamamlayıcı proses yaklaşımını okuyun.",
+  },
+  {
+    title: "Kurutma Tamburu Tasarım Kriterleri",
+    href: "/kutuphane/kurutma-tamburu-tasarim-kriterleri",
+    description:
+      "Tambur çapı, boyu, eğim, devir ve enerji yükü gibi temel tasarım parametrelerini detaylı görün.",
+  },
+  {
     title: "Kurutma Tamburu Nasıl Hesaplanır?",
     href: "/kutuphane/blog/kurutma-tamburu-nasil-hesaplanir",
     description:
