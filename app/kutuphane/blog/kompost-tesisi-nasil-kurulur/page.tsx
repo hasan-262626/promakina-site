@@ -32,31 +32,14 @@ const sections = [
           <>
             <p>
               Kompost tesisi; organik içerikli atıkların kontrollü biyolojik ayrışma süreciyle kararlı,
-              tarımsal değeri olan ve çevre açısından daha güvenli son ürüne dönüştürüldüğü endüstriyel
-              proses yapısıdır. Bu tesisler belediye kaynaklı organik atıklar, hayvansal gübreler, gıda
-              işleme atıkları, bitkisel artıklar, park-bahçe atıkları ve benzeri biyobozunur akışlar için
-              kullanılabilir. Türkiye pazarında kompost yatırımları yalnız atık bertarafı için değil, aynı
-              zamanda geri kazanım ve ticari son ürün üretimi için de giderek daha önemli hale gelmektedir.
+              tarımsal değeri olan ve çevre açısından daha güvenli son ürüne dönüştürüldüğü endüstriyel proses
+              yapısıdır. Türkiye pazarında kompost yatırımları yalnız atık bertarafı için değil, geri kazanım
+              ve ticari son ürün üretimi için de önem kazanmaktadır.
             </p>
             <p>
-              Kompost prosesinin başarılı olması için organik atığı yalnız depolamak yetmez; doğru reçeteleme,
-              uygun nem yönetimi, kontrollü havalanma, yeterli tutulma süresi ve etkili son ürün hazırlama
-              gerekir. Bu yüzden kompost tesisi kurulumu, basit bir yığın sistemi yerine proses mühendisliği
-              yaklaşımıyla ele alınmalıdır. Özellikle yüksek kapasiteli tesislerde taşıma ekipmanları, tambur
-              sistemleri, eleme ekipmanları, bunkerler ve gerekiyorsa kurutma çözümleri birbirine uyumlu
-              şekilde çalışmalıdır.
-            </p>
-            <p>
-              Pro Makina,{" "}
-              <Link
-                href="/sektorler/kompost-ve-organik-atik-tesisleri"
-                className="font-semibold text-blue-700 transition hover:text-blue-800"
-              >
-                kompost ve organik atık tesisleri
-              </Link>{" "}
-              alanında proses tasarımı ile endüstriyel makine imalatını birleştirerek saha uygulanabilir
-              çözümler üretir. Bu yaklaşım yatırımcıya, yalnız teorik kompost bilgisi değil, gerçekten
-              işletilebilen bir tesis altyapısı sunar.
+              Doğru sistem kurgusu için organik atığı yalnız depolamak yetmez; reçeteleme, nem yönetimi,
+              kontrollü havalanma, yeterli tutulma süresi ve etkili son ürün hazırlama gerekir. Bu yüzden
+              kompost tesisleri basit yığın sistemleri değil, proses mühendisliği bakışıyla ele alınmalıdır.
             </p>
           </>
         ),
@@ -70,23 +53,14 @@ const sections = [
         content: (
           <>
             <p>
-              Kompost tesislerinde başarı, hammadde kabul aşamasında başlar. Sisteme giren organik akışın
-              yapısı, nemi, yabancı madde oranı ve mevsimsel değişkenliği bilinmeden sağlıklı proses kurulamaz.
-              Özellikle belediye organik atıklarında plastik, metal, cam ve taş gibi istenmeyen bileşenlerin
-              ayrıştırılması gerekir. Bu nedenle kabul alanı, kaba ayıklama, manyetik ayırma, eleme veya uygun
-              manuel kontrol istasyonları proje tasarımında yer almalıdır.
+              Sisteme giren organik akışın yapısı, nemi, yabancı madde oranı ve mevsimsel değişkenliği
+              bilinmeden sağlıklı proses kurulamaz. Özellikle belediye organik atıklarında plastik, metal,
+              cam ve taş gibi istenmeyen bileşenlerin ayrıştırılması gerekir.
             </p>
             <p>
-              Ön ayrıştırma yalnız çevresel kalite için değil, makine ömrü için de önemlidir. Yabancı maddeler
-              taşıma ekipmanlarında sıkışma, tambur yüzeylerinde aşınma ve eleme hatlarında arıza yaratabilir.
-              Ayrıca reçeteleme açısından homojen olmayan besleme, olgunlaştırma süresini uzatır ve son ürün
-              kalitesini düşürür. Bu yüzden kabul hattı çoğu zaman kompost tesisinin görünmeyen ama en kritik
-              güvenlik noktalarından biridir.
-            </p>
-            <p>
-              Hammadde kabul tasarımında saha lojistiği de değerlendirilmelidir. Araç boşaltma alanı, stok tamponu,
-              bunker kapasitesi ve ilk taşıma ekipmanları sistemin günlük ritmini belirler. Özellikle sürekli akış
-              beklenen tesislerde bu bölümün zayıf tasarlanması, tüm hattı kesintili çalışmaya zorlar.
+              Ön ayrıştırma yalnız çevresel kalite için değil, makine ömrü için de önemlidir. Yabancı
+              maddeler taşıma ekipmanlarında sıkışma, tambur yüzeylerinde aşınma ve eleme hatlarında arıza
+              yaratabilir.
             </p>
           </>
         ),
@@ -100,23 +74,13 @@ const sections = [
         content: (
           <>
             <p>
-              Kompost prosesinin kalbi nem ve reçete dengesidir. Organik atığın çok ıslak olması havalanmayı
-              düşürür, anaerobik bölgeler oluşturur ve koku riskini yükseltir. Çok kuru olması ise biyolojik
-              aktiviteyi zayıflatır ve parçalanma hızını düşürür. Bu nedenle başlangıç nemi, proses süresince
-              hedeflenen aralıkta tutulmalıdır. Karbon-azot oranı da aynı derecede önemlidir; fazla azot kokuyu
-              ve amonyak kaybını artırabilir, fazla karbon ise biyolojik dönüşümü yavaşlatabilir.
+              Kompost prosesinin kalbi nem ve reçete dengesidir. Çok yüksek nem havalanmayı düşürür ve koku
+              riskini artırır; düşük nem ise biyolojik aktiviteyi zayıflatır. Karbon-azot oranı da benzer
+              şekilde kritik rol oynar.
             </p>
             <p>
-              Bu dengeyi sağlamak için farklı hammaddeler reçete halinde bir araya getirilir. Yaş mutfak atığı,
-              hayvansal gübre, yeşil atık, dal-budak kırpıntısı, sap-saman veya benzeri yapı verici malzemeler
-              birlikte kullanılarak hem nem hem porozite yönetilir. Proses kontrolü yalnız ilk karışımda değil,
-              süreç boyunca da sürdürülür. Gerekirse geri karıştırma, havalandırma düzeltmesi veya ek malzeme
-              beslemesi yapılır.
-            </p>
-            <p>
-              Kompost tesislerinde proses kontrol yaklaşımı olmadan yalnız açık alanda yığın yapmak, endüstriyel
-              anlamda güvenilir sonuç vermez. Bu yüzden Pro Makina projelerinde kompost tasarımı; malzeme dengesi,
-              taşıma ritmi ve çevresel kontrolle birlikte değerlendirilir.
+              Bu dengeyi sağlamak için farklı hammaddeler reçete halinde bir araya getirilir. Proses kontrolü
+              yalnız başlangıç karışımında değil, tüm çevrim boyunca sürdürülmelidir.
             </p>
           </>
         ),
@@ -130,22 +94,13 @@ const sections = [
         content: (
           <>
             <p>
-              Kompost tesisinde olgunlaştırma yöntemi, yatırım ölçeğini ve işletme davranışını doğrudan belirler.
-              Açık windrow sistemleri, kapalı veya yarı kapalı tünel çözümleri, tamburlu ön fermentasyon sistemleri
-              ve farklı hibrit kurgular arasında seçim yapılabilir. Doğru seçim; günlük besleme miktarı, iklim
-              koşulları, koku kontrol ihtiyacı, saha büyüklüğü ve son ürün beklentisine göre değişir.
+              Açık windrow sistemleri, kapalı tünel çözümleri, tamburlu ön fermentasyon sistemleri ve hibrit
+              yapılar arasında seçim yapılabilir. Doğru seçim; günlük besleme miktarı, iklim koşulları, koku
+              kontrol ihtiyacı, saha büyüklüğü ve son ürün beklentisine göre belirlenir.
             </p>
             <p>
-              Düşük ve orta kapasiteli bazı tesislerde açık windrow yapısı ekonomik olabilir; fakat yoğun yerleşim
-              yakınında, yüksek koku hassasiyetinde veya yıl boyu kontrollü kalite istenen projelerde daha kapalı
-              sistemler öne çıkar. Tamburlu ön işleme veya kontrollü fermentasyon, biyolojik yükü daha dengeli
-              yönetmeye yardımcı olabilir. Ancak burada amaç her zaman en karmaşık sistemi kurmak değil, yatırım
-              ihtiyacına en uygun proses bütünlüğünü kurmaktır.
-            </p>
-            <p>
-              Olgunlaştırma sistemi seçimi aynı zamanda sahadaki yükleme-boşaltma mantığını, iç taşıma düzenini ve
-              ekipman devrini de etkiler. Bu nedenle proje kararı verilirken yalnız kompost biyolojisi değil, saha
-              operasyonu da birlikte ele alınmalıdır.
+              Burada amaç her zaman en karmaşık sistemi kurmak değil, yatırım ihtiyacına en uygun proses
+              bütünlüğünü kurmaktır.
             </p>
           </>
         ),
@@ -159,29 +114,15 @@ const sections = [
         content: (
           <>
             <p>
-              Kompost prosesinin son bölümünde nihai ürünün pazarlanabilir hale gelmesi için eleme, gerekiyorsa
-              kurutma ve ürün hazırlama adımları devreye girer. Eleme sistemi, iri parçaları, tam ayrışmamış
-              fraksiyonları veya geri dönmesi gereken malzemeyi ayrıştırır. Böylece daha homojen, akışkan ve
-              ticari açıdan daha kabul edilebilir son ürün elde edilir. Elek seçimi yapılırken ürün nemi, hedef
-              mesh, kapasite ve organik lif davranışı birlikte değerlendirilmelidir.
+              Nihai ürünün pazarlanabilir hale gelmesi için eleme, gerekiyorsa kurutma ve ürün hazırlama
+              adımları devreye girer. Eleme sistemi iri parçaları ve geri dönmesi gereken fraksiyonu ayırır.
             </p>
             <p>
-              Bazı uygulamalarda son ürünün daha düşük nemle sunulması gerekebilir. Özellikle torbalı satış,
-              uzun depolama veya granül kompost hazırlığı hedefleniyorsa kurutma aşaması devreye girebilir.
-              Bu noktada{" "}
-              <Link
-                href="/makinalar/tambur-sistemleri/kompost-tamburu"
-                className="font-semibold text-blue-700 transition hover:text-blue-800"
-              >
+              Özellikle torbalı satış veya granül kompost hazırlığı hedefleniyorsa{" "}
+              <Link href="/makinalar/tambur-sistemleri/kompost-tamburu" className="font-semibold text-blue-700 transition hover:text-blue-800">
                 kompost tamburu
               </Link>{" "}
-              ve diğer tambur sistemleri önemli rol oynar. Kurutma kararı verilirken yalnız nem düşürme değil,
-              enerji maliyeti ve ürün biyolojik karakterinin korunması da hesaba katılmalıdır.
-            </p>
-            <p>
-              Nihai ürün hazırlama aşaması, kompost tesisinin ticari yüzüdür. Doğru tane boyutu, uygun nem, düşük
-              yabancı madde ve düzenli paketleme kombinasyonu sağlandığında tesis yalnız atık işleyen yapı olmaktan
-              çıkar ve pazara ürün sunan üretim tesisine dönüşür.
+              ve diğer tambur sistemleri önem kazanır.
             </p>
           </>
         ),
@@ -195,22 +136,13 @@ const sections = [
         content: (
           <>
             <p>
-              Kompost tesislerinde çevresel kontrol, teknik performans kadar kritik bir başlıktır. Koku, toz ve
-              sızıntı suyu yönetimi doğru planlanmadığında tesisin sürdürülebilir çalışması zorlaşır. Özellikle
-              belediye atıkları, gıda endüstrisi atıkları ve hayvansal kökenli organik akışlar yüksek koku yükü
-              oluşturabilir. Bu nedenle proses alanlarının yerleşimi, havalandırma mantığı, biyofiltre veya uygun
-              koku kontrol sistemleri proje tasarımında en baştan düşünülmelidir.
+              Koku, toz ve sızıntı suyu yönetimi doğru planlanmadığında tesisin sürdürülebilir çalışması
+              zorlaşır. Bu nedenle proses alanı yerleşimi, havalandırma mantığı ve koku kontrol sistemleri
+              proje tasarımının ayrılmaz parçasıdır.
             </p>
             <p>
-              Toz kontrolü özellikle kurumuş kompost, eleme hattı ve paketleme bölgelerinde önem kazanır. Yetersiz
-              emiş ve toplama sistemi yalnız iş güvenliğini değil ürün kaybını da etkiler. Aynı şekilde drenaj ve
-              zemin eğimi doğru tasarlanmadığında proses suyu yönetimi problem haline gelir. Çevresel kontrol
-              başlıkları bu nedenle sonradan eklenen yardımcı detaylar değil, ana tesis mühendisliğinin parçasıdır.
-            </p>
-            <p>
-              Pro Makina yaklaşımı, kompost tesisini yalnız makine hattı değil, çevresel etkileri yönetilen bütüncül
-              üretim sistemi olarak ele alır. Bu sayede yatırım hem teknik açıdan hem de işletme disiplini açısından
-              daha güvenli hale gelir.
+              Toz kontrolü özellikle eleme ve paketleme bölgelerinde önem kazanır. Yetersiz emiş sistemi
+              yalnız iş güvenliğini değil, ürün kaybını da etkiler.
             </p>
           </>
         ),
@@ -224,28 +156,16 @@ const sections = [
         content: (
           <>
             <p>
-              Kompost tesisinde kapasite planlama yapılırken günlük besleme miktarı kadar, bu beslemenin hangi
-              periyotlarda geldiği de önemlidir. Haftalık pikler, mevsimsel değişimler, kabul alanı tampon hacmi,
-              olgunlaştırma süresi ve son ürün stok mantığı birlikte değerlendirilmelidir. Aksi halde kağıt üzerinde
-              yeterli görünen kapasite, sahada darboğaz oluşturabilir. Bu yüzden makine seçimi yalnız anlık tonaj
-              üzerinden değil, tüm prosesin çevrim süresi üzerinden yapılır.
+              Kapasite planı yalnız günlük tonaja göre değil; haftalık pikler, olgunlaştırma süresi, stok
+              hacmi ve son ürün çıkış senaryosuna göre yapılır. Bu yüzden makine seçimi, anlık tonaj yerine
+              tüm prosesin çevrim süresi üzerinden değerlendirilmelidir.
             </p>
             <p>
-              Taşıma ekipmanları, bunkerler, karıştırma sistemleri, tamburlar, elekler ve yardımcı çevresel kontrol
-              ekipmanları aynı ritimde seçilmelidir. Özellikle{" "}
-              <Link
-                href="/makinalar/tasima-ekipmanlari"
-                className="font-semibold text-blue-700 transition hover:text-blue-800"
-              >
+              Özellikle{" "}
+              <Link href="/makinalar/tasima-ekipmanlari" className="font-semibold text-blue-700 transition hover:text-blue-800">
                 taşıma ekipmanları
               </Link>{" "}
-              tarafındaki zayıf seçimler, tüm kompost hattını kesintili hale getirebilir. Benzer şekilde yanlış
-              elek kapasitesi veya eksik stok yaklaşımı son ürün tarafında darboğaz yaratır.
-            </p>
-            <p>
-              Sağlıklı kapasite planı, yalnız bugün için değil büyüme senaryosu için de düşünülmelidir. Bu nedenle
-              Pro Makina projelerinde makine seçimi, sahadaki gerçek operasyon ve yatırım hedefi ile birlikte ele
-              alınır.
+              tarafındaki zayıf seçimler tüm kompost hattını kesintili hale getirebilir.
             </p>
           </>
         ),
@@ -259,45 +179,49 @@ const sections = [
         content: (
           <>
             <p>
-              Pro Makina, kompost tesisi kurulumunda proses mühendisliği, endüstriyel makine imalatı ve saha kurulum
-              disiplinlerini tek bir proje yaklaşımında birleştirir. Bu sayede hammadde kabulden nihai ürün
-              hazırlamaya kadar tüm adımlar ortak hedefe göre tasarlanır. Organik atık karakteri, saha koşulları,
-              çevresel hassasiyet ve hedef ürün senaryosu birlikte analiz edilir; ardından buna uygun ekipman ve
-              proses akışı belirlenir.
+              Pro Makina, kompost tesisi kurulumunda proses mühendisliği, endüstriyel makine imalatı ve saha
+              kurulum disiplinlerini tek proje yaklaşımında birleştirir. Böylece hammadde kabulden nihai ürün
+              hazırlamaya kadar tüm adımlar ortak hedefe göre tasarlanır.
             </p>
             <p>
               Özellikle{" "}
-              <Link
-                href="/hizmetler/kompost-tesisi-kurulumu"
-                className="font-semibold text-blue-700 transition hover:text-blue-800"
-              >
+              <Link href="/hizmetler/kompost-tesisi-kurulumu" className="font-semibold text-blue-700 transition hover:text-blue-800">
                 anahtar teslim kompost tesisi kurulumu
               </Link>{" "}
-              projelerinde bu bütüncül yaklaşım, devreye alma süresini kısaltır ve yatırım riskini düşürür. Pro Makina
-              için amaç yalnız makine tedarik etmek değil; kapasiteyi karşılayan, çevresel yönetimi güçlü ve ticari
-              olarak anlamlı sonuç üreten sistem kurmaktır.
-            </p>
-            <p>
-              Projenize özel kompost tesisi fizibilitesi, kapasite planı ve ekipman önerisi almak isterseniz{" "}
-              <Link
-                href="/iletisim"
-                className="font-semibold text-blue-700 transition hover:text-blue-800"
-              >
-                bizimle iletişime geçin
-              </Link>{" "}
-              veya genel çözüm alanlarımız için{" "}
-              <Link
-                href="/hizmetler"
-                className="font-semibold text-blue-700 transition hover:text-blue-800"
-              >
-                hizmetler
-              </Link>{" "}
-              sayfasını inceleyin.
+              projelerinde bu bütüncül yaklaşım, devreye alma süresini kısaltır ve yatırım riskini azaltır.
             </p>
           </>
         ),
       },
     ],
+  },
+];
+
+const faqs = [
+  {
+    question: "Kompost tesisi kurmak için hangi veriler gerekir?",
+    answer:
+      "Günlük besleme miktarı, atık türü, nem durumu, yabancı madde oranı, hedef son ürün yapısı ve saha koşulları temel girdiler arasındadır.",
+  },
+  {
+    question: "Kompost tesisinde nem neden bu kadar önemlidir?",
+    answer:
+      "Aşırı yüksek nem havalanmayı düşürür ve koku riskini artırır; düşük nem ise biyolojik aktiviteyi zayıflatır. Bu nedenle proses boyunca dengeli nem gerekir.",
+  },
+  {
+    question: "Kompost tesisinde hangi makineler kullanılır?",
+    answer:
+      "Taşıma ekipmanları, bunkerler, karıştırma sistemleri, tamburlar, eleme sistemleri ve çevresel kontrol ekipmanları en yaygın kullanılan ana ekipmanlardır.",
+  },
+  {
+    question: "Kompost tesisi kapasitesi nasıl planlanır?",
+    answer:
+      "Kapasite planı yalnız günlük tonaja göre değil; pik yükler, olgunlaştırma süresi, stok hacmi ve son ürün çıkış senaryosuna göre yapılır.",
+  },
+  {
+    question: "Anahtar teslim kompost tesisi kurulumu ne sağlar?",
+    answer:
+      "Proses mühendisliği, ekipman seçimi, saha kurulum ve devreye alma adımlarının tek bütün halinde yönetilmesini sağlayarak yatırım riskini azaltır.",
   },
 ];
 
@@ -311,29 +235,77 @@ export default function Page() {
       categoryLabel="BLOG / MAKALE"
       sections={sections}
       relatedServices={relatedServices}
+      faqs={faqs}
       ctaText="Kompost tesisi tasarımı, ekipman seçimi ve anahtar teslim kurulum desteği için Pro Makina ile iletişime geçebilirsiniz."
       extraSection={
-        <section>
-          <h2 className="text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">Sonuç</h2>
-          <div className="mt-5 space-y-5 text-sm leading-8 text-slate-700 sm:text-base">
-            <p>
-              Doğru kompost tesisi kurulumu; organik atığı yalnız yönetmek değil, onu kontrollü süreçlerle ekonomik
-              değere dönüştürmek anlamına gelir. Bunu sağlayan unsur ise proses bilgisi ile makine seçimini tek bir
-              mühendislik bakışında toplamaktır.
-            </p>
-            <p>
-              Projenize özel fizibilite ve teklif için{" "}
-              <Link href="/iletisim" className="font-semibold text-blue-700 transition hover:text-blue-800">
-                iletişim
-              </Link>{" "}
-              sayfasından bize ulaşabilir veya{" "}
-              <Link href="/hizmetler" className="font-semibold text-blue-700 transition hover:text-blue-800">
-                hizmetler
-              </Link>{" "}
-              sayfası üzerinden genel kurulum yaklaşımımızı inceleyebilirsiniz.
-            </p>
-          </div>
-        </section>
+        <>
+          <section>
+            <h2 className="text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">
+              Teknik Değerlendirme Özeti
+            </h2>
+            <div className="mt-6 overflow-hidden rounded-[24px] border border-slate-200 bg-white shadow-sm">
+              <div className="grid grid-cols-3 border-b border-slate-200 bg-slate-50 text-sm font-semibold text-slate-950">
+                <div className="px-4 py-3">Kriter</div>
+                <div className="px-4 py-3">Açıklama</div>
+                <div className="px-4 py-3">Mühendislik Önemi</div>
+              </div>
+              {[
+                ["Hammadde Kalitesi", "Yabancı madde, nem ve reçete yapısı baştan okunur.", "Proses kararlılığı ve ekipman güvenliği için kritiktir."],
+                ["Olgunlaştırma Yöntemi", "Açık, kapalı veya tamburlu sistemler ihtiyaca göre seçilir.", "Saha büyüklüğü, koku kontrolü ve çevrim süresini etkiler."],
+                ["Eleme ve Son Ürün", "Nihai ürün homojenliği için eleme ve gerekiyorsa kurutma uygulanır.", "Ticari ürün kalitesi ve pazarlanabilirlik üzerinde belirleyicidir."],
+                ["Çevresel Kontrol", "Koku, toz ve drenaj yönetimi tasarımın parçası olarak ele alınır.", "Tesisin sürdürülebilir ve mevzuata uygun çalışmasını destekler."],
+              ].map((row) => (
+                <div key={row[0]} className="grid grid-cols-3 border-t border-slate-200 text-sm text-slate-700">
+                  <div className="px-4 py-3 font-semibold text-slate-950">{row[0]}</div>
+                  <div className="px-4 py-3">{row[1]}</div>
+                  <div className="px-4 py-3">{row[2]}</div>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <section>
+            <h2 className="text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">
+              İlgili Teknik İçerikler
+            </h2>
+            <div className="mt-6 grid gap-4 md:grid-cols-3">
+              <Link href="/kutuphane/blog/kurutma-tamburu-hesaplama" className="rounded-[22px] border border-slate-200 bg-white p-4 shadow-sm transition hover:border-blue-200 hover:shadow-[0_18px_45px_rgba(15,23,42,0.08)]">
+                <span className="text-base font-semibold text-slate-950">Kurutma Tamburu Hesaplama</span>
+                <span className="mt-2 block text-sm leading-7 text-slate-600">Kompost son ürününde kurutma ihtiyacı varsa ısıl yük mantığını detaylı okuyun.</span>
+              </Link>
+              <Link href="/kutuphane/blog/helezon-konveyor-kapasite-hesabi" className="rounded-[22px] border border-slate-200 bg-white p-4 shadow-sm transition hover:border-blue-200 hover:shadow-[0_18px_45px_rgba(15,23,42,0.08)]">
+                <span className="text-base font-semibold text-slate-950">Helezon Konveyör Kapasite Hesabı</span>
+                <span className="mt-2 block text-sm leading-7 text-slate-600">Organik ürün taşıma hatlarında kapasite ve doluluk ilişkisini ekipman bazında görün.</span>
+              </Link>
+              <Link href="/kutuphane/blog/granul-gubre-uretim-sureci" className="rounded-[22px] border border-slate-200 bg-white p-4 shadow-sm transition hover:border-blue-200 hover:shadow-[0_18px_45px_rgba(15,23,42,0.08)]">
+                <span className="text-base font-semibold text-slate-950">Granül Gübre Üretim Süreci</span>
+                <span className="mt-2 block text-sm leading-7 text-slate-600">Kompost bazlı gübre hatlarında granülasyon ve son ürün hazırlama akışını inceleyin.</span>
+              </Link>
+            </div>
+          </section>
+
+          <section>
+            <h2 className="text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">Sonuç</h2>
+            <div className="mt-5 space-y-5 text-sm leading-8 text-slate-700 sm:text-base">
+              <p>
+                Doğru kompost tesisi kurulumu; organik atığı yalnız yönetmek değil, onu kontrollü süreçlerle
+                ekonomik değere dönüştürmek anlamına gelir. Bunu sağlayan unsur ise proses bilgisi ile makine
+                seçimini tek bir mühendislik bakışında toplamaktır.
+              </p>
+              <p>
+                Projenize özel fizibilite ve teklif için{" "}
+                <Link href="/iletisim" className="font-semibold text-blue-700 transition hover:text-blue-800">
+                  iletişim
+                </Link>{" "}
+                sayfasından bize ulaşabilir veya{" "}
+                <Link href="/hizmetler" className="font-semibold text-blue-700 transition hover:text-blue-800">
+                  hizmetler
+                </Link>{" "}
+                sayfası üzerinden genel kurulum yaklaşımımızı inceleyebilirsiniz.
+              </p>
+            </div>
+          </section>
+        </>
       }
     />
   );
