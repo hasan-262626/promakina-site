@@ -13,6 +13,7 @@ type PageProps = {
 const aliasMap: Record<string, string> = {
   "tasima-sistemleri": "tasima-ekipmanlari",
   "depolama-sistemleri": "depolama-ve-besleme-sistemleri",
+  "kiricilar-ve-parcalayicilar": "kırıcılar-ve-parcalayicilar",
 };
 
 export function generateStaticParams() {
@@ -49,7 +50,7 @@ export default async function MachineProductDetailPage({ params }: PageProps) {
   const { slug, product } = await params;
   const resolvedSlug = aliasMap[slug] ?? slug;
 
-  if (resolvedSlug !== slug) {
+  if (resolvedSlug !== slug && slug !== "kiricilar-ve-parcalayicilar") {
     redirect(`/makinalar-ekipman/${resolvedSlug}/${product}`);
   }
 

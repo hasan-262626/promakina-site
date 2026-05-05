@@ -13,6 +13,7 @@ type PageProps = {
 const aliasMap: Record<string, string> = {
   "tasima-sistemleri": "tasima-ekipmanlari",
   "depolama-sistemleri": "depolama-ve-besleme-sistemleri",
+  "kiricilar-ve-parcalayicilar": "kırıcılar-ve-parcalayicilar",
 };
 
 function getCategory(slug: string) {
@@ -47,7 +48,7 @@ export default async function MachineCategoryPage({ params }: PageProps) {
   const { slug } = await params;
   const resolvedSlug = aliasMap[slug] ?? slug;
 
-  if (resolvedSlug !== slug) {
+  if (resolvedSlug !== slug && slug !== "kiricilar-ve-parcalayicilar") {
     redirect(`/makinalar-ekipman/${resolvedSlug}`);
   }
 
