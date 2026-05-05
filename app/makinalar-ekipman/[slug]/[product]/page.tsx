@@ -39,6 +39,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: `${activeProduct.title} | ${category.title} | Pro Makina`,
     description: activeProduct.shortDescription,
+    alternates: {
+      canonical: `https://www.promakina.com.tr/makinalar-ekipman/${category.slug}/${activeProduct.slug}`,
+    },
   };
 }
 
