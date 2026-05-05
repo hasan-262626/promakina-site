@@ -11,112 +11,155 @@ export const metadata = buildServiceMetadata({
   canonical,
 });
 
-const technicalContents = [
+const cards = [
   {
-    title: "Organomineral Gübre Tesisi Maliyeti",
-    href: "/kutuphane/organomineral-gubre-tesisi-maliyeti",
+    title: "Çözündürme ve Reaksiyon",
     description:
-      "Katı ve sıvı ürün gruplarını birlikte değerlendiren yatırım planlarında maliyet kurgusunu teknik açıdan inceleyin.",
+      "Mineral ve organik hammaddelerin çözünürlük davranışına göre tank, reaktör ve karıştırma altyapısı kuruyoruz.",
   },
   {
-    title: "Granül Gübre Üretim Süreci",
-    href: "/kutuphane/granul-gubre-uretim-sureci",
+    title: "Dozajlama ve Homojenizasyon",
     description:
-      "Granül hatların proses mantığını görerek sıvı ve katı ürün yatırımlarını daha doğru kıyaslayın.",
+      "Sıvı NPK, organomineral ve özel formül ürünlerde hassas dozajlama ile parti standardını koruyoruz.",
   },
   {
-    title: "Sıvı Gübre Üretim Tesisi Nasıl Kurulur?",
-    href: "/kutuphane/sivi-gubre-uretim-tesisi-nasil-kurulur",
+    title: "Filtrasyon ve Stoklama",
     description:
-      "Sıvı gübre hattı kurgusunda tank, reaktör, dozajlama ve dolum mantığını ayrıntılı biçimde okuyun.",
+      "Çökelme, faz ayrışması ve saha uygulama risklerini azaltan filtreleme ve stok yönetimi kurguluyoruz.",
   },
   {
-    title: "Kurutma Tamburu Tasarım Kriterleri",
-    href: "/kutuphane/kurutma-tamburu-tasarim-kriterleri",
+    title: "Dolum ve Sevkiyat",
     description:
-      "Ürün portföyünde granül veya kurutmalı hatlar da düşünülüyorsa kurutma tamburu mühendisliğini inceleyin.",
+      "Bidon, IBC veya dökme sevkiyat senaryolarına göre dolum, etiketleme ve yükleme akışını planlıyoruz.",
   },
 ];
 
-const cards = [
+const summaryRows = [
   {
-    title: "Sıvı Organomineral Gübre",
+    criterion: "Formülasyon Yapısı",
     description:
-      "Organik ve mineral bileşenlerin dengeli biçimde birleştiği, kontrollü çözündürme ve karışım altyapısı gerektiren üretim senaryoları için tasarlanır.",
+      "Organomineral sıvı gübre, sıvı NPK, amino asitli ürünler ve deniz yosunu ekstraktları farklı çözünürlük ve reaksiyon ihtiyacı taşır.",
+    importance:
+      "Tank, karıştırıcı ve filtrasyon seçimini doğrudan belirler.",
   },
   {
-    title: "Sıvı NPK Gübre",
+    criterion: "Parti Çevrim Süresi",
     description:
-      "Farklı besin elementlerinin doğru dozaj ve çözünürlük dengesiyle işlendiği, homojen ve kararlı son ürün hedefleyen hat kurgularına uygundur.",
+      "Çözündürme, reaksiyon, filtrasyon ve dolum sürelerinin birlikte hesaplanması gerçek kapasiteyi tanımlar.",
+    importance:
+      "Yatırım verimliliği ile üretim planlamasının sağlıklı kurulmasını sağlar.",
   },
   {
-    title: "Amino Asitli Gübre",
+    criterion: "Malzeme ve Korozyon",
     description:
-      "Isı hassasiyeti, çözünürlük davranışı ve formül kararlılığı dikkate alınarak geliştirilen, özel proses kontrolü isteyen sıvı gübre yatırımları için kullanılır.",
+      "Hat malzemesi, vana-pompa seçimi ve temas yüzeyleri ürünün kimyasal karakterine göre belirlenmelidir.",
+    importance:
+      "Ürün güvenliği, ekipman ömrü ve bakım maliyeti açısından kritiktir.",
   },
   {
-    title: "Deniz Yosunu Ekstraktı",
+    criterion: "Dolum ve Sevkiyat Disiplini",
     description:
-      "Bitki besleme ve biyostimülan segmentinde değerlendirilen, filtrasyon, reaksiyon ve stoklama disiplinini birlikte isteyen özel üretim kurgularını kapsar.",
+      "Dolum hızı, ambalaj tipi ve stok tankı kurgusu ticari operasyon ile proses dengesini kurar.",
+    importance:
+      "Parti standardı ve müşteri teslim performansını güçlendirir.",
   },
 ];
 
 const sections = [
   {
-    title: "Proses",
+    title: "Proses Akışı",
     paragraphs: [
-      "Sıvı gübre üretim tesisi yatırımlarında proses tasarımı, ürün kalitesini ve ticari sürdürülebilirliği doğrudan belirleyen ana unsurdur. Türkiye pazarında en çok talep gören ürün grupları arasında organomineral sıvı gübre, amino asitli gübre üretimi, deniz yosunu ekstraktı üretimi ve sıvı NPK formülasyonları yer alır. Bu ürünlerin tamamında temel ihtiyaç, farklı hammadde sınıflarını kontrollü biçimde çözündürmek, homojenleştirmek ve depolamaya uygun kararlı bir sıvı form elde etmektir. Bu nedenle sıvı gübre üretim hattı yalnızca karıştırma tanklarından oluşan basit bir sistem olarak düşünülmemelidir. Reaktör, çözündürme tankı, sirkülasyon hattı, filtreleme ve dozajlama ekipmanları birbiriyle uyumlu tasarlanmalıdır.",
-      "Sıvı gübre üretim tesisi içinde proses akışı çoğu zaman hammadde kabulü, ön çözündürme, ana karışım, reaksiyon kontrolü, filtrasyon, stoklama ve dolum aşamalarından oluşur. Organik kökenli girdiler kullanıldığında sıcaklık kontrolü ve faz ayrışması riski daha dikkatli izlenir. Mineral bazlı reçetelerde ise çözünürlük sınırları ve kristallenme davranışı önemli hale gelir. Türkiye’de çalışan bir sıvı gübre üretim hattı kurarken ürün çeşitliliği, mevsimsel talep ve ihracat hedefleri birlikte değerlendirilmelidir. Aynı hatta birden fazla formülasyon üretilecekse temizlik kolaylığı, hat geçiş süresi ve otomasyon seviyesi süreç başında planlanmalıdır.",
-      "Özellikle ihracata yönelik çalışan firmalar için sıvı gübre üretim tesisi kurulumunda parti kararlılığı, izlenebilirlik ve standart dolum kalitesi ayrı önem taşır. Bu yüzden proses tasarımı sadece bugünkü üretim ihtiyacını değil, ileride büyüyebilecek ürün portföyünü de karşılayacak esneklikte kurgulanmalıdır. Doğru mühendislik yaklaşımı ile kurulan bir sıvı gübre üretim tesisi, yüksek ürün tekrarlanabilirliği, daha düşük operatör hatası ve daha güçlü marka standardı sağlar.",
+      "Sıvı gübre üretim tesisi, farklı çözünürlük davranışına sahip hammaddelerin kontrollü biçimde çözündürülmesi, reaksiyona sokulması, homojenleştirilmesi ve doluma uygun kararlı ürün haline getirilmesi için tasarlanan özel bir üretim altyapısıdır. Türkiye’de tarım girdileri pazarında organomineral sıvı gübre, amino asitli gübre üretimi, deniz yosunu ekstraktı üretimi ve sıvı NPK segmentleri hızla geliştiği için yatırımcılar daha esnek ve daha kontrollü sistemlere yönelmektedir. Bu nedenle sıvı gübre üretim tesisi kurulumu, yalnızca tank yatırımı olarak değil; proses mühendisliği, ürün standardı ve dolum lojistiğiyle birlikte ele alınmalıdır.",
+      "Tipik proses akışı; hammadde kabulü, ön çözündürme, ana karışım, reaksiyon, homojenizasyon, filtrasyon, ara stoklama, kalite kontrol ve dolum adımlarından oluşur. Bazı ürünlerde pH kontrolü, sıcaklık yönetimi ve bekleme süresi ürün performansını doğrudan etkiler. Sıvı gübre üretim hattı içinde özellikle organik bileşenler kullanıldığında çökme, faz ayrışması ve filtre tıkanması gibi riskler süreç başında hesaba katılmalıdır. Granül ürünlerde görülen kurutma tamburu veya konveyör sistemleri kadar görünür olmasa da, sıvı tesislerde reaksiyon tankı ve filtrasyon omurgası aynı derecede kritiktir.",
+      "Anahtar teslim tesis kurulumu yaklaşımı burada büyük avantaj sağlar. Çünkü çözündürme tankları, reaktörler, pompalar, dozajlama hatları, filtreler ve dolum ekipmanları tek tek güçlü olsa bile süreç mantığı doğru kurulmazsa tesis gerçek kapasitesine ulaşamaz. Pro Makina, sıvı gübre üretim tesisi tasarımında proses akışını ticari çeviklik ile birleştirir; böylece yatırımcı daha hızlı ürün geçişi, daha istikrarlı parti kalitesi ve daha güvenilir sevkiyat ritmi elde eder.",
     ],
   },
   {
-    title: "Kullanılan Makinalar",
+    title: "Kullanılan Ana Makineler",
     paragraphs: [
-      "Sıvı gübre üretim tesisi içinde kullanılan makinalar, üretilecek ürün grubuna ve proses gereksinimine göre seçilir. Hammadde stok tankları, çözündürme tankları, reaktörler, yüksek devirli karıştırıcılar, sirkülasyon pompaları, dozajlama hatları ve ara stok üniteleri sistemin temel ekipmanlarını oluşturur. Organomineral sıvı gübre hatlarında katı hammaddenin sıvı sistem içine kontrollü verilmesi önemlidir. Amino asitli gübre üretimi ve deniz yosunu ekstraktı üretimi gibi hassas ürünlerde ise düşük kesme etkili karıştırma, sıcaklık kontrolü ve daha stabil filtrasyon ekipmanları öne çıkar. Sıvı NPK gübre hatlarında çözünürlük yönetimi için tank hacmi, karıştırma gücü ve hat debisi birlikte değerlendirilir.",
-      "Filtrasyon sistemleri sıvı gübre üretim hattı için çoğu zaman kritik bir kırılma noktasıdır. Özellikle damla sulama veya hassas uygulama hedeflenen ürünlerde çözünmemiş fraksiyonların ürün içinde kalması ciddi saha sorunları oluşturabilir. Bu yüzden torba filtre, kartuş filtre veya özel ayırma çözümleri ürün sınıfına göre belirlenmelidir. Dolum makineleri, etiketleme sistemleri ve son ürün transfer ekipmanları da ticari operasyonun bir parçası olarak düşünülmelidir. Sadece tank ve karıştırıcı kurmak, gerçek anlamda üretime hazır bir sıvı gübre üretim tesisi oluşturmak için yeterli değildir.",
-      "Türkiye pazarı için makina imalatı tarafında bakım erişimi, agresif kimyasallara dayanım, CIP benzeri temizlik kolaylığı ve geniş ürün yelpazesine uygun esneklik önem kazanır. Korozif akışkanlarla çalışan hatlarda gövde ve temas yüzeyi malzemesi doğru seçilmelidir. İyi seçilmiş ekipman kombinasyonu, sıvı gübre üretim tesisinde kalite standardını korurken aynı zamanda operatör bağımlılığını düşürür ve büyümeye açık bir üretim yapısı kurulmasına yardımcı olur.",
+      "Sıvı gübre üretim tesisinde kullanılan ana makineler, üretilecek ürün ailesine göre belirlenir. Hammadde stok tankları, çözündürme tankları, reaktörler, yüksek veya düşük devirli karıştırıcılar, homojenizatörler, sirkülasyon pompaları, ara depolama tankları ve dolum hatları ana sistem omurgasını oluşturur. Organomineral sıvı gübre projelerinde katı fraksiyonun sisteme kontrollü verilmesi için yardımcı besleme ve eleme çözümleri de gerekebilir. Sıvı NPK ürünlerinde ise çözünürlük sınırları nedeniyle tank hacmi, karıştırıcı gücü ve dolum temposu daha dikkatli belirlenir.",
+      "Filtrasyon sistemleri sıvı gübre üretim tesisinde çoğu zaman kalite standardını belirleyen gizli merkezdir. Damlama sulama veya hassas uygulama yapılan pazarlarda çözülemeyen parçacıklar büyük sorun yaratabileceği için filtrasyon seviyesi ürünün kullanım senaryosuna uygun seçilmelidir. Pompa, vana ve hat malzemesi de ürünün kimyasal yapısına göre belirlenmelidir. Korozif ürünlerde uygun malzeme seçilmezse bakım maliyeti hızla yükselir ve tesis sürekliliği bozulur. Bu yüzden endüstriyel makine imalatı tarafında malzeme kalitesi, yüzey özellikleri ve temizlenebilirlik önemli kriterlerdir.",
+      "Dolum sistemleri, etiketleme ve paletleme altyapısı da sıvı gübre üretim hattının ticari yüzünü oluşturur. Saha gerçekliğinde güçlü üretim kadar güçlü ambalaj disiplini de önemlidir. Türkiye pazarında farklı ambalaj formatlarıyla çalışan firmalar için dolum esnekliği ciddi avantaj sağlar. Pro Makina, ekipman seçimini tüm bu akışı tek çatı altında değerlendirerek yapar; böylece tesis yalnızca ürün üreten değil, güvenle sevk edilebilen ürün hazırlayan bir yapıya dönüşür.",
     ],
   },
   {
-    title: "Kapasite",
+    title: "Kapasite ve Tasarım Kriterleri",
     paragraphs: [
-      "Sıvı gübre üretim tesisi kapasitesi belirlenirken yalnızca günlük tonaj değil, reçete değişim sıklığı, üretim partisi büyüklüğü, dolum planı ve stoklama senaryosu birlikte ele alınmalıdır. Türkiye’de birçok yatırımcı ilk aşamada tek bir ürünle başlamak isterken kısa sürede organomineral sıvı gübre, amino asitli gübre üretimi veya deniz yosunu ekstraktı üretimi gibi farklı ürün gruplarına açılmak ister. Bu nedenle sıvı gübre üretim hattı tasarlanırken modüler tank yapısı, hat geçiş mantığı ve ek dolum senaryoları da hesaba katılmalıdır. Sadece anlık kapasiteye göre yapılan tasarım, büyüme aşamasında yetersiz kalabilir.",
-      "Kapasite planlamasında tank hacmi, karıştırma süresi, çözündürme süresi, dinlendirme ihtiyacı ve dolum hızı birbirini tamamlayan veriler olarak değerlendirilmelidir. Örneğin ürün bir saatte hazırlanıyor olsa bile filtrasyon veya dolum hattı bu tempoyu karşılamıyorsa gerçek tesis kapasitesi düşer. Bu nedenle sıvı gübre üretim tesisi kurulumunda proses süresi ile lojistik akış birlikte planlanmalıdır. İhracat yapan veya yapmayı hedefleyen tesislerde parti büyüklüğü ile sevkiyat planı arasındaki denge daha da kritik hale gelir.",
-      "Doğru kapasite kurgusu aynı zamanda enerji tüketimi, operatör sayısı ve toplam yatırım verimliliği üzerinde doğrudan etkilidir. Çok büyük seçilmiş tanklar ilk yatırım maliyetini gereksiz artırabilir, çok küçük seçilmiş sistemler ise üretim esnekliğini sınırlar. Pro Makina yaklaşımında sıvı gübre üretim tesisi tasarımı, saha gerçekleri ile ticari hedefleri aynı zeminde buluşturacak şekilde yapılır. Böylece üretici yalnızca bugün için değil, orta ve uzun vadede de rekabetçi kalabilecek bir üretim altyapısına kavuşur.",
+      "Sıvı gübre üretim tesisi kapasitesi belirlenirken yalnızca günlük tonaj değil, parti çevrim süresi, reçete değişim sıklığı, tank temizliği, filtrasyon süresi ve dolum hızı da birlikte hesaba katılmalıdır. Türkiye’de birçok yatırımcı başlangıçta sınırlı ürün ailesiyle yola çıkarken kısa sürede daha geniş ürün portföyüne geçmek ister. Bu nedenle sıvı gübre üretim hattı modüler bir mantıkla tasarlanmalı; ilave tank, yeni dolum formatı veya farklı çözündürme kurguları sisteme sonradan eklenebilmelidir. Bu esneklik yatırımın ömrünü uzatır.",
+      "Tasarım kriterleri içinde tank yerleşimi, kimyasal uyum, operatör güvenliği, CIP benzeri temizlik yaklaşımı, havalandırma, stok yönetimi ve yükleme alanı önemli yer tutar. Sadece proses tanklarını kurmak yeterli değildir; dolum, ara stoklama ve sevkiyat planı da aynı yapının parçası olmalıdır. Özellikle ihracata yönelik çalışan üreticiler için parti standardı ve tekrar edilebilir kalite, kapasite hesabından ayrı düşünülemez. Tasarım buna göre yapılmazsa yüksek teorik kapasiteye rağmen zayıf ticari performans ortaya çıkabilir.",
+      "Pro Makina, sıvı gübre üretim tesisi tasarımında proses mühendisliği ile yatırım verimliliğini aynı tabloda değerlendirir. Hangi ürün gruplarının aynı hatta üretilebileceği, hangi tank hacimlerinin daha doğru olacağı ve dolum hattının ne kadar çevik çalışması gerektiği bu yaklaşımın parçasıdır. Sonuçta üretici, hem Türkiye iç pazarında hem dış pazarlarda güvenle büyütebileceği bir üretim omurgasına sahip olur.",
     ],
   },
   {
-    title: "Yatırım",
+    title: "Pro Makina Mühendislik Yaklaşımı",
     paragraphs: [
-      "Sıvı gübre üretim tesisi yatırımı yapılırken en sık karşılaşılan hata, proje kapsamının yalnızca tank ve dolum hattı olarak görülmesidir. Oysa profesyonel bir sıvı gübre üretim tesisi; proses tasarımı, makine imalatı, otomasyon, borulama, vana grupları, pompa seçimi, filtrasyon, stok yönetimi ve son ürün lojistiği ile birlikte değerlendirilmelidir. Türkiye pazarında fiyat odaklı başlangıç yapan birçok tesis, kısa sürede ürün kararlılığı, çökelme, hat tıkanması veya yetersiz temizlik nedeniyle verim kaybı yaşayabilmektedir. Bu nedenle yatırım kararının teknik doğrulukla desteklenmesi gerekir.",
-      "Organomineral sıvı gübre ve amino asitli gübre üretimi gibi daha yüksek katma değerli ürünlerde kalite standardı, tesis yatırımının geri dönüşünü doğrudan etkiler. Aynı şekilde deniz yosunu ekstraktı üretimi gibi özel segmentlerde proses kararlılığı, pazardaki ürün güvenilirliğini belirler. Yatırım planı yapılırken yalnızca bugünkü iç pazar değil, ihracat ambalajı, dolum standardı ve kalite dokümantasyonu da düşünülmelidir. Anahtar teslim yaklaşım burada ciddi avantaj sağlar; çünkü mühendislik, ekipman seçimi ve saha kurulumu tek plan altında yürütülür.",
-      "Doğru planlanan bir sıvı gübre üretim tesisi yatırımı, daha düşük hatalı üretim oranı, daha kısa ürün geçiş süresi ve daha güçlü ticari ölçeklenme sağlar. Özellikle Türkiye’den çevre pazarlara açılmak isteyen firmalar için üretim altyapısının güvenilir, ölçülebilir ve tekrarlanabilir olması büyük önem taşır. Teknik olarak sağlam kurulan bir sıvı gübre üretim hattı, markanın sahadaki itibarını güçlendiren en önemli unsurlardan biridir.",
+      "Pro Makina, sıvı gübre üretim tesisi projelerinde ilk olarak ürün ailesini ve hedef pazarı teknik açıdan tanımlar. Organomineral sıvı gübre, amino asitli gübre üretimi veya deniz yosunu ekstraktı üretimi gibi başlıkların her biri farklı proses hassasiyeti taşır. Bu nedenle standart bir ekipman listesi vermek yerine, ürünün sahadaki davranışını merkeze alan özel proje kurgusu geliştiririz. Hammadde çözünürlüğü, reaksiyon ihtiyacı, sıcaklık hassasiyeti ve ambalaj modeli aynı tasarım dosyası içinde düşünülür.",
+      "Anahtar teslim tesis kurulumu modelinde mekanik imalat, borulama, otomasyon, saha kurulumu ve devreye alma tek proje akışında yürütülür. Böylece süreç boyunca bilgi kaybı azalır ve yatırımcı farklı disiplinleri ayrı ayrı yönetmek zorunda kalmaz. Özellikle sıvı ürünlerde vana mantığı, hat dönüşleri, filtre yerleşimi ve tank dizilimi kritik olduğu için bu bütüncül yaklaşım çok değerlidir. Pro Makina’nın farkı, teorik hesap ile saha uygulamasını birbirine yakın tutmasıdır.",
+      "Mühendislik yaklaşımımızın ana hedefi, yalnızca çalışan bir sıvı gübre üretim hattı kurmak değil; yüksek parti kararlılığı sağlayan, temizlik ve ürün geçişlerini hızlı yapan, büyümeye açık bir tesis oluşturmaktır. Bu sayede üretici daha düşük operasyon stresiyle daha güvenilir kalite elde eder. Türkiye pazarı için bu avantaj, rekabet gücüne; ihracat hedefi için ise marka güvenilirliğine dönüşür.",
     ],
   },
 ];
 
 const faqs = [
   {
-    question: "Sıvı gübre üretim tesisi hangi ürünleri aynı hatta üretebilir?",
+    question: "Sıvı gübre üretim tesisi hangi ürün gruplarını aynı hatta üretebilir?",
     answer:
-      "Doğru proses tasarımı yapılırsa aynı hatta organomineral sıvı gübre, sıvı NPK, amino asitli gübre ve bazı deniz yosunu bazlı ürünler üretilebilir. Bunun için tank dizilimi, temizlik kurgusu ve reçete geçiş mantığı proje başında planlanmalıdır.",
+      "Doğru proses tasarımı ile organomineral sıvı gübre, sıvı NPK ve bazı özel biyostimülan ürünler aynı tesiste yönetilebilir; ancak tank ve temizlik kurgusu buna göre planlanmalıdır.",
   },
   {
-    question: "Türkiye pazarı için sıvı gübre üretim hattında en kritik konu nedir?",
+    question: "Filtrasyon neden sıvı gübre üretim hattında bu kadar önemlidir?",
     answer:
-      "Ürün kararlılığı ve filtrasyon kalitesi öne çıkar. Pazarın farklı bölgelerinde değişen kullanım senaryoları nedeniyle çökelme, faz ayrışması ve dolum standardı sorun yaratmamalıdır.",
+      "Filtrasyon; çökme, tıkanma ve saha uygulama problemlerini azaltarak ürünün müşteri tarafında sorunsuz kullanılmasını sağlar.",
   },
   {
-    question: "Sıvı gübre üretim tesisi yatırımı ihracata uygun kurulabilir mi?",
+    question: "Sıvı gübre tesisi yatırımı ihracata uygun planlanabilir mi?",
     answer:
-      "Evet. Uygun tank altyapısı, izlenebilirlik, dolum hassasiyeti ve ürün standardı ile tesis hem iç pazar hem ihracat için yapılandırılabilir.",
+      "Evet. Parti standardı, dolum hassasiyeti, izlenebilirlik ve ambalaj esnekliği doğru kurulduğunda tesis ihracat beklentilerine uygun çalışabilir.",
   },
   {
-    question: "Amino asitli gübre üretimi ile organomineral sıvı gübre aynı proseste düşünülebilir mi?",
+    question: "Tank hacmi nasıl seçilmelidir?",
     answer:
-      "Ekipman malzemesi, karıştırma tipi ve temizlik mantığı doğru seçilirse aynı tesis içinde farklı ürün grupları yönetilebilir. Ancak reçete davranışı mutlaka mühendislik açısından ayrı değerlendirilmelidir.",
+      "Tank hacmi yalnızca bir partinin büyüklüğüne göre değil, çözündürme süresi, filtrasyon süresi, dolum ritmi ve gelecekteki ürün çeşitliliği dikkate alınarak belirlenmelidir.",
   },
+  {
+    question: "Anahtar teslim sıvı gübre tesisi yatırımının avantajı nedir?",
+    answer:
+      "Proses, ekipman, montaj ve devreye alma tek yapı içinde yönetildiği için proje daha hızlı ilerler ve saha uyumsuzluğu riski azalır.",
+  },
+];
+
+const technicalContents = [
+  {
+    title: "Kurutma Tamburu Hesaplama",
+    href: "/kutuphane/blog/kurutma-tamburu-hesaplama",
+    description:
+      "Granül veya hibrit hat planlayan üreticiler için kurutma yükü ve tambur tasarım mantığını inceleyin.",
+  },
+  {
+    title: "Helezon Konveyör Kapasite Hesabı",
+    href: "/kutuphane/blog/helezon-konveyor-kapasite-hesabi",
+    description:
+      "Katı hammadde besleme, transfer ve ara bunker akışlarında taşıma ekipmanı seçimini görün.",
+  },
+  {
+    title: "Granül Gübre Üretim Süreci",
+    href: "/kutuphane/blog/granul-gubre-uretim-sureci",
+    description:
+      "Sıvı ve katı ürün yatırımlarını birlikte değerlendirmek için granül proses akışını okuyun.",
+  },
+  {
+    title: "Kompost Tesisi Nasıl Kurulur?",
+    href: "/kutuphane/blog/kompost-tesisi-nasil-kurulur",
+    description:
+      "Organik girdi yönetimi ve proses tasarımının farklı sektörlerde nasıl ele alındığını inceleyin.",
+  },
+];
+
+const keyLinks = [
+  { label: "Hizmetler", href: "/hizmetler" },
+  { label: "Makinalar", href: "/makinalar" },
+  { label: "Sektörler", href: "/sektorler" },
+  { label: "İletişim", href: "/iletisim" },
 ];
 
 export default function Page() {
@@ -127,16 +170,19 @@ export default function Page() {
       canonical={canonical}
       image="/images/hizmetler1.png"
       serviceName="Sıvı Gübre Üretim Tesisi Kurulumu"
-      introTitle="Sıvı Gübre Üretim Tesisi Nedir?"
+      introTitle="Sıvı Gübre Üretiminde Kontrollü ve Ölçeklenebilir Proses Tasarımı"
       introParagraphs={[
-        "Sıvı gübre üretim tesisi; bitki besleme amaçlı sıvı formülasyonların kontrollü biçimde hazırlanması, çözündürülmesi, karıştırılması, filtre edilmesi, stoklanması ve doluma hazırlanması için tasarlanan entegre proses yapısıdır. Türkiye pazarında organomineral sıvı gübre, amino asitli gübre üretimi, deniz yosunu ekstraktı üretimi ve sıvı NPK segmentleri hızla büyümektedir. Bu nedenle tesis kurgusunun yalnızca bugünkü ürün değil, gelecekteki formülasyon çeşitliliğini de taşıyabilecek esneklikte olması gerekir.",
-        "Profesyonel bir sıvı gübre üretim tesisi, proses kararlılığı ile ticari hız arasında doğru dengeyi kurmalıdır. Ürünlerin homojenliği, stok ömrü, dolum performansı ve sevkiyat güvenilirliği bir bütün olarak düşünülmelidir. Anahtar teslim yaklaşım sayesinde mühendislik, makine imalatı ve devreye alma süreçleri tek merkezden yönetilir; böylece daha kısa sürede daha güvenli bir yatırım yapısı oluşturulur.",
+        "Sıvı gübre üretim tesisi kurulumu, çözünürlük davranışı farklı hammaddelerin kararlı, homojen ve sahada güvenle uygulanabilir ürünlere dönüştürülmesini hedefleyen hassas bir mühendislik çalışmasıdır. Türkiye’de organomineral sıvı gübre, amino asitli gübre üretimi, deniz yosunu ekstraktı üretimi ve sıvı NPK segmentleri büyürken yatırımcıların en büyük ihtiyacı, farklı reçeteleri aynı tesis içinde yönetebilecek esneklikte hatlar kurmaktır. Bu nedenle doğru proje, yalnızca tank sayısını değil; proses akışını, dolum yapısını ve ürün standardını da birlikte planlar.",
+        "Pro Makina, sıvı gübre tesislerinde proses mühendisliği, endüstriyel makine imalatı, saha kurulumu ve devreye alma adımlarını tek yapı içinde yönetir. Bu yaklaşım sayesinde yatırımcı hem bugünkü ürün ailesine hem ileride büyüyecek formülasyon ihtiyaçlarına yanıt verebilen bir üretim sistemi elde eder. İyi kurgulanmış bir sıvı gübre üretim hattı, yalnızca üretim kapasitesi sağlamaz; aynı zamanda daha güvenli sevkiyat, daha düşük kalite dalgalanması ve daha güçlü marka standardı sunar.",
       ]}
       cards={cards}
-      technicalContents={technicalContents}
+      summaryRows={summaryRows}
       sections={sections}
+      technicalContents={technicalContents}
       faqs={faqs}
-      ctaText="Projenize özel sıvı gübre tesisi fizibilitesi ve teklif almak için bizimle iletişime geçin."
+      ctaTitle="Teklif / Keşif Çağrısı"
+      ctaText="Projenize özel sıvı gübre tesisi fizibilitesi, proses tasarımı ve anahtar teslim kurulum teklifi almak için bizimle iletişime geçin."
+      keyLinks={keyLinks}
     />
   );
 }

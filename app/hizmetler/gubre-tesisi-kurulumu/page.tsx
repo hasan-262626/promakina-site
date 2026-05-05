@@ -13,150 +13,153 @@ export const metadata = buildServiceMetadata({
 
 const cards = [
   {
-    title: "Organomineral Gübre Tesisi",
-    href: "/hizmetler/organomineral-gubre-tesisi",
+    title: "Hammadde Hazırlama ve Dozajlama",
     description:
-      "Organik ve mineral girdilerin dengeli işlendiği, granül dayanımı ve homojen karışım performansı odaklı tesis çözümleri geliştiriyoruz.",
+      "Organik, mineral ve yardımcı hammaddelerin kontrollü beslenmesi için bunker, dozajlama ve taşıma kurgusu oluşturuyoruz.",
   },
   {
-    title: "Granül Gübre Üretim Tesisi",
-    href: "/hizmetler/granul-gubre-uretim-tesisi",
+    title: "Granülasyon ve Şartlandırma",
     description:
-      "Granülatör tamburu, kurutma tamburu, soğutma ve eleme dengesini birlikte yöneten yüksek verimli granül gübre üretim hatları kuruyoruz.",
+      "Ürün reçetesine göre karıştırma, şartlandırma ve granülasyon ekipmanlarını aynı proses hedefiyle eşleştiriyoruz.",
   },
   {
-    title: "Sıvı Gübre Üretim Tesisi",
-    href: "/hizmetler/sivi-gubre-uretim-tesisi",
+    title: "Kurutma, Soğutma ve Eleme",
     description:
-      "Sıvı organomineral, amino asitli, deniz yosunu bazlı ve NPK ürün grupları için esnek formülasyon ve dolum altyapısı sunuyoruz.",
+      "Kurutma tamburu, soğutma tamburu ve elek sistemlerini ürün dayanımı ile enerji dengesine göre tasarlıyoruz.",
+  },
+  {
+    title: "Paketleme ve Sevkiyat Hazırlığı",
+    description:
+      "Son ürünün torbalama, paletleme, stoklama ve saha içi lojistik adımlarını üretim temposuna uygun kuruyoruz.",
   },
 ];
 
-const technicalContents = [
+const summaryRows = [
   {
-    title: "Organomineral Gübre Tesisi Maliyeti",
-    href: "/kutuphane/organomineral-gubre-tesisi-maliyeti",
+    criterion: "Ürün Tipi",
     description:
-      "Kapasite, proses yapısı ve makine seçiminin gübre tesisi yatırımına etkisini teknik ve ticari açıdan inceleyin.",
+      "Organomineral, granül, sıvı veya toz ürün senaryosu proses akışını ve ekipman seçimini doğrudan belirler.",
+    importance:
+      "Yanlış ürün kurgusu, kapasite hesabını ve yatırım geri dönüşünü zayıflatır.",
   },
   {
-    title: "Granül Gübre Üretim Süreci",
-    href: "/kutuphane/granul-gubre-uretim-sureci",
+    criterion: "Kapasite Dengesi",
     description:
-      "Granül hattın hammadde hazırlama, granülasyon, kurutma ve paketleme akışını adım adım görün.",
+      "Dozajlama, granülasyon, kurutma, eleme ve paketleme ekipmanlarının birbirine uyumlu debide seçilmesi gerekir.",
+    importance:
+      "Hat içinde dar boğaz oluşmasını önler ve gerçek üretim kapasitesini korur.",
   },
   {
-    title: "Sıvı Gübre Üretim Tesisi Nasıl Kurulur?",
-    href: "/kutuphane/sivi-gubre-uretim-tesisi-nasil-kurulur",
+    criterion: "Nem ve Isı Yönetimi",
     description:
-      "Sıvı ürün gruplarına yönelik proses ve ekipman yaklaşımını okuyarak yatırım kapsamını geniş değerlendirin.",
+      "Ürün reçetesine göre şartlandırma, kurutma yükü ve soğutma ihtiyacı birlikte değerlendirilir.",
+    importance:
+      "Granül kalitesini, enerji tüketimini ve depolama stabilitesini doğrudan etkiler.",
   },
   {
-    title: "Kurutma Tamburu Tasarım Kriterleri",
-    href: "/kutuphane/kurutma-tamburu-tasarim-kriterleri",
+    criterion: "Saha ve Genişleme Planı",
     description:
-      "Granül ve organomineral hatlarda kurutma performansını belirleyen tambur tasarım mantığını teknik açıdan inceleyin.",
-  },
-  {
-    title: "Kurutma Tamburu Nasıl Hesaplanır?",
-    href: "/kutuphane/blog/kurutma-tamburu-nasil-hesaplanir",
-    description:
-      "Kurutma tamburu kapasite hesabı, nem dengesi, çap-boy seçimi ve enerji ihtiyacı üzerine hazırlanan teknik makaleyi inceleyin.",
-  },
-  {
-    title: "Helezon Konveyör Kapasite Hesabı",
-    href: "/kutuphane/blog/helezon-konveyor-kapasite-hesabi",
-    description:
-      "Helezon çapı, hatve, devir, yoğunluk, doluluk oranı ve motor gücü seçim yaklaşımını adım adım görün.",
-  },
-  {
-    title: "Organomineral Gübre Tesisi Nasıl Kurulur?",
-    href: "/kutuphane/blog/organomineral-gubre-tesisi-nasil-kurulur",
-    description:
-      "Hammadde hazırlama, karıştırma, granülasyon, kurutma, eleme ve paketleme akışını anlatan uygulamalı rehbere ulaşın.",
+      "Çelik konstrüksiyon, bakım erişimi, yardımcı ekipmanlar ve ileride eklenecek modüller tasarım başında planlanır.",
+    importance:
+      "İlk yatırımın daha verimli kullanılmasını ve büyümenin düşük revizyonla yapılmasını sağlar.",
   },
 ];
 
 const sections = [
   {
-    title: "Gübre Tesisi Kurulumu Nedir?",
+    title: "Proses Akışı",
     paragraphs: [
-      "Gübre tesisi kurulumu, hammaddenin tesise girişinden son ürünün paketlenmesine veya doluma hazırlanmasına kadar olan tüm süreçlerin tek bir mühendislik yaklaşımıyla tasarlanması ve uygulanmasıdır. Türkiye’de artan tarımsal ihtiyaçlar, ürün çeşitliliği ve bölgesel dağıtım ağları nedeniyle gübre tesisi kurulumu artık yalnızca makine tedariki olarak değil, stratejik üretim altyapısı yatırımı olarak görülmelidir. Organomineral, granül, sıvı ve toz ürün grupları arasında önemli proses farkları bulunduğu için tesis tasarımı ürün tipine göre özel olarak kurgulanmalıdır. Başarılı bir gübre tesisi kurulumu, proses tasarımı, makine imalatı, montaj, otomasyon ve devreye alma aşamalarının aynı proje disiplini içinde yönetilmesini gerektirir.",
-      "Bugün Türkiye pazarında üreticiler yalnızca iç talebi karşılamak için değil, aynı zamanda bölgesel ihracat fırsatlarını değerlendirmek için de gübre üretim tesisi yatırımı planlamaktadır. Bu nedenle kurulan hattın sadece çalışması yeterli değildir; aynı zamanda kalite standardını sürdürebilmesi, kapasiteyi kontrollü yönetebilmesi ve uzun vadede büyümeye açık olması gerekir. Anahtar teslim gübre tesisi yaklaşımı tam da bu noktada değer üretir. Çünkü yatırımcı; saha düzeni, ekipman seçimi, proses dengesi ve devreye alma gibi kritik aşamaları farklı tedarikçiler arasında kaybetmeden, tek bir koordinasyon yapısı içinde ilerletebilir. Sonuç olarak daha az belirsizlik, daha yüksek işletme güveni ve daha öngörülebilir maliyet yapısı elde edilir.",
-      "Pro Makina yaklaşımında gübre tesisi kurulumu yalnızca bir makine projesi değil, proses davranışını ticari hedeflerle buluşturan bütüncül bir üretim yatırımı olarak ele alınır. Bu sayede hem Türkiye iç pazarına uygun hem de ihracat beklentilerine cevap verebilen tesis kurguları geliştirilebilir.",
+      "Gübre tesisi kurulumu, hammaddenin depoya kabulünden son ürünün paketlenmesine kadar olan tüm üretim zincirinin tek mühendislik senaryosu içinde planlanmasıdır. Türkiye pazarında yatırım yapan üreticiler için bu süreç yalnızca birkaç makinenin bir araya getirilmesi anlamına gelmez. Hammadde karakteri, reçete yapısı, nem davranışı, hedef kapasite, satış modeli ve hatta mevsimsel talep değişimi aynı proje çatısı altında ele alınmalıdır. Organomineral, granül ve sıvı ürünlerin her biri farklı proses davranışı gösterdiği için gübre tesisi kurulumu sırasında ilk karar, hangi ürün ailesine odaklanılacağı ve hat esnekliğinin ne kadar olacağıdır.",
+      "Granül ürün odaklı bir gübre üretim tesisinde tipik akış; hammadde kabulü, besleme, dozajlama, karıştırma, şartlandırma, granülasyon, kurutma, soğutma, eleme, geri devir ve paketleme adımlarından oluşur. Sıvı gübre tarafında ise stok tankları, çözündürme, reaksiyon, filtrasyon ve dolum gibi başka alt adımlar devreye girer. Pro Makina yaklaşımında bu akış, yalnızca şematik bir çizim olarak değil, sahada nasıl çalışacağı önceden düşünülmüş gerçek bir üretim modeli olarak kurgulanır. Böylece proses mühendisliği kararları ile endüstriyel makine imalatı aynı ritimde ilerler.",
+      "Anahtar teslim tesis kurulumu hedefleniyorsa malzeme akışı ile operatör akışının da birlikte değerlendirilmesi gerekir. Konveyör sistemleri, helezonlar, elevatörler, bunkerler ve tambur sistemleri birbirinden bağımsız seçildiğinde sahada kapasite kayıpları yaşanabilir. Bu nedenle gübre tesisi kurulumu projelerinde her ekipman, bir sonraki ekipmanın gerçek çalışma temposunu destekleyecek şekilde konumlandırılır. Sonuçta daha istikrarlı kalite, daha kontrollü enerji kullanımı ve daha öngörülebilir üretim ritmi elde edilir.",
     ],
   },
   {
-    title: "Türkiye ve İhracat İçin Gübre Tesisi Yatırımı",
+    title: "Kullanılan Ana Makineler",
     paragraphs: [
-      "Türkiye’de gübre tesisi yatırımı planlayan firmalar için ilk temel soru, hangi ürün grubuna odaklanılacağıdır. Organomineral gübre tesisi, granül gübre tesisi, sıvı gübre üretim tesisi veya toz gübre üretim hattı kararlarının her biri farklı proses, farklı makine grubu ve farklı maliyet yapısı doğurur. İç pazarda hızlı hareket eden ve sezonluk talepten etkilenen ürünler için esnek üretim altyapısı önem kazanırken, ihracat hedefli tesislerde parti standardı, paketleme disiplini ve dokümantasyon uyumu ön plana çıkar. Dolayısıyla yatırım kararı yalnızca kısa vadeli satış beklentisiyle değil, orta ve uzun vadeli pazar stratejisiyle birlikte verilmelidir.",
-      "Özellikle ihracata çalışan firmalar için gübre tesisi kurulumu sırasında ürün standardının tekrarlanabilirliği kritik bir konudur. Granül ürünlerde tane boyutu, dayanım ve nem dengesi; sıvı ürünlerde karışım kararlılığı ve filtrasyon kalitesi; organomineral ürünlerde ise reçete homojenliği ile saha performansı birlikte değerlendirilmelidir. Bu nedenle gübre üretim tesisi yatırımı yapılırken proses tasarımının ticari stratejiyle uyumlu olması gerekir. Türkiye’de başarılı olan birçok üretici, iç pazardaki ürün deneyimini ihracata taşırken tesisini modüler ve kontrollü büyüme mantığıyla planlamaktadır.",
-      "Doğru yapılandırılmış bir anahtar teslim gübre tesisi, yatırımcının hem bugünkü ürün grubuna hem de gelecekte açılacağı segmentlere uyum sağlar. Üretim kapasitesinin artırılması, yeni reçete eklenmesi veya dolum-paketleme tarafının genişletilmesi gibi ihtiyaçlar, başlangıçta doğru kurgulanmış bir altyapı sayesinde çok daha sağlıklı yönetilir.",
+      "Bir gübre tesisi kurulumunda kullanılan ana makineler, seçilen ürün tipine göre değişmekle birlikte belirli omurgalar etrafında toplanır. Hammadde kabul bunkerleri, dozajlama sistemleri, helezonlar, bantlı konveyörler ve elevatörler malzeme akışını yönetir. Karıştırıcılar ve şartlandırıcı ekipmanlar ürün reçetesinin homojenliğini sağlar. Granül hatta geçildiğinde granülatör tamburu, kurutma tamburu, soğutma tamburu ve elek sistemleri devreye girer. Son ürün hazırlığında bunkerler, otomatik paketleme üniteleri ve paletleme sistemleri üretim hattının ticari çıktısını tamamlar.",
+      "Makine seçiminde en sık yapılan hata, ekipmanların yalnızca katalog kapasitesine göre değerlendirilmesidir. Oysa gübre üretim tesisi içinde ürün yoğunluğu, nem seviyesi, granül dayanımı, yapışma eğilimi ve geri devir oranı gibi faktörler ekipman performansını doğrudan etkiler. Örneğin kurutma tamburu yükü doğru belirlenmezse enerji tüketimi artar ve son ürün nemi stabil kalmaz. Benzer şekilde konveyör sistemleri veya helezonlar hatalı seçildiğinde malzeme kırılması, tıkanma veya tozlanma oluşabilir. Bu yüzden endüstriyel makine imalatı, gerçek proses verileriyle birlikte yapılmalıdır.",
+      "Pro Makina, makine seçimini sadece tekil ekipman gücü üzerinden değil, tüm hattın uyumu üzerinden değerlendirir. Böylece bakım erişimi kolay, yedek parça standardı güçlü ve ileride kapasite artışına açık hatlar kurulabilir. Türkiye’de çalışan gübre üretim tesisleri için bu yaklaşım önemlidir; çünkü piyasa koşulları değiştiğinde yeni reçetelere veya yeni ürün formatlarına geçmek gerekebilir. Doğru makine omurgası, bu geçişleri daha düşük revizyonla mümkün kılar.",
     ],
   },
   {
-    title: "Proses ve Üretim Yapısı",
+    title: "Kapasite ve Tasarım Kriterleri",
     paragraphs: [
-      "Bir gübre tesisi kurulumu projesinde proses ve üretim yapısı, tüm yatırımın bel kemiğini oluşturur. Hammadde kabulü, depolama, dozajlama, karıştırma, granülasyon veya çözündürme, kurutma, soğutma, eleme, stoklama ve son ürün hazırlama gibi adımların her biri birbirini tamamlayacak şekilde planlanmalıdır. Organomineral gübre tesislerinde organik ve mineral hammaddelerin aynı hatta dengeli işlenmesi gerekirken, granül gübre tesisi projelerinde granülatör tamburu, kurutma tamburu ve soğutma tamburu arasındaki denge öne çıkar. Sıvı gübre üretim tesislerinde ise çözündürme, reaktör, dozajlama ve filtrasyon daha kritik hale gelir.",
-      "Proses tasarımında en sık yapılan hata, ekipmanların tek tek güçlü seçilmesine rağmen hat bütünlüğünün ihmal edilmesidir. Oysa gerçek performansı belirleyen unsur, ekipmanların birbirleriyle aynı ritimde ve ürün davranışına uygun biçimde çalışmasıdır. Gübre üretim tesisi içinde malzeme akışı, bakım erişimi, otomasyon kontrol noktaları ve geri dönüş hatları doğru tasarlanmadığında kapasite düşer, enerji tüketimi artar ve kalite dalgalanması ortaya çıkar. Bu nedenle proses akışı yalnızca çizim değil, gerçek saha çalışmasının ön simülasyonu gibi ele alınmalıdır.",
-      "Türkiye’de özellikle farklı ürün gruplarını aynı tesiste üretmek isteyen firmalar için proses esnekliği büyük önem taşır. Anahtar teslim gübre tesisi yaklaşımı burada önemli avantaj sağlar; çünkü tüm mekanik ve proses kararları tek merkezden yönetildiğinde ürün geçişleri, kapasite dengesi ve işletme akışı daha kontrollü kurulur. Sonuçta tesis sadece çalışan değil, ölçülebilir biçimde verimli çalışan bir yapıya dönüşür.",
+      "Kapasite planlaması, gübre tesisi kurulumu projelerinde yatırımın geleceğini belirleyen temel başlıklardan biridir. Saatlik tonaj tek başına yeterli veri değildir; ürün çeşitliliği, vardiya sayısı, bakım süreleri, hammaddelerin hazırlama ritmi ve sevkiyat modeli de tasarım hesabına dahil edilmelidir. Granül gübre üretim tesislerinde özellikle granülasyon, kurutma ve eleme bölümleri arasında denge kurulmazsa hattın bir noktasında dar boğaz oluşur. Sıvı ürünlerde ise tank çevrim süresi ve dolum hattı kapasitesi gerçek üretimi sınırlar. Bu nedenle kapasite hesabı, bütün hat birlikte çalışıyormuş gibi ele alınmalıdır.",
+      "Tasarım kriterleri içinde saha yerleşimi, taşıma mesafeleri, toz kontrolü, filtreleme, enerji altyapısı ve çelik konstrüksiyon da önemli yer tutar. Gübre tesisi kurulumu sırasında kurutma tamburu, konveyör sistemleri ve paketleme alanı arasındaki akış düzgün kurulmadığında operasyonda gereksiz stok noktaları oluşur. Bu durum hem verimi düşürür hem de operatör ihtiyacını artırır. İyi tasarlanmış bir gübre üretim tesisi, bakım ekiplerinin erişebileceği, hat içinde kör noktaların oluşmadığı ve modüler genişlemeye açık bir yapı sunmalıdır.",
+      "Türkiye pazarı ve yakın ihracat coğrafyası düşünüldüğünde birçok yatırımcı ilk aşamada orta ölçekli kapasiteyle başlayıp daha sonra büyümeyi hedefler. Bu nedenle başlangıçta kurulan sistemin ölçeklenebilir olması büyük avantaj sağlar. Pro Makina’nın proses mühendisliği yaklaşımında kapasite ve tasarım kriterleri yalnızca bugünün sipariş hacmine göre değil, orta vadeli pazar büyümesine göre kurgulanır. Böylece anahtar teslim tesis kurulumu, kısa sürede sınırına gelen bir yapı değil; büyümeye hazır bir üretim platformu olarak çalışır.",
     ],
   },
   {
-    title: "Kullanılan Makinalar",
+    title: "Pro Makina Mühendislik Yaklaşımı",
     paragraphs: [
-      "Gübre tesisi kurulumu sırasında kullanılan makinalar, tesisin üretim modeline göre değişmekle birlikte belirli ana gruplar etrafında şekillenir. Besleme bunkerleri, hassas dozajlama sistemleri, helezonlar, bantlı konveyörler ve elevatörler malzeme akışını yönetir. Granül üretim senaryolarında granülatör tamburu, kurutma tamburu, soğutma tamburu ve elek sistemleri ana ekipman omurgasını oluşturur. Sıvı ürünlerde ise stok tankları, çözündürme tankları, reaktörler, karıştırıcılar, pompalar ve filtrasyon sistemleri ön plana çıkar. Son ürün tipine göre paketleme, paletleme veya dolum hatları devreye alınır.",
-      "Makina imalatı tarafında dikkat edilmesi gereken temel konu, her ekipmanın yalnızca kapasiteye değil ürün davranışına da uygun seçilmesidir. Örneğin organomineral gübre tesisi içinde yapışma eğilimli veya nemli karışımlar için standart taşıma çözümleri yeterli olmayabilir. Granül gübre tesisinde kurutma tamburu yeterli seçilmezse son ürün dayanımı düşebilir. Sıvı gübre üretim tesisinde yetersiz filtrasyon veya hatalı pompa seçimi ürünün sahadaki performansını etkileyebilir. Bu nedenle ekipman listesi, katalog mantığıyla değil, proses mantığıyla oluşturulmalıdır.",
-      "Türkiye ve ihracat hedefli gübre üretim tesisi yatırımlarında ayrıca bakım kolaylığı, malzeme kalitesi, yedek parça erişimi ve uzun vardiya çalışmasına uygunluk dikkate alınmalıdır. Pro Makina, makine imalatını tesisin gerçek üretim senaryosuna uygun şekilde ele alır. Bu sayede saha koşullarında daha dayanıklı, bakım açısından daha erişilebilir ve performans açısından daha güvenilir sistemler kurulabilir.",
-    ],
-  },
-  {
-    title: "Kapasite ve Proje Planlaması",
-    paragraphs: [
-      "Gübre tesisi kurulumu projesinde kapasite planlaması, yatırımın toplam başarısını belirleyen en önemli başlıklardan biridir. Saatlik veya günlük tonaj hedefi tek başına yeterli değildir; ürün çeşitliliği, vardiya sayısı, bakım süresi, stok alanı ve satış kanalları da kapasite hesabına dahil edilmelidir. Granül gübre üretim tesislerinde granülasyon, kurutma, soğutma ve eleme hattı birbirine eşit olmayan yükler oluşturur. Sıvı gübre üretim tesislerinde ise tank çevrim süreleri, çözündürme hızı ve dolum ritmi gerçek kapasiteyi belirler. Organomineral gübre tesislerinde ürün reçetesinin değişkenliği ayrıca dikkate alınmalıdır.",
-      "Türkiye pazarında birçok yatırımın ilk yıllarda sınırlı kapasite ile başlayıp kısa sürede büyüme ihtiyacı göstermesi, proje planlamasında modüler yaklaşımı öne çıkarır. Bu nedenle gübre üretim tesisi tasarımında gelecekte eklenebilecek tank, kurutma grubu, eleme hattı veya paketleme ünitesi için alan ve bağlantı planı başlangıçta düşünülmelidir. Bu yaklaşım, ileride yapılacak kapasite artışını daha düşük maliyetle mümkün kılar.",
-      "Doğru kapasite planlaması aynı zamanda yatırım maliyetinin daha verimli kullanılmasını sağlar. Gereğinden büyük seçilen ekipman ilk yatırım bedelini yükseltirken, gereğinden küçük seçilen sistemler satış fırsatlarını kaçırmaya neden olabilir. Pro Makina, gübre tesisi kurulumu projelerinde kapasiteyi sadece mekanik hesap olarak değil, ticari hedefler ile saha gerçeklerinin birleştiği bir proje disiplini olarak ele alır. Bu da yatırımcıya daha net bir yol haritası sunar.",
-    ],
-  },
-  {
-    title: "Yatırım ve Devreye Alma Süreci",
-    paragraphs: [
-      "Bir gübre tesisi kurulumu yatırımında en kritik aşamalardan biri, teknik kararların ticari plan ile dengelenmesidir. Yatırım maliyeti; kapasite, otomasyon seviyesi, ürün tipi, kullanılan makine grupları, filtreleme veya dolum altyapısı, saha çelik konstrüksiyonu ve montaj kapsamına göre değişir. Ancak doğru bütçe planlaması yapmak için yalnızca ekipman fiyatlarını değil, devreye alma sürecini de işin içine katmak gerekir. Çünkü kurulum, otomasyon entegrasyonu, saha testleri ve ilk performans doğrulaması yatırımın fiilen üretime döndüğü aşamadır.",
-      "Anahtar teslim gübre tesisi yaklaşımı burada önemli avantaj sağlar. Farklı disiplinler aynı proje planı içinde ilerlediğinde, uygulama hataları ve zaman kaybı azalır. Özellikle Türkiye’de yatırım takvimi ile satış takvimi arasında sıkı ilişki bulunduğu için devreye alma süresinin uzaması ticari kayıp oluşturabilir. Bu nedenle proses, makina imalatı, elektrik-otomasyon ve saha montajı en baştan entegre düşünülmelidir. İhracat planlayan üreticiler için bu durum daha da kritiktir; çünkü teslim tarihleri, kalite standardı ve lojistik program aynı anda yönetilmelidir.",
-      "Doğru yönetilmiş bir gübre üretim tesisi yatırımı, yalnızca üretimi başlatmakla kalmaz; işletmenin daha güvenli büyümesini de sağlar. Sistem performansı ölçülebilir hale gelir, bakım planı daha net kurulur ve ürün standardı daha sürdürülebilir olur. Bu nedenle yatırım ve devreye alma süreci, projenin son adımı değil, tesisin gerçek başarısının başladığı aşama olarak görülmelidir.",
-    ],
-  },
-  {
-    title: "Anahtar Teslim Gübre Tesisi Çözümleri",
-    paragraphs: [
-      "Anahtar teslim gübre tesisi çözümleri, yatırımcının mühendislik, makine imalatı, montaj, otomasyon ve devreye alma süreçlerini farklı firmalar arasında parçalamadan yönetmesini sağlar. Bu modelde proje, ilk fizibiliteden son performans kontrolüne kadar tek merkezden planlanır. Böylece kapasite hedefi, ürün tipi ve saha koşulları birbiriyle uyumlu hale gelir. Özellikle organomineral gübre tesisi, granül gübre tesisi ve sıvı gübre üretim tesisi gibi farklı süreçler içeren projelerde bu bütünleşik yaklaşım hata riskini ciddi biçimde düşürür.",
-      "Türkiye pazarında üreticiler yalnızca ekipman değil, güvenilir teslim süresi, sürdürülebilir kalite ve satışa uygun ürün standardı arar. Anahtar teslim yaklaşım, yatırımcının bu üç başlıkta daha güçlü bir zemine oturmasını sağlar. İhracat planlayan şirketlerde ise süreç daha kritik hale gelir; çünkü ürün standardının tekrarlanabilir olması, sevkiyat ritmi ve müşteri güveni açısından zorunludur. Bu yüzden gübre tesisi kurulumu, yalnızca fabrika içine ekipman koymak değil, sahada sürekli çalışabilen bir üretim sistemi oluşturmak anlamına gelir.",
-      "Pro Makina, anahtar teslim gübre tesisi projelerinde teknik bakış ile ticari gerçekliği birlikte ele alır. Amaç yalnızca çalışan bir hat teslim etmek değil, yatırımcıya pazarda güçlü konum sağlayacak bir üretim altyapısı oluşturmaktır. Bu nedenle her proje; ürün grubu, kapasite, saha koşulu, büyüme planı ve ihracat hedefi dikkate alınarak özel olarak kurgulanır.",
+      "Pro Makina, gübre tesisi kurulumu projelerini yalnızca ekipman tedariği olarak görmez. Her projeyi, proses mühendisliği, saha verisi, ürün davranışı ve yatırım hedefleri birlikte değerlendirilecek bir üretim mimarisi olarak ele alır. İlk aşamada hammaddelerin fiziksel ve kimyasal davranışı, hedef ürün formatı, sevkiyat modeli ve pazar beklentisi analiz edilir. Ardından makine listesi, yerleşim planı, enerji yükü, kontrol noktaları ve bakım akışı oluşturulur. Bu yaklaşım yatırımcıya daha net bir karar zemini sağlar.",
+      "Anahtar teslim tesis kurulumu modelinde m² kullanımı, çelik konstrüksiyon, mekanik montaj, otomasyon entegrasyonu ve devreye alma aynı zaman planı içinde yürütülür. Böylece farklı yükleniciler arasında koordinasyon kaybı azalır. Özellikle gübre tesisi yatırımlarında kurutma tamburu, konveyör sistemleri ve paketleme tarafının ayrı ayrı değil, birbirini destekleyecek şekilde planlanması kritik önem taşır. Pro Makina, saha gerçekliğini teorik hesaplarla birleştirerek hem teknik riskleri azaltır hem de yatırımın devreye alma süresini daha kontrollü hale getirir.",
+      "Mühendislik yaklaşımımızın bir diğer farkı da geleceğe açık tasarım yapmasıdır. Türkiye’de çalışan birçok tesis, ilk kurulumdan sonra yeni ürün grupları veya daha yüksek kapasite ihtiyacıyla karşılaşır. Bu nedenle doğru proje, ilk günden itibaren büyüme ihtimalini taşımalıdır. Pro Makina; proses mühendisliği, endüstriyel makine imalatı ve anahtar teslim tesis kurulumu kabiliyetini aynı çatı altında sunarak yatırımcıya hem teknik güven hem ticari esneklik kazandırır. Güçlü bir tasarım, yalnızca bugün çalışmak için değil, yarın daha fazla üretmek için yapılır.",
     ],
   },
 ];
 
 const faqs = [
   {
-    question: "Gübre tesisi kurulumu için hangi ürün grubuyla başlamak daha doğru olur?",
+    question: "Gübre tesisi kurulumu için ilk değerlendirmede hangi veriler gerekir?",
     answer:
-      "Bu karar hedef pazar, satış ağı ve hammaddelere erişime bağlıdır. Organomineral, granül veya sıvı ürünlerin her biri farklı proses ve yatırım mantığı gerektirir; doğru seçim teknik fizibilite ile yapılmalıdır.",
+      "Ürün tipi, hedef kapasite, hammadde listesi, nem davranışı, saha ölçüleri ve paketleme modeli ön değerlendirme için temel verileri oluşturur.",
   },
   {
-    question: "Anahtar teslim gübre tesisi ne avantaj sağlar?",
+    question: "Anahtar teslim gübre tesisi ile parça parça yatırım arasında ne fark vardır?",
     answer:
-      "Mühendislik, makine imalatı, montaj ve devreye alma tek koordinasyon altında yürütüldüğü için uygulama riski azalır, süre yönetimi kolaylaşır ve maliyet daha öngörülebilir hale gelir.",
+      "Anahtar teslim modelde proses, mekanik tasarım, montaj ve devreye alma tek merkezden yönetilir; bu yaklaşım koordinasyon kaybını ve uygulama riskini azaltır.",
   },
   {
-    question: "Gübre üretim tesisi ihracat hedefiyle kurulabilir mi?",
+    question: "Gübre üretim tesisinde kurutma tamburu seçimi neden kritiktir?",
     answer:
-      "Evet. Ürün standardı, kapasite planı, ambalaj altyapısı ve proses kararlılığı doğru kurulduğunda tesis hem Türkiye pazarı hem ihracat kanalları için uygun çalışabilir.",
+      "Kurutma tamburu kapasiteyi, enerji tüketimini, son ürün nemini ve granül dayanımını aynı anda etkilediği için hat performansının ana belirleyicilerinden biridir.",
   },
   {
-    question: "Kurulum sürecinde teknik form ve ön fizibilite neden önemlidir?",
+    question: "Konveyör sistemleri ve helezonlar gübre tesisinde nasıl seçilir?",
     answer:
-      "Ürün tipi, kapasite, saha koşulu ve otomasyon beklentisi netleşmeden doğru ekipman ve proses seçimi yapılamaz. Ön fizibilite yatırım kararının sağlıklı verilmesini sağlar.",
+      "Ürün yoğunluğu, akış davranışı, nemi, taşınacak mesafe ve istenen kapasite birlikte değerlendirilerek taşıma ekipmanı belirlenir.",
   },
+  {
+    question: "Türkiye pazarı için kurulan bir gübre tesisi ihracata uygun planlanabilir mi?",
+    answer:
+      "Evet. Ürün standardı, paketleme, kapasite esnekliği ve kalite kontrol altyapısı doğru kurulursa tesis hem iç pazar hem ihracat için yapılandırılabilir.",
+  },
+];
+
+const technicalContents = [
+  {
+    title: "Kurutma Tamburu Hesaplama",
+    href: "/kutuphane/blog/kurutma-tamburu-hesaplama",
+    description:
+      "Kurutma tamburu kapasitesi, çap-boy dengesi ve enerji yaklaşımını adım adım inceleyin.",
+  },
+  {
+    title: "Helezon Konveyör Kapasite Hesabı",
+    href: "/kutuphane/blog/helezon-konveyor-kapasite-hesabi",
+    description:
+      "Taşıma hatlarında çap, hatve, devir ve motor seçimini etkileyen mühendislik verilerini görün.",
+  },
+  {
+    title: "Granül Gübre Üretim Süreci",
+    href: "/kutuphane/blog/granul-gubre-uretim-sureci",
+    description:
+      "Hammadde hazırlamadan kurutma, eleme ve paketlemeye kadar granül üretim akışını inceleyin.",
+  },
+  {
+    title: "Kompost Tesisi Nasıl Kurulur?",
+    href: "/kutuphane/blog/kompost-tesisi-nasil-kurulur",
+    description:
+      "Organik atık işleme, proses tasarımı ve makine seçimi açısından kompost tesislerini değerlendirin.",
+  },
+];
+
+const keyLinks = [
+  { label: "Hizmetler", href: "/hizmetler" },
+  { label: "Makinalar", href: "/makinalar" },
+  { label: "Sektörler", href: "/sektorler" },
+  { label: "İletişim", href: "/iletisim" },
 ];
 
 export default function Page() {
@@ -167,17 +170,20 @@ export default function Page() {
       canonical={canonical}
       image="/images/hizmetler1.png"
       serviceName="Gübre Tesisi Kurulumu"
-      introTitle="Türkiye Pazarı İçin Güçlü Gübre Üretim Altyapıları"
+      introTitle="Türkiye Pazarı ve İhracat İçin Güçlü Gübre Üretim Altyapısı"
       introParagraphs={[
-        "Gübre tesisi kurulumu alanında doğru yatırım kararı; proses tasarımı, makine imalatı, saha kurulumu ve ticari hedeflerin aynı çerçevede değerlendirilmesiyle alınır. Türkiye’de artan üretim ihtiyacı ve yakın coğrafyaya yönelik ihracat fırsatları, gübre üretim tesisi yatırımlarını stratejik hale getirmiştir. Bu nedenle anahtar teslim gübre tesisi projeleri yalnızca ekipman seçimi değil, ölçeklenebilir üretim altyapısı kurma hedefiyle ele alınmalıdır.",
-        "Pro Makina; organomineral, granül, sıvı ve toz ürün grupları için mühendislik, makine imalatı, montaj ve devreye alma süreçlerini entegre biçimde yürütür. Böylece yatırımcı, daha kontrollü maliyet yapısı, daha güvenli devreye alma süreci ve daha yüksek üretim standardı ile projeyi hayata geçirir.",
+        "Gübre tesisi kurulumu, bugün yalnızca üretim hattı yatırımı değil; proses mühendisliği, ürün standardı ve ticari ölçeklenme kararlarının birlikte verildiği stratejik bir sanayi yatırımına dönüşmüş durumda. Türkiye’de gübre üretim tesisi kurmak isteyen firmalar için doğru karar, ürün tipini, kapasiteyi, kurutma tamburu yükünü, konveyör sistemleri omurgasını ve saha kurulum modelini aynı çerçevede görmekten geçer. Organomineral, granül ve sıvı ürünlerin her biri farklı proses davranışı gösterdiği için anahtar teslim tesis kurulumu yaklaşımı, hatalar pahalı hale gelmeden önce doğru mimariyi kurma fırsatı sağlar.",
+        "Pro Makina; gübre tesisi yatırımlarında proses mühendisliği, endüstriyel makine imalatı, saha kurulumu, devreye alma ve büyümeye açık hat tasarımı konularını tek merkezden yönetir. Böylece yatırımcı yalnızca çalışan bir hat değil, kalite standardını koruyan, ileride genişleyebilen ve saha gerçekliği ile uyumlu bir üretim sistemi elde eder. Güçlü bir gübre üretim tesisi, doğru hesaplanan proses akışı ile kurulur; verimli büyüme de bu doğru tasarımın doğal sonucudur.",
       ]}
       cards={cards}
-      technicalContents={technicalContents}
+      summaryRows={summaryRows}
       sections={sections}
+      technicalContents={technicalContents}
       faqs={faqs}
-      ctaText="Projenize özel fizibilite ve teklif almak için bizimle iletişime geçin."
+      ctaTitle="Teklif / Keşif Çağrısı"
+      ctaText="Projenize özel gübre tesisi fizibilitesi, kapasite planı ve anahtar teslim tesis kurulumu teklifi almak için bizimle iletişime geçin."
       showForm
+      keyLinks={keyLinks}
     />
   );
 }

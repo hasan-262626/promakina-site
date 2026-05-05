@@ -11,89 +11,155 @@ export const metadata = buildServiceMetadata({
   canonical,
 });
 
-const technicalContents = [
+const cards = [
   {
-    title: "Organomineral Gübre Tesisi Maliyeti",
-    href: "/kutuphane/organomineral-gubre-tesisi-maliyeti",
+    title: "Organik ve Mineral Hammadde Besleme",
     description:
-      "Kapasite, proses tasarımı, makine seçimi ve saha altyapısının organomineral gübre yatırımına nasıl yansıdığını anlatan teknik yatırım yazısı.",
+      "Farklı akış karakterine sahip hammaddeleri aynı hatta dengeli besleyen dozajlama ve transfer kurgusu oluşturuyoruz.",
   },
   {
-    title: "Granül Gübre Üretim Süreci",
-    href: "/kutuphane/granul-gubre-uretim-sureci",
+    title: "Karıştırma ve Şartlandırma",
     description:
-      "Granülasyon, kurutma, soğutma ve eleme akışını süreç mantığıyla açıklayan SEO makalesini inceleyin.",
+      "Homojen reçete, doğru bağlayıcı etkisi ve kontrollü granül öncesi hazırlık için proses omurgası kuruyoruz.",
   },
   {
-    title: "Sıvı Gübre Üretim Tesisi Nasıl Kurulur?",
-    href: "/kutuphane/sivi-gubre-uretim-tesisi-nasil-kurulur",
+    title: "Granülasyon, Kurutma ve Eleme",
     description:
-      "Sıvı ürün gruplarına geçiş planlayan firmalar için proses, ekipman ve kapasite yaklaşımını görün.",
+      "Granülatör, kurutma tamburu, soğutma ve elek sistemlerini tek kalite hedefi etrafında eşleştiriyoruz.",
   },
   {
-    title: "Kurutma Tamburu Tasarım Kriterleri",
-    href: "/kutuphane/kurutma-tamburu-tasarim-kriterleri",
+    title: "Son Ürün ve Paketleme",
     description:
-      "Organomineral granül ürünlerde kurutma performansını belirleyen tasarım parametrelerini teknik bakışla inceleyin.",
+      "Granül dayanımı, son nem, stok davranışı ve torbalama akışını ticari ürün standardına göre planlıyoruz.",
+  },
+];
+
+const summaryRows = [
+  {
+    criterion: "Hammadde Davranışı",
+    description:
+      "Organik fraksiyonun nemi ile mineral hammaddelerin akış karakteri aynı hatta birlikte düşünülmelidir.",
+    importance:
+      "Karıştırma verimi ve granül kalitesinin tutarlı kalmasını sağlar.",
+  },
+  {
+    criterion: "Granülasyon Dengesi",
+    description:
+      "Bağlayıcı oranı, tambur yükü, geri devir miktarı ve besleme ritmi birlikte ayarlanır.",
+    importance:
+      "Granül dayanımı ile hat verimini doğrudan etkiler.",
+  },
+  {
+    criterion: "Kurutma ve Son Nem",
+    description:
+      "Kurutma tamburu ve soğutma sistemi, ürünün depolama ve paketleme davranışına göre boyutlandırılır.",
+    importance:
+      "Ürün stabilitesi, raf ömrü ve sevkiyat güveni açısından kritiktir.",
+  },
+  {
+    criterion: "Genişleme ve Reçete Esnekliği",
+    description:
+      "İleride yeni reçeteler veya kapasite artışı için modüler büyüme mantığı tasarımın başında düşünülür.",
+    importance:
+      "Yatırımın uzun vadede daha düşük revizyon maliyetiyle büyümesini sağlar.",
   },
 ];
 
 const sections = [
   {
-    title: "Proses",
+    title: "Proses Akışı",
     paragraphs: [
-      "Organomineral gübre tesisi, organik içerik ile mineral bileşenleri aynı üretim hattında kontrollü biçimde bir araya getiren özel bir gübre üretim tesisidir. Türkiye pazarında organomineral gübre tesisi yatırımları, hem tarımsal verimliliği artıran ürünlere olan talep hem de daha yüksek katma değerli üretim hedefi nedeniyle önem kazanmıştır. Ancak bu tesislerin başarısı yalnızca reçeteye değil, proses tasarımının doğruluğuna bağlıdır. Organik fraksiyonun nemi, lif yapısı, yoğunluğu ve depolama davranışı ile mineral hammaddelerin tane boyutu ve akış özellikleri aynı hatta dengeli biçimde yönetilmelidir. Bu yüzden organomineral gübre tesisi kurulumu klasik karışım hatlarına göre daha detaylı mühendislik ister.",
-      "Proses çoğu zaman hammadde kabulü, dozajlama, karıştırma, şartlandırma, granülasyon, kurutma, soğutma, eleme ve son ürün hazırlama aşamalarından oluşur. Eğer ürün granül formda pazara sunulacaksa granülatör tamburu, kurutma tamburu ve elek sistemleri doğrudan kalite standardını belirler. Organik bileşen kullanıldığı için nem yönetimi ve bağlayıcı davranışı daha kritik hale gelir. Organomineral gübre tesisi içinde geri dönüş akışı da dikkatle planlanmalıdır; çünkü fazla geri dönüş ürün stabilitesini bozabilir ve enerji yükünü artırabilir.",
-      "Türkiye’de çalışan bir organomineral gübre tesisi için prosesin, ürün çeşitliliğine ve mevsimsel satış yapısına uyum sağlayacak esneklikte olması gerekir. İhracat hedefleyen yatırımlarda ise ürünün depolama dayanımı, granül homojenliği ve torbalama performansı ayrıca önem kazanır. Bu nedenle proses tasarımı yalnızca üretmek için değil, aynı kaliteyi sürdürülebilir biçimde tekrar üretebilmek için yapılmalıdır.",
+      "Organomineral gübre tesisi kurulumu, organik içerikler ile mineral hammaddelerin aynı hatta dengeli ve kontrollü biçimde işlenmesini gerektiren özel bir proses yatırımudur. Türkiye’de organomineral ürünlere olan ilgi arttıkça üreticiler yalnızca karışım yapabilen değil, ticari standartta granül ürün çıkarabilen tesislere ihtiyaç duymaktadır. Bu nedenle organomineral gübre tesisi tasarımı, klasik granül üretim hatlarından daha hassas yaklaşım ister. Organik fraksiyonun nem davranışı, lif yapısı ve yoğunluğu ile mineral bileşenlerin tane boyutu ve akış özellikleri birlikte ele alınmalıdır.",
+      "Tipik süreç; hammadde kabulü, depolama, dozajlama, ön karıştırma, şartlandırma, granülasyon, kurutma, soğutma, eleme, geri devir ve paketleme adımlarından oluşur. Organik içeriğin varlığı, granülasyon verimini doğrudan etkileyebileceği için bağlayıcı yönetimi ve karıştırma disiplini büyük önem taşır. Organomineral gübre tesisi kurulumu sırasında proses akışının yalnızca ürün çıkışı değil, hat içinde istikrarlı kalite üretimi hedefiyle tasarlanması gerekir. Aksi halde granül boyut dağılımı, son nem ve ürün dayanımı gibi kritik göstergelerde dalgalanma oluşur.",
+      "Pro Makina, bu süreci proses mühendisliği ve endüstriyel makine imalatı perspektifiyle birlikte yönetir. Böylece anahtar teslim tesis kurulumu modelinde her ekipman, ürün davranışını destekleyecek şekilde seçilir. Sonuçta yatırımcı, daha güvenli devreye alınan, daha düşük enerji kaybıyla çalışan ve büyüme planına uyum sağlayan bir organomineral gübre üretim altyapısına sahip olur.",
     ],
   },
   {
-    title: "Kullanılan Makinalar",
+    title: "Kullanılan Ana Makineler",
     paragraphs: [
-      "Organomineral gübre tesisi içinde kullanılan makinalar, organik ve mineral hammaddelerin farklı davranışlarını aynı hat içinde dengelemek üzere seçilir. Besleme bunkerleri, hassas dozajlama ekipmanları, helezonlar, bantlı konveyörler ve elevatörler hat içi akışı yönetir. Karıştırıcılar, reçete homojenliğinin sağlanmasında ana rol üstlenir. Şartlandırma ve granülasyon aşamasında ise granülatör tamburu veya projeye uygun başka granülasyon ekipmanları kullanılır. Ürün granül forma alındıktan sonra kurutma tamburu, soğutma tamburu ve elek sistemleri devreye girer. Bu ekipmanların her biri, organomineral gübre tesisinin gerçek üretim verimini belirleyen parçalar olarak düşünülmelidir.",
-      "Organik içeriğin varlığı nedeniyle makina seçiminde tıkanma riski, yapışma davranışı ve temizlenebilirlik standart gübre hatlarına göre daha fazla önem taşır. Toz kontrol sistemleri, filtre grupları ve gerekirse koku yönetimi bileşenleri de tesise dahil edilmelidir. Son ürün hazırlama tarafında paketleme ve paletleme sistemleri ticari operasyon açısından kritik rol oynar. Organomineral gübre tesisi kurulumu sırasında makinalar birbirinden bağımsız düşünülürse süreç içinde dar boğazlar ve kalite sapmaları oluşabilir.",
-      "Türkiye pazarı için makina imalatı tarafında yedek parça ulaşılabilirliği, ağır hizmete uygun gövde dayanımı ve bakım erişimi büyük önem taşır. İhracat çalışan tesislerde ise vardiya süreleri ve ürün standardı beklentisi daha yüksek olduğundan ekipman ömrü ve sistem kararlılığı daha da değerli hale gelir. Bu yüzden organomineral gübre tesisi makine seçimi, yalnızca ilk yatırım maliyetiyle değil uzun vadeli işletme sürdürülebilirliği ile değerlendirilmelidir.",
+      "Organomineral gübre tesisinde kullanılan ana makineler, birbirinden farklı karaktere sahip hammaddeleri tek üretim ritminde buluşturacak şekilde seçilir. Besleme bunkerleri, helezonlar, bantlı konveyörler ve elevatörler hammadde akışını yönetir. Karıştırıcılar ve şartlandırma ekipmanları reçete homojenliğini sağlar. Granül ürün hedefleniyorsa granülatör tamburu, kurutma tamburu, soğutma tamburu ve elek sistemleri sürecin merkezinde yer alır. Son ürün tarafında bunkerler, paketleme ve paletleme çözümleri hattın ticari devamlılığını destekler.",
+      "Makine seçiminde yalnızca katalog kapasitesi değil; yapışma eğilimi, nem yükü, geri devir miktarı ve bakım erişimi gibi saha gerçekleri de dikkate alınmalıdır. Organik içerik arttıkça tıkanma ve yüzey yapışması gibi riskler yükseldiği için konveyör sistemleri ve helezonlar doğru geometriyle tasarlanmalıdır. Kurutma tamburu seçimi ise ürünün son nemine, hedef granül dayanımına ve enerji maliyetine doğrudan etki eder. Bu nedenle her ekipman birbirini tamamlayacak mantıkta belirlenmelidir.",
+      "Pro Makina, organomineral gübre tesisi için makina omurgasını bütün hat performansını dikkate alarak kurar. Endüstriyel makine imalatı yalnızca güçlü gövde üretmek anlamına gelmez; bakım kolaylığı, yedek parça standardı ve uzun vardiya uyumu da aynı derecede önemlidir. Bu yaklaşım sayesinde üretici sahada daha kontrollü bir süreç, daha düşük arıza riski ve daha tutarlı kalite performansı elde eder.",
     ],
   },
   {
-    title: "Kapasite",
+    title: "Kapasite ve Tasarım Kriterleri",
     paragraphs: [
-      "Organomineral gübre tesisi kapasitesi belirlenirken ton/saat değeri tek başına yeterli bir kriter değildir. Üretilecek reçete sayısı, vardiya düzeni, organik bileşen oranı, son ürün formu ve hedef pazar büyüklüğü birlikte değerlendirilmelidir. Türkiye’de yatırım yapan üreticiler çoğu zaman iç pazardaki talebe göre başlangıç kapasitesi planlar; ancak ürün portföyü büyüdükçe ve bölgesel dağıtım ağı genişledikçe tesisin daha yüksek esneklik göstermesi gerekir. Bu nedenle kapasite planı, yalnızca mevcut sipariş hacmine değil, orta vadeli büyüme hedeflerine göre yapılmalıdır.",
-      "Organomineral gübre tesisi içinde karıştırma, granülasyon, kurutma ve eleme ekipmanlarının dengesi gerçek kapasiteyi belirler. Örneğin granülasyon ekipmanı yüksek seçilmiş olsa da kurutma tamburu veya elek sistemi geride kalıyorsa tesis hedeflenen performansa ulaşamaz. Aynı şekilde taşıma ekipmanları ve paketleme hattı da kapasite hesabının parçası olarak ele alınmalıdır. Hat içi bekleme süreleri, bakım periyotları ve geri dönüş oranı kapasite modelini etkileyen diğer unsurlardır.",
-      "Doğru kapasite planlaması yapılmış bir organomineral gübre tesisi, hem daha düşük enerji kaybı ile çalışır hem de ürün kalitesini daha tutarlı korur. İhracat hedefi olan yatırımlarda bu planlama ayrıca parti büyüklüğü, stok yönetimi ve sevkiyat disiplinini de desteklemelidir. Pro Makina yaklaşımında kapasite hesabı yalnızca mekanik ekipman bazında değil, gerçek işletme davranışı üzerinden ele alınır. Bu sayede yatırımcı, sahada daha öngörülebilir sonuç veren bir üretim altyapısına sahip olur.",
+      "Organomineral gübre tesisi kapasitesi belirlenirken saatlik tonaj kadar reçete çeşitliliği, organik içerik oranı, geri devir seviyesi ve hedef pazar yapısı da değerlendirilmelidir. Türkiye’de yatırım yapan birçok üretici, iç pazar taleplerine hızlı cevap verirken aynı zamanda yakın ihracat pazarlarına da açılmak ister. Bu nedenle tesisin sadece bugünkü kapasiteyi değil, gelecekteki üretim artışını da taşıyabilecek şekilde tasarlanması büyük avantaj sağlar. Kapasite hesabında granülasyon, kurutma, eleme ve paketleme bölümlerinin dengesi özellikle önemlidir.",
+      "Tasarım kriterleri içinde saha yerleşimi, bunker hacimleri, malzeme akış mesafeleri, toz kontrolü, filtreleme, enerji yükü ve bakım erişimi yer alır. Organomineral gübre tesisi kurulumu sırasında geri devir hattı iyi planlanmazsa hem enerji tüketimi artar hem ürün homojenliği bozulabilir. Aynı şekilde kurutma ve soğutma adımları doğru ölçeklenmezse son ürün depolamada sorun çıkarabilir. Bu nedenle teknik tasarım yalnızca akış şeması olarak değil, gerçek işletme davranışını taşıyan bir sistem planı olarak görülmelidir.",
+      "Pro Makina, tasarım kararlarını proses mühendisliği ile yatırım verimliliği arasında köprü kurarak verir. Hangi kapasitede hangi tambur boyutunun daha sağlıklı olduğu, hangi taşıma ekipmanının ürün kırılmasını azaltacağı ve hangi paketleme temposunun ticari olarak doğru olacağı birlikte düşünülür. Böylece organomineral gübre tesisi, yalnızca çalışan değil sürdürülebilir şekilde büyüyebilen bir üretim altyapısına dönüşür.",
     ],
   },
   {
-    title: "Yatırım",
+    title: "Pro Makina Mühendislik Yaklaşımı",
     paragraphs: [
-      "Organomineral gübre tesisi yatırımı, hem teknik doğruluk hem de ticari ölçeklenme açısından dikkatli planlanması gereken bir süreçtir. Organik hammaddelerin işlenmesi, depolanması ve karıştırılması; mineral bileşenlerin hassas oranlarda hatta verilmesi ve son ürünün granül kalite standardına taşınması toplam yatırımın ana eksenini oluşturur. Bu nedenle maliyet hesabı yalnızca ana makinalardan ibaret değildir. Çelik konstrüksiyon, elektrik ve otomasyon, filtre sistemleri, stok alanları, son ürün lojistiği ve bakım erişimi de yatırım planının önemli parçalarıdır.",
-      "Türkiye pazarı için organomineral gübre tesisi kurulumunda doğru fizibilite çalışması yapılmadan girilen yatırımlar, çoğu zaman kapasite dengesizliği veya ürün kalitesi sorunlarıyla karşılaşabilir. Anahtar teslim modelin önemli avantajı, mühendislik, makine imalatı, saha kurulumu ve devreye alma adımlarının tek proje yönetimi altında toplanmasıdır. Bu yaklaşım maliyet sapmasını azaltır, uygulama sürecini hızlandırır ve karar mekanizmasını daha sade hale getirir. Özellikle ihracat hedefli projelerde ürün standardının sürdürülebilir olması, yatırımın geri dönüşünü doğrudan etkiler.",
-      "İyi planlanmış bir organomineral gübre tesisi yatırımı, üreticinin yalnızca bugünkü satışını değil, markasının uzun vadeli rekabet gücünü de destekler. Daha kararlı kalite, daha düşük bakım maliyeti ve daha yüksek proses verimi sayesinde yatırım geri dönüşü güçlenir. Bu nedenle organomineral gübre tesisi kararı teknik ekipman satın alımı değil, aynı zamanda stratejik bir üretim altyapısı yatırımı olarak değerlendirilmelidir.",
+      "Pro Makina, organomineral gübre tesisi projelerinde önce ürün reçetesinin sahadaki davranışını anlamayı hedefler. Organik ve mineral girdilerin aynı hat içinde nasıl etkileştiği, granülasyon sırasında nasıl tepki verdiği ve son ürünün depolama davranışı ilk analiz başlıklarıdır. Bu veriler netleşmeden yalnızca ekipman listesi oluşturmak sağlıklı değildir. Bu yüzden proje başlangıcında proses mühendisliği çalışması ile sahadaki ticari hedefler aynı masada değerlendirilir.",
+      "Anahtar teslim tesis kurulumu modelinde mekanik tasarım, çelik konstrüksiyon, otomasyon, filtreleme altyapısı, paketleme omurgası ve devreye alma aşamaları tek proje yönetimi içinde ilerler. Bu bütünlük, özellikle organomineral ürünlerde kalite standardının korunması açısından önemlidir. Pro Makina’nın yaklaşımı, teorik hesabı saha uygulanabilirliği ile birleştirmeye dayanır. Yani tasarım yalnızca iyi görünmek için değil, sahada vardiya vardiya aynı sonucu verebilmek için yapılır.",
+      "Uzun vadeli bakış açısı da bu yaklaşımın önemli bir parçasıdır. Birçok yatırımcı ilk fazda sınırlı reçete ile başlar, ancak kısa sürede daha geniş ürün gamına geçmek ister. Bu yüzden biz, tasarımın içine büyüme ve ürün esnekliği ihtimalini ilk günden yerleştiririz. Sonuç olarak yatırımcı; daha güvenilir devreye alma, daha düşük operasyon stresi ve daha yüksek ticari çeviklik kazanır.",
     ],
   },
 ];
 
 const faqs = [
   {
-    question: "Organomineral gübre tesisi ile klasik gübre üretim tesisi arasındaki fark nedir?",
+    question: "Organomineral gübre tesisi kurulumu için en kritik teknik konu nedir?",
     answer:
-      "Organomineral gübre tesisinde organik ve mineral bileşenler aynı reçete içinde dengeli biçimde işlenir. Bu nedenle nem yönetimi, homojen karışım ve granül dayanımı gibi konular daha hassas hale gelir.",
+      "Organik ve mineral hammaddelerin aynı hatta dengeli davranmasını sağlamak en kritik konudur; bu denge karıştırma, granülasyon ve kurutma performansını belirler.",
   },
   {
-    question: "Organomineral gübre tesisi granül ürün dışında başka ürün de verebilir mi?",
+    question: "Organomineral gübre tesisi sadece granül ürün mü üretir?",
     answer:
-      "Tesis tasarımına bağlı olarak toz veya farklı son ürün senaryoları düşünülebilir. Ancak granül form hedefleniyorsa granülasyon, kurutma ve eleme altyapısının buna göre kurulması gerekir.",
+      "Çoğu yatırım granül ürün odaklıdır; ancak tesis tasarımına göre toz veya farklı son ürün senaryoları da kurgulanabilir.",
   },
   {
-    question: "Türkiye pazarı için hangi kapasite aralığı daha uygundur?",
+    question: "Kurutma tamburu organomineral hatta neden önemlidir?",
     answer:
-      "Bu tamamen hedef satış hacmine, bölgesel dağıtım yapısına ve ürün portföyüne bağlıdır. Doğru kapasite, teknik fizibilite ve ticari plan birlikte değerlendirilerek belirlenmelidir.",
+      "Kurutma tamburu son ürün nemini, granül dayanımını ve depolama stabilitesini doğrudan etkilediği için prosesin ana belirleyicilerinden biridir.",
   },
   {
-    question: "Organomineral gübre tesisi ihracata uygun ürün çıkarabilir mi?",
+    question: "Organomineral gübre tesisi ihracata uygun planlanabilir mi?",
     answer:
-      "Evet. Ürün standardı, granül yapısı, depolama dayanımı ve paketleme kalitesi doğru kurulduğunda tesis hem iç pazar hem ihracat için uygun üretim yapabilir.",
+      "Evet. Granül standardı, paketleme, kapasite dengesi ve kalite kontrol doğru kurulursa tesis ihracat odaklı çalışabilir.",
   },
+  {
+    question: "Anahtar teslim model yatırımcıya ne kazandırır?",
+    answer:
+      "Mühendislik, makine imalatı, montaj ve devreye alma tek merkezden yönetildiği için proje daha kontrollü ilerler ve saha uyumsuzlukları azalır.",
+  },
+];
+
+const technicalContents = [
+  {
+    title: "Kurutma Tamburu Hesaplama",
+    href: "/kutuphane/blog/kurutma-tamburu-hesaplama",
+    description:
+      "Organomineral granül hatlarında kurutma yükünü ve tambur boyutlandırma yaklaşımını inceleyin.",
+  },
+  {
+    title: "Helezon Konveyör Kapasite Hesabı",
+    href: "/kutuphane/blog/helezon-konveyor-kapasite-hesabi",
+    description:
+      "Hammadde besleme ve ara transfer hatlarında taşıma ekipmanı seçimini etkileyen mühendislik verilerini görün.",
+  },
+  {
+    title: "Granül Gübre Üretim Süreci",
+    href: "/kutuphane/blog/granul-gubre-uretim-sureci",
+    description:
+      "Granülasyon, kurutma, soğutma ve eleme adımlarının nasıl dengelendiğini teknik açıdan okuyun.",
+  },
+  {
+    title: "Kompost Tesisi Nasıl Kurulur?",
+    href: "/kutuphane/blog/kompost-tesisi-nasil-kurulur",
+    description:
+      "Organik içerik yönetimi ve proses disiplini açısından kompost tesisleriyle olan teknik bağı inceleyin.",
+  },
+];
+
+const keyLinks = [
+  { label: "Hizmetler", href: "/hizmetler" },
+  { label: "Makinalar", href: "/makinalar" },
+  { label: "Sektörler", href: "/sektorler" },
+  { label: "İletişim", href: "/iletisim" },
 ];
 
 export default function Page() {
@@ -104,15 +170,19 @@ export default function Page() {
       canonical={canonical}
       image="/images/hizmetler1.png"
       serviceName="Organomineral Gübre Tesisi Kurulumu"
-      introTitle="Organomineral Gübre Tesisi Nedir?"
+      introTitle="Katma Değeri Yüksek Organomineral Üretim Hatları"
       introParagraphs={[
-        "Organomineral gübre tesisi, organik içerik ile mineral hammaddelerin kontrollü biçimde aynı üretim sistemi içinde işlendiği ve yüksek katma değerli gübre ürünlerinin üretildiği tesis modelidir. Türkiye’de organomineral gübre tesisi yatırımları, tarımsal verimlilik kadar ürün çeşitliliği ve marka farklılaşması hedefleyen üreticiler için giderek daha önemli hale gelmektedir.",
-        "Başarılı bir organomineral gübre tesisi kurulumu, doğru reçete ile doğru proses tasarımını aynı zeminde buluşturur. Mühendislik, makine imalatı, montaj ve devreye alma süreçlerinin entegre ilerlemesi, hem kalite standardını hem de yatırımın geri dönüş hızını güçlendirir.",
+        "Organomineral gübre tesisi kurulumu, organik içerik ile mineral bileşenleri kontrollü biçimde aynı hatta buluşturan ve yüksek katma değerli ürün üretmeyi hedefleyen özel bir tesis yatırımudur. Türkiye pazarında bu alana ilginin artmasının temel nedeni, daha güçlü ürün farklılaşması ve daha yüksek ticari değer yaratma imkânıdır. Ancak bu tesislerin başarısı, yalnızca reçete kalitesine değil; proses mühendisliği, granülasyon dengesi, kurutma tamburu performansı ve doğru taşıma ekipmanı seçimine bağlıdır.",
+        "Pro Makina, organomineral gübre tesislerinde anahtar teslim tesis kurulumu yaklaşımıyla proses tasarımı, endüstriyel makine imalatı, saha kurulumu ve devreye alma adımlarını birleştirir. Böylece yatırımcı daha ilk fazda sadece bugün için değil, büyüyecek ürün portföyü için de sağlam bir altyapı kurar. Doğru tasarlanan organomineral gübre tesisi, hem ürün standardını korur hem de ticari ölçekte sürdürülebilir büyüme için güçlü zemin oluşturur.",
       ]}
-      technicalContents={technicalContents}
+      cards={cards}
+      summaryRows={summaryRows}
       sections={sections}
+      technicalContents={technicalContents}
       faqs={faqs}
-      ctaText="Projenize özel organomineral gübre tesisi fizibilitesi ve teklif almak için bizimle iletişime geçin."
+      ctaTitle="Teklif / Keşif Çağrısı"
+      ctaText="Projenize özel organomineral gübre tesisi fizibilitesi, kapasite planı ve anahtar teslim kurulum teklifi için bizimle iletişime geçin."
+      keyLinks={keyLinks}
     />
   );
 }

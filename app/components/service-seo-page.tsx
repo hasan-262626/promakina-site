@@ -22,6 +22,17 @@ type ServiceFaq = {
   answer: string;
 };
 
+type ServiceSummaryRow = {
+  criterion: string;
+  description: string;
+  importance: string;
+};
+
+type ServiceKeyLink = {
+  label: string;
+  href: string;
+};
+
 type ServiceSeoPageProps = {
   title: string;
   description: string;
@@ -34,8 +45,11 @@ type ServiceSeoPageProps = {
   sections: ServiceSection[];
   faqs: ServiceFaq[];
   ctaText: string;
+  ctaTitle?: string;
   showForm?: boolean;
   technicalContents?: TechnicalContentCard[];
+  summaryRows?: ServiceSummaryRow[];
+  keyLinks?: ServiceKeyLink[];
 };
 
 const siteName = "Pro Makina";
@@ -83,8 +97,11 @@ export function ServiceSeoPage({
   sections,
   faqs,
   ctaText,
+  ctaTitle = "Teklif / Keşif Çağrısı",
   showForm = false,
   technicalContents = [],
+  summaryRows = [],
+  keyLinks = [],
 }: ServiceSeoPageProps) {
   const organizationSchema = {
     "@context": "https://schema.org",
@@ -177,6 +194,19 @@ export function ServiceSeoPage({
                 <p key={paragraph}>{paragraph}</p>
               ))}
             </div>
+            {keyLinks.length > 0 ? (
+              <div className="mt-6 flex flex-wrap gap-3">
+                {keyLinks.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-blue-200 hover:bg-blue-50 hover:text-blue-700"
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
+            ) : null}
           </div>
         </div>
       </section>
@@ -205,6 +235,52 @@ export function ServiceSeoPage({
                   </article>
                 ),
               )}
+            </div>
+          </div>
+        </section>
+      ) : null}
+
+      {summaryRows.length > 0 ? (
+        <section className="pb-10 sm:pb-14">
+          <div className="site-container">
+            <div className="overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-[0_18px_45px_rgba(15,23,42,0.06)]">
+              <div className="border-b border-slate-200 px-6 py-6 sm:px-8">
+                <h2 className="text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">
+                  Teknik Değerlendirme Özeti
+                </h2>
+              </div>
+              <div className="overflow-x-auto">
+                <table className="min-w-full divide-y divide-slate-200">
+                  <thead className="bg-slate-50">
+                    <tr>
+                      <th className="px-6 py-4 text-left text-sm font-semibold text-slate-950 sm:px-8">
+                        Kriter
+                      </th>
+                      <th className="px-6 py-4 text-left text-sm font-semibold text-slate-950 sm:px-8">
+                        Açıklama
+                      </th>
+                      <th className="px-6 py-4 text-left text-sm font-semibold text-slate-950 sm:px-8">
+                        Proje Açısından Önemi
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-slate-200 bg-white">
+                    {summaryRows.map((row) => (
+                      <tr key={row.criterion}>
+                        <td className="px-6 py-4 text-sm font-semibold text-slate-950 sm:px-8">
+                          {row.criterion}
+                        </td>
+                        <td className="px-6 py-4 text-sm leading-7 text-slate-600 sm:px-8">
+                          {row.description}
+                        </td>
+                        <td className="px-6 py-4 text-sm leading-7 text-slate-600 sm:px-8">
+                          {row.importance}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
         </section>
@@ -373,6 +449,9 @@ export function ServiceSeoPage({
       <section className="pb-16 sm:pb-20">
         <div className="site-container">
           <div className="rounded-[28px] bg-blue-700 px-6 py-8 text-white shadow-[0_24px_70px_rgba(29,78,216,0.28)] sm:px-8 sm:py-10">
+            <h2 className="text-2xl font-semibold tracking-tight text-white sm:text-3xl">
+              {ctaTitle}
+            </h2>
             <p className="max-w-3xl text-base leading-8 text-white/90 sm:text-lg">{ctaText}</p>
             <div className="mt-6 flex flex-col gap-3 sm:flex-row">
               <Link
