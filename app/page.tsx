@@ -37,20 +37,28 @@ const knowledgeCenterItems = [
 
 const featuredKnowledgeArticles = [
   {
-    title: "Organomineral Gübre Tesisi Maliyeti",
-    href: "/kutuphane/blog",
+    title: "Kurutma Tamburu Hesaplama",
+    description:
+      "Kapasite, çap-boy seçimi, hava debisi, enerji ihtiyacı ve lifter tasarımını adım adım anlatan teknik rehber.",
+    href: "/kutuphane/blog/kurutma-tamburu-hesaplama",
+  },
+  {
+    title: "Helezon Konveyör Kapasite Hesabı",
+    description:
+      "Ürün yoğunluğu, doluluk oranı, çap, hatve, devir ve motor gücünü birlikte ele alan mühendislik makalesi.",
+    href: "/kutuphane/blog/helezon-konveyor-kapasite-hesabi",
   },
   {
     title: "Granül Gübre Üretim Süreci",
-    href: "/kutuphane/blog",
+    description:
+      "Hammadde hazırlama, granülasyon, kurutma, soğutma, eleme, geri devir ve paketleme akışını teknik dille özetler.",
+    href: "/kutuphane/blog/granul-gubre-uretim-sureci",
   },
   {
-    title: "Sıvı Gübre Üretim Tesisi Nasıl Kurulur?",
-    href: "/kutuphane/blog",
-  },
-  {
-    title: "Kurutma Tamburu Tasarım Kriterleri",
-    href: "/kutuphane/blog",
+    title: "Kompost Tesisi Nasıl Kurulur?",
+    description:
+      "Hammadde kabul, nem yönetimi, olgunlaştırma, eleme ve çevresel kontrol başlıklarıyla kurulum rehberi sunar.",
+    href: "/kutuphane/blog/kompost-tesisi-nasil-kurulur",
   },
 ];
 
@@ -82,19 +90,19 @@ export default function Home() {
               </h2>
               <div className="mt-5 space-y-5 text-sm leading-8 text-slate-600 sm:text-base">
                 <p>
-                  Pro Makina; gübre üretim tesisleri, kompost tesisleri, organomineral gübre hatları, geri dönüşüm
-                  sistemleri, biyogaz ekipmanları ve endüstriyel proses tesisleri için anahtar teslim mühendislik
-                  çözümleri sunar.
+                  Pro Makina; gübre üretim tesisleri, kompost tesisleri, organomineral gübre hatları,
+                  geri dönüşüm sistemleri, biyogaz ekipmanları ve endüstriyel proses tesisleri için
+                  anahtar teslim mühendislik çözümleri sunar.
                 </p>
                 <p>
-                  Granül gübre üretim hatlarından kurutma tamburlarına, konveyör sistemlerinden reaktör, tank,
-                  bunker, kırıcı, elek ve paketleme sistemlerine kadar tüm süreçlerde yüksek verimli, uzun ömürlü ve
-                  sahaya özel makina imalatı gerçekleştiriyoruz.
+                  Granül gübre üretim hatlarından kurutma tamburlarına, konveyör sistemlerinden reaktör,
+                  tank, bunker, kırıcı, elek ve paketleme sistemlerine kadar tüm süreçlerde yüksek verimli,
+                  uzun ömürlü ve sahaya özel makina imalatı gerçekleştiriyoruz.
                 </p>
                 <p>
-                  Türkiye’de belediyeler, sanayi kuruluşları, gübre üreticileri, maden işletmeleri ve geri dönüşüm
-                  tesisleri için proje tasarımı, makina imalatı, montaj ve devreye alma süreçlerini bütüncül şekilde
-                  yönetiyoruz.
+                  Türkiye’de belediyeler, sanayi kuruluşları, gübre üreticileri, maden işletmeleri ve geri
+                  dönüşüm tesisleri için proje tasarımı, makina imalatı, montaj ve devreye alma süreçlerini
+                  bütüncül şekilde yönetiyoruz.
                 </p>
               </div>
             </div>
@@ -157,8 +165,8 @@ export default function Home() {
               Kurumsal Hızlı Erişim
             </p>
             <p className="mt-3 max-w-3xl text-sm leading-7 text-slate-600 sm:text-base">
-              Pro Makina&apos;nın hizmet kapsamını, makine gruplarını, sektör deneyimini ve
-              proje yaklaşımını aşağıdaki ana sayfalardan inceleyebilirsiniz.
+              Pro Makina&apos;nın hizmet kapsamını, makine gruplarını, sektör deneyimini ve proje yaklaşımını
+              aşağıdaki ana sayfalardan inceleyebilirsiniz.
             </p>
             <div className="mt-5 flex flex-wrap gap-3">
               {corporateQuickLinks.map((item) => (
@@ -179,7 +187,9 @@ export default function Home() {
         <div className="site-container">
           <div className="rounded-[32px] border border-slate-200 bg-slate-50 px-6 py-8 shadow-[0_18px_45px_rgba(15,23,42,0.06)] sm:px-8 sm:py-10 lg:px-12">
             <div className="max-w-3xl">
-              <p className="text-sm font-semibold uppercase tracking-[0.16em] text-blue-700">BİLGİ MERKEZİ</p>
+              <p className="text-sm font-semibold uppercase tracking-[0.16em] text-blue-700">
+                BİLGİ MERKEZİ
+              </p>
               <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950 md:text-4xl">
                 Bilgi Merkezi
               </h2>
@@ -221,14 +231,18 @@ export default function Home() {
               <p className="text-sm font-semibold uppercase tracking-[0.16em] text-blue-700">
                 Öne Çıkan İçerikler
               </p>
-              <div className="mt-4 flex flex-wrap gap-3">
+              <div className="mt-5 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
                 {featuredKnowledgeArticles.map((item) => (
                   <Link
                     key={item.href}
                     href={item.href}
-                    className="inline-flex rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-blue-200 hover:text-blue-700"
+                    className="group rounded-[22px] border border-slate-200 bg-slate-50 p-4 shadow-sm transition hover:-translate-y-1 hover:border-blue-200 hover:bg-white hover:shadow-[0_18px_45px_rgba(15,23,42,0.08)]"
                   >
-                    {item.title}
+                    <span className="block text-base font-semibold text-slate-950">{item.title}</span>
+                    <span className="mt-3 block text-sm leading-7 text-slate-600">{item.description}</span>
+                    <span className="mt-4 inline-flex text-sm font-semibold text-blue-700 transition group-hover:text-blue-800">
+                      Devamını Oku
+                    </span>
                   </Link>
                 ))}
               </div>

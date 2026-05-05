@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { LibrarySeoPage, buildLibraryMetadata } from "../../../components/library-seo-page";
 
-const title = "Helezon Konveyör Kapasite Hesabı | Pro Makina";
+const title = "Helezon Konveyör Kapasite Hesabı | Çap, Hatve, Devir | Pro Makina";
 const description =
-  "Helezon konveyör kapasite hesabı, çap, hatve, devir, eğim, ürün yoğunluğu ve motor seçimi için teknik rehber.";
+  "Helezon konveyör kapasite hesabı, ürün yoğunluğu, doluluk oranı, çap, hatve, devir, eğim ve motor gücü seçimi için teknik mühendislik rehberi.";
 const canonical = "https://www.promakina.com.tr/kutuphane/blog/helezon-konveyor-kapasite-hesabi";
 
 export const metadata = buildLibraryMetadata({ title, description, canonical });
@@ -11,44 +11,58 @@ export const metadata = buildLibraryMetadata({ title, description, canonical });
 const relatedServices = [
   {
     title: "Taşıma Ekipmanları",
-    href: "/makinalar-ekipman/tasima-ekipmanlari",
-    description: "Helezon, bant konveyör, elevatör ve zincirli konveyör çözümlerini birlikte inceleyin.",
+    href: "/makinalar/tasima-ekipmanlari",
+    description:
+      "Helezon, bant konveyör, elevatör ve zincirli taşıma çözümlerini tek bir ekipman ailesi içinde inceleyin.",
   },
   {
-    title: "Gübre Tesisi Kurulumu",
-    href: "/hizmetler/gubre-tesisi-kurulumu",
-    description: "Taşıma ekipmanlarının genel proses içindeki yerini anahtar teslim tesis yaklaşımıyla görün.",
+    title: "Hizmetler",
+    href: "/hizmetler",
+    description:
+      "Anahtar teslim tesis kurulumu, proses mühendisliği ve saha entegrasyonu yaklaşımımızı birlikte değerlendirin.",
   },
 ];
 
 const sections = [
   {
-    title: "Helezon konveyör nedir?",
+    title: "Helezon Konveyör Nedir?",
     blocks: [
       {
         content: (
           <>
             <p>
-              Helezon konveyör, toz, granül, yarı nemli veya belirli ölçüde akışkan karakter taşıyan dökme katı
-              malzemelerin kontrollü biçimde taşınması için kullanılan en yaygın proses ekipmanlarından biridir.
-              Dönerek ilerleyen helezon yaprağı, ürünü kapalı ya da açık tekne içinde belirli bir doğrultuda sürükler
-              ve tesis içinde güvenli malzeme transferi sağlar. Özellikle gübre tesisleri, kompost hatları, yem
-              fabrikaları, maden işleme sistemleri ve çeşitli endüstriyel proseslerde helezon konveyör çözümleri hem
-              kompakt yerleşim avantajı hem de kontrollü besleme kabiliyeti nedeniyle sık tercih edilir.
+              Helezon konveyör; toz, granül, pul veya belirli ölçüde nem taşıyan dökme katı
+              malzemelerin kontrollü biçimde taşınması için kullanılan en yaygın proses
+              ekipmanlarından biridir. Döner bir mil veya boru çevresine sarılmış helezon
+              yaprağı, ürünün tekne ya da boru gövde içinde belirli bir doğrultuda ilerlemesini
+              sağlar. Gübre üretim tesisleri, kompost hatları, biyogaz ön hazırlama sistemleri,
+              yem fabrikaları, çimento ve madencilik uygulamaları gibi çok sayıda endüstride
+              kullanılır. Bunun temel nedeni, kompakt yapıda yüksek taşıma sürekliliği sağlaması
+              ve dozajlama mantığına uygun kontrol edilebilir akış üretmesidir.
             </p>
             <p>
-              Ancak bir helezon konveyörün sahada verimli çalışması yalnızca gövde imalatına bağlı değildir. Kapasite
-              hesabı yapılırken ürünün yoğunluğu, tane yapısı, nem seviyesi, doluluk oranı, yatay ya da eğimli çalışma
-              durumu ve motor seçimi birlikte ele alınmalıdır. Pek çok projede yaşanan temel sorun, helezon çapının
-              yalnızca alışkanlığa göre seçilmesi ve gerçek proses davranışının hesaba katılmamasıdır. Oysa yanlış
-              seçilen bir helezon konveyör ya yetersiz kapasite verir ya da gereğinden büyük seçildiği için ilk yatırım
-              maliyetini artırır.
+              Ancak helezon konveyör seçimi çoğu zaman olduğundan basit görülür. Sahada sık yapılan
+              hata, yalnızca istenen tonajı dinleyip standart bir çap önermektir. Oysa gerçek
+              mühendislik yaklaşımı; ürün yoğunluğu, akış karakteri, nem durumu, hat uzunluğu,
+              toplam eğim, çalışma süresi ve motor yükünü birlikte değerlendirmeyi gerektirir.
+              Aynı debiyi taşıyan iki farklı ürün, tamamen farklı mekanik geometri isteyebilir.
+              Serbest akışlı kuru bir ürün ile yapışkan ve lifli bir karışım için aynı helezon
+              seçimi yapmak, genellikle kapasite kaybı, tıkanma veya gereksiz enerji tüketimiyle
+              sonuçlanır.
             </p>
             <p>
-              Türkiye pazarında özellikle gübre, kompost ve organik atık uygulamalarında ürün davranışı çok değişken
-              olabilir. Bu yüzden helezon konveyör kapasite hesabı, standart katalog değeri okumaktan çok daha fazla
-              mühendislik düşüncesi gerektirir. Eğer helezon, bir <Link href="/hizmetler/gubre-tesisi-kurulumu" className="font-semibold text-blue-700 hover:text-blue-800">gübre tesisi kurulumu</Link> projesinin parçasıysa,
-              upstream ve downstream ekipmanlarla uyumlu çalışması da ayrıca değerlendirilmelidir.
+              Özellikle{" "}
+              <Link
+                href="/hizmetler"
+                className="font-semibold text-blue-700 transition hover:text-blue-800"
+              >
+                hizmetler
+              </Link>{" "}
+              kapsamındaki anahtar teslim tesis projelerinde helezon konveyör tek başına bir makine
+              değildir; bunker, besleme sistemi, karıştırıcı, tambur veya paketleme hattı ile ritim
+              içinde çalışan proses bileşenidir. Bu nedenle doğru kapasite hesabı, yalnızca taşıma
+              miktarını değil tüm hat verimini etkiler. Pro Makina yaklaşımında helezon seçimleri,
+              saha verisi, ürün davranışı ve işletme hedefi ile birlikte şekillendirilir.
             </p>
           </>
         ),
@@ -56,31 +70,45 @@ const sections = [
     ],
   },
   {
-    title: "Kapasite hesabı için gerekli bilgiler",
+    title: "Kapasite Hesabı İçin Gerekli Veriler",
     blocks: [
       {
         content: (
           <>
             <p>
-              Sağlıklı bir helezon konveyör kapasite hesabı için ilk gerekli veri, taşınacak ürünün gerçek debisidir.
-              Ton/saat veya kilogram/saat cinsinden istenen kapasite bilinmeden helezon çapı ve devir sayısı sağlıklı
-              seçilemez. Ancak kapasite tek başına yeterli değildir. Aynı kapasite değerine sahip iki farklı ürün,
-              yoğunluk ve akış davranışı farklı olduğu için tamamen farklı helezon boyutları gerektirebilir. Bu nedenle
-              ikinci temel veri ürünün yığın yoğunluğudur. Üçüncü kritik başlık ise ürünün akış karakteridir; serbest
-              akışlı, yapışkan, aşındırıcı veya kırılgan ürünler farklı seçim yaklaşımları ister.
+              Helezon konveyör kapasite hesabının ilk girdisi istenen debidir. Bu değer genellikle
+              ton/saat veya kilogram/saat olarak ifade edilir. Ancak debi tek başına yeterli değildir;
+              çünkü aynı kütlesel kapasite, farklı yoğunluktaki ürünlerde farklı hacimsel taşıma
+              ihtiyacı doğurur. Bu yüzden ikinci ana veri ürünün yığın yoğunluğudur. Üçüncü veri,
+              ürünün serbest akışlı mı, orta akışlı mı, yapışkan mı veya aşındırıcı mı olduğudur.
+              Dördüncü veri hat boyudur. Beşinci veri ise yatay ya da eğimli çalışma durumudur.
             </p>
             <p>
-              Hat boyu ve eğim de kapasite hesabında doğrudan belirleyicidir. Yatay çalışan kısa bir helezon ile uzun
-              ve yükselen bir hat arasında aynı çap ve devirle aynı performansı beklemek doğru değildir. Eğim arttıkça
-              ürünün geriye kayma eğilimi yükselir ve efektif kapasite düşer. Uzun hatlarda ise şaft sehim kontrolü,
-              ara yatak gereksinimi ve sürtünme kayıpları devreye girer. Bu da motor gücü ve mekanik tasarım üzerinde
-              ek yük oluşturur.
+              Hesap sırasında yalnızca nominal kapasiteye değil, çalışma senaryosuna da bakmak gerekir.
+              Günde 8 saat çalışan bir besleme helezonu ile 24 saat sürekli çalışan proses helezonu
+              aynı servis yaklaşımıyla seçilmez. Kalkış momenti, ara yatak ihtiyacı, temizlik ihtiyacı,
+              çevresel korozyon ve bakım erişimi de seçimin parçasıdır. Bu nedenle sağlıklı ön seçim
+              için şu bilgiler toplanmalıdır:
             </p>
+            <ul className="list-disc space-y-2 pl-6">
+              <li>Net kapasite ve gerekiyorsa güvenlik payı ile tasarım kapasitesi</li>
+              <li>Ürünün yığın yoğunluğu ve nem aralığı</li>
+              <li>Akış karakteri: serbest akışlı, yapışkan, aşındırıcı, tozlu</li>
+              <li>Toplam hat boyu ve varsa toplam yükselme yüksekliği</li>
+              <li>Çalışma süresi ve günlük servis düzeni</li>
+              <li>Korozif ortam, hijyen ihtiyacı veya sıcaklık etkisi</li>
+            </ul>
             <p>
-              Bunlara ek olarak çalışma süresi, servis faktörü, güvenlik payı ve malzeme seçimi de hesaba katılmalıdır.
-              Gün içinde kısa aralıklı çalışan bir besleme helezonu ile 24 saat sürekli çalışan proses helezonu aynı
-              mekanik güvenlik seviyesiyle seçilmez. Bu nedenle <Link href="/makinalar-ekipman/tasima-ekipmanlari" className="font-semibold text-blue-700 hover:text-blue-800">taşıma ekipmanları</Link> kategorisinde helezon seçimi
-              yapılırken sadece kapasite değil, işletme şartları da dosyanın merkezinde tutulmalıdır.
+              Bu veriler olmadan yapılan seçimler, çoğu zaman katalog ezberine dönüşür. Oysa{" "}
+              <Link
+                href="/sektorler"
+                className="font-semibold text-blue-700 transition hover:text-blue-800"
+              >
+                sektörler
+              </Link>{" "}
+              arasında ürün davranışı çok değişkendir. Gübre, kompost, RDF, kül, talaş veya mineral
+              ürünlerin tamamı helezon içinde aynı şekilde hareket etmez. Bu yüzden veri kalitesi,
+              kapasite hesabının doğruluğunu doğrudan belirler.
             </p>
           </>
         ),
@@ -88,32 +116,35 @@ const sections = [
     ],
   },
   {
-    title: "Ürün yoğunluğu ve doluluk oranı",
+    title: "Ürün Yoğunluğu ve Doluluk Oranı",
     blocks: [
       {
         content: (
           <>
             <p>
-              Helezon konveyör hesabında ürün yoğunluğu, hacimsel taşıma kapasitesinin kütlesel kapasiteye dönüşmesini
-              sağlayan temel veridir. Örneğin 950 kg/m³ yoğunlukta granül bir organomineral ürün ile 1600 kg/m³
-              yoğunlukta kum aynı helezon içinde aynı hacimde taşınsa bile tonaj olarak çok farklı sonuç verir. Bu
-              nedenle sahadan gelen ürün bilgisinin yalnızca ismiyle yetinmek yerine yaklaşık yığın yoğunluğunun
-              belirlenmesi gerekir. Eğer ürün karışım ise, mevsimsel değişim gösteriyorsa veya nem nedeniyle yoğunluğu
-              farklılaşabiliyorsa güvenlik payı buna göre artırılmalıdır.
+              Helezon konveyörde teorik hacim taşıma kapasitesi ancak ürün yoğunluğu ile birlikte
+              anlam kazanır. Örneğin 950 kg/m³ yoğunlukta bir organomineral granül ile 1.600 kg/m³
+              yoğunlukta kum aynı helezon hacminde taşınsa bile ton/saat sonucu farklıdır. Bu nedenle
+              hacimsel ve kütlesel kapasitenin birbirine dönüştürülmesi için yoğunluk zorunlu girdidir.
+              Eğer ürün karışıksa veya mevsimsel neme göre değişkenlik gösteriyorsa, sabit bir katalog
+              yoğunluğu yerine sahadaki gerçek aralığa göre güvenlik payı bırakmak gerekir.
             </p>
             <p>
-              Doluluk oranı ise helezon kesitinin ne kadarının ürünle dolu kabul edileceğini belirler. Teorik olarak
-              tüm kesitin dolu kabul edilmesi sahada gerçekçi değildir. Serbest akışlı ve kuru ürünlerde daha yüksek
-              doluluk oranları mümkünken, yapışkan, lifli veya nemli ürünlerde daha düşük doluluk kullanmak gerekir.
-              Aksi durumda ürün sıkışır, geri kaçırır veya motor yükünü gereksiz artırır. Bu yüzden doluluk oranı,
-              kapasite hesabının görünmeyen ama en kritik güvenlik noktalarından biridir.
+              Doluluk oranı ise helezon kesitinin ne kadarının ürünle dolu kabul edileceğini belirler.
+              Teorik hesapta tüm kesiti dolu varsaymak sahada gerçekçi değildir. Serbest akışlı ve kuru
+              ürünlerde daha yüksek doluluk oranları kabul edilebilirken, nemli ve yapışkan ürünlerde
+              doluluk bilinçli olarak aşağı çekilmelidir. Aksi halde ürün sıkışır, motor yükü büyür,
+              geri kaçırma oluşur ve hat kararsız çalışır. Özellikle lifli kompost, yaş arıtma çamuru,
+              toz gübre veya ince nemli mineral ürünlerde doluluk seçiminde muhafazakâr davranmak
+              gerekir.
             </p>
             <p>
-              Gübre, kompost ve benzeri proseslerde ürün yoğunluğu ile doluluk oranı birlikte okunmalıdır. Hafif ama
-              yapışkan bir ürün, ağır ve serbest akışlı bir üründen daha problemli olabilir. Bu yüzden kapasite hesabı
-              hazırlanırken malzemenin laboratuvar verisi kadar sahadaki davranışı da önemlidir. Pro Makina yaklaşımında
-              helezon seçimi yapılırken ürün sınıfına göre önerilen doluluk aralığı kullanılır ve kapasite buna göre
-              gerçekçi hale getirilir.
+              Pro Makina projelerinde doluluk oranı, yalnızca teorik kapasiteyi büyütmek için değil,
+              sürdürülebilir saha performansı için kullanılır. Çünkü iyi seçilmiş doluluk oranı, yatak
+              ömrünü, enerji tüketimini ve taşıma kalitesini birlikte etkiler. Eğer ürün hattın ana
+              proses akışını besliyorsa, kararlı akış çoğu zaman kâğıt üzerindeki maksimum kapasiteden
+              daha değerlidir. Bu bakış açısı helezon konveyör hesabını daha gerçekçi ve yatırım açısından
+              daha güvenilir hale getirir.
             </p>
           </>
         ),
@@ -121,31 +152,39 @@ const sections = [
     ],
   },
   {
-    title: "Helezon çapı, hatve ve devir ilişkisi",
+    title: "Helezon Çapı, Hatve ve Devir İlişkisi",
     blocks: [
       {
         content: (
           <>
             <p>
-              Helezon konveyör kapasite hesabında en çok konuşulan üç parametre; helezon çapı, hatve ve devirdir.
-              Çap büyüdükçe aynı dönüşte taşınan hacim artar. Hatve, yani yaprak adımı, ürünün her turda ne kadar
-              ileri taşınacağını etkiler. Devir ise bu hacimsel hareketin zamana yayılmış hızıdır. Temel mühendislik
-              yaklaşımı bu üç değişkenin birbiriyle dengeli biçimde seçilmesine dayanır. Yalnızca devri artırarak
-              kapasiteyi yükseltmeye çalışmak çoğu zaman aşınma, kırılma, ürün savrulması veya yüksek motor yükü gibi
-              yan etkiler doğurur.
+              Helezon kapasitesini belirleyen en temel üç parametre çap, hatve ve devirdir. Çap
+              büyüdükçe aynı dönüşte taşınan hacim artar. Hatve, yani yaprağın bir turdaki ilerleme
+              adımı, ürünün ne kadar ileri taşınacağını etkiler. Devir ise bu hacimsel hareketin zamana
+              yayılmış hızını belirler. Kağıt üzerinde kapasiteyi artırmanın en kolay yolu devri yükseltmek
+              gibi görünür; ancak bu yaklaşım çoğu zaman aşınmayı, titreşimi, ürün kırılmasını ve gereksiz
+              motor yükünü büyütür. Bu nedenle kapasiteyi yalnız devre yüklemek yerine geometri ile dengelemek
+              gerekir.
             </p>
             <p>
-              Standart hatvede seçilen helezonlar, pek çok genel uygulama için uygundur. Ancak dozajlama, kontrollü
-              besleme veya özel ürün davranışlarında kısa ya da uzun hatve tercihleri gündeme gelebilir. Örneğin hassas
-              besleme isteniyorsa daha kontrollü ilerleme için özel geometri kullanılabilir. Buna karşılık yüksek hacim
-              istenen bazı uygulamalarda bir üst çap seçmek, devri aşırı yükseltmekten daha güvenli sonuç verir.
-              Özellikle ürün kırılgan ise mekanik taşımanın ürün kalitesine etkisi ayrıca değerlendirilmelidir.
+              Pek çok genel uygulamada standart hatveli tasarım yeterlidir. Fakat dozajlama, kontrollü
+              besleme veya zor akan ürünlerde özel hatve kurguları gerekebilir. Daha küçük hatve daha
+              kontrollü besleme sağlayabilir; daha büyük hatve ise bazı durumlarda hacimsel taşıma avantajı
+              verir. Buna rağmen yanlış hatve seçimi ürünün helezon içinde yığılmasına veya akış ritminin
+              bozulmasına neden olabilir. Bu yüzden hatve seçimi, sadece katalogdan bir satır okumak değil,
+              ürün davranışını yorumlamak anlamına gelir.
             </p>
             <p>
-              Sahada iyi çalışan bir helezon, genellikle en yüksek teorik kapasiteye sahip olan değil; en dengeli çap,
-              hatve ve devir kombinasyonuna sahip olandır. Bu nedenle tasarım sürecinde standart yaprak tabloları,
-              ürün yoğunluğu ve çalışma türü birlikte okunur. Eğer hat bir <Link href="/makinalar-ekipman/tasima-ekipmanlari" className="font-semibold text-blue-700 hover:text-blue-800">helezon konveyör çözümü</Link> olarak
-              genel tesis akışının parçasıysa, giriş ve çıkış ekipmanlarının ritmi de bu seçim üzerinde etkili olur.
+              Örneğin 20 ton/saat granül ürün taşıyan bir hat için daha yüksek devre çıkmak yerine bir üst
+              çapta, daha makul devirde çalışmak çoğu zaman daha güvenli sonuç verir. Bu, özellikle uzun
+              vardiyalı hatlarda bakım maliyetini de düşürür. Ayrıntılı ekipman ailesi için{" "}
+              <Link
+                href="/makinalar/tasima-ekipmanlari"
+                className="font-semibold text-blue-700 transition hover:text-blue-800"
+              >
+                taşıma ekipmanları
+              </Link>{" "}
+              sayfası, çap ve uygulama mantığını görmek için iyi bir referans oluşturur.
             </p>
           </>
         ),
@@ -153,29 +192,33 @@ const sections = [
     ],
   },
   {
-    title: "Eğimli helezonlarda kapasite kaybı",
+    title: "Eğimli Helezonlarda Kapasite Kaybı",
     blocks: [
       {
         content: (
           <>
             <p>
-              Helezon konveyörler yatay çalışmada en verimli performansı verir. Hat eğimi arttıkça ürün, yerçekimi
-              nedeniyle geriye kayma eğilimi gösterir ve efektif taşıma kapasitesi düşer. Bu durum özellikle granül,
-              yuvarlak veya serbest akışlı ürünlerde daha belirgin olabilir. Nemli ve yapışkan ürünlerde ise kapasite
-              kaybına ek olarak yapışma ve düzensiz akış problemleri ortaya çıkabilir. Bu nedenle eğimli helezonlarda
-              kapasite hesabı yapılırken yalnızca hat boyuna değil, toplam yükselme yüksekliğine de bakılmalıdır.
+              Helezon konveyörler yatay hatta en verimli performansı verir. Hat eğimi yükseldikçe ürün,
+              yerçekimi nedeniyle geriye kaçma eğilimi gösterir ve efektif taşıma kapasitesi düşer. Bu
+              durum özellikle serbest akışlı granüllerde ve yuvarlak taneli ürünlerde daha belirgindir.
+              Nemli veya yapışkan ürünlerde ise kapasite kaybına ek olarak gövde içi yapışma ve düzensiz
+              akış problemleri görülebilir. Bu nedenle eğimli sistemlerde yalnız net kapasiteyi değil,
+              toplam yükselme yüksekliğini ve ürün karakterini birlikte okumak gerekir.
             </p>
             <p>
-              Eğim arttıkça iki temel karar gündeme gelir: ya daha büyük çap seçilir ya da aynı çapta daha düşük efektif
-              kapasite kabul edilir. Uygulamaya göre hatve yapısı ve devir de revize edilebilir. Ancak burada amaç,
-              teorik kapasiteyi kâğıt üzerinde korumak değil, sahada güvenli ve stabil akış sağlamaktır. Çok eğimli
-              hatlarda bazı projelerde helezon yerine farklı taşıma ekipmanlarının değerlendirilmesi daha doğru olabilir.
+              Mühendislik yaklaşımında eğim arttıkça iki temel karar gündeme gelir: ya kapasite düşüşünü
+              kabul edip güvenli bir geometri ile devam edilir ya da daha büyük çap, farklı doluluk oranı
+              veya farklı devir kombinasyonu ile tasarım revize edilir. Bazı projelerde helezon konveyör,
+              eğim belirli bir seviyenin üzerine çıktığında artık en doğru çözüm olmayabilir. Bu durumda
+              elevatör, zincirli konveyör veya farklı bir taşıma sistemi değerlendirilir. Amaç, teorik
+              kapasiteyi korumaya çalışmak değil, sahada güvenilir akış sağlamaktır.
             </p>
             <p>
-              Gübre, kompost ve atık işleme hatlarında eğimli helezon kullanımı yaygındır; çünkü kompakt yerleşim sağlar.
-              Buna rağmen kapasite kaybı hesaba katılmadan yapılan seçimler motorun zorlanmasına, ürünün hatta birikmesine
-              veya besleme dengesinin bozulmasına yol açabilir. Bu nedenle eğimli uygulamalarda proje başında muhafazakâr
-              tasarım yaklaşımı benimsemek, işletme sırasında oluşacak sorunları ciddi biçimde azaltır.
+              Özellikle kompost, yaş organik atık ve granül gübre hatlarında yerleşim kısıtları nedeniyle
+              eğimli helezonlar tercih edilir. Bu durumda motor yükü, ara yatak ihtiyacı ve başlangıç
+              momenti büyür. Eğer proje başında bu gerçekler hesaba katılmazsa saha devreye alma sürecinde
+              performans sorunları kaçınılmaz olur. Pro Makina bu yüzden eğimli hat seçimlerinde daha
+              kontrollü ve muhafazakâr tasarım senaryoları kullanır.
             </p>
           </>
         ),
@@ -183,30 +226,37 @@ const sections = [
     ],
   },
   {
-    title: "Motor gücü seçiminde dikkat edilecek noktalar",
+    title: "Motor Gücü ve Redüktör Seçimi",
     blocks: [
       {
         content: (
           <>
             <p>
-              Helezon konveyör motor gücü yalnızca ürün tonajına göre belirlenmez. Şaft boyu, yatak sürtünmesi, ürünün
-              başlangıç momenti, eğim etkisi, doluluk oranı ve çalışma süresi doğrudan motor seçiminde rol oynar.
-              Özellikle ağır hizmette çalışan hatlarda, ilk kalkış yükü ile sürekli çalışma yükü arasında ciddi fark
-              olabilir. Bu yüzden motor gücü seçiminde yalnızca ortalama kapasiteyi değil, zorlayıcı senaryoları da
-              hesaba katmak gerekir. Güvenlik payı burada gerçek saha davranışını absorbe eden önemli bir tasarım
-              aracıdır.
+              Helezon konveyör motor gücü, yalnızca taşınan tonajdan türetilen basit bir sayı değildir.
+              Hat uzunluğu, yatak sürtünmesi, ürünün kalkış momenti, eğim, doluluk, ara yatak sayısı ve
+              çalışma süresi motor gücünü doğrudan etkiler. Kısa ve aralıklı çalışan bir dozaj helezonu
+              ile uzun ve 24 saat çalışan proses helezonu aynı servis faktörüyle seçilemez. Bu nedenle
+              hesap yapılırken güvenlik payı ve işletme senaryosu birlikte değerlendirilir.
             </p>
             <p>
-              Redüktör çıkış devri, helezon devriyle uyumlu olacak şekilde seçilmelidir. Hızlı motoru doğrudan mekanik
-              sisteme bağlamak yerine redüktörlü motor çözümü kullanmak, hem tork hem de işletme güvenliği açısından daha
-              sağlıklı sonuç verir. Ayrıca 24 saat çalışan hatlarda servis faktörü, aralıklı çalışan sistemlere göre daha
-              yüksek tutulmalıdır. Aşındırıcı veya sıkışma riski olan ürünlerde tork rezervi bırakmak önemlidir.
+              Redüktör seçimi ise motor devrini helezonun güvenli çalışma devrine düşürmek için kritik
+              rol oynar. Çoğu uygulamada redüktörlü motor yaklaşımı, doğrudan tahrike göre çok daha
+              kontrollü tork üretir. Özellikle sık dur-kalk yapan hatlarda veya yapışkan ürün taşıyan
+              sistemlerde kalkış tork rezervi bırakmak gerekir. Yetersiz redüktör seçimi yalnız kapasiteyi
+              düşürmez; kaplin, şaft ve yatak ömrünü de olumsuz etkiler.
             </p>
             <p>
-              Doğru motor seçimi, yalnızca makinenin dönmesini sağlamak değil; ekipmanın ömrünü, enerji tüketimini ve
-              bakım periyodunu doğrudan yönetmek anlamına gelir. Bu nedenle Pro Makina projelerinde motor ön seçimi,
-              kapasite hesabıyla birlikte değerlendirilir ve mekanik öneri buna göre oluşturulur. Böylece kullanıcı,
-              yalnızca çalışan değil, sürdürülebilir şekilde çalışan bir helezon konveyör altyapısına sahip olur.
+              Enerji verimliliği açısından da doğru güç seçimi önemlidir. Gereğinden büyük motor ilk yatırım
+              maliyetini ve kısmi yükte verimsizliği artırırken, gereğinden küçük motor ise aşırı akım,
+              duruş ve bakım yükü üretir. Sağlıklı seçim için hat,{" "}
+              <Link
+                href="/hizmetler"
+                className="font-semibold text-blue-700 transition hover:text-blue-800"
+              >
+                hizmetler
+              </Link>{" "}
+              kapsamında bir bütün olarak değerlendirilmeli ve taşıma görevinin proses içindeki gerçek rolü
+              okunmalıdır.
             </p>
           </>
         ),
@@ -214,28 +264,75 @@ const sections = [
     ],
   },
   {
-    title: "Pro Makina mühendislik yaklaşımı",
+    title: "Endüstriyel Uygulamalarda Sık Yapılan Hatalar",
     blocks: [
       {
         content: (
           <>
             <p>
-              Pro Makina, helezon konveyör kapasite hesabını yalnızca teorik bir formül uygulaması olarak görmez.
-              Ürünün davranışı, proses içindeki konumu, bakım erişimi, saha yerleşimi ve gelecekteki kapasite artışı
-              ihtimali birlikte değerlendirilir. Bu yaklaşım özellikle Türkiye pazarında değişken hammadde ile çalışan
-              üreticiler için büyük avantaj sağlar. Çünkü sahadaki gerçek davranış çoğu zaman katalog verilerinden daha
-              karmaşıktır ve seçim buna göre yapılmalıdır.
+              Helezon konveyör uygulamalarında en sık görülen hata, ürün davranışını hesaba katmadan seçim
+              yapmaktır. Yalnız kapasite değerine bakılarak çap belirlemek, çoğu zaman yetersiz veya aşırı
+              büyük makine seçimine neden olur. İkinci yaygın hata, nemli ürünlerde yüksek doluluk oranı
+              kullanmaktır. Bu durum sıkışma, aşırı motor yükü ve düzensiz besleme yaratır. Üçüncü hata ise
+              eğimli hatlarda kapasite düşüşünü hesaba katmamaktır. Teoride çalışan ama sahada verimsiz kalan
+              birçok sistem bu nedenle sorun yaşar.
             </p>
             <p>
-              Özel imalat gerektiren helezonlarda yaprak kalınlığı, şaft yapısı, gövde tipi, yatak çözümü ve malzeme
-              seçimi de kapasite hesabının doğal devamı olarak ele alınır. Aşındırıcı ürünlerde malzeme kalitesi, nemli
-              ürünlerde temizlenebilirlik, korozif ortamlarda ise uygun gövde malzemesi ön plana çıkar. Böylece kapasite
-              hesabı yalnızca sayısal değil, mekanik olarak uygulanabilir bir ön tasarıma dönüşür.
+              Bir diğer kritik hata, bakım ve temizlik ihtiyaçlarını küçümsemektir. Özellikle organik, korozif
+              veya tozlu ürünlerde gövde açılabilirliği, yatak erişimi ve temizlenebilirlik çok önemlidir.
+              Ayrıca motor-redüktör grubunu yalnız tork hesabına göre seçip gerçek çalışma tipini görmezden
+              gelmek de sık rastlanan problemlerden biridir. Ağır hizmette çalışan helezonlarda servis faktörü
+              düşük tutulduğunda ekipman ömrü hızla kısalır.
             </p>
             <p>
-              Eğer siz de tesisiniz için doğru helezon konveyör çözümünü arıyorsanız, debi, ürün tipi, hat boyu ve
-              çalışma şartlarına göre özel ön değerlendirme yapmak en güvenli başlangıç olacaktır. Helezon konveyör
-              seçimi ve özel imalat çözümleri için Pro Makina ile iletişime geçebilirsiniz.
+              Bu hataların ortak noktası, makineyi ürün ve proses bağlamından kopuk düşünmektir. Oysa doğru
+              helezon konveyör seçimi; mekanik geometri, ürün bilimi, enerji dengesi ve saha işletmesini aynı
+              masada toplar. Bu nedenle ön mühendislik aşamasına yatırım yapmak, sahadaki pahalı revizyonların
+              önüne geçer.
+            </p>
+          </>
+        ),
+      },
+    ],
+  },
+  {
+    title: "Pro Makina Mühendislik Yaklaşımı",
+    blocks: [
+      {
+        content: (
+          <>
+            <p>
+              Pro Makina, helezon konveyör kapasite hesabını yalnızca teorik formül uygulaması olarak görmez.
+              Öncelikle ürünün gerçek davranışı, proses içindeki konumu, hat boyu, temizlik ihtiyacı ve
+              işletme süresi okunur. Ardından uygun çap, hatve, doluluk, devir ve tahrik yaklaşımı belirlenir.
+              Eğer sistem bir gübre, kompost veya geri dönüşüm tesisinin parçasıysa upstream ve downstream
+              ekipmanlarla ritim uyumu da değerlendirmeye alınır. Böylece hesap sonucu yalnız kâğıt üzerinde
+              doğru değil, sahada uygulanabilir hale gelir.
+            </p>
+            <p>
+              Mekanik tasarım aşamasında gövde tipi, yaprak kalınlığı, malzeme kalitesi, yatak çözümü ve
+              redüktör-motor kombinasyonu birlikte seçilir. Aşındırıcı ürünlerde daha dayanıklı malzeme,
+              korozif ürünlerde paslanmaz seçenekler ve hijyenik uygulamalarda temizlenebilir tasarım öne
+              çıkar. Bu yaklaşım, endüstriyel makine imalatını doğrudan proses mühendisliği ile birleştirir.
+            </p>
+            <p>
+              Eğer siz de yeni bir hat kuruyor, mevcut tesisinizi büyütüyor veya zor ürünler için doğru taşıma
+              çözümünü arıyorsanız, teknik ön değerlendirme ile başlamak en sağlıklı adımdır. Helezon konveyör
+              seçimi, özel imalat ve anahtar teslim kurulum desteği için{" "}
+              <Link
+                href="/iletisim"
+                className="font-semibold text-blue-700 transition hover:text-blue-800"
+              >
+                bizimle iletişime geçin
+              </Link>{" "}
+              ya da genel çözüm yapımızı görmek için{" "}
+              <Link
+                href="/hizmetler"
+                className="font-semibold text-blue-700 transition hover:text-blue-800"
+              >
+                hizmetler
+              </Link>{" "}
+              sayfamızı inceleyin.
             </p>
           </>
         ),
@@ -250,11 +347,34 @@ export default function Page() {
       title="Helezon Konveyör Kapasite Hesabı"
       description={description}
       canonical={canonical}
-      heroDescription="Helezon çapı, hatve, devir, eğim, ürün yoğunluğu ve motor seçimi üzerinden doğru helezon konveyör kapasitesini belirlemek için temel mühendislik yaklaşımını adım adım açıklıyoruz."
+      heroDescription="Helezon çapı, hatve, doluluk oranı, devir, eğim ve motor gücü ilişkisini mühendislik bakışıyla okuyarak doğru taşıma kapasitesini belirlemek için kapsamlı bir teknik rehber sunuyoruz."
       categoryLabel="BLOG / MAKALE"
       sections={sections}
       relatedServices={relatedServices}
-      ctaText="Helezon konveyör seçimi ve özel imalat çözümleri için Pro Makina ile iletişime geçebilirsiniz."
+      ctaText="Helezon konveyör seçimi, özel imalat ve anahtar teslim tesis çözümleri için teknik fizibilite almak isterseniz Pro Makina ile iletişime geçebilirsiniz."
+      extraSection={
+        <section>
+          <h2 className="text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">Sonuç</h2>
+          <div className="mt-5 space-y-5 text-sm leading-8 text-slate-700 sm:text-base">
+            <p>
+              Doğru helezon konveyör hesabı; yalnız tonajı karşılamak değil, akışı kararlı hale getirmek,
+              enerji tüketimini yönetmek ve bakım riskini azaltmak anlamına gelir. Çap, hatve ve devir
+              üçlüsünü ürün davranışı ile birlikte değerlendirmek, yatırım güvenliğini ciddi biçimde artırır.
+            </p>
+            <p>
+              Projenize uygun kapasite hesabı ve taşıma ekipmanı seçimi için{" "}
+              <Link href="/iletisim" className="font-semibold text-blue-700 transition hover:text-blue-800">
+                iletişim
+              </Link>{" "}
+              sayfamızdan bize ulaşabilir veya{" "}
+              <Link href="/hizmetler" className="font-semibold text-blue-700 transition hover:text-blue-800">
+                hizmetler
+              </Link>{" "}
+              sayfası üzerinden genel mühendislik yaklaşımımızı inceleyebilirsiniz.
+            </p>
+          </div>
+        </section>
+      }
     />
   );
 }
