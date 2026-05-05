@@ -169,6 +169,26 @@ export default function MachinesIndexPage() {
         </div>
       </section>
 
+      <section className="pb-10 sm:pb-14">
+        <div className="site-container">
+          <div className="rounded-[28px] border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+            <h2 className="text-2xl font-semibold tracking-tight text-slate-950">
+              Blog / Makaleler
+            </h2>
+            <p className="mt-4 text-sm leading-8 text-slate-600 sm:text-base">
+              Ekipman seçimini yalnız ürün kataloğu üzerinden değil, gerçek proses davranışı
+              üzerinden değerlendirmek isterseniz{" "}
+              <Link href="/kutuphane/blog" className="font-semibold text-blue-700 hover:text-blue-800">
+                blog / makaleler
+              </Link>{" "}
+              sayfamızdaki teknik içerikleri inceleyebilirsiniz. Kurutma tamburu hesabı,
+              helezon konveyör kapasitesi ve granül gübre üretim süreci gibi başlıklar,
+              makina seçimi kararını daha güvenli hale getirir.
+            </p>
+          </div>
+        </div>
+      </section>
+
       <section className="pb-16 sm:pb-20">
         <div className="site-container">
           <div className="rounded-[32px] bg-blue-700 px-6 py-10 text-white shadow-[0_28px_90px_rgba(37,99,235,0.25)] sm:px-8 sm:py-12 md:px-12">

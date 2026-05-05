@@ -38,19 +38,19 @@ const knowledgeCenterItems = [
 const featuredKnowledgeArticles = [
   {
     title: "Organomineral Gübre Tesisi Maliyeti",
-    href: "/kutuphane/organomineral-gubre-tesisi-maliyeti",
+    href: "/kutuphane/blog",
   },
   {
     title: "Granül Gübre Üretim Süreci",
-    href: "/kutuphane/granul-gubre-uretim-sureci",
+    href: "/kutuphane/blog",
   },
   {
     title: "Sıvı Gübre Üretim Tesisi Nasıl Kurulur?",
-    href: "/kutuphane/sivi-gubre-uretim-tesisi-nasil-kurulur",
+    href: "/kutuphane/blog",
   },
   {
     title: "Kurutma Tamburu Tasarım Kriterleri",
-    href: "/kutuphane/kurutma-tamburu-tasarim-kriterleri",
+    href: "/kutuphane/blog",
   },
 ];
 

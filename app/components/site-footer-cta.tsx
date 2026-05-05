@@ -100,6 +100,11 @@ export function SiteFooterCta() {
                   </Link>
                 </li>
                 <li>
+                  <Link href="/kutuphane/blog" className="transition hover:text-white">
+                    Blog / Makaleler
+                  </Link>
+                </li>
+                <li>
                   <Link href="/hakkimizda" className="transition hover:text-white">
                     {trText("Hakkımızda")}
                   </Link>

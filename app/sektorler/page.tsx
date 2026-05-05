@@ -154,6 +154,20 @@ export default function SectorsIndexPage() {
               </div>
             </div>
           </div>
+          <div className="mt-10 rounded-[28px] border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+            <h2 className="text-2xl font-semibold tracking-tight text-slate-950">
+              Blog / Makaleler
+            </h2>
+            <p className="mt-4 text-sm leading-8 text-slate-600 sm:text-base">
+              Gübre, kompost, organik atık, biyogaz ve proses endüstrilerinde yatırım kararı
+              verirken teknik içerik desteği almak için{" "}
+              <Link href="/kutuphane/blog" className="font-semibold text-blue-700 hover:text-blue-800">
+                blog / makaleler
+              </Link>{" "}
+              sayfamızı inceleyebilirsiniz. Buradaki yazılar, sektör ihtiyaçlarını ekipman ve
+              proses mantığıyla birlikte okumaya yardımcı olur.
+            </p>
+          </div>
         </div>
       </section>
     </main>

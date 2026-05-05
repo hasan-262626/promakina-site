@@ -170,6 +170,45 @@ export default function ServicesPage() {
               sayfalarımız üzerinden detaylı teknik ve yatırım içeriklerini inceleyebilirsiniz.
             </p>
           </div>
+          <div className="mt-10 rounded-[28px] border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+            <h2 className="text-2xl font-semibold tracking-tight text-slate-950">
+              Teknik İçerikler
+            </h2>
+            <p className="mt-4 text-sm leading-8 text-slate-600 sm:text-base">
+              Hizmet kararını destekleyen teknik makaleleri inceleyerek proses mühendisliği,
+              kurutma tamburu, granül hat yapısı ve sıvı gübre üretim mantığı hakkında daha
+              net çerçeve oluşturabilirsiniz.
+            </p>
+            <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+              <Link
+                href="/kutuphane/blog/kurutma-tamburu-nasil-hesaplanir"
+                className="group rounded-[24px] border border-slate-200 bg-slate-50 p-5 shadow-sm transition hover:-translate-y-1 hover:border-blue-200 hover:bg-white hover:shadow-[0_18px_45px_rgba(15,23,42,0.08)]"
+              >
+                <h3 className="text-lg font-semibold text-slate-950">Kurutma Tamburu Nasıl Hesaplanır</h3>
+                <span className="mt-4 inline-flex text-sm font-semibold text-blue-700 transition group-hover:text-blue-800">
+                  Devamını Oku
+                </span>
+              </Link>
+              <Link
+                href="/kutuphane/blog/granul-gubre-uretim-sureci"
+                className="group rounded-[24px] border border-slate-200 bg-slate-50 p-5 shadow-sm transition hover:-translate-y-1 hover:border-blue-200 hover:bg-white hover:shadow-[0_18px_45px_rgba(15,23,42,0.08)]"
+              >
+                <h3 className="text-lg font-semibold text-slate-950">Granül Gübre Üretim Süreci</h3>
+                <span className="mt-4 inline-flex text-sm font-semibold text-blue-700 transition group-hover:text-blue-800">
+                  Devamını Oku
+                </span>
+              </Link>
+              <Link
+                href="/kutuphane/blog/sivi-gubre-tesisi-nasil-kurulur"
+                className="group rounded-[24px] border border-slate-200 bg-slate-50 p-5 shadow-sm transition hover:-translate-y-1 hover:border-blue-200 hover:bg-white hover:shadow-[0_18px_45px_rgba(15,23,42,0.08)]"
+              >
+                <h3 className="text-lg font-semibold text-slate-950">Sıvı Gübre Tesisi Nasıl Kurulur</h3>
+                <span className="mt-4 inline-flex text-sm font-semibold text-blue-700 transition group-hover:text-blue-800">
+                  Devamını Oku
+                </span>
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
     </main>
