@@ -79,7 +79,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
-      url: `${siteUrl}/kutuphane/blog-makaleler`,
+      url: `${siteUrl}/kutuphane/blog`,
       lastModified,
       changeFrequency: "weekly",
       priority: 0.8,

@@ -32,6 +32,27 @@ const cards = [
   },
 ];
 
+const technicalContents = [
+  {
+    title: "Kurutma Tamburu Nasıl Hesaplanır?",
+    href: "/kutuphane/blog/kurutma-tamburu-nasil-hesaplanir",
+    description:
+      "Kurutma tamburu kapasite hesabı, nem dengesi, çap-boy seçimi ve enerji ihtiyacı üzerine hazırlanan teknik makaleyi inceleyin.",
+  },
+  {
+    title: "Helezon Konveyör Kapasite Hesabı",
+    href: "/kutuphane/blog/helezon-konveyor-kapasite-hesabi",
+    description:
+      "Helezon çapı, hatve, devir, yoğunluk, doluluk oranı ve motor gücü seçim yaklaşımını adım adım görün.",
+  },
+  {
+    title: "Organomineral Gübre Tesisi Nasıl Kurulur?",
+    href: "/kutuphane/blog/organomineral-gubre-tesisi-nasil-kurulur",
+    description:
+      "Hammadde hazırlama, karıştırma, granülasyon, kurutma, eleme ve paketleme akışını anlatan uygulamalı rehbere ulaşın.",
+  },
+];
+
 const sections = [
   {
     title: "Gübre Tesisi Kurulumu Nedir?",
@@ -128,6 +149,7 @@ export default function Page() {
         "Pro Makina; organomineral, granül, sıvı ve toz ürün grupları için mühendislik, makine imalatı, montaj ve devreye alma süreçlerini entegre biçimde yürütür. Böylece yatırımcı, daha kontrollü maliyet yapısı, daha güvenli devreye alma süreci ve daha yüksek üretim standardı ile projeyi hayata geçirir.",
       ]}
       cards={cards}
+      technicalContents={technicalContents}
       sections={sections}
       faqs={faqs}
       ctaText="Projenize özel fizibilite ve teklif almak için bizimle iletişime geçin."

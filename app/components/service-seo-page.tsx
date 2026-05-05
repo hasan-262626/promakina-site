@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Hero } from "./Hero";
+import {
+  ServiceRelatedTechnicalContents,
+  type TechnicalContentCard,
+} from "./service-related-technical-contents";
 
 type ServiceCard = {
   title: string;
@@ -31,6 +35,7 @@ type ServiceSeoPageProps = {
   faqs: ServiceFaq[];
   ctaText: string;
   showForm?: boolean;
+  technicalContents?: TechnicalContentCard[];
 };
 
 const siteName = "Pro Makina";
@@ -79,6 +84,7 @@ export function ServiceSeoPage({
   faqs,
   ctaText,
   showForm = false,
+  technicalContents = [],
 }: ServiceSeoPageProps) {
   const organizationSchema = {
     "@context": "https://schema.org",
@@ -224,6 +230,8 @@ export function ServiceSeoPage({
           </div>
         </div>
       </section>
+
+      <ServiceRelatedTechnicalContents items={technicalContents} />
 
       <section className="pb-10 sm:pb-14">
         <div className="site-container">

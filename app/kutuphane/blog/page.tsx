@@ -5,15 +5,15 @@ import { Hero } from "../../components/Hero";
 export const metadata: Metadata = {
   title: "Blog / Makaleler | Kütüphane | Pro Makina",
   description:
-    "Organomineral gübre tesisi maliyeti, granül gübre üretim süreci ve sıvı gübre üretim tesisi hakkında SEO uyumlu blog makaleleri.",
+    "Kurutma tamburu hesabı, helezon konveyör kapasitesi ve organomineral gübre tesisi kurulumu hakkında SEO uyumlu teknik makaleler.",
   alternates: {
-    canonical: "https://www.promakina.com.tr/kutuphane/blog-makaleler",
+    canonical: "https://www.promakina.com.tr/kutuphane/blog",
   },
   openGraph: {
     title: "Blog / Makaleler | Kütüphane | Pro Makina",
     description:
-      "Organomineral gübre tesisi maliyeti, granül gübre üretim süreci ve sıvı gübre üretim tesisi hakkında SEO uyumlu blog makaleleri.",
-    url: "https://www.promakina.com.tr/kutuphane/blog-makaleler",
+      "Kurutma tamburu hesabı, helezon konveyör kapasitesi ve organomineral gübre tesisi kurulumu hakkında SEO uyumlu teknik makaleler.",
+    url: "https://www.promakina.com.tr/kutuphane/blog",
     siteName: "Pro Makina",
     locale: "tr_TR",
     type: "website",
@@ -22,37 +22,37 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Blog / Makaleler | Kütüphane | Pro Makina",
     description:
-      "Organomineral gübre tesisi maliyeti, granül gübre üretim süreci ve sıvı gübre üretim tesisi hakkında SEO uyumlu blog makaleleri.",
+      "Kurutma tamburu hesabı, helezon konveyör kapasitesi ve organomineral gübre tesisi kurulumu hakkında SEO uyumlu teknik makaleler.",
   },
 };
 
 const articles = [
   {
-    title: "Organomineral Gübre Tesisi Maliyeti",
+    title: "Kurutma Tamburu Nasıl Hesaplanır?",
     description:
-      "Yatırım kalemleri, kapasite planı, ekipman grupları ve Türkiye pazarı için maliyet yaklaşımını özetleyen detaylı makale.",
-    href: "/kutuphane/organomineral-gubre-tesisi-maliyeti",
+      "Kapasite hesabı, çap-boy seçimi, giriş-çıkış nemi, sıcaklık ve enerji ihtiyacı üzerinden kurutma tamburu tasarımını anlatan teknik makale.",
+    href: "/kutuphane/blog/kurutma-tamburu-nasil-hesaplanir",
   },
   {
-    title: "Granül Gübre Üretim Süreci",
+    title: "Helezon Konveyör Kapasite Hesabı",
     description:
-      "Granülasyon, kurutma, soğutma, eleme ve paketleme adımlarını kullanılan makinalarla birlikte anlatan içerik.",
-    href: "/kutuphane/granul-gubre-uretim-sureci",
+      "Yoğunluk, doluluk oranı, helezon çapı, hatve, devir ve motor gücü ilişkisini açıklayan mühendislik rehberi.",
+    href: "/kutuphane/blog/helezon-konveyor-kapasite-hesabi",
   },
   {
-    title: "Sıvı Gübre Üretim Tesisi Nasıl Kurulur?",
+    title: "Organomineral Gübre Tesisi Nasıl Kurulur?",
     description:
-      "Sıvı organomineral, amino asitli ve NPK bazlı üretim tesislerinde proses ve ekipman mantığını açıklayan rehber makale.",
-    href: "/kutuphane/sivi-gubre-uretim-tesisi-nasil-kurulur",
+      "Hammadde hazırlama, reçeteleme, granülasyon, kurutma, eleme ve paketleme akışını teknik ve anlaşılır dille açıklayan SEO makalesi.",
+    href: "/kutuphane/blog/organomineral-gubre-tesisi-nasil-kurulur",
   },
 ];
 
-export default function BlogArticlesPage() {
+export default function BlogPage() {
   return (
     <main className="min-h-screen overflow-x-hidden bg-white text-slate-900">
       <Hero
         title="Blog / Makaleler"
-        description="Türkiye pazarı odaklı, yatırım ve mühendislik kararlarını destekleyen uzun form teknik içerikler."
+        description="Gübre, proses ekipmanları ve tesis mühendisliği üzerine teknik ama okunabilir içerikler."
         image="/images/proses1.jpg"
       />
 
@@ -65,8 +65,8 @@ export default function BlogArticlesPage() {
                 Blog ve makale içerikleri
               </h1>
               <p className="mt-5 text-sm leading-8 text-slate-600 sm:text-base">
-                Bu bölümde yer alan makaleler, yatırımcıların ve teknik ekiplerin sık araştırdığı konuları sade
-                ama güven veren bir mühendislik diliyle ele alır.
+                Bu bölümde yer alan makaleler, tesis yatırımı ve ekipman seçimi sürecinde teknik ekiplere ve
+                yatırımcılara yön verecek şekilde hazırlanmıştır.
               </p>
             </div>
 
@@ -81,7 +81,7 @@ export default function BlogArticlesPage() {
                   <h2 className="mt-3 text-xl font-semibold tracking-tight text-slate-950">{article.title}</h2>
                   <p className="mt-3 text-sm leading-7 text-slate-600">{article.description}</p>
                   <span className="mt-5 inline-flex text-sm font-semibold text-blue-700 transition group-hover:text-blue-800">
-                    İçeriği İncele
+                    Devamını Oku
                   </span>
                 </Link>
               ))}

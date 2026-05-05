@@ -29,7 +29,7 @@ export const libraryCategoryConfig: Record<
   }
 > = {
   "Blog / Makaleler": {
-    anchor: "blog-makaleler",
+    anchor: "blog",
     title: "Blog / Makaleler",
     description:
       "SEO uyumlu, teknik ama anlaşılır içeriklerle yatırım kararını, ekipman seçimini ve proses mantığını destekleyen uzun form makaleler.",

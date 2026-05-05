@@ -45,7 +45,7 @@ export function SiteHeader() {
   );
 
   const libraryMenu = [
-    { label: "Blog", href: "/kutuphane#blog-makaleler" },
+    { label: "Blog", href: "/kutuphane/blog" },
     { label: "Teknik Rehberler", href: "/kutuphane#teknik-rehberler" },
     { label: "PDF Kataloglar", href: "/kutuphane#pdf-kataloglar" },
     { label: "Video İçerikler", href: "/kutuphane#video-icerikler" },

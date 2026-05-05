@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Hero } from "../../components/Hero";
+import { ServiceRelatedTechnicalContents } from "../../components/service-related-technical-contents";
 
 export const metadata: Metadata = {
   title: "Kompost Tesisi Kurulumu | Pro Makina",
@@ -49,6 +50,27 @@ const sections = [
   },
 ];
 
+const technicalContents = [
+  {
+    title: "Kurutma Tamburu Nasıl Hesaplanır?",
+    href: "/kutuphane/blog/kurutma-tamburu-nasil-hesaplanir",
+    description:
+      "Nemli ürünlerde tambur seçimi, kapasite hesabı ve enerji ihtiyacı için hazırlanan teknik rehberi inceleyin.",
+  },
+  {
+    title: "Helezon Konveyör Kapasite Hesabı",
+    href: "/kutuphane/blog/helezon-konveyor-kapasite-hesabi",
+    description:
+      "Kompost ve organik malzeme taşıma hatlarında helezon seçimini etkileyen temel mühendislik verilerini görün.",
+  },
+  {
+    title: "Organomineral Gübre Tesisi Nasıl Kurulur?",
+    href: "/kutuphane/blog/organomineral-gubre-tesisi-nasil-kurulur",
+    description:
+      "Kompost ve organik girdilerin gübre tesislerinde nasıl değerlendirildiğini anlatan detaylı içeriğe ulaşın.",
+  },
+];
+
 export default function Page() {
   return (
     <main className="min-h-screen overflow-x-hidden bg-white text-slate-900">
@@ -89,6 +111,8 @@ export default function Page() {
                   </div>
                 </article>
               ))}
+
+              <ServiceRelatedTechnicalContents items={technicalContents} />
 
               <div className="rounded-[28px] bg-blue-700 px-6 py-8 text-white shadow-[0_24px_70px_rgba(29,78,216,0.28)] sm:px-8 sm:py-10">
                 <p className="max-w-3xl text-base leading-8 text-white/90 sm:text-lg">

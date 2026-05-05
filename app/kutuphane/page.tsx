@@ -30,7 +30,7 @@ const libraryCategories = [
   {
     title: "Blog / Makaleler" as const,
     description: "Sektöre yön veren, arama niyeti güçlü makaleler ve konu kümeleri.",
-    href: "/kutuphane/blog-makaleler",
+    href: "/kutuphane/blog",
     image: "/images/proses1.jpg",
   },
   {
