@@ -1,4 +1,15 @@
+import type { Metadata } from "next";
+import Link from "next/link";
 import { Hero } from "../components/Hero";
+
+export const metadata: Metadata = {
+  title: "Hakkımızda | Pro Makina",
+  description:
+    "Proses mühendisliği, endüstriyel makine imalatı ve anahtar teslim tesis kurulumu alanlarında Pro Makina yaklaşımı.",
+  alternates: {
+    canonical: "https://www.promakina.com.tr/hakkimizda",
+  },
+};
 
 const expertiseAreas = [
   "Kompost ve organik atık tesisleri",
@@ -139,6 +150,96 @@ export default function AboutPage() {
             <div className="mt-6 rounded-3xl border border-dashed border-slate-300 bg-slate-50 px-6 py-16 text-center text-slate-500">
               Tesis ve üretim fotoğraf alanı
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-4 pb-16 sm:px-6 sm:pb-20 lg:px-10">
+        <div className="rounded-[32px] border border-slate-200 bg-slate-50 p-6 shadow-[0_18px_50px_rgba(15,23,42,0.05)] sm:p-8 lg:p-10">
+          <p className="text-sm font-semibold uppercase tracking-[0.16em] text-blue-700">
+            Kurumsal Yaklaşım
+          </p>
+          <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950 md:text-4xl">
+            Pro Makina Mühendislik Yaklaşımı
+          </h2>
+          <p className="mt-4 text-sm leading-8 text-slate-600 sm:text-base">
+            Pro Makina, yatırımın yalnızca ekipman tedarikinden ibaret olmadığını bilen bir
+            mühendislik anlayışıyla çalışır. Gübre tesisi, kompost tesisi, kurutma tamburu
+            ve konveyör sistemleri gibi başlıklarda verdiğimiz her karar; ürün davranışı,
+            kapasite hedefi, bakım kolaylığı ve saha şartları birlikte değerlendirilerek
+            alınır. Bu yaklaşım, proses mühendisliği ile endüstriyel makine imalatı
+            disiplinlerini aynı çatı altında buluşturmamızı sağlar. Bir projeyi ele alırken
+            ilk hedefimiz, sahada uzun ömürlü ve öngörülebilir çalışan bir anahtar teslim
+            tesis kurulumu kurgulamaktır. Bu nedenle tasarım, imalat, montaj ve devreye
+            alma süreçlerini birbirinden kopuk değil, tek bir operasyon planı içinde ele
+            alırız.
+          </p>
+
+          <div className="mt-8 grid gap-8 lg:grid-cols-3">
+            <article>
+              <h2 className="text-2xl font-semibold text-slate-950">
+                Endüstriyel Makine ve Tesis Çözümleri
+              </h2>
+              <p className="mt-4 text-sm leading-8 text-slate-600 sm:text-base">
+                Üretim yapımız; tambur sistemleri, helezonlar, elevatörler, reaktörler,
+                bunkerler, kırıcılar ve paketleme hatları gibi farklı ekipmanları aynı
+                mühendislik diliyle geliştirmeye uygundur. Özellikle{" "}
+                <Link href="/hizmetler" className="font-semibold text-blue-700 transition hover:text-blue-800">
+                  hizmetler
+                </Link>{" "}
+                sayfamızda görülebilecek anahtar teslim tesis kurulumu yaklaşımımız, sadece
+                tek bir makine grubuna değil, tüm hat uyumuna odaklanır.{" "}
+                <Link href="/makinalar" className="font-semibold text-blue-700 transition hover:text-blue-800">
+                  Makinalar
+                </Link>{" "}
+                yapımız ve{" "}
+                <Link href="/sektorler" className="font-semibold text-blue-700 transition hover:text-blue-800">
+                  sektörler
+                </Link>{" "}
+                deneyimimiz birlikte değerlendirildiğinde, her projede ürün tipine ve saha
+                gereksinimine göre özel çözüm üretebilen bir sistem ortaya çıkar.
+              </p>
+            </article>
+
+            <article>
+              <h2 className="text-2xl font-semibold text-slate-950">
+                Kalite, Süreklilik ve Teknik Güven
+              </h2>
+              <p className="mt-4 text-sm leading-8 text-slate-600 sm:text-base">
+                Teknik güven, yalnızca malzeme kalitesiyle değil; doğru kapasite analizi,
+                doğru proses seçimi ve uygulanabilir proje yönetimi ile oluşur. Pro Makina,
+                proje başlangıcından sahadaki ilk çalıştırmaya kadar süreç takibini teknik
+                doğrulukla sürdürür. Bu nedenle{" "}
+                <Link href="/projeler" className="font-semibold text-blue-700 transition hover:text-blue-800">
+                  projeler
+                </Link>{" "}
+                alanında yer alan yaklaşımımız, üretim kadar koordinasyonu da önemser.
+                Müşterilerimizle çalışırken teklif aşamasından itibaren ölçülebilir teknik
+                kararlar oluşturur, gerektiğinde{" "}
+                <Link
+                  href="/kutuphane"
+                  className="font-semibold text-blue-700 transition hover:text-blue-800"
+                >
+                  kütüphane
+                </Link>{" "}
+                içeriğiyle süreci destekleriz. Böylece yatırım kararları yalnızca fiyat
+                değil, teknik sürdürülebilirlik üzerinden şekillenir.
+              </p>
+            </article>
+
+            <article>
+              <h2 className="text-2xl font-semibold text-slate-950">Kısa Sonuç</h2>
+              <p className="mt-4 text-sm leading-8 text-slate-600 sm:text-base">
+                Eğer proses mühendisliği, endüstriyel makine imalatı ve sahaya uygun anahtar
+                teslim tesis kurulumu yaklaşımını aynı ekipte görmek istiyorsanız, Pro
+                Makina doğru teknik partner olarak konumlanır. Gübre tesisi, kompost tesisi
+                ve farklı proses endüstrileri için projenizi birlikte değerlendirmek üzere{" "}
+                <Link href="/iletisim" className="font-semibold text-blue-700 transition hover:text-blue-800">
+                  iletişim
+                </Link>{" "}
+                sayfamızdan bize ulaşabilirsiniz.
+              </p>
+            </article>
           </div>
         </div>
       </section>

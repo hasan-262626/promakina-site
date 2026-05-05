@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useMemo, useState } from "react";
 import { Hero } from "../components/Hero";
 
@@ -392,6 +393,85 @@ export default function ContactPage() {
 
       <section className="pb-16 sm:pb-20">
         <div className="site-container">
+          <div className="mb-10 rounded-[32px] border border-slate-200 bg-slate-50 p-6 shadow-[0_18px_50px_rgba(15,23,42,0.05)] sm:p-8 lg:p-10">
+            <p className="text-sm font-semibold uppercase tracking-[0.16em] text-blue-700">
+              Teknik İletişim
+            </p>
+            <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950 md:text-4xl">
+              Teknik Teklif ve Proje Görüşmesi
+            </h2>
+            <p className="mt-4 text-sm leading-8 text-slate-600 sm:text-base">
+              Pro Makina ile iletişim süreci, yalnızca teklif istemekten daha fazlasını kapsar.
+              Gübre tesisi, kompost tesisi, kurutma tamburu, konveyör sistemleri ve benzeri
+              proses ekipmanları için ilk görüşmede kapasite, ürün tipi, saha koşulları ve
+              yatırım hedefi birlikte değerlendirilir. Bu yaklaşım, gereksiz ekipman
+              seçimlerini azaltır ve anahtar teslim tesis kurulumu için daha doğru bir
+              başlangıç sağlar. Özellikle proses mühendisliği gerektiren projelerde, doğru
+              ön bilgi hem teklif kalitesini hem de proje hızını doğrudan etkiler. Bu nedenle
+              iletişim aşamasını teknik ön değerlendirme sürecinin bir parçası olarak ele
+              alıyoruz.
+            </p>
+
+            <div className="mt-8 grid gap-8 lg:grid-cols-3">
+              <article>
+                <h2 className="text-2xl font-semibold text-slate-950">
+                  Kapasite Hesabı ve Ön Değerlendirme
+                </h2>
+                <p className="mt-4 text-sm leading-8 text-slate-600 sm:text-base">
+                  Yeni bir hat planlarken ya da mevcut bir prosesi büyütürken, kapasite
+                  hedefinin makine yapısı ile uyumlu olması gerekir. Bu aşamada{" "}
+                  <Link href="/hizmetler" className="font-semibold text-blue-700 transition hover:text-blue-800">
+                    hizmetler
+                  </Link>{" "}
+                  sayfamızdaki anahtar teslim yaklaşımımız ve{" "}
+                  <Link href="/projeler" className="font-semibold text-blue-700 transition hover:text-blue-800">
+                    projeler
+                  </Link>{" "}
+                  tarafındaki uygulama disiplini birlikte devreye girer. Gerek tambur ve
+                  konveyör sistemleri gerekse özel proses ekipmanları için, müşteriden gelen
+                  ilk veriler üzerinden ön teknik çerçeve oluştururuz. Böylece yatırımcı,
+                  ilk aşamada hangi çözüm modeline yönelmesi gerektiğini net biçimde görür.
+                </p>
+              </article>
+
+              <article>
+                <h2 className="text-2xl font-semibold text-slate-950">
+                  Pro Makina ile İletişime Geçin
+                </h2>
+                <p className="mt-4 text-sm leading-8 text-slate-600 sm:text-base">
+                  Endüstriyel makine imalatı ve proses mühendisliği odaklı projelerde hızlı
+                  ve doğru iletişim, teklif başarısının temelidir. Eğer{" "}
+                  <Link href="/makinalar" className="font-semibold text-blue-700 transition hover:text-blue-800">
+                    makinalar
+                  </Link>{" "}
+                  tarafındaki ekipmanlarımızı inceleyip kendi hattınıza uygun çözümü
+                  değerlendirmek istiyorsanız, teknik ekibimiz size yardımcı olabilir. Aynı
+                  şekilde farklı ürün grupları ve sektör ihtiyaçları için{" "}
+                  <Link href="/sektorler" className="font-semibold text-blue-700 transition hover:text-blue-800">
+                    sektörler
+                  </Link>{" "}
+                  sayfamızdan ilgili çalışma alanlarını gözden geçirebilir, daha detaylı
+                  mühendislik içeriği için{" "}
+                  <Link href="/kutuphane" className="font-semibold text-blue-700 transition hover:text-blue-800">
+                    kütüphane
+                  </Link>{" "}
+                  bölümüne geçebilirsiniz.
+                </p>
+              </article>
+
+              <article>
+                <h2 className="text-2xl font-semibold text-slate-950">Kısa Sonuç</h2>
+                <p className="mt-4 text-sm leading-8 text-slate-600 sm:text-base">
+                  Teklif, keşif, kapasite hesabı veya proje değerlendirmesi için bize
+                  ulaştığınızda; yalnızca fiyat odaklı değil, teknik uygulanabilirlik odaklı
+                  bir geri dönüş alırsınız. Gübre tesisi, kompost tesisi ve endüstriyel
+                  proses projelerinde güvenli bir başlangıç için aşağıdaki iletişim
+                  kanallarını kullanabilirsiniz.
+                </p>
+              </article>
+            </div>
+          </div>
+
           <h2 className="text-3xl font-semibold tracking-tight text-slate-950 md:text-4xl">
             İletişim Kişileri
           </h2>

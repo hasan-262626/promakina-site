@@ -85,6 +85,87 @@ export default function MachinesIndexPage() {
               </article>
             ))}
           </div>
+
+          <div className="mt-10 rounded-[32px] border border-slate-200 bg-slate-50 px-6 py-8 shadow-[0_18px_45px_rgba(15,23,42,0.06)] sm:px-8 sm:py-10 lg:px-12">
+            <div className="space-y-10">
+              <article>
+                <h2 className="text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">
+                  Endüstriyel Makine Grupları
+                </h2>
+                <div className="mt-5 space-y-5 text-sm leading-8 text-slate-700 sm:text-base">
+                  <p>
+                    Pro Makina; tambur sistemleri, konveyör sistemleri, helezonlar, elevatörler, kırıcılar, elekler,
+                    reaktörler, tanklar ve paketleme ekipmanları gibi birçok başlıkta endüstriyel makine imalatı
+                    gerçekleştirir. Bu ekipmanlar farklı sektörlerde kullanılsa da ortak nokta, proses mühendisliği
+                    bakışıyla seçilmeleri gerektiğidir.
+                  </p>
+                  <p>
+                    Gübre tesisi, kompost tesisi ve farklı dökme katı malzeme uygulamalarında doğru makina grubu seçimi,
+                    hattın kapasitesini ve işletme güvenini doğrudan etkiler. Bu yüzden makina tarafını yalnız ürün
+                    listesi olarak değil, üretim altyapısının omurgası olarak değerlendiriyoruz.
+                  </p>
+                </div>
+              </article>
+
+              <article>
+                <h2 className="text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">
+                  Tambur, Konveyör ve Proses Ekipmanları
+                </h2>
+                <div className="mt-5 space-y-5 text-sm leading-8 text-slate-700 sm:text-base">
+                  <p>
+                    Kurutma tamburu, granülatör tamburu, soğutma tamburu, bantlı konveyörler, zincirli konveyörler ve
+                    helezon sistemleri; proses ritmini belirleyen ana ekipman gruplarıdır. Özellikle{" "}
+                    <Link href="/makinalar/tambur-sistemleri" className="font-semibold text-blue-700 hover:text-blue-800">
+                      tambur sistemleri
+                    </Link>{" "}
+                    ve{" "}
+                    <Link href="/makinalar/tasima-ekipmanlari" className="font-semibold text-blue-700 hover:text-blue-800">
+                      taşıma ekipmanları
+                    </Link>{" "}
+                    birlikte değerlendirildiğinde hat içi akış çok daha dengeli hale gelir.
+                  </p>
+                  <p>
+                    Reaktörler, tanklar, elekler ve yardımcı proses ekipmanları da bu akışı tamamlar. Böylece yalnız
+                    mekanik olarak çalışan değil, saha şartlarında sürdürülebilir sonuç üreten çözümler kurulabilir.
+                  </p>
+                </div>
+              </article>
+
+              <article>
+                <h2 className="text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">
+                  Özel İmalat ve Mühendislik Yaklaşımı
+                </h2>
+                <div className="mt-5 space-y-5 text-sm leading-8 text-slate-700 sm:text-base">
+                  <p>
+                    Her proje farklı kapasite, ürün yapısı ve saha kısıtı içerir. Bu nedenle standart makina seçiminin
+                    yeterli olmadığı noktalarda özel imalat yaklaşımı devreye girer. Pro Makina, anahtar teslim tesis
+                    kurulumu ve proses mühendisliği kararlarını makine imalatı ile aynı zeminde birleştirir.
+                  </p>
+                  <p>
+                    Daha geniş hizmet kapsamı için{" "}
+                    <Link href="/hizmetler" className="font-semibold text-blue-700 hover:text-blue-800">
+                      hizmetler
+                    </Link>
+                    , sektör uygulamaları için{" "}
+                    <Link href="/sektorler" className="font-semibold text-blue-700 hover:text-blue-800">
+                      sektörler
+                    </Link>{" "}
+                    ve örnek uygulamalar için{" "}
+                    <Link href="/projeler" className="font-semibold text-blue-700 hover:text-blue-800">
+                      projeler
+                    </Link>{" "}
+                    sayfalarımızı inceleyebilirsiniz.
+                  </p>
+                </div>
+              </article>
+
+              <div className="rounded-[28px] bg-blue-700 px-6 py-8 text-white shadow-[0_24px_70px_rgba(29,78,216,0.28)] sm:px-8 sm:py-10">
+                <p className="max-w-3xl text-base leading-8 text-white/90 sm:text-lg">
+                  Projeniz için doğru makine kombinasyonunu ve mühendislik yaklaşımını birlikte netleştirelim.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 

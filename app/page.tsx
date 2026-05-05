@@ -35,6 +35,15 @@ const knowledgeCenterItems = [
   },
 ];
 
+const corporateQuickLinks = [
+  { label: "Hizmetler", href: "/hizmetler" },
+  { label: "Makinalar", href: "/makinalar" },
+  { label: "Sektörler", href: "/sektorler" },
+  { label: "Projeler", href: "/projeler" },
+  { label: "İletişim", href: "/iletisim" },
+  { label: "Hakkımızda", href: "/hakkimizda" },
+];
+
 export default function Home() {
   ReactDOM.preload(homeHeroSlides[0].image, { as: "image" });
 
@@ -121,6 +130,31 @@ export default function Home() {
       <HomeQuickAccessSection />
       <HomeMachineGroupsSection />
       <HomeServicesSection />
+
+      <section className="pb-10 sm:pb-14">
+        <div className="site-container">
+          <div className="rounded-[28px] border border-slate-200 bg-white px-6 py-6 shadow-[0_18px_45px_rgba(15,23,42,0.05)] sm:px-8">
+            <p className="text-sm font-semibold uppercase tracking-[0.16em] text-blue-700">
+              Kurumsal Hızlı Erişim
+            </p>
+            <p className="mt-3 max-w-3xl text-sm leading-7 text-slate-600 sm:text-base">
+              Pro Makina&apos;nın hizmet kapsamını, makine gruplarını, sektör deneyimini ve
+              proje yaklaşımını aşağıdaki ana sayfalardan inceleyebilirsiniz.
+            </p>
+            <div className="mt-5 flex flex-wrap gap-3">
+              {corporateQuickLinks.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="inline-flex rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-blue-200 hover:text-blue-700"
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
 
       <section className="pb-10 sm:pb-14">
         <div className="site-container">

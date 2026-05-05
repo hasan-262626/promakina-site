@@ -1,7 +1,17 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { Metadata } from "next";
 import { sectorCards } from "../components/sector-subsectors-data";
 import { trText } from "../lib/tr-text";
+
+export const metadata: Metadata = {
+  title: "Sektörler | Pro Makina",
+  description:
+    "Gübre, kompost, organik atık, biyogaz, madencilik, kimya, yem ve dökme katı malzeme sektörleri için çözümler.",
+  alternates: {
+    canonical: "https://www.promakina.com.tr/sektorler",
+  },
+};
 
 export default function SectorsIndexPage() {
   return (
@@ -63,6 +73,86 @@ export default function SectorsIndexPage() {
                 </div>
               </article>
             ))}
+          </div>
+
+          <div className="mt-10 rounded-[32px] border border-slate-200 bg-white px-6 py-8 shadow-[0_18px_45px_rgba(15,23,42,0.06)] sm:px-8 sm:py-10 lg:px-12">
+            <div className="space-y-10">
+              <article>
+                <h2 className="text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">
+                  Hizmet Verilen Sektörler
+                </h2>
+                <div className="mt-5 space-y-5 text-sm leading-8 text-slate-700 sm:text-base">
+                  <p>
+                    Pro Makina; gübre tesisi, kompost tesisi, organik atık değerlendirme, biyogaz, madencilik, kimya,
+                    yem ve dökme katı malzeme işleme gibi farklı sektörlerde proses mühendisliği ve endüstriyel makine
+                    imalatı çözümleri geliştirir. Her sektörün hammadde yapısı, nem karakteri ve kapasite beklentisi
+                    farklı olduğu için mühendislik yaklaşımımızı sektörün kendi gerçeklerine göre şekillendiririz.
+                  </p>
+                  <p>
+                    Bu yaklaşım, anahtar teslim tesis kurulumu kararlarının daha güvenli alınmasını sağlar ve süreçte
+                    gereksiz revizyon riskini azaltır.
+                  </p>
+                </div>
+              </article>
+
+              <article>
+                <h2 className="text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">
+                  Atık, Gübre ve Proses Endüstrileri
+                </h2>
+                <div className="mt-5 space-y-5 text-sm leading-8 text-slate-700 sm:text-base">
+                  <p>
+                    Gübre tesisi ve kompost tesisi uygulamalarında kurutma tamburu, eleme, dozajlama ve konveyör
+                    sistemleri birlikte değerlendirilmelidir. Organik atık ve biyogaz tarafında ise ön işleme, besleme
+                    ritmi ve son ürün yönetimi daha belirleyici hale gelir. Bu nedenle sektörel deneyim, yalnız ürün
+                    bilgisi değil, proses davranışını da doğru okumayı gerektirir.
+                  </p>
+                  <p>
+                    Teknik kapsamı görmek için{" "}
+                    <Link href="/hizmetler" className="font-semibold text-blue-700 hover:text-blue-800">
+                      hizmetler
+                    </Link>{" "}
+                    ve ekipman ailelerini incelemek için{" "}
+                    <Link href="/makinalar" className="font-semibold text-blue-700 hover:text-blue-800">
+                      makinalar
+                    </Link>{" "}
+                    sayfalarımızı birlikte değerlendirebilirsiniz.
+                  </p>
+                </div>
+              </article>
+
+              <article>
+                <h2 className="text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">
+                  Sektöre Özel Makine ve Tesis Tasarımı
+                </h2>
+                <div className="mt-5 space-y-5 text-sm leading-8 text-slate-700 sm:text-base">
+                  <p>
+                    Sektöre özel makine ve tesis tasarımı; reaktörler, tanklar, tambur sistemleri, konveyör sistemleri,
+                    bunkerler ve yardımcı proses ekipmanlarının doğru kombinasyonunu gerektirir. Pro Makina bu süreci{" "}
+                    <Link href="/projeler" className="font-semibold text-blue-700 hover:text-blue-800">
+                      projeler
+                    </Link>{" "}
+                    tarafındaki uygulama yaklaşımı ile destekler.
+                  </p>
+                  <p>
+                    Eğer sektörünüze uygun çözüm yapısını daha net görmek istiyorsanız{" "}
+                    <Link href="/kutuphane" className="font-semibold text-blue-700 hover:text-blue-800">
+                      kütüphane
+                    </Link>{" "}
+                    içeriklerimizi inceleyebilir veya{" "}
+                    <Link href="/iletisim" className="font-semibold text-blue-700 hover:text-blue-800">
+                      iletişim
+                    </Link>{" "}
+                    sayfası üzerinden teknik görüşme talep edebilirsiniz.
+                  </p>
+                </div>
+              </article>
+
+              <div className="rounded-[28px] bg-blue-700 px-6 py-8 text-white shadow-[0_24px_70px_rgba(29,78,216,0.28)] sm:px-8 sm:py-10">
+                <p className="max-w-3xl text-base leading-8 text-white/90 sm:text-lg">
+                  Sektörünüze özel proses mühendisliği, makine seçimi ve tesis kurgusu için bizimle iletişime geçin.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
