@@ -19,6 +19,10 @@ function shouldHideGlobalCta(pathname: string) {
   );
 }
 
+function shouldHideMobileStickyCta(pathname: string) {
+  return pathname === "/iletisim";
+}
+
 export function SiteFooterCta() {
   const pathname = usePathname();
   const hideGlobalCta = shouldHideGlobalCta(pathname);
@@ -263,5 +267,34 @@ export function FloatingWhatsApp() {
       <span className="text-lg">W</span>
       WhatsApp
     </a>
+  );
+}
+
+export function MobileStickyCta() {
+  const pathname = usePathname();
+
+  if (shouldHideMobileStickyCta(pathname)) {
+    return null;
+  }
+
+  return (
+    <div className="fixed inset-x-4 bottom-20 z-[69] sm:hidden">
+      <div className="rounded-full border border-slate-200 bg-white/95 p-2 shadow-[0_16px_48px_rgba(15,23,42,0.18)] backdrop-blur">
+        <div className="grid grid-cols-2 gap-2">
+          <Link
+            href="/iletisim"
+            className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-blue-700 px-4 text-xs font-semibold text-white transition hover:bg-blue-800"
+          >
+            Teklif Al
+          </Link>
+          <Link
+            href="/hizmetler/teknik-danismanlik"
+            className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-slate-200 px-4 text-xs font-semibold text-slate-900 transition hover:border-blue-200 hover:text-blue-700"
+          >
+            Teknik Danışmanlık
+          </Link>
+        </div>
+      </div>
+    </div>
   );
 }

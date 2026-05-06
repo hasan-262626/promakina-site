@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
 import Script from "next/script";
 import { CookiePreferences } from "./components/cookie-preferences";
-import { FloatingWhatsApp, SiteFooterCta } from "./components/site-footer-cta";
+import {
+  FloatingWhatsApp,
+  MobileStickyCta,
+  SiteFooterCta,
+} from "./components/site-footer-cta";
 import { SiteHeader } from "./components/site-header";
 import { TextNormalizer } from "./components/text-normalizer";
 import "./globals.css";
@@ -80,6 +84,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <SiteHeader />
         {children}
         <SiteFooterCta />
+        <MobileStickyCta />
         <FloatingWhatsApp />
         <CookiePreferences />
       </body>

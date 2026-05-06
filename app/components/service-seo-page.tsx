@@ -42,6 +42,8 @@ type ServiceSeoPageProps = {
   introTitle?: string;
   introParagraphs: string[];
   cards?: ServiceCard[];
+  cardsTitle?: string;
+  cardsDescription?: string;
   sections: ServiceSection[];
   faqs: ServiceFaq[];
   ctaText: string;
@@ -94,6 +96,8 @@ export function ServiceSeoPage({
   introTitle,
   introParagraphs,
   cards = [],
+  cardsTitle = "Kullanım Alanları ve İlgili Ana Makineler",
+  cardsDescription = "Bu bölüm, tesis kurgusunda öne çıkan uygulama alanlarını ve prosesi taşıyan ana makina omurgasını birlikte özetler.",
   sections,
   faqs,
   ctaText,
@@ -214,6 +218,14 @@ export function ServiceSeoPage({
       {cards.length > 0 ? (
         <section className="pb-10 sm:pb-14">
           <div className="site-container">
+            <div className="mb-6 rounded-[28px] border border-slate-200 bg-white px-6 py-6 shadow-sm sm:px-8">
+              <h2 className="text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">
+                {cardsTitle}
+              </h2>
+              <p className="mt-4 max-w-3xl text-sm leading-8 text-slate-600 sm:text-base">
+                {cardsDescription}
+              </p>
+            </div>
             <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
               {cards.map((card) =>
                 card.href ? (
@@ -468,6 +480,12 @@ export function ServiceSeoPage({
               >
                 WhatsApp
               </a>
+              <Link
+                href="/hizmetler/teknik-danismanlik"
+                className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/25 px-6 text-sm font-semibold text-white transition hover:bg-white/10"
+              >
+                Teknik Danışmanlık
+              </Link>
             </div>
           </div>
         </div>

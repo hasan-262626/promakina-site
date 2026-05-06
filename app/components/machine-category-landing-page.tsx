@@ -298,6 +298,12 @@ export function MachineCategoryLandingPage({
               >
                 Hizmetleri İncele
               </Link>
+              <Link
+                href="/hizmetler/teknik-danismanlik"
+                className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/25 px-6 text-sm font-semibold text-white transition hover:bg-white/10"
+              >
+                Teknik Danışmanlık
+              </Link>
             </div>
           </div>
         </div>

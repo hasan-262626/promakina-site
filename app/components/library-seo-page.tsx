@@ -24,6 +24,10 @@ type LibrarySeoPageProps = {
   relatedServices?: LibraryServiceLink[];
   faqs?: LibraryFaqItem[];
   extraSection?: ReactNode;
+  heroImage?: string;
+  internalLinks?: { label: string; href: string }[];
+  nextContent?: { title: string; description: string; href: string };
+  breadcrumbs?: { label: string; href: string }[];
 };
 
 export function buildLibraryMetadata({
@@ -49,6 +53,11 @@ export function buildLibraryMetadata({
       locale: "tr_TR",
       type: "article",
     },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+    },
   };
 }
 
@@ -63,7 +72,86 @@ export function LibrarySeoPage({
   relatedServices = [],
   faqs = [],
   extraSection,
+  heroImage = "/images/proses1.jpg",
+  internalLinks = [],
+  nextContent,
+  breadcrumbs,
 }: LibrarySeoPageProps) {
+  const defaultBreadcrumbs = breadcrumbs ?? [
+    { label: "Ana Sayfa", href: "/" },
+    { label: "Kütüphane", href: "/kutuphane" },
+    { label: "Blog", href: "/kutuphane/blog" },
+    { label: title, href: canonical.replace("https://www.promakina.com.tr", "") || canonical },
+  ];
+
+  const normalizedBreadcrumbs = defaultBreadcrumbs.map((item) => ({
+    label: item.label,
+    href: item.href.startsWith("http")
+      ? item.href
+      : `https://www.promakina.com.tr${item.href === "/" ? "" : item.href}`,
+  }));
+
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Pro Makina",
+    url: "https://www.promakina.com.tr",
+    logo: "https://www.promakina.com.tr/logo.png",
+    email: "info@promakina.com.tr",
+    telephone: "+90 532 085 01 04",
+  };
+
+  const localBusinessSchema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    name: "Pro Makina",
+    url: "https://www.promakina.com.tr",
+    telephone: "+90 532 085 01 04",
+    email: "info@promakina.com.tr",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "75. Yıl Mah. Teksan Sanayi Sitesi Kilis Sokak D6 Blok No:2E",
+      addressLocality: "Odunpazarı",
+      addressRegion: "Eskişehir",
+      postalCode: "26250",
+      addressCountry: "TR",
+    },
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: normalizedBreadcrumbs.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.label,
+      item: item.href,
+    })),
+  };
+
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: title,
+    description,
+    mainEntityOfPage: canonical,
+    author: {
+      "@type": "Organization",
+      name: "Pro Makina",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Pro Makina",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://www.promakina.com.tr/logo.png",
+      },
+    },
+    image: `https://www.promakina.com.tr${heroImage}`,
+    datePublished: "2026-05-06",
+    dateModified: "2026-05-06",
+  };
+
   const faqSchema =
     faqs.length > 0
       ? {
@@ -82,6 +170,22 @@ export function LibrarySeoPage({
 
   return (
     <main className="min-h-screen overflow-x-hidden bg-white text-slate-900">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
       {faqSchema ? (
         <script
           type="application/ld+json"
@@ -89,7 +193,7 @@ export function LibrarySeoPage({
         />
       ) : null}
 
-      <Hero title={title} description={heroDescription} image="/images/proses1.jpg">
+      <Hero title={title} description={heroDescription} image={heroImage}>
         <Link
           href="/iletisim"
           className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-white px-6 text-sm font-semibold text-slate-950 transition hover:bg-slate-100"
@@ -109,9 +213,43 @@ export function LibrarySeoPage({
       <section className="section-space">
         <div className="site-container">
           <div className="rounded-[32px] border border-slate-200 bg-white px-6 py-8 shadow-[0_18px_50px_rgba(15,23,42,0.06)] sm:px-8 sm:py-10 lg:px-12">
+            <nav aria-label="Breadcrumb" className="flex flex-wrap gap-2 text-sm text-slate-500">
+              {defaultBreadcrumbs.map((item, index) => {
+                const href = item.href.startsWith("http")
+                  ? item.href
+                  : item.href;
+                const isLast = index === defaultBreadcrumbs.length - 1;
+
+                return (
+                  <span key={`${item.label}-${index}`} className="inline-flex items-center gap-2">
+                    {isLast ? (
+                      <span className="font-medium text-slate-700">{item.label}</span>
+                    ) : (
+                      <Link href={href} className="transition hover:text-blue-700">
+                        {item.label}
+                      </Link>
+                    )}
+                    {!isLast ? <span>/</span> : null}
+                  </span>
+                );
+              })}
+            </nav>
             <p className="text-sm font-semibold uppercase tracking-[0.16em] text-blue-700">{categoryLabel}</p>
             <h1 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950 md:text-4xl">{title}</h1>
             <p className="mt-5 text-sm leading-8 text-slate-600 sm:text-base">{description}</p>
+            {internalLinks.length ? (
+              <div className="mt-6 flex flex-wrap gap-3">
+                {internalLinks.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="inline-flex rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-blue-200 hover:bg-blue-50 hover:text-blue-700"
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
+            ) : null}
           </div>
         </div>
       </section>
@@ -161,6 +299,22 @@ export function LibrarySeoPage({
                   </div>
                 </section>
               ) : null}
+
+              {nextContent ? (
+                <section>
+                  <h2 className="text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">
+                    Sıradaki İçerik Önerisi
+                  </h2>
+                  <Link
+                    href={nextContent.href}
+                    className="mt-6 block rounded-[24px] border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:border-blue-200 hover:shadow-[0_18px_45px_rgba(15,23,42,0.08)]"
+                  >
+                    <span className="text-lg font-semibold text-slate-950">{nextContent.title}</span>
+                    <span className="mt-3 block text-sm leading-7 text-slate-600">{nextContent.description}</span>
+                    <span className="mt-4 inline-flex text-sm font-semibold text-blue-700">Devamını Oku</span>
+                  </Link>
+                </section>
+              ) : null}
             </div>
           </div>
         </div>
@@ -185,6 +339,12 @@ export function LibrarySeoPage({
               >
                 WhatsApp
               </a>
+              <Link
+                href="/hizmetler/teknik-danismanlik"
+                className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/25 px-6 text-sm font-semibold text-white transition hover:bg-white/10"
+              >
+                Teknik Danışmanlık
+              </Link>
             </div>
           </div>
         </div>

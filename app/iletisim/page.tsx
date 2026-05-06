@@ -26,19 +26,19 @@ const locations = {
 const contacts = [
   {
     role: "Makine Mühendisi - Satış Temsilcisi",
-    name: "Hasan Hüseyin Işık",
-    phone: "+90 538 063 11 63",
+    name: "Hüseyin Bey",
+    phone: "+90 532 085 01 04",
     whatsapp: "https://wa.me/905380631163",
   },
   {
     role: "Türkiye Bölge Müdürü",
-    name: "Serkan",
+    name: "Serkan Bey",
     phone: "+90 532 252 57 13",
     whatsapp: "https://wa.me/905322525713",
   },
   {
     role: "Fabrika ve İmalat Müdürü",
-    name: "Akif",
+    name: "Akif Bey",
     phone: "+90 533 569 31 43",
     whatsapp: "https://wa.me/905335693143",
   },
