@@ -4,9 +4,9 @@ import Link from "next/link";
 import { useMemo, useState } from "react";
 import { libraryItems, librarySections } from "../data";
 import { trText } from "../lib/tr-text";
-import { ProgramGroupCard } from "./program-group-card";
-import { programGroups } from "../program-groups";
 import { topicalAuthorityLatestArticles } from "../lib/topical-authority-blog-hub";
+import { programGroups } from "../program-groups";
+import { ProgramGroupCard } from "./program-group-card";
 
 const ALL_LIBRARY_ITEMS = "Tum Icerikler";
 const PROGRAMS_TAB = "Programlar";
@@ -29,7 +29,9 @@ export function HomeLibrarySection() {
     () => [
       ALL_LIBRARY_ITEMS,
       PROGRAMS_TAB,
-      ...librarySections.filter((section) => section.title !== PROGRAMS_TAB).map((section) => section.title),
+      ...librarySections
+        .filter((section) => section.title !== PROGRAMS_TAB)
+        .map((section) => section.title),
     ],
     [],
   );
@@ -39,7 +41,10 @@ export function HomeLibrarySection() {
       return [];
     }
 
-    if (activeCategory === ALL_LIBRARY_ITEMS || activeCategory === "Blog / Makaleler") {
+    if (
+      activeCategory === ALL_LIBRARY_ITEMS ||
+      activeCategory === "Blog / Makaleler"
+    ) {
       return topicalAuthorityLatestArticles.map((item) => ({
         slug: `blog/${item.slug}`,
         category: item.category,
@@ -48,9 +53,7 @@ export function HomeLibrarySection() {
       }));
     }
 
-    const items =
-      libraryItems.filter((item) => item.category === activeCategory);
-
+    const items = libraryItems.filter((item) => item.category === activeCategory);
     return items.slice(0, 6);
   }, [activeCategory]);
 
@@ -58,10 +61,12 @@ export function HomeLibrarySection() {
     <section id="kutuphane" className="section-space">
       <div className="site-container">
         <div className="mb-8 max-w-3xl">
-          <h2 className="text-3xl font-semibold tracking-tight text-slate-950 md:text-4xl">Kütüphane</h2>
+          <h2 className="text-3xl font-semibold tracking-tight text-slate-950 md:text-4xl">
+            Kütüphane
+          </h2>
           <p className="mt-4 leading-8 text-slate-600">
-            Proses, ekipman ve tesis kurulumuna dair teknik içerikleri, rehberleri ve sektörel yazıları
-            inceleyin.
+            Proses, ekipman ve tesis kurulumuna dair teknik içerikleri,
+            rehberleri ve sektörel yazıları inceleyin.
           </p>
         </div>
 
@@ -93,16 +98,34 @@ export function HomeLibrarySection() {
         </div>
 
         {activeCategory === PROGRAMS_TAB ? (
-          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-            {programGroups.map((group) => (
-              <ProgramGroupCard
-                key={group.id}
-                group={group}
-                titleHref={`/programlar#${group.id}`}
-                footerHref={`/programlar#${group.id}`}
-                footerLabel="Grubu Aç"
-              />
-            ))}
+          <div className="space-y-6">
+            <div className="rounded-[28px] border border-slate-200 bg-[linear-gradient(135deg,#f8fbff_0%,#ffffff_52%,#eef4ff_100%)] p-6 shadow-[0_18px_45px_rgba(15,23,42,0.06)] sm:p-8">
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-blue-700">
+                Mühendislik Hesaplama Merkezi
+              </p>
+              <h3 className="mt-3 text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">
+                Programlar sekmesi artık teknik içerik, canlı araç ve teklif
+                dönüşümünü aynı yapıda taşıyor
+              </h3>
+              <p className="mt-4 max-w-3xl text-sm leading-8 text-slate-600 sm:text-base">
+                Helezon, konveyör, tambur, elevatör ve proses ekipmanları için
+                oluşturulan yeni program merkezi; SEO odaklı statik hesap
+                sayfalarını, mevcut modal kullanım akışını ve mühendislik destek
+                CTA&apos;larını tek yerde toplar.
+              </p>
+            </div>
+
+            <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+              {programGroups.map((group) => (
+                <ProgramGroupCard
+                  key={group.id}
+                  group={group}
+                  titleHref={`/programlar#${group.id}`}
+                  footerHref={`/programlar#${group.id}`}
+                  footerLabel="Grubu Aç"
+                />
+              ))}
+            </div>
           </div>
         ) : (
           <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
@@ -118,7 +141,9 @@ export function HomeLibrarySection() {
                 <h3 className="mt-3 text-2xl font-semibold tracking-tight text-slate-950">
                   {compactText(item.title, 58)}
                 </h3>
-                <p className="mt-3 flex-1 leading-7 text-slate-600">{compactText(item.summary)}</p>
+                <p className="mt-3 flex-1 leading-7 text-slate-600">
+                  {compactText(item.summary)}
+                </p>
                 <span className="mt-5 inline-flex items-center text-sm font-semibold text-blue-700 transition group-hover:text-blue-800">
                   İçeriği İncele
                 </span>

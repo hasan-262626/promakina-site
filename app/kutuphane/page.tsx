@@ -65,7 +65,8 @@ const libraryCategories = [
   },
   {
     title: "Programlar" as const,
-    description: "Hesaplama araçları, seçim programları ve teknik yardımcı ekranları tek merkezde inceleyin.",
+    description:
+      "Mühendislik hesaplama araçları, SEO odaklı teknik program sayfaları ve canlı seçim ekranları ile teklif sürecini hızlandırın.",
     href: "/programlar",
     image: "/images/proses1.png",
   },

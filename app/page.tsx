@@ -92,9 +92,9 @@ const knowledgeCenterCategories = [
     buttonLabel: "Rehberleri İncele",
   },
   {
-    title: "Hesaplama Araçları",
+    title: "Mühendislik Hesaplama Araçları",
     description:
-      "Helezon, konveyör, tambur, elevatör ve yardımcı ön seçim araçlarıyla mühendislik değerlendirmesini hızlandırın.",
+      "Helezon, konveyör, tambur, elevatör ve proses ekipmanları için profesyonel hesaplama sayfalarına ve teknik ön seçim mantığına ulaşın.",
     href: "/programlar",
     image: "/images/hizmetler1.png",
     buttonLabel: "Araçları Aç",
@@ -160,25 +160,25 @@ const calculationToolCards = [
     title: "Helezon Hesabı",
     description:
       "Kapasite, çap, hatve, eğim, motor ve malzeme önerisi mantığıyla ön seçim yapın.",
-    href: "/programlar",
+    href: "/programlar/helezon-kapasite-hesabi",
   },
   {
     title: "Konveyör Hesabı",
     description:
       "Hat boyu, yoğunluk, hız ve motor yaklaşımını kısa sonuç kartlarıyla değerlendirin.",
-    href: "/programlar",
+    href: "/programlar/konveyor-kapasite-hesabi",
   },
   {
     title: "Tambur Hesabı",
     description:
       "Kurutma, soğutma ve kaplama prosesleri için boyut, devir ve güç yaklaşımını görün.",
-    href: "/programlar",
+    href: "/programlar/kurutma-tamburu-hesabi",
   },
   {
     title: "Elevatör Hesabı",
     description:
       "Kova seçimi, deşarj tipi, hız ve motor ön seçimiyle dikey taşıma sisteminizi şekillendirin.",
-    href: "/programlar",
+    href: "/programlar/elevator-kapasite-hesabi",
   },
 ];
 
