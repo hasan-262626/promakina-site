@@ -139,6 +139,11 @@ export function LibrarySeoPage({
       "@type": "Organization",
       name: "Pro Makina",
     },
+    about: [
+      "Proses mühendisliği",
+      "Endüstriyel makine imalatı",
+      "Anahtar teslim tesis kurulumu",
+    ],
     publisher: {
       "@type": "Organization",
       name: "Pro Makina",
@@ -280,6 +285,33 @@ export function LibrarySeoPage({
 
               {extraSection}
 
+              <section>
+                <div className="rounded-[24px] border border-slate-200 bg-white px-5 py-5 shadow-sm">
+                  <h2 className="text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">
+                    Teknik Görüşme Talep Edin
+                  </h2>
+                  <p className="mt-4 text-sm leading-8 text-slate-600 sm:text-base">
+                    Bu içerik Pro Makina proses mühendisliği yaklaşımıyla hazırlanmıştır. İçerikteki
+                    teknik çerçeveyi kendi projenize uyarlamak, kapasite ve ekipman seçimini birlikte
+                    netleştirmek için bizimle teknik görüşme planlayabilirsiniz.
+                  </p>
+                  <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+                    <Link
+                      href="/iletisim"
+                      className="inline-flex min-h-[44px] items-center justify-center rounded-full bg-blue-700 px-5 text-sm font-semibold text-white transition hover:bg-blue-800"
+                    >
+                      Teknik Görüşme Talep Edin
+                    </Link>
+                    <Link
+                      href="/hizmetler"
+                      className="inline-flex min-h-[44px] items-center justify-center rounded-full border border-slate-200 px-5 text-sm font-semibold text-slate-800 transition hover:border-blue-200 hover:text-blue-700"
+                    >
+                      İlgili Hizmetleri İncele
+                    </Link>
+                  </div>
+                </div>
+              </section>
+
               {relatedServices.length ? <LibraryServiceLinks items={relatedServices} /> : null}
 
               {faqs.length ? (
@@ -323,6 +355,9 @@ export function LibrarySeoPage({
       <section className="pb-16 sm:pb-20">
         <div className="site-container">
           <div className="rounded-[28px] bg-blue-700 px-6 py-8 text-white shadow-[0_24px_70px_rgba(29,78,216,0.28)] sm:px-8 sm:py-10">
+            <p className="text-sm font-semibold uppercase tracking-[0.16em] text-white/80">
+              Teknik Görüşme Talep Edin
+            </p>
             <p className="max-w-3xl text-base leading-8 text-white/90 sm:text-lg">{ctaText}</p>
             <div className="mt-6 flex flex-col gap-3 sm:flex-row">
               <Link

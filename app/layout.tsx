@@ -60,6 +60,34 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Pro Makina",
+    url: "https://www.promakina.com.tr",
+    logo: "https://www.promakina.com.tr/logo.png",
+    email: "info@promakina.com.tr",
+    telephone: "+90 532 085 01 04",
+    sameAs: ["https://www.promakina.com.tr"],
+  };
+
+  const localBusinessSchema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    name: "Pro Makina",
+    url: "https://www.promakina.com.tr",
+    telephone: "+90 532 085 01 04",
+    email: "info@promakina.com.tr",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "75. Yıl Mah. Teksan Sanayi Sitesi Kilis Sokak D6 Blok No:2E",
+      addressLocality: "Odunpazarı",
+      addressRegion: "Eskişehir",
+      postalCode: "26250",
+      addressCountry: "TR",
+    },
+  };
+
   return (
     <html lang="tr">
       <head>
@@ -72,6 +100,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </Script>
       </head>
       <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+        />
         <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-NJT8ZQPC"

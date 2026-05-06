@@ -63,54 +63,49 @@ export function SiteFooterCta() {
 
       <footer className="border-t border-slate-200 bg-slate-950 text-white">
         <div className="site-container py-14 sm:py-16 lg:py-18">
-          <div className="grid gap-10 md:grid-cols-2 xl:grid-cols-[1.35fr_0.9fr_1fr_1fr_0.95fr_0.8fr]">
+          <div className="grid gap-10 md:grid-cols-2 xl:grid-cols-[1.25fr_1fr_1fr_1fr_1fr_0.95fr]">
             <div className="max-w-sm">
               <h2 className="text-2xl font-semibold tracking-tight text-white">Pro Makina</h2>
               <p className="mt-4 text-sm leading-7 text-white/70">
                 {trText(
-                  "Pro Makina, kompost, gübre, geri dönüşüm ve proses tesisleri için anahtar teslim endüstriyel çözümler sunar.",
+                  "Pro Makina, proses mühendisliği, makine imalatı ve anahtar teslim tesis kurulumu yaklaşımını aynı yapıda sunan endüstriyel çözüm partneridir.",
                 )}
               </p>
             </div>
 
             <div>
               <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-white/82">
-                {trText("Menü")}
+                Sektörler
               </h3>
               <ul className="mt-4 space-y-3 text-sm leading-6 text-white/70">
                 <li>
-                  <Link href="/" className="transition hover:text-white">
-                    Ana Sayfa
+                  <Link href="/sektorler/gubre-ve-granulasyon-tesisleri" className="transition hover:text-white">
+                    Gübre ve Granülasyon
                   </Link>
                 </li>
                 <li>
-                  <Link href="/hizmetler" className="transition hover:text-white">
-                    Hizmetler
+                  <Link href="/sektorler/kompost-ve-organik-atik-tesisleri" className="transition hover:text-white">
+                    Kompost ve Organik Atık
                   </Link>
                 </li>
                 <li>
-                  <Link href="/sektorler" className="transition hover:text-white">
-                    {trText("Sektörler")}
+                  <Link href="/sektorler/enerji-ve-biyogaz-sistemleri" className="transition hover:text-white">
+                    Enerji ve Biyogaz
                   </Link>
                 </li>
                 <li>
-                  <Link href="/projeler" className="transition hover:text-white">
-                    Projeler
+                  <Link href="/sektorler/madencilik-ve-mineral-isleme" className="transition hover:text-white">
+                    Madencilik ve Mineral
                   </Link>
                 </li>
                 <li>
-                  <Link href="/kutuphane" className="transition hover:text-white">
-                    {trText("Kütüphane")}
+                  <Link href="/sektorler/kimya-ve-proses-endustrisi" className="transition hover:text-white">
+                    Kimya ve Proses
                   </Link>
                 </li>
                 <li>
-                  <Link href="/kutuphane/blog" className="transition hover:text-white">
-                    Blog / Makaleler
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/hakkimizda" className="transition hover:text-white">
-                    {trText("Hakkımızda")}
+                  <Link href="/sektorler/yem-toz-ve-dokme-kati-malzeme-isleme-sistemleri" className="transition hover:text-white">
+                    Dökme Katı Malzeme
                   </Link>
                 </li>
               </ul>
@@ -122,29 +117,33 @@ export function SiteFooterCta() {
               </h3>
               <ul className="mt-4 space-y-3 text-sm leading-6 text-white/70">
                 <li>
-                  <Link
-                    href="/hizmetler/anahtar-teslim-tesis-kurulumu"
-                    className="transition hover:text-white"
-                  >
-                    Anahtar Teslim Tesis Kurulumu
+                  <Link href="/hizmetler/anahtar-teslim-tesis-kurulumu" className="transition hover:text-white">
+                    Anahtar Teslim Tesis
                   </Link>
                 </li>
                 <li>
-                  <Link
-                    href="/hizmetler/proses-tasarimi-ve-muhendislik"
-                    className="transition hover:text-white"
-                  >
-                    {trText("Proses Tasarımı ve Mühendislik")}
+                  <Link href="/hizmetler/proses-tasarimi-ve-muhendislik" className="transition hover:text-white">
+                    Proses Tasarımı
                   </Link>
                 </li>
                 <li>
-                  <Link href="/hizmetler/makine-imalati" className="transition hover:text-white">
-                    {trText("Makine İmalatı")}
+                  <Link href="/hizmetler/gubre-tesisi-kurulumu" className="transition hover:text-white">
+                    Gübre Tesisi Kurulumu
                   </Link>
                 </li>
                 <li>
-                  <Link href="/hizmetler/bakim-ve-servis" className="transition hover:text-white">
-                    {trText("Bakım ve Servis")}
+                  <Link href="/hizmetler/kompost-tesisi-kurulumu" className="transition hover:text-white">
+                    Kompost Tesisi Kurulumu
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/hizmetler/organomineral-gubre-tesisi" className="transition hover:text-white">
+                    Organomineral Gübre
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/hizmetler/sivi-gubre-uretim-tesisi" className="transition hover:text-white">
+                    Sıvı Gübre Üretimi
                   </Link>
                 </li>
               </ul>
@@ -152,30 +151,37 @@ export function SiteFooterCta() {
 
             <div>
               <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-white/82">
-                Makina & Ekipman
+                Teknik İçerikler
               </h3>
               <ul className="mt-4 space-y-3 text-sm leading-6 text-white/70">
                 <li>
-                  <Link href="/makinalar/tambur-sistemleri" className="transition hover:text-white">
-                    Tambur Sistemleri
+                  <Link href="/kutuphane/blog" className="transition hover:text-white">
+                    Blog / Makaleler
                   </Link>
                 </li>
                 <li>
-                  <Link href="/makinalar/tasima-ekipmanlari" className="transition hover:text-white">
-                    {trText("Taşıma Ekipmanları")}
+                  <Link href="/kutuphane/teknik-rehberler" className="transition hover:text-white">
+                    Teknik Rehberler
                   </Link>
                 </li>
                 <li>
-                  <Link
-                    href="/makinalar/kiricilar-ve-parcalayicilar"
-                    className="transition hover:text-white"
-                  >
-                    {trText("Kırıcılar ve Parçalayıcılar")}
+                  <Link href="/kutuphane/blog/kurutma-tamburu-hesaplama" className="transition hover:text-white">
+                    Kurutma Tamburu
                   </Link>
                 </li>
                 <li>
-                  <Link href="/makinalar/reaktorler-ve-tanklar" className="transition hover:text-white">
-                    {trText("Reaktörler ve Tanklar")}
+                  <Link href="/kutuphane/blog/helezon-kapasite-hesabi" className="transition hover:text-white">
+                    Helezon Kapasite
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/kutuphane/blog/granul-gubre-uretim-sureci" className="transition hover:text-white">
+                    Granül Gübre Süreci
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/kutuphane/blog/kompost-tesisi-kurulumu" className="transition hover:text-white">
+                    Kompost Tesisi
                   </Link>
                 </li>
               </ul>
@@ -183,13 +189,76 @@ export function SiteFooterCta() {
 
             <div>
               <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-white/82">
-                {trText("İletişim")}
+                Hesaplama Araçları
               </h3>
               <ul className="mt-4 space-y-3 text-sm leading-6 text-white/70">
+                <li>
+                  <Link href="/programlar" className="transition hover:text-white">
+                    Programlar
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/programlar/helezon-kapasite-hesabi" className="transition hover:text-white">
+                    Helezon Hesabı
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/programlar/konveyor-kapasite-hesabi" className="transition hover:text-white">
+                    Konveyör Hesabı
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/programlar/kurutma-tamburu-hesabi" className="transition hover:text-white">
+                    Tambur Hesabı
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/programlar/elevator-kapasite-hesabi" className="transition hover:text-white">
+                    Elevatör Hesabı
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/programlar/redler-kapasite-hesabi" className="transition hover:text-white">
+                    Redler Hesabı
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-white/82">
+                Çözümler / İletişim
+              </h3>
+              <ul className="mt-4 space-y-3 text-sm leading-6 text-white/70">
+                <li>
+                  <Link href="/cozumler" className="transition hover:text-white">
+                    Çözüm Merkezi
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/cozumler/gubre-tesisi-kurulumu" className="transition hover:text-white">
+                    Gübre Tesisi
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/cozumler/endustriyel-kurutma-sistemleri" className="transition hover:text-white">
+                    Kurutma Sistemleri
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/cozumler/vidali-konveyor-sistemleri" className="transition hover:text-white">
+                    Vidalı Konveyör
+                  </Link>
+                </li>
                 <li>
                   <Link href="/iletisim" className="transition hover:text-white">
-                    {trText("İletişim Sayfası")}
+                    İletişim
                   </Link>
+                </li>
+                <li>
+                  <a href="mailto:info@promakina.com.tr" className="transition hover:text-white">
+                    info@promakina.com.tr
+                  </a>
                 </li>
                 <li>
                   <a
@@ -199,44 +268,6 @@ export function SiteFooterCta() {
                     className="transition hover:text-white"
                   >
                     WhatsApp
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="transition hover:text-white">
-                    LinkedIn
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="transition hover:text-white">
-                    {trText("Katalog İndir")}
-                  </a>
-                </li>
-                <li>
-                  <a href="mailto:info@promakina.com.tr" className="transition hover:text-white">
-                    info@promakina.com.tr
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-white/82">
-                Yasal
-              </h3>
-              <ul className="mt-4 space-y-3 text-sm leading-6 text-white/70">
-                <li>
-                  <a href="#" className="transition hover:text-white">
-                    KVKK
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="transition hover:text-white">
-                    {trText("Gizlilik Politikası")}
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="transition hover:text-white">
-                    {trText("Çerez Politikası")}
                   </a>
                 </li>
                 <li>
