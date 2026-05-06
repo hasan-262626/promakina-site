@@ -182,6 +182,53 @@ const calculationToolCards = [
   },
 ];
 
+const technicalEngineeringCenterCards = [
+  {
+    title: "Programlar",
+    description:
+      "Helezon, konveyör, tambur ve elevatör hesaplama sistemleriyle ön seçim sürecini hızlandırın.",
+    href: "/programlar",
+    buttonLabel: "Programları Aç",
+    links: [
+      { label: "Helezon Hesabı", href: "/programlar/helezon-kapasite-hesabi" },
+      { label: "Tambur Hesabı", href: "/programlar/kurutma-tamburu-hesabi" },
+    ],
+  },
+  {
+    title: "Teknik Rehberler",
+    description:
+      "Kurutma sistemleri, ekipman seçimi ve proses davranışı için karar destekleyen derin teknik açıklamalar.",
+    href: "/kutuphane/teknik-rehberler",
+    buttonLabel: "Rehberleri İncele",
+    links: [
+      { label: "Tambur Sistemleri Hub", href: "/kutuphane/tambur-sistemleri" },
+      { label: "Kurutma Rehberleri", href: "/kutuphane/blog/kurutma-sistemleri" },
+    ],
+  },
+  {
+    title: "Hesaplama Araçları",
+    description:
+      "Program sayfalarını, teknik blogları ve ilgili makina ailelerini tek merkezden birleştiren SEO omurgası.",
+    href: "/kutuphane/helezon-konveyor-sistemleri",
+    buttonLabel: "Hub Sayfaları Aç",
+    links: [
+      { label: "Helezon Hub", href: "/kutuphane/helezon-konveyor-sistemleri" },
+      { label: "Konveyör Hub", href: "/kutuphane/konveyor-sistemleri" },
+    ],
+  },
+  {
+    title: "Teknik Makaleler",
+    description:
+      "Satın alma niyeti taşıyan ziyaretçiler için proses, kapasite ve ekipman seçimi odaklı makale ağı.",
+    href: "/kutuphane/blog",
+    buttonLabel: "Makaleleri Gör",
+    links: [
+      { label: "Granül Gübre", href: "/kutuphane/granul-gubre-uretim-sistemleri" },
+      { label: "Kompost & Atık", href: "/kutuphane/kompost-tesisi-sistemleri" },
+    ],
+  },
+];
+
 const deliverySteps = [
   {
     title: "Keşif",
@@ -473,6 +520,55 @@ export default function Home() {
                   ))}
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="pb-10 sm:pb-14">
+        <div className="site-container">
+          <div className="rounded-[32px] border border-slate-200 bg-[linear-gradient(135deg,#ffffff_0%,#f7fbff_48%,#eef5ff_100%)] px-6 py-8 shadow-[0_18px_45px_rgba(15,23,42,0.06)] sm:px-8 sm:py-10 lg:px-12">
+            <div className="max-w-3xl">
+              <p className="text-sm font-semibold uppercase tracking-[0.16em] text-blue-700">
+                TEKNİK MÜHENDİSLİK MERKEZİ
+              </p>
+              <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950 md:text-4xl">
+                Hub sayfaları, programlar ve makaleleri aynı karar yolculuğunda birleştirin
+              </h2>
+              <p className="mt-4 text-sm leading-8 text-slate-600 sm:text-base">
+                Helezon konveyör, tambur sistemleri, konveyörler, kompost tesisleri ve granül
+                gübre üretimi gibi ana başlıklarda hub sayfaları, hesaplama araçları ve teknik
+                makaleler birbirini besleyen bir mühendislik ağı oluşturur.
+              </p>
+            </div>
+
+            <div className="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+              {technicalEngineeringCenterCards.map((item) => (
+                <article
+                  key={item.title}
+                  className="group rounded-[24px] border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:border-blue-200 hover:shadow-[0_18px_45px_rgba(15,23,42,0.08)]"
+                >
+                  <h3 className="text-xl font-semibold tracking-tight text-slate-950">{item.title}</h3>
+                  <p className="mt-3 text-sm leading-7 text-slate-600">{item.description}</p>
+                  <div className="mt-5 flex flex-wrap gap-2">
+                    {item.links.map((link) => (
+                      <Link
+                        key={link.href}
+                        href={link.href}
+                        className="inline-flex rounded-full border border-slate-200 bg-slate-50 px-3 py-1.5 text-xs font-semibold text-slate-700 transition hover:border-blue-200 hover:bg-blue-50 hover:text-blue-700"
+                      >
+                        {link.label}
+                      </Link>
+                    ))}
+                  </div>
+                  <Link
+                    href={item.href}
+                    className="mt-5 inline-flex text-sm font-semibold text-blue-700 transition group-hover:text-blue-800"
+                  >
+                    {item.buttonLabel}
+                  </Link>
+                </article>
+              ))}
             </div>
           </div>
         </div>
