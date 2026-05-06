@@ -74,6 +74,49 @@ const sectorSolutionCards = [
   },
 ];
 
+const industrialSolutionLandingCards = [
+  {
+    title: "Gübre Tesisi Kurulumu",
+    description: "Granül, organomineral ve NPK odaklı anahtar teslim gübre üretim tesisi çözümleri.",
+    href: "/cozumler/gubre-tesisi-kurulumu",
+  },
+  {
+    title: "Kompost Tesisi Kurulumu",
+    description: "Organik atık akışlarını kontrollü son ürüne dönüştüren kompost tesis kurguları.",
+    href: "/cozumler/kompost-tesisi-kurulumu",
+  },
+  {
+    title: "Rotary Dryer Manufacturer",
+    description: "Kurutma tamburu ve termal proses tasarımı için uluslararası arama niyetine uygun landing page.",
+    href: "/cozumler/rotary-dryer-manufacturer",
+  },
+  {
+    title: "Helezon Konveyör Üretimi",
+    description: "Özel imalat vidalı taşıma sistemleri, kapasite ve tahrik odaklı mühendislik çözümleri.",
+    href: "/cozumler/helezon-konveyor-uretimi",
+  },
+  {
+    title: "Endüstriyel Kurutma Sistemleri",
+    description: "Tambur kurutucu, sıcak gaz ve yardımcı ekipman omurgasıyla kurutma çözümleri.",
+    href: "/cozumler/endustriyel-kurutma-sistemleri",
+  },
+  {
+    title: "Organomineral Gübre Tesisi",
+    description: "Organik ve mineral bileşenleri dengeli işleyen yüksek kaliteli üretim tesisleri.",
+    href: "/cozumler/organomineral-gubre-tesisi",
+  },
+  {
+    title: "Sıvı Gübre Üretim Tesisi",
+    description: "Tank, reaktör, çözündürme ve dolum altyapısıyla sıvı ürün üretim çözümleri.",
+    href: "/cozumler/sivi-gubre-uretim-tesisi",
+  },
+  {
+    title: "Vidalı Konveyör Sistemleri",
+    description: "Kapalı transfer, kontrollü besleme ve ürün davranışına uygun vida taşıma sistemleri.",
+    href: "/cozumler/vidali-konveyor-sistemleri",
+  },
+];
+
 const knowledgeCenterCategories = [
   {
     title: "Öne Çıkan Makaleler",
@@ -633,6 +676,42 @@ export default function Home() {
                   <h3 className="mt-3 text-xl font-semibold text-white">{item.title}</h3>
                   <p className="mt-3 text-sm leading-7 text-white/72">{item.description}</p>
                 </article>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="pb-10 sm:pb-14">
+        <div className="site-container">
+          <div className="rounded-[32px] border border-slate-200 bg-[linear-gradient(135deg,#ffffff_0%,#f7fbff_52%,#eef3ff_100%)] px-6 py-8 shadow-[0_18px_45px_rgba(15,23,42,0.06)] sm:px-8 sm:py-10 lg:px-12">
+            <div className="max-w-3xl">
+              <p className="text-sm font-semibold uppercase tracking-[0.16em] text-blue-700">
+                ENDÜSTRİYEL ÇÖZÜM ALANLARI
+              </p>
+              <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950 md:text-4xl">
+                Teknik aramayı doğrudan teklif görüşmesine bağlayan premium çözüm sayfaları
+              </h2>
+              <p className="mt-4 text-sm leading-8 text-slate-600 sm:text-base">
+                Gübre tesislerinden rotary dryer üretimine, sıvı gübre hatlarından vidalı taşıma
+                sistemlerine kadar her çözüm sayfası; teknik içerik, ilgili makinalar, hesaplama
+                araçları ve CTA omurgasıyla yüksek dönüşüm odaklı olarak kurgulandı.
+              </p>
+            </div>
+
+            <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+              {industrialSolutionLandingCards.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="group rounded-[24px] border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:border-blue-200 hover:shadow-[0_18px_45px_rgba(15,23,42,0.08)]"
+                >
+                  <h3 className="text-xl font-semibold tracking-tight text-slate-950">{item.title}</h3>
+                  <p className="mt-3 text-sm leading-7 text-slate-600">{item.description}</p>
+                  <span className="mt-4 inline-flex text-sm font-semibold text-blue-700 transition group-hover:text-blue-800">
+                    Çözümü İncele
+                  </span>
+                </Link>
               ))}
             </div>
           </div>
