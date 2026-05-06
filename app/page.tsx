@@ -111,16 +111,16 @@ const knowledgeCenterCategories = [
 
 const featuredKnowledgeArticles = [
   {
-    title: "Kurutma Tamburu Hesaplama",
+    title: "Kurutma Tamburu Kapasite Hesabı",
     description:
       "Kapasite, çap-boy seçimi, hava debisi ve enerji dengesini aynı mühendislik çerçevesinde okuyun.",
-    href: "/kutuphane/blog/kurutma-tamburu-hesaplama",
+    href: "/kutuphane/blog/kurutma-tamburu-kapasite-hesabi",
   },
   {
-    title: "Helezon Konveyör Kapasite Hesabı",
+    title: "Helezon Kapasite Hesabı",
     description:
       "Ürün yoğunluğu, doluluk oranı, hatve, devir ve motor seçimini sahaya uygun şekilde değerlendirin.",
-    href: "/kutuphane/blog/helezon-konveyor-kapasite-hesabi",
+    href: "/kutuphane/blog/helezon-kapasite-hesabi",
   },
   {
     title: "Granül Gübre Üretim Süreci",
@@ -129,10 +129,10 @@ const featuredKnowledgeArticles = [
     href: "/kutuphane/blog/granul-gubre-uretim-sureci",
   },
   {
-    title: "Kompost Tesisi Nasıl Kurulur?",
+    title: "Kompost Tesisi Kurulumu",
     description:
       "Organik atık kabulü, nem yönetimi, olgunlaştırma ve çevresel kontrol başlıklarını yatırım gözlüğüyle okuyun.",
-    href: "/kutuphane/blog/kompost-tesisi-nasil-kurulur",
+    href: "/kutuphane/blog/kompost-tesisi-kurulumu",
   },
 ];
 

@@ -1,19 +1,22 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Hero } from "../../components/Hero";
-import { topicalBlogCategories } from "../../lib/topical-authority-blog-data";
+import {
+  topicalAuthorityClusters,
+  topicalAuthorityLatestArticles,
+} from "../../lib/topical-authority-blog-hub";
 
 export const metadata: Metadata = {
   title: "Blog / Makaleler | Kütüphane | Pro Makina",
   description:
-    "Gübre tesisi, proses mühendisliği, kurutma tamburu, konveyör sistemleri ve endüstriyel yatırım kararları üzerine teknik blog makaleleri.",
+    "Gübre tesisi, proses mühendisliği, kurutma tamburu, helezon, konveyör sistemleri ve endüstriyel yatırım kararları üzerine teknik blog makaleleri.",
   alternates: {
     canonical: "https://www.promakina.com.tr/kutuphane/blog",
   },
   openGraph: {
     title: "Blog / Makaleler | Kütüphane | Pro Makina",
     description:
-      "Gübre tesisi, proses mühendisliği, kurutma tamburu, konveyör sistemleri ve endüstriyel yatırım kararları üzerine teknik blog makaleleri.",
+      "Gübre tesisi, proses mühendisliği, kurutma tamburu, helezon, konveyör sistemleri ve endüstriyel yatırım kararları üzerine teknik blog makaleleri.",
     url: "https://www.promakina.com.tr/kutuphane/blog",
     siteName: "Pro Makina",
     locale: "tr_TR",
@@ -23,34 +26,26 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Blog / Makaleler | Kütüphane | Pro Makina",
     description:
-      "Gübre tesisi, proses mühendisliği, kurutma tamburu, konveyör sistemleri ve endüstriyel yatırım kararları üzerine teknik blog makaleleri.",
+      "Gübre tesisi, proses mühendisliği, kurutma tamburu, helezon, konveyör sistemleri ve endüstriyel yatırım kararları üzerine teknik blog makaleleri.",
   },
 };
 
-const featuredArticles = [
+const featuredGuides = [
   {
     title: "Kurutma Tamburu Hesaplama",
-    description:
-      "Kapasite, çap-boy seçimi, hava debisi, enerji ihtiyacı ve lifter yapısını birlikte okuyan ana rehber.",
     href: "/kutuphane/blog/kurutma-tamburu-hesaplama",
   },
   {
-    title: "Helezon Konveyör Kapasite Hesabı",
-    description:
-      "Ürün yoğunluğu, doluluk oranı, hatve, devir ve eğim etkisini aynı tabloda değerlendiren makale.",
-    href: "/kutuphane/blog/helezon-konveyor-kapasite-hesabi",
+    title: "Helezon Motor Gücü Hesabı",
+    href: "/kutuphane/blog/helezon-motor-gucu-hesabi",
   },
   {
-    title: "Granül Gübre Üretim Süreci",
-    description:
-      "Granülasyon, kurutma, eleme, geri devir ve paketleme adımlarını proses bütünlüğü içinde anlatır.",
-    href: "/kutuphane/blog/granul-gubre-uretim-sureci",
+    title: "Rotary Dryer Design",
+    href: "/kutuphane/blog/rotary-dryer-design",
   },
   {
-    title: "Kompost Tesisi Nasıl Kurulur?",
-    description:
-      "Organik atık kabulü, nem yönetimi, olgunlaştırma ve çevresel kontrol mantığını yatırım diliyle açıklar.",
-    href: "/kutuphane/blog/kompost-tesisi-nasil-kurulur",
+    title: "NPK Gübre Üretimi",
+    href: "/kutuphane/blog/npk-gubre-uretimi",
   },
 ];
 
@@ -59,7 +54,7 @@ export default function BlogPage() {
     <main className="min-h-screen overflow-x-hidden bg-white text-slate-900">
       <Hero
         title="Blog / Makaleler"
-        description="Endüstriyel tesisler, kurutma, taşıma, gübre teknolojileri ve proses mühendisliği üzerine teknik ama okunabilir içerikler."
+        description="B2B satın alma niyeti taşıyan yatırımcılar, teknik yöneticiler ve satın alma ekipleri için proses mühendisliği odaklı bilgi merkezi."
         image="/images/proses1.jpg"
       />
 
@@ -67,29 +62,25 @@ export default function BlogPage() {
         <div className="site-container">
           <div className="rounded-[32px] border border-slate-200 bg-slate-50 px-6 py-8 shadow-[0_18px_45px_rgba(15,23,42,0.06)] sm:px-8 sm:py-10 lg:px-12">
             <div className="max-w-4xl">
-              <p className="text-sm font-semibold uppercase tracking-[0.16em] text-blue-700">BLOG HUB</p>
+              <p className="text-sm font-semibold uppercase tracking-[0.16em] text-blue-700">
+                BLOG HUB
+              </p>
               <h1 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950 md:text-4xl">
-                Proses mühendisliği ve endüstriyel yatırım kararları için bilgi merkezi
+                Endüstriyel tesisler için topical authority bilgi merkezi
               </h1>
               <div className="mt-5 space-y-5 text-sm leading-8 text-slate-600 sm:text-base">
                 <p>
-                  Pro Makina blog bölümü, yalnız SEO için yazılmış yüzeysel içeriklerden oluşmaz. Bu yapı; gübre tesisi,
-                  kompost tesisi, kurutma tamburu, konveyör sistemleri, reaktörler, tanklar ve proses ekipmanları
-                  etrafında gerçek yatırım kararına destek olmak için kurgulanmıştır. Türkiye pazarında yatırım yapan
-                  sanayi kuruluşları, belediyeler ve fabrika sahipleri çoğu zaman aynı anda hem teknik doğruluk hem de
-                  ticari öngörü arar. Bu yüzden içeriklerimizi yalnız anahtar kelimeye değil, sahadaki gerçek sorulara
-                  göre inşa ediyoruz.
+                  Bu blog yapısı, yalnızca trafik toplamak için hazırlanmış içeriklerden oluşmaz.
+                  Amaç; gübre tesisi, kompost tesisi, kurutma sistemleri, helezon ve konveyör
+                  hatları gibi karar yoğun başlıklarda Google için sektör otoritesi, kullanıcı için
+                  ise güvenilir teknik rehber olmaktır. Bu nedenle her içerik bir cluster mantığında
+                  kurgulanır ve ilgili hizmet, makine ve sektör sayfalarıyla birlikte çalışır.
                 </p>
                 <p>
-                  Burada yer alan her kategori, kendi içinde bir topical authority mantığı taşır. Kurutma sistemleri
-                  tarafında kapasite hesabı, rotary dryer design ve enerji yaklaşımı birlikte okunur. Konveyör
-                  sistemleri tarafında ise helezon kapasitesi ile motor gücü hesabı aynı küme içinde değerlendirilir.
-                  Gübre teknolojileri grubunda granül, NPK, organomineral ve sıvı ürün perspektifleri ayrı başlıklarda
-                  açılır ama aynı mühendislik altyapısına bağlanır. Böylece kullanıcı, tek makale okumak yerine, bir
-                  bilgi kümesinin içine girer ve sonraki adıma doğal biçimde yönlenir.
-                </p>
-                <p>
-                  Blog / Makaleler sayfası aynı zamanda{" "}
+                  B2B satın alma niyeti taşıyan ziyaretçiler çoğu zaman doğrudan teklif istemeden
+                  önce proses, kapasite, ekipman ve yatırım mantığını anlamak ister. Blog / Makaleler
+                  sayfası bu ihtiyaca cevap vererek teknik keşif aşamasını kısaltır ve kullanıcıyı
+                  doğru sayfalara yönlendirir. Buradan{" "}
                   <Link href="/hizmetler" className="font-semibold text-blue-700 transition hover:text-blue-800">
                     hizmetler
                   </Link>
@@ -105,23 +96,52 @@ export default function BlogPage() {
                   <Link href="/iletisim" className="font-semibold text-blue-700 transition hover:text-blue-800">
                     iletişim
                   </Link>{" "}
-                  sayfalarıyla birlikte çalışan bir keşif katmanıdır. Amaç yalnız okunmak değil; doğru kişiyi doğru
-                  teknik içeriğe, oradan da teklif veya teknik değerlendirme sürecine taşımaktır.
+                  sayfalarına güçlü iç link akışı verilir.
                 </p>
               </div>
             </div>
 
             <div className="mt-8 rounded-[24px] border border-slate-200 bg-white p-5 sm:p-6">
-              <h2 className="text-2xl font-semibold tracking-tight text-slate-950">Öne Çıkan İçerikler</h2>
-              <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-                {featuredArticles.map((article) => (
+              <h2 className="text-2xl font-semibold tracking-tight text-slate-950">
+                Kategori Filtreleri
+              </h2>
+              <div className="mt-5 flex flex-wrap gap-3">
+                {topicalAuthorityClusters.map((cluster) => (
                   <Link
-                    key={article.href}
-                    href={article.href}
+                    key={cluster.slug}
+                    href={`/kutuphane/blog/${cluster.slug}`}
+                    className="inline-flex rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-blue-200 hover:bg-blue-50 hover:text-blue-700"
+                  >
+                    {cluster.title}
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            <div className="mt-8 rounded-[24px] border border-slate-200 bg-white p-5 sm:p-6">
+              <h2 className="text-2xl font-semibold tracking-tight text-slate-950">
+                En Yeni Makaleler
+              </h2>
+              <p className="mt-4 max-w-3xl text-sm leading-8 text-slate-600 sm:text-base">
+                En yeni içerikler üstte olacak şekilde listelenir. Böylece tarama sinyali,
+                güncellik algısı ve iç link akışı aynı anda güçlenir.
+              </p>
+              <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+                {topicalAuthorityLatestArticles.map((article) => (
+                  <Link
+                    key={article.slug}
+                    href={`/kutuphane/blog/${article.slug}`}
                     className="group rounded-[22px] border border-slate-200 bg-slate-50 p-4 shadow-sm transition hover:-translate-y-1 hover:border-blue-200 hover:bg-white hover:shadow-[0_18px_45px_rgba(15,23,42,0.08)]"
                   >
-                    <span className="block text-base font-semibold text-slate-950">{article.title}</span>
-                    <span className="mt-3 block text-sm leading-7 text-slate-600">{article.description}</span>
+                    <span className="block text-xs font-semibold uppercase tracking-[0.14em] text-blue-700">
+                      {article.category}
+                    </span>
+                    <span className="mt-2 block text-base font-semibold text-slate-950">
+                      {article.title}
+                    </span>
+                    <span className="mt-3 block text-sm leading-7 text-slate-600">
+                      {article.description}
+                    </span>
                     <span className="mt-4 inline-flex text-sm font-semibold text-blue-700 transition group-hover:text-blue-800">
                       Devamını Oku
                     </span>
@@ -131,32 +151,32 @@ export default function BlogPage() {
             </div>
 
             <div className="mt-8 space-y-6">
-              {topicalBlogCategories.map((category) => (
+              {topicalAuthorityClusters.map((cluster) => (
                 <article
-                  key={category.slug}
+                  key={cluster.slug}
                   className="rounded-[24px] border border-slate-200 bg-white p-5 shadow-sm sm:p-6"
                 >
                   <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
                     <div className="max-w-3xl">
                       <h2 className="text-2xl font-semibold tracking-tight text-slate-950">
-                        {category.title}
+                        {cluster.title}
                       </h2>
                       <p className="mt-4 text-sm leading-8 text-slate-600 sm:text-base">
-                        {category.description}
+                        {cluster.description}
                       </p>
                     </div>
                     <Link
-                      href={`/kutuphane/blog/${category.slug}`}
+                      href={`/kutuphane/blog/${cluster.slug}`}
                       className="inline-flex min-h-[44px] items-center justify-center rounded-full border border-slate-200 bg-slate-50 px-5 text-sm font-semibold text-slate-800 transition hover:border-blue-200 hover:bg-blue-50 hover:text-blue-700"
                     >
-                      Kategoriyi İncele
+                      Cluster’ı İncele
                     </Link>
                   </div>
-                  <div className="mt-5 grid gap-3 md:grid-cols-2 xl:grid-cols-4">
-                    {category.relatedContents.slice(0, 4).map((article) => (
+                  <div className="mt-5 grid gap-3 md:grid-cols-2 xl:grid-cols-5">
+                    {cluster.articles.map((article) => (
                       <Link
-                        key={article.href}
-                        href={article.href}
+                        key={article.slug}
+                        href={`/kutuphane/blog/${article.slug}`}
                         className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm font-semibold text-slate-800 transition hover:border-blue-200 hover:bg-white hover:text-blue-700"
                       >
                         {article.title}
@@ -165,6 +185,23 @@ export default function BlogPage() {
                   </div>
                 </article>
               ))}
+            </div>
+
+            <div className="mt-8 rounded-[24px] border border-slate-200 bg-white p-5 sm:p-6">
+              <h2 className="text-2xl font-semibold tracking-tight text-slate-950">
+                Öne Çıkan Teknik Rehberler
+              </h2>
+              <div className="mt-5 grid gap-3 md:grid-cols-2 xl:grid-cols-4">
+                {featuredGuides.map((guide) => (
+                  <Link
+                    key={guide.href}
+                    href={guide.href}
+                    className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm font-semibold text-slate-800 transition hover:border-blue-200 hover:bg-white hover:text-blue-700"
+                  >
+                    {guide.title}
+                  </Link>
+                ))}
+              </div>
             </div>
           </div>
         </div>

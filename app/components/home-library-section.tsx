@@ -6,6 +6,7 @@ import { libraryItems, librarySections } from "../data";
 import { trText } from "../lib/tr-text";
 import { ProgramGroupCard } from "./program-group-card";
 import { programGroups } from "../program-groups";
+import { topicalAuthorityLatestArticles } from "../lib/topical-authority-blog-hub";
 
 const ALL_LIBRARY_ITEMS = "Tum Icerikler";
 const PROGRAMS_TAB = "Programlar";
@@ -38,12 +39,19 @@ export function HomeLibrarySection() {
       return [];
     }
 
-    const items =
-      activeCategory === ALL_LIBRARY_ITEMS
-        ? libraryItems
-        : libraryItems.filter((item) => item.category === activeCategory);
+    if (activeCategory === ALL_LIBRARY_ITEMS || activeCategory === "Blog / Makaleler") {
+      return topicalAuthorityLatestArticles.map((item) => ({
+        slug: `blog/${item.slug}`,
+        category: item.category,
+        title: item.title,
+        summary: item.description,
+      }));
+    }
 
-    return items.slice(0, 3);
+    const items =
+      libraryItems.filter((item) => item.category === activeCategory);
+
+    return items.slice(0, 6);
   }, [activeCategory]);
 
   return (

@@ -182,19 +182,19 @@ export default function ServicesPage() {
             </p>
             <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
               <Link
-                href="/kutuphane/blog/kurutma-tamburu-hesaplama"
+                href="/kutuphane/blog/kurutma-tamburu-kapasite-hesabi"
                 className="group rounded-[24px] border border-slate-200 bg-slate-50 p-5 shadow-sm transition hover:-translate-y-1 hover:border-blue-200 hover:bg-white hover:shadow-[0_18px_45px_rgba(15,23,42,0.08)]"
               >
-                <h3 className="text-lg font-semibold text-slate-950">Kurutma Tamburu Hesaplama</h3>
+                <h3 className="text-lg font-semibold text-slate-950">Kurutma Tamburu Kapasite Hesabı</h3>
                 <span className="mt-4 inline-flex text-sm font-semibold text-blue-700 transition group-hover:text-blue-800">
                   Devamını Oku
                 </span>
               </Link>
               <Link
-                href="/kutuphane/blog/helezon-konveyor-kapasite-hesabi"
+                href="/kutuphane/blog/helezon-kapasite-hesabi"
                 className="group rounded-[24px] border border-slate-200 bg-slate-50 p-5 shadow-sm transition hover:-translate-y-1 hover:border-blue-200 hover:bg-white hover:shadow-[0_18px_45px_rgba(15,23,42,0.08)]"
               >
-                <h3 className="text-lg font-semibold text-slate-950">Helezon Konveyör Kapasite Hesabı</h3>
+                <h3 className="text-lg font-semibold text-slate-950">Helezon Kapasite Hesabı</h3>
                 <span className="mt-4 inline-flex text-sm font-semibold text-blue-700 transition group-hover:text-blue-800">
                   Devamını Oku
                 </span>
@@ -209,10 +209,10 @@ export default function ServicesPage() {
                 </span>
               </Link>
               <Link
-                href="/kutuphane/blog/kompost-tesisi-nasil-kurulur"
+                href="/kutuphane/blog/kompost-tesisi-kurulumu"
                 className="group rounded-[24px] border border-slate-200 bg-slate-50 p-5 shadow-sm transition hover:-translate-y-1 hover:border-blue-200 hover:bg-white hover:shadow-[0_18px_45px_rgba(15,23,42,0.08)]"
               >
-                <h3 className="text-lg font-semibold text-slate-950">Kompost Tesisi Nasıl Kurulur?</h3>
+                <h3 className="text-lg font-semibold text-slate-950">Kompost Tesisi Kurulumu</h3>
                 <span className="mt-4 inline-flex text-sm font-semibold text-blue-700 transition group-hover:text-blue-800">
                   Devamını Oku
                 </span>
