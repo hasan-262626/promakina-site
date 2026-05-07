@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Hero } from "./Hero";
 import type { IndustrialSolutionLandingConfig } from "../lib/industrial-solution-landing-data";
+import { siteContact, siteSocialSameAs } from "../lib/site-contact";
+import { SocialFollowPanel } from "./social-follow-panel";
 
 export function buildIndustrialSolutionMetadata(
   config: IndustrialSolutionLandingConfig,
@@ -43,8 +45,9 @@ export function IndustrialSolutionLandingPage({
     name: "Pro Makina",
     url: "https://www.promakina.com.tr",
     logo: "https://www.promakina.com.tr/logo.png",
-    email: "info@promakina.com.tr",
-    telephone: "+90 532 085 01 04",
+    email: siteContact.email,
+    telephone: siteContact.phoneDisplay,
+    sameAs: ["https://www.promakina.com.tr", ...siteSocialSameAs],
   };
 
   const serviceSchema = {
@@ -127,7 +130,7 @@ export function IndustrialSolutionLandingPage({
           Teklif Al
         </Link>
         <a
-          href="https://wa.me/905320850104"
+          href={siteContact.whatsappHref}
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/20 bg-white/10 px-6 text-sm font-semibold text-white transition hover:bg-white/15"
@@ -352,6 +355,12 @@ export function IndustrialSolutionLandingPage({
 
       <section className="pb-10 sm:pb-14">
         <div className="site-container">
+          <SocialFollowPanel />
+        </div>
+      </section>
+
+      <section className="pb-10 sm:pb-14">
+        <div className="site-container">
           <div className="rounded-[32px] border border-slate-200 bg-slate-50 px-6 py-8 shadow-[0_18px_45px_rgba(15,23,42,0.06)] sm:px-8 sm:py-10 lg:px-12">
             <h2 className="text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">
               Sık Sorulan Sorular
@@ -388,7 +397,7 @@ export function IndustrialSolutionLandingPage({
                 Teknik Teklif Al
               </Link>
               <a
-                href="https://wa.me/905320850104"
+                href={siteContact.whatsappHref}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/25 px-6 text-sm font-semibold text-white transition hover:bg-white/10"

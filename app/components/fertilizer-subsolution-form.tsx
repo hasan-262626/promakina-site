@@ -1,6 +1,7 @@
 ﻿"use client";
 
 import { useMemo, useRef, useState } from "react";
+import { createMailtoHref, createWhatsAppHref } from "../lib/site-contact";
 import type { FertilizerSubsolutionConfig } from "./fertilizer-subsolution-config";
 import { trText } from "../lib/tr-text";
 
@@ -56,13 +57,14 @@ export function FertilizerSubsolutionForm({ title, config }: Props) {
     if (!formRef.current?.reportValidity() || !common.consent) return;
 
     if (target === "whatsapp") {
-      window.open(`https://wa.me/905380631163?text=${encodeURIComponent(messageBody)}`, "_blank", "noopener,noreferrer");
+      window.open(createWhatsAppHref(messageBody), "_blank", "noopener,noreferrer");
       return;
     }
 
-    window.location.href = `mailto:info@promakina.com.tr?subject=${encodeURIComponent(
+    window.location.href = createMailtoHref(
       `${trText(title)} - Teklif / Teknik Görüşme`,
-    )}&body=${encodeURIComponent(messageBody)}`;
+      messageBody,
+    );
   }
 
   const commonTextFields = [

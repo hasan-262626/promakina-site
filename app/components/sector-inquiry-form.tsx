@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
+import { createMailtoHref, createWhatsAppHref } from "../lib/site-contact";
 import { sectorCards } from "./sector-subsectors-data";
 import { trText } from "../lib/tr-text";
 
@@ -454,11 +455,11 @@ export function SectorInquiryForm({
     const subject = `${trText(requestTargetTitle)} - Teklif / Teknik Görüşme`;
 
     if (target === "whatsapp") {
-      window.open(`https://wa.me/905380631163?text=${encodeURIComponent(messageBody)}`, "_blank", "noopener,noreferrer");
+      window.open(createWhatsAppHref(messageBody), "_blank", "noopener,noreferrer");
       return;
     }
 
-    window.location.href = `mailto:info@promakina.com.tr?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(messageBody)}`;
+    window.location.href = createMailtoHref(subject, messageBody);
   }
 
   return (

@@ -1180,7 +1180,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                 E-posta Gönder
               </a>
               <a
-                href="tel:+905380631163"
+                href="tel:+905320850104"
                 className="rounded-full border border-white/25 px-6 py-3 text-center text-sm font-semibold text-white transition hover:bg-white/10"
               >
                 Hemen Ara

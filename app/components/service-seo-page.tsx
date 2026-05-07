@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { siteContact, siteSocialSameAs } from "../lib/site-contact";
 import { Hero } from "./Hero";
 import {
   ServiceRelatedTechnicalContents,
@@ -113,11 +114,11 @@ export function ServiceSeoPage({
     name: siteName,
     url: "https://www.promakina.com.tr",
     logo: "https://www.promakina.com.tr/logo.png",
-    sameAs: ["https://www.promakina.com.tr"],
+    sameAs: ["https://www.promakina.com.tr", ...siteSocialSameAs],
     contactPoint: [
       {
         "@type": "ContactPoint",
-        telephone: "+90-538-063-11-63",
+        telephone: siteContact.phoneDisplay,
         contactType: "sales",
         areaServed: ["TR", "EU", "Middle East"],
         availableLanguage: ["Turkish", "English"],
@@ -176,7 +177,7 @@ export function ServiceSeoPage({
           Teklif Al
         </Link>
         <a
-          href="https://wa.me/905380631163"
+          href={siteContact.whatsappHref}
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/20 bg-white/10 px-6 text-sm font-semibold text-white transition hover:bg-white/15"
@@ -444,7 +445,7 @@ export function ServiceSeoPage({
                     Teklif Al
                   </button>
                   <a
-                    href="https://wa.me/905380631163"
+                    href={siteContact.whatsappHref}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-slate-200 bg-white px-6 text-sm font-semibold text-slate-700 transition hover:border-blue-200 hover:text-blue-700"
@@ -473,7 +474,7 @@ export function ServiceSeoPage({
                 Teklif Al
               </Link>
               <a
-                href="https://wa.me/905380631163"
+                href={siteContact.whatsappHref}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/25 px-6 text-sm font-semibold text-white transition hover:bg-white/10"

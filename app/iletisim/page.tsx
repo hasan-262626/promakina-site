@@ -1,8 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import { useMemo, useState } from "react";
+import { useState } from "react";
+import { ContactForm } from "@/components/contact-form";
 import { Hero } from "../components/Hero";
+import { createMailtoHref, siteContact } from "../lib/site-contact";
 
 const locations = {
   factory: {
@@ -27,8 +29,8 @@ const contacts = [
   {
     role: "Makine Mühendisi - Satış Temsilcisi",
     name: "Hüseyin Bey",
-    phone: "+90 532 085 01 04",
-    whatsapp: "https://wa.me/905380631163",
+    phone: siteContact.phoneDisplay,
+    whatsapp: siteContact.whatsappHref,
   },
   {
     role: "Türkiye Bölge Müdürü",
@@ -44,167 +46,10 @@ const contacts = [
   },
 ];
 
-const interestGroups = [
-  {
-    label: "Hizmetler",
-    options: [
-      "Anahtar Teslim Tesis Kurulumu",
-      "Proses Tasarımı ve Mühendislik",
-      "Makine İmalatı",
-      "Kurulum ve Devreye Alma",
-      "Modernizasyon ve Revizyon",
-      "Teknik Danışmanlık",
-    ],
-  },
-  {
-    label: "Tambur Sistemleri",
-    options: [
-      "Tambur Sistemleri",
-      "Granülatör Tamburu",
-      "Kurutma Tamburu",
-      "Soğutma Tamburu",
-      "Kaplama Tamburu",
-      "Kompost Tamburu",
-    ],
-  },
-  {
-    label: "Taşıma Ekipmanları",
-    options: [
-      "Taşıma Ekipmanları",
-      "Bantlı Konveyörler",
-      "Zincirli Konveyörler",
-      "Vidalı Helezonlar",
-      "Zincirli Elevatörler",
-      "Bantlı Elevatörler",
-    ],
-  },
-  {
-    label: "Kırıcılar ve Parçalayıcılar",
-    options: [
-      "Kırıcılar ve Parçalayıcılar",
-      "Çekiçli Kırıcılar",
-      "Zincirli Kırıcılar",
-      "Shredder Sistemleri",
-      "Bıçaklı Primer Kırıcılar",
-      "Bıçaklı Sekonder Kırıcılar",
-    ],
-  },
-  {
-    label: "Reaktörler ve Tanklar",
-    options: [
-      "Reaktörler ve Tanklar",
-      "Soğutma Tankları",
-      "Karıştırıcılı Reaktörler",
-      "Basınçlı Reaktörler",
-      "Çözündürme Tankları",
-      "Stok Tankları",
-    ],
-  },
-  {
-    label: "Eleme ve Sınıflandırma Sistemleri",
-    options: [
-      "Eleme ve Sınıflandırma Sistemleri",
-      "Döner Elekler",
-      "Vibrasyonlu Elekler",
-      "Trommel Elekler",
-      "Sınıflandırma Elekleri",
-      "Susuzlandırma Elekleri",
-    ],
-  },
-  {
-    label: "Toz Toplama Sistemleri",
-    options: [
-      "Toz Toplama Sistemleri",
-      "Pulse Jet Filtreler",
-      "Siklon Ayırıcılar",
-      "Torba Filtreler",
-      "Kartuş Filtreler",
-      "Bin Vent Filtreler",
-    ],
-  },
-  {
-    label: "Paketleme ve Dolum Sistemleri",
-    options: [
-      "Paketleme ve Dolum Sistemleri",
-      "Açık Ağız Torbalama",
-      "Valfli Torba Dolum",
-      "Big Bag Dolum",
-      "FFS Torbalama",
-      "Paletleme Hatları",
-    ],
-  },
-  {
-    label: "Depolama ve Besleme Sistemleri",
-    options: [
-      "Depolama ve Besleme Sistemleri",
-      "Silo Sistemleri",
-      "Bunker ve Hazneler",
-      "Vidalı Besleyiciler",
-      "Rotary Valfler",
-      "Sürgülü Klapeler",
-    ],
-  },
-  {
-    label: "Sektörel Talepler",
-    options: [
-      "Kompost Tesisi",
-      "Gübre Tesisi",
-      "Geri Dönüşüm Tesisi",
-      "Biyogaz Sistemleri",
-      "Kimyasal Proses Sistemleri",
-      "Diğer",
-    ],
-  },
-];
-
-type FormState = {
-  fullName: string;
-  company: string;
-  phone: string;
-  email: string;
-  country: string;
-  interest: string;
-  message: string;
-};
-
-const initialForm: FormState = {
-  fullName: "",
-  company: "",
-  phone: "",
-  email: "",
-  country: "",
-  interest: "",
-  message: "",
-};
-
 export default function ContactPage() {
   const [activeLocation, setActiveLocation] = useState<"factory" | "ankara">("factory");
-  const [form, setForm] = useState<FormState>(initialForm);
 
   const activeMap = locations[activeLocation];
-
-  const requestBody = useMemo(() => {
-    const lines = [
-      "Merhaba, aşağıdaki konuda bilgi / teklif talep ediyorum.",
-      "",
-      `Ad Soyad: ${form.fullName || "-"}`,
-      `Firma: ${form.company || "-"}`,
-      `Telefon: ${form.phone || "-"}`,
-      `E-posta: ${form.email || "-"}`,
-      `Ülke: ${form.country || "-"}`,
-      `İlgilenilen Alan: ${form.interest || "-"}`,
-      `Mesaj: ${form.message || "-"}`,
-      "",
-      "Bu talebim için dönüş rica ederim.",
-    ];
-
-    return lines.join("\n");
-  }, [form]);
-
-  const whatsappHref = `https://wa.me/905380631163?text=${encodeURIComponent(requestBody)}`;
-  const mailHref = `mailto:info@promakina.com.tr?subject=${encodeURIComponent(
-    `Web Sitesi Teklif / Bilgi Talebi - ${form.interest || "Genel Talep"}`,
-  )}&body=${encodeURIComponent(requestBody)}`;
 
   return (
     <main className="min-h-screen overflow-x-hidden bg-white text-slate-900">
@@ -286,10 +131,10 @@ export default function ContactPage() {
                       Kurumsal E-posta
                     </p>
                     <a
-                      href="mailto:info@promakina.com.tr"
+                      href={siteContact.emailHref}
                       className="mt-2 block text-slate-800 transition hover:text-blue-700"
                     >
-                      info@promakina.com.tr
+                      {siteContact.email}
                     </a>
                   </div>
                   <div className="rounded-2xl bg-white px-5 py-4">
@@ -297,7 +142,7 @@ export default function ContactPage() {
                       WhatsApp
                     </p>
                     <a
-                      href="https://wa.me/905380631163"
+                      href={siteContact.whatsappHref}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="mt-3 inline-flex rounded-full bg-green-600 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-green-500"
@@ -309,82 +154,28 @@ export default function ContactPage() {
               </div>
             </div>
 
-            <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-[0_18px_50px_rgba(15,23,42,0.05)] sm:p-8">
-              <h2 className="text-2xl font-semibold text-slate-950">Teklif Formu</h2>
-              <p className="mt-4 leading-8 text-slate-600">
-                Talebinizi doğru birime hızlı yönlendirmek için aşağıdaki bilgileri doldürün.
-              </p>
-
-              <div className="mt-6 grid gap-4 sm:grid-cols-2">
-                <input
-                  value={form.fullName}
-                  onChange={(event) => setForm((current) => ({ ...current, fullName: event.target.value }))}
-                  className="rounded-2xl border border-slate-200 px-4 py-3 outline-none transition focus:border-blue-500"
-                  placeholder="Ad Soyad"
-                />
-                <input
-                  value={form.company}
-                  onChange={(event) => setForm((current) => ({ ...current, company: event.target.value }))}
-                  className="rounded-2xl border border-slate-200 px-4 py-3 outline-none transition focus:border-blue-500"
-                  placeholder="Firma Adı"
-                />
-                <input
-                  value={form.phone}
-                  onChange={(event) => setForm((current) => ({ ...current, phone: event.target.value }))}
-                  className="rounded-2xl border border-slate-200 px-4 py-3 outline-none transition focus:border-blue-500"
-                  placeholder="Telefon"
-                />
-                <input
-                  value={form.email}
-                  onChange={(event) => setForm((current) => ({ ...current, email: event.target.value }))}
-                  className="rounded-2xl border border-slate-200 px-4 py-3 outline-none transition focus:border-blue-500"
-                  placeholder="E-posta"
-                />
-                <input
-                  value={form.country}
-                  onChange={(event) => setForm((current) => ({ ...current, country: event.target.value }))}
-                  className="rounded-2xl border border-slate-200 px-4 py-3 outline-none transition focus:border-blue-500 sm:col-span-2"
-                  placeholder="Ülke"
-                />
-                <select
-                  value={form.interest}
-                  onChange={(event) => setForm((current) => ({ ...current, interest: event.target.value }))}
-                  className="rounded-2xl border border-slate-200 px-4 py-3 outline-none transition focus:border-blue-500 sm:col-span-2"
-                >
-                  <option value="">İlgilenilen Alan</option>
-                  {interestGroups.map((group) => (
-                    <optgroup key={group.label} label={group.label}>
-                      {group.options.map((option) => (
-                        <option key={option} value={option}>
-                          {option}
-                        </option>
-                      ))}
-                    </optgroup>
-                  ))}
-                </select>
-                <textarea
-                  value={form.message}
-                  onChange={(event) => setForm((current) => ({ ...current, message: event.target.value }))}
-                  className="min-h-[160px] rounded-2xl border border-slate-200 px-4 py-3 outline-none transition focus:border-blue-500 sm:col-span-2"
-                  placeholder="Mesaj"
-                />
-              </div>
-
-              <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-                <a
-                  href={whatsappHref}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex min-h-[48px] items-center justify-center rounded-full bg-green-600 px-6 text-sm font-semibold text-white transition hover:bg-green-500"
-                >
-                  WhatsApp ile Gönder
-                </a>
-                <a
-                  href={mailHref}
-                  className="inline-flex min-h-[48px] items-center justify-center rounded-full border border-slate-300 px-6 text-sm font-semibold text-slate-900 transition hover:border-blue-200 hover:text-blue-700"
-                >
-                  Mail ile Gönder
-                </a>
+            <div className="space-y-5">
+              <ContactForm />
+              <div className="rounded-3xl border border-slate-200 bg-slate-50 p-5 shadow-[0_18px_50px_rgba(15,23,42,0.04)]">
+                <p className="text-sm leading-7 text-slate-600">
+                  Hızlı geri dönüş isterseniz{" "}
+                  <a
+                    href={siteContact.whatsappHref}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-semibold text-green-700 transition hover:text-green-800"
+                  >
+                    WhatsApp
+                  </a>{" "}
+                  üzerinden yazabilir ya da{" "}
+                  <a
+                    href={createMailtoHref("Pro Makina Teknik Talep")}
+                    className="font-semibold text-blue-700 transition hover:text-blue-800"
+                  >
+                    {siteContact.email}
+                  </a>{" "}
+                  adresine doğrudan mail gönderebilirsiniz.
+                </p>
               </div>
             </div>
           </div>
@@ -401,15 +192,15 @@ export default function ContactPage() {
               Teknik Teklif ve Proje Görüşmesi
             </h2>
             <p className="mt-4 text-sm leading-8 text-slate-600 sm:text-base">
-              Pro Makina ile iletişim süreci, yalnızca teklif istemekten daha fazlasını kapsar.
-              Gübre tesisi, kompost tesisi, kurutma tamburu, konveyör sistemleri ve benzeri
-              proses ekipmanları için ilk görüşmede kapasite, ürün tipi, saha koşulları ve
-              yatırım hedefi birlikte değerlendirilir. Bu yaklaşım, gereksiz ekipman
-              seçimlerini azaltır ve anahtar teslim tesis kurulumu için daha doğru bir
-              başlangıç sağlar. Özellikle proses mühendisliği gerektiren projelerde, doğru
-              ön bilgi hem teklif kalitesini hem de proje hızını doğrudan etkiler. Bu nedenle
-              iletişim aşamasını teknik ön değerlendirme sürecinin bir parçası olarak ele
-              alıyoruz.
+              Pro Makina ile iletişim süreci, yalnızca teklif istemekten daha fazlasını
+              kapsar. Gübre tesisi, kompost tesisi, kurutma tamburu, konveyör sistemleri
+              ve benzeri proses ekipmanları için ilk görüşmede kapasite, ürün tipi, saha
+              koşulları ve yatırım hedefi birlikte değerlendirilir. Bu yaklaşım, gereksiz
+              ekipman seçimlerini azaltır ve anahtar teslim tesis kurulumu için daha doğru
+              bir başlangıç sağlar. Özellikle proses mühendisliği gerektiren projelerde,
+              doğru ön bilgi hem teklif kalitesini hem de proje hızını doğrudan etkiler.
+              Bu nedenle iletişim aşamasını teknik ön değerlendirme sürecinin bir parçası
+              olarak ele alıyoruz.
             </p>
 
             <div className="mt-8 grid gap-8 lg:grid-cols-3">

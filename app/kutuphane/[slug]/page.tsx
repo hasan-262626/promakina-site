@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { Hero } from "../../components/Hero";
 import { LibraryServiceLinks } from "../../components/library-service-links";
 import { libraryItems } from "../../data";
+import { siteContact } from "../../lib/site-contact";
 import { buildLibraryDetailContent, libraryCategoryConfig } from "../../lib/library-page-data";
 import { trText } from "../../lib/tr-text";
 
@@ -156,7 +157,7 @@ export default async function LibraryDetailPage({ params }: PageProps) {
                 Teklif Al
               </Link>
               <a
-                href="https://wa.me/905380631163"
+                href={siteContact.whatsappHref}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/25 px-6 text-sm font-semibold text-white transition hover:bg-white/10"

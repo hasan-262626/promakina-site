@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import type { EngineeringCalculationCard } from "../lib/engineering-calculation-center-data";
+import { siteContact } from "../lib/site-contact";
 import { ServiceRelatedTechnicalContents } from "./service-related-technical-contents";
+import { SocialFollowPanel } from "./social-follow-panel";
 
 const siteUrl = "https://www.promakina.com.tr";
 
@@ -293,6 +295,12 @@ export function EngineeringCalculationPage({
 
       <section className="pb-10 sm:pb-14">
         <div className="site-container">
+          <SocialFollowPanel />
+        </div>
+      </section>
+
+      <section className="pb-10 sm:pb-14">
+        <div className="site-container">
           <div className="rounded-[32px] border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
             <div className="max-w-3xl">
               <h2 className="text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">
@@ -365,7 +373,7 @@ export function EngineeringCalculationPage({
             </p>
             <div className="mt-6 flex flex-col gap-3 sm:flex-row">
               <a
-                href="https://wa.me/905380631163"
+                href={siteContact.whatsappHref}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-white px-6 text-sm font-semibold text-blue-800 transition hover:bg-slate-100"

@@ -2,8 +2,10 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { siteContact } from "../lib/site-contact";
 import { trText } from "../lib/tr-text";
 import { CookieSettingsLink } from "./cookie-preferences";
+import { SocialLinks } from "./social-links";
 
 function shouldHideGlobalCta(pathname: string) {
   return (
@@ -50,7 +52,7 @@ export function SiteFooterCta() {
                   {trText("İletişim Sayfasına Git")}
                 </Link>
                 <a
-                  href="tel:+905380631163"
+                  href={siteContact.phoneHref}
                   className="rounded-full border border-white/25 px-6 py-3 text-center text-sm font-semibold text-white transition hover:bg-white/10"
                 >
                   Hemen Ara
@@ -256,13 +258,13 @@ export function SiteFooterCta() {
                   </Link>
                 </li>
                 <li>
-                  <a href="mailto:info@promakina.com.tr" className="transition hover:text-white">
-                    info@promakina.com.tr
+                  <a href={siteContact.emailHref} className="transition hover:text-white">
+                    {siteContact.email}
                   </a>
                 </li>
                 <li>
                   <a
-                    href="https://wa.me/905380631163"
+                    href={siteContact.whatsappHref}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="transition hover:text-white"
@@ -274,6 +276,19 @@ export function SiteFooterCta() {
                   <CookieSettingsLink className="transition hover:text-white" />
                 </li>
               </ul>
+            </div>
+          </div>
+
+          <div className="mt-12 rounded-[28px] border border-white/10 bg-white/5 p-6 backdrop-blur-sm sm:p-8">
+            <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-center">
+              <div>
+                <h3 className="text-lg font-semibold text-white">Bizi Takip Edin</h3>
+                <p className="mt-3 max-w-3xl text-sm leading-7 text-white/72">
+                  Proses mühendisliği, makina üretimi, teknik rehberler ve proje
+                  içerikleri için sosyal medya hesaplarımızı takip edin.
+                </p>
+              </div>
+              <SocialLinks variant="button" className="lg:justify-end" />
             </div>
           </div>
 
@@ -289,7 +304,7 @@ export function SiteFooterCta() {
 export function FloatingWhatsApp() {
   return (
     <a
-      href="https://wa.me/905380631163"
+      href={siteContact.whatsappHref}
       target="_blank"
       rel="noopener noreferrer"
       aria-label={trText("WhatsApp ile iletişime geç")}

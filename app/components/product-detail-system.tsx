@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { createMailtoHref, createWhatsAppHref } from "../lib/site-contact";
 
 type ProductLink = { label: string; href?: string; onClick?: () => void };
 type GalleryItem = { src: string; alt: string; caption: string };
@@ -431,8 +432,11 @@ export function ProductDetailSystem({
   const dynamicCtaTitle = ctaTitle ?? `${title} için doğru makina çözümünü birlikte netleştirelim`;
   const dynamicCtaText = calculationSummary || `${title} için kapasite, proses ve saha verilerinize göre teknik çözüm talebinizi bize iletebilirsiniz. ${ctaText}`;
   const messageBody = buildMessage(title, categoryLabel, calculatorFamily, calculatorValues, calculationSummary || dynamicCtaText);
-  const whatsappHref = `https://wa.me/905380631163?text=${encodeURIComponent(messageBody)}`;
-  const mailHref = `mailto:info@promakina.com?subject=${encodeURIComponent(`${title} Kapasite Hesabı ve Teknik Talep`)}&body=${encodeURIComponent(messageBody)}`;
+  const whatsappHref = createWhatsAppHref(messageBody);
+  const mailHref = createMailtoHref(
+    `${title} Kapasite Hesabı ve Teknik Talep`,
+    messageBody,
+  );
 
   return (
     <>

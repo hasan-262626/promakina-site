@@ -8,6 +8,7 @@ import {
 } from "./components/site-footer-cta";
 import { SiteHeader } from "./components/site-header";
 import { TextNormalizer } from "./components/text-normalizer";
+import { siteContact, siteSocialSameAs } from "./lib/site-contact";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -41,6 +42,14 @@ export const metadata: Metadata = {
     siteName: "Pro Makina",
     locale: "tr_TR",
     type: "website",
+    images: [
+      {
+        url: "https://www.promakina.com.tr/images/fabrika1.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Pro Makina endüstriyel tesis ve makina çözümleri",
+      },
+    ],
   },
   robots: {
     index: true,
@@ -66,9 +75,9 @@ export default function RootLayout({
     name: "Pro Makina",
     url: "https://www.promakina.com.tr",
     logo: "https://www.promakina.com.tr/logo.png",
-    email: "info@promakina.com.tr",
-    telephone: "+90 532 085 01 04",
-    sameAs: ["https://www.promakina.com.tr"],
+    email: siteContact.email,
+    telephone: siteContact.phoneDisplay,
+    sameAs: ["https://www.promakina.com.tr", ...siteSocialSameAs],
   };
 
   const localBusinessSchema = {
@@ -76,8 +85,9 @@ export default function RootLayout({
     "@type": "LocalBusiness",
     name: "Pro Makina",
     url: "https://www.promakina.com.tr",
-    telephone: "+90 532 085 01 04",
-    email: "info@promakina.com.tr",
+    telephone: siteContact.phoneDisplay,
+    email: siteContact.email,
+    sameAs: siteSocialSameAs,
     address: {
       "@type": "PostalAddress",
       streetAddress: "75. Yıl Mah. Teksan Sanayi Sitesi Kilis Sokak D6 Blok No:2E",

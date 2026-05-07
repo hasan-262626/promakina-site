@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import { solutions } from "../../data";
+import { siteContact } from "../../lib/site-contact";
 import { trText } from "../../lib/tr-text";
 
 type PageProps = {
@@ -115,13 +116,13 @@ export default async function SolutionDetailPage({ params }: PageProps) {
 
             <div className="flex flex-col gap-4 sm:flex-row">
               <a
-                href="tel:+902123562960"
+                href={siteContact.phoneHref}
                 className="inline-flex w-full items-center justify-center rounded-full bg-white px-6 py-4 text-lg font-semibold text-[var(--color-brand)] transition hover:bg-[#f6f7fb] sm:min-w-[270px] sm:px-8 sm:py-5 sm:text-xl"
               >
-                +90 212 356 29 60
+                {siteContact.phoneDisplay}
               </a>
               <a
-                href="mailto:info@progroup.com"
+                href={siteContact.emailHref}
                 className="inline-flex w-full items-center justify-center rounded-full bg-[var(--color-accent)] px-6 py-4 text-lg font-semibold text-white transition hover:bg-[#b1852f] sm:min-w-[220px] sm:px-8 sm:py-5 sm:text-xl"
               >
                 Teklif Formu

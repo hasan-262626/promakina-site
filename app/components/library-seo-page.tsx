@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { siteContact, siteSocialSameAs } from "../lib/site-contact";
 import type { ReactNode } from "react";
 import { Hero } from "./Hero";
 import { LibraryServiceLinks } from "./library-service-links";
+import { SocialFollowPanel } from "./social-follow-panel";
 import type { LibraryFaqItem, LibraryServiceLink } from "../lib/library-page-data";
 
 type LibrarySeoSection = {
@@ -97,8 +99,9 @@ export function LibrarySeoPage({
     name: "Pro Makina",
     url: "https://www.promakina.com.tr",
     logo: "https://www.promakina.com.tr/logo.png",
-    email: "info@promakina.com.tr",
-    telephone: "+90 532 085 01 04",
+    email: siteContact.email,
+    telephone: siteContact.phoneDisplay,
+    sameAs: ["https://www.promakina.com.tr", ...siteSocialSameAs],
   };
 
   const localBusinessSchema = {
@@ -106,8 +109,9 @@ export function LibrarySeoPage({
     "@type": "LocalBusiness",
     name: "Pro Makina",
     url: "https://www.promakina.com.tr",
-    telephone: "+90 532 085 01 04",
-    email: "info@promakina.com.tr",
+    telephone: siteContact.phoneDisplay,
+    email: siteContact.email,
+    sameAs: siteSocialSameAs,
     address: {
       "@type": "PostalAddress",
       streetAddress: "75. Yıl Mah. Teksan Sanayi Sitesi Kilis Sokak D6 Blok No:2E",
@@ -206,7 +210,7 @@ export function LibrarySeoPage({
           Teklif Al
         </Link>
         <a
-          href="https://wa.me/905380631163"
+          href={siteContact.whatsappHref}
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/20 bg-white/10 px-6 text-sm font-semibold text-white transition hover:bg-white/15"
@@ -314,6 +318,8 @@ export function LibrarySeoPage({
 
               {relatedServices.length ? <LibraryServiceLinks items={relatedServices} /> : null}
 
+              <SocialFollowPanel />
+
               {faqs.length ? (
                 <section>
                   <h2 className="text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">
@@ -367,7 +373,7 @@ export function LibrarySeoPage({
                 Teklif Al
               </Link>
               <a
-                href="https://wa.me/905380631163"
+                href={siteContact.whatsappHref}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/25 px-6 text-sm font-semibold text-white transition hover:bg-white/10"

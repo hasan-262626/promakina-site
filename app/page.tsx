@@ -6,7 +6,9 @@ import { HomeLibrarySection } from "./components/home-library-section";
 import { HomeMachineGroupsSection } from "./components/home-machine-groups-section";
 import { HomeQuickAccessSection } from "./components/home-quick-access-section";
 import { HomeServicesSection } from "./components/home-services-section";
+import { SocialIcon } from "./components/social-links";
 import { homeHeroSlides } from "./home-hero-data";
+import { siteContact, siteSocialProfiles } from "./lib/site-contact";
 
 const trustMetrics = [
   {
@@ -370,7 +372,7 @@ export default function Home() {
                 Teklif Al
               </Link>
               <a
-                href="https://wa.me/905380631163"
+                href={siteContact.whatsappHref}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex min-h-[48px] items-center justify-center rounded-full border border-slate-300 bg-white px-7 text-sm font-semibold text-slate-900 transition hover:border-slate-400 hover:bg-slate-50"
@@ -570,6 +572,62 @@ export default function Home() {
 
       <section className="pb-10 sm:pb-14">
         <div className="site-container">
+          <div className="rounded-[32px] border border-slate-200 bg-slate-950 px-6 py-8 text-white shadow-[0_24px_70px_rgba(2,6,23,0.18)] sm:px-8 sm:py-10 lg:px-12">
+            <div className="max-w-3xl">
+              <p className="text-sm font-semibold uppercase tracking-[0.16em] text-blue-300">
+                TEKNİK İÇERİK VE MEDYA
+              </p>
+              <h2 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">
+                Sosyal medya üzerinden teknik otoriteyi görünür kılan içerik katmanı
+              </h2>
+              <p className="mt-4 text-sm leading-8 text-white/78 sm:text-base">
+                LinkedIn, YouTube ve Instagram kanallarımızda proses mühendisliği,
+                makina üretimi, saha uygulamaları ve teknik rehberleri düzenli olarak
+                görünür kılıyor; yatırımcı ve teknik ekipler için güven üreten bir medya
+                akışı oluşturuyoruz.
+              </p>
+            </div>
+
+            <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+              {siteSocialProfiles.map((profile) => {
+                const cardTitles: Record<(typeof profile)["id"], string> = {
+                  linkedin: "LinkedIn Teknik İçerikler",
+                  youtube: "YouTube Proses Videoları",
+                  instagram: "Instagram Proje Görselleri",
+                };
+
+                const buttonLabels: Record<(typeof profile)["id"], string> = {
+                  linkedin: "LinkedIn’i İncele",
+                  youtube: "YouTube’u Aç",
+                  instagram: "Instagram’ı Gör",
+                };
+
+                return (
+                  <a
+                    key={profile.id}
+                    href={profile.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group rounded-[24px] border border-white/10 bg-white/5 p-5 backdrop-blur-sm transition hover:-translate-y-1 hover:border-blue-300/30 hover:bg-white/10"
+                  >
+                    <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-white/10 text-white">
+                      <SocialIcon id={profile.id} className="h-5 w-5" />
+                    </div>
+                    <h3 className="mt-5 text-xl font-semibold text-white">{cardTitles[profile.id]}</h3>
+                    <p className="mt-3 text-sm leading-7 text-white/72">{profile.description}</p>
+                    <span className="mt-5 inline-flex text-sm font-semibold text-blue-300 transition group-hover:text-blue-200">
+                      {buttonLabels[profile.id]}
+                    </span>
+                  </a>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="pb-10 sm:pb-14">
+        <div className="site-container">
           <div className="rounded-[32px] border border-slate-200 bg-[linear-gradient(135deg,#ffffff_0%,#f7fbff_48%,#eef5ff_100%)] px-6 py-8 shadow-[0_18px_45px_rgba(15,23,42,0.06)] sm:px-8 sm:py-10 lg:px-12">
             <div className="max-w-3xl">
               <p className="text-sm font-semibold uppercase tracking-[0.16em] text-blue-700">
@@ -736,7 +794,7 @@ export default function Home() {
                 Teklif Formu
               </Link>
               <a
-                href="https://wa.me/905380631163"
+                href={siteContact.whatsappHref}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/25 px-6 text-sm font-semibold text-white transition hover:bg-white/10"

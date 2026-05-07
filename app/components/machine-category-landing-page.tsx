@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { siteContact } from "../lib/site-contact";
 import { Hero } from "./Hero";
 import {
   ServiceRelatedTechnicalContents,
@@ -123,7 +124,7 @@ export function MachineCategoryLandingPage({
           Teklif Al
         </Link>
         <a
-          href="https://wa.me/905380631163"
+          href={siteContact.whatsappHref}
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/20 bg-white/10 px-6 text-sm font-semibold text-white transition hover:bg-white/15"

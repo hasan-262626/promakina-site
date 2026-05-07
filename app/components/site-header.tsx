@@ -1,7 +1,8 @@
-﻿import Link from "next/link";
-import { trText } from "../lib/tr-text";
+import Link from "next/link";
 import { sectors, services } from "../data";
+import { trText } from "../lib/tr-text";
 import { machineCategoryPages } from "./machine-group-data";
+import { SocialLinks } from "./social-links";
 
 export function SiteHeader() {
   const menuServices = services.filter((service) =>
@@ -60,6 +61,7 @@ export function SiteHeader() {
         <div className="site-container flex items-center justify-between gap-4 py-3 text-[12px] text-slate-700 sm:text-[13px]">
           <p className="truncate">{trText("Endüstriyel Tesis Çözümleri")}</p>
           <div className="flex shrink-0 items-center gap-3 sm:gap-4 lg:gap-5">
+            <SocialLinks variant="compact" className="hidden md:flex" />
             <Link href="/iletisim" className="transition hover:text-blue-700">
               {trText("İletişim")}
             </Link>
@@ -207,4 +209,3 @@ export function SiteHeader() {
     </header>
   );
 }
-

@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
+import { createMailtoHref, createWhatsAppHref } from "../lib/site-contact";
 
 type FertilizerFormState = {
   companyName: string;
@@ -139,11 +140,14 @@ export function FertilizerSectorForm() {
     const message = buildMessage(formState);
 
     if (target === "whatsapp") {
-      window.open(`https://wa.me/905380631163?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
+      window.open(createWhatsAppHref(message), "_blank", "noopener,noreferrer");
       return;
     }
 
-    window.location.href = `mailto:info@promakina.com.tr?subject=${encodeURIComponent("Gübre Üretim Tesisleri - Teklif / Teknik Talep")}&body=${encodeURIComponent(message)}`;
+    window.location.href = createMailtoHref(
+      "Gübre Üretim Tesisleri - Teklif / Teknik Talep",
+      message,
+    );
   }
 
   return (
