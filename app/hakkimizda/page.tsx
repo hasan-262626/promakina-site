@@ -339,7 +339,7 @@ export default function AboutPage() {
               Teknik Görüşme Talep Edin
             </Link>
             <a
-              href="tel:+905320850104"
+              href="tel:+905320580104"
               className="rounded-full border border-white/25 px-6 py-3 text-center text-sm font-semibold text-white transition hover:bg-white/10"
             >
               Hemen Ara

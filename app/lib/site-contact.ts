@@ -1,8 +1,8 @@
 export const siteContact = {
-  phoneDisplay: "+90 532 085 01 04",
-  phoneDigits: "905320850104",
-  phoneHref: "tel:+905320850104",
-  whatsappHref: "https://wa.me/905320850104",
+  phoneDisplay: "+90 532 058 01 04",
+  phoneDigits: "905320580104",
+  phoneHref: "tel:+905320580104",
+  whatsappHref: "https://wa.me/905320580104",
   email: "info@promakina.com.tr",
   emailHref: "mailto:info@promakina.com.tr",
 } as const;

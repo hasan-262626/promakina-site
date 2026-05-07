@@ -91,7 +91,7 @@ export default function Page() {
                     Teklif Al
                   </Link>
                   <a
-                    href="https://wa.me/905320850104"
+                    href="https://wa.me/905320580104"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/25 px-6 text-sm font-semibold text-white transition hover:bg-white/10"

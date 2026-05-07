@@ -86,7 +86,7 @@ export function EngineeringCalculationPage({
     name: "Pro Makina",
     url: siteUrl,
     logo: `${siteUrl}/logo.png`,
-    telephone: "+90 532 085 01 04",
+    telephone: "+90 532 058 01 04",
     email: "info@promakina.com.tr",
   };
 
@@ -95,7 +95,7 @@ export function EngineeringCalculationPage({
     "@type": "LocalBusiness",
     name: "Pro Makina",
     url: siteUrl,
-    telephone: "+90 532 085 01 04",
+    telephone: "+90 532 058 01 04",
     email: "info@promakina.com.tr",
     address: {
       "@type": "PostalAddress",

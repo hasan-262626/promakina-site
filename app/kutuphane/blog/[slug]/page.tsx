@@ -79,7 +79,7 @@ function CategoryPage({ slug }: { slug: string }) {
     name: "Pro Makina",
     url: "https://www.promakina.com.tr",
     logo: "https://www.promakina.com.tr/logo.png",
-    telephone: "+90 532 085 01 04",
+    telephone: "+90 532 058 01 04",
   };
 
   const localBusinessSchema = {
@@ -87,7 +87,7 @@ function CategoryPage({ slug }: { slug: string }) {
     "@type": "LocalBusiness",
     name: "Pro Makina",
     url: "https://www.promakina.com.tr",
-    telephone: "+90 532 085 01 04",
+    telephone: "+90 532 058 01 04",
     email: "info@promakina.com.tr",
   };
 
@@ -149,7 +149,7 @@ function CategoryPage({ slug }: { slug: string }) {
           Teklif Al
         </Link>
         <a
-          href="https://wa.me/905320850104"
+          href="https://wa.me/905320580104"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/20 bg-white/10 px-6 text-sm font-semibold text-white transition hover:bg-white/15"
@@ -269,7 +269,7 @@ function CategoryPage({ slug }: { slug: string }) {
                 Teklif Al
               </Link>
               <a
-                href="https://wa.me/905320850104"
+                href="https://wa.me/905320580104"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/25 px-6 text-sm font-semibold text-white transition hover:bg-white/10"
