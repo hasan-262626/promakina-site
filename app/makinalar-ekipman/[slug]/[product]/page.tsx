@@ -10,48 +10,97 @@ type PageProps = {
   }>;
 };
 
-const aliasMap: Record<string, string> = {
+const categoryAliasMap: Record<string, string> = {
   "tasima-sistemleri": "tasima-ekipmanlari",
   "depolama-sistemleri": "depolama-ve-besleme-sistemleri",
-  "kiricilar-ve-parcalayicilar": "kırıcılar-ve-parcalayicilar",
+  "kiricilar-ve-parcalayicilar": "kÄ±rÄ±cÄ±lar-ve-parcalayicilar",
 };
+
+const productAliasMap: Record<string, string> = {
+  "cekicli-kiricilar": "cekicli-kırıcılar",
+  "ceneli-kiricilar": "ceneli-kırıcılar",
+  "dik-milli-kiricilar": "dik-milli-kırıcılar",
+  "zincirli-kiricilar": "zincirli-kırıcılar",
+  "bicakli-primer-kiricilar": "bicakli-primer-kırıcılar",
+  "bicakli-sekonder-kiricilar": "bicakli-sekonder-kırıcılar",
+};
+
+function getPublicCategorySlug(slug: string) {
+  return Object.entries(categoryAliasMap).find(([, target]) => target === slug)?.[0] ?? slug;
+}
+
+function getPublicProductSlug(slug: string) {
+  return Object.entries(productAliasMap).find(([, target]) => target === slug)?.[0] ?? slug;
+}
 
 export function generateStaticParams() {
   return machineCategoryPages
     .filter((category) => category.slug !== "tambur-sistemleri")
-    .flatMap((category) =>
-      category.products.map((product) => ({
-        slug: category.slug,
-        product: product.slug,
-      })),
-    );
+    .flatMap((category) => {
+      const publicCategorySlug = getPublicCategorySlug(category.slug);
+
+      return category.products.flatMap((product) => {
+        const publicProductSlug = getPublicProductSlug(product.slug);
+        const routes = [
+          {
+            slug: publicCategorySlug,
+            product: publicProductSlug,
+          },
+        ];
+
+        if (publicCategorySlug !== category.slug || publicProductSlug !== product.slug) {
+          routes.push({
+            slug: category.slug,
+            product: product.slug,
+          });
+        }
+
+        return routes;
+      });
+    });
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug, product } = await params;
-  const resolvedSlug = aliasMap[slug] ?? slug;
+  const resolvedSlug = categoryAliasMap[slug] ?? slug;
+  const resolvedProduct = productAliasMap[product] ?? product;
   const category = machineCategoryMap[resolvedSlug];
-  const activeProduct = category?.products.find((item) => item.slug === product);
+  const activeProduct = category?.products.find((item) => item.slug === resolvedProduct);
 
   if (!category || !activeProduct) {
     return {};
   }
 
+  const publicCategorySlug = getPublicCategorySlug(category.slug);
+  const publicProductSlug = getPublicProductSlug(activeProduct.slug);
+  const canonical = `https://www.promakina.com.tr/makinalar-ekipman/${publicCategorySlug}/${publicProductSlug}`;
+
   return {
     title: `${activeProduct.title} | ${category.title} | Pro Makina`,
     description: activeProduct.shortDescription,
     alternates: {
-      canonical: `https://www.promakina.com.tr/makinalar-ekipman/${category.slug}/${activeProduct.slug}`,
+      canonical,
+    },
+    openGraph: {
+      title: `${activeProduct.title} | ${category.title} | Pro Makina`,
+      description: activeProduct.shortDescription,
+      url: canonical,
+      siteName: "Pro Makina",
+      locale: "tr_TR",
+      type: "website",
     },
   };
 }
 
 export default async function MachineProductDetailPage({ params }: PageProps) {
   const { slug, product } = await params;
-  const resolvedSlug = aliasMap[slug] ?? slug;
+  const resolvedSlug = categoryAliasMap[slug] ?? slug;
+  const resolvedProduct = productAliasMap[product] ?? product;
+  const publicCategorySlug = getPublicCategorySlug(resolvedSlug);
+  const publicProductSlug = getPublicProductSlug(resolvedProduct);
 
-  if (resolvedSlug !== slug && slug !== "kiricilar-ve-parcalayicilar") {
-    redirect(`/makinalar-ekipman/${resolvedSlug}/${product}`);
+  if (slug !== publicCategorySlug || product !== publicProductSlug) {
+    redirect(`/makinalar-ekipman/${publicCategorySlug}/${publicProductSlug}`);
   }
 
   const category = machineCategoryMap[resolvedSlug];
@@ -60,7 +109,7 @@ export default async function MachineProductDetailPage({ params }: PageProps) {
     notFound();
   }
 
-  const activeProduct = category.products.find((item) => item.slug === product);
+  const activeProduct = category.products.find((item) => item.slug === resolvedProduct);
 
   if (!activeProduct) {
     notFound();
@@ -70,14 +119,14 @@ export default async function MachineProductDetailPage({ params }: PageProps) {
     .filter((item) => item.slug !== activeProduct.slug)
     .map((item) => ({
       label: item.title,
-      href: `/makinalar-ekipman/${category.slug}/${item.slug}`,
+      href: `/makinalar-ekipman/${publicCategorySlug}/${getPublicProductSlug(item.slug)}`,
     }));
 
   return (
     <main className="min-h-screen bg-white text-slate-900">
       <ProductDetailSystem
         categoryLabel={category.title}
-        categoryHref={`/makinalar-ekipman/${category.slug}`}
+        categoryHref={`/makinalar-ekipman/${publicCategorySlug}`}
         title={activeProduct.title}
         heroDescription={activeProduct.heroDescription}
         heroImage={category.heroImage}
@@ -90,7 +139,7 @@ export default async function MachineProductDetailPage({ params }: PageProps) {
         spareParts={activeProduct.spareParts}
         relatedProducts={relatedProducts}
         calculatorFamily={category.calculatorFamily}
-        ctaTitle={activeProduct.ctaTitle ?? `${activeProduct.title} için doğru makina çözümünü birlikte netleştirelim`}
+        ctaTitle={activeProduct.ctaTitle ?? `${activeProduct.title} iÃ§in doÄŸru makina Ã§Ã¶zÃ¼mÃ¼nÃ¼ birlikte netleÅŸtirelim`}
         ctaText={activeProduct.ctaText ?? category.ctaText}
       />
     </main>

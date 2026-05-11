@@ -10,21 +10,47 @@ type PageProps = {
   }>;
 };
 
-const aliasMap: Record<string, string> = {
+const categoryAliasMap: Record<string, string> = {
   "tasima-sistemleri": "tasima-ekipmanlari",
   "depolama-sistemleri": "depolama-ve-besleme-sistemleri",
-  "kiricilar-ve-parcalayicilar": "kırıcılar-ve-parcalayicilar",
+  "kiricilar-ve-parcalayicilar": "kÄ±rÄ±cÄ±lar-ve-parcalayicilar",
+};
+
+const productAliasMap: Record<string, string> = {
+  "cekicli-kiricilar": "cekicli-kırıcılar",
+  "ceneli-kiricilar": "ceneli-kırıcılar",
+  "dik-milli-kiricilar": "dik-milli-kırıcılar",
+  "zincirli-kiricilar": "zincirli-kırıcılar",
+  "bicakli-primer-kiricilar": "bicakli-primer-kırıcılar",
+  "bicakli-sekonder-kiricilar": "bicakli-sekonder-kırıcılar",
 };
 
 function getCategory(slug: string) {
-  const resolvedSlug = aliasMap[slug] ?? slug;
+  const resolvedSlug = categoryAliasMap[slug] ?? slug;
   return machineCategoryMap[resolvedSlug];
+}
+
+function getPublicCategorySlug(slug: string) {
+  return Object.entries(categoryAliasMap).find(([, target]) => target === slug)?.[0] ?? slug;
+}
+
+function getPublicProductSlug(slug: string) {
+  return Object.entries(productAliasMap).find(([, target]) => target === slug)?.[0] ?? slug;
 }
 
 export function generateStaticParams() {
   return machineCategoryPages
     .filter((category) => category.slug !== "tambur-sistemleri")
-    .map((category) => ({ slug: category.slug }));
+    .flatMap((category) => {
+      const publicCategorySlug = getPublicCategorySlug(category.slug);
+      const routes = [{ slug: publicCategorySlug }];
+
+      if (publicCategorySlug !== category.slug) {
+        routes.push({ slug: category.slug });
+      }
+
+      return routes;
+    });
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
@@ -35,21 +61,32 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     return {};
   }
 
+  const canonical = `https://www.promakina.com.tr/makinalar-ekipman/${getPublicCategorySlug(category.slug)}`;
+
   return {
     title: `${category.title} | Pro Makina`,
     description: category.shortDescription,
     alternates: {
-      canonical: `https://www.promakina.com.tr/makinalar-ekipman/${category.slug}`,
+      canonical,
+    },
+    openGraph: {
+      title: `${category.title} | Pro Makina`,
+      description: category.shortDescription,
+      url: canonical,
+      siteName: "Pro Makina",
+      locale: "tr_TR",
+      type: "website",
     },
   };
 }
 
 export default async function MachineCategoryPage({ params }: PageProps) {
   const { slug } = await params;
-  const resolvedSlug = aliasMap[slug] ?? slug;
+  const resolvedSlug = categoryAliasMap[slug] ?? slug;
+  const publicCategorySlug = getPublicCategorySlug(resolvedSlug);
 
-  if (resolvedSlug !== slug && slug !== "kiricilar-ve-parcalayicilar") {
-    redirect(`/makinalar-ekipman/${resolvedSlug}`);
+  if (slug !== publicCategorySlug) {
+    redirect(`/makinalar-ekipman/${publicCategorySlug}`);
   }
 
   const category = machineCategoryMap[resolvedSlug];
@@ -95,14 +132,14 @@ export default async function MachineCategoryPage({ params }: PageProps) {
         <div className="site-container">
           <div className="max-w-4xl">
             <p className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-700">
-              Alt Ürünler
+              Alt ÃœrÃ¼nler
             </p>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
-              {category.title} alt ürünlerini ayrı ayrı inceleyin
+              {category.title} alt Ã¼rÃ¼nlerini ayrÄ± ayrÄ± inceleyin
             </h2>
             <p className="mt-4 text-[15px] leading-8 text-slate-600 sm:text-base">
-              {category.shortDescription} Prosesinize uygun makina tipini seçin ve ilgili ürün detay
-              sayfasına geçin.
+              {category.shortDescription} Prosesinize uygun makina tipini seÃ§in ve ilgili Ã¼rÃ¼n detay
+              sayfasÄ±na geÃ§in.
             </p>
           </div>
 
@@ -110,7 +147,7 @@ export default async function MachineCategoryPage({ params }: PageProps) {
             {category.products.map((product) => (
               <Link
                 key={product.slug}
-                href={`/makinalar-ekipman/${category.slug}/${product.slug}`}
+                href={`/makinalar-ekipman/${publicCategorySlug}/${getPublicProductSlug(product.slug)}`}
                 className="group flex h-full flex-col overflow-hidden rounded-[30px] border border-slate-200 bg-white shadow-[0_18px_50px_rgba(15,23,42,0.06)] transition duration-200 hover:-translate-y-1 hover:border-blue-200 hover:shadow-[0_24px_62px_rgba(15,23,42,0.1)]"
               >
                 <article className="flex h-full flex-col">
@@ -132,7 +169,7 @@ export default async function MachineCategoryPage({ params }: PageProps) {
                     </p>
                     <div className="mt-auto pt-8">
                       <span className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-slate-300 px-5 text-sm font-semibold text-slate-900 transition group-hover:border-blue-200 group-hover:text-blue-700">
-                        Ürünü İncele
+                        ÃœrÃ¼nÃ¼ Ä°ncele
                       </span>
                     </div>
                   </div>
