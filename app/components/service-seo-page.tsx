@@ -7,34 +7,34 @@ import {
   type TechnicalContentCard,
 } from "./service-related-technical-contents";
 
-type ServiceCard = {
+export type ServiceCard = {
   title: string;
   description: string;
   href?: string;
 };
 
-type ServiceSection = {
+export type ServiceSection = {
   title: string;
   paragraphs: string[];
 };
 
-type ServiceFaq = {
+export type ServiceFaq = {
   question: string;
   answer: string;
 };
 
-type ServiceSummaryRow = {
+export type ServiceSummaryRow = {
   criterion: string;
   description: string;
   importance: string;
 };
 
-type ServiceKeyLink = {
+export type ServiceKeyLink = {
   label: string;
   href: string;
 };
 
-type ServiceSeoPageProps = {
+export type ServiceSeoPageProps = {
   title: string;
   description: string;
   canonical: string;
@@ -151,7 +151,32 @@ export function ServiceSeoPage({
         "@type": "Answer",
         text: faq.answer,
       },
-    })),
+      })),
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Ana Sayfa",
+        item: "https://www.promakina.com.tr",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Hizmetler",
+        item: "https://www.promakina.com.tr/hizmetler",
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: serviceName,
+        item: canonical,
+      },
+    ],
   };
 
   return (
@@ -167,6 +192,10 @@ export function ServiceSeoPage({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
       <Hero title={title} description={description} image={image}>

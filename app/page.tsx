@@ -311,6 +311,20 @@ const corporateQuickLinks = [
   { label: "Hakkımızda", href: "/hakkimizda" },
 ];
 
+const waveOneSeoLinks = [
+  { label: "Kurutma Tamburu İmalatı", href: "/hizmetler/kurutma-tamburu-imalati" },
+  { label: "Çamur Kurutma Tesisi", href: "/hizmetler/camur-kurutma-tesisi" },
+  { label: "Silis Kumu Kurutma Tesisi", href: "/hizmetler/silis-kumu-kurutma-tesisi" },
+  { label: "Maden Kurutma ve Eleme Tesisi", href: "/hizmetler/maden-kurutma-ve-eleme-tesisi" },
+  { label: "Granül Gübre Üretim Tesisi", href: "/hizmetler/granul-gubre-uretim-tesisi" },
+  { label: "Organomineral Gübre Tesisi", href: "/hizmetler/organomineral-gubre-tesisi" },
+  { label: "Sıvı Gübre Üretim Tesisi", href: "/hizmetler/sivi-gubre-uretim-tesisi" },
+  { label: "Helezon Konveyörler", href: "/makinalar-ekipman/tasima-ekipmanlari/helezon-konveyorler" },
+  { label: "Bant Konveyörler", href: "/makinalar-ekipman/tasima-ekipmanlari/bant-konveyorler" },
+  { label: "Kovalı Elevatörler", href: "/makinalar-ekipman/tasima-ekipmanlari/kovali-elevatorler" },
+  { label: "Kurutma Tamburları", href: "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburlari" },
+];
+
 export default function Home() {
   ReactDOM.preload(homeHeroSlides[0].image, { as: "image" });
 
@@ -473,6 +487,37 @@ export default function Home() {
                   key={item.href}
                   href={item.href}
                   className="inline-flex rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-blue-200 hover:text-blue-700"
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="pb-10 sm:pb-14">
+        <div className="site-container">
+          <div className="rounded-[32px] border border-slate-200 bg-slate-50 px-6 py-8 shadow-[0_18px_45px_rgba(15,23,42,0.06)] sm:px-8 sm:py-10 lg:px-12">
+            <div className="max-w-3xl">
+              <p className="text-sm font-semibold uppercase tracking-[0.16em] text-blue-700">
+                SEO ODAKLI HİZMET VE MAKİNA SAYFALARI
+              </p>
+              <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950 md:text-4xl">
+                Kurutma, taşıma ve gübre üretimi aramalarında öne çıkan teknik sayfalar
+              </h2>
+              <p className="mt-4 text-sm leading-8 text-slate-600 sm:text-base">
+                Kurutma tamburu, helezon konveyör, bant konveyör, kovalı elevatör, çamur kurutma,
+                silis kumu kurutma ve maden işleme gibi yüksek satın alma niyeti taşıyan başlıklara
+                aşağıdaki direkt bağlantılardan ulaşabilirsiniz.
+              </p>
+            </div>
+            <div className="mt-8 flex flex-wrap gap-3">
+              {waveOneSeoLinks.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="inline-flex rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-blue-200 hover:bg-blue-50 hover:text-blue-700"
                 >
                   {item.label}
                 </Link>

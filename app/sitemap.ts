@@ -25,6 +25,30 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: `${siteUrl}/hizmetler/kurutma-tamburu-imalati`,
+      lastModified,
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
+      url: `${siteUrl}/hizmetler/camur-kurutma-tesisi`,
+      lastModified,
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
+      url: `${siteUrl}/hizmetler/silis-kumu-kurutma-tesisi`,
+      lastModified,
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
+      url: `${siteUrl}/hizmetler/maden-kurutma-ve-eleme-tesisi`,
+      lastModified,
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
       url: `${siteUrl}/hizmetler/organomineral-gubre-tesisi`,
       lastModified,
       changeFrequency: "weekly",
@@ -38,6 +62,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${siteUrl}/hizmetler/kompost-tesisi-kurulumu`,
+      lastModified,
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
+      url: `${siteUrl}/hizmetler/sivi-gubre-uretim-tesisi`,
       lastModified,
       changeFrequency: "weekly",
       priority: 0.9,
@@ -71,6 +101,30 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified,
       changeFrequency: "weekly",
       priority: 0.7,
+    },
+    {
+      url: `${siteUrl}/makinalar-ekipman/tasima-ekipmanlari/helezon-konveyorler`,
+      lastModified,
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    {
+      url: `${siteUrl}/makinalar-ekipman/tasima-ekipmanlari/bant-konveyorler`,
+      lastModified,
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    {
+      url: `${siteUrl}/makinalar-ekipman/tasima-ekipmanlari/kovali-elevatorler`,
+      lastModified,
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    {
+      url: `${siteUrl}/makinalar-ekipman/tambur-sistemleri/kurutma-tamburlari`,
+      lastModified,
+      changeFrequency: "weekly",
+      priority: 0.8,
     },
     {
       url: `${siteUrl}/makinalar-ekipman/kiricilar-ve-parcalayicilar/cekicli-kiricilar`,

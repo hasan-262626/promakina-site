@@ -4,6 +4,51 @@ import type { Metadata } from "next";
 import { Hero } from "../components/Hero";
 import { homeServiceCards } from "../home-services-data";
 
+const seoWaveOneServices = [
+  {
+    title: "Kurutma Tamburu İmalatı",
+    description:
+      "Rotary dryer, endüstriyel kurutma tamburu ve yardımcı filtre-konveyör omurgasını birlikte inceleyin.",
+    href: "/hizmetler/kurutma-tamburu-imalati",
+  },
+  {
+    title: "Çamur Kurutma Tesisi",
+    description:
+      "Arıtma çamuru kurutma, digestat kurutma ve belediye çamuru hattı kurgusunu görün.",
+    href: "/hizmetler/camur-kurutma-tesisi",
+  },
+  {
+    title: "Silis Kumu Kurutma Tesisi",
+    description:
+      "Kuvars ve silis kumu hatlarında kurutma, eleme ve stoklama dengesini teknik olarak inceleyin.",
+    href: "/hizmetler/silis-kumu-kurutma-tesisi",
+  },
+  {
+    title: "Maden Kurutma ve Eleme Tesisi",
+    description:
+      "Kırma, eleme, kurutma ve mineral hazırlama ekipmanlarını tek tesiste nasıl kurguladığımızı görün.",
+    href: "/hizmetler/maden-kurutma-ve-eleme-tesisi",
+  },
+  {
+    title: "Granül Gübre Üretim Tesisi",
+    description:
+      "Granülasyon, kurutma, soğutma, eleme ve paketleme adımlarını taşıyan gübre hattını inceleyin.",
+    href: "/hizmetler/granul-gubre-uretim-tesisi",
+  },
+  {
+    title: "Organomineral Gübre Tesisi",
+    description:
+      "Organik ve mineral girdileri aynı hatta yöneten granülasyon çözümlerine göz atın.",
+    href: "/hizmetler/organomineral-gubre-tesisi",
+  },
+  {
+    title: "Sıvı Gübre Üretim Tesisi",
+    description:
+      "Tank, reaktör, çözündürme, filtrasyon ve dolum temelli sıvı ürün üretim hatlarını değerlendirin.",
+    href: "/hizmetler/sivi-gubre-uretim-tesisi",
+  },
+];
+
 export const metadata: Metadata = {
   title: "Hizmetler | Pro Makina",
   description:
@@ -171,6 +216,32 @@ export default function ServicesPage() {
               </Link>{" "}
               sayfalarımız üzerinden detaylı teknik ve yatırım içeriklerini inceleyebilirsiniz.
             </p>
+          </div>
+
+          <div className="mt-10 rounded-[28px] border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+            <h2 className="text-2xl font-semibold tracking-tight text-slate-950">
+              Google Odaklı Hizmet Sayfaları
+            </h2>
+            <p className="mt-4 text-sm leading-8 text-slate-600 sm:text-base">
+              Kurutma tamburu, çamur kurutma, silis kumu kurutma, maden kurutma ve granül gübre
+              üretimi gibi yüksek satın alma niyeti taşıyan başlıklarda teknik detayları doğrudan
+              bu sayfalardan inceleyebilirsiniz.
+            </p>
+            <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+              {seoWaveOneServices.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="group rounded-[24px] border border-slate-200 bg-slate-50 p-5 shadow-sm transition hover:-translate-y-1 hover:border-blue-200 hover:bg-white hover:shadow-[0_18px_45px_rgba(15,23,42,0.08)]"
+                >
+                  <h3 className="text-lg font-semibold text-slate-950">{item.title}</h3>
+                  <p className="mt-3 text-sm leading-7 text-slate-600">{item.description}</p>
+                  <span className="mt-4 inline-flex text-sm font-semibold text-blue-700 transition group-hover:text-blue-800">
+                    Sayfayı İncele
+                  </span>
+                </Link>
+              ))}
+            </div>
           </div>
 
           <div className="mt-10 rounded-[28px] border border-slate-200 bg-white p-6 shadow-sm sm:p-8">

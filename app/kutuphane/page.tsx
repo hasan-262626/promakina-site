@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Hero } from "../components/Hero";
 import { LibraryCategoryShowcase } from "../components/library-category-showcase";
 
@@ -85,6 +86,51 @@ export default function LibraryPage() {
         <div className="site-container">
           <div className="rounded-[32px] border border-slate-200 bg-white px-6 py-8 shadow-[0_18px_50px_rgba(15,23,42,0.06)] sm:px-8 sm:py-10 lg:px-12">
             <LibraryCategoryShowcase items={libraryCategories} />
+          </div>
+
+          <div className="mt-10 rounded-[28px] border border-slate-200 bg-slate-50 p-6 shadow-sm sm:p-8">
+            <h2 className="text-2xl font-semibold tracking-tight text-slate-950">
+              Öne Çıkan Teknik Rehberler ve Hizmet Sayfaları
+            </h2>
+            <p className="mt-4 text-sm leading-8 text-slate-600 sm:text-base">
+              Teknik rehberler ile saha odaklı hizmet sayfalarını birlikte incelemek isterseniz{" "}
+              <Link className="font-semibold text-blue-700 transition hover:text-blue-800" href="/kutuphane/blog/kurutma-tamburu-hesaplama">
+                Kurutma Tamburu Hesaplama
+              </Link>
+              ,{" "}
+              <Link className="font-semibold text-blue-700 transition hover:text-blue-800" href="/kutuphane/blog/helezon-konveyor-kapasite-hesabi">
+                Helezon Konveyör Kapasite Hesabı
+              </Link>
+              ,{" "}
+              <Link className="font-semibold text-blue-700 transition hover:text-blue-800" href="/hizmetler/kurutma-tamburu-imalati">
+                Kurutma Tamburu İmalatı
+              </Link>
+              ,{" "}
+              <Link className="font-semibold text-blue-700 transition hover:text-blue-800" href="/hizmetler/camur-kurutma-tesisi">
+                Çamur Kurutma Tesisi
+              </Link>
+              ,{" "}
+              <Link className="font-semibold text-blue-700 transition hover:text-blue-800" href="/hizmetler/silis-kumu-kurutma-tesisi">
+                Silis Kumu Kurutma Tesisi
+              </Link>{" "}
+              ,{" "}
+              <Link className="font-semibold text-blue-700 transition hover:text-blue-800" href="/hizmetler/maden-kurutma-ve-eleme-tesisi">
+                Maden Kurutma ve Eleme Tesisi
+              </Link>{" "}
+              ,{" "}
+              <Link className="font-semibold text-blue-700 transition hover:text-blue-800" href="/hizmetler/granul-gubre-uretim-tesisi">
+                Granül Gübre Üretim Tesisi
+              </Link>
+              ,{" "}
+              <Link className="font-semibold text-blue-700 transition hover:text-blue-800" href="/hizmetler/organomineral-gubre-tesisi">
+                Organomineral Gübre Tesisi
+              </Link>
+              {" "}ve{" "}
+              <Link className="font-semibold text-blue-700 transition hover:text-blue-800" href="/hizmetler/sivi-gubre-uretim-tesisi">
+                Sıvı Gübre Üretim Tesisi
+              </Link>{" "}
+              sayfalarımız üzerinden karar sürecini hızlandırabilirsiniz.
+            </p>
           </div>
         </div>
       </section>

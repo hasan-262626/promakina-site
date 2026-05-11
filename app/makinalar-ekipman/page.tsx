@@ -6,6 +6,33 @@ import { useRouter } from "next/navigation";
 import { Hero } from "../components/Hero";
 import { homeMachineGroupCards } from "../home-machine-groups-data";
 
+const seoWaveOneMachineLinks = [
+  {
+    title: "Helezon Konveyörler",
+    description:
+      "Vidalı konveyör, paslanmaz helezon ve dozajlama odaklı kapalı taşıma sistemlerini inceleyin.",
+    href: "/makinalar-ekipman/tasima-ekipmanlari/helezon-konveyorler",
+  },
+  {
+    title: "Bant Konveyörler",
+    description:
+      "Uzun hatlarda endüstriyel taşıma bandı ve bant konveyör imalatı çözümlerini görün.",
+    href: "/makinalar-ekipman/tasima-ekipmanlari/bant-konveyorler",
+  },
+  {
+    title: "Kovalı Elevatörler",
+    description:
+      "Dikey taşıma, zincirli kovalı elevatör ve granül ürün yükseltme çözümlerini değerlendirin.",
+    href: "/makinalar-ekipman/tasima-ekipmanlari/kovali-elevatorler",
+  },
+  {
+    title: "Kurutma Tamburları",
+    description:
+      "Rotary dryer, döner kurutma tamburu ve yardımcı termal proses ekipmanlarını inceleyin.",
+    href: "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburlari",
+  },
+];
+
 export default function MachinesIndexPage() {
   const router = useRouter();
 
@@ -171,6 +198,32 @@ export default function MachinesIndexPage() {
 
       <section className="pb-10 sm:pb-14">
         <div className="site-container">
+          <div className="mb-10 rounded-[28px] border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+            <h2 className="text-2xl font-semibold tracking-tight text-slate-950">
+              Öne Çıkan SEO Makina Sayfaları
+            </h2>
+            <p className="mt-4 text-sm leading-8 text-slate-600 sm:text-base">
+              Helezon konveyör, bant konveyör, kovalı elevatör ve kurutma tamburu gibi yüksek
+              arama niyeti taşıyan makina başlıklarını aşağıdaki detay sayfalarından doğrudan
+              inceleyebilirsiniz.
+            </p>
+            <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+              {seoWaveOneMachineLinks.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="group rounded-[24px] border border-slate-200 bg-slate-50 p-5 shadow-sm transition hover:-translate-y-1 hover:border-blue-200 hover:bg-white hover:shadow-[0_18px_45px_rgba(15,23,42,0.08)]"
+                >
+                  <h3 className="text-lg font-semibold text-slate-950">{item.title}</h3>
+                  <p className="mt-3 text-sm leading-7 text-slate-600">{item.description}</p>
+                  <span className="mt-4 inline-flex text-sm font-semibold text-blue-700 transition group-hover:text-blue-800">
+                    Sayfayı İncele
+                  </span>
+                </Link>
+              ))}
+            </div>
+          </div>
+
           <div className="rounded-[28px] border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
             <h2 className="text-2xl font-semibold tracking-tight text-slate-950">
               Blog / Makaleler
