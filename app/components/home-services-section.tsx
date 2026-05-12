@@ -72,35 +72,6 @@ export function HomeServicesSection() {
             <ServiceCard key={card.title} card={card} />
           ))}
         </div>
-
-        <div className="mt-10 rounded-[30px] border border-slate-200 bg-white px-6 py-8 shadow-[0_16px_48px_rgba(15,23,42,0.05)] sm:px-8 lg:px-10">
-          <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
-            <div className="max-w-3xl">
-              <p className="text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">
-                {trText("Projenize uygun doğru sistemi birlikte belirleyelim")}
-              </p>
-              <p className="mt-4 text-base leading-8 text-slate-600">
-                {trText(
-                  "Yeni tesis yatırımı, kapasite artışı, proses revizyonu veya özel makina ihtiyacınız için ekibimizle iletişime geçin. Projenize uygun mühendislik yaklaşımını ve doğru ekipman kurgusunu birlikte oluşturalım.",
-                )}
-              </p>
-            </div>
-            <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap lg:justify-end">
-              <Link
-                href="/hizmetler"
-                className="inline-flex min-h-[54px] items-center justify-center rounded-full bg-slate-950 px-7 text-sm font-semibold text-white transition hover:bg-slate-800"
-              >
-                {trText("Tüm Hizmetleri İncele")}
-              </Link>
-              <Link
-                href="/iletisim"
-                className="inline-flex min-h-[54px] items-center justify-center rounded-full border border-slate-300 px-7 text-sm font-semibold text-slate-900 transition hover:border-blue-200 hover:text-blue-700"
-              >
-                Teklif Al
-              </Link>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );

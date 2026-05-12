@@ -59,14 +59,9 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-[70] bg-white">
       <div className="border-b border-slate-200/80">
-        <div className="site-container flex items-center justify-between gap-4 py-3 text-[12px] text-slate-700 sm:text-[13px]">
-          <div className="min-w-0">
-            <p className="truncate font-medium text-slate-900">
-              Teknik teklif için arayın: {siteContact.phoneDisplay}
-            </p>
-            <p className="hidden truncate sm:block">
-              {trText("Endüstriyel Tesis Çözümleri")}
-            </p>
+        <div className="site-container flex items-center justify-end gap-4 py-3 text-[12px] text-slate-700 sm:justify-between sm:text-[13px]">
+          <div className="hidden min-w-0 sm:block">
+            <p className="truncate">{trText("Endüstriyel Tesis Çözümleri")}</p>
           </div>
           <div className="flex shrink-0 items-center gap-3 sm:gap-4 lg:gap-5">
             <SocialLinks variant="compact" className="hidden md:flex" />
@@ -81,9 +76,9 @@ export function SiteHeader() {
             <Link href="/iletisim" className="transition hover:text-blue-700">
               {trText("İletişim")}
             </Link>
-            <a href="#" className="transition hover:text-blue-700">
+            <Link href="/kariyer" className="transition hover:text-blue-700">
               Kariyer
-            </a>
+            </Link>
             <button className="transition hover:text-blue-700">
               {trText("Dil Değiştir")}
             </button>
@@ -96,7 +91,7 @@ export function SiteHeader() {
           <Link href="/" className="flex min-w-0 shrink-0 items-center">
             <div className="min-w-0 leading-none">
               <div className="text-[20px] font-semibold uppercase tracking-[0.04em] text-slate-950 lg:text-[22px]">
-                PRO MAKİNA
+                PRO MAKINA
               </div>
               <div className="mt-1.5 text-[9px] font-medium uppercase tracking-[0.34em] text-slate-500 lg:text-[10px] lg:tracking-[0.4em]">
                 PROSES ENGINEERING

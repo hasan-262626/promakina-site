@@ -115,6 +115,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
+      url: `${siteUrl}/kariyer`,
+      lastModified,
+      changeFrequency: "weekly",
+      priority: 0.7,
+    },
+    {
       url: `${siteUrl}/makinalar-ekipman/tasima-ekipmanlari/helezon-konveyorler`,
       lastModified,
       changeFrequency: "weekly",

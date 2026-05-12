@@ -4,48 +4,120 @@ import type { Metadata } from "next";
 import { Hero } from "../components/Hero";
 import { homeServiceCards } from "../home-services-data";
 
-const seoWaveOneServices = [
+const projectServiceAreas = [
+  {
+    title: "Gübre Tesisi Kurulumu",
+    description:
+      "Granül gübre, organomineral gübre, sıvı gübre ve özel formülasyon hatları için proses, makine ve saha kurulum çözümleri.",
+    href: "/hizmetler/gubre-tesisi-kurulumu",
+    buttonLabel: "Hizmeti İncele",
+  },
+  {
+    title: "Kompost Tesisi Kurulumu",
+    description:
+      "Evsel organik atık, arıtma çamuru, digestat ve tarımsal atıkların kompost ürününe dönüştürülmesi için tesis çözümleri.",
+    href: "/hizmetler/kompost-tesisi-kurulumu",
+    buttonLabel: "Hizmeti İncele",
+  },
   {
     title: "Kurutma Tamburu İmalatı",
     description:
-      "Rotary dryer, endüstriyel kurutma tamburu ve yardımcı filtre-konveyör omurgasını birlikte inceleyin.",
+      "Gübre, kum, maden, çamur ve organik ürünler için döner kurutucu ve endüstriyel kurutma tamburu imalatı.",
     href: "/hizmetler/kurutma-tamburu-imalati",
+    buttonLabel: "Hizmeti İncele",
   },
   {
     title: "Çamur Kurutma Tesisi",
     description:
-      "Arıtma çamuru kurutma, digestat kurutma ve belediye çamuru hattı kurgusunu görün.",
+      "Arıtma çamuru, belediye çamuru ve digestat gibi yüksek nemli malzemeler için kurutma ve ürün hazırlama hatları.",
     href: "/hizmetler/camur-kurutma-tesisi",
-  },
-  {
-    title: "Silis Kumu Kurutma Tesisi",
-    description:
-      "Kuvars ve silis kumu hatlarında kurutma, eleme ve stoklama dengesini teknik olarak inceleyin.",
-    href: "/hizmetler/silis-kumu-kurutma-tesisi",
+    buttonLabel: "Hizmeti İncele",
   },
   {
     title: "Maden Kurutma ve Eleme Tesisi",
     description:
-      "Kırma, eleme, kurutma ve mineral hazırlama ekipmanlarını tek tesiste nasıl kurguladığımızı görün.",
+      "Silis kumu, kuvars, mineral ve benzeri dökme katı malzemeler için kırma, eleme, kurutma ve taşıma çözümleri.",
     href: "/hizmetler/maden-kurutma-ve-eleme-tesisi",
+    buttonLabel: "Hizmeti İncele",
   },
   {
-    title: "Granül Gübre Üretim Tesisi",
+    title: "Endüstriyel Taşıma Sistemleri",
     description:
-      "Granülasyon, kurutma, soğutma, eleme ve paketleme adımlarını taşıyan gübre hattını inceleyin.",
-    href: "/hizmetler/granul-gubre-uretim-tesisi",
+      "Bant konveyör, helezon konveyör, kovalı elevatör ve bunker besleme sistemleriyle proses içi ürün transfer çözümleri.",
+    href: "/makinalar-ekipman/tasima-ekipmanlari",
+    buttonLabel: "Makinaları İncele",
+  },
+];
+
+const sectorCards = [
+  {
+    title: "Gübre ve Granülasyon Tesisleri",
+    description:
+      "Granülasyon, kurutma, soğutma, eleme ve paketleme adımlarıyla gübre tesislerinin proses omurgasını sektör ihtiyacına göre şekillendiriyoruz.",
+    href: "/sektorler/gubre-ve-granulasyon-tesisleri",
   },
   {
-    title: "Organomineral Gübre Tesisi",
+    title: "Kompost ve Organik Atık Tesisleri",
     description:
-      "Organik ve mineral girdileri aynı hatta yöneten granülasyon çözümlerine göz atın.",
-    href: "/hizmetler/organomineral-gubre-tesisi",
+      "Evsel organik atık, tarımsal atık, digestat ve organik fraksiyonların kompost ürününe dönüştürülmesi için saha odaklı çözümler sunuyoruz.",
+    href: "/sektorler/kompost-ve-organik-atik-tesisleri",
   },
   {
-    title: "Sıvı Gübre Üretim Tesisi",
+    title: "Atık Su Çamuru ve Arıtma Çözümleri",
     description:
-      "Tank, reaktör, çözündürme, filtrasyon ve dolum temelli sıvı ürün üretim hatlarını değerlendirin.",
-    href: "/hizmetler/sivi-gubre-uretim-tesisi",
+      "Arıtma çamuru, susuzlaştırma, kurutma ve ürün hazırlama hatlarında nem yönetimi ile proses güvenliğini birlikte ele alıyoruz.",
+    href: "/sektorler/atik-su-camuru-ve-aritma-cozumleri",
+  },
+  {
+    title: "Enerji ve Biyogaz Sistemleri",
+    description:
+      "Biyogaz ön işleme, besleme dengesi, organik yük kontrolü ve son ürün yönetimi için entegre mühendislik yaklaşımı geliştiriyoruz.",
+    href: "/sektorler/enerji-ve-biyogaz-sistemleri",
+  },
+  {
+    title: "Madencilik ve Mineral İşleme",
+    description:
+      "Kırma, eleme, kurutma ve taşıma aşamalarını mineralin davranışına, kapasiteye ve saha yerleşimine göre kurguluyoruz.",
+    href: "/sektorler/madencilik-ve-mineral-isleme",
+  },
+  {
+    title: "Kimya ve Proses Endüstrisi",
+    description:
+      "Reaktör, tank, dozaj, taşıma ve yardımcı ekipman gruplarıyla kimyasal proseslerde kontrollü ve sürdürülebilir üretim akışı kuruyoruz.",
+    href: "/sektorler/kimya-ve-proses-endustrisi",
+  },
+];
+
+const machineGroups = [
+  {
+    title: "Tambur Sistemleri",
+    description: "Kurutma, soğutma, kaplama ve kompost prosesleri için tambur bazlı ekipman çözümleri.",
+    href: "/makinalar-ekipman/tambur-sistemleri",
+  },
+  {
+    title: "Taşıma Ekipmanları",
+    description: "Bant konveyör, helezon konveyör, kovalı elevatör ve besleme ekipmanları.",
+    href: "/makinalar-ekipman/tasima-ekipmanlari",
+  },
+  {
+    title: "Kırıcılar ve Parçalayıcılar",
+    description: "Hammadde hazırlama ve boyut küçültme ihtiyaçları için ağır hizmet tipi çözümler.",
+    href: "/makinalar-ekipman/kiricilar-ve-parcalayicilar",
+  },
+  {
+    title: "Reaktörler ve Tanklar",
+    description: "Karıştırma, çözündürme, reaksiyon ve depolama prosesleri için tasarlanmış ekipmanlar.",
+    href: "/makinalar-ekipman/reaktorler-ve-tanklar",
+  },
+  {
+    title: "Eleme ve Sınıflandırma Sistemleri",
+    description: "Ürün ayırma, fraksiyon kontrolü ve sınıflandırma için proses odaklı eleme çözümleri.",
+    href: "/makinalar-ekipman/eleme-ve-siniflandirma-sistemleri",
+  },
+  {
+    title: "Paketleme ve Dolum Sistemleri",
+    description: "Son ürün dolumu, tartımı ve sevkiyat hazırlığı için tamamlayıcı ekipman grupları.",
+    href: "/makinalar-ekipman/paketleme-ve-dolum-sistemleri",
   },
 ];
 
@@ -100,196 +172,132 @@ export default function ServicesPage() {
             ))}
           </div>
 
-          <div className="mt-10 rounded-[32px] border border-slate-200 bg-white px-6 py-8 shadow-[0_18px_45px_rgba(15,23,42,0.06)] sm:px-8 sm:py-10 lg:px-12">
-            <div className="space-y-10">
-              <article>
-                <h2 className="text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">
-                  Anahtar Teslim Tesis Kurulumu
-                </h2>
-                <div className="mt-5 space-y-5 text-sm leading-8 text-slate-700 sm:text-base">
-                  <p>
-                    Pro Makina, yatırım kararı alan firmalar için anahtar teslim tesis kurulumu sürecini
-                    mühendislik, imalat, montaj ve devreye alma adımlarıyla birlikte yönetir. Gübre tesisi,
-                    kompost tesisi, organik atık değerlendirme ve farklı endüstriyel proses uygulamalarında
-                    doğru sonuç; yalnızca makine seçimiyle değil, tüm sistemin birlikte çalışmasını sağlayan
-                    planlama disipliniyle elde edilir.
-                  </p>
-                  <p>
-                    Bu nedenle ürün tipi, kapasite, kurutma tamburu yükü, depolama yapısı ve konveyör
-                    sistemleri aynı çerçevede ele alınır. Özellikle{" "}
-                    <Link href="/hizmetler/gubre-tesisi-kurulumu" className="font-semibold text-blue-700 hover:text-blue-800">
-                      gübre tesisi
-                    </Link>{" "}
-                    ve{" "}
-                    <Link href="/hizmetler/kompost-tesisi-kurulumu" className="font-semibold text-blue-700 hover:text-blue-800">
-                      kompost tesisi
-                    </Link>{" "}
-                    yatırımlarında bu bütüncül yaklaşım, yatırımın sahada daha güvenli ve sürdürülebilir çalışmasını sağlar.
-                  </p>
-                </div>
-              </article>
-
-              <article>
-                <h2 className="text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">
-                  Proses Mühendisliği ve Makine İmalatı
-                </h2>
-                <div className="mt-5 space-y-5 text-sm leading-8 text-slate-700 sm:text-base">
-                  <p>
-                    Proses mühendisliği, sahaya uygun endüstriyel makine imalatı kararlarının temelidir. Tambur
-                    sistemleri, reaktörler, helezonlar, elevatörler, bunkerler ve paketleme ekipmanları
-                    birbirinden bağımsız ürünler değil; aynı üretim ritminin parçalarıdır. Bu yüzden tasarım
-                    aşamasında enerji yükü, bakım erişimi, malzeme davranışı ve büyüme ihtiyacı birlikte değerlendirilir.
-                  </p>
-                  <p>
-                    Daha geniş ekipman ailelerini{" "}
-                    <Link href="/makinalar" className="font-semibold text-blue-700 hover:text-blue-800">
-                      makinalar
-                    </Link>{" "}
-                    sayfasında, uygulama örneklerini ise{" "}
-                    <Link href="/projeler" className="font-semibold text-blue-700 hover:text-blue-800">
-                      projeler
-                    </Link>{" "}
-                    bölümünde inceleyebilirsiniz.
-                  </p>
-                </div>
-              </article>
-
-              <article>
-                <h2 className="text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">
-                  Gübre, Kompost ve Endüstriyel Tesis Çözümleri
-                </h2>
-                <div className="mt-5 space-y-5 text-sm leading-8 text-slate-700 sm:text-base">
-                  <p>
-                    Gübre tesisi, kompost tesisi, kurutma tamburu uygulamaları ve konveyör sistemleri gibi
-                    başlıklarda çözüm üretirken sektörün gerçek ihtiyaçlarını dikkate alıyoruz. Farklı
-                    hammaddeler, farklı nem davranışları ve farklı kapasite beklentileri aynı şablonla
-                    yönetilemez. Bu nedenle{" "}
-                    <Link href="/sektorler" className="font-semibold text-blue-700 hover:text-blue-800">
-                      sektörler
-                    </Link>{" "}
-                    bazında değerlendirme yapıyor, ardından uygun mühendislik ve imalat akışını belirliyoruz.
-                  </p>
-                  <p>
-                    Teknik kapsamı birlikte netleştirmek ve ön değerlendirme almak için{" "}
-                    <Link href="/iletisim" className="font-semibold text-blue-700 hover:text-blue-800">
-                      iletişim
-                    </Link>{" "}
-                    sayfası üzerinden bize ulaşabilirsiniz.
-                  </p>
-                </div>
-              </article>
-
-              <div className="rounded-[28px] bg-blue-700 px-6 py-8 text-white shadow-[0_24px_70px_rgba(29,78,216,0.28)] sm:px-8 sm:py-10">
-                <p className="max-w-3xl text-base leading-8 text-white/90 sm:text-lg">
-                  Projenize uygun proses mühendisliği, anahtar teslim tesis kurulumu ve endüstriyel makine
-                  imalatı çözümleri için bizimle iletişime geçin.
-                </p>
-              </div>
+          <section className="mt-10 rounded-[32px] border border-slate-200 bg-white px-6 py-8 shadow-[0_18px_45px_rgba(15,23,42,0.06)] sm:px-8 sm:py-10 lg:px-12">
+            <div className="max-w-4xl">
+              <h2 className="text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">
+                Proje Bazlı Hizmet Alanlarımız
+              </h2>
+              <p className="mt-4 text-sm leading-8 text-slate-600 sm:text-base">
+                Pro Makina, yatırım fikrinden saha kurulumuna kadar gübre, kompost, kurutma,
+                taşıma, maden, biyogaz ve endüstriyel proses tesisleri için mühendislik, imalat ve
+                devreye alma desteği sunar.
+              </p>
             </div>
-          </div>
 
-          <div className="mt-10 rounded-[28px] border border-slate-200 bg-slate-50 p-6 shadow-sm sm:p-8">
-            <h2 className="text-2xl font-semibold tracking-tight text-slate-950">
-              Öne Çıkan Üretim ve Kurulum Sayfaları
-            </h2>
-            <p className="mt-4 text-sm leading-8 text-slate-600 sm:text-base">
-              Gübre ve organik atık odaklı yatırım planlıyorsanız{" "}
-              <Link
-                href="/hizmetler/organomineral-gubre-tesisi"
-                className="font-semibold text-blue-700 transition hover:text-blue-800"
-              >
-                Organomineral Gübre Tesisi Kurulumu
-              </Link>
-              ,{" "}
-              <Link
-                href="/hizmetler/granul-gubre-uretim-tesisi"
-                className="font-semibold text-blue-700 transition hover:text-blue-800"
-              >
-                Granül Gübre Üretim Tesisi Kurulumu
-              </Link>{" "}
-              ve{" "}
-              <Link
-                href="/hizmetler/kompost-tesisi-kurulumu"
-                className="font-semibold text-blue-700 transition hover:text-blue-800"
-              >
-                Kompost Tesisi Kurulumu
-              </Link>{" "}
-              sayfalarımız üzerinden detaylı teknik ve yatırım içeriklerini inceleyebilirsiniz.
-            </p>
-          </div>
-
-          <div className="mt-10 rounded-[28px] border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
-            <h2 className="text-2xl font-semibold tracking-tight text-slate-950">
-              Google Odaklı Hizmet Sayfaları
-            </h2>
-            <p className="mt-4 text-sm leading-8 text-slate-600 sm:text-base">
-              Kurutma tamburu, çamur kurutma, silis kumu kurutma, maden kurutma ve granül gübre
-              üretimi gibi yüksek satın alma niyeti taşıyan başlıklarda teknik detayları doğrudan
-              bu sayfalardan inceleyebilirsiniz.
-            </p>
-            <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-              {seoWaveOneServices.map((item) => (
+            <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+              {projectServiceAreas.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="group rounded-[24px] border border-slate-200 bg-slate-50 p-5 shadow-sm transition hover:-translate-y-1 hover:border-blue-200 hover:bg-white hover:shadow-[0_18px_45px_rgba(15,23,42,0.08)]"
+                  className="group rounded-[26px] border border-slate-200 bg-slate-50 p-5 shadow-sm transition hover:-translate-y-1 hover:border-blue-200 hover:bg-white hover:shadow-[0_18px_45px_rgba(15,23,42,0.08)]"
                 >
-                  <h3 className="text-lg font-semibold text-slate-950">{item.title}</h3>
+                  <h3 className="text-xl font-semibold tracking-tight text-slate-950">
+                    {item.title}
+                  </h3>
                   <p className="mt-3 text-sm leading-7 text-slate-600">{item.description}</p>
-                  <span className="mt-4 inline-flex text-sm font-semibold text-blue-700 transition group-hover:text-blue-800">
-                    Sayfayı İncele
+                  <span className="mt-5 inline-flex text-sm font-semibold text-blue-700 transition group-hover:text-blue-800">
+                    {item.buttonLabel}
                   </span>
                 </Link>
               ))}
             </div>
-          </div>
+          </section>
 
-          <div className="mt-10 rounded-[28px] border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
-            <h2 className="text-2xl font-semibold tracking-tight text-slate-950">
-              İlgili Teknik İçerikler
-            </h2>
-            <p className="mt-4 text-sm leading-8 text-slate-600 sm:text-base">
-              Tesis kurulumu, makine seçimi ve proses mühendisliği hakkında teknik rehberler.
-            </p>
-            <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+          <section className="mt-10 rounded-[32px] border border-slate-200 bg-white px-6 py-8 shadow-[0_18px_45px_rgba(15,23,42,0.06)] sm:px-8 sm:py-10 lg:px-12">
+            <div className="max-w-4xl">
+              <h2 className="text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">
+                Hizmet Verdiğimiz Sektörler
+              </h2>
+              <p className="mt-4 text-sm leading-8 text-slate-600 sm:text-base">
+                Her sektörün hammadde yapısı, kapasite hedefi, nem oranı, ürün davranışı ve saha
+                koşulu farklıdır. Bu nedenle tesis ve makine tasarımlarını sektör bazlı proses
+                ihtiyaçlarına göre şekillendiriyoruz.
+              </p>
+            </div>
+
+            <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+              {sectorCards.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="group rounded-[26px] border border-slate-200 bg-slate-50 p-5 shadow-sm transition hover:-translate-y-1 hover:border-blue-200 hover:bg-white hover:shadow-[0_18px_45px_rgba(15,23,42,0.08)]"
+                >
+                  <h3 className="text-xl font-semibold tracking-tight text-slate-950">
+                    {item.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-7 text-slate-600">{item.description}</p>
+                  <span className="mt-5 inline-flex text-sm font-semibold text-blue-700 transition group-hover:text-blue-800">
+                    Sektörü İncele
+                  </span>
+                </Link>
+              ))}
+            </div>
+          </section>
+
+          <section className="mt-10 rounded-[32px] border border-slate-200 bg-white px-6 py-8 shadow-[0_18px_45px_rgba(15,23,42,0.06)] sm:px-8 sm:py-10 lg:px-12">
+            <div className="max-w-4xl">
+              <h2 className="text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">
+                Makine ve Ekipman Grupları
+              </h2>
+              <p className="mt-4 text-sm leading-8 text-slate-600 sm:text-base">
+                Prosesin ihtiyaç duyduğu ana makine grupları; besleme, taşıma, karıştırma,
+                kurutma, eleme, toz toplama ve paketleme aşamalarına göre projelendirilir.
+              </p>
+            </div>
+
+            <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+              {machineGroups.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="group rounded-[26px] border border-slate-200 bg-slate-50 p-5 shadow-sm transition hover:-translate-y-1 hover:border-blue-200 hover:bg-white hover:shadow-[0_18px_45px_rgba(15,23,42,0.08)]"
+                >
+                  <h3 className="text-xl font-semibold tracking-tight text-slate-950">
+                    {item.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-7 text-slate-600">{item.description}</p>
+                  <span className="mt-5 inline-flex text-sm font-semibold text-blue-700 transition group-hover:text-blue-800">
+                    Grubu İncele
+                  </span>
+                </Link>
+              ))}
+            </div>
+          </section>
+
+          <section className="mt-10 rounded-[32px] bg-blue-700 px-6 py-8 text-white shadow-[0_24px_70px_rgba(29,78,216,0.28)] sm:px-8 sm:py-10 lg:px-12">
+            <div className="max-w-4xl">
+              <h2 className="text-2xl font-semibold tracking-tight text-white sm:text-3xl">
+                Projeniz İçin Teknik Değerlendirme Alın
+              </h2>
+              <p className="mt-4 text-sm leading-8 text-white/90 sm:text-base">
+                Kapasite, hammadde, nem oranı, hedef ürün, saha yerleşimi ve yatırım planınızı
+                paylaşın; size uygun proses ve makine çözümünü birlikte netleştirelim.
+              </p>
+            </div>
+
+            <div className="mt-8 flex flex-wrap gap-3">
               <Link
-                href="/kutuphane/blog/kurutma-tamburu-kapasite-hesabi"
-                className="group rounded-[24px] border border-slate-200 bg-slate-50 p-5 shadow-sm transition hover:-translate-y-1 hover:border-blue-200 hover:bg-white hover:shadow-[0_18px_45px_rgba(15,23,42,0.08)]"
+                href="/iletisim"
+                className="inline-flex min-h-11 items-center justify-center rounded-full bg-white px-5 py-3 text-sm font-semibold text-blue-700 transition hover:bg-slate-100"
               >
-                <h3 className="text-lg font-semibold text-slate-950">Kurutma Tamburu Kapasite Hesabı</h3>
-                <span className="mt-4 inline-flex text-sm font-semibold text-blue-700 transition group-hover:text-blue-800">
-                  Devamını Oku
-                </span>
+                Teklif Al
               </Link>
               <Link
-                href="/kutuphane/blog/helezon-kapasite-hesabi"
-                className="group rounded-[24px] border border-slate-200 bg-slate-50 p-5 shadow-sm transition hover:-translate-y-1 hover:border-blue-200 hover:bg-white hover:shadow-[0_18px_45px_rgba(15,23,42,0.08)]"
+                href="https://wa.me/905320580104"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex min-h-11 items-center justify-center rounded-full border border-white/30 bg-white/10 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/15"
               >
-                <h3 className="text-lg font-semibold text-slate-950">Helezon Kapasite Hesabı</h3>
-                <span className="mt-4 inline-flex text-sm font-semibold text-blue-700 transition group-hover:text-blue-800">
-                  Devamını Oku
-                </span>
+                WhatsApp ile Görüş
               </Link>
               <Link
-                href="/kutuphane/blog/granul-gubre-uretim-sureci"
-                className="group rounded-[24px] border border-slate-200 bg-slate-50 p-5 shadow-sm transition hover:-translate-y-1 hover:border-blue-200 hover:bg-white hover:shadow-[0_18px_45px_rgba(15,23,42,0.08)]"
+                href="tel:+905320580104"
+                className="inline-flex min-h-11 items-center justify-center rounded-full border border-white/30 bg-white/10 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/15"
               >
-                <h3 className="text-lg font-semibold text-slate-950">Granül Gübre Üretim Süreci</h3>
-                <span className="mt-4 inline-flex text-sm font-semibold text-blue-700 transition group-hover:text-blue-800">
-                  Devamını Oku
-                </span>
-              </Link>
-              <Link
-                href="/kutuphane/blog/kompost-tesisi-kurulumu"
-                className="group rounded-[24px] border border-slate-200 bg-slate-50 p-5 shadow-sm transition hover:-translate-y-1 hover:border-blue-200 hover:bg-white hover:shadow-[0_18px_45px_rgba(15,23,42,0.08)]"
-              >
-                <h3 className="text-lg font-semibold text-slate-950">Kompost Tesisi Kurulumu</h3>
-                <span className="mt-4 inline-flex text-sm font-semibold text-blue-700 transition group-hover:text-blue-800">
-                  Devamını Oku
-                </span>
+                Telefonla Ara
               </Link>
             </div>
-          </div>
+          </section>
         </div>
       </section>
     </main>
