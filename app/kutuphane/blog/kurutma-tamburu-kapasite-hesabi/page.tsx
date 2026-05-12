@@ -17,7 +17,7 @@ const relatedServices = [
   },
   {
     title: "Tambur Sistemleri",
-    href: "/makinalar/tambur-sistemleri",
+    href: "/makinalar-ekipman/tambur-sistemleri",
     description:
       "Kurutma, soğutma, kaplama ve granülasyon tamburlarını aynı ekipman ailesi içinde görün.",
   },
@@ -124,7 +124,7 @@ const sections = [
               Pratikte L/D oranı çoğu projede ön mühendislik referansı olarak kullanılır. Ancak bu oran sabit reçete
               değildir. Aynı oranda tasarlanan iki tambur, farklı ürünlerde çok farklı performans gösterebilir.
               Kurutma sisteminin{" "}
-              <Link href="/makinalar/tambur-sistemleri/kurutma-tamburu" className="font-semibold text-blue-700 transition hover:text-blue-800">
+              <Link href="/makinalar-ekipman/tambur-sistemleri/kurutma-tamburu" className="font-semibold text-blue-700 transition hover:text-blue-800">
                 tambur ekipmanı
               </Link>{" "}
               ile fan, siklon ve brülör hattı birlikte okunmadığında kağıt üzerindeki geometri sahada karşılığını

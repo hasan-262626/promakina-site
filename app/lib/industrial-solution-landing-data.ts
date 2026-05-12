@@ -128,8 +128,8 @@ export const industrialSolutionLandingConfigs: IndustrialSolutionLandingConfig[]
       },
     ],
     relatedMachines: [
-      { title: "Granülatör Tamburu", description: "Granül yapı oluşumu için hat merkezindeki ana proses ekipmanı.", href: "/makinalar/tambur-sistemleri/granulator-tamburu" },
-      { title: "Kurutma Tamburu", description: "Granül ürünlerde hedef son neme ulaşmak için yüksek kapasiteli kurutma çözümü.", href: "/makinalar/tambur-sistemleri/kurutma-tamburu" },
+      { title: "Granülatör Tamburu", description: "Granül yapı oluşumu için hat merkezindeki ana proses ekipmanı.", href: "/makinalar-ekipman/tambur-sistemleri/granulator-tamburu" },
+      { title: "Kurutma Tamburu", description: "Granül ürünlerde hedef son neme ulaşmak için yüksek kapasiteli kurutma çözümü.", href: "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburu" },
       { title: "Helezon Konveyörler", description: "Dozajlama ve kontrollü transfer için kompakt taşıma sistemi.", href: "/makinalar-ekipman/tasima-ekipmanlari/helezon-konveyorler" },
     ],
     relatedCalculations: [
@@ -206,8 +206,8 @@ export const industrialSolutionLandingConfigs: IndustrialSolutionLandingConfig[]
       },
     ],
     relatedMachines: [
-      { title: "Kompost Tamburu", description: "Ön fermentasyon, karışım ve kontrollü dönüşüm için tambur sistemi.", href: "/makinalar/tambur-sistemleri/kompost-tamburu" },
-      { title: "Trommel Elekler", description: "Kompost son ürününde tane sınıflandırma ve kaba ayrım için kullanılır.", href: "/makinalar/eleme-ve-siniflandirma-sistemleri/trommel-elekler" },
+      { title: "Kompost Tamburu", description: "Ön fermentasyon, karışım ve kontrollü dönüşüm için tambur sistemi.", href: "/makinalar-ekipman/tambur-sistemleri/kompost-tamburu" },
+      { title: "Trommel Elekler", description: "Kompost son ürününde tane sınıflandırma ve kaba ayrım için kullanılır.", href: "/makinalar-ekipman/eleme-ve-siniflandirma-sistemleri/trommel-elekler" },
       { title: "Zincirli Konveyörler", description: "Nemli ve hacimli organik akışların ağır hizmet transferinde görev alır.", href: "/makinalar/tasima-ekipmanlari/zincirli-konveyorler" },
     ],
     relatedCalculations: [
@@ -284,8 +284,8 @@ export const industrialSolutionLandingConfigs: IndustrialSolutionLandingConfig[]
       },
     ],
     relatedMachines: [
-      { title: "Kurutma Tamburu", description: "High-capacity rotary drying machine for controlled moisture reduction.", href: "/makinalar/tambur-sistemleri/kurutma-tamburu" },
-      { title: "Soğutma Tamburu", description: "Downstream cooling support for stabilized final product handling.", href: "/makinalar/tambur-sistemleri/sogutma-tamburu" },
+      { title: "Kurutma Tamburu", description: "High-capacity rotary drying machine for controlled moisture reduction.", href: "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburu" },
+      { title: "Soğutma Tamburu", description: "Downstream cooling support for stabilized final product handling.", href: "/makinalar-ekipman/tambur-sistemleri/sogutma-tamburu" },
       { title: "Cyclone / Screening Pairings", description: "Dust and classification support via related downstream equipment.", href: "/makinalar/eleme-ve-siniflandirma-sistemleri" },
     ],
     relatedCalculations: [
@@ -440,9 +440,9 @@ export const industrialSolutionLandingConfigs: IndustrialSolutionLandingConfig[]
       },
     ],
     relatedMachines: [
-      { title: "Kurutma Tamburu", description: "Yüksek nemli ürünlerde ana termal proses ekipmanı.", href: "/makinalar/tambur-sistemleri/kurutma-tamburu" },
-      { title: "Soğutma Tamburu", description: "Kurutma sonrası ürün stabilizasyonu için tamamlayıcı ekipman.", href: "/makinalar/tambur-sistemleri/sogutma-tamburu" },
-      { title: "Trommel Elekler", description: "Kurutma sonrası boyut kontrolü ve ayrım için kullanılır.", href: "/makinalar/eleme-ve-siniflandirma-sistemleri/trommel-elekler" },
+      { title: "Kurutma Tamburu", description: "Yüksek nemli ürünlerde ana termal proses ekipmanı.", href: "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburu" },
+      { title: "Soğutma Tamburu", description: "Kurutma sonrası ürün stabilizasyonu için tamamlayıcı ekipman.", href: "/makinalar-ekipman/tambur-sistemleri/sogutma-tamburu" },
+      { title: "Trommel Elekler", description: "Kurutma sonrası boyut kontrolü ve ayrım için kullanılır.", href: "/makinalar-ekipman/eleme-ve-siniflandirma-sistemleri/trommel-elekler" },
     ],
     relatedCalculations: [
       { title: "Kurutma Tamburu Hesabı", description: "Tambur çapı, boyu ve güç yaklaşımını teknik ön seçimle görün.", href: "/programlar/kurutma-tamburu-hesabi" },
@@ -518,8 +518,8 @@ export const industrialSolutionLandingConfigs: IndustrialSolutionLandingConfig[]
       },
     ],
     relatedMachines: [
-      { title: "Granülatör Tamburu", description: "Organomineral ürünlerde granül yapısını oluşturan ana ekipman.", href: "/makinalar/tambur-sistemleri/granulator-tamburu" },
-      { title: "Kurutma Tamburu", description: "Granül sonrası hedef neme ulaşmak için kullanılır.", href: "/makinalar/tambur-sistemleri/kurutma-tamburu" },
+      { title: "Granülatör Tamburu", description: "Organomineral ürünlerde granül yapısını oluşturan ana ekipman.", href: "/makinalar-ekipman/tambur-sistemleri/granulator-tamburu" },
+      { title: "Kurutma Tamburu", description: "Granül sonrası hedef neme ulaşmak için kullanılır.", href: "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburu" },
       { title: "Vibrasyonlu Elekler", description: "Ürün boyut dağılımını kontrol etmek için sınıflandırma ekipmanı.", href: "/makinalar/eleme-ve-siniflandirma-sistemleri/vibrasyonlu-elekler" },
     ],
     relatedCalculations: [

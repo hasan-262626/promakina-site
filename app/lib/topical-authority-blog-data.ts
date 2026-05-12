@@ -267,7 +267,7 @@ export const topicalBlogArticles: TopicalArticle[] = [
     internalLinks: [
       ...makeCommonLinks(),
       { label: "Kurutma Sistemleri", href: "/kutuphane/blog/kurutma-sistemleri" },
-      { label: "Kurutma Tamburu", href: "/makinalar/tambur-sistemleri/kurutma-tamburu" },
+      { label: "Kurutma Tamburu", href: "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburu" },
     ],
     relatedContents: [
       { title: "Kurutma Tamburu Kapasite Hesabı", description: "Su uçurma yükü ve kapasite dengesini inceleyin.", href: "/kutuphane/blog/kurutma-tamburu-kapasite-hesabi" },
@@ -276,7 +276,7 @@ export const topicalBlogArticles: TopicalArticle[] = [
     ],
     relatedServices: [
       { title: "Kurutma Sistemleri", description: "Hizmet kapsamında kurutma hattı mühendisliği.", href: "/hizmetler/kurutma-sistemleri" },
-      { title: "Tambur Sistemleri", description: "Tambur kategorisini ekipman bazında inceleyin.", href: "/makinalar/tambur-sistemleri" },
+      { title: "Tambur Sistemleri", description: "Tambur kategorisini ekipman bazında inceleyin.", href: "/makinalar-ekipman/tambur-sistemleri" },
     ],
     nextContent: { title: "Tambur Kurutucu Nasıl Çalışır?", description: "Tambur, gaz akışı ve lifter düzenini mekanik bakışla okuyun.", href: "/kutuphane/blog/tambur-kurutucu-nasil-calisir" },
     ctaText: "Kurutma tamburu çap-boy seçimi, kapasite doğrulaması ve anahtar teslim kurutma hattı için Pro Makina ile iletişime geçebilirsiniz.",
@@ -318,7 +318,7 @@ export const topicalBlogArticles: TopicalArticle[] = [
     ],
     relatedServices: [
       { title: "Kurutma Sistemleri", description: "Kurutma projeleri için hizmet çerçevemiz.", href: "/hizmetler/kurutma-sistemleri" },
-      { title: "Tambur Sistemleri", description: "Tambur ekipman ailesini kategori olarak inceleyin.", href: "/makinalar/tambur-sistemleri" },
+      { title: "Tambur Sistemleri", description: "Tambur ekipman ailesini kategori olarak inceleyin.", href: "/makinalar-ekipman/tambur-sistemleri" },
     ],
     nextContent: { title: "Endüstriyel Kurutma Sistemleri", description: "Farklı kurutma teknolojilerini bir arada değerlendirin.", href: "/kutuphane/blog/endustriyel-kurutma-sistemleri" },
     ctaText: "Tambur kurutucu çalışma mantığına uygun proses tasarımı ve saha çözümü için Pro Makina ekibinden teknik destek alabilirsiniz.",
@@ -352,7 +352,7 @@ export const topicalBlogArticles: TopicalArticle[] = [
       { question: "Fan ve filtre hattı kurutma sistemine dahil midir?", answer: "Evet. Gaz akışı ve emisyon kontrolü kurutma hattının ayrılmaz parçasıdır." },
       { question: "Teklif için hangi bilgileri hazırlamalıyım?", answer: "Ürün tipi, günlük kapasite, giriş-çıkış nemi, enerji tercihi ve saha kısıtları ilk değerlendirme için yeterlidir." },
     ],
-    internalLinks: [...makeCommonLinks(), { label: "Kurutma Sistemleri Kategorisi", href: "/kutuphane/blog/kurutma-sistemleri" }, { label: "Kurutma Tamburu", href: "/makinalar/tambur-sistemleri/kurutma-tamburu" }],
+    internalLinks: [...makeCommonLinks(), { label: "Kurutma Sistemleri Kategorisi", href: "/kutuphane/blog/kurutma-sistemleri" }, { label: "Kurutma Tamburu", href: "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburu" }],
     relatedContents: [
       { title: "Kurutma Tamburu Kapasite Hesabı", description: "Tamburlu sistemlerin yük hesabını inceleyin.", href: "/kutuphane/blog/kurutma-tamburu-kapasite-hesabi" },
       { title: "Rotary Dryer Design", description: "Tambur tasarımını mühendislik dilinde okuyun.", href: "/kutuphane/blog/rotary-dryer-design" },
@@ -360,7 +360,7 @@ export const topicalBlogArticles: TopicalArticle[] = [
     ],
     relatedServices: [
       { title: "Kurutma Sistemleri", description: "Endüstriyel kurutma hizmet yaklaşımımızı inceleyin.", href: "/hizmetler/kurutma-sistemleri" },
-      { title: "Tambur Sistemleri", description: "Kurutma, soğutma ve diğer tambur ekipmanlarına bakın.", href: "/makinalar/tambur-sistemleri" },
+      { title: "Tambur Sistemleri", description: "Kurutma, soğutma ve diğer tambur ekipmanlarına bakın.", href: "/makinalar-ekipman/tambur-sistemleri" },
     ],
     nextContent: { title: "Rotary Dryer Design", description: "Rotary dryer tasarımını detaylı teknik çerçevede inceleyin.", href: "/kutuphane/blog/rotary-dryer-design" },
     ctaText: "Endüstriyel kurutma sistemi seçimi, kapasite doğrulama ve yatırım çerçevesi için Pro Makina ile iletişime geçebilirsiniz.",

@@ -36,6 +36,9 @@ export function generateStaticParams() {
 export default async function MachineProductAliasPage({ params }: PageProps) {
   const { slug, product } = await params;
   const resolvedSlug = resolveSlug(slug);
+  if (resolvedSlug === "tambur-sistemleri") {
+    redirect(`/makinalar-ekipman/tambur-sistemleri/${product}`);
+  }
   if (resolvedSlug === "reaktorler-ve-tanklar") {
     redirect(`/makinalar-ekipman/reaktorler-ve-tanklar/${product}`);
   }

@@ -17,7 +17,7 @@ const relatedServices = [
   },
   {
     title: "Tambur Sistemleri",
-    href: "/makinalar/tambur-sistemleri/granulator-tamburu",
+    href: "/makinalar-ekipman/tambur-sistemleri/granulator-tamburu",
     description:
       "Granülasyon ve kurutma aşamalarında kullanılan tambur ekipmanlarını uygulama mantığıyla değerlendirin.",
   },
@@ -87,7 +87,7 @@ const sections = [
             <p>
               Reçeteleme yalnız miktarsal işlem değildir; proses akışıyla birlikte çalışan kalite adımıdır.
               Bu yaklaşım, bir sonraki{" "}
-              <Link href="/makinalar/tambur-sistemleri/granulator-tamburu" className="font-semibold text-blue-700 transition hover:text-blue-800">
+              <Link href="/makinalar-ekipman/tambur-sistemleri/granulator-tamburu" className="font-semibold text-blue-700 transition hover:text-blue-800">
                 granülatör tamburu
               </Link>{" "}
               aşamasına daha stabil ürün gönderilmesini sağlar.
@@ -131,7 +131,7 @@ const sections = [
             <p>
               Kurutma sonrasında soğutma genellikle zorunludur. Sıcak ürün depoya veya paketlemeye doğrudan
               girdiğinde yoğuşma ve topaklanma problemi yaşanabilir. Bu bölümde{" "}
-              <Link href="/makinalar/tambur-sistemleri/kurutma-tamburu" className="font-semibold text-blue-700 transition hover:text-blue-800">
+              <Link href="/makinalar-ekipman/tambur-sistemleri/kurutma-tamburu" className="font-semibold text-blue-700 transition hover:text-blue-800">
                 kurutma tamburu
               </Link>{" "}
               ve soğutma ekipmanlarının ritim uyumu belirleyicidir.

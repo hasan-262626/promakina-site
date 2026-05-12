@@ -8,6 +8,8 @@ const LEGACY_PATH_REDIRECTS: Record<string, string> = {
     "/makinalar-ekipman/tasima-ekipmanlari/helezon-konveyorler",
   "/makinalar/tasima-ekipmanlari/vidali-helezonlar":
     "/makinalar-ekipman/tasima-ekipmanlari/helezon-konveyorler",
+  "/makinalar/tambur-sistemleri":
+    "/makinalar-ekipman/tambur-sistemleri",
   "/makinalar/reaktorler-ve-tanklar":
     "/makinalar-ekipman/reaktorler-ve-tanklar",
 };

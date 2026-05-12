@@ -361,17 +361,17 @@ export const technicalAuthorityHubs: TechnicalAuthorityHub[] = [
       {
         title: "Kurutma Tamburu",
         description: "Termal kurutma proseslerinde kapasite ve enerji dengesini taşıyan ana ekipman.",
-        href: "/makinalar/tambur-sistemleri/kurutma-tamburu",
+        href: "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburu",
       },
       {
         title: "Granülatör Tamburu",
         description: "Granül oluşturma ve ürün form yönetimi için özel tambur çözümü.",
-        href: "/makinalar/tambur-sistemleri/granulator-tamburu",
+        href: "/makinalar-ekipman/tambur-sistemleri/granulator-tamburu",
       },
       {
         title: "Kompost Tamburu",
         description: "Organik atık ön işleme ve homojenizasyon tarafında kullanılan tambur sistemi.",
-        href: "/makinalar/tambur-sistemleri/kompost-tamburu",
+        href: "/makinalar-ekipman/tambur-sistemleri/kompost-tamburu",
       },
     ],
     relatedServices: [
@@ -706,7 +706,7 @@ export const technicalAuthorityHubs: TechnicalAuthorityHub[] = [
       {
         title: "Kompost Tamburu",
         description: "Ön fermentasyon ve homojenizasyon tarafında kullanılan ana tambur sistemi.",
-        href: "/makinalar/tambur-sistemleri/kompost-tamburu",
+        href: "/makinalar-ekipman/tambur-sistemleri/kompost-tamburu",
       },
       {
         title: "Vidalı Helezonlar",
@@ -716,7 +716,7 @@ export const technicalAuthorityHubs: TechnicalAuthorityHub[] = [
       {
         title: "Trommel Elekler",
         description: "Kompost son ürün sınıflandırmasında öne çıkan eleme çözümü.",
-        href: "/makinalar/eleme-ve-siniflandirma-sistemleri/trommel-elekler",
+        href: "/makinalar-ekipman/eleme-ve-siniflandirma-sistemleri/trommel-elekler",
       },
     ],
     relatedServices: [
@@ -881,12 +881,12 @@ export const technicalAuthorityHubs: TechnicalAuthorityHub[] = [
       {
         title: "Granülatör Tamburu",
         description: "Granül oluşumunun kalbinde yer alan ana proses tamburu.",
-        href: "/makinalar/tambur-sistemleri/granulator-tamburu",
+        href: "/makinalar-ekipman/tambur-sistemleri/granulator-tamburu",
       },
       {
         title: "Kurutma Tamburu",
         description: "Granül gübrede doğru son nemi sağlayan ana termal ekipman.",
-        href: "/makinalar/tambur-sistemleri/kurutma-tamburu",
+        href: "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburu",
       },
       {
         title: "Elek Sistemleri",

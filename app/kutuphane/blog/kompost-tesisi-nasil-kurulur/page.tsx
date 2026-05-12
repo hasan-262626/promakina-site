@@ -119,7 +119,7 @@ const sections = [
             </p>
             <p>
               Özellikle torbalı satış veya granül kompost hazırlığı hedefleniyorsa{" "}
-              <Link href="/makinalar/tambur-sistemleri/kompost-tamburu" className="font-semibold text-blue-700 transition hover:text-blue-800">
+              <Link href="/makinalar-ekipman/tambur-sistemleri/kompost-tamburu" className="font-semibold text-blue-700 transition hover:text-blue-800">
                 kompost tamburu
               </Link>{" "}
               ve diğer tambur sistemleri önem kazanır.

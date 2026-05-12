@@ -73,6 +73,21 @@ const libraryCategories = [
   },
 ];
 
+const compostTechnicalPages = [
+  {
+    label: "Evsel Organik Atık İşleme",
+    href: "/sektorler/kompost-ve-organik-atik-tesisleri/evsel-organik-atiklar",
+  },
+  {
+    label: "Trommel Elekler",
+    href: "/makinalar-ekipman/eleme-ve-siniflandirma-sistemleri/trommel-elekler",
+  },
+  {
+    label: "Kompost Tamburu",
+    href: "/makinalar-ekipman/tambur-sistemleri/kompost-tamburu",
+  },
+];
+
 export default function LibraryPage() {
   return (
     <main className="min-h-screen overflow-x-hidden bg-white text-slate-900">
@@ -131,6 +146,17 @@ export default function LibraryPage() {
               </Link>{" "}
               sayfalarımız üzerinden karar sürecini hızlandırabilirsiniz.
             </p>
+            <div className="mt-6 flex flex-wrap gap-3">
+              {compostTechnicalPages.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="inline-flex rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-blue-200 hover:bg-blue-50 hover:text-blue-700"
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
       </section>

@@ -1,6 +1,27 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { Metadata } from "next";
 import { drumProductPages } from "../../components/drum-product-data";
+
+const canonical = "https://www.promakina.com.tr/makinalar-ekipman/tambur-sistemleri";
+
+export const metadata: Metadata = {
+  title: "Tambur Sistemleri | Pro Makina",
+  description:
+    "Granülatör, kurutma, soğutma, kaplama ve kompost tamburu çözümleriyle endüstriyel tambur sistemlerini inceleyin.",
+  alternates: {
+    canonical,
+  },
+  openGraph: {
+    title: "Tambur Sistemleri | Pro Makina",
+    description:
+      "Granülatör, kurutma, soğutma, kaplama ve kompost tamburu çözümleriyle endüstriyel tambur sistemlerini inceleyin.",
+    url: canonical,
+    siteName: "Pro Makina",
+    locale: "tr_TR",
+    type: "website",
+  },
+};
 
 export default function DrumSystemsCategoryPage() {
   return (

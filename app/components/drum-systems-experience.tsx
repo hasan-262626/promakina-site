@@ -27,7 +27,7 @@ export default function DrumSystemsExperience() {
   return (
     <ProductDetailSystem
       categoryLabel="Tambur Sistemleri"
-      categoryHref="/makinalar/tambur-sistemleri"
+      categoryHref="/makinalar-ekipman/tambur-sistemleri"
       title={activeProduct.title}
       heroDescription={activeProduct.heroDescription}
       heroImage="/images/kurutmatam2.jpg"

@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import {
   getFertilizerRelatedLinks,
@@ -22,6 +23,38 @@ export function generateStaticParams() {
       subsector: item.slug,
     })),
   );
+}
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { slug, subsector } = await params;
+  const sector = getSectorCardBySlug(slug);
+  const current = sector?.subLinks.find((item) => item.slug === subsector);
+
+  if (!sector || !current) {
+    return {};
+  }
+
+  const title = `${current.title} | ${sector.title} | Pro Makina`;
+  const description =
+    current.description ||
+    `${sector.title} içinde ${current.title.toLowerCase()} için proses, ekipman ve mühendislik çözümleri.`;
+  const canonical = `https://www.promakina.com.tr/sektorler/${slug}/${subsector}`;
+
+  return {
+    title,
+    description,
+    alternates: {
+      canonical,
+    },
+    openGraph: {
+      title,
+      description,
+      url: canonical,
+      siteName: "Pro Makina",
+      locale: "tr_TR",
+      type: "website",
+    },
+  };
 }
 
 export default async function SectorSubsectorPage({ params }: PageProps) {

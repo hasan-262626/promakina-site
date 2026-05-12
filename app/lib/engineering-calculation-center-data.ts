@@ -374,7 +374,7 @@ export const engineeringCalculationCards: EngineeringCalculationCard[] = [
         title: "Çap, Boy ve Residence Time İlişkisi",
         paragraphs: [
           "Tambur çapı büyüdükçe ürünün serbest düşme karakteri ve gaz temas yüzeyi değişir. Boy arttıkça ise ürünün tambur içindeki kalış süresi uzar. Ancak bu iki parametre gelişi güzel büyütülemez; çünkü aşırı uzun tambur gereksiz yatırım ve ısı kaybı, yetersiz boy ise eksik kurutma yaratır. Genellikle L/D oranı ve hedef residence time birlikte değerlendirilir.",
-          "Kurutma tamburu tasarımında çap ve boy kararı aynı zamanda taşıyıcı şasi, ring sistemi, tahrik gücü ve saha yerleşimini de etkiler. Özellikle yüksek tonajlı hatlarda tambur geometrisi yalnız proses değil, çelik konstrüksiyon ve servis erişimi kararlarını da belirler. Bu nedenle /makinalar/tambur-sistemleri/kurutma-tamburu sayfasında görülen ekipman seçimi ile hesap yaklaşımı birlikte okunmalıdır.",
+          "Kurutma tamburu tasarımında çap ve boy kararı aynı zamanda taşıyıcı şasi, ring sistemi, tahrik gücü ve saha yerleşimini de etkiler. Özellikle yüksek tonajlı hatlarda tambur geometrisi yalnız proses değil, çelik konstrüksiyon ve servis erişimi kararlarını da belirler. Bu nedenle /makinalar-ekipman/tambur-sistemleri/kurutma-tamburu sayfasında görülen ekipman seçimi ile hesap yaklaşımı birlikte okunmalıdır.",
         ],
       },
       {
@@ -469,22 +469,22 @@ export const engineeringCalculationCards: EngineeringCalculationCard[] = [
       {
         title: "Kurutma Tamburu",
         description: "Endüstriyel kurutma proseslerinde saha verisine göre imal edilen döner tambur çözümü.",
-        href: "/makinalar/tambur-sistemleri/kurutma-tamburu",
+        href: "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburu",
       },
       {
         title: "Granülatör Tamburu",
         description: "Granül büyütme ve ürün form stabilitesi için kullanılan tambur sistemi.",
-        href: "/makinalar/tambur-sistemleri/granulator-tamburu",
+        href: "/makinalar-ekipman/tambur-sistemleri/granulator-tamburu",
       },
       {
         title: "Soğutma Tamburu",
         description: "Kurutma sonrası sıcak ürünlerin paketlemeye uygun hale gelmesini sağlayan tambur.",
-        href: "/makinalar/tambur-sistemleri/sogutma-tamburu",
+        href: "/makinalar-ekipman/tambur-sistemleri/sogutma-tamburu",
       },
     ],
     internalLinks: [
       ...commonLinks,
-      { label: "Tambur Sistemleri", href: "/makinalar/tambur-sistemleri" },
+      { label: "Tambur Sistemleri", href: "/makinalar-ekipman/tambur-sistemleri" },
       { label: "Gübre ve Granülasyon", href: "/sektorler/gubre-ve-granulasyon-tesisleri" },
     ],
   },

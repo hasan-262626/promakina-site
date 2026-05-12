@@ -1,110 +1,192 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import { Hero } from "../../../components/Hero";
+import { SeoRichLandingPage } from "../../../components/seo-rich-landing-page";
+
+const canonical =
+  "https://www.promakina.com.tr/sektorler/kompost-ve-organik-atik-tesisleri/evsel-organik-atiklar";
 
 export const metadata: Metadata = {
-  title: "Evsel Organik Atıkların Değerlendirilmesi | Pro Makina",
+  title: "Evsel Organik Atık İşleme ve Kompost Tesisleri | Pro Makina",
   description:
-    "Evsel organik atıkların kompost ve biyogaz tesislerinde değerlendirilmesi için proses, ayrıştırma ve anahtar teslim tesis çözümleri.",
+    "Evsel organik atık işleme, belediye organik atık kompost tesisi ve organik atık geri kazanımı için proses, makine ve anahtar teslim tesis çözümleri.",
   alternates: {
-    canonical:
-      "https://www.promakina.com.tr/sektorler/kompost-ve-organik-atik-tesisleri/evsel-organik-atiklar",
+    canonical,
   },
   openGraph: {
-    title: "Evsel Organik Atıkların Değerlendirilmesi | Pro Makina",
+    title: "Evsel Organik Atık İşleme ve Kompost Tesisleri | Pro Makina",
     description:
-      "Evsel organik atıkların kompost ve biyogaz tesislerinde değerlendirilmesi için proses, ayrıştırma ve anahtar teslim tesis çözümleri.",
-    url: "https://www.promakina.com.tr/sektorler/kompost-ve-organik-atik-tesisleri/evsel-organik-atiklar",
+      "Evsel organik atık işleme, belediye organik atık kompost tesisi ve organik atık geri kazanımı için proses, makine ve anahtar teslim tesis çözümleri.",
+    url: canonical,
     siteName: "Pro Makina",
     locale: "tr_TR",
     type: "website",
   },
 };
 
+const faqs = [
+  {
+    question: "Evsel organik atıklar hangi tesiste değerlendirilir?",
+    answer:
+      "Evsel organik atıklar; içerik yapısına, nem seviyesine ve kirletici oranına göre kompost, biyogaz veya ön kurutma destekli organik atık işleme tesislerinde değerlendirilebilir.",
+  },
+  {
+    question: "Belediye organik atık işleme tesisinde hangi makineler kullanılır?",
+    answer:
+      "Kompost tamburu, trommel elek, konveyör sistemleri, bunkerler, dozaj ekipmanları, kurutma tamburu ve koku kontrol ekipmanları belediye ölçekli hatlarda sık kullanılan ana makina gruplarıdır.",
+  },
+  {
+    question: "Evsel organik atık kompost tesisi için nem oranı neden önemlidir?",
+    answer:
+      "Nem oranı mikrobiyal aktivite, karıştırma davranışı ve havalandırma performansını doğrudan etkiler. Aşırı nem yapışma ve koku riskini, düşük nem ise biyolojik aktivite kaybını artırır.",
+  },
+  {
+    question: "Kompost ve organik atık geri kazanımı için kapasite nasıl seçilir?",
+    answer:
+      "Kapasite seçimi günlük atık kabul miktarı, mevsimsel pik yükler, bekleme süresi, nihai ürün hedefi ve saha alanı birlikte değerlendirilerek yapılır.",
+  },
+  {
+    question: "Evsel organik atık tesisi için teklif verirken hangi bilgiler gerekir?",
+    answer:
+      "Atık kompozisyonu, günlük tonaj, nem seviyesi, yabancı madde oranı, saha alanı, istenen son ürün ve otomasyon seviyesi teknik teklif için temel verileri oluşturur.",
+  },
+];
+
 export default function Page() {
   return (
-    <main className="min-h-screen overflow-x-hidden bg-white text-slate-900">
-      <Hero
-        title="Evsel Organik Atıkların Değerlendirilmesi"
-        description="Evsel organik atıklar, kompost ve biyogaz tesislerinde yüksek verimle değerlendirilebilen önemli hammaddelerdir."
-        image="/images/proses1.jpg"
-      >
-        <Link
-          href="/iletisim"
-          className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-white px-6 text-sm font-semibold text-slate-950 transition hover:bg-slate-100"
-        >
-          İletişime Geç
-        </Link>
-      </Hero>
-
-      <section className="section-space">
-        <div className="site-container">
-          <div className="rounded-[32px] border border-slate-200 bg-slate-50 px-6 py-8 shadow-[0_18px_45px_rgba(15,23,42,0.06)] sm:px-8 sm:py-10 lg:px-12">
-            <div className="space-y-10">
-              <article>
-                <h1 className="text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
-                  Evsel Organik Atıkların Değerlendirilmesi
-                </h1>
-                <div className="mt-5 space-y-5 text-sm leading-8 text-slate-700 sm:text-base">
-                  <p>
-                    Evsel organik atıklar, kompost ve biyogaz tesislerinde yüksek verimle değerlendirilebilen önemli
-                    hammaddelerdir. Doğru ayrıştırma, nem dengesi ve proses yönetimi ile çevreye zarar vermeden ekonomik
-                    değere dönüştürülebilir.
-                  </p>
-                </div>
-              </article>
-
-              <article>
-                <h2 className="text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">
-                  Kompost Üretiminde Kullanımı
-                </h2>
-                <div className="mt-5 space-y-5 text-sm leading-8 text-slate-700 sm:text-base">
-                  <p>
-                    Evsel organik atıkların kompost üretiminde kullanılabilmesi için ön ayrıştırma, yabancı madde
-                    uzaklaştırma ve uygun karışım oranı kritik öneme sahiptir. Nem ve karbon-azot dengesi doğru kurulduğunda
-                    stabil ve pazarlanabilir son ürün elde edilebilir.
-                  </p>
-                </div>
-              </article>
-
-              <article>
-                <h2 className="text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">
-                  Biyogaz Sistemlerinde Değerlendirme
-                </h2>
-                <div className="mt-5 space-y-5 text-sm leading-8 text-slate-700 sm:text-base">
-                  <p>
-                    Biyogaz uygulamalarında evsel organik atıklar, uygun ön işleme ve reçete dengesi ile yüksek metan
-                    potansiyeli sunabilir. Besleme kararlılığı, kirletici kontrolü ve proses sürekliliği sağlandığında
-                    sistem verimi önemli ölçüde yükselir.
-                  </p>
-                </div>
-              </article>
-
-              <div className="rounded-[28px] bg-blue-700 px-6 py-8 text-white shadow-[0_24px_70px_rgba(29,78,216,0.28)] sm:px-8 sm:py-10">
-                <p className="max-w-3xl text-base leading-8 text-white/90 sm:text-lg">
-                  Pro Makina ile anahtar teslim tesis çözümleri için iletişime geçin.
-                </p>
-                <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-                  <Link
-                    href="/iletisim"
-                    className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-white px-6 text-sm font-semibold text-blue-800 transition hover:bg-slate-100"
-                  >
-                    Teklif Al
-                  </Link>
-                  <a
-                    href="https://wa.me/905320580104"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/25 px-6 text-sm font-semibold text-white transition hover:bg-white/10"
-                  >
-                    WhatsApp
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
+    <SeoRichLandingPage
+      canonical={canonical}
+      heroTitle="Evsel Organik Atık İşleme ve Kompost Tesisleri"
+      heroDescription="Evsel organik atıklar, doğru ayrıştırma ve proses yönetimi ile kompost ve organik atık geri kazanımı sağlayan yüksek verimli tesislerde ekonomik değere dönüştürülebilir."
+      image="/images/proses1.jpg"
+      introLabel="Kompost ve Organik Atık Geri Kazanımı"
+      introTitle="Evsel Organik Atık İşleme ve Kompost Tesisleri"
+      introParagraphs={[
+        "Evsel organik atıklar; mutfak kaynaklı organik fraksiyonlar, pazar atıkları, peyzaj artıkları ve biyobozunur kentsel atıkların kontrollü biçimde değerlendirilmesiyle kompost ve organik atık geri kazanımı sağlayan önemli bir hammaddedir. Özellikle belediye organik atık işleme tesisi yatırımlarında atığın kararlı şekilde kabul edilmesi, yabancı maddelerden ayrıştırılması ve biyolojik süreç için uygun yapıya getirilmesi tesis başarısını belirler.",
+        "Evsel organik atık tesisi tasarımında yalnızca tonaj değil; atığın mevsimsel değişimi, nem seviyesi, yabancı madde oranı, koku kontrol ihtiyacı ve son ürün hedefi birlikte değerlendirilmelidir. Bu nedenle organik atık kompost tesisi yaklaşımı; kompost tamburu, trommel elek, konveyör ve dozaj sistemleri gibi ekipmanları tek tek seçmekten daha fazlasını ifade eder.",
+      ]}
+      breadcrumbs={[
+        { label: "Sektörler", href: "/sektorler" },
+        {
+          label: "Kompost ve Organik Atık Tesisleri",
+          href: "/sektorler/kompost-ve-organik-atik-tesisleri",
+        },
+        {
+          label: "Evsel Organik Atıklar",
+          href: "/sektorler/kompost-ve-organik-atik-tesisleri/evsel-organik-atiklar",
+        },
+      ]}
+      sections={[
+        {
+          title: "Evsel Organik Atık Nedir?",
+          paragraphs: [
+            "Evsel organik atıklar; haneler, pazar yerleri, yemekhaneler ve belediye toplama akışlarından gelen biyobozunur fraksiyonları kapsar. Sebze-meyve artıkları, yemek atıkları, çay-kahve posaları, bahçe atıkları ve bazı ambalajsız gıda kalıntıları bu grupta değerlendirilir.",
+            "Bu atıkların ekonomik şekilde işlenebilmesi için organik olmayan fraksiyonların, özellikle plastik, metal, cam ve iri inert malzemelerin hat başında mümkün olduğunca ayrılması gerekir. Aksi durumda hem kompost kalitesi düşer hem de proses içindeki ekipmanların aşınması artar.",
+          ],
+        },
+        {
+          title: "Hangi Atıklar İşlenebilir?",
+          bullets: [
+            "Mutfak ve yemek kaynaklı biyobozunur organik fraksiyonlar",
+            "Sebze-meyve ve hal/pazar atıkları",
+            "Peyzaj, budama ve park-bahçe yeşil atıkları",
+            "Biyogaz tesisi sonrası belirli koşullarda digestat karışımları",
+            "Arıtma çamuru ile kontrollü oranlarda harmanlanan organik karışımlar",
+          ],
+          links: [
+            { label: "Çamur Kurutma Tesisi", href: "/hizmetler/camur-kurutma-tesisi" },
+            { label: "Kompost Tesisi Kurulumu", href: "/hizmetler/kompost-tesisi-kurulumu" },
+          ],
+        },
+        {
+          title: "Proses Akışı",
+          paragraphs: [
+            "Evsel organik atık işleme hatlarında tipik akış; kabul alanı, ön ayıklama, kontrollü besleme, karışım hazırlama, ön biyolojik stabilizasyon, kompostlaştırma, eleme ve son ürün hazırlama adımlarından oluşur. Eğer atık çok yüksek nem içeriyorsa, kurutma tamburu gibi destek ekipmanlar nem dengesini iyileştirmek için devreye alınabilir.",
+            "Kompost tamburu ön fermentasyon ve homojenleştirme için kritik rol oynarken, trommel elek son ürünün ticari kaliteye ulaşması için istenmeyen iri fraksiyonları ayırır. Konveyör sistemleri ve dozaj ekipmanları ise hatta stabil ürün akışı sağlayarak biyolojik sürecin daha kontrollü ilerlemesine katkı verir.",
+          ],
+          links: [
+            { label: "Kompost Tamburu", href: "/makinalar-ekipman/tambur-sistemleri/kompost-tamburu" },
+            {
+              label: "Trommel Elekler",
+              href: "/makinalar-ekipman/eleme-ve-siniflandirma-sistemleri/trommel-elekler",
+            },
+            {
+              label: "Kurutma Tamburları",
+              href: "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburlari",
+            },
+            {
+              label: "Konveyör Sistemleri",
+              href: "/kutuphane/konveyor-sistemleri",
+            },
+            {
+              label: "Dozaj Sistemleri",
+              href: "/makinalar-ekipman/dozajlama-sistemleri",
+            },
+          ],
+        },
+        {
+          title: "Kullanılan Makineler",
+          paragraphs: [
+            "Bir belediye organik atık işleme tesisi için makina seçimi atığın yapısına göre değişse de, tipik omurga kompost tamburu, trommel elek, bant konveyörler, helezon konveyörler, bunkerler, dozaj hatları ve gerekiyorsa kurutma tamburu gibi ekipmanlardan oluşur. Ayrıca koku ve toz kontrolü için yardımcı ekipmanlar da sürecin parçasıdır.",
+            "Bu ekipmanların tek başına değil, birbirleriyle senkron çalışacak şekilde kapasite uyumunda tasarlanması gerekir. Örneğin trommel elek kapasitesi, tamburdan çıkan günlük ürün debisini karşılamalı; konveyör genişliği ve motor seçimi de ıslak ve lifli malzeme davranışına göre belirlenmelidir.",
+          ],
+        },
+        {
+          title: "Belediye ve Özel Sektör Uygulamaları",
+          paragraphs: [
+            "Belediyelerde odak nokta çoğu zaman atık azaltımı, düzenli depolama yükünün düşürülmesi ve çevresel geri kazanımdır. Özel sektör tarafında ise kompost ve organik atık geri kazanımı; tarımsal son ürün, toprak düzenleyici veya yan ürün gelir modeli üzerinden değerlendirilir.",
+            "Her iki senaryoda da teknik yaklaşım; lojistik akış, kabul senaryoları, proses dayanımı ve bakım kolaylığı üzerine kurulmalıdır. Saha alanı darsa kompakt tasarım, atık dalgalanması yüksekse esnek besleme kurgusu öne çıkar.",
+          ],
+        },
+      ]}
+      summaryRows={[
+        {
+          criterion: "Atık Kompozisyonu",
+          description: "Mutfak, pazar, yeşil atık ve yabancı madde oranlarının birlikte değerlendirilmesi gerekir.",
+          importance: "Makina seçimi, ayıklama seviyesi ve kompost kalitesini doğrudan belirler.",
+        },
+        {
+          criterion: "Nem Dengesi",
+          description: "Başlangıç nemi, karışım reçetesi ve havalandırma seviyesiyle birlikte ele alınır.",
+          importance: "Biyolojik aktivite, koku kontrolü ve tambur performansı için kritiktir.",
+        },
+        {
+          criterion: "Günlük Tonaj",
+          description: "Ortalama ve pik yükler üzerinden kapasite projeksiyonu yapılır.",
+          importance: "Tambur, elek ve konveyör boyutlandırması için temel veridir.",
+        },
+        {
+          criterion: "Son Ürün Hedefi",
+          description: "Pazar şartlarına göre iri fraksiyon toleransı ve elek açıklıkları belirlenir.",
+          importance: "Trommel elek seçimi ve geri devir kurgusunu etkiler.",
+        },
+      ]}
+      faqs={faqs}
+      relatedGroups={[
+        {
+          title: "İlgili Hizmetler",
+          links: [
+            { label: "Kompost Tesisi Kurulumu", href: "/hizmetler/kompost-tesisi-kurulumu" },
+            { label: "Çamur Kurutma Tesisi", href: "/hizmetler/camur-kurutma-tesisi" },
+            { label: "Gübre Tesisi Kurulumu", href: "/hizmetler/gubre-tesisi-kurulumu" },
+          ],
+        },
+        {
+          title: "İlgili Makinalar",
+          links: [
+            { label: "Kompost Tamburu", href: "/makinalar-ekipman/tambur-sistemleri/kompost-tamburu" },
+            {
+              label: "Trommel Elekler",
+              href: "/makinalar-ekipman/eleme-ve-siniflandirma-sistemleri/trommel-elekler",
+            },
+            {
+              label: "Kurutma Tamburları",
+              href: "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburlari",
+            },
+          ],
+        },
+      ]}
+      ctaText="Kapasite, hammadde yapısı, nem oranı, saha alanı ve son ürün hedefinize göre size özel evsel organik atık tesisi ve kompost çözümü hazırlayalım."
+      serviceName="Evsel Organik Atık İşleme ve Kompost Tesisleri"
+      serviceDescription="Evsel organik atıkların kabulü, ayrıştırılması, kompostlaştırılması ve son ürün hazırlığı için proje bazlı tesis ve makina çözümleri."
+    />
   );
 }

@@ -79,6 +79,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: `${siteUrl}/makinalar-ekipman/tambur-sistemleri`,
+      lastModified,
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    {
+      url: `${siteUrl}/makinalar-ekipman/reaktorler-ve-tanklar`,
+      lastModified,
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    {
       url: `${siteUrl}/sektorler`,
       lastModified,
       changeFrequency: "weekly",
@@ -122,6 +134,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${siteUrl}/makinalar-ekipman/tambur-sistemleri/kurutma-tamburlari`,
+      lastModified,
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    {
+      url: `${siteUrl}/makinalar-ekipman/tambur-sistemleri/kompost-tamburu`,
+      lastModified,
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    {
+      url: `${siteUrl}/makinalar-ekipman/eleme-ve-siniflandirma-sistemleri/trommel-elekler`,
       lastModified,
       changeFrequency: "weekly",
       priority: 0.8,
@@ -181,7 +205,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
+      url: `${siteUrl}/sektorler/kompost-ve-organik-atik-tesisleri/evsel-organik-atiklar`,
+      lastModified,
+      changeFrequency: "weekly",
+      priority: 0.7,
+    },
+    {
+      url: `${siteUrl}/sektorler/enerji-ve-biyogaz-sistemleri/tarimsal-atik-biyogaz-tesisleri`,
+      lastModified,
+      changeFrequency: "weekly",
+      priority: 0.7,
+    },
+    {
       url: `${siteUrl}/kutuphane/organomineral-gubre-tesisi-maliyeti`,
+      lastModified,
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    {
+      url: `${siteUrl}/kutuphane/organik-atiklarin-geri-kazanimi`,
       lastModified,
       changeFrequency: "weekly",
       priority: 0.8,

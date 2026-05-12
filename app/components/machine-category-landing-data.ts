@@ -85,7 +85,7 @@ export const machineCategoryLandingConfigs: Record<string, MachineCategoryLandin
     title: "Tambur Sistemleri",
     description:
       "Kurutma tamburu, granülatör tamburu, soğutma tamburu, kaplama tamburu ve kompost tamburu çözümleri için proses odaklı mühendislik yaklaşımı sunuyoruz.",
-    canonical: "https://www.promakina.com.tr/makinalar/tambur-sistemleri",
+    canonical: "https://www.promakina.com.tr/makinalar-ekipman/tambur-sistemleri",
     heroImage: "/images/kurutmatam2.jpg",
     heroDescription:
       "Kurutma, granülasyon, soğutma, kaplama ve kompost prosesleri için endüstriyel tambur sistemlerini saha verisine göre projelendiriyoruz.",
@@ -190,31 +190,31 @@ export const machineCategoryLandingConfigs: Record<string, MachineCategoryLandin
     relatedMachines: [
       {
         title: "Kurutma Tamburu",
-        href: "/makinalar/tambur-sistemleri/kurutma-tamburu",
+        href: "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburu",
         description:
           "Nemli ürünlerde kontrollü kurutma ve enerji verimi için özel tasarlanan döner tambur çözümü.",
       },
       {
         title: "Granülatör Tamburu",
-        href: "/makinalar/tambur-sistemleri/granulator-tamburu",
+        href: "/makinalar-ekipman/tambur-sistemleri/granulator-tamburu",
         description:
           "Toz ve ince fraksiyonlu hammaddeleri dengeli granül forma dönüştüren tambur sistemi.",
       },
       {
         title: "Soğutma Tamburu",
-        href: "/makinalar/tambur-sistemleri/sogutma-tamburu",
+        href: "/makinalar-ekipman/tambur-sistemleri/sogutma-tamburu",
         description:
           "Sıcak granül ürünlerin stabilizasyonunu sağlayan kontrollü soğutma tamburu.",
       },
       {
         title: "Kaplama Tamburu",
-        href: "/makinalar/tambur-sistemleri/kaplama-tamburu",
+        href: "/makinalar-ekipman/tambur-sistemleri/kaplama-tamburu",
         description:
           "Granül ürünlerde yüzey iyileştirme ve homojen katkı dağılımı sağlayan tambur sistemi.",
       },
       {
         title: "Kompost Tamburu",
-        href: "/makinalar/tambur-sistemleri/kompost-tamburu",
+        href: "/makinalar-ekipman/tambur-sistemleri/kompost-tamburu",
         description:
           "Organik atık karışımlarında ön işleme ve homojen akış için tasarlanan tambur çözümü.",
       },
@@ -629,7 +629,7 @@ export const machineCategoryLandingConfigs: Record<string, MachineCategoryLandin
       },
       {
         title: "Trommel Elekler",
-        href: "/makinalar/eleme-ve-siniflandirma-sistemleri/trommel-elekler",
+        href: "/makinalar-ekipman/eleme-ve-siniflandirma-sistemleri/trommel-elekler",
         description:
           "Organik atık ve kompost akışlarında güçlü ayırma sağlayan döner trommel sistemi.",
       },

@@ -28,7 +28,7 @@ const relatedServices = [
   },
   {
     title: "Tambur Sistemleri",
-    href: "/makinalar/tambur-sistemleri/kurutma-tamburu",
+    href: "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburu",
     description:
       "Kurutma tamburu ekipman yapısı, gövde detayları ve saha kullanım senaryolarını ekipman bazında inceleyin.",
   },
@@ -144,7 +144,7 @@ const sections = [
               ölçeğindeki bir uygulamada 2,0–2,5 metre çap ve 10–16 metre boy bandı ön seçim için makul
               başlangıç aralığı olabilir. Ancak nihai karar ürünün gerçek nem davranışı, iç kanat yapısı ve
               gaz rejimi ile birlikte verilir. Özellikle{" "}
-              <Link href="/makinalar/tambur-sistemleri/kurutma-tamburu" className="font-semibold text-blue-700 transition hover:text-blue-800">
+              <Link href="/makinalar-ekipman/tambur-sistemleri/kurutma-tamburu" className="font-semibold text-blue-700 transition hover:text-blue-800">
                 kurutma tamburu
               </Link>{" "}
               gibi ağır ekipmanlarda saha erişimi ve servis boşluğu da geometri kadar önemlidir.

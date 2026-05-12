@@ -77,7 +77,7 @@ const sections = [
             <p>
               Organomineral gübre tesisinin kalbinde granülasyon, kurutma ve eleme bölümü yer alır. Bu üçlü; toplam
               yatırımın büyük kısmını etkileyen ana proses bloklarından biridir. Özellikle{" "}
-              <Link href="/makinalar/tambur-sistemleri" className="font-semibold text-blue-700 transition hover:text-blue-800">
+              <Link href="/makinalar-ekipman/tambur-sistemleri" className="font-semibold text-blue-700 transition hover:text-blue-800">
                 tambur sistemleri
               </Link>{" "}
               seçimi, maliyeti yükselten ama aynı zamanda ürün kalitesini belirleyen ana unsurdur.

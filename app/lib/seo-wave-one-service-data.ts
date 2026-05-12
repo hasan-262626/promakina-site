@@ -688,13 +688,13 @@ const servicePages: Record<string, ServicePageRecord> = {
         title: "Granülatör Tamburu",
         description:
           "Granül yapı oluşumunun merkezinde yer alan tambur tipi ve proses ilişkisini inceleyin.",
-        href: "/makinalar/tambur-sistemleri/granulator-tamburu",
+        href: "/makinalar-ekipman/tambur-sistemleri/granulator-tamburu",
       },
       {
         title: "Soğutma ve Kaplama Tamburu",
         description:
           "Granül dayanımı, sıcaklık düşürme ve son yüzey performansı için tamamlayıcı tambur sistemleri.",
-        href: "/makinalar/tambur-sistemleri/sogutma-tamburu",
+        href: "/makinalar-ekipman/tambur-sistemleri/sogutma-tamburu",
       },
       {
         title: "Eleme Sistemleri",
@@ -819,8 +819,8 @@ const servicePages: Record<string, ServicePageRecord> = {
     technicalContents: commonTechnicalContents,
     keyLinks: [
       { label: "Kurutma Tamburu İmalatı", href: "/hizmetler/kurutma-tamburu-imalati" },
-      { label: "Granülatör Tamburu", href: "/makinalar/tambur-sistemleri/granulator-tamburu" },
-      { label: "Kaplama Tamburu", href: "/makinalar/tambur-sistemleri/kaplama-tamburu" },
+      { label: "Granülatör Tamburu", href: "/makinalar-ekipman/tambur-sistemleri/granulator-tamburu" },
+      { label: "Kaplama Tamburu", href: "/makinalar-ekipman/tambur-sistemleri/kaplama-tamburu" },
       { label: "Eleme Sistemleri", href: "/makinalar/eleme-ve-siniflandirma-sistemleri" },
     ],
   },

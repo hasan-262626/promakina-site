@@ -49,6 +49,9 @@ export async function generateMetadata({ params }: PageProps) {
 export default async function MachineCategoryPage({ params }: PageProps) {
   const { slug } = await params;
   const resolvedSlug = resolveSlug(slug);
+  if (resolvedSlug === "tambur-sistemleri") {
+    redirect("/makinalar-ekipman/tambur-sistemleri");
+  }
   if (resolvedSlug === "reaktorler-ve-tanklar") {
     redirect("/makinalar-ekipman/reaktorler-ve-tanklar");
   }

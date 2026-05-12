@@ -77,8 +77,12 @@ type CategorySeed = {
 };
 
 function makeGallery(image: string, subject: string) {
+  const primaryAlt =
+    image === "/images/reaktor1.avif"
+      ? "Pro Makina reaktör ve tank sistemleri"
+      : `${subject} genel görünüm`;
   return [
-    { src: image, alt: `${subject} genel görünüm`, caption: "Genel ürün görünümü" },
+    { src: image, alt: primaryAlt, caption: "Genel ürün görünümü" },
     { src: image, alt: `${subject} imalat detayı`, caption: "İmalat ve gövde detayı" },
     { src: image, alt: `${subject} saha yerleşimi`, caption: "Saha yerleşimi yaklaşımı" },
     { src: image, alt: `${subject} teknik detay`, caption: "Teknik detay ve servis kurgusu" },

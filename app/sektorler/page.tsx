@@ -4,6 +4,27 @@ import type { Metadata } from "next";
 import { sectorCards } from "../components/sector-subsectors-data";
 import { trText } from "../lib/tr-text";
 
+const compostAuthorityLinks = [
+  {
+    title: "Evsel Organik Atık İşleme",
+    description:
+      "Belediye organik atık işleme tesisi ve kompost geri kazanımı için sektör odaklı detay sayfasını inceleyin.",
+    href: "/sektorler/kompost-ve-organik-atik-tesisleri/evsel-organik-atiklar",
+  },
+  {
+    title: "Trommel Elekler",
+    description:
+      "Kompost son ürününde sınıflandırma ve iri fraksiyon ayırımı için döner elek yaklaşımını görün.",
+    href: "/makinalar-ekipman/eleme-ve-siniflandirma-sistemleri/trommel-elekler",
+  },
+  {
+    title: "Kompost Tamburu",
+    description:
+      "Organik atık kompost tamburu ve döner kompost reaktörü çözümlerini makina perspektifiyle değerlendirin.",
+    href: "/makinalar-ekipman/tambur-sistemleri/kompost-tamburu",
+  },
+];
+
 export const metadata: Metadata = {
   title: "Sektörler | Pro Makina",
   description:
@@ -154,6 +175,27 @@ export default function SectorsIndexPage() {
               </div>
             </div>
           </div>
+          <div className="mt-10 rounded-[28px] border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+            <h2 className="text-2xl font-semibold tracking-tight text-slate-950">
+              Kompost ve Organik Atıkta Öne Çıkan Teknik Sayfalar
+            </h2>
+            <div className="mt-6 grid gap-4 md:grid-cols-3">
+              {compostAuthorityLinks.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="group rounded-[24px] border border-slate-200 bg-slate-50 p-5 shadow-sm transition hover:-translate-y-1 hover:border-blue-200 hover:bg-white hover:shadow-[0_18px_45px_rgba(15,23,42,0.08)]"
+                >
+                  <h3 className="text-lg font-semibold text-slate-950">{item.title}</h3>
+                  <p className="mt-3 text-sm leading-7 text-slate-600">{item.description}</p>
+                  <span className="mt-4 inline-flex text-sm font-semibold text-blue-700 transition group-hover:text-blue-800">
+                    Sayfayı İncele
+                  </span>
+                </Link>
+              ))}
+            </div>
+          </div>
+
           <div className="mt-10 rounded-[28px] border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
             <h2 className="text-2xl font-semibold tracking-tight text-slate-950">
               Blog / Makaleler

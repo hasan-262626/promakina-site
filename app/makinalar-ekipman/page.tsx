@@ -33,6 +33,27 @@ const seoWaveOneMachineLinks = [
   },
 ];
 
+const compostMachineHighlights = [
+  {
+    title: "Trommel Elekler",
+    description:
+      "Kompost eleme makinesi, atık eleme sistemi ve maden eleme ekipmanı uygulamalarını detaylı inceleyin.",
+    href: "/makinalar-ekipman/eleme-ve-siniflandirma-sistemleri/trommel-elekler",
+  },
+  {
+    title: "Kompost Tamburu",
+    description:
+      "Organik atık kompost tamburu, belediye kompost tesisi tamburu ve döner kompost reaktörü yaklaşımını görün.",
+    href: "/makinalar-ekipman/tambur-sistemleri/kompost-tamburu",
+  },
+  {
+    title: "Evsel Organik Atık İşleme",
+    description:
+      "Kompost prosesi içinde bu makinelerin nasıl konumlandığını sektörel sayfadan değerlendirin.",
+    href: "/sektorler/kompost-ve-organik-atik-tesisleri/evsel-organik-atiklar",
+  },
+];
+
 export default function MachinesIndexPage() {
   const router = useRouter();
 
@@ -142,7 +163,7 @@ export default function MachinesIndexPage() {
                   <p>
                     Kurutma tamburu, granülatör tamburu, soğutma tamburu, bantlı konveyörler, zincirli konveyörler ve
                     helezon sistemleri; proses ritmini belirleyen ana ekipman gruplarıdır. Özellikle{" "}
-                    <Link href="/makinalar/tambur-sistemleri" className="font-semibold text-blue-700 hover:text-blue-800">
+                    <Link href="/makinalar-ekipman/tambur-sistemleri" className="font-semibold text-blue-700 hover:text-blue-800">
                       tambur sistemleri
                     </Link>{" "}
                     ve{" "}
@@ -209,6 +230,32 @@ export default function MachinesIndexPage() {
             </p>
             <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
               {seoWaveOneMachineLinks.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="group rounded-[24px] border border-slate-200 bg-slate-50 p-5 shadow-sm transition hover:-translate-y-1 hover:border-blue-200 hover:bg-white hover:shadow-[0_18px_45px_rgba(15,23,42,0.08)]"
+                >
+                  <h3 className="text-lg font-semibold text-slate-950">{item.title}</h3>
+                  <p className="mt-3 text-sm leading-7 text-slate-600">{item.description}</p>
+                  <span className="mt-4 inline-flex text-sm font-semibold text-blue-700 transition group-hover:text-blue-800">
+                    Sayfayı İncele
+                  </span>
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          <div className="mb-10 rounded-[28px] border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+            <h2 className="text-2xl font-semibold tracking-tight text-slate-950">
+              Kompost ve Organik Atıkta Öne Çıkan Makinalar
+            </h2>
+            <p className="mt-4 text-sm leading-8 text-slate-600 sm:text-base">
+              Kompost tamburu, trommel elek ve evsel organik atık işleme çözümleri birlikte
+              değerlendirildiğinde organik atık geri kazanımı için daha doğru ekipman kurgusu
+              oluşturulabilir.
+            </p>
+            <div className="mt-6 grid gap-4 md:grid-cols-3">
+              {compostMachineHighlights.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}

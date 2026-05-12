@@ -155,7 +155,11 @@ export default async function MachineCategoryPage({ params }: PageProps) {
                   <div className="relative min-h-[220px] bg-slate-200">
                     <Image
                       src={product.gallery[0]?.src ?? category.heroImage}
-                      alt={product.title}
+                      alt={
+                        product.gallery[0]?.src === "/images/reaktor1.avif"
+                          ? "Pro Makina reaktör ve tank sistemleri"
+                          : product.title
+                      }
                       fill
                       sizes="(min-width: 1536px) 24vw, (min-width: 768px) 48vw, 100vw"
                       className="object-cover transition duration-300 group-hover:scale-[1.02]"

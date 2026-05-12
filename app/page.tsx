@@ -200,6 +200,27 @@ const engineeringGuideHighlights = [
   },
 ];
 
+const compostProcessHighlights = [
+  {
+    title: "Evsel Organik Atık İşleme",
+    description:
+      "Belediye organik atık işleme tesisi ve kompost geri kazanımı için süreç, ekipman ve saha kriterlerini inceleyin.",
+    href: "/sektorler/kompost-ve-organik-atik-tesisleri/evsel-organik-atiklar",
+  },
+  {
+    title: "Trommel Elekler",
+    description:
+      "Kompost, atık, gübre ve maden sınıflandırmasında döner elek ve tambur elek yaklaşımını görün.",
+    href: "/makinalar-ekipman/eleme-ve-siniflandirma-sistemleri/trommel-elekler",
+  },
+  {
+    title: "Kompost Tamburu",
+    description:
+      "Organik atık kompost tamburu, olgunlaştırma tamburu ve döner kompost reaktörü çözümlerini değerlendirin.",
+    href: "/makinalar-ekipman/tambur-sistemleri/kompost-tamburu",
+  },
+];
+
 const calculationToolCards = [
   {
     title: "Helezon Hesabı",
@@ -489,6 +510,40 @@ export default function Home() {
                   className="inline-flex rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-blue-200 hover:text-blue-700"
                 >
                   {item.label}
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="pb-10 sm:pb-14">
+        <div className="site-container">
+          <div className="rounded-[32px] border border-slate-200 bg-white px-6 py-8 shadow-[0_18px_45px_rgba(15,23,42,0.05)] sm:px-8 sm:py-10 lg:px-12">
+            <div className="max-w-3xl">
+              <p className="text-sm font-semibold uppercase tracking-[0.16em] text-blue-700">
+                Kompost ve Eleme Çözümleri
+              </p>
+              <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950 md:text-4xl">
+                Organik atık geri kazanımı için öne çıkan teknik sayfalar
+              </h2>
+              <p className="mt-4 text-sm leading-8 text-slate-600 sm:text-base">
+                Evsel organik atık işleme, trommel elek ve kompost tamburu başlıklarında
+                hazırladığımız teknik sayfalara doğrudan buradan ulaşabilirsiniz.
+              </p>
+            </div>
+            <div className="mt-8 grid gap-4 md:grid-cols-3">
+              {compostProcessHighlights.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="group rounded-[24px] border border-slate-200 bg-slate-50 p-5 shadow-sm transition hover:-translate-y-1 hover:border-blue-200 hover:bg-white hover:shadow-[0_18px_45px_rgba(15,23,42,0.08)]"
+                >
+                  <h3 className="text-lg font-semibold text-slate-950">{item.title}</h3>
+                  <p className="mt-3 text-sm leading-7 text-slate-600">{item.description}</p>
+                  <span className="mt-4 inline-flex text-sm font-semibold text-blue-700 transition group-hover:text-blue-800">
+                    Sayfayı İncele
+                  </span>
                 </Link>
               ))}
             </div>
