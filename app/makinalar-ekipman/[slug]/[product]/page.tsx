@@ -17,6 +17,7 @@ const categoryAliasMap: Record<string, string> = {
 };
 
 const productAliasMap: Record<string, string> = {
+  "helezon-konveyorler": "vidali-helezonlar",
   "cekicli-kiricilar": "cekicli-kırıcılar",
   "ceneli-kiricilar": "ceneli-kırıcılar",
   "dik-milli-kiricilar": "dik-milli-kırıcılar",

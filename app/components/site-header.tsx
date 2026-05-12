@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { sectors, services } from "../data";
+import { siteContact } from "../lib/site-contact";
 import { trText } from "../lib/tr-text";
 import { machineCategoryPages } from "./machine-group-data";
 import { SocialLinks } from "./social-links";
@@ -59,16 +60,33 @@ export function SiteHeader() {
     <header className="sticky top-0 z-[70] bg-white">
       <div className="border-b border-slate-200/80">
         <div className="site-container flex items-center justify-between gap-4 py-3 text-[12px] text-slate-700 sm:text-[13px]">
-          <p className="truncate">{trText("Endüstriyel Tesis Çözümleri")}</p>
+          <div className="min-w-0">
+            <p className="truncate font-medium text-slate-900">
+              Teknik teklif için arayın: {siteContact.phoneDisplay}
+            </p>
+            <p className="hidden truncate sm:block">
+              {trText("Endüstriyel Tesis Çözümleri")}
+            </p>
+          </div>
           <div className="flex shrink-0 items-center gap-3 sm:gap-4 lg:gap-5">
             <SocialLinks variant="compact" className="hidden md:flex" />
+            <a
+              href={siteContact.phoneHref}
+              data-cta-event="phone_click"
+              data-cta-label="header_phone"
+              className="hidden font-semibold text-slate-900 transition hover:text-blue-700 lg:inline-flex"
+            >
+              {siteContact.phoneDisplay}
+            </a>
             <Link href="/iletisim" className="transition hover:text-blue-700">
               {trText("İletişim")}
             </Link>
             <a href="#" className="transition hover:text-blue-700">
               Kariyer
             </a>
-            <button className="transition hover:text-blue-700">{trText("Dil Değiştir")}</button>
+            <button className="transition hover:text-blue-700">
+              {trText("Dil Değiştir")}
+            </button>
           </div>
         </div>
       </div>
@@ -195,6 +213,8 @@ export function SiteHeader() {
           <div className="hidden shrink-0 items-center gap-3 xl:flex">
             <Link
               href="/iletisim"
+              data-cta-event="quote_button_click"
+              data-cta-label="header_quote_button"
               className="inline-flex min-h-[48px] items-center justify-center border border-slate-200 px-4 text-[14px] font-semibold text-slate-900 transition hover:border-blue-200 hover:text-blue-700 2xl:min-h-[52px] 2xl:px-5 2xl:text-[15px]"
             >
               Teklif Al

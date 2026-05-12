@@ -36,6 +36,12 @@ export function generateStaticParams() {
 export default async function MachineProductAliasPage({ params }: PageProps) {
   const { slug, product } = await params;
   const resolvedSlug = resolveSlug(slug);
+  if (resolvedSlug === "reaktorler-ve-tanklar") {
+    redirect(`/makinalar-ekipman/reaktorler-ve-tanklar/${product}`);
+  }
+  if (resolvedSlug === "tasima-ekipmanlari" && product === "vidali-helezonlar") {
+    redirect("/makinalar-ekipman/tasima-ekipmanlari/helezon-konveyorler");
+  }
   const config = machineCategoryLandingConfigs[resolvedSlug];
 
   if (!config) {

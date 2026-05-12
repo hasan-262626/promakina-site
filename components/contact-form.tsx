@@ -1,6 +1,8 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import { useMemo, useState } from "react";
+import { pushDataLayerEvent } from "@/app/lib/gtm-events";
 
 type FormState = {
   fullName: string;
@@ -27,6 +29,7 @@ const initialForm: FormState = {
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 export function ContactForm() {
+  const router = useRouter();
   const [form, setForm] = useState<FormState>(initialForm);
   const [status, setStatus] = useState<SubmissionState>("idle");
   const [message, setMessage] = useState("");
@@ -84,8 +87,14 @@ export function ContactForm() {
       }
 
       setStatus("success");
-      setMessage(result.message || "Mesajınız başarıyla gönderildi.");
+      setMessage(result.message || "Talebiniz alındı. Yönlendiriliyorsunuz.");
+      pushDataLayerEvent("quote_form_submit", {
+        subject: form.subject.trim(),
+        company: form.company.trim(),
+        page_path: window.location.pathname,
+      });
       setForm(initialForm);
+      router.push("/tesekkurler");
     } catch (error) {
       setStatus("error");
       setMessage(

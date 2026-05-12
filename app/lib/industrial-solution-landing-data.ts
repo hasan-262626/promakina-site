@@ -130,7 +130,7 @@ export const industrialSolutionLandingConfigs: IndustrialSolutionLandingConfig[]
     relatedMachines: [
       { title: "Granülatör Tamburu", description: "Granül yapı oluşumu için hat merkezindeki ana proses ekipmanı.", href: "/makinalar/tambur-sistemleri/granulator-tamburu" },
       { title: "Kurutma Tamburu", description: "Granül ürünlerde hedef son neme ulaşmak için yüksek kapasiteli kurutma çözümü.", href: "/makinalar/tambur-sistemleri/kurutma-tamburu" },
-      { title: "Vidalı Helezonlar", description: "Dozajlama ve kontrollü transfer için kompakt taşıma sistemi.", href: "/makinalar/tasima-ekipmanlari/vidali-helezonlar" },
+      { title: "Helezon Konveyörler", description: "Dozajlama ve kontrollü transfer için kompakt taşıma sistemi.", href: "/makinalar-ekipman/tasima-ekipmanlari/helezon-konveyorler" },
     ],
     relatedCalculations: [
       { title: "Helezon Kapasite Hesabı", description: "Dozajlama ve transfer hatlarında vida geometrisini hızlıca ön seçin.", href: "/programlar/helezon-kapasite-hesabi" },
@@ -362,7 +362,7 @@ export const industrialSolutionLandingConfigs: IndustrialSolutionLandingConfig[]
       },
     ],
     relatedMachines: [
-      { title: "Vidalı Helezonlar", description: "Toz, granül ve kontrollü besleme gereken hatlar için özel imalat helezonlar.", href: "/makinalar/tasima-ekipmanlari/vidali-helezonlar" },
+      { title: "Helezon Konveyörler", description: "Toz, granül ve kontrollü besleme gereken hatlar için özel imalat helezonlar.", href: "/makinalar-ekipman/tasima-ekipmanlari/helezon-konveyorler" },
       { title: "Zincirli Konveyörler", description: "Ağır hizmet transferi ve kapalı taşıma için tamamlayıcı çözüm.", href: "/makinalar/tasima-ekipmanlari/zincirli-konveyorler" },
       { title: "Bantlı Elevatörler", description: "Dikey taşıma gerektiren hatlarda helezon sistemlerini tamamlar.", href: "/makinalar/tasima-ekipmanlari/bantli-elevatorler" },
     ],
@@ -596,9 +596,9 @@ export const industrialSolutionLandingConfigs: IndustrialSolutionLandingConfig[]
       },
     ],
     relatedMachines: [
-      { title: "Karıştırıcılı Reaktörler", description: "Kimyasal ve sıvı proseslerde kontrollü reaksiyon ve karışım için.", href: "/makinalar/reaktorler-ve-tanklar/karistiricili-reaktorler" },
-      { title: "Çözündürme Tankları", description: "Katı-sıvı hazırlama ve formülasyona geçiş için kritik ekipman.", href: "/makinalar/reaktorler-ve-tanklar/cozundurme-tanklari" },
-      { title: "Stok Tankları", description: "Batch sonrası güvenli depolama ve dolum hazırlığı sağlar.", href: "/makinalar/reaktorler-ve-tanklar/stok-tanklari" },
+      { title: "Karıştırıcılı Reaktörler", description: "Kimyasal ve sıvı proseslerde kontrollü reaksiyon ve karışım için.", href: "/makinalar-ekipman/reaktorler-ve-tanklar/karistiricili-reaktorler" },
+      { title: "Çözündürme Tankları", description: "Katı-sıvı hazırlama ve formülasyona geçiş için kritik ekipman.", href: "/makinalar-ekipman/reaktorler-ve-tanklar/cozundurme-tanklari" },
+      { title: "Stok Tankları", description: "Batch sonrası güvenli depolama ve dolum hazırlığı sağlar.", href: "/makinalar-ekipman/reaktorler-ve-tanklar/stok-tanklari" },
     ],
     relatedCalculations: [
       { title: "Konveyör Kapasite Hesabı", description: "Toz besleyici hammaddelerin yardımcı transfer ihtiyacını değerlendirin.", href: "/programlar/konveyor-kapasite-hesabi" },
@@ -674,7 +674,7 @@ export const industrialSolutionLandingConfigs: IndustrialSolutionLandingConfig[]
       },
     ],
     relatedMachines: [
-      { title: "Vidalı Helezonlar", description: "Toz, granül ve kontrollü besleme gerektiren hatlar için ana vida sistemi.", href: "/makinalar/tasima-ekipmanlari/vidali-helezonlar" },
+      { title: "Helezon Konveyörler", description: "Toz, granül ve kontrollü besleme gerektiren hatlar için ana vida sistemi.", href: "/makinalar-ekipman/tasima-ekipmanlari/helezon-konveyorler" },
       { title: "Bantlı Konveyörler", description: "Daha uzun yatay transferlerde tamamlayıcı taşıma çözümü.", href: "/makinalar/tasima-ekipmanlari/bantli-konveyorler" },
       { title: "Zincirli Konveyörler", description: "Ağır hizmet ve kapalı hat ihtiyaçlarında alternatif çözüm.", href: "/makinalar/tasima-ekipmanlari/zincirli-konveyorler" },
     ],

@@ -6,6 +6,7 @@ import {
   MobileStickyCta,
   SiteFooterCta,
 } from "./components/site-footer-cta";
+import { GlobalContactEventTracker } from "./components/global-contact-event-tracker";
 import { SiteHeader } from "./components/site-header";
 import { TextNormalizer } from "./components/text-normalizer";
 import { siteContact, siteSocialSameAs } from "./lib/site-contact";
@@ -127,6 +128,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           />
         </noscript>
         <TextNormalizer />
+        <GlobalContactEventTracker />
         <SiteHeader />
         {children}
         <SiteFooterCta />

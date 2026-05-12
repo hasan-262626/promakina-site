@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Hero } from "./Hero";
-import { siteContact, siteSocialSameAs } from "../lib/site-contact";
+import {
+  createWhatsAppHref,
+  siteContact,
+  siteSocialSameAs,
+} from "../lib/site-contact";
 import {
   ServiceRelatedTechnicalContents,
   type TechnicalContentCard,
@@ -145,6 +149,12 @@ export function MachineSeoLandingPage({
   faqs,
   ctaText,
 }: MachineSeoLandingPageProps) {
+  const quoteCtaTitle = "Projeniz için teknik teklif alın";
+  const quoteCtaDescription =
+    "Kapasite, hammadde, nem oranı, proses hedefi ve saha koşullarına göre size özel makine ve tesis çözümü hazırlayalım.";
+  const whatsappHref = createWhatsAppHref(
+    `Merhaba, Pro Makina web sitenizden ulaşıyorum. Aşağıdaki ürün/hizmet için teklif almak istiyorum: ${title}`,
+  );
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
@@ -154,21 +164,19 @@ export function MachineSeoLandingPage({
     sameAs: ["https://www.promakina.com.tr", ...siteSocialSameAs],
   };
 
-  const productSchema = {
+  const serviceSchema = {
     "@context": "https://schema.org",
-    "@type": "Product",
+    "@type": "Service",
     name: productName,
-    category: categoryName,
     description,
-    brand: {
-      "@type": "Brand",
-      name: siteName,
-    },
-    manufacturer: {
+    provider: {
       "@type": "Organization",
       name: siteName,
       url: "https://www.promakina.com.tr",
     },
+    serviceType: `${categoryName} - ${productName}`,
+    category: categoryName,
+    areaServed: ["Türkiye", "Avrupa", "Orta Doğu", "Kuzey Afrika"],
     url: canonical,
   };
 
@@ -226,7 +234,7 @@ export function MachineSeoLandingPage({
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
       />
       <script
         type="application/ld+json"
@@ -240,17 +248,25 @@ export function MachineSeoLandingPage({
       <Hero title={title} description={description} image={image}>
         <Link
           href="/iletisim"
+          data-cta-event="quote_button_click"
+          data-cta-label={`${productName}_hero_quote`}
           className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-white px-6 text-sm font-semibold text-slate-950 transition hover:bg-slate-100"
         >
           Teklif Al
         </Link>
         <a
-          href={siteContact.whatsappHref}
+          href={whatsappHref}
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/20 bg-white/10 px-6 text-sm font-semibold text-white transition hover:bg-white/15"
         >
-          WhatsApp
+          WhatsApp ile Gönder
+        </a>
+        <a
+          href={siteContact.phoneHref}
+          className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/20 bg-white/10 px-6 text-sm font-semibold text-white transition hover:bg-white/15"
+        >
+          Telefonla Ara
         </a>
       </Hero>
 
@@ -351,6 +367,43 @@ export function MachineSeoLandingPage({
         </div>
       </section>
 
+      <section className="pb-10 sm:pb-14">
+        <div className="site-container">
+          <div className="rounded-[28px] border border-slate-200 bg-blue-700 px-6 py-8 text-white shadow-[0_24px_70px_rgba(29,78,216,0.22)] sm:px-8 sm:py-10">
+            <h2 className="text-2xl font-semibold tracking-tight text-white sm:text-3xl">
+              {quoteCtaTitle}
+            </h2>
+            <p className="mt-4 max-w-3xl text-sm leading-8 text-white/88 sm:text-base">
+              {quoteCtaDescription}
+            </p>
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+              <a
+                href={whatsappHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-white px-6 text-sm font-semibold text-blue-800 transition hover:bg-slate-100"
+              >
+                WhatsApp ile Görüş
+              </a>
+              <Link
+                href="/iletisim"
+                data-cta-event="quote_button_click"
+                data-cta-label={`${productName}_mid_quote_form`}
+                className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/25 px-6 text-sm font-semibold text-white transition hover:bg-white/10"
+              >
+                Teknik Teklif Formu
+              </Link>
+              <a
+                href={siteContact.phoneHref}
+                className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/25 px-6 text-sm font-semibold text-white transition hover:bg-white/10"
+              >
+                Telefonla Ara
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <ServiceRelatedTechnicalContents items={technicalContents} />
 
       <section className="pb-10 sm:pb-14">
@@ -418,23 +471,34 @@ export function MachineSeoLandingPage({
         <div className="site-container">
           <div className="rounded-[28px] bg-blue-700 px-6 py-8 text-white shadow-[0_24px_70px_rgba(29,78,216,0.28)] sm:px-8 sm:py-10">
             <h2 className="text-2xl font-semibold tracking-tight text-white sm:text-3xl">
-              Projeniz için doğru ekipmanı birlikte belirleyelim
+              {quoteCtaTitle}
             </h2>
-            <p className="max-w-3xl text-base leading-8 text-white/90 sm:text-lg">{ctaText}</p>
+            <p className="max-w-3xl text-base leading-8 text-white/90 sm:text-lg">
+              {quoteCtaDescription}
+            </p>
+            <p className="mt-3 max-w-3xl text-sm leading-8 text-white/82 sm:text-base">{ctaText}</p>
             <div className="mt-6 flex flex-col gap-3 sm:flex-row">
               <Link
                 href="/iletisim"
+                data-cta-event="quote_button_click"
+                data-cta-label={`${productName}_final_quote_form`}
                 className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-white px-6 text-sm font-semibold text-blue-800 transition hover:bg-slate-100"
               >
-                Teknik Teklif Al
+                Teknik Teklif Formu
               </Link>
               <a
-                href={siteContact.whatsappHref}
+                href={whatsappHref}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/25 px-6 text-sm font-semibold text-white transition hover:bg-white/10"
               >
-                WhatsApp
+                WhatsApp ile Görüş
+              </a>
+              <a
+                href={siteContact.phoneHref}
+                className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/25 px-6 text-sm font-semibold text-white transition hover:bg-white/10"
+              >
+                Telefonla Ara
               </a>
             </div>
           </div>

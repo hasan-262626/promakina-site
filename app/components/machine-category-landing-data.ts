@@ -346,7 +346,7 @@ export const machineCategoryLandingConfigs: Record<string, MachineCategoryLandin
       },
       {
         title: "Vidalı Helezonlar",
-        href: "/makinalar/tasima-ekipmanlari/vidali-helezonlar",
+        href: "/makinalar-ekipman/tasima-ekipmanlari/helezon-konveyorler",
         description:
           "Dozajlama ve kompakt alanlı transfer uygulamalarında kontrollü akış sağlayan helezon çözümü.",
       },
@@ -650,7 +650,7 @@ export const machineCategoryLandingConfigs: Record<string, MachineCategoryLandin
     title: "Reaktörler ve Tanklar",
     description:
       "Karıştırıcılı reaktörler, çözündürme tankları, stok tankları ve proses tankları için özel mühendislik yaklaşımı sunuyoruz.",
-    canonical: "https://www.promakina.com.tr/makinalar/reaktorler-ve-tanklar",
+    canonical: "https://www.promakina.com.tr/makinalar-ekipman/reaktorler-ve-tanklar",
     heroImage: "/images/tank1.jpg",
     heroDescription:
       "Sıvı gübre, kimya ve proses endüstrilerinde kontrollü karışım, reaksiyon ve depolama için tank ve reaktör çözümleri geliştiriyoruz.",
@@ -755,31 +755,31 @@ export const machineCategoryLandingConfigs: Record<string, MachineCategoryLandin
     relatedMachines: [
       {
         title: "Soğutma Tankları",
-        href: "/makinalar/reaktorler-ve-tanklar/sogutma-tanklari",
+        href: "/makinalar-ekipman/reaktorler-ve-tanklar/sogutma-tanklari",
         description:
           "Sıvı ürünlerde kontrollü sıcaklık düşürme ve tampon depolama için tasarlanan tank çözümü.",
       },
       {
         title: "Karıştırıcılı Reaktörler",
-        href: "/makinalar/reaktorler-ve-tanklar/karistiricili-reaktorler",
+        href: "/makinalar-ekipman/reaktorler-ve-tanklar/karistiricili-reaktorler",
         description:
           "Karışım ve reaksiyon sürekliliği için güçlü iç karıştırma sistemine sahip reaktör yapısı.",
       },
       {
         title: "Basınçlı Reaktörler",
-        href: "/makinalar/reaktorler-ve-tanklar/basincli-reaktorler",
+        href: "/makinalar-ekipman/reaktorler-ve-tanklar/basincli-reaktorler",
         description:
           "Basınç altında kontrollü proses yürütmek için özel güvenlik ve dayanım odaklı çözüm.",
       },
       {
         title: "Çözündürme Tankları",
-        href: "/makinalar/reaktorler-ve-tanklar/cozundurme-tanklari",
+        href: "/makinalar-ekipman/reaktorler-ve-tanklar/cozundurme-tanklari",
         description:
           "Katı-sıvı karışımların çözündürülmesi ve ön hazırlığı için optimize edilen tank sistemi.",
       },
       {
         title: "Stok Tankları",
-        href: "/makinalar/reaktorler-ve-tanklar/stok-tanklari",
+        href: "/makinalar-ekipman/reaktorler-ve-tanklar/stok-tanklari",
         description:
           "Sıvı ürünlerde güvenli tampon depolama ve hat dengesi için kullanılan temel tank çözümü.",
       },

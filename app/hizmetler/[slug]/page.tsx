@@ -2,6 +2,7 @@
 import { notFound } from "next/navigation";
 import { Hero } from "../../components/Hero";
 import { services } from "../../data";
+import { createWhatsAppHref, siteContact } from "../../lib/site-contact";
 import { trText } from "../../lib/tr-text";
 
 type PageProps = {
@@ -878,14 +879,40 @@ export default async function ServiceDetailPage({ params }: PageProps) {
         question: trText(faq.question),
         answer: trText(faq.answer),
       }));
+  const whatsappHref = createWhatsAppHref(
+    `Merhaba, Pro Makina web sitenizden ulaşıyorum. Aşağıdaki ürün/hizmet için teklif almak istiyorum: ${trText(service.title)}`,
+  );
 
   return (
     <main className="min-h-screen overflow-x-hidden bg-white text-slate-900">
-            <Hero
+      <Hero
         title={trText(service.title)}
         description={trText(service.summary)}
         image={heroImage}
-      />
+      >
+        <Link
+          href="/iletisim"
+          data-cta-event="quote_button_click"
+          data-cta-label={`${service.slug}_hero_quote`}
+          className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-white px-6 text-sm font-semibold text-slate-950 transition hover:bg-slate-100"
+        >
+          Teklif Al
+        </Link>
+        <a
+          href={whatsappHref}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/20 bg-white/10 px-6 text-sm font-semibold text-white transition hover:bg-white/15"
+        >
+          WhatsApp ile Gönder
+        </a>
+        <a
+          href={siteContact.phoneHref}
+          className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/20 bg-white/10 px-6 text-sm font-semibold text-white transition hover:bg-white/15"
+        >
+          Telefonla Ara
+        </a>
+      </Hero>
 
       <section className="pt-16 sm:pt-20">
         <div className="site-container">
@@ -1027,6 +1054,43 @@ export default async function ServiceDetailPage({ params }: PageProps) {
 
       <section className="pb-16 sm:pb-20">
         <div className="site-container">
+          <div className="rounded-[32px] bg-blue-700 px-6 py-10 text-white shadow-sm sm:px-8 sm:py-12 md:px-12">
+            <h2 className="max-w-3xl text-3xl font-semibold tracking-tight md:text-4xl">
+              Projeniz için teknik teklif alın
+            </h2>
+            <p className="mt-4 max-w-3xl text-base leading-8 text-white/86">
+              Kapasite, hammadde, nem oranı, proses hedefi ve saha koşullarına göre size özel makine ve tesis çözümü hazırlayalım.
+            </p>
+            <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:flex-wrap">
+              <a
+                href={whatsappHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-full bg-white px-6 py-3 text-center text-sm font-semibold text-blue-700 transition hover:bg-slate-100"
+              >
+                WhatsApp ile Görüş
+              </a>
+              <Link
+                href="/iletisim"
+                data-cta-event="quote_button_click"
+                data-cta-label={`${service.slug}_mid_quote_form`}
+                className="rounded-full border border-white/25 px-6 py-3 text-center text-sm font-semibold text-white transition hover:bg-white/10"
+              >
+                Teknik Teklif Formu
+              </Link>
+              <a
+                href={siteContact.phoneHref}
+                className="rounded-full border border-white/25 px-6 py-3 text-center text-sm font-semibold text-white transition hover:bg-white/10"
+              >
+                Telefonla Ara
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="pb-16 sm:pb-20">
+        <div className="site-container">
           <div className="rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-sm sm:p-8">
             <h2 className="text-3xl font-semibold tracking-tight text-slate-950 md:text-4xl">
               {trText(
@@ -1143,21 +1207,12 @@ export default async function ServiceDetailPage({ params }: PageProps) {
         <div className="site-container">
           <div className="rounded-[32px] bg-blue-700 px-6 py-10 text-white shadow-sm sm:px-8 sm:py-12 md:px-12">
             <h2 className="max-w-3xl text-3xl font-semibold tracking-tight md:text-4xl">
-              {trText(
-                isMachineManufacturing
-                  ? "Makine İmalatı için bizimle iletişime geçin"
-                  : isCommissioning
-                    ? "Kurulum ve Devreye Alma için bizimle iletişime geçin"
-                    : isModernization
-                      ? "Modernizasyon ve Revizyon için bizimle iletişime geçin"
-                      : isConsulting
-                        ? "Teknik Dani?Ymanlik için bizimle iletişime geçin"
-                        : isMaintenance
-                          ? "Bakım ve Servis için bizimle iletişime geçin"
-                          : "Anahtar Teslim Tesis Kurulumu için bizimle iletişime geçin",
-              )}
+              Projeniz için teknik teklif alın
             </h2>
-            <p className="mt-4 max-w-2xl text-base leading-8 text-white/82">
+            <p className="mt-4 max-w-3xl text-base leading-8 text-white/86">
+              Kapasite, hammadde, nem oranı, proses hedefi ve saha koşullarına göre size özel makine ve tesis çözümü hazırlayalım.
+            </p>
+            <p className="mt-3 max-w-2xl text-base leading-8 text-white/82">
               {trText(
                 isMachineManufacturing
                   ? "Projenize en uygun makina ?z?mlerini, do?ru malzeme se?imini ve yüksek performansli üretim sistemlerini birlikte planlayalim."
@@ -1174,16 +1229,26 @@ export default async function ServiceDetailPage({ params }: PageProps) {
             </p>
             <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:flex-wrap">
               <a
-                href="mailto:info@promakina.com.tr"
+                href={whatsappHref}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="rounded-full bg-white px-6 py-3 text-center text-sm font-semibold text-blue-700 transition hover:bg-slate-100"
               >
-                E-posta Gönder
+                WhatsApp ile Görüş
               </a>
-              <a
-                href="tel:+905320580104"
+              <Link
+                href="/iletisim"
+                data-cta-event="quote_button_click"
+                data-cta-label={`${service.slug}_final_quote_form`}
                 className="rounded-full border border-white/25 px-6 py-3 text-center text-sm font-semibold text-white transition hover:bg-white/10"
               >
-                Hemen Ara
+                Teknik Teklif Formu
+              </Link>
+              <a
+                href={siteContact.phoneHref}
+                className="rounded-full border border-white/25 px-6 py-3 text-center text-sm font-semibold text-white transition hover:bg-white/10"
+              >
+                Telefonla Ara
               </a>
             </div>
           </div>

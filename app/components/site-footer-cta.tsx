@@ -47,6 +47,8 @@ export function SiteFooterCta() {
               <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:flex-wrap">
                 <Link
                   href="/iletisim"
+                  data-cta-event="quote_button_click"
+                  data-cta-label="footer_global_quote"
                   className="rounded-full bg-white px-6 py-3 text-center text-sm font-semibold text-blue-700 transition hover:bg-slate-100"
                 >
                   {trText("İletişim Sayfasına Git")}
@@ -329,6 +331,8 @@ export function MobileStickyCta() {
         <div className="grid grid-cols-2 gap-2">
           <Link
             href="/iletisim"
+            data-cta-event="quote_button_click"
+            data-cta-label="mobile_sticky_quote"
             className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-blue-700 px-4 text-xs font-semibold text-white transition hover:bg-blue-800"
           >
             Teklif Al

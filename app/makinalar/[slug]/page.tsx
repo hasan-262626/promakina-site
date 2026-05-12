@@ -49,6 +49,9 @@ export async function generateMetadata({ params }: PageProps) {
 export default async function MachineCategoryPage({ params }: PageProps) {
   const { slug } = await params;
   const resolvedSlug = resolveSlug(slug);
+  if (resolvedSlug === "reaktorler-ve-tanklar") {
+    redirect("/makinalar-ekipman/reaktorler-ve-tanklar");
+  }
   const config = machineCategoryLandingConfigs[resolvedSlug];
 
   if (config) {

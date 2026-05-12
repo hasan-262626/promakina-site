@@ -479,11 +479,19 @@ export function ProductDetailSystem({
               <button type="button" onClick={() => setIsCalculatorOpen(true)} className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-blue-600 px-6 text-sm font-semibold text-white transition hover:bg-blue-500">
                 Kapasite Hesabı
               </button>
-              <Link href="/iletisim" className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/20 bg-white/10 px-6 text-sm font-semibold text-white transition hover:bg-white/15">
+              <Link
+                href="/iletisim"
+                data-cta-event="quote_button_click"
+                data-cta-label={`${title}_hero_quote`}
+                className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/20 bg-white/10 px-6 text-sm font-semibold text-white transition hover:bg-white/15"
+              >
                 Teklif Al
               </Link>
               <a href={whatsappHref} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/20 bg-white/10 px-6 text-sm font-semibold text-white transition hover:bg-white/15">
-                WhatsApp
+                WhatsApp ile Görüş
+              </a>
+              <a href="tel:+905320580104" className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/20 bg-white/10 px-6 text-sm font-semibold text-white transition hover:bg-white/15">
+                Telefonla Ara
               </a>
             </div>
           </div>
@@ -607,11 +615,43 @@ export function ProductDetailSystem({
         </div>
       </section>
 
+      <section className="pb-16">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
+          <div className="rounded-[32px] border border-slate-200 bg-blue-700 px-6 py-8 text-white shadow-[0_24px_70px_rgba(29,78,216,0.22)] sm:px-8 sm:py-10">
+            <h2 className="text-2xl font-semibold tracking-tight text-white sm:text-3xl">
+              Projeniz için teknik teklif alın
+            </h2>
+            <p className="mt-4 max-w-3xl text-sm leading-8 text-white/88 sm:text-base">
+              Kapasite, hammadde, nem oranı, proses hedefi ve saha koşullarına göre size özel makine ve tesis çözümü hazırlayalım.
+            </p>
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+              <a href={whatsappHref} target="_blank" rel="noopener noreferrer" className="rounded-full bg-white px-6 py-3 text-center text-sm font-semibold text-blue-800 transition hover:bg-slate-100">
+                WhatsApp ile Görüş
+              </a>
+              <Link
+                href="/iletisim"
+                data-cta-event="quote_button_click"
+                data-cta-label={`${title}_mid_quote_form`}
+                className="rounded-full border border-white/30 px-6 py-3 text-center text-sm font-semibold text-white transition hover:bg-white/10"
+              >
+                Teknik Teklif Formu
+              </Link>
+              <a href="tel:+905320580104" className="rounded-full border border-white/30 px-6 py-3 text-center text-sm font-semibold text-white transition hover:bg-white/10">
+                Telefonla Ara
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="pb-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
           <div className="rounded-[32px] bg-blue-700 px-6 py-10 text-white shadow-[0_28px_90px_rgba(37,99,235,0.25)] sm:px-8 sm:py-12 md:px-12">
-            <h2 className="max-w-3xl text-3xl font-semibold tracking-tight md:text-4xl">{dynamicCtaTitle}</h2>
-            <p className="mt-4 max-w-3xl leading-8 text-white/86">{dynamicCtaText}</p>
+            <h2 className="max-w-3xl text-3xl font-semibold tracking-tight md:text-4xl">Projeniz için teknik teklif alın</h2>
+            <p className="mt-4 max-w-3xl leading-8 text-white/86">
+              Kapasite, hammadde, nem oranı, proses hedefi ve saha koşullarına göre size özel makine ve tesis çözümü hazırlayalım.
+            </p>
+            <p className="mt-3 max-w-3xl leading-8 text-white/78">{dynamicCtaText}</p>
             {calculationSummary ? <div className="mt-6 rounded-[24px] border border-white/18 bg-white/10 px-5 py-4 text-sm leading-7 text-white/92">{calculationSummary}</div> : null}
             <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:flex-wrap">
               <button type="button" onClick={() => setIsCalculatorOpen(true)} className="rounded-full bg-white px-6 py-3 text-center text-sm font-semibold text-blue-700 transition hover:bg-slate-100">
@@ -623,9 +663,17 @@ export function ProductDetailSystem({
               <a href={mailHref} className="rounded-full border border-white/30 px-6 py-3 text-center text-sm font-semibold text-white transition hover:bg-white/10">
                 Mail ile Gönder
               </a>
-              <Link href="/iletisim" className="rounded-full border border-white/30 px-6 py-3 text-center text-sm font-semibold text-white transition hover:bg-white/10">
-                Teklif Al
+              <Link
+                href="/iletisim"
+                data-cta-event="quote_button_click"
+                data-cta-label={`${title}_final_quote_form`}
+                className="rounded-full border border-white/30 px-6 py-3 text-center text-sm font-semibold text-white transition hover:bg-white/10"
+              >
+                Teknik Teklif Formu
               </Link>
+              <a href="tel:+905320580104" className="rounded-full border border-white/30 px-6 py-3 text-center text-sm font-semibold text-white transition hover:bg-white/10">
+                Telefonla Ara
+              </a>
             </div>
           </div>
         </div>

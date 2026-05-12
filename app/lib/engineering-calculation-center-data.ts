@@ -185,7 +185,7 @@ export const engineeringCalculationCards: EngineeringCalculationCard[] = [
       {
         title: "Helezon Konveyörler",
         description: "Kontrollü besleme ve kompakt taşıma ihtiyacı için özel imalat helezon çözümleri.",
-        href: "/makinalar/tasima-ekipmanlari/helezon-konveyorler",
+        href: "/makinalar-ekipman/tasima-ekipmanlari/helezon-konveyorler",
       },
       {
         title: "Zincirli Konveyörler",
@@ -332,7 +332,7 @@ export const engineeringCalculationCards: EngineeringCalculationCard[] = [
       {
         title: "Helezon Konveyörler",
         description: "Kompakt alan ve kontrollü besleme gereken hatlar için vida bazlı taşıma ekipmanı.",
-        href: "/makinalar/tasima-ekipmanlari/helezon-konveyorler",
+        href: "/makinalar-ekipman/tasima-ekipmanlari/helezon-konveyorler",
       },
       {
         title: "Zincirli Konveyörler",
@@ -758,7 +758,7 @@ export const engineeringCalculationCards: EngineeringCalculationCard[] = [
       {
         title: "Helezon Konveyörler",
         description: "Daha kontrollü ve kompakt taşıma senaryolarında alternatif vida konveyör yaklaşımı.",
-        href: "/makinalar/tasima-ekipmanlari/helezon-konveyorler",
+        href: "/makinalar-ekipman/tasima-ekipmanlari/helezon-konveyorler",
       },
       {
         title: "Bant Konveyörler",

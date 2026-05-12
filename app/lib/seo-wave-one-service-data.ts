@@ -1000,7 +1000,7 @@ const servicePages: Record<string, ServicePageRecord> = {
         title: "Reaktörler ve Tanklar",
         description:
           "Sıvı ürünlerde çözündürme, reaksiyon ve stoklama için kullanılan proses ekipmanlarını inceleyin.",
-        href: "/makinalar/reaktorler-ve-tanklar",
+        href: "/makinalar-ekipman/reaktorler-ve-tanklar",
       },
       {
         title: "Dozaj ve Besleme Omurgası",
@@ -1137,7 +1137,7 @@ const servicePages: Record<string, ServicePageRecord> = {
     technicalContents: commonTechnicalContents,
     keyLinks: [
       { label: "Organomineral Gübre Tesisi", href: "/hizmetler/organomineral-gubre-tesisi" },
-      { label: "Reaktörler ve Tanklar", href: "/makinalar/reaktorler-ve-tanklar" },
+      { label: "Reaktörler ve Tanklar", href: "/makinalar-ekipman/reaktorler-ve-tanklar" },
       { label: "Makinalar", href: "/makinalar" },
       { label: "İletişim", href: "/iletisim" },
     ],
