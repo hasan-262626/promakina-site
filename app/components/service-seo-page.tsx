@@ -264,7 +264,7 @@ export function ServiceSeoPage({
       </section>
 
       {cards.length > 0 ? (
-        <section className="pb-10 sm:pb-14">
+        <section className="section-bottom-space">
           <div className="site-container">
             <div className="mb-6 rounded-[28px] border border-slate-200 bg-white px-6 py-6 shadow-sm sm:px-8">
               <h2 className="text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">
@@ -301,7 +301,7 @@ export function ServiceSeoPage({
       ) : null}
 
       {summaryRows.length > 0 ? (
-        <section className="pb-10 sm:pb-14">
+        <section className="section-bottom-space">
           <div className="site-container">
             <div className="overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-[0_18px_45px_rgba(15,23,42,0.06)]">
               <div className="border-b border-slate-200 px-6 py-6 sm:px-8">
@@ -346,10 +346,10 @@ export function ServiceSeoPage({
         </section>
       ) : null}
 
-      <section className="seo-content pb-10 sm:pb-14">
+      <section className="seo-content section-bottom-space">
         <div className="site-container">
           <div className="rounded-[32px] border border-slate-200 bg-slate-50 px-6 py-8 shadow-[0_18px_45px_rgba(15,23,42,0.06)] sm:px-8 sm:py-10 lg:px-12">
-            <div className="space-y-10">
+            <div className="content-stack">
               {sections.map((section) => (
                 <article key={section.title}>
                   <h2 className="text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">
@@ -367,7 +367,7 @@ export function ServiceSeoPage({
         </div>
       </section>
 
-      <section className="pb-10 sm:pb-14">
+      <section className="section-bottom-space">
         <div className="site-container">
           <div className="rounded-[28px] border border-slate-200 bg-blue-700 px-6 py-8 text-white shadow-[0_24px_70px_rgba(29,78,216,0.22)] sm:px-8 sm:py-10">
             <h2 className="text-2xl font-semibold tracking-tight text-white sm:text-3xl">
@@ -406,7 +406,7 @@ export function ServiceSeoPage({
 
       <ServiceRelatedTechnicalContents items={technicalContents} />
 
-      <section className="pb-10 sm:pb-14">
+      <section className="section-bottom-space">
         <div className="site-container">
           <div className="rounded-[32px] border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
             <h2 className="text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">
@@ -427,7 +427,7 @@ export function ServiceSeoPage({
       </section>
 
       {showForm ? (
-        <section className="pb-10 sm:pb-14">
+        <section className="section-bottom-space">
           <div className="site-container">
             <div className="grid gap-6 lg:grid-cols-[1.05fr_0.95fr]">
               <div className="rounded-[32px] border border-slate-200 bg-slate-950 p-6 text-white shadow-[0_20px_60px_rgba(2,6,23,0.16)] sm:p-8">
@@ -545,7 +545,7 @@ export function ServiceSeoPage({
         </section>
       ) : null}
 
-      <section className="pb-16 sm:pb-20">
+      <section className="section-bottom-space-lg">
         <div className="site-container">
           <div className="rounded-[28px] bg-blue-700 px-6 py-8 text-white shadow-[0_24px_70px_rgba(29,78,216,0.28)] sm:px-8 sm:py-10">
             <h2 className="text-2xl font-semibold tracking-tight text-white sm:text-3xl">

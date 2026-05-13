@@ -75,7 +75,7 @@ export default function Home() {
       <HomeMachineGroupsSection />
       <HomeServicesSection />
 
-      <section className="pb-10 sm:pb-14">
+      <section className="section-bottom-space">
         <div className="site-container">
           <div className="rounded-[32px] border border-slate-200 bg-[linear-gradient(135deg,#f8fbff_0%,#ffffff_55%,#eef4ff_100%)] px-6 py-8 shadow-[0_18px_45px_rgba(15,23,42,0.06)] sm:px-8 sm:py-10 lg:px-12">
             <div className="max-w-3xl">
@@ -137,7 +137,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="pb-10 sm:pb-14">
+      <section className="section-bottom-space">
         <div className="site-container">
           <div className="rounded-[28px] bg-blue-700 px-6 py-8 text-white shadow-[0_24px_70px_rgba(29,78,216,0.28)] sm:px-8 sm:py-10">
             <h2 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">
@@ -181,7 +181,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="pb-10 sm:pb-14">
+      <section className="section-bottom-space">
         <div className="site-container">
           <div className="rounded-[32px] border border-slate-200 bg-slate-950 px-6 py-8 text-white shadow-[0_24px_70px_rgba(2,6,23,0.18)] sm:px-8 sm:py-10 lg:px-12">
             <div className="max-w-3xl">

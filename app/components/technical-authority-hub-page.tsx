@@ -152,7 +152,7 @@ export function TechnicalAuthorityHubPage({ hub }: TechnicalAuthorityHubPageProp
       <section className="section-space">
         <div className="site-container">
           <div className="grid gap-8 xl:grid-cols-[minmax(0,1fr)_320px] xl:items-start">
-            <div className="space-y-8">
+            <div className="space-y-8 md:space-y-10">
               <div className="rounded-[32px] border border-slate-200 bg-white px-6 py-8 shadow-[0_18px_50px_rgba(15,23,42,0.06)] sm:px-8 sm:py-10 lg:px-12">
                 <nav aria-label="Breadcrumb" className="flex flex-wrap gap-2 text-sm text-slate-500">
                   <Link href="/" className="transition hover:text-blue-700">

@@ -32,7 +32,7 @@ export function SiteFooterCta() {
   return (
     <>
       {!hideGlobalCta ? (
-        <section id="iletisim" className="pb-16 sm:pb-20">
+        <section id="iletisim" className="section-bottom-space-lg">
           <div className="site-container">
             <div className="rounded-[32px] bg-blue-700 px-6 py-10 text-white sm:px-8 sm:py-12 md:px-12">
               <h2 className="max-w-3xl text-3xl font-semibold tracking-tight md:text-4xl">
@@ -66,7 +66,7 @@ export function SiteFooterCta() {
       ) : null}
 
       <footer className="border-t border-slate-200 bg-slate-950 text-white">
-        <div className="site-container py-14 sm:py-16 lg:py-18">
+        <div className="site-container py-10 sm:py-14 lg:py-16">
           <div className="grid gap-10 md:grid-cols-2 xl:grid-cols-[1.25fr_1fr_1fr_1fr_1fr_0.95fr]">
             <div className="max-w-sm">
               <h2 className="text-2xl font-semibold tracking-tight text-white">Pro Makina</h2>

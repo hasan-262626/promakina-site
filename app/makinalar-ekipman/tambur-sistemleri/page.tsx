@@ -35,7 +35,7 @@ export default function DrumSystemsCategoryPage() {
           backgroundPosition: "center",
         }}
       >
-        <div className="site-container flex min-h-[260px] items-center py-14">
+        <div className="site-container flex min-h-[260px] items-center py-10 md:py-14 lg:py-16">
           <div className="max-w-3xl text-white">
             <nav className="text-sm text-white/72">
               <Link href="/" className="transition hover:text-white">
@@ -74,7 +74,7 @@ export default function DrumSystemsCategoryPage() {
             </p>
           </div>
 
-          <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+          <div className="section-gap grid gap-6 md:grid-cols-2 xl:grid-cols-3">
             {drumProductPages.map((product) => (
               <Link
                 key={product.slug}

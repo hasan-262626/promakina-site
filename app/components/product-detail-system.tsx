@@ -448,7 +448,7 @@ export function ProductDetailSystem({
           backgroundPosition: "center",
         }}
       >
-        <div className="mx-auto flex min-h-[260px] max-w-7xl items-center px-4 py-14 sm:px-6 lg:px-10">
+        <div className="mx-auto flex min-h-[260px] max-w-7xl items-center px-4 py-10 sm:px-6 md:py-14 lg:px-10 lg:py-16">
           <div className="max-w-3xl text-white">
             <nav className="text-sm text-white/72">
               <Link href="/" className="transition hover:text-white">Ana Sayfa</Link>
@@ -615,7 +615,7 @@ export function ProductDetailSystem({
         </div>
       </section>
 
-      <section className="pb-16">
+      <section className="section-bottom-space">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
           <div className="rounded-[32px] border border-slate-200 bg-blue-700 px-6 py-8 text-white shadow-[0_24px_70px_rgba(29,78,216,0.22)] sm:px-8 sm:py-10">
             <h2 className="text-2xl font-semibold tracking-tight text-white sm:text-3xl">
@@ -644,7 +644,7 @@ export function ProductDetailSystem({
         </div>
       </section>
 
-      <section className="pb-20">
+      <section className="section-bottom-space-lg">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
           <div className="rounded-[32px] bg-blue-700 px-6 py-10 text-white shadow-[0_28px_90px_rgba(37,99,235,0.25)] sm:px-8 sm:py-12 md:px-12">
             <h2 className="max-w-3xl text-3xl font-semibold tracking-tight md:text-4xl">Projeniz için teknik teklif alın</h2>

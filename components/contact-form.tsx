@@ -1,247 +1,337 @@
 "use client";
 
-import { useRouter } from "next/navigation";
 import { useMemo, useState } from "react";
+import { createMailtoHref, createWhatsAppHref } from "@/app/lib/site-contact";
 import { pushDataLayerEvent } from "@/app/lib/gtm-events";
+
+type ContactIntent =
+  | "Teknik teklif almak istiyorum"
+  | "Makine fiyati almak istiyorum"
+  | "Tesis kurulumu hakkinda gorusmek istiyorum"
+  | "Mevcut tesis icin revizyon / modernizasyon istiyorum"
+  | "Servis / bakim talebim var"
+  | "Genel bilgi almak istiyorum";
+
+type ContactFocus =
+  | "Gubre tesisi"
+  | "Sivi gubre uretim tesisi"
+  | "Kompost tesisi"
+  | "Biyogaz / digestat hatti"
+  | "Kurutma tamburu"
+  | "Helezon konveyor"
+  | "Bant konveyor"
+  | "Kovali elevator"
+  | "Kirici / shredder"
+  | "Reaktor ve tank sistemleri"
+  | "Maden / mineral isleme"
+  | "Paketleme ve dolum sistemleri"
+  | "Diger";
 
 type FormState = {
   fullName: string;
   company: string;
   phone: string;
   email: string;
-  subject: string;
+  requestType: ContactIntent | "";
+  interestArea: ContactFocus | "";
+  capacity: string;
+  city: string;
   message: string;
-  website: string;
 };
 
-type SubmissionState = "idle" | "loading" | "success" | "error";
+const requestTypes: ContactIntent[] = [
+  "Teknik teklif almak istiyorum",
+  "Makine fiyati almak istiyorum",
+  "Tesis kurulumu hakkinda gorusmek istiyorum",
+  "Mevcut tesis icin revizyon / modernizasyon istiyorum",
+  "Servis / bakim talebim var",
+  "Genel bilgi almak istiyorum",
+];
+
+const interestAreas: ContactFocus[] = [
+  "Gubre tesisi",
+  "Sivi gubre uretim tesisi",
+  "Kompost tesisi",
+  "Biyogaz / digestat hatti",
+  "Kurutma tamburu",
+  "Helezon konveyor",
+  "Bant konveyor",
+  "Kovali elevator",
+  "Kirici / shredder",
+  "Reaktor ve tank sistemleri",
+  "Maden / mineral isleme",
+  "Paketleme ve dolum sistemleri",
+  "Diger",
+];
 
 const initialForm: FormState = {
   fullName: "",
   company: "",
   phone: "",
   email: "",
-  subject: "",
+  requestType: "",
+  interestArea: "",
+  capacity: "",
+  city: "",
   message: "",
-  website: "",
 };
 
-const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const requiredMessage =
+  "Lutfen Ad Soyad, Telefon, Talep Turu ve Ilgilendiginiz Alan alanlarini doldurun.";
 
 export function ContactForm() {
-  const router = useRouter();
   const [form, setForm] = useState<FormState>(initialForm);
-  const [status, setStatus] = useState<SubmissionState>("idle");
-  const [message, setMessage] = useState("");
+  const [error, setError] = useState("");
 
-  const canSubmit = useMemo(() => {
+  const hasRequiredFields = useMemo(() => {
     return Boolean(
       form.fullName.trim() &&
-        form.company.trim() &&
         form.phone.trim() &&
-        form.email.trim() &&
-        form.subject.trim() &&
-        form.message.trim(),
+        form.requestType.trim() &&
+        form.interestArea.trim(),
     );
   }, [form]);
 
+  const messageBody = useMemo(() => {
+    return [
+      "Merhaba, Pro Makina web sitenizden ulasiyorum.",
+      `Ad Soyad: ${form.fullName.trim() || "-"}`,
+      `Firma: ${form.company.trim() || "-"}`,
+      `Telefon: ${form.phone.trim() || "-"}`,
+      `E-posta: ${form.email.trim() || "-"}`,
+      `Talep Turu: ${form.requestType || "-"}`,
+      `Ilgilendigim Alan: ${form.interestArea || "-"}`,
+      `Hedef Kapasite: ${form.capacity.trim() || "-"}`,
+      `Sehir / Lokasyon: ${form.city.trim() || "-"}`,
+      `Mesaj: ${form.message.trim() || "-"}`,
+    ].join("\n");
+  }, [form]);
+
+  const whatsappHref = useMemo(() => createWhatsAppHref(messageBody), [messageBody]);
+  const emailHref = useMemo(
+    () => createMailtoHref("Web Sitesi Teknik Talep Formu", messageBody),
+    [messageBody],
+  );
+
   function updateField<K extends keyof FormState>(key: K, value: FormState[K]) {
     setForm((current) => ({ ...current, [key]: value }));
-    if (status !== "idle") {
-      setStatus("idle");
-      setMessage("");
+    if (error) {
+      setError("");
     }
   }
 
-  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
-    event.preventDefault();
+  function validateBeforeExit() {
+    if (!hasRequiredFields) {
+      setError(requiredMessage);
+      return false;
+    }
 
-    if (!canSubmit) {
-      setStatus("error");
-      setMessage("Lütfen tüm zorunlu alanları doldurun.");
+    setError("");
+    return true;
+  }
+
+  function handleWhatsAppClick() {
+    if (!validateBeforeExit()) {
       return;
     }
 
-    if (!emailRegex.test(form.email.trim())) {
-      setStatus("error");
-      setMessage("Lütfen geçerli bir e-posta adresi girin.");
+    pushDataLayerEvent("whatsapp_click", {
+      cta_label: "WhatsApp'tan Gonder",
+      cta_href: whatsappHref,
+      page_path: window.location.pathname,
+    });
+    pushDataLayerEvent("contact_form_whatsapp_submit", {
+      request_type: form.requestType,
+      interest_area: form.interestArea,
+      page_path: window.location.pathname,
+    });
+
+    window.open(whatsappHref, "_blank", "noopener,noreferrer");
+  }
+
+  function handleEmailClick() {
+    if (!validateBeforeExit()) {
       return;
     }
 
-    setStatus("loading");
-    setMessage("");
+    pushDataLayerEvent("email_click", {
+      cta_label: "Mail Olarak Gonder",
+      cta_href: emailHref,
+      page_path: window.location.pathname,
+    });
+    pushDataLayerEvent("contact_form_email_submit", {
+      request_type: form.requestType,
+      interest_area: form.interestArea,
+      page_path: window.location.pathname,
+    });
 
-    try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(form),
-      });
-
-      const result = (await response.json()) as { error?: string; message?: string };
-
-      if (!response.ok) {
-        throw new Error(result.error || "Mesaj gönderilemedi.");
-      }
-
-      setStatus("success");
-      setMessage(result.message || "Talebiniz alındı. Yönlendiriliyorsunuz.");
-      pushDataLayerEvent("quote_form_submit", {
-        subject: form.subject.trim(),
-        company: form.company.trim(),
-        page_path: window.location.pathname,
-      });
-      setForm(initialForm);
-      router.push("/tesekkurler");
-    } catch (error) {
-      setStatus("error");
-      setMessage(
-        error instanceof Error
-          ? error.message
-          : "Beklenmeyen bir hata oluştu. Lütfen tekrar deneyin.",
-      );
-    }
+    window.location.href = emailHref;
   }
 
   return (
-    <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-[0_18px_50px_rgba(15,23,42,0.05)] dark:border-slate-800 dark:bg-slate-950 sm:p-8">
-      <div className="max-w-2xl">
-        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-blue-700 dark:text-blue-400">
-          PROFESYONEL İLETİŞİM FORMU
+    <div className="rounded-[32px] border border-slate-200 bg-white p-6 shadow-[0_18px_50px_rgba(15,23,42,0.05)] sm:p-8 lg:p-10">
+      <div className="max-w-3xl">
+        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-blue-700">
+          PROFESYONEL ILETISIM FORMU
         </p>
-        <h2 className="mt-3 text-2xl font-semibold tracking-tight text-slate-950 dark:text-white sm:text-3xl">
-          Teknik talebinizi doğrudan mühendislik ekibimize iletin
+        <h2 className="mt-3 text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">
+          Teknik talebinizi dogrudan muhendislik ekibimize iletin
         </h2>
-        <p className="mt-4 text-sm leading-8 text-slate-600 dark:text-slate-300 sm:text-base">
-          Kapasite, proses, makina seçimi veya teklif ihtiyacınızı paylaşın. Mesajınız
-          <span className="font-semibold text-slate-900 dark:text-white"> info@promakina.com.tr </span>
-          adresine güvenli şekilde iletilir.
+        <p className="mt-4 text-sm leading-8 text-slate-600 sm:text-base">
+          Kapasite, proses, makine secimi veya teklif ihtiyacinizi paylasin.
+          Talebinizi WhatsApp uzerinden hizlica iletebilir veya{" "}
+          <a
+            href="mailto:info@promakina.com.tr"
+            className="font-semibold text-blue-700 transition hover:text-blue-800"
+          >
+            info@promakina.com.tr
+          </a>{" "}
+          adresine mail olarak gonderebilirsiniz.
         </p>
       </div>
 
-      <form onSubmit={handleSubmit} className="mt-8 space-y-5">
-        <div className="grid gap-4 md:grid-cols-2">
-          <label className="space-y-2">
-            <span className="text-sm font-semibold text-slate-900 dark:text-white">Ad Soyad *</span>
-            <input
-              required
-              type="text"
-              value={form.fullName}
-              onChange={(event) => updateField("fullName", event.target.value)}
-              className="h-12 w-full rounded-2xl border border-slate-200 bg-white px-4 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-100 dark:border-slate-800 dark:bg-slate-950 dark:text-white"
-              placeholder="Yetkili kişi"
-            />
-          </label>
-          <label className="space-y-2">
-            <span className="text-sm font-semibold text-slate-900 dark:text-white">Firma *</span>
-            <input
-              required
-              type="text"
-              value={form.company}
-              onChange={(event) => updateField("company", event.target.value)}
-              className="h-12 w-full rounded-2xl border border-slate-200 bg-white px-4 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-100 dark:border-slate-800 dark:bg-slate-950 dark:text-white"
-              placeholder="Firma adı"
-            />
-          </label>
-          <label className="space-y-2">
-            <span className="text-sm font-semibold text-slate-900 dark:text-white">Telefon *</span>
-            <input
-              required
-              type="tel"
-              value={form.phone}
-              onChange={(event) => updateField("phone", event.target.value)}
-              className="h-12 w-full rounded-2xl border border-slate-200 bg-white px-4 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-100 dark:border-slate-800 dark:bg-slate-950 dark:text-white"
-              placeholder="+90 5xx xxx xx xx"
-            />
-          </label>
-          <label className="space-y-2">
-            <span className="text-sm font-semibold text-slate-900 dark:text-white">E-posta *</span>
-            <input
-              required
-              type="email"
-              value={form.email}
-              onChange={(event) => updateField("email", event.target.value)}
-              className="h-12 w-full rounded-2xl border border-slate-200 bg-white px-4 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-100 dark:border-slate-800 dark:bg-slate-950 dark:text-white"
-              placeholder="ornek@firma.com"
-            />
-          </label>
-        </div>
-
+      <div className="mt-8 grid gap-4 md:grid-cols-2">
         <label className="space-y-2">
-          <span className="text-sm font-semibold text-slate-900 dark:text-white">Konu *</span>
+          <span className="text-sm font-semibold text-slate-900">Ad Soyad *</span>
           <input
-            required
             type="text"
-            value={form.subject}
-            onChange={(event) => updateField("subject", event.target.value)}
-            className="h-12 w-full rounded-2xl border border-slate-200 bg-white px-4 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-100 dark:border-slate-800 dark:bg-slate-950 dark:text-white"
-            placeholder="Örn. Gübre tesisi kapasite değerlendirmesi"
+            value={form.fullName}
+            onChange={(event) => updateField("fullName", event.target.value)}
+            placeholder="Adiniz ve soyadiniz"
+            className="h-12 w-full rounded-2xl border border-slate-200 bg-white px-4 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
           />
         </label>
 
         <label className="space-y-2">
-          <span className="text-sm font-semibold text-slate-900 dark:text-white">Mesaj *</span>
-          <textarea
-            required
-            rows={6}
-            value={form.message}
-            onChange={(event) => updateField("message", event.target.value)}
-            className="min-h-[168px] w-full rounded-[28px] border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-100 dark:border-slate-800 dark:bg-slate-950 dark:text-white"
-            placeholder="Projenizin hedef kapasitesini, ürün tipini, saha koşullarını ve beklentinizi paylaşabilirsiniz."
+          <span className="text-sm font-semibold text-slate-900">Firma</span>
+          <input
+            type="text"
+            value={form.company}
+            onChange={(event) => updateField("company", event.target.value)}
+            placeholder="Firma adi"
+            className="h-12 w-full rounded-2xl border border-slate-200 bg-white px-4 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
           />
         </label>
 
-        <div className="hidden" aria-hidden="true">
-          <label>
-            Website
-            <input
-              tabIndex={-1}
-              autoComplete="off"
-              type="text"
-              value={form.website}
-              onChange={(event) => updateField("website", event.target.value)}
-            />
-          </label>
-        </div>
+        <label className="space-y-2">
+          <span className="text-sm font-semibold text-slate-900">Telefon *</span>
+          <input
+            type="tel"
+            value={form.phone}
+            onChange={(event) => updateField("phone", event.target.value)}
+            placeholder="+90 5xx xxx xx xx"
+            className="h-12 w-full rounded-2xl border border-slate-200 bg-white px-4 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+          />
+        </label>
 
-        <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-          <div className="min-h-[24px] text-sm">
-            {status === "success" ? (
-              <div className="inline-flex items-center gap-2 rounded-full bg-emerald-50 px-3 py-1 text-emerald-700 dark:bg-emerald-500/10 dark:text-emerald-300">
-                <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-emerald-600 text-xs text-white">
-                  ✓
-                </span>
-                {message}
-              </div>
-            ) : null}
-            {status === "error" ? (
-              <div className="inline-flex items-center gap-2 rounded-full bg-red-50 px-3 py-1 text-red-700 dark:bg-red-500/10 dark:text-red-300">
-                <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-red-600 text-xs text-white">
-                  !
-                </span>
-                {message}
-              </div>
-            ) : null}
-          </div>
+        <label className="space-y-2">
+          <span className="text-sm font-semibold text-slate-900">E-posta</span>
+          <input
+            type="email"
+            value={form.email}
+            onChange={(event) => updateField("email", event.target.value)}
+            placeholder="ornek@firma.com"
+            className="h-12 w-full rounded-2xl border border-slate-200 bg-white px-4 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+          />
+        </label>
 
-          <button
-            type="submit"
-            disabled={status === "loading"}
-            className="inline-flex min-h-[50px] items-center justify-center gap-3 rounded-full bg-blue-700 px-6 text-sm font-semibold text-white transition hover:bg-blue-800 disabled:cursor-not-allowed disabled:opacity-75"
+        <label className="space-y-2">
+          <span className="text-sm font-semibold text-slate-900">Talep Turu *</span>
+          <select
+            value={form.requestType}
+            onChange={(event) =>
+              updateField("requestType", event.target.value as FormState["requestType"])
+            }
+            className="h-12 w-full rounded-2xl border border-slate-200 bg-white px-4 text-sm text-slate-900 outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
           >
-            {status === "loading" ? (
-              <>
-                <span className="h-4 w-4 animate-spin rounded-full border-2 border-white/30 border-t-white" />
-                Gönderiliyor
-              </>
-            ) : (
-              "Mesajı Gönder"
-            )}
-          </button>
+            <option value="">Seciniz</option>
+            {requestTypes.map((item) => (
+              <option key={item} value={item}>
+                {item}
+              </option>
+            ))}
+          </select>
+        </label>
+
+        <label className="space-y-2">
+          <span className="text-sm font-semibold text-slate-900">Ilgilendiginiz Alan *</span>
+          <select
+            value={form.interestArea}
+            onChange={(event) =>
+              updateField("interestArea", event.target.value as FormState["interestArea"])
+            }
+            className="h-12 w-full rounded-2xl border border-slate-200 bg-white px-4 text-sm text-slate-900 outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+          >
+            <option value="">Seciniz</option>
+            {interestAreas.map((item) => (
+              <option key={item} value={item}>
+                {item}
+              </option>
+            ))}
+          </select>
+        </label>
+
+        <label className="space-y-2">
+          <span className="text-sm font-semibold text-slate-900">Hedef Kapasite</span>
+          <input
+            type="text"
+            value={form.capacity}
+            onChange={(event) => updateField("capacity", event.target.value)}
+            placeholder="Orn. 5 ton/saat, 10 ton/saat, 100 ton/gun"
+            className="h-12 w-full rounded-2xl border border-slate-200 bg-white px-4 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+          />
+        </label>
+
+        <label className="space-y-2">
+          <span className="text-sm font-semibold text-slate-900">Sehir / Lokasyon</span>
+          <input
+            type="text"
+            value={form.city}
+            onChange={(event) => updateField("city", event.target.value)}
+            placeholder="Orn. Eskisehir, Kocaeli, Antalya"
+            className="h-12 w-full rounded-2xl border border-slate-200 bg-white px-4 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+          />
+        </label>
+      </div>
+
+      <label className="mt-4 block space-y-2">
+        <span className="text-sm font-semibold text-slate-900">Mesaj</span>
+        <textarea
+          rows={6}
+          value={form.message}
+          onChange={(event) => updateField("message", event.target.value)}
+          placeholder="Urun tipi, kapasite, hammadde, nem orani, saha kosullari veya beklentinizi kisaca yazabilirsiniz."
+          className="min-h-[160px] w-full rounded-[28px] border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+        />
+      </label>
+
+      <div className="mt-6 rounded-3xl border border-slate-200 bg-slate-50 p-4 text-sm leading-7 text-slate-600">
+        WhatsApp ve mail butonlari, yazdiginiz bilgileri otomatik mesaja donusturur.
+        Hizli iletisim icin zorunlu alanlari doldurmaniz yeterlidir.
+      </div>
+
+      {error ? (
+        <div className="mt-4 rounded-2xl border border-red-200 bg-red-50 px-4 py-3 text-sm font-medium text-red-700">
+          {error}
         </div>
-      </form>
+      ) : null}
+
+      <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+        <button
+          type="button"
+          onClick={handleWhatsAppClick}
+          className="inline-flex min-h-[50px] items-center justify-center rounded-full bg-green-600 px-6 text-sm font-semibold text-white transition hover:bg-green-500"
+        >
+          WhatsApp'tan Gonder
+        </button>
+        <button
+          type="button"
+          onClick={handleEmailClick}
+          className="inline-flex min-h-[50px] items-center justify-center rounded-full bg-blue-700 px-6 text-sm font-semibold text-white transition hover:bg-blue-800"
+        >
+          Mail Olarak Gonder
+        </button>
+      </div>
     </div>
   );
 }

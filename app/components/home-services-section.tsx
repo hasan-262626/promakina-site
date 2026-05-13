@@ -36,7 +36,7 @@ export function HomeServicesSection() {
   return (
     <section
       id="hizmetler"
-      className="bg-[linear-gradient(180deg,#ffffff_0%,#f8fafc_100%)] py-16 sm:py-20 lg:py-24"
+      className="bg-[linear-gradient(180deg,#ffffff_0%,#f8fafc_100%)] py-10 md:py-14 lg:py-16"
       aria-labelledby="home-services-title"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
@@ -54,7 +54,7 @@ export function HomeServicesSection() {
           </p>
         </div>
 
-        <div className="mt-8 flex flex-wrap gap-3">
+        <div className="mt-6 md:mt-8 flex flex-wrap gap-3">
           {homeServiceTags.map((tag) => (
             <Link
               key={tag.href}
@@ -67,7 +67,7 @@ export function HomeServicesSection() {
           ))}
         </div>
 
-        <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+        <div className="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
           {visibleHomeServiceCards.map((card) => (
             <ServiceCard key={card.title} card={card} />
           ))}

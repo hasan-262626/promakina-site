@@ -147,7 +147,7 @@ export function EngineeringCalculationPage({
 
       <section className="relative overflow-hidden bg-slate-950 text-white">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(59,130,246,0.24),transparent_42%),radial-gradient(circle_at_bottom_right,rgba(148,163,184,0.22),transparent_38%)]" />
-        <div className="site-container relative py-14 sm:py-16 lg:py-20">
+        <div className="site-container relative py-10 sm:py-14 lg:py-16">
           <nav
             aria-label="Breadcrumb"
             className="flex flex-wrap gap-2 text-sm text-white/66"
@@ -226,10 +226,10 @@ export function EngineeringCalculationPage({
         </div>
       </section>
 
-      <section className="pb-10 sm:pb-14">
+      <section className="section-bottom-space">
         <div className="site-container">
           <div className="rounded-[32px] border border-slate-200 bg-slate-50 px-6 py-8 shadow-[0_18px_45px_rgba(15,23,42,0.06)] sm:px-8 sm:py-10 lg:px-12">
-            <div className="space-y-10">
+            <div className="content-stack">
               {page.sections.map((section) => (
                 <article key={section.title}>
                   <h2 className="text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">
@@ -247,7 +247,7 @@ export function EngineeringCalculationPage({
         </div>
       </section>
 
-      <section className="pb-10 sm:pb-14">
+      <section className="section-bottom-space">
         <div className="site-container">
           <div className="overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-[0_18px_45px_rgba(15,23,42,0.06)]">
             <div className="border-b border-slate-200 px-6 py-6 sm:px-8">
@@ -293,13 +293,13 @@ export function EngineeringCalculationPage({
 
       <ServiceRelatedTechnicalContents items={page.relatedArticles} />
 
-      <section className="pb-10 sm:pb-14">
+      <section className="section-bottom-space">
         <div className="site-container">
           <SocialFollowPanel />
         </div>
       </section>
 
-      <section className="pb-10 sm:pb-14">
+      <section className="section-bottom-space">
         <div className="site-container">
           <div className="rounded-[32px] border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
             <div className="max-w-3xl">
@@ -335,7 +335,7 @@ export function EngineeringCalculationPage({
         </div>
       </section>
 
-      <section className="pb-10 sm:pb-14">
+      <section className="section-bottom-space">
         <div className="site-container">
           <div className="rounded-[32px] border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
             <h2 className="text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">
@@ -360,7 +360,7 @@ export function EngineeringCalculationPage({
         </div>
       </section>
 
-      <section className="pb-16 sm:pb-20">
+      <section className="section-bottom-space-lg">
         <div className="site-container">
           <div className="rounded-[28px] bg-blue-700 px-6 py-8 text-white shadow-[0_24px_70px_rgba(29,78,216,0.28)] sm:px-8 sm:py-10">
             <h2 className="text-3xl font-semibold tracking-tight text-white">

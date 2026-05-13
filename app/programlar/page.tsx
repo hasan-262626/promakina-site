@@ -119,7 +119,7 @@ export default function ProgramsPage() {
 
       <EngineeringCalculationCenter cards={engineeringCalculationCards} />
 
-      <section className="pb-16 sm:pb-20">
+      <section className="section-bottom-space-lg">
         <div className="site-container">
           <div className="rounded-[32px] border border-slate-200 bg-slate-50 px-6 py-8 shadow-[0_18px_45px_rgba(15,23,42,0.06)] sm:px-8 sm:py-10 lg:px-12">
             <div className="max-w-3xl">

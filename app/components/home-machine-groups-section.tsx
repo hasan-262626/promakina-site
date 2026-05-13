@@ -11,7 +11,7 @@ export function HomeMachineGroupsSection() {
 
   return (
     <section
-      className="bg-slate-50/75 py-16 sm:py-20 lg:py-24"
+      className="bg-slate-50/75 py-10 md:py-14 lg:py-16"
       aria-labelledby="home-machine-groups-title"
     >
       <div className="site-container">
@@ -32,7 +32,7 @@ export function HomeMachineGroupsSection() {
           </p>
         </div>
 
-        <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+        <div className="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {homeMachineGroupCards.map((card) => (
             <article
               key={card.href}

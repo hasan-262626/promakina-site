@@ -122,33 +122,126 @@ const sectorMachineSolutions = [
     href: "/makinalar-ekipman/tasima-ekipmanlari",
     buttonLabel: "Taşıma Ekipmanlarını İncele",
   },
+  {
+    title: "Atık Su Çamuru ve Arıtma Makinaları",
+    description:
+      "Arıtma çamuru, susuzlaştırılmış çamur, belediye çamuru ve endüstriyel çamurlar için besleme, susuzlaştırma, kurutma, taşıma ve ürün hazırlama ekipmanları.",
+    items: [
+      "Çamur besleme bunkerleri",
+      "Susuzlandırma destek sistemleri",
+      "Bant konveyörler",
+      "Helezon konveyörler",
+      "Kurutma tamburları",
+      "Trommel elekler",
+      "Koku kontrol sistemleri",
+      "Jet pulse filtreler",
+      "Siklon sistemleri",
+      "Paketleme sistemleri",
+    ],
+    href: "/sektorler/atik-su-camuru-ve-aritma-cozumleri",
+    buttonLabel: "Çamur Proses Makinalarını İncele",
+  },
+  {
+    title: "Biyogaz Ön İşlem ve Digestat Makinaları",
+    description:
+      "Hayvansal atık, tarımsal atık, organik atık ve biyogaz digestatı için ön hazırlama, besleme, ayırma, taşıma ve kurutma ekipmanları.",
+    items: [
+      "Atık kabul bunkerleri",
+      "Shredder sistemleri",
+      "Besleme konveyörleri",
+      "Helezon konveyörler",
+      "Katı-sıvı ayırma destek ekipmanları",
+      "Digestat kurutma sistemleri",
+      "Kompost tamburları",
+      "Trommel elekler",
+      "Koku kontrol ekipmanları",
+      "Paketleme hatları",
+    ],
+    href: "/sektorler/enerji-ve-biyogaz-sistemleri",
+    buttonLabel: "Biyogaz Ekipmanlarını İncele",
+  },
+  {
+    title: "Kimya ve Proses Endüstrisi Ekipmanları",
+    description:
+      "Kimyasal proses, karıştırma, çözündürme, reaksiyon, stoklama ve kontrollü dozajlama gerektiren endüstriyel üretim hatları için proses ekipmanları.",
+    items: [
+      "Karıştırıcılı tanklar",
+      "Reaktörler",
+      "Basınçlı tanklar",
+      "Çözündürme tankları",
+      "Stok tankları",
+      "Dozaj sistemleri",
+      "Filtrasyon bağlantıları",
+      "Pompa ve hat bağlantıları",
+      "Paslanmaz proses ekipmanları",
+      "Dolum sistemleri",
+    ],
+    href: "/sektorler/kimya-ve-proses-endustrisi",
+    buttonLabel: "Proses Ekipmanlarını İncele",
+  },
+  {
+    title: "Paketleme, Dolum ve Son Ürün Hazırlama Sistemleri",
+    description:
+      "Toz, granül, sıvı ve dökme ürünlerin ticari ürüne dönüştürülmesi için torbalama, big bag dolum, sıvı dolum, etiketleme ve paletleme ekipmanları.",
+    items: [
+      "Açık ağız torbalama",
+      "Big bag dolum",
+      "Sıvı dolum makineleri",
+      "Şişeleme hatları",
+      "Şişe etiketleme makineleri",
+      "Paletleme hatları",
+      "Tartım sistemleri",
+      "Dolum bunkerleri",
+      "Konveyör bağlantıları",
+      "Sevkiyat ekipmanları",
+    ],
+    href: "/makinalar-ekipman/paketleme-ve-dolum-sistemleri",
+    buttonLabel: "Paketleme Sistemlerini İncele",
+  },
 ];
 
-const processSteps = [
+const engineeringTools = [
   {
-    title: "Besleme ve Dozajlama",
+    title: "Helezon Konveyör Hesabı",
     description:
-      "Hammadde akışının kontrollü başlaması için bunker, silo, dozaj konveyörü, dozaj bandı ve vidalı besleyici sistemleri kullanılır.",
+      "Çap, hatve, devir, doluluk oranı, ürün yoğunluğu ve eğim bilgilerine göre vidalı taşıma kapasitesi için ön seçim yapın.",
+    href: "/programlar/helezon-kapasite-hesabi",
+    buttonLabel: "Programı Aç",
   },
   {
-    title: "Kırma, Parçalama ve Hazırlık",
+    title: "Bant Konveyör Hesabı",
     description:
-      "Ürün boyutunu prosese uygun hale getirmek için kırıcı, shredder, bıçaklı kırıcı ve ön hazırlık ekipmanları seçilir.",
+      "Hat uzunluğu, bant genişliği, hız, yoğunluk ve motor gücü yaklaşımıyla taşıma bandı ön tasarımını değerlendirin.",
+    href: "/programlar/konveyor-kapasite-hesabi",
+    buttonLabel: "Programı Aç",
   },
   {
-    title: "Karıştırma, Reaktör ve Proses İşleme",
+    title: "Kovalı Elevatör Hesabı",
     description:
-      "Sıvı veya katı proseslerde karıştırıcılı reaktörler, tanklar, çözündürme sistemleri ve homojenizasyon ekipmanları devreye girer.",
+      "Kova hacmi, hız, doluluk oranı, ürün yoğunluğu ve dikey taşıma yüksekliğine göre elevatör kapasitesini hesaplayın.",
+    href: "/programlar/elevator-kapasite-hesabi",
+    buttonLabel: "Programı Aç",
   },
   {
-    title: "Kurutma, Soğutma ve Eleme",
+    title: "Tambur Hesabı",
     description:
-      "Granül, kompost, maden ve çamur proseslerinde kurutma tamburu, soğutma tamburu, trommel elek ve vibrasyonlu elek sistemleri ile ürün son forma hazırlanır.",
+      "Kurutma, soğutma, granülasyon ve kaplama tamburları için çap, boy, devir, doluluk ve kapasite yaklaşımını inceleyin.",
+    href: "/programlar/kurutma-tamburu-hesabi",
+    buttonLabel: "Programı Aç",
   },
   {
-    title: "Paketleme, Dolum ve Sevkiyat",
+    title: "Zincir Dişli Hesabı",
     description:
-      "Son ürün açık ağız torbalama, big bag dolum, sıvı dolum, etiketleme, paletleme ve sevkiyat sistemleriyle ticari ürüne dönüştürülür.",
+      "Zincir dişli, devir oranı, diş sayısı, hatve ve tahrik aktarımı için teknik ön seçim yapın.",
+    href: "/programlar/zincir-disli-hesabi",
+    buttonLabel: "Programı Aç",
+  },
+  {
+    title: "Mühendislik Programları",
+    description:
+      "Tüm hesaplama araçlarını ve teknik ön seçim programlarını tek merkezden inceleyin.",
+    href: "/programlar",
+    buttonLabel: "Tüm Programları Gör",
   },
 ];
 
@@ -164,15 +257,6 @@ const featuredMachineLinks = [
   { label: "Reaktörler ve Tanklar", href: "/makinalar-ekipman/reaktorler-ve-tanklar" },
   { label: "Toz Toplama Sistemleri", href: "/makinalar-ekipman/toz-toplama-sistemleri" },
   { label: "Paketleme ve Dolum Sistemleri", href: "/makinalar-ekipman/paketleme-ve-dolum-sistemleri" },
-];
-
-const sectorLinks = [
-  { label: "Gübre Üretim Tesisleri", href: "/sektorler/gubre-ve-granulasyon-tesisleri" },
-  { label: "Kompost ve Organik Atık Tesisleri", href: "/sektorler/kompost-ve-organik-atik-tesisleri" },
-  { label: "Atık Su Çamuru ve Arıtma Çözümleri", href: "/sektorler/atik-su-camuru-ve-aritma-cozumleri" },
-  { label: "Enerji ve Biyogaz Sistemleri", href: "/sektorler/enerji-ve-biyogaz-sistemleri" },
-  { label: "Madencilik ve Mineral İşleme", href: "/sektorler/madencilik-ve-mineral-isleme" },
-  { label: "Kimya ve Proses Endüstrisi", href: "/sektorler/kimya-ve-proses-endustrisi" },
 ];
 
 export const metadata: Metadata = {
@@ -197,16 +281,17 @@ export default function MachinesIndexPage() {
         <div className="site-container">
           <MachineCategoriesOverviewGrid />
 
-          <section className="mt-10 rounded-[32px] border border-slate-200 bg-slate-50 px-6 py-8 shadow-[0_18px_45px_rgba(15,23,42,0.06)] sm:px-8 sm:py-10 lg:px-12">
+          <section className="section-gap rounded-[32px] border border-slate-200 bg-slate-50 px-6 py-8 shadow-[0_18px_45px_rgba(15,23,42,0.06)] sm:px-8 sm:py-10 lg:px-12">
             <div className="max-w-4xl">
               <h2 className="text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">
                 Sektörlere Göre Makine ve Ekipman Çözümleri
               </h2>
               <p className="mt-4 text-sm leading-8 text-slate-600 sm:text-base">
-                Pro Makina; gübre, kompost, maden, sıvı gübre, atık yönetimi, kimya ve dökme
-                katı malzeme prosesleri için makine ve ekipman gruplarını sektör bazlı mühendislik
-                yaklaşımıyla projelendirir. Her makine grubu, ürün davranışı, kapasite, nem oranı,
-                aşındırıcılık, yoğunluk ve saha yerleşimi dikkate alınarak seçilir.
+                Pro Makina; gübre, sıvı gübre, kompost, maden, atık su çamuru, biyogaz, kimya ve
+                dökme katı malzeme prosesleri için makine ve ekipman gruplarını sektör bazlı
+                mühendislik yaklaşımıyla projelendirir. Her makine grubu; ürün davranışı,
+                kapasite, nem oranı, aşındırıcılık, yoğunluk, çalışma süresi ve saha yerleşimi
+                dikkate alınarak seçilir.
               </p>
             </div>
 
@@ -237,37 +322,38 @@ export default function MachinesIndexPage() {
             </div>
           </section>
 
-          <section className="mt-10 rounded-[32px] border border-slate-200 bg-white px-6 py-8 shadow-[0_18px_45px_rgba(15,23,42,0.06)] sm:px-8 sm:py-10 lg:px-12">
+          <section className="section-gap rounded-[32px] border border-slate-200 bg-white px-6 py-8 shadow-[0_18px_45px_rgba(15,23,42,0.06)] sm:px-8 sm:py-10 lg:px-12">
             <div className="max-w-4xl">
               <h2 className="text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">
-                Proses Akışına Göre Makine Seçimi
+                Mühendislik Hesaplama Araçları
               </h2>
               <p className="mt-4 text-sm leading-8 text-slate-600 sm:text-base">
-                Doğru makine seçimi yalnızca ürün adına göre yapılmaz. Hammadde yoğunluğu, tane
-                boyutu, nem oranı, aşındırıcılık, kapasite hedefi, çalışma süresi, saha yerleşimi
-                ve bakım erişimi birlikte değerlendirilmelidir.
+                Makine seçimi ve ön tasarım sürecinde kapasite, çap, hız, motor gücü, eğim, ürün
+                yoğunluğu ve proses davranışı gibi değerleri hızlıca değerlendirmek için
+                mühendislik hesaplama araçlarımızı kullanabilirsiniz.
               </p>
             </div>
 
-            <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-5">
-              {processSteps.map((step, index) => (
-                <article
-                  key={step.title}
-                  className="rounded-[24px] border border-slate-200 bg-slate-50 p-5 shadow-sm"
+            <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+              {engineeringTools.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="group rounded-[24px] border border-slate-200 bg-slate-50 p-5 shadow-sm transition hover:-translate-y-1 hover:border-blue-200 hover:bg-white hover:shadow-[0_18px_45px_rgba(15,23,42,0.08)]"
                 >
-                  <p className="text-sm font-semibold tracking-[0.18em] text-blue-700">
-                    {String(index + 1).padStart(2, "0")}
-                  </p>
-                  <h3 className="mt-3 text-lg font-semibold tracking-tight text-slate-950">
-                    {step.title}
+                  <h3 className="text-xl font-semibold tracking-tight text-slate-950">
+                    {item.title}
                   </h3>
-                  <p className="mt-3 text-sm leading-7 text-slate-600">{step.description}</p>
-                </article>
+                  <p className="mt-3 text-sm leading-7 text-slate-600">{item.description}</p>
+                  <span className="mt-5 inline-flex text-sm font-semibold text-blue-700 transition group-hover:text-blue-800">
+                    {item.buttonLabel}
+                  </span>
+                </Link>
               ))}
             </div>
           </section>
 
-          <section className="mt-10 rounded-[32px] border border-slate-200 bg-white px-6 py-8 shadow-[0_18px_45px_rgba(15,23,42,0.06)] sm:px-8 sm:py-10 lg:px-12">
+          <section className="section-gap rounded-[32px] border border-slate-200 bg-white px-6 py-8 shadow-[0_18px_45px_rgba(15,23,42,0.06)] sm:px-8 sm:py-10 lg:px-12">
             <div className="max-w-4xl">
               <h2 className="text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">
                 Öne Çıkan Makine Sayfaları
@@ -290,40 +376,10 @@ export default function MachinesIndexPage() {
               ))}
             </div>
           </section>
-
-          <section className="mt-10 rounded-[32px] border border-slate-200 bg-white px-6 py-8 shadow-[0_18px_45px_rgba(15,23,42,0.06)] sm:px-8 sm:py-10 lg:px-12">
-            <div className="max-w-4xl">
-              <h2 className="text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">
-                Hangi Sektörler İçin Makine İmalatı Yapıyoruz?
-              </h2>
-              <p className="mt-4 text-sm leading-8 text-slate-600 sm:text-base">
-                Makine ve ekipman gruplarımız; gübre üretimi, kompost tesisleri, maden ve mineral
-                işleme, sıvı gübre üretimi, biyogaz ön işlem, atık yönetimi ve kimyasal proses
-                hatlarında kullanılacak şekilde projelendirilir.
-              </p>
-            </div>
-
-            <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-              {sectorLinks.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className="group rounded-[24px] border border-slate-200 bg-slate-50 p-5 shadow-sm transition hover:-translate-y-1 hover:border-blue-200 hover:bg-white hover:shadow-[0_18px_45px_rgba(15,23,42,0.08)]"
-                >
-                  <h3 className="text-lg font-semibold tracking-tight text-slate-950">
-                    {item.label}
-                  </h3>
-                  <span className="mt-4 inline-flex text-sm font-semibold text-blue-700 transition group-hover:text-blue-800">
-                    Sektörü İncele
-                  </span>
-                </Link>
-              ))}
-            </div>
-          </section>
         </div>
       </section>
 
-      <section className="pb-16 sm:pb-20">
+      <section className="section-bottom-space-lg">
         <div className="site-container">
           <div className="rounded-[32px] bg-blue-700 px-6 py-10 text-white shadow-[0_28px_90px_rgba(37,99,235,0.25)] sm:px-8 sm:py-12 md:px-12">
             <h2 className="max-w-3xl text-3xl font-semibold tracking-tight md:text-4xl">

@@ -16,7 +16,7 @@ export function ServiceRelatedTechnicalContents({
   }
 
   return (
-    <section className="pb-10 sm:pb-14">
+    <section className="section-bottom-space">
       <div className="site-container">
         <div className="rounded-[32px] border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
           <div className="max-w-3xl">

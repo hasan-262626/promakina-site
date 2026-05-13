@@ -185,7 +185,7 @@ export function IndustrialSolutionLandingPage({
         </div>
       </section>
 
-      <section className="pb-10 sm:pb-14">
+      <section className="section-bottom-space">
         <div className="site-container">
           <div className="grid gap-6 lg:grid-cols-2">
             <div className="rounded-[28px] border border-slate-200 bg-white px-6 py-8 shadow-[0_18px_45px_rgba(15,23,42,0.05)] sm:px-8 sm:py-10">
@@ -218,7 +218,7 @@ export function IndustrialSolutionLandingPage({
         </div>
       </section>
 
-      <section className="pb-10 sm:pb-14">
+      <section className="section-bottom-space">
         <div className="site-container">
           <div className="rounded-[32px] border border-slate-200 bg-slate-50 px-6 py-8 shadow-[0_18px_45px_rgba(15,23,42,0.06)] sm:px-8 sm:py-10 lg:px-12">
             <div className="max-w-3xl">
@@ -246,7 +246,7 @@ export function IndustrialSolutionLandingPage({
         </div>
       </section>
 
-      <section className="pb-10 sm:pb-14">
+      <section className="section-bottom-space">
         <div className="site-container">
           <div className="rounded-[32px] border border-slate-200 bg-white px-6 py-8 shadow-[0_18px_45px_rgba(15,23,42,0.06)] sm:px-8 sm:py-10 lg:px-12">
             <div className="max-w-3xl">
@@ -274,10 +274,10 @@ export function IndustrialSolutionLandingPage({
         </div>
       </section>
 
-      <section className="pb-10 sm:pb-14">
+      <section className="section-bottom-space">
         <div className="site-container">
           <div className="rounded-[32px] border border-slate-200 bg-white px-6 py-8 shadow-[0_18px_45px_rgba(15,23,42,0.06)] sm:px-8 sm:py-10 lg:px-12">
-            <div className="space-y-10">
+            <div className="content-stack">
               {config.sections.slice(1).map((section) => (
                 <article key={section.title}>
                   <h2 className="text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">
@@ -295,7 +295,7 @@ export function IndustrialSolutionLandingPage({
         </div>
       </section>
 
-      <section className="pb-10 sm:pb-14">
+      <section className="section-bottom-space">
         <div className="site-container grid gap-6 xl:grid-cols-3">
           <div className="rounded-[28px] border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
             <h2 className="text-2xl font-semibold tracking-tight text-slate-950">
@@ -353,13 +353,13 @@ export function IndustrialSolutionLandingPage({
         </div>
       </section>
 
-      <section className="pb-10 sm:pb-14">
+      <section className="section-bottom-space">
         <div className="site-container">
           <SocialFollowPanel />
         </div>
       </section>
 
-      <section className="pb-10 sm:pb-14">
+      <section className="section-bottom-space">
         <div className="site-container">
           <div className="rounded-[32px] border border-slate-200 bg-slate-50 px-6 py-8 shadow-[0_18px_45px_rgba(15,23,42,0.06)] sm:px-8 sm:py-10 lg:px-12">
             <h2 className="text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">
@@ -377,7 +377,7 @@ export function IndustrialSolutionLandingPage({
         </div>
       </section>
 
-      <section className="pb-16 sm:pb-20">
+      <section className="section-bottom-space-lg">
         <div className="site-container">
           <div className="rounded-[32px] bg-[linear-gradient(135deg,#0f172a_0%,#153f8a_100%)] px-6 py-8 text-white shadow-[0_24px_70px_rgba(15,23,42,0.24)] sm:px-8 sm:py-10">
             <p className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-200">

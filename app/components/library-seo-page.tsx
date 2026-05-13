@@ -263,10 +263,10 @@ export function LibrarySeoPage({
         </div>
       </section>
 
-      <section className="pb-10 sm:pb-14">
+      <section className="section-bottom-space">
         <div className="site-container">
           <div className="rounded-[32px] border border-slate-200 bg-slate-50 px-6 py-8 shadow-[0_18px_45px_rgba(15,23,42,0.06)] sm:px-8 sm:py-10 lg:px-12">
-            <div className="space-y-10">
+            <div className="content-stack">
               {sections.map((section) => (
                 <article key={section.title}>
                   <h2 className="text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">
@@ -358,7 +358,7 @@ export function LibrarySeoPage({
         </div>
       </section>
 
-      <section className="pb-16 sm:pb-20">
+      <section className="section-bottom-space-lg">
         <div className="site-container">
           <div className="rounded-[28px] bg-blue-700 px-6 py-8 text-white shadow-[0_24px_70px_rgba(29,78,216,0.28)] sm:px-8 sm:py-10">
             <p className="text-sm font-semibold uppercase tracking-[0.16em] text-white/80">

@@ -72,7 +72,7 @@ export function HomeHeroSlider() {
   return (
     <section
       id="anasayfa"
-      className="hero-section bg-white"
+      className="bg-white pt-4 pb-8 md:pt-6 md:pb-10 lg:pt-8 lg:pb-12"
       aria-label="Pro Makina ana tanıtım bölümü"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}

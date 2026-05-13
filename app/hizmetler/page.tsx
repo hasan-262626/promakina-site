@@ -172,7 +172,7 @@ export default function ServicesPage() {
             ))}
           </div>
 
-          <section className="mt-10 rounded-[32px] border border-slate-200 bg-white px-6 py-8 shadow-[0_18px_45px_rgba(15,23,42,0.06)] sm:px-8 sm:py-10 lg:px-12">
+          <section className="section-gap rounded-[32px] border border-slate-200 bg-white px-6 py-8 shadow-[0_18px_45px_rgba(15,23,42,0.06)] sm:px-8 sm:py-10 lg:px-12">
             <div className="max-w-4xl">
               <h2 className="text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">
                 Proje Bazlı Hizmet Alanlarımız
@@ -203,7 +203,7 @@ export default function ServicesPage() {
             </div>
           </section>
 
-          <section className="mt-10 rounded-[32px] border border-slate-200 bg-white px-6 py-8 shadow-[0_18px_45px_rgba(15,23,42,0.06)] sm:px-8 sm:py-10 lg:px-12">
+          <section className="section-gap rounded-[32px] border border-slate-200 bg-white px-6 py-8 shadow-[0_18px_45px_rgba(15,23,42,0.06)] sm:px-8 sm:py-10 lg:px-12">
             <div className="max-w-4xl">
               <h2 className="text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">
                 Hizmet Verdiğimiz Sektörler
@@ -234,7 +234,7 @@ export default function ServicesPage() {
             </div>
           </section>
 
-          <section className="mt-10 rounded-[32px] border border-slate-200 bg-white px-6 py-8 shadow-[0_18px_45px_rgba(15,23,42,0.06)] sm:px-8 sm:py-10 lg:px-12">
+          <section className="section-gap rounded-[32px] border border-slate-200 bg-white px-6 py-8 shadow-[0_18px_45px_rgba(15,23,42,0.06)] sm:px-8 sm:py-10 lg:px-12">
             <div className="max-w-4xl">
               <h2 className="text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">
                 Makine ve Ekipman Grupları
@@ -264,7 +264,7 @@ export default function ServicesPage() {
             </div>
           </section>
 
-          <section className="mt-10 rounded-[32px] bg-blue-700 px-6 py-8 text-white shadow-[0_24px_70px_rgba(29,78,216,0.28)] sm:px-8 sm:py-10 lg:px-12">
+          <section className="section-gap rounded-[32px] bg-blue-700 px-6 py-8 text-white shadow-[0_24px_70px_rgba(29,78,216,0.28)] sm:px-8 sm:py-10 lg:px-12">
             <div className="max-w-4xl">
               <h2 className="text-2xl font-semibold tracking-tight text-white sm:text-3xl">
                 Projeniz İçin Teknik Değerlendirme Alın

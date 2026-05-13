@@ -125,9 +125,9 @@ export function HomeQuickAccessSection() {
   };
 
   return (
-    <section className="site-section border-b border-slate-200/70 bg-white" aria-labelledby="quick-access-title">
+    <section className="section-space border-b border-slate-200/70 bg-white" aria-labelledby="quick-access-title">
       <div className="site-container">
-        <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+        <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
           <div className="max-w-3xl">
             <h2
               id="quick-access-title"
@@ -169,7 +169,7 @@ export function HomeQuickAccessSection() {
           onMouseMove={handleMouseMove}
           onMouseUp={finishDrag}
           onMouseLeave={finishDrag}
-          className={`mt-10 flex snap-x snap-mandatory gap-4 overflow-x-auto pb-4 pr-[10%] outline-none [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:gap-5 md:pr-[8%] lg:gap-6 lg:pr-[9%] ${
+          className={`mt-8 flex snap-x snap-mandatory gap-4 overflow-x-auto pb-4 pr-[10%] outline-none [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:gap-5 md:pr-[8%] lg:gap-6 lg:pr-[9%] ${
             isDragging ? "cursor-grabbing select-none" : "cursor-grab"
           }`}
           aria-label="Sektöre özel çözümler slider alanı"
@@ -212,9 +212,9 @@ export function HomeQuickAccessSection() {
           </div>
         </div>
 
-        <div className="mt-6 h-px w-full bg-slate-200" />
+        <div className="mt-5 h-px w-full bg-slate-200" />
 
-        <div className="mt-5 flex justify-center">
+        <div className="mt-4 flex justify-center">
           <Link
             href="/sektorler"
             className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-[18px] py-[10px] text-[15px] font-semibold text-slate-800 transition hover:border-blue-200 hover:bg-blue-50 hover:text-blue-700 sm:text-base"

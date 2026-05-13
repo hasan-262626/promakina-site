@@ -77,7 +77,7 @@ export function SectorSupportDetailPage({
       </Hero>
 
       <section className="section-space">
-        <div className="site-container space-y-10">
+        <div className="site-container content-stack">
           <section className="rounded-[32px] border border-slate-200 bg-slate-50 px-6 py-8 shadow-[0_18px_45px_rgba(15,23,42,0.06)] sm:px-8 sm:py-10 lg:px-12">
             <p className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-700">
               SektÃ¶rel Proses Çözümü

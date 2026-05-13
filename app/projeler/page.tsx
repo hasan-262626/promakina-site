@@ -4,7 +4,7 @@ import ProjectsHubExperience from "../components/projects-hub-experience";
 export const metadata: Metadata = {
   title: "Projeler | Pro Makina",
   description:
-    "Kapasite analizi, yerleşim, imalat, montaj ve devreye alma yaklaşımıyla proje çözümleri.",
+    "Gubre, kompost, biyogaz, kurutma, maden ve ozel proses projeleri icin proses, imalat, montaj ve devreye alma odakli tesis cozumleri.",
   alternates: {
     canonical: "https://www.promakina.com.tr/projeler",
   },

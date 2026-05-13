@@ -298,7 +298,7 @@ export function MachineSeoLandingPage({
         </div>
       </section>
 
-      <section className="pb-10 sm:pb-14">
+      <section className="section-bottom-space">
         <div className="site-container">
           <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
             {cards.map((card) => (
@@ -308,7 +308,7 @@ export function MachineSeoLandingPage({
         </div>
       </section>
 
-      <section className="pb-10 sm:pb-14">
+      <section className="section-bottom-space">
         <div className="site-container">
           <div className="overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-[0_18px_45px_rgba(15,23,42,0.06)]">
             <div className="border-b border-slate-200 px-6 py-6 sm:px-8">
@@ -352,10 +352,10 @@ export function MachineSeoLandingPage({
         </div>
       </section>
 
-      <section className="seo-content pb-10 sm:pb-14">
+      <section className="seo-content section-bottom-space">
         <div className="site-container">
           <div className="rounded-[32px] border border-slate-200 bg-slate-50 px-6 py-8 shadow-[0_18px_45px_rgba(15,23,42,0.06)] sm:px-8 sm:py-10 lg:px-12">
-            <div className="space-y-10">
+            <div className="content-stack">
               <ParagraphListSection title="Teknik Özellikler" items={technicalFeatures} />
               <ParagraphListSection title="Kapasite ve Tasarım Kriterleri" items={capacityCriteria} />
               <ParagraphListSection title="Proses İçindeki Yeri" items={processRole} />
@@ -367,7 +367,7 @@ export function MachineSeoLandingPage({
         </div>
       </section>
 
-      <section className="pb-10 sm:pb-14">
+      <section className="section-bottom-space">
         <div className="site-container">
           <div className="rounded-[28px] border border-slate-200 bg-blue-700 px-6 py-8 text-white shadow-[0_24px_70px_rgba(29,78,216,0.22)] sm:px-8 sm:py-10">
             <h2 className="text-2xl font-semibold tracking-tight text-white sm:text-3xl">
@@ -406,7 +406,7 @@ export function MachineSeoLandingPage({
 
       <ServiceRelatedTechnicalContents items={technicalContents} />
 
-      <section className="pb-10 sm:pb-14">
+      <section className="section-bottom-space">
         <div className="site-container">
           <div className="grid gap-6 lg:grid-cols-2">
             <div className="rounded-[28px] border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
@@ -445,7 +445,7 @@ export function MachineSeoLandingPage({
         </div>
       </section>
 
-      <section className="pb-10 sm:pb-14">
+      <section className="section-bottom-space">
         <div className="site-container">
           <div className="rounded-[32px] border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
             <h2 className="text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">
@@ -467,7 +467,7 @@ export function MachineSeoLandingPage({
         </div>
       </section>
 
-      <section className="pb-16 sm:pb-20">
+      <section className="section-bottom-space-lg">
         <div className="site-container">
           <div className="rounded-[28px] bg-blue-700 px-6 py-8 text-white shadow-[0_24px_70px_rgba(29,78,216,0.28)] sm:px-8 sm:py-10">
             <h2 className="text-2xl font-semibold tracking-tight text-white sm:text-3xl">

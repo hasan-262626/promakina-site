@@ -103,7 +103,7 @@ export default function LibraryPage() {
             <LibraryCategoryShowcase items={libraryCategories} />
           </div>
 
-          <div className="mt-10 rounded-[28px] border border-slate-200 bg-slate-50 p-6 shadow-sm sm:p-8">
+          <div className="section-gap rounded-[28px] border border-slate-200 bg-slate-50 p-6 shadow-sm sm:p-8">
             <h2 className="text-2xl font-semibold tracking-tight text-slate-950">
               Öne Çıkan Teknik Rehberler ve Hizmet Sayfaları
             </h2>
