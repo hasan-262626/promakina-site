@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { LibrarySeoPage, buildLibraryMetadata } from "../../../components/library-seo-page";
+import { buildLibraryMetadata } from "../../../components/library-seo-page";
+import { BlogArticleTemplate } from "../../../components/blog-article-template";
 
 const title = "Kompost Tesisi Nasıl Kurulur? | Proses, Makine, Kapasite | Pro Makina";
 const description =
@@ -227,7 +228,7 @@ const faqs = [
 
 export default function Page() {
   return (
-    <LibrarySeoPage
+    <BlogArticleTemplate
       title="Kompost Tesisi Nasıl Kurulur?"
       description={description}
       canonical={canonical}

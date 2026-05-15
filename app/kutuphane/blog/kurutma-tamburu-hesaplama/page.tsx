@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { LibrarySeoPage } from "../../../components/library-seo-page";
+import { BlogArticleTemplate } from "../../../components/blog-article-template";
 
 export const metadata: Metadata = {
   title: "Kurutma Tamburu Hesaplama (2026) | Kapasite, Çap-Boy, Hava Debisi | Pro Makina",
@@ -302,7 +302,7 @@ const faqs = [
 
 export default function Page() {
   return (
-    <LibrarySeoPage
+    <BlogArticleTemplate
       title="Kurutma Tamburu Hesaplama (Adım Adım Mühendislik Rehberi)"
       description="Kurutma tamburu kapasite hesabı, çap-boy seçimi, nem dengesi, hava debisi ve enerji ihtiyacı için adım adım mühendislik çerçevesi sunuyoruz."
       canonical={canonical}

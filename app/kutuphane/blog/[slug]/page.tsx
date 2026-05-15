@@ -3,9 +3,9 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Hero } from "../../../components/Hero";
 import {
-  LibrarySeoPage,
   buildLibraryMetadata,
 } from "../../../components/library-seo-page";
+import { BlogArticleTemplate } from "../../../components/blog-article-template";
 import {
   topicalBlogArticleMap,
   topicalBlogCategoryMap,
@@ -298,7 +298,7 @@ export default async function Page({ params }: PageProps) {
   }
 
   return (
-    <LibrarySeoPage
+    <BlogArticleTemplate
       title={article.title}
       description={article.description}
       canonical={`https://www.promakina.com.tr/kutuphane/blog/${slug}`}

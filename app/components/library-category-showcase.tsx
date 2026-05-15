@@ -4,15 +4,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { useMemo, useState } from "react";
 
-type LibraryCategoryCard = {
+export type LibraryCategoryCard = {
   title:
     | "Blog / Makaleler"
-    | "Teknik Rehberler"
+    | "Programlar"
+    | "Terimler Sözlüğü"
     | "PDF Kataloglar"
     | "Video İçerikler"
-    | "Sık Sorulan Sorular"
-    | "Terimler Sözlüğü"
-    | "Programlar";
+    | "Sık Sorulan Sorular";
   description: string;
   href: string;
   image: string;
@@ -24,7 +23,6 @@ const filterOrder = [
   ALL_CONTENTS,
   "Programlar",
   "Blog / Makaleler",
-  "Teknik Rehberler",
   "PDF Kataloglar",
   "Video İçerikler",
   "Sık Sorulan Sorular",
@@ -88,8 +86,12 @@ export function LibraryCategoryShowcase({ items }: { items: LibraryCategoryCard[
               />
               <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(15,23,42,0.18),rgba(15,23,42,0.72))]" />
               <div className="absolute inset-x-0 bottom-0 p-6">
-                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-blue-200">KÜTÜPHANE</p>
-                <h2 className="mt-2 text-2xl font-semibold tracking-tight text-white">{item.title}</h2>
+                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-blue-200">
+                  KÜTÜPHANE
+                </p>
+                <h2 className="mt-2 text-2xl font-semibold tracking-tight text-white">
+                  {item.title}
+                </h2>
               </div>
             </div>
 

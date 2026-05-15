@@ -8,6 +8,9 @@ type PageProps = {
     slug: string;
     product: string;
   }>;
+  searchParams?: Promise<{
+    tab?: string;
+  }>;
 };
 
 const categoryAliasMap: Record<string, string> = {
@@ -93,8 +96,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
-export default async function MachineProductDetailPage({ params }: PageProps) {
+export default async function MachineProductDetailPage({ params, searchParams }: PageProps) {
   const { slug, product } = await params;
+  const resolvedSearchParams = (await searchParams) ?? {};
   const resolvedSlug = categoryAliasMap[slug] ?? slug;
   const resolvedProduct = productAliasMap[product] ?? product;
   const publicCategorySlug = getPublicCategorySlug(resolvedSlug);
@@ -140,6 +144,7 @@ export default async function MachineProductDetailPage({ params }: PageProps) {
         spareParts={activeProduct.spareParts}
         relatedProducts={relatedProducts}
         calculatorFamily={category.calculatorFamily}
+        openCalculatorOnLoad={resolvedSearchParams.tab === "kapasite-hesabi"}
         ctaTitle={activeProduct.ctaTitle ?? `${activeProduct.title} iÃ§in doÄŸru makina Ã§Ã¶zÃ¼mÃ¼nÃ¼ birlikte netleÅŸtirelim`}
         ctaText={activeProduct.ctaText ?? category.ctaText}
       />

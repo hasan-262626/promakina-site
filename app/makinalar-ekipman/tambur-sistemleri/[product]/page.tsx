@@ -6,14 +6,18 @@ type PageProps = {
   params: Promise<{
     product: string;
   }>;
+  searchParams?: Promise<{
+    tab?: string;
+  }>;
 };
 
 export function generateStaticParams() {
   return drumProductPages.map((product) => ({ product: product.slug }));
 }
 
-export default async function DrumProductDetailPage({ params }: PageProps) {
+export default async function DrumProductDetailPage({ params, searchParams }: PageProps) {
   const { product } = await params;
+  const resolvedSearchParams = (await searchParams) ?? {};
   const activeProduct = drumProductPages.find((item) => item.slug === product);
 
   if (!activeProduct) {
@@ -44,6 +48,7 @@ export default async function DrumProductDetailPage({ params }: PageProps) {
         spareParts={activeProduct.spareParts}
         relatedProducts={relatedProducts}
         calculatorFamily="drum"
+        openCalculatorOnLoad={resolvedSearchParams.tab === "kapasite-hesabi"}
         ctaTitle={activeProduct.ctaTitle ?? "Tambur sistemleri için doğru makina çözümünü birlikte netleştirelim"}
         ctaText={
           activeProduct.ctaText ??

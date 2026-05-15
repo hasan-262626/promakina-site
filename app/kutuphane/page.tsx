@@ -1,19 +1,22 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Hero } from "../components/Hero";
-import { LibraryCategoryShowcase } from "../components/library-category-showcase";
+import {
+  LibraryCategoryShowcase,
+  type LibraryCategoryCard,
+} from "../components/library-category-showcase";
 
 export const metadata: Metadata = {
-  title: "Kütüphane | Teknik Rehberler, Blog ve Sözlük | Pro Makina",
+  title: "Kütüphane | Blog, Programlar ve Teknik İçerikler | Pro Makina",
   description:
-    "Blog makaleleri, teknik rehberler, PDF kataloglar, video içerikler, sık sorulan sorular ve terimler sözlüğü ile endüstriyel proses bilgi merkezi.",
+    "Blog makaleleri, mühendislik programları, terimler sözlüğü, PDF kataloglar, video içerikler ve sık sorulan sorular ile endüstriyel proses bilgi merkezi.",
   alternates: {
     canonical: "https://www.promakina.com.tr/kutuphane",
   },
   openGraph: {
-    title: "Kütüphane | Teknik Rehberler, Blog ve Sözlük | Pro Makina",
+    title: "Kütüphane | Blog, Programlar ve Teknik İçerikler | Pro Makina",
     description:
-      "Blog makaleleri, teknik rehberler, PDF kataloglar, video içerikler, sık sorulan sorular ve terimler sözlüğü ile endüstriyel proses bilgi merkezi.",
+      "Blog makaleleri, mühendislik programları, terimler sözlüğü, PDF kataloglar, video içerikler ve sık sorulan sorular ile endüstriyel proses bilgi merkezi.",
     url: "https://www.promakina.com.tr/kutuphane",
     siteName: "Pro Makina",
     locale: "tr_TR",
@@ -21,79 +24,126 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Kütüphane | Teknik Rehberler, Blog ve Sözlük | Pro Makina",
+    title: "Kütüphane | Blog, Programlar ve Teknik İçerikler | Pro Makina",
     description:
-      "Blog makaleleri, teknik rehberler, PDF kataloglar, video içerikler, sık sorulan sorular ve terimler sözlüğü ile endüstriyel proses bilgi merkezi.",
+      "Blog makaleleri, mühendislik programları, terimler sözlüğü, PDF kataloglar, video içerikler ve sık sorulan sorular ile endüstriyel proses bilgi merkezi.",
   },
 };
 
-const libraryCategories = [
+const libraryCategories: LibraryCategoryCard[] = [
   {
-    title: "Blog / Makaleler" as const,
-    description: "Sektöre yön veren, arama niyeti güçlü makaleler ve konu kümeleri.",
+    title: "Blog / Makaleler",
+    description:
+      "Sektör, proses, makina seçimi ve yatırım kararlarını destekleyen teknik makaleleri inceleyin.",
     href: "/kutuphane/blog",
     image: "/images/proses1.jpg",
   },
   {
-    title: "Teknik Rehberler" as const,
-    description: "Karar sürecini destekleyen detaylı teknik açıklamalar ve saha odaklı rehberler.",
-    href: "/kutuphane/teknik-rehberler",
-    image: "/images/kurutmatam2.jpg",
+    title: "Programlar",
+    description:
+      "Mühendislik hesapları, kapasite araçları ve ön seçim programlarıyla teknik kararlarınızı hızlandırın.",
+    href: "/programlar",
+    image: "/images/proses1.png",
   },
   {
-    title: "PDF Kataloglar" as const,
-    description: "Makina, ekipman ve sistem ailelerini toplu incelemeye yarayan katalog içerikleri.",
-    href: "/kutuphane/pdf-kataloglar",
-    image: "/images/makinalar1.png",
-  },
-  {
-    title: "Video İçerikler" as const,
-    description: "Makina mantığı, proses akışları ve saha uygulamaları için anlatımlı içerikler.",
-    href: "/kutuphane/video-icerikler",
-    image: "/images/konveyor1.jpg",
-  },
-  {
-    title: "Sık Sorulan Sorular" as const,
-    description: "Teknik ekiplerin ve yatırımcıların en sık sorduğu sorulara hızlı cevaplar.",
-    href: "/kutuphane/sik-sorulan-sorular",
-    image: "/images/hizmetler1.png",
-  },
-  {
-    title: "Terimler Sözlüğü" as const,
-    description: "Google için yüksek potansiyelli, temel kavramları açıklayan otorite sayfaları.",
+    title: "Terimler Sözlüğü",
+    description:
+      "Gübre, kompost, kurutma, taşıma ve proses ekipmanlarıyla ilgili teknik terimleri sade açıklamalarla okuyun.",
     href: "/kutuphane/terimler-sozlugu",
     image: "/images/kimya1.jpg",
   },
   {
-    title: "Programlar" as const,
+    title: "PDF Kataloglar",
     description:
-      "Mühendislik hesaplama araçları, SEO odaklı teknik program sayfaları ve canlı seçim ekranları ile teklif sürecini hızlandırın.",
-    href: "/programlar",
-    image: "/images/proses1.png",
+      "Makina, ekipman ve tesis çözümlerimize ait katalogları tek merkezden inceleyin.",
+    href: "/kutuphane/pdf-kataloglar",
+    image: "/images/makinalar1.png",
+  },
+  {
+    title: "Video İçerikler",
+    description:
+      "Makina çalışma prensipleri, saha uygulamaları ve proses anlatımlarını video içeriklerle görün.",
+    href: "/kutuphane/video-icerikler",
+    image: "/images/konveyor1.jpg",
+  },
+  {
+    title: "Sık Sorulan Sorular",
+    description:
+      "Tesis kurulumu, makine seçimi, kapasite, teklif ve süreç hakkında sık sorulan sorulara hızlıca ulaşın.",
+    href: "/kutuphane/sik-sorulan-sorular",
+    image: "/images/hizmetler1.png",
   },
 ];
 
-const compostTechnicalPages = [
+const highlights = [
   {
-    label: "Evsel Organik Atık İşleme",
-    href: "/sektorler/kompost-ve-organik-atik-tesisleri/evsel-organik-atiklar",
+    title: "Mühendislik Hesapları",
+    description:
+      "Kapasite, motor gücü, çap, hız, eğim ve proses değerlerini ön seçim mantığıyla değerlendirin.",
+    href: "/programlar",
   },
   {
-    label: "Trommel Elekler",
-    href: "/makinalar-ekipman/eleme-ve-siniflandirma-sistemleri/trommel-elekler",
+    title: "Saha Tecrübesi",
+    description:
+      "Makine seçimini yalnız katalog bilgisiyle değil, gerçek üretim ve işletme koşullarıyla birlikte okuyun.",
+    href: "/projeler",
   },
   {
-    label: "Kompost Tamburu",
-    href: "/makinalar-ekipman/tambur-sistemleri/kompost-tamburu",
+    title: "Teknik Teklif Hazırlığı",
+    description:
+      "Hammadde, kapasite, nem oranı ve ürün hedefinizi belirleyerek teklif sürecine daha hazırlıklı başlayın.",
+    href: "/iletisim",
   },
 ];
 
 export default function LibraryPage() {
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Ana Sayfa",
+        item: "https://www.promakina.com.tr",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Kütüphane",
+        item: "https://www.promakina.com.tr/kutuphane",
+      },
+    ],
+  };
+
+  const collectionPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: "Kütüphane",
+    description:
+      "Blog, programlar, terimler sözlüğü, PDF kataloglar, video içerikler ve sık sorulan sorular ile Pro Makina teknik bilgi merkezi.",
+    url: "https://www.promakina.com.tr/kutuphane",
+    hasPart: libraryCategories.map((item) => ({
+      "@type": "CreativeWork",
+      name: item.title,
+      url: `https://www.promakina.com.tr${item.href}`,
+    })),
+  };
+
   return (
     <main className="min-h-screen overflow-x-hidden bg-white text-slate-900">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionPageSchema) }}
+      />
+
       <Hero
         title="Kütüphane"
-        description="Teknik rehberler, blog makaleleri, sözlük içerikleri ve yardımcı mühendislik başlıklarıyla yatırım kararlarını destekleyen bilgi merkezi."
+        description="Blog makaleleri, mühendislik programları, sözlük içerikleri ve karar sürecini hızlandıran teknik kaynaklarla yatırım hazırlığınızı güçlendirin."
         image="/images/proses1.jpg"
       />
 
@@ -104,56 +154,39 @@ export default function LibraryPage() {
           </div>
 
           <div className="section-gap rounded-[28px] border border-slate-200 bg-slate-50 p-6 shadow-sm sm:p-8">
-            <h2 className="text-2xl font-semibold tracking-tight text-slate-950">
-              Öne Çıkan Teknik Rehberler ve Hizmet Sayfaları
-            </h2>
-            <p className="mt-4 text-sm leading-8 text-slate-600 sm:text-base">
-              Teknik rehberler ile saha odaklı hizmet sayfalarını birlikte incelemek isterseniz{" "}
-              <Link className="font-semibold text-blue-700 transition hover:text-blue-800" href="/kutuphane/blog/kurutma-tamburu-hesaplama">
-                Kurutma Tamburu Hesaplama
-              </Link>
-              ,{" "}
-              <Link className="font-semibold text-blue-700 transition hover:text-blue-800" href="/kutuphane/blog/helezon-konveyor-kapasite-hesabi">
-                Helezon Konveyör Kapasite Hesabı
-              </Link>
-              ,{" "}
-              <Link className="font-semibold text-blue-700 transition hover:text-blue-800" href="/hizmetler/kurutma-tamburu-imalati">
-                Kurutma Tamburu İmalatı
-              </Link>
-              ,{" "}
-              <Link className="font-semibold text-blue-700 transition hover:text-blue-800" href="/hizmetler/camur-kurutma-tesisi">
-                Çamur Kurutma Tesisi
-              </Link>
-              ,{" "}
-              <Link className="font-semibold text-blue-700 transition hover:text-blue-800" href="/hizmetler/silis-kumu-kurutma-tesisi">
-                Silis Kumu Kurutma Tesisi
-              </Link>{" "}
-              ,{" "}
-              <Link className="font-semibold text-blue-700 transition hover:text-blue-800" href="/hizmetler/maden-kurutma-ve-eleme-tesisi">
-                Maden Kurutma ve Eleme Tesisi
-              </Link>{" "}
-              ,{" "}
-              <Link className="font-semibold text-blue-700 transition hover:text-blue-800" href="/hizmetler/granul-gubre-uretim-tesisi">
-                Granül Gübre Üretim Tesisi
-              </Link>
-              ,{" "}
-              <Link className="font-semibold text-blue-700 transition hover:text-blue-800" href="/hizmetler/organomineral-gubre-tesisi">
-                Organomineral Gübre Tesisi
-              </Link>
-              {" "}ve{" "}
-              <Link className="font-semibold text-blue-700 transition hover:text-blue-800" href="/hizmetler/sivi-gubre-uretim-tesisi">
-                Sıvı Gübre Üretim Tesisi
-              </Link>{" "}
-              sayfalarımız üzerinden karar sürecini hızlandırabilirsiniz.
-            </p>
-            <div className="mt-6 flex flex-wrap gap-3">
-              {compostTechnicalPages.map((item) => (
+            <div className="max-w-4xl">
+              <h2 className="text-3xl font-semibold tracking-tight text-slate-950">
+                Teknik bilgi, mühendislik hesabı ve saha tecrübesi aynı merkezde
+              </h2>
+              <p className="mt-4 text-sm leading-8 text-slate-600 sm:text-base">
+                Pro Makina Kütüphane alanı; yalnızca genel bilgi sunmak için değil, yatırım
+                öncesi doğru karar almanıza yardımcı olmak için hazırlanmıştır. Blog yazıları,
+                mühendislik hesaplama programları, terimler sözlüğü, kataloglar, videolar ve sık
+                sorulan sorular sayesinde proses mantığını, makine seçimini ve tesis kurulum
+                adımlarını daha net değerlendirebilirsiniz.
+              </p>
+              <p className="mt-4 text-sm leading-8 text-slate-600 sm:text-base">
+                Kurutma tamburu, helezon konveyör, bant konveyör, kompost tesisi, gübre üretim
+                hattı, maden işleme ve sıvı gübre üretimi gibi başlıklarda daha önceki saha
+                tecrübelerimizden ve mühendislik yaklaşımımızdan faydalanarak projeniz için daha
+                doğru ön değerlendirme yapabilirsiniz.
+              </p>
+            </div>
+
+            <div className="mt-8 grid gap-5 md:grid-cols-3">
+              {highlights.map((item) => (
                 <Link
-                  key={item.href}
+                  key={item.title}
                   href={item.href}
-                  className="inline-flex rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-blue-200 hover:bg-blue-50 hover:text-blue-700"
+                  className="group rounded-[24px] border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:border-blue-200 hover:shadow-[0_18px_45px_rgba(15,23,42,0.08)]"
                 >
-                  {item.label}
+                  <h3 className="text-xl font-semibold tracking-tight text-slate-950">
+                    {item.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-7 text-slate-600">{item.description}</p>
+                  <span className="mt-5 inline-flex text-sm font-semibold text-blue-700 transition group-hover:text-blue-800">
+                    İçeriği İncele
+                  </span>
                 </Link>
               ))}
             </div>

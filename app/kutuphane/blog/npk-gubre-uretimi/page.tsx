@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { LibrarySeoPage, buildLibraryMetadata } from "../../../components/library-seo-page";
+import { buildLibraryMetadata } from "../../../components/library-seo-page";
+import { BlogArticleTemplate } from "../../../components/blog-article-template";
 
 const title = "NPK Gübre Üretimi | Pro Makina";
 const description =
@@ -185,7 +186,7 @@ const faqs = [
 
 export default function Page() {
   return (
-    <LibrarySeoPage
+    <BlogArticleTemplate
       title="NPK Gübre Üretimi"
       description={description}
       canonical={canonical}

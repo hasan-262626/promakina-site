@@ -239,60 +239,60 @@ export default function ContactPage() {
 
             <div className="content-stack">
               <div className="rounded-[32px] border border-slate-200 bg-slate-50 p-6 shadow-[0_18px_50px_rgba(15,23,42,0.04)] sm:p-8">
-                <div className="grid gap-6 lg:grid-cols-[0.92fr_1.08fr] lg:items-stretch">
-                  <div>
-                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-blue-700">
-                      KONUM VE YOL TARİFİ
-                    </p>
-                    <h2 className="mt-3 text-2xl font-semibold tracking-tight text-slate-950">
-                      Konum ve Yol Tarifi
-                    </h2>
-                    <p className="mt-4 text-sm leading-8 text-slate-600">
-                      75. Yıl Mahallesi, Teksan Sanayi Sitesi, Kilis Sokak D6 Blok No: 2E,
-                      Odunpazarı / Eskişehir
-                    </p>
-                    <p className="mt-2 text-sm font-medium text-slate-700">Posta Kodu: 26250</p>
-                    <p className="mt-4 text-sm leading-8 text-slate-600">
-                      Pro Makina üretim ve proje görüşmeleri için Eskişehir Teksan Sanayi
-                      Sitesi&apos;nde hizmet vermektedir. Ziyaret öncesinde telefon veya
-                      WhatsApp üzerinden randevu almanızı öneririz.
-                    </p>
-                    <div className="mt-6 flex flex-col gap-3">
-                      <a
-                        href={googleDirectionsHref}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        data-cta-event="directions_click"
-                        data-cta-label="Yol Tarifi Al"
-                        className="inline-flex min-h-[48px] items-center justify-center rounded-full bg-blue-700 px-5 text-sm font-semibold text-white transition hover:bg-blue-800"
-                      >
-                        Yol Tarifi Al
-                      </a>
-                      <a
-                        href={siteContact.phoneHref}
-                        className="inline-flex min-h-[48px] items-center justify-center rounded-full border border-slate-200 bg-white px-5 text-sm font-semibold text-slate-900 transition hover:border-blue-200 hover:text-blue-700"
-                      >
-                        Telefonla Ara
-                      </a>
-                      <a
-                        href={siteContact.whatsappHref}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex min-h-[48px] items-center justify-center rounded-full bg-green-600 px-5 text-sm font-semibold text-white transition hover:bg-green-500"
-                      >
-                        WhatsApp ile Yaz
-                      </a>
-                    </div>
-                  </div>
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-blue-700">
+                  KONUM VE YOL TARİFİ
+                </p>
+                <h2 className="mt-3 text-2xl font-semibold tracking-tight text-slate-950">
+                  Konum ve Yol Tarifi
+                </h2>
 
-                  <div className="overflow-hidden rounded-[28px] border border-slate-200 bg-white shadow-[0_10px_30px_rgba(15,23,42,0.05)]">
-                    <iframe
-                      title="Pro Makina Konum Haritası"
-                      src="https://www.google.com/maps?q=75.%20Y%C4%B1l%20Mahallesi%2C%20Teksan%20Sanayi%20Sitesi%2C%20Kilis%20Sokak%20D6%20Blok%20No%3A%202E%2C%20Odunpazar%C4%B1%2C%20Eski%C5%9Fehir&output=embed"
-                      className="h-[320px] w-full"
-                      loading="lazy"
-                    />
-                  </div>
+                <div className="mt-6 overflow-hidden rounded-[28px] border border-slate-200 bg-white shadow-[0_10px_30px_rgba(15,23,42,0.05)]">
+                  <iframe
+                    title="Pro Makina Konum Haritası"
+                    src="https://www.google.com/maps?q=75.%20Y%C4%B1l%20Mahallesi%2C%20Teksan%20Sanayi%20Sitesi%2C%20Kilis%20Sokak%20D6%20Blok%20No%3A%202E%2C%20Odunpazar%C4%B1%2C%20Eski%C5%9Fehir&output=embed"
+                    className="h-[240px] w-full sm:h-[260px] lg:h-[280px]"
+                    loading="lazy"
+                  />
+                </div>
+
+                <div className="mt-6">
+                  <p className="text-sm leading-8 text-slate-600">
+                    75. Yıl Mahallesi, Teksan Sanayi Sitesi, Kilis Sokak D6 Blok No: 2E,
+                    Odunpazarı / Eskişehir
+                  </p>
+                  <p className="mt-2 text-sm font-medium text-slate-700">Posta Kodu: 26250</p>
+                  <p className="mt-4 text-sm leading-8 text-slate-600">
+                    Pro Makina üretim ve proje görüşmeleri için Eskişehir Teksan Sanayi
+                    Sitesi&apos;nde hizmet vermektedir. Ziyaret öncesinde telefon veya
+                    WhatsApp üzerinden randevu almanızı öneririz.
+                  </p>
+                </div>
+
+                <div className="mt-6 flex flex-col gap-3">
+                  <a
+                    href={googleDirectionsHref}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    data-cta-event="directions_click"
+                    data-cta-label="Yol Tarifi Al"
+                    className="inline-flex min-h-[48px] items-center justify-center rounded-full bg-blue-700 px-5 text-sm font-semibold text-white transition hover:bg-blue-800"
+                  >
+                    Yol Tarifi Al
+                  </a>
+                  <a
+                    href={siteContact.phoneHref}
+                    className="inline-flex min-h-[48px] items-center justify-center rounded-full border border-slate-200 bg-white px-5 text-sm font-semibold text-slate-900 transition hover:border-blue-200 hover:text-blue-700"
+                  >
+                    Telefonla Ara
+                  </a>
+                  <a
+                    href={siteContact.whatsappHref}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex min-h-[48px] items-center justify-center rounded-full bg-green-600 px-5 text-sm font-semibold text-white transition hover:bg-green-500"
+                  >
+                    WhatsApp ile Yaz
+                  </a>
                 </div>
               </div>
 

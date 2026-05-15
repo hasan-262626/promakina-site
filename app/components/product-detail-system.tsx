@@ -40,6 +40,7 @@ type ProductDetailSystemProps = {
   ctaTitle?: string;
   ctaText: string;
   calculatorFamily: CalculatorFamily;
+  openCalculatorOnLoad?: boolean;
 };
 
 type SectionKey =
@@ -395,6 +396,7 @@ export function ProductDetailSystem({
   ctaTitle,
   ctaText,
   calculatorFamily,
+  openCalculatorOnLoad = false,
 }: ProductDetailSystemProps) {
   const [activeTab, setActiveTab] = useState<SectionKey>("ürün-detaylari");
   const [isCalculatorOpen, setIsCalculatorOpen] = useState(false);
@@ -416,6 +418,17 @@ export function ProductDetailSystem({
     observed.forEach((section) => observer.observe(section));
     return () => observer.disconnect();
   }, []);
+
+  useEffect(() => {
+    if (!openCalculatorOnLoad) return;
+
+    const initialSectionId = sections[0]?.id;
+    if (!initialSectionId) return;
+
+    setActiveTab(initialSectionId);
+    setIsCalculatorOpen(true);
+    document.getElementById(initialSectionId)?.scrollIntoView({ block: "start" });
+  }, [openCalculatorOnLoad]);
 
   const handleValueChange = (key: string, value: string) => {
     setCalculatorValues((current) => {

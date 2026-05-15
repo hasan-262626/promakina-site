@@ -4,9 +4,15 @@ import ProjectsHubExperience from "../components/projects-hub-experience";
 export const metadata: Metadata = {
   title: "Projeler | Pro Makina",
   description:
-    "Gubre, kompost, biyogaz, kurutma, maden ve ozel proses projeleri icin proses, imalat, montaj ve devreye alma odakli tesis cozumleri.",
+    "Gübre, kompost, biyogaz, kurutma, maden ve özel proses projeleri için müşteri odaklı tesis senaryolarını ve uygulama yaklaşımlarını inceleyin.",
   alternates: {
     canonical: "https://www.promakina.com.tr/projeler",
+  },
+  openGraph: {
+    title: "Projeler | Pro Makina",
+    description:
+      "Gübre, kompost, biyogaz, kurutma, maden ve özel proses projeleri için müşteri odaklı tesis senaryolarını ve uygulama yaklaşımlarını inceleyin.",
+    url: "https://www.promakina.com.tr/projeler",
   },
 };
 

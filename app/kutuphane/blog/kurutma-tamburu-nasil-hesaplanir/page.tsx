@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { LibrarySeoPage, buildLibraryMetadata } from "../../../components/library-seo-page";
+import { buildLibraryMetadata } from "../../../components/library-seo-page";
+import { BlogArticleTemplate } from "../../../components/blog-article-template";
 
 const title = "Kurutma Tamburu Nasıl Hesaplanır? | Pro Makina";
 const description =
@@ -224,7 +225,7 @@ const sections = [
 
 export default function Page() {
   return (
-    <LibrarySeoPage
+    <BlogArticleTemplate
       title={title}
       description={description}
       canonical={canonical}
