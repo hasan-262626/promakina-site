@@ -1,7 +1,10 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
+import { getBlogArticleCtaConfig } from "../lib/blog-article-cta-map";
+import { getBlogTechnicalArticleData } from "../lib/blog-technical-article-data";
 import { siteContact, siteSocialSameAs } from "../lib/site-contact";
-import { LibraryServiceLinks } from "./library-service-links";
+import { BlogArticleCta } from "./blog-article-cta";
+import { BlogTechnicalArticleBlocks } from "./blog-technical-article-blocks";
 import { SocialFollowPanel } from "./social-follow-panel";
 import type { LibraryFaqItem, LibraryServiceLink } from "../lib/library-page-data";
 
@@ -44,6 +47,7 @@ type BlogArticleTemplateProps = {
   extraSection?: ReactNode;
   internalLinks?: { label: string; href: string }[];
   nextContent?: { title: string; description: string; href: string };
+  ctaVariant?: "default" | "sector-guide";
 };
 
 const defaultSocialDescription =
@@ -209,6 +213,86 @@ function buildTopicConfig({
       "Kapasite, ürün yoğunluğu, taşıma yönü, yükleme noktaları ve çalışma süresi bilgilerinizi paylaşın; doğru taşıma hattını birlikte netleştirelim.",
     primaryLabel: "Taşıma Ekipmanları",
     primaryHref: "/makinalar-ekipman/tasima-ekipmanlari",
+  };
+
+  const elevatorConfig: ArticleTopicConfig = {
+    actionEyebrow: "HESAPLAMA ARACI",
+    actionTitle: "Elevatör Kapasite Hesabınızı Yapın",
+    actionDescription:
+      "Kova hacmi, bant veya zincir hızı, ürün yoğunluğu ve dikey taşıma kapasitesini ön seçim mantığıyla değerlendirin.",
+    actionFeatures: [
+      "Dikey kapasite planlama",
+      "Kova hacmi yaklaşımı",
+      "Hat yüksekliği etkisi",
+      "Servis güvenliği",
+    ],
+    actionLink: "/programlar/elevator-kapasite-hesabi",
+    actionButtonLabel: "Hesaplama Aracını Aç",
+    highlights: [
+      {
+        title: "Dikey taşıma",
+        description: "Kot farkı olan sahalarda stabil ürün transferi elevatör tasarımına bağlıdır.",
+      },
+      {
+        title: "Kova doluluğu",
+        description: "Kapasite ile ürün dökülmesi riski arasındaki dengeyi belirler.",
+      },
+      {
+        title: "Hat güvenliği",
+        description: "Şase, tahrik ve geri kaçma kontrolü uzun vadeli işletmeyi etkiler.",
+      },
+    ],
+    supportLinks: [
+      { label: "Kovalı Elevatörler", href: "/makinalar-ekipman/tasima-ekipmanlari/kovali-elevatorler" },
+      { label: "Taşıma Ekipmanları", href: "/makinalar-ekipman/tasima-ekipmanlari" },
+      { label: "Bant Konveyörler", href: "/makinalar-ekipman/tasima-ekipmanlari/bant-konveyorler" },
+      { label: "Programlar", href: "/programlar" },
+    ],
+    ctaTitle: "Dikey taşıma hattınızı birlikte değerlendirelim",
+    ctaDescription:
+      "Ürün yoğunluğu, kapasite, yükselme yüksekliği ve saha koşullarınızı paylaşın; doğru elevatör omurgasını birlikte netleştirelim.",
+    primaryLabel: "Kovalı Elevatörler",
+    primaryHref: "/makinalar-ekipman/tasima-ekipmanlari/kovali-elevatorler",
+  };
+
+  const drumSystemsConfig: ArticleTopicConfig = {
+    actionEyebrow: "HESAPLAMA ARACI",
+    actionTitle: "Tambur Sistemi Ön Değerlendirmesini Yapın",
+    actionDescription:
+      "Granülasyon, soğutma, kaplama ve kompost tamburlarında kapasite, residence time ve ekipman yaklaşımını birlikte değerlendirin.",
+    actionFeatures: [
+      "Residence time yaklaşımı",
+      "Gövde geometrisi",
+      "Ürün hareketi",
+      "Hat entegrasyonu",
+    ],
+    actionLink: "/programlar/kurutma-tamburu-hesabi",
+    actionButtonLabel: "Hesaplama Aracını Aç",
+    highlights: [
+      {
+        title: "İşlem süresi",
+        description: "Tambur içindeki gerçek temas süresi proses başarısını doğrudan etkiler.",
+      },
+      {
+        title: "Ürün davranışı",
+        description: "Granül büyümesi, soğuma veya kaplama homojenliği ürün hareketine bağlıdır.",
+      },
+      {
+        title: "Hat uyumu",
+        description: "Besleme, çıkış ve yardımcı ekipmanlar tamburla aynı ritimde çalışmalıdır.",
+      },
+    ],
+    supportLinks: [
+      { label: "Tambur Sistemleri", href: "/makinalar-ekipman/tambur-sistemleri" },
+      { label: "Granülatör Tamburu", href: "/makinalar-ekipman/tambur-sistemleri/granulator-tamburu" },
+      { label: "Kompost Tamburu", href: "/makinalar-ekipman/tambur-sistemleri/kompost-tamburu" },
+      { label: "Programlar", href: "/programlar" },
+    ],
+    ctaTitle: "Tambur sistemi seçimini birlikte netleştirelim",
+    ctaDescription:
+      "Ürün tipi, kapasite hedefi, residence time beklentisi ve saha koşullarınızı paylaşın; doğru tambur omurgasını birlikte değerlendirelim.",
+    primaryLabel: "Tambur Sistemleri",
+    primaryHref: "/makinalar-ekipman/tambur-sistemleri",
   };
 
   const fertilizerConfig: ArticleTopicConfig = {
@@ -550,11 +634,28 @@ function buildTopicConfig({
     return dustConfig;
   }
 
-  if (key.includes("biyogaz")) {
+  if (key.includes("tavuk-gubresi-kurutma") || key.includes("maden-kurutma") || key.includes("kum-kurutma")) {
+    return dryingConfig;
+  }
+
+  if (
+    key.includes("granulator") ||
+    key.includes("sogutma-tamburu") ||
+    key.includes("kaplama-tamburu")
+  ) {
+    return drumSystemsConfig;
+  }
+
+  if (key.includes("biyogaz") || key.includes("digestat")) {
     return biogasConfig;
   }
 
-  if (key.includes("kompost") || key.includes("organik-atik") || key.includes("trommel")) {
+  if (
+    key.includes("kompost") ||
+    key.includes("organik-atik") ||
+    key.includes("trommel") ||
+    key.includes("buyukbas-hayvan-gubresi")
+  ) {
     return compostConfig;
   }
 
@@ -574,10 +675,11 @@ function buildTopicConfig({
     return screwConfig;
   }
 
-  if (
-    key.includes("konveyor") ||
-    key.includes("elevator")
-  ) {
+  if (key.includes("kovali") || key.includes("elevator")) {
+    return elevatorConfig;
+  }
+
+  if (key.includes("konveyor")) {
     return conveyorConfig;
   }
 
@@ -617,8 +719,12 @@ export function BlogArticleTemplate({
   extraSection,
   internalLinks = [],
   nextContent,
+  ctaVariant = "default",
 }: BlogArticleTemplateProps) {
+  const articleSlug = getArticleSlug(canonical);
   const topicConfig = buildTopicConfig({ title, categoryLabel, canonical });
+  const articleCta = getBlogArticleCtaConfig(articleSlug);
+  const technicalArticleData = getBlogTechnicalArticleData(articleSlug);
 
   const organizationSchema = {
     "@context": "https://schema.org",
@@ -750,50 +856,18 @@ export function BlogArticleTemplate({
         />
       ) : null}
 
-      <section className="section-space pt-10 md:pt-12">
-        <div className="site-container">
-          <div className="rounded-[32px] border border-slate-200 bg-[linear-gradient(135deg,#0f172a_0%,#173963_58%,#eff6ff_190%)] px-6 py-8 text-white shadow-[0_24px_70px_rgba(15,23,42,0.18)] sm:px-8 sm:py-10 lg:px-12">
-            <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
-              <div className="max-w-3xl">
-                <p className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-100">
-                  {topicConfig.actionEyebrow}
-                </p>
-                <h2 className="mt-4 text-3xl font-semibold tracking-tight text-white md:text-4xl">
-                  {topicConfig.actionTitle}
-                </h2>
-                <p className="mt-4 text-base leading-8 text-white/88 sm:text-lg">
-                  {topicConfig.actionDescription}
-                </p>
-              </div>
-
-              <div className="rounded-[28px] border border-white/15 bg-white/10 p-5 backdrop-blur-sm lg:max-w-sm">
-                <div className="grid gap-3 text-sm text-white/88 sm:grid-cols-2 lg:grid-cols-1">
-                  {topicConfig.actionFeatures.map((feature) => (
-                    <div
-                      key={feature}
-                      className="rounded-2xl border border-white/12 bg-white/10 px-4 py-3"
-                    >
-                      {feature}
-                    </div>
-                  ))}
-                </div>
-                <Link
-                  href={topicConfig.actionLink}
-                  className="mt-5 inline-flex min-h-[48px] w-full items-center justify-center rounded-full bg-white px-6 text-sm font-semibold text-blue-800 transition hover:bg-slate-100"
-                >
-                  {topicConfig.actionButtonLabel}
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <BlogArticleCta
+        title={articleCta.title}
+        description={articleCta.description}
+        buttonLabel={articleCta.buttonLabel}
+        buttonHref={articleCta.buttonHref}
+      />
 
       <article className="section-bottom-space-lg">
         <div className="site-container">
           <div className="mx-auto max-w-5xl">
             <div className="max-w-4xl">
-              <p className="text-sm font-semibold uppercase tracking-[0.16em] text-blue-700">
+              <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[#278DC0]">
                 {categoryLabel}
               </p>
               <h1 className="mt-3 text-4xl font-semibold tracking-tight text-slate-950 md:text-5xl">
@@ -805,13 +879,31 @@ export function BlogArticleTemplate({
               <p className="mt-4 text-base leading-8 text-slate-600 sm:text-lg">
                 {description}
               </p>
+              {ctaVariant === "sector-guide" ? (
+                <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+                  <Link
+                    href={siteContact.whatsappHref}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-[#278DC0] px-6 text-sm font-semibold text-white transition hover:bg-[#154764]"
+                  >
+                    WhatsApp ile Teklif Al
+                  </Link>
+                  <Link
+                    href={siteContact.phoneHref}
+                    className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-[#278DC0]/20 bg-white px-6 text-sm font-semibold text-[#154764] transition hover:bg-[#278DC0]/10"
+                  >
+                    Telefonla Ara
+                  </Link>
+                </div>
+              ) : null}
               {quickLinks.length ? (
                 <div className="mt-6 flex flex-wrap gap-3">
                   {quickLinks.map((link) => (
                     <Link
                       key={link.href}
                       href={link.href}
-                      className="inline-flex rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-blue-200 hover:bg-white hover:text-blue-700"
+                      className="inline-flex rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-[#278DC0] hover:bg-white hover:text-[#278DC0]"
                     >
                       {link.label}
                     </Link>
@@ -821,6 +913,8 @@ export function BlogArticleTemplate({
             </div>
 
             <div className="section-gap space-y-12">
+              <BlogTechnicalArticleBlocks data={technicalArticleData} />
+
               <section className="grid gap-4 md:grid-cols-3">
                 {topicConfig.highlights.map((item) => (
                   <div
@@ -862,8 +956,6 @@ export function BlogArticleTemplate({
 
               {extraSection}
 
-              {relatedServices.length ? <LibraryServiceLinks items={relatedServices} /> : null}
-
               {faqs.length ? (
                 <section className="rounded-[30px] border border-slate-200 bg-white p-6 shadow-sm md:p-8">
                   <div className="max-w-3xl">
@@ -901,7 +993,7 @@ export function BlogArticleTemplate({
                   </h2>
                   <Link
                     href={nextContent.href}
-                    className="mt-6 block rounded-[24px] border border-slate-200 bg-slate-50 p-5 shadow-sm transition hover:-translate-y-1 hover:border-blue-200 hover:bg-white hover:shadow-[0_18px_45px_rgba(15,23,42,0.08)]"
+                    className="mt-6 block rounded-[24px] border border-slate-200 bg-slate-50 p-5 shadow-sm transition hover:-translate-y-1 hover:border-[#278DC0]/16 hover:bg-white hover:shadow-[0_18px_45px_rgba(15,23,42,0.08)]"
                   >
                     <span className="text-lg font-semibold text-slate-950">
                       {nextContent.title}
@@ -909,50 +1001,71 @@ export function BlogArticleTemplate({
                     <span className="mt-3 block text-sm leading-7 text-slate-600">
                       {nextContent.description}
                     </span>
-                    <span className="mt-4 inline-flex text-sm font-semibold text-blue-700">
+                    <span className="mt-4 inline-flex text-sm font-semibold text-[#278DC0]">
                       İçeriği İncele
                     </span>
                   </Link>
                 </section>
               ) : null}
 
-              <section className="rounded-[32px] bg-blue-700 px-6 py-8 text-white shadow-[0_24px_70px_rgba(29,78,216,0.28)] sm:px-8 sm:py-10">
+              <section className="rounded-[32px] bg-[#278DC0] px-6 py-8 text-white shadow-[0_24px_70px_rgba(39,141,192,0.24)] sm:px-8 sm:py-10">
                 <div className="max-w-3xl">
                   <h2 className="text-3xl font-semibold tracking-tight text-white md:text-4xl">
-                    {topicConfig.ctaTitle}
+                    {ctaVariant === "sector-guide"
+                      ? "Projeniz için makine ve ekipman seçimini birlikte değerlendirelim."
+                      : topicConfig.ctaTitle}
                   </h2>
                   <p className="mt-4 text-base leading-8 text-white/90 sm:text-lg">
                     {ctaDescription}
                   </p>
                 </div>
-                <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-                  <Link
-                    href="/iletisim"
-                    className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-white px-6 text-sm font-semibold text-blue-800 transition hover:bg-slate-100"
-                  >
-                    Teknik Görüşme Talep Et
-                  </Link>
-                  <Link
-                    href={siteContact.whatsappHref}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/25 px-6 text-sm font-semibold text-white transition hover:bg-white/10"
-                  >
-                    WhatsApp ile Görüş
-                  </Link>
-                  <Link
-                    href={topicConfig.primaryHref}
-                    className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/25 px-6 text-sm font-semibold text-white transition hover:bg-white/10"
-                  >
-                    {topicConfig.primaryLabel}
-                  </Link>
-                  <Link
-                    href={topicConfig.actionLink}
-                    className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/25 px-6 text-sm font-semibold text-white transition hover:bg-white/10"
-                  >
-                    {topicConfig.actionButtonLabel}
-                  </Link>
-                </div>
+                {ctaVariant === "sector-guide" ? (
+                  <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+                    <Link
+                      href={siteContact.whatsappHref}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-white px-6 text-sm font-semibold text-[#154764] transition hover:bg-slate-100"
+                    >
+                      WhatsApp ile Teklif Al
+                    </Link>
+                    <Link
+                      href={siteContact.phoneHref}
+                      className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/25 px-6 text-sm font-semibold text-white transition hover:bg-white/10"
+                    >
+                      Telefonla Ara
+                    </Link>
+                  </div>
+                ) : (
+                  <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+                    <Link
+                      href="/iletisim"
+                      className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-white px-6 text-sm font-semibold text-[#154764] transition hover:bg-slate-100"
+                    >
+                      Teknik Görüşme Talep Et
+                    </Link>
+                    <Link
+                      href={siteContact.whatsappHref}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/25 px-6 text-sm font-semibold text-white transition hover:bg-white/10"
+                    >
+                      WhatsApp ile Görüş
+                    </Link>
+                    <Link
+                      href={topicConfig.primaryHref}
+                      className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/25 px-6 text-sm font-semibold text-white transition hover:bg-white/10"
+                    >
+                      {topicConfig.primaryLabel}
+                    </Link>
+                    <Link
+                      href={topicConfig.actionLink}
+                      className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/25 px-6 text-sm font-semibold text-white transition hover:bg-white/10"
+                    >
+                      {topicConfig.actionButtonLabel}
+                    </Link>
+                  </div>
+                )}
               </section>
 
               <SocialFollowPanel

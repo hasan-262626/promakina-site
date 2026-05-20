@@ -18,14 +18,11 @@ export function HomeMachineGroupsSection() {
         <div className="max-w-[1180px] min-w-0">
           <h2
             id="home-machine-groups-title"
-            className="text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl"
+            className="text-3xl font-semibold tracking-tight text-[#278DC0] sm:text-4xl"
           >
-            Makinalar & Ekipman
+            Makinalar & Ekipmanlar
           </h2>
-          <h3 className="mt-3 max-w-4xl text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">
-            {trText("Endüstriyel makina ve ekipman gruplarını tek çatı altında inceleyin")}
-          </h3>
-          <p className="mt-4 w-full max-w-[1120px] text-[15px] leading-[1.65] text-slate-600 sm:text-base">
+          <p className="mt-4 w-full max-w-[1120px] text-[15px] leading-[1.65] text-slate-900 sm:text-base">
             {trText(
               "Tambur sistemlerinden taşıma ekipmanlarına, kırıcı ve parçalayıcılardan reaktör ve tank çözümlerine kadar farklı proses ihtiyaçları için geliştirilen makina ailelerini bir arada sunuyoruz.",
             )}
@@ -45,7 +42,7 @@ export function HomeMachineGroupsSection() {
                   router.push(card.href);
                 }
               }}
-              className="group flex h-full cursor-pointer flex-col overflow-hidden rounded-[30px] border border-slate-200 bg-white shadow-[0_18px_50px_rgba(15,23,42,0.06)] transition duration-200 hover:-translate-y-1 hover:border-blue-200 hover:shadow-[0_24px_62px_rgba(15,23,42,0.1)]"
+              className="group flex h-full cursor-pointer flex-col overflow-hidden rounded-[30px] border border-slate-200 bg-white shadow-[0_18px_50px_rgba(15,23,42,0.06)] transition duration-200 hover:-translate-y-1 hover:border-[#278DC0]/16 hover:shadow-[0_24px_62px_rgba(15,23,42,0.1)]"
             >
               <div className="flex h-full flex-col">
                 <div className="relative min-h-[220px] bg-slate-200">
@@ -78,7 +75,7 @@ export function HomeMachineGroupsSection() {
                             <Link
                               href={product.href}
                               onClick={(event) => event.stopPropagation()}
-                              className="inline-flex rounded-md py-0.5 transition hover:text-blue-700 hover:underline underline-offset-4"
+                              className="inline-flex rounded-md py-0.5 transition hover:text-[#278DC0] hover:underline underline-offset-4"
                             >
                               {trText(product.label)}
                             </Link>
@@ -95,7 +92,7 @@ export function HomeMachineGroupsSection() {
                   </div>
 
                   <div className="mt-auto pt-8">
-                    <span className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-slate-300 px-5 text-sm font-semibold text-slate-900 transition group-hover:border-blue-200 group-hover:text-blue-700">
+                    <span className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-[#278DC0]/16 px-5 text-sm font-semibold text-[#278DC0] transition group-hover:border-[#278DC0] group-hover:text-[#278DC0]">
                       {trText(card.buttonLabel)}
                     </span>
                   </div>

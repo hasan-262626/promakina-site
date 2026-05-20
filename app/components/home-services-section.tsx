@@ -9,7 +9,7 @@ const visibleHomeServiceCards = homeServiceCards.filter(
 
 function ServiceCard({ card }: { card: (typeof homeServiceCards)[number] }) {
   return (
-    <article className="group flex h-full flex-col rounded-[28px] border border-slate-200/80 bg-white p-6 shadow-[0_14px_40px_rgba(15,23,42,0.05)] transition duration-200 hover:-translate-y-1 hover:border-blue-200 hover:shadow-[0_18px_48px_rgba(15,23,42,0.08)]">
+    <article className="group flex h-full flex-col rounded-[28px] border border-slate-200/80 bg-white p-6 shadow-[0_14px_40px_rgba(15,23,42,0.05)] transition duration-200 hover:-translate-y-1 hover:border-[#278DC0]/16 hover:shadow-[0_18px_48px_rgba(15,23,42,0.08)]">
       <div className="relative h-16 w-16 overflow-hidden rounded-2xl border border-slate-200 bg-slate-100 shadow-[0_8px_24px_rgba(15,23,42,0.08)]">
         <Image
           src={card.image}
@@ -23,9 +23,9 @@ function ServiceCard({ card }: { card: (typeof homeServiceCards)[number] }) {
       <p className="mt-3 flex-1 text-sm leading-7 text-slate-600 sm:text-[15px]">{trText(card.description)}</p>
       <Link
         href={card.href}
-        className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-blue-700 transition hover:text-blue-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700"
+        className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[#278DC0] transition hover:text-[#154764] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#278DC0]"
       >
-        {trText(card.buttonLabel)}
+        Detayları Gör
         <span aria-hidden="true">-&gt;</span>
       </Link>
     </article>
@@ -43,11 +43,11 @@ export function HomeServicesSection() {
         <div className="max-w-4xl">
           <h2
             id="home-services-title"
-            className="text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl"
+            className="text-3xl font-semibold tracking-tight text-[#278DC0] sm:text-4xl"
           >
             {trText("HİZMETLERİMİZ")}
           </h2>
-          <p className="mt-4 max-w-[1180px] text-[15px] leading-[1.7] text-slate-600 sm:text-base">
+          <p className="mt-4 max-w-[1180px] text-[15px] leading-[1.7] text-slate-900 sm:text-base">
             {trText(
               "Pro Makina; gübre ve granülasyon, kompost ve organik atık, geri dönüşüm, atık su çamuru, biyogaz, madencilik ve dökme katı malzeme işleme alanlarında projeye özel mühendislik ve uygulama çözümleri sunar. İhtiyaç analizinden proses tasarımına, makina imalatından saha kurulumuna ve devreye almaya kadar tüm süreçler tek merkezden planlanır.",
             )}
@@ -60,7 +60,7 @@ export function HomeServicesSection() {
               key={tag.href}
               href={tag.href}
               aria-label={`${trText(tag.label)} sektör sayfasına git`}
-              className="inline-flex rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-700 shadow-sm transition hover:border-blue-200 hover:text-blue-700 hover:shadow-[0_8px_22px_rgba(15,23,42,0.06)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700"
+              className="inline-flex rounded-full border border-[#278DC0]/16 bg-white px-4 py-2 text-sm font-medium text-[#278DC0] shadow-sm transition hover:border-[#278DC0] hover:text-[#154764] hover:shadow-[0_8px_22px_rgba(15,23,42,0.06)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#278DC0]"
             >
               {trText(tag.label)}
             </Link>

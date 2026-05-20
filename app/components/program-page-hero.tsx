@@ -15,7 +15,7 @@ export function ProgramPageHero({
   return (
     <>
       {showBackToPrograms ? <BackToProgramsButton variant="fixed" /> : null}
-      <section className="border-b border-slate-200 bg-[linear-gradient(180deg,#f8fafc_0%,#eff6ff_46%,#ffffff_100%)]">
+      <section className="border-b border-slate-200 bg-[linear-gradient(180deg,#f8fafc_0%,rgba(39,141,192,0.08)_46%,#ffffff_100%)]">
         <div className="site-container py-10 lg:py-12">
           {showBackToPrograms ? (
             <div className="mb-5 flex flex-wrap items-center gap-3">
@@ -25,7 +25,7 @@ export function ProgramPageHero({
             </div>
           ) : null}
 
-          <div className="inline-flex rounded-full border border-blue-100 bg-blue-50 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-blue-700">
+          <div className="inline-flex rounded-full border border-[#278DC0]/20 bg-[#278DC0]/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#154764]">
             {trText("Programlar")}
           </div>
 

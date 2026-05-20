@@ -1,9 +1,24 @@
 import { getProgramMeta } from "../program-platform-data";
 import {
+  drumCalculatorTools,
+  getDrumCalculatorTool,
+  type DrumFieldConfig,
+} from "../lib/drum-calculator-data";
+import {
+  calculateDrumTool,
+  validateDrumCalculator,
+  type DrumCalculationResult,
+} from "../lib/drum-calculator-utils";
+import {
   BUCKET_TABLES,
   type BucketMaterial,
   type BucketOption,
 } from "./elevator-selection-data";
+import { buildTamburCapacityModalConfig } from "./tambur-capacity-modal-config";
+import {
+  buildTamburSpecializedModalConfig,
+  isTamburSpecializedSlug,
+} from "./tambur-specialized-modal-config";
 
 export type ModalFieldOption = {
   label: string;
@@ -66,6 +81,7 @@ export type ProgramModalConfig = {
   validate: (values: ProgramModalValues) => Record<string, string>;
   buildComments: (values: ProgramModalValues) => string[];
   calculate: (values: ProgramModalValues) => ProgramModalOutput;
+  buildShareSummary?: (args: ShareSummaryArgs) => string;
 };
 
 type ShareSummaryArgs = {
@@ -282,6 +298,10 @@ export function buildShareSummary({
   values,
   output,
 }: ShareSummaryArgs) {
+  if (config.buildShareSummary) {
+    return config.buildShareSummary({ config, customerValues, values, output });
+  }
+
   const fields = config.fields(values);
 
   const inputLines = fields
@@ -3985,6 +4005,143 @@ const buildToleranceConfig = () =>
     },
   });
 
+const drumModalIdSet = new Set(drumCalculatorTools.map((tool) => tool.slug));
+
+const toDrumModalOptions = (field: DrumFieldConfig): ModalFieldOption[] | undefined =>
+  field.options?.map((option) => ({
+    value: option.value,
+    label: option.reference ? `${option.label} — ${option.reference}` : option.label,
+  }));
+
+const toDrumModalField = (fieldConfig: DrumFieldConfig): ModalField => ({
+  id: fieldConfig.id,
+  label: fieldConfig.label,
+  type: fieldConfig.type,
+  placeholder: fieldConfig.placeholder,
+  helperText: fieldConfig.helperText,
+  min: fieldConfig.min,
+  max: fieldConfig.max,
+  step: fieldConfig.step,
+  options: toDrumModalOptions(fieldConfig),
+});
+
+const buildDrumPreviewComments = (slug: string, values: ProgramModalValues) => {
+  const comments: string[] = [];
+
+  if (values.drumType) {
+    comments.push(`Seçilen tambur tipi: ${values.drumType}.`);
+  }
+  if (values.materialType) {
+    comments.push(`Ürün tipi seçimi sonuca göre referans yoğunluk ve nem bandı yorumunu etkiler.`);
+  }
+  if (slug === "tambur-kapasite-hesabi") {
+    comments.push("Kapasite, nem yükü ve doluluk oranı birlikte değerlendirilir.");
+  }
+  if (slug === "tambur-devir-hesabi") {
+    comments.push("Tambur çapı ile çevresel hız birlikte okunarak kritik hız kontrolü yapılır.");
+  }
+  if (slug === "tambur-egim-doluluk-hesabi") {
+    comments.push("Eğim ve doluluk oranı kalış süresi ile ürün akışını birlikte etkiler.");
+  }
+  if (slug === "tambur-fan-secimi") {
+    comments.push("Fan seçiminde yalnız debi değil, kanal hızı ve basınç kaybı da kritiktir.");
+  }
+  if (slug === "tambur-siklon-secimi") {
+    comments.push("Siklon hesabında debi, giriş hızı ve toz karakteri birlikte değerlendirilir.");
+  }
+  if (slug === "tambur-brulor-secimi") {
+    comments.push("Brülör kapasitesi, buharlaştırılacak su miktarı ve sistem verimiyle birlikte okunur.");
+  }
+
+  return comments;
+};
+
+const mapDrumTone = (
+  tone?: DrumCalculationResult["cards"][number]["tone"],
+): ProgramModalResultCard["tone"] => {
+  if (tone === "warning" || tone === "danger") return "warning";
+  if (tone === "success") return "success";
+  return "default";
+};
+
+const buildDrumSections = (result: DrumCalculationResult) => {
+  const firstRows = result.tableRows.slice(0, 2);
+  const secondRows = result.tableRows.slice(2, 4);
+
+  return [
+    {
+      title: "Teknik değerlendirme",
+      items: firstRows.map((row) => ({
+        label: row.input,
+        value: `${row.value} | ${row.impact}`,
+      })),
+    },
+    {
+      title: "Dikkat edilecek noktalar",
+      items: secondRows.map((row) => ({
+        label: row.input,
+        value: row.note,
+      })),
+    },
+  ].filter((section) => section.items.length > 0);
+};
+
+const mapDrumResultToProgramOutput = (
+  toolTitle: string,
+  resultTitle: string,
+  result: DrumCalculationResult,
+): ProgramModalOutput => ({
+  resultTitle,
+  cards: result.cards.map((card) => ({
+    label: card.label,
+    value: card.value,
+    tone: mapDrumTone(card.tone),
+  })),
+  technicalSummary: result.commentary,
+  formulaSummary:
+    "Bu hesaplama ön tasarım içindir. Kesin seçim için ürün numunesi, proses şartları ve detay mühendislik birlikte değerlendirilmelidir.",
+  warnings: result.warnings.map((warning) => `${warning.title}: ${warning.description}`),
+  comments: [`${toolTitle} için sonuçlar ön mühendislik yaklaşımıyla oluşturulmuştur.`],
+  sections: buildDrumSections(result),
+});
+
+const buildDrumProgramConfig = (slug: string) => {
+  if (slug === "tambur-kapasite-hesabi") {
+    return buildTamburCapacityModalConfig();
+  }
+
+  if (isTamburSpecializedSlug(slug)) {
+    return buildTamburSpecializedModalConfig(slug);
+  }
+
+  const tool = getDrumCalculatorTool(slug);
+  if (!tool) return null;
+
+  const initialValues: ProgramModalValues = {};
+  if (slug === "tambur-devir-hesabi") initialValues.manualRpmMode = "auto";
+  if (slug === "tambur-fan-secimi") initialValues.airFlowMode = "auto";
+  if (slug === "tambur-siklon-secimi") initialValues.cycloneDiameterMode = "auto";
+  if (slug === "tambur-reduktor-hesabi") initialValues.motorSpeedPreset = "1500";
+  if (slug === "tambur-brulor-secimi") {
+    initialValues.systemEfficiency = "60";
+    initialValues.safetyMargin = "15";
+  }
+
+  return createToolConfig({
+    id: tool.slug,
+    title: getProgramMeta(tool.slug)?.title ?? tool.title,
+    categoryLabel: "Tambur Hesapları",
+    submitLabel: "Sonucu Hesapla",
+    intro: tool.heroDescription,
+    initialValues,
+    fields: () => tool.fields.map(toDrumModalField),
+    validate: (values) => validateDrumCalculator(tool, values),
+    buildComments: (values) => buildDrumPreviewComments(tool.slug, values),
+    calculate: (values) =>
+      mapDrumResultToProgramOutput(tool.title, tool.resultTitle, calculateDrumTool(tool.slug, values)),
+  });
+};
+
 const programConfigMap: Record<string, () => ProgramModalConfig> = {
   "elevator-kapasite-ve-secim-programi": buildElevatorConfigV2,
   "konveyor-kapasite-ve-secim-hesap-programi": buildConveyorConfig,
@@ -4045,6 +4202,10 @@ export function getProgramModalConfig(slug: string): ProgramModalConfig | null {
   const factory = programConfigMap[slug];
   if (factory) {
     return factory();
+  }
+
+  if (drumModalIdSet.has(slug)) {
+    return buildDrumProgramConfig(slug);
   }
 
   const meta = getProgramMeta(slug);

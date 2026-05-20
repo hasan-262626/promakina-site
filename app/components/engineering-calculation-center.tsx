@@ -43,7 +43,7 @@ export function EngineeringCalculationCenter({
                   className={`inline-flex min-h-11 items-center rounded-full border px-4 py-2 text-sm font-semibold transition ${
                     isActive
                       ? "border-slate-950 bg-slate-950 text-white shadow-[0_14px_35px_rgba(15,23,42,0.18)]"
-                      : "border-slate-200 bg-white text-slate-700 hover:-translate-y-0.5 hover:border-blue-200 hover:bg-blue-50 hover:text-blue-800"
+                      : "border-slate-200 bg-white text-slate-700 hover:-translate-y-0.5 hover:border-[#278DC0] hover:bg-[#278DC0]/10 hover:text-[#154764]"
                   }`}
                 >
                   {filter}
@@ -58,7 +58,7 @@ export function EngineeringCalculationCenter({
             {filteredCards.map((card) => (
               <article
                 key={card.slug}
-                className="group overflow-hidden rounded-[30px] border border-slate-200 bg-white shadow-[0_16px_45px_rgba(15,23,42,0.06)] transition hover:-translate-y-1 hover:border-blue-200 hover:shadow-[0_24px_70px_rgba(37,99,235,0.14)]"
+                className="group overflow-hidden rounded-[30px] border border-slate-200 bg-white shadow-[0_16px_45px_rgba(15,23,42,0.06)] transition hover:-translate-y-1 hover:border-[#278DC0]/16 hover:shadow-[0_24px_70px_rgba(39,141,192,0.14)]"
               >
                 <div className="relative h-52 overflow-hidden">
                   <Image
@@ -70,7 +70,7 @@ export function EngineeringCalculationCenter({
                   />
                   <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(2,6,23,0.12),rgba(2,6,23,0.78))]" />
                   <div className="absolute inset-x-0 bottom-0 p-6">
-                    <p className="text-xs font-semibold uppercase tracking-[0.22em] text-blue-200">
+                    <p className="text-xs font-semibold uppercase tracking-[0.22em] text-white/80">
                       {card.filter}
                     </p>
                     <h2 className="mt-2 text-2xl font-semibold tracking-tight text-white">
@@ -93,7 +93,7 @@ export function EngineeringCalculationCenter({
                     </Link>
                     <Link
                       href={`/programlar/${card.slug}`}
-                      className="text-sm font-semibold text-blue-700 transition hover:text-blue-800"
+                      className="text-sm font-semibold text-[#278DC0] transition hover:text-[#154764]"
                     >
                       SEO Sayfasını İncele
                     </Link>
@@ -121,7 +121,7 @@ export function EngineeringCalculationCenter({
               </Link>
               <Link
                 href="/iletisim"
-                className="inline-flex min-h-[44px] items-center justify-center rounded-full border border-slate-200 bg-white px-5 text-sm font-semibold text-slate-700 transition hover:border-blue-200 hover:text-blue-700"
+                className="inline-flex min-h-[44px] items-center justify-center rounded-full border border-slate-200 bg-white px-5 text-sm font-semibold text-slate-700 transition hover:border-[#278DC0] hover:text-[#278DC0]"
               >
                 Teknik Destek Al
               </Link>

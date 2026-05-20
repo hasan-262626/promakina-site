@@ -1,3 +1,5 @@
+import { drumCalculatorTools } from "./lib/drum-calculator-data";
+
 export type ProgramItem = {
   slug: string;
   title: string;
@@ -61,6 +63,17 @@ export type ProgramMeta = ProgramItem & {
   groupId: ProgramGroup["id"];
   shell?: ProgramShellConfig;
   genericKind?: GenericProgramKind;
+};
+
+const drumProgramTitleMap: Record<string, string> = {
+  "tambur-kapasite-hesabi": "Tambur Kapasite Hesabı",
+  "tambur-devir-hesabi": "Tambur Devir Hesabı",
+  "tambur-egim-doluluk-hesabi": "Tambur Eğim ve Doluluk Oranı Hesabı",
+  "tambur-ring-tahrik-hesabi": "Tambur Ring ve Tahrik Sistemi",
+  "tambur-reduktor-hesabi": "Tambur Redüktör Hesabı",
+  "tambur-fan-secimi": "Tambur Fan Seçimi",
+  "tambur-siklon-secimi": "Tambur Siklon Seçimi",
+  "tambur-brulor-secimi": "Tambur Brülör Seçimi",
 };
 
 export const sectorProductOptions: Record<string, string[]> = {
@@ -904,6 +917,14 @@ const rawProgramDefinitions: ProgramMeta[] = [
       ],
     },
   },
+  ...drumCalculatorTools.map((tool) => ({
+    slug: tool.slug,
+    title: drumProgramTitleMap[tool.slug] ?? tool.title,
+    description: tool.categoryDescription,
+    image: "/images/tambur1.jpg",
+    alt: `${drumProgramTitleMap[tool.slug] ?? tool.title} görseli`,
+    groupId: "tambur-hesaplari" as ProgramGroup["id"],
+  })),
 ];
 
 const groupDefinitions: Array<{
@@ -928,6 +949,13 @@ const groupDefinitions: Array<{
       "bunker-hesabi",
       "elek-hesabi",
     ],
+  },
+  {
+    id: "tambur-hesaplari",
+    title: "Tambur Hesapları",
+    description:
+      "Tambur imalatı ve proses tasarımı için kapasite, devir, eğim, doluluk, ring, redüktör, fan, siklon ve brülör seçimlerini tek mühendislik panelinde değerlendirin.",
+    toolSlugs: drumCalculatorTools.map((tool) => tool.slug),
   },
   {
     id: "maliyet-hesaplari",

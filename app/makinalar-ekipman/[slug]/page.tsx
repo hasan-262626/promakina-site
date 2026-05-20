@@ -132,7 +132,7 @@ export default async function MachineCategoryPage({ params }: PageProps) {
       <section className="section-space">
         <div className="site-container">
           <div className="max-w-4xl">
-            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-700">
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#278DC0]">
               Alt ÃœrÃ¼nler
             </p>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
@@ -149,7 +149,7 @@ export default async function MachineCategoryPage({ params }: PageProps) {
               <Link
                 key={product.slug}
                 href={`/makinalar-ekipman/${publicCategorySlug}/${getPublicProductSlug(product.slug)}`}
-                className="group flex h-full flex-col overflow-hidden rounded-[30px] border border-slate-200 bg-white shadow-[0_18px_50px_rgba(15,23,42,0.06)] transition duration-200 hover:-translate-y-1 hover:border-blue-200 hover:shadow-[0_24px_62px_rgba(15,23,42,0.1)]"
+                className="group flex h-full flex-col overflow-hidden rounded-[30px] border border-slate-200 bg-white shadow-[0_18px_50px_rgba(15,23,42,0.06)] transition duration-200 hover:-translate-y-1 hover:border-[#278DC0]/20 hover:shadow-[0_24px_62px_rgba(15,23,42,0.1)]"
               >
                 <article className="flex h-full flex-col">
                   <div className="relative min-h-[220px] bg-slate-200">
@@ -173,7 +173,7 @@ export default async function MachineCategoryPage({ params }: PageProps) {
                       {product.shortDescription}
                     </p>
                     <div className="mt-auto pt-8">
-                      <span className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-slate-300 px-5 text-sm font-semibold text-slate-900 transition group-hover:border-blue-200 group-hover:text-blue-700">
+                      <span className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-slate-300 px-5 text-sm font-semibold text-slate-900 transition group-hover:border-[#278DC0]/20 group-hover:text-[#278DC0]">
                         ÃœrÃ¼nÃ¼ Ä°ncele
                       </span>
                     </div>

@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { BlogArticleCta } from "../../../components/blog-article-cta";
+import { getBlogArticleCtaConfig } from "../../../lib/blog-article-cta-map";
 
 const title = "Kurutma Tamburu Kapasite Hesabı | Pro Makina";
 const description =
   "Kurutma tamburu kapasite hesabı; nem oranı, su uçurma yükü, tambur çap-boy oranı, hava debisi, fan, siklon ve brülör seçimi için teknik rehber.";
 const canonical =
   "https://www.promakina.com.tr/kutuphane/blog/kurutma-tamburu-kapasite-hesabi";
-const calculationProgramHref = "/programlar/kurutma-tamburu-hesabi";
+const articleCta = getBlogArticleCtaConfig("kurutma-tamburu-kapasite-hesabi");
 
 export const metadata: Metadata = {
   title,
@@ -183,7 +185,7 @@ const evaluationRows = [
 const relatedContents = [
   {
     title: "Kurutma Tamburu Çap Boy Hesabı",
-    href: calculationProgramHref,
+    href: "/kutuphane/blog/kurutma-tamburu-cap-boy-hesabi",
     description: "Tambur geometrisini kapasite, tutulma süresi ve ürün davranışı ile birlikte okuyun.",
   },
   {
@@ -344,7 +346,14 @@ export default function Page() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
-      <section className="section-space pt-10 md:pt-12">
+      <BlogArticleCta
+        title={articleCta.title}
+        description={articleCta.description}
+        buttonLabel={articleCta.buttonLabel}
+        buttonHref={articleCta.buttonHref}
+      />
+
+      <section className="hidden section-space pt-10 md:pt-12">
         <div className="site-container">
           <div className="rounded-[32px] border border-slate-200 bg-[linear-gradient(135deg,#0f172a_0%,#173963_58%,#eff6ff_190%)] px-6 py-8 text-white shadow-[0_24px_70px_rgba(15,23,42,0.18)] sm:px-8 sm:py-10 lg:px-12">
             <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
@@ -378,7 +387,7 @@ export default function Page() {
                   </div>
                 </div>
                 <Link
-                  href={calculationProgramHref}
+                  href={articleCta.buttonHref}
                   className="mt-5 inline-flex min-h-[48px] w-full items-center justify-center rounded-full bg-white px-6 text-sm font-semibold text-blue-800 transition hover:bg-slate-100"
                 >
                   Hesaplama Aracını Aç
@@ -551,7 +560,7 @@ export default function Page() {
                     </Link>{" "}
                     sayfasında, hesap yaklaşımını ise{" "}
                     <Link
-                      href={calculationProgramHref}
+                      href={articleCta.buttonHref}
                       className="font-semibold text-blue-700 transition hover:text-blue-800"
                     >
                       kurutma tamburu hesabı
@@ -805,7 +814,7 @@ export default function Page() {
                     Kurutma Tamburu İmalatı
                   </Link>
                   <Link
-                    href={calculationProgramHref}
+                    href={articleCta.buttonHref}
                     className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/25 px-6 text-sm font-semibold text-white transition hover:bg-white/10"
                   >
                     Hesaplama Aracını Aç

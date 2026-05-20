@@ -2,52 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { Hero } from "../components/Hero";
+import { TechnicalArticlesShortcut } from "../components/technical-articles-shortcut";
 import { homeServiceCards } from "../home-services-data";
-
-const projectServiceAreas = [
-  {
-    title: "Gübre Tesisi Kurulumu",
-    description:
-      "Granül gübre, organomineral gübre, sıvı gübre ve özel formülasyon hatları için proses, makine ve saha kurulum çözümleri.",
-    href: "/hizmetler/gubre-tesisi-kurulumu",
-    buttonLabel: "Hizmeti İncele",
-  },
-  {
-    title: "Kompost Tesisi Kurulumu",
-    description:
-      "Evsel organik atık, arıtma çamuru, digestat ve tarımsal atıkların kompost ürününe dönüştürülmesi için tesis çözümleri.",
-    href: "/hizmetler/kompost-tesisi-kurulumu",
-    buttonLabel: "Hizmeti İncele",
-  },
-  {
-    title: "Kurutma Tamburu İmalatı",
-    description:
-      "Gübre, kum, maden, çamur ve organik ürünler için döner kurutucu ve endüstriyel kurutma tamburu imalatı.",
-    href: "/hizmetler/kurutma-tamburu-imalati",
-    buttonLabel: "Hizmeti İncele",
-  },
-  {
-    title: "Çamur Kurutma Tesisi",
-    description:
-      "Arıtma çamuru, belediye çamuru ve digestat gibi yüksek nemli malzemeler için kurutma ve ürün hazırlama hatları.",
-    href: "/hizmetler/camur-kurutma-tesisi",
-    buttonLabel: "Hizmeti İncele",
-  },
-  {
-    title: "Maden Kurutma ve Eleme Tesisi",
-    description:
-      "Silis kumu, kuvars, mineral ve benzeri dökme katı malzemeler için kırma, eleme, kurutma ve taşıma çözümleri.",
-    href: "/hizmetler/maden-kurutma-ve-eleme-tesisi",
-    buttonLabel: "Hizmeti İncele",
-  },
-  {
-    title: "Endüstriyel Taşıma Sistemleri",
-    description:
-      "Bant konveyör, helezon konveyör, kovalı elevatör ve bunker besleme sistemleriyle proses içi ürün transfer çözümleri.",
-    href: "/makinalar-ekipman/tasima-ekipmanlari",
-    buttonLabel: "Makinaları İncele",
-  },
-];
 
 const sectorCards = [
   {
@@ -141,12 +97,14 @@ export default function ServicesPage() {
 
       <section id="hizmet-basliklari" className="section-space">
         <div className="site-container">
+          <TechnicalArticlesShortcut className="mb-6" />
+
           <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
             {homeServiceCards.map((service) => (
               <Link
                 key={service.href}
                 href={service.href}
-                className="group rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition duration-200 hover:-translate-y-1 hover:border-blue-200 hover:shadow-[0_20px_50px_rgba(15,23,42,0.08)] sm:p-7"
+                className="group rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition duration-200 hover:-translate-y-1 hover:border-[#278DC0]/16 hover:shadow-[0_20px_50px_rgba(15,23,42,0.08)] sm:p-7"
               >
                 <div className="flex items-start gap-4">
                   <span className="relative mt-1 h-16 w-16 shrink-0 overflow-hidden rounded-2xl border border-slate-200 bg-slate-100 shadow-[0_8px_24px_rgba(15,23,42,0.08)]">
@@ -163,7 +121,7 @@ export default function ServicesPage() {
                       {service.title}
                     </h2>
                     <p className="mt-3 leading-7 text-slate-600">{service.description}</p>
-                    <span className="mt-5 inline-flex items-center text-sm font-semibold text-blue-700 transition group-hover:text-blue-800">
+                    <span className="mt-5 inline-flex items-center text-sm font-semibold text-[#278DC0] transition group-hover:text-[#154764]">
                       Hizmeti İncele
                     </span>
                   </div>
@@ -171,37 +129,6 @@ export default function ServicesPage() {
               </Link>
             ))}
           </div>
-
-          <section className="section-gap rounded-[32px] border border-slate-200 bg-white px-6 py-8 shadow-[0_18px_45px_rgba(15,23,42,0.06)] sm:px-8 sm:py-10 lg:px-12">
-            <div className="max-w-4xl">
-              <h2 className="text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">
-                Proje Bazlı Hizmet Alanlarımız
-              </h2>
-              <p className="mt-4 text-sm leading-8 text-slate-600 sm:text-base">
-                Pro Makina, yatırım fikrinden saha kurulumuna kadar gübre, kompost, kurutma,
-                taşıma, maden, biyogaz ve endüstriyel proses tesisleri için mühendislik, imalat ve
-                devreye alma desteği sunar.
-              </p>
-            </div>
-
-            <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-              {projectServiceAreas.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className="group rounded-[26px] border border-slate-200 bg-slate-50 p-5 shadow-sm transition hover:-translate-y-1 hover:border-blue-200 hover:bg-white hover:shadow-[0_18px_45px_rgba(15,23,42,0.08)]"
-                >
-                  <h3 className="text-xl font-semibold tracking-tight text-slate-950">
-                    {item.title}
-                  </h3>
-                  <p className="mt-3 text-sm leading-7 text-slate-600">{item.description}</p>
-                  <span className="mt-5 inline-flex text-sm font-semibold text-blue-700 transition group-hover:text-blue-800">
-                    {item.buttonLabel}
-                  </span>
-                </Link>
-              ))}
-            </div>
-          </section>
 
           <section className="section-gap rounded-[32px] border border-slate-200 bg-white px-6 py-8 shadow-[0_18px_45px_rgba(15,23,42,0.06)] sm:px-8 sm:py-10 lg:px-12">
             <div className="max-w-4xl">
@@ -220,13 +147,13 @@ export default function ServicesPage() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="group rounded-[26px] border border-slate-200 bg-slate-50 p-5 shadow-sm transition hover:-translate-y-1 hover:border-blue-200 hover:bg-white hover:shadow-[0_18px_45px_rgba(15,23,42,0.08)]"
+                  className="group rounded-[26px] border border-slate-200 bg-slate-50 p-5 shadow-sm transition hover:-translate-y-1 hover:border-[#278DC0]/16 hover:bg-white hover:shadow-[0_18px_45px_rgba(15,23,42,0.08)]"
                 >
                   <h3 className="text-xl font-semibold tracking-tight text-slate-950">
                     {item.title}
                   </h3>
                   <p className="mt-3 text-sm leading-7 text-slate-600">{item.description}</p>
-                  <span className="mt-5 inline-flex text-sm font-semibold text-blue-700 transition group-hover:text-blue-800">
+                  <span className="mt-5 inline-flex text-sm font-semibold text-[#278DC0] transition group-hover:text-[#154764]">
                     Sektörü İncele
                   </span>
                 </Link>
@@ -250,13 +177,13 @@ export default function ServicesPage() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="group rounded-[26px] border border-slate-200 bg-slate-50 p-5 shadow-sm transition hover:-translate-y-1 hover:border-blue-200 hover:bg-white hover:shadow-[0_18px_45px_rgba(15,23,42,0.08)]"
+                  className="group rounded-[26px] border border-slate-200 bg-slate-50 p-5 shadow-sm transition hover:-translate-y-1 hover:border-[#278DC0]/16 hover:bg-white hover:shadow-[0_18px_45px_rgba(15,23,42,0.08)]"
                 >
                   <h3 className="text-xl font-semibold tracking-tight text-slate-950">
                     {item.title}
                   </h3>
                   <p className="mt-3 text-sm leading-7 text-slate-600">{item.description}</p>
-                  <span className="mt-5 inline-flex text-sm font-semibold text-blue-700 transition group-hover:text-blue-800">
+                  <span className="mt-5 inline-flex text-sm font-semibold text-[#278DC0] transition group-hover:text-[#154764]">
                     Grubu İncele
                   </span>
                 </Link>
@@ -264,40 +191,6 @@ export default function ServicesPage() {
             </div>
           </section>
 
-          <section className="section-gap rounded-[32px] bg-blue-700 px-6 py-8 text-white shadow-[0_24px_70px_rgba(29,78,216,0.28)] sm:px-8 sm:py-10 lg:px-12">
-            <div className="max-w-4xl">
-              <h2 className="text-2xl font-semibold tracking-tight text-white sm:text-3xl">
-                Projeniz İçin Teknik Değerlendirme Alın
-              </h2>
-              <p className="mt-4 text-sm leading-8 text-white/90 sm:text-base">
-                Kapasite, hammadde, nem oranı, hedef ürün, saha yerleşimi ve yatırım planınızı
-                paylaşın; size uygun proses ve makine çözümünü birlikte netleştirelim.
-              </p>
-            </div>
-
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Link
-                href="/iletisim"
-                className="inline-flex min-h-11 items-center justify-center rounded-full bg-white px-5 py-3 text-sm font-semibold text-blue-700 transition hover:bg-slate-100"
-              >
-                Teklif Al
-              </Link>
-              <Link
-                href="https://wa.me/905320580104"
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex min-h-11 items-center justify-center rounded-full border border-white/30 bg-white/10 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/15"
-              >
-                WhatsApp ile Görüş
-              </Link>
-              <Link
-                href="tel:+905320580104"
-                className="inline-flex min-h-11 items-center justify-center rounded-full border border-white/30 bg-white/10 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/15"
-              >
-                Telefonla Ara
-              </Link>
-            </div>
-          </section>
         </div>
       </section>
     </main>

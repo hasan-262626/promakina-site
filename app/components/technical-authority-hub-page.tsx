@@ -155,17 +155,17 @@ export function TechnicalAuthorityHubPage({ hub }: TechnicalAuthorityHubPageProp
             <div className="space-y-8 md:space-y-10">
               <div className="rounded-[32px] border border-slate-200 bg-white px-6 py-8 shadow-[0_18px_50px_rgba(15,23,42,0.06)] sm:px-8 sm:py-10 lg:px-12">
                 <nav aria-label="Breadcrumb" className="flex flex-wrap gap-2 text-sm text-slate-500">
-                  <Link href="/" className="transition hover:text-blue-700">
+                  <Link href="/" className="transition hover:text-[#278DC0]">
                     Ana Sayfa
                   </Link>
                   <span>/</span>
-                  <Link href="/kutuphane" className="transition hover:text-blue-700">
+                  <Link href="/kutuphane" className="transition hover:text-[#278DC0]">
                     Kütüphane
                   </Link>
                   <span>/</span>
                   <span className="font-medium text-slate-700">{hub.title}</span>
                 </nav>
-                <p className="mt-4 text-sm font-semibold uppercase tracking-[0.18em] text-blue-700">
+                <p className="mt-4 text-sm font-semibold uppercase tracking-[0.18em] text-[#278DC0]">
                   TOPICAL AUTHORITY HUB
                 </p>
                 <h1 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950 md:text-4xl">
@@ -184,7 +184,7 @@ export function TechnicalAuthorityHubPage({ hub }: TechnicalAuthorityHubPageProp
                     <a
                       key={section.id}
                       href={`#${section.id}`}
-                      className="inline-flex rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-blue-200 hover:bg-blue-50 hover:text-blue-700"
+                      className="inline-flex rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-[#278DC0] hover:bg-[#278DC0]/10 hover:text-[#154764]"
                     >
                       {section.title}
                     </a>
@@ -243,7 +243,7 @@ export function TechnicalAuthorityHubPage({ hub }: TechnicalAuthorityHubPageProp
                     <Link
                       key={item.href}
                       href={item.href}
-                      className="rounded-[22px] border border-slate-200 bg-slate-50 p-5 shadow-sm transition hover:-translate-y-1 hover:border-blue-200 hover:bg-white hover:shadow-[0_18px_45px_rgba(15,23,42,0.08)]"
+                      className="rounded-[22px] border border-slate-200 bg-slate-50 p-5 shadow-sm transition hover:-translate-y-1 hover:border-[#278DC0]/16 hover:bg-white hover:shadow-[0_18px_45px_rgba(15,23,42,0.08)]"
                     >
                       <span className="block text-base font-semibold text-slate-950">{item.title}</span>
                       <span className="mt-3 block text-sm leading-7 text-slate-600">{item.description}</span>
@@ -262,7 +262,7 @@ export function TechnicalAuthorityHubPage({ hub }: TechnicalAuthorityHubPageProp
                       <Link
                         key={item.href}
                         href={item.href}
-                        className="block rounded-[22px] border border-slate-200 bg-slate-50 p-4 transition hover:border-blue-200 hover:bg-white"
+                        className="block rounded-[22px] border border-slate-200 bg-slate-50 p-4 transition hover:border-[#278DC0] hover:bg-white"
                       >
                         <span className="block text-base font-semibold text-slate-950">{item.title}</span>
                         <span className="mt-2 block text-sm leading-7 text-slate-600">{item.description}</span>
@@ -280,7 +280,7 @@ export function TechnicalAuthorityHubPage({ hub }: TechnicalAuthorityHubPageProp
                       <Link
                         key={item.href}
                         href={item.href}
-                        className="block rounded-[22px] border border-slate-200 bg-slate-50 p-4 transition hover:border-blue-200 hover:bg-white"
+                        className="block rounded-[22px] border border-slate-200 bg-slate-50 p-4 transition hover:border-[#278DC0] hover:bg-white"
                       >
                         <span className="block text-base font-semibold text-slate-950">{item.title}</span>
                         <span className="mt-2 block text-sm leading-7 text-slate-600">{item.description}</span>
@@ -307,7 +307,7 @@ export function TechnicalAuthorityHubPage({ hub }: TechnicalAuthorityHubPageProp
                 </div>
               </section>
 
-              <section className="rounded-[32px] bg-blue-700 px-6 py-8 text-white shadow-[0_24px_70px_rgba(29,78,216,0.28)] sm:px-8 sm:py-10">
+              <section className="rounded-[32px] bg-[#278DC0] px-6 py-8 text-white shadow-[0_24px_70px_rgba(39,141,192,0.24)] sm:px-8 sm:py-10">
                 <h2 className="text-3xl font-semibold tracking-tight text-white">
                   Teklif Al
                 </h2>
@@ -317,7 +317,7 @@ export function TechnicalAuthorityHubPage({ hub }: TechnicalAuthorityHubPageProp
                 <div className="mt-6 flex flex-col gap-3 sm:flex-row">
                   <Link
                     href="/iletisim"
-                    className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-white px-6 text-sm font-semibold text-blue-800 transition hover:bg-slate-100"
+                    className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-white px-6 text-sm font-semibold text-[#154764] transition hover:bg-slate-100"
                   >
                     Teknik Teklif Al
                   </Link>
@@ -341,7 +341,7 @@ export function TechnicalAuthorityHubPage({ hub }: TechnicalAuthorityHubPageProp
                     <Link
                       key={item.href}
                       href={item.href}
-                      className="block rounded-[20px] border border-slate-200 bg-white p-4 transition hover:border-blue-200 hover:shadow-[0_14px_36px_rgba(15,23,42,0.06)]"
+                      className="block rounded-[20px] border border-slate-200 bg-white p-4 transition hover:border-[#278DC0] hover:shadow-[0_14px_36px_rgba(15,23,42,0.06)]"
                     >
                       <span className="block text-base font-semibold text-slate-950">{item.title}</span>
                       <span className="mt-2 block text-sm leading-7 text-slate-600">{item.description}</span>
@@ -357,25 +357,25 @@ export function TechnicalAuthorityHubPage({ hub }: TechnicalAuthorityHubPageProp
                 <div className="mt-5 flex flex-wrap gap-3">
                   <Link
                     href="/programlar"
-                    className="inline-flex rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-blue-200 hover:bg-blue-50 hover:text-blue-700"
+                    className="inline-flex rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-[#278DC0] hover:bg-[#278DC0]/10 hover:text-[#154764]"
                   >
                     Programlar
                   </Link>
                   <Link
                     href="/kutuphane/blog"
-                    className="inline-flex rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-blue-200 hover:bg-blue-50 hover:text-blue-700"
+                    className="inline-flex rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-[#278DC0] hover:bg-[#278DC0]/10 hover:text-[#154764]"
                   >
                     Blog
                   </Link>
                   <Link
                     href="/makinalar"
-                    className="inline-flex rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-blue-200 hover:bg-blue-50 hover:text-blue-700"
+                    className="inline-flex rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-[#278DC0] hover:bg-[#278DC0]/10 hover:text-[#154764]"
                   >
                     Makinalar
                   </Link>
                   <Link
                     href="/sektorler"
-                    className="inline-flex rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-blue-200 hover:bg-blue-50 hover:text-blue-700"
+                    className="inline-flex rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-[#278DC0] hover:bg-[#278DC0]/10 hover:text-[#154764]"
                   >
                     Sektörler
                   </Link>

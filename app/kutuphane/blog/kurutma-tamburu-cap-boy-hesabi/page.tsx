@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { BlogArticleCta } from "../../../components/blog-article-cta";
+import { getBlogArticleCtaConfig } from "../../../lib/blog-article-cta-map";
 
 const title = "Kurutma Tamburu Çap Boy Hesabı | Pro Makina";
 const description =
   "Kurutma tamburu çap boy hesabı; L/D oranı, tutulma süresi, tambur çapı, tambur boyu, hava debisi, fan, siklon ve brülör yaklaşımı için teknik rehber.";
 const canonical =
   "https://www.promakina.com.tr/kutuphane/blog/kurutma-tamburu-cap-boy-hesabi";
-const productCalculatorHref =
-  "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburu?tab=kapasite-hesabi";
-const calculationProgramHref = "/programlar/kurutma-tamburu-hesabi";
+const articleCta = getBlogArticleCtaConfig("kurutma-tamburu-cap-boy-hesabi");
 
 export const metadata: Metadata = {
   title,
@@ -440,7 +440,14 @@ export default function Page() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
-      <section className="section-space pt-10 md:pt-12">
+      <BlogArticleCta
+        title={articleCta.title}
+        description={articleCta.description}
+        buttonLabel={articleCta.buttonLabel}
+        buttonHref={articleCta.buttonHref}
+      />
+
+      <section className="hidden section-space pt-10 md:pt-12">
         <div className="site-container">
           <div className="rounded-[32px] border border-slate-200 bg-[linear-gradient(135deg,#0f172a_0%,#173963_58%,#eff6ff_190%)] px-6 py-8 text-white shadow-[0_24px_70px_rgba(15,23,42,0.18)] sm:px-8 sm:py-10 lg:px-12">
             <div className="mx-auto max-w-3xl text-center">
@@ -456,7 +463,7 @@ export default function Page() {
                   değerlendirme mantığıyla inceleyin.
                 </p>
                 <Link
-                  href={productCalculatorHref}
+                  href={articleCta.buttonHref}
                   className="inline-flex min-h-[52px] items-center justify-center rounded-full bg-white px-8 text-base font-semibold text-blue-800 transition hover:bg-slate-100"
                 >
                   Kurutma Tamburu Hesapla
@@ -489,7 +496,7 @@ export default function Page() {
                   ))}
                 </div>
                 <Link
-                  href={productCalculatorHref}
+                  href={articleCta.buttonHref}
                   className="mt-5 inline-flex min-h-[48px] w-full items-center justify-center rounded-full bg-white px-6 text-sm font-semibold text-blue-800 transition hover:bg-slate-100"
                 >
                   Kurutma Tamburu Hesapla
@@ -731,7 +738,7 @@ export default function Page() {
                     taşınacağını belirler. Bu nedenle{" "}
                     <Link
                       href="/kutuphane/blog/kurutma-tamburu-kapasite-hesabi"
-                      className="font-semibold text-blue-700 transition hover:text-blue-800"
+                      className="font-semibold text-[#278DC0] transition hover:text-[#154764]"
                     >
                       kurutma tamburu kapasite hesabı
                     </Link>{" "}
@@ -741,14 +748,14 @@ export default function Page() {
                     Prosesin gerçek ihtiyacını görmek için{" "}
                     <Link
                       href="/hizmetler/kurutma-tamburu-imalati"
-                      className="font-semibold text-blue-700 transition hover:text-blue-800"
+                      className="font-semibold text-[#278DC0] transition hover:text-[#154764]"
                     >
                       kurutma tamburu imalatı
                     </Link>{" "}
                     ve{" "}
                     <Link
                       href="/makinalar-ekipman/tambur-sistemleri/kurutma-tamburlari"
-                      className="font-semibold text-blue-700 transition hover:text-blue-800"
+                      className="font-semibold text-[#278DC0] transition hover:text-[#154764]"
                     >
                       kurutma tamburları
                     </Link>{" "}
@@ -772,8 +779,8 @@ export default function Page() {
                     Bu süre yalnız tambur boyuna bağlı değildir; devir, eğim, ürün akışkanlığı ve iç
                     kanat yapısı ile birlikte değişir. Bu yüzden{" "}
                     <Link
-                      href={calculationProgramHref}
-                      className="font-semibold text-blue-700 transition hover:text-blue-800"
+                      href={articleCta.buttonHref}
+                      className="font-semibold text-[#278DC0] transition hover:text-[#154764]"
                     >
                       programlar
                     </Link>{" "}
@@ -797,14 +804,14 @@ export default function Page() {
                     Özellikle{" "}
                     <Link
                       href="/hizmetler/silis-kumu-kurutma-tesisi"
-                      className="font-semibold text-blue-700 transition hover:text-blue-800"
+                      className="font-semibold text-[#278DC0] transition hover:text-[#154764]"
                     >
                       silis kumu kurutma tesisi
                     </Link>{" "}
                     veya{" "}
                     <Link
                       href="/hizmetler/maden-kurutma-ve-eleme-tesisi"
-                      className="font-semibold text-blue-700 transition hover:text-blue-800"
+                      className="font-semibold text-[#278DC0] transition hover:text-[#154764]"
                     >
                       maden kurutma ve eleme tesisi
                     </Link>{" "}
@@ -828,7 +835,7 @@ export default function Page() {
                     Bu nedenle daha uzun tambur otomatik olarak daha iyi kurutma demek değildir. Özellikle{" "}
                     <Link
                       href="/hizmetler/camur-kurutma-tesisi"
-                      className="font-semibold text-blue-700 transition hover:text-blue-800"
+                      className="font-semibold text-[#278DC0] transition hover:text-[#154764]"
                     >
                       çamur kurutma tesisi
                     </Link>{" "}
@@ -852,7 +859,7 @@ export default function Page() {
                     Fan, kanal,{" "}
                     <Link
                       href="/makinalar-ekipman/toz-toplama-sistemleri"
-                      className="font-semibold text-blue-700 transition hover:text-blue-800"
+                      className="font-semibold text-[#278DC0] transition hover:text-[#154764]"
                     >
                       toz toplama sistemleri
                     </Link>{" "}
@@ -860,7 +867,7 @@ export default function Page() {
                     Aynı şekilde lifter yapısı ürünün perdeleme karakterini belirlediği için{" "}
                     <Link
                       href="/kutuphane/blog/rotary-dryer-design"
-                      className="font-semibold text-blue-700 transition hover:text-blue-800"
+                      className="font-semibold text-[#278DC0] transition hover:text-[#154764]"
                     >
                       rotary dryer design
                     </Link>{" "}
@@ -884,14 +891,14 @@ export default function Page() {
                     Teknik değerlendirme sürecini birlikte netleştirmek için{" "}
                     <Link
                       href="/makinalar-ekipman/tambur-sistemleri"
-                      className="font-semibold text-blue-700 transition hover:text-blue-800"
+                      className="font-semibold text-[#278DC0] transition hover:text-[#154764]"
                     >
                       tambur sistemleri
                     </Link>{" "}
                     ve{" "}
                     <Link
                       href="/iletisim"
-                      className="font-semibold text-blue-700 transition hover:text-blue-800"
+                      className="font-semibold text-[#278DC0] transition hover:text-[#154764]"
                     >
                       iletişim
                     </Link>{" "}
@@ -945,7 +952,7 @@ export default function Page() {
                     <Link
                       key={item.title}
                       href={item.href}
-                      className="rounded-[22px] border border-slate-200 bg-slate-50 p-5 shadow-sm transition hover:border-blue-200 hover:bg-white hover:shadow-[0_18px_45px_rgba(15,23,42,0.08)]"
+                      className="rounded-[22px] border border-slate-200 bg-slate-50 p-5 shadow-sm transition hover:border-[#278DC0]/16 hover:bg-white hover:shadow-[0_18px_45px_rgba(15,23,42,0.08)]"
                     >
                       <span className="text-base font-semibold text-slate-950">{item.title}</span>
                       <span className="mt-2 block text-sm leading-7 text-slate-600">{item.description}</span>
@@ -980,7 +987,7 @@ export default function Page() {
                 </div>
               </section>
 
-              <section className="rounded-[32px] bg-blue-700 px-6 py-8 text-white shadow-[0_24px_70px_rgba(29,78,216,0.28)] sm:px-8 sm:py-10">
+              <section className="rounded-[32px] bg-[#278DC0] px-6 py-8 text-white shadow-[0_24px_70px_rgba(39,141,192,0.24)] sm:px-8 sm:py-10">
                 <div className="max-w-3xl">
                   <h2 className="text-3xl font-semibold tracking-tight text-white md:text-4xl">
                     Kurutma tamburu çap-boy seçimini birlikte netleştirelim
@@ -994,7 +1001,7 @@ export default function Page() {
                 <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
                   <Link
                     href="/iletisim"
-                    className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-white px-6 text-sm font-semibold text-blue-800 transition hover:bg-slate-100"
+                    className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-white px-6 text-sm font-semibold text-[#154764] transition hover:bg-slate-100"
                   >
                     Teknik Görüşme Talep Et
                   </Link>
@@ -1013,7 +1020,7 @@ export default function Page() {
                     Kurutma Tamburu İmalatı
                   </Link>
                   <Link
-                    href={calculationProgramHref}
+                    href={articleCta.buttonHref}
                     className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/25 px-6 text-sm font-semibold text-white transition hover:bg-white/10"
                   >
                     Hesaplama Aracını Aç
@@ -1039,7 +1046,7 @@ export default function Page() {
                         href={item.href}
                         target="_blank"
                         rel="noreferrer"
-                        className="inline-flex min-h-[44px] items-center justify-center rounded-full border border-slate-200 bg-slate-50 px-5 text-sm font-semibold text-slate-700 transition hover:border-blue-200 hover:bg-white hover:text-blue-700"
+                        className="inline-flex min-h-[44px] items-center justify-center rounded-full border border-slate-200 bg-slate-50 px-5 text-sm font-semibold text-slate-700 transition hover:border-[#278DC0] hover:bg-white hover:text-[#278DC0]"
                       >
                         {item.title}
                       </Link>

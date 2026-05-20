@@ -23,8 +23,8 @@ export function ProgramFormFields({
         const error = errors[field.id];
         const baseClasses = `min-h-[48px] w-full rounded-2xl border px-4 py-3 text-sm text-slate-900 outline-none transition ${
           error
-            ? "border-rose-300 bg-rose-50 focus:border-rose-400"
-            : "border-slate-200 bg-white hover:border-blue-200 focus:border-blue-500 focus:bg-blue-50/30"
+            ? "border-[#154764]/30 bg-[#154764]/10 focus:border-[#154764]"
+            : "border-slate-200 bg-white hover:border-[#278DC0]/30 focus:border-[#278DC0] focus:bg-[#278DC0]/10"
         }`;
 
         return (
@@ -78,7 +78,7 @@ export function ProgramFormFields({
               />
             )}
 
-            {error ? <span className="text-xs leading-5 text-rose-600">{trText(error)}</span> : null}
+            {error ? <span className="text-xs leading-5 text-[#154764]">{trText(error)}</span> : null}
           </label>
         );
       })}

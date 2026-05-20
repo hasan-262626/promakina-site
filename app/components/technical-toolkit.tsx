@@ -53,7 +53,7 @@ export function ToolkitTooltip({
         type="button"
         aria-label={normalizedText}
         onClick={() => setOpenId(isOpen ? null : id)}
-        className="inline-flex h-5 w-5 items-center justify-center rounded-full border border-slate-300 bg-white text-[11px] font-semibold text-slate-500 transition hover:border-blue-200 hover:text-blue-700"
+        className="inline-flex h-5 w-5 items-center justify-center rounded-full border border-slate-300 bg-white text-[11px] font-semibold text-slate-500 transition hover:border-[#278DC0]/30 hover:text-[#154764]"
       >
         i
       </button>
@@ -110,7 +110,7 @@ export function ToolkitField({
       ) : null}
       {children}
       {normalizedError ? (
-        <span className="text-[11px] leading-4 text-rose-600">{normalizedError}</span>
+        <span className="text-[11px] leading-4 text-[#154764]">{normalizedError}</span>
       ) : null}
     </label>
   );
@@ -166,8 +166,8 @@ export function ToolkitInput({
       <div
         className={`customer-field user-field input-user user-input flex min-h-[46px] items-center rounded-2xl border px-3.5 py-2.5 shadow-sm transition ${
           error
-            ? "border-rose-300 bg-rose-50"
-            : "border-slate-300 bg-white hover:border-blue-300 focus-within:border-blue-500 focus-within:bg-blue-50/30 focus-within:shadow-[0_0_0_4px_rgba(59,130,246,0.08)]"
+            ? "border-[#154764]/30 bg-[#154764]/10"
+            : "border-slate-300 bg-white hover:border-[#278DC0]/30 focus-within:border-[#278DC0] focus-within:bg-[#278DC0]/10 focus-within:shadow-[0_0_0_4px_rgba(39,141,192,0.08)]"
         }`}
       >
         <input
@@ -225,7 +225,7 @@ export function ToolkitSelect({
       <select
         value={value}
         onChange={(event) => onChange(event.target.value)}
-        className="select-user user-field user-select min-h-[46px] rounded-2xl border border-slate-300 bg-white px-3.5 py-2.5 text-slate-900 shadow-sm outline-none transition hover:border-blue-300 focus:border-blue-500 focus:bg-blue-50/30 focus:shadow-[0_0_0_4px_rgba(59,130,246,0.08)]"
+        className="select-user user-field user-select min-h-[46px] rounded-2xl border border-slate-300 bg-white px-3.5 py-2.5 text-slate-900 shadow-sm outline-none transition hover:border-[#278DC0]/30 focus:border-[#278DC0] focus:bg-[#278DC0]/10 focus:shadow-[0_0_0_4px_rgba(39,141,192,0.08)]"
       >
         <option value="">Seçiniz</option>
         {options.map((option) => (
@@ -275,11 +275,11 @@ export function ToolkitResult({
   const normalizedValue = trText(value);
   const classes =
     tone === "critical"
-      ? "border-rose-100 bg-rose-50"
+      ? "border-[#154764]/20 bg-[#154764]/10"
       : tone === "warning"
-        ? "border-amber-100 bg-amber-50"
+        ? "border-[#154764]/20 bg-[#154764]/10"
         : tone === "info"
-          ? "border-sky-100 bg-sky-50"
+          ? "border-[#278DC0]/20 bg-[#278DC0]/10"
           : "border-slate-200 bg-white";
 
   return (
@@ -315,19 +315,19 @@ export function ToolkitLead({
   const normalizedText = trText(text);
 
   return (
-    <div className="rounded-3xl border border-blue-100 bg-blue-50 px-5 py-6 sm:px-6">
+    <div className="rounded-3xl border border-[#278DC0]/20 bg-[#278DC0]/10 px-5 py-6 sm:px-6">
       <h3 className="text-lg font-semibold text-slate-950">{normalizedTitle}</h3>
       <p className="mt-3 text-sm leading-7 text-slate-600">{normalizedText}</p>
       <div className="mt-5 flex flex-wrap gap-3">
         <a
           href="/iletisim"
-          className="inline-flex min-h-[44px] items-center justify-center rounded-full bg-blue-700 px-5 text-sm font-semibold text-white transition hover:bg-blue-800"
+          className="inline-flex min-h-[44px] items-center justify-center rounded-full bg-[#278DC0] px-5 text-sm font-semibold text-white transition hover:bg-[#154764]"
         >
           Teklif Al
         </a>
         <a
           href="/iletisim"
-          className="inline-flex min-h-[44px] items-center justify-center rounded-full border border-slate-200 bg-white px-5 text-sm font-semibold text-slate-700 transition hover:border-blue-200 hover:text-blue-700"
+          className="inline-flex min-h-[44px] items-center justify-center rounded-full border border-slate-200 bg-white px-5 text-sm font-semibold text-slate-700 transition hover:border-[#278DC0]/30 hover:text-[#154764]"
         >
           İletişime Geç
         </a>

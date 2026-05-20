@@ -171,7 +171,7 @@ export function ContactForm() {
   return (
     <div className="rounded-[32px] border border-slate-200 bg-white p-6 shadow-[0_18px_50px_rgba(15,23,42,0.05)] sm:p-8 lg:p-10">
       <div className="max-w-3xl">
-        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-blue-700">
+        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#278DC0]">
           PROFESYONEL ILETISIM FORMU
         </p>
         <h2 className="mt-3 text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">
@@ -182,7 +182,7 @@ export function ContactForm() {
           Talebinizi WhatsApp uzerinden hizlica iletebilir veya{" "}
           <a
             href="mailto:info@promakina.com.tr"
-            className="font-semibold text-blue-700 transition hover:text-blue-800"
+            className="font-semibold text-[#278DC0] transition hover:text-[#154764]"
           >
             info@promakina.com.tr
           </a>{" "}
@@ -198,7 +198,7 @@ export function ContactForm() {
             value={form.fullName}
             onChange={(event) => updateField("fullName", event.target.value)}
             placeholder="Adiniz ve soyadiniz"
-            className="h-12 w-full rounded-2xl border border-slate-200 bg-white px-4 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+            className="h-12 w-full rounded-2xl border border-slate-200 bg-white px-4 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-[#278DC0] focus:ring-2 focus:ring-[#278DC0]/25"
           />
         </label>
 
@@ -209,7 +209,7 @@ export function ContactForm() {
             value={form.company}
             onChange={(event) => updateField("company", event.target.value)}
             placeholder="Firma adi"
-            className="h-12 w-full rounded-2xl border border-slate-200 bg-white px-4 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+            className="h-12 w-full rounded-2xl border border-slate-200 bg-white px-4 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-[#278DC0] focus:ring-2 focus:ring-[#278DC0]/25"
           />
         </label>
 
@@ -220,7 +220,7 @@ export function ContactForm() {
             value={form.phone}
             onChange={(event) => updateField("phone", event.target.value)}
             placeholder="+90 5xx xxx xx xx"
-            className="h-12 w-full rounded-2xl border border-slate-200 bg-white px-4 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+            className="h-12 w-full rounded-2xl border border-slate-200 bg-white px-4 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-[#278DC0] focus:ring-2 focus:ring-[#278DC0]/25"
           />
         </label>
 
@@ -231,7 +231,7 @@ export function ContactForm() {
             value={form.email}
             onChange={(event) => updateField("email", event.target.value)}
             placeholder="ornek@firma.com"
-            className="h-12 w-full rounded-2xl border border-slate-200 bg-white px-4 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+            className="h-12 w-full rounded-2xl border border-slate-200 bg-white px-4 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-[#278DC0] focus:ring-2 focus:ring-[#278DC0]/25"
           />
         </label>
 
@@ -242,7 +242,7 @@ export function ContactForm() {
             onChange={(event) =>
               updateField("requestType", event.target.value as FormState["requestType"])
             }
-            className="h-12 w-full rounded-2xl border border-slate-200 bg-white px-4 text-sm text-slate-900 outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+            className="h-12 w-full rounded-2xl border border-slate-200 bg-white px-4 text-sm text-slate-900 outline-none transition focus:border-[#278DC0] focus:ring-2 focus:ring-[#278DC0]/25"
           >
             <option value="">Seciniz</option>
             {requestTypes.map((item) => (
@@ -260,7 +260,7 @@ export function ContactForm() {
             onChange={(event) =>
               updateField("interestArea", event.target.value as FormState["interestArea"])
             }
-            className="h-12 w-full rounded-2xl border border-slate-200 bg-white px-4 text-sm text-slate-900 outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+            className="h-12 w-full rounded-2xl border border-slate-200 bg-white px-4 text-sm text-slate-900 outline-none transition focus:border-[#278DC0] focus:ring-2 focus:ring-[#278DC0]/25"
           >
             <option value="">Seciniz</option>
             {interestAreas.map((item) => (
@@ -278,7 +278,7 @@ export function ContactForm() {
             value={form.capacity}
             onChange={(event) => updateField("capacity", event.target.value)}
             placeholder="Orn. 5 ton/saat, 10 ton/saat, 100 ton/gun"
-            className="h-12 w-full rounded-2xl border border-slate-200 bg-white px-4 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+            className="h-12 w-full rounded-2xl border border-slate-200 bg-white px-4 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-[#278DC0] focus:ring-2 focus:ring-[#278DC0]/25"
           />
         </label>
 
@@ -289,7 +289,7 @@ export function ContactForm() {
             value={form.city}
             onChange={(event) => updateField("city", event.target.value)}
             placeholder="Orn. Eskisehir, Kocaeli, Antalya"
-            className="h-12 w-full rounded-2xl border border-slate-200 bg-white px-4 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+            className="h-12 w-full rounded-2xl border border-slate-200 bg-white px-4 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-[#278DC0] focus:ring-2 focus:ring-[#278DC0]/25"
           />
         </label>
       </div>
@@ -301,7 +301,7 @@ export function ContactForm() {
           value={form.message}
           onChange={(event) => updateField("message", event.target.value)}
           placeholder="Urun tipi, kapasite, hammadde, nem orani, saha kosullari veya beklentinizi kisaca yazabilirsiniz."
-          className="min-h-[160px] w-full rounded-[28px] border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+          className="min-h-[160px] w-full rounded-[28px] border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-[#278DC0] focus:ring-2 focus:ring-[#278DC0]/25"
         />
       </label>
 
@@ -311,7 +311,7 @@ export function ContactForm() {
       </div>
 
       {error ? (
-        <div className="mt-4 rounded-2xl border border-red-200 bg-red-50 px-4 py-3 text-sm font-medium text-red-700">
+        <div className="mt-4 rounded-2xl border border-[#278DC0]/20 bg-[#278DC0]/10 px-4 py-3 text-sm font-medium text-[#278DC0]">
           {error}
         </div>
       ) : null}
@@ -327,7 +327,7 @@ export function ContactForm() {
         <button
           type="button"
           onClick={handleEmailClick}
-          className="inline-flex min-h-[50px] items-center justify-center rounded-full bg-blue-700 px-6 text-sm font-semibold text-white transition hover:bg-blue-800"
+          className="inline-flex min-h-[50px] items-center justify-center rounded-full bg-[#278DC0] px-6 text-sm font-semibold text-white transition hover:bg-[#154764]"
         >
           Mail Olarak Gonder
         </button>

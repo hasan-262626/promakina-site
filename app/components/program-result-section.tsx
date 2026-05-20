@@ -10,9 +10,9 @@ type ProgramResultSectionProps = {
 
 const toneClasses: Record<NonNullable<ProgramModalOutput["cards"][number]["tone"]>, string> = {
   default: "border-slate-200 bg-white",
-  info: "border-sky-100 bg-sky-50",
-  warning: "border-amber-100 bg-amber-50",
-  success: "border-emerald-100 bg-emerald-50",
+  info: "border-[#278DC0]/20 bg-[#278DC0]/10",
+  warning: "border-[#154764]/20 bg-[#154764]/10",
+  success: "border-[#278DC0]/20 bg-[#278DC0]/10",
 };
 
 export function ProgramResultSection({
@@ -23,7 +23,7 @@ export function ProgramResultSection({
     <div className="space-y-5">
       {commentPreview.length > 0 ? (
         <div className="rounded-[28px] border border-slate-200 bg-slate-50 p-5">
-          <div className="inline-flex rounded-full border border-blue-100 bg-blue-50 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-blue-700">
+          <div className="inline-flex rounded-full border border-[#278DC0]/20 bg-[#278DC0]/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#154764]">
             {trText("Otomatik Sistem Yorumu")}
           </div>
           <div className="mt-4 grid gap-3 md:grid-cols-2">
@@ -41,7 +41,7 @@ export function ProgramResultSection({
 
       {output ? (
         <div className="rounded-[28px] border border-slate-200 bg-white p-5 shadow-[0_12px_32px_rgba(15,23,42,0.06)]">
-          <div className="inline-flex rounded-full border border-emerald-100 bg-emerald-50 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-emerald-700">
+          <div className="inline-flex rounded-full border border-[#278DC0]/20 bg-[#278DC0]/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#154764]">
             {trText(output.resultTitle ?? "Sonuç Alanı")}
           </div>
           <div className="mt-4 grid gap-4 md:grid-cols-2 xl:grid-cols-3">

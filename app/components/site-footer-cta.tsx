@@ -28,13 +28,14 @@ function shouldHideMobileStickyCta(pathname: string) {
 export function SiteFooterCta() {
   const pathname = usePathname();
   const hideGlobalCta = shouldHideGlobalCta(pathname);
+  const isServicesIndexPage = pathname === "/hizmetler";
 
   return (
     <>
       {!hideGlobalCta ? (
         <section id="iletisim" className="section-bottom-space-lg">
           <div className="site-container">
-            <div className="rounded-[32px] bg-blue-700 px-6 py-10 text-white sm:px-8 sm:py-12 md:px-12">
+            <div className="rounded-[32px] bg-[#278DC0] px-6 py-10 text-white sm:px-8 sm:py-12 md:px-12">
               <h2 className="max-w-3xl text-3xl font-semibold tracking-tight md:text-4xl">
                 {trText("Projeniz için teklif veya teknik görüşme talep edin")}
               </h2>
@@ -44,21 +45,42 @@ export function SiteFooterCta() {
                 )}
               </p>
 
-              <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:flex-wrap">
-                <Link
-                  href="/iletisim"
-                  data-cta-event="quote_button_click"
-                  data-cta-label="footer_global_quote"
-                  className="rounded-full bg-white px-6 py-3 text-center text-sm font-semibold text-blue-700 transition hover:bg-slate-100"
-                >
-                  {trText("İletişim Sayfasına Git")}
-                </Link>
-                <a
-                  href={siteContact.phoneHref}
-                  className="rounded-full border border-white/25 px-6 py-3 text-center text-sm font-semibold text-white transition hover:bg-white/10"
-                >
-                  Hemen Ara
-                </a>
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+                {isServicesIndexPage ? (
+                  <>
+                    <a
+                      href={siteContact.whatsappHref}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="rounded-full border border-white bg-white px-6 py-3 text-center text-sm font-semibold text-[#154764] transition hover:border-[#d7edf8] hover:bg-[#eef8fd] hover:text-[#278DC0]"
+                    >
+                      WhatsApp ile Teklif Al
+                    </a>
+                    <a
+                      href={siteContact.phoneHref}
+                      className="rounded-full border border-white bg-white px-6 py-3 text-center text-sm font-semibold text-[#154764] transition hover:border-[#d7edf8] hover:bg-[#eef8fd] hover:text-[#278DC0]"
+                    >
+                      Telefonla Ara
+                    </a>
+                  </>
+                ) : (
+                  <>
+                    <Link
+                      href="/iletisim"
+                      data-cta-event="quote_button_click"
+                      data-cta-label="footer_global_quote"
+                      className="rounded-full bg-white px-6 py-3 text-center text-sm font-semibold text-[#154764] transition hover:bg-slate-100"
+                    >
+                      {trText("İletişim Sayfasına Git")}
+                    </Link>
+                    <a
+                      href={siteContact.phoneHref}
+                      className="rounded-full border border-white/25 px-6 py-3 text-center text-sm font-semibold text-white transition hover:bg-white/10"
+                    >
+                      Hemen Ara
+                    </a>
+                  </>
+                )}
               </div>
             </div>
           </div>
@@ -333,13 +355,13 @@ export function MobileStickyCta() {
             href="/iletisim"
             data-cta-event="quote_button_click"
             data-cta-label="mobile_sticky_quote"
-            className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-blue-700 px-4 text-xs font-semibold text-white transition hover:bg-blue-800"
+            className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-[#278DC0] px-4 text-xs font-semibold text-white transition hover:bg-[#154764]"
           >
             Teklif Al
           </Link>
           <Link
             href="/hizmetler/teknik-danismanlik"
-            className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-slate-200 px-4 text-xs font-semibold text-slate-900 transition hover:border-blue-200 hover:text-blue-700"
+            className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-slate-200 px-4 text-xs font-semibold text-slate-900 transition hover:border-[#278DC0] hover:text-[#278DC0]"
           >
             Teknik Danışmanlık
           </Link>

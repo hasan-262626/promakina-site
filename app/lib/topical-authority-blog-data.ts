@@ -1,7 +1,25 @@
+import { generatedTechnicalBlogArticles } from "./generated-technical-blog-articles";
+import {
+  sectorMachineGuideArticles,
+  sectorMachineGuideCategories,
+} from "./sector-machine-guide-blog-data";
+import {
+  technicalTopicClusterArticles,
+  technicalTopicClusterCategories,
+} from "./technical-topic-cluster-data";
+import {
+  sectorTechnicalBlogArticles,
+  sectorTechnicalBlogCategories,
+} from "./sector-technical-blog-data";
+
 export type TopicalBlogCard = {
   title: string;
   description: string;
   href: string;
+  eyebrow?: string;
+  readingTime?: string;
+  category?: string;
+  sector?: string;
 };
 
 export type TopicalFaq = {
@@ -18,6 +36,10 @@ export type TopicalSummaryRow = {
 export type TopicalSection = {
   title: string;
   paragraphs: string[];
+  subsections?: {
+    heading: string;
+    paragraphs: string[];
+  }[];
 };
 
 export type TopicalArticle = {
@@ -27,6 +49,12 @@ export type TopicalArticle = {
   description: string;
   heroDescription: string;
   categorySlug: string;
+  excerpt?: string;
+  readingTime?: string;
+  sector?: string;
+  keywords?: string[];
+  relatedMachines?: string[];
+  relatedServiceLabels?: string[];
   sections: TopicalSection[];
   summaryRows: TopicalSummaryRow[];
   faqs: TopicalFaq[];
@@ -35,6 +63,7 @@ export type TopicalArticle = {
   relatedServices: TopicalBlogCard[];
   nextContent?: TopicalBlogCard;
   ctaText: string;
+  ctaVariant?: "default" | "sector-guide";
 };
 
 export type TopicalCategory = {
@@ -44,6 +73,7 @@ export type TopicalCategory = {
   introParagraphs: string[];
   relatedContents: TopicalBlogCard[];
   ctaText: string;
+  ctaVariant?: "default" | "sector-guide";
 };
 
 export const topicalBlogCategories: TopicalCategory[] = [
@@ -178,6 +208,9 @@ export const topicalBlogCategories: TopicalCategory[] = [
     ctaText:
       "Makine kategorileriniz için doğru ekipman omurgasını birlikte belirlemek isterseniz bize ulaşabilirsiniz.",
   },
+  ...technicalTopicClusterCategories,
+  ...sectorMachineGuideCategories,
+  ...sectorTechnicalBlogCategories,
 ];
 
 function makeCommonLinks() {
@@ -701,10 +734,15 @@ export const topicalBlogArticles: TopicalArticle[] = [
     nextContent: { title: "Organik Atık İşleme Tesisi", description: "Biyogaz öncesi akışların daha geniş değerlendirmesini okuyun.", href: "/kutuphane/blog/organik-atik-isleme-tesisi" },
     ctaText: "Biyogaz ön işlem sistemi, besleme hazırlığı ve organik akış kurgusu için Pro Makina ile iletişime geçebilirsiniz.",
   },
+  ...technicalTopicClusterArticles,
+  ...sectorMachineGuideArticles,
+  ...sectorTechnicalBlogArticles,
 ];
 
+const allTopicalBlogArticles = [...topicalBlogArticles, ...generatedTechnicalBlogArticles];
+
 export const topicalBlogArticleMap = Object.fromEntries(
-  topicalBlogArticles.map((article) => [article.slug, article]),
+  allTopicalBlogArticles.map((article) => [article.slug, article]),
 ) as Record<string, TopicalArticle>;
 
 export const topicalBlogCategoryMap = Object.fromEntries(
@@ -713,5 +751,5 @@ export const topicalBlogCategoryMap = Object.fromEntries(
 
 export const topicalBlogDynamicSlugs = [
   ...topicalBlogCategories.map((category) => category.slug),
-  ...topicalBlogArticles.map((article) => article.slug),
+  ...allTopicalBlogArticles.map((article) => article.slug),
 ];

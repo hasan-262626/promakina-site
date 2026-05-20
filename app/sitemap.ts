@@ -1,9 +1,31 @@
 import type { MetadataRoute } from "next";
+import { compostSystemDetailMap } from "./lib/compost-system-detail-data";
+import { dryingSystemDetailMap } from "./lib/drying-system-detail-data";
+import { drumSystemDetailMap } from "./lib/drum-system-detail-data";
+import { fertilizerSystemDetailMap } from "./lib/fertilizer-system-detail-data";
+import { liquidFertilizerDetailMap } from "./lib/liquid-fertilizer-detail-data";
+import { topicalBlogDynamicSlugs } from "./lib/topical-authority-blog-data";
 
 const siteUrl = "https://www.promakina.com.tr";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
+  const dynamicBlogRoutes = Array.from(
+    new Set([
+      ...topicalBlogDynamicSlugs,
+      "granulator-tamburu-secimi",
+      ...Object.keys(compostSystemDetailMap),
+      ...Object.keys(drumSystemDetailMap),
+      ...Object.keys(dryingSystemDetailMap),
+      ...Object.keys(fertilizerSystemDetailMap),
+      ...Object.keys(liquidFertilizerDetailMap),
+    ]),
+  ).map((slug) => ({
+    url: `${siteUrl}/kutuphane/blog/${slug}`,
+    lastModified,
+    changeFrequency: "weekly" as const,
+    priority: 0.8,
+  }));
 
   return [
     {
@@ -372,5 +394,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 0.7,
     },
+    ...dynamicBlogRoutes,
   ];
 }

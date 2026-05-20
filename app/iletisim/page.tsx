@@ -182,7 +182,7 @@ export default function ContactPage() {
       <section className="section-space">
         <div className="site-container">
           <div className="max-w-4xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-blue-700">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#278DC0]">
               İLETİŞİM KİŞİLERİ
             </p>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950 md:text-4xl">
@@ -200,20 +200,20 @@ export default function ContactPage() {
                 key={person.phone}
                 className="rounded-[32px] border border-slate-200 bg-white p-6 shadow-[0_18px_50px_rgba(15,23,42,0.05)] sm:p-7"
               >
-                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-blue-700">
+                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#278DC0]">
                   {person.role}
                 </p>
                 <h3 className="mt-3 text-2xl font-semibold text-slate-950">{person.name}</h3>
                 <a
                   href={person.phoneHref}
-                  className="mt-4 block text-lg font-semibold text-slate-900 transition hover:text-blue-700"
+                  className="mt-4 block text-lg font-semibold text-slate-900 transition hover:text-[#278DC0]"
                 >
                   {person.phone}
                 </a>
                 <div className="mt-6 flex flex-col gap-3 sm:flex-row">
                   <a
                     href={person.phoneHref}
-                    className="inline-flex min-h-[48px] items-center justify-center rounded-full border border-slate-200 px-5 text-sm font-semibold text-slate-900 transition hover:border-blue-200 hover:text-blue-700"
+                    className="inline-flex min-h-[48px] items-center justify-center rounded-full border border-slate-200 px-5 text-sm font-semibold text-slate-900 transition hover:border-[#278DC0] hover:text-[#278DC0]"
                   >
                     Telefonla Ara
                   </a>
@@ -239,7 +239,7 @@ export default function ContactPage() {
 
             <div className="content-stack">
               <div className="rounded-[32px] border border-slate-200 bg-slate-50 p-6 shadow-[0_18px_50px_rgba(15,23,42,0.04)] sm:p-8">
-                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-blue-700">
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#278DC0]">
                   KONUM VE YOL TARİFİ
                 </p>
                 <h2 className="mt-3 text-2xl font-semibold tracking-tight text-slate-950">
@@ -275,13 +275,13 @@ export default function ContactPage() {
                     rel="noopener noreferrer"
                     data-cta-event="directions_click"
                     data-cta-label="Yol Tarifi Al"
-                    className="inline-flex min-h-[48px] items-center justify-center rounded-full bg-blue-700 px-5 text-sm font-semibold text-white transition hover:bg-blue-800"
+                    className="inline-flex min-h-[48px] items-center justify-center rounded-full bg-[#278DC0] px-5 text-sm font-semibold text-white transition hover:bg-[#154764]"
                   >
                     Yol Tarifi Al
                   </a>
                   <a
                     href={siteContact.phoneHref}
-                    className="inline-flex min-h-[48px] items-center justify-center rounded-full border border-slate-200 bg-white px-5 text-sm font-semibold text-slate-900 transition hover:border-blue-200 hover:text-blue-700"
+                    className="inline-flex min-h-[48px] items-center justify-center rounded-full border border-slate-200 bg-white px-5 text-sm font-semibold text-slate-900 transition hover:border-[#278DC0] hover:text-[#278DC0]"
                   >
                     Telefonla Ara
                   </a>
@@ -297,7 +297,7 @@ export default function ContactPage() {
               </div>
 
               <div className="rounded-[32px] border border-slate-200 bg-white p-6 shadow-[0_18px_50px_rgba(15,23,42,0.04)] sm:p-8">
-                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-blue-700">
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#278DC0]">
                   HIZLI İLETİŞİM BİLGİLERİ
                 </p>
                 <h2 className="mt-3 text-2xl font-semibold tracking-tight text-slate-950">
@@ -319,7 +319,7 @@ export default function ContactPage() {
                           rel={
                             item.href.startsWith("http") ? "noopener noreferrer" : undefined
                           }
-                          className="mt-2 block text-sm leading-7 text-slate-800 transition hover:text-blue-700"
+                          className="mt-2 block text-sm leading-7 text-slate-800 transition hover:text-[#278DC0]"
                         >
                           {item.value}
                         </a>
@@ -339,7 +339,7 @@ export default function ContactPage() {
         <div className="site-container">
           <div className="rounded-[36px] border border-slate-200 bg-[linear-gradient(135deg,#0f1f46_0%,#17336f_100%)] px-6 py-8 text-white shadow-[0_25px_60px_rgba(15,23,42,0.18)] sm:px-8 sm:py-10 lg:px-10">
             <div className="max-w-3xl">
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-blue-100">
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-white/80">
                 TEKNİK GÖRÜŞME
               </p>
               <h2 className="mt-3 text-3xl font-semibold tracking-tight md:text-4xl">

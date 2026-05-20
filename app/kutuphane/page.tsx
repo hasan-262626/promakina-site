@@ -5,6 +5,7 @@ import {
   LibraryCategoryShowcase,
   type LibraryCategoryCard,
 } from "../components/library-category-showcase";
+import { TechnicalArticlesShortcut } from "../components/technical-articles-shortcut";
 
 export const metadata: Metadata = {
   title: "Kütüphane | Blog, Programlar ve Teknik İçerikler | Pro Makina",
@@ -153,6 +154,8 @@ export default function LibraryPage() {
             <LibraryCategoryShowcase items={libraryCategories} />
           </div>
 
+          <TechnicalArticlesShortcut className="section-gap" />
+
           <div className="section-gap rounded-[28px] border border-slate-200 bg-slate-50 p-6 shadow-sm sm:p-8">
             <div className="max-w-4xl">
               <h2 className="text-3xl font-semibold tracking-tight text-slate-950">
@@ -178,13 +181,13 @@ export default function LibraryPage() {
                 <Link
                   key={item.title}
                   href={item.href}
-                  className="group rounded-[24px] border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:border-blue-200 hover:shadow-[0_18px_45px_rgba(15,23,42,0.08)]"
+                  className="group rounded-[24px] border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:border-[#278DC0]/16 hover:shadow-[0_18px_45px_rgba(15,23,42,0.08)]"
                 >
                   <h3 className="text-xl font-semibold tracking-tight text-slate-950">
                     {item.title}
                   </h3>
                   <p className="mt-3 text-sm leading-7 text-slate-600">{item.description}</p>
-                  <span className="mt-5 inline-flex text-sm font-semibold text-blue-700 transition group-hover:text-blue-800">
+                  <span className="mt-5 inline-flex text-sm font-semibold text-[#278DC0] transition group-hover:text-[#154764]">
                     İçeriği İncele
                   </span>
                 </Link>

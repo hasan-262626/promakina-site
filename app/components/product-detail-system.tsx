@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { createMailtoHref, createWhatsAppHref } from "../lib/site-contact";
+import { ProgramModal } from "./program-modal";
 
 type ProductLink = { label: string; href?: string; onClick?: () => void };
 type GalleryItem = { src: string; alt: string; caption: string };
@@ -271,6 +272,18 @@ function buildMessage(title: string, categoryLabel: string, family: CalculatorFa
   return lines.join("\n");
 }
 
+function getDefaultDrumProcess(title: string) {
+  const normalized = title.toLocaleLowerCase("tr-TR");
+
+  if (normalized.includes("gran")) return "Granülatör tamburu";
+  if (normalized.includes("kurut")) return "Kurutma tamburu";
+  if (normalized.includes("soğut") || normalized.includes("sogut")) return "Soğutma tamburu";
+  if (normalized.includes("kaplama")) return "Kaplama tamburu";
+  if (normalized.includes("kompost") || normalized.includes("olgun")) return "Kompost tamburu";
+
+  return "Kurutma tamburu";
+}
+
 function ProductCalculatorModal(props: {
   open: boolean;
   onClose: () => void;
@@ -450,6 +463,12 @@ export function ProductDetailSystem({
     `${title} Kapasite Hesabı ve Teknik Talep`,
     messageBody,
   );
+  const drumProgramInitialValues =
+    calculatorFamily === "drum"
+      ? {
+          processType: getDefaultDrumProcess(title),
+        }
+      : undefined;
 
   return (
     <>
@@ -692,18 +711,28 @@ export function ProductDetailSystem({
         </div>
       </section>
 
-      <ProductCalculatorModal
-        open={isCalculatorOpen}
-        onClose={() => setIsCalculatorOpen(false)}
-        title={title}
-        family={calculatorFamily}
-        values={calculatorValues}
-        onChange={handleValueChange}
-        onCreateSummary={handleCreateSummary}
-        summary={calculationSummary}
-        whatsappHref={whatsappHref}
-        mailHref={mailHref}
-      />
+      {calculatorFamily === "drum" ? (
+        isCalculatorOpen ? (
+          <ProgramModal
+            slug="tambur-hesabi"
+            initialValues={drumProgramInitialValues}
+            onClose={() => setIsCalculatorOpen(false)}
+          />
+        ) : null
+      ) : (
+        <ProductCalculatorModal
+          open={isCalculatorOpen}
+          onClose={() => setIsCalculatorOpen(false)}
+          title={title}
+          family={calculatorFamily}
+          values={calculatorValues}
+          onChange={handleValueChange}
+          onCreateSummary={handleCreateSummary}
+          summary={calculationSummary}
+          whatsappHref={whatsappHref}
+          mailHref={mailHref}
+        />
+      )}
     </>
   );
 }

@@ -252,7 +252,7 @@ export function ServiceSeoPage({
                   <Link
                     key={link.href}
                     href={link.href}
-                    className="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-blue-200 hover:bg-blue-50 hover:text-blue-700"
+                    className="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-[#278DC0] hover:bg-[#278DC0]/10 hover:text-[#154764]"
                   >
                     {link.label}
                   </Link>
@@ -280,7 +280,7 @@ export function ServiceSeoPage({
                   <Link
                     key={card.title}
                     href={card.href}
-                    className="rounded-[24px] border border-slate-200 bg-slate-50 p-5 shadow-sm transition hover:-translate-y-1 hover:border-blue-200 hover:bg-white hover:shadow-[0_18px_45px_rgba(15,23,42,0.08)]"
+                    className="rounded-[24px] border border-slate-200 bg-slate-50 p-5 shadow-sm transition hover:-translate-y-1 hover:border-[#278DC0]/16 hover:bg-white hover:shadow-[0_18px_45px_rgba(15,23,42,0.08)]"
                   >
                     <h3 className="text-lg font-semibold text-slate-950">{card.title}</h3>
                     <p className="mt-3 text-sm leading-7 text-slate-600">{card.description}</p>
@@ -369,7 +369,7 @@ export function ServiceSeoPage({
 
       <section className="section-bottom-space">
         <div className="site-container">
-          <div className="rounded-[28px] border border-slate-200 bg-blue-700 px-6 py-8 text-white shadow-[0_24px_70px_rgba(29,78,216,0.22)] sm:px-8 sm:py-10">
+          <div className="rounded-[28px] border border-slate-200 bg-[#278DC0] px-6 py-8 text-white shadow-[0_24px_70px_rgba(39,141,192,0.22)] sm:px-8 sm:py-10">
             <h2 className="text-2xl font-semibold tracking-tight text-white sm:text-3xl">
               {quoteCtaTitle}
             </h2>
@@ -381,7 +381,7 @@ export function ServiceSeoPage({
                 href={whatsappHref}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-white px-6 text-sm font-semibold text-blue-800 transition hover:bg-slate-100"
+                className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-white px-6 text-sm font-semibold text-[#154764] transition hover:bg-slate-100"
               >
                 WhatsApp ile Görüş
               </a>
@@ -431,7 +431,7 @@ export function ServiceSeoPage({
           <div className="site-container">
             <div className="grid gap-6 lg:grid-cols-[1.05fr_0.95fr]">
               <div className="rounded-[32px] border border-slate-200 bg-slate-950 p-6 text-white shadow-[0_20px_60px_rgba(2,6,23,0.16)] sm:p-8">
-                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-blue-300">
+                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-white/80">
                   TEKNİK GÖRÜŞME
                 </p>
                 <h2 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">
@@ -455,7 +455,7 @@ export function ServiceSeoPage({
                     <input
                       name="firma"
                       type="text"
-                      className="w-full rounded-2xl border border-slate-200 px-4 py-3 text-sm outline-none transition focus:border-blue-300"
+                      className="w-full rounded-2xl border border-slate-200 px-4 py-3 text-sm outline-none transition focus:border-[#278DC0]"
                       placeholder="Firma adı"
                     />
                   </label>
@@ -464,7 +464,7 @@ export function ServiceSeoPage({
                     <input
                       name="adSoyad"
                       type="text"
-                      className="w-full rounded-2xl border border-slate-200 px-4 py-3 text-sm outline-none transition focus:border-blue-300"
+                      className="w-full rounded-2xl border border-slate-200 px-4 py-3 text-sm outline-none transition focus:border-[#278DC0]"
                       placeholder="Yetkili kişi"
                     />
                   </label>
@@ -473,7 +473,7 @@ export function ServiceSeoPage({
                     <input
                       name="telefon"
                       type="tel"
-                      className="w-full rounded-2xl border border-slate-200 px-4 py-3 text-sm outline-none transition focus:border-blue-300"
+                      className="w-full rounded-2xl border border-slate-200 px-4 py-3 text-sm outline-none transition focus:border-[#278DC0]"
                       placeholder="05xx xxx xx xx"
                     />
                   </label>
@@ -482,7 +482,7 @@ export function ServiceSeoPage({
                     <input
                       name="eposta"
                       type="email"
-                      className="w-full rounded-2xl border border-slate-200 px-4 py-3 text-sm outline-none transition focus:border-blue-300"
+                      className="w-full rounded-2xl border border-slate-200 px-4 py-3 text-sm outline-none transition focus:border-[#278DC0]"
                       placeholder="ornek@firma.com"
                     />
                   </label>
@@ -490,7 +490,7 @@ export function ServiceSeoPage({
                     <span className="text-sm font-medium text-slate-700">Ürün Grubu</span>
                     <select
                       name="urunGrubu"
-                      className="w-full rounded-2xl border border-slate-200 px-4 py-3 text-sm outline-none transition focus:border-blue-300"
+                      className="w-full rounded-2xl border border-slate-200 px-4 py-3 text-sm outline-none transition focus:border-[#278DC0]"
                       defaultValue=""
                     >
                       <option value="" disabled>
@@ -507,7 +507,7 @@ export function ServiceSeoPage({
                     <input
                       name="kapasite"
                       type="text"
-                      className="w-full rounded-2xl border border-slate-200 px-4 py-3 text-sm outline-none transition focus:border-blue-300"
+                      className="w-full rounded-2xl border border-slate-200 px-4 py-3 text-sm outline-none transition focus:border-[#278DC0]"
                       placeholder="Örn. 10 ton/saat"
                     />
                   </label>
@@ -517,7 +517,7 @@ export function ServiceSeoPage({
                   <textarea
                     name="mesaj"
                     rows={5}
-                    className="w-full rounded-2xl border border-slate-200 px-4 py-3 text-sm outline-none transition focus:border-blue-300"
+                    className="w-full rounded-2xl border border-slate-200 px-4 py-3 text-sm outline-none transition focus:border-[#278DC0]"
                     placeholder="Hedef ürün, saha bilgisi, ihracat planı veya teknik beklentinizi yazabilirsiniz."
                   />
                 </label>
@@ -526,7 +526,7 @@ export function ServiceSeoPage({
                     type="submit"
                     data-cta-event="quote_button_click"
                     data-cta-label={`${serviceName}_inline_form_quote`}
-                    className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-blue-700 px-6 text-sm font-semibold text-white transition hover:bg-blue-800"
+                    className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-[#278DC0] px-6 text-sm font-semibold text-white transition hover:bg-[#154764]"
                   >
                     Teklif Al
                   </button>
@@ -534,7 +534,7 @@ export function ServiceSeoPage({
                     href={whatsappHref}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-slate-200 bg-white px-6 text-sm font-semibold text-slate-700 transition hover:border-blue-200 hover:text-blue-700"
+                    className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-slate-200 bg-white px-6 text-sm font-semibold text-slate-700 transition hover:border-[#278DC0] hover:text-[#278DC0]"
                   >
                     WhatsApp
                   </a>
@@ -547,7 +547,7 @@ export function ServiceSeoPage({
 
       <section className="section-bottom-space-lg">
         <div className="site-container">
-          <div className="rounded-[28px] bg-blue-700 px-6 py-8 text-white shadow-[0_24px_70px_rgba(29,78,216,0.28)] sm:px-8 sm:py-10">
+          <div className="rounded-[28px] bg-[#278DC0] px-6 py-8 text-white shadow-[0_24px_70px_rgba(39,141,192,0.24)] sm:px-8 sm:py-10">
             <h2 className="text-2xl font-semibold tracking-tight text-white sm:text-3xl">
               {quoteCtaTitle}
             </h2>
@@ -560,7 +560,7 @@ export function ServiceSeoPage({
                 href="/iletisim"
                 data-cta-event="quote_button_click"
                 data-cta-label={`${serviceName}_final_quote_form`}
-                className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-white px-6 text-sm font-semibold text-blue-800 transition hover:bg-slate-100"
+                className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-white px-6 text-sm font-semibold text-[#154764] transition hover:bg-slate-100"
               >
                 Teknik Teklif Formu
               </Link>

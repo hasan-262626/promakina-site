@@ -708,7 +708,7 @@ function ServiceList({ title, items }: { title: string; items: string[] }) {
       <ul className="mt-5 space-y-3 text-base leading-7 text-slate-600">
         {items.map((item) => (
           <li key={item} className="flex gap-3">
-            <span className="mt-2 h-1.5 w-1.5 rounded-full bg-blue-600" />
+            <span className="mt-2 h-1.5 w-1.5 rounded-full bg-[#278DC0]" />
             <span>{trText(item)}</span>
           </li>
         ))}
@@ -730,7 +730,7 @@ function RelatedSectorLinks({ items }: { items: string[] }) {
             <Link
               key={label}
               href={href}
-              className="inline-flex rounded-full border border-slate-200 px-4 py-2 text-sm font-medium text-slate-700 transition hover:border-blue-200 hover:bg-blue-50 hover:text-blue-700"
+              className="inline-flex rounded-full border border-slate-200 px-4 py-2 text-sm font-medium text-slate-700 transition hover:border-[#278DC0]/20 hover:bg-[#278DC0]/10 hover:text-[#154764]"
             >
               {label}
             </Link>
@@ -918,7 +918,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
         <div className="site-container">
           <div className="grid gap-10 lg:grid-cols-[1.15fr_0.85fr]">
             <div className="space-y-6">
-              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-700">
+              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#278DC0]">
                 {trText(service.title)}
               </p>
               <h2 className="text-3xl font-semibold tracking-tight text-slate-950 md:text-4xl">
@@ -935,7 +935,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                     fazla bilgi için{" "}
                     <Link
                       href="/hizmetler/gubre-tesisi-kurulumu"
-                      className="font-semibold text-blue-700 transition hover:text-blue-800"
+                      className="font-semibold text-[#278DC0] transition hover:text-[#154764]"
                     >
                       gübre tesisi kurulumu
                     </Link>{" "}
@@ -952,7 +952,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
               <ul className="mt-6 space-y-4 text-base leading-7 text-slate-600">
                 {outputs.map((item) => (
                   <li key={item} className="flex gap-3">
-                    <span className="mt-2 h-1.5 w-1.5 rounded-full bg-blue-600" />
+                    <span className="mt-2 h-1.5 w-1.5 rounded-full bg-[#278DC0]" />
                     <span>{trText(item)}</span>
                   </li>
                 ))}
@@ -988,7 +988,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
       <section className="pb-16 sm:pb-20">
         <div className="site-container">
           <div className="rounded-[32px] border border-slate-200 bg-slate-50 p-6 shadow-sm sm:p-8 md:p-10">
-            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-700">
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#278DC0]">
               Nasıl Çalışıyoruz?
             </p>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950 md:text-4xl">
@@ -1054,7 +1054,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
 
       <section className="pb-16 sm:pb-20">
         <div className="site-container">
-          <div className="rounded-[32px] bg-blue-700 px-6 py-10 text-white shadow-sm sm:px-8 sm:py-12 md:px-12">
+          <div className="rounded-[32px] bg-[#278DC0] px-6 py-10 text-white shadow-sm sm:px-8 sm:py-12 md:px-12">
             <h2 className="max-w-3xl text-3xl font-semibold tracking-tight md:text-4xl">
               Projeniz için teknik teklif alın
             </h2>
@@ -1066,7 +1066,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                 href={whatsappHref}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-full bg-white px-6 py-3 text-center text-sm font-semibold text-blue-700 transition hover:bg-slate-100"
+                className="rounded-full bg-white px-6 py-3 text-center text-sm font-semibold text-[#154764] transition hover:bg-slate-100"
               >
                 WhatsApp ile Görüş
               </a>
@@ -1205,7 +1205,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
 
       <section id="cta" className="pb-16 sm:pb-20">
         <div className="site-container">
-          <div className="rounded-[32px] bg-blue-700 px-6 py-10 text-white shadow-sm sm:px-8 sm:py-12 md:px-12">
+          <div className="rounded-[32px] bg-[#278DC0] px-6 py-10 text-white shadow-sm sm:px-8 sm:py-12 md:px-12">
             <h2 className="max-w-3xl text-3xl font-semibold tracking-tight md:text-4xl">
               Projeniz için teknik teklif alın
             </h2>
@@ -1232,7 +1232,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                 href={whatsappHref}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-full bg-white px-6 py-3 text-center text-sm font-semibold text-blue-700 transition hover:bg-slate-100"
+                className="rounded-full bg-white px-6 py-3 text-center text-sm font-semibold text-[#154764] transition hover:bg-slate-100"
               >
                 WhatsApp ile Görüş
               </a>

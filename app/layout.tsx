@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Montserrat } from "next/font/google";
 import Script from "next/script";
 import { CookiePreferences } from "./components/cookie-preferences";
 import {
@@ -11,6 +12,13 @@ import { SiteHeader } from "./components/site-header";
 import { TextNormalizer } from "./components/text-normalizer";
 import { siteContact, siteSocialSameAs } from "./lib/site-contact";
 import "./globals.css";
+
+const montserrat = Montserrat({
+  subsets: ["latin", "latin-ext"],
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-montserrat",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.promakina.com.tr"),
@@ -110,7 +118,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-NJT8ZQPC');`}
         </Script>
       </head>
-      <body>
+      <body className={`${montserrat.variable} font-sans`}>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}

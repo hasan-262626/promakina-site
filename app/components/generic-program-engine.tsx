@@ -1007,21 +1007,21 @@ export function GenericProgramEngine({ program }: GenericProgramEngineProps) {
                   <button
                     type="button"
                     onClick={openWhatsApp}
-                    className="rounded-full bg-emerald-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-emerald-700"
+                    className="rounded-full bg-[#278DC0] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#154764]"
                   >
                     WhatsApp
                   </button>
                   <button
                     type="button"
                     onClick={openMail}
-                    className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-blue-200 hover:text-blue-700"
+                    className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-[#278DC0]/30 hover:text-[#154764]"
                   >
                     Mail
                   </button>
                   <button
                     type="button"
                     onClick={printReport}
-                    className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-blue-200 hover:text-blue-700"
+                    className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-[#278DC0]/30 hover:text-[#154764]"
                   >
                     PDF indir
                   </button>
@@ -1043,7 +1043,7 @@ export function GenericProgramEngine({ program }: GenericProgramEngineProps) {
             </div>
 
             <div className="space-y-5">
-              <div className="rounded-[32px] border border-blue-100 bg-blue-50 px-5 py-6 shadow-[0_16px_44px_rgba(59,130,246,0.12)]">
+              <div className="rounded-[32px] border border-[#278DC0]/20 bg-[#278DC0]/10 px-5 py-6 shadow-[0_16px_44px_rgba(39,141,192,0.12)]">
                 <h3 className="text-lg font-semibold text-slate-950">Teknik özet raporu hazır</h3>
                 <p className="mt-3 text-sm leading-7 text-slate-600">
                   Müşteri: {customerName || "Belirtilmedi"} | Proje: {projectName || "Belirtilmedi"} | Tarih: {dateValue || "Belirtilmedi"}
@@ -1054,13 +1054,13 @@ export function GenericProgramEngine({ program }: GenericProgramEngineProps) {
                 <div className="mt-5 flex flex-wrap gap-3">
                   <a
                     href="/iletisim"
-                    className="inline-flex min-h-[44px] items-center justify-center rounded-full bg-blue-700 px-5 text-sm font-semibold text-white transition hover:bg-blue-800"
+                    className="inline-flex min-h-[44px] items-center justify-center rounded-full bg-[#278DC0] px-5 text-sm font-semibold text-white transition hover:bg-[#154764]"
                   >
                     Teklif Al
                   </a>
                   <a
                     href="/iletisim"
-                    className="inline-flex min-h-[44px] items-center justify-center rounded-full border border-blue-200 bg-white px-5 text-sm font-semibold text-slate-700 transition hover:border-blue-300 hover:text-blue-700"
+                    className="inline-flex min-h-[44px] items-center justify-center rounded-full border border-[#278DC0]/20 bg-white px-5 text-sm font-semibold text-slate-700 transition hover:border-[#278DC0] hover:text-[#154764]"
                   >
                     İletişime Geç
                   </a>

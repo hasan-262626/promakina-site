@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useMemo } from "react";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import type { ProgramGroup, ProgramGroupTool } from "../program-groups";
 import { ProgramGroupCard } from "./program-group-card";
 import { ProgramModal } from "./program-modal";
@@ -12,10 +13,32 @@ type ProgramsModalExperienceProps = {
 export function ProgramsModalExperience({
   groups,
 }: ProgramsModalExperienceProps) {
-  const [selectedProgramSlug, setSelectedProgramSlug] = useState<string | null>(null);
+  const router = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+  const validSlugs = useMemo(
+    () => new Set(groups.flatMap((group) => group.tools.map((tool) => tool.slug))),
+    [groups],
+  );
+  const selectedProgramSlug = searchParams.get("modal");
+  const activeProgramSlug =
+    selectedProgramSlug && validSlugs.has(selectedProgramSlug) ? selectedProgramSlug : null;
+
+  const updateModalQuery = (slug: string | null) => {
+    const params = new URLSearchParams(searchParams.toString());
+
+    if (slug) {
+      params.set("modal", slug);
+    } else {
+      params.delete("modal");
+    }
+
+    const query = params.toString();
+    router.replace(query ? `${pathname}?${query}` : pathname, { scroll: false });
+  };
 
   const handleToolSelect = (tool: ProgramGroupTool) => {
-    setSelectedProgramSlug(tool.slug);
+    updateModalQuery(tool.slug);
   };
 
   return (
@@ -30,10 +53,10 @@ export function ProgramsModalExperience({
         ))}
       </div>
 
-      {selectedProgramSlug ? (
+      {activeProgramSlug ? (
         <ProgramModal
-          slug={selectedProgramSlug}
-          onClose={() => setSelectedProgramSlug(null)}
+          slug={activeProgramSlug}
+          onClose={() => updateModalQuery(null)}
         />
       ) : null}
     </>

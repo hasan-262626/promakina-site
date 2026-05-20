@@ -118,7 +118,7 @@ export default function ProjectsHubExperience() {
               <Link
                 key={project.slug}
                 href={`/projeler/${project.slug}`}
-                className="group flex min-h-[240px] flex-col rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition duration-200 hover:-translate-y-1 hover:border-blue-200 hover:shadow-[0_20px_50px_rgba(15,23,42,0.08)] sm:p-7"
+                className="group flex min-h-[240px] flex-col rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition duration-200 hover:-translate-y-1 hover:border-[#278DC0]/20 hover:shadow-[0_20px_50px_rgba(15,23,42,0.08)] sm:p-7"
               >
                 <div className="flex flex-1 items-start gap-4">
                   <span className="relative mt-1 h-16 w-16 shrink-0 overflow-hidden rounded-2xl border border-slate-200 bg-slate-100 shadow-[0_8px_24px_rgba(15,23,42,0.08)]">
@@ -138,7 +138,7 @@ export default function ProjectsHubExperience() {
                     <p className="mt-3 flex-1 leading-7 text-slate-600">
                       {project.cardDescription}
                     </p>
-                    <span className="mt-5 inline-flex items-center text-sm font-semibold text-blue-700 transition group-hover:text-blue-800">
+                    <span className="mt-5 inline-flex items-center text-sm font-semibold text-[#278DC0] transition group-hover:text-[#154764]">
                       Projeyi İncele
                     </span>
                   </div>
@@ -170,7 +170,7 @@ export default function ProjectsHubExperience() {
                 <Link
                   key={service.href}
                   href={service.href}
-                  className="group rounded-[28px] border border-slate-200 bg-slate-50 p-5 shadow-sm transition hover:-translate-y-1 hover:border-blue-200 hover:bg-white hover:shadow-[0_18px_45px_rgba(15,23,42,0.08)]"
+                  className="group rounded-[28px] border border-slate-200 bg-slate-50 p-5 shadow-sm transition hover:-translate-y-1 hover:border-[#278DC0]/20 hover:bg-white hover:shadow-[0_18px_45px_rgba(15,23,42,0.08)]"
                 >
                   <div className="relative h-14 w-14 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-[0_8px_24px_rgba(15,23,42,0.06)]">
                     <Image
@@ -187,7 +187,7 @@ export default function ProjectsHubExperience() {
                   <p className="mt-3 text-sm leading-7 text-slate-600">
                     {service.description}
                   </p>
-                  <span className="mt-5 inline-flex text-sm font-semibold text-blue-700 transition group-hover:text-blue-800">
+                  <span className="mt-5 inline-flex text-sm font-semibold text-[#278DC0] transition group-hover:text-[#154764]">
                     Hizmeti İncele
                   </span>
                 </Link>
@@ -212,7 +212,7 @@ export default function ProjectsHubExperience() {
                   key={item.step}
                   className="rounded-[24px] border border-slate-200 bg-white p-5 shadow-sm"
                 >
-                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-blue-700">
+                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#278DC0]">
                     {item.step}
                   </p>
                   <h3 className="mt-3 text-lg font-semibold tracking-tight text-slate-950">
@@ -230,7 +230,7 @@ export default function ProjectsHubExperience() {
 
       <section className="section-bottom-space-lg">
         <div className="site-container">
-          <div className="rounded-[32px] bg-blue-700 px-6 py-10 text-white sm:px-8 sm:py-12 md:px-12">
+          <div className="rounded-[32px] bg-[#278DC0] px-6 py-10 text-white sm:px-8 sm:py-12 md:px-12">
             <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">
               Projenizi birlikte değerlendirelim
             </h2>
@@ -242,7 +242,7 @@ export default function ProjectsHubExperience() {
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <Link
                 href="/iletisim"
-                className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-white px-6 text-sm font-semibold text-blue-700 transition hover:bg-slate-100"
+                className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-white px-6 text-sm font-semibold text-[#154764] transition hover:bg-slate-100"
               >
                 Teknik Görüşme Talep Et
               </Link>

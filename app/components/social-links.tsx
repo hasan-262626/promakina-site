@@ -34,8 +34,8 @@ function SocialIcon({ id, className = "h-4 w-4" }: { id: SocialId; className?: s
 export function SocialLinks({ variant = "button", className = "" }: SocialLinksProps) {
   const baseClass =
     variant === "compact"
-      ? "inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 transition hover:border-blue-200 hover:text-blue-700"
-      : "inline-flex min-h-[46px] items-center justify-center gap-2 rounded-full border border-white/15 bg-white/6 px-4 text-sm font-semibold text-white transition hover:border-white/30 hover:bg-white/10";
+      ? "inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 transition hover:border-[#278DC0] hover:bg-[#278DC0] hover:text-white"
+      : "inline-flex min-h-[46px] items-center justify-center gap-2 rounded-full border border-white/15 bg-white/6 px-4 text-sm font-semibold text-white transition hover:border-[#278DC0] hover:bg-[#278DC0] hover:text-white";
 
   return (
     <div className={`flex flex-wrap items-center gap-3 ${className}`.trim()}>
