@@ -1,20 +1,20 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import { ContactForm } from "@/components/contact-form";
 import { Hero } from "../components/Hero";
 import { siteContact } from "../lib/site-contact";
 
 export const metadata: Metadata = {
-  title: "İletişim | Pro Makina Process Engineering",
+  title: "Ä°letiÅŸim | Pro Makina Process Engineering",
   description:
-    "Pro Makina iletişim bilgileri. Gübre tesisi, kompost tesisi, kurutma tamburu, konveyör, maden ve proses ekipmanları için teknik teklif alın.",
+    "Pro Makina iletiÅŸim bilgileri. GÃ¼bre tesisi, kompost tesisi, kurutma tamburu, konveyÃ¶r, maden ve proses ekipmanlarÄ± iÃ§in teknik teklif alÄ±n.",
   alternates: {
     canonical: "https://www.promakina.com.tr/iletisim",
   },
   openGraph: {
-    title: "İletişim | Pro Makina Process Engineering",
+    title: "Ä°letiÅŸim | Pro Makina Process Engineering",
     description:
-      "Pro Makina iletişim bilgileri. Gübre tesisi, kompost tesisi, kurutma tamburu, konveyör, maden ve proses ekipmanları için teknik teklif alın.",
+      "Pro Makina iletiÅŸim bilgileri. GÃ¼bre tesisi, kompost tesisi, kurutma tamburu, konveyÃ¶r, maden ve proses ekipmanlarÄ± iÃ§in teknik teklif alÄ±n.",
     url: "https://www.promakina.com.tr/iletisim",
   },
 };
@@ -23,21 +23,21 @@ const googleDirectionsHref = "https://share.google/vTWI0v98yqL1eu3dA";
 
 const contacts = [
   {
-    role: "Makine Mühendisi - Satış Temsilcisi",
-    name: "Hüseyin Bey",
+    role: "Makine MÃ¼hendisi - SatÄ±ÅŸ Temsilcisi",
+    name: "HÃ¼seyin Bey",
     phone: "+90 532 058 01 04",
     phoneHref: "tel:+905320580104",
     whatsappHref: "https://wa.me/905320580104",
   },
   {
-    role: "Türkiye Bölge Müdürü",
+    role: "TÃ¼rkiye BÃ¶lge MÃ¼dÃ¼rÃ¼",
     name: "Serkan Bey",
     phone: "+90 532 252 57 13",
     phoneHref: "tel:+905322525713",
     whatsappHref: "https://wa.me/905322525713",
   },
   {
-    role: "Fabrika ve İmalat Müdürü",
+    role: "Fabrika ve Ä°malat MÃ¼dÃ¼rÃ¼",
     name: "Akif Bey",
     phone: "+90 533 569 31 43",
     phoneHref: "tel:+905335693143",
@@ -69,7 +69,7 @@ const quickDetails = [
   {
     label: "Adres",
     value:
-      "75. Yıl Mahallesi, Teksan Sanayi Sitesi, Kilis Sokak D6 Blok No: 2E, Odunpazarı / Eskişehir, 26250",
+      "75. YÄ±l Mahallesi, Teksan Sanayi Sitesi, Kilis Sokak D6 Blok No: 2E, OdunpazarÄ± / EskiÅŸehir, 26250",
   },
 ] as const;
 
@@ -87,7 +87,7 @@ export default function ContactPage() {
       {
         "@type": "ListItem",
         position: 2,
-        name: "İletişim",
+        name: "Ä°letiÅŸim",
         item: "https://www.promakina.com.tr/iletisim",
       },
     ],
@@ -96,10 +96,10 @@ export default function ContactPage() {
   const contactPageSchema = {
     "@context": "https://schema.org",
     "@type": "ContactPage",
-    name: "İletişim | Pro Makina Process Engineering",
+    name: "Ä°letiÅŸim | Pro Makina Process Engineering",
     url: "https://www.promakina.com.tr/iletisim",
     description:
-      "Gübre tesisi, kompost tesisi, kurutma tamburu, konveyör, maden ve proses ekipmanları için teknik teklif ve iletişim sayfası.",
+      "GÃ¼bre tesisi, kompost tesisi, kurutma tamburu, konveyÃ¶r, maden ve proses ekipmanlarÄ± iÃ§in teknik teklif ve iletiÅŸim sayfasÄ±.",
   };
 
   const organizationSchema = {
@@ -131,9 +131,9 @@ export default function ContactPage() {
     address: {
       "@type": "PostalAddress",
       streetAddress:
-        "75. Yıl Mahallesi, Teksan Sanayi Sitesi, Kilis Sokak D6 Blok No: 2E",
-      addressLocality: "Odunpazarı",
-      addressRegion: "Eskişehir",
+        "75. YÄ±l Mahallesi, Teksan Sanayi Sitesi, Kilis Sokak D6 Blok No: 2E",
+      addressLocality: "OdunpazarÄ±",
+      addressRegion: "EskiÅŸehir",
       postalCode: "26250",
       addressCountry: "TR",
     },
@@ -159,23 +159,28 @@ export default function ContactPage() {
       />
 
       <Hero
-        title="İletişim"
-        description="Teknik teklif, makine seçimi, saha görüşmesi ve proses değerlendirmesi için doğru kişiye hızlıca ulaşın. Telefon, WhatsApp, e-posta ve yol tarifi seçeneklerini tek sayfada topladık."
+        title="Ä°letiÅŸim"
         image="/images/fabrika1.jpg"
       >
         <a
-          href={siteContact.phoneHref}
-          className="inline-flex rounded-full bg-white px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-slate-100"
+          href="/iletisim"
+          className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-[#278DC0] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#154764]"
         >
-          Telefonla Ara
+          Teklif Al
         </a>
         <a
           href={siteContact.whatsappHref}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex rounded-full border border-white/25 bg-white/10 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/20"
+          className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/60 bg-white/12 px-5 py-3 text-sm font-semibold text-white transition hover:border-white hover:bg-white/18"
         >
-          WhatsApp ile Yaz
+          WhatsApp ile Görüş
+        </a>
+        <a
+          href={siteContact.phoneHref}
+          className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/60 bg-white/12 px-5 py-3 text-sm font-semibold text-white transition hover:border-white hover:bg-white/18"
+        >
+          Telefonla Ara
         </a>
       </Hero>
 
@@ -183,14 +188,14 @@ export default function ContactPage() {
         <div className="site-container">
           <div className="max-w-4xl">
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#278DC0]">
-              İLETİŞİM KİŞİLERİ
+              Ä°LETÄ°ÅžÄ°M KÄ°ÅžÄ°LERÄ°
             </p>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950 md:text-4xl">
-              Doğrudan ilgili ekibimizle görüşün
+              DoÄŸrudan ilgili ekibimizle gÃ¶rÃ¼ÅŸÃ¼n
             </h2>
             <p className="mt-4 text-sm leading-8 text-slate-600 sm:text-base">
-              Proje, teklif, saha görüşmesi ve teknik değerlendirme talepleriniz için
-              ilgili ekibimizle doğrudan iletişime geçebilirsiniz.
+              Proje, teklif, saha gÃ¶rÃ¼ÅŸmesi ve teknik deÄŸerlendirme talepleriniz iÃ§in
+              ilgili ekibimizle doÄŸrudan iletiÅŸime geÃ§ebilirsiniz.
             </p>
           </div>
 
@@ -240,7 +245,7 @@ export default function ContactPage() {
             <div className="content-stack">
               <div className="rounded-[32px] border border-slate-200 bg-slate-50 p-6 shadow-[0_18px_50px_rgba(15,23,42,0.04)] sm:p-8">
                 <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#278DC0]">
-                  KONUM VE YOL TARİFİ
+                  KONUM VE YOL TARÄ°FÄ°
                 </p>
                 <h2 className="mt-3 text-2xl font-semibold tracking-tight text-slate-950">
                   Konum ve Yol Tarifi
@@ -248,7 +253,7 @@ export default function ContactPage() {
 
                 <div className="mt-6 overflow-hidden rounded-[28px] border border-slate-200 bg-white shadow-[0_10px_30px_rgba(15,23,42,0.05)]">
                   <iframe
-                    title="Pro Makina Konum Haritası"
+                    title="Pro Makina Konum HaritasÄ±"
                     src="https://www.google.com/maps?q=75.%20Y%C4%B1l%20Mahallesi%2C%20Teksan%20Sanayi%20Sitesi%2C%20Kilis%20Sokak%20D6%20Blok%20No%3A%202E%2C%20Odunpazar%C4%B1%2C%20Eski%C5%9Fehir&output=embed"
                     className="h-[240px] w-full sm:h-[260px] lg:h-[280px]"
                     loading="lazy"
@@ -257,14 +262,14 @@ export default function ContactPage() {
 
                 <div className="mt-6">
                   <p className="text-sm leading-8 text-slate-600">
-                    75. Yıl Mahallesi, Teksan Sanayi Sitesi, Kilis Sokak D6 Blok No: 2E,
-                    Odunpazarı / Eskişehir
+                    75. YÄ±l Mahallesi, Teksan Sanayi Sitesi, Kilis Sokak D6 Blok No: 2E,
+                    OdunpazarÄ± / EskiÅŸehir
                   </p>
                   <p className="mt-2 text-sm font-medium text-slate-700">Posta Kodu: 26250</p>
                   <p className="mt-4 text-sm leading-8 text-slate-600">
-                    Pro Makina üretim ve proje görüşmeleri için Eskişehir Teksan Sanayi
-                    Sitesi&apos;nde hizmet vermektedir. Ziyaret öncesinde telefon veya
-                    WhatsApp üzerinden randevu almanızı öneririz.
+                    Pro Makina Ã¼retim ve proje gÃ¶rÃ¼ÅŸmeleri iÃ§in EskiÅŸehir Teksan Sanayi
+                    Sitesi&apos;nde hizmet vermektedir. Ziyaret Ã¶ncesinde telefon veya
+                    WhatsApp Ã¼zerinden randevu almanÄ±zÄ± Ã¶neririz.
                   </p>
                 </div>
 
@@ -298,10 +303,10 @@ export default function ContactPage() {
 
               <div className="rounded-[32px] border border-slate-200 bg-white p-6 shadow-[0_18px_50px_rgba(15,23,42,0.04)] sm:p-8">
                 <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#278DC0]">
-                  HIZLI İLETİŞİM BİLGİLERİ
+                  HIZLI Ä°LETÄ°ÅžÄ°M BÄ°LGÄ°LERÄ°
                 </p>
                 <h2 className="mt-3 text-2xl font-semibold tracking-tight text-slate-950">
-                  Hızlı İletişim Bilgileri
+                  HÄ±zlÄ± Ä°letiÅŸim Bilgileri
                 </h2>
                 <div className="mt-6 grid gap-4">
                   {quickDetails.map((item) => (
@@ -340,16 +345,16 @@ export default function ContactPage() {
           <div className="rounded-[36px] border border-slate-200 bg-[linear-gradient(135deg,#0f1f46_0%,#17336f_100%)] px-6 py-8 text-white shadow-[0_25px_60px_rgba(15,23,42,0.18)] sm:px-8 sm:py-10 lg:px-10">
             <div className="max-w-3xl">
               <p className="text-xs font-semibold uppercase tracking-[0.18em] text-white/80">
-                TEKNİK GÖRÜŞME
+                TEKNÄ°K GÃ–RÃœÅžME
               </p>
               <h2 className="mt-3 text-3xl font-semibold tracking-tight md:text-4xl">
-                Projeniz için doğru kişiyi hemen devreye alın
+                Projeniz iÃ§in doÄŸru kiÅŸiyi hemen devreye alÄ±n
               </h2>
               <p className="mt-4 text-sm leading-8 text-white/82 sm:text-base">
-                Gübre tesisi, kompost tesisi, kurutma sistemi, konveyör hattı, maden
-                işleme tesisi veya özel makine ihtiyacınız için bizimle iletişime geçin.
-                Telefon, WhatsApp ve e-posta üzerinden kısa sürede teknik yönlendirme
-                sağlayalım.
+                GÃ¼bre tesisi, kompost tesisi, kurutma sistemi, konveyÃ¶r hattÄ±, maden
+                iÅŸleme tesisi veya Ã¶zel makine ihtiyacÄ±nÄ±z iÃ§in bizimle iletiÅŸime geÃ§in.
+                Telefon, WhatsApp ve e-posta Ã¼zerinden kÄ±sa sÃ¼rede teknik yÃ¶nlendirme
+                saÄŸlayalÄ±m.
               </p>
             </div>
 
@@ -358,7 +363,7 @@ export default function ContactPage() {
                 href="/iletisim"
                 className="inline-flex min-h-[50px] items-center justify-center rounded-full bg-white px-6 text-sm font-semibold text-slate-950 transition hover:bg-slate-100"
               >
-                İletişim Sayfasına Git
+                Ä°letiÅŸim SayfasÄ±na Git
               </Link>
               <a
                 href={siteContact.phoneHref}
@@ -372,7 +377,7 @@ export default function ContactPage() {
                 rel="noopener noreferrer"
                 className="inline-flex min-h-[50px] items-center justify-center rounded-full border border-white/20 bg-white/10 px-6 text-sm font-semibold text-white transition hover:bg-white/18"
               >
-                WhatsApp ile Görüş
+                WhatsApp ile GÃ¶rÃ¼ÅŸ
               </a>
             </div>
           </div>
@@ -381,3 +386,5 @@ export default function ContactPage() {
     </main>
   );
 }
+
+

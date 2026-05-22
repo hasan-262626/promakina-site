@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import {
   fertilizerCriticalCards,
@@ -32,48 +31,33 @@ function SectionHeading({
 export default function FertilizerSectorExperience() {
   return (
     <main className="min-h-screen bg-white text-slate-900">
-      <section className="relative isolate overflow-hidden border-b border-slate-200">
-        <div className="absolute inset-0">
-          <Image
-            src="/images/granul1.jpg"
-            alt={trText("Gübre Üretim Tesisleri hero arka plan görseli")}
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover object-center"
-          />
-        </div>
-        <div className="absolute inset-0 bg-[linear-gradient(105deg,rgba(2,6,23,0.9)_0%,rgba(15,23,42,0.82)_34%,rgba(30,58,138,0.56)_62%,rgba(2,6,23,0.72)_100%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(59,130,246,0.18),transparent_30%)]" />
-
-        <div className="relative mx-auto flex min-h-[300px] max-w-7xl items-center px-4 py-12 sm:px-6 md:min-h-[380px] md:py-14 lg:px-10">
+      <section className="relative isolate overflow-hidden border-b border-slate-200 bg-gradient-to-br from-white via-sky-50 to-[#eef6fb]">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(39,141,192,0.10),transparent_32%)]" />
+        <div className="relative mx-auto flex min-h-[170px] max-w-7xl items-center px-4 py-8 sm:min-h-[200px] sm:px-6 sm:py-10 lg:min-h-[230px] lg:px-10 lg:py-12">
           <div className="max-w-4xl">
-            <div className="inline-flex rounded-full border border-white/15 bg-white/10 px-4 py-2 text-xs font-medium tracking-[0.16em] text-white/80 backdrop-blur">
-              {trText("SIVI, TOZ VE GRANÜL GÜBRE TESİSLERİ")}
-            </div>
-            <p className="mt-4 text-sm font-medium text-blue-200">
-              {trText("Gübre üretim tesislerinde yüksek verim, sürekli kalite ve prosese uygun doğru makine kurgusu.")}
-            </p>
-            <h1 className="mt-2.5 text-[30px] font-semibold leading-[1.02] tracking-tight text-white sm:text-[38px] md:text-[44px] lg:text-[54px]">
-              {trText("Gübre Üretim Tesisleri")}
+            <h1 className="text-4xl font-semibold leading-[1.1] tracking-tight text-[#020617] sm:text-5xl">
+              {trText("GÃ¼bre Ãœretim Tesisleri")}
             </h1>
-            <p className="mt-4 max-w-3xl text-sm leading-7 text-white/82 sm:text-base sm:leading-8 lg:max-w-[52rem]">
-              {trText(
-                "Ham madde hazırlamadan sıvı, toz ve granül gübre üretimine; dozajlamadan karışıma, granülasyondan kurutma ve elemeye, soğutmadan paketlemeye kadar tüm süreci tek sistem mantığı ile planlıyoruz. Organomineral, mineral, sıvı, granül ve toz gübre hatları için proses tasarımı, ekipman seçimi, makine imalatı ve tesis kurgusu sunuyoruz.",
-              )}
-            </p>
-            <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-              <a
-                href="#gubre-uretim-formu"
-                className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-blue-600 px-6 text-sm font-semibold text-white transition hover:bg-blue-700"
+            <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+              <Link
+                href="/iletisim"
+                className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-[#278DC0] px-6 text-sm font-semibold text-white transition hover:bg-[#154764]"
               >
                 Teklif Al
-              </a>
+              </Link>
               <Link
-                href="/sektorler"
-                className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/20 bg-white/10 px-6 text-sm font-semibold text-white backdrop-blur transition hover:bg-white/15"
+                href="https://wa.me/905320580104"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-[#d7e3ec] bg-white px-6 text-sm font-semibold text-[#154764] transition hover:border-[#278DC0] hover:bg-[#278DC0]/6"
               >
-                {trText("Tüm Çözüm Alanlarına Dön")}
+                WhatsApp ile Görüş
+              </Link>
+              <Link
+                href="tel:+905320580104"
+                className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-[#d7e3ec] bg-white px-6 text-sm font-semibold text-[#154764] transition hover:border-[#278DC0] hover:bg-[#278DC0]/6"
+              >
+                Telefonla Ara
               </Link>
             </div>
           </div>
@@ -82,9 +66,9 @@ export default function FertilizerSectorExperience() {
 
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-10">
         <SectionHeading
-          eyebrow="Gübre Tesisleri"
-          title="Hangi gübre tesislerini kuruyoruz?"
-          description="Sıvı, granül ve toz gübre üretimi için farklı proses ve kapasite ihtiyaçlarına uygun tesis çözümleri sunuyoruz. Aşağıdan ilginizi çeken tesis tipini seçerek detaylara ulaşabilirsiniz."
+          eyebrow="GÃ¼bre Tesisleri"
+          title="Hangi gÃ¼bre tesislerini kuruyoruz?"
+          description="SÄ±vÄ±, granÃ¼l ve toz gÃ¼bre Ã¼retimi iÃ§in farklÄ± proses ve kapasite ihtiyaÃ§larÄ±na uygun tesis Ã§Ã¶zÃ¼mleri sunuyoruz. AÅŸaÄŸÄ±dan ilginizi Ã§eken tesis tipini seÃ§erek detaylara ulaÅŸabilirsiniz."
         />
         <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
           {fertilizerPlantCards.map((item) => (
@@ -113,8 +97,8 @@ export default function FertilizerSectorExperience() {
       <section className="mx-auto max-w-7xl px-4 pb-16 sm:px-6 lg:px-10">
         <SectionHeading
           eyebrow="Hizmetler"
-          title="Gübre üretim tesisleri için sunduğumuz hizmetler"
-          description="Gübre üretim tesislerinde proses tasarımından ekipman imalatına, saha kurulumundan devreye almaya kadar tüm süreci tek merkezden yönetiyoruz."
+          title="GÃ¼bre Ã¼retim tesisleri iÃ§in sunduÄŸumuz hizmetler"
+          description="GÃ¼bre Ã¼retim tesislerinde proses tasarÄ±mÄ±ndan ekipman imalatÄ±na, saha kurulumundan devreye almaya kadar tÃ¼m sÃ¼reci tek merkezden yÃ¶netiyoruz."
         />
         <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
           {fertilizerServiceCards.map((item) => (
@@ -129,8 +113,8 @@ export default function FertilizerSectorExperience() {
       <section className="mx-auto max-w-7xl px-4 pb-16 sm:px-6 lg:px-10">
         <SectionHeading
           eyebrow="Kritik Noktalar"
-          title="Gübre üretim tesislerinde kritik olan konular"
-          description="Yatırım kararından saha kurulumuna kadar başarıyı belirleyen teknik başlıkları kısa ve net şekilde öne çıkarıyoruz."
+          title="GÃ¼bre Ã¼retim tesislerinde kritik olan konular"
+          description="YatÄ±rÄ±m kararÄ±ndan saha kurulumuna kadar baÅŸarÄ±yÄ± belirleyen teknik baÅŸlÄ±klarÄ± kÄ±sa ve net ÅŸekilde Ã¶ne Ã§Ä±karÄ±yoruz."
         />
         <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
           {fertilizerCriticalCards.map((item) => (
@@ -145,8 +129,8 @@ export default function FertilizerSectorExperience() {
       <section className="mx-auto max-w-7xl px-4 pb-16 sm:px-6 lg:px-10">
         <SectionHeading
           eyebrow="SSS"
-          title="Gübre üretim tesisleri hakkında sık sorulan sorular"
-          description="Gübre üretim tesisi yatırımında en sık karşılaşılan soruları tek ekranda topladık."
+          title="GÃ¼bre Ã¼retim tesisleri hakkÄ±nda sÄ±k sorulan sorular"
+          description="GÃ¼bre Ã¼retim tesisi yatÄ±rÄ±mÄ±nda en sÄ±k karÅŸÄ±laÅŸÄ±lan sorularÄ± tek ekranda topladÄ±k."
         />
         <div className="mt-8 space-y-4">
           {fertilizerFaqItems.map((item) => (
@@ -162,7 +146,7 @@ export default function FertilizerSectorExperience() {
 
       <section id="gubre-uretim-formu" className="mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-10">
         <SectorInquiryForm
-          requestTargetTitle={trText("Gübre Üretim Tesisleri")}
+          requestTargetTitle={trText("GÃ¼bre Ãœretim Tesisleri")}
           initialSectorSlug="gubre-ve-granulasyon-tesisleri"
         />
       </section>

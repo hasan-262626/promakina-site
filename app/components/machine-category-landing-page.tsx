@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import { siteContact } from "../lib/site-contact";
 import { Hero } from "./Hero";
@@ -119,7 +119,7 @@ export function MachineCategoryLandingPage({
       <Hero title={title} description={heroDescription} image={heroImage}>
         <Link
           href="/iletisim"
-          className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-white px-6 text-sm font-semibold text-slate-950 transition hover:bg-slate-100"
+          className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-[#278DC0] px-6 text-sm font-semibold text-white transition hover:bg-[#154764]"
         >
           Teklif Al
         </Link>
@@ -127,7 +127,7 @@ export function MachineCategoryLandingPage({
           href={siteContact.whatsappHref}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/20 bg-white/10 px-6 text-sm font-semibold text-white transition hover:bg-white/15"
+          className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/60 bg-white/12 px-6 text-sm font-semibold text-white transition hover:border-white hover:bg-white/18"
         >
           WhatsApp
         </a>
@@ -163,7 +163,7 @@ export function MachineCategoryLandingPage({
           <div className="overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-[0_18px_45px_rgba(15,23,42,0.06)]">
             <div className="border-b border-slate-200 px-6 py-6 sm:px-8">
               <h2 className="text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">
-                Teknik Değerlendirme Özeti
+                Teknik DeÄŸerlendirme Ã–zeti
               </h2>
             </div>
             <div className="overflow-x-auto">
@@ -174,10 +174,10 @@ export function MachineCategoryLandingPage({
                       Kriter
                     </th>
                     <th className="px-6 py-4 text-left text-sm font-semibold text-slate-950 sm:px-8">
-                      Açıklama
+                      AÃ§Ä±klama
                     </th>
                     <th className="px-6 py-4 text-left text-sm font-semibold text-slate-950 sm:px-8">
-                      Proje Açısından Önemi
+                      Proje AÃ§Ä±sÄ±ndan Ã–nemi
                     </th>
                   </tr>
                 </thead>
@@ -228,10 +228,10 @@ export function MachineCategoryLandingPage({
           <div className="rounded-[32px] border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
             <div className="max-w-3xl">
               <h2 className="text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">
-                İlgili Makineler
+                Ä°lgili Makineler
               </h2>
               <p className="mt-4 text-sm leading-7 text-slate-600 sm:text-base">
-                Bu kategori içinde öne çıkan alt makine sayfalarını doğrudan inceleyebilirsiniz.
+                Bu kategori iÃ§inde Ã¶ne Ã§Ä±kan alt makine sayfalarÄ±nÄ± doÄŸrudan inceleyebilirsiniz.
               </p>
             </div>
             <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
@@ -244,7 +244,7 @@ export function MachineCategoryLandingPage({
                   <h3 className="text-lg font-semibold text-slate-950">{machine.title}</h3>
                   <p className="mt-3 text-sm leading-7 text-slate-600">{machine.description}</p>
                   <span className="mt-4 inline-flex text-sm font-semibold text-blue-700 transition group-hover:text-blue-800">
-                    Makineyi İncele
+                    Makineyi Ä°ncele
                   </span>
                 </Link>
               ))}
@@ -259,7 +259,7 @@ export function MachineCategoryLandingPage({
         <div className="site-container">
           <div className="rounded-[32px] border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
             <h2 className="text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">
-              Sık Sorulan Sorular
+              SÄ±k Sorulan Sorular
             </h2>
             <div className="mt-6 space-y-4">
               {faqs.map((faq) => (
@@ -281,7 +281,7 @@ export function MachineCategoryLandingPage({
         <div className="site-container">
           <div className="rounded-[28px] bg-blue-700 px-6 py-8 text-white shadow-[0_24px_70px_rgba(29,78,216,0.28)] sm:px-8 sm:py-10">
             <h2 className="text-2xl font-semibold tracking-tight text-white sm:text-3xl">
-              Teklif / Kapasite Değerlendirme Çağrısı
+              Teklif / Kapasite DeÄŸerlendirme Ã‡aÄŸrÄ±sÄ±
             </h2>
             <p className="mt-4 max-w-3xl text-base leading-8 text-white/90 sm:text-lg">
               {ctaText}
@@ -297,13 +297,13 @@ export function MachineCategoryLandingPage({
                 href="/hizmetler"
                 className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/25 px-6 text-sm font-semibold text-white transition hover:bg-white/10"
               >
-                Hizmetleri İncele
+                Hizmetleri Ä°ncele
               </Link>
               <Link
                 href="/hizmetler/teknik-danismanlik"
                 className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/25 px-6 text-sm font-semibold text-white transition hover:bg-white/10"
               >
-                Teknik Danışmanlık
+                Teknik DanÄ±ÅŸmanlÄ±k
               </Link>
             </div>
           </div>
@@ -312,3 +312,4 @@ export function MachineCategoryLandingPage({
     </main>
   );
 }
+

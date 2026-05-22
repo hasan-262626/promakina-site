@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import { Hero } from "./Hero";
 import { createWhatsAppHref, siteContact } from "../lib/site-contact";
 
@@ -59,7 +59,7 @@ export function SeoRichLandingPage({
   heroTitle,
   heroDescription,
   image,
-  introLabel = "Teknik Çözüm",
+  introLabel = "Teknik Ã‡Ã¶zÃ¼m",
   introTitle,
   introParagraphs,
   breadcrumbs,
@@ -126,7 +126,7 @@ export function SeoRichLandingPage({
   };
 
   const whatsappHref = createWhatsAppHref(
-    `Merhaba, Pro Makina web sitenizden ulaşıyorum. Aşağıdaki ürün/hizmet için teklif almak istiyorum: ${heroTitle}`,
+    `Merhaba, Pro Makina web sitenizden ulaÅŸÄ±yorum. AÅŸaÄŸÄ±daki Ã¼rÃ¼n/hizmet iÃ§in teklif almak istiyorum: ${heroTitle}`,
   );
 
   return (
@@ -149,7 +149,7 @@ export function SeoRichLandingPage({
           href="/iletisim"
           data-cta-event="quote_button_click"
           data-cta-label={`${heroTitle}_hero_quote`}
-          className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-white px-6 text-sm font-semibold text-slate-950 transition hover:bg-slate-100"
+          className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-[#278DC0] px-6 text-sm font-semibold text-white transition hover:bg-[#154764]"
         >
           Teklif Al
         </Link>
@@ -157,13 +157,13 @@ export function SeoRichLandingPage({
           href={whatsappHref}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/20 bg-white/10 px-6 text-sm font-semibold text-white transition hover:bg-white/15"
+          className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/60 bg-white/12 px-6 text-sm font-semibold text-white transition hover:border-white hover:bg-white/18"
         >
           WhatsApp
         </a>
         <a
           href={siteContact.phoneHref}
-          className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/20 bg-white/10 px-6 text-sm font-semibold text-white transition hover:bg-white/15"
+          className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/60 bg-white/12 px-6 text-sm font-semibold text-white transition hover:border-white hover:bg-white/18"
         >
           Telefon
         </a>
@@ -242,13 +242,13 @@ export function SeoRichLandingPage({
 
           <section className="rounded-[32px] border border-slate-200 bg-white px-6 py-8 shadow-[0_18px_45px_rgba(15,23,42,0.05)] sm:px-8 sm:py-10 lg:px-12">
             <h2 className="text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
-              Teknik Değerlendirme Kriterleri
+              Teknik DeÄŸerlendirme Kriterleri
             </h2>
             <div className="mt-6 overflow-hidden rounded-[24px] border border-slate-200">
               <div className="grid grid-cols-1 border-b border-slate-200 bg-slate-50 text-sm font-semibold text-slate-900 md:grid-cols-3">
                 <div className="px-5 py-4">Kriter</div>
-                <div className="px-5 py-4">Açıklama</div>
-                <div className="px-5 py-4">Mühendislik Önemi</div>
+                <div className="px-5 py-4">AÃ§Ä±klama</div>
+                <div className="px-5 py-4">MÃ¼hendislik Ã–nemi</div>
               </div>
               {summaryRows.map((row) => (
                 <div
@@ -265,7 +265,7 @@ export function SeoRichLandingPage({
 
           <section className="rounded-[32px] border border-slate-200 bg-white px-6 py-8 shadow-[0_18px_45px_rgba(15,23,42,0.05)] sm:px-8 sm:py-10 lg:px-12">
             <h2 className="text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
-              Sık Sorulan Sorular
+              SÄ±k Sorulan Sorular
             </h2>
             <div className="mt-6 grid gap-4">
               {faqs.map((faq) => (
@@ -286,7 +286,7 @@ export function SeoRichLandingPage({
 
           <section className="rounded-[32px] border border-slate-200 bg-white px-6 py-8 shadow-[0_18px_45px_rgba(15,23,42,0.05)] sm:px-8 sm:py-10 lg:px-12">
             <h2 className="text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
-              İlgili Sayfalar
+              Ä°lgili Sayfalar
             </h2>
             <div className="mt-6 grid gap-6 lg:grid-cols-2">
               {relatedGroups.map((group) => (
@@ -310,7 +310,7 @@ export function SeoRichLandingPage({
 
           <section className="rounded-[32px] bg-blue-700 px-6 py-8 text-white shadow-[0_24px_70px_rgba(29,78,216,0.28)] sm:px-8 sm:py-10 lg:px-12">
             <h2 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-              Projeniz için teknik teklif alın
+              Projeniz iÃ§in teknik teklif alÄ±n
             </h2>
             <p className="mt-4 max-w-3xl text-sm leading-8 text-white/88 sm:text-base">
               {ctaText}
@@ -345,3 +345,4 @@ export function SeoRichLandingPage({
     </main>
   );
 }
+

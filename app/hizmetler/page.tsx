@@ -93,7 +93,28 @@ export default function ServicesPage() {
         title="Hizmetler"
         description="Planlama, mühendislik, imalat, kurulum, devreye alma ve teknik destek adımlarını entegre hizmet yapısı içinde sunuyoruz. Anahtar teslim tesis kurulumu, proses tasarımı, makine imalatı, modernizasyon, danışmanlık ve bakım hizmetlerini tek merkezden yönetiyoruz."
         image="/images/hizmetler1.png"
-      />
+      >
+        <Link
+          href="/iletisim"
+          className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-[#278DC0] px-6 text-sm font-semibold text-white transition hover:bg-[#154764]"
+        >
+          Teklif Al
+        </Link>
+        <Link
+          href="https://wa.me/905320580104"
+          target="_blank"
+          rel="noreferrer"
+          className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/60 bg-white/12 px-6 text-sm font-semibold text-white transition hover:border-white hover:bg-white/18"
+        >
+          WhatsApp ile Görüş
+        </Link>
+        <Link
+          href="tel:+905320580104"
+          className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/60 bg-white/12 px-6 text-sm font-semibold text-white transition hover:border-white hover:bg-white/18"
+        >
+          Telefonla Ara
+        </Link>
+      </Hero>
 
       <section id="hizmet-basliklari" className="section-space">
         <div className="site-container">

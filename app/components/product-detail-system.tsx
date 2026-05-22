@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -45,13 +45,13 @@ type ProductDetailSystemProps = {
 };
 
 type SectionKey =
-  | "ürün-detaylari"
+  | "Ã¼rÃ¼n-detaylari"
   | "teknik-ozellikler"
   | "uygulama-alanlari"
   | "galeri"
   | "opsiyonel-ekipman"
   | "yedek-parca"
-  | "diger-ürünler";
+  | "diger-Ã¼rÃ¼nler";
 
 type FieldConfig = {
   key: string;
@@ -62,141 +62,141 @@ type FieldConfig = {
 };
 
 const sections: { id: SectionKey; label: string }[] = [
-  { id: "ürün-detaylari", label: "Makine Hakkında" },
-  { id: "teknik-ozellikler", label: "Teknik Özellikler" },
-  { id: "uygulama-alanlari", label: "Uygulama Alanları" },
+  { id: "Ã¼rÃ¼n-detaylari", label: "Makine HakkÄ±nda" },
+  { id: "teknik-ozellikler", label: "Teknik Ã–zellikler" },
+  { id: "uygulama-alanlari", label: "Uygulama AlanlarÄ±" },
   { id: "galeri", label: "Galeri" },
   { id: "opsiyonel-ekipman", label: "Opsiyonel Ekipman" },
-  { id: "yedek-parca", label: "Yedek Parça" },
-  { id: "diger-ürünler", label: "Diğer Ürünler" },
+  { id: "yedek-parca", label: "Yedek ParÃ§a" },
+  { id: "diger-Ã¼rÃ¼nler", label: "DiÄŸer ÃœrÃ¼nler" },
 ];
 
 const materialOptions = [
-  "Toz Ürün",
-  "Granül Ürün",
-  "Organik Karışım",
+  "Toz ÃœrÃ¼n",
+  "GranÃ¼l ÃœrÃ¼n",
+  "Organik KarÄ±ÅŸÄ±m",
   "Kompost",
   "Mineral",
-  "Gübre Hammaddesi",
+  "GÃ¼bre Hammaddesi",
   "NPK / Organomineral",
-  "Nemli Karışım",
-  "Diğer",
+  "Nemli KarÄ±ÅŸÄ±m",
+  "DiÄŸer",
 ];
 
 const materialDensityDefaults: Record<string, string> = {
-  "Toz Ürün": "850",
-  "Granül Ürün": "1100",
-  "Organik Karışım": "650",
+  "Toz ÃœrÃ¼n": "850",
+  "GranÃ¼l ÃœrÃ¼n": "1100",
+  "Organik KarÄ±ÅŸÄ±m": "650",
   Kompost: "550",
   Mineral: "1400",
-  "Gübre Hammaddesi": "1200",
+  "GÃ¼bre Hammaddesi": "1200",
   "NPK / Organomineral": "1150",
-  "Nemli Karışım": "750",
-  Diğer: "1000",
+  "Nemli KarÄ±ÅŸÄ±m": "750",
+  DiÄŸer: "1000",
 };
 
 const commonFields: FieldConfig[] = [
   { key: "name", label: "Ad Soyad", placeholder: "Ad Soyad" },
-  { key: "company", label: "Firma", placeholder: "Firma adı" },
+  { key: "company", label: "Firma", placeholder: "Firma adÄ±" },
   { key: "phone", label: "Telefon", placeholder: "+90..." },
   { key: "email", label: "E-posta", placeholder: "ornek@firma.com" },
 ];
 
 const calculatorFields: Record<CalculatorFamily, FieldConfig[]> = {
   drum: [
-    { key: "processType", label: "İstenen proses", type: "select", options: ["Granülasyon", "Kurutma", "Soğutma", "Kaplama", "Kompost"] },
+    { key: "processType", label: "Ä°stenen proses", type: "select", options: ["GranÃ¼lasyon", "Kurutma", "SoÄŸutma", "Kaplama", "Kompost"] },
     { key: "capacity", label: "Kapasite (ton/saat)", type: "number", placeholder: "12" },
-    { key: "material", label: "Ürün tipi / malzeme", type: "select", options: materialOptions },
-    { key: "bulkDensity", label: "Yığın yoğunluğu (kg/m³)", type: "number", placeholder: "950" },
-    { key: "inletMoisture", label: "Giriş nemi (%)", type: "number", placeholder: "18" },
-    { key: "outletMoisture", label: "Çıkış nemi (%)", type: "number", placeholder: "8" },
-    { key: "safetyMargin", label: "Güvenlik payı (%)", type: "number", placeholder: "10" },
-    { key: "workingSchedule", label: "Çalışma süresi", type: "select", options: ["8 saat", "16 saat", "24 saat", "Sürekli çalışma"] },
+    { key: "material", label: "ÃœrÃ¼n tipi / malzeme", type: "select", options: materialOptions },
+    { key: "bulkDensity", label: "YÄ±ÄŸÄ±n yoÄŸunluÄŸu (kg/mÂ³)", type: "number", placeholder: "950" },
+    { key: "inletMoisture", label: "GiriÅŸ nemi (%)", type: "number", placeholder: "18" },
+    { key: "outletMoisture", label: "Ã‡Ä±kÄ±ÅŸ nemi (%)", type: "number", placeholder: "8" },
+    { key: "safetyMargin", label: "GÃ¼venlik payÄ± (%)", type: "number", placeholder: "10" },
+    { key: "workingSchedule", label: "Ã‡alÄ±ÅŸma sÃ¼resi", type: "select", options: ["8 saat", "16 saat", "24 saat", "SÃ¼rekli Ã§alÄ±ÅŸma"] },
     { key: "notes", label: "Notlar", type: "textarea", placeholder: "Proses veya saha notu" },
   ],
   transport: [
     { key: "material", label: "Malzeme tipi", type: "select", options: materialOptions },
     { key: "capacity", label: "Kapasite (ton/saat)", type: "number", placeholder: "25" },
-    { key: "bulkDensity", label: "Yoğunluk (kg/m³)", type: "number", placeholder: "950" },
-    { key: "lineLength", label: "Hat uzunluğu (m)", type: "number", placeholder: "18" },
-    { key: "incline", label: "Eğim (°)", type: "number", placeholder: "8" },
-    { key: "workingType", label: "Çalışma tipi", type: "select", options: ["Sürekli", "Partili", "Ağır hizmet", "Standart"] },
-    { key: "feedType", label: "Besleme şekli", type: "select", options: ["Bunker altı", "Konveyörden", "Serbest düşüş", "Dozajlı besleme"] },
-    { key: "notes", label: "Notlar", type: "textarea", placeholder: "Hat veya ürün notu" },
+    { key: "bulkDensity", label: "YoÄŸunluk (kg/mÂ³)", type: "number", placeholder: "950" },
+    { key: "lineLength", label: "Hat uzunluÄŸu (m)", type: "number", placeholder: "18" },
+    { key: "incline", label: "EÄŸim (Â°)", type: "number", placeholder: "8" },
+    { key: "workingType", label: "Ã‡alÄ±ÅŸma tipi", type: "select", options: ["SÃ¼rekli", "Partili", "AÄŸÄ±r hizmet", "Standart"] },
+    { key: "feedType", label: "Besleme ÅŸekli", type: "select", options: ["Bunker altÄ±", "KonveyÃ¶rden", "Serbest dÃ¼ÅŸÃ¼ÅŸ", "DozajlÄ± besleme"] },
+    { key: "notes", label: "Notlar", type: "textarea", placeholder: "Hat veya Ã¼rÃ¼n notu" },
   ],
   crusher: [
     { key: "material", label: "Malzeme tipi", type: "select", options: materialOptions },
     { key: "capacity", label: "Kapasite (ton/saat)", type: "number", placeholder: "15" },
-    { key: "feedSize", label: "Giriş boyutu (mm)", type: "number", placeholder: "120" },
-    { key: "targetSize", label: "Hedef çıkış boyutu (mm)", type: "number", placeholder: "20" },
+    { key: "feedSize", label: "GiriÅŸ boyutu (mm)", type: "number", placeholder: "120" },
+    { key: "targetSize", label: "Hedef Ã§Ä±kÄ±ÅŸ boyutu (mm)", type: "number", placeholder: "20" },
     { key: "moisture", label: "Nem (%)", type: "number", placeholder: "25" },
-    { key: "workingType", label: "Çalışma tipi", type: "select", options: ["Sürekli", "Partili", "Ağır hizmet"] },
+    { key: "workingType", label: "Ã‡alÄ±ÅŸma tipi", type: "select", options: ["SÃ¼rekli", "Partili", "AÄŸÄ±r hizmet"] },
     { key: "notes", label: "Notlar", type: "textarea", placeholder: "Malzeme karakteri ve notlar" },
   ],
   reactor: [
-    { key: "processType", label: "Ürün / proses tipi", placeholder: "Sıvı gübre çözeltisi" },
-    { key: "batchVolume", label: "Batch hacmi (m³)", type: "number", placeholder: "8" },
-    { key: "dailyCapacity", label: "Günlük kapasite", placeholder: "40 ton/gün" },
-    { key: "mixingNeed", label: "Karıştırma ihtiyacı", type: "select", options: ["Düşük", "Orta", "Yüksek"] },
-    { key: "pressureMode", label: "Basınç durumu", type: "select", options: ["Atmosferik", "Basınçlı"] },
-    { key: "thermalNeed", label: "Isıtma / soğutma ihtiyacı", type: "select", options: ["Yok", "Isıtma", "Soğutma", "Her ikisi"] },
-    { key: "notes", label: "Notlar", type: "textarea", placeholder: "Proses ve tesis notları" },
+    { key: "processType", label: "ÃœrÃ¼n / proses tipi", placeholder: "SÄ±vÄ± gÃ¼bre Ã§Ã¶zeltisi" },
+    { key: "batchVolume", label: "Batch hacmi (mÂ³)", type: "number", placeholder: "8" },
+    { key: "dailyCapacity", label: "GÃ¼nlÃ¼k kapasite", placeholder: "40 ton/gÃ¼n" },
+    { key: "mixingNeed", label: "KarÄ±ÅŸtÄ±rma ihtiyacÄ±", type: "select", options: ["DÃ¼ÅŸÃ¼k", "Orta", "YÃ¼ksek"] },
+    { key: "pressureMode", label: "BasÄ±nÃ§ durumu", type: "select", options: ["Atmosferik", "BasÄ±nÃ§lÄ±"] },
+    { key: "thermalNeed", label: "IsÄ±tma / soÄŸutma ihtiyacÄ±", type: "select", options: ["Yok", "IsÄ±tma", "SoÄŸutma", "Her ikisi"] },
+    { key: "notes", label: "Notlar", type: "textarea", placeholder: "Proses ve tesis notlarÄ±" },
   ],
   screening: [
     { key: "material", label: "Malzeme tipi", type: "select", options: materialOptions },
     { key: "capacity", label: "Kapasite (ton/saat)", type: "number", placeholder: "20" },
     { key: "feedSize", label: "Besleme boyutu", placeholder: "0-30 mm" },
-    { key: "targetSize", label: "Ayırma aralığı", placeholder: "2-4 mm / 4-6 mm" },
+    { key: "targetSize", label: "AyÄ±rma aralÄ±ÄŸÄ±", placeholder: "2-4 mm / 4-6 mm" },
     { key: "moisture", label: "Nem (%)", type: "number", placeholder: "12" },
-    { key: "notes", label: "Notlar", type: "textarea", placeholder: "Ürün davranışı ve eleme notları" },
+    { key: "notes", label: "Notlar", type: "textarea", placeholder: "ÃœrÃ¼n davranÄ±ÅŸÄ± ve eleme notlarÄ±" },
   ],
   dust: [
-    { key: "material", label: "Toz / ürün tipi", type: "select", options: materialOptions },
-    { key: "airflow", label: "Hava debisi (m³/saat)", type: "number", placeholder: "18000" },
-    { key: "dustLoad", label: "Toz yükü", placeholder: "Orta / yüksek" },
-    { key: "environment", label: "Ortam tipi", type: "select", options: ["Kapalı alan", "Açık alan", "Kimyasal ortam", "ATEX riski"] },
-    { key: "notes", label: "Notlar", type: "textarea", placeholder: "Filtrasyon ve saha notları" },
+    { key: "material", label: "Toz / Ã¼rÃ¼n tipi", type: "select", options: materialOptions },
+    { key: "airflow", label: "Hava debisi (mÂ³/saat)", type: "number", placeholder: "18000" },
+    { key: "dustLoad", label: "Toz yÃ¼kÃ¼", placeholder: "Orta / yÃ¼ksek" },
+    { key: "environment", label: "Ortam tipi", type: "select", options: ["KapalÄ± alan", "AÃ§Ä±k alan", "Kimyasal ortam", "ATEX riski"] },
+    { key: "notes", label: "Notlar", type: "textarea", placeholder: "Filtrasyon ve saha notlarÄ±" },
   ],
   packaging: [
-    { key: "material", label: "Ürün tipi", type: "select", options: materialOptions },
+    { key: "material", label: "ÃœrÃ¼n tipi", type: "select", options: materialOptions },
     { key: "capacity", label: "Kapasite", placeholder: "6 ton/saat veya 240 torba/saat" },
-    { key: "packageType", label: "Ambalaj tipi", type: "select", options: ["Açık ağız torba", "Valfli torba", "Big Bag", "FFS"] },
-    { key: "bagSize", label: "Ambalaj ölçüsü", placeholder: "25 kg / 50 kg / 1000 kg" },
-    { key: "notes", label: "Notlar", type: "textarea", placeholder: "Hat sonu ve otomasyon notları" },
+    { key: "packageType", label: "Ambalaj tipi", type: "select", options: ["AÃ§Ä±k aÄŸÄ±z torba", "Valfli torba", "Big Bag", "FFS"] },
+    { key: "bagSize", label: "Ambalaj Ã¶lÃ§Ã¼sÃ¼", placeholder: "25 kg / 50 kg / 1000 kg" },
+    { key: "notes", label: "Notlar", type: "textarea", placeholder: "Hat sonu ve otomasyon notlarÄ±" },
   ],
   storage: [
-    { key: "material", label: "Ürün tipi", type: "select", options: materialOptions },
-    { key: "capacity", label: "Kapasite / akış ihtiyacı", placeholder: "20 ton/saat" },
-    { key: "volume", label: "Depolama hacmi", placeholder: "50 m³" },
-    { key: "feedType", label: "Besleme tipi", type: "select", options: ["Silo", "Bunker", "Vidalı besleyici", "Rotary valf", "Sürgülü klape"] },
-    { key: "notes", label: "Notlar", type: "textarea", placeholder: "Akış ve saha notları" },
+    { key: "material", label: "ÃœrÃ¼n tipi", type: "select", options: materialOptions },
+    { key: "capacity", label: "Kapasite / akÄ±ÅŸ ihtiyacÄ±", placeholder: "20 ton/saat" },
+    { key: "volume", label: "Depolama hacmi", placeholder: "50 mÂ³" },
+    { key: "feedType", label: "Besleme tipi", type: "select", options: ["Silo", "Bunker", "VidalÄ± besleyici", "Rotary valf", "SÃ¼rgÃ¼lÃ¼ klape"] },
+    { key: "notes", label: "Notlar", type: "textarea", placeholder: "AkÄ±ÅŸ ve saha notlarÄ±" },
   ],
   auxiliary: [
-    { key: "material", label: "Ürün tipi", type: "select", options: materialOptions },
-    { key: "capacity", label: "Kapasite / akış ihtiyacı", placeholder: "20 ton/saat" },
-    { key: "lineLength", label: "Hat / boşaltma mesafesi", placeholder: "12 m" },
-    { key: "feedType", label: "Uygulama tipi", type: "select", options: ["Silobas yükleme", "Hat yönlendirme", "Akış kontrolü", "Boşaltma kontrolü"] },
-    { key: "notes", label: "Notlar", type: "textarea", placeholder: "Saha ve ürün akışı notları" },
+    { key: "material", label: "ÃœrÃ¼n tipi", type: "select", options: materialOptions },
+    { key: "capacity", label: "Kapasite / akÄ±ÅŸ ihtiyacÄ±", placeholder: "20 ton/saat" },
+    { key: "lineLength", label: "Hat / boÅŸaltma mesafesi", placeholder: "12 m" },
+    { key: "feedType", label: "Uygulama tipi", type: "select", options: ["Silobas yÃ¼kleme", "Hat yÃ¶nlendirme", "AkÄ±ÅŸ kontrolÃ¼", "BoÅŸaltma kontrolÃ¼"] },
+    { key: "notes", label: "Notlar", type: "textarea", placeholder: "Saha ve Ã¼rÃ¼n akÄ±ÅŸÄ± notlarÄ±" },
   ],
   dosage: [
-    { key: "material", label: "Ürün tipi", type: "select", options: materialOptions },
-    { key: "capacity", label: "Kapasite / reçete ihtiyacı", placeholder: "12 ton/saat" },
-    { key: "bulkDensity", label: "Yoğunluk (kg/m³)", type: "number", placeholder: "950" },
-    { key: "feedType", label: "Dozaj tipi", type: "select", options: ["Mikro dozajlama", "Makro dozajlama", "Dozaj bant kantarı"] },
-    { key: "notes", label: "Notlar", type: "textarea", placeholder: "Reçete, hammadde ve proses notları" },
+    { key: "material", label: "ÃœrÃ¼n tipi", type: "select", options: materialOptions },
+    { key: "capacity", label: "Kapasite / reÃ§ete ihtiyacÄ±", placeholder: "12 ton/saat" },
+    { key: "bulkDensity", label: "YoÄŸunluk (kg/mÂ³)", type: "number", placeholder: "950" },
+    { key: "feedType", label: "Dozaj tipi", type: "select", options: ["Mikro dozajlama", "Makro dozajlama", "Dozaj bant kantarÄ±"] },
+    { key: "notes", label: "Notlar", type: "textarea", placeholder: "ReÃ§ete, hammadde ve proses notlarÄ±" },
   ],
 };
 
 const familyLabels: Record<CalculatorFamily, string> = {
   drum: "tambur",
-  transport: "taşıma ekipmanı",
-  crusher: "kırıcı",
-  reactor: "reaktör / tank",
+  transport: "taÅŸÄ±ma ekipmanÄ±",
+  crusher: "kÄ±rÄ±cÄ±",
+  reactor: "reaktÃ¶r / tank",
   screening: "eleme sistemi",
   dust: "toz toplama sistemi",
   packaging: "paketleme sistemi",
   storage: "depolama / besleme sistemi",
-  auxiliary: "yardımcı ekipman / akış sistemi",
+  auxiliary: "yardÄ±mcÄ± ekipman / akÄ±ÅŸ sistemi",
   dosage: "dozajlama sistemi",
 };
 
@@ -222,45 +222,45 @@ function formatSummary(title: string, family: CalculatorFamily, values: Record<s
   const notes = values.notes?.trim();
 
   if (family === "drum") {
-    return `${title} için ${capacity || "belirtilmeyen"} ton/saat kapasite, ${values.inletMoisture ? `%${values.inletMoisture} giriş nemi, ` : ""}${values.outletMoisture ? `%${values.outletMoisture} çıkış nemi ve ` : ""}${material} verisine göre teknik değerlendirme talebi oluşturuldu${notes ? `. Not: ${notes}` : "."}`;
+    return `${title} iÃ§in ${capacity || "belirtilmeyen"} ton/saat kapasite, ${values.inletMoisture ? `%${values.inletMoisture} giriÅŸ nemi, ` : ""}${values.outletMoisture ? `%${values.outletMoisture} Ã§Ä±kÄ±ÅŸ nemi ve ` : ""}${material} verisine gÃ¶re teknik deÄŸerlendirme talebi oluÅŸturuldu${notes ? `. Not: ${notes}` : "."}`;
   }
 
   if (family === "transport") {
-    return `${title} için ${capacity || "belirtilmeyen"} ton/saat kapasite, ${values.lineLength || "belirtilmeyen"} metre hat uzunluğu ve ${material} taşıma ihtiyacına göre çözüm talebi hazırlandı${notes ? `. Not: ${notes}` : "."}`;
+    return `${title} iÃ§in ${capacity || "belirtilmeyen"} ton/saat kapasite, ${values.lineLength || "belirtilmeyen"} metre hat uzunluÄŸu ve ${material} taÅŸÄ±ma ihtiyacÄ±na gÃ¶re Ã§Ã¶zÃ¼m talebi hazÄ±rlandÄ±${notes ? `. Not: ${notes}` : "."}`;
   }
 
   if (family === "crusher") {
-    return `${title} için ${capacity || "belirtilmeyen"} ton/saat kapasite, ${values.feedSize || "belirtilmeyen"} mm giriş boyutu ve ${values.targetSize || "belirtilmeyen"} mm hedef çıkış ölçüsüne göre kırma çözümü talebi oluşturuldu${notes ? `. Not: ${notes}` : "."}`;
+    return `${title} iÃ§in ${capacity || "belirtilmeyen"} ton/saat kapasite, ${values.feedSize || "belirtilmeyen"} mm giriÅŸ boyutu ve ${values.targetSize || "belirtilmeyen"} mm hedef Ã§Ä±kÄ±ÅŸ Ã¶lÃ§Ã¼sÃ¼ne gÃ¶re kÄ±rma Ã§Ã¶zÃ¼mÃ¼ talebi oluÅŸturuldu${notes ? `. Not: ${notes}` : "."}`;
   }
 
   if (family === "reactor") {
-    return `${title} için ${values.batchVolume || "belirtilmeyen"} m³ batch hacmi, ${values.dailyCapacity || "belirtilmeyen"} günlük kapasite ve ${material} prosesi için teknik çözüm talebi oluşturuldu${notes ? `. Not: ${notes}` : "."}`;
+    return `${title} iÃ§in ${values.batchVolume || "belirtilmeyen"} mÂ³ batch hacmi, ${values.dailyCapacity || "belirtilmeyen"} gÃ¼nlÃ¼k kapasite ve ${material} prosesi iÃ§in teknik Ã§Ã¶zÃ¼m talebi oluÅŸturuldu${notes ? `. Not: ${notes}` : "."}`;
   }
 
-  return `${title} için ${capacity || values.volume || "belirtilmeyen"} kapasite/hacim, ${material} ve girilen proses verilerine göre teknik değerlendirme talebi oluşturuldu${notes ? `. Not: ${notes}` : "."}`;
+  return `${title} iÃ§in ${capacity || values.volume || "belirtilmeyen"} kapasite/hacim, ${material} ve girilen proses verilerine gÃ¶re teknik deÄŸerlendirme talebi oluÅŸturuldu${notes ? `. Not: ${notes}` : "."}`;
 }
 
 function buildMessage(title: string, categoryLabel: string, family: CalculatorFamily, values: Record<string, string>, summary: string) {
-  const lines = [`Merhaba, ${title} için kapasite hesabı oluşturdum.`, "", `Ürün grubu: ${categoryLabel}`];
+  const lines = [`Merhaba, ${title} iÃ§in kapasite hesabÄ± oluÅŸturdum.`, "", `ÃœrÃ¼n grubu: ${categoryLabel}`];
   const entries: [string, string | undefined][] = [
     ["Ad Soyad", values.name],
     ["Firma", values.company],
     ["Telefon", values.phone],
     ["E-posta", values.email],
-    ["İstenen proses", values.processType],
+    ["Ä°stenen proses", values.processType],
     ["Kapasite", values.capacity ? `${values.capacity} ton/saat` : undefined],
-    ["Ürün tipi", values.materialOther || values.material],
-    ["Yığın yoğunluğu", values.bulkDensity ? `${values.bulkDensity} kg/m³` : undefined],
-    ["Giriş nemi", values.inletMoisture ? `%${values.inletMoisture}` : undefined],
-    ["Çıkış nemi", values.outletMoisture ? `%${values.outletMoisture}` : undefined],
-    ["Güvenlik payı", values.safetyMargin ? `%${values.safetyMargin}` : undefined],
-    ["Çalışma süresi", values.workingSchedule],
-    ["Hat uzunluğu", values.lineLength ? `${values.lineLength} m` : undefined],
-    ["Eğim", values.incline ? `${values.incline}°` : undefined],
-    ["Giriş boyutu", values.feedSize ? `${values.feedSize} mm` : undefined],
-    ["Hedef çıkış boyutu", values.targetSize ? `${values.targetSize} mm` : undefined],
-    ["Batch hacmi", values.batchVolume ? `${values.batchVolume} m³` : undefined],
-    ["Günlük kapasite", values.dailyCapacity],
+    ["ÃœrÃ¼n tipi", values.materialOther || values.material],
+    ["YÄ±ÄŸÄ±n yoÄŸunluÄŸu", values.bulkDensity ? `${values.bulkDensity} kg/mÂ³` : undefined],
+    ["GiriÅŸ nemi", values.inletMoisture ? `%${values.inletMoisture}` : undefined],
+    ["Ã‡Ä±kÄ±ÅŸ nemi", values.outletMoisture ? `%${values.outletMoisture}` : undefined],
+    ["GÃ¼venlik payÄ±", values.safetyMargin ? `%${values.safetyMargin}` : undefined],
+    ["Ã‡alÄ±ÅŸma sÃ¼resi", values.workingSchedule],
+    ["Hat uzunluÄŸu", values.lineLength ? `${values.lineLength} m` : undefined],
+    ["EÄŸim", values.incline ? `${values.incline}Â°` : undefined],
+    ["GiriÅŸ boyutu", values.feedSize ? `${values.feedSize} mm` : undefined],
+    ["Hedef Ã§Ä±kÄ±ÅŸ boyutu", values.targetSize ? `${values.targetSize} mm` : undefined],
+    ["Batch hacmi", values.batchVolume ? `${values.batchVolume} mÂ³` : undefined],
+    ["GÃ¼nlÃ¼k kapasite", values.dailyCapacity],
     ["Notlar", values.notes],
   ];
 
@@ -268,16 +268,16 @@ function buildMessage(title: string, categoryLabel: string, family: CalculatorFa
     if (value) lines.push(`${label}: ${value}`);
   });
 
-  lines.push("", "Teknik Özet:", summary, "", `Bu veriler için ${familyLabels[family]} çözümü ve teklif talep ediyorum.`);
+  lines.push("", "Teknik Ã–zet:", summary, "", `Bu veriler iÃ§in ${familyLabels[family]} Ã§Ã¶zÃ¼mÃ¼ ve teklif talep ediyorum.`);
   return lines.join("\n");
 }
 
 function getDefaultDrumProcess(title: string) {
   const normalized = title.toLocaleLowerCase("tr-TR");
 
-  if (normalized.includes("gran")) return "Granülatör tamburu";
+  if (normalized.includes("gran")) return "GranÃ¼latÃ¶r tamburu";
   if (normalized.includes("kurut")) return "Kurutma tamburu";
-  if (normalized.includes("soğut") || normalized.includes("sogut")) return "Soğutma tamburu";
+  if (normalized.includes("soÄŸut") || normalized.includes("sogut")) return "SoÄŸutma tamburu";
   if (normalized.includes("kaplama")) return "Kaplama tamburu";
   if (normalized.includes("kompost") || normalized.includes("olgun")) return "Kompost tamburu";
 
@@ -307,7 +307,7 @@ function ProductCalculatorModal(props: {
       <div className="max-h-[90vh] w-full max-w-4xl overflow-hidden rounded-[28px] border border-slate-200 bg-white shadow-[0_32px_90px_rgba(15,23,42,0.24)]">
         <div className="flex items-center justify-between border-b border-slate-200 px-6 py-5 sm:px-8">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-blue-700">Kapasite Hesabı</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-blue-700">Kapasite HesabÄ±</p>
             <h3 className="mt-1 text-2xl font-semibold tracking-tight text-slate-950">{title}</h3>
           </div>
           <button type="button" onClick={onClose} className="rounded-full border border-slate-200 px-4 py-2 text-sm font-semibold text-slate-600 transition hover:border-slate-300 hover:text-slate-900">
@@ -326,7 +326,7 @@ function ProductCalculatorModal(props: {
                   <span className="text-sm font-semibold text-slate-800">{field.label}</span>
                   {field.type === "select" ? (
                     <select value={value} onChange={(e) => onChange(field.key, e.target.value)} className={commonClass}>
-                      <option value="">Seçiniz</option>
+                      <option value="">SeÃ§iniz</option>
                       {field.options?.map((option) => (
                         <option key={option} value={option}>
                           {option}
@@ -342,13 +342,13 @@ function ProductCalculatorModal(props: {
               );
             })}
 
-            {values.material === "Diğer" ? (
+            {values.material === "DiÄŸer" ? (
               <label className="md:col-span-2">
-                <span className="text-sm font-semibold text-slate-800">Diğer ürün açıklaması</span>
+                <span className="text-sm font-semibold text-slate-800">DiÄŸer Ã¼rÃ¼n aÃ§Ä±klamasÄ±</span>
                 <input
                   value={values.materialOther ?? ""}
                   onChange={(e) => onChange("materialOther", e.target.value)}
-                  placeholder="Ürün tipini yazın"
+                  placeholder="ÃœrÃ¼n tipini yazÄ±n"
                   className="mt-2 w-full rounded-2xl border border-slate-300 bg-white px-4 py-3 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-blue-500 focus:ring-4 focus:ring-blue-100"
                 />
               </label>
@@ -359,10 +359,10 @@ function ProductCalculatorModal(props: {
             {!summary ? (
               <div className="flex flex-col gap-3 sm:flex-row sm:justify-end">
                 <button type="button" onClick={onClose} className="rounded-full border border-slate-300 px-6 py-3 text-sm font-semibold text-slate-700 transition hover:border-slate-400">
-                  Vazgeç
+                  VazgeÃ§
                 </button>
                 <button type="button" onClick={onCreateSummary} className="rounded-full bg-blue-600 px-6 py-3 text-sm font-semibold text-white transition hover:bg-blue-500">
-                  Teknik Özeti Oluştur
+                  Teknik Ã–zeti OluÅŸtur
                 </button>
               </div>
             ) : (
@@ -370,13 +370,13 @@ function ProductCalculatorModal(props: {
                 <div className="rounded-[24px] border border-slate-200 bg-slate-50 px-5 py-4 text-sm leading-7 text-slate-700">{summary}</div>
                 <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:justify-end">
                   <button type="button" onClick={onCreateSummary} className="rounded-full border border-slate-300 px-6 py-3 text-sm font-semibold text-slate-700 transition hover:border-slate-400">
-                    Teknik Özeti Güncelle
+                    Teknik Ã–zeti GÃ¼ncelle
                   </button>
                   <a href={whatsappHref} target="_blank" rel="noopener noreferrer" className="rounded-full bg-green-600 px-6 py-3 text-center text-sm font-semibold text-white transition hover:bg-green-500">
-                    WhatsApp ile Gönder
+                    WhatsApp ile GÃ¶nder
                   </a>
                   <a href={mailHref} className="rounded-full border border-slate-300 px-6 py-3 text-center text-sm font-semibold text-slate-800 transition hover:border-slate-400">
-                    Mail ile Gönder
+                    Mail ile GÃ¶nder
                   </a>
                 </div>
               </>
@@ -396,7 +396,7 @@ export function ProductDetailSystem({
   title,
   heroDescription,
   heroImage,
-  overviewTitle = "Makine Hakkında",
+  overviewTitle = "Makine HakkÄ±nda",
   overviewParagraphs,
   highlightTitle = "Avantajlar",
   highlightText,
@@ -411,7 +411,7 @@ export function ProductDetailSystem({
   calculatorFamily,
   openCalculatorOnLoad = false,
 }: ProductDetailSystemProps) {
-  const [activeTab, setActiveTab] = useState<SectionKey>("ürün-detaylari");
+  const [activeTab, setActiveTab] = useState<SectionKey>("Ã¼rÃ¼n-detaylari");
   const [isCalculatorOpen, setIsCalculatorOpen] = useState(false);
   const [calculatorValues, setCalculatorValues] = useState<Record<string, string>>({});
   const [calculationSummary, setCalculationSummary] = useState("");
@@ -455,12 +455,12 @@ export function ProductDetailSystem({
     setCalculationSummary(formatSummary(title, calculatorFamily, calculatorValues));
   };
 
-  const dynamicCtaTitle = ctaTitle ?? `${title} için doğru makina çözümünü birlikte netleştirelim`;
-  const dynamicCtaText = calculationSummary || `${title} için kapasite, proses ve saha verilerinize göre teknik çözüm talebinizi bize iletebilirsiniz. ${ctaText}`;
+  const dynamicCtaTitle = ctaTitle ?? `${title} iÃ§in doÄŸru makina Ã§Ã¶zÃ¼mÃ¼nÃ¼ birlikte netleÅŸtirelim`;
+  const dynamicCtaText = calculationSummary || `${title} iÃ§in kapasite, proses ve saha verilerinize gÃ¶re teknik Ã§Ã¶zÃ¼m talebinizi bize iletebilirsiniz. ${ctaText}`;
   const messageBody = buildMessage(title, categoryLabel, calculatorFamily, calculatorValues, calculationSummary || dynamicCtaText);
   const whatsappHref = createWhatsAppHref(messageBody);
   const mailHref = createMailtoHref(
-    `${title} Kapasite Hesabı ve Teknik Talep`,
+    `${title} Kapasite HesabÄ± ve Teknik Talep`,
     messageBody,
   );
   const drumProgramInitialValues =
@@ -472,17 +472,11 @@ export function ProductDetailSystem({
 
   return (
     <>
-      <section
-        className="relative overflow-hidden"
-        style={{
-          backgroundImage: `linear-gradient(90deg, rgba(5,15,35,0.88) 0%, rgba(5,15,35,0.78) 45%, rgba(5,15,35,0.56) 100%), url('${heroImage}')`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      >
-        <div className="mx-auto flex min-h-[260px] max-w-7xl items-center px-4 py-10 sm:px-6 md:py-14 lg:px-10 lg:py-16">
-          <div className="max-w-3xl text-white">
-            <nav className="text-sm text-white/72">
+      <section className="relative overflow-hidden border-b border-slate-200 bg-gradient-to-br from-white via-sky-50 to-[#eef6fb]">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(39,141,192,0.10),transparent_32%)]" />
+        <div className="relative mx-auto flex min-h-[170px] max-w-7xl items-center px-4 py-8 sm:min-h-[200px] sm:px-6 sm:py-10 lg:min-h-[230px] lg:px-10 lg:py-12">
+          <div className="max-w-4xl">
+            <div className="hidden">
               <Link href="/" className="transition hover:text-white">Ana Sayfa</Link>
               <span className="px-2 text-white/40">/</span>
               <Link href="/makinalar-ekipman" className="transition hover:text-white">Makinalar & Ekipman</Link>
@@ -496,33 +490,32 @@ export function ProductDetailSystem({
               ) : null}
               <span className="px-2 text-white/40">/</span>
               <span className="text-white">{title}</span>
-            </nav>
-            <div className="mt-4 flex flex-wrap items-center gap-3">
+            </div>
+            <div className="flex flex-wrap items-center gap-3">
               <Link
                 href={categoryHref}
                 className="inline-flex min-h-[40px] items-center justify-center rounded-full border border-white/18 bg-white/10 px-4 text-sm font-semibold text-white backdrop-blur transition hover:bg-white/15"
               >
-                ← Geri
+                â† Geri
               </Link>
-              <h1 className="text-4xl font-semibold tracking-tight md:text-5xl">{title}</h1>
+              <h1 className="text-4xl font-semibold tracking-tight text-[#020617] md:text-5xl">{title}</h1>
             </div>
-            <p className="mt-4 max-w-2xl text-sm leading-7 text-white/82 sm:text-base sm:leading-8">{heroDescription}</p>
             <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-              <button type="button" onClick={() => setIsCalculatorOpen(true)} className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-blue-600 px-6 text-sm font-semibold text-white transition hover:bg-blue-500">
-                Kapasite Hesabı
+              <button type="button" onClick={() => setIsCalculatorOpen(true)} className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-[#278DC0] px-6 text-sm font-semibold text-white transition hover:bg-[#154764]">
+                Kapasite HesabÄ±
               </button>
               <Link
                 href="/iletisim"
                 data-cta-event="quote_button_click"
                 data-cta-label={`${title}_hero_quote`}
-                className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/20 bg-white/10 px-6 text-sm font-semibold text-white transition hover:bg-white/15"
+                className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-[#d7e3ec] bg-white px-6 text-sm font-semibold text-[#154764] transition hover:border-[#278DC0] hover:bg-[#278DC0]/6"
               >
                 Teklif Al
               </Link>
-              <a href={whatsappHref} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/20 bg-white/10 px-6 text-sm font-semibold text-white transition hover:bg-white/15">
-                WhatsApp ile Görüş
+              <a href={whatsappHref} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-[#d7e3ec] bg-white px-6 text-sm font-semibold text-[#154764] transition hover:border-[#278DC0] hover:bg-[#278DC0]/6">
+                WhatsApp ile GÃ¶rÃ¼ÅŸ
               </a>
-              <a href="tel:+905320580104" className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/20 bg-white/10 px-6 text-sm font-semibold text-white transition hover:bg-white/15">
+              <a href="tel:+905320580104" className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-[#d7e3ec] bg-white px-6 text-sm font-semibold text-[#154764] transition hover:border-[#278DC0] hover:bg-[#278DC0]/6">
                 Telefonla Ara
               </a>
             </div>
@@ -538,7 +531,7 @@ export function ProductDetailSystem({
                   href={categoryHref}
                   className="inline-flex min-h-[34px] items-center justify-center rounded-full border border-slate-200 bg-slate-50 px-3 text-xs font-semibold text-slate-700 transition hover:border-blue-200 hover:bg-blue-50 hover:text-blue-700 sm:text-sm"
                 >
-                  ← Geri
+                  â† Geri
                 </Link>
                 <span>{title}</span>
               </div>
@@ -560,7 +553,7 @@ export function ProductDetailSystem({
                   })}
                 </div>
                 <button type="button" onClick={() => setIsCalculatorOpen(true)} className="hidden rounded-full bg-slate-950 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-slate-800 lg:inline-flex">
-                  Kapasite Hesabı
+                  Kapasite HesabÄ±
                 </button>
               </div>
             </div>
@@ -568,7 +561,7 @@ export function ProductDetailSystem({
         </div>
       </div>
 
-      <section id="ürün-detaylari" className="scroll-mt-[210px] xl:scroll-mt-[220px]">
+      <section id="Ã¼rÃ¼n-detaylari" className="scroll-mt-[210px] xl:scroll-mt-[220px]">
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-10">
           <div className="grid gap-8 lg:grid-cols-2">
             <div className="overflow-hidden rounded-[30px] border border-slate-200 bg-white shadow-[0_18px_50px_rgba(15,23,42,0.05)]">
@@ -594,9 +587,9 @@ export function ProductDetailSystem({
               <h2 className="text-2xl font-semibold tracking-tight text-slate-950">{highlightTitle}</h2>
               <p className="mt-5 text-sm leading-8 text-slate-600 sm:text-[15px]">{highlightText}</p>
             </div>
-            <DetailListCard title="Teknik Özellikler" items={specs} />
+            <DetailListCard title="Teknik Ã–zellikler" items={specs} />
             <div id="uygulama-alanlari" className="scroll-mt-[210px] xl:scroll-mt-[220px] h-full">
-              <DetailListCard title="Uygulama Alanları" items={applications} />
+              <DetailListCard title="Uygulama AlanlarÄ±" items={applications} />
             </div>
           </div>
         </div>
@@ -607,10 +600,10 @@ export function ProductDetailSystem({
           <div className="grid gap-6 lg:grid-cols-3">
             <DetailListCard title="Opsiyonel Ekipman" items={optionalEquipment} />
             <div id="yedek-parca" className="scroll-mt-[210px] xl:scroll-mt-[220px] h-full">
-              <DetailListCard title="Yedek Parça" items={spareParts} />
+              <DetailListCard title="Yedek ParÃ§a" items={spareParts} />
             </div>
-            <div id="diger-ürünler" className="scroll-mt-[210px] xl:scroll-mt-[220px] h-full rounded-[28px] border border-slate-200 bg-white p-6 shadow-[0_16px_46px_rgba(15,23,42,0.05)] sm:p-7">
-              <h2 className="text-2xl font-semibold tracking-tight text-slate-950">Diğer Ürünler</h2>
+            <div id="diger-Ã¼rÃ¼nler" className="scroll-mt-[210px] xl:scroll-mt-[220px] h-full rounded-[28px] border border-slate-200 bg-white p-6 shadow-[0_16px_46px_rgba(15,23,42,0.05)] sm:p-7">
+              <h2 className="text-2xl font-semibold tracking-tight text-slate-950">DiÄŸer ÃœrÃ¼nler</h2>
               <div className="mt-5 grid gap-3">
                 {relatedProducts.map((item) =>
                   item.href ? (
@@ -651,14 +644,14 @@ export function ProductDetailSystem({
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
           <div className="rounded-[32px] border border-slate-200 bg-blue-700 px-6 py-8 text-white shadow-[0_24px_70px_rgba(29,78,216,0.22)] sm:px-8 sm:py-10">
             <h2 className="text-2xl font-semibold tracking-tight text-white sm:text-3xl">
-              Projeniz için teknik teklif alın
+              Projeniz iÃ§in teknik teklif alÄ±n
             </h2>
             <p className="mt-4 max-w-3xl text-sm leading-8 text-white/88 sm:text-base">
-              Kapasite, hammadde, nem oranı, proses hedefi ve saha koşullarına göre size özel makine ve tesis çözümü hazırlayalım.
+              Kapasite, hammadde, nem oranÄ±, proses hedefi ve saha koÅŸullarÄ±na gÃ¶re size Ã¶zel makine ve tesis Ã§Ã¶zÃ¼mÃ¼ hazÄ±rlayalÄ±m.
             </p>
             <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <a href={whatsappHref} target="_blank" rel="noopener noreferrer" className="rounded-full bg-white px-6 py-3 text-center text-sm font-semibold text-blue-800 transition hover:bg-slate-100">
-                WhatsApp ile Görüş
+                WhatsApp ile GÃ¶rÃ¼ÅŸ
               </a>
               <Link
                 href="/iletisim"
@@ -679,21 +672,21 @@ export function ProductDetailSystem({
       <section className="section-bottom-space-lg">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
           <div className="rounded-[32px] bg-blue-700 px-6 py-10 text-white shadow-[0_28px_90px_rgba(37,99,235,0.25)] sm:px-8 sm:py-12 md:px-12">
-            <h2 className="max-w-3xl text-3xl font-semibold tracking-tight md:text-4xl">Projeniz için teknik teklif alın</h2>
+            <h2 className="max-w-3xl text-3xl font-semibold tracking-tight md:text-4xl">Projeniz iÃ§in teknik teklif alÄ±n</h2>
             <p className="mt-4 max-w-3xl leading-8 text-white/86">
-              Kapasite, hammadde, nem oranı, proses hedefi ve saha koşullarına göre size özel makine ve tesis çözümü hazırlayalım.
+              Kapasite, hammadde, nem oranÄ±, proses hedefi ve saha koÅŸullarÄ±na gÃ¶re size Ã¶zel makine ve tesis Ã§Ã¶zÃ¼mÃ¼ hazÄ±rlayalÄ±m.
             </p>
             <p className="mt-3 max-w-3xl leading-8 text-white/78">{dynamicCtaText}</p>
             {calculationSummary ? <div className="mt-6 rounded-[24px] border border-white/18 bg-white/10 px-5 py-4 text-sm leading-7 text-white/92">{calculationSummary}</div> : null}
             <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:flex-wrap">
               <button type="button" onClick={() => setIsCalculatorOpen(true)} className="rounded-full bg-white px-6 py-3 text-center text-sm font-semibold text-blue-700 transition hover:bg-slate-100">
-                Kapasite Hesabı
+                Kapasite HesabÄ±
               </button>
               <a href={whatsappHref} target="_blank" rel="noopener noreferrer" className="rounded-full border border-white/30 px-6 py-3 text-center text-sm font-semibold text-white transition hover:bg-white/10">
-                WhatsApp ile Gönder
+                WhatsApp ile GÃ¶nder
               </a>
               <a href={mailHref} className="rounded-full border border-white/30 px-6 py-3 text-center text-sm font-semibold text-white transition hover:bg-white/10">
-                Mail ile Gönder
+                Mail ile GÃ¶nder
               </a>
               <Link
                 href="/iletisim"
@@ -736,3 +729,5 @@ export function ProductDetailSystem({
     </>
   );
 }
+
+

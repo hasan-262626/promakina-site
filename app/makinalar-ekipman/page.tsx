@@ -290,7 +290,34 @@ export default function MachinesIndexPage() {
         title="Makinalar & Ekipman"
         description="Prosese, kapasiteye ve malzeme yapısına uygun makina gruplarını tek çatı altında sunuyoruz. Tambur sistemlerinden taşıma ekipmanlarına, kırıcı ve parçalayıcılardan reaktör, tank, eleme, dolum ve depolama çözümlerine kadar farklı endüstriyel ihtiyaçlara uygun ekipman ailelerini kategori bazlı inceleyebilirsiniz."
         image="/images/makinalar1.png"
-      />
+      >
+        <Link
+          href="/programlar"
+          className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-[#278DC0] px-6 text-sm font-semibold text-white transition hover:bg-[#154764]"
+        >
+          Kapasite Hesabı
+        </Link>
+        <Link
+          href="/iletisim"
+          className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/60 bg-white/12 px-6 text-sm font-semibold text-white transition hover:border-white hover:bg-white/18"
+        >
+          Teklif Al
+        </Link>
+        <Link
+          href="https://wa.me/905320580104"
+          target="_blank"
+          rel="noreferrer"
+          className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/60 bg-white/12 px-6 text-sm font-semibold text-white transition hover:border-white hover:bg-white/18"
+        >
+          WhatsApp ile Görüş
+        </Link>
+        <Link
+          href="tel:+905320580104"
+          className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/60 bg-white/12 px-6 text-sm font-semibold text-white transition hover:border-white hover:bg-white/18"
+        >
+          Telefonla Ara
+        </Link>
+      </Hero>
 
       <section className="section-space">
         <div className="site-container">

@@ -7,9 +7,9 @@ import { sectorTechnicalBlogGroups } from "../lib/sector-technical-blog-data";
 import { trText } from "../lib/tr-text";
 
 export const metadata: Metadata = {
-  title: "Sektörler | Pro Makina",
+  title: "SektÃ¶rler | Pro Makina",
   description:
-    "Gübre, kompost, organik atık, biyogaz, madencilik, kimya, yem ve dökme katı malzeme sektörleri için çözümler.",
+    "GÃ¼bre, kompost, organik atÄ±k, biyogaz, madencilik, kimya, yem ve dÃ¶kme katÄ± malzeme sektÃ¶rleri iÃ§in Ã§Ã¶zÃ¼mler.",
   alternates: {
     canonical: "https://www.promakina.com.tr/sektorler",
   },
@@ -18,19 +18,35 @@ export const metadata: Metadata = {
 export default function SectorsIndexPage() {
   return (
     <main className="min-h-screen overflow-x-hidden bg-[linear-gradient(180deg,#f8fbff_0%,#ffffff_24%,#ffffff_100%)] text-slate-900">
-      <section className="relative border-b border-slate-200/80 bg-[radial-gradient(circle_at_top_left,rgba(59,130,246,0.12),transparent_32%),linear-gradient(180deg,rgba(255,255,255,0.98),rgba(248,250,252,0.92))]">
-        <div className="mx-auto max-w-[1480px] px-4 py-16 sm:px-6 lg:px-10 lg:py-20">
+      <section className="relative border-b border-slate-200 bg-gradient-to-br from-white via-sky-50 to-[#eef6fb]">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(39,141,192,0.10),transparent_32%)]" />
+        <div className="relative mx-auto max-w-[1480px] px-4 py-8 sm:px-6 sm:py-10 lg:px-10 lg:py-12">
           <div className="max-w-4xl">
-            <span className="inline-flex rounded-full border border-[#278DC0]/15 bg-[#278DC0]/10 px-4 py-2 text-xs font-semibold tracking-[0.16em] text-[#278DC0]">
-              SEKTÖRLER
-            </span>
-            <h1 className="mt-5 text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl lg:text-5xl">
-              Hangi sektörlere çözüm sunuyoruz?
+            <h1 className="text-4xl font-semibold tracking-tight text-[#020617] sm:text-5xl">
+              Hangi sektÃ¶rlere Ã§Ã¶zÃ¼m sunuyoruz?
             </h1>
-            <p className="mt-5 max-w-3xl text-base leading-8 text-slate-600 sm:text-lg">
-              Farklı sektörlerin ihtiyaçlarına özel mühendislik çözümlerimizle verimliliği artırıyor,
-              sürdürülebilir bir gelecek için üretim yapıyoruz.
-            </p>
+            <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+              <Link
+                href="/iletisim"
+                className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-[#278DC0] px-6 text-sm font-semibold text-white transition hover:bg-[#154764]"
+              >
+                Teklif Al
+              </Link>
+              <Link
+                href="https://wa.me/905320580104"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-[#d7e3ec] bg-white px-6 text-sm font-semibold text-[#154764] transition hover:border-[#278DC0] hover:bg-[#278DC0]/6"
+              >
+                WhatsApp ile GÃ¶rÃ¼ÅŸ
+              </Link>
+              <Link
+                href="tel:+905320580104"
+                className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-[#d7e3ec] bg-white px-6 text-sm font-semibold text-[#154764] transition hover:border-[#278DC0] hover:bg-[#278DC0]/6"
+              >
+                Telefonla Ara
+              </Link>
+            </div>
           </div>
         </div>
       </section>
@@ -89,13 +105,13 @@ export default function SectorsIndexPage() {
           <section className="section-gap rounded-[32px] border border-slate-200 bg-white px-6 py-8 shadow-[0_18px_45px_rgba(15,23,42,0.06)] sm:px-8 sm:py-10 lg:px-12">
             <div className="max-w-5xl">
               <h2 className="text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">
-                Sektörlere Göre Teknik Blog ve Rehber İçerikleri
+                SektÃ¶rlere GÃ¶re Teknik Blog ve Rehber Ä°Ã§erikleri
               </h2>
               <p className="mt-4 text-sm leading-8 text-slate-600 sm:text-base">
-                Gübre, kompost, biyogaz, maden, kimya, arıtma çamuru, geri dönüşüm ve dökme katı
-                malzeme işleme alanlarında; proses tasarımı, makine seçimi, kapasite hesabı,
-                kurutma, granülasyon, taşıma ve otomasyon konularını kapsayan teknik blog ve rehber
-                içerikleri.
+                GÃ¼bre, kompost, biyogaz, maden, kimya, arÄ±tma Ã§amuru, geri dÃ¶nÃ¼ÅŸÃ¼m ve dÃ¶kme katÄ±
+                malzeme iÅŸleme alanlarÄ±nda; proses tasarÄ±mÄ±, makine seÃ§imi, kapasite hesabÄ±,
+                kurutma, granÃ¼lasyon, taÅŸÄ±ma ve otomasyon konularÄ±nÄ± kapsayan teknik blog ve rehber
+                iÃ§erikleri.
               </p>
             </div>
 
@@ -107,7 +123,7 @@ export default function SectorsIndexPage() {
                 >
                   <div className="max-w-4xl">
                     <span className="inline-flex rounded-full border border-[#278DC0]/15 bg-[#278DC0]/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-[#154764]">
-                      Sektörel Rehber Grubu
+                      SektÃ¶rel Rehber Grubu
                     </span>
                     <h3 className="mt-4 text-xl font-semibold tracking-tight text-slate-950 sm:text-2xl">
                       {group.title}
@@ -131,7 +147,7 @@ export default function SectorsIndexPage() {
                             </span>
                           ) : null}
                           <span className="text-xs font-medium text-slate-500">
-                            Okuma süresi: {item.readingTime}
+                            Okuma sÃ¼resi: {item.readingTime}
                           </span>
                         </div>
                         <h4 className="mt-4 text-lg font-semibold tracking-tight text-slate-950">
@@ -139,7 +155,7 @@ export default function SectorsIndexPage() {
                         </h4>
                         <p className="mt-3 text-sm leading-7 text-slate-600">{item.description}</p>
                         <span className="mt-5 inline-flex text-sm font-semibold text-[#278DC0] transition group-hover:text-[#154764]">
-                          İçeriği İncele
+                          Ä°Ã§eriÄŸi Ä°ncele
                         </span>
                       </Link>
                     ))}
@@ -151,18 +167,18 @@ export default function SectorsIndexPage() {
 
           <section className="section-gap rounded-[32px] bg-[#278DC0] px-6 py-8 text-white shadow-[0_24px_70px_rgba(39,141,192,0.24)] sm:px-8 sm:py-10 lg:px-12">
             <h2 className="max-w-3xl text-2xl font-semibold tracking-tight text-white sm:text-3xl">
-              Sektörünüze Uygun Proses ve Makine Kurgusunu Birlikte Netleştirelim
+              SektÃ¶rÃ¼nÃ¼ze Uygun Proses ve Makine Kurgusunu Birlikte NetleÅŸtirelim
             </h2>
             <p className="mt-4 max-w-4xl text-sm leading-8 text-white/88 sm:text-base">
-              Hammadde türü, kapasite hedefi, nem oranı, ürün formu ve saha koşullarını paylaşın;
-              sektörünüze uygun tesis, makine ve proses yaklaşımını birlikte değerlendirelim.
+              Hammadde tÃ¼rÃ¼, kapasite hedefi, nem oranÄ±, Ã¼rÃ¼n formu ve saha koÅŸullarÄ±nÄ± paylaÅŸÄ±n;
+              sektÃ¶rÃ¼nÃ¼ze uygun tesis, makine ve proses yaklaÅŸÄ±mÄ±nÄ± birlikte deÄŸerlendirelim.
             </p>
             <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <Link
                 href="/iletisim"
                 className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-white px-6 text-sm font-semibold text-[#154764] transition hover:bg-slate-100"
               >
-                Teknik Görüşme Talep Et
+                Teknik GÃ¶rÃ¼ÅŸme Talep Et
               </Link>
               <Link
                 href="https://wa.me/905320580104"
@@ -170,13 +186,13 @@ export default function SectorsIndexPage() {
                 rel="noreferrer"
                 className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/25 px-6 text-sm font-semibold text-white transition hover:bg-white/10"
               >
-                WhatsApp ile Görüş
+                WhatsApp ile GÃ¶rÃ¼ÅŸ
               </Link>
               <Link
                 href="/hizmetler"
                 className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/25 px-6 text-sm font-semibold text-white transition hover:bg-white/10"
               >
-                Hizmetleri İncele
+                Hizmetleri Ä°ncele
               </Link>
             </div>
           </section>

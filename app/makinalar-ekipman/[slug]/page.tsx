@@ -98,33 +98,41 @@ export default async function MachineCategoryPage({ params }: PageProps) {
 
   return (
     <main className="min-h-screen bg-white text-slate-900">
-      <section
-        className="relative overflow-hidden"
-        style={{
-          backgroundImage: `linear-gradient(90deg, rgba(5,15,35,0.88) 0%, rgba(5,15,35,0.78) 45%, rgba(5,15,35,0.56) 100%), url('${category.heroImage}')`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      >
-        <div className="site-container flex min-h-[260px] items-center py-14">
-          <div className="max-w-3xl text-white">
-            <nav className="text-sm text-white/72">
-              <Link href="/" className="transition hover:text-white">
-                Ana Sayfa
-              </Link>
-              <span className="px-2 text-white/40">/</span>
-              <Link href="/makinalar-ekipman" className="transition hover:text-white">
-                Makinalar & Ekipman
-              </Link>
-              <span className="px-2 text-white/40">/</span>
-              <span className="text-white">{category.title}</span>
-            </nav>
-            <h1 className="mt-4 text-4xl font-semibold tracking-tight md:text-5xl">
+      <section className="relative overflow-hidden border-b border-slate-200 bg-gradient-to-br from-white via-sky-50 to-[#eef6fb]">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(39,141,192,0.10),transparent_32%)]" />
+        <div className="site-container relative flex min-h-[170px] items-center py-8 sm:min-h-[200px] sm:py-10 lg:min-h-[230px] lg:py-12">
+          <div className="max-w-4xl">
+            <h1 className="text-4xl font-semibold tracking-tight text-[#020617] md:text-5xl">
               {category.title}
             </h1>
-            <p className="mt-4 max-w-2xl text-sm leading-7 text-white/82 sm:text-base sm:leading-8">
-              {category.heroDescription}
-            </p>
+            <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+              <Link
+                href="/programlar"
+                className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-[#278DC0] px-6 text-sm font-semibold text-white transition hover:bg-[#154764]"
+              >
+                Kapasite Hesabı
+              </Link>
+              <Link
+                href="/iletisim"
+                className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-[#d7e3ec] bg-white px-6 text-sm font-semibold text-[#154764] transition hover:border-[#278DC0] hover:bg-[#278DC0]/6"
+              >
+                Teklif Al
+              </Link>
+              <Link
+                href="https://wa.me/905320580104"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-[#d7e3ec] bg-white px-6 text-sm font-semibold text-[#154764] transition hover:border-[#278DC0] hover:bg-[#278DC0]/6"
+              >
+                WhatsApp ile Görüş
+              </Link>
+              <Link
+                href="tel:+905320580104"
+                className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-[#d7e3ec] bg-white px-6 text-sm font-semibold text-[#154764] transition hover:border-[#278DC0] hover:bg-[#278DC0]/6"
+              >
+                Telefonla Ara
+              </Link>
+            </div>
           </div>
         </div>
       </section>

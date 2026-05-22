@@ -146,7 +146,28 @@ export default function LibraryPage() {
         title="Kütüphane"
         description="Blog makaleleri, mühendislik programları, sözlük içerikleri ve karar sürecini hızlandıran teknik kaynaklarla yatırım hazırlığınızı güçlendirin."
         image="/images/proses1.jpg"
-      />
+      >
+        <Link
+          href="/programlar"
+          className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-[#278DC0] px-6 text-sm font-semibold text-white transition hover:bg-[#154764]"
+        >
+          Programlar
+        </Link>
+        <Link
+          href="/iletisim"
+          className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/60 bg-white/12 px-6 text-sm font-semibold text-white transition hover:border-white hover:bg-white/18"
+        >
+          Teklif Al
+        </Link>
+        <Link
+          href="https://wa.me/905320580104"
+          target="_blank"
+          rel="noreferrer"
+          className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/60 bg-white/12 px-6 text-sm font-semibold text-white transition hover:border-white hover:bg-white/18"
+        >
+          WhatsApp ile Görüş
+        </Link>
+      </Hero>
 
       <section className="section-space">
         <div className="site-container">

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { GlobalBottomCta } from "./global-bottom-cta";
@@ -138,7 +138,7 @@ function FormulaBox({ title, formula, example }: SectorGuideFormula) {
   return (
     <div className="rounded-[24px] border border-[#278DC0]/20 bg-[#F1F8FC] p-5 shadow-sm">
       <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#278DC0]">
-        Formül Kutusu
+        FormÃ¼l Kutusu
       </p>
       <h3 className="mt-2 text-lg font-semibold text-slate-950">{title}</h3>
       <pre className="mt-4 overflow-x-auto rounded-2xl bg-white px-4 py-4 text-sm font-semibold text-[#154764]">
@@ -176,8 +176,8 @@ function FlowBox({
             </div>
             {index < steps.length - 1 ? (
               <div className="flex items-center justify-center text-[#278DC0] xl:w-6">
-                <span className="text-xl xl:hidden">↓</span>
-                <span className="hidden text-xl xl:inline">→</span>
+                <span className="text-xl xl:hidden">â†“</span>
+                <span className="hidden text-xl xl:inline">â†’</span>
               </div>
             ) : null}
           </div>
@@ -204,7 +204,7 @@ function ProcessDiagram({
           viewBox={`0 0 ${width} 220`}
           className="min-w-[860px]"
           role="img"
-          aria-label={`${title} proses şeması`}
+          aria-label={`${title} proses ÅŸemasÄ±`}
         >
           <defs>
             <linearGradient id="sectorGuideGradient" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -314,7 +314,7 @@ function buildBreadcrumbSchema(guide: SectorMachineGuidePageData) {
       {
         "@type": "ListItem",
         position: 2,
-        name: "Kütüphane",
+        name: "KÃ¼tÃ¼phane",
         item: "https://www.promakina.com.tr/kutuphane",
       },
       {
@@ -382,14 +382,14 @@ export function SectorMachineGuideDetailPage({
 
       <article className="pb-16 sm:pb-20">
         <section className="border-b border-white/10 bg-gradient-to-br from-[#154764] via-[#1a5d81] to-[#278DC0]">
-          <div className="site-container py-10 sm:py-12 lg:py-16">
-            <nav aria-label="Breadcrumb" className="flex flex-wrap gap-2 text-sm text-white/75">
+          <div className="site-container py-8 sm:py-10 lg:py-12">
+            <div className="hidden">
               <Link href="/" className="transition hover:text-white">
                 Ana Sayfa
               </Link>
               <span>/</span>
               <Link href="/kutuphane" className="transition hover:text-white">
-                Kütüphane
+                KÃ¼tÃ¼phane
               </Link>
               <span>/</span>
               <Link href="/kutuphane/blog" className="transition hover:text-white">
@@ -397,32 +397,30 @@ export function SectorMachineGuideDetailPage({
               </Link>
               <span>/</span>
               <span className="font-medium text-white">{guide.title}</span>
-            </nav>
+            </div>
 
-            <div className="mt-6 max-w-5xl rounded-[32px] border border-white/15 bg-white/8 p-6 shadow-[0_20px_65px_rgba(15,23,42,0.18)] backdrop-blur md:p-8">
-              <div className="flex flex-wrap items-center gap-3">
+            <div className="mt-4 max-w-5xl rounded-[32px] border border-white/15 bg-white/8 p-5 shadow-[0_20px_65px_rgba(15,23,42,0.18)] backdrop-blur md:p-6">
+              <div className="hidden">
                 <span className="inline-flex rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-white">
-                  Sektörel Makine Rehberi
+                  SektÃ¶rel Makine Rehberi
                 </span>
               </div>
 
-              <h1 className="mt-5 text-3xl font-semibold tracking-tight text-white md:text-5xl">
+              <h1 className="text-3xl font-semibold tracking-tight text-white md:text-[42px]">
                 {guide.title}
               </h1>
-              <p className="mt-5 max-w-4xl text-base leading-8 text-white/90 md:text-lg">
-                {guide.heroDescription}
-              </p>
+              
 
-              <div className="mt-6 flex flex-wrap gap-3 text-sm text-white/85">
+              <div className="hidden">
                 <span className="rounded-full border border-white/15 bg-white/10 px-4 py-2">
-                  Okuma süresi: {guide.readingTime}
+                  Okuma sÃ¼resi: {guide.readingTime}
                 </span>
                 <span className="rounded-full border border-white/15 bg-white/10 px-4 py-2">
                   Konu: {guide.heroTopic}
                 </span>
               </div>
 
-              <div className="mt-6 flex flex-wrap gap-3">
+              <div className="hidden">
                 {guide.heroLinks.map((link) => (
                   <Link
                     key={link.href}
@@ -434,10 +432,10 @@ export function SectorMachineGuideDetailPage({
                 ))}
               </div>
 
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
                 <Link
                   href={guide.heroCtaHref}
-                  className="inline-flex min-h-[48px] items-center justify-center rounded-full bg-white px-6 text-sm font-semibold text-[#154764] transition hover:bg-[#F1F8FC]"
+                  className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-[#278DC0] px-6 text-sm font-semibold text-white transition hover:bg-[#154764]"
                 >
                   {guide.heroCtaLabel}
                 </Link>
@@ -449,7 +447,7 @@ export function SectorMachineGuideDetailPage({
                       ? "noopener noreferrer"
                       : undefined
                   }
-                  className="inline-flex min-h-[48px] items-center justify-center rounded-full border border-white/20 bg-white/10 px-6 text-sm font-semibold text-white transition hover:bg-white/15"
+                  className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/60 bg-white/12 px-6 text-sm font-semibold text-white transition hover:border-white hover:bg-white/18"
                 >
                   {guide.heroSecondaryLabel}
                 </a>
@@ -460,13 +458,13 @@ export function SectorMachineGuideDetailPage({
 
         <div className="site-container mt-8">
           <div className="grid gap-8">
-            <SectionCard title="Giriş">
+            <SectionCard title="GiriÅŸ">
               {guide.introParagraphs.map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>
               ))}
             </SectionCard>
 
-            <SectionCard title="Proses Akışı">
+            <SectionCard title="Proses AkÄ±ÅŸÄ±">
               <FlowBox title={guide.flowTitle} steps={guide.flowSteps} note={guide.flowNote} />
               <ProcessDiagram title={guide.flowTitle} steps={guide.flowSteps} />
             </SectionCard>
@@ -530,19 +528,19 @@ export function SectorMachineGuideDetailPage({
               </SectionCard>
             ))}
 
-            <SectionCard title="Makine Seçim Kriterleri">
+            <SectionCard title="Makine SeÃ§im Kriterleri">
               <p>
-                Aşağıdaki kriterler, sektör fark etmeksizin ekipman zincirinin doğru boyutlandırılması
-                ve prosesin dengeli kurulması için ön mühendislik aşamasında birlikte okunmalıdır.
+                AÅŸaÄŸÄ±daki kriterler, sektÃ¶r fark etmeksizin ekipman zincirinin doÄŸru boyutlandÄ±rÄ±lmasÄ±
+                ve prosesin dengeli kurulmasÄ± iÃ§in Ã¶n mÃ¼hendislik aÅŸamasÄ±nda birlikte okunmalÄ±dÄ±r.
               </p>
               <TableSection {...guide.selectionCriteria} />
             </SectionCard>
 
-            <SectionCard title="Sık Yapılan Tasarım Hataları">
+            <SectionCard title="SÄ±k YapÄ±lan TasarÄ±m HatalarÄ±">
               <TableSection {...guide.mistakes} />
             </SectionCard>
 
-            <SectionCard title="Pro Makina ile Çözüm Yaklaşımı">
+            <SectionCard title="Pro Makina ile Ã‡Ã¶zÃ¼m YaklaÅŸÄ±mÄ±">
               {guide.approachParagraphs.map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>
               ))}
@@ -561,11 +559,11 @@ export function SectorMachineGuideDetailPage({
             <section className="rounded-[30px] border border-slate-200 bg-white p-6 shadow-sm md:p-8">
               <div className="max-w-3xl">
                 <h2 className="text-2xl font-semibold tracking-tight text-slate-950 md:text-3xl">
-                  Sık Sorulan Sorular
+                  SÄ±k Sorulan Sorular
                 </h2>
                 <p className="mt-4 text-base leading-8 text-slate-600">
-                  Makine seçimi, proses akışı, kapasite sınırları ve saha uygulamaları hakkında en
-                  çok sorulan soruları kısa ama teknik çerçevede yanıtladık.
+                  Makine seÃ§imi, proses akÄ±ÅŸÄ±, kapasite sÄ±nÄ±rlarÄ± ve saha uygulamalarÄ± hakkÄ±nda en
+                  Ã§ok sorulan sorularÄ± kÄ±sa ama teknik Ã§erÃ§evede yanÄ±tladÄ±k.
                 </p>
               </div>
               <div className="mt-8 grid gap-4 md:grid-cols-2">
@@ -589,11 +587,11 @@ export function SectorMachineGuideDetailPage({
             <section className="rounded-[30px] border border-slate-200 bg-white p-6 shadow-sm md:p-8">
               <div className="max-w-3xl">
                 <h2 className="text-2xl font-semibold tracking-tight text-slate-950 md:text-3xl">
-                  İlgili Teknik İçerikler ve Programlar
+                  Ä°lgili Teknik Ä°Ã§erikler ve Programlar
                 </h2>
                 <p className="mt-4 text-base leading-8 text-slate-600">
-                  Bu makaleyi destekleyen hizmet, makine, sektör ve hesaplama sayfalarına aşağıdan
-                  erişebilirsiniz.
+                  Bu makaleyi destekleyen hizmet, makine, sektÃ¶r ve hesaplama sayfalarÄ±na aÅŸaÄŸÄ±dan
+                  eriÅŸebilirsiniz.
                 </p>
               </div>
               <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
@@ -610,7 +608,7 @@ export function SectorMachineGuideDetailPage({
                       {item.description}
                     </span>
                     <span className="mt-4 inline-flex text-sm font-semibold text-[#278DC0] transition group-hover:text-[#154764]">
-                      İçeriği İncele
+                      Ä°Ã§eriÄŸi Ä°ncele
                     </span>
                   </Link>
                 ))}
@@ -620,11 +618,11 @@ export function SectorMachineGuideDetailPage({
             <GlobalBottomCta
               title={
                 guide.ctaTitle ??
-                "Projeniz için teklif veya teknik görüşme talep edin"
+                "Projeniz iÃ§in teklif veya teknik gÃ¶rÃ¼ÅŸme talep edin"
               }
               description={
                 guide.ctaDescription ??
-                "Kapasite, hammadde, nem oranı, hedef ürün ve saha yerleşiminize göre uygun proses ve makine çözümünü birlikte netleştirebiliriz."
+                "Kapasite, hammadde, nem oranÄ±, hedef Ã¼rÃ¼n ve saha yerleÅŸiminize gÃ¶re uygun proses ve makine Ã§Ã¶zÃ¼mÃ¼nÃ¼ birlikte netleÅŸtirebiliriz."
               }
             />
           </div>
@@ -633,3 +631,5 @@ export function SectorMachineGuideDetailPage({
     </main>
   );
 }
+
+

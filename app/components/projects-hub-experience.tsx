@@ -109,7 +109,28 @@ export default function ProjectsHubExperience() {
         title="Projeler"
         description="Projeler bölümünde farklı sektörler için geliştirdiğimiz tesis senaryolarını, proses yaklaşımlarını ve uygulama mantığını bir arada sunuyoruz. Gübre, kompost, biyogaz, kurutma, maden işleme ve özel proses projelerine doğrudan ulaşabilirsiniz."
         image="/images/fabrika1.jpg"
-      />
+      >
+        <Link
+          href="/iletisim"
+          className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-[#278DC0] px-6 text-sm font-semibold text-white transition hover:bg-[#154764]"
+        >
+          Teklif Al
+        </Link>
+        <Link
+          href="https://wa.me/905320580104"
+          target="_blank"
+          rel="noreferrer"
+          className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/60 bg-white/12 px-6 text-sm font-semibold text-white transition hover:border-white hover:bg-white/18"
+        >
+          WhatsApp ile Görüş
+        </Link>
+        <Link
+          href="tel:+905320580104"
+          className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/60 bg-white/12 px-6 text-sm font-semibold text-white transition hover:border-white hover:bg-white/18"
+        >
+          Telefonla Ara
+        </Link>
+      </Hero>
 
       <section id="proje-basliklari" className="section-space">
         <div className="site-container">

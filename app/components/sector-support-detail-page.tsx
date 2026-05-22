@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import { Hero } from "./Hero";
 import { siteContact } from "../lib/site-contact";
 
@@ -62,7 +62,7 @@ export function SectorSupportDetailPage({
       <Hero title={heroTitle} description={heroDescription} image={image}>
         <Link
           href="/iletisim"
-          className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-white px-6 text-sm font-semibold text-slate-950 transition hover:bg-slate-100"
+          className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-[#278DC0] px-6 text-sm font-semibold text-white transition hover:bg-[#154764]"
         >
           Teklif Al
         </Link>
@@ -70,7 +70,7 @@ export function SectorSupportDetailPage({
           href={siteContact.whatsappHref}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/20 bg-white/10 px-6 text-sm font-semibold text-white transition hover:bg-white/15"
+          className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/60 bg-white/12 px-6 text-sm font-semibold text-white transition hover:border-white hover:bg-white/18"
         >
           WhatsApp
         </a>
@@ -80,7 +80,7 @@ export function SectorSupportDetailPage({
         <div className="site-container content-stack">
           <section className="rounded-[32px] border border-slate-200 bg-slate-50 px-6 py-8 shadow-[0_18px_45px_rgba(15,23,42,0.06)] sm:px-8 sm:py-10 lg:px-12">
             <p className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-700">
-              SektÃ¶rel Proses Çözümü
+              SektÃƒÂ¶rel Proses Ã‡Ã¶zÃ¼mÃ¼
             </p>
             <h1 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
               {introTitle}
@@ -95,11 +95,11 @@ export function SectorSupportDetailPage({
           <section>
             <div className="max-w-3xl">
               <h2 className="text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
-                KullanÄ±m AlanlarÄ±
+                KullanÃ„Â±m AlanlarÃ„Â±
               </h2>
               <p className="mt-4 text-sm leading-7 text-slate-600 sm:text-base sm:leading-8">
-                Bu çözüm; atık su, çamur yönetimi, kurutma, taşıma ve ara proses entegrasyonu
-                gereken tesislerde farklı işletme senaryolarına göre uyarlanabilir.
+                Bu Ã§Ã¶zÃ¼m; atÄ±k su, Ã§amur yÃ¶netimi, kurutma, taÅŸÄ±ma ve ara proses entegrasyonu
+                gereken tesislerde farklÄ± iÅŸletme senaryolarÄ±na gÃ¶re uyarlanabilir.
               </p>
             </div>
             <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
@@ -118,18 +118,18 @@ export function SectorSupportDetailPage({
           </section>
 
           <section className="grid gap-6 xl:grid-cols-2">
-            <ListCard title="Teknik Ã–zellikler" items={technicalFeatures} />
+            <ListCard title="Teknik Ãƒâ€“zellikler" items={technicalFeatures} />
             <ListCard title="Avantajlar" items={advantages} />
           </section>
 
           <section className="grid gap-6 xl:grid-cols-2">
-            <ListCard title="Proses Ä°Ã§indeki Yeri" items={processRole} />
+            <ListCard title="Proses Ã„Â°ÃƒÂ§indeki Yeri" items={processRole} />
             <ListCard title="Opsiyonel Ekipmanlar" items={optionalEquipment} />
           </section>
 
           <section className="rounded-[32px] border border-slate-200 bg-white px-6 py-8 shadow-[0_18px_45px_rgba(15,23,42,0.05)] sm:px-8 sm:py-10 lg:px-12">
             <h2 className="text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
-              İlgili Sayfalar
+              Ä°lgili Sayfalar
             </h2>
             <div className="mt-6 grid gap-3 md:grid-cols-2">
               {relatedLinks.map((item) => (
@@ -146,7 +146,7 @@ export function SectorSupportDetailPage({
 
           <section className="rounded-[32px] bg-blue-700 px-6 py-8 text-white shadow-[0_24px_70px_rgba(29,78,216,0.28)] sm:px-8 sm:py-10 lg:px-12">
             <h2 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-              Teklif ve Teknik Değerlendirme
+              Teklif ve Teknik DeÄŸerlendirme
             </h2>
             <p className="mt-4 max-w-3xl text-sm leading-8 text-white/88 sm:text-base">
               {ctaText}
@@ -173,3 +173,4 @@ export function SectorSupportDetailPage({
     </main>
   );
 }
+

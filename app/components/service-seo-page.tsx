@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import {
   createWhatsAppHref,
@@ -101,22 +101,22 @@ export function ServiceSeoPage({
   introTitle,
   introParagraphs,
   cards = [],
-  cardsTitle = "Kullanım Alanları ve İlgili Ana Makineler",
-  cardsDescription = "Bu bölüm, tesis kurgusunda öne çıkan uygulama alanlarını ve prosesi taşıyan ana makina omurgasını birlikte özetler.",
+  cardsTitle = "KullanÄ±m AlanlarÄ± ve Ä°lgili Ana Makineler",
+  cardsDescription = "Bu bÃ¶lÃ¼m, tesis kurgusunda Ã¶ne Ã§Ä±kan uygulama alanlarÄ±nÄ± ve prosesi taÅŸÄ±yan ana makina omurgasÄ±nÄ± birlikte Ã¶zetler.",
   sections,
   faqs,
   ctaText,
-  ctaTitle = "Teklif / Keşif Çağrısı",
+  ctaTitle = "Teklif / KeÅŸif Ã‡aÄŸrÄ±sÄ±",
   showForm = false,
   technicalContents = [],
   summaryRows = [],
   keyLinks = [],
 }: ServiceSeoPageProps) {
-  const quoteCtaTitle = "Projeniz için teknik teklif alın";
+  const quoteCtaTitle = "Projeniz iÃ§in teknik teklif alÄ±n";
   const quoteCtaDescription =
-    "Kapasite, hammadde, nem oranı, proses hedefi ve saha koşullarına göre size özel makine ve tesis çözümü hazırlayalım.";
+    "Kapasite, hammadde, nem oranÄ±, proses hedefi ve saha koÅŸullarÄ±na gÃ¶re size Ã¶zel makine ve tesis Ã§Ã¶zÃ¼mÃ¼ hazÄ±rlayalÄ±m.";
   const whatsappHref = createWhatsAppHref(
-    `Merhaba, Pro Makina web sitenizden ulaşıyorum. Aşağıdaki ürün/hizmet için teklif almak istiyorum: ${title}`,
+    `Merhaba, Pro Makina web sitenizden ulaÅŸÄ±yorum. AÅŸaÄŸÄ±daki Ã¼rÃ¼n/hizmet iÃ§in teklif almak istiyorum: ${title}`,
   );
   const organizationSchema = {
     "@context": "https://schema.org",
@@ -146,7 +146,7 @@ export function ServiceSeoPage({
       name: siteName,
       url: "https://www.promakina.com.tr",
     },
-    areaServed: ["Türkiye", "Avrupa", "Orta Doğu", "Kuzey Afrika"],
+    areaServed: ["TÃ¼rkiye", "Avrupa", "Orta DoÄŸu", "Kuzey Afrika"],
     serviceType: serviceName,
     url: canonical,
   };
@@ -213,7 +213,7 @@ export function ServiceSeoPage({
           href="/iletisim"
           data-cta-event="quote_button_click"
           data-cta-label={`${serviceName}_hero_quote`}
-          className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-white px-6 text-sm font-semibold text-slate-950 transition hover:bg-slate-100"
+          className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-[#278DC0] px-6 text-sm font-semibold text-white transition hover:bg-[#154764]"
         >
           Teklif Al
         </Link>
@@ -221,13 +221,13 @@ export function ServiceSeoPage({
           href={whatsappHref}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/20 bg-white/10 px-6 text-sm font-semibold text-white transition hover:bg-white/15"
+          className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/60 bg-white/12 px-6 text-sm font-semibold text-white transition hover:border-white hover:bg-white/18"
         >
-          WhatsApp ile Gönder
+          WhatsApp ile GÃ¶nder
         </a>
         <a
           href={siteContact.phoneHref}
-          className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/20 bg-white/10 px-6 text-sm font-semibold text-white transition hover:bg-white/15"
+          className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/60 bg-white/12 px-6 text-sm font-semibold text-white transition hover:border-white hover:bg-white/18"
         >
           Telefonla Ara
         </a>
@@ -306,7 +306,7 @@ export function ServiceSeoPage({
             <div className="overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-[0_18px_45px_rgba(15,23,42,0.06)]">
               <div className="border-b border-slate-200 px-6 py-6 sm:px-8">
                 <h2 className="text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">
-                  Teknik Değerlendirme Özeti
+                  Teknik DeÄŸerlendirme Ã–zeti
                 </h2>
               </div>
               <div className="overflow-x-auto">
@@ -317,10 +317,10 @@ export function ServiceSeoPage({
                         Kriter
                       </th>
                       <th className="px-6 py-4 text-left text-sm font-semibold text-slate-950 sm:px-8">
-                        Açıklama
+                        AÃ§Ä±klama
                       </th>
                       <th className="px-6 py-4 text-left text-sm font-semibold text-slate-950 sm:px-8">
-                        Proje Açısından Önemi
+                        Proje AÃ§Ä±sÄ±ndan Ã–nemi
                       </th>
                     </tr>
                   </thead>
@@ -383,7 +383,7 @@ export function ServiceSeoPage({
                 rel="noopener noreferrer"
                 className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-white px-6 text-sm font-semibold text-[#154764] transition hover:bg-slate-100"
               >
-                WhatsApp ile Görüş
+                WhatsApp ile GÃ¶rÃ¼ÅŸ
               </a>
               <Link
                 href="/iletisim"
@@ -410,7 +410,7 @@ export function ServiceSeoPage({
         <div className="site-container">
           <div className="rounded-[32px] border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
             <h2 className="text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">
-              Sık Sorulan Sorular
+              SÄ±k Sorulan Sorular
             </h2>
             <div className="mt-6 space-y-4">
               {faqs.map((faq) => (
@@ -432,15 +432,15 @@ export function ServiceSeoPage({
             <div className="grid gap-6 lg:grid-cols-[1.05fr_0.95fr]">
               <div className="rounded-[32px] border border-slate-200 bg-slate-950 p-6 text-white shadow-[0_20px_60px_rgba(2,6,23,0.16)] sm:p-8">
                 <p className="text-xs font-semibold uppercase tracking-[0.22em] text-white/80">
-                  TEKNİK GÖRÜŞME
+                  TEKNÄ°K GÃ–RÃœÅžME
                 </p>
                 <h2 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">
-                  Gübre tesisi yatırımınız için ön fizibilite oluşturalım
+                  GÃ¼bre tesisi yatÄ±rÄ±mÄ±nÄ±z iÃ§in Ã¶n fizibilite oluÅŸturalÄ±m
                 </h2>
                 <p className="mt-4 text-sm leading-8 text-white/78 sm:text-base">
-                  Türkiye pazarı ve ihracat hedefleriniz için uygun kapasite, ürün tipi, otomasyon seviyesi ve
-                  proses akışını birlikte netleştirelim. Ekibimiz, organomineral, granül ve sıvı gübre
-                  yatırımlarında teknik ve ticari karar sürecini hızlandıracak şekilde destek sunar.
+                  TÃ¼rkiye pazarÄ± ve ihracat hedefleriniz iÃ§in uygun kapasite, Ã¼rÃ¼n tipi, otomasyon seviyesi ve
+                  proses akÄ±ÅŸÄ±nÄ± birlikte netleÅŸtirelim. Ekibimiz, organomineral, granÃ¼l ve sÄ±vÄ± gÃ¼bre
+                  yatÄ±rÄ±mlarÄ±nda teknik ve ticari karar sÃ¼recini hÄ±zlandÄ±racak ÅŸekilde destek sunar.
                 </p>
               </div>
 
@@ -456,7 +456,7 @@ export function ServiceSeoPage({
                       name="firma"
                       type="text"
                       className="w-full rounded-2xl border border-slate-200 px-4 py-3 text-sm outline-none transition focus:border-[#278DC0]"
-                      placeholder="Firma adı"
+                      placeholder="Firma adÄ±"
                     />
                   </label>
                   <label className="space-y-2">
@@ -465,7 +465,7 @@ export function ServiceSeoPage({
                       name="adSoyad"
                       type="text"
                       className="w-full rounded-2xl border border-slate-200 px-4 py-3 text-sm outline-none transition focus:border-[#278DC0]"
-                      placeholder="Yetkili kişi"
+                      placeholder="Yetkili kiÅŸi"
                     />
                   </label>
                   <label className="space-y-2">
@@ -487,19 +487,19 @@ export function ServiceSeoPage({
                     />
                   </label>
                   <label className="space-y-2">
-                    <span className="text-sm font-medium text-slate-700">Ürün Grubu</span>
+                    <span className="text-sm font-medium text-slate-700">ÃœrÃ¼n Grubu</span>
                     <select
                       name="urunGrubu"
                       className="w-full rounded-2xl border border-slate-200 px-4 py-3 text-sm outline-none transition focus:border-[#278DC0]"
                       defaultValue=""
                     >
                       <option value="" disabled>
-                        Seçiniz
+                        SeÃ§iniz
                       </option>
-                      <option>Organomineral Gübre</option>
-                      <option>Granül Gübre</option>
-                      <option>Sıvı Gübre</option>
-                      <option>Toz Gübre</option>
+                      <option>Organomineral GÃ¼bre</option>
+                      <option>GranÃ¼l GÃ¼bre</option>
+                      <option>SÄ±vÄ± GÃ¼bre</option>
+                      <option>Toz GÃ¼bre</option>
                     </select>
                   </label>
                   <label className="space-y-2">
@@ -508,7 +508,7 @@ export function ServiceSeoPage({
                       name="kapasite"
                       type="text"
                       className="w-full rounded-2xl border border-slate-200 px-4 py-3 text-sm outline-none transition focus:border-[#278DC0]"
-                      placeholder="Örn. 10 ton/saat"
+                      placeholder="Ã–rn. 10 ton/saat"
                     />
                   </label>
                 </div>
@@ -518,7 +518,7 @@ export function ServiceSeoPage({
                     name="mesaj"
                     rows={5}
                     className="w-full rounded-2xl border border-slate-200 px-4 py-3 text-sm outline-none transition focus:border-[#278DC0]"
-                    placeholder="Hedef ürün, saha bilgisi, ihracat planı veya teknik beklentinizi yazabilirsiniz."
+                    placeholder="Hedef Ã¼rÃ¼n, saha bilgisi, ihracat planÄ± veya teknik beklentinizi yazabilirsiniz."
                   />
                 </label>
                 <div className="mt-6 flex flex-col gap-3 sm:flex-row">
@@ -570,7 +570,7 @@ export function ServiceSeoPage({
                 rel="noopener noreferrer"
                 className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/25 px-6 text-sm font-semibold text-white transition hover:bg-white/10"
               >
-                WhatsApp ile Görüş
+                WhatsApp ile GÃ¶rÃ¼ÅŸ
               </a>
               <a
                 href={siteContact.phoneHref}
@@ -585,3 +585,4 @@ export function ServiceSeoPage({
     </main>
   );
 }
+

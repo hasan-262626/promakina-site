@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { RelatedServiceLinks } from "./related-service-links";
 import type { SectorExperienceConfig } from "./sector-experience-config";
@@ -37,44 +36,33 @@ export function SectorExperienceTemplate({
 }) {
   return (
     <main className="min-h-screen overflow-x-hidden bg-white text-slate-900">
-      <section className="relative isolate overflow-hidden border-b border-slate-200 text-white">
-        <div className="absolute inset-0">
-          <Image
-            src={config.heroImage}
-            alt={`${trText(config.heroTitle)} hero arka plan görseli`}
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover object-center"
-          />
-        </div>
-        <div className="absolute inset-0 bg-[linear-gradient(105deg,rgba(2,6,23,0.9)_0%,rgba(15,23,42,0.82)_34%,rgba(30,58,138,0.56)_62%,rgba(2,6,23,0.72)_100%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(59,130,246,0.18),transparent_30%)]" />
-
-        <div className="relative mx-auto flex min-h-[300px] max-w-7xl items-center px-4 py-12 sm:px-6 md:min-h-[380px] md:py-14 lg:px-10">
+      <section className="relative isolate overflow-hidden border-b border-slate-200 bg-gradient-to-br from-white via-sky-50 to-[#eef6fb]">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(39,141,192,0.10),transparent_32%)]" />
+        <div className="relative mx-auto flex min-h-[170px] max-w-7xl items-center px-4 py-8 sm:min-h-[200px] sm:px-6 sm:py-10 lg:min-h-[230px] lg:px-10 lg:py-12">
           <div className="max-w-4xl">
-            <div className="inline-flex rounded-full border border-white/15 bg-white/10 px-4 py-2 text-xs font-medium tracking-[0.16em] text-white/80 backdrop-blur">
-              {trText(config.heroBadge)}
-            </div>
-            <p className="mt-4 text-sm font-medium text-blue-200">{trText(config.heroIntro)}</p>
-            <h1 className="mt-2.5 text-[30px] font-semibold leading-[1.02] tracking-tight text-white sm:text-[38px] md:text-[44px] lg:text-[54px]">
+            <h1 className="text-4xl font-semibold leading-[1.1] tracking-tight text-[#020617] sm:text-5xl">
               {trText(config.heroTitle)}
             </h1>
-            <p className="mt-4 max-w-3xl text-sm leading-7 text-white/82 sm:text-base sm:leading-8 lg:max-w-[52rem]">
-              {trText(config.heroDescription)}
-            </p>
-            <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-              <a
-                href={`#${formId}`}
-                className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-blue-600 px-6 text-sm font-semibold text-white transition hover:bg-blue-700"
+            <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+              <Link
+                href="/iletisim"
+                className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-[#278DC0] px-6 text-sm font-semibold text-white transition hover:bg-[#154764]"
               >
                 Teklif Al
-              </a>
+              </Link>
               <Link
-                href="/sektorler"
-                className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/20 bg-white/10 px-6 text-sm font-semibold text-white backdrop-blur transition hover:bg-white/15"
+                href="https://wa.me/905320580104"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-[#d7e3ec] bg-white px-6 text-sm font-semibold text-[#154764] transition hover:border-[#278DC0] hover:bg-[#278DC0]/6"
               >
-                Tüm Sektörlere Dön
+                WhatsApp ile Görüş
+              </Link>
+              <Link
+                href="tel:+905320580104"
+                className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-[#d7e3ec] bg-white px-6 text-sm font-semibold text-[#154764] transition hover:border-[#278DC0] hover:bg-[#278DC0]/6"
+              >
+                Telefonla Ara
               </Link>
             </div>
           </div>
@@ -104,7 +92,7 @@ export function SectorExperienceTemplate({
 
             <aside className="xl:sticky xl:top-28 xl:self-start">
               <div className="rounded-[30px] border border-slate-200 bg-slate-50 p-6 shadow-[0_16px_40px_rgba(15,23,42,0.06)]">
-                <h3 className="text-2xl font-semibold text-slate-950">İlgili alt başlıklar</h3>
+                <h3 className="text-2xl font-semibold text-slate-950">Ä°lgili alt baÅŸlÄ±klar</h3>
                 <div className="mt-6 space-y-3">
                   {sector.subLinks.map((item) => (
                     <Link

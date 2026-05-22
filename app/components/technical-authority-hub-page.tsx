@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import { Hero } from "./Hero";
 import type { TechnicalAuthorityHub } from "../lib/technical-authority-hub-data";
@@ -48,7 +48,7 @@ export function TechnicalAuthorityHubPage({ hub }: TechnicalAuthorityHubPageProp
       {
         "@type": "ListItem",
         position: 2,
-        name: "Kütüphane",
+        name: "KÃ¼tÃ¼phane",
         item: "https://www.promakina.com.tr/kutuphane",
       },
       {
@@ -79,9 +79,9 @@ export function TechnicalAuthorityHubPage({ hub }: TechnicalAuthorityHubPageProp
     email: "info@promakina.com.tr",
     address: {
       "@type": "PostalAddress",
-      streetAddress: "75. Yıl Mah. Teksan Sanayi Sitesi Kilis Sokak D6 Blok No:2E",
-      addressLocality: "Odunpazarı",
-      addressRegion: "Eskişehir",
+      streetAddress: "75. YÄ±l Mah. Teksan Sanayi Sitesi Kilis Sokak D6 Blok No:2E",
+      addressLocality: "OdunpazarÄ±",
+      addressRegion: "EskiÅŸehir",
       postalCode: "26250",
       addressCountry: "TR",
     },
@@ -135,7 +135,7 @@ export function TechnicalAuthorityHubPage({ hub }: TechnicalAuthorityHubPageProp
       <Hero title={hub.title} description={hub.heroDescription} image={hub.image}>
         <Link
           href="/iletisim"
-          className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-white px-6 text-sm font-semibold text-slate-950 transition hover:bg-slate-100"
+          className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-[#278DC0] px-6 text-sm font-semibold text-white transition hover:bg-[#154764]"
         >
           Teklif Al
         </Link>
@@ -143,7 +143,7 @@ export function TechnicalAuthorityHubPage({ hub }: TechnicalAuthorityHubPageProp
           href="https://wa.me/905320580104"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/20 bg-white/10 px-6 text-sm font-semibold text-white transition hover:bg-white/15"
+          className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/60 bg-white/12 px-6 text-sm font-semibold text-white transition hover:border-white hover:bg-white/18"
         >
           WhatsApp
         </a>
@@ -160,7 +160,7 @@ export function TechnicalAuthorityHubPage({ hub }: TechnicalAuthorityHubPageProp
                   </Link>
                   <span>/</span>
                   <Link href="/kutuphane" className="transition hover:text-[#278DC0]">
-                    Kütüphane
+                    KÃ¼tÃ¼phane
                   </Link>
                   <span>/</span>
                   <span className="font-medium text-slate-700">{hub.title}</span>
@@ -213,13 +213,13 @@ export function TechnicalAuthorityHubPage({ hub }: TechnicalAuthorityHubPageProp
 
               <section className="rounded-[28px] border border-slate-200 bg-white px-6 py-8 shadow-[0_18px_45px_rgba(15,23,42,0.06)] sm:px-8 sm:py-10">
                 <h2 className="text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">
-                  Teknik Değerlendirme Özeti
+                  Teknik DeÄŸerlendirme Ã–zeti
                 </h2>
                 <div className="mt-6 overflow-hidden rounded-[22px] border border-slate-200 bg-white">
                   <div className="grid grid-cols-3 border-b border-slate-200 bg-slate-50 text-sm font-semibold text-slate-950">
                     <div className="px-4 py-3">Kriter</div>
-                    <div className="px-4 py-3">Açıklama</div>
-                    <div className="px-4 py-3">Mühendislik Önemi</div>
+                    <div className="px-4 py-3">AÃ§Ä±klama</div>
+                    <div className="px-4 py-3">MÃ¼hendislik Ã–nemi</div>
                   </div>
                   {hub.summaryRows.map((row) => (
                     <div
@@ -236,7 +236,7 @@ export function TechnicalAuthorityHubPage({ hub }: TechnicalAuthorityHubPageProp
 
               <section className="rounded-[28px] border border-slate-200 bg-white px-6 py-8 shadow-[0_18px_45px_rgba(15,23,42,0.06)] sm:px-8 sm:py-10">
                 <h2 className="text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">
-                  İlgili Bloglar
+                  Ä°lgili Bloglar
                 </h2>
                 <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
                   {hub.relatedBlogs.map((item) => (
@@ -255,7 +255,7 @@ export function TechnicalAuthorityHubPage({ hub }: TechnicalAuthorityHubPageProp
               <div className="grid gap-6 lg:grid-cols-2">
                 <section className="rounded-[28px] border border-slate-200 bg-white px-6 py-8 shadow-[0_18px_45px_rgba(15,23,42,0.06)] sm:px-8 sm:py-10">
                   <h2 className="text-2xl font-semibold tracking-tight text-slate-950">
-                    İlgili Makinalar
+                    Ä°lgili Makinalar
                   </h2>
                   <div className="mt-6 space-y-4">
                     {hub.relatedMachines.map((item) => (
@@ -273,7 +273,7 @@ export function TechnicalAuthorityHubPage({ hub }: TechnicalAuthorityHubPageProp
 
                 <section className="rounded-[28px] border border-slate-200 bg-white px-6 py-8 shadow-[0_18px_45px_rgba(15,23,42,0.06)] sm:px-8 sm:py-10">
                   <h2 className="text-2xl font-semibold tracking-tight text-slate-950">
-                    İlgili Hizmetler
+                    Ä°lgili Hizmetler
                   </h2>
                   <div className="mt-6 space-y-4">
                     {hub.relatedServices.map((item) => (
@@ -292,7 +292,7 @@ export function TechnicalAuthorityHubPage({ hub }: TechnicalAuthorityHubPageProp
 
               <section className="rounded-[28px] border border-slate-200 bg-slate-950 px-6 py-8 text-white shadow-[0_20px_60px_rgba(2,6,23,0.16)] sm:px-8 sm:py-10">
                 <h2 className="text-2xl font-semibold tracking-tight text-white sm:text-3xl">
-                  Sık Sorulan Sorular
+                  SÄ±k Sorulan Sorular
                 </h2>
                 <div className="mt-6 space-y-4">
                   {hub.faqs.map((faq) => (
@@ -325,7 +325,7 @@ export function TechnicalAuthorityHubPage({ hub }: TechnicalAuthorityHubPageProp
                     href="/hizmetler"
                     className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/25 px-6 text-sm font-semibold text-white transition hover:bg-white/10"
                   >
-                    İlgili Hizmetleri İncele
+                    Ä°lgili Hizmetleri Ä°ncele
                   </Link>
                 </div>
               </section>
@@ -334,7 +334,7 @@ export function TechnicalAuthorityHubPage({ hub }: TechnicalAuthorityHubPageProp
             <aside className="space-y-6 xl:sticky xl:top-28">
               <section className="rounded-[28px] border border-slate-200 bg-slate-50 p-6 shadow-[0_18px_45px_rgba(15,23,42,0.05)]">
                 <h2 className="text-xl font-semibold tracking-tight text-slate-950">
-                  İlgili Hesaplamalar
+                  Ä°lgili Hesaplamalar
                 </h2>
                 <div className="mt-5 space-y-4">
                   {hub.relatedCalculations.map((item) => (
@@ -352,7 +352,7 @@ export function TechnicalAuthorityHubPage({ hub }: TechnicalAuthorityHubPageProp
 
               <section className="rounded-[28px] border border-slate-200 bg-white p-6 shadow-[0_18px_45px_rgba(15,23,42,0.05)]">
                 <h2 className="text-xl font-semibold tracking-tight text-slate-950">
-                  Hızlı Geçişler
+                  HÄ±zlÄ± GeÃ§iÅŸler
                 </h2>
                 <div className="mt-5 flex flex-wrap gap-3">
                   <Link
@@ -377,7 +377,7 @@ export function TechnicalAuthorityHubPage({ hub }: TechnicalAuthorityHubPageProp
                     href="/sektorler"
                     className="inline-flex rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-[#278DC0] hover:bg-[#278DC0]/10 hover:text-[#154764]"
                   >
-                    Sektörler
+                    SektÃ¶rler
                   </Link>
                 </div>
               </section>
@@ -388,3 +388,4 @@ export function TechnicalAuthorityHubPage({ hub }: TechnicalAuthorityHubPageProp
     </main>
   );
 }
+

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import { siteContact, siteSocialSameAs } from "../lib/site-contact";
 import type { ReactNode } from "react";
@@ -81,7 +81,7 @@ export function LibrarySeoPage({
 }: LibrarySeoPageProps) {
   const defaultBreadcrumbs = breadcrumbs ?? [
     { label: "Ana Sayfa", href: "/" },
-    { label: "Kütüphane", href: "/kutuphane" },
+    { label: "KÃ¼tÃ¼phane", href: "/kutuphane" },
     { label: "Blog", href: "/kutuphane/blog" },
     { label: title, href: canonical.replace("https://www.promakina.com.tr", "") || canonical },
   ];
@@ -114,9 +114,9 @@ export function LibrarySeoPage({
     sameAs: siteSocialSameAs,
     address: {
       "@type": "PostalAddress",
-      streetAddress: "75. Yıl Mah. Teksan Sanayi Sitesi Kilis Sokak D6 Blok No:2E",
-      addressLocality: "Odunpazarı",
-      addressRegion: "Eskişehir",
+      streetAddress: "75. YÄ±l Mah. Teksan Sanayi Sitesi Kilis Sokak D6 Blok No:2E",
+      addressLocality: "OdunpazarÄ±",
+      addressRegion: "EskiÅŸehir",
       postalCode: "26250",
       addressCountry: "TR",
     },
@@ -144,8 +144,8 @@ export function LibrarySeoPage({
       name: "Pro Makina",
     },
     about: [
-      "Proses mühendisliği",
-      "Endüstriyel makine imalatı",
+      "Proses mÃ¼hendisliÄŸi",
+      "EndÃ¼striyel makine imalatÄ±",
       "Anahtar teslim tesis kurulumu",
     ],
     publisher: {
@@ -205,7 +205,7 @@ export function LibrarySeoPage({
       <Hero title={title} description={heroDescription} image={heroImage}>
         <Link
           href="/iletisim"
-          className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-white px-6 text-sm font-semibold text-slate-950 transition hover:bg-slate-100"
+          className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-[#278DC0] px-6 text-sm font-semibold text-white transition hover:bg-[#154764]"
         >
           Teklif Al
         </Link>
@@ -213,7 +213,7 @@ export function LibrarySeoPage({
           href={siteContact.whatsappHref}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/20 bg-white/10 px-6 text-sm font-semibold text-white transition hover:bg-white/15"
+          className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/60 bg-white/12 px-6 text-sm font-semibold text-white transition hover:border-white hover:bg-white/18"
         >
           WhatsApp
         </a>
@@ -292,25 +292,25 @@ export function LibrarySeoPage({
               <section>
                 <div className="rounded-[24px] border border-slate-200 bg-white px-5 py-5 shadow-sm">
                   <h2 className="text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">
-                    Teknik Görüşme Talep Edin
+                    Teknik GÃ¶rÃ¼ÅŸme Talep Edin
                   </h2>
                   <p className="mt-4 text-sm leading-8 text-slate-600 sm:text-base">
-                    Bu içerik Pro Makina proses mühendisliği yaklaşımıyla hazırlanmıştır. İçerikteki
-                    teknik çerçeveyi kendi projenize uyarlamak, kapasite ve ekipman seçimini birlikte
-                    netleştirmek için bizimle teknik görüşme planlayabilirsiniz.
+                    Bu iÃ§erik Pro Makina proses mÃ¼hendisliÄŸi yaklaÅŸÄ±mÄ±yla hazÄ±rlanmÄ±ÅŸtÄ±r. Ä°Ã§erikteki
+                    teknik Ã§erÃ§eveyi kendi projenize uyarlamak, kapasite ve ekipman seÃ§imini birlikte
+                    netleÅŸtirmek iÃ§in bizimle teknik gÃ¶rÃ¼ÅŸme planlayabilirsiniz.
                   </p>
                   <div className="mt-6 flex flex-col gap-3 sm:flex-row">
                     <Link
                       href="/iletisim"
                       className="inline-flex min-h-[44px] items-center justify-center rounded-full bg-blue-700 px-5 text-sm font-semibold text-white transition hover:bg-blue-800"
                     >
-                      Teknik Görüşme Talep Edin
+                      Teknik GÃ¶rÃ¼ÅŸme Talep Edin
                     </Link>
                     <Link
                       href="/hizmetler"
                       className="inline-flex min-h-[44px] items-center justify-center rounded-full border border-slate-200 px-5 text-sm font-semibold text-slate-800 transition hover:border-blue-200 hover:text-blue-700"
                     >
-                      İlgili Hizmetleri İncele
+                      Ä°lgili Hizmetleri Ä°ncele
                     </Link>
                   </div>
                 </div>
@@ -323,7 +323,7 @@ export function LibrarySeoPage({
               {faqs.length ? (
                 <section>
                   <h2 className="text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">
-                    Sık Sorulan Sorular
+                    SÄ±k Sorulan Sorular
                   </h2>
                   <div className="mt-6 space-y-4">
                     {faqs.map((faq) => (
@@ -341,7 +341,7 @@ export function LibrarySeoPage({
               {nextContent ? (
                 <section>
                   <h2 className="text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">
-                    Sıradaki İçerik Önerisi
+                    SÄ±radaki Ä°Ã§erik Ã–nerisi
                   </h2>
                   <Link
                     href={nextContent.href}
@@ -349,7 +349,7 @@ export function LibrarySeoPage({
                   >
                     <span className="text-lg font-semibold text-slate-950">{nextContent.title}</span>
                     <span className="mt-3 block text-sm leading-7 text-slate-600">{nextContent.description}</span>
-                    <span className="mt-4 inline-flex text-sm font-semibold text-blue-700">Devamını Oku</span>
+                    <span className="mt-4 inline-flex text-sm font-semibold text-blue-700">DevamÄ±nÄ± Oku</span>
                   </Link>
                 </section>
               ) : null}
@@ -362,7 +362,7 @@ export function LibrarySeoPage({
         <div className="site-container">
           <div className="rounded-[28px] bg-blue-700 px-6 py-8 text-white shadow-[0_24px_70px_rgba(29,78,216,0.28)] sm:px-8 sm:py-10">
             <p className="text-sm font-semibold uppercase tracking-[0.16em] text-white/80">
-              Teknik Görüşme Talep Edin
+              Teknik GÃ¶rÃ¼ÅŸme Talep Edin
             </p>
             <p className="max-w-3xl text-base leading-8 text-white/90 sm:text-lg">{ctaText}</p>
             <div className="mt-6 flex flex-col gap-3 sm:flex-row">
@@ -384,7 +384,7 @@ export function LibrarySeoPage({
                 href="/hizmetler/teknik-danismanlik"
                 className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/25 px-6 text-sm font-semibold text-white transition hover:bg-white/10"
               >
-                Teknik Danışmanlık
+                Teknik DanÄ±ÅŸmanlÄ±k
               </Link>
             </div>
           </div>
@@ -393,3 +393,4 @@ export function LibrarySeoPage({
     </main>
   );
 }
+

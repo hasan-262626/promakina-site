@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import { Hero } from "./Hero";
 import { ProjectPageData } from "../lib/project-pages-data";
 
@@ -59,7 +59,7 @@ export default function ProjectDetailLandingPage({
       email: "info@promakina.com.tr",
     },
     areaServed: "TR",
-    serviceType: "Endüstriyel proses ve tesis proje geliştirme",
+    serviceType: "EndÃ¼striyel proses ve tesis proje geliÅŸtirme",
   };
 
   return (
@@ -70,21 +70,21 @@ export default function ProjectDetailLandingPage({
       <Hero title={project.title} description={project.heroDescription} image={project.image}>
         <Link
           href="/iletisim"
-          className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-blue-600 px-6 text-sm font-semibold text-white transition hover:bg-blue-700"
+          className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-[#278DC0] px-6 text-sm font-semibold text-white transition hover:bg-[#154764]"
         >
-          Teknik Görüşme Talep Et
+          Teknik GÃ¶rÃ¼ÅŸme Talep Et
         </Link>
         <a
           href={`https://wa.me/905320580104?text=${encodeURIComponent(
-            `Merhaba, Pro Makina web sitenizden ulaşıyorum. ${project.title} için teklif almak istiyorum.`,
+            `Merhaba, Pro Makina web sitenizden ulaÅŸÄ±yorum. ${project.title} iÃ§in teklif almak istiyorum.`,
           )}`}
-          className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/20 bg-white/10 px-6 text-sm font-semibold text-white backdrop-blur transition hover:bg-white/15"
+          className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/60 bg-white/12 px-6 text-sm font-semibold text-white backdrop-blur transition hover:border-white hover:bg-white/18"
         >
-          WhatsApp ile Görüş
+          WhatsApp ile GÃ¶rÃ¼ÅŸ
         </a>
         <a
           href="tel:+905320580104"
-          className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/20 bg-white/10 px-6 text-sm font-semibold text-white backdrop-blur transition hover:bg-white/15"
+          className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/60 bg-white/12 px-6 text-sm font-semibold text-white backdrop-blur transition hover:border-white hover:bg-white/18"
         >
           Telefonla Ara
         </a>
@@ -95,21 +95,21 @@ export default function ProjectDetailLandingPage({
           <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
             <div className="rounded-3xl border border-slate-200 bg-white p-6 md:p-8">
               <h2 className="text-2xl font-semibold tracking-tight text-slate-950">
-                Kısa proje özeti
+                KÄ±sa proje Ã¶zeti
               </h2>
               <p className="mt-4 text-sm leading-8 text-slate-600 md:text-base">
                 {project.heroDescription}
               </p>
               <div className="mt-6 rounded-2xl border border-blue-100 bg-blue-50 px-5 py-5 text-sm leading-7 text-slate-700">
-                Bu proje sayfası detaylı teknik içeriklerle hazırlanacaktır. Şimdilik proje
-                kapsamını, kullanılan ana makine gruplarını ve ilk görüşme için gerekli çerçeveyi
-                sade biçimde sunuyoruz.
+                Bu proje sayfasÄ± detaylÄ± teknik iÃ§eriklerle hazÄ±rlanacaktÄ±r. Åžimdilik proje
+                kapsamÄ±nÄ±, kullanÄ±lan ana makine gruplarÄ±nÄ± ve ilk gÃ¶rÃ¼ÅŸme iÃ§in gerekli Ã§erÃ§eveyi
+                sade biÃ§imde sunuyoruz.
               </div>
             </div>
 
             <div className="rounded-3xl border border-slate-200 bg-slate-50 p-6 md:p-8">
               <h2 className="text-2xl font-semibold tracking-tight text-slate-950">
-                Proje kapsamı
+                Proje kapsamÄ±
               </h2>
               <ul className="mt-5 space-y-3 text-sm leading-7 text-slate-600 md:text-base">
                 {project.projectScope.map((item) => (
@@ -129,7 +129,7 @@ export default function ProjectDetailLandingPage({
           <div className="grid gap-6 lg:grid-cols-3">
             <div className="rounded-3xl border border-slate-200 bg-white p-6 md:p-8">
               <h2 className="text-xl font-semibold tracking-tight text-slate-950">
-                Kullanılan makine grupları
+                KullanÄ±lan makine gruplarÄ±
               </h2>
               <div className="mt-5 flex flex-wrap gap-3">
                 {project.machineGroups.map((item) => (
@@ -145,7 +145,7 @@ export default function ProjectDetailLandingPage({
 
             <div className="rounded-3xl border border-slate-200 bg-white p-6 md:p-8">
               <h2 className="text-xl font-semibold tracking-tight text-slate-950">
-                Proses akışı
+                Proses akÄ±ÅŸÄ±
               </h2>
               <div className="mt-5 grid gap-3">
                 {project.processFlow.map((item, index) => (
@@ -154,7 +154,7 @@ export default function ProjectDetailLandingPage({
                     className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4"
                   >
                     <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">
-                      Adım {index + 1}
+                      AdÄ±m {index + 1}
                     </p>
                     <p className="mt-2 text-sm leading-7 text-slate-700">{item}</p>
                   </div>
@@ -164,7 +164,7 @@ export default function ProjectDetailLandingPage({
 
             <div className="rounded-3xl border border-slate-200 bg-white p-6 md:p-8">
               <h2 className="text-xl font-semibold tracking-tight text-slate-950">
-                İlk görüşmede faydalı bilgiler
+                Ä°lk gÃ¶rÃ¼ÅŸmede faydalÄ± bilgiler
               </h2>
               <ul className="mt-5 space-y-3 text-sm leading-7 text-slate-600">
                 {project.quoteRequirements.map((item) => (
@@ -183,7 +183,7 @@ export default function ProjectDetailLandingPage({
         <div className="site-container">
           <div className="rounded-3xl border border-slate-200 bg-slate-50 p-6 md:p-8">
             <h2 className="text-2xl font-semibold tracking-tight text-slate-950">
-              İlgili hizmetler ve makinalar
+              Ä°lgili hizmetler ve makinalar
             </h2>
             <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
               {project.relatedLinks.map((item) => (
@@ -204,32 +204,32 @@ export default function ProjectDetailLandingPage({
         <div className="site-container">
           <div className="rounded-[32px] bg-blue-700 px-6 py-10 text-white md:px-10 md:py-12">
             <h2 className="text-3xl font-semibold tracking-tight">
-              Projeniz için teknik değerlendirme alın
+              Projeniz iÃ§in teknik deÄŸerlendirme alÄ±n
             </h2>
             <p className="mt-4 max-w-3xl text-sm leading-8 text-white/84 md:text-base">
-              Hammadde, kapasite, nem oranı, ürün hedefi ve saha koşullarınızı paylaşın;
-              projenize uygun proses akışını ve makine omurgasını birlikte netleştirelim.
+              Hammadde, kapasite, nem oranÄ±, Ã¼rÃ¼n hedefi ve saha koÅŸullarÄ±nÄ±zÄ± paylaÅŸÄ±n;
+              projenize uygun proses akÄ±ÅŸÄ±nÄ± ve makine omurgasÄ±nÄ± birlikte netleÅŸtirelim.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <Link
                 href="/iletisim"
                 className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-white px-6 text-sm font-semibold text-blue-700 transition hover:bg-slate-100"
               >
-                İletişim
+                Ä°letiÅŸim
               </Link>
               <a
                 href={`https://wa.me/905320580104?text=${encodeURIComponent(
-                  `Merhaba, ${project.title} için teknik görüşme talep ediyorum.`,
+                  `Merhaba, ${project.title} iÃ§in teknik gÃ¶rÃ¼ÅŸme talep ediyorum.`,
                 )}`}
-                className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/20 bg-white/10 px-6 text-sm font-semibold text-white backdrop-blur transition hover:bg-white/15"
+                className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/60 bg-white/12 px-6 text-sm font-semibold text-white backdrop-blur transition hover:border-white hover:bg-white/18"
               >
-                WhatsApp ile Görüş
+                WhatsApp ile GÃ¶rÃ¼ÅŸ
               </a>
               <Link
                 href="/hizmetler"
-                className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/20 bg-white/10 px-6 text-sm font-semibold text-white backdrop-blur transition hover:bg-white/15"
+                className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/60 bg-white/12 px-6 text-sm font-semibold text-white backdrop-blur transition hover:border-white hover:bg-white/18"
               >
-                Hizmetleri İncele
+                Hizmetleri Ä°ncele
               </Link>
             </div>
           </div>
@@ -238,3 +238,4 @@ export default function ProjectDetailLandingPage({
     </main>
   );
 }
+

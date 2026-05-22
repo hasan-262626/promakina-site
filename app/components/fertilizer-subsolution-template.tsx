@@ -1,4 +1,4 @@
-﻿import Link from "next/link";
+import Link from "next/link";
 import type { FertilizerSubsolutionConfig } from "./fertilizer-subsolution-config";
 import type { SectorCardItem, SectorSubsectorItem } from "./sector-subsectors-data";
 import { trText } from "../lib/tr-text";
@@ -104,27 +104,33 @@ export function FertilizerSubsolutionTemplate({
 
   return (
     <main className="min-h-screen overflow-x-hidden bg-white text-slate-900">
-      <section className="relative isolate overflow-hidden border-b border-slate-200 text-white">
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url('${sector.image}')` }}
-        />
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(10,20,40,0.78),rgba(10,20,40,0.78))]" />
-        <div className="relative site-container flex min-h-[320px] items-center py-[60px] md:min-h-[420px] md:py-[80px]">
+      <section className="relative isolate overflow-hidden border-b border-slate-200 bg-gradient-to-br from-white via-sky-50 to-[#eef6fb]">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(39,141,192,0.10),transparent_32%)]" />
+        <div className="relative site-container flex min-h-[170px] items-center py-8 sm:min-h-[200px] sm:py-10 lg:min-h-[230px] lg:py-12">
           <div className="max-w-[860px]">
-            <div className="inline-flex rounded-full border border-white/15 bg-white/10 px-4 py-2 text-xs font-medium tracking-[0.16em] text-white/84 backdrop-blur">
-              {trText(config.heroBadge)}
-            </div>
-            <h1 className="mt-5 max-w-[800px] break-normal text-[32px] font-semibold leading-[1.2] tracking-tight text-white md:text-[48px]">
+            <h1 className="max-w-[800px] break-normal text-4xl font-semibold leading-[1.1] tracking-tight text-[#020617] md:text-5xl">
               {trText(config.heroTitle)}
             </h1>
-            <p className="mt-4 max-w-[700px] text-base leading-[1.7] text-white/84">{trText(config.heroDescription)}</p>
-            <div className="mt-8 flex flex-wrap gap-3">
+            <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <Link
-                href={`/sektorler/${sector.slug}`}
-                className="rounded-full bg-blue-700 px-7 py-4 text-center text-sm font-semibold text-white transition hover:bg-blue-800"
+                href="/iletisim"
+                className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-[#278DC0] px-6 text-sm font-semibold text-white transition hover:bg-[#154764]"
               >
-                Gübre Üretim Tesisleri sayfasına dön
+                Teklif Al
+              </Link>
+              <Link
+                href="https://wa.me/905320580104"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-[#d7e3ec] bg-white px-6 text-sm font-semibold text-[#154764] transition hover:border-[#278DC0] hover:bg-[#278DC0]/6"
+              >
+                WhatsApp ile Görüş
+              </Link>
+              <Link
+                href="tel:+905320580104"
+                className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-[#d7e3ec] bg-white px-6 text-sm font-semibold text-[#154764] transition hover:border-[#278DC0] hover:bg-[#278DC0]/6"
+              >
+                Telefonla Ara
               </Link>
             </div>
           </div>

@@ -1,29 +1,54 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import type { Metadata } from "next";
-import { drumProductPages } from "../../components/drum-product-data";
+import { notFound } from "next/navigation";
+import { machineCategoryPages } from "../../components/machine-group-data";
+import { crusherPublicProductRecords } from "../../components/crusher-product-public-data";
 
-const canonical = "https://www.promakina.com.tr/makinalar-ekipman/tambur-sistemleri";
+function getCrusherCategory() {
+  return machineCategoryPages.find((category) => category.calculatorFamily === "crusher") ?? null;
+}
 
 export const metadata: Metadata = {
-  title: "Tambur Sistemleri | Pro Makina",
+  title: "Kırıcılar ve Parçalayıcılar | Pro Makina",
   description:
-    "GranÃ¼latÃ¶r, kurutma, soÄŸutma, kaplama ve kompost tamburu Ã§Ã¶zÃ¼mleriyle endÃ¼striyel tambur sistemlerini inceleyin.",
+    "Çekiçli kırıcı, zincirli kırıcı, shredder, bıçaklı primer kırıcı, bıçaklı sekonder kırıcı, çeneli kırıcı ve dik milli kırıcı çözümlerini inceleyin.",
   alternates: {
-    canonical,
+    canonical: "https://www.promakina.com.tr/makinalar-ekipman/kiricilar-ve-parcalayicilar",
   },
   openGraph: {
-    title: "Tambur Sistemleri | Pro Makina",
+    title: "Kırıcılar ve Parçalayıcılar | Pro Makina",
     description:
-      "GranÃ¼latÃ¶r, kurutma, soÄŸutma, kaplama ve kompost tamburu Ã§Ã¶zÃ¼mleriyle endÃ¼striyel tambur sistemlerini inceleyin.",
-    url: canonical,
+      "Çekiçli kırıcı, zincirli kırıcı, shredder, bıçaklı primer kırıcı, bıçaklı sekonder kırıcı, çeneli kırıcı ve dik milli kırıcı çözümlerini inceleyin.",
+    url: "https://www.promakina.com.tr/makinalar-ekipman/kiricilar-ve-parcalayicilar",
     siteName: "Pro Makina",
     locale: "tr_TR",
     type: "website",
   },
 };
 
-export default function DrumSystemsCategoryPage() {
+export default function Page() {
+  const category = getCrusherCategory();
+
+  if (!category) {
+    notFound();
+  }
+
+  const products = crusherPublicProductRecords
+    .map((record) => {
+      const product = category.products.find((item) => item.slug === record.dataSlug);
+
+      if (!product) {
+        return null;
+      }
+
+      return {
+        record,
+        product,
+      };
+    })
+    .filter((item): item is NonNullable<typeof item> => item !== null);
+
   return (
     <main className="min-h-screen bg-white text-slate-900">
       <section className="relative overflow-hidden border-b border-slate-200 bg-gradient-to-br from-white via-sky-50 to-[#eef6fb]">
@@ -31,7 +56,7 @@ export default function DrumSystemsCategoryPage() {
         <div className="site-container relative flex min-h-[170px] items-center py-8 sm:min-h-[200px] sm:py-10 lg:min-h-[230px] lg:py-12">
           <div className="max-w-4xl">
             <h1 className="text-4xl font-semibold tracking-tight text-[#020617] md:text-5xl">
-              Tambur Sistemleri
+              Kırıcılar ve Parçalayıcılar
             </h1>
             <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <Link
@@ -68,31 +93,30 @@ export default function DrumSystemsCategoryPage() {
       <section className="section-space">
         <div className="site-container">
           <div className="max-w-4xl">
-            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-700">
-              Alt ÃœrÃ¼nler
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#278DC0]">
+              Alt Ürünler
             </p>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
-              Tambur Ã§eÅŸitlerini ayrÄ± ayrÄ± inceleyin
+              Kırıcılar ve Parçalayıcılar alt ürünlerini ayrı ayrı inceleyin
             </h2>
             <p className="mt-4 text-[15px] leading-8 text-slate-600 sm:text-base">
-              Prosesinize uygun tambur tipini seÃ§in ve ilgili makina detay sayfasÄ±na geÃ§in.
-              Her alt Ã¼rÃ¼n kendi teknik odaklarÄ±, uygulama alanlarÄ± ve opsiyonlarÄ±yla ayrÄ±
-              incelenebilir yapÄ±dadÄ±r.
+              {category.shortDescription} Prosesinize uygun makina tipini seçin ve ilgili ürün detay
+              sayfasına geçin.
             </p>
           </div>
 
-          <div className="section-gap grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-            {drumProductPages.map((product) => (
+          <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+            {products.map(({ record, product }) => (
               <Link
-                key={product.slug}
-                href={`/makinalar-ekipman/tambur-sistemleri/${product.slug}`}
-                className="group flex h-full flex-col overflow-hidden rounded-[30px] border border-slate-200 bg-white shadow-[0_18px_50px_rgba(15,23,42,0.06)] transition duration-200 hover:-translate-y-1 hover:border-blue-200 hover:shadow-[0_24px_62px_rgba(15,23,42,0.1)]"
+                key={record.publicSlug}
+                href={`/makinalar-ekipman/kiricilar-ve-parcalayicilar/${record.publicSlug}`}
+                className="group flex h-full flex-col overflow-hidden rounded-[30px] border border-slate-200 bg-white shadow-[0_18px_50px_rgba(15,23,42,0.06)] transition duration-200 hover:-translate-y-1 hover:border-[#278DC0]/20 hover:shadow-[0_24px_62px_rgba(15,23,42,0.1)]"
               >
                 <article className="flex h-full flex-col">
                   <div className="relative min-h-[220px] bg-slate-200">
                     <Image
-                      src={product.gallery[0]?.src ?? "/images/kurutmatam2.jpg"}
-                      alt={product.title}
+                      src={product.gallery[0]?.src ?? category.heroImage}
+                      alt={record.title}
                       fill
                       sizes="(min-width: 1536px) 24vw, (min-width: 768px) 48vw, 100vw"
                       className="object-cover transition duration-300 group-hover:scale-[1.02]"
@@ -100,14 +124,14 @@ export default function DrumSystemsCategoryPage() {
                   </div>
                   <div className="flex min-h-[260px] flex-1 flex-col px-6 py-6 sm:px-7 sm:py-7">
                     <h3 className="text-2xl font-semibold tracking-tight text-slate-950">
-                      {product.title}
+                      {record.title}
                     </h3>
                     <p className="mt-4 text-sm leading-7 text-slate-600 sm:text-[15px]">
-                      {product.shortDescription}
+                      {record.description}
                     </p>
                     <div className="mt-auto pt-8">
-                      <span className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-slate-300 px-5 text-sm font-semibold text-slate-900 transition group-hover:border-blue-200 group-hover:text-blue-700">
-                        ÃœrÃ¼nÃ¼ Ä°ncele
+                      <span className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-slate-300 px-5 text-sm font-semibold text-slate-900 transition group-hover:border-[#278DC0]/20 group-hover:text-[#278DC0]">
+                        Ürünü İncele
                       </span>
                     </div>
                   </div>

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import { Hero } from "./Hero";
 import {
@@ -149,11 +149,11 @@ export function MachineSeoLandingPage({
   faqs,
   ctaText,
 }: MachineSeoLandingPageProps) {
-  const quoteCtaTitle = "Projeniz için teknik teklif alın";
+  const quoteCtaTitle = "Projeniz iÃ§in teknik teklif alÄ±n";
   const quoteCtaDescription =
-    "Kapasite, hammadde, nem oranı, proses hedefi ve saha koşullarına göre size özel makine ve tesis çözümü hazırlayalım.";
+    "Kapasite, hammadde, nem oranÄ±, proses hedefi ve saha koÅŸullarÄ±na gÃ¶re size Ã¶zel makine ve tesis Ã§Ã¶zÃ¼mÃ¼ hazÄ±rlayalÄ±m.";
   const whatsappHref = createWhatsAppHref(
-    `Merhaba, Pro Makina web sitenizden ulaşıyorum. Aşağıdaki ürün/hizmet için teklif almak istiyorum: ${title}`,
+    `Merhaba, Pro Makina web sitenizden ulaÅŸÄ±yorum. AÅŸaÄŸÄ±daki Ã¼rÃ¼n/hizmet iÃ§in teklif almak istiyorum: ${title}`,
   );
   const organizationSchema = {
     "@context": "https://schema.org",
@@ -176,7 +176,7 @@ export function MachineSeoLandingPage({
     },
     serviceType: `${categoryName} - ${productName}`,
     category: categoryName,
-    areaServed: ["Türkiye", "Avrupa", "Orta Doğu", "Kuzey Afrika"],
+    areaServed: ["TÃ¼rkiye", "Avrupa", "Orta DoÄŸu", "Kuzey Afrika"],
     url: canonical,
   };
 
@@ -250,7 +250,7 @@ export function MachineSeoLandingPage({
           href="/iletisim"
           data-cta-event="quote_button_click"
           data-cta-label={`${productName}_hero_quote`}
-          className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-white px-6 text-sm font-semibold text-slate-950 transition hover:bg-slate-100"
+          className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-[#278DC0] px-6 text-sm font-semibold text-white transition hover:bg-[#154764]"
         >
           Teklif Al
         </Link>
@@ -258,13 +258,13 @@ export function MachineSeoLandingPage({
           href={whatsappHref}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/20 bg-white/10 px-6 text-sm font-semibold text-white transition hover:bg-white/15"
+          className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/60 bg-white/12 px-6 text-sm font-semibold text-white transition hover:border-white hover:bg-white/18"
         >
-          WhatsApp ile Gönder
+          WhatsApp ile GÃ¶nder
         </a>
         <a
           href={siteContact.phoneHref}
-          className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/20 bg-white/10 px-6 text-sm font-semibold text-white transition hover:bg-white/15"
+          className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/60 bg-white/12 px-6 text-sm font-semibold text-white transition hover:border-white hover:bg-white/18"
         >
           Telefonla Ara
         </a>
@@ -313,7 +313,7 @@ export function MachineSeoLandingPage({
           <div className="overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-[0_18px_45px_rgba(15,23,42,0.06)]">
             <div className="border-b border-slate-200 px-6 py-6 sm:px-8">
               <h2 className="text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">
-                Teknik Değerlendirme Özeti
+                Teknik DeÄŸerlendirme Ã–zeti
               </h2>
             </div>
             <div className="overflow-x-auto">
@@ -324,10 +324,10 @@ export function MachineSeoLandingPage({
                       Kriter
                     </th>
                     <th className="px-6 py-4 text-left text-sm font-semibold text-slate-950 sm:px-8">
-                      Açıklama
+                      AÃ§Ä±klama
                     </th>
                     <th className="px-6 py-4 text-left text-sm font-semibold text-slate-950 sm:px-8">
-                      Proje Açısından Önemi
+                      Proje AÃ§Ä±sÄ±ndan Ã–nemi
                     </th>
                   </tr>
                 </thead>
@@ -356,12 +356,12 @@ export function MachineSeoLandingPage({
         <div className="site-container">
           <div className="rounded-[32px] border border-slate-200 bg-slate-50 px-6 py-8 shadow-[0_18px_45px_rgba(15,23,42,0.06)] sm:px-8 sm:py-10 lg:px-12">
             <div className="content-stack">
-              <ParagraphListSection title="Teknik Özellikler" items={technicalFeatures} />
-              <ParagraphListSection title="Kapasite ve Tasarım Kriterleri" items={capacityCriteria} />
-              <ParagraphListSection title="Proses İçindeki Yeri" items={processRole} />
+              <ParagraphListSection title="Teknik Ã–zellikler" items={technicalFeatures} />
+              <ParagraphListSection title="Kapasite ve TasarÄ±m Kriterleri" items={capacityCriteria} />
+              <ParagraphListSection title="Proses Ä°Ã§indeki Yeri" items={processRole} />
               <ParagraphListSection title="Opsiyonel Ekipmanlar" items={optionalEquipment} />
               <ParagraphListSection title="Avantajlar" items={advantages} />
-              <ParagraphListSection title="Teklif Almak İçin Gerekli Bilgiler" items={quoteRequirements} />
+              <ParagraphListSection title="Teklif Almak Ä°Ã§in Gerekli Bilgiler" items={quoteRequirements} />
             </div>
           </div>
         </div>
@@ -383,7 +383,7 @@ export function MachineSeoLandingPage({
                 rel="noopener noreferrer"
                 className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-white px-6 text-sm font-semibold text-blue-800 transition hover:bg-slate-100"
               >
-                WhatsApp ile Görüş
+                WhatsApp ile GÃ¶rÃ¼ÅŸ
               </a>
               <Link
                 href="/iletisim"
@@ -411,7 +411,7 @@ export function MachineSeoLandingPage({
           <div className="grid gap-6 lg:grid-cols-2">
             <div className="rounded-[28px] border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
               <h2 className="text-2xl font-semibold tracking-tight text-slate-950">
-                İlgili Makinalar ve Sayfalar
+                Ä°lgili Makinalar ve Sayfalar
               </h2>
               <div className="mt-5 flex flex-wrap gap-3">
                 {relatedPages.map((link) => (
@@ -427,7 +427,7 @@ export function MachineSeoLandingPage({
             </div>
             <div className="rounded-[28px] border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
               <h2 className="text-2xl font-semibold tracking-tight text-slate-950">
-                İlgili Hizmetler
+                Ä°lgili Hizmetler
               </h2>
               <div className="mt-5 flex flex-wrap gap-3">
                 {relatedServices.map((link) => (
@@ -449,7 +449,7 @@ export function MachineSeoLandingPage({
         <div className="site-container">
           <div className="rounded-[32px] border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
             <h2 className="text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">
-              Sık Sorulan Sorular
+              SÄ±k Sorulan Sorular
             </h2>
             <div className="mt-6 space-y-4">
               {faqs.map((faq) => (
@@ -492,7 +492,7 @@ export function MachineSeoLandingPage({
                 rel="noopener noreferrer"
                 className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/25 px-6 text-sm font-semibold text-white transition hover:bg-white/10"
               >
-                WhatsApp ile Görüş
+                WhatsApp ile GÃ¶rÃ¼ÅŸ
               </a>
               <a
                 href={siteContact.phoneHref}
@@ -507,3 +507,4 @@ export function MachineSeoLandingPage({
     </main>
   );
 }
+

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import { Hero } from "./Hero";
 import type { IndustrialSolutionLandingConfig } from "../lib/industrial-solution-landing-data";
@@ -61,7 +61,7 @@ export function IndustrialSolutionLandingPage({
       name: "Pro Makina",
       url: "https://www.promakina.com.tr",
     },
-    areaServed: ["Türkiye", "Avrupa", "Orta Doğu", "Kuzey Afrika"],
+    areaServed: ["TÃ¼rkiye", "Avrupa", "Orta DoÄŸu", "Kuzey Afrika"],
     url: canonical,
   };
 
@@ -78,7 +78,7 @@ export function IndustrialSolutionLandingPage({
       {
         "@type": "ListItem",
         position: 2,
-        name: "Çözümler",
+        name: "Ã‡Ã¶zÃ¼mler",
         item: "https://www.promakina.com.tr/cozumler",
       },
       {
@@ -125,7 +125,7 @@ export function IndustrialSolutionLandingPage({
       <Hero title={config.title} description={config.heroDescription} image={config.image}>
         <Link
           href="/iletisim"
-          className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-white px-6 text-sm font-semibold text-slate-950 transition hover:bg-slate-100"
+          className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-[#278DC0] px-6 text-sm font-semibold text-white transition hover:bg-[#154764]"
         >
           Teklif Al
         </Link>
@@ -133,7 +133,7 @@ export function IndustrialSolutionLandingPage({
           href={siteContact.whatsappHref}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/20 bg-white/10 px-6 text-sm font-semibold text-white transition hover:bg-white/15"
+          className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/60 bg-white/12 px-6 text-sm font-semibold text-white transition hover:border-white hover:bg-white/18"
         >
           WhatsApp
         </a>
@@ -190,7 +190,7 @@ export function IndustrialSolutionLandingPage({
           <div className="grid gap-6 lg:grid-cols-2">
             <div className="rounded-[28px] border border-slate-200 bg-white px-6 py-8 shadow-[0_18px_45px_rgba(15,23,42,0.05)] sm:px-8 sm:py-10">
               <h2 className="text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">
-                Teknik Giriş
+                Teknik GiriÅŸ
               </h2>
               <div className="mt-5 space-y-5 text-sm leading-8 text-slate-600 sm:text-base">
                 {config.sections[0]?.paragraphs.map((paragraph) => (
@@ -223,12 +223,12 @@ export function IndustrialSolutionLandingPage({
           <div className="rounded-[32px] border border-slate-200 bg-slate-50 px-6 py-8 shadow-[0_18px_45px_rgba(15,23,42,0.06)] sm:px-8 sm:py-10 lg:px-12">
             <div className="max-w-3xl">
               <h2 className="text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">
-                Kullanım Alanları
+                KullanÄ±m AlanlarÄ±
               </h2>
               <p className="mt-4 text-sm leading-8 text-slate-600 sm:text-base">
-                Endüstriyel çözüm sayfaları yalnız tek sektörü değil, birden fazla proses senaryosunu
-                aynı mühendislik omurgasında yorumlar. Aşağıdaki başlıklar en sık karşılaşılan uygulama
-                alanlarını temsil eder.
+                EndÃ¼striyel Ã§Ã¶zÃ¼m sayfalarÄ± yalnÄ±z tek sektÃ¶rÃ¼ deÄŸil, birden fazla proses senaryosunu
+                aynÄ± mÃ¼hendislik omurgasÄ±nda yorumlar. AÅŸaÄŸÄ±daki baÅŸlÄ±klar en sÄ±k karÅŸÄ±laÅŸÄ±lan uygulama
+                alanlarÄ±nÄ± temsil eder.
               </p>
             </div>
             <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
@@ -251,11 +251,11 @@ export function IndustrialSolutionLandingPage({
           <div className="rounded-[32px] border border-slate-200 bg-white px-6 py-8 shadow-[0_18px_45px_rgba(15,23,42,0.06)] sm:px-8 sm:py-10 lg:px-12">
             <div className="max-w-3xl">
               <h2 className="text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">
-                Proses Akışı
+                Proses AkÄ±ÅŸÄ±
               </h2>
               <p className="mt-4 text-sm leading-8 text-slate-600 sm:text-base">
-                Her projede önce teknik veri okunur, sonra ekipman seçilir. Aşağıdaki zaman çizgisi
-                landing page mantığında kullanıcıyı keşiften devreye almaya kadar yönlendirir.
+                Her projede Ã¶nce teknik veri okunur, sonra ekipman seÃ§ilir. AÅŸaÄŸÄ±daki zaman Ã§izgisi
+                landing page mantÄ±ÄŸÄ±nda kullanÄ±cÄ±yÄ± keÅŸiften devreye almaya kadar yÃ¶nlendirir.
               </p>
             </div>
             <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
@@ -299,7 +299,7 @@ export function IndustrialSolutionLandingPage({
         <div className="site-container grid gap-6 xl:grid-cols-3">
           <div className="rounded-[28px] border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
             <h2 className="text-2xl font-semibold tracking-tight text-slate-950">
-              İlgili Makinalar
+              Ä°lgili Makinalar
             </h2>
             <div className="mt-5 space-y-4">
               {config.relatedMachines.map((item) => (
@@ -317,7 +317,7 @@ export function IndustrialSolutionLandingPage({
 
           <div className="rounded-[28px] border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
             <h2 className="text-2xl font-semibold tracking-tight text-slate-950">
-              İlgili Hesaplama Araçları
+              Ä°lgili Hesaplama AraÃ§larÄ±
             </h2>
             <div className="mt-5 space-y-4">
               {config.relatedCalculations.map((item) => (
@@ -335,7 +335,7 @@ export function IndustrialSolutionLandingPage({
 
           <div className="rounded-[28px] border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
             <h2 className="text-2xl font-semibold tracking-tight text-slate-950">
-              İlgili Teknik Makaleler
+              Ä°lgili Teknik Makaleler
             </h2>
             <div className="mt-5 space-y-4">
               {config.relatedArticles.map((item) => (
@@ -363,7 +363,7 @@ export function IndustrialSolutionLandingPage({
         <div className="site-container">
           <div className="rounded-[32px] border border-slate-200 bg-slate-50 px-6 py-8 shadow-[0_18px_45px_rgba(15,23,42,0.06)] sm:px-8 sm:py-10 lg:px-12">
             <h2 className="text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">
-              Sık Sorulan Sorular
+              SÄ±k Sorulan Sorular
             </h2>
             <div className="mt-6 space-y-4">
               {config.faqs.map((faq) => (
@@ -381,10 +381,10 @@ export function IndustrialSolutionLandingPage({
         <div className="site-container">
           <div className="rounded-[32px] bg-[linear-gradient(135deg,#0f172a_0%,#153f8a_100%)] px-6 py-8 text-white shadow-[0_24px_70px_rgba(15,23,42,0.24)] sm:px-8 sm:py-10">
             <p className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-200">
-              TEKLİF / KEŞİF ÇAĞRISI
+              TEKLÄ°F / KEÅžÄ°F Ã‡AÄžRISI
             </p>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-              Projeniz için teknik görüşme planlayın.
+              Projeniz iÃ§in teknik gÃ¶rÃ¼ÅŸme planlayÄ±n.
             </h2>
             <p className="mt-4 max-w-3xl text-sm leading-8 text-white/84 sm:text-base">
               {config.ctaText}
@@ -392,7 +392,7 @@ export function IndustrialSolutionLandingPage({
             <div className="mt-6 flex flex-col gap-3 sm:flex-row">
               <Link
                 href="/iletisim"
-                className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-white px-6 text-sm font-semibold text-slate-950 transition hover:bg-slate-100"
+                className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-[#278DC0] px-6 text-sm font-semibold text-white transition hover:bg-[#154764]"
               >
                 Teknik Teklif Al
               </Link>
@@ -411,3 +411,4 @@ export function IndustrialSolutionLandingPage({
     </main>
   );
 }
+

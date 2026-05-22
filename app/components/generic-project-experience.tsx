@@ -41,8 +41,8 @@ export default function GenericProjectExperience({ config }: { config: GenericPr
   return (
     <main className="min-h-screen bg-white text-slate-900">
             <Hero title={trText(config.title)} description={trText(config.summary)} image="/images/fabrika1.jpg">
-        <a href="#cta" className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-blue-600 px-6 text-sm font-semibold text-white transition hover:bg-blue-700">Teknik Görüşme Talep Et</a>
-        <Link href="/projeler" className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/20 bg-white/10 px-6 text-sm font-semibold text-white backdrop-blur transition hover:bg-white/15">Tüm Projelere Dön</Link>
+        <a href="#cta" className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-[#278DC0] px-6 text-sm font-semibold text-white transition hover:bg-[#154764]">Teknik Görüşme Talep Et</a>
+        <Link href="/projeler" className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/60 bg-white/12 px-6 text-sm font-semibold text-white backdrop-blur transition hover:border-white hover:bg-white/18">Tüm Projelere Dön</Link>
       </Hero>
 
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-10">
@@ -136,6 +136,7 @@ export default function GenericProjectExperience({ config }: { config: GenericPr
     </main>
   );
 }
+
 
 
 
