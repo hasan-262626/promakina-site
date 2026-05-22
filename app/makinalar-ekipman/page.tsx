@@ -288,8 +288,6 @@ export default function MachinesIndexPage() {
     <main className="min-h-screen bg-white text-slate-900">
       <Hero
         title="Makinalar & Ekipman"
-        description="Prosese, kapasiteye ve malzeme yapısına uygun makina gruplarını tek çatı altında sunuyoruz. Tambur sistemlerinden taşıma ekipmanlarına, kırıcı ve parçalayıcılardan reaktör, tank, eleme, dolum ve depolama çözümlerine kadar farklı endüstriyel ihtiyaçlara uygun ekipman ailelerini kategori bazlı inceleyebilirsiniz."
-        image="/images/makinalar1.png"
       >
         <Link
           href="/programlar"
