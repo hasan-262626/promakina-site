@@ -17,11 +17,6 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
-        source: "/sektorler/geri-donusum-ve-atik-yonetimi/shredder-sistemleri",
-        destination: "/makinalar-ekipman/kiricilar-ve-parcalayicilar/shredder-sistemleri",
-        permanent: true,
-      },
-      {
         source: "/sektorler/geri-donusum-ve-atik-yonetimi/eleme-ve-ayirma-sistemleri",
         destination: "/sektorler/geri-donusum-ve-atik-yonetimi",
         permanent: true,

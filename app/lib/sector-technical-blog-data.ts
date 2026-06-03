@@ -1296,7 +1296,7 @@ const articleSpecs: ArticleSpec[] = [
     ],
     internalLinks: [
       { label: "Taşıma Ekipmanları", href: "/makinalar-ekipman/tasima-ekipmanlari" },
-      { label: "Konveyör Hesapları", href: "/programlar/konveyor-hesaplari" },
+      { label: "Konveyör Hesapları", href: "/programlar/konveyor-kapasite-hesabi" },
       { label: "İletişim", href: "/iletisim" },
       { label: "Yem, Toz ve Dökme Katı Malzeme İşleme Sistemleri", href: "/sektorler/yem-toz-ve-dokme-kati-malzeme-isleme-sistemleri" },
     ],
@@ -1396,7 +1396,7 @@ const articleSpecs: ArticleSpec[] = [
     ],
     internalLinks: [
       { label: "Taşıma Ekipmanları", href: "/makinalar-ekipman/tasima-ekipmanlari" },
-      { label: "Konveyör Hesapları", href: "/programlar/konveyor-hesaplari" },
+      { label: "Konveyör Hesapları", href: "/programlar/konveyor-kapasite-hesabi" },
       { label: "Yem, Toz ve Dökme Katı Malzeme İşleme Sistemleri", href: "/sektorler/yem-toz-ve-dokme-kati-malzeme-isleme-sistemleri" },
       { label: "İletişim", href: "/iletisim" },
     ],

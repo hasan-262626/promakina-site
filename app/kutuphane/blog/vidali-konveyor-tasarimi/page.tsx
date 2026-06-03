@@ -12,7 +12,7 @@ export const metadata = buildLibraryMetadata({ title, description, canonical });
 const relatedServices = [
   {
     title: "Taşıma Ekipmanları",
-    href: "/makinalar/tasima-ekipmanlari",
+    href: "/makinalar-ekipman/tasima-ekipmanlari",
     description:
       "Vidalı, bantlı ve zincirli taşıma ekipmanlarını aynı taşıma sistem mimarisi içinde inceleyin.",
   },
@@ -131,7 +131,7 @@ const sections = [
             <p>
               Uzun hatlarda şaft salınımı, ara yatakların ürünle etkileşimi ve yatak ömrü ayrıca
               dikkate alınmalıdır. Pro Makina yaklaşımında vidalı konveyörler, bağlantı yaptığı{" "}
-              <Link href="/makinalar" className="font-semibold text-blue-700 transition hover:text-blue-800">
+              <Link href="/makinalar-ekipman" className="font-semibold text-blue-700 transition hover:text-blue-800">
                 makine aileleri
               </Link>{" "}
               ve ilgili bunker/reaktör/tambur ekipmanlarıyla birlikte ele alınır; böylece yalnız
@@ -269,7 +269,7 @@ export default function Page() {
       faqs={faqs}
       ctaText="Vidalı konveyör tasarımı, özel imalat taşıma ekipmanları ve proses entegrasyonu için Pro Makina ile teknik değerlendirme sürecini başlatabilirsiniz."
       internalLinks={[
-        { label: "Taşıma Ekipmanları", href: "/makinalar/tasima-ekipmanlari" },
+        { label: "Taşıma Ekipmanları", href: "/makinalar-ekipman/tasima-ekipmanlari" },
         { label: "Hizmetler", href: "/hizmetler" },
         { label: "Sektörler", href: "/sektorler" },
         { label: "İletişim", href: "/iletisim" },

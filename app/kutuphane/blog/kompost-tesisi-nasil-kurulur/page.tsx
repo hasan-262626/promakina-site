@@ -163,7 +163,7 @@ const sections = [
             </p>
             <p>
               Özellikle{" "}
-              <Link href="/makinalar/tasima-ekipmanlari" className="font-semibold text-blue-700 transition hover:text-blue-800">
+              <Link href="/makinalar-ekipman/tasima-ekipmanlari" className="font-semibold text-blue-700 transition hover:text-blue-800">
                 taşıma ekipmanları
               </Link>{" "}
               tarafındaki zayıf seçimler tüm kompost hattını kesintili hale getirebilir.

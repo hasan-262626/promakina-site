@@ -208,7 +208,7 @@ export const industrialSolutionLandingConfigs: IndustrialSolutionLandingConfig[]
     relatedMachines: [
       { title: "Kompost Tamburu", description: "Ön fermentasyon, karışım ve kontrollü dönüşüm için tambur sistemi.", href: "/makinalar-ekipman/tambur-sistemleri/kompost-tamburu" },
       { title: "Trommel Elekler", description: "Kompost son ürününde tane sınıflandırma ve kaba ayrım için kullanılır.", href: "/makinalar-ekipman/eleme-ve-siniflandirma-sistemleri/trommel-elekler" },
-      { title: "Zincirli Konveyörler", description: "Nemli ve hacimli organik akışların ağır hizmet transferinde görev alır.", href: "/makinalar/tasima-ekipmanlari/zincirli-konveyorler" },
+      { title: "Zincirli Konveyörler", description: "Nemli ve hacimli organik akışların ağır hizmet transferinde görev alır.", href: "/makinalar-ekipman/tasima-ekipmanlari/zincirli-konveyorler" },
     ],
     relatedCalculations: [
       { title: "Redler Kapasite Hesabı", description: "Nemli ve ağır akışlarda zincirli taşıma ön seçimi yapın.", href: "/programlar/redler-kapasite-hesabi" },
@@ -286,7 +286,7 @@ export const industrialSolutionLandingConfigs: IndustrialSolutionLandingConfig[]
     relatedMachines: [
       { title: "Kurutma Tamburu", description: "High-capacity rotary drying machine for controlled moisture reduction.", href: "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburu" },
       { title: "Soğutma Tamburu", description: "Downstream cooling support for stabilized final product handling.", href: "/makinalar-ekipman/tambur-sistemleri/sogutma-tamburu" },
-      { title: "Cyclone / Screening Pairings", description: "Dust and classification support via related downstream equipment.", href: "/makinalar/eleme-ve-siniflandirma-sistemleri" },
+      { title: "Cyclone / Screening Pairings", description: "Dust and classification support via related downstream equipment.", href: "/makinalar-ekipman/eleme-ve-siniflandirma-sistemleri" },
     ],
     relatedCalculations: [
       { title: "Kurutma Tamburu Hesabı", description: "Quickly assess drum size, speed and power logic for pre-selection.", href: "/programlar/kurutma-tamburu-hesabi" },
@@ -363,8 +363,8 @@ export const industrialSolutionLandingConfigs: IndustrialSolutionLandingConfig[]
     ],
     relatedMachines: [
       { title: "Helezon Konveyörler", description: "Toz, granül ve kontrollü besleme gereken hatlar için özel imalat helezonlar.", href: "/makinalar-ekipman/tasima-ekipmanlari/helezon-konveyorler" },
-      { title: "Zincirli Konveyörler", description: "Ağır hizmet transferi ve kapalı taşıma için tamamlayıcı çözüm.", href: "/makinalar/tasima-ekipmanlari/zincirli-konveyorler" },
-      { title: "Bantlı Elevatörler", description: "Dikey taşıma gerektiren hatlarda helezon sistemlerini tamamlar.", href: "/makinalar/tasima-ekipmanlari/bantli-elevatorler" },
+      { title: "Zincirli Konveyörler", description: "Ağır hizmet transferi ve kapalı taşıma için tamamlayıcı çözüm.", href: "/makinalar-ekipman/tasima-ekipmanlari/zincirli-konveyorler" },
+      { title: "Bantlı Elevatörler", description: "Dikey taşıma gerektiren hatlarda helezon sistemlerini tamamlar.", href: "/makinalar-ekipman/tasima-ekipmanlari/bantli-elevatorler" },
     ],
     relatedCalculations: [
       { title: "Helezon Kapasite Hesabı", description: "Vida geometrisini ve doluluk oranını ön seçim mantığıyla değerlendirin.", href: "/programlar/helezon-kapasite-hesabi" },
@@ -520,7 +520,7 @@ export const industrialSolutionLandingConfigs: IndustrialSolutionLandingConfig[]
     relatedMachines: [
       { title: "Granülatör Tamburu", description: "Organomineral ürünlerde granül yapısını oluşturan ana ekipman.", href: "/makinalar-ekipman/tambur-sistemleri/granulator-tamburu" },
       { title: "Kurutma Tamburu", description: "Granül sonrası hedef neme ulaşmak için kullanılır.", href: "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburu" },
-      { title: "Vibrasyonlu Elekler", description: "Ürün boyut dağılımını kontrol etmek için sınıflandırma ekipmanı.", href: "/makinalar/eleme-ve-siniflandirma-sistemleri/vibrasyonlu-elekler" },
+      { title: "Vibrasyonlu Elekler", description: "Ürün boyut dağılımını kontrol etmek için sınıflandırma ekipmanı.", href: "/makinalar-ekipman/eleme-ve-siniflandirma-sistemleri/vibrasyonlu-elekler" },
     ],
     relatedCalculations: [
       { title: "Kurutma Tamburu Hesabı", description: "Nem yükü ve termal tasarımı ön seçim düzeyinde değerlendirin.", href: "/programlar/kurutma-tamburu-hesabi" },
@@ -675,8 +675,8 @@ export const industrialSolutionLandingConfigs: IndustrialSolutionLandingConfig[]
     ],
     relatedMachines: [
       { title: "Helezon Konveyörler", description: "Toz, granül ve kontrollü besleme gerektiren hatlar için ana vida sistemi.", href: "/makinalar-ekipman/tasima-ekipmanlari/helezon-konveyorler" },
-      { title: "Bantlı Konveyörler", description: "Daha uzun yatay transferlerde tamamlayıcı taşıma çözümü.", href: "/makinalar/tasima-ekipmanlari/bantli-konveyorler" },
-      { title: "Zincirli Konveyörler", description: "Ağır hizmet ve kapalı hat ihtiyaçlarında alternatif çözüm.", href: "/makinalar/tasima-ekipmanlari/zincirli-konveyorler" },
+      { title: "Bantlı Konveyörler", description: "Daha uzun yatay transferlerde tamamlayıcı taşıma çözümü.", href: "/makinalar-ekipman/tasima-ekipmanlari/bantli-konveyorler" },
+      { title: "Zincirli Konveyörler", description: "Ağır hizmet ve kapalı hat ihtiyaçlarında alternatif çözüm.", href: "/makinalar-ekipman/tasima-ekipmanlari/zincirli-konveyorler" },
     ],
     relatedCalculations: [
       { title: "Helezon Kapasite Hesabı", description: "Vida geometrisi ve doluluk oranı üzerinden kapasite mantığını görün.", href: "/programlar/helezon-kapasite-hesabi" },

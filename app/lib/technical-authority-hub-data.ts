@@ -191,12 +191,12 @@ export const technicalAuthorityHubs: TechnicalAuthorityHub[] = [
       {
         title: "Zincirli Konveyörler",
         description: "Ağır hizmet ve kapalı hat akışlarında alternatif taşıma çözümü.",
-        href: "/makinalar/tasima-ekipmanlari/zincirli-konveyorler",
+        href: "/makinalar-ekipman/tasima-ekipmanlari/zincirli-konveyorler",
       },
       {
         title: "Bantlı Elevatörler",
         description: "Dikey ürün taşıma gereksiniminde tamamlayıcı ekipman ailesi.",
-        href: "/makinalar/tasima-ekipmanlari/bantli-elevatorler",
+        href: "/makinalar-ekipman/tasima-ekipmanlari/bantli-elevatorler",
       },
     ],
     relatedServices: [
@@ -531,17 +531,17 @@ export const technicalAuthorityHubs: TechnicalAuthorityHub[] = [
       {
         title: "Bantlı Konveyörler",
         description: "Uzun hatlı ve dengeli transfer gereken uygulamalar için temel çözüm.",
-        href: "/makinalar/tasima-ekipmanlari/bantli-konveyorler",
+        href: "/makinalar-ekipman/tasima-ekipmanlari/bantli-konveyorler",
       },
       {
         title: "Zincirli Konveyörler",
         description: "Kapalı ve ağır hizmet taşıma senaryoları için dayanıklı yapı.",
-        href: "/makinalar/tasima-ekipmanlari/zincirli-konveyorler",
+        href: "/makinalar-ekipman/tasima-ekipmanlari/zincirli-konveyorler",
       },
       {
         title: "Tripper Arabalı Konveyör",
         description: "Çok noktalı stoklama ve yönlendirme gerektiren hatlarda özel çözüm.",
-        href: "/makinalar/tasima-ekipmanlari/tripper-arabali-konveyor",
+        href: "/makinalar-ekipman/tasima-ekipmanlari/tripper-arabali-konveyor",
       },
     ],
     relatedServices: [
@@ -891,7 +891,7 @@ export const technicalAuthorityHubs: TechnicalAuthorityHub[] = [
       {
         title: "Elek Sistemleri",
         description: "Fraksiyon kontrolü ve geri devir dengesinde kritik ekipman grubu.",
-        href: "/makinalar/eleme-ve-siniflandirma-sistemleri",
+        href: "/makinalar-ekipman/eleme-ve-siniflandirma-sistemleri",
       },
     ],
     relatedServices: [

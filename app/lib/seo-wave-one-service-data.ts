@@ -62,13 +62,13 @@ const servicePages: Record<string, ServicePageRecord> = {
         title: "Jet Pulse Filtreler",
         description:
           "Kurutma tamburunun ardından hava-temizleme ve toz toplama hattını tamamlayan filtre çözümleri.",
-        href: "/makinalar/toz-toplama-ve-filtrasyon-sistemleri/jet-pulse-filtreler",
+        href: "/makinalar-ekipman/toz-toplama-sistemleri",
       },
       {
         title: "Siklon Ayırıcılar",
         description:
           "Ön ayırma ve taşıyıcı gaz hattında partikül yükünü düşüren siklon entegrasyonunu inceleyin.",
-        href: "/makinalar/toz-toplama-ve-filtrasyon-sistemleri/siklon-ayiricilar",
+        href: "/makinalar-ekipman/toz-toplama-sistemleri/siklon-ayiricilar",
       },
     ],
     summaryRows: [
@@ -217,7 +217,7 @@ const servicePages: Record<string, ServicePageRecord> = {
         title: "Toz Toplama ve Koku Kontrol",
         description:
           "Koku yükü ve toz kontrolü için filtre, siklon ve kapalı akış altyapısını tamamlayın.",
-        href: "/makinalar/toz-toplama-ve-filtrasyon-sistemleri",
+        href: "/makinalar-ekipman/toz-toplama-sistemleri",
       },
       {
         title: "Digestat Kurutma",
@@ -342,7 +342,7 @@ const servicePages: Record<string, ServicePageRecord> = {
     technicalContents: commonTechnicalContents,
     keyLinks: [
       { label: "Kompost Tesisi Kurulumu", href: "/hizmetler/kompost-tesisi-kurulumu" },
-      { label: "Koku ve Toz Kontrol", href: "/makinalar/toz-toplama-ve-filtrasyon-sistemleri" },
+      { label: "Koku ve Toz Kontrol", href: "/makinalar-ekipman/toz-toplama-sistemleri" },
       { label: "Susuzlaştırma Destek Sistemleri", href: "/sektorler/atik-su-camuru-ve-aritma-cozumleri/susuzlastirma-destek-sistemleri" },
       { label: "Çamur Besleme", href: "/sektorler/atik-su-camuru-ve-aritma-cozumleri/camur-besleme" },
     ],
@@ -382,7 +382,7 @@ const servicePages: Record<string, ServicePageRecord> = {
         title: "Eleme ve Sınıflandırma",
         description:
           "Kurumuş ürünün tane dağılımı ve ticari kalite standardı için eleme hattını tamamlayın.",
-        href: "/makinalar/eleme-ve-siniflandirma-sistemleri",
+        href: "/makinalar-ekipman/eleme-ve-siniflandirma-sistemleri",
       },
     ],
     cardsTitle: "Kullanım Alanları ve İlgili Ana Makineler",
@@ -535,7 +535,7 @@ const servicePages: Record<string, ServicePageRecord> = {
         title: "Eleme ve Sınıflandırma",
         description:
           "Tane dağılımı ve satış standardı için eleme omurgasını tamamlayan ekipman ailesi.",
-        href: "/makinalar/eleme-ve-siniflandirma-sistemleri",
+        href: "/makinalar-ekipman/eleme-ve-siniflandirma-sistemleri",
       },
       {
         title: "Kırıcılar ve Parçalayıcılar",
@@ -700,7 +700,7 @@ const servicePages: Record<string, ServicePageRecord> = {
         title: "Eleme Sistemleri",
         description:
           "Ticari ürün standardı için geri devir ve son fraksiyon kontrolünü yöneten eleme hattı.",
-        href: "/makinalar/eleme-ve-siniflandirma-sistemleri",
+        href: "/makinalar-ekipman/eleme-ve-siniflandirma-sistemleri",
       },
     ],
     cardsTitle: "Kullanım Alanları ve İlgili Ana Makineler",
@@ -821,7 +821,7 @@ const servicePages: Record<string, ServicePageRecord> = {
       { label: "Kurutma Tamburu İmalatı", href: "/hizmetler/kurutma-tamburu-imalati" },
       { label: "Granülatör Tamburu", href: "/makinalar-ekipman/tambur-sistemleri/granulator-tamburu" },
       { label: "Kaplama Tamburu", href: "/makinalar-ekipman/tambur-sistemleri/kaplama-tamburu" },
-      { label: "Eleme Sistemleri", href: "/makinalar/eleme-ve-siniflandirma-sistemleri" },
+      { label: "Eleme Sistemleri", href: "/makinalar-ekipman/eleme-ve-siniflandirma-sistemleri" },
     ],
   },
   "organomineral-gubre-tesisi": {
@@ -859,7 +859,7 @@ const servicePages: Record<string, ServicePageRecord> = {
         title: "Eleme ve Geri Devir",
         description:
           "Son ürün standardı ve geri dönüş akışını belirleyen sınıflandırma yapısını tamamlayın.",
-        href: "/makinalar/eleme-ve-siniflandirma-sistemleri",
+        href: "/makinalar-ekipman/eleme-ve-siniflandirma-sistemleri",
       },
     ],
     cardsTitle: "Kullanım Alanları ve İlgili Ana Makineler",
@@ -1006,7 +1006,7 @@ const servicePages: Record<string, ServicePageRecord> = {
         title: "Dozaj ve Besleme Omurgası",
         description:
           "Sıvı ve katı katkıların hassas karışımını destekleyen yardımcı akış altyapısı.",
-        href: "/makinalar/dozajlama-ve-tartim-sistemleri",
+        href: "/makinalar-ekipman/dozajlama-sistemleri",
       },
       {
         title: "Organomineral Gübre Tesisi",

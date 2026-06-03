@@ -615,7 +615,7 @@ export function SectorMachineGuideDetailPage({
               </div>
             </section>
 
-            <GlobalBottomCta
+              <GlobalBottomCta
               title={
                 guide.ctaTitle ??
                 "Projeniz iÃ§in teklif veya teknik gÃ¶rÃ¼ÅŸme talep edin"

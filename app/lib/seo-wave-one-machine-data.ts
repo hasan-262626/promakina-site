@@ -138,7 +138,7 @@ const machinePages: Record<string, MachinePageRecord> = {
     relatedPages: [
       { label: "Bant Konveyörler", href: "/makinalar-ekipman/tasima-ekipmanlari/bant-konveyorler" },
       { label: "Kovalı Elevatörler", href: "/makinalar-ekipman/tasima-ekipmanlari/kovali-elevatorler" },
-      { label: "Dozaj Sistemleri", href: "/makinalar/dozajlama-ve-tartim-sistemleri" },
+      { label: "Dozaj Sistemleri", href: "/makinalar-ekipman/dozajlama-sistemleri" },
       { label: "Makinalar & Ekipman", href: "/makinalar-ekipman" },
     ],
     relatedServices: [
@@ -581,8 +581,8 @@ const machinePages: Record<string, MachinePageRecord> = {
     ],
     relatedPages: [
       { label: "Bant Konveyörler", href: "/makinalar-ekipman/tasima-ekipmanlari/bant-konveyorler" },
-      { label: "Jet Pulse Filtreler", href: "/makinalar/toz-toplama-ve-filtrasyon-sistemleri/jet-pulse-filtreler" },
-      { label: "Siklon Ayırıcılar", href: "/makinalar/toz-toplama-ve-filtrasyon-sistemleri/siklon-ayiricilar" },
+      { label: "Jet Pulse Filtreler", href: "/makinalar-ekipman/toz-toplama-sistemleri" },
+      { label: "Siklon Ayırıcılar", href: "/makinalar-ekipman/toz-toplama-sistemleri/siklon-ayiricilar" },
       { label: "Makinalar & Ekipman", href: "/makinalar-ekipman" },
     ],
     relatedServices: [

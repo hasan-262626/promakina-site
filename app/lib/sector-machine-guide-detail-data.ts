@@ -955,12 +955,12 @@ export const sectorMachineGuideDetailPages: SectorMachineGuidePageData[] = [
     readingTime: "10-11 dk",
     heroTopic: "Konveyör, elevatör, bunker ve tartım sistemleri",
     heroCtaLabel: "Konveyör Hesaplarını Aç",
-    heroCtaHref: "/programlar/konveyor-hesaplari",
+    heroCtaHref: "/programlar/konveyor-kapasite-hesabi",
     heroSecondaryLabel: "WhatsApp ile Teklif Al",
     heroSecondaryHref: "https://wa.me/905320580104",
     heroLinks: [
       { label: "Taşıma Ekipmanları", href: "/makinalar-ekipman/tasima-ekipmanlari" },
-      { label: "Konveyör Hesapları", href: "/programlar/konveyor-hesaplari" },
+      { label: "Konveyör Hesapları", href: "/programlar/konveyor-kapasite-hesabi" },
       { label: "İletişim", href: "/iletisim" },
     ],
     introParagraphs: [
@@ -1074,7 +1074,7 @@ export const sectorMachineGuideDetailPages: SectorMachineGuidePageData[] = [
       {
         title: "Konveyör Hesapları",
         description: "Konveyör kapasite hesabı programını açın.",
-        href: "/programlar/konveyor-hesaplari",
+        href: "/programlar/konveyor-kapasite-hesabi",
       },
       {
         title: "Bant Konveyör Seçimi",

@@ -287,7 +287,7 @@ export default function TransportEquipmentExperience() {
   return (
     <ProductDetailSystem
       categoryLabel="Taşıma Ekipmanları"
-      categoryHref="/makinalar/tasima-ekipmanlari"
+      categoryHref="/makinalar-ekipman/tasima-ekipmanlari"
       title={activeProduct.title}
       heroDescription={activeProduct.heroDescription}
       heroImage="/images/konveyor2.jpg"

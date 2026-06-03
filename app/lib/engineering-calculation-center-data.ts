@@ -111,7 +111,7 @@ export const engineeringCalculationCards: EngineeringCalculationCard[] = [
         title: "Proses Entegrasyonu ve Doğru Ekipman Kararı",
         paragraphs: [
           "Helezon konveyörler çoğu zaman tek ekipman gibi görünse de, aslında bunker, dozajlama, konveyör, elevatör ve tambur sistemlerinin arasında kritik bir bağlantı halkasıdır. Girişte ürün birikmesi, çıkışta geri basınç oluşması veya yanlış eğim seçimi tüm hattın performansını etkiler. Bu nedenle helezon hesabı yalnız taşıma değil, proses ritmi kararıdır.",
-          "Özellikle /hizmetler/gubre-tesisi-kurulumu ve /hizmetler/kompost-tesisi-kurulumu gibi tesis projelerinde helezon seçimi hattın karışım ve besleme kararlılığını doğrudan belirler. Benzer şekilde /makinalar/tasima-ekipmanlari sayfasında görülen taşıma ekipmanı ailesi içinde helezonlar, kontrollü akış gereken uygulamalar için öne çıkar. Eğer projenize özel doğru vida çapını, motor gücünü ve genel hat yerleşimini birlikte belirlemek istiyorsanız, teknik ekibimiz saha verisine göre yönlendirme sağlayabilir.",
+          "Özellikle /hizmetler/gubre-tesisi-kurulumu ve /hizmetler/kompost-tesisi-kurulumu gibi tesis projelerinde helezon seçimi hattın karışım ve besleme kararlılığını doğrudan belirler. Benzer şekilde /makinalar-ekipman/tasima-ekipmanlari sayfasında görülen taşıma ekipmanı ailesi içinde helezonlar, kontrollü akış gereken uygulamalar için öne çıkar. Eğer projenize özel doğru vida çapını, motor gücünü ve genel hat yerleşimini birlikte belirlemek istiyorsanız, teknik ekibimiz saha verisine göre yönlendirme sağlayabilir.",
         ],
       },
     ],
@@ -190,17 +190,17 @@ export const engineeringCalculationCards: EngineeringCalculationCard[] = [
       {
         title: "Zincirli Konveyörler",
         description: "Ağır hizmet ve kapalı hat taşıma gerektiren akışlarda tercih edilen konveyör ailesi.",
-        href: "/makinalar/tasima-ekipmanlari/zincirli-konveyorler",
+        href: "/makinalar-ekipman/tasima-ekipmanlari/zincirli-konveyorler",
       },
       {
         title: "Kovalı Elevatörler",
         description: "Dikey ürün taşımada kapasite ve boşaltma disiplinini güçlendiren ekipman grubu.",
-        href: "/makinalar/tasima-ekipmanlari/kovali-elevatorler",
+        href: "/makinalar-ekipman/tasima-ekipmanlari/kovali-elevatorler",
       },
     ],
     internalLinks: [
       ...commonLinks,
-      { label: "Taşıma Ekipmanları", href: "/makinalar/tasima-ekipmanlari" },
+      { label: "Taşıma Ekipmanları", href: "/makinalar-ekipman/tasima-ekipmanlari" },
       { label: "Gübre Tesisi Kurulumu", href: "/hizmetler/gubre-tesisi-kurulumu" },
     ],
   },
@@ -327,7 +327,7 @@ export const engineeringCalculationCards: EngineeringCalculationCard[] = [
       {
         title: "Bant Konveyörler",
         description: "Uzun mesafeli ve dengeli ürün transferinde öne çıkan bantlı taşıma çözümleri.",
-        href: "/makinalar/tasima-ekipmanlari/bant-konveyorler",
+        href: "/makinalar-ekipman/tasima-ekipmanlari/bant-konveyorler",
       },
       {
         title: "Helezon Konveyörler",
@@ -337,12 +337,12 @@ export const engineeringCalculationCards: EngineeringCalculationCard[] = [
       {
         title: "Zincirli Konveyörler",
         description: "Ağır hizmet ve kapalı gövde taşıma senaryoları için dayanıklı konveyör grubu.",
-        href: "/makinalar/tasima-ekipmanlari/zincirli-konveyorler",
+        href: "/makinalar-ekipman/tasima-ekipmanlari/zincirli-konveyorler",
       },
     ],
     internalLinks: [
       ...commonLinks,
-      { label: "Taşıma Ekipmanları", href: "/makinalar/tasima-ekipmanlari" },
+      { label: "Taşıma Ekipmanları", href: "/makinalar-ekipman/tasima-ekipmanlari" },
       { label: "Kompost Tesisi Kurulumu", href: "/hizmetler/kompost-tesisi-kurulumu" },
     ],
   },
@@ -529,7 +529,7 @@ export const engineeringCalculationCards: EngineeringCalculationCard[] = [
       {
         title: "Proses Entegrasyonu ve Doğru Uygulama",
         paragraphs: [
-          "Bir elevatörün başarısı yalnız kendi gövdesine değil, beslendiği bunker ve boşalttığı ekipman zincirine de bağlıdır. Girişte düzensiz besleme varsa kova doluluğu stabil olmaz; çıkışta uygun transfer yoksa geri dökülme artar. Bu nedenle /makinalar/tasima-ekipmanlari ve /sektorler/gubre-ve-granulasyon-tesisleri gibi sayfalarda görülen ekipmanlar birlikte planlanmalıdır.",
+          "Bir elevatörün başarısı yalnız kendi gövdesine değil, beslendiği bunker ve boşalttığı ekipman zincirine de bağlıdır. Girişte düzensiz besleme varsa kova doluluğu stabil olmaz; çıkışta uygun transfer yoksa geri dökülme artar. Bu nedenle /makinalar-ekipman/tasima-ekipmanlari ve /sektorler/gubre-ve-granulasyon-tesisleri gibi sayfalarda görülen ekipmanlar birlikte planlanmalıdır.",
           "Elevatörler özellikle tambur sistemleri, elekler ve paketleme öncesi bunkerlerle çalışan hatlarda dikey akışın ana omurgasını oluşturur. Doğru seçilmiş bir elevatör, alan kullanımını iyileştirir ve yatay taşıma ihtiyacını azaltır. Mühendislik kararı burada yalnız kapasite değil, tüm tesis akışının sadeleşmesi anlamına da gelir.",
         ],
       },
@@ -611,22 +611,22 @@ export const engineeringCalculationCards: EngineeringCalculationCard[] = [
       {
         title: "Kovalı Elevatörler",
         description: "Bantlı veya zincirli yapıda dikey taşıma için tasarlanan elevatör çözümleri.",
-        href: "/makinalar/tasima-ekipmanlari/kovali-elevatorler",
+        href: "/makinalar-ekipman/tasima-ekipmanlari/kovali-elevatorler",
       },
       {
         title: "Zincirli Konveyörler",
         description: "Elevatör giriş-çıkış akışını destekleyen ağır hizmet taşıma ekipmanları.",
-        href: "/makinalar/tasima-ekipmanlari/zincirli-konveyorler",
+        href: "/makinalar-ekipman/tasima-ekipmanlari/zincirli-konveyorler",
       },
       {
         title: "Bant Konveyörler",
         description: "Yatay ürün akışı ile elevatör hatlarını bağlayan temel taşıma altyapısı.",
-        href: "/makinalar/tasima-ekipmanlari/bant-konveyorler",
+        href: "/makinalar-ekipman/tasima-ekipmanlari/bant-konveyorler",
       },
     ],
     internalLinks: [
       ...commonLinks,
-      { label: "Taşıma Ekipmanları", href: "/makinalar/tasima-ekipmanlari" },
+      { label: "Taşıma Ekipmanları", href: "/makinalar-ekipman/tasima-ekipmanlari" },
       { label: "Gübre Üretim Tesisleri", href: "/sektorler/gubre-ve-granulasyon-tesisleri" },
     ],
   },
@@ -671,7 +671,7 @@ export const engineeringCalculationCards: EngineeringCalculationCard[] = [
       {
         title: "Proses Entegrasyonu ve Uygulama Alanları",
         paragraphs: [
-          "Redler konveyörler gübre, kompost, biyokütle, mineral ve farklı dökme katı malzeme uygulamalarında bunker çıkışı, ara transfer ve kapalı hat taşıma için tercih edilir. Toz kontrolü gereken veya sıcak ürün taşınan proseslerde kapalı gövde avantajı büyüktür. Bu nedenle /makinalar/tasima-ekipmanlari ailesi içinde redler sistemleri, daha ağır ve kontrollü uygulamalar için ayrı değerlendirilmelidir.",
+          "Redler konveyörler gübre, kompost, biyokütle, mineral ve farklı dökme katı malzeme uygulamalarında bunker çıkışı, ara transfer ve kapalı hat taşıma için tercih edilir. Toz kontrolü gereken veya sıcak ürün taşınan proseslerde kapalı gövde avantajı büyüktür. Bu nedenle /makinalar-ekipman/tasima-ekipmanlari ailesi içinde redler sistemleri, daha ağır ve kontrollü uygulamalar için ayrı değerlendirilmelidir.",
           "Doğru redler hesabı, besleme ekipmanı ve çıkış noktasının da sistemle uyumlu olmasını gerektirir. Eğer girişte ani yükleme varsa veya çıkışta birikme oluşuyorsa zincir zorlanması hızla artabilir. Bu yüzden redler konveyör tasarımı, tüm proses hattı içinde ele alınmalıdır.",
         ],
       },
@@ -753,7 +753,7 @@ export const engineeringCalculationCards: EngineeringCalculationCard[] = [
       {
         title: "Zincirli Konveyörler",
         description: "Redler mantığına yakın ağır hizmet taşıma uygulamaları için zincirli konveyör çözümleri.",
-        href: "/makinalar/tasima-ekipmanlari/zincirli-konveyorler",
+        href: "/makinalar-ekipman/tasima-ekipmanlari/zincirli-konveyorler",
       },
       {
         title: "Helezon Konveyörler",
@@ -763,12 +763,12 @@ export const engineeringCalculationCards: EngineeringCalculationCard[] = [
       {
         title: "Bant Konveyörler",
         description: "Uzun ve açık hatlarda dengeli taşıma sağlayan bantlı sistemler.",
-        href: "/makinalar/tasima-ekipmanlari/bant-konveyorler",
+        href: "/makinalar-ekipman/tasima-ekipmanlari/bant-konveyorler",
       },
     ],
     internalLinks: [
       ...commonLinks,
-      { label: "Taşıma Ekipmanları", href: "/makinalar/tasima-ekipmanlari" },
+      { label: "Taşıma Ekipmanları", href: "/makinalar-ekipman/tasima-ekipmanlari" },
       { label: "Kompost ve Organik Atık", href: "/sektorler/kompost-ve-organik-atik-tesisleri" },
     ],
   },

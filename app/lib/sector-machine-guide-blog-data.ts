@@ -754,7 +754,7 @@ const baseSectorMachineGuideArticles: TopicalArticle[] = [
     internalLinks: [
       { label: "Tambur Sistemleri", href: "/makinalar-ekipman/tambur-sistemleri" },
       { label: "Tambur Hesapları", href: "/programlar/tambur-hesaplari" },
-      { label: "Kurutma Tamburu Hesabı", href: "/programlar/tambur-hesaplari/kurutma-tamburu-hesabi" },
+      { label: "Kurutma Tamburu Hesabı", href: "/programlar/kurutma-tamburu-hesabi" },
       { label: "İletişim", href: "/iletisim" },
     ],
     relatedContents: [

@@ -231,7 +231,7 @@ export default function MachineCategoryExperience({ slug }: { slug: CategorySlug
   return (
     <ProductDetailSystem
       categoryLabel={config.title}
-      categoryHref={`/makinalar/${slug}`}
+      categoryHref={`/makinalar-ekipman/${slug}`}
       title={activeProduct.title}
       heroDescription={activeProduct.heroDescription}
       heroImage={config.heroImage}

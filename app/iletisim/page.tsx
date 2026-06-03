@@ -5,16 +5,16 @@ import { Hero } from "../components/Hero";
 import { siteContact } from "../lib/site-contact";
 
 export const metadata: Metadata = {
-  title: "Ä°letiÅŸim | Pro Makina Process Engineering",
+  title: "İletişim | Pro Makina Process Engineering",
   description:
-    "Pro Makina iletiÅŸim bilgileri. GÃ¼bre tesisi, kompost tesisi, kurutma tamburu, konveyÃ¶r, maden ve proses ekipmanlarÄ± iÃ§in teknik teklif alÄ±n.",
+    "Pro Makina iletişim bilgileri. Gübre tesisi, kompost tesisi, kurutma tamburu, konveyör, maden ve proses ekipmanları için teknik teklif alın.",
   alternates: {
     canonical: "https://www.promakina.com.tr/iletisim",
   },
   openGraph: {
-    title: "Ä°letiÅŸim | Pro Makina Process Engineering",
+    title: "İletişim | Pro Makina Process Engineering",
     description:
-      "Pro Makina iletiÅŸim bilgileri. GÃ¼bre tesisi, kompost tesisi, kurutma tamburu, konveyÃ¶r, maden ve proses ekipmanlarÄ± iÃ§in teknik teklif alÄ±n.",
+      "Pro Makina iletişim bilgileri. Gübre tesisi, kompost tesisi, kurutma tamburu, konveyör, maden ve proses ekipmanları için teknik teklif alın.",
     url: "https://www.promakina.com.tr/iletisim",
   },
 };
@@ -23,21 +23,21 @@ const googleDirectionsHref = "https://share.google/vTWI0v98yqL1eu3dA";
 
 const contacts = [
   {
-    role: "Makine MÃ¼hendisi - SatÄ±ÅŸ Temsilcisi",
-    name: "HÃ¼seyin Bey",
+    role: "Makine Mühendisi - Satış Temsilcisi",
+    name: "Hüseyin Bey",
     phone: "+90 532 058 01 04",
     phoneHref: "tel:+905320580104",
     whatsappHref: "https://wa.me/905320580104",
   },
   {
-    role: "TÃ¼rkiye BÃ¶lge MÃ¼dÃ¼rÃ¼",
+    role: "Türkiye Bölge Müdürü",
     name: "Serkan Bey",
     phone: "+90 532 252 57 13",
     phoneHref: "tel:+905322525713",
     whatsappHref: "https://wa.me/905322525713",
   },
   {
-    role: "Fabrika ve Ä°malat MÃ¼dÃ¼rÃ¼",
+    role: "Fabrika ve İmalat Müdürü",
     name: "Akif Bey",
     phone: "+90 533 569 31 43",
     phoneHref: "tel:+905335693143",
@@ -69,7 +69,7 @@ const quickDetails = [
   {
     label: "Adres",
     value:
-      "75. YÄ±l Mahallesi, Teksan Sanayi Sitesi, Kilis Sokak D6 Blok No: 2E, OdunpazarÄ± / EskiÅŸehir, 26250",
+      "75. Yıl Mahallesi, Teksan Sanayi Sitesi, Kilis Sokak D6 Blok No: 2E, Odunpazarı / Eskişehir, 26250",
   },
 ] as const;
 
@@ -87,7 +87,7 @@ export default function ContactPage() {
       {
         "@type": "ListItem",
         position: 2,
-        name: "Ä°letiÅŸim",
+        name: "İletişim",
         item: "https://www.promakina.com.tr/iletisim",
       },
     ],
@@ -96,10 +96,10 @@ export default function ContactPage() {
   const contactPageSchema = {
     "@context": "https://schema.org",
     "@type": "ContactPage",
-    name: "Ä°letiÅŸim | Pro Makina Process Engineering",
+    name: "İletişim | Pro Makina Process Engineering",
     url: "https://www.promakina.com.tr/iletisim",
     description:
-      "GÃ¼bre tesisi, kompost tesisi, kurutma tamburu, konveyÃ¶r, maden ve proses ekipmanlarÄ± iÃ§in teknik teklif ve iletiÅŸim sayfasÄ±.",
+      "Gübre tesisi, kompost tesisi, kurutma tamburu, konveyör, maden ve proses ekipmanları için teknik teklif ve iletişim sayfası.",
   };
 
   const organizationSchema = {
@@ -131,9 +131,9 @@ export default function ContactPage() {
     address: {
       "@type": "PostalAddress",
       streetAddress:
-        "75. YÄ±l Mahallesi, Teksan Sanayi Sitesi, Kilis Sokak D6 Blok No: 2E",
-      addressLocality: "OdunpazarÄ±",
-      addressRegion: "EskiÅŸehir",
+        "75. Yıl Mahallesi, Teksan Sanayi Sitesi, Kilis Sokak D6 Blok No: 2E",
+      addressLocality: "Odunpazarı",
+      addressRegion: "Eskişehir",
       postalCode: "26250",
       addressCountry: "TR",
     },
@@ -159,7 +159,7 @@ export default function ContactPage() {
       />
 
       <Hero
-        title="Ä°letiÅŸim"
+        title="İletişim"
         image="/images/fabrika1.jpg"
       >
         <a

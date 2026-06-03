@@ -103,7 +103,7 @@ const sections = [
               Konveyör sistemleri, helezonlar, elevatörler, bunkerler ve paketleme altyapısı çoğu zaman ikincil
               kalem gibi görülür; ancak gerçekte üretim ritmini belirleyen yapılar bunlardır. Ürün akışının doğru
               kurgulanmaması, tüm hattı dar boğazlı hale getirir. Bu yüzden{" "}
-              <Link href="/makinalar/tasima-ekipmanlari" className="font-semibold text-blue-700 transition hover:text-blue-800">
+              <Link href="/makinalar-ekipman/tasima-ekipmanlari" className="font-semibold text-blue-700 transition hover:text-blue-800">
                 taşıma ekipmanları
               </Link>{" "}
               bütçesi proses maliyetinden ayrı düşünülmemelidir.

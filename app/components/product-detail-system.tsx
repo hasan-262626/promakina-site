@@ -455,8 +455,10 @@ export function ProductDetailSystem({
     setCalculationSummary(formatSummary(title, calculatorFamily, calculatorValues));
   };
 
-  const dynamicCtaTitle = ctaTitle ?? `${title} iÃ§in doÄŸru makina Ã§Ã¶zÃ¼mÃ¼nÃ¼ birlikte netleÅŸtirelim`;
-  const dynamicCtaText = calculationSummary || `${title} iÃ§in kapasite, proses ve saha verilerinize gÃ¶re teknik Ã§Ã¶zÃ¼m talebinizi bize iletebilirsiniz. ${ctaText}`;
+  const dynamicCtaTitle = ctaTitle ?? `${title} için doğru makina çözümünü birlikte netleştirelim`;
+  const dynamicCtaText =
+    calculationSummary ||
+    `${title} için kapasite, proses ve saha verilerinize göre teknik çözüm talebinizi bize iletebilirsiniz. ${ctaText}`;
   const messageBody = buildMessage(title, categoryLabel, calculatorFamily, calculatorValues, calculationSummary || dynamicCtaText);
   const whatsappHref = createWhatsAppHref(messageBody);
   const mailHref = createMailtoHref(

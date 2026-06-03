@@ -49,7 +49,7 @@ const commonQuickLinks: QuickLink[] = [
   { label: "Hizmetler", href: "/hizmetler" },
   { label: "Sektörler", href: "/sektorler" },
   { label: "İletişim", href: "/iletisim" },
-  { label: "Makinalar", href: "/makinalar" },
+  { label: "Makinalar", href: "/makinalar-ekipman" },
 ];
 
 const commonTechnicalContents: TechnicalContentCard[] = [
@@ -229,7 +229,7 @@ export const machineCategoryLandingConfigs: Record<string, MachineCategoryLandin
     title: "Taşıma Ekipmanları",
     description:
       "Bantlı konveyörler, zincirli konveyörler, helezonlar ve elevatörler için proses uyumlu taşıma ekipmanı çözümleri sunuyoruz.",
-    canonical: "https://www.promakina.com.tr/makinalar/tasima-ekipmanlari",
+    canonical: "https://www.promakina.com.tr/makinalar-ekipman/tasima-ekipmanlari",
     heroImage: "/images/konveyor2.jpg",
     heroDescription:
       "Dökme katı malzeme, granül ürün, kompost ve mineral akışlarında güvenli transfer için taşıma ekipmanlarını prosese göre seçiyoruz.",
@@ -334,13 +334,13 @@ export const machineCategoryLandingConfigs: Record<string, MachineCategoryLandin
     relatedMachines: [
       {
         title: "Bantlı Konveyörler",
-        href: "/makinalar/tasima-ekipmanlari/bantli-konveyorler",
+        href: "/makinalar-ekipman/tasima-ekipmanlari/bantli-konveyorler",
         description:
           "Uzun ve dengeli hatlarda yüksek süreklilik sağlayan standart taşıma çözümü.",
       },
       {
         title: "Zincirli Konveyörler",
-        href: "/makinalar/tasima-ekipmanlari/zincirli-konveyorler",
+        href: "/makinalar-ekipman/tasima-ekipmanlari/zincirli-konveyorler",
         description:
           "Kapalı gövde ve ağır hizmet sınıfı gerektiren transfer noktaları için güçlü çözüm.",
       },
@@ -352,13 +352,13 @@ export const machineCategoryLandingConfigs: Record<string, MachineCategoryLandin
       },
       {
         title: "Zincirli Elevatörler",
-        href: "/makinalar/tasima-ekipmanlari/zincirli-elevatorler",
+        href: "/makinalar-ekipman/tasima-ekipmanlari/zincirli-elevatorler",
         description:
           "Ağır hizmet ve dikey taşıma ihtiyacı olan prosesler için güvenli elevatör sistemi.",
       },
       {
         title: "Bantlı Elevatörler",
-        href: "/makinalar/tasima-ekipmanlari/bantli-elevatorler",
+        href: "/makinalar-ekipman/tasima-ekipmanlari/bantli-elevatorler",
         description:
           "Granül ve kırılgan ürünlerin kontrollü dikey taşınması için nazik elevatör yapısı.",
       },
@@ -374,7 +374,7 @@ export const machineCategoryLandingConfigs: Record<string, MachineCategoryLandin
     title: "Kırıcılar ve Parçalayıcılar",
     description:
       "Çekiçli kırıcı, zincirli kırıcı, shredder ve primer-sekonder kırıcı çözümleri için proses odaklı makina seçimi yapıyoruz.",
-    canonical: "https://www.promakina.com.tr/makinalar/kiricilar-ve-parcalayicilar",
+    canonical: "https://www.promakina.com.tr/makinalar-ekipman/kiricilar-ve-parcalayicilar",
     heroImage: "/images/kırıcı3.jpg",
     heroDescription:
       "Organik atık, gübre hammaddesi, geri dönüşüm ve mineral hazırlama hatlarında doğru kırma-parçalama kurgusu oluşturuyoruz.",
@@ -479,31 +479,31 @@ export const machineCategoryLandingConfigs: Record<string, MachineCategoryLandin
     relatedMachines: [
       {
         title: "Çekiçli Kırıcılar",
-        href: "/makinalar/kiricilar-ve-parcalayicilar/cekicli-kiricilar",
+        href: "/makinalar-ekipman/kiricilar-ve-parcalayicilar/cekicli-kiricilar",
         description:
           "Kırılgan ve topaklı ürünlerde kontrollü tane küçültme sağlayan klasik kırma çözümü.",
       },
       {
         title: "Zincirli Kırıcılar",
-        href: "/makinalar/kiricilar-ve-parcalayicilar/zincirli-kiricilar",
+        href: "/makinalar-ekipman/kiricilar-ve-parcalayicilar/zincirli-kiricilar",
         description:
           "Nemli ve topaklı malzemelerde güvenilir ilk kırma sağlayan zincirli sistem.",
       },
       {
         title: "Shredder Sistemleri",
-        href: "/makinalar/kiricilar-ve-parcalayicilar/shredder-sistemleri",
+        href: "/makinalar-ekipman/kiricilar-ve-parcalayicilar/shredder-sistemleri",
         description:
           "Hacimli ve düzensiz atıkların ilk kademe parçalanması için ağır hizmet çözümü.",
       },
       {
         title: "Bıçaklı Primer Kırıcılar",
-        href: "/makinalar/kiricilar-ve-parcalayicilar/bicakli-primer-kiricilar",
+        href: "/makinalar-ekipman/kiricilar-ve-parcalayicilar/bicakli-primer-kiricilar",
         description:
           "Daha büyük giriş ölçülerini kontrollü küçültmek için tasarlanan primer kırma sistemi.",
       },
       {
         title: "Bıçaklı Sekonder Kırıcılar",
-        href: "/makinalar/kiricilar-ve-parcalayicilar/bicakli-sekonder-kiricilar",
+        href: "/makinalar-ekipman/kiricilar-ve-parcalayicilar/bicakli-sekonder-kiricilar",
         description:
           "Daha dar ürün dağılımı ve nihai boyut kontrolü için kullanılan ikinci kademe çözüm.",
       },
@@ -518,7 +518,7 @@ export const machineCategoryLandingConfigs: Record<string, MachineCategoryLandin
     title: "Eleme ve Sınıflandırma Sistemleri",
     description:
       "Döner elekler, vibrasyonlu elekler, trommel sistemleri ve susuzlandırma çözümleri için proses odaklı eleme mühendisliği sunuyoruz.",
-    canonical: "https://www.promakina.com.tr/makinalar/eleme-ve-siniflandirma-sistemleri",
+    canonical: "https://www.promakina.com.tr/makinalar-ekipman/eleme-ve-siniflandirma-sistemleri",
     heroImage: "/images/elek2.jpeg",
     heroDescription:
       "Granül, kompost, mineral ve organik karışımlarda net ürün ayrımı için eleme ve sınıflandırma sistemlerini projelendiriyoruz.",
@@ -623,7 +623,7 @@ export const machineCategoryLandingConfigs: Record<string, MachineCategoryLandin
     relatedMachines: [
       {
         title: "Vibrasyonlu Elekler",
-        href: "/makinalar/eleme-ve-siniflandirma-sistemleri/vibrasyonlu-elekler",
+        href: "/makinalar-ekipman/eleme-ve-siniflandirma-sistemleri/vibrasyonlu-elekler",
         description:
           "Hassas ayırma ve yüksek verimli sınıflandırma için titreşim kontrollü elek çözümü.",
       },
@@ -635,7 +635,7 @@ export const machineCategoryLandingConfigs: Record<string, MachineCategoryLandin
       },
       {
         title: "Susuzlandırma Elekleri",
-        href: "/makinalar/eleme-ve-siniflandirma-sistemleri/susuzlandirma-elekleri",
+        href: "/makinalar-ekipman/eleme-ve-siniflandirma-sistemleri/susuzlandirma-elekleri",
         description:
           "Yüksek nemli ürünlerde su ayrımı ve ön kurutma etkisi için özel elek yapısı.",
       },
@@ -794,7 +794,7 @@ export const machineCategoryLandingConfigs: Record<string, MachineCategoryLandin
     title: "Paketleme ve Dolum Sistemleri",
     description:
       "Açık ağız torbalama, big bag dolum, sıvı dolum ve paletleme çözümleri için hat sonu otomasyon yaklaşımı sunuyoruz.",
-    canonical: "https://www.promakina.com.tr/makinalar/paketleme-ve-dolum-sistemleri",
+    canonical: "https://www.promakina.com.tr/makinalar-ekipman/paketleme-ve-dolum-sistemleri",
     heroImage: "/images/dolum1.jpg",
     heroDescription:
       "Granül, toz ve sıvı ürünlerde kontrollü dolum, tartım ve sevkiyat hazırlığı için paketleme sistemleri geliştiriyoruz.",
@@ -899,31 +899,31 @@ export const machineCategoryLandingConfigs: Record<string, MachineCategoryLandin
     relatedMachines: [
       {
         title: "Açık Ağız Torbalama",
-        href: "/makinalar/paketleme-ve-dolum-sistemleri/acik-agiz-torbalama",
+        href: "/makinalar-ekipman/paketleme-ve-dolum-sistemleri/acik-agiz-torbalama",
         description:
           "Granül ve toz ürünlerde hızlı, kontrollü ve tartım odaklı torbalama çözümü.",
       },
       {
         title: "Big Bag Dolum",
-        href: "/makinalar/paketleme-ve-dolum-sistemleri/big-bag-dolum",
+        href: "/makinalar-ekipman/paketleme-ve-dolum-sistemleri/big-bag-dolum",
         description:
           "Yüksek tonajlı sevkiyatlarda güçlü tartım ve güvenli dolum altyapısı sunan sistem.",
       },
       {
         title: "Sıvı Dolum Şişeleme",
-        href: "/makinalar/paketleme-ve-dolum-sistemleri/sivi-dolum-siseleme",
+        href: "/makinalar-ekipman/paketleme-ve-dolum-sistemleri/sivi-dolum-siseleme",
         description:
           "Sıvı ürünlerde hassas dolum ve şişe senkronizasyonu sağlayan dolum hattı.",
       },
       {
         title: "Şişe Etiketleme Makinası",
-        href: "/makinalar/paketleme-ve-dolum-sistemleri/sise-etiketleme-makinasi",
+        href: "/makinalar-ekipman/paketleme-ve-dolum-sistemleri/sise-etiketleme-makinasi",
         description:
           "Ambalaj üzerinde düzenli, tekrarlanabilir ve hızlı etiket uygulaması sağlayan çözüm.",
       },
       {
         title: "Paletleme Hatları",
-        href: "/makinalar/paketleme-ve-dolum-sistemleri/paletleme-hatlari",
+        href: "/makinalar-ekipman/paketleme-ve-dolum-sistemleri/paletleme-hatlari",
         description:
           "Dolum sonrası sevkiyat hazırlığını hızlandıran, düzenli istif sağlayan paletleme sistemi.",
       },

@@ -12,7 +12,7 @@ export const metadata = buildLibraryMetadata({ title, description, canonical });
 const relatedServices = [
   {
     title: "Taşıma Ekipmanları",
-    href: "/makinalar/tasima-ekipmanlari",
+    href: "/makinalar-ekipman/tasima-ekipmanlari",
     description:
       "Helezon, bant konveyör, elevatör ve zincirli taşıma çözümlerini tek bir ekipman ailesi içinde inceleyin.",
   },
@@ -116,7 +116,7 @@ const sections = [
             </p>
             <p>
               Uygun çap-hatve-devir kombinasyonu, ürün davranışına göre belirlenir. Ayrıntılı ekipman ailesi için{" "}
-              <Link href="/makinalar/tasima-ekipmanlari" className="font-semibold text-blue-700 transition hover:text-blue-800">
+              <Link href="/makinalar-ekipman/tasima-ekipmanlari" className="font-semibold text-blue-700 transition hover:text-blue-800">
                 taşıma ekipmanları
               </Link>{" "}
               sayfası iyi bir referans oluşturur.

@@ -271,6 +271,84 @@ const asciiWordMap: Record<string, string> = {
   yuksek: "yüksek",
 };
 
+const charLevelReplacements: Array<[RegExp, string]> = [
+  [/â€™/g, "’"],
+  [/â€œ/g, "“"],
+  [/â€/g, "”"],
+  [/â€“/g, "–"],
+  [/â€”/g, "—"],
+  [/Ä±/g, "ı"],
+  [/Ä°/g, "İ"],
+  [/Ã¼/g, "ü"],
+  [/Ãœ/g, "Ü"],
+  [/Ã¶/g, "ö"],
+  [/Ã–/g, "Ö"],
+  [/Ã§/g, "ç"],
+  [/Ã‡/g, "Ç"],
+  [/ÅŸ/g, "ş"],
+  [/Åž/g, "Ş"],
+  [/ÄŸ/g, "ğ"],
+  [/Äž/g, "Ğ"],
+];
+
+const typoReplacements: Array<[RegExp, string]> = [
+  [/\bSretim\b/g, "Üretim"],
+  [/\bsretim\b/g, "üretim"],
+  [/\bMühendislixi\b/g, "Mühendisliği"],
+  [/\bmühendislixi\b/g, "mühendisliği"],
+  [/\bBaxlayan\b/g, "Başlayan"],
+  [/\bbaxlayan\b/g, "başlayan"],
+  [/\bAnlayıxı\b/g, "Anlayışı"],
+  [/\banlayıxı\b/g, "anlayışı"],
+  [/\bÖxrenilmix\b/g, "Öğrenilmiş"],
+  [/\böxrenilmix\b/g, "öğrenilmiş"],
+  [/\bKuxak\b/g, "Kuşak"],
+  [/\bkuxak\b/g, "kuşak"],
+  [/\bdönüxmüxtür\b/g, "dönüşmüştür"],
+  [/\bTaxıyoruz\b/g, "Taşıyoruz"],
+  [/\btaxıyoruz\b/g, "taşıyoruz"],
+  [/\bgenix\b/g, "geniş"],
+  [/\bGenix\b/g, "Geniş"],
+  [/\bdexerlendirilir\b/g, "değerlendirilir"],
+  [/\bdexerlendiriyoruz\b/g, "değerlendiriyoruz"],
+  [/\bDexil\b/g, "Değil"],
+  [/\bdexil\b/g, "değil"],
+  [/\bxartları\b/g, "şartları"],
+  [/\bXartları\b/g, "Şartları"],
+  [/\bxekilde\b/g, "şekilde"],
+  [/\bXekilde\b/g, "Şekilde"],
+  [/\bçalıxıyoruz\b/g, "çalışıyoruz"],
+  [/\bçalıxması\b/g, "çalışması"],
+  [/\byaklaxımı\b/g, "yaklaşımı"],
+  [/\bYaklaxımı\b/g, "Yaklaşımı"],
+  [/\bbirlextiriyoruz\b/g, "birleştiriyoruz"],
+  [/\bnetlextirilerek\b/g, "netleştirilerek"],
+  [/\boluxturulur\b/g, "oluşturulur"],
+  [/\boluxturur\b/g, "oluşturur"],
+  [/\boluxan\b/g, "oluşan"],
+  [/\bihtiyaçı\b/g, "ihtiyacı"],
+  [/\bihtiyaçınız\b/g, "ihtiyacınız"],
+  [/\beriximi\b/g, "erişimi"],
+  [/\byerleximi\b/g, "yerleşimi"],
+  [/\bSretim akıxı\b/g, "Üretim akışı"],
+  [/\büretim akıxı\b/g, "üretim akışı"],
+  [/\bTaxıma\b/g, "Taşıma"],
+  [/\btaxıma\b/g, "taşıma"],
+  [/\bİxleme\b/g, "İşleme"],
+  [/\bixleme\b/g, "işleme"],
+  [/!özümleri/g, "Çözümleri"],
+  [/!özümü/g, "Çözümü"],
+  [/!amuru/g, "Çamuru"],
+  [/\bGörüxme\b/g, "Görüşme"],
+  [/\bgörüxme\b/g, "görüşme"],
+  [/\bGörüx\b/g, "Görüş"],
+  [/\bgörüx\b/g, "görüş"],
+  [/\biletixime\b/g, "iletişime"],
+  [/\biletixim\b/g, "iletişim"],
+  [/\bTeknik Görüxme\b/g, "Teknik Görüşme"],
+  [/\bWhatsApp ile Görüx\b/g, "WhatsApp ile Görüş"],
+];
+
 const mojibakeMarkerRegex = /[ÃÄÅÂ�]/g;
 
 function applyCasePattern(source: string, target: string) {
@@ -344,6 +422,14 @@ export function trText(text: string): string {
 
   value = normalizeMojibake(value);
   value = normalizeAsciiWords(value);
+
+  for (const [pattern, replacement] of charLevelReplacements) {
+    value = value.replace(pattern, replacement);
+  }
+
+  for (const [pattern, replacement] of typoReplacements) {
+    value = value.replace(pattern, replacement);
+  }
 
   return value
     .replace(/Â/g, "")

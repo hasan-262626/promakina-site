@@ -1,3 +1,4 @@
+import { trText } from "../lib/tr-text";
 import { drumProductPages } from "./drum-product-data";
 
 export type CalculatorFamily =
@@ -962,6 +963,42 @@ export const machineCategoryPages: MachineCategoryPage[] = [
   expandCategory(auxiliaryFlowSeed),
   expandCategory(dosageSeed),
 ];
+
+function normalizeTextTree<T>(value: T, key?: string): T {
+  if (typeof value === "string") {
+    if (
+      key === "slug" ||
+      key === "src" ||
+      key === "image" ||
+      key === "heroImage" ||
+      key === "cardImage"
+    ) {
+      return value;
+    }
+
+    return trText(value) as T;
+  }
+
+  if (Array.isArray(value)) {
+    return value.map((item) => normalizeTextTree(item)) as T;
+  }
+
+  if (value && typeof value === "object") {
+    const output: Record<string, unknown> = {};
+
+    for (const [entryKey, entryValue] of Object.entries(value as Record<string, unknown>)) {
+      output[entryKey] = normalizeTextTree(entryValue, entryKey);
+    }
+
+    return output as T;
+  }
+
+  return value;
+}
+
+for (let index = 0; index < machineCategoryPages.length; index += 1) {
+  machineCategoryPages[index] = normalizeTextTree(machineCategoryPages[index]);
+}
 
 export const machineCategoryMap = Object.fromEntries(
   machineCategoryPages.map((category) => [category.slug, category]),

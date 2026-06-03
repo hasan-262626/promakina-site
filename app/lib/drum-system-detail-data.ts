@@ -1255,7 +1255,7 @@ export const drumSystemDetailPages: DrumSystemDetailPageData[] = [
       {
         title: "Tambur Ring ve Tahrik Sistemi Programı",
         description: "Ön seçim ve yük yaklaşımını program üzerinden açın.",
-        href: "/programlar/tambur-hesaplari/tambur-ring-ve-tahrik-sistemi",
+        href: "/programlar/tambur-hesaplari",
       },
       {
         title: "Tambur Redüktör Hesabı",

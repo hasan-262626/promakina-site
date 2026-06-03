@@ -32,11 +32,23 @@ function getCategory(slug: string) {
 }
 
 function getPublicCategorySlug(slug: string) {
-  return Object.entries(categoryAliasMap).find(([, target]) => target === slug)?.[0] ?? slug;
+  if (slug === "kÃ„Â±rÃ„Â±cÃ„Â±lar-ve-parcalayicilar") {
+    return "kiricilar-ve-parcalayicilar";
+  }
+
+  return slug;
 }
 
 function getPublicProductSlug(slug: string) {
-  return Object.entries(productAliasMap).find(([, target]) => target === slug)?.[0] ?? slug;
+  if (slug === "vidali-helezonlar") return "helezon-konveyorler";
+  if (slug === "cekicli-kÄ±rÄ±cÄ±lar") return "cekicli-kiricilar";
+  if (slug === "ceneli-kÄ±rÄ±cÄ±lar") return "ceneli-kiricilar";
+  if (slug === "dik-milli-kÄ±rÄ±cÄ±lar") return "dik-milli-kiricilar";
+  if (slug === "zincirli-kÄ±rÄ±cÄ±lar") return "zincirli-kiricilar";
+  if (slug === "bicakli-primer-kÄ±rÄ±cÄ±lar") return "bicakli-primer-kiricilar";
+  if (slug === "bicakli-sekonder-kÄ±rÄ±cÄ±lar") return "bicakli-sekonder-kiricilar";
+
+  return slug;
 }
 
 export function generateStaticParams() {
