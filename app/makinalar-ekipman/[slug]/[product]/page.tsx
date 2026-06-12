@@ -2,7 +2,6 @@ import { Metadata } from "next";
 import { notFound, redirect } from "next/navigation";
 import { ProductDetailSystem } from "../../../components/product-detail-system";
 import { machineCategoryMap, machineCategoryPages } from "../../../components/machine-group-data";
-import { beltConveyorGallery } from "../../../lib/conveyor-gallery";
 import { getMachineAuxiliarySystems } from "../../../lib/machine-auxiliary-systems";
 import {
   getMachinePublicCategorySlug,
@@ -109,10 +108,6 @@ export default async function MachineProductDetailPage({ params, searchParams }:
     href: `/makinalar-ekipman/${publicCategorySlug}/${getPublicProductSlug(item.slug)}`,
   }));
   const activeHref = `/makinalar-ekipman/${publicCategorySlug}/${publicProductSlug}`;
-  const productGallery =
-    resolvedSlug === "tasima-ekipmanlari" && activeProduct.slug === "bantli-konveyorler"
-      ? beltConveyorGallery
-      : activeProduct.gallery;
 
   return (
     <main className="min-h-screen bg-white text-slate-900">
@@ -124,12 +119,12 @@ export default async function MachineProductDetailPage({ params, searchParams }:
         title={activeProduct.title}
         heroDescription={activeProduct.heroDescription}
         heroImage={category.heroImage}
-        mainImage={productGallery[0]?.src ?? category.heroImage}
+        mainImage={activeProduct.gallery[0]?.src ?? category.heroImage}
         overviewParagraphs={activeProduct.overviewParagraphs}
         highlightText={activeProduct.highlightText}
         specs={activeProduct.specs}
         applications={activeProduct.applications}
-        gallery={productGallery}
+        gallery={activeProduct.gallery}
         optionalEquipment={activeProduct.optionalEquipment}
         spareParts={activeProduct.spareParts}
         auxiliarySystems={auxiliarySystems}

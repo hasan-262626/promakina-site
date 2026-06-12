@@ -11,12 +11,14 @@ export type DrumProductPage = {
   applications: string[];
   optionalEquipment: string[];
   spareParts: string[];
+  mainImage: string;
+  mainImageAlt: string;
   gallery: { src: string; alt: string; caption: string }[];
 };
 
-const sharedGallery = [
+const legacySharedGallery = [
   {
-    src: "/images/kurutmatam2.jpg",
+    src: "/images/test.jpg",
     alt: "Tambur sistemi genel görünüm",
     caption: "Genel ürün görünümü",
   },
@@ -36,6 +38,43 @@ const sharedGallery = [
     caption: "İç geometri ve proses kurgusu",
   },
 ];
+
+void legacySharedGallery;
+
+const drumSharedGallery = [
+  "/images/tambur kurutma/tamkurutma1.jpg",
+  "/images/tambur kurutma/tamkurutma2.jpg",
+  "/images/tambur kurutma/tamkurutma3.jpg",
+  "/images/tambur kurutma/tamkurutma4.jpg",
+  "/images/tambur kurutma/tamkurutma5.jpg",
+  "/images/tambur kurutma/tamkurutma6.jpg",
+  "/images/tambur kurutma/tamkurutma7.jpg",
+  "/images/tambur kurutma/tamkurutma8.jpg",
+  "/images/tambur kurutma/tamkurutma9.jpg",
+  "/images/tambur kurutma/tamkurutma10.jpg",
+  "/images/tambur kurutma/tamkurutma11.jpg",
+  "/images/tambur kurutma/tamkurutma12.jpg",
+  "/images/tambur kurutma/tamkurutma13.jpg",
+  "/images/tambur kurutma/tamkurutma14.jpg",
+  "/images/tambur kurutma/tamkurutma15.jpg",
+  "/images/tambur kurutma/tamkurutma16.jpg",
+  "/images/tambur kurutma/tamkurutma17.jpg",
+  "/images/tambur kurutma/tamkurutma18.jpg",
+  "/images/tambur kurutma/tamkurutma19.jpg",
+  "/images/tambur kurutma/tamkurutma20.jpg",
+  "/images/tambur kurutma/tamkurutma21.jpg",
+  "/images/tambur kurutma/tamkurutma22.jpg",
+  "/images/tambur kurutma/tamkurutma24.png",
+  "/images/tambur kurutma/tamkurutma25.jpg",
+  "/images/tambur kurutma/tamkurutma27.jpg",
+  "/images/tambur kurutma/tamkurutma28.jpg",
+  "/images/tambur kurutma/tamkurutma29.jpg",
+  "/images/tambur kurutma/tamkurutma30.jpg",
+].map((src, index) => ({
+  src,
+  alt: `Tambur sistemleri galeri görseli ${index + 1}`,
+  caption: `Tambur sistemleri galeri görseli ${index + 1}`,
+}));
 
 export const drumProductPages: DrumProductPage[] = [
   {
@@ -85,14 +124,9 @@ export const drumProductPages: DrumProductPage[] = [
       "Sprey ekipmanları",
       "Conta ve bağlantı elemanları",
     ],
-    gallery: [
-      {
-        src: "/images/granulator1.png",
-        alt: "Granülatör tamburu genel görünüm",
-        caption: "Granülatör tamburu ürün görünümü",
-      },
-      ...sharedGallery.slice(1),
-    ],
+    mainImage: "/images/tambur kurutma/tamkurutma17.jpg",
+    mainImageAlt: "Granülatör tamburu ve gübre granülasyon ekipmanı",
+    gallery: drumSharedGallery,
   },
   {
     slug: "kurutma-tamburu",
@@ -138,14 +172,9 @@ export const drumProductPages: DrumProductPage[] = [
       "Rulman ve yataklar",
       "Sızdırmazlık parçaları",
     ],
-    gallery: [
-      {
-        src: "/images/kurutma3.png",
-        alt: "Kurutma tamburu genel görünüm",
-        caption: "Kurutma tamburu ürün görünümü",
-      },
-      ...sharedGallery.slice(1),
-    ],
+    mainImage: "/images/tambur kurutma/tamkurutma25.jpg",
+    mainImageAlt: "Endüstriyel kurutma tamburu",
+    gallery: drumSharedGallery,
   },
   {
     slug: "sogutma-tamburu",
@@ -191,14 +220,9 @@ export const drumProductPages: DrumProductPage[] = [
       "Rulman grupları",
       "Conta ve sızdırmazlık parçaları",
     ],
-    gallery: [
-      {
-        src: "/images/sogut2.png",
-        alt: "Soğutma tamburu genel görünüm",
-        caption: "Soğutma tamburu ürün görünümü",
-      },
-      ...sharedGallery.slice(1),
-    ],
+    mainImage: "/images/tambur kurutma/tamkurutma30.jpg",
+    mainImageAlt: "Soğutma tamburu ve proses ekipmanı",
+    gallery: drumSharedGallery,
   },
   {
     slug: "kaplama-tamburu",
@@ -244,14 +268,9 @@ export const drumProductPages: DrumProductPage[] = [
       "Conta grupları",
       "Sprey hattı bağlantıları",
     ],
-    gallery: [
-      {
-        src: "/images/kaplama1.png",
-        alt: "Kaplama tamburu genel görünüm",
-        caption: "Kaplama tamburu ürün görünümü",
-      },
-      ...sharedGallery.slice(1),
-    ],
+    mainImage: "/images/tambur kurutma/tamkurutma2.jpg",
+    mainImageAlt: "Kaplama tamburu ve yüzey kaplama ekipmanı",
+    gallery: drumSharedGallery,
   },
   {
     slug: "kompost-tamburu",
@@ -297,13 +316,8 @@ export const drumProductPages: DrumProductPage[] = [
       "Sızdırmazlık parçaları",
       "Besleme ve boşaltma bağlantıları",
     ],
-    gallery: [
-      {
-        src: "/images/biokom1.png",
-        alt: "Kompost tamburu genel görünüm",
-        caption: "Kompost tamburu ürün görünümü",
-      },
-      ...sharedGallery.slice(1),
-    ],
+    mainImage: "/images/tambur kurutma/tamkurutma3.jpg",
+    mainImageAlt: "Kompost tamburu ve organik atık işleme ekipmanı",
+    gallery: drumSharedGallery,
   },
 ];

@@ -4,7 +4,6 @@ import { Metadata } from "next";
 import { notFound, redirect } from "next/navigation";
 import { MachinePageHero } from "../../components/machine-page-hero";
 import { machineCategoryMap, machineCategoryPages } from "../../components/machine-group-data";
-import { beltConveyorGallery } from "../../lib/conveyor-gallery";
 import { getMachineCalculatorHref } from "../../lib/machine-calculator-link";
 import {
   getMachinePublicCategorySlug,
@@ -115,11 +114,7 @@ export default async function MachineCategoryPage({ params }: PageProps) {
                 <article className="flex h-full flex-col">
                   <div className="relative min-h-[220px] bg-slate-200">
                     <Image
-                      src={
-                        resolvedSlug === "tasima-ekipmanlari" && product.slug === "bantli-konveyorler"
-                          ? beltConveyorGallery[0]?.src ?? product.gallery[0]?.src ?? category.heroImage
-                          : product.gallery[0]?.src ?? category.heroImage
-                      }
+                      src={product.gallery[0]?.src ?? category.heroImage}
                       alt={
                         product.gallery[0]?.src === "/images/reaktor1.avif"
                           ? "Pro Makina reaktör ve tank sistemleri"

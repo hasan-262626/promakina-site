@@ -38,6 +38,7 @@ type ProductDetailSystemProps = {
   heroDescription: string;
   heroImage: string;
   mainImage?: string;
+  mainImageAlt?: string;
   overviewTitle?: string;
   overviewParagraphs: string[];
   highlightTitle?: string;
@@ -45,6 +46,7 @@ type ProductDetailSystemProps = {
   specs: string[];
   applications: string[];
   gallery: GalleryItem[];
+  galleryLayout?: "carousel" | "grid";
   optionalEquipment: string[];
   spareParts: string[];
   auxiliarySystems: AuxiliarySystemLink[];
@@ -293,8 +295,10 @@ function DetailListCard({ title, items }: { title: string; items: string[] }) {
 
 function ProductGalleryCarousel({
   images,
+  layout = "carousel",
 }: {
   images: ({ src: string; alt?: string; caption?: string } | string)[];
+  layout?: "carousel" | "grid";
 }) {
   const normalizedImages = images.map((item, index) =>
     typeof item === "string"
@@ -382,33 +386,22 @@ function ProductGalleryCarousel({
   return (
     <>
       <div className="mt-6">
-        <div className="relative">
-          <button
-            type="button"
-            onClick={() => scrollCarousel("prev")}
-            className="absolute left-2 top-1/2 z-10 hidden h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-slate-200 bg-white/95 text-slate-900 shadow-[0_10px_24px_rgba(15,23,42,0.12)] transition hover:border-blue-200 hover:text-blue-700 lg:inline-flex"
-            aria-label="Önceki görseller"
-          >
-            ‹
-          </button>
-          <div
-            ref={scrollRef}
-            className="no-scrollbar flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth"
-          >
+        {layout === "grid" ? (
+          <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
             {normalizedImages.map((item, index) => (
               <button
                 key={`${item.src}-${index}`}
                 type="button"
                 onClick={() => openLightbox(index)}
-                className="group shrink-0 basis-[calc((100%-1rem)/2)] snap-start overflow-hidden rounded-[20px] border border-slate-200 bg-white text-left transition hover:-translate-y-0.5 hover:border-blue-200 hover:shadow-[0_12px_30px_rgba(15,23,42,0.08)] md:basis-[calc((100%-2rem)/3)] xl:basis-[calc((100%-4rem)/5)]"
+                className="group overflow-hidden rounded-[22px] border border-slate-200 bg-white text-left transition hover:-translate-y-0.5 hover:border-blue-200 hover:shadow-[0_16px_36px_rgba(15,23,42,0.08)]"
               >
-                <div className="relative h-[132px] bg-slate-100">
+                <div className="relative aspect-[4/3] bg-slate-100">
                   <Image
                     src={item.src}
                     alt={item.alt}
                     fill
-                    sizes="(min-width: 1280px) 18vw, (min-width: 768px) 30vw, 48vw"
-                    className="object-cover transition duration-300 group-hover:scale-[1.03]"
+                    sizes="(min-width: 1280px) 30vw, (min-width: 640px) 48vw, 100vw"
+                    className="object-cover transition duration-300 group-hover:scale-[1.04]"
                   />
                 </div>
                 <div className="px-4 py-3 text-sm text-slate-600">
@@ -417,15 +410,52 @@ function ProductGalleryCarousel({
               </button>
             ))}
           </div>
-          <button
-            type="button"
-            onClick={() => scrollCarousel("next")}
-            className="absolute right-2 top-1/2 z-10 hidden h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-slate-200 bg-white/95 text-slate-900 shadow-[0_10px_24px_rgba(15,23,42,0.12)] transition hover:border-blue-200 hover:text-blue-700 lg:inline-flex"
-            aria-label="Sonraki görseller"
-          >
-            ›
-          </button>
-        </div>
+        ) : (
+          <div className="relative">
+            <button
+              type="button"
+              onClick={() => scrollCarousel("prev")}
+              className="absolute left-2 top-1/2 z-10 hidden h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-slate-200 bg-white/95 text-slate-900 shadow-[0_10px_24px_rgba(15,23,42,0.12)] transition hover:border-blue-200 hover:text-blue-700 lg:inline-flex"
+              aria-label="Önceki görseller"
+            >
+              ‹
+            </button>
+            <div
+              ref={scrollRef}
+              className="no-scrollbar flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth"
+            >
+              {normalizedImages.map((item, index) => (
+                <button
+                  key={`${item.src}-${index}`}
+                  type="button"
+                  onClick={() => openLightbox(index)}
+                  className="group shrink-0 basis-[calc((100%-1rem)/2)] snap-start overflow-hidden rounded-[20px] border border-slate-200 bg-white text-left transition hover:-translate-y-0.5 hover:border-blue-200 hover:shadow-[0_12px_30px_rgba(15,23,42,0.08)] md:basis-[calc((100%-2rem)/3)] xl:basis-[calc((100%-4rem)/5)]"
+                >
+                  <div className="relative h-[132px] bg-slate-100">
+                    <Image
+                      src={item.src}
+                      alt={item.alt}
+                      fill
+                      sizes="(min-width: 1280px) 18vw, (min-width: 768px) 30vw, 48vw"
+                      className="object-cover transition duration-300 group-hover:scale-[1.03]"
+                    />
+                  </div>
+                  <div className="px-4 py-3 text-sm text-slate-600">
+                    <p className="truncate">{item.caption}</p>
+                  </div>
+                </button>
+              ))}
+            </div>
+            <button
+              type="button"
+              onClick={() => scrollCarousel("next")}
+              className="absolute right-2 top-1/2 z-10 hidden h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-slate-200 bg-white/95 text-slate-900 shadow-[0_10px_24px_rgba(15,23,42,0.12)] transition hover:border-blue-200 hover:text-blue-700 lg:inline-flex"
+              aria-label="Sonraki görseller"
+            >
+              ›
+            </button>
+          </div>
+        )}
       </div>
 
       {lightboxIndex !== null ? (
@@ -665,12 +695,14 @@ export function ProductDetailSystem({
   heroDescription,
   heroImage,
   mainImage,
+  mainImageAlt,
   overviewParagraphs,
   highlightTitle = "Avantajlar",
   highlightText,
   specs,
   applications,
   gallery,
+  galleryLayout = "carousel",
   optionalEquipment,
   spareParts,
   auxiliarySystems,
@@ -719,7 +751,7 @@ export function ProductDetailSystem({
   const leadParagraph = overviewParagraphs[0] ?? heroDescription;
   const secondaryParagraphs = overviewParagraphs.slice(1);
   const mainVisual = mainImage ?? gallery[0]?.src ?? heroImage;
-  const mainVisualAlt = gallery[0]?.alt ?? title;
+  const mainVisualAlt = mainImageAlt ?? gallery[0]?.alt ?? title;
 
   return (
     <>
@@ -785,7 +817,7 @@ export function ProductDetailSystem({
               <section id="galeri" className="scroll-mt-[210px] xl:scroll-mt-[220px]">
                 <div className="rounded-[30px] border border-slate-200 bg-white p-6 shadow-[0_18px_50px_rgba(15,23,42,0.05)] sm:p-7">
                   <h2 className="text-3xl font-semibold tracking-tight text-slate-950">Galeri</h2>
-                  <ProductGalleryCarousel images={gallery} />
+                  <ProductGalleryCarousel images={gallery} layout={galleryLayout} />
                 </div>
               </section>
 

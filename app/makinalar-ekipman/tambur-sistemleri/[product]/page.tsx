@@ -79,13 +79,15 @@ export default async function DrumProductDetailPage({ params, searchParams }: Pa
         activeSidebarHref={activeHref}
         title={activeProduct.title}
         heroDescription={activeProduct.heroDescription}
-        heroImage="/images/kurutmatam2.jpg"
-        mainImage={activeProduct.gallery[0]?.src ?? "/images/kurutmatam2.jpg"}
+        heroImage={activeProduct.mainImage}
+        mainImage={activeProduct.mainImage}
+        mainImageAlt={activeProduct.mainImageAlt}
         overviewParagraphs={activeProduct.overviewParagraphs}
         highlightText={activeProduct.highlightText}
         specs={activeProduct.specs}
         applications={activeProduct.applications}
         gallery={activeProduct.gallery}
+        galleryLayout="grid"
         optionalEquipment={activeProduct.optionalEquipment}
         spareParts={activeProduct.spareParts}
         auxiliarySystems={auxiliarySystems}

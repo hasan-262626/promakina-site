@@ -48,6 +48,7 @@ type ProductSeed = {
   title: string;
   shortDescription: string;
   image?: string;
+  gallery?: { src: string; alt: string; caption: string }[];
   heroDescription?: string;
   ctaTitle?: string;
   ctaText?: string;
@@ -90,6 +91,36 @@ function makeGallery(image: string, subject: string) {
   ];
 }
 
+function makeNumberedGallery(
+  sources: string[],
+  altPrefix: string,
+  captionPrefix = "Galeri görseli",
+) {
+  return sources.map((src, index) => ({
+    src,
+    alt: `${altPrefix} ${index + 1}`,
+    caption: `${captionPrefix} ${index + 1}`,
+  }));
+}
+
+function makeGalleryWithPrimary(
+  primary: { src: string; alt: string; caption?: string },
+  additionalSources: string[],
+  altPrefix: string,
+  captionPrefix = "Galeri görseli",
+) {
+  const rest = makeNumberedGallery(additionalSources, altPrefix, captionPrefix);
+
+  return [
+    {
+      src: primary.src,
+      alt: primary.alt,
+      caption: primary.caption ?? "Genel ürün görünümü",
+    },
+    ...rest,
+  ];
+}
+
 function expandCategory(seed: CategorySeed): MachineCategoryPage {
   return {
     ...seed,
@@ -113,7 +144,7 @@ function expandCategory(seed: CategorySeed): MachineCategoryPage {
       applications: product.applications ?? seed.applications,
       optionalEquipment: product.optionalEquipment ?? seed.optionalEquipment,
       spareParts: product.spareParts ?? seed.spareParts,
-      gallery: makeGallery(product.image ?? seed.heroImage, product.title),
+      gallery: product.gallery ?? makeGallery(product.image ?? seed.heroImage, product.title),
     })),
   };
 }
@@ -163,12 +194,255 @@ const transportSeed: CategorySeed = {
     "Kapak ve bağlantı parçaları",
   ],
   products: [
-    { slug: "bantli-konveyorler", title: "Bantlı Konveyörler", shortDescription: "Malzeme taşıma hatları için dayanıklı ve özel ölçü üretim bantlı konveyör sistemleri sunuyoruz.", image: "/images/konveyor6.jpeg" },
-    { slug: "zincirli-konveyorler", title: "Zincirli Konveyörler", shortDescription: "Ağır hizmet ve kontrollü transfer gerektiren hatlar için zincirli konveyör imalatı yapıyoruz.", image: "/images/zincirlikonveyor.jpg" },
-    { slug: "tripper-arabali-konveyor", title: "Tripper Arabalı Konveyör", shortDescription: "Hat boyunca farklı noktalara kontrollü ürün boşaltımı için tripper arabalı konveyör çözümleri sunuyoruz.", image: "/images/tripper1.jpg" },
-    { slug: "vidali-helezonlar", title: "Vidalı Helezonlar", shortDescription: "Toz, granül ve kontrollü besleme gerektiren hatlar için vidalı helezon imalatı yapıyoruz.", image: "/images/helezon2.jpg" },
-    { slug: "zincirli-elevatorler", title: "Zincirli Elevatörler", shortDescription: "Dikey taşıma ve ağır hizmet prosesleri için zincirli elevatör çözümleri üretiyoruz.", image: "/images/zincirlielevator.jpg" },
-    { slug: "bantli-elevatorler", title: "Bantlı Elevatörler", shortDescription: "Granül ve kırılgan ürünler için kontrollü dikey taşıma sağlayan bantlı elevatör sistemleri sunuyoruz.", image: "/images/bantlielevator.jpg" },
+    {
+      slug: "bantli-konveyorler",
+      title: "Bantlı Konveyörler",
+      shortDescription:
+        "Malzeme taşıma hatları için dayanıklı ve özel ölçü üretim bantlı konveyör sistemleri sunuyoruz.",
+      image: "/images/konveyor/konvey2.jpg",
+      gallery: makeGalleryWithPrimary(
+        {
+          src: "/images/konveyor/konvey2.jpg",
+          alt: "Bantlı konveyör ve endüstriyel taşıma ekipmanı",
+        },
+        [
+          "/images/konveyor/konvey1.jpeg",
+          "/images/konveyor/konvey5.jpg",
+          "/images/konveyor/konvey7.jpg",
+          "/images/konveyor/konvey8.jpg",
+          "/images/konveyor/konvey9.jpg",
+          "/images/konveyor/konvey11.jpg",
+          "/images/konveyor/konvey12.jpg",
+          "/images/konveyor/konvey14.jpg",
+          "/images/konveyor/konvey15.png",
+          "/images/konveyor/konvey16.png",
+          "/images/konveyor/konvey17.jpg",
+          "/images/konveyor/konvey18.png",
+          "/images/konveyor/konvey19.jpg",
+          "/images/konveyor/konvey20.webp",
+          "/images/konveyor/konvey21.webp",
+          "/images/konveyor/konvey22.webp",
+          "/images/konveyor/konvey23.webp",
+          "/images/konveyor/konvey24.webp",
+          "/images/konveyor/konvey25.webp",
+          "/images/konveyor/konvey26.webp",
+          "/images/konveyor/konvey27.webp",
+          "/images/konveyor/konvey28.webp",
+          "/images/konveyor/konvey29.webp",
+          "/images/konveyor/konvey30.webp",
+          "/images/konveyor/konvey31.webp",
+          "/images/konveyor/konvey32.jpg",
+          "/images/konveyor/konvey35.png",
+          "/images/konveyor/konvey38.jpg",
+          "/images/konveyor/konvey39.webp",
+          "/images/konveyor/konvey40.webp",
+          "/images/konveyor/konvey41.webp",
+          "/images/konveyor/konveyor3.jpg",
+        ],
+        "Bantlı konveyör sistemleri galeri görseli",
+      ),
+    },
+    {
+      slug: "zincirli-konveyorler",
+      title: "Zincirli Konveyörler",
+      shortDescription:
+        "Ağır hizmet ve kontrollü transfer gerektiren hatlar için zincirli konveyör imalatı yapıyoruz.",
+      image: "/images/konveyor zincirli/konveyorzinc12.jpg",
+      gallery: makeGalleryWithPrimary(
+        {
+          src: "/images/konveyor zincirli/konveyorzinc12.jpg",
+          alt: "Zincirli konveyör ve ağır hizmet taşıma sistemi",
+        },
+        [
+          "/images/konveyor zincirli/konveyorzinc1.jpg",
+          "/images/konveyor zincirli/konveyorzinc2.jpg",
+          "/images/konveyor zincirli/konveyorzinc3.jpg",
+          "/images/konveyor zincirli/konveyorzinc4.jpg",
+          "/images/konveyor zincirli/konveyorzinc5.jpg",
+          "/images/konveyor zincirli/konveyorzinc6.jpg",
+          "/images/konveyor zincirli/konveyorzinc7.jpg",
+          "/images/konveyor zincirli/konveyorzinc8.jpg",
+          "/images/elevator z/konveyorzinc9.jpg",
+          "/images/konveyor zincirli/konveyorzinc10.png",
+          "/images/konveyor zincirli/konveyorzinc11.png",
+          "/images/konveyor zincirli/konveyorzinc13.jpg",
+          "/images/konveyor zincirli/konveyorzinc14.jpg",
+          "/images/konveyor zincirli/konveyorzinc15.jpg",
+          "/images/konveyor zincirli/konveyorzinc16.jpg",
+          "/images/konveyor zincirli/konveyorzinc17.jpg",
+          "/images/konveyor zincirli/konveyorzinc18.jpg",
+          "/images/konveyor zincirli/konveyorzinc19.jpg",
+          "/images/konveyor zincirli/konveyorzinc20.jpg",
+          "/images/konveyor zincirli/konveyorzinc21.jpg",
+          "/images/konveyor zincirli/konveyorzinc22.jpg",
+          "/images/konveyor zincirli/konveyorzinc23.jpg",
+          "/images/konveyor zincirli/konveyorzinc24.jpg",
+          "/images/konveyor zincirli/konveyorzinc25.jpg",
+          "/images/konveyor zincirli/konveyorzinc26.jpg",
+          "/images/konveyor zincirli/konveyorzinc27.jpg",
+          "/images/konveyor zincirli/konveyorzinc28.jpg",
+          "/images/konveyor zincirli/konveyorzinc29.jpg",
+          "/images/elevator bantlı/konveyorzinc30.jpeg",
+          "/images/konveyor zincirli/konveyorzinc31.jpg",
+          "/images/konveyor zincirli/konveyorzinc32.jpg",
+        ],
+        "Zincirli konveyör sistemleri galeri görseli",
+      ),
+    },
+    {
+      slug: "tripper-arabali-konveyor",
+      title: "Tripper Arabalı Konveyör",
+      shortDescription:
+        "Hat boyunca farklı noktalara kontrollü ürün boşaltımı için tripper arabalı konveyör çözümleri sunuyoruz.",
+      image: "/images/konveyor tripper/konevtrip3.jpg",
+      gallery: makeGalleryWithPrimary(
+        {
+          src: "/images/konveyor tripper/konevtrip3.jpg",
+          alt: "Tripper arabalı konveyör sistemi",
+        },
+        [
+          "/images/konveyor tripper/konevtrip1.jpg",
+          "/images/konveyor tripper/konevtrip2.webp",
+          "/images/konveyor tripper/konevtrip5.webp",
+          "/images/konveyor tripper/konevtrip6.webp",
+        ],
+        "Tripper arabalı konveyör galeri görseli",
+      ),
+    },
+    {
+      slug: "vidali-helezonlar",
+      title: "Vidalı Helezonlar",
+      shortDescription:
+        "Toz, granül ve kontrollü besleme gerektiren hatlar için vidalı helezon imalatı yapıyoruz.",
+      image: "/images/helezon/helezon39.jpg",
+      gallery: makeGalleryWithPrimary(
+        {
+          src: "/images/helezon/helezon39.jpg",
+          alt: "Vidalı helezon ve helezon konveyör sistemi",
+        },
+        [
+          "/images/helezon/helezon1.jpg",
+          "/images/helezon/helezon2.png",
+          "/images/helezon/helezon3.jpg",
+          "/images/helezon/helezon4.jpg",
+          "/images/helezon/helezon5.jpg",
+          "/images/helezon/helezon6.jpg",
+          "/images/helezon/helezon7.jpg",
+          "/images/helezon/helezon8.jpg",
+          "/images/helezon/helezon9.jpg",
+          "/images/helezon/helezon10.jpg",
+          "/images/helezon/helezon11.jpg",
+          "/images/helezon/helezon12.jpg",
+          "/images/helezon/helezon13.jpg",
+          "/images/helezon/helezon14.jpg",
+          "/images/helezon/helezon15.jpeg",
+          "/images/helezon/helezon16.jpg",
+          "/images/helezon/helezon17.jpg",
+          "/images/helezon/helezon18.jpg",
+          "/images/helezon/helezon19.jpg",
+          "/images/helezon/helezon20.jpg",
+          "/images/helezon/helezon21.jpg",
+          "/images/helezon/helezon22.jpeg",
+          "/images/helezon/helezon23.jpg",
+          "/images/helezon/helezon24.jpg",
+          "/images/helezon/helezon25.jpg",
+          "/images/helezon/helezon26.jpeg",
+          "/images/helezon/helezon27.jpg",
+          "/images/helezon/helezon28.jpg",
+          "/images/helezon/helezon29.jpg",
+          "/images/helezon/helezon30.jpg",
+          "/images/helezon/helezon31.jpg",
+          "/images/helezon/helezon32.jpg",
+          "/images/helezon/helezon33.jpg",
+          "/images/helezon/helezon34.jpg",
+          "/images/helezon/helezon35.jpg",
+          "/images/helezon/helezon36.jpg",
+          "/images/helezon/helezon37.jpg",
+          "/images/helezon/helezon38.jpg",
+          "/images/helezon/helezon40.jpg",
+          "/images/helezon/helezon41.jpg",
+          "/images/helezon/helezon42.jpg",
+          "/images/helezon/helezon43.jpg",
+          "/images/helezon/helezon44.jpg",
+          "/images/helezon/helezon45.jpg",
+          "/images/helezon/helezon46.jpg",
+          "/images/helezon/helezon47.jpg",
+          "/images/helezon/helezon48.jpg",
+        ],
+        "Vidalı helezon galeri görseli",
+      ),
+    },
+    {
+      slug: "zincirli-elevatorler",
+      title: "Zincirli Elevatörler",
+      shortDescription:
+        "Dikey taşıma ve ağır hizmet prosesleri için zincirli elevatör çözümleri üretiyoruz.",
+      image: "/images/elevator zincirli/elevzinc1.jpg",
+      gallery: makeGalleryWithPrimary(
+        {
+          src: "/images/elevator zincirli/elevzinc1.jpg",
+          alt: "Zincirli elevatör ve dikey taşıma sistemi",
+        },
+        [
+          "/images/elevator zincirli/elevzinc2.jpg",
+          "/images/elevator zincirli/elevzinc3.jpg",
+          "/images/elevator zincirli/elevzinc4.jpg",
+          "/images/elevator zincirli/elevzinc5.webp",
+          "/images/elevator zincirli/elevzinc6.jpg",
+          "/images/elevator zincirli/elevzinc7.webp",
+          "/images/elevator zincirli/elevzinc8.jpg",
+          "/images/elevator zincirli/elevzinc9.webp",
+          "/images/elevator zincirli/elevzinc10.jpg",
+        ],
+        "Zincirli elevatör galeri görseli",
+      ),
+    },
+    {
+      slug: "bantli-elevatorler",
+      title: "Bantlı Elevatörler",
+      shortDescription:
+        "Granül ve kırılgan ürünler için kontrollü dikey taşıma sağlayan bantlı elevatör sistemleri sunuyoruz.",
+      image: "/images/elevator bantlı/elevbant13.jpg",
+      gallery: makeGalleryWithPrimary(
+        {
+          src: "/images/elevator bantlı/elevbant13.jpg",
+          alt: "Bantlı elevatör ve dikey malzeme taşıma ekipmanı",
+        },
+        [
+          "/images/elevator bantlı/elevbant1.jpg",
+          "/images/elevator bantlı/elevbant2.jpg",
+          "/images/elevator bantlı/elevbant3.jpg",
+          "/images/elevator bantlı/elevbant4.jpg",
+          "/images/elevator bantlı/elevbant5.jpg",
+          "/images/elevator bantlı/elevbant6.jpg",
+          "/images/elevator bantlı/elevbant7.jpg",
+          "/images/elevator bantlı/elevbant8.jpg",
+          "/images/elevator bantlı/elevbant9.jpg",
+          "/images/elevator bantlı/elevbant10.jpg",
+          "/images/elevator bantlı/elevbant11.jpg",
+          "/images/elevator bantlı/elevbant12.jpg",
+          "/images/elevator bantlı/elevbant14.jpg",
+          "/images/elevator bantlı/elevbant15.jpg",
+          "/images/elevator bantlı/elevbant16.jpg",
+          "/images/elevator bantlı/elevbant17.jpg",
+          "/images/elevator bantlı/elevbant18.jpg",
+          "/images/elevator bantlı/elevbant19.jpeg",
+          "/images/elevator bantlı/elevbant20.jpeg",
+          "/images/elevator bantlı/elevbant21.jpeg",
+          "/images/elevator bantlı/elevbant22.jpg",
+          "/images/elevator bantlı/elevbant23.jpg",
+          "/images/elevator bantlı/elevbant24.jpg",
+          "/images/elevator bantlı/elevbant25.jpg",
+          "/images/elevator bantlı/elevbant26.jpg",
+          "/images/elevator bantlı/elevbant27.jpg",
+          "/images/elevator bantlı/elevbant28.jpg",
+          "/images/elevator bantlı/elevbant29.jpg",
+          "/images/elevator bantlı/elevbant30.png",
+          "/images/elevator bantlı/elevbant31.jpg",
+        ],
+        "Bantlı elevatör galeri görseli",
+      ),
+    },
   ],
 };
 

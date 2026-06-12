@@ -49,8 +49,8 @@ export const homeServiceCards: HomeServiceCard[] = [
       "Konsept geliştirmeden saha kurulumuna kadar tüm süreci planlıyor, projeye uygun tesis altyapısını tek elden kuruyoruz.",
     buttonLabel: "Detayları Gör",
     href: "/hizmetler/anahtar-teslim-tesis-kurulumu",
-    image: "/images/anahtar1.jpg",
-    imageAlt: "Anahtar teslim tesis kurulumu için toplantı ve planlama görseli",
+    image: "/images/01-genel/proses1.png",
+    imageAlt: "Anahtar teslim tesis kurulumu hizmeti",
   },
   {
     title: "Proses Tasarımı ve Mühendislik",
@@ -58,8 +58,8 @@ export const homeServiceCards: HomeServiceCard[] = [
       "Kapasite, ürün yapısı, hammadde akışı ve işletme hedeflerine göre proses kurgusu, ekipman seçimi ve teknik altyapı planlaması yapıyoruz.",
     buttonLabel: "Mühendislik Çözümleri",
     href: "/hizmetler/proses-tasarimi-ve-muhendislik",
-    image: "/images/proses1.png",
-    imageAlt: "Proses tasarımı ve mühendislik için mühendislik ekranı görseli",
+    image: "/images/01-genel/proje2.jpg",
+    imageAlt: "Proses tasarımı ve mühendislik hizmeti",
   },
   {
     title: "Makine İmalatı",
@@ -67,8 +67,8 @@ export const homeServiceCards: HomeServiceCard[] = [
       "Tambur sistemleri, konveyörler, kırıcılar, reaktörler, tanklar, eleme ve toz toplama sistemleri dahil ağır hizmet tipi ekipmanlar üretiyoruz.",
     buttonLabel: "Makinaları İncele",
     href: "/hizmetler/makine-imalati",
-    image: "/images/makinalar1.png",
-    imageAlt: "Makine imalatı için üretim ve ekipman görseli",
+    image: "/images/01-genel/fabrika1.jpg",
+    imageAlt: "Endüstriyel makine imalatı hizmeti",
   },
   {
     title: "Kurulum ve Devreye Alma",
@@ -76,8 +76,8 @@ export const homeServiceCards: HomeServiceCard[] = [
       "Saha montajı, mekanik-elektrik entegrasyonu, test çalışmaları ve ilk üretim devreye alma süreçlerini kontrollü şekilde yönetiyoruz.",
     buttonLabel: "Kurulum Süreci",
     href: "/hizmetler/kurulum-ve-devreye-alma",
-    image: "/images/kurulum1.webp",
-    imageAlt: "Kurulum ve devreye alma için saha montaj görseli",
+    image: "/images/bakim/bakim3.webp",
+    imageAlt: "Kurulum ve devreye alma hizmeti",
   },
   {
     title: "Modernizasyon ve Revizyon",
@@ -85,8 +85,8 @@ export const homeServiceCards: HomeServiceCard[] = [
       "Mevcut tesislerin kapasite, verimlilik, ürün kalitesi ve işletme güvenliği açısından iyileştirilmesi için revizyon projeleri geliştiriyoruz.",
     buttonLabel: "Revizyon Çözümleri",
     href: "/hizmetler/modernizasyon-ve-revizyon",
-    image: "/images/fabrika1.jpg",
-    imageAlt: "Modernizasyon ve revizyon için mevcut tesis iyileştirme görseli",
+    image: "/images/bakim/bakim3.webp",
+    imageAlt: "Modernizasyon ve revizyon hizmeti",
   },
   {
     title: "Teknik Danışmanlık",
@@ -104,7 +104,7 @@ export const homeServiceCards: HomeServiceCard[] = [
     buttonLabel: "Bakım ve Servis",
     href: "/hizmetler/bakim-ve-servis",
     image: "/images/bakim/bakim1.webp",
-    imageAlt: "Bakım ve servis için ekipman müdahale görseli",
+    imageAlt: "Bakım servis ve teknik destek hizmeti",
   },
   {
     title: "Pilot Tesis ve Proses Test Çalışmaları",
@@ -121,7 +121,7 @@ export const homeServiceCards: HomeServiceCard[] = [
       "İmalat, tedarik, saha uygulaması, zaman planı ve ekip koordinasyonunu yöneterek projenin kontrollü ve düzenli ilerlemesini sağlıyoruz.",
     buttonLabel: "Proje Yönetimi",
     href: "/hizmetler/proje-yonetimi-ve-saha-koordinasyonu",
-    image: "/images/sahakontrol1.webp",
-    imageAlt: "Proje yönetimi ve saha koordinasyonu için saha kontrol görseli",
+    image: "/images/01-genel/sahakontrol1.webp",
+    imageAlt: "Proje yönetimi ve saha koordinasyonu hizmeti",
   },
 ];

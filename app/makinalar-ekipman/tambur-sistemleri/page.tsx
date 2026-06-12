@@ -62,8 +62,8 @@ export default function DrumSystemsCategoryPage() {
                 <article className="flex h-full flex-col">
                   <div className="relative min-h-[220px] bg-slate-200">
                     <Image
-                      src={product.gallery[0]?.src ?? "/images/kurutmatam2.jpg"}
-                      alt={product.title}
+                      src={product.mainImage}
+                      alt={product.mainImageAlt}
                       fill
                       sizes="(min-width: 1536px) 24vw, (min-width: 768px) 48vw, 100vw"
                       className="object-cover transition duration-300 group-hover:scale-[1.02]"
