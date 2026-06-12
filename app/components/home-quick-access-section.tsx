@@ -3,7 +3,6 @@ import Link from "next/link";
 
 type SectorShowcaseItem = {
   title: string;
-  description: string;
   href: string;
   image: string;
   alt: string;
@@ -119,7 +118,6 @@ function BulkHandlingIllustration() {
 const sectorShowcaseItems: SectorShowcaseItem[] = [
   {
     title: "Gübre Uygulamaları",
-    description: "Gübre üretim tesisleri için proses ve makine çözümleri",
     href: "/sektorler/gubre-ve-granulasyon-tesisleri",
     image: "/images/01-genel/gran3.jpg",
     alt: "Gübre üretim tesisleri için proses ve makine çözümleri",
@@ -137,7 +135,6 @@ const sectorShowcaseItems: SectorShowcaseItem[] = [
   },
   {
     title: "Kompost ve Organik Atık",
-    description: "Kompost ve organik atık işleme proses çözümleri",
     href: "/sektorler/kompost-ve-organik-atik-tesisleri",
     image: "/images/01-genel/evselkompost1.jpg",
     alt: "Kompost ve organik atık işleme proses çözümleri",
@@ -151,7 +148,6 @@ const sectorShowcaseItems: SectorShowcaseItem[] = [
   },
   {
     title: "Biyogaz ve Enerji",
-    description: "Biyogaz ve enerji tesisleri için besleme ve proses çözümleri",
     href: "/sektorler/enerji-ve-biyogaz-sistemleri",
     image: "/images/biyogaz/biogaz1.jpg",
     alt: "Biyogaz ve enerji tesisleri için besleme ve proses çözümleri",
@@ -169,7 +165,6 @@ const sectorShowcaseItems: SectorShowcaseItem[] = [
   },
   {
     title: "Madencilik ve Mineral İşleme",
-    description: "Madencilik ve mineral işleme tesisleri için kırma, eleme ve kurutma çözümleri",
     href: "/sektorler/madencilik-ve-mineral-isleme",
     image: "/images/maden/maden1.jpg",
     alt: "Madencilik ve mineral işleme tesisleri için kırma, eleme ve kurutma çözümleri",
@@ -187,7 +182,6 @@ const sectorShowcaseItems: SectorShowcaseItem[] = [
   },
   {
     title: "Atık Su Çamuru Çözümleri",
-    description: "Atık su çamuru kurutma, susuzlaştırma ve nihai ürün hazırlama çözümleri",
     href: "/sektorler/atik-su-camuru-ve-aritma-cozumleri",
     image: "/images/01-genel/atıksucamuru.jpg",
     alt: "Atık su çamuru kurutma, susuzlaştırma ve nihai ürün hazırlama çözümleri",
@@ -204,7 +198,6 @@ const sectorShowcaseItems: SectorShowcaseItem[] = [
   },
   {
     title: "Kimya ve Proses Endüstrisi",
-    description: "Kimya ve proses endüstrisi için reaktör ve tank çözümleri",
     href: "/sektorler/kimya-ve-proses-endustrisi",
     image: "/images/sıvı/sivi21.jpg",
     alt: "Kimya ve proses endüstrisi için reaktör ve tank çözümleri",
@@ -223,7 +216,6 @@ const sectorShowcaseItems: SectorShowcaseItem[] = [
   },
   {
     title: "Geri Dönüşüm ve Atık Yönetimi",
-    description: "Geri dönüşüm ve atık yönetimi proses çözümleri",
     href: "/sektorler/geri-donusum-ve-atik-yonetimi",
     image: "/images/01-genel/geridonusum1.jpg",
     alt: "Geri dönüşüm ve atık yönetimi proses çözümleri",
@@ -241,7 +233,6 @@ const sectorShowcaseItems: SectorShowcaseItem[] = [
   },
   {
     title: "Yem, Toz ve Dökme Katı İşleme",
-    description: "Yem, toz ve dökme katı malzeme işleme sistemleri",
     href: "/sektorler/yem-toz-ve-dokme-kati-malzeme-isleme-sistemleri",
     image: "/images/01-genel/yem1.jpg",
     alt: "Yem, toz ve dökme katı malzeme işleme sistemleri",
@@ -306,13 +297,10 @@ export function HomeQuickAccessSection() {
                 </div>
 
                 <div className="relative">
-                  <h3 className="max-w-[15ch] text-2xl font-semibold leading-tight tracking-tight text-white [text-shadow:0_8px_24px_rgba(15,23,42,0.4)] sm:text-[28px]">
+                  <h3 className="max-w-[16ch] text-2xl font-semibold leading-snug tracking-tight text-white [text-shadow:0_8px_24px_rgba(15,23,42,0.4)] sm:text-[28px]">
                     {item.title}
                   </h3>
-                  <p className="mt-4 max-w-[28ch] text-sm leading-7 text-white/82 [text-shadow:0_6px_18px_rgba(15,23,42,0.38)]">
-                    {item.description}
-                  </p>
-                  <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-white/95 [text-shadow:0_6px_18px_rgba(15,23,42,0.4)]">
+                  <span className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-white/95 [text-shadow:0_6px_18px_rgba(15,23,42,0.4)]">
                     Sektörü İncele
                     <span
                       aria-hidden="true"
