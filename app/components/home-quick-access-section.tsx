@@ -3,19 +3,19 @@ import Link from "next/link";
 
 type SectorShowcaseItem = {
   title: string;
+  description: string;
   href: string;
   image: string;
   alt: string;
   icon: React.ReactNode;
   illustration: React.ReactNode;
-  overlayClassName: string;
 };
 
 const iconClassName = "h-7 w-7";
 const illustrationClassName = "h-32 w-32 sm:h-36 sm:w-36 xl:h-40 xl:w-40";
 
 const sharedIconShellClassName =
-  "inline-flex h-12 w-12 items-center justify-center rounded-2xl border border-white/16 bg-white/8 text-white backdrop-blur-sm transition duration-300 group-hover:border-white/26 group-hover:bg-white/12 group-hover:opacity-0";
+  "inline-flex h-12 w-12 items-center justify-center rounded-2xl border border-white/16 bg-white/8 text-white backdrop-blur-sm transition duration-300 group-hover:border-white/26 group-hover:bg-white/12 group-focus-visible:border-white/26 group-focus-visible:bg-white/12";
 
 function FertilizerIllustration() {
   return (
@@ -119,12 +119,11 @@ function BulkHandlingIllustration() {
 const sectorShowcaseItems: SectorShowcaseItem[] = [
   {
     title: "Gübre Uygulamaları",
+    description: "Gübre üretim tesisleri için proses ve makine çözümleri",
     href: "/sektorler/gubre-ve-granulasyon-tesisleri",
-    image: "/images/granul1.jpg",
-    alt: "Granül ve sıvı gübre üretim tesisleri için proses çözümleri",
+    image: "/images/01-genel/gran3.jpg",
+    alt: "Gübre üretim tesisleri için proses ve makine çözümleri",
     illustration: <FertilizerIllustration />,
-    overlayClassName:
-      "bg-gradient-to-b from-[#278DC0]/92 via-[#154764]/88 to-[#0B0F14]/92 group-hover:from-black/55 group-hover:via-black/10 group-hover:to-transparent",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" className={iconClassName}>
         <path d="M12 3v7" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
@@ -138,12 +137,11 @@ const sectorShowcaseItems: SectorShowcaseItem[] = [
   },
   {
     title: "Kompost ve Organik Atık",
+    description: "Kompost ve organik atık işleme proses çözümleri",
     href: "/sektorler/kompost-ve-organik-atik-tesisleri",
-    image: "/images/kompost1.jpg",
+    image: "/images/01-genel/evselkompost1.jpg",
     alt: "Kompost ve organik atık işleme proses çözümleri",
     illustration: <CompostIllustration />,
-    overlayClassName:
-      "bg-gradient-to-b from-[#278DC0]/92 via-[#154764]/88 to-[#0B0F14]/92 group-hover:from-black/55 group-hover:via-black/10 group-hover:to-transparent",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" className={iconClassName}>
         <path d="M7 7h10v10H7z" stroke="currentColor" strokeWidth="1.8" rx="2" />
@@ -153,12 +151,11 @@ const sectorShowcaseItems: SectorShowcaseItem[] = [
   },
   {
     title: "Biyogaz ve Enerji",
+    description: "Biyogaz ve enerji tesisleri için besleme ve proses çözümleri",
     href: "/sektorler/enerji-ve-biyogaz-sistemleri",
-    image: "/images/biogaz1.jpg",
+    image: "/images/biyogaz/biogaz1.jpg",
     alt: "Biyogaz ve enerji tesisleri için besleme ve proses çözümleri",
     illustration: <BiogasIllustration />,
-    overlayClassName:
-      "bg-gradient-to-b from-[#278DC0]/92 via-[#154764]/88 to-[#0B0F14]/92 group-hover:from-black/55 group-hover:via-black/10 group-hover:to-transparent",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" className={iconClassName}>
         <path
@@ -172,12 +169,11 @@ const sectorShowcaseItems: SectorShowcaseItem[] = [
   },
   {
     title: "Madencilik ve Mineral İşleme",
+    description: "Madencilik ve mineral işleme tesisleri için kırma, eleme ve kurutma çözümleri",
     href: "/sektorler/madencilik-ve-mineral-isleme",
-    image: "/images/maden1.jpg",
+    image: "/images/maden/maden1.jpg",
     alt: "Madencilik ve mineral işleme tesisleri için kırma, eleme ve kurutma çözümleri",
     illustration: <MiningIllustration />,
-    overlayClassName:
-      "bg-gradient-to-b from-[#278DC0]/92 via-[#154764]/88 to-[#0B0F14]/92 group-hover:from-black/55 group-hover:via-black/10 group-hover:to-transparent",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" className={iconClassName}>
         <path
@@ -190,13 +186,12 @@ const sectorShowcaseItems: SectorShowcaseItem[] = [
     ),
   },
   {
-    title: "Arıtma Çamuru ve Kurutma",
+    title: "Atık Su Çamuru Çözümleri",
+    description: "Atık su çamuru kurutma, susuzlaştırma ve nihai ürün hazırlama çözümleri",
     href: "/sektorler/atik-su-camuru-ve-aritma-cozumleri",
-    image: "/images/sucamuru1.jpg",
-    alt: "Arıtma çamuru kurutma ve nihai ürün hazırlama çözümleri",
+    image: "/images/01-genel/atıksucamuru.jpg",
+    alt: "Atık su çamuru kurutma, susuzlaştırma ve nihai ürün hazırlama çözümleri",
     illustration: <SludgeIllustration />,
-    overlayClassName:
-      "bg-gradient-to-b from-[#278DC0]/92 via-[#154764]/88 to-[#0B0F14]/92 group-hover:from-black/55 group-hover:via-black/10 group-hover:to-transparent",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" className={iconClassName}>
         <path
@@ -209,12 +204,11 @@ const sectorShowcaseItems: SectorShowcaseItem[] = [
   },
   {
     title: "Kimya ve Proses Endüstrisi",
+    description: "Kimya ve proses endüstrisi için reaktör ve tank çözümleri",
     href: "/sektorler/kimya-ve-proses-endustrisi",
-    image: "/images/kimya1.jpg",
+    image: "/images/sıvı/sivi21.jpg",
     alt: "Kimya ve proses endüstrisi için reaktör ve tank çözümleri",
     illustration: <ChemicalIllustration />,
-    overlayClassName:
-      "bg-gradient-to-b from-[#278DC0]/92 via-[#154764]/88 to-[#0B0F14]/92 group-hover:from-black/55 group-hover:via-black/10 group-hover:to-transparent",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" className={iconClassName}>
         <path
@@ -229,12 +223,11 @@ const sectorShowcaseItems: SectorShowcaseItem[] = [
   },
   {
     title: "Geri Dönüşüm ve Atık Yönetimi",
+    description: "Geri dönüşüm ve atık yönetimi proses çözümleri",
     href: "/sektorler/geri-donusum-ve-atik-yonetimi",
-    image: "/images/geridonusum1.jpg",
+    image: "/images/01-genel/geridonusum1.jpg",
     alt: "Geri dönüşüm ve atık yönetimi proses çözümleri",
     illustration: <RecyclingIllustration />,
-    overlayClassName:
-      "bg-gradient-to-b from-[#278DC0]/92 via-[#154764]/88 to-[#0B0F14]/92 group-hover:from-black/55 group-hover:via-black/10 group-hover:to-transparent",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" className={iconClassName}>
         <path
@@ -248,12 +241,11 @@ const sectorShowcaseItems: SectorShowcaseItem[] = [
   },
   {
     title: "Yem, Toz ve Dökme Katı İşleme",
+    description: "Yem, toz ve dökme katı malzeme işleme sistemleri",
     href: "/sektorler/yem-toz-ve-dokme-kati-malzeme-isleme-sistemleri",
-    image: "/images/yem1.jpg",
+    image: "/images/01-genel/yem1.jpg",
     alt: "Yem, toz ve dökme katı malzeme işleme sistemleri",
     illustration: <BulkHandlingIllustration />,
-    overlayClassName:
-      "bg-gradient-to-b from-[#278DC0]/92 via-[#154764]/88 to-[#0B0F14]/92 group-hover:from-black/55 group-hover:via-black/10 group-hover:to-transparent",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" className={iconClassName}>
         <path
@@ -292,39 +284,42 @@ export function HomeQuickAccessSection() {
             <Link
               key={item.title}
               href={item.href}
-              className="group relative isolate min-h-[320px] overflow-hidden rounded-[30px] border border-[#278DC0]/16 bg-[#278DC0] shadow-[0_18px_48px_rgba(15,23,42,0.08)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_28px_64px_rgba(15,23,42,0.14)] md:min-h-[340px] xl:min-h-[360px]"
+              className="group relative isolate min-h-[320px] overflow-hidden rounded-[30px] border border-[#278DC0]/16 bg-[linear-gradient(180deg,#278DC0_0%,#154764_55%,#07111F_100%)] shadow-[0_18px_48px_rgba(15,23,42,0.08)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_28px_64px_rgba(15,23,42,0.14)] focus-visible:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#278DC0]/45 md:min-h-[340px] xl:min-h-[360px]"
             >
               <Image
                 src={item.image}
-                alt={
-                  item.href === "/sektorler/atik-su-camuru-ve-aritma-cozumleri"
-                    ? "Atık su çamuru kurutma, susuzlaştırma ve nihai ürün hazırlama çözümleri"
-                    : item.alt
-                }
+                alt={item.alt}
                 fill
                 sizes="(min-width: 1280px) calc((1280px - 48px) / 4), (min-width: 768px) calc((100vw - 48px - 16px) / 2), 100vw"
-                className="object-cover object-center opacity-[0.04] transition duration-500 group-hover:scale-105 group-hover:opacity-100"
+                className="object-cover object-center opacity-0 transition duration-500 group-hover:scale-105 group-hover:opacity-100 group-focus-visible:scale-105 group-focus-visible:opacity-100"
               />
 
-              <div className={`absolute inset-0 transition duration-500 ${item.overlayClassName}`} />
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.12),transparent_30%)] opacity-90 transition duration-500 group-hover:opacity-30" />
+              <div className="absolute inset-0 bg-[linear-gradient(180deg,#278DC0_0%,#154764_55%,#07111F_100%)] transition duration-500 group-hover:opacity-0 group-focus-visible:opacity-0" />
+              <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,24,38,0.15)_0%,rgba(10,24,38,0.45)_45%,rgba(10,24,38,0.88)_100%)] opacity-0 transition duration-500 group-hover:opacity-100 group-focus-visible:opacity-100" />
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.12),transparent_30%)] opacity-90 transition duration-500 group-hover:opacity-30 group-focus-visible:opacity-30" />
 
               <div className="relative z-10 flex h-full flex-col justify-between p-6 text-white">
                 <div className={sharedIconShellClassName}>{item.icon}</div>
 
-                <div className="pointer-events-none absolute inset-x-0 top-[27%] flex justify-center transition duration-500 group-hover:opacity-0 group-hover:scale-95">
+                <div className="pointer-events-none absolute inset-x-0 top-[27%] flex justify-center transition duration-500 group-hover:opacity-0 group-hover:scale-95 group-focus-visible:opacity-0 group-focus-visible:scale-95">
                   <div className="text-white/95">{item.illustration}</div>
                 </div>
 
                 <div className="relative">
-                  <h3 className="max-w-[14ch] text-2xl font-semibold leading-tight tracking-tight text-white [text-shadow:0_8px_24px_rgba(15,23,42,0.4)] sm:text-[28px]">
-                    {item.href === "/sektorler/atik-su-camuru-ve-aritma-cozumleri"
-                      ? "Atık Su Çamuru Çözümleri"
-                      : item.title}
+                  <h3 className="max-w-[15ch] text-2xl font-semibold leading-tight tracking-tight text-white [text-shadow:0_8px_24px_rgba(15,23,42,0.4)] sm:text-[28px]">
+                    {item.title}
                   </h3>
-                  <span className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-white/95 [text-shadow:0_6px_18px_rgba(15,23,42,0.4)]">
+                  <p className="mt-4 max-w-[28ch] text-sm leading-7 text-white/82 [text-shadow:0_6px_18px_rgba(15,23,42,0.38)]">
+                    {item.description}
+                  </p>
+                  <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-white/95 [text-shadow:0_6px_18px_rgba(15,23,42,0.4)]">
                     Sektörü İncele
-                    <span aria-hidden="true">→</span>
+                    <span
+                      aria-hidden="true"
+                      className="transition duration-300 group-hover:translate-x-0.5 group-focus-visible:translate-x-0.5"
+                    >
+                      →
+                    </span>
                   </span>
                 </div>
               </div>
