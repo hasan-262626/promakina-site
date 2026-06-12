@@ -1,17 +1,5 @@
-import {
-  MachineSeoLandingPage,
-  buildMachineLandingMetadata,
-} from "../../../components/machine-seo-landing-page";
-import { getWaveOneMachinePage } from "../../../lib/seo-wave-one-machine-data";
-
-const pageData = getWaveOneMachinePage("kurutma-tamburlari");
-
-export const metadata = buildMachineLandingMetadata({
-  title: pageData.title,
-  description: pageData.description,
-  canonical: pageData.canonical,
-});
+import { permanentRedirect } from "next/navigation";
 
 export default function Page() {
-  return <MachineSeoLandingPage {...pageData} />;
+  permanentRedirect("/makinalar-ekipman/tambur-sistemleri/kurutma-tamburu");
 }

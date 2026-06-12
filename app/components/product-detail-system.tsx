@@ -2,11 +2,18 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import {
+  getMachineCalculatorHref,
+  getMachineCalculatorTitle,
+} from "../lib/machine-calculator-link";
+import type { AuxiliarySystemLink } from "../lib/machine-auxiliary-systems";
 import { createMailtoHref, createWhatsAppHref } from "../lib/site-contact";
+import { MachineSidebar, type MachineSidebarItem } from "./machine-sidebar";
+import { MachinePageHero } from "./machine-page-hero";
+import { MachineTechnicalCta } from "./machine-technical-cta";
 import { ProgramModal } from "./program-modal";
 
-type ProductLink = { label: string; href?: string; onClick?: () => void };
 type GalleryItem = { src: string; alt: string; caption: string };
 type CalculatorFamily =
   | "drum"
@@ -23,11 +30,14 @@ type CalculatorFamily =
 type ProductDetailSystemProps = {
   categoryLabel: string;
   categoryHref: string;
+  sidebarItems?: MachineSidebarItem[];
+  activeSidebarHref?: string;
   parentLabel?: string;
   parentHref?: string;
   title: string;
   heroDescription: string;
   heroImage: string;
+  mainImage?: string;
   overviewTitle?: string;
   overviewParagraphs: string[];
   highlightTitle?: string;
@@ -37,21 +47,13 @@ type ProductDetailSystemProps = {
   gallery: GalleryItem[];
   optionalEquipment: string[];
   spareParts: string[];
-  relatedProducts: ProductLink[];
+  auxiliarySystems: AuxiliarySystemLink[];
+  faqItems?: { question: string; answer: string }[];
   ctaTitle?: string;
   ctaText: string;
   calculatorFamily: CalculatorFamily;
   openCalculatorOnLoad?: boolean;
 };
-
-type SectionKey =
-  | "Ã¼rÃ¼n-detaylari"
-  | "teknik-ozellikler"
-  | "uygulama-alanlari"
-  | "galeri"
-  | "opsiyonel-ekipman"
-  | "yedek-parca"
-  | "diger-Ã¼rÃ¼nler";
 
 type FieldConfig = {
   key: string;
@@ -60,16 +62,6 @@ type FieldConfig = {
   placeholder?: string;
   options?: string[];
 };
-
-const sections: { id: SectionKey; label: string }[] = [
-  { id: "Ã¼rÃ¼n-detaylari", label: "Makine HakkÄ±nda" },
-  { id: "teknik-ozellikler", label: "Teknik Ã–zellikler" },
-  { id: "uygulama-alanlari", label: "Uygulama AlanlarÄ±" },
-  { id: "galeri", label: "Galeri" },
-  { id: "opsiyonel-ekipman", label: "Opsiyonel Ekipman" },
-  { id: "yedek-parca", label: "Yedek ParÃ§a" },
-  { id: "diger-Ã¼rÃ¼nler", label: "DiÄŸer ÃœrÃ¼nler" },
-];
 
 const materialOptions = [
   "Toz ÃœrÃ¼n",
@@ -200,6 +192,89 @@ const familyLabels: Record<CalculatorFamily, string> = {
   dosage: "dozajlama sistemi",
 };
 
+function normalizeTitle(value: string) {
+  return value
+    .toLocaleLowerCase("tr-TR")
+    .replaceAll("ı", "i")
+    .replaceAll("İ", "i")
+    .replaceAll("ğ", "g")
+    .replaceAll("ü", "u")
+    .replaceAll("ş", "s")
+    .replaceAll("ö", "o")
+    .replaceAll("ç", "c");
+}
+
+function buildMachineOfferText(title: string) {
+  const normalizedTitle = normalizeTitle(title);
+
+  if (normalizedTitle.includes("granulator")) {
+    return "Granülatör Tamburu için kapasite, proses ve saha verilerinize göre teknik çözüm talebinizi bize iletebilirsiniz. Kapasite, hammadde, nem oranı, proses hedefi ve saha koşullarına göre size özel makine ve tesis çözümü hazırlayalım.";
+  }
+
+  if (normalizedTitle.includes("kaplama")) {
+    return "Kaplama Tamburu için kapasite, proses ve saha verilerinize göre teknik çözüm talebinizi bize iletebilirsiniz. Kapasite, ürün tipi, kaplama sıvısı, hedef ürün kalitesi ve saha koşullarına göre size özel makine ve tesis çözümü hazırlayalım.";
+  }
+
+  if (normalizedTitle.includes("kurutma")) {
+    return "Kurutma Tamburu için kapasite, proses ve saha verilerinize göre teknik çözüm talebinizi bize iletebilirsiniz. Kapasite, giriş-çıkış nem oranı, ürün tipi, ısı kaynağı ve saha koşullarına göre size özel kurutma çözümü hazırlayalım.";
+  }
+
+  return `${title} için kapasite, proses ve saha verilerinize göre teknik çözüm talebinizi bize iletebilirsiniz. Kapasite, hammadde, proses hedefi ve saha koşullarına göre size özel makine ve tesis çözümü hazırlayalım.`;
+}
+
+function buildMachineInquiryMessage(title: string) {
+  return [
+    `Merhaba, ${title} için teknik teklif almak istiyorum.`,
+    "",
+    `Makine: ${title}`,
+    "Kapasite:",
+    "Hammadde / Ürün Tipi:",
+    "Proses Hedefi:",
+    "Saha Bilgisi:",
+    "Açıklama:",
+  ].join("\n");
+}
+
+function buildDefaultFaqs(title: string, categoryLabel: string, calculatorFamily: CalculatorFamily) {
+  const calculatorLabel = getMachineCalculatorTitle({
+    family: calculatorFamily,
+    title,
+  });
+
+  return [
+    {
+      question: `${title} hangi kapasitelere göre tasarlanır?`,
+      answer:
+        `${title} kapasitesi; ürün tipi, hedef proses, çalışma süresi ve saha koşullarına göre projeye özel belirlenir. Doğru ölçülendirme için kapasite verisi tek başına değil, prosesin tamamı ile birlikte değerlendirilir.`,
+    },
+    {
+      question: `${title} için hangi ürünler veya hammaddeler uygundur?`,
+      answer:
+        `${title} seçiminde ürünün tane yapısı, nem oranı, yoğunluğu, akış davranışı ve proses hedefi birlikte değerlendirilir. Bu teknik veriler makine ölçüsü, iç geometri ve tahrik seçiminde belirleyici olur.`,
+    },
+    {
+      question: `${title} teklifinde hangi bilgiler gerekir?`,
+      answer:
+        "Kapasite, hammadde veya ürün tipi, hedef proses, saha yerleşimi, giriş-çıkış koşulları ve varsa mevcut hat bilgileri teknik teklif için temel verileri oluşturur.",
+    },
+    {
+      question: `${title} mevcut tesise entegre edilebilir mi?`,
+      answer:
+        `${title}, mevcut proses hattına uyumlu olacak şekilde boyut, bağlantı noktaları, otomasyon ve yardımcı ekipman kurgusuyla entegre edilebilir. Revizyon ve kapasite artışı senaryoları için de özel çözümler geliştirilebilir.`,
+    },
+    {
+      question: `${categoryLabel} içinde doğru makina seçimi nasıl yapılır?`,
+      answer:
+        "Doğru makina seçimi; yalnızca isim veya kapasiteye göre değil, ürün davranışı, prosesin çalışma rejimi, bakım erişimi ve saha koşulları birlikte değerlendirilerek yapılır.",
+    },
+    {
+      question: `${calculatorLabel} ne zaman kullanılmalıdır?`,
+      answer:
+        `${calculatorLabel}, ön boyutlandırma ve ilk teknik değerlendirme için kullanılabilir. Nihai makine seçimi ise proje verileri ve saha koşulları birlikte incelenerek netleştirilmelidir.`,
+    },
+  ];
+}
+
 function DetailListCard({ title, items }: { title: string; items: string[] }) {
   return (
     <div className="h-full rounded-[28px] border border-slate-200 bg-white p-6 shadow-[0_16px_46px_rgba(15,23,42,0.05)] sm:p-7">
@@ -213,6 +288,199 @@ function DetailListCard({ title, items }: { title: string; items: string[] }) {
         ))}
       </ul>
     </div>
+  );
+}
+
+function ProductGalleryCarousel({
+  images,
+}: {
+  images: ({ src: string; alt?: string; caption?: string } | string)[];
+}) {
+  const normalizedImages = images.map((item, index) =>
+    typeof item === "string"
+      ? {
+          src: item,
+          alt: `Galeri gorseli ${index + 1}`,
+          caption: `Gorsel ${index + 1}`,
+        }
+      : {
+          src: item.src,
+          alt: item.alt || `Galeri gorseli ${index + 1}`,
+          caption: item.caption || `Gorsel ${index + 1}`,
+        },
+  );
+
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+
+  const scrollCarousel = (direction: "prev" | "next") => {
+    const container = scrollRef.current;
+    if (!container) return;
+
+    const amount = container.clientWidth * 0.82;
+    const maxScrollLeft = container.scrollWidth - container.clientWidth;
+
+    if (direction === "prev") {
+      if (container.scrollLeft <= 4) {
+        container.scrollTo({ left: maxScrollLeft, behavior: "smooth" });
+        return;
+      }
+
+      container.scrollBy({ left: -amount, behavior: "smooth" });
+      return;
+    }
+
+    if (container.scrollLeft >= maxScrollLeft - 4) {
+      container.scrollTo({ left: 0, behavior: "smooth" });
+      return;
+    }
+
+    container.scrollBy({ left: amount, behavior: "smooth" });
+  };
+
+  const openLightbox = (index: number) => setLightboxIndex(index);
+  const closeLightbox = () => setLightboxIndex(null);
+
+  const goLightboxPrev = () => {
+    setLightboxIndex((current) => {
+      if (current === null) return current;
+      return current === 0 ? normalizedImages.length - 1 : current - 1;
+    });
+  };
+
+  const goLightboxNext = () => {
+    setLightboxIndex((current) => {
+      if (current === null) return current;
+      return current === normalizedImages.length - 1 ? 0 : current + 1;
+    });
+  };
+
+  useEffect(() => {
+    if (lightboxIndex === null) return;
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        closeLightbox();
+      } else if (event.key === "ArrowLeft") {
+        goLightboxPrev();
+      } else if (event.key === "ArrowRight") {
+        goLightboxNext();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [lightboxIndex, normalizedImages.length]);
+
+  return (
+    <>
+      <div className="mt-6">
+        <div className="relative">
+          <button
+            type="button"
+            onClick={() => scrollCarousel("prev")}
+            className="absolute left-2 top-1/2 z-10 hidden h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-slate-200 bg-white/95 text-slate-900 shadow-[0_10px_24px_rgba(15,23,42,0.12)] transition hover:border-blue-200 hover:text-blue-700 lg:inline-flex"
+            aria-label="Önceki görseller"
+          >
+            ‹
+          </button>
+          <div
+            ref={scrollRef}
+            className="no-scrollbar flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth"
+          >
+            {normalizedImages.map((item, index) => (
+              <button
+                key={`${item.src}-${index}`}
+                type="button"
+                onClick={() => openLightbox(index)}
+                className="group shrink-0 basis-[calc((100%-1rem)/2)] snap-start overflow-hidden rounded-[20px] border border-slate-200 bg-white text-left transition hover:-translate-y-0.5 hover:border-blue-200 hover:shadow-[0_12px_30px_rgba(15,23,42,0.08)] md:basis-[calc((100%-2rem)/3)] xl:basis-[calc((100%-4rem)/5)]"
+              >
+                <div className="relative h-[132px] bg-slate-100">
+                  <Image
+                    src={item.src}
+                    alt={item.alt}
+                    fill
+                    sizes="(min-width: 1280px) 18vw, (min-width: 768px) 30vw, 48vw"
+                    className="object-cover transition duration-300 group-hover:scale-[1.03]"
+                  />
+                </div>
+                <div className="px-4 py-3 text-sm text-slate-600">
+                  <p className="truncate">{item.caption}</p>
+                </div>
+              </button>
+            ))}
+          </div>
+          <button
+            type="button"
+            onClick={() => scrollCarousel("next")}
+            className="absolute right-2 top-1/2 z-10 hidden h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-slate-200 bg-white/95 text-slate-900 shadow-[0_10px_24px_rgba(15,23,42,0.12)] transition hover:border-blue-200 hover:text-blue-700 lg:inline-flex"
+            aria-label="Sonraki görseller"
+          >
+            ›
+          </button>
+        </div>
+      </div>
+
+      {lightboxIndex !== null ? (
+        <div
+          className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/80 p-4"
+          onClick={closeLightbox}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Galeri büyük görsel"
+        >
+          <button
+            type="button"
+            onClick={(event) => {
+              event.stopPropagation();
+              closeLightbox();
+            }}
+            className="absolute right-4 top-4 z-10 inline-flex h-11 w-11 items-center justify-center rounded-full bg-white/90 text-xl text-slate-900 shadow transition hover:bg-white"
+            aria-label="Görseli kapat"
+          >
+            ×
+          </button>
+          <button
+            type="button"
+            onClick={(event) => {
+              event.stopPropagation();
+              goLightboxPrev();
+            }}
+            className="absolute left-4 top-1/2 z-10 inline-flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-2xl text-slate-900 shadow transition hover:bg-white"
+            aria-label="Önceki görsel"
+          >
+            ‹
+          </button>
+          <div className="relative flex max-h-[85vh] max-w-[90vw] items-center justify-center" onClick={(event) => event.stopPropagation()}>
+            <Image
+              src={normalizedImages[lightboxIndex].src}
+              alt={normalizedImages[lightboxIndex].alt}
+              width={1600}
+              height={1200}
+              className="max-h-[85vh] w-auto max-w-[90vw] rounded-xl bg-white object-contain"
+            />
+          </div>
+          <button
+            type="button"
+            onClick={(event) => {
+              event.stopPropagation();
+              goLightboxNext();
+            }}
+            className="absolute right-4 top-1/2 z-10 inline-flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-2xl text-slate-900 shadow transition hover:bg-white"
+            aria-label="Sonraki görsel"
+          >
+            ›
+          </button>
+        </div>
+      ) : null}
+    </>
   );
 }
 
@@ -391,12 +659,12 @@ function ProductCalculatorModal(props: {
 export function ProductDetailSystem({
   categoryLabel,
   categoryHref,
-  parentLabel,
-  parentHref,
+  sidebarItems,
+  activeSidebarHref,
   title,
   heroDescription,
   heroImage,
-  overviewTitle = "Makine HakkÄ±nda",
+  mainImage,
   overviewParagraphs,
   highlightTitle = "Avantajlar",
   highlightText,
@@ -405,43 +673,15 @@ export function ProductDetailSystem({
   gallery,
   optionalEquipment,
   spareParts,
-  relatedProducts,
-  ctaTitle,
+  auxiliarySystems,
   ctaText,
+  faqItems,
   calculatorFamily,
   openCalculatorOnLoad = false,
 }: ProductDetailSystemProps) {
-  const [activeTab, setActiveTab] = useState<SectionKey>("Ã¼rÃ¼n-detaylari");
-  const [isCalculatorOpen, setIsCalculatorOpen] = useState(false);
+  const [isCalculatorOpen, setIsCalculatorOpen] = useState(openCalculatorOnLoad);
   const [calculatorValues, setCalculatorValues] = useState<Record<string, string>>({});
   const [calculationSummary, setCalculationSummary] = useState("");
-
-  useEffect(() => {
-    const observed = sections.map((section) => document.getElementById(section.id)).filter(Boolean) as HTMLElement[];
-    if (!observed.length) return;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries.filter((entry) => entry.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-        if (visible?.target?.id) setActiveTab(visible.target.id as SectionKey);
-      },
-      { rootMargin: "-150px 0px -52% 0px", threshold: [0.2, 0.45, 0.7] },
-    );
-
-    observed.forEach((section) => observer.observe(section));
-    return () => observer.disconnect();
-  }, []);
-
-  useEffect(() => {
-    if (!openCalculatorOnLoad) return;
-
-    const initialSectionId = sections[0]?.id;
-    if (!initialSectionId) return;
-
-    setActiveTab(initialSectionId);
-    setIsCalculatorOpen(true);
-    document.getElementById(initialSectionId)?.scrollIntoView({ block: "start" });
-  }, [openCalculatorOnLoad]);
 
   const handleValueChange = (key: string, value: string) => {
     setCalculatorValues((current) => {
@@ -455,252 +695,151 @@ export function ProductDetailSystem({
     setCalculationSummary(formatSummary(title, calculatorFamily, calculatorValues));
   };
 
-  const dynamicCtaTitle = ctaTitle ?? `${title} için doğru makina çözümünü birlikte netleştirelim`;
-  const dynamicCtaText =
-    calculationSummary ||
-    `${title} için kapasite, proses ve saha verilerinize göre teknik çözüm talebinizi bize iletebilirsiniz. ${ctaText}`;
-  const messageBody = buildMessage(title, categoryLabel, calculatorFamily, calculatorValues, calculationSummary || dynamicCtaText);
-  const whatsappHref = createWhatsAppHref(messageBody);
-  const mailHref = createMailtoHref(
-    `${title} Kapasite HesabÄ± ve Teknik Talep`,
-    messageBody,
-  );
+  const offerText = buildMachineOfferText(title);
+  const inquiryMessage = buildMachineInquiryMessage(title);
+  const whatsappHref = createWhatsAppHref(inquiryMessage);
+  const mailHref = createMailtoHref(`${title} Teknik Teklif Talebi`, inquiryMessage);
   const drumProgramInitialValues =
     calculatorFamily === "drum"
       ? {
           processType: getDefaultDrumProcess(title),
         }
       : undefined;
+  const calculatorHref = getMachineCalculatorHref({
+    family: calculatorFamily,
+    title,
+  });
+  const calculatorTitle = getMachineCalculatorTitle({
+    family: calculatorFamily,
+    title,
+  });
+  const effectiveSidebarItems = sidebarItems ?? [];
+  const effectiveActiveHref = activeSidebarHref ?? "";
+  const effectiveFaqItems = faqItems ?? buildDefaultFaqs(title, categoryLabel, calculatorFamily);
+  const leadParagraph = overviewParagraphs[0] ?? heroDescription;
+  const secondaryParagraphs = overviewParagraphs.slice(1);
+  const mainVisual = mainImage ?? gallery[0]?.src ?? heroImage;
+  const mainVisualAlt = gallery[0]?.alt ?? title;
 
   return (
     <>
-      <section className="relative overflow-hidden border-b border-slate-200 bg-gradient-to-br from-white via-sky-50 to-[#eef6fb]">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(39,141,192,0.10),transparent_32%)]" />
-        <div className="relative mx-auto flex min-h-[170px] max-w-7xl items-center px-4 py-8 sm:min-h-[200px] sm:px-6 sm:py-10 lg:min-h-[230px] lg:px-10 lg:py-12">
-          <div className="max-w-4xl">
-            <div className="hidden">
-              <Link href="/" className="transition hover:text-white">Ana Sayfa</Link>
-              <span className="px-2 text-white/40">/</span>
-              <Link href="/makinalar-ekipman" className="transition hover:text-white">Makinalar & Ekipman</Link>
-              <span className="px-2 text-white/40">/</span>
-              <Link href={categoryHref} className="transition hover:text-white">{categoryLabel}</Link>
-              {parentLabel ? (
-                <>
-                  <span className="px-2 text-white/40">/</span>
-                  {parentHref ? <Link href={parentHref} className="transition hover:text-white">{parentLabel}</Link> : <span>{parentLabel}</span>}
-                </>
-              ) : null}
-              <span className="px-2 text-white/40">/</span>
-              <span className="text-white">{title}</span>
-            </div>
-            <div className="flex flex-wrap items-center gap-3">
-              <Link
-                href={categoryHref}
-                className="inline-flex min-h-[40px] items-center justify-center rounded-full border border-white/18 bg-white/10 px-4 text-sm font-semibold text-white backdrop-blur transition hover:bg-white/15"
-              >
-                â† Geri
-              </Link>
-              <h1 className="text-4xl font-semibold tracking-tight text-[#020617] md:text-5xl">{title}</h1>
-            </div>
-            <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-              <button type="button" onClick={() => setIsCalculatorOpen(true)} className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-[#278DC0] px-6 text-sm font-semibold text-white transition hover:bg-[#154764]">
-                Kapasite HesabÄ±
-              </button>
-              <Link
-                href="/iletisim"
-                data-cta-event="quote_button_click"
-                data-cta-label={`${title}_hero_quote`}
-                className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-[#d7e3ec] bg-white px-6 text-sm font-semibold text-[#154764] transition hover:border-[#278DC0] hover:bg-[#278DC0]/6"
-              >
-                Teklif Al
-              </Link>
-              <a href={whatsappHref} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-[#d7e3ec] bg-white px-6 text-sm font-semibold text-[#154764] transition hover:border-[#278DC0] hover:bg-[#278DC0]/6">
-                WhatsApp ile GÃ¶rÃ¼ÅŸ
-              </a>
-              <a href="tel:+905320580104" className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-[#d7e3ec] bg-white px-6 text-sm font-semibold text-[#154764] transition hover:border-[#278DC0] hover:bg-[#278DC0]/6">
-                Telefonla Ara
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-      <div className="product-sticky-bar sticky top-[112px] z-[60] mt-6 sm:mt-7 lg:mt-8 xl:top-[120px]">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
-          <div className="rounded-[24px] border border-slate-200/90 bg-white shadow-[0_16px_40px_rgba(15,23,42,0.12)] supports-[backdrop-filter]:bg-white/96 supports-[backdrop-filter]:backdrop-blur-md">
-            <div className="product-sticky-inner px-4 pb-4 pt-4 sm:px-5 lg:px-6">
-              <div className="product-sticky-title relative z-[1] flex items-center gap-3 border-b border-slate-200/80 pb-3 text-left text-base font-semibold tracking-tight text-slate-950 sm:text-lg">
-                <Link
+      <MachinePageHero title={title} calculatorHref={calculatorHref} />
+
+      <section className="section-space">
+        <div className="site-container">
+          <div className="grid gap-8 lg:grid-cols-[280px_minmax(0,1fr)] xl:gap-10">
+            {effectiveSidebarItems.length ? (
+              <div className="lg:sticky lg:top-28 lg:self-start">
+                <MachineSidebar
+                  title={categoryLabel}
                   href={categoryHref}
-                  className="inline-flex min-h-[34px] items-center justify-center rounded-full border border-slate-200 bg-slate-50 px-3 text-xs font-semibold text-slate-700 transition hover:border-blue-200 hover:bg-blue-50 hover:text-blue-700 sm:text-sm"
-                >
-                  â† Geri
-                </Link>
-                <span>{title}</span>
+                  items={effectiveSidebarItems}
+                  activeHref={effectiveActiveHref}
+                />
               </div>
-              <div className="mt-3 flex items-center justify-between gap-4">
-                <div className="product-sticky-tabs flex gap-3 overflow-x-auto pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-                  {sections.map((section) => {
-                    const isActive = activeTab === section.id;
-                    return (
-                      <a
-                        key={section.id}
-                        href={`#${section.id}`}
-                        className={`inline-flex min-h-[40px] whitespace-nowrap rounded-full border px-4 py-2 text-sm font-semibold transition ${
-                          isActive ? "border-blue-200 bg-blue-50 text-blue-700" : "border-slate-200 bg-white text-slate-600 hover:border-blue-100 hover:text-blue-700"
-                        }`}
-                      >
-                        {section.label}
-                      </a>
-                    );
-                  })}
-                </div>
-                <button type="button" onClick={() => setIsCalculatorOpen(true)} className="hidden rounded-full bg-slate-950 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-slate-800 lg:inline-flex">
-                  Kapasite HesabÄ±
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+            ) : null}
 
-      <section id="Ã¼rÃ¼n-detaylari" className="scroll-mt-[210px] xl:scroll-mt-[220px]">
-        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-10">
-          <div className="grid gap-8 lg:grid-cols-2">
-            <div className="overflow-hidden rounded-[30px] border border-slate-200 bg-white shadow-[0_18px_50px_rgba(15,23,42,0.05)]">
-              <div className="relative min-h-[360px] bg-slate-100 lg:min-h-[430px]">
-                <Image src={heroImage} alt={title} fill className="object-cover" />
-              </div>
-            </div>
-            <div className="flex h-full flex-col justify-center rounded-[30px] border border-slate-200 bg-white p-7 shadow-[0_18px_50px_rgba(15,23,42,0.05)]">
-              <div className="space-y-5 text-base leading-8 text-slate-600">
-                {overviewParagraphs.map((paragraph) => (
-                  <p key={paragraph}>{paragraph}</p>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="teknik-ozellikler" className="scroll-mt-[210px] xl:scroll-mt-[220px]">
-        <div className="mx-auto max-w-7xl px-4 pb-16 sm:px-6 lg:px-10">
-          <div className="grid gap-6 lg:grid-cols-3">
-            <div className="h-full rounded-[28px] border border-slate-200 bg-white p-6 shadow-[0_16px_46px_rgba(15,23,42,0.05)] sm:p-7">
-              <h2 className="text-2xl font-semibold tracking-tight text-slate-950">{highlightTitle}</h2>
-              <p className="mt-5 text-sm leading-8 text-slate-600 sm:text-[15px]">{highlightText}</p>
-            </div>
-            <DetailListCard title="Teknik Ã–zellikler" items={specs} />
-            <div id="uygulama-alanlari" className="scroll-mt-[210px] xl:scroll-mt-[220px] h-full">
-              <DetailListCard title="Uygulama AlanlarÄ±" items={applications} />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="opsiyonel-ekipman" className="scroll-mt-[210px] xl:scroll-mt-[220px]">
-        <div className="mx-auto max-w-7xl px-4 pb-16 sm:px-6 lg:px-10">
-          <div className="grid gap-6 lg:grid-cols-3">
-            <DetailListCard title="Opsiyonel Ekipman" items={optionalEquipment} />
-            <div id="yedek-parca" className="scroll-mt-[210px] xl:scroll-mt-[220px] h-full">
-              <DetailListCard title="Yedek ParÃ§a" items={spareParts} />
-            </div>
-            <div id="diger-Ã¼rÃ¼nler" className="scroll-mt-[210px] xl:scroll-mt-[220px] h-full rounded-[28px] border border-slate-200 bg-white p-6 shadow-[0_16px_46px_rgba(15,23,42,0.05)] sm:p-7">
-              <h2 className="text-2xl font-semibold tracking-tight text-slate-950">DiÄŸer ÃœrÃ¼nler</h2>
-              <div className="mt-5 grid gap-3">
-                {relatedProducts.map((item) =>
-                  item.href ? (
-                    <Link key={item.label} href={item.href} className="rounded-[20px] border border-slate-200 bg-slate-50 px-5 py-3 text-sm font-semibold text-slate-700 transition hover:border-blue-200 hover:bg-blue-50 hover:text-blue-700">
-                      {item.label}
-                    </Link>
-                  ) : (
-                    <button key={item.label} type="button" onClick={item.onClick} className="rounded-[20px] border border-slate-200 bg-slate-50 px-5 py-3 text-left text-sm font-semibold text-slate-700 transition hover:border-blue-200 hover:bg-blue-50 hover:text-blue-700">
-                      {item.label}
-                    </button>
-                  ),
-                )}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="galeri" className="scroll-mt-[210px] xl:scroll-mt-[220px]">
-        <div className="mx-auto max-w-7xl px-4 pb-16 sm:px-6 lg:px-10">
-          <div className="rounded-[30px] border border-slate-200 bg-white p-6 shadow-[0_18px_50px_rgba(15,23,42,0.05)] sm:p-7">
-            <h2 className="text-3xl font-semibold tracking-tight text-slate-950">Galeri</h2>
-            <div className="mt-6 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-              {gallery.map((item) => (
-                <div key={item.caption} className="overflow-hidden rounded-[24px] border border-slate-200 bg-slate-50 transition hover:-translate-y-0.5 hover:shadow-[0_12px_30px_rgba(15,23,42,0.08)]">
-                  <div className="relative aspect-[4/3] bg-slate-100">
-                    <Image src={item.src} alt={item.alt} fill className="object-cover" />
+            <div className="min-w-0 space-y-12">
+              <section id="urun-detaylari" className="scroll-mt-[210px] xl:scroll-mt-[220px]">
+                <div className="overflow-hidden rounded-[30px] border border-slate-200 bg-white shadow-[0_18px_50px_rgba(15,23,42,0.05)]">
+                  <div className="relative min-h-[320px] bg-slate-100 sm:min-h-[380px] lg:min-h-[430px]">
+                    <Image src={mainVisual} alt={mainVisualAlt} fill className="object-cover" />
                   </div>
-                  <div className="px-4 py-4 text-sm text-slate-600">{item.caption}</div>
                 </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+                <div className="mt-6 rounded-[30px] border border-slate-200 bg-white p-7 shadow-[0_18px_50px_rgba(15,23,42,0.05)]">
+                  <div className="space-y-5 text-base leading-8 text-slate-600">
+                    <p>{leadParagraph}</p>
+                    {secondaryParagraphs.map((paragraph) => (
+                      <p key={paragraph}>{paragraph}</p>
+                    ))}
+                  </div>
+                </div>
+              </section>
 
-      <section className="section-bottom-space">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
-          <div className="rounded-[32px] border border-slate-200 bg-blue-700 px-6 py-8 text-white shadow-[0_24px_70px_rgba(29,78,216,0.22)] sm:px-8 sm:py-10">
-            <h2 className="text-2xl font-semibold tracking-tight text-white sm:text-3xl">
-              Projeniz iÃ§in teknik teklif alÄ±n
-            </h2>
-            <p className="mt-4 max-w-3xl text-sm leading-8 text-white/88 sm:text-base">
-              Kapasite, hammadde, nem oranÄ±, proses hedefi ve saha koÅŸullarÄ±na gÃ¶re size Ã¶zel makine ve tesis Ã§Ã¶zÃ¼mÃ¼ hazÄ±rlayalÄ±m.
-            </p>
-            <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-              <a href={whatsappHref} target="_blank" rel="noopener noreferrer" className="rounded-full bg-white px-6 py-3 text-center text-sm font-semibold text-blue-800 transition hover:bg-slate-100">
-                WhatsApp ile GÃ¶rÃ¼ÅŸ
-              </a>
-              <Link
-                href="/iletisim"
-                data-cta-event="quote_button_click"
-                data-cta-label={`${title}_mid_quote_form`}
-                className="rounded-full border border-white/30 px-6 py-3 text-center text-sm font-semibold text-white transition hover:bg-white/10"
-              >
-                Teknik Teklif Formu
-              </Link>
-              <a href="tel:+905320580104" className="rounded-full border border-white/30 px-6 py-3 text-center text-sm font-semibold text-white transition hover:bg-white/10">
-                Telefonla Ara
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
+              <section id="teknik-ozellikler" className="scroll-mt-[210px] xl:scroll-mt-[220px]">
+                <div className="grid gap-6 lg:grid-cols-3">
+                  <div className="h-full rounded-[28px] border border-slate-200 bg-white p-6 shadow-[0_16px_46px_rgba(15,23,42,0.05)] sm:p-7">
+                    <h2 className="text-2xl font-semibold tracking-tight text-slate-950">
+                      {highlightTitle}
+                    </h2>
+                    <p className="mt-5 text-sm leading-8 text-slate-600 sm:text-[15px]">
+                      {highlightText}
+                    </p>
+                  </div>
+                  <DetailListCard title="Teknik Özellikler" items={specs} />
+                  <div id="uygulama-alanlari" className="scroll-mt-[210px] xl:scroll-mt-[220px] h-full">
+                    <DetailListCard title="Uygulama Alanları" items={applications} />
+                  </div>
+                </div>
+              </section>
 
-      <section className="section-bottom-space-lg">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
-          <div className="rounded-[32px] bg-blue-700 px-6 py-10 text-white shadow-[0_28px_90px_rgba(37,99,235,0.25)] sm:px-8 sm:py-12 md:px-12">
-            <h2 className="max-w-3xl text-3xl font-semibold tracking-tight md:text-4xl">Projeniz iÃ§in teknik teklif alÄ±n</h2>
-            <p className="mt-4 max-w-3xl leading-8 text-white/86">
-              Kapasite, hammadde, nem oranÄ±, proses hedefi ve saha koÅŸullarÄ±na gÃ¶re size Ã¶zel makine ve tesis Ã§Ã¶zÃ¼mÃ¼ hazÄ±rlayalÄ±m.
-            </p>
-            <p className="mt-3 max-w-3xl leading-8 text-white/78">{dynamicCtaText}</p>
-            {calculationSummary ? <div className="mt-6 rounded-[24px] border border-white/18 bg-white/10 px-5 py-4 text-sm leading-7 text-white/92">{calculationSummary}</div> : null}
-            <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:flex-wrap">
-              <button type="button" onClick={() => setIsCalculatorOpen(true)} className="rounded-full bg-white px-6 py-3 text-center text-sm font-semibold text-blue-700 transition hover:bg-slate-100">
-                Kapasite HesabÄ±
-              </button>
-              <a href={whatsappHref} target="_blank" rel="noopener noreferrer" className="rounded-full border border-white/30 px-6 py-3 text-center text-sm font-semibold text-white transition hover:bg-white/10">
-                WhatsApp ile GÃ¶nder
-              </a>
-              <a href={mailHref} className="rounded-full border border-white/30 px-6 py-3 text-center text-sm font-semibold text-white transition hover:bg-white/10">
-                Mail ile GÃ¶nder
-              </a>
-              <Link
-                href="/iletisim"
-                data-cta-event="quote_button_click"
-                data-cta-label={`${title}_final_quote_form`}
-                className="rounded-full border border-white/30 px-6 py-3 text-center text-sm font-semibold text-white transition hover:bg-white/10"
-              >
-                Teknik Teklif Formu
-              </Link>
-              <a href="tel:+905320580104" className="rounded-full border border-white/30 px-6 py-3 text-center text-sm font-semibold text-white transition hover:bg-white/10">
-                Telefonla Ara
-              </a>
+              <section id="opsiyonel-ekipman" className="scroll-mt-[210px] xl:scroll-mt-[220px]">
+                <div className="grid gap-6 lg:grid-cols-2">
+                  <DetailListCard title="Opsiyonel Ekipman" items={optionalEquipment} />
+                  <div id="yedek-parca" className="scroll-mt-[210px] xl:scroll-mt-[220px] h-full">
+                    <DetailListCard title="Yedek Parça" items={spareParts} />
+                  </div>
+                </div>
+              </section>
+
+              <section id="galeri" className="scroll-mt-[210px] xl:scroll-mt-[220px]">
+                <div className="rounded-[30px] border border-slate-200 bg-white p-6 shadow-[0_18px_50px_rgba(15,23,42,0.05)] sm:p-7">
+                  <h2 className="text-3xl font-semibold tracking-tight text-slate-950">Galeri</h2>
+                  <ProductGalleryCarousel images={gallery} />
+                </div>
+              </section>
+
+              <section>
+                <div className="rounded-[30px] border border-slate-200 bg-white p-6 shadow-[0_18px_50px_rgba(15,23,42,0.05)] sm:p-7">
+                  <h2 className="text-3xl font-semibold tracking-tight text-slate-950">
+                    {title} Hakkında Sık Sorulan Sorular
+                  </h2>
+                  <div className="mt-8 space-y-4">
+                    {effectiveFaqItems.map((item) => (
+                      <details
+                        key={item.question}
+                        className="rounded-[24px] border border-slate-200 bg-white px-5 py-4 shadow-sm"
+                      >
+                        <summary className="cursor-pointer list-none text-base font-semibold text-slate-950 [&::-webkit-details-marker]:hidden">
+                          {item.question}
+                        </summary>
+                        <p className="mt-3 text-sm leading-7 text-slate-600">{item.answer}</p>
+                      </details>
+                    ))}
+                  </div>
+                </div>
+              </section>
+
+              <section>
+                <Link
+                  href={calculatorHref}
+                  className="block rounded-[32px] bg-[#154764] px-6 py-8 text-white shadow-[0_24px_70px_rgba(21,71,100,0.24)] transition hover:bg-[#278DC0] sm:px-8 sm:py-10"
+                >
+                  <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                    <div>
+                      <p className="text-xs font-semibold uppercase tracking-[0.18em] text-white/70">
+                        Hesaplama
+                      </p>
+                      <h2 className="mt-2 text-2xl font-semibold tracking-tight sm:text-3xl">
+                        {calculatorTitle}
+                      </h2>
+                      <p className="mt-3 max-w-3xl text-sm leading-8 text-white/84 sm:text-base">
+                        İlgili hesaplama aracını açarak kapasite ve ön teknik değerlendirme sürecine doğrudan geçin.
+                      </p>
+                    </div>
+                    <span className="inline-flex min-h-[50px] items-center justify-center rounded-full bg-white px-6 text-sm font-semibold text-[#154764] transition sm:shrink-0">
+                      Kapasite Hesapla
+                    </span>
+                  </div>
+                </Link>
+              </section>
+
+              <MachineTechnicalCta
+                title={title}
+                text={offerText}
+                whatsappHref={whatsappHref}
+                mailHref={mailHref}
+              />
             </div>
           </div>
         </div>

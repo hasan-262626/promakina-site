@@ -1,6 +1,8 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ProductDetailSystem } from "../../../components/product-detail-system";
 import { drumProductPages } from "../../../components/drum-product-data";
+import { getMachineAuxiliarySystems } from "../../../lib/machine-auxiliary-systems";
 
 type PageProps = {
   params: Promise<{
@@ -15,6 +17,38 @@ export function generateStaticParams() {
   return drumProductPages.map((product) => ({ product: product.slug }));
 }
 
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { product } = await params;
+  const activeProduct = drumProductPages.find((item) => item.slug === product);
+
+  if (!activeProduct) {
+    return {};
+  }
+
+  const canonical = `https://www.promakina.com.tr/makinalar-ekipman/tambur-sistemleri/${activeProduct.slug}`;
+
+  return {
+    title: `${activeProduct.title} | Tambur Sistemleri | Pro Makina`,
+    description: activeProduct.shortDescription,
+    alternates: {
+      canonical,
+    },
+    openGraph: {
+      title: `${activeProduct.title} | Pro Makina`,
+      description: activeProduct.shortDescription,
+      url: canonical,
+      siteName: "Pro Makina",
+      locale: "tr_TR",
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${activeProduct.title} | Pro Makina`,
+      description: activeProduct.shortDescription,
+    },
+  };
+}
+
 export default async function DrumProductDetailPage({ params, searchParams }: PageProps) {
   const { product } = await params;
   const resolvedSearchParams = (await searchParams) ?? {};
@@ -24,21 +58,29 @@ export default async function DrumProductDetailPage({ params, searchParams }: Pa
     notFound();
   }
 
-  const relatedProducts = drumProductPages
-    .filter((item) => item.slug !== activeProduct.slug)
-    .map((item) => ({
-      label: item.title,
-      href: `/makinalar-ekipman/tambur-sistemleri/${item.slug}`,
-    }));
+  const auxiliarySystems = getMachineAuxiliarySystems({
+    categorySlug: "tambur-sistemleri",
+    productSlug: activeProduct.slug,
+    calculatorFamily: "drum",
+    title: activeProduct.title,
+  });
+  const sidebarItems = drumProductPages.map((item) => ({
+    label: item.title,
+    href: `/makinalar-ekipman/tambur-sistemleri/${item.slug}`,
+  }));
+  const activeHref = `/makinalar-ekipman/tambur-sistemleri/${activeProduct.slug}`;
 
   return (
     <main className="min-h-screen bg-white text-slate-900">
       <ProductDetailSystem
         categoryLabel="Tambur Sistemleri"
         categoryHref="/makinalar-ekipman/tambur-sistemleri"
+        sidebarItems={sidebarItems}
+        activeSidebarHref={activeHref}
         title={activeProduct.title}
         heroDescription={activeProduct.heroDescription}
         heroImage="/images/kurutmatam2.jpg"
+        mainImage={activeProduct.gallery[0]?.src ?? "/images/kurutmatam2.jpg"}
         overviewParagraphs={activeProduct.overviewParagraphs}
         highlightText={activeProduct.highlightText}
         specs={activeProduct.specs}
@@ -46,7 +88,7 @@ export default async function DrumProductDetailPage({ params, searchParams }: Pa
         gallery={activeProduct.gallery}
         optionalEquipment={activeProduct.optionalEquipment}
         spareParts={activeProduct.spareParts}
-        relatedProducts={relatedProducts}
+        auxiliarySystems={auxiliarySystems}
         calculatorFamily="drum"
         openCalculatorOnLoad={resolvedSearchParams.tab === "kapasite-hesabi"}
         ctaTitle={activeProduct.ctaTitle ?? "Tambur sistemleri için doğru makina çözümünü birlikte netleştirelim"}

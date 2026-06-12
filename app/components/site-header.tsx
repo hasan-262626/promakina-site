@@ -1,9 +1,12 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
 import { services } from "../data";
+import { machineCategoryPages } from "./machine-group-data";
+import { buildSectorMenuGroups } from "./sector-subsectors-data";
+import { buildMachineMenuGroups } from "../lib/machine-route-utils";
 import { siteContact } from "../lib/site-contact";
 import { trText } from "../lib/tr-text";
 import { SocialLinks } from "./social-links";
@@ -30,226 +33,8 @@ type MegaMenuGroup = {
   items: MegaMenuItem[];
 };
 
-const machineMenuGroups: MegaMenuGroup[] = [
-  {
-    id: "tambur-sistemleri",
-    label: "Tambur Sistemleri",
-    href: "/makinalar-ekipman/tambur-sistemleri",
-    items: [
-      { label: "Granülatör Tamburları", href: "/makinalar-ekipman/tambur-sistemleri" },
-      { label: "Kurutma Tamburları", href: "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburlari" },
-      { label: "Soğutma Tamburları", href: "/makinalar-ekipman/tambur-sistemleri" },
-      { label: "Kaplama Tamburları", href: "/makinalar-ekipman/tambur-sistemleri" },
-      { label: "Kompost Tamburu", href: "/makinalar-ekipman/tambur-sistemleri/kompost-tamburu" },
-    ],
-  },
-  {
-    id: "tasima-ekipmanlari",
-    label: "Taşıma Ekipmanları",
-    href: "/makinalar-ekipman/tasima-ekipmanlari",
-    items: [
-      { label: "Bant Konveyörler", href: "/makinalar-ekipman/tasima-ekipmanlari/bant-konveyorler" },
-      { label: "Zincirli Konveyörler", href: "/makinalar-ekipman/tasima-ekipmanlari" },
-      { label: "Vidalı Helezonlar", href: "/makinalar-ekipman/tasima-ekipmanlari/helezon-konveyorler" },
-      { label: "Kovalı Elevatörler", href: "/makinalar-ekipman/tasima-ekipmanlari/kovali-elevatorler" },
-      { label: "Bantlı Elevatörler", href: "/makinalar-ekipman/tasima-ekipmanlari" },
-      { label: "Tripper Arabalı Konveyör", href: "/makinalar-ekipman/tasima-ekipmanlari" },
-    ],
-  },
-  {
-    id: "kiricilar-ve-parcalayicilar",
-    label: "Kırıcılar ve Parçalayıcılar",
-    href: "/makinalar-ekipman/kiricilar-ve-parcalayicilar",
-    items: [
-      { label: "Çekiçli Kırıcılar", href: "/makinalar-ekipman/kiricilar-ve-parcalayicilar/cekicli-kiricilar" },
-      { label: "Çeneli Kırıcılar", href: "/makinalar-ekipman/kiricilar-ve-parcalayicilar/ceneli-kiricilar" },
-      { label: "Dik Milli Kırıcılar", href: "/makinalar-ekipman/kiricilar-ve-parcalayicilar/dik-milli-kiricilar" },
-      { label: "Zincirli Kırıcılar", href: "/makinalar-ekipman/kiricilar-ve-parcalayicilar/zincirli-kiricilar" },
-      { label: "Shredder Sistemleri", href: "/makinalar-ekipman/kiricilar-ve-parcalayicilar/shredder-sistemleri" },
-      { label: "Bıçaklı Primer Kırıcılar", href: "/makinalar-ekipman/kiricilar-ve-parcalayicilar/bicakli-primer-kiricilar" },
-      { label: "Bıçaklı Sekonder Kırıcılar", href: "/makinalar-ekipman/kiricilar-ve-parcalayicilar/bicakli-sekonder-kiricilar" },
-    ],
-  },
-  {
-    id: "reaktorler-ve-tanklar",
-    label: "Reaktörler ve Tanklar",
-    href: "/makinalar-ekipman/reaktorler-ve-tanklar",
-    items: [
-      { label: "Soğutma Tankları", href: "/makinalar-ekipman/reaktorler-ve-tanklar" },
-      { label: "Karıştırıcılı Reaktörler", href: "/makinalar-ekipman/reaktorler-ve-tanklar" },
-      { label: "Basınçlı Reaktörler", href: "/makinalar-ekipman/reaktorler-ve-tanklar" },
-      { label: "Çözündürme Tankları", href: "/makinalar-ekipman/reaktorler-ve-tanklar" },
-      { label: "Stok Tankları", href: "/makinalar-ekipman/reaktorler-ve-tanklar" },
-    ],
-  },
-  {
-    id: "eleme-ve-siniflandirma-sistemleri",
-    label: "Eleme ve Sınıflandırma Sistemleri",
-    href: "/makinalar-ekipman/eleme-ve-siniflandirma-sistemleri",
-    items: [
-      { label: "Vibrasyonlu Elekler", href: "/makinalar-ekipman/eleme-ve-siniflandirma-sistemleri" },
-      { label: "Trommel Elekler", href: "/makinalar-ekipman/eleme-ve-siniflandirma-sistemleri/trommel-elekler" },
-      { label: "Susuzlandırma Elekleri", href: "/makinalar-ekipman/eleme-ve-siniflandirma-sistemleri" },
-    ],
-  },
-  {
-    id: "toz-toplama-sistemleri",
-    label: "Toz Toplama Sistemleri",
-    href: "/makinalar-ekipman/toz-toplama-sistemleri",
-    items: [
-      { label: "Jet Pulse Filtreler", href: "/makinalar-ekipman/toz-toplama-sistemleri" },
-      { label: "Siklon Ayırıcılar", href: "/makinalar-ekipman/toz-toplama-sistemleri" },
-      { label: "Torba Filtre Sistemleri", href: "/makinalar-ekipman/toz-toplama-sistemleri" },
-      { label: "Kartuş Filtreler", href: "/makinalar-ekipman/toz-toplama-sistemleri" },
-    ],
-  },
-  {
-    id: "paketleme-ve-dolum-sistemleri",
-    label: "Paketleme ve Dolum Sistemleri",
-    href: "/makinalar-ekipman/paketleme-ve-dolum-sistemleri",
-    items: [
-      { label: "Açık Ağız Torbalama", href: "/makinalar-ekipman/paketleme-ve-dolum-sistemleri" },
-      { label: "Big Bag Dolum", href: "/makinalar-ekipman/paketleme-ve-dolum-sistemleri" },
-      { label: "Paletleme Hatları", href: "/makinalar-ekipman/paketleme-ve-dolum-sistemleri" },
-      { label: "Sıvı Dolum Şişeleme", href: "/makinalar-ekipman/paketleme-ve-dolum-sistemleri" },
-      { label: "Şişe Etiketleme Makinası", href: "/makinalar-ekipman/paketleme-ve-dolum-sistemleri" },
-    ],
-  },
-  {
-    id: "depolama-ve-besleme-sistemleri",
-    label: "Depolama ve Besleme Sistemleri",
-    href: "/makinalar-ekipman/depolama-ve-besleme-sistemleri",
-    items: [
-      { label: "Silo Sistemleri", href: "/makinalar-ekipman/depolama-ve-besleme-sistemleri" },
-      { label: "Bunker ve Hazneler", href: "/makinalar-ekipman/depolama-ve-besleme-sistemleri" },
-      { label: "Teremi Bunkeri", href: "/makinalar-ekipman/depolama-ve-besleme-sistemleri" },
-      { label: "Vidalı Besleyiciler", href: "/makinalar-ekipman/depolama-ve-besleme-sistemleri" },
-      { label: "Rotary Valfler", href: "/makinalar-ekipman/depolama-ve-besleme-sistemleri" },
-    ],
-  },
-  {
-    id: "dozajlama-sistemleri",
-    label: "Dozajlama Sistemleri",
-    href: "/makinalar-ekipman/dozajlama-sistemleri",
-    items: [
-      { label: "Mikro Dozajlama", href: "/makinalar-ekipman/dozajlama-sistemleri" },
-      { label: "Makro Dozajlama", href: "/makinalar-ekipman/dozajlama-sistemleri" },
-      { label: "Dozaj Bant Kantarı", href: "/makinalar-ekipman/dozajlama-sistemleri" },
-      { label: "Tartımlı Besleme Sistemleri", href: "/makinalar-ekipman/dozajlama-sistemleri" },
-    ],
-  },
-];
-
-const sectorMenuGroups: MegaMenuGroup[] = [
-  {
-    id: "gubre-ve-granulasyon-tesisleri",
-    label: "Gübre Üretim Tesisleri",
-    href: "/sektorler/gubre-ve-granulasyon-tesisleri",
-    items: [
-      { label: "Sıvı Organomineral", href: "/sektorler/gubre-ve-granulasyon-tesisleri/sivi-organomineral" },
-      { label: "Sıvı NPK", href: "/sektorler/gubre-ve-granulasyon-tesisleri/sivi-npk" },
-      { label: "Sıvı Amino Asit", href: "/sektorler/gubre-ve-granulasyon-tesisleri/sivi-amino-asit" },
-      { label: "Organik Sıvı Gübre", href: "/sektorler/gubre-ve-granulasyon-tesisleri" },
-      { label: "Organik Biyostimülan", href: "/sektorler/gubre-ve-granulasyon-tesisleri" },
-      { label: "Granül Organomineral", href: "/sektorler/gubre-ve-granulasyon-tesisleri" },
-      { label: "Granül NPK", href: "/sektorler/gubre-ve-granulasyon-tesisleri" },
-      { label: "Granül Kompost Tesisleri", href: "/sektorler/gubre-ve-granulasyon-tesisleri" },
-      { label: "Toz Organomineral", href: "/sektorler/gubre-ve-granulasyon-tesisleri" },
-      { label: "Toz NPK", href: "/sektorler/gubre-ve-granulasyon-tesisleri" },
-    ],
-  },
-  {
-    id: "kompost-ve-organik-atik-tesisleri",
-    label: "Kompost ve Organik Atık Tesisleri",
-    href: "/sektorler/kompost-ve-organik-atik-tesisleri",
-    items: [
-      { label: "Evsel Atıklardan Kompost Tesisi", href: "/sektorler/kompost-ve-organik-atik-tesisleri/evsel-organik-atiklar" },
-      { label: "Hayvansal Atıklardan Kompost Tesisi", href: "/sektorler/kompost-ve-organik-atik-tesisleri" },
-      { label: "Tarımsal Atıklardan Kompost Tesisi", href: "/sektorler/kompost-ve-organik-atik-tesisleri" },
-      { label: "Mezbaha Atıklarından Kompost Tesisi", href: "/sektorler/kompost-ve-organik-atik-tesisleri" },
-      { label: "Gıda Atıklarından Kompost Tesisi", href: "/sektorler/kompost-ve-organik-atik-tesisleri" },
-      { label: "Park ve Bahçe Atıklarından Kompost Tesisi", href: "/sektorler/kompost-ve-organik-atik-tesisleri" },
-    ],
-  },
-  {
-    id: "enerji-ve-biyogaz-sistemleri",
-    label: "Enerji ve Biyogaz Sistemleri",
-    href: "/sektorler/enerji-ve-biyogaz-sistemleri",
-    items: [
-      { label: "Biyogaz Tesisleri", href: "/sektorler/enerji-ve-biyogaz-sistemleri" },
-      { label: "Tarımsal Atık Biyogaz Tesisleri", href: "/sektorler/enerji-ve-biyogaz-sistemleri" },
-      { label: "Hayvansal Atık Biyogaz Tesisleri", href: "/sektorler/enerji-ve-biyogaz-sistemleri" },
-      { label: "Gıda Atıklarından Biyogaz Tesisleri", href: "/sektorler/enerji-ve-biyogaz-sistemleri" },
-      { label: "Biyokütle Enerji Tesisleri", href: "/sektorler/enerji-ve-biyogaz-sistemleri" },
-      { label: "Biyometan / Gaz Arıtma Çözümleri", href: "/sektorler/enerji-ve-biyogaz-sistemleri" },
-    ],
-  },
-  {
-    id: "madencilik-ve-mineral-isleme",
-    label: "Madencilik ve Mineral İşleme",
-    href: "/sektorler/madencilik-ve-mineral-isleme",
-    items: [
-      { label: "Silis Maden Tesisleri", href: "/sektorler/madencilik-ve-mineral-isleme" },
-      { label: "Perlit İşleme Tesisleri", href: "/sektorler/madencilik-ve-mineral-isleme" },
-      { label: "Kalsit İşleme Tesisleri", href: "/sektorler/madencilik-ve-mineral-isleme" },
-      { label: "Feldspat İşleme Tesisleri", href: "/sektorler/madencilik-ve-mineral-isleme" },
-      { label: "Kırma Eleme ve Sınıflandırma Tesisleri", href: "/sektorler/madencilik-ve-mineral-isleme" },
-      { label: "Kurutma ve Soğutma Çözümleri", href: "/sektorler/madencilik-ve-mineral-isleme" },
-    ],
-  },
-  {
-    id: "atik-su-camuru-ve-aritma-cozumleri",
-    label: "Atık Su Çamuru ve Arıtma Çözümleri",
-    href: "/sektorler/atik-su-camuru-ve-aritma-cozumleri",
-    items: [
-      { label: "Evsel Atık Su Arıtma Çözümleri", href: "/sektorler/atik-su-camuru-ve-aritma-cozumleri" },
-      { label: "Endüstriyel Atık Su Arıtma Çözümleri", href: "/sektorler/atik-su-camuru-ve-aritma-cozumleri" },
-      { label: "Sanayi Atık Suyu Çözümleri", href: "/sektorler/atik-su-camuru-ve-aritma-cozumleri" },
-      { label: "Arıtma Çamuru Kurutma Sistemleri", href: "/sektorler/atik-su-camuru-ve-aritma-cozumleri" },
-      { label: "Arıtma Çamuru Susuzlaştırma Sistemleri", href: "/sektorler/atik-su-camuru-ve-aritma-cozumleri/susuzlastirma-destek-sistemleri" },
-      { label: "Çamur İşleme ve Nihai Ürün Hazırlama Sistemleri", href: "/sektorler/atik-su-camuru-ve-aritma-cozumleri/camur-besleme" },
-    ],
-  },
-  {
-    id: "kimya-ve-proses-endustrisi",
-    label: "Kimya ve Proses Endüstrisi",
-    href: "/sektorler/kimya-ve-proses-endustrisi",
-    items: [
-      { label: "Sıvı Kimyasal Hazırlama Tesisleri", href: "/sektorler/kimya-ve-proses-endustrisi" },
-      { label: "Reaktörlü Kimyasal Üretim Tesisleri", href: "/sektorler/kimya-ve-proses-endustrisi" },
-      { label: "Asit ve Baz Dozajlama Sistemleri", href: "/sektorler/kimya-ve-proses-endustrisi" },
-      { label: "Karıştırma ve Homojenizasyon Tesisleri", href: "/sektorler/kimya-ve-proses-endustrisi" },
-      { label: "Çözündürme ve Formülasyon Hatları", href: "/sektorler/kimya-ve-proses-endustrisi" },
-      { label: "Deterjan ve Temizlik Kimyasal Sistemleri", href: "/sektorler/kimya-ve-proses-endustrisi" },
-    ],
-  },
-  {
-    id: "geri-donusum-ve-atik-yonetimi",
-    label: "Geri Dönüşüm ve Atık Yönetimi",
-    href: "/sektorler/geri-donusum-ve-atik-yonetimi",
-    items: [
-      { label: "Evsel Atık Geri Dönüşüm Tesisleri", href: "/sektorler/geri-donusum-ve-atik-yonetimi" },
-      { label: "Metal Geri Dönüşüm Tesisleri", href: "/sektorler/geri-donusum-ve-atik-yonetimi" },
-      { label: "Plastik Geri Dönüşüm Tesisleri", href: "/sektorler/geri-donusum-ve-atik-yonetimi" },
-      { label: "Kağıt ve Karton Geri Dönüşüm Tesisleri", href: "/sektorler/geri-donusum-ve-atik-yonetimi" },
-      { label: "Cam Geri Dönüşüm Tesisleri", href: "/sektorler/geri-donusum-ve-atik-yonetimi" },
-      { label: "RDF / SRF Hazırlama Tesisleri", href: "/sektorler/geri-donusum-ve-atik-yonetimi" },
-    ],
-  },
-  {
-    id: "yem-toz-ve-dokme-kati-malzeme-isleme-sistemleri",
-    label: "Yem, Toz ve Dökme Katı Malzeme İşleme",
-    href: "/sektorler/yem-toz-ve-dokme-kati-malzeme-isleme-sistemleri",
-    items: [
-      { label: "Büyükbaş Yem Tesisleri", href: "/sektorler/yem-toz-ve-dokme-kati-malzeme-isleme-sistemleri" },
-      { label: "Küçükbaş Yem Tesisleri", href: "/sektorler/yem-toz-ve-dokme-kati-malzeme-isleme-sistemleri" },
-      { label: "Kanatlı Yem Tesisleri", href: "/sektorler/yem-toz-ve-dokme-kati-malzeme-isleme-sistemleri" },
-      { label: "Balık Yemi Tesisleri", href: "/sektorler/yem-toz-ve-dokme-kati-malzeme-isleme-sistemleri" },
-      { label: "Kedi Köpek Maması Tesisleri", href: "/sektorler/yem-toz-ve-dokme-kati-malzeme-isleme-sistemleri" },
-      { label: "Toz Karışım ve Premiks Hatları", href: "/sektorler/yem-toz-ve-dokme-kati-malzeme-isleme-sistemleri" },
-    ],
-  },
-];
+const machineMenuGroups: MegaMenuGroup[] = buildMachineMenuGroups(machineCategoryPages);
+const sectorMenuGroups: MegaMenuGroup[] = buildSectorMenuGroups();
 
 const libraryMenu = [
   { label: "Blog", href: "/kutuphane/blog" },
@@ -317,6 +102,7 @@ export function SiteHeader() {
   const [activeSectorGroup, setActiveSectorGroup] = useState(defaultSectorGroupId);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setMobileMenuOpen(false);
     setMobileMachinesOpen(false);
   }, [pathname]);

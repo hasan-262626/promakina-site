@@ -183,9 +183,9 @@ export const engineeringCalculationCards: EngineeringCalculationCard[] = [
     ],
     relatedMachines: [
       {
-        title: "Helezon Konveyörler",
+        title: "Vidalı Helezonlar",
         description: "Kontrollü besleme ve kompakt taşıma ihtiyacı için özel imalat helezon çözümleri.",
-        href: "/makinalar-ekipman/tasima-ekipmanlari/helezon-konveyorler",
+        href: "/makinalar-ekipman/tasima-ekipmanlari/vidali-helezonlar",
       },
       {
         title: "Zincirli Konveyörler",
@@ -193,9 +193,9 @@ export const engineeringCalculationCards: EngineeringCalculationCard[] = [
         href: "/makinalar-ekipman/tasima-ekipmanlari/zincirli-konveyorler",
       },
       {
-        title: "Kovalı Elevatörler",
+        title: "Zincirli Elevatörler",
         description: "Dikey ürün taşımada kapasite ve boşaltma disiplinini güçlendiren ekipman grubu.",
-        href: "/makinalar-ekipman/tasima-ekipmanlari/kovali-elevatorler",
+        href: "/makinalar-ekipman/tasima-ekipmanlari/zincirli-elevatorler",
       },
     ],
     internalLinks: [
@@ -325,14 +325,14 @@ export const engineeringCalculationCards: EngineeringCalculationCard[] = [
     ],
     relatedMachines: [
       {
-        title: "Bant Konveyörler",
+        title: "Bantlı Konveyörler",
         description: "Uzun mesafeli ve dengeli ürün transferinde öne çıkan bantlı taşıma çözümleri.",
-        href: "/makinalar-ekipman/tasima-ekipmanlari/bant-konveyorler",
+        href: "/makinalar-ekipman/tasima-ekipmanlari/bantli-konveyorler",
       },
       {
-        title: "Helezon Konveyörler",
+        title: "Vidalı Helezonlar",
         description: "Kompakt alan ve kontrollü besleme gereken hatlar için vida bazlı taşıma ekipmanı.",
-        href: "/makinalar-ekipman/tasima-ekipmanlari/helezon-konveyorler",
+        href: "/makinalar-ekipman/tasima-ekipmanlari/vidali-helezonlar",
       },
       {
         title: "Zincirli Konveyörler",
@@ -609,9 +609,9 @@ export const engineeringCalculationCards: EngineeringCalculationCard[] = [
     ],
     relatedMachines: [
       {
-        title: "Kovalı Elevatörler",
+        title: "Zincirli Elevatörler",
         description: "Bantlı veya zincirli yapıda dikey taşıma için tasarlanan elevatör çözümleri.",
-        href: "/makinalar-ekipman/tasima-ekipmanlari/kovali-elevatorler",
+        href: "/makinalar-ekipman/tasima-ekipmanlari/zincirli-elevatorler",
       },
       {
         title: "Zincirli Konveyörler",
@@ -619,9 +619,9 @@ export const engineeringCalculationCards: EngineeringCalculationCard[] = [
         href: "/makinalar-ekipman/tasima-ekipmanlari/zincirli-konveyorler",
       },
       {
-        title: "Bant Konveyörler",
+        title: "Bantlı Konveyörler",
         description: "Yatay ürün akışı ile elevatör hatlarını bağlayan temel taşıma altyapısı.",
-        href: "/makinalar-ekipman/tasima-ekipmanlari/bant-konveyorler",
+        href: "/makinalar-ekipman/tasima-ekipmanlari/bantli-konveyorler",
       },
     ],
     internalLinks: [
@@ -756,14 +756,14 @@ export const engineeringCalculationCards: EngineeringCalculationCard[] = [
         href: "/makinalar-ekipman/tasima-ekipmanlari/zincirli-konveyorler",
       },
       {
-        title: "Helezon Konveyörler",
+        title: "Vidalı Helezonlar",
         description: "Daha kontrollü ve kompakt taşıma senaryolarında alternatif vida konveyör yaklaşımı.",
-        href: "/makinalar-ekipman/tasima-ekipmanlari/helezon-konveyorler",
+        href: "/makinalar-ekipman/tasima-ekipmanlari/vidali-helezonlar",
       },
       {
-        title: "Bant Konveyörler",
+        title: "Bantlı Konveyörler",
         description: "Uzun ve açık hatlarda dengeli taşıma sağlayan bantlı sistemler.",
-        href: "/makinalar-ekipman/tasima-ekipmanlari/bant-konveyorler",
+        href: "/makinalar-ekipman/tasima-ekipmanlari/bantli-konveyorler",
       },
     ],
     internalLinks: [

@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { getMachineAuxiliarySystems } from "../lib/machine-auxiliary-systems";
 import { ProductDetailSystem } from "./product-detail-system";
 import { machineCategoryPages } from "./machine-group-data";
 import { crusherPublicProductRecords } from "./crusher-product-public-data";
+import { normalizeMachineSlug } from "../lib/machine-route-utils";
 
 const publicCategorySlug = "kiricilar-ve-parcalayicilar";
 
@@ -22,7 +24,9 @@ function getCrusherProduct(publicSlug: string) {
     return null;
   }
 
-  const product = category.products.find((item) => item.slug === record.dataSlug);
+  const product = category.products.find(
+    (item) => normalizeMachineSlug(item.slug) === normalizeMachineSlug(record.dataSlug),
+  );
 
   if (!product) {
     return null;
@@ -66,28 +70,38 @@ export function CrusherProductDetailRoute({ publicSlug }: { publicSlug: string }
   }
 
   const { category, product, record } = resolved;
-  const relatedProducts = category.products
-    .filter((item) => item.slug !== product.slug)
-    .map((item) => {
-      const relatedRecord =
-        crusherPublicProductRecords.find((entry) => entry.dataSlug === item.slug) ?? null;
+  const auxiliarySystems = getMachineAuxiliarySystems({
+    categorySlug: publicCategorySlug,
+    productSlug: record.publicSlug,
+    calculatorFamily: category.calculatorFamily,
+    title: record.title,
+  });
+  const sidebarItems = category.products.map((item) => {
+    const itemRecord =
+      crusherPublicProductRecords.find(
+        (entry) => normalizeMachineSlug(entry.dataSlug) === normalizeMachineSlug(item.slug),
+      ) ?? null;
 
-      return {
-        label: item.title,
-        href: relatedRecord
-          ? `/makinalar-ekipman/${publicCategorySlug}/${relatedRecord.publicSlug}`
-          : `/makinalar-ekipman/${publicCategorySlug}`,
-      };
-    });
+    return {
+      label: item.title,
+      href: itemRecord
+        ? `/makinalar-ekipman/${publicCategorySlug}/${itemRecord.publicSlug}`
+        : `/makinalar-ekipman/${publicCategorySlug}`,
+    };
+  });
+  const activeHref = `/makinalar-ekipman/${publicCategorySlug}/${record.publicSlug}`;
 
   return (
     <main className="min-h-screen bg-white text-slate-900">
       <ProductDetailSystem
         categoryLabel={category.title}
         categoryHref={`/makinalar-ekipman/${publicCategorySlug}`}
+        sidebarItems={sidebarItems}
+        activeSidebarHref={activeHref}
         title={record.heroTitle}
         heroDescription={record.heroDescription || product.heroDescription}
         heroImage={category.heroImage}
+        mainImage={product.gallery[0]?.src ?? category.heroImage}
         overviewParagraphs={product.overviewParagraphs}
         highlightText={product.highlightText}
         specs={product.specs}
@@ -95,7 +109,7 @@ export function CrusherProductDetailRoute({ publicSlug }: { publicSlug: string }
         gallery={product.gallery}
         optionalEquipment={product.optionalEquipment}
         spareParts={product.spareParts}
-        relatedProducts={relatedProducts}
+        auxiliarySystems={auxiliarySystems}
         calculatorFamily={category.calculatorFamily}
         ctaTitle={product.ctaTitle ?? `${record.title} iÃ§in doÄŸru makina Ã§Ã¶zÃ¼mÃ¼nÃ¼ birlikte netleÅŸtirelim`}
         ctaText={product.ctaText ?? category.ctaText}

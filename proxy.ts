@@ -4,10 +4,10 @@ import { NextResponse } from "next/server";
 const CANONICAL_HOST = "www.promakina.com.tr";
 const ROOT_HOST = "promakina.com.tr";
 const LEGACY_PATH_REDIRECTS: Record<string, string> = {
-  "/makinalar-ekipman/tasima-ekipmanlari/vidali-helezonlar":
-    "/makinalar-ekipman/tasima-ekipmanlari/helezon-konveyorler",
+  "/kutuphane/blog/sivi-gubre-tesisi-nasil-kurulur":
+    "/kutuphane/blog/sivi-gubre-uretim-tesisi-nasil-kurulur",
   "/makinalar/tasima-ekipmanlari/vidali-helezonlar":
-    "/makinalar-ekipman/tasima-ekipmanlari/helezon-konveyorler",
+    "/makinalar-ekipman/tasima-ekipmanlari/vidali-helezonlar",
   "/makinalar/tambur-sistemleri":
     "/makinalar-ekipman/tambur-sistemleri",
   "/makinalar/reaktorler-ve-tanklar":
@@ -19,7 +19,7 @@ const LEGACY_PATH_REDIRECTS: Record<string, string> = {
   "/makinalar/kiricilar-ve-parcalayicilar/ceneli-kırıcılar":
     "/makinalar-ekipman/kiricilar-ve-parcalayicilar/ceneli-kiricilar",
   "/makinalar/tasima-ekipmanlari/kovali-elevatorler":
-    "/makinalar-ekipman/tasima-ekipmanlari/kovali-elevatorler",
+    "/makinalar-ekipman/tasima-ekipmanlari/zincirli-elevatorler",
   "/makinalar/dozajlama-ve-tartim-sistemleri":
     "/makinalar-ekipman/dozajlama-sistemleri",
   "/makinalar/yardimci-ekipmanlar-ve-akis-sistemleri/distributor":
@@ -89,7 +89,19 @@ const LEGACY_PATH_REDIRECTS: Record<string, string> = {
   "/makinalar/kiricilar-ve-parcalayicilar/cekicli-kırıcılar":
     "/makinalar-ekipman/kiricilar-ve-parcalayicilar/cekicli-kiricilar",
   "/makinalar/tasima-ekipmanlari/bant-konveyorler":
-    "/makinalar-ekipman/tasima-ekipmanlari/bant-konveyorler",
+    "/makinalar-ekipman/tasima-ekipmanlari/bantli-konveyorler",
+  "/makinalar-ekipman/tambur-sistemleri/granulator-tamburlari":
+    "/makinalar-ekipman/tambur-sistemleri/granulator-tamburu",
+  "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburlari":
+    "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburu",
+  "/makinalar-ekipman/tambur-sistemleri/sogutma-tamburlari":
+    "/makinalar-ekipman/tambur-sistemleri/sogutma-tamburu",
+  "/makinalar-ekipman/tambur-sistemleri/kaplama-tamburlari":
+    "/makinalar-ekipman/tambur-sistemleri/kaplama-tamburu",
+  "/makinalar-ekipman/tambur-sistemleri/kompost-tamburlari":
+    "/makinalar-ekipman/tambur-sistemleri/kompost-tamburu",
+  "/sektorler/gubre-ve-granulasyon-tesisleri/granul-kompost":
+    "/sektorler/gubre-ve-granulasyon-tesisleri/granul-kompost-tesisleri",
   "/makinalar/dozajlama-sistemleri/mikro-dozajlama":
     "/makinalar-ekipman/dozajlama-sistemleri/mikro-dozajlama",
 };

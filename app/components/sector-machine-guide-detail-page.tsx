@@ -2,6 +2,7 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { GlobalBottomCta } from "./global-bottom-cta";
+import { trText } from "../lib/tr-text";
 
 export type SectorGuideTable = {
   title: string;
@@ -78,6 +79,82 @@ export type SectorMachineGuidePageData = {
   ctaTitle?: string;
   ctaDescription?: string;
 };
+
+function normalizeGuide(guide: SectorMachineGuidePageData): SectorMachineGuidePageData {
+  return {
+    ...guide,
+    title: trText(guide.title),
+    metaTitle: trText(guide.metaTitle),
+    description: trText(guide.description),
+    openGraphTitle: trText(guide.openGraphTitle),
+    openGraphDescription: trText(guide.openGraphDescription),
+    heroDescription: trText(guide.heroDescription),
+    readingTime: trText(guide.readingTime),
+    heroTopic: trText(guide.heroTopic),
+    heroCtaLabel: trText(guide.heroCtaLabel),
+    heroSecondaryLabel: trText(guide.heroSecondaryLabel),
+    heroLinks: guide.heroLinks.map((item) => ({ ...item, label: trText(item.label) })),
+    introParagraphs: guide.introParagraphs.map((item) => trText(item)),
+    flowTitle: trText(guide.flowTitle),
+    flowSteps: guide.flowSteps.map((item) => trText(item)),
+    flowNote: trText(guide.flowNote),
+    sections: guide.sections.map((section) => ({
+      ...section,
+      title: trText(section.title),
+      paragraphs: section.paragraphs?.map((item) => trText(item)),
+      bullets: section.bullets?.map((item) => trText(item)),
+      numbered: section.numbered?.map((item) => trText(item)),
+      subsections: section.subsections?.map((item) => ({
+        ...item,
+        title: trText(item.title),
+        paragraphs: item.paragraphs?.map((entry) => trText(entry)),
+        bullets: item.bullets?.map((entry) => trText(entry)),
+      })),
+      table: section.table
+        ? {
+            ...section.table,
+            title: trText(section.table.title),
+            headers: section.table.headers.map((item) => trText(item)),
+            rows: section.table.rows.map((row) => row.map((cell) => trText(cell))),
+            note: section.table.note ? trText(section.table.note) : undefined,
+          }
+        : undefined,
+      formulas: section.formulas?.map((item) => ({
+        ...item,
+        title: trText(item.title),
+        formula: trText(item.formula),
+        example: item.example?.map((entry) => trText(entry)),
+      })),
+    })),
+    selectionCriteria: {
+      ...guide.selectionCriteria,
+      title: trText(guide.selectionCriteria.title),
+      headers: guide.selectionCriteria.headers.map((item) => trText(item)),
+      rows: guide.selectionCriteria.rows.map((row) => row.map((cell) => trText(cell))),
+      note: guide.selectionCriteria.note ? trText(guide.selectionCriteria.note) : undefined,
+    },
+    mistakes: {
+      ...guide.mistakes,
+      title: trText(guide.mistakes.title),
+      headers: guide.mistakes.headers.map((item) => trText(item)),
+      rows: guide.mistakes.rows.map((row) => row.map((cell) => trText(cell))),
+      note: guide.mistakes.note ? trText(guide.mistakes.note) : undefined,
+    },
+    approachParagraphs: guide.approachParagraphs.map((item) => trText(item)),
+    approachBullets: guide.approachBullets.map((item) => trText(item)),
+    faqs: guide.faqs.map((item) => ({
+      question: trText(item.question),
+      answer: trText(item.answer),
+    })),
+    relatedLinks: guide.relatedLinks.map((item) => ({
+      ...item,
+      title: trText(item.title),
+      description: trText(item.description),
+    })),
+    ctaTitle: guide.ctaTitle ? trText(guide.ctaTitle) : undefined,
+    ctaDescription: guide.ctaDescription ? trText(guide.ctaDescription) : undefined,
+  };
+}
 
 function SectionCard({
   title,
@@ -336,24 +413,26 @@ function buildBreadcrumbSchema(guide: SectorMachineGuidePageData) {
 export function buildSectorMachineGuideMetadata(
   guide: SectorMachineGuidePageData,
 ): Metadata {
+  const normalizedGuide = normalizeGuide(guide);
+
   return {
-    title: guide.metaTitle,
-    description: guide.description,
+    title: normalizedGuide.metaTitle,
+    description: normalizedGuide.description,
     alternates: {
-      canonical: guide.canonical,
+      canonical: normalizedGuide.canonical,
     },
     openGraph: {
-      title: guide.openGraphTitle,
-      description: guide.openGraphDescription,
-      url: guide.canonical,
+      title: normalizedGuide.openGraphTitle,
+      description: normalizedGuide.openGraphDescription,
+      url: normalizedGuide.canonical,
       siteName: "Pro Makina",
       locale: "tr_TR",
       type: "article",
     },
     twitter: {
       card: "summary_large_image",
-      title: guide.openGraphTitle,
-      description: guide.openGraphDescription,
+      title: normalizedGuide.openGraphTitle,
+      description: normalizedGuide.openGraphDescription,
     },
   };
 }
@@ -363,20 +442,22 @@ export function SectorMachineGuideDetailPage({
 }: {
   guide: SectorMachineGuidePageData;
 }) {
+  const normalizedGuide = normalizeGuide(guide);
+
   return (
     <main className="min-h-screen overflow-x-hidden bg-slate-50 text-slate-900">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(buildArticleSchema(guide)) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(buildArticleSchema(normalizedGuide)) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(buildFaqSchema(guide)) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(buildFaqSchema(normalizedGuide)) }}
       />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(buildBreadcrumbSchema(guide)),
+          __html: JSON.stringify(buildBreadcrumbSchema(normalizedGuide)),
         }}
       />
 
@@ -396,7 +477,7 @@ export function SectorMachineGuideDetailPage({
                 Blog
               </Link>
               <span>/</span>
-              <span className="font-medium text-white">{guide.title}</span>
+              <span className="font-medium text-white">{normalizedGuide.title}</span>
             </div>
 
             <div className="mt-4 max-w-5xl rounded-[32px] border border-white/15 bg-white/8 p-5 shadow-[0_20px_65px_rgba(15,23,42,0.18)] backdrop-blur md:p-6">
@@ -407,21 +488,21 @@ export function SectorMachineGuideDetailPage({
               </div>
 
               <h1 className="text-3xl font-semibold tracking-tight text-white md:text-[42px]">
-                {guide.title}
+                {normalizedGuide.title}
               </h1>
               
 
               <div className="hidden">
                 <span className="rounded-full border border-white/15 bg-white/10 px-4 py-2">
-                  Okuma sÃ¼resi: {guide.readingTime}
+                  Okuma sÃ¼resi: {normalizedGuide.readingTime}
                 </span>
                 <span className="rounded-full border border-white/15 bg-white/10 px-4 py-2">
-                  Konu: {guide.heroTopic}
+                  Konu: {normalizedGuide.heroTopic}
                 </span>
               </div>
 
               <div className="hidden">
-                {guide.heroLinks.map((link) => (
+                {normalizedGuide.heroLinks.map((link) => (
                   <Link
                     key={link.href}
                     href={link.href}
@@ -434,22 +515,22 @@ export function SectorMachineGuideDetailPage({
 
               <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
                 <Link
-                  href={guide.heroCtaHref}
+                  href={normalizedGuide.heroCtaHref}
                   className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-[#278DC0] px-6 text-sm font-semibold text-white transition hover:bg-[#154764]"
                 >
-                  {guide.heroCtaLabel}
+                  {normalizedGuide.heroCtaLabel}
                 </Link>
                 <a
-                  href={guide.heroSecondaryHref}
-                  target={guide.heroSecondaryHref.startsWith("http") ? "_blank" : undefined}
+                  href={normalizedGuide.heroSecondaryHref}
+                  target={normalizedGuide.heroSecondaryHref.startsWith("http") ? "_blank" : undefined}
                   rel={
-                    guide.heroSecondaryHref.startsWith("http")
+                    normalizedGuide.heroSecondaryHref.startsWith("http")
                       ? "noopener noreferrer"
                       : undefined
                   }
                   className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/60 bg-white/12 px-6 text-sm font-semibold text-white transition hover:border-white hover:bg-white/18"
                 >
-                  {guide.heroSecondaryLabel}
+                  {normalizedGuide.heroSecondaryLabel}
                 </a>
               </div>
             </div>
@@ -459,17 +540,17 @@ export function SectorMachineGuideDetailPage({
         <div className="site-container mt-8">
           <div className="grid gap-8">
             <SectionCard title="GiriÅŸ">
-              {guide.introParagraphs.map((paragraph) => (
+              {normalizedGuide.introParagraphs.map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>
               ))}
             </SectionCard>
 
             <SectionCard title="Proses AkÄ±ÅŸÄ±">
-              <FlowBox title={guide.flowTitle} steps={guide.flowSteps} note={guide.flowNote} />
-              <ProcessDiagram title={guide.flowTitle} steps={guide.flowSteps} />
+              <FlowBox title={normalizedGuide.flowTitle} steps={normalizedGuide.flowSteps} note={normalizedGuide.flowNote} />
+              <ProcessDiagram title={normalizedGuide.flowTitle} steps={normalizedGuide.flowSteps} />
             </SectionCard>
 
-            {guide.sections.map((section) => (
+            {normalizedGuide.sections.map((section) => (
               <SectionCard key={section.title} title={section.title}>
                 {section.paragraphs?.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
 
@@ -533,19 +614,19 @@ export function SectorMachineGuideDetailPage({
                 AÅŸaÄŸÄ±daki kriterler, sektÃ¶r fark etmeksizin ekipman zincirinin doÄŸru boyutlandÄ±rÄ±lmasÄ±
                 ve prosesin dengeli kurulmasÄ± iÃ§in Ã¶n mÃ¼hendislik aÅŸamasÄ±nda birlikte okunmalÄ±dÄ±r.
               </p>
-              <TableSection {...guide.selectionCriteria} />
+              <TableSection {...normalizedGuide.selectionCriteria} />
             </SectionCard>
 
             <SectionCard title="SÄ±k YapÄ±lan TasarÄ±m HatalarÄ±">
-              <TableSection {...guide.mistakes} />
+              <TableSection {...normalizedGuide.mistakes} />
             </SectionCard>
 
             <SectionCard title="Pro Makina ile Ã‡Ã¶zÃ¼m YaklaÅŸÄ±mÄ±">
-              {guide.approachParagraphs.map((paragraph) => (
+              {normalizedGuide.approachParagraphs.map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>
               ))}
               <ul className="grid gap-3 sm:grid-cols-2">
-                {guide.approachBullets.map((item) => (
+                {normalizedGuide.approachBullets.map((item) => (
                   <li
                     key={item}
                     className="rounded-[18px] border border-slate-200 bg-slate-50 px-4 py-3 text-sm font-semibold text-slate-700"
@@ -567,7 +648,7 @@ export function SectorMachineGuideDetailPage({
                 </p>
               </div>
               <div className="mt-8 grid gap-4 md:grid-cols-2">
-                {guide.faqs.map((faq, index) => (
+                {normalizedGuide.faqs.map((faq, index) => (
                   <div
                     key={faq.question}
                     className="rounded-[22px] border border-slate-200 bg-slate-50 p-5 shadow-sm"
@@ -595,7 +676,7 @@ export function SectorMachineGuideDetailPage({
                 </p>
               </div>
               <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-                {guide.relatedLinks.map((item) => (
+                {normalizedGuide.relatedLinks.map((item) => (
                   <Link
                     key={item.href}
                     href={item.href}
@@ -617,11 +698,11 @@ export function SectorMachineGuideDetailPage({
 
               <GlobalBottomCta
               title={
-                guide.ctaTitle ??
+                normalizedGuide.ctaTitle ??
                 "Projeniz iÃ§in teklif veya teknik gÃ¶rÃ¼ÅŸme talep edin"
               }
               description={
-                guide.ctaDescription ??
+                normalizedGuide.ctaDescription ??
                 "Kapasite, hammadde, nem oranÄ±, hedef Ã¼rÃ¼n ve saha yerleÅŸiminize gÃ¶re uygun proses ve makine Ã§Ã¶zÃ¼mÃ¼nÃ¼ birlikte netleÅŸtirebiliriz."
               }
             />

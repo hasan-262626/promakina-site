@@ -1,20 +1,23 @@
 import type { Metadata } from "next";
-import { SeoRichLandingPage } from "../../../components/seo-rich-landing-page";
+import { notFound } from "next/navigation";
+import { machineCategoryMap } from "../../../components/machine-group-data";
+import { ProductDetailSystem } from "../../../components/product-detail-system";
+import { getMachineAuxiliarySystems } from "../../../lib/machine-auxiliary-systems";
 
 const canonical =
   "https://www.promakina.com.tr/makinalar-ekipman/depolama-ve-besleme-sistemleri/surgulu-klapeler";
 
 export const metadata: Metadata = {
-  title: "Surgulu Klapeler | Depolama ve Besleme Sistemleri | Pro Makina",
+  title: "Sürgülü Klapeler | Depolama ve Besleme Sistemleri | Pro Makina",
   description:
-    "Surgulu klape cozumleriyle silo ve bunker cikislarinda urun akis kontrolunu guvenli ve surekli hale getirin.",
+    "Sürgülü klape çözümleriyle silo ve bunker çıkışlarında ürün akış kontrolünü güvenli ve sürekli hale getirin.",
   alternates: {
     canonical,
   },
   openGraph: {
-    title: "Surgulu Klapeler | Depolama ve Besleme Sistemleri | Pro Makina",
+    title: "Sürgülü Klapeler | Depolama ve Besleme Sistemleri | Pro Makina",
     description:
-      "Surgulu klape cozumleriyle silo ve bunker cikislarinda urun akis kontrolunu guvenli ve surekli hale getirin.",
+      "Sürgülü klape çözümleriyle silo ve bunker çıkışlarında ürün akış kontrolünü güvenli ve sürekli hale getirin.",
     url: canonical,
     siteName: "Pro Makina",
     locale: "tr_TR",
@@ -22,85 +25,65 @@ export const metadata: Metadata = {
   },
 };
 
+const faqItems = [
+  {
+    question: "Sürgülü klape hangi noktalarda kullanılır?",
+    answer:
+      "Silo, bunker, hazne, helezon ve konveyör çıkışlarında ürün akışının kontrolü için kullanılır.",
+  },
+  {
+    question: "Sürgülü klape seçiminde hangi bilgiler gerekir?",
+    answer:
+      "Ürün tipi, akış davranışı, bağlantı ölçüleri, kapasite ve aktüatör tercihi seçim için temel verilerdir.",
+  },
+];
+
 export default function Page() {
+  const category = machineCategoryMap["depolama-ve-besleme-sistemleri"];
+  const activeProduct = category?.products.find((item) => item.slug === "surgulu-klapeler");
+
+  if (!category || !activeProduct) {
+    notFound();
+  }
+
+  const publicCategorySlug = "depolama-ve-besleme-sistemleri";
+  const sidebarItems = category.products.map((item) => ({
+    label: item.title,
+    href: `/makinalar-ekipman/${publicCategorySlug}/${item.slug}`,
+  }));
+  const auxiliarySystems = getMachineAuxiliarySystems({
+    categorySlug: publicCategorySlug,
+    productSlug: activeProduct.slug,
+    calculatorFamily: category.calculatorFamily,
+    title: activeProduct.title,
+  });
+
   return (
-    <SeoRichLandingPage
-      canonical={canonical}
-      heroTitle="Surgulu Klapeler"
-      heroDescription="Surgulu klapeler, silo ve bunker cikislarinda urun akisinin baslatilmasi, durdurulmasi ve kontrollu yonetimi icin kullanilan yardimci ekipmanlardir."
-      image="/images/surgu1.webp"
-      introLabel="Depolama ve Besleme Sistemleri"
-      introTitle="Surgulu Klapeler"
-      introParagraphs={[
-        "Surgulu klapeler; silo, bunker, hazne ve transfer noktalarinda malzeme akisinin kontrollu sekilde yonetilmesini saglar. Tozlu, granül veya dokme kati urunlerin hatta emniyetli bicimde aktarilmasi icin kritik destek ekipmanlaridir.",
-        "Pro Makina surgulu klape cozumlerini urun tipi, akis karakteri ve saha yerlesimine gore projelendirir. Doğru govde yapisi, sizdirmazlik seviyesi ve aktuatör secimi ile daha kararli proses akisina ulasilir.",
-      ]}
-      breadcrumbs={[
-        { label: "Makinalar & Ekipman", href: "/makinalar-ekipman" },
-        {
-          label: "Depolama ve Besleme Sistemleri",
-          href: "/makinalar-ekipman/depolama-ve-besleme-sistemleri",
-        },
-        {
-          label: "Surgulu Klapeler",
-          href: "/makinalar-ekipman/depolama-ve-besleme-sistemleri/surgulu-klapeler",
-        },
-      ]}
-      sections={[
-        {
-          title: "Kullanim Alanlari",
-          paragraphs: [
-            "Surgulu klapeler; silo cikislari, bunker bosaltmalari, helezon ve konveyor besleme noktalarinda urun akisinin kontrollu sekilde yonetilmesi icin kullanilir.",
-            "Ozellikle tozlu ve dokme kati malzeme proseslerinde bakim kolayligi, sizdirmazlik ve saha uyumu bir arada degerlendirilmelidir.",
-          ],
-        },
-        {
-          title: "Teknik Secim Kriterleri",
-          bullets: [
-            "Urun akis karakteri ve bulk yogunlugu",
-            "Manuel, pnömatik veya motorlu surus ihtiyaci",
-            "Sizdirmazlik seviyesi ve toz kontrol beklentisi",
-            "Silo, bunker veya transfer hattiyla baglanti geometrisi",
-          ],
-        },
-      ]}
-      summaryRows={[
-        {
-          criterion: "Akis Kontrolu",
-          description: "Urunun ne kadar hizli ve ne kadar guvenli aktarilacagini belirler.",
-          importance: "Hat kararliligi icin kritiktir.",
-        },
-        {
-          criterion: "Sizdirmazlik",
-          description: "Toz kacaklari ve urun kaybini azaltir.",
-          importance: "Cevresel performansi ve saha temizligini destekler.",
-        },
-      ]}
-      faqs={[
-        {
-          question: "Surgulu klape hangi noktalarda kullanilir?",
-          answer:
-            "Silo, bunker, hazne, helezon ve konveyor cikislarinda urun akisinin kontrolu icin kullanilir.",
-        },
-        {
-          question: "Surgulu klape seciminde hangi bilgiler gerekir?",
-          answer:
-            "Urun tipi, akis davranisi, baglanti olculeri, kapasite ve aktuatör tercihi secim icin temel verilerdir.",
-        },
-      ]}
-      relatedGroups={[
-        {
-          title: "Ilgili Makinalar",
-          links: [
-            { label: "Bunker ve Hazneler", href: "/makinalar-ekipman/depolama-ve-besleme-sistemleri/bunker-ve-hazneler" },
-            { label: "Klapeler", href: "/makinalar-ekipman/yardimci-ekipmanlar-ve-akis-sistemleri/klapeler" },
-            { label: "Distributor", href: "/makinalar-ekipman/yardimci-ekipmanlar-ve-akis-sistemleri/distributor" },
-          ],
-        },
-      ]}
-      ctaText="Urun tipi, baglanti olculeri ve saha kosullarini paylasin; size uygun surgulu klape cozumunu birlikte netlestirelim."
-      serviceName="Surgulu Klapeler"
-      serviceDescription="Silo ve bunker cikislarinda akisin kontrollu yonetimi icin proje bazli surgulu klape cozumleri."
-    />
+    <main className="min-h-screen bg-white text-slate-900">
+      <ProductDetailSystem
+        categoryLabel={category.title}
+        categoryHref={`/makinalar-ekipman/${publicCategorySlug}`}
+        sidebarItems={sidebarItems}
+        activeSidebarHref={`/makinalar-ekipman/${publicCategorySlug}/${activeProduct.slug}`}
+        title={activeProduct.title}
+        heroDescription={activeProduct.heroDescription}
+        heroImage={category.heroImage}
+        mainImage={activeProduct.gallery[0]?.src ?? category.heroImage}
+        overviewParagraphs={activeProduct.overviewParagraphs}
+        highlightText={activeProduct.highlightText}
+        specs={activeProduct.specs}
+        applications={activeProduct.applications}
+        gallery={activeProduct.gallery}
+        optionalEquipment={activeProduct.optionalEquipment}
+        spareParts={activeProduct.spareParts}
+        auxiliarySystems={auxiliarySystems}
+        faqItems={faqItems}
+        calculatorFamily={category.calculatorFamily}
+        ctaText={
+          activeProduct.ctaText ??
+          "Ürün tipi, bağlantı ölçüleri ve saha koşullarını paylaşın; size uygun sürgülü klape çözümünü birlikte netleştirelim."
+        }
+      />
+    </main>
   );
 }

@@ -1,4 +1,4 @@
-import { trText } from "../lib/tr-text";
+﻿import { trText } from "../lib/tr-text";
 import { drumProductPages } from "./drum-product-data";
 
 export type CalculatorFamily =
@@ -173,9 +173,9 @@ const transportSeed: CategorySeed = {
 };
 
 const crusherSeed: CategorySeed = {
-  slug: "kırıcılar-ve-parcalayicilar",
+  slug: "kiricilar-ve-parcalayicilar",
   title: "Kırıcılar ve Parçalayıcılar",
-  heroImage: "/images/kırıcı3.jpg",
+  heroImage: "/images/kirici3.jpg",
   shortDescription:
     "Kompost, gübre, geri dönüşüm ve endüstriyel proses hatları için çekiçli kırıcı, zincirli kırıcı, shredder, primer kırıcı ve sekonder kırıcı imalatı yapıyoruz.",
   heroDescription:
@@ -217,13 +217,13 @@ const crusherSeed: CategorySeed = {
     "Kapak ve bağlantı parçaları",
   ],
   products: [
-    { slug: "cekicli-kırıcılar", title: "Çekiçli Kırıcılar", shortDescription: "Gübre, kompost ve kırılgan mineral hatları için çekiçli kırıcı imalatı yapıyoruz." },
-    { slug: "ceneli-kırıcılar", title: "Çeneli Kırıcılar", shortDescription: "Sert ve iri boyutlu malzemelerin ilk kademe kırılması için çeneli kırıcı çözümleri sunuyoruz.", image: "/images/ceneli1.png" },
-    { slug: "dik-milli-kırıcılar", title: "Dik Milli Kırıcılar", shortDescription: "Agrega, mineral ve benzeri malzemelerde kontrollü boyut küçültme için dik milli kırıcı çözümleri sunuyoruz.", image: "/images/pim1.png" },
-    { slug: "zincirli-kırıcılar", title: "Zincirli Kırıcılar", shortDescription: "Topaklı ve yarı nemli ürünler için zincirli kırıcı imalatı yapıyoruz.", image: "/images/zincirli1.jpg" },
+    { slug: "cekicli-kiricilar", title: "Çekiçli Kırıcılar", shortDescription: "Gübre, kompost ve kırılgan mineral hatları için çekiçli kırıcı imalatı yapıyoruz." },
+    { slug: "ceneli-kiricilar", title: "Çeneli Kırıcılar", shortDescription: "Sert ve iri boyutlu malzemelerin ilk kademe kırılması için çeneli kırıcı çözümleri sunuyoruz.", image: "/images/ceneli1.png" },
+    { slug: "dik-milli-kiricilar", title: "Dik Milli Kırıcılar", shortDescription: "Agrega, mineral ve benzeri malzemelerde kontrollü boyut küçültme için dik milli kırıcı çözümleri sunuyoruz.", image: "/images/pim1.png" },
+    { slug: "zincirli-kiricilar", title: "Zincirli Kırıcılar", shortDescription: "Topaklı ve yarı nemli ürünler için zincirli kırıcı imalatı yapıyoruz.", image: "/images/zincirli1.jpg" },
     { slug: "shredder-sistemleri", title: "Shredder Sistemleri", shortDescription: "Karma atık ve hacimli malzemeler için shredder sistemleri üretiyoruz.", image: "/images/shredder6.jpg" },
-    { slug: "bicakli-primer-kırıcılar", title: "Bıçaklı Primer Kırıcılar", shortDescription: "İlk kademe boyut küçültme için bıçaklı primer kırıcı çözümleri sunuyoruz.", image: "/images/primer1.png" },
-    { slug: "bicakli-sekonder-kırıcılar", title: "Bıçaklı Sekonder Kırıcılar", shortDescription: "Kontrollü çıkış boyutu için bıçaklı sekonder kırıcı imalatı yapıyoruz.", image: "/images/primer2.png" },
+    { slug: "bicakli-primer-kiricilar", title: "Bıçaklı Primer Kırıcılar", shortDescription: "İlk kademe boyut küçültme için bıçaklı primer kırıcı çözümleri sunuyoruz.", image: "/images/primer1.png" },
+    { slug: "bicakli-sekonder-kiricilar", title: "Bıçaklı Sekonder Kırıcılar", shortDescription: "Kontrollü çıkış boyutu için bıçaklı sekonder kırıcı imalatı yapıyoruz.", image: "/images/primer2.png" },
   ],
 };
 
@@ -325,6 +325,46 @@ const screeningSeed: CategorySeed = {
     "Bağlantı ve kapak parçaları",
   ],
   products: [
+    {
+      slug: "doner-elekler",
+      title: "Döner Elekler",
+      shortDescription:
+        "Granül, mineral ve farklı dökme katı malzemelerde dengeli fraksiyon ayırma için döner elek çözümleri sunuyoruz.",
+      image: "/images/elek2.jpeg",
+      heroDescription:
+        "Döner elek çözümleri; granül, mineral ve farklı dökme katı malzemelerde dengeli fraksiyon ayırma ve sınıflandırma sağlar.",
+      overviewParagraphs: [
+        "Döner elekler, farklı tane boylarındaki ürünlerin kontrollü sınıflandırılması için kullanılan endüstriyel eleme ekipmanlarıdır. Granül, mineral ve dökme katı malzeme akışları için sürekli çalışma karakteri sunar.",
+        "Pro Makina döner elek çözümlerini kapasite, ürün davranışı, elek açıklığı ve saha entegrasyonuna göre projelendirir. Doğru çap, boy ve devir seçimi ile ayırma verimi ve işletme kararlılığı birlikte korunur.",
+      ],
+      highlightText:
+        "Döner elek seçiminde elek açıklığı, tambur ölçüleri, ürün akışı ve çalışma rejimi birlikte değerlendirilir. Doğru gövde kurgusu, kararlı sınıflandırma performansı ve düşük bakım ihtiyacı sağlar.",
+      specs: [
+        "Elek açıklığı hedef son ürün tane boyuna göre belirlenir",
+        "Tambur çapı ve boyu kapasite ile ayırma süresini etkiler",
+        "Devir ve doluluk oranı eleme verimini doğrudan belirler",
+        "Besleme karakteri ve ürün yoğunluğu mekanik boyutlandırmaya dahil edilir",
+        "Hat yerleşimine uygun giriş, çıkış ve destek şasesi tasarlanır",
+      ],
+      applications: [
+        "Mineral hazırlama tesisleri",
+        "Granül ürün sınıflandırma hatları",
+        "Kompost son ürün ayırma prosesleri",
+        "Farklı dökme katı malzeme akışlarında sürekli eleme uygulamaları",
+      ],
+      optionalEquipment: [
+        "Bakım platformu",
+        "Toz emiş bağlantısı",
+        "Temizleme sistemi",
+        "Otomasyon ve sensör altyapısı",
+      ],
+      spareParts: [
+        "Elek yüzeyi ve panelleri",
+        "Support rulo ve yatak grupları",
+        "Motor-redüktör grubu",
+        "Kapak ve bağlantı parçaları",
+      ],
+    },
     { slug: "vibrasyonlu-elekler", title: "Vibrasyonlu Elekler", shortDescription: "Hassas ayırma ve yüksek verimli sınıflandırma için vibrasyonlu elek çözümleri üretiyoruz.", image: "/images/elek1.png" },
     { slug: "trommel-elekler", title: "Trommel Elekler", shortDescription: "Organik atık ve kompost hatları için trommel elek imalatı yapıyoruz.", image: "/images/trommel2.jpg" },
     { slug: "susuzlandirma-elekleri", title: "Susuzlandırma Elekleri", shortDescription: "Yüksek nemli ürünlerde su ayrımı için susuzlandırma eleği çözümleri geliştiriyoruz." },
@@ -482,6 +522,46 @@ const storageSeed: CategorySeed = {
     { slug: "silo-sistemleri", title: "Silo Sistemleri", shortDescription: "Dökme katı ürünler için güvenli ve proses uyumlu silo sistemleri üretiyoruz.", image: "/images/silo1.png" },
     { slug: "bunker-ve-hazneler", title: "Bunker ve Hazneler", shortDescription: "Kontrollü ürün kabulü ve besleme için bunker ve hazne sistemleri üretiyoruz." },
     { slug: "teremi-bunkeri", title: "Teremi Bunkeri", shortDescription: "Dökme katı ürünlerin kontrollü alınması, tamponlanması ve prosese düzenli beslenmesi için teremi bunkeri çözümleri sunuyoruz.", image: "/images/teremi6.png" },
+    {
+      slug: "surgulu-klapeler",
+      title: "Sürgülü Klapeler",
+      shortDescription:
+        "Silo ve bunker çıkışlarında ürün akış kontrolünü güvenli ve sürekli hale getiren sürgülü klape çözümleri sunuyoruz.",
+      image: "/images/surgu1.webp",
+      heroDescription:
+        "Sürgülü klapeler, silo ve bunker çıkışlarında ürün akışının başlatılması, durdurulması ve kontrollü yönetimi için kullanılan yardımcı ekipmanlardır.",
+      overviewParagraphs: [
+        "Sürgülü klapeler; silo, bunker, hazne ve transfer noktalarında malzeme akışının kontrollü şekilde yönetilmesini sağlar. Tozlu, granül veya dökme katı ürünlerin hatta emniyetli biçimde aktarılması için kritik destek ekipmanlarıdır.",
+        "Pro Makina sürgülü klape çözümlerini ürün tipi, akış karakteri ve saha yerleşimine göre projelendirir. Doğru gövde yapısı, sızdırmazlık seviyesi ve aktüatör seçimi ile daha kararlı proses akışına ulaşılır.",
+      ],
+      highlightText:
+        "Doğru sürgülü klape seçimi; ürün akışının hassas yönetimi, güvenli çalışma ve düşük kaçak oranı için kritik önem taşır.",
+      specs: [
+        "Ürün akış karakteri ve bulk yoğunluğuna uygun gövde tasarımı",
+        "Manuel, pnömatik veya motorlu sürüş ihtiyacına göre konfigürasyon",
+        "Sızdırmazlık seviyesi ve toz kontrol beklentisine uygun yapı",
+        "Silo, bunker veya transfer hattıyla uyumlu bağlantı geometrisi",
+        "Proses hattına özel ebat ve aktüatör seçenekleri",
+      ],
+      applications: [
+        "Silo çıkışları",
+        "Bunker boşaltmaları",
+        "Helezon ve konveyör besleme noktaları",
+        "Tozlu ve dökme katı malzeme prosesleri",
+      ],
+      optionalEquipment: [
+        "Sensörlü açık-kapalı izleme",
+        "Pnömatik veya motorlu tahrik",
+        "Aşınma plakalı kızak sistemi",
+        "Toz sızdırmaz conta paketi",
+      ],
+      spareParts: [
+        "Kızak ve sürgü parçaları",
+        "Conta setleri",
+        "Aktüatör veya motor grupları",
+        "Bağlantı ve kilitleme elemanları",
+      ],
+    },
   ],
 };
 

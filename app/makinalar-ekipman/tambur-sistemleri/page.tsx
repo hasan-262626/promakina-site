@@ -1,21 +1,23 @@
 import Image from "next/image";
-import Link from "next/link";
 import type { Metadata } from "next";
+import Link from "next/link";
+import { MachinePageHero } from "../../components/machine-page-hero";
 import { drumProductPages } from "../../components/drum-product-data";
+import { getMachineCalculatorHref } from "../../lib/machine-calculator-link";
 
 const canonical = "https://www.promakina.com.tr/makinalar-ekipman/tambur-sistemleri";
 
 export const metadata: Metadata = {
   title: "Tambur Sistemleri | Pro Makina",
   description:
-    "GranÃ¼latÃ¶r, kurutma, soÄŸutma, kaplama ve kompost tamburu Ã§Ã¶zÃ¼mleriyle endÃ¼striyel tambur sistemlerini inceleyin.",
+    "Granülatör, kurutma, soğutma, kaplama ve kompost tamburu çözümleriyle endüstriyel tambur sistemlerini inceleyin.",
   alternates: {
     canonical,
   },
   openGraph: {
     title: "Tambur Sistemleri | Pro Makina",
     description:
-      "GranÃ¼latÃ¶r, kurutma, soÄŸutma, kaplama ve kompost tamburu Ã§Ã¶zÃ¼mleriyle endÃ¼striyel tambur sistemlerini inceleyin.",
+      "Granülatör, kurutma, soğutma, kaplama ve kompost tamburu çözümleriyle endüstriyel tambur sistemlerini inceleyin.",
     url: canonical,
     siteName: "Pro Makina",
     locale: "tr_TR",
@@ -26,58 +28,27 @@ export const metadata: Metadata = {
 export default function DrumSystemsCategoryPage() {
   return (
     <main className="min-h-screen bg-white text-slate-900">
-      <section className="relative overflow-hidden border-b border-slate-200 bg-gradient-to-br from-white via-sky-50 to-[#eef6fb]">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(39,141,192,0.10),transparent_32%)]" />
-        <div className="site-container relative flex min-h-[170px] items-center py-8 sm:min-h-[200px] sm:py-10 lg:min-h-[230px] lg:py-12">
-          <div className="max-w-4xl">
-            <h1 className="text-4xl font-semibold tracking-tight text-[#020617] md:text-5xl">
-              Tambur Sistemleri
-            </h1>
-            <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-              <Link
-                href="/programlar"
-                className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-[#278DC0] px-6 text-sm font-semibold text-white transition hover:bg-[#154764]"
-              >
-                Kapasite Hesabı
-              </Link>
-              <Link
-                href="/iletisim"
-                className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-[#d7e3ec] bg-white px-6 text-sm font-semibold text-[#154764] transition hover:border-[#278DC0] hover:bg-[#278DC0]/6"
-              >
-                Teklif Al
-              </Link>
-              <Link
-                href="https://wa.me/905320580104"
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-[#d7e3ec] bg-white px-6 text-sm font-semibold text-[#154764] transition hover:border-[#278DC0] hover:bg-[#278DC0]/6"
-              >
-                WhatsApp ile Görüş
-              </Link>
-              <Link
-                href="tel:+905320580104"
-                className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-[#d7e3ec] bg-white px-6 text-sm font-semibold text-[#154764] transition hover:border-[#278DC0] hover:bg-[#278DC0]/6"
-              >
-                Telefonla Ara
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      <MachinePageHero
+        title="Tambur Sistemleri"
+        calculatorHref={getMachineCalculatorHref({
+          family: "drum",
+          title: "Tambur Sistemleri",
+        })}
+      />
 
       <section className="section-space">
         <div className="site-container">
           <div className="max-w-4xl">
             <p className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-700">
-              Alt ÃœrÃ¼nler
+              Alt Ürünler
             </p>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
-              Tambur Ã§eÅŸitlerini ayrÄ± ayrÄ± inceleyin
+              Tambur çeşitlerini ayrı ayrı inceleyin
             </h2>
             <p className="mt-4 text-[15px] leading-8 text-slate-600 sm:text-base">
-              Prosesinize uygun tambur tipini seÃ§in ve ilgili makina detay sayfasÄ±na geÃ§in.
-              Her alt Ã¼rÃ¼n kendi teknik odaklarÄ±, uygulama alanlarÄ± ve opsiyonlarÄ±yla ayrÄ±
-              incelenebilir yapÄ±dadÄ±r.
+              Prosesinize uygun tambur tipini seçin ve ilgili makina detay sayfasına geçin.
+              Her alt ürün kendi teknik odakları, uygulama alanları ve opsiyonlarıyla ayrı
+              incelenebilir yapıdadır.
             </p>
           </div>
 
@@ -107,7 +78,7 @@ export default function DrumSystemsCategoryPage() {
                     </p>
                     <div className="mt-auto pt-8">
                       <span className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-slate-300 px-5 text-sm font-semibold text-slate-900 transition group-hover:border-blue-200 group-hover:text-blue-700">
-                        ÃœrÃ¼nÃ¼ Ä°ncele
+                        Ürünü İncele
                       </span>
                     </div>
                   </div>

@@ -1,2 +1,5 @@
-export { metadata } from "../../sivi-gubre-uretim-tesisi-nasil-kurulur/page";
-export { default } from "../../sivi-gubre-uretim-tesisi-nasil-kurulur/page";
+﻿import { permanentRedirect } from "next/navigation";
+
+export default function LegacyLiquidFertilizerBlogPage() {
+  permanentRedirect("/kutuphane/blog/sivi-gubre-uretim-tesisi-nasil-kurulur");
+}

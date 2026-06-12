@@ -1,20 +1,23 @@
 import type { Metadata } from "next";
-import { SeoRichLandingPage } from "../../../components/seo-rich-landing-page";
+import { notFound } from "next/navigation";
+import { machineCategoryMap } from "../../../components/machine-group-data";
+import { ProductDetailSystem } from "../../../components/product-detail-system";
+import { getMachineAuxiliarySystems } from "../../../lib/machine-auxiliary-systems";
 
 const canonical =
   "https://www.promakina.com.tr/makinalar-ekipman/eleme-ve-siniflandirma-sistemleri/doner-elekler";
 
 export const metadata: Metadata = {
-  title: "Doner Elekler | Eleme ve Siniflandirma Sistemleri | Pro Makina",
+  title: "Döner Elekler | Eleme ve Sınıflandırma Sistemleri | Pro Makina",
   description:
-    "Doner elek cozumleriyle granül, mineral ve farkli dokme kati malzemelerde dengeli fraksiyon ayirma ve siniflandirma saglayin.",
+    "Döner elek çözümleriyle granül, mineral ve farklı dökme katı malzemelerde dengeli fraksiyon ayırma ve sınıflandırma sağlayın.",
   alternates: {
     canonical,
   },
   openGraph: {
-    title: "Doner Elekler | Eleme ve Siniflandirma Sistemleri | Pro Makina",
+    title: "Döner Elekler | Eleme ve Sınıflandırma Sistemleri | Pro Makina",
     description:
-      "Doner elek cozumleriyle granül, mineral ve farkli dokme kati malzemelerde dengeli fraksiyon ayirma ve siniflandirma saglayin.",
+      "Döner elek çözümleriyle granül, mineral ve farklı dökme katı malzemelerde dengeli fraksiyon ayırma ve sınıflandırma sağlayın.",
     url: canonical,
     siteName: "Pro Makina",
     locale: "tr_TR",
@@ -22,84 +25,65 @@ export const metadata: Metadata = {
   },
 };
 
+const faqItems = [
+  {
+    question: "Döner elek hangi ürünler için uygundur?",
+    answer:
+      "Granül, mineral, kompost ve farklı dökme katı malzeme akışları için uygun eleme çözümleri sunar.",
+  },
+  {
+    question: "Döner elek kapasitesi nasıl belirlenir?",
+    answer:
+      "Elek açıklığı, tambur ölçüleri, besleme debisi, ürün yoğunluğu ve hedef ayırma verimi birlikte değerlendirilir.",
+  },
+];
+
 export default function Page() {
+  const category = machineCategoryMap["eleme-ve-siniflandirma-sistemleri"];
+  const activeProduct = category?.products.find((item) => item.slug === "doner-elekler");
+
+  if (!category || !activeProduct) {
+    notFound();
+  }
+
+  const publicCategorySlug = "eleme-ve-siniflandirma-sistemleri";
+  const sidebarItems = category.products.map((item) => ({
+    label: item.title,
+    href: `/makinalar-ekipman/${publicCategorySlug}/${item.slug}`,
+  }));
+  const auxiliarySystems = getMachineAuxiliarySystems({
+    categorySlug: publicCategorySlug,
+    productSlug: activeProduct.slug,
+    calculatorFamily: category.calculatorFamily,
+    title: activeProduct.title,
+  });
+
   return (
-    <SeoRichLandingPage
-      canonical={canonical}
-      heroTitle="Doner Elekler"
-      heroDescription="Doner elek cozumleri; granül, mineral ve farkli dokme kati malzemelerde dengeli fraksiyon ayirma ve siniflandirma saglar."
-      image="/images/elek2.jpeg"
-      introLabel="Eleme ve Siniflandirma Sistemleri"
-      introTitle="Doner Elekler"
-      introParagraphs={[
-        "Doner elekler, farkli tane boylarindaki urunlerin kontrollu siniflandirilmasi icin kullanilan endustriyel eleme ekipmanlaridir. Granül, mineral ve dokme kati malzeme akislari icin surekli calisma karakteri sunar.",
-        "Pro Makina doner elek cozumlerini kapasite, urun davranisi, elek acikligi ve saha entegrasyonuna gore projelendirir. Doğru cap, boy ve devir secimi ile ayirma verimi ve isletme kararliligi birlikte korunur.",
-      ]}
-      breadcrumbs={[
-        { label: "Makinalar & Ekipman", href: "/makinalar-ekipman" },
-        {
-          label: "Eleme ve Siniflandirma Sistemleri",
-          href: "/makinalar-ekipman/eleme-ve-siniflandirma-sistemleri",
-        },
-        {
-          label: "Doner Elekler",
-          href: "/makinalar-ekipman/eleme-ve-siniflandirma-sistemleri/doner-elekler",
-        },
-      ]}
-      sections={[
-        {
-          title: "Kullanim Alanlari",
-          paragraphs: [
-            "Doner elekler; mineral hazirlama, granül urun siniflandirma, kompost son urun ayirma ve farkli dokme kati malzeme akislari icin kullanilir.",
-            "Surekli urun akisinda dengeli eleme davranisi ve dusuk bakim yuku isteyen uygulamalarda, doner elek yapisi proses kararliligi acisindan avantaj saglar.",
-          ],
-        },
-        {
-          title: "Teknik Secim Kriterleri",
-          bullets: [
-            "Elek acikligi hedef son urun tane boyuna gore belirlenir",
-            "Tambur capi ve boyu kapasite ile ayirma suresini etkiler",
-            "Devir ve doluluk orani eleme verimini dogrudan belirler",
-            "Besleme karakteri ve urun yogunlugu mekanik boyutlandirmaya dahil edilir",
-          ],
-        },
-      ]}
-      summaryRows={[
-        {
-          criterion: "Elek Acikligi",
-          description: "Hedef fraksiyon araligina gore secilir.",
-          importance: "Son urun kalitesini belirler.",
-        },
-        {
-          criterion: "Tambur Boyutu",
-          description: "Cap ve boy birlikte kapasiteye gore cozulur.",
-          importance: "Verim ve calisma kararliligini etkiler.",
-        },
-      ]}
-      faqs={[
-        {
-          question: "Doner elek hangi urunler icin uygundur?",
-          answer:
-            "Granül, mineral, kompost ve farkli dokme kati malzeme akislari icin uygun eleme cozumleri sunar.",
-        },
-        {
-          question: "Doner elek kapasitesi nasil belirlenir?",
-          answer:
-            "Elek acikligi, tambur olculeri, besleme debisi, urun yogunlugu ve hedef ayirma verimi birlikte degerlendirilir.",
-        },
-      ]}
-      relatedGroups={[
-        {
-          title: "Ilgili Makinalar",
-          links: [
-            { label: "Trommel Elekler", href: "/makinalar-ekipman/eleme-ve-siniflandirma-sistemleri/trommel-elekler" },
-            { label: "Bant Konveyorler", href: "/makinalar-ekipman/tasima-ekipmanlari/bant-konveyorler" },
-          ],
-        },
-      ]}
-      ctaText="Saatlik kapasite, urun tipi ve hedef fraksiyon bilgisini paylasin; size uygun doner elek cozumunu birlikte netlestirelim."
-      serviceName="Doner Elekler"
-      serviceDescription="Granül, mineral ve dokme kati malzemelerde proje bazli doner elek cozumleri."
-    />
+    <main className="min-h-screen bg-white text-slate-900">
+      <ProductDetailSystem
+        categoryLabel={category.title}
+        categoryHref={`/makinalar-ekipman/${publicCategorySlug}`}
+        sidebarItems={sidebarItems}
+        activeSidebarHref={`/makinalar-ekipman/${publicCategorySlug}/${activeProduct.slug}`}
+        title={activeProduct.title}
+        heroDescription={activeProduct.heroDescription}
+        heroImage={category.heroImage}
+        mainImage={activeProduct.gallery[0]?.src ?? category.heroImage}
+        overviewParagraphs={activeProduct.overviewParagraphs}
+        highlightText={activeProduct.highlightText}
+        specs={activeProduct.specs}
+        applications={activeProduct.applications}
+        gallery={activeProduct.gallery}
+        optionalEquipment={activeProduct.optionalEquipment}
+        spareParts={activeProduct.spareParts}
+        auxiliarySystems={auxiliarySystems}
+        faqItems={faqItems}
+        calculatorFamily={category.calculatorFamily}
+        ctaText={
+          activeProduct.ctaText ??
+          "Döner elek için kapasite, ürün tipi ve hedef sınıflandırma aralığına göre size özel teknik çözümü birlikte belirleyelim."
+        }
+      />
+    </main>
   );
 }

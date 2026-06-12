@@ -5,63 +5,33 @@ import { createMailtoHref, createWhatsAppHref } from "@/app/lib/site-contact";
 import { pushDataLayerEvent } from "@/app/lib/gtm-events";
 
 type ContactIntent =
-  | "Teknik teklif almak istiyorum"
-  | "Makine fiyati almak istiyorum"
-  | "Tesis kurulumu hakkinda gorusmek istiyorum"
-  | "Mevcut tesis icin revizyon / modernizasyon istiyorum"
-  | "Servis / bakim talebim var"
-  | "Genel bilgi almak istiyorum";
-
-type ContactFocus =
-  | "Gubre tesisi"
-  | "Sivi gubre uretim tesisi"
-  | "Kompost tesisi"
-  | "Biyogaz / digestat hatti"
-  | "Kurutma tamburu"
-  | "Helezon konveyor"
-  | "Bant konveyor"
-  | "Kovali elevator"
-  | "Kirici / shredder"
-  | "Reaktor ve tank sistemleri"
-  | "Maden / mineral isleme"
-  | "Paketleme ve dolum sistemleri"
-  | "Diger";
+  | "Teknik Teklif"
+  | "Makine İmalatı"
+  | "Proses Tasarımı"
+  | "Tesis Kurulumu"
+  | "Bakım Servis"
+  | "Modernizasyon"
+  | "Diğer";
 
 type FormState = {
   fullName: string;
   company: string;
   phone: string;
   email: string;
-  requestType: ContactIntent | "";
-  interestArea: ContactFocus | "";
-  capacity: string;
+  subject: ContactIntent | "";
   city: string;
+  projectNeed: string;
   message: string;
 };
 
-const requestTypes: ContactIntent[] = [
-  "Teknik teklif almak istiyorum",
-  "Makine fiyati almak istiyorum",
-  "Tesis kurulumu hakkinda gorusmek istiyorum",
-  "Mevcut tesis icin revizyon / modernizasyon istiyorum",
-  "Servis / bakim talebim var",
-  "Genel bilgi almak istiyorum",
-];
-
-const interestAreas: ContactFocus[] = [
-  "Gubre tesisi",
-  "Sivi gubre uretim tesisi",
-  "Kompost tesisi",
-  "Biyogaz / digestat hatti",
-  "Kurutma tamburu",
-  "Helezon konveyor",
-  "Bant konveyor",
-  "Kovali elevator",
-  "Kirici / shredder",
-  "Reaktor ve tank sistemleri",
-  "Maden / mineral isleme",
-  "Paketleme ve dolum sistemleri",
-  "Diger",
+const subjectOptions: ContactIntent[] = [
+  "Teknik Teklif",
+  "Makine İmalatı",
+  "Proses Tasarımı",
+  "Tesis Kurulumu",
+  "Bakım Servis",
+  "Modernizasyon",
+  "Diğer",
 ];
 
 const initialForm: FormState = {
@@ -69,15 +39,14 @@ const initialForm: FormState = {
   company: "",
   phone: "",
   email: "",
-  requestType: "",
-  interestArea: "",
-  capacity: "",
+  subject: "",
   city: "",
+  projectNeed: "",
   message: "",
 };
 
 const requiredMessage =
-  "Lutfen Ad Soyad, Telefon, Talep Turu ve Ilgilendiginiz Alan alanlarini doldurun.";
+  "Lütfen Ad Soyad, Firma Adı, Telefon, E-posta, Konu ve Mesaj alanlarını doldurun.";
 
 export function ContactForm() {
   const [form, setForm] = useState<FormState>(initialForm);
@@ -86,30 +55,31 @@ export function ContactForm() {
   const hasRequiredFields = useMemo(() => {
     return Boolean(
       form.fullName.trim() &&
+        form.company.trim() &&
         form.phone.trim() &&
-        form.requestType.trim() &&
-        form.interestArea.trim(),
+        form.email.trim() &&
+        form.subject.trim() &&
+        form.message.trim(),
     );
   }, [form]);
 
   const messageBody = useMemo(() => {
     return [
-      "Merhaba, Pro Makina web sitenizden ulasiyorum.",
+      "Merhaba, Pro Makina web sitenizden iletişime geçiyorum.",
       `Ad Soyad: ${form.fullName.trim() || "-"}`,
-      `Firma: ${form.company.trim() || "-"}`,
+      `Firma Adı: ${form.company.trim() || "-"}`,
       `Telefon: ${form.phone.trim() || "-"}`,
       `E-posta: ${form.email.trim() || "-"}`,
-      `Talep Turu: ${form.requestType || "-"}`,
-      `Ilgilendigim Alan: ${form.interestArea || "-"}`,
-      `Hedef Kapasite: ${form.capacity.trim() || "-"}`,
-      `Sehir / Lokasyon: ${form.city.trim() || "-"}`,
+      `Konu: ${form.subject || "-"}`,
+      `Şehir / Ülke: ${form.city.trim() || "-"}`,
+      `Proje veya Makine İhtiyacı: ${form.projectNeed.trim() || "-"}`,
       `Mesaj: ${form.message.trim() || "-"}`,
     ].join("\n");
   }, [form]);
 
   const whatsappHref = useMemo(() => createWhatsAppHref(messageBody), [messageBody]);
   const emailHref = useMemo(
-    () => createMailtoHref("Web Sitesi Teknik Talep Formu", messageBody),
+    () => createMailtoHref("İletişim Formu Mesajı", messageBody),
     [messageBody],
   );
 
@@ -136,13 +106,12 @@ export function ContactForm() {
     }
 
     pushDataLayerEvent("whatsapp_click", {
-      cta_label: "WhatsApp'tan Gonder",
+      cta_label: "Mesajı Gönder",
       cta_href: whatsappHref,
       page_path: window.location.pathname,
     });
     pushDataLayerEvent("contact_form_whatsapp_submit", {
-      request_type: form.requestType,
-      interest_area: form.interestArea,
+      request_type: form.subject,
       page_path: window.location.pathname,
     });
 
@@ -155,13 +124,12 @@ export function ContactForm() {
     }
 
     pushDataLayerEvent("email_click", {
-      cta_label: "Mail Olarak Gonder",
+      cta_label: "E-posta ile Gönder",
       cta_href: emailHref,
       page_path: window.location.pathname,
     });
     pushDataLayerEvent("contact_form_email_submit", {
-      request_type: form.requestType,
-      interest_area: form.interestArea,
+      request_type: form.subject,
       page_path: window.location.pathname,
     });
 
@@ -172,21 +140,21 @@ export function ContactForm() {
     <div className="rounded-[32px] border border-slate-200 bg-white p-6 shadow-[0_18px_50px_rgba(15,23,42,0.05)] sm:p-8 lg:p-10">
       <div className="max-w-3xl">
         <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#278DC0]">
-          PROFESYONEL ILETISIM FORMU
+          Profesyonel İletişim Formu
         </p>
         <h2 className="mt-3 text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">
-          Teknik talebinizi dogrudan muhendislik ekibimize iletin
+          Talebinizi doğrudan bize iletin
         </h2>
         <p className="mt-4 text-sm leading-8 text-slate-600 sm:text-base">
-          Kapasite, proses, makine secimi veya teklif ihtiyacinizi paylasin.
-          Talebinizi WhatsApp uzerinden hizlica iletebilir veya{" "}
+          Proje konunuzu, makine ihtiyacınızı veya genel teknik talebinizi paylaşın.
+          Dilerseniz mesajınızı doğrudan WhatsApp üzerinden iletebilir ya da{" "}
           <a
             href="mailto:info@promakina.com.tr"
             className="font-semibold text-[#278DC0] transition hover:text-[#154764]"
           >
             info@promakina.com.tr
           </a>{" "}
-          adresine mail olarak gonderebilirsiniz.
+          adresine e-posta gönderebilirsiniz.
         </p>
       </div>
 
@@ -197,18 +165,18 @@ export function ContactForm() {
             type="text"
             value={form.fullName}
             onChange={(event) => updateField("fullName", event.target.value)}
-            placeholder="Adiniz ve soyadiniz"
+            placeholder="Adınız ve soyadınız"
             className="h-12 w-full rounded-2xl border border-slate-200 bg-white px-4 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-[#278DC0] focus:ring-2 focus:ring-[#278DC0]/25"
           />
         </label>
 
         <label className="space-y-2">
-          <span className="text-sm font-semibold text-slate-900">Firma</span>
+          <span className="text-sm font-semibold text-slate-900">Firma Adı *</span>
           <input
             type="text"
             value={form.company}
             onChange={(event) => updateField("company", event.target.value)}
-            placeholder="Firma adi"
+            placeholder="Firma adınız"
             className="h-12 w-full rounded-2xl border border-slate-200 bg-white px-4 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-[#278DC0] focus:ring-2 focus:ring-[#278DC0]/25"
           />
         </label>
@@ -225,7 +193,7 @@ export function ContactForm() {
         </label>
 
         <label className="space-y-2">
-          <span className="text-sm font-semibold text-slate-900">E-posta</span>
+          <span className="text-sm font-semibold text-slate-900">E-posta *</span>
           <input
             type="email"
             value={form.email}
@@ -236,16 +204,16 @@ export function ContactForm() {
         </label>
 
         <label className="space-y-2">
-          <span className="text-sm font-semibold text-slate-900">Talep Turu *</span>
+          <span className="text-sm font-semibold text-slate-900">Konu *</span>
           <select
-            value={form.requestType}
+            value={form.subject}
             onChange={(event) =>
-              updateField("requestType", event.target.value as FormState["requestType"])
+              updateField("subject", event.target.value as FormState["subject"])
             }
             className="h-12 w-full rounded-2xl border border-slate-200 bg-white px-4 text-sm text-slate-900 outline-none transition focus:border-[#278DC0] focus:ring-2 focus:ring-[#278DC0]/25"
           >
-            <option value="">Seciniz</option>
-            {requestTypes.map((item) => (
+            <option value="">Seçiniz</option>
+            {subjectOptions.map((item) => (
               <option key={item} value={item}>
                 {item}
               </option>
@@ -254,60 +222,44 @@ export function ContactForm() {
         </label>
 
         <label className="space-y-2">
-          <span className="text-sm font-semibold text-slate-900">Ilgilendiginiz Alan *</span>
-          <select
-            value={form.interestArea}
-            onChange={(event) =>
-              updateField("interestArea", event.target.value as FormState["interestArea"])
-            }
-            className="h-12 w-full rounded-2xl border border-slate-200 bg-white px-4 text-sm text-slate-900 outline-none transition focus:border-[#278DC0] focus:ring-2 focus:ring-[#278DC0]/25"
-          >
-            <option value="">Seciniz</option>
-            {interestAreas.map((item) => (
-              <option key={item} value={item}>
-                {item}
-              </option>
-            ))}
-          </select>
-        </label>
-
-        <label className="space-y-2">
-          <span className="text-sm font-semibold text-slate-900">Hedef Kapasite</span>
-          <input
-            type="text"
-            value={form.capacity}
-            onChange={(event) => updateField("capacity", event.target.value)}
-            placeholder="Orn. 5 ton/saat, 10 ton/saat, 100 ton/gun"
-            className="h-12 w-full rounded-2xl border border-slate-200 bg-white px-4 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-[#278DC0] focus:ring-2 focus:ring-[#278DC0]/25"
-          />
-        </label>
-
-        <label className="space-y-2">
-          <span className="text-sm font-semibold text-slate-900">Sehir / Lokasyon</span>
+          <span className="text-sm font-semibold text-slate-900">Şehir / Ülke</span>
           <input
             type="text"
             value={form.city}
             onChange={(event) => updateField("city", event.target.value)}
-            placeholder="Orn. Eskisehir, Kocaeli, Antalya"
+            placeholder="Örn. Eskişehir / Türkiye"
+            className="h-12 w-full rounded-2xl border border-slate-200 bg-white px-4 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-[#278DC0] focus:ring-2 focus:ring-[#278DC0]/25"
+          />
+        </label>
+
+        <label className="space-y-2 md:col-span-2">
+          <span className="text-sm font-semibold text-slate-900">
+            Proje veya Makine İhtiyacı
+          </span>
+          <input
+            type="text"
+            value={form.projectNeed}
+            onChange={(event) => updateField("projectNeed", event.target.value)}
+            placeholder="Makine adı, proje konusu veya ihtiyacınızı kısa yazabilirsiniz"
             className="h-12 w-full rounded-2xl border border-slate-200 bg-white px-4 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-[#278DC0] focus:ring-2 focus:ring-[#278DC0]/25"
           />
         </label>
       </div>
 
       <label className="mt-4 block space-y-2">
-        <span className="text-sm font-semibold text-slate-900">Mesaj</span>
+        <span className="text-sm font-semibold text-slate-900">Mesaj *</span>
         <textarea
           rows={6}
           value={form.message}
           onChange={(event) => updateField("message", event.target.value)}
-          placeholder="Urun tipi, kapasite, hammadde, nem orani, saha kosullari veya beklentinizi kisaca yazabilirsiniz."
+          placeholder="Talebinizi, proje konunuzu veya teknik beklentinizi kısaca yazabilirsiniz."
           className="min-h-[160px] w-full rounded-[28px] border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-[#278DC0] focus:ring-2 focus:ring-[#278DC0]/25"
         />
       </label>
 
       <div className="mt-6 rounded-3xl border border-slate-200 bg-slate-50 p-4 text-sm leading-7 text-slate-600">
-        WhatsApp ve mail butonlari, yazdiginiz bilgileri otomatik mesaja donusturur.
-        Hizli iletisim icin zorunlu alanlari doldurmaniz yeterlidir.
+        Paylaştığınız bilgiler yalnızca iletişim ve teknik değerlendirme amacıyla
+        kullanılacaktır.
       </div>
 
       {error ? (
@@ -320,16 +272,16 @@ export function ContactForm() {
         <button
           type="button"
           onClick={handleWhatsAppClick}
-          className="inline-flex min-h-[50px] items-center justify-center rounded-full bg-green-600 px-6 text-sm font-semibold text-white transition hover:bg-green-500"
+          className="inline-flex min-h-[50px] items-center justify-center rounded-full bg-[#278DC0] px-6 text-sm font-semibold text-white transition hover:bg-[#154764]"
         >
-          WhatsApp'tan Gonder
+          Mesajı Gönder
         </button>
         <button
           type="button"
           onClick={handleEmailClick}
-          className="inline-flex min-h-[50px] items-center justify-center rounded-full bg-[#278DC0] px-6 text-sm font-semibold text-white transition hover:bg-[#154764]"
+          className="inline-flex min-h-[50px] items-center justify-center rounded-full border border-slate-200 bg-white px-6 text-sm font-semibold text-[#154764] transition hover:border-[#278DC0] hover:bg-[#278DC0]/5"
         >
-          Mail Olarak Gonder
+          E-posta ile Gönder
         </button>
       </div>
     </div>

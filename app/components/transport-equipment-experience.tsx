@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { getMachineAuxiliarySystems } from "../lib/machine-auxiliary-systems";
 import { ProductDetailSystem } from "./product-detail-system";
 
 type TransportKey = "belt" | "chain-conveyor" | "screw" | "chain-elevator" | "belt-elevator";
@@ -272,17 +273,19 @@ export default function TransportEquipmentExperience() {
     [activeId],
   );
 
-  const relatedProducts = transportProducts
-    .filter((product) => product.id !== activeProduct.id)
-    .map((product) => ({
-      label: product.title,
-      onClick: () => {
-        setActiveId(product.id);
-        if (typeof window !== "undefined") {
-          window.scrollTo({ top: 0, behavior: "smooth" });
-        }
-      },
-    }));
+  const productSlugMap: Record<TransportKey, string> = {
+    belt: "bantli-konveyorler",
+    "chain-conveyor": "zincirli-konveyorler",
+    screw: "vidali-helezonlar",
+    "chain-elevator": "zincirli-elevatorler",
+    "belt-elevator": "bantli-elevatorler",
+  };
+  const auxiliarySystems = getMachineAuxiliarySystems({
+    categorySlug: "tasima-ekipmanlari",
+    productSlug: productSlugMap[activeProduct.id],
+    calculatorFamily: "transport",
+    title: activeProduct.title,
+  });
 
   return (
     <ProductDetailSystem
@@ -298,7 +301,7 @@ export default function TransportEquipmentExperience() {
       gallery={activeProduct.gallery}
       optionalEquipment={activeProduct.optionalEquipment}
       spareParts={activeProduct.spareParts}
-      relatedProducts={relatedProducts}
+      auxiliarySystems={auxiliarySystems}
       calculatorFamily="transport"
       ctaTitle="Taşıma ekipmanları için doğru sistem seçimini birlikte yapalım"
       ctaText="Bantlı konveyör, zincirli konveyör, vidalı helezon, zincirli elevatör ve bantlı elevatör çözümleri için kapasite, hat boyu ve ürün karakterine uygun sistemi birlikte netleştirelim."

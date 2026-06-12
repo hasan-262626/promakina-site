@@ -346,7 +346,7 @@ export const machineCategoryLandingConfigs: Record<string, MachineCategoryLandin
       },
       {
         title: "Vidalı Helezonlar",
-        href: "/makinalar-ekipman/tasima-ekipmanlari/helezon-konveyorler",
+        href: "/makinalar-ekipman/tasima-ekipmanlari/vidali-helezonlar",
         description:
           "Dozajlama ve kompakt alanlı transfer uygulamalarında kontrollü akış sağlayan helezon çözümü.",
       },

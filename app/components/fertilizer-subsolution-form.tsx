@@ -213,7 +213,7 @@ export function FertilizerSubsolutionForm({ title, config }: Props) {
           onClick={() => submit("whatsapp")}
           className="inline-flex min-h-[50px] items-center justify-center rounded-full bg-green-600 px-6 text-sm font-semibold text-white transition hover:bg-green-700"
         >
-          WhatsApp'dan Gönder
+          WhatsApp&apos;dan Gönder
         </button>
         <button
           type="button"

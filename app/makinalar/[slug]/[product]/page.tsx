@@ -42,8 +42,14 @@ export default async function MachineProductAliasPage({ params }: PageProps) {
   if (resolvedSlug === "reaktorler-ve-tanklar") {
     redirect(`/makinalar-ekipman/reaktorler-ve-tanklar/${product}`);
   }
-  if (resolvedSlug === "tasima-ekipmanlari" && product === "vidali-helezonlar") {
-    redirect("/makinalar-ekipman/tasima-ekipmanlari/helezon-konveyorler");
+  if (resolvedSlug === "tasima-ekipmanlari" && product === "helezon-konveyorler") {
+    redirect("/makinalar-ekipman/tasima-ekipmanlari/vidali-helezonlar");
+  }
+  if (resolvedSlug === "tasima-ekipmanlari" && product === "bant-konveyorler") {
+    redirect("/makinalar-ekipman/tasima-ekipmanlari/bantli-konveyorler");
+  }
+  if (resolvedSlug === "tasima-ekipmanlari" && product === "kovali-elevatorler") {
+    redirect("/makinalar-ekipman/tasima-ekipmanlari/zincirli-elevatorler");
   }
   const config = machineCategoryLandingConfigs[resolvedSlug];
 

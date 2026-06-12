@@ -38,7 +38,7 @@ export const fertilizerPlantCards: PlantCard[] = [
     links: [
       { label: "Granül Organomineral", href: "/sektorler/gubre-ve-granulasyon-tesisleri/granul-organomineral" },
       { label: "Granül NPK", href: "/sektorler/gubre-ve-granulasyon-tesisleri/granul-npk" },
-      { label: "Granül Kompost Tesisleri", href: "/sektorler/gubre-ve-granulasyon-tesisleri/granul-kompost" },
+      { label: "Granül Kompost Tesisleri", href: "/sektorler/gubre-ve-granulasyon-tesisleri/granul-kompost-tesisleri" },
     ],
   },
   {

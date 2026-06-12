@@ -2,13 +2,38 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import { createMailtoHref, createWhatsAppHref } from "../lib/site-contact";
-import { sectorCards } from "./sector-subsectors-data";
 import { trText } from "../lib/tr-text";
+import { sectorCards } from "./sector-subsectors-data";
+
+export type FieldDefinition = {
+  id: string;
+  label: string;
+  type: "text" | "number" | "select";
+  options?: string[];
+  placeholder?: string;
+  unit?: string;
+  readOnly?: boolean;
+  span?: 1 | 2;
+};
+
+export type ProductOptionDefinition = {
+  value: string;
+  label: string;
+};
 
 type SectorInquiryFormProps = {
   requestTargetTitle: string;
   initialSectorSlug?: string;
   initialProductSlug?: string;
+  productLabelOverride?: string;
+  productOptionsOverride?: ProductOptionDefinition[];
+  formTitle?: string;
+  formDescription?: string;
+  formDescriptionSecondary?: string;
+  mailSubject?: string;
+  initialCommonValues?: Partial<CommonState>;
+  initialDynamicValues?: Record<string, string>;
+  dynamicFieldsOverride?: FieldDefinition[];
 };
 
 type CommonState = {
@@ -24,17 +49,6 @@ type CommonState = {
   projectStatus: string;
   message: string;
   consent: boolean;
-};
-
-type FieldDefinition = {
-  id: string;
-  label: string;
-  type: "text" | "number" | "select";
-  options?: string[];
-  placeholder?: string;
-  unit?: string;
-  readOnly?: boolean;
-  span?: 1 | 2;
 };
 
 type CapacityMeta = {
@@ -76,7 +90,37 @@ const liquidFertilizerSlugs = new Set([
   "organik-biyostimulan",
 ]);
 
-const granuleFertilizerSlugs = new Set(["granul-organomineral", "granul-npk", "granul-kompost"]);
+const cleanRequestTypeOptions = [
+  "Teklif Talebi",
+  "Teknik Görüşme Talebi",
+  "Proje Değerlendirme",
+  "Revizyon / Modernizasyon",
+];
+
+const cleanProjectStatusOptions = [
+  "Yeni yatırım",
+  "Mevcut tesis revizyonu",
+  "Kapasite artırımı",
+  "Fizibilite aşaması",
+  "Henüz net değil",
+];
+
+const cleanInstallationModelOptions = [
+  "Sadece Makine",
+  "Makine + Proses Danışmanlığı",
+  "Anahtar Teslim Tesis",
+  "Henüz net değil",
+];
+
+const cleanAutomationLevelOptions = ["Yarı Otomatik", "Tam Otomatik", "Henüz net değil"];
+const packagingByProjectOptions = ["Projeye göre", "Evet", "Hayır", "Henüz net değil"];
+
+const granuleFertilizerSlugs = new Set([
+  "granul-organomineral",
+  "granul-npk",
+  "granul-kompost-tesisleri",
+]);
+
 const powderFertilizerSlugs = new Set(["toz-organomineral", "toz-npk"]);
 
 const inputClass =
@@ -142,6 +186,66 @@ function getDynamicFields(
   productSlug: string,
   dynamicValues: Record<string, string>,
 ): FieldDefinition[] {
+  if (sectorSlug === "atik-su-camuru-ve-aritma-cozumleri") {
+    return [
+      {
+        id: "productForm",
+        label: "Ürün Formu",
+        type: "text",
+        placeholder: "Çamur İşleme",
+        readOnly: true,
+      },
+      {
+        id: "automationLevel",
+        label: "Otomasyon Seviyesi",
+        type: "select",
+        options: cleanAutomationLevelOptions,
+      },
+      {
+        id: "packagingNeed",
+        label: "Paketleme İhtiyacı",
+        type: "select",
+        options: packagingByProjectOptions,
+      },
+      {
+        id: "installationModel",
+        label: "Kurulum Modeli",
+        type: "select",
+        options: cleanInstallationModelOptions,
+      },
+      {
+        id: "sludgeType",
+        label: "Giriş Çamur Türü",
+        type: "text",
+        placeholder: "Örn. evsel / biyolojik / endüstriyel",
+      },
+      {
+        id: "inputMoisture",
+        label: "Giriş Nemi",
+        type: "text",
+        placeholder: "Örn. %78",
+      },
+      {
+        id: "targetMoisture",
+        label: "Hedef Çıkış Nemi",
+        type: "text",
+        placeholder: "Örn. %20",
+      },
+      {
+        id: "targetProduct",
+        label: "Son Ürün Hedefi",
+        type: "select",
+        options: [
+          "Bertaraf öncesi hacim azaltma",
+          "Kurutulmuş ürün",
+          "ATY hazırlama",
+          "Kompost senaryosu",
+          "Henüz net değil",
+        ],
+      },
+    ];
+  }
+
   if (sectorSlug === "gubre-ve-granulasyon-tesisleri") {
     return [
       {
@@ -342,10 +446,21 @@ export function SectorInquiryForm({
   requestTargetTitle,
   initialSectorSlug,
   initialProductSlug,
+  productLabelOverride,
+  productOptionsOverride,
+  formTitle,
+  formDescription,
+  formDescriptionSecondary,
+  mailSubject,
+  initialCommonValues,
+  initialDynamicValues,
+  dynamicFieldsOverride,
 }: SectorInquiryFormProps) {
   const initialSector = getSectorBySlug(initialSectorSlug ?? sectorCards[0]?.slug ?? "");
   const initialProduct =
-    initialSector.subLinks.find((item) => item.slug === initialProductSlug)?.slug ?? initialSector.subLinks[0]?.slug ?? "";
+    initialSector.subLinks.find((item) => item.slug === initialProductSlug)?.slug ??
+    initialSector.subLinks[0]?.slug ??
+    "";
 
   const formRef = useRef<HTMLFormElement>(null);
   const [commonState, setCommonState] = useState<CommonState>({
@@ -354,21 +469,34 @@ export function SectorInquiryForm({
     phone: "",
     email: "",
     location: "",
-    requestType: requestTypeOptions[0],
+    requestType: cleanRequestTypeOptions[0],
     sectorSlug: initialSector.slug,
     productSlug: initialProduct,
     targetCapacity: "",
-    projectStatus: projectStatusOptions[0],
+    projectStatus: cleanProjectStatusOptions[0],
     message: "",
     consent: false,
+    ...initialCommonValues,
   });
-  const [dynamicValues, setDynamicValues] = useState<Record<string, string>>({});
+  const [dynamicValues, setDynamicValues] = useState<Record<string, string>>(initialDynamicValues ?? {});
 
   const selectedSector = useMemo(() => getSectorBySlug(commonState.sectorSlug), [commonState.sectorSlug]);
-  const productOptions = selectedSector.subLinks;
+  const isUsingProductOverride =
+    !!productOptionsOverride?.length && commonState.sectorSlug === (initialSectorSlug ?? initialSector.slug);
+  const productOptions = useMemo(
+    () =>
+      isUsingProductOverride
+        ? (productOptionsOverride ?? []).map((item) => ({
+            slug: item.value,
+            label: item.label,
+          }))
+        : selectedSector.subLinks,
+    [initialSector.slug, initialSectorSlug, isUsingProductOverride, productOptionsOverride, selectedSector.subLinks],
+  );
 
   useEffect(() => {
     if (!productOptions.some((item) => item.slug === commonState.productSlug)) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setCommonState((current) => ({
         ...current,
         productSlug: productOptions[0]?.slug ?? "",
@@ -376,22 +504,27 @@ export function SectorInquiryForm({
     }
   }, [commonState.productSlug, productOptions]);
 
-  const dynamicFields = useMemo(
-    () => getDynamicFields(commonState.sectorSlug, commonState.productSlug, dynamicValues),
-    [commonState.productSlug, commonState.sectorSlug, dynamicValues],
-  );
+  const dynamicFields = useMemo(() => {
+    if (dynamicFieldsOverride?.length) {
+      return dynamicFieldsOverride;
+    }
+
+    return getDynamicFields(commonState.sectorSlug, commonState.productSlug, dynamicValues);
+  }, [commonState.productSlug, commonState.sectorSlug, dynamicFieldsOverride, dynamicValues]);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setDynamicValues((current) => {
       const next = Object.fromEntries(
         dynamicFields.map((field) => {
           const fallbackValue = getFieldDefaultValue(field);
+          const preferredValue = initialDynamicValues?.[field.id];
 
           if (field.readOnly) {
-            return [field.id, fallbackValue];
+            return [field.id, preferredValue ?? fallbackValue];
           }
 
-          return [field.id, current[field.id] ?? fallbackValue];
+          return [field.id, current[field.id] ?? preferredValue ?? fallbackValue];
         }),
       );
 
@@ -403,7 +536,7 @@ export function SectorInquiryForm({
 
       return hasDifferentLength || hasDifferentValue ? next : current;
     });
-  }, [dynamicFields]);
+  }, [dynamicFields, initialDynamicValues]);
 
   const capacityMeta = useMemo(
     () => getCapacityMeta(commonState.sectorSlug, commonState.productSlug, dynamicValues),
@@ -421,38 +554,61 @@ export function SectorInquiryForm({
 
   const messageBody = useMemo(() => {
     const sectorLabel = trText(selectedSector.title);
-    const productLabel = getProductLabel(commonState.sectorSlug, commonState.productSlug);
+    const productLabel =
+      productLabelOverride && commonState.productSlug === (initialProductSlug ?? initialProduct)
+        ? trText(productLabelOverride)
+        : getProductLabel(commonState.sectorSlug, commonState.productSlug);
 
     const rows = [
-      `Merhaba, ${trText(requestTargetTitle)} için bilgi / teklif talep ediyorum.`,
+      "Yeni Teknik Teklif Talebi",
       "",
+      `Sayfa: ${trText(requestTargetTitle)}`,
+      "",
+      "İletişim Bilgileri:",
       `Firma Adı: ${commonState.companyName}`,
       `Ad Soyad: ${commonState.fullName}`,
       `Telefon: ${commonState.phone}`,
       `E-posta: ${commonState.email}`,
-      commonState.location ? `Şehir / Ülke: ${commonState.location}` : "",
+      `Şehir / Ülke: ${commonState.location || "-"}`,
+      "",
+      "Talep ve Çözüm Kurgusu:",
       `Talep Türü: ${commonState.requestType}`,
       `Sektör: ${sectorLabel}`,
       `Ürün / Çözüm Grubu: ${productLabel}`,
-      commonState.targetCapacity ? `${capacityMeta.label}: ${commonState.targetCapacity} ${capacityMeta.unit}` : `${capacityMeta.label}: -`,
+      commonState.targetCapacity
+        ? `${capacityMeta.label}: ${commonState.targetCapacity} ${capacityMeta.unit}`
+        : `${capacityMeta.label}: -`,
       `Proje Durumu: ${commonState.projectStatus}`,
+      "",
+      "Dinamik Teknik Alanlar:",
       ...dynamicFields.map((field) => {
         const value = dynamicValues[field.id];
         const suffix = field.unit && value ? ` ${field.unit}` : "";
-        return `${field.label}: ${value || "-" }${suffix}`;
+        return `${field.label}: ${value || "-"}${suffix}`;
       }),
-      `Mesaj / Teknik Açıklama: ${commonState.message || "Belirtilmedi"}`,
       "",
-      "Bu talebim için teknik değerlendirme ve dönüş rica ederim.",
+      "Mesaj / Teknik Açıklama:",
+      commonState.message || "-",
     ];
 
-    return rows.filter(Boolean).join("\n");
-  }, [capacityMeta.label, capacityMeta.unit, commonState, dynamicFields, dynamicValues, requestTargetTitle, selectedSector.title]);
+    return rows.map((row) => trText(row)).join("\n");
+  }, [
+    capacityMeta.label,
+    capacityMeta.unit,
+    commonState,
+    dynamicFields,
+    dynamicValues,
+    initialProduct,
+    initialProductSlug,
+    productLabelOverride,
+    requestTargetTitle,
+    selectedSector.title,
+  ]);
 
   function submitTo(target: "whatsapp" | "mail") {
     if (!formRef.current?.reportValidity() || !commonState.consent) return;
 
-    const subject = `${trText(requestTargetTitle)} - Teklif / Teknik Görüşme`;
+    const subject = mailSubject ?? `${trText(requestTargetTitle)} - Teklif / Teknik Görüşme`;
 
     if (target === "whatsapp") {
       window.open(createWhatsAppHref(messageBody), "_blank", "noopener,noreferrer");
@@ -465,13 +621,23 @@ export function SectorInquiryForm({
   return (
     <div className="overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-[0_24px_80px_rgba(15,23,42,0.08)]">
       <div className="border-b border-slate-200 bg-[linear-gradient(180deg,#f8fbff_0%,#ffffff_100%)] px-6 py-6 sm:px-8">
-        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-blue-700">TEKLİF VE TEKNİK GÖRÜŞME</p>
+        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-blue-700">
+          TEKLİF VE TEKNİK GÖRÜŞME
+        </p>
         <h2 className="mt-3 max-w-5xl text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">
-          {trText(requestTargetTitle)} için teklif veya teknik görüşme talep edin
+          {trText(formTitle ?? `${requestTargetTitle} için teklif veya teknik görüşme talep edin`)}
         </h2>
         <p className="mt-3 max-w-4xl text-sm leading-7 text-slate-600 sm:text-base sm:leading-8">
-          Seçtiğiniz sektör, ürün, kapasite ve kurulum ihtiyacına göre size uygun proses, makina ve tesis çözümünü birlikte netleştirelim.
+          {trText(
+            formDescription ??
+              "Seçtiğiniz sektör, ürün, kapasite ve kurulum ihtiyacına göre size uygun proses, makina ve tesis çözümünü birlikte netleştirelim.",
+          )}
         </p>
+        {formDescriptionSecondary ? (
+          <p className="mt-2 max-w-4xl text-sm leading-7 text-slate-500 sm:text-[15px] sm:leading-8">
+            {trText(formDescriptionSecondary)}
+          </p>
+        ) : null}
       </div>
 
       <form ref={formRef} className="px-6 py-6 sm:px-8 sm:py-8">
@@ -479,7 +645,9 @@ export function SectorInquiryForm({
           <section>
             <div className="mb-4 flex items-center gap-3">
               <span className="h-2 w-2 rounded-full bg-blue-600" />
-              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">İletişim Bilgileri</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">
+                İletişim Bilgileri
+              </p>
             </div>
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5">
               <label className="space-y-2">
@@ -537,7 +705,9 @@ export function SectorInquiryForm({
           <section>
             <div className="mb-4 flex items-center gap-3">
               <span className="h-2 w-2 rounded-full bg-blue-600" />
-              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">Talep ve Çözüm Kurgusu</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">
+                Talep ve Çözüm Kurgusu
+              </p>
             </div>
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5">
               <label className="space-y-2">
@@ -548,7 +718,7 @@ export function SectorInquiryForm({
                   onChange={(event) => setCommonState((current) => ({ ...current, requestType: event.target.value }))}
                   className={inputClass}
                 >
-                  {requestTypeOptions.map((option) => (
+                  {cleanRequestTypeOptions.map((option) => (
                     <option key={option}>{option}</option>
                   ))}
                 </select>
@@ -617,7 +787,7 @@ export function SectorInquiryForm({
                   onChange={(event) => setCommonState((current) => ({ ...current, projectStatus: event.target.value }))}
                   className={inputClass}
                 >
-                  {projectStatusOptions.map((option) => (
+                  {cleanProjectStatusOptions.map((option) => (
                     <option key={option}>{option}</option>
                   ))}
                 </select>
@@ -628,7 +798,9 @@ export function SectorInquiryForm({
           <section>
             <div className="mb-4 flex items-center gap-3">
               <span className="h-2 w-2 rounded-full bg-blue-600" />
-              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">Dinamik Teknik Alanlar</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">
+                Dinamik Teknik Alanlar
+              </p>
             </div>
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5">
               {dynamicFields.map((field) => (
@@ -701,12 +873,12 @@ export function SectorInquiryForm({
                 onClick={() => submitTo("whatsapp")}
                 className="inline-flex min-h-[50px] items-center justify-center rounded-full bg-green-600 px-6 text-sm font-semibold text-white transition hover:bg-green-700"
               >
-                WhatsApp'dan Gönder
+                WhatsApp&apos;dan Gönder
               </button>
               <button
                 type="button"
                 onClick={() => submitTo("mail")}
-                className="inline-flex min-h-[50px] items-center justify-center rounded-full border border-slate-300 bg-white px-6 text-sm font-semibold text-slate-900 transition hover:border-blue-200 hover:text-blue-700"
+                className="inline-flex min-h-[50px] items-center justify-center rounded-full bg-[#278DC0] px-6 text-sm font-semibold text-white transition hover:bg-[#154764]"
               >
                 Mail Gönder
               </button>

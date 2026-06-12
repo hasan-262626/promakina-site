@@ -2,6 +2,14 @@ import { Metadata } from "next";
 import { notFound, redirect } from "next/navigation";
 import { ProductDetailSystem } from "../../../components/product-detail-system";
 import { machineCategoryMap, machineCategoryPages } from "../../../components/machine-group-data";
+import { beltConveyorGallery } from "../../../lib/conveyor-gallery";
+import { getMachineAuxiliarySystems } from "../../../lib/machine-auxiliary-systems";
+import {
+  getMachinePublicCategorySlug,
+  getMachinePublicProductSlug,
+  getMachineResolvedCategorySlug,
+  getMachineResolvedProductSlug,
+} from "../../../lib/machine-route-utils";
 
 type PageProps = {
   params: Promise<{
@@ -13,40 +21,12 @@ type PageProps = {
   }>;
 };
 
-const categoryAliasMap: Record<string, string> = {
-  "tasima-sistemleri": "tasima-ekipmanlari",
-  "depolama-sistemleri": "depolama-ve-besleme-sistemleri",
-  "kiricilar-ve-parcalayicilar": "kÄ±rÄ±cÄ±lar-ve-parcalayicilar",
-};
-
-const productAliasMap: Record<string, string> = {
-  "helezon-konveyorler": "vidali-helezonlar",
-  "cekicli-kiricilar": "cekicli-kırıcılar",
-  "ceneli-kiricilar": "ceneli-kırıcılar",
-  "dik-milli-kiricilar": "dik-milli-kırıcılar",
-  "zincirli-kiricilar": "zincirli-kırıcılar",
-  "bicakli-primer-kiricilar": "bicakli-primer-kırıcılar",
-  "bicakli-sekonder-kiricilar": "bicakli-sekonder-kırıcılar",
-};
-
 function getPublicCategorySlug(slug: string) {
-  if (slug === "kÃ„Â±rÃ„Â±cÃ„Â±lar-ve-parcalayicilar") {
-    return "kiricilar-ve-parcalayicilar";
-  }
-
-  return slug;
+  return getMachinePublicCategorySlug(slug);
 }
 
 function getPublicProductSlug(slug: string) {
-  if (slug === "vidali-helezonlar") return "helezon-konveyorler";
-  if (slug === "cekicli-kÄ±rÄ±cÄ±lar") return "cekicli-kiricilar";
-  if (slug === "ceneli-kÄ±rÄ±cÄ±lar") return "ceneli-kiricilar";
-  if (slug === "dik-milli-kÄ±rÄ±cÄ±lar") return "dik-milli-kiricilar";
-  if (slug === "zincirli-kÄ±rÄ±cÄ±lar") return "zincirli-kiricilar";
-  if (slug === "bicakli-primer-kÄ±rÄ±cÄ±lar") return "bicakli-primer-kiricilar";
-  if (slug === "bicakli-sekonder-kÄ±rÄ±cÄ±lar") return "bicakli-sekonder-kiricilar";
-
-  return slug;
+  return getMachinePublicProductSlug(slug);
 }
 
 export function generateStaticParams() {
@@ -55,31 +35,17 @@ export function generateStaticParams() {
     .flatMap((category) => {
       const publicCategorySlug = getPublicCategorySlug(category.slug);
 
-      return category.products.flatMap((product) => {
-        const publicProductSlug = getPublicProductSlug(product.slug);
-        const routes = [
-          {
-            slug: publicCategorySlug,
-            product: publicProductSlug,
-          },
-        ];
-
-        if (publicCategorySlug !== category.slug || publicProductSlug !== product.slug) {
-          routes.push({
-            slug: category.slug,
-            product: product.slug,
-          });
-        }
-
-        return routes;
-      });
+      return category.products.map((product) => ({
+        slug: publicCategorySlug,
+        product: getPublicProductSlug(product.slug),
+      }));
     });
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug, product } = await params;
-  const resolvedSlug = categoryAliasMap[slug] ?? slug;
-  const resolvedProduct = productAliasMap[product] ?? product;
+  const resolvedSlug = getMachineResolvedCategorySlug(slug);
+  const resolvedProduct = getMachineResolvedProductSlug(product);
   const category = machineCategoryMap[resolvedSlug];
   const activeProduct = category?.products.find((item) => item.slug === resolvedProduct);
 
@@ -111,8 +77,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 export default async function MachineProductDetailPage({ params, searchParams }: PageProps) {
   const { slug, product } = await params;
   const resolvedSearchParams = (await searchParams) ?? {};
-  const resolvedSlug = categoryAliasMap[slug] ?? slug;
-  const resolvedProduct = productAliasMap[product] ?? product;
+  const resolvedSlug = getMachineResolvedCategorySlug(slug);
+  const resolvedProduct = getMachineResolvedProductSlug(product);
   const publicCategorySlug = getPublicCategorySlug(resolvedSlug);
   const publicProductSlug = getPublicProductSlug(resolvedProduct);
 
@@ -132,32 +98,44 @@ export default async function MachineProductDetailPage({ params, searchParams }:
     notFound();
   }
 
-  const relatedProducts = category.products
-    .filter((item) => item.slug !== activeProduct.slug)
-    .map((item) => ({
-      label: item.title,
-      href: `/makinalar-ekipman/${publicCategorySlug}/${getPublicProductSlug(item.slug)}`,
-    }));
+  const auxiliarySystems = getMachineAuxiliarySystems({
+    categorySlug: resolvedSlug,
+    productSlug: activeProduct.slug,
+    calculatorFamily: category.calculatorFamily,
+    title: activeProduct.title,
+  });
+  const sidebarItems = category.products.map((item) => ({
+    label: item.title,
+    href: `/makinalar-ekipman/${publicCategorySlug}/${getPublicProductSlug(item.slug)}`,
+  }));
+  const activeHref = `/makinalar-ekipman/${publicCategorySlug}/${publicProductSlug}`;
+  const productGallery =
+    resolvedSlug === "tasima-ekipmanlari" && activeProduct.slug === "bantli-konveyorler"
+      ? beltConveyorGallery
+      : activeProduct.gallery;
 
   return (
     <main className="min-h-screen bg-white text-slate-900">
       <ProductDetailSystem
         categoryLabel={category.title}
         categoryHref={`/makinalar-ekipman/${publicCategorySlug}`}
+        sidebarItems={sidebarItems}
+        activeSidebarHref={activeHref}
         title={activeProduct.title}
         heroDescription={activeProduct.heroDescription}
         heroImage={category.heroImage}
+        mainImage={productGallery[0]?.src ?? category.heroImage}
         overviewParagraphs={activeProduct.overviewParagraphs}
         highlightText={activeProduct.highlightText}
         specs={activeProduct.specs}
         applications={activeProduct.applications}
-        gallery={activeProduct.gallery}
+        gallery={productGallery}
         optionalEquipment={activeProduct.optionalEquipment}
         spareParts={activeProduct.spareParts}
-        relatedProducts={relatedProducts}
+        auxiliarySystems={auxiliarySystems}
         calculatorFamily={category.calculatorFamily}
         openCalculatorOnLoad={resolvedSearchParams.tab === "kapasite-hesabi"}
-        ctaTitle={activeProduct.ctaTitle ?? `${activeProduct.title} iÃ§in doÄŸru makina Ã§Ã¶zÃ¼mÃ¼nÃ¼ birlikte netleÅŸtirelim`}
+        ctaTitle={activeProduct.ctaTitle ?? `${activeProduct.title} için doğru makina çözümünü birlikte netleştirelim`}
         ctaText={activeProduct.ctaText ?? category.ctaText}
       />
     </main>

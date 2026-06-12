@@ -31,12 +31,12 @@ const commonTechnicalContents = [
 
 const machinePages: Record<string, MachinePageRecord> = {
   "helezon-konveyorler": {
-    title: "Helezon Konveyörler | Vidalı Konveyör İmalatı",
+    title: "Vidalı Helezonlar | Vidalı Konveyör İmalatı",
     description:
       "Helezon konveyör, vidalı konveyör ve paslanmaz helezon konveyör çözümleri için kapasiteye özel endüstriyel imalat sunuyoruz.",
-    canonical: "https://www.promakina.com.tr/makinalar-ekipman/tasima-ekipmanlari/helezon-konveyorler",
+    canonical: "https://www.promakina.com.tr/makinalar-ekipman/tasima-ekipmanlari/vidali-helezonlar",
     image: "/images/helezon2.jpg",
-    productName: "Helezon Konveyörler",
+    productName: "Vidalı Helezonlar",
     categoryName: "Taşıma Ekipmanları",
     introTitle: "Toz, Granül ve Kontrollü Besleme Gerektiren Hatlar İçin Vida Taşıma Çözümleri",
     introParagraphs: [
@@ -136,8 +136,8 @@ const machinePages: Record<string, MachinePageRecord> = {
       "Bu verilerle Pro Makina, helezon konveyör imalatı için daha net çap, hatve, motor ve gövde çözümü sunabilir.",
     ],
     relatedPages: [
-      { label: "Bant Konveyörler", href: "/makinalar-ekipman/tasima-ekipmanlari/bant-konveyorler" },
-      { label: "Kovalı Elevatörler", href: "/makinalar-ekipman/tasima-ekipmanlari/kovali-elevatorler" },
+      { label: "Bantlı Konveyörler", href: "/makinalar-ekipman/tasima-ekipmanlari/bantli-konveyorler" },
+      { label: "Zincirli Elevatörler", href: "/makinalar-ekipman/tasima-ekipmanlari/zincirli-elevatorler" },
       { label: "Dozaj Sistemleri", href: "/makinalar-ekipman/dozajlama-sistemleri" },
       { label: "Makinalar & Ekipman", href: "/makinalar-ekipman" },
     ],
@@ -179,12 +179,12 @@ const machinePages: Record<string, MachinePageRecord> = {
       "Helezon konveyör imalatı, vida çapı seçimi ve motor ön boyutlandırması için ürün verilerinizi paylaşın; doğru taşıma sistemini birlikte belirleyelim.",
   },
   "bant-konveyorler": {
-    title: "Bant Konveyörler | Endüstriyel Taşıma Bandı",
+    title: "Bantlı Konveyörler | Endüstriyel Taşıma Bandı",
     description:
       "Bant konveyör ve endüstriyel taşıma bandı sistemleri için kapasiteye özel bant konveyör imalatı ve saha entegrasyonu sunuyoruz.",
-    canonical: "https://www.promakina.com.tr/makinalar-ekipman/tasima-ekipmanlari/bant-konveyorler",
+    canonical: "https://www.promakina.com.tr/makinalar-ekipman/tasima-ekipmanlari/bantli-konveyorler",
     image: "/images/konveyor6.jpeg",
-    productName: "Bant Konveyörler",
+    productName: "Bantlı Konveyörler",
     categoryName: "Taşıma Ekipmanları",
     introTitle: "Uzun ve Orta Mesafeli Transferlerde Güvenilir Endüstriyel Konveyör Omurgası",
     introParagraphs: [
@@ -284,8 +284,8 @@ const machinePages: Record<string, MachinePageRecord> = {
       "Yükleme-boşaltma noktaları ve yardımcı ekipman ilişkisi de doğru boyutlandırma için paylaşılmalıdır.",
     ],
     relatedPages: [
-      { label: "Helezon Konveyörler", href: "/makinalar-ekipman/tasima-ekipmanlari/helezon-konveyorler" },
-      { label: "Kovalı Elevatörler", href: "/makinalar-ekipman/tasima-ekipmanlari/kovali-elevatorler" },
+      { label: "Vidalı Helezonlar", href: "/makinalar-ekipman/tasima-ekipmanlari/vidali-helezonlar" },
+      { label: "Zincirli Elevatörler", href: "/makinalar-ekipman/tasima-ekipmanlari/zincirli-elevatorler" },
       { label: "Makinalar & Ekipman", href: "/makinalar-ekipman" },
       { label: "Sektörler", href: "/sektorler" },
     ],
@@ -327,12 +327,12 @@ const machinePages: Record<string, MachinePageRecord> = {
       "Bant konveyör imalatı, taşıma bandı boyutlandırması ve hat entegrasyonu için ürün ve kapasite verilerinizi paylaşın; en uygun sistemi birlikte kuralım.",
   },
   "kovali-elevatorler": {
-    title: "Kovalı Elevatörler | Dikey Taşıma Sistemleri",
+    title: "Zincirli Elevatörler | Dikey Taşıma Sistemleri",
     description:
       "Kovalı elevatör ve zincirli kovalı elevatör çözümleri için dikey taşıma elevatörü imalatı ve kapasiteye özel tasarım sunuyoruz.",
-    canonical: "https://www.promakina.com.tr/makinalar-ekipman/tasima-ekipmanlari/kovali-elevatorler",
+    canonical: "https://www.promakina.com.tr/makinalar-ekipman/tasima-ekipmanlari/zincirli-elevatorler",
     image: "/images/bantlielevator.jpg",
-    productName: "Kovalı Elevatörler",
+    productName: "Zincirli Elevatörler",
     categoryName: "Taşıma Ekipmanları",
     introTitle: "Granül, Toz ve Dökme Katı Ürünler İçin Güvenli Dikey Taşıma",
     introParagraphs: [
@@ -432,8 +432,8 @@ const machinePages: Record<string, MachinePageRecord> = {
       "Giriş ve çıkış ekipmanlarının tipi de doğru boşaltma kurgusu için paylaşılmalıdır.",
     ],
     relatedPages: [
-      { label: "Helezon Konveyörler", href: "/makinalar-ekipman/tasima-ekipmanlari/helezon-konveyorler" },
-      { label: "Bant Konveyörler", href: "/makinalar-ekipman/tasima-ekipmanlari/bant-konveyorler" },
+      { label: "Vidalı Helezonlar", href: "/makinalar-ekipman/tasima-ekipmanlari/vidali-helezonlar" },
+      { label: "Bantlı Konveyörler", href: "/makinalar-ekipman/tasima-ekipmanlari/bantli-konveyorler" },
       { label: "Makinalar & Ekipman", href: "/makinalar-ekipman" },
       { label: "Programlar", href: "/programlar/elevator-kapasite-hesabi" },
     ],
@@ -580,7 +580,7 @@ const machinePages: Record<string, MachinePageRecord> = {
       "Bu verilerle rotary dryer boyutlandırması ve yardımcı proses omurgası daha net çıkarılabilir.",
     ],
     relatedPages: [
-      { label: "Bant Konveyörler", href: "/makinalar-ekipman/tasima-ekipmanlari/bant-konveyorler" },
+      { label: "Bantlı Konveyörler", href: "/makinalar-ekipman/tasima-ekipmanlari/bantli-konveyorler" },
       { label: "Jet Pulse Filtreler", href: "/makinalar-ekipman/toz-toplama-sistemleri" },
       { label: "Siklon Ayırıcılar", href: "/makinalar-ekipman/toz-toplama-sistemleri/siklon-ayiricilar" },
       { label: "Makinalar & Ekipman", href: "/makinalar-ekipman" },

@@ -2,8 +2,11 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { MachinePageHero } from "../../components/machine-page-hero";
 import { machineCategoryPages } from "../../components/machine-group-data";
 import { crusherPublicProductRecords } from "../../components/crusher-product-public-data";
+import { getMachineCalculatorHref } from "../../lib/machine-calculator-link";
+import { normalizeMachineSlug } from "../../lib/machine-route-utils";
 
 function getCrusherCategory() {
   return machineCategoryPages.find((category) => category.calculatorFamily === "crusher") ?? null;
@@ -36,7 +39,9 @@ export default function Page() {
 
   const products = crusherPublicProductRecords
     .map((record) => {
-      const product = category.products.find((item) => item.slug === record.dataSlug);
+      const product = category.products.find(
+        (item) => normalizeMachineSlug(item.slug) === normalizeMachineSlug(record.dataSlug),
+      );
 
       if (!product) {
         return null;
@@ -51,44 +56,13 @@ export default function Page() {
 
   return (
     <main className="min-h-screen bg-white text-slate-900">
-      <section className="relative overflow-hidden border-b border-slate-200 bg-gradient-to-br from-white via-sky-50 to-[#eef6fb]">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(39,141,192,0.10),transparent_32%)]" />
-        <div className="site-container relative flex min-h-[170px] items-center py-8 sm:min-h-[200px] sm:py-10 lg:min-h-[230px] lg:py-12">
-          <div className="max-w-4xl">
-            <h1 className="text-4xl font-semibold tracking-tight text-[#020617] md:text-5xl">
-              Kırıcılar ve Parçalayıcılar
-            </h1>
-            <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-              <Link
-                href="/programlar"
-                className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-[#278DC0] px-6 text-sm font-semibold text-white transition hover:bg-[#154764]"
-              >
-                Kapasite Hesabı
-              </Link>
-              <Link
-                href="/iletisim"
-                className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-[#d7e3ec] bg-white px-6 text-sm font-semibold text-[#154764] transition hover:border-[#278DC0] hover:bg-[#278DC0]/6"
-              >
-                Teklif Al
-              </Link>
-              <Link
-                href="https://wa.me/905320580104"
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-[#d7e3ec] bg-white px-6 text-sm font-semibold text-[#154764] transition hover:border-[#278DC0] hover:bg-[#278DC0]/6"
-              >
-                WhatsApp ile Görüş
-              </Link>
-              <Link
-                href="tel:+905320580104"
-                className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-[#d7e3ec] bg-white px-6 text-sm font-semibold text-[#154764] transition hover:border-[#278DC0] hover:bg-[#278DC0]/6"
-              >
-                Telefonla Ara
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      <MachinePageHero
+        title="Kırıcılar ve Parçalayıcılar"
+        calculatorHref={getMachineCalculatorHref({
+          family: "crusher",
+          title: "Kırıcılar ve Parçalayıcılar",
+        })}
+      />
 
       <section className="section-space">
         <div className="site-container">

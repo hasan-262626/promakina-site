@@ -80,7 +80,7 @@ export function getSpeedRange(params: {
       ? { min: 0.35, max: 1.05 }
       : { min: 0.7, max: 1.9 };
 
-  let min = base.min;
+  const min = base.min;
   let max = base.max;
 
   if (params.grain === "Kırılgan") max -= 0.3;

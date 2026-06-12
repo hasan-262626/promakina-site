@@ -23,6 +23,7 @@ import {
   topicalBlogCategoryMap,
   topicalBlogDynamicSlugs,
 } from "../../../lib/topical-authority-blog-data";
+import { trText } from "../../../lib/tr-text";
 
 type PageProps = {
   params: Promise<{
@@ -32,16 +33,18 @@ type PageProps = {
 
 function buildCategoryMetadata(slug: string): Metadata {
   const category = topicalBlogCategoryMap[slug];
+  const title = trText(category.title);
+  const description = trText(category.description);
 
   return {
-    title: `${category.title} | Blog Kategorisi | Pro Makina`,
-    description: category.description,
+    title: `${title} | Blog Kategorisi | Pro Makina`,
+    description,
     alternates: {
       canonical: `https://www.promakina.com.tr/kutuphane/blog/${slug}`,
     },
     openGraph: {
-      title: `${category.title} | Blog Kategorisi | Pro Makina`,
-      description: category.description,
+      title: `${title} | Blog Kategorisi | Pro Makina`,
+      description,
       url: `https://www.promakina.com.tr/kutuphane/blog/${slug}`,
       siteName: "Pro Makina",
       locale: "tr_TR",
@@ -49,8 +52,8 @@ function buildCategoryMetadata(slug: string): Metadata {
     },
     twitter: {
       card: "summary_large_image",
-      title: `${category.title} | Blog Kategorisi | Pro Makina`,
-      description: category.description,
+      title: `${title} | Blog Kategorisi | Pro Makina`,
+      description,
     },
   };
 }
@@ -100,8 +103,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     const article = topicalBlogArticleMap[slug];
 
     return buildLibraryMetadata({
-      title: article.metaTitle,
-      description: article.description,
+      title: trText(article.metaTitle),
+      description: trText(article.description),
       canonical: `https://www.promakina.com.tr/kutuphane/blog/${slug}`,
     });
   }

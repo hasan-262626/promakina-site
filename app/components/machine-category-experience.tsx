@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { getMachineAuxiliarySystems } from "../lib/machine-auxiliary-systems";
 import { ProductDetailSystem } from "./product-detail-system";
 
 type CategorySlug =
@@ -216,17 +217,11 @@ export default function MachineCategoryExperience({ slug }: { slug: CategorySlug
     [activeId, config.products],
   );
 
-  const relatedProducts = config.products
-    .filter((product) => product.id !== activeProduct.id)
-    .map((product) => ({
-      label: product.title,
-      onClick: () => {
-        setActiveId(product.id);
-        if (typeof window !== "undefined") {
-          window.scrollTo({ top: 0, behavior: "smooth" });
-        }
-      },
-    }));
+  const auxiliarySystems = getMachineAuxiliarySystems({
+    categorySlug: slug,
+    calculatorFamily,
+    title: activeProduct.title,
+  });
 
   return (
     <ProductDetailSystem
@@ -242,7 +237,7 @@ export default function MachineCategoryExperience({ slug }: { slug: CategorySlug
       gallery={config.gallery}
       optionalEquipment={activeProduct.optionalEquipment}
       spareParts={activeProduct.spareParts}
-      relatedProducts={relatedProducts}
+      auxiliarySystems={auxiliarySystems}
       calculatorFamily={calculatorFamily}
       ctaTitle={config.ctaTitle}
       ctaText={config.ctaText}

@@ -186,7 +186,7 @@ export const technicalAuthorityHubs: TechnicalAuthorityHub[] = [
       {
         title: "Vidalı Helezonlar",
         description: "Toz, granül ve kontrollü besleme gereken hatlar için özel imalat çözümler.",
-        href: "/makinalar-ekipman/tasima-ekipmanlari/helezon-konveyorler",
+        href: "/makinalar-ekipman/tasima-ekipmanlari/vidali-helezonlar",
       },
       {
         title: "Zincirli Konveyörler",
@@ -711,7 +711,7 @@ export const technicalAuthorityHubs: TechnicalAuthorityHub[] = [
       {
         title: "Vidalı Helezonlar",
         description: "Nemli organik akışların kontrollü transferi için özel helezon çözümleri.",
-        href: "/makinalar-ekipman/tasima-ekipmanlari/helezon-konveyorler",
+        href: "/makinalar-ekipman/tasima-ekipmanlari/vidali-helezonlar",
       },
       {
         title: "Trommel Elekler",

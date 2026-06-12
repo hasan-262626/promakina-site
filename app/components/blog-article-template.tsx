@@ -7,6 +7,7 @@ import { BlogArticleCta } from "./blog-article-cta";
 import { BlogTechnicalArticleBlocks } from "./blog-technical-article-blocks";
 import { SocialFollowPanel } from "./social-follow-panel";
 import type { LibraryFaqItem, LibraryServiceLink } from "../lib/library-page-data";
+import { trText } from "../lib/tr-text";
 
 type BlogArticleSection = {
   title: string;
@@ -51,15 +52,15 @@ type BlogArticleTemplateProps = {
 };
 
 const defaultSocialDescription =
-  "Proses mühendisliği, makine imalatı ve saha uygulamalarına dair içeriklerimizi LinkedIn, YouTube ve Instagram kanallarımızda da paylaşıyoruz.";
+  "Proses mühendisli�xi, makine imalatı ve saha uygulamalarına dair içeriklerimizi LinkedIn, YouTube ve Instagram kanallarımızda da payla�xıyoruz.";
 
 function normalizeTopicKey(value: string) {
   return value
     .toLocaleLowerCase("tr-TR")
     .replace(/ı/g, "i")
-    .replace(/ğ/g, "g")
+    .replace(/�x/g, "g")
     .replace(/ü/g, "u")
-    .replace(/ş/g, "s")
+    .replace(/�x/g, "s")
     .replace(/ö/g, "o")
     .replace(/ç/g, "c");
 }
@@ -99,38 +100,38 @@ function buildTopicConfig({
     actionEyebrow: "HESAPLAMA ARACI",
     actionTitle: "Kurutma Tamburu Hesabınızı Yapın",
     actionDescription:
-      "Kapasite, başlangıç nemi, hedef çıkış nemi, su uçurma yükü ve tambur yaklaşımını ön değerlendirme mantığıyla hızlıca okuyun.",
+      "Kapasite, ba�xlangıç nemi, hedef çıkı�x nemi, su uçurma yükü ve tambur yakla�xımını ön de�xerlendirme mantı�xıyla hızlıca okuyun.",
     actionFeatures: [
-      "Su uçurma yükü yaklaşımı",
+      "Su uçurma yükü yakla�xımı",
       "Tambur çap-boy ön seçimi",
-      "Hava debisi ve fan mantığı",
-      "Brülör kapasite yaklaşımı",
+      "Hava debisi ve fan mantı�xı",
+      "Brülör kapasite yakla�xımı",
     ],
     actionLink: "/programlar/kurutma-tamburu-hesabi",
     actionButtonLabel: "Hesaplama Aracını Aç",
     highlights: [
       {
         title: "Su uçurma yükü",
-        description: "Gerçek ısıl yükü ve enerji yaklaşımını belirleyen ana hesap kalemidir.",
+        description: "Gerçek ısıl yükü ve enerji yakla�xımını belirleyen ana hesap kalemidir.",
       },
       {
         title: "Tambur geometrisi",
-        description: "Çap, boy, devir ve iç kanat yapısı ürünün residence time davranışını etkiler.",
+        description: "�!ap, boy, devir ve iç kanat yapısı ürünün residence time davranı�xını etkiler.",
       },
       {
         title: "Gaz hattı",
-        description: "Fan, siklon ve filtre hattı kurutma veriminin sahadaki karşılığını belirler.",
+        description: "Fan, siklon ve filtre hattı kurutma veriminin sahadaki kar�xılı�xını belirler.",
       },
     ],
     supportLinks: [
       { label: "Kurutma Tamburu İmalatı", href: "/hizmetler/kurutma-tamburu-imalati" },
       { label: "Tambur Sistemleri", href: "/makinalar-ekipman/tambur-sistemleri" },
-      { label: "Kurutma Tamburları", href: "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburlari" },
+      { label: "Kurutma Tamburları", href: "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburu" },
       { label: "Programlar", href: "/programlar" },
     ],
-    ctaTitle: "Kurutma tamburu kapasite ve tasarım yaklaşımını birlikte netleştirelim",
+    ctaTitle: "Kurutma tamburu kapasite ve tasarım yakla�xımını birlikte netle�xtirelim",
     ctaDescription:
-      "Kapasite, nem oranı, ürün tipi, enerji tercihi ve saha koşullarınızı paylaşın; kurutma tamburu, gaz hattı ve yardımcı ekipman yapısını birlikte değerlendirelim.",
+      "Kapasite, nem oranı, ürün tipi, enerji tercihi ve saha ko�xullarınızı payla�xın; kurutma tamburu, gaz hattı ve yardımcı ekipman yapısını birlikte de�xerlendirelim.",
     primaryLabel: "Kurutma Tamburu İmalatı",
     primaryHref: "/hizmetler/kurutma-tamburu-imalati",
   };
@@ -139,79 +140,79 @@ function buildTopicConfig({
     actionEyebrow: "HESAPLAMA ARACI",
     actionTitle: "Helezon Kapasite Hesabınızı Yapın",
     actionDescription:
-      "Çap, hatve, devir, eğim, doluluk oranı ve ürün yoğunluğu bilgileriyle helezon konveyör için ön kapasite ve güç yaklaşımını görün.",
+      "�!ap, hatve, devir, e�xim, doluluk oranı ve ürün yo�xunlu�xu bilgileriyle helezon konveyör için ön kapasite ve güç yakla�xımını görün.",
     actionFeatures: [
       "Kapasite ön seçimi",
-      "Motor gücü yaklaşımı",
-      "Eğim etkisi değerlendirmesi",
-      "Ürün yoğunluğu okuması",
+      "Motor gücü yakla�xımı",
+      "E�xim etkisi de�xerlendirmesi",
+      "�Srün yo�xunlu�xu okuması",
     ],
     actionLink: "/programlar/helezon-kapasite-hesabi",
     actionButtonLabel: "Hesaplama Aracını Aç",
     highlights: [
       {
         title: "Kapasite",
-        description: "Çap, hatve ve devir kombinasyonu taşıma omurgasının çıkışını belirler.",
+        description: "�!ap, hatve ve devir kombinasyonu ta�xıma omurgasının çıkı�xını belirler.",
       },
       {
         title: "Motor gücü",
         description: "Tork, sürtünme ve servis faktörü birlikte okunmadan güvenli seçim yapılamaz.",
       },
       {
-        title: "Eğim etkisi",
-        description: "Yükselme arttıkça gerçek taşıma kapasitesi düşer ve güç ihtiyacı değişir.",
+        title: "E�xim etkisi",
+        description: "Yükselme arttıkça gerçek ta�xıma kapasitesi dü�xer ve güç ihtiyacı de�xi�xir.",
       },
     ],
     supportLinks: [
-      { label: "Helezon Konveyörler", href: "/makinalar-ekipman/tasima-ekipmanlari/helezon-konveyorler" },
-      { label: "Taşıma Ekipmanları", href: "/makinalar-ekipman/tasima-ekipmanlari" },
-      { label: "Bant Konveyörler", href: "/makinalar-ekipman/tasima-ekipmanlari/bant-konveyorler" },
+      { label: "Vidalı Helezonlar", href: "/makinalar-ekipman/tasima-ekipmanlari/vidali-helezonlar" },
+      { label: "Ta�xıma Ekipmanları", href: "/makinalar-ekipman/tasima-ekipmanlari" },
+      { label: "Bantlı Konveyörler", href: "/makinalar-ekipman/tasima-ekipmanlari/bantli-konveyorler" },
       { label: "Programlar", href: "/programlar" },
     ],
-    ctaTitle: "Helezon konveyör kapasite ve motor seçimini birlikte değerlendirelim",
+    ctaTitle: "Helezon konveyör kapasite ve motor seçimini birlikte de�xerlendirelim",
     ctaDescription:
-      "Ürün yoğunluğu, kapasite hedefi, taşıma mesafesi, eğim ve saha koşullarınızı paylaşın; doğru helezon omurgasını birlikte netleştirelim.",
-    primaryLabel: "Helezon Konveyörler",
-    primaryHref: "/makinalar-ekipman/tasima-ekipmanlari/helezon-konveyorler",
+      "�Srün yo�xunlu�xu, kapasite hedefi, ta�xıma mesafesi, e�xim ve saha ko�xullarınızı payla�xın; do�xru helezon omurgasını birlikte netle�xtirelim.",
+    primaryLabel: "Vidalı Helezonlar",
+    primaryHref: "/makinalar-ekipman/tasima-ekipmanlari/vidali-helezonlar",
   };
 
   const conveyorConfig: ArticleTopicConfig = {
     actionEyebrow: "HESAPLAMA ARACI",
-    actionTitle: "Taşıma Sistemi Ön Seçiminizi Yapın",
+    actionTitle: "Ta�xıma Sistemi �n Seçiminizi Yapın",
     actionDescription:
-      "Bant konveyör, kovalı elevatör ve genel taşıma hatları için kapasite, hız, güç ve saha akışını ön değerlendirme mantığıyla inceleyin.",
+      "Bant konveyör, kovalı elevatör ve genel ta�xıma hatları için kapasite, hız, güç ve saha akı�xını ön de�xerlendirme mantı�xıyla inceleyin.",
     actionFeatures: [
       "Kapasite planlama",
-      "Bant genişliği yaklaşımı",
+      "Bant geni�xli�xi yakla�xımı",
       "Elevatör ön seçimi",
-      "Hat akışı değerlendirmesi",
+      "Hat akı�xı de�xerlendirmesi",
     ],
     actionLink: "/programlar/konveyor-kapasite-hesabi",
     actionButtonLabel: "Hesaplama Aracını Aç",
     highlights: [
       {
-        title: "Hat akışı",
-        description: "Taşıma hattı yalnız tek ekipman değil, tüm proses ritminin omurgasıdır.",
+        title: "Hat akı�xı",
+        description: "Ta�xıma hattı yalnız tek ekipman de�xil, tüm proses ritminin omurgasıdır.",
       },
       {
         title: "Güç dengesi",
-        description: "Motor seçimi sürtünme, yük dağılımı ve çalışma süresiyle birlikte okunmalıdır.",
+        description: "Motor seçimi sürtünme, yük da�xılımı ve çalı�xma süresiyle birlikte okunmalıdır.",
       },
       {
         title: "Saha kurgusu",
-        description: "Yükleme noktaları, boşaltma mantığı ve bakım erişimi seçim kalitesini belirler.",
+        description: "Yükleme noktaları, bo�xaltma mantı�xı ve bakım eri�ximi seçim kalitesini belirler.",
       },
     ],
     supportLinks: [
-      { label: "Taşıma Ekipmanları", href: "/makinalar-ekipman/tasima-ekipmanlari" },
-      { label: "Bant Konveyörler", href: "/makinalar-ekipman/tasima-ekipmanlari/bant-konveyorler" },
-      { label: "Kovalı Elevatörler", href: "/makinalar-ekipman/tasima-ekipmanlari/kovali-elevatorler" },
+      { label: "Ta�xıma Ekipmanları", href: "/makinalar-ekipman/tasima-ekipmanlari" },
+      { label: "Bantlı Konveyörler", href: "/makinalar-ekipman/tasima-ekipmanlari/bantli-konveyorler" },
+      { label: "Zincirli Elevatörler", href: "/makinalar-ekipman/tasima-ekipmanlari/zincirli-elevatorler" },
       { label: "Programlar", href: "/programlar" },
     ],
-    ctaTitle: "Taşıma hattı kapasite ve ekipman seçimini birlikte değerlendirelim",
+    ctaTitle: "Ta�xıma hattı kapasite ve ekipman seçimini birlikte de�xerlendirelim",
     ctaDescription:
-      "Kapasite, ürün yoğunluğu, taşıma yönü, yükleme noktaları ve çalışma süresi bilgilerinizi paylaşın; doğru taşıma hattını birlikte netleştirelim.",
-    primaryLabel: "Taşıma Ekipmanları",
+      "Kapasite, ürün yo�xunlu�xu, ta�xıma yönü, yükleme noktaları ve çalı�xma süresi bilgilerinizi payla�xın; do�xru ta�xıma hattını birlikte netle�xtirelim.",
+    primaryLabel: "Ta�xıma Ekipmanları",
     primaryHref: "/makinalar-ekipman/tasima-ekipmanlari",
   };
 
@@ -219,67 +220,67 @@ function buildTopicConfig({
     actionEyebrow: "HESAPLAMA ARACI",
     actionTitle: "Elevatör Kapasite Hesabınızı Yapın",
     actionDescription:
-      "Kova hacmi, bant veya zincir hızı, ürün yoğunluğu ve dikey taşıma kapasitesini ön seçim mantığıyla değerlendirin.",
+      "Kova hacmi, bant veya zincir hızı, ürün yo�xunlu�xu ve dikey ta�xıma kapasitesini ön seçim mantı�xıyla de�xerlendirin.",
     actionFeatures: [
       "Dikey kapasite planlama",
-      "Kova hacmi yaklaşımı",
-      "Hat yüksekliği etkisi",
-      "Servis güvenliği",
+      "Kova hacmi yakla�xımı",
+      "Hat yüksekli�xi etkisi",
+      "Servis güvenli�xi",
     ],
     actionLink: "/programlar/elevator-kapasite-hesabi",
     actionButtonLabel: "Hesaplama Aracını Aç",
     highlights: [
       {
-        title: "Dikey taşıma",
-        description: "Kot farkı olan sahalarda stabil ürün transferi elevatör tasarımına bağlıdır.",
+        title: "Dikey ta�xıma",
+        description: "Kot farkı olan sahalarda stabil ürün transferi elevatör tasarımına ba�xlıdır.",
       },
       {
-        title: "Kova doluluğu",
+        title: "Kova dolulu�xu",
         description: "Kapasite ile ürün dökülmesi riski arasındaki dengeyi belirler.",
       },
       {
-        title: "Hat güvenliği",
-        description: "Şase, tahrik ve geri kaçma kontrolü uzun vadeli işletmeyi etkiler.",
+        title: "Hat güvenli�xi",
+        description: "�~ase, tahrik ve geri kaçma kontrolü uzun vadeli i�xletmeyi etkiler.",
       },
     ],
     supportLinks: [
-      { label: "Kovalı Elevatörler", href: "/makinalar-ekipman/tasima-ekipmanlari/kovali-elevatorler" },
-      { label: "Taşıma Ekipmanları", href: "/makinalar-ekipman/tasima-ekipmanlari" },
-      { label: "Bant Konveyörler", href: "/makinalar-ekipman/tasima-ekipmanlari/bant-konveyorler" },
+      { label: "Zincirli Elevatörler", href: "/makinalar-ekipman/tasima-ekipmanlari/zincirli-elevatorler" },
+      { label: "Ta�xıma Ekipmanları", href: "/makinalar-ekipman/tasima-ekipmanlari" },
+      { label: "Bantlı Konveyörler", href: "/makinalar-ekipman/tasima-ekipmanlari/bantli-konveyorler" },
       { label: "Programlar", href: "/programlar" },
     ],
-    ctaTitle: "Dikey taşıma hattınızı birlikte değerlendirelim",
+    ctaTitle: "Dikey ta�xıma hattınızı birlikte de�xerlendirelim",
     ctaDescription:
-      "Ürün yoğunluğu, kapasite, yükselme yüksekliği ve saha koşullarınızı paylaşın; doğru elevatör omurgasını birlikte netleştirelim.",
-    primaryLabel: "Kovalı Elevatörler",
-    primaryHref: "/makinalar-ekipman/tasima-ekipmanlari/kovali-elevatorler",
+      "�Srün yo�xunlu�xu, kapasite, yükselme yüksekli�xi ve saha ko�xullarınızı payla�xın; do�xru elevatör omurgasını birlikte netle�xtirelim.",
+    primaryLabel: "Zincirli Elevatörler",
+    primaryHref: "/makinalar-ekipman/tasima-ekipmanlari/zincirli-elevatorler",
   };
 
   const drumSystemsConfig: ArticleTopicConfig = {
     actionEyebrow: "HESAPLAMA ARACI",
-    actionTitle: "Tambur Sistemi Ön Değerlendirmesini Yapın",
+    actionTitle: "Tambur Sistemi �n De�xerlendirmesini Yapın",
     actionDescription:
-      "Granülasyon, soğutma, kaplama ve kompost tamburlarında kapasite, residence time ve ekipman yaklaşımını birlikte değerlendirin.",
+      "Granülasyon, so�xutma, kaplama ve kompost tamburlarında kapasite, residence time ve ekipman yakla�xımını birlikte de�xerlendirin.",
     actionFeatures: [
-      "Residence time yaklaşımı",
+      "Residence time yakla�xımı",
       "Gövde geometrisi",
-      "Ürün hareketi",
+      "�Srün hareketi",
       "Hat entegrasyonu",
     ],
     actionLink: "/programlar/kurutma-tamburu-hesabi",
     actionButtonLabel: "Hesaplama Aracını Aç",
     highlights: [
       {
-        title: "İşlem süresi",
-        description: "Tambur içindeki gerçek temas süresi proses başarısını doğrudan etkiler.",
+        title: "İ�xlem süresi",
+        description: "Tambur içindeki gerçek temas süresi proses ba�xarısını do�xrudan etkiler.",
       },
       {
-        title: "Ürün davranışı",
-        description: "Granül büyümesi, soğuma veya kaplama homojenliği ürün hareketine bağlıdır.",
+        title: "�Srün davranı�xı",
+        description: "Granül büyümesi, so�xuma veya kaplama homojenli�xi ürün hareketine ba�xlıdır.",
       },
       {
         title: "Hat uyumu",
-        description: "Besleme, çıkış ve yardımcı ekipmanlar tamburla aynı ritimde çalışmalıdır.",
+        description: "Besleme, çıkı�x ve yardımcı ekipmanlar tamburla aynı ritimde çalı�xmalıdır.",
       },
     ],
     supportLinks: [
@@ -288,20 +289,20 @@ function buildTopicConfig({
       { label: "Kompost Tamburu", href: "/makinalar-ekipman/tambur-sistemleri/kompost-tamburu" },
       { label: "Programlar", href: "/programlar" },
     ],
-    ctaTitle: "Tambur sistemi seçimini birlikte netleştirelim",
+    ctaTitle: "Tambur sistemi seçimini birlikte netle�xtirelim",
     ctaDescription:
-      "Ürün tipi, kapasite hedefi, residence time beklentisi ve saha koşullarınızı paylaşın; doğru tambur omurgasını birlikte değerlendirelim.",
+      "�Srün tipi, kapasite hedefi, residence time beklentisi ve saha ko�xullarınızı payla�xın; do�xru tambur omurgasını birlikte de�xerlendirelim.",
     primaryLabel: "Tambur Sistemleri",
     primaryHref: "/makinalar-ekipman/tambur-sistemleri",
   };
 
   const fertilizerConfig: ArticleTopicConfig = {
-    actionEyebrow: "TEKNİK ÖN DEĞERLENDİRME",
-    actionTitle: "Gübre Tesisi Ön Değerlendirmesi Yapın",
+    actionEyebrow: "TEKNİK �N DE�~ERLENDİRME",
+    actionTitle: "Gübre Tesisi �n De�xerlendirmesi Yapın",
     actionDescription:
-      "Kapasite, ürün formu, hammadde dengesi, granülasyon, kurutma ve paketleme mantığını tek çerçevede okuyarak yatırım yaklaşımınızı netleştirin.",
+      "Kapasite, ürün formu, hammadde dengesi, granülasyon, kurutma ve paketleme mantı�xını tek çerçevede okuyarak yatırım yakla�xımınızı netle�xtirin.",
     actionFeatures: [
-      "Proses akışı",
+      "Proses akı�xı",
       "Dozajlama hassasiyeti",
       "Kurutma ve paketleme",
       "Yatırım omurgası",
@@ -310,16 +311,16 @@ function buildTopicConfig({
     actionButtonLabel: "İlgili Hizmeti İncele",
     highlights: [
       {
-        title: "Proses akışı",
-        description: "Dozajlama, karıştırma, granülasyon, kurutma ve paketleme aynı ritimde çalışmalıdır.",
+        title: "Proses akı�xı",
+        description: "Dozajlama, karı�xtırma, granülasyon, kurutma ve paketleme aynı ritimde çalı�xmalıdır.",
       },
       {
-        title: "Ürün standardı",
-        description: "Granül dayanımı, nem kararlılığı ve sınıflandırma başarısı hat kalitesini belirler.",
+        title: "�Srün standardı",
+        description: "Granül dayanımı, nem kararlılı�xı ve sınıflandırma ba�xarısı hat kalitesini belirler.",
       },
       {
         title: "Ticari verim",
-        description: "Doğru tesis omurgası yalnız üretimi değil satışa uygun son ürünü de destekler.",
+        description: "Do�xru tesis omurgası yalnız üretimi de�xil satı�xa uygun son ürünü de destekler.",
       },
     ],
     supportLinks: [
@@ -330,20 +331,20 @@ function buildTopicConfig({
     ],
     ctaTitle: "Gübre tesisi yatırımınızı birlikte projelendirelim",
     ctaDescription:
-      "Ürün formu, kapasite hedefi, hammadde dengesi, kurutma ihtiyacı ve paketleme senaryonuzu paylaşın; doğru tesis omurgasını birlikte kuralım.",
+      "�Srün formu, kapasite hedefi, hammadde dengesi, kurutma ihtiyacı ve paketleme senaryonuzu payla�xın; do�xru tesis omurgasını birlikte kuralım.",
     primaryLabel: "Gübre Tesisi Kurulumu",
     primaryHref: "/hizmetler/gubre-tesisi-kurulumu",
   };
 
   const liquidConfig: ArticleTopicConfig = {
-    actionEyebrow: "TEKNİK ÖN DEĞERLENDİRME",
-    actionTitle: "Sıvı Gübre ve Proses Tankı Ön Değerlendirmesi Yapın",
+    actionEyebrow: "TEKNİK �N DE�~ERLENDİRME",
+    actionTitle: "Sıvı Gübre ve Proses Tankı �n De�xerlendirmesi Yapın",
     actionDescription:
-      "Reaktör, çözündürme tankı, filtrasyon, stoklama ve dolum yapısını ürün formülünüz ve kapasite hedefinizle birlikte değerlendirin.",
+      "Reaktör, çözündürme tankı, filtrasyon, stoklama ve dolum yapısını ürün formülünüz ve kapasite hedefinizle birlikte de�xerlendirin.",
     actionFeatures: [
       "Reaktör seçimi",
-      "Tank hacmi yaklaşımı",
-      "Filtrasyon mantığı",
+      "Tank hacmi yakla�xımı",
+      "Filtrasyon mantı�xı",
       "Dolum hattı planı",
     ],
     actionLink: "/hizmetler/sivi-gubre-uretim-tesisi",
@@ -351,38 +352,38 @@ function buildTopicConfig({
     highlights: [
       {
         title: "Reaktör kurgusu",
-        description: "Karıştırma, çözündürme ve reaksiyon süreleri ürün kalitesinin merkezindedir.",
+        description: "Karı�xtırma, çözündürme ve reaksiyon süreleri ürün kalitesinin merkezindedir.",
       },
       {
         title: "Tank altyapısı",
-        description: "Stok, tampon ve proses tanklarının doğru dizilimi hat sürekliliğini belirler.",
+        description: "Stok, tampon ve proses tanklarının do�xru dizilimi hat süreklili�xini belirler.",
       },
       {
         title: "Dolum disiplini",
-        description: "Filtrasyon ve son dolum hattı ticari ürüne geçiş kalitesini etkiler.",
+        description: "Filtrasyon ve son dolum hattı ticari ürüne geçi�x kalitesini etkiler.",
       },
     ],
     supportLinks: [
-      { label: "Sıvı Gübre Üretim Tesisi", href: "/hizmetler/sivi-gubre-uretim-tesisi" },
+      { label: "Sıvı Gübre �Sretim Tesisi", href: "/hizmetler/sivi-gubre-uretim-tesisi" },
       { label: "Reaktörler ve Tanklar", href: "/makinalar-ekipman/reaktorler-ve-tanklar" },
       { label: "Paketleme ve Dolum", href: "/makinalar-ekipman/paketleme-ve-dolum-sistemleri" },
       { label: "Kimya ve Proses", href: "/sektorler/kimya-ve-proses-endustrisi" },
     ],
-    ctaTitle: "Sıvı gübre ve proses tankı kurgusunu birlikte netleştirelim",
+    ctaTitle: "Sıvı gübre ve proses tankı kurgusunu birlikte netle�xtirelim",
     ctaDescription:
-      "Formülasyon, kapasite, hammaddeler, reaktör tipi ve dolum senaryonuzu paylaşın; doğru sıvı proses omurgasını birlikte kuralım.",
-    primaryLabel: "Sıvı Gübre Üretim Tesisi",
+      "Formülasyon, kapasite, hammaddeler, reaktör tipi ve dolum senaryonuzu payla�xın; do�xru sıvı proses omurgasını birlikte kuralım.",
+    primaryLabel: "Sıvı Gübre �Sretim Tesisi",
     primaryHref: "/hizmetler/sivi-gubre-uretim-tesisi",
   };
 
   const compostConfig: ArticleTopicConfig = {
-    actionEyebrow: "TEKNİK ÖN DEĞERLENDİRME",
-    actionTitle: "Kompost Tesisi Ön Değerlendirmesi Yapın",
+    actionEyebrow: "TEKNİK �N DE�~ERLENDİRME",
+    actionTitle: "Kompost Tesisi �n De�xerlendirmesi Yapın",
     actionDescription:
-      "Atık türü, nem yükü, olgunlaştırma süresi, eleme yaklaşımı ve son ürün standardını birlikte okuyarak kompost omurgasını değerlendirin.",
+      "Atık türü, nem yükü, olgunla�xtırma süresi, eleme yakla�xımı ve son ürün standardını birlikte okuyarak kompost omurgasını de�xerlendirin.",
     actionFeatures: [
       "Nem yönetimi",
-      "Olgunlaştırma süresi",
+      "Olgunla�xtırma süresi",
       "Eleme ve son ürün",
       "Koku kontrolü",
     ],
@@ -391,14 +392,14 @@ function buildTopicConfig({
     highlights: [
       {
         title: "Nem yönetimi",
-        description: "Kompost kalitesini belirleyen ilk başlık, karışımın doğru nem aralığında tutulmasıdır.",
+        description: "Kompost kalitesini belirleyen ilk ba�xlık, karı�xımın do�xru nem aralı�xında tutulmasıdır.",
       },
       {
-        title: "Olgunlaştırma süresi",
+        title: "Olgunla�xtırma süresi",
         description: "Yeterli residence time ve biyolojik denge olmadan ticari son ürün kararlı olmaz.",
       },
       {
-        title: "Son ürün hazırlığı",
+        title: "Son ürün hazırlı�xı",
         description: "Eleme, geri devir ve paketleme adımları yatırımın ticari çıktısını belirler.",
       },
     ],
@@ -408,61 +409,61 @@ function buildTopicConfig({
       { label: "Kompost Tamburu", href: "/makinalar-ekipman/tambur-sistemleri/kompost-tamburu" },
       { label: "Trommel Elekler", href: "/makinalar-ekipman/eleme-ve-siniflandirma-sistemleri/trommel-elekler" },
     ],
-    ctaTitle: "Kompost tesisi proses kurgusunu birlikte netleştirelim",
+    ctaTitle: "Kompost tesisi proses kurgusunu birlikte netle�xtirelim",
     ctaDescription:
-      "Atık tipi, günlük tonaj, nem seviyesi, olgunlaştırma hedefi ve saha koşullarınızı paylaşın; doğru kompost prosesini birlikte kuralım.",
+      "Atık tipi, günlük tonaj, nem seviyesi, olgunla�xtırma hedefi ve saha ko�xullarınızı payla�xın; do�xru kompost prosesini birlikte kuralım.",
     primaryLabel: "Kompost Tesisi Kurulumu",
     primaryHref: "/hizmetler/kompost-tesisi-kurulumu",
   };
 
   const sludgeConfig: ArticleTopicConfig = {
-    actionEyebrow: "TEKNİK ÖN DEĞERLENDİRME",
-    actionTitle: "Çamur Kurutma Ön Değerlendirmesi Yapın",
+    actionEyebrow: "TEKNİK �N DE�~ERLENDİRME",
+    actionTitle: "�!amur Kurutma �n De�xerlendirmesi Yapın",
     actionDescription:
-      "Besleme, susuzlaştırma destek, kurutma, koku kontrolü ve son ürün hazırlama mantığını günlük tonaj ve nem hedefiyle birlikte değerlendirin.",
+      "Besleme, susuzla�xtırma destek, kurutma, koku kontrolü ve son ürün hazırlama mantı�xını günlük tonaj ve nem hedefiyle birlikte de�xerlendirin.",
     actionFeatures: [
       "Besleme omurgası",
-      "Nem düşürme hedefi",
+      "Nem dü�xürme hedefi",
       "Koku ve toz kontrolü",
-      "Enerji yaklaşımı",
+      "Enerji yakla�xımı",
     ],
     actionLink: "/hizmetler/camur-kurutma-tesisi",
     actionButtonLabel: "İlgili Hizmeti İncele",
     highlights: [
       {
         title: "Besleme disiplini",
-        description: "Çamur kurutma hattında sürekli ve kontrollü besleme tüm kapasite hesabını etkiler.",
+        description: "�!amur kurutma hattında sürekli ve kontrollü besleme tüm kapasite hesabını etkiler.",
       },
       {
         title: "Enerji yükü",
-        description: "Yüksek başlangıç nemi nedeniyle teorik ve gerçek saha yükü birlikte okunmalıdır.",
+        description: "Yüksek ba�xlangıç nemi nedeniyle teorik ve gerçek saha yükü birlikte okunmalıdır.",
       },
       {
-        title: "Çevresel kontrol",
-        description: "Koku, toz ve baca hattı kurutma tamburundan ayrı düşünülemez.",
+        title: "�!evresel kontrol",
+        description: "Koku, toz ve baca hattı kurutma tamburundan ayrı dü�xünülemez.",
       },
     ],
     supportLinks: [
-      { label: "Çamur Kurutma Tesisi", href: "/hizmetler/camur-kurutma-tesisi" },
-      { label: "Atık Su Çamuru Çözümleri", href: "/sektorler/atik-su-camuru-ve-aritma-cozumleri" },
+      { label: "�!amur Kurutma Tesisi", href: "/hizmetler/camur-kurutma-tesisi" },
+      { label: "Atık Su �!amuru �!özümleri", href: "/sektorler/atik-su-camuru-ve-aritma-cozumleri" },
       { label: "Toz Toplama Sistemleri", href: "/makinalar-ekipman/toz-toplama-sistemleri" },
-      { label: "Kurutma Tamburları", href: "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburlari" },
+      { label: "Kurutma Tamburları", href: "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburu" },
     ],
-    ctaTitle: "Çamur kurutma hattınızı birlikte değerlendirelim",
+    ctaTitle: "�!amur kurutma hattınızı birlikte de�xerlendirelim",
     ctaDescription:
-      "Günlük tonaj, başlangıç nemi, hedef kuruluk, koku kontrol ihtiyacı ve saha koşullarınızı paylaşın; doğru çamur kurutma omurgasını birlikte netleştirelim.",
-    primaryLabel: "Çamur Kurutma Tesisi",
+      "Günlük tonaj, ba�xlangıç nemi, hedef kuruluk, koku kontrol ihtiyacı ve saha ko�xullarınızı payla�xın; do�xru çamur kurutma omurgasını birlikte netle�xtirelim.",
+    primaryLabel: "�!amur Kurutma Tesisi",
     primaryHref: "/hizmetler/camur-kurutma-tesisi",
   };
 
   const biogasConfig: ArticleTopicConfig = {
-    actionEyebrow: "TEKNİK ÖN DEĞERLENDİRME",
-    actionTitle: "Biyogaz ve Ön İşlem Kurgusunu Değerlendirin",
+    actionEyebrow: "TEKNİK �N DE�~ERLENDİRME",
+    actionTitle: "Biyogaz ve �n İ�xlem Kurgusunu De�xerlendirin",
     actionDescription:
-      "Atık kabulü, ön hazırlama, besleme ritmi, digestat yönetimi ve entegre proses yaklaşımını aynı çerçevede değerlendirin.",
+      "Atık kabulü, ön hazırlama, besleme ritmi, digestat yönetimi ve entegre proses yakla�xımını aynı çerçevede de�xerlendirin.",
     actionFeatures: [
       "Atık kabulü",
-      "Ön hazırlama hattı",
+      "�n hazırlama hattı",
       "Besleme ritmi",
       "Digestat yönetimi",
     ],
@@ -470,48 +471,48 @@ function buildTopicConfig({
     actionButtonLabel: "Sektörü İncele",
     highlights: [
       {
-        title: "Ön işlem disiplini",
-        description: "Reaktöre girecek akışın düzeni tüm biyogaz veriminin temelini oluşturur.",
+        title: "�n i�xlem disiplini",
+        description: "Reaktöre girecek akı�xın düzeni tüm biyogaz veriminin temelini olu�xturur.",
       },
       {
         title: "Besleme dengesi",
-        description: "Dalgalı akış ve yanlış boyutlandırma işletme güvenliğini zayıflatır.",
+        description: "Dalgalı akı�x ve yanlı�x boyutlandırma i�xletme güvenli�xini zayıflatır.",
       },
       {
-        title: "Yan akış yönetimi",
-        description: "Digestat, kompost ve yardımcı akışlar ana yatırım kadar önemlidir.",
+        title: "Yan akı�x yönetimi",
+        description: "Digestat, kompost ve yardımcı akı�xlar ana yatırım kadar önemlidir.",
       },
     ],
     supportLinks: [
       { label: "Enerji ve Biyogaz", href: "/sektorler/enerji-ve-biyogaz-sistemleri" },
       { label: "Kompost ve Organik Atık", href: "/sektorler/kompost-ve-organik-atik-tesisleri" },
       { label: "Kırıcılar ve Parçalayıcılar", href: "/makinalar-ekipman/kiricilar-ve-parcalayicilar" },
-      { label: "Taşıma Ekipmanları", href: "/makinalar-ekipman/tasima-ekipmanlari" },
+      { label: "Ta�xıma Ekipmanları", href: "/makinalar-ekipman/tasima-ekipmanlari" },
     ],
-    ctaTitle: "Biyogaz ön işlem ve atık yönetimi kurgusunu birlikte netleştirelim",
+    ctaTitle: "Biyogaz ön i�xlem ve atık yönetimi kurgusunu birlikte netle�xtirelim",
     ctaDescription:
-      "Atık tipi, günlük besleme, ön işlem ihtiyacı, digestat senaryosu ve saha koşullarınızı paylaşın; uygun biyogaz ön hazırlık omurgasını birlikte değerlendirelim.",
+      "Atık tipi, günlük besleme, ön i�xlem ihtiyacı, digestat senaryosu ve saha ko�xullarınızı payla�xın; uygun biyogaz ön hazırlık omurgasını birlikte de�xerlendirelim.",
     primaryLabel: "Enerji ve Biyogaz Sistemleri",
     primaryHref: "/sektorler/enerji-ve-biyogaz-sistemleri",
   };
 
   const miningConfig: ArticleTopicConfig = {
-    actionEyebrow: "TEKNİK ÖN DEĞERLENDİRME",
-    actionTitle: "Maden ve Mineral Prosesinizi Değerlendirin",
+    actionEyebrow: "TEKNİK �N DE�~ERLENDİRME",
+    actionTitle: "Maden ve Mineral Prosesinizi De�xerlendirin",
     actionDescription:
-      "Kırma, eleme, kurutma, taşıma ve toz toplama hattını ürün tipi, kapasite ve saha yerleşimiyle birlikte teknik olarak okuyun.",
+      "Kırma, eleme, kurutma, ta�xıma ve toz toplama hattını ürün tipi, kapasite ve saha yerle�ximiyle birlikte teknik olarak okuyun.",
     actionFeatures: [
       "Kırma ve eleme",
-      "Kurutma yaklaşımı",
+      "Kurutma yakla�xımı",
       "Toz kontrolü",
-      "Hat akışı planlama",
+      "Hat akı�xı planlama",
     ],
     actionLink: "/hizmetler/maden-kurutma-ve-eleme-tesisi",
     actionButtonLabel: "İlgili Hizmeti İncele",
     highlights: [
       {
-        title: "Ürün davranışı",
-        description: "Aşındırıcılık, tane boyutu ve toz yükü makine seçiminde belirleyici olur.",
+        title: "�Srün davranı�xı",
+        description: "A�xındırıcılık, tane boyutu ve toz yükü makine seçiminde belirleyici olur.",
       },
       {
         title: "Hat kombinasyonu",
@@ -519,69 +520,69 @@ function buildTopicConfig({
       },
       {
         title: "Saha verimi",
-        description: "Toz toplama ve stoklama omurgası doğru kurulmadığında nominal kapasite sahada düşer.",
+        description: "Toz toplama ve stoklama omurgası do�xru kurulmadı�xında nominal kapasite sahada dü�xer.",
       },
     ],
     supportLinks: [
       { label: "Maden Kurutma ve Eleme", href: "/hizmetler/maden-kurutma-ve-eleme-tesisi" },
-      { label: "Madencilik ve Mineral İşleme", href: "/sektorler/madencilik-ve-mineral-isleme" },
+      { label: "Madencilik ve Mineral İ�xleme", href: "/sektorler/madencilik-ve-mineral-isleme" },
       { label: "Kırıcılar ve Parçalayıcılar", href: "/makinalar-ekipman/kiricilar-ve-parcalayicilar" },
       { label: "Eleme ve Sınıflandırma", href: "/makinalar-ekipman/eleme-ve-siniflandirma-sistemleri" },
     ],
-    ctaTitle: "Maden ve mineral işleme hattınızı birlikte değerlendirelim",
+    ctaTitle: "Maden ve mineral i�xleme hattınızı birlikte de�xerlendirelim",
     ctaDescription:
-      "Ürün tipi, tane boyutu, kapasite hedefi, nem yükü ve saha koşullarınızı paylaşın; doğru maden proses omurgasını birlikte netleştirelim.",
+      "�Srün tipi, tane boyutu, kapasite hedefi, nem yükü ve saha ko�xullarınızı payla�xın; do�xru maden proses omurgasını birlikte netle�xtirelim.",
     primaryLabel: "Maden Kurutma ve Eleme Tesisi",
     primaryHref: "/hizmetler/maden-kurutma-ve-eleme-tesisi",
   };
 
   const processConfig: ArticleTopicConfig = {
-    actionEyebrow: "TEKNİK ÖN DEĞERLENDİRME",
-    actionTitle: "Reaktör ve Proses Ekipmanı Kurgusunu Değerlendirin",
+    actionEyebrow: "TEKNİK �N DE�~ERLENDİRME",
+    actionTitle: "Reaktör ve Proses Ekipmanı Kurgusunu De�xerlendirin",
     actionDescription:
-      "Karıştırma, çözündürme, reaksiyon, stoklama ve kontrollü dozajlama ihtiyaçlarını proses güvenliğiyle birlikte okuyun.",
+      "Karı�xtırma, çözündürme, reaksiyon, stoklama ve kontrollü dozajlama ihtiyaçlarını proses güvenli�xiyle birlikte okuyun.",
     actionFeatures: [
       "Reaktör seçimi",
-      "Tank yerleşimi",
+      "Tank yerle�ximi",
       "Dozajlama disiplini",
-      "Hat güvenliği",
+      "Hat güvenli�xi",
     ],
     actionLink: "/makinalar-ekipman/reaktorler-ve-tanklar",
     actionButtonLabel: "Makinaları İncele",
     highlights: [
       {
         title: "Reaktör hacmi",
-        description: "Süre, karıştırma tipi ve ürün davranışı doğru hacim seçiminin temelidir.",
+        description: "Süre, karı�xtırma tipi ve ürün davranı�xı do�xru hacim seçiminin temelidir.",
       },
       {
         title: "Tank altyapısı",
-        description: "Stok ve tampon hacimlerin doğru kurgulanması üretim sürekliliği sağlar.",
+        description: "Stok ve tampon hacimlerin do�xru kurgulanması üretim süreklili�xi sa�xlar.",
       },
       {
         title: "Dozaj ve güvenlik",
-        description: "Kimyasal veya sıvı proseslerde hat bağlantıları ve kontrol mantığı kritik rol oynar.",
+        description: "Kimyasal veya sıvı proseslerde hat ba�xlantıları ve kontrol mantı�xı kritik rol oynar.",
       },
     ],
     supportLinks: [
       { label: "Reaktörler ve Tanklar", href: "/makinalar-ekipman/reaktorler-ve-tanklar" },
       { label: "Kimya ve Proses", href: "/sektorler/kimya-ve-proses-endustrisi" },
-      { label: "Sıvı Gübre Üretim Tesisi", href: "/hizmetler/sivi-gubre-uretim-tesisi" },
+      { label: "Sıvı Gübre �Sretim Tesisi", href: "/hizmetler/sivi-gubre-uretim-tesisi" },
       { label: "Programlar", href: "/programlar" },
     ],
-    ctaTitle: "Reaktör ve tank sistemi yaklaşımını birlikte netleştirelim",
+    ctaTitle: "Reaktör ve tank sistemi yakla�xımını birlikte netle�xtirelim",
     ctaDescription:
-      "Kapasite, ürün formülü, reaksiyon süresi, stok ihtiyacı ve saha koşullarınızı paylaşın; proses ekipman omurgasını birlikte değerlendirelim.",
+      "Kapasite, ürün formülü, reaksiyon süresi, stok ihtiyacı ve saha ko�xullarınızı payla�xın; proses ekipman omurgasını birlikte de�xerlendirelim.",
     primaryLabel: "Reaktörler ve Tanklar",
     primaryHref: "/makinalar-ekipman/reaktorler-ve-tanklar",
   };
 
   const dustConfig: ArticleTopicConfig = {
-    actionEyebrow: "TEKNİK ÖN DEĞERLENDİRME",
-    actionTitle: "Toz Toplama Hattınızı Değerlendirin",
+    actionEyebrow: "TEKNİK �N DE�~ERLENDİRME",
+    actionTitle: "Toz Toplama Hattınızı De�xerlendirin",
     actionDescription:
-      "Siklon, jet pulse filtre, fan, kanal kaybı ve emisyon yaklaşımını proses debisi ve ürün toz yüküyle birlikte inceleyin.",
+      "Siklon, jet pulse filtre, fan, kanal kaybı ve emisyon yakla�xımını proses debisi ve ürün toz yüküyle birlikte inceleyin.",
     actionFeatures: [
-      "Debi yaklaşımı",
+      "Debi yakla�xımı",
       "Siklon ve filtre",
       "Fan basıncı",
       "Emisyon kontrolü",
@@ -591,26 +592,26 @@ function buildTopicConfig({
     highlights: [
       {
         title: "Debi dengesi",
-        description: "Yetersiz veya aşırı hava debisi hem ürün kaybı hem enerji maliyeti doğurabilir.",
+        description: "Yetersiz veya a�xırı hava debisi hem ürün kaybı hem enerji maliyeti do�xurabilir.",
       },
       {
         title: "Filtreleme omurgası",
-        description: "Siklon ve jet pulse filtre birlikte ele alınmadığında saha performansı zayıflar.",
+        description: "Siklon ve jet pulse filtre birlikte ele alınmadı�xında saha performansı zayıflar.",
       },
       {
         title: "Negatif basınç",
-        description: "Kontrollü çekiş, güvenli işletme ve temiz saha için belirleyici olur.",
+        description: "Kontrollü çeki�x, güvenli i�xletme ve temiz saha için belirleyici olur.",
       },
     ],
     supportLinks: [
       { label: "Toz Toplama Sistemleri", href: "/makinalar-ekipman/toz-toplama-sistemleri" },
-      { label: "Kurutma Tamburları", href: "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburlari" },
+      { label: "Kurutma Tamburları", href: "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburu" },
       { label: "Eleme ve Sınıflandırma", href: "/makinalar-ekipman/eleme-ve-siniflandirma-sistemleri" },
       { label: "Makinalar & Ekipman", href: "/makinalar-ekipman" },
     ],
-    ctaTitle: "Toz toplama ve filtre hattını birlikte değerlendirelim",
+    ctaTitle: "Toz toplama ve filtre hattını birlikte de�xerlendirelim",
     ctaDescription:
-      "Debi, ürün tipi, emisyon hedefi, saha yerleşimi ve bakım beklentilerinizi paylaşın; doğru toz toplama omurgasını birlikte netleştirelim.",
+      "Debi, ürün tipi, emisyon hedefi, saha yerle�ximi ve bakım beklentilerinizi payla�xın; do�xru toz toplama omurgasını birlikte netle�xtirelim.",
     primaryLabel: "Toz Toplama Sistemleri",
     primaryHref: "/makinalar-ekipman/toz-toplama-sistemleri",
   };
@@ -749,7 +750,7 @@ export function BlogArticleTemplate({
       "@type": "PostalAddress",
       streetAddress: "75. Yıl Mah. Teksan Sanayi Sitesi Kilis Sokak D6 Blok No:2E",
       addressLocality: "Odunpazarı",
-      addressRegion: "Eskişehir",
+      addressRegion: "Eski�xehir",
       postalCode: "26250",
       addressCountry: "TR",
     },
@@ -868,16 +869,16 @@ export function BlogArticleTemplate({
           <div className="mx-auto max-w-5xl">
             <div className="max-w-4xl">
               <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[#278DC0]">
-                {categoryLabel}
+                {trText(categoryLabel)}
               </p>
               <h1 className="mt-3 text-4xl font-semibold tracking-tight text-slate-950 md:text-5xl">
-                {title}
+                {trText(title)}
               </h1>
               <p className="mt-5 text-base leading-8 text-slate-600 sm:text-lg">
-                {heroDescription}
+                {trText(heroDescription)}
               </p>
               <p className="mt-4 text-base leading-8 text-slate-600 sm:text-lg">
-                {description}
+                {trText(description)}
               </p>
               {ctaVariant === "sector-guide" ? (
                 <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
@@ -905,7 +906,7 @@ export function BlogArticleTemplate({
                       href={link.href}
                       className="inline-flex rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-[#278DC0] hover:bg-white hover:text-[#278DC0]"
                     >
-                      {link.label}
+                      {trText(link.label)}
                     </Link>
                   ))}
                 </div>
@@ -921,8 +922,8 @@ export function BlogArticleTemplate({
                     key={item.title}
                     className="rounded-[24px] border border-slate-200 bg-slate-50 p-5 shadow-sm"
                   >
-                    <h2 className="text-lg font-semibold text-slate-950">{item.title}</h2>
-                    <p className="mt-2 text-sm leading-7 text-slate-600">{item.description}</p>
+                    <h2 className="text-lg font-semibold text-slate-950">{trText(item.title)}</h2>
+                    <p className="mt-2 text-sm leading-7 text-slate-600">{trText(item.description)}</p>
                   </div>
                 ))}
               </section>
@@ -934,14 +935,14 @@ export function BlogArticleTemplate({
                     className="rounded-[30px] border border-slate-200 bg-white p-6 shadow-sm md:p-8"
                   >
                     <h2 className="text-2xl font-semibold tracking-tight text-slate-950 md:text-3xl">
-                      {section.title}
+                      {trText(section.title)}
                     </h2>
                     <div className="mt-6 space-y-6">
                       {section.blocks.map((block, index) => (
                         <div key={`${section.title}-${index}`}>
                           {block.heading ? (
                             <h3 className="text-lg font-semibold text-slate-950 sm:text-xl">
-                              {block.heading}
+                              {trText(block.heading)}
                             </h3>
                           ) : null}
                           <div className="mt-3 space-y-5 text-sm leading-8 text-slate-700 sm:text-base">
@@ -977,9 +978,9 @@ export function BlogArticleTemplate({
                           Soru {index + 1}
                         </p>
                         <h3 className="mt-2 text-lg font-semibold text-slate-950">
-                          {faq.question}
+                          {trText(faq.question)}
                         </h3>
-                        <p className="mt-3 text-sm leading-7 text-slate-600">{faq.answer}</p>
+                        <p className="mt-3 text-sm leading-7 text-slate-600">{trText(faq.answer)}</p>
                       </div>
                     ))}
                   </div>
@@ -996,13 +997,13 @@ export function BlogArticleTemplate({
                     className="mt-6 block rounded-[24px] border border-slate-200 bg-slate-50 p-5 shadow-sm transition hover:-translate-y-1 hover:border-[#278DC0]/16 hover:bg-white hover:shadow-[0_18px_45px_rgba(15,23,42,0.08)]"
                   >
                     <span className="text-lg font-semibold text-slate-950">
-                      {nextContent.title}
+                      {trText(nextContent.title)}
                     </span>
                     <span className="mt-3 block text-sm leading-7 text-slate-600">
-                      {nextContent.description}
+                      {trText(nextContent.description)}
                     </span>
                     <span className="mt-4 inline-flex text-sm font-semibold text-[#278DC0]">
-                      İçeriği İncele
+                      İçeri�xi İncele
                     </span>
                   </Link>
                 </section>
@@ -1012,11 +1013,11 @@ export function BlogArticleTemplate({
                 <div className="max-w-3xl">
                   <h2 className="text-3xl font-semibold tracking-tight text-white md:text-4xl">
                     {ctaVariant === "sector-guide"
-                      ? "Projeniz için makine ve ekipman seçimini birlikte değerlendirelim."
-                      : topicConfig.ctaTitle}
+                      ? "Projeniz için makine ve ekipman seçimini birlikte de�xerlendirelim."
+                      : trText(topicConfig.ctaTitle)}
                   </h2>
                   <p className="mt-4 text-base leading-8 text-white/90 sm:text-lg">
-                    {ctaDescription}
+                    {trText(ctaDescription)}
                   </p>
                 </div>
                 {ctaVariant === "sector-guide" ? (
@@ -1042,7 +1043,7 @@ export function BlogArticleTemplate({
                       href="/iletisim"
                       className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-white px-6 text-sm font-semibold text-[#154764] transition hover:bg-slate-100"
                     >
-                      Teknik Görüşme Talep Et
+                      Teknik Görü�xme Talep Et
                     </Link>
                     <Link
                       href={siteContact.whatsappHref}
@@ -1050,7 +1051,7 @@ export function BlogArticleTemplate({
                       rel="noreferrer"
                       className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/25 px-6 text-sm font-semibold text-white transition hover:bg-white/10"
                     >
-                      WhatsApp ile Görüş
+                      WhatsApp ile Görü�x
                     </Link>
                     <Link
                       href={topicConfig.primaryHref}
@@ -1079,3 +1080,4 @@ export function BlogArticleTemplate({
     </main>
   );
 }
+

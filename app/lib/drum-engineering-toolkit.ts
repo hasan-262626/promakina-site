@@ -750,7 +750,7 @@ function getRecommendedRpmRange(drumType: DrumType, criticalRpm: number, form: D
   };
 
   const [minRatio, maxRatio] = rangeMap[drumType];
-  let min = criticalRpm * minRatio;
+  const min = criticalRpm * minRatio;
   let max = criticalRpm * maxRatio;
 
   if (drumType === "kaplama" && form.productFragility === "evet") {

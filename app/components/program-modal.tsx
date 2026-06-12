@@ -60,6 +60,7 @@ export function ProgramModal({ slug, onClose, initialValues }: ProgramModalProps
   }, [onClose]);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setValues({ ...(config?.initialValues ?? {}), ...(initialValues ?? {}) });
     setCustomerValues({});
     setCustomerErrors({});
@@ -329,4 +330,3 @@ export function ProgramModal({ slug, onClose, initialValues }: ProgramModalProps
     </div>
   );
 }
-

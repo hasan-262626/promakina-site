@@ -1,13 +1,9 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import {
-  getFertilizerRelatedLinks,
-  getFertilizerSubsolutionConfig,
-} from "../../../components/fertilizer-subsolution-config";
-import { FertilizerSubsolutionTemplate } from "../../../components/fertilizer-subsolution-template";
-import { getSectorSubsolutionConfig } from "../../../components/sector-subsolution-config";
-import { SectorSubsolutionTemplate } from "../../../components/sector-subsolution-template";
+import { getSectorDetailConfig } from "../../../components/sector-detail-config";
+import { SectorDetailTemplate } from "../../../components/sector-detail-template";
 import { getSectorCardBySlug, sectorCards } from "../../../components/sector-subsectors-data";
+import { trText } from "../../../lib/tr-text";
 
 type PageProps = {
   params: Promise<{
@@ -34,10 +30,14 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     return {};
   }
 
-  const title = `${current.title} | ${sector.title} | Pro Makina`;
-  const description =
+  const config = getSectorDetailConfig(sector, current);
+  const sectorTitle = trText(sector.title);
+  const heroTitle = trText(config.heroTitle);
+  const title = `${heroTitle} | ${sectorTitle} | Pro Makina`;
+  const description = trText(
     current.description ||
-    `${sector.title} içinde ${current.title.toLowerCase()} için proses, ekipman ve mühendislik çözümleri.`;
+      `${sectorTitle} içinde ${heroTitle.toLocaleLowerCase("tr-TR")} için proses, ekipman ve mühendislik çözümleri.`,
+  );
   const canonical = `https://www.promakina.com.tr/sektorler/${slug}/${subsector}`;
 
   return {
@@ -66,33 +66,14 @@ export default async function SectorSubsectorPage({ params }: PageProps) {
     notFound();
   }
 
-  if (slug === "gubre-ve-granulasyon-tesisleri") {
-    const fertilizerConfig = getFertilizerSubsolutionConfig(subsector);
+  const config = getSectorDetailConfig(sector, current);
 
-    if (fertilizerConfig) {
-      return (
-        <FertilizerSubsolutionTemplate
-          sector={sector}
-          current={current}
-          relatedLinks={getFertilizerRelatedLinks(subsector)}
-          config={fertilizerConfig}
-        />
-      );
-    }
-  }
-
-  const sectorConfig = getSectorSubsolutionConfig(sector, current);
-
-  if (sectorConfig) {
-    return (
-      <SectorSubsolutionTemplate
-        sector={sector}
-        current={current}
-        relatedLinks={sector.subLinks}
-        config={sectorConfig}
-      />
-    );
-  }
-
-  notFound();
+  return (
+    <SectorDetailTemplate
+      sector={sector}
+      current={current}
+      relatedLinks={sector.subLinks}
+      config={config}
+    />
+  );
 }

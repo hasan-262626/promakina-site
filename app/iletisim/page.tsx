@@ -1,77 +1,190 @@
-﻿import type { Metadata } from "next";
-import Link from "next/link";
+import type { Metadata } from "next";
+import Image from "next/image";
 import { ContactForm } from "@/components/contact-form";
-import { Hero } from "../components/Hero";
-import { siteContact } from "../lib/site-contact";
+import { siteContact, siteSocialSameAs } from "../lib/site-contact";
 
-export const metadata: Metadata = {
-  title: "İletişim | Pro Makina Process Engineering",
-  description:
-    "Pro Makina iletişim bilgileri. Gübre tesisi, kompost tesisi, kurutma tamburu, konveyör, maden ve proses ekipmanları için teknik teklif alın.",
-  alternates: {
-    canonical: "https://www.promakina.com.tr/iletisim",
-  },
-  openGraph: {
-    title: "İletişim | Pro Makina Process Engineering",
-    description:
-      "Pro Makina iletişim bilgileri. Gübre tesisi, kompost tesisi, kurutma tamburu, konveyör, maden ve proses ekipmanları için teknik teklif alın.",
-    url: "https://www.promakina.com.tr/iletisim",
-  },
+const canonical = "https://www.promakina.com.tr/iletisim";
+const pageTitle = "İletişim | Pro Makina";
+const pageDescription =
+  "Pro Makina ile iletişime geçin. Makine imalatı, proses tasarımı, tesis kurulumu, modernizasyon, bakım servis ve teknik destek talepleriniz için doğrudan iletişim kurun.";
+
+type TeamMember = {
+  name: string;
+  role: string;
+  phoneDisplay: string;
+  phoneHref: string;
+  whatsappHref: string;
 };
 
 const googleDirectionsHref = "https://share.google/vTWI0v98yqL1eu3dA";
+const addressLine =
+  "75. Yıl Mahallesi, Teksan Sanayi Sitesi, Kilis Sokak D6 Blok No: 2E, Odunpazarı / Eskişehir, 26250";
 
-const contacts = [
+const teamMembers: TeamMember[] = [
   {
-    role: "Makine Mühendisi - Satış Temsilcisi",
     name: "Hüseyin Bey",
-    phone: "+90 532 058 01 04",
-    phoneHref: "tel:+905320580104",
-    whatsappHref: "https://wa.me/905320580104",
+    role: "Makine Mühendisi - Satış Temsilcisi",
+    phoneDisplay: siteContact.phoneDisplay,
+    phoneHref: siteContact.phoneHref,
+    whatsappHref: siteContact.whatsappHref,
   },
   {
-    role: "Türkiye Bölge Müdürü",
     name: "Serkan Bey",
-    phone: "+90 532 252 57 13",
+    role: "Türkiye Bölge Müdürü",
+    phoneDisplay: "+90 532 252 57 13",
     phoneHref: "tel:+905322525713",
     whatsappHref: "https://wa.me/905322525713",
   },
   {
-    role: "Fabrika ve İmalat Müdürü",
     name: "Akif Bey",
-    phone: "+90 533 569 31 43",
+    role: "Fabrika ve İmalat Müdürü",
+    phoneDisplay: "+90 533 569 31 43",
     phoneHref: "tel:+905335693143",
     whatsappHref: "https://wa.me/905335693143",
   },
-] as const;
+];
 
-const quickDetails = [
+const socialCards = [
   {
-    label: "Telefon",
-    value: siteContact.phoneDisplay,
-    href: siteContact.phoneHref,
+    title: "LinkedIn",
+    description:
+      "Teknik içerikler, proses mühendisliği bakışları ve kurumsal proje paylaşımları.",
+    href: "https://www.linkedin.com/in/promakinaengineering/",
   },
   {
-    label: "E-posta",
-    value: siteContact.email,
-    href: siteContact.emailHref,
+    title: "YouTube",
+    description:
+      "Proses videoları, makine çalışma senaryoları ve saha uygulama anlatımları.",
+    href: "https://www.youtube.com/@ProMakinaProcessEngineering",
   },
   {
-    label: "Web",
-    value: "https://www.promakina.com.tr",
-    href: "https://www.promakina.com.tr",
+    title: "Instagram",
+    description: "Proje görselleri, üretim detayları ve tesis uygulama kareleri.",
+    href: "https://www.instagram.com/promakinaengineering/",
   },
-  {
-    label: "WhatsApp",
-    value: siteContact.whatsappHref,
-    href: siteContact.whatsappHref,
+];
+
+export const metadata: Metadata = {
+  title: {
+    absolute: pageTitle,
   },
-  {
-    label: "Adres",
-    value:
-      "75. Yıl Mahallesi, Teksan Sanayi Sitesi, Kilis Sokak D6 Blok No: 2E, Odunpazarı / Eskişehir, 26250",
+  description: pageDescription,
+  keywords: [
+    "Pro Makina iletişim",
+    "makine imalatı iletişim",
+    "teknik teklif",
+    "proses tasarımı",
+    "tesis kurulumu",
+    "bakım servis",
+    "Eskişehir makine imalatı",
+  ],
+  alternates: {
+    canonical,
   },
-] as const;
+  openGraph: {
+    title: pageTitle,
+    description: pageDescription,
+    url: canonical,
+    siteName: "Pro Makina Process Engineering",
+    locale: "tr_TR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: pageTitle,
+    description: pageDescription,
+  },
+};
+
+function JsonLd({ data }: { data: Record<string, unknown> }) {
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+    />
+  );
+}
+
+function SectionHeading({
+  title,
+  description,
+}: {
+  title: string;
+  description?: string;
+}) {
+  return (
+    <div className="max-w-3xl">
+      <h2 className="text-3xl font-semibold tracking-tight text-[#154764] md:text-4xl">
+        {title}
+      </h2>
+      {description ? (
+        <p className="mt-4 text-sm leading-8 text-slate-600 sm:text-base">{description}</p>
+      ) : null}
+    </div>
+  );
+}
+
+function TeamMemberCard({ member }: { member: TeamMember }) {
+  return (
+    <article className="rounded-[28px] border border-[#d9e6ee] bg-white p-6 shadow-sm">
+      <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[#278DC0]">
+        {member.role}
+      </p>
+      <h3 className="mt-3 text-2xl font-semibold tracking-tight text-slate-950">
+        {member.name}
+      </h3>
+      <div className="mt-5 text-sm font-medium text-slate-600">
+        <span className="font-semibold text-slate-900">Telefon:</span> {member.phoneDisplay}
+      </div>
+
+      <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+        <a
+          href={member.phoneHref}
+          className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-slate-200 bg-white px-5 text-sm font-semibold text-[#154764] transition hover:border-[#278DC0] hover:bg-[#278DC0]/5"
+        >
+          Telefonla Ara
+        </a>
+        <a
+          href={member.whatsappHref}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-[#278DC0] px-5 text-sm font-semibold text-white transition hover:bg-[#154764]"
+        >
+          WhatsApp ile Yaz
+        </a>
+      </div>
+    </article>
+  );
+}
+
+function SocialCard({
+  title,
+  description,
+  href,
+}: {
+  title: string;
+  description: string;
+  href: string;
+}) {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group rounded-[28px] border border-[#d9e6ee] bg-white p-6 shadow-sm transition duration-200 hover:-translate-y-0.5 hover:border-[#278DC0]/40 hover:shadow-[0_18px_45px_rgba(15,23,42,0.08)]"
+    >
+      <div className="flex items-start justify-between gap-4">
+        <h3 className="text-xl font-semibold tracking-tight text-slate-950 transition group-hover:text-[#154764]">
+          {title}
+        </h3>
+        <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[#d9e6ee] text-[#278DC0] transition group-hover:border-[#278DC0]/40 group-hover:text-[#154764]">
+          &rarr;
+        </span>
+      </div>
+      <p className="mt-4 text-sm leading-7 text-slate-600">{description}</p>
+    </a>
+  );
+}
 
 export default function ContactPage() {
   const breadcrumbSchema = {
@@ -88,7 +201,7 @@ export default function ContactPage() {
         "@type": "ListItem",
         position: 2,
         name: "İletişim",
-        item: "https://www.promakina.com.tr/iletisim",
+        item: canonical,
       },
     ],
   };
@@ -96,295 +209,167 @@ export default function ContactPage() {
   const contactPageSchema = {
     "@context": "https://schema.org",
     "@type": "ContactPage",
-    name: "İletişim | Pro Makina Process Engineering",
-    url: "https://www.promakina.com.tr/iletisim",
-    description:
-      "Gübre tesisi, kompost tesisi, kurutma tamburu, konveyör, maden ve proses ekipmanları için teknik teklif ve iletişim sayfası.",
+    name: "İletişim",
+    description: pageDescription,
+    url: canonical,
   };
 
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "Pro Makina Process Engineering",
+    name: "Pro Makina",
     url: "https://www.promakina.com.tr",
-    telephone: "+905320580104",
     email: "info@promakina.com.tr",
-    sameAs: [
-      "https://www.linkedin.com/in/promakinaengineering/",
-      "https://www.youtube.com/@ProMakinaProcessEngineering",
-      "https://www.instagram.com/promakinaengineering/",
-    ],
-  };
-
-  const localBusinessSchema = {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    name: "Pro Makina Process Engineering",
-    url: "https://www.promakina.com.tr",
-    telephone: "+905320580104",
-    email: "info@promakina.com.tr",
-    sameAs: [
-      "https://www.linkedin.com/in/promakinaengineering/",
-      "https://www.youtube.com/@ProMakinaProcessEngineering",
-      "https://www.instagram.com/promakinaengineering/",
-    ],
-    address: {
-      "@type": "PostalAddress",
-      streetAddress:
-        "75. Yıl Mahallesi, Teksan Sanayi Sitesi, Kilis Sokak D6 Blok No: 2E",
-      addressLocality: "Odunpazarı",
-      addressRegion: "Eskişehir",
-      postalCode: "26250",
-      addressCountry: "TR",
+    telephone: "+90 532 058 01 04",
+    areaServed: "Türkiye ve yurtdışı endüstriyel tesis projeleri",
+    contactPoint: {
+      "@type": "ContactPoint",
+      contactType: "technical sales",
+      telephone: "+90 532 058 01 04",
+      email: "info@promakina.com.tr",
+      availableLanguage: "Turkish",
     },
+    sameAs: siteSocialSameAs,
   };
 
   return (
     <main className="min-h-screen overflow-x-hidden bg-white text-slate-900">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(contactPageSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
-      />
+      <JsonLd data={breadcrumbSchema} />
+      <JsonLd data={contactPageSchema} />
+      <JsonLd data={organizationSchema} />
 
-      <Hero
-        title="İletişim"
-        image="/images/fabrika1.jpg"
-      >
-        <a
-          href="/iletisim"
-          className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-[#278DC0] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#154764]"
-        >
-          Teklif Al
-        </a>
-        <a
-          href={siteContact.whatsappHref}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/60 bg-white/12 px-5 py-3 text-sm font-semibold text-white transition hover:border-white hover:bg-white/18"
-        >
-          WhatsApp ile Görüş
-        </a>
-        <a
-          href={siteContact.phoneHref}
-          className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/60 bg-white/12 px-5 py-3 text-sm font-semibold text-white transition hover:border-white hover:bg-white/18"
-        >
-          Telefonla Ara
-        </a>
-      </Hero>
-
-      <section className="section-space">
-        <div className="site-container">
-          <div className="max-w-4xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#278DC0]">
-              Ä°LETÄ°ÅžÄ°M KÄ°ÅžÄ°LERÄ°
-            </p>
-            <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950 md:text-4xl">
-              DoÄŸrudan ilgili ekibimizle gÃ¶rÃ¼ÅŸÃ¼n
-            </h2>
-            <p className="mt-4 text-sm leading-8 text-slate-600 sm:text-base">
-              Proje, teklif, saha gÃ¶rÃ¼ÅŸmesi ve teknik deÄŸerlendirme talepleriniz iÃ§in
-              ilgili ekibimizle doÄŸrudan iletiÅŸime geÃ§ebilirsiniz.
-            </p>
-          </div>
-
-          <div className="mt-8 grid gap-6 lg:grid-cols-3">
-            {contacts.map((person) => (
-              <article
-                key={person.phone}
-                className="rounded-[32px] border border-slate-200 bg-white p-6 shadow-[0_18px_50px_rgba(15,23,42,0.05)] sm:p-7"
-              >
-                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#278DC0]">
-                  {person.role}
-                </p>
-                <h3 className="mt-3 text-2xl font-semibold text-slate-950">{person.name}</h3>
+      <section className="border-b border-slate-200 bg-gradient-to-br from-white via-sky-50 to-[#eef6fb]">
+        <div className="site-container py-10 sm:py-12 lg:py-16">
+          <div className="grid items-center gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12">
+            <div className="max-w-3xl">
+              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#278DC0]">
+                Teknik Görüşme ve Proje İletişimi
+              </p>
+              <h1 className="mt-4 text-4xl font-semibold leading-[1.05] tracking-tight text-[#020617] md:text-5xl lg:text-6xl">
+                İletişim
+              </h1>
+              <p className="mt-6 max-w-2xl text-sm leading-8 text-slate-600 sm:text-base">
+                Makine imalatı, proses tasarımı, tesis kurulumu, modernizasyon ve
+                teknik destek talepleriniz için Pro Makina ekibiyle doğrudan iletişime
+                geçebilirsiniz.
+              </p>
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
                 <a
-                  href={person.phoneHref}
-                  className="mt-4 block text-lg font-semibold text-slate-900 transition hover:text-[#278DC0]"
+                  href={siteContact.whatsappHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex min-h-[48px] items-center justify-center rounded-full bg-[#278DC0] px-6 text-sm font-semibold text-white transition hover:bg-[#154764]"
                 >
-                  {person.phone}
+                  WhatsApp ile İletişime Geç
                 </a>
-                <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-                  <a
-                    href={person.phoneHref}
-                    className="inline-flex min-h-[48px] items-center justify-center rounded-full border border-slate-200 px-5 text-sm font-semibold text-slate-900 transition hover:border-[#278DC0] hover:text-[#278DC0]"
-                  >
-                    Telefonla Ara
-                  </a>
-                  <a
-                    href={person.whatsappHref}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex min-h-[48px] items-center justify-center rounded-full bg-green-600 px-5 text-sm font-semibold text-white transition hover:bg-green-500"
-                  >
-                    WhatsApp ile Yaz
-                  </a>
-                </div>
-              </article>
+                <a
+                  href="#profesyonel-iletisim-formu"
+                  className="inline-flex min-h-[48px] items-center justify-center rounded-full border border-[#d7e3ec] bg-white px-6 text-sm font-semibold text-[#154764] transition hover:border-[#278DC0] hover:bg-[#278DC0]/5"
+                >
+                  İletişim Formu
+                </a>
+                <a
+                  href="#konum"
+                  className="inline-flex min-h-[48px] items-center justify-center rounded-full border border-[#d7e3ec] bg-white px-6 text-sm font-semibold text-[#154764] transition hover:border-[#278DC0] hover:bg-[#278DC0]/5"
+                >
+                  Konumu Gör
+                </a>
+              </div>
+            </div>
+
+            <div className="relative overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-[0_24px_60px_rgba(15,23,42,0.08)]">
+              <div className="relative aspect-[5/4] sm:aspect-[16/11]">
+                <Image
+                  src="/images/hero/kat22.jpg"
+                  alt="Pro Makina makine imalatı ve proses mühendisliği iletişim görseli"
+                  fill
+                  priority
+                  sizes="(max-width: 1024px) 100vw, 48vw"
+                  className="object-cover object-center"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="iletisim-ekibi" className="section-space scroll-mt-28">
+        <div className="site-container">
+          <SectionHeading
+            title="İletişim Ekibimiz"
+            description="Projeniz, teklif talebiniz veya üretim süreciniz için ilgili kişiyle doğrudan iletişime geçebilirsiniz."
+          />
+          <div className="mt-8 grid gap-6 lg:grid-cols-3">
+            {teamMembers.map((member) => (
+              <TeamMemberCard key={member.name} member={member} />
             ))}
           </div>
         </div>
       </section>
 
-      <section className="section-space">
+      <section id="konum" className="section-bottom-space scroll-mt-28">
         <div className="site-container">
-          <div className="grid gap-8 xl:grid-cols-[1.15fr_0.85fr]">
-            <ContactForm />
-
-            <div className="content-stack">
-              <div className="rounded-[32px] border border-slate-200 bg-slate-50 p-6 shadow-[0_18px_50px_rgba(15,23,42,0.04)] sm:p-8">
-                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#278DC0]">
-                  KONUM VE YOL TARÄ°FÄ°
-                </p>
-                <h2 className="mt-3 text-2xl font-semibold tracking-tight text-slate-950">
-                  Konum ve Yol Tarifi
-                </h2>
-
-                <div className="mt-6 overflow-hidden rounded-[28px] border border-slate-200 bg-white shadow-[0_10px_30px_rgba(15,23,42,0.05)]">
-                  <iframe
-                    title="Pro Makina Konum HaritasÄ±"
-                    src="https://www.google.com/maps?q=75.%20Y%C4%B1l%20Mahallesi%2C%20Teksan%20Sanayi%20Sitesi%2C%20Kilis%20Sokak%20D6%20Blok%20No%3A%202E%2C%20Odunpazar%C4%B1%2C%20Eski%C5%9Fehir&output=embed"
-                    className="h-[240px] w-full sm:h-[260px] lg:h-[280px]"
-                    loading="lazy"
-                  />
-                </div>
-
-                <div className="mt-6">
-                  <p className="text-sm leading-8 text-slate-600">
-                    75. YÄ±l Mahallesi, Teksan Sanayi Sitesi, Kilis Sokak D6 Blok No: 2E,
-                    OdunpazarÄ± / EskiÅŸehir
-                  </p>
-                  <p className="mt-2 text-sm font-medium text-slate-700">Posta Kodu: 26250</p>
-                  <p className="mt-4 text-sm leading-8 text-slate-600">
-                    Pro Makina Ã¼retim ve proje gÃ¶rÃ¼ÅŸmeleri iÃ§in EskiÅŸehir Teksan Sanayi
-                    Sitesi&apos;nde hizmet vermektedir. Ziyaret Ã¶ncesinde telefon veya
-                    WhatsApp Ã¼zerinden randevu almanÄ±zÄ± Ã¶neririz.
-                  </p>
-                </div>
-
-                <div className="mt-6 flex flex-col gap-3">
-                  <a
-                    href={googleDirectionsHref}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    data-cta-event="directions_click"
-                    data-cta-label="Yol Tarifi Al"
-                    className="inline-flex min-h-[48px] items-center justify-center rounded-full bg-[#278DC0] px-5 text-sm font-semibold text-white transition hover:bg-[#154764]"
-                  >
-                    Yol Tarifi Al
-                  </a>
-                  <a
-                    href={siteContact.phoneHref}
-                    className="inline-flex min-h-[48px] items-center justify-center rounded-full border border-slate-200 bg-white px-5 text-sm font-semibold text-slate-900 transition hover:border-[#278DC0] hover:text-[#278DC0]"
-                  >
-                    Telefonla Ara
-                  </a>
-                  <a
-                    href={siteContact.whatsappHref}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex min-h-[48px] items-center justify-center rounded-full bg-green-600 px-5 text-sm font-semibold text-white transition hover:bg-green-500"
-                  >
-                    WhatsApp ile Yaz
-                  </a>
-                </div>
-              </div>
-
-              <div className="rounded-[32px] border border-slate-200 bg-white p-6 shadow-[0_18px_50px_rgba(15,23,42,0.04)] sm:p-8">
-                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#278DC0]">
-                  HIZLI Ä°LETÄ°ÅžÄ°M BÄ°LGÄ°LERÄ°
-                </p>
-                <h2 className="mt-3 text-2xl font-semibold tracking-tight text-slate-950">
-                  HÄ±zlÄ± Ä°letiÅŸim Bilgileri
-                </h2>
-                <div className="mt-6 grid gap-4">
-                  {quickDetails.map((item) => (
-                    <div
-                      key={item.label}
-                      className="rounded-2xl border border-slate-100 bg-slate-50 px-5 py-4"
-                    >
-                      <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">
-                        {item.label}
-                      </p>
-                      {item.href ? (
-                        <a
-                          href={item.href}
-                          target={item.href.startsWith("http") ? "_blank" : undefined}
-                          rel={
-                            item.href.startsWith("http") ? "noopener noreferrer" : undefined
-                          }
-                          className="mt-2 block text-sm leading-7 text-slate-800 transition hover:text-[#278DC0]"
-                        >
-                          {item.value}
-                        </a>
-                      ) : (
-                        <p className="mt-2 text-sm leading-7 text-slate-800">{item.value}</p>
-                      )}
-                    </div>
-                  ))}
-                </div>
-              </div>
+          <div className="rounded-[32px] border border-[#d9e6ee] bg-white p-6 shadow-sm sm:p-8">
+            <SectionHeading
+              title="Konum"
+              description="Pro Makina, Eskişehir merkezli üretim ve mühendislik yaklaşımıyla Türkiye ve yurtdışı endüstriyel tesis projelerine çözüm sunar."
+            />
+            <div className="mt-6 overflow-hidden rounded-[28px] border border-slate-200 bg-white shadow-sm">
+              <iframe
+                title="Pro Makina Konum Haritası"
+                src="https://www.google.com/maps?q=75.%20Y%C4%B1l%20Mahallesi%2C%20Teksan%20Sanayi%20Sitesi%2C%20Kilis%20Sokak%20D6%20Blok%20No%3A%202E%2C%20Odunpazar%C4%B1%2C%20Eski%C5%9Fehir&output=embed"
+                className="h-[260px] w-full sm:h-[320px] lg:h-[360px]"
+                loading="lazy"
+              />
             </div>
+            <div className="mt-6 flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+              <p className="text-sm leading-8 text-slate-600">{addressLine}</p>
+              <a
+                href={googleDirectionsHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-[#278DC0] px-5 text-sm font-semibold text-white transition hover:bg-[#154764]"
+              >
+                Konumu Gör
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="profesyonel-iletisim-formu"
+        className="section-bottom-space scroll-mt-28"
+      >
+        <div className="site-container">
+          <div className="content-stack">
+            <SectionHeading
+              title="Profesyonel İletişim Formu"
+              description="Talebinizi, proje konunuzu veya makine ihtiyacınızı bizimle paylaşın. Pro Makina ekibi en kısa sürede sizinle iletişime geçsin."
+            />
+            <ContactForm />
           </div>
         </div>
       </section>
 
       <section className="section-bottom-space-lg">
         <div className="site-container">
-          <div className="rounded-[36px] border border-slate-200 bg-[linear-gradient(135deg,#0f1f46_0%,#17336f_100%)] px-6 py-8 text-white shadow-[0_25px_60px_rgba(15,23,42,0.18)] sm:px-8 sm:py-10 lg:px-10">
-            <div className="max-w-3xl">
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-white/80">
-                TEKNÄ°K GÃ–RÃœÅžME
-              </p>
-              <h2 className="mt-3 text-3xl font-semibold tracking-tight md:text-4xl">
-                Projeniz iÃ§in doÄŸru kiÅŸiyi hemen devreye alÄ±n
-              </h2>
-              <p className="mt-4 text-sm leading-8 text-white/82 sm:text-base">
-                GÃ¼bre tesisi, kompost tesisi, kurutma sistemi, konveyÃ¶r hattÄ±, maden
-                iÅŸleme tesisi veya Ã¶zel makine ihtiyacÄ±nÄ±z iÃ§in bizimle iletiÅŸime geÃ§in.
-                Telefon, WhatsApp ve e-posta Ã¼zerinden kÄ±sa sÃ¼rede teknik yÃ¶nlendirme
-                saÄŸlayalÄ±m.
-              </p>
-            </div>
-
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-              <Link
-                href="/iletisim"
-                className="inline-flex min-h-[50px] items-center justify-center rounded-full bg-white px-6 text-sm font-semibold text-slate-950 transition hover:bg-slate-100"
-              >
-                Ä°letiÅŸim SayfasÄ±na Git
-              </Link>
-              <a
-                href={siteContact.phoneHref}
-                className="inline-flex min-h-[50px] items-center justify-center rounded-full border border-white/20 bg-white/10 px-6 text-sm font-semibold text-white transition hover:bg-white/18"
-              >
-                Hemen Ara
-              </a>
-              <a
-                href={siteContact.whatsappHref}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex min-h-[50px] items-center justify-center rounded-full border border-white/20 bg-white/10 px-6 text-sm font-semibold text-white transition hover:bg-white/18"
-              >
-                WhatsApp ile GÃ¶rÃ¼ÅŸ
-              </a>
-            </div>
+          <SectionHeading
+            title="Pro Makina&apos;yı Takip Edin"
+            description="Makine imalatı, proses çözümleri, tesis uygulamaları ve teknik içerikler için sosyal medya hesaplarımızı takip edebilirsiniz."
+          />
+          <div className="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+            {socialCards.map((item) => (
+              <SocialCard
+                key={item.title}
+                title={item.title}
+                description={item.description}
+                href={item.href}
+              />
+            ))}
           </div>
         </div>
       </section>
     </main>
   );
 }
-
-

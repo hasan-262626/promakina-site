@@ -1,4 +1,9 @@
 import { machineCategoryPages } from "./components/machine-group-data";
+import {
+  getMachinePublicCategorySlug,
+  getMachinePublicProductSlug,
+  normalizeMachineSlug,
+} from "./lib/machine-route-utils";
 
 export type HomeMachineGroupCardProduct = {
   label: string;
@@ -17,39 +22,9 @@ export type HomeMachineGroupCard = {
   alt: string;
 };
 
-function normalizeSlug(value: string) {
-  return value
-    .replace(/Ãƒâ€žÃ‚Â±|Ã„Â±/g, "i")
-    .replace(/Ãƒâ€žÃ‚Â°|Ã„Â°/g, "i")
-    .replace(/ÃƒÆ’Ã‚Â¼|ÃƒÂ¼/g, "u")
-    .replace(/ÃƒÆ’Ã…â€œ|ÃƒÅ“/g, "u")
-    .replace(/ÃƒÆ’Ã‚Â¶|ÃƒÂ¶/g, "o")
-    .replace(/ÃƒÆ’Ã¢â‚¬â€œ|Ãƒâ€“/g, "o")
-    .replace(/Ãƒâ€¦Ã…Â¸|Ã…Å¸/g, "s")
-    .replace(/Ãƒâ€¦Ã…Â¾|Ã…Å¾/g, "s")
-    .replace(/ÃƒÆ’Ã‚Â§|ÃƒÂ§/g, "c")
-    .replace(/ÃƒÆ’Ã¢â‚¬Â¡|Ãƒâ€¡/g, "c")
-    .replace(/Ãƒâ€žÃ…Â¸|Ã„Å¸/g, "g")
-    .replace(/Ãƒâ€žÃ…Â¾|Ã„Å¾/g, "g");
-}
-
-function resolveMachineCategorySlug(slug: string) {
-  const normalized = normalizeSlug(slug);
-
-  if (normalized === "tasima-sistemleri") {
-    return "tasima-ekipmanlari";
-  }
-
-  return normalized;
-}
-
-function resolveMachineProductSlug(slug: string) {
-  return normalizeSlug(slug);
-}
-
 function resolveCardImage(categorySlug: string, image: string) {
-  const normalizedCategorySlug = resolveMachineCategorySlug(categorySlug);
-  const normalizedImage = normalizeSlug(image);
+  const normalizedCategorySlug = getMachinePublicCategorySlug(categorySlug);
+  const normalizedImage = normalizeMachineSlug(image);
 
   if (normalizedCategorySlug === "kiricilar-ve-parcalayicilar") {
     return "/images/kirici3.jpg";
@@ -64,13 +39,13 @@ export const homeMachineGroupCards: HomeMachineGroupCard[] = machineCategoryPage
     title: category.title,
     products: category.products.map((product) => ({
       label: product.title,
-      href: `/makinalar-ekipman/${resolveMachineCategorySlug(
+      href: `/makinalar-ekipman/${getMachinePublicCategorySlug(
         category.slug,
-      )}/${resolveMachineProductSlug(product.slug)}`,
+      )}/${getMachinePublicProductSlug(product.slug)}`,
     })),
     seoNote: category.seoNote,
-    buttonLabel: "Kategoriyi İncele",
-    href: `/makinalar-ekipman/${resolveMachineCategorySlug(category.slug)}`,
+    buttonLabel: "Kategoriyi Ä°ncele",
+    href: `/makinalar-ekipman/${getMachinePublicCategorySlug(category.slug)}`,
     image: resolveCardImage(category.slug, category.cardImage ?? category.heroImage),
     alt: category.title,
   }),

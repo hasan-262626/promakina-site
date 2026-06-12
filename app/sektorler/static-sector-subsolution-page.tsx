@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { SectorSubsolutionTemplate } from "../components/sector-subsolution-template";
-import { getSectorSubsolutionConfig } from "../components/sector-subsolution-config";
+import { getSectorDetailConfig } from "../components/sector-detail-config";
+import { SectorDetailTemplate } from "../components/sector-detail-template";
 import { getSectorCardBySlug, type SectorSubsectorItem } from "../components/sector-subsectors-data";
 
 type StaticSectorSubsolutionConfig = {
@@ -18,8 +18,9 @@ export function buildStaticSectorSubsolutionMetadata(
     return {};
   }
 
+  const templateConfig = getSectorDetailConfig(sector, config.subsector);
   const canonical = `https://www.promakina.com.tr/sektorler/${config.sectorSlug}/${config.subsector.slug}`;
-  const title = `${config.subsector.title} | ${sector.title} | Pro Makina`;
+  const title = `${templateConfig.heroTitle} | ${sector.title} | Pro Makina`;
 
   return {
     title,
@@ -45,17 +46,16 @@ export function StaticSectorSubsolutionPage(config: StaticSectorSubsolutionConfi
     notFound();
   }
 
-  const templateConfig = getSectorSubsolutionConfig(sector, config.subsector);
-
-  if (!templateConfig) {
-    notFound();
-  }
+  const templateConfig = getSectorDetailConfig(sector, config.subsector);
+  const relatedLinks = sector.subLinks.some((item) => item.slug === config.subsector.slug)
+    ? sector.subLinks
+    : [...sector.subLinks, config.subsector];
 
   return (
-    <SectorSubsolutionTemplate
+    <SectorDetailTemplate
       sector={sector}
       current={config.subsector}
-      relatedLinks={sector.subLinks}
+      relatedLinks={relatedLinks}
       config={templateConfig}
     />
   );

@@ -781,12 +781,14 @@ export function GenericProgramEngine({ program }: GenericProgramEngineProps) {
   useEffect(() => {
     const options = sectorProductOptions[sector] ?? [];
     if (!options.includes(product)) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setProduct(options[0] ?? "");
     }
   }, [product, sector]);
 
   useEffect(() => {
     const profile = getProductProfile(sector, product);
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setManualDensity(String(profile.density));
     setMoisture(profile.moisture);
     setCorrosion(profile.corrosion);
@@ -794,6 +796,7 @@ export function GenericProgramEngine({ program }: GenericProgramEngineProps) {
 
   useEffect(() => {
     if (!blueprint) return;
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setDynamicState((current) => {
       const next = { ...current };
       blueprint.dynamicFields.forEach((field) => {

@@ -6,6 +6,7 @@ import { Hero } from "./Hero";
 import { LibraryServiceLinks } from "./library-service-links";
 import { SocialFollowPanel } from "./social-follow-panel";
 import type { LibraryFaqItem, LibraryServiceLink } from "../lib/library-page-data";
+import { trText } from "../lib/tr-text";
 
 type LibrarySeoSection = {
   title: string;
@@ -41,15 +42,18 @@ export function buildLibraryMetadata({
   description: string;
   canonical: string;
 }): Metadata {
+  const normalizedTitle = trText(title);
+  const normalizedDescription = trText(description);
+
   return {
-    title,
-    description,
+    title: normalizedTitle,
+    description: normalizedDescription,
     alternates: {
       canonical,
     },
     openGraph: {
-      title,
-      description,
+      title: normalizedTitle,
+      description: normalizedDescription,
       url: canonical,
       siteName: "Pro Makina",
       locale: "tr_TR",
@@ -57,8 +61,8 @@ export function buildLibraryMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      title,
-      description,
+      title: normalizedTitle,
+      description: normalizedDescription,
     },
   };
 }

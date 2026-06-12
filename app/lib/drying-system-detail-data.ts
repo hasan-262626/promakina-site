@@ -1126,7 +1126,7 @@ export const dryingSystemDetailPages: DrumSystemDetailPageData[] = [
     ],
     relatedLinks: [
       { title: "Çamur Kurutma Tesisi", description: "Hizmet sayfasında saha ve çözüm yaklaşımını inceleyin.", href: "/hizmetler/camur-kurutma-tesisi" },
-      { title: "Atık Su Çamuru ve Arıtma Makinaları", description: "Çamur prosesinde kullanılan ekipman ailesini görün.", href: "/kutuphane/blog/atik-su-camuru-ve-aritma-makinalari" },
+      { title: "Atık Su Çamuru İşleme Makinaları", description: "Çamur prosesinde kullanılan ekipman ailesini görün.", href: "/kutuphane/blog/atik-su-camuru-ve-aritma-makinalari" },
       { title: "Çamur Kurutma ve Koku Kontrol Sistemleri", description: "Koku ve gaz yönetimini ayrı teknik rehberle tamamlayın.", href: "/kutuphane/blog/camur-kurutma-ve-koku-kontrol-sistemleri" },
       { title: "Tambur Hesapları", description: "Kurutma yükü ve tambur boyutlandırmasını program üzerinden açın.", href: "/programlar/tambur-hesaplari" },
       { title: "Tambur Brülör Seçimi", description: "Enerji tarafını brülör kapasitesi üzerinden detaylandırın.", href: "/programlar?modal=tambur-brulor-secimi" },

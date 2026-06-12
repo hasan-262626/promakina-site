@@ -19,10 +19,10 @@ export const quickAccessItems: QuickAccessItem[] = [
     alt: "Kompost ve organik atık işleme çözümleri",
   },
   {
-    title: "Atık Su Çamuru",
+    title: "Atık Su Çamuru Çözümleri",
     href: "/sektorler/atik-su-camuru-ve-aritma-cozumleri",
     image: "/images/sucamuru1.jpg",
-    alt: "Atık su çamuru kurutma ve işleme sistemleri",
+    alt: "Atık su çamuru susuzlaştırma, kurutma ve değerlendirme çözümleri",
   },
   {
     title: "Geri Dönüşüm ve Atık Yönetimi",

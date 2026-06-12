@@ -296,7 +296,11 @@ export function HomeQuickAccessSection() {
             >
               <Image
                 src={item.image}
-                alt={item.alt}
+                alt={
+                  item.href === "/sektorler/atik-su-camuru-ve-aritma-cozumleri"
+                    ? "Atık su çamuru kurutma, susuzlaştırma ve nihai ürün hazırlama çözümleri"
+                    : item.alt
+                }
                 fill
                 sizes="(min-width: 1280px) calc((1280px - 48px) / 4), (min-width: 768px) calc((100vw - 48px - 16px) / 2), 100vw"
                 className="object-cover object-center opacity-[0.04] transition duration-500 group-hover:scale-105 group-hover:opacity-100"
@@ -314,7 +318,9 @@ export function HomeQuickAccessSection() {
 
                 <div className="relative">
                   <h3 className="max-w-[14ch] text-2xl font-semibold leading-tight tracking-tight text-white [text-shadow:0_8px_24px_rgba(15,23,42,0.4)] sm:text-[28px]">
-                    {item.title}
+                    {item.href === "/sektorler/atik-su-camuru-ve-aritma-cozumleri"
+                      ? "Atık Su Çamuru Çözümleri"
+                      : item.title}
                   </h3>
                   <span className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-white/95 [text-shadow:0_6px_18px_rgba(15,23,42,0.4)]">
                     Sektörü İncele

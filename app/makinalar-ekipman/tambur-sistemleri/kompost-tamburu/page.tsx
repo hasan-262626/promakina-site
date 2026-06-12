@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
-import { SeoRichLandingPage } from "../../../components/seo-rich-landing-page";
+import { notFound } from "next/navigation";
+import { drumProductPages } from "../../../components/drum-product-data";
+import { ProductDetailSystem } from "../../../components/product-detail-system";
+import { getMachineAuxiliarySystems } from "../../../lib/machine-auxiliary-systems";
 
 const canonical =
   "https://www.promakina.com.tr/makinalar-ekipman/tambur-sistemleri/kompost-tamburu";
@@ -22,7 +25,7 @@ export const metadata: Metadata = {
   },
 };
 
-const faqs = [
+const faqItems = [
   {
     question: "Kompost tamburu hangi atıklar için kullanılır?",
     answer:
@@ -51,142 +54,50 @@ const faqs = [
 ];
 
 export default function Page() {
+  const activeProduct = drumProductPages.find((item) => item.slug === "kompost-tamburu");
+
+  if (!activeProduct) {
+    notFound();
+  }
+
+  const sidebarItems = drumProductPages.map((item) => ({
+    label: item.title,
+    href: `/makinalar-ekipman/tambur-sistemleri/${item.slug}`,
+  }));
+
+  const auxiliarySystems = getMachineAuxiliarySystems({
+    categorySlug: "tambur-sistemleri",
+    productSlug: activeProduct.slug,
+    calculatorFamily: "drum",
+    title: activeProduct.title,
+  });
+
   return (
-    <SeoRichLandingPage
-      canonical={canonical}
-      heroTitle="Kompost Tamburu"
-      heroDescription="Kompost tamburu, kompost olgunlaştırma tamburu ve döner kompost reaktörü uygulamalarında organik atıkların kontrollü karışımı, havalandırılması ve stabilizasyonu için kullanılır."
-      image="/images/biokom1.png"
-      introLabel="Tambur Sistemleri"
-      introTitle="Kompost Tamburu"
-      introParagraphs={[
-        "Kompost tamburu; evsel organik atık, arıtma çamuru, digestat, hayvansal atık ve tarımsal atık gibi organik fraksiyonların daha homojen, kontrollü ve yönetilebilir hale getirilmesi için kullanılan ana proses ekipmanlarından biridir. Belediye kompost tesisi tamburu projelerinde, atığın değişken yapısına rağmen kararlı dönüşüm sağlamak için doğru mekanik tasarım büyük önem taşır.",
-        "Organik atık kompost tamburu sistemlerinde yalnızca çap ve boy değil; iç karıştırma karakteri, havalandırma yaklaşımı, kalış süresi ve nem kontrol mantığı da birlikte çözülmelidir. Pro Makina döner kompost reaktörü çözümlerini proses davranışı ve saha gerçeklerine göre özel olarak kurgular.",
-      ]}
-      breadcrumbs={[
-        { label: "Makinalar & Ekipman", href: "/makinalar-ekipman" },
-        { label: "Tambur Sistemleri", href: "/makinalar-ekipman/tambur-sistemleri" },
-        {
-          label: "Kompost Tamburu",
-          href: "/makinalar-ekipman/tambur-sistemleri/kompost-tamburu",
-        },
-      ]}
-      sections={[
-        {
-          title: "Kullanım Alanları",
-          paragraphs: [
-            "Kompost tamburu; evsel organik atık, arıtma çamuru, digestat, hayvansal atık ve tarımsal atık akışlarında kullanılır. Bu ürünlerin ortak özelliği, biyolojik dönüşüm sırasında homojen karışım ve kontrollü hava teması gerektirmesidir.",
-            "Özellikle belediye kompost tesisi tamburu uygulamalarında atık kompozisyonu hızlı değişebildiği için ekipmanın yapışma, lifli malzeme ve nemli yapı karşısında kararlı çalışması beklenir. Bu nedenle ağır hizmet tipi gövde, doğru iç geometri ve dengeli sürüş sistemi kritik hale gelir.",
-          ],
-        },
-        {
-          title: "Proses İçindeki Görevi",
-          paragraphs: [
-            "Kompost tamburunun temel görevi, organik fraksiyonu biyolojik reaksiyon için daha dengeli hale getirmek, iri topaklanmayı azaltmak ve karışımın tambur boyunca kontrollü şekilde ilerlemesini sağlamaktır. Aynı zamanda ilk sıcaklık yükselişi ve nem dağılımının daha kararlı hale gelmesine yardımcı olur.",
-            "Tambur çıkışında trommel elek ile son ürün sınıflandırması yapılabilir; yüksek nemli senaryolarda ise kurutma tamburu veya yardımcı hava yönetimi çözümleri entegre edilerek proses kararlılığı artırılabilir.",
-          ],
-          links: [
-            {
-              label: "Trommel Elekler",
-              href: "/makinalar-ekipman/eleme-ve-siniflandirma-sistemleri/trommel-elekler",
-            },
-            {
-              label: "Evsel Organik Atık İşleme",
-              href: "/sektorler/kompost-ve-organik-atik-tesisleri/evsel-organik-atiklar",
-            },
-            {
-              label: "Kurutma Tamburları",
-              href: "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburlari",
-            },
-          ],
-        },
-        {
-          title: "Teknik Özellikler",
-          paragraphs: [
-            "Kompost olgunlaştırma tamburu tasarımında kapasite, çap, boy, iç karıştırma elemanları, havalandırma bağlantıları ve gövde dayanımı birlikte değerlendirilir. Lifli ve değişken yoğunluklu organik fraksiyonların dengeli ilerlemesi için tambur içindeki flight ve karıştırıcı düzeni proses hedefine göre seçilir.",
-            "Döner kompost reaktörü sistemlerinde düşük bakım ve uzun ömür için destek ruloları, ring yapısı, yataklama sistemi ve sürüş grubunun ağır hizmet yaklaşımıyla tasarlanması gerekir. Ayrıca temizlik ve servis erişimi de saha verimliliği açısından önemlidir.",
-          ],
-        },
-        {
-          title: "Kapasite, Çap, Boy, Karıştırma, Havalandırma ve Nem Kontrol Kriterleri",
-          bullets: [
-            "Kapasite, günlük besleme miktarı ve hedef proses süresine göre belirlenir",
-            "Tambur çapı, ürün yatağının kalınlığı ve karışım davranışını etkiler",
-            "Tambur boyu, kalış süresi ve biyolojik reaksiyonun ilk fazını belirler",
-            "Karıştırma elemanları topak çözme ve homojenleşme performansını doğrudan etkiler",
-            "Havalandırma yaklaşımı oksijen dengesi ve koku kontrolü için önemlidir",
-            "Nem kontrolü ürün akışı ve mikrobiyal aktiviteyi kararlı tutar",
-          ],
-        },
-        {
-          title: "Opsiyonel Ekipmanlar ve Avantajlar",
-          paragraphs: [
-            "Kompost tamburu; bunker, besleme konveyörleri, dozaj sistemleri, trommel elek, koku kontrol ekipmanları, nemlendirme veya havalandırma hatlarıyla desteklenebilir. Prosesin kapalı alan veya yarı açık saha olması da opsiyonel ekipman seçimini etkiler.",
-            "Doğru tasarlanan bir organik atık kompost tamburu; daha dengeli karışım, daha kontrollü biyolojik aktivite, daha düşük müdahale ihtiyacı ve sonraki ekipmanlara daha kararlı besleme sağlar. Bu da hem belediye hem özel sektör yatırımlarında operasyon güvenini yükseltir.",
-          ],
-          links: [
-            { label: "Kompost Tesisi Kurulumu", href: "/hizmetler/kompost-tesisi-kurulumu" },
-            { label: "Çamur Kurutma Tesisi", href: "/hizmetler/camur-kurutma-tesisi" },
-            {
-              label: "Evsel Organik Atık Tesisleri",
-              href: "/sektorler/kompost-ve-organik-atik-tesisleri/evsel-organik-atiklar",
-            },
-          ],
-        },
-      ]}
-      summaryRows={[
-        {
-          criterion: "Kapasite",
-          description: "Günlük atık kabulü ve hedef proses süresine göre belirlenir.",
-          importance: "Tambur boyutlandırması ve hat dengesi için ana girdidir.",
-        },
-        {
-          criterion: "Karıştırma Geometrisi",
-          description: "İç flight ve karıştırıcı yapısı malzemenin homojenliğini belirler.",
-          importance: "Topak çözme, hava teması ve proses kararlılığı sağlar.",
-        },
-        {
-          criterion: "Havalandırma",
-          description: "Oksijen desteği ve koku kontrol mantığı ile birlikte değerlendirilir.",
-          importance: "Biyolojik reaksiyon verimi ve çevresel kontrol için kritiktir.",
-        },
-        {
-          criterion: "Nem Kontrolü",
-          description: "Besleme nemi, su ilavesi veya kurutma desteği senaryolarını kapsar.",
-          importance: "Akış davranışı ve mikrobiyal aktivitenin kararlılığını etkiler.",
-        },
-      ]}
-      faqs={faqs}
-      relatedGroups={[
-        {
-          title: "İlgili Hizmetler",
-          links: [
-            { label: "Kompost Tesisi Kurulumu", href: "/hizmetler/kompost-tesisi-kurulumu" },
-            { label: "Çamur Kurutma Tesisi", href: "/hizmetler/camur-kurutma-tesisi" },
-            { label: "Evsel Organik Atık Tesisleri", href: "/sektorler/kompost-ve-organik-atik-tesisleri/evsel-organik-atiklar" },
-          ],
-        },
-        {
-          title: "İlgili Makinalar",
-          links: [
-            {
-              label: "Trommel Elekler",
-              href: "/makinalar-ekipman/eleme-ve-siniflandirma-sistemleri/trommel-elekler",
-            },
-            {
-              label: "Kurutma Tamburları",
-              href: "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburlari",
-            },
-            {
-              label: "Bant Konveyörler",
-              href: "/makinalar-ekipman/tasima-ekipmanlari/bant-konveyorler",
-            },
-          ],
-        },
-      ]}
-      ctaText="Günlük tonaj, organik fraksiyon yapısı, giriş nemi, hedef proses süresi ve saha kurgusuna göre size özel kompost tamburu çözümü hazırlayalım."
-      serviceName="Kompost Tamburu"
-      serviceDescription="Evsel organik atık, arıtma çamuru, digestat ve tarımsal atık uygulamaları için kompost tamburu ve döner kompost reaktörü çözümleri."
-    />
+    <main className="min-h-screen bg-white text-slate-900">
+      <ProductDetailSystem
+        categoryLabel="Tambur Sistemleri"
+        categoryHref="/makinalar-ekipman/tambur-sistemleri"
+        sidebarItems={sidebarItems}
+        activeSidebarHref={canonical.replace("https://www.promakina.com.tr", "")}
+        title={activeProduct.title}
+        heroDescription={activeProduct.heroDescription}
+        heroImage="/images/kurutmatam2.jpg"
+        mainImage={activeProduct.gallery[0]?.src ?? "/images/kurutmatam2.jpg"}
+        overviewParagraphs={activeProduct.overviewParagraphs}
+        highlightText={activeProduct.highlightText}
+        specs={activeProduct.specs}
+        applications={activeProduct.applications}
+        gallery={activeProduct.gallery}
+        optionalEquipment={activeProduct.optionalEquipment}
+        spareParts={activeProduct.spareParts}
+        auxiliarySystems={auxiliarySystems}
+        faqItems={faqItems}
+        calculatorFamily="drum"
+        ctaText={
+          activeProduct.ctaText ??
+          "Kompost tamburu için kapasite, proses ve saha verilerinize uygun teknik çözümü birlikte belirleyelim."
+        }
+      />
+    </main>
   );
 }

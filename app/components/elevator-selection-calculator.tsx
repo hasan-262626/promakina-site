@@ -201,6 +201,7 @@ export function ElevatorSelectionCalculator() {
   const plasticAllowed = isPlasticAllowed(temperatureBand);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     if (!plasticAllowed && bucketMaterial === "Plastik kova") setBucketMaterial("Sistem seçsin");
   }, [plasticAllowed, bucketMaterial]);
 
@@ -275,7 +276,7 @@ export function ElevatorSelectionCalculator() {
       corrosionRisk: corrosion === "Çok korozif" || usage === "Kimyasal ortam" ? "Yüksek korozyon korumasi gerekir" : corrosion === "Korozif" || usage === "Gübre tesisi" ? "Orta / yüksek korozyon korumasi önerilir" : "Standart koruma yeterli olabilir",
       fillRatioLabel: fillRatio,
     };
-  }, [beltClass, beltSpeedMode, beltType, bucketCode, bucketMaterial, capacity, chainMaterial, chainPitchMode, corrosion, density, dischargeType, driveType, elevatorType, fillRatio, grain, inletType, liftHeight, manualBeltSpeed, manualChainPitch, manualSpacing, moisture, product, safety, spacingMode, temperatureBand, usage, workingTime]);
+  }, [beltClass, beltSpeedMode, beltType, bucketCode, bucketMaterial, capacity, chainMaterial, chainPitchMode, corrosion, density, dischargeType, driveType, elevatorType, fillRatio, grain, inletType, liftHeight, manualBeltSpeed, manualChainPitch, manualSpacing, moisture, plasticAllowed, product, safety, spacingMode, temperatureBand, usage, workingTime]);
 
   const activeBucketSelectValue = bucketCode || model.selectedBucket.code;
 

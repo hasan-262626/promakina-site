@@ -2,7 +2,15 @@ import Image from "next/image";
 import Link from "next/link";
 import { Metadata } from "next";
 import { notFound, redirect } from "next/navigation";
+import { MachinePageHero } from "../../components/machine-page-hero";
 import { machineCategoryMap, machineCategoryPages } from "../../components/machine-group-data";
+import { beltConveyorGallery } from "../../lib/conveyor-gallery";
+import { getMachineCalculatorHref } from "../../lib/machine-calculator-link";
+import {
+  getMachinePublicCategorySlug,
+  getMachinePublicProductSlug,
+  getMachineResolvedCategorySlug,
+} from "../../lib/machine-route-utils";
 
 type PageProps = {
   params: Promise<{
@@ -10,60 +18,24 @@ type PageProps = {
   }>;
 };
 
-const categoryAliasMap: Record<string, string> = {
-  "tasima-sistemleri": "tasima-ekipmanlari",
-  "depolama-sistemleri": "depolama-ve-besleme-sistemleri",
-  "kiricilar-ve-parcalayicilar": "kÄ±rÄ±cÄ±lar-ve-parcalayicilar",
-};
-
-const productAliasMap: Record<string, string> = {
-  "helezon-konveyorler": "vidali-helezonlar",
-  "cekicli-kiricilar": "cekicli-kırıcılar",
-  "ceneli-kiricilar": "ceneli-kırıcılar",
-  "dik-milli-kiricilar": "dik-milli-kırıcılar",
-  "zincirli-kiricilar": "zincirli-kırıcılar",
-  "bicakli-primer-kiricilar": "bicakli-primer-kırıcılar",
-  "bicakli-sekonder-kiricilar": "bicakli-sekonder-kırıcılar",
-};
-
 function getCategory(slug: string) {
-  const resolvedSlug = categoryAliasMap[slug] ?? slug;
-  return machineCategoryMap[resolvedSlug];
+  return machineCategoryMap[getMachineResolvedCategorySlug(slug)];
 }
 
 function getPublicCategorySlug(slug: string) {
-  if (slug === "kÃ„Â±rÃ„Â±cÃ„Â±lar-ve-parcalayicilar") {
-    return "kiricilar-ve-parcalayicilar";
-  }
-
-  return slug;
+  return getMachinePublicCategorySlug(slug);
 }
 
 function getPublicProductSlug(slug: string) {
-  if (slug === "vidali-helezonlar") return "helezon-konveyorler";
-  if (slug === "cekicli-kÄ±rÄ±cÄ±lar") return "cekicli-kiricilar";
-  if (slug === "ceneli-kÄ±rÄ±cÄ±lar") return "ceneli-kiricilar";
-  if (slug === "dik-milli-kÄ±rÄ±cÄ±lar") return "dik-milli-kiricilar";
-  if (slug === "zincirli-kÄ±rÄ±cÄ±lar") return "zincirli-kiricilar";
-  if (slug === "bicakli-primer-kÄ±rÄ±cÄ±lar") return "bicakli-primer-kiricilar";
-  if (slug === "bicakli-sekonder-kÄ±rÄ±cÄ±lar") return "bicakli-sekonder-kiricilar";
-
-  return slug;
+  return getMachinePublicProductSlug(slug);
 }
 
 export function generateStaticParams() {
   return machineCategoryPages
     .filter((category) => category.slug !== "tambur-sistemleri")
-    .flatMap((category) => {
-      const publicCategorySlug = getPublicCategorySlug(category.slug);
-      const routes = [{ slug: publicCategorySlug }];
-
-      if (publicCategorySlug !== category.slug) {
-        routes.push({ slug: category.slug });
-      }
-
-      return routes;
-    });
+    .map((category) => ({
+      slug: getPublicCategorySlug(category.slug),
+    }));
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
@@ -95,7 +67,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 export default async function MachineCategoryPage({ params }: PageProps) {
   const { slug } = await params;
-  const resolvedSlug = categoryAliasMap[slug] ?? slug;
+  const resolvedSlug = getMachineResolvedCategorySlug(slug);
   const publicCategorySlug = getPublicCategorySlug(resolvedSlug);
 
   if (slug !== publicCategorySlug) {
@@ -110,57 +82,26 @@ export default async function MachineCategoryPage({ params }: PageProps) {
 
   return (
     <main className="min-h-screen bg-white text-slate-900">
-      <section className="relative overflow-hidden border-b border-slate-200 bg-gradient-to-br from-white via-sky-50 to-[#eef6fb]">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(39,141,192,0.10),transparent_32%)]" />
-        <div className="site-container relative flex min-h-[170px] items-center py-8 sm:min-h-[200px] sm:py-10 lg:min-h-[230px] lg:py-12">
-          <div className="max-w-4xl">
-            <h1 className="text-4xl font-semibold tracking-tight text-[#020617] md:text-5xl">
-              {category.title}
-            </h1>
-            <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-              <Link
-                href="/programlar"
-                className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-[#278DC0] px-6 text-sm font-semibold text-white transition hover:bg-[#154764]"
-              >
-                Kapasite Hesabı
-              </Link>
-              <Link
-                href="/iletisim"
-                className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-[#d7e3ec] bg-white px-6 text-sm font-semibold text-[#154764] transition hover:border-[#278DC0] hover:bg-[#278DC0]/6"
-              >
-                Teklif Al
-              </Link>
-              <Link
-                href="https://wa.me/905320580104"
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-[#d7e3ec] bg-white px-6 text-sm font-semibold text-[#154764] transition hover:border-[#278DC0] hover:bg-[#278DC0]/6"
-              >
-                WhatsApp ile Görüş
-              </Link>
-              <Link
-                href="tel:+905320580104"
-                className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-[#d7e3ec] bg-white px-6 text-sm font-semibold text-[#154764] transition hover:border-[#278DC0] hover:bg-[#278DC0]/6"
-              >
-                Telefonla Ara
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      <MachinePageHero
+        title={category.title}
+        calculatorHref={getMachineCalculatorHref({
+          family: category.calculatorFamily,
+          title: category.title,
+        })}
+      />
 
       <section className="section-space">
         <div className="site-container">
           <div className="max-w-4xl">
             <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#278DC0]">
-              Alt ÃœrÃ¼nler
+              Alt Ürünler
             </p>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
-              {category.title} alt Ã¼rÃ¼nlerini ayrÄ± ayrÄ± inceleyin
+              {category.title} alt ürünlerini ayrı ayrı inceleyin
             </h2>
             <p className="mt-4 text-[15px] leading-8 text-slate-600 sm:text-base">
-              {category.shortDescription} Prosesinize uygun makina tipini seÃ§in ve ilgili Ã¼rÃ¼n detay
-              sayfasÄ±na geÃ§in.
+              {category.shortDescription} Prosesinize uygun makina tipini seçin ve ilgili ürün detay
+              sayfasına geçin.
             </p>
           </div>
 
@@ -174,7 +115,11 @@ export default async function MachineCategoryPage({ params }: PageProps) {
                 <article className="flex h-full flex-col">
                   <div className="relative min-h-[220px] bg-slate-200">
                     <Image
-                      src={product.gallery[0]?.src ?? category.heroImage}
+                      src={
+                        resolvedSlug === "tasima-ekipmanlari" && product.slug === "bantli-konveyorler"
+                          ? beltConveyorGallery[0]?.src ?? product.gallery[0]?.src ?? category.heroImage
+                          : product.gallery[0]?.src ?? category.heroImage
+                      }
                       alt={
                         product.gallery[0]?.src === "/images/reaktor1.avif"
                           ? "Pro Makina reaktör ve tank sistemleri"
@@ -194,7 +139,7 @@ export default async function MachineCategoryPage({ params }: PageProps) {
                     </p>
                     <div className="mt-auto pt-8">
                       <span className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-slate-300 px-5 text-sm font-semibold text-slate-900 transition group-hover:border-[#278DC0]/20 group-hover:text-[#278DC0]">
-                        ÃœrÃ¼nÃ¼ Ä°ncele
+                        Ürünü İncele
                       </span>
                     </div>
                   </div>

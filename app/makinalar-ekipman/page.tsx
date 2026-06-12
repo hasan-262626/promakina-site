@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { Hero } from "../components/Hero";
+import { MachinePageHero } from "../components/machine-page-hero";
 import { MachineCategoriesOverviewGrid } from "../components/machine-categories-overview-grid";
 import { TechnicalArticlesShortcut } from "../components/technical-articles-shortcut";
 
@@ -16,9 +16,9 @@ const sectorMachineSolutions = [
       "Döner elekler",
       "Vibrasyonlu elekler",
       "Kurutma tamburları",
-      "Bant konveyörler",
-      "Helezon konveyörler",
-      "Kovalı elevatörler",
+      "Bantlı Konveyörler",
+      "Vidalı Helezonlar",
+      "Zincirli Elevatörler",
       "Siklon ve jet pulse filtreler",
     ],
     machineHref: "/makinalar-ekipman/kiricilar-ve-parcalayicilar",
@@ -79,7 +79,7 @@ const sectorMachineSolutions = [
       "Olgunlaştırma tamburları",
       "Kurutma tamburları",
       "Trommel elekler",
-      "Bant konveyörler",
+      "Bantlı Konveyörler",
       "Koku kontrol sistemleri",
       "Biyofiltre / scrubber",
       "Paketleme sistemleri",
@@ -114,9 +114,9 @@ const sectorMachineSolutions = [
     description:
       "Toz, granül, mineral ve dökme katı ürünlerin tesis içinde kontrollü taşınması, dozajlanması ve stoklanması için konveyör, elevatör, bunker ve silo çözümlerini bir arada sunar.",
     items: [
-      "Bant konveyörler",
-      "Helezon konveyörler",
-      "Kovalı elevatörler",
+      "Bantlı Konveyörler",
+      "Vidalı Helezonlar",
+      "Zincirli Elevatörler",
       "Zincirli konveyörler",
       "Silolar",
       "Bunkerler",
@@ -131,12 +131,12 @@ const sectorMachineSolutions = [
     machineLinkText: "Makinaları İncele",
   },
   {
-    title: "Atık Su Çamuru ve Arıtma Makinaları",
+    title: "Atık Su Çamuru İşleme Makinaları",
     description:
       "Arıtma çamuru, belediye çamuru ve yüksek nemli organik akışlar için besleme, karıştırma, kurutma, stabilizasyon ve emisyon kontrol ekipmanlarını kapsayan proses çözümü.",
     items: [
       "Çamur besleme bunkerleri",
-      "Helezon konveyörler",
+      "Vidalı Helezonlar",
       "Karıştırıcılar",
       "Kurutma tamburları",
       "Sterilizasyon tamburları",
@@ -160,7 +160,7 @@ const sectorMachineSolutions = [
       "Bıçaklı kırıcılar",
       "Karıştırma tankları",
       "Besleme bunkerleri",
-      "Helezon konveyörler",
+      "Vidalı Helezonlar",
       "Pompa sistemleri",
       "Elekler",
       "Manyetik ayırıcılar",
@@ -261,11 +261,11 @@ const engineeringTools = [
 ];
 
 const featuredMachineLinks = [
-  { label: "Kurutma Tamburları", href: "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburlari" },
+  { label: "Kurutma Tamburu", href: "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburu" },
   { label: "Kompost Tamburu", href: "/makinalar-ekipman/tambur-sistemleri/kompost-tamburu" },
-  { label: "Helezon Konveyörler", href: "/makinalar-ekipman/tasima-ekipmanlari/helezon-konveyorler" },
-  { label: "Bant Konveyörler", href: "/makinalar-ekipman/tasima-ekipmanlari/bant-konveyorler" },
-  { label: "Kovalı Elevatörler", href: "/makinalar-ekipman/tasima-ekipmanlari/kovali-elevatorler" },
+  { label: "Vidalı Helezonlar", href: "/makinalar-ekipman/tasima-ekipmanlari/vidali-helezonlar" },
+  { label: "Bantlı Konveyörler", href: "/makinalar-ekipman/tasima-ekipmanlari/bantli-konveyorler" },
+  { label: "Zincirli Elevatörler", href: "/makinalar-ekipman/tasima-ekipmanlari/zincirli-elevatorler" },
   { label: "Trommel Elekler", href: "/makinalar-ekipman/eleme-ve-siniflandirma-sistemleri/trommel-elekler" },
   { label: "Çekiçli Kırıcılar", href: "/makinalar-ekipman/kiricilar-ve-parcalayicilar/cekicli-kiricilar" },
   { label: "Çeneli Kırıcılar", href: "/makinalar-ekipman/kiricilar-ve-parcalayicilar/ceneli-kiricilar" },
@@ -286,36 +286,7 @@ export const metadata: Metadata = {
 export default function MachinesIndexPage() {
   return (
     <main className="min-h-screen bg-white text-slate-900">
-      <Hero
-        title="Makinalar & Ekipman"
-      >
-        <Link
-          href="/programlar"
-          className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-[#278DC0] px-6 text-sm font-semibold text-white transition hover:bg-[#154764]"
-        >
-          Kapasite Hesabı
-        </Link>
-        <Link
-          href="/iletisim"
-          className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/60 bg-white/12 px-6 text-sm font-semibold text-white transition hover:border-white hover:bg-white/18"
-        >
-          Teklif Al
-        </Link>
-        <Link
-          href="https://wa.me/905320580104"
-          target="_blank"
-          rel="noreferrer"
-          className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/60 bg-white/12 px-6 text-sm font-semibold text-white transition hover:border-white hover:bg-white/18"
-        >
-          WhatsApp ile Görüş
-        </Link>
-        <Link
-          href="tel:+905320580104"
-          className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/60 bg-white/12 px-6 text-sm font-semibold text-white transition hover:border-white hover:bg-white/18"
-        >
-          Telefonla Ara
-        </Link>
-      </Hero>
+      <MachinePageHero title="Makinalar & Ekipman" calculatorHref="/programlar" />
 
       <section className="section-space">
         <div className="site-container">
@@ -350,9 +321,15 @@ export default function MachinesIndexPage() {
                   />
                   <div className="relative z-10">
                     <h3 className="text-xl font-semibold tracking-tight text-slate-950">
-                      {item.title}
+                      {item.blogHref === "/kutuphane/blog/atik-su-camuru-ve-aritma-makinalari"
+                        ? "Atık Su Çamuru İşleme Makinaları"
+                        : item.title}
                     </h3>
-                    <p className="mt-3 text-sm leading-7 text-slate-600">{item.description}</p>
+                    <p className="mt-3 text-sm leading-7 text-slate-600">
+                      {item.blogHref === "/kutuphane/blog/atik-su-camuru-ve-aritma-makinalari"
+                        ? "Evsel ve endüstriyel atık su çamurları için besleme, karıştırma, kurutma, stabilizasyon, emisyon kontrolü ve son ürün hazırlama ekipmanlarını kapsayan çamur işleme çözümü."
+                        : item.description}
+                    </p>
                     <ul className="mt-4 space-y-2 text-sm leading-6 text-slate-700">
                       {item.items.map((machine) => (
                         <li key={machine} className="flex gap-2">

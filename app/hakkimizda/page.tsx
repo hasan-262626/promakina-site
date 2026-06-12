@@ -1,14 +1,29 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 
-const pageTitle = "Hakkımızda | Pro Makina Process Engineering";
-const pageDescription =
-  "Pro Makina; 40+ yıllık üretim kültürü ve ikinci kuşak mühendislik yaklaşımıyla gübre tesisleri, kompost tesisleri, kurutma sistemleri, konveyör hatları, maden işleme ve endüstriyel makine imalatı çözümleri sunar.";
 const canonical = "https://www.promakina.com.tr/hakkimizda";
+const pageTitle =
+  "Pro Makina Hakkında | Endüstriyel Makine İmalatı ve Proses Mühendisliği";
+const pageDescription =
+  "Pro Makina; gübre, kompost, geri dönüşüm, kimya, madencilik, atık su çamuru ve dökme katı malzeme prosesleri için endüstriyel makine imalatı, proses mühendisliği ve tesis çözümleri sunar.";
 
 export const metadata: Metadata = {
   title: pageTitle,
   description: pageDescription,
+  keywords: [
+    "Pro Makina",
+    "endüstriyel makine imalatı",
+    "proses mühendisliği",
+    "makine imalat firması",
+    "tesis kurulumu",
+    "gübre tesisi makineleri",
+    "kompost tesisi ekipmanları",
+    "tambur sistemleri",
+    "reaktör ve tank imalatı",
+    "konveyör sistemleri",
+    "endüstriyel proses çözümleri",
+  ],
   alternates: {
     canonical,
   },
@@ -20,86 +35,216 @@ export const metadata: Metadata = {
     locale: "tr_TR",
     type: "website",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: pageTitle,
+    description: pageDescription,
+  },
 };
 
-const trustCards = [
+type CardLink = {
+  title: string;
+  description: string;
+  href: string;
+};
+
+type SimpleCard = {
+  title: string;
+  description: string;
+};
+
+type ProcessStep = {
+  step: string;
+  title: string;
+  description: string;
+};
+
+const trustCards: SimpleCard[] = [
   {
     title: "40+ Yıllık Üretim Kültürü",
     description:
-      "Sahada imalat, montaj ve ekipman üretimiyle oluşmuş uzun yıllara dayanan bir üretim disipliniyle çalışıyoruz.",
+      "Sahadan gelen imalat tecrübesiyle proses ihtiyaçlarına uygun pratik ve uygulanabilir çözümler geliştiriyoruz.",
   },
   {
-    title: "2. Kuşak Mühendislik Yaklaşımı",
+    title: "Proses Odaklı Yaklaşım",
     description:
-      "Ustalıkla gelen üretim bilgisini, proses mühendisliği ve modern tesis kurgusuyla birleştiriyoruz.",
+      "Makine seçimi, kapasite, hammadde ve saha koşulları birlikte değerlendirilerek çözüm kurguluyoruz.",
   },
   {
-    title: "Saha Gerçeklerini Bilen Tasarım",
+    title: "Endüstriyel Makine İmalatı",
     description:
-      "Makineyi yalnız katalog ölçüsüyle değil; bakım, montaj, işletme ve uzun vadeli kullanım şartlarıyla birlikte değerlendiriyoruz.",
+      "Tambur, reaktör, tank, konveyör, kırıcı, bunker, silo ve özel proses ekipmanları üretiyoruz.",
   },
   {
-    title: "Proses Odaklı İmalat",
+    title: "Tesis ve Hat Çözümleri",
     description:
-      "Tambur, konveyör, helezon, kırıcı, reaktör ve tank gibi ekipmanları hattın tamamındaki görevine göre kurguluyoruz.",
+      "Gübre, kompost, geri dönüşüm, kimya, madencilik ve atık su çamuru prosesleri için entegre çözümler sunuyoruz.",
   },
 ];
 
-const serviceAreas = [
-  { title: "Gübre Üretim Tesisleri", href: "/sektorler/gubre-ve-granulasyon-tesisleri" },
-  { title: "Kompost ve Organik Atık Tesisleri", href: "/sektorler/kompost-ve-organik-atik-tesisleri" },
-  { title: "Kurutma Sistemleri", href: "/hizmetler/kurutma-tamburu-imalati" },
-  { title: "Maden ve Mineral İşleme", href: "/sektorler/madencilik-ve-mineral-isleme" },
-  { title: "Atık Su Çamuru ve Arıtma Çözümleri", href: "/sektorler/atik-su-camuru-ve-aritma-cozumleri" },
-  { title: "Kimya ve Proses Endüstrisi", href: "/sektorler/kimya-ve-proses-endustrisi" },
+const serviceCards: CardLink[] = [
+  {
+    title: "Proses Tasarımı ve Mühendislik",
+    description:
+      "Hammadde, kapasite ve ürün hedeflerine göre proses akışı ve ekipman seçimi.",
+    href: "/hizmetler/proses-tasarimi-ve-muhendislik",
+  },
+  {
+    title: "Makine İmalatı",
+    description:
+      "Tambur, tank, reaktör, konveyör, kırıcı, bunker, silo ve özel proses ekipmanları.",
+    href: "/hizmetler/makine-imalati",
+  },
+  {
+    title: "Anahtar Teslim Tesis Kurulumu",
+    description:
+      "Proses tasarımından saha montajına ve devreye almaya kadar komple tesis çözümleri.",
+    href: "/hizmetler/anahtar-teslim-tesis-kurulumu",
+  },
+  {
+    title: "Modernizasyon ve Revizyon",
+    description:
+      "Mevcut tesislerde kapasite, verimlilik, enerji kullanımı ve proses stabilitesi iyileştirmeleri.",
+    href: "/hizmetler/modernizasyon-ve-revizyon",
+  },
+  {
+    title: "Kurulum ve Devreye Alma",
+    description:
+      "Makine ve proses hatlarının sahada kurulumu, test edilmesi ve üretime hazırlanması.",
+    href: "/hizmetler/kurulum-ve-devreye-alma",
+  },
+  {
+    title: "Teknik Danışmanlık",
+    description:
+      "Yatırım öncesi makine seçimi, proses değerlendirmesi ve saha uygulanabilirliği desteği.",
+    href: "/hizmetler/teknik-danismanlik",
+  },
 ];
 
-const machineGroups = [
-  { title: "Tambur Sistemleri", href: "/makinalar-ekipman/tambur-sistemleri" },
-  { title: "Taşıma Ekipmanları", href: "/makinalar-ekipman/tasima-ekipmanlari" },
-  { title: "Kırıcılar ve Parçalayıcılar", href: "/makinalar-ekipman/kiricilar-ve-parcalayicilar" },
-  { title: "Reaktörler ve Tanklar", href: "/makinalar-ekipman/reaktorler-ve-tanklar" },
+const sectorCards: CardLink[] = [
   {
-    title: "Eleme ve Sınıflandırma Sistemleri",
-    href: "/makinalar-ekipman/eleme-ve-siniflandirma-sistemleri",
+    title: "Gübre Üretim Tesisleri",
+    description:
+      "Granül gübre, organomineral gübre, sıvı gübre, NPK ve kompost gübre hatları.",
+    href: "/sektorler/gubre-ve-granulasyon-tesisleri",
   },
-  { title: "Toz Toplama Sistemleri", href: "/makinalar-ekipman/toz-toplama-sistemleri" },
+  {
+    title: "Kompost ve Organik Atık Tesisleri",
+    description:
+      "Evsel, tarımsal, hayvansal ve organik atık işleme prosesleri.",
+    href: "/sektorler/kompost-ve-organik-atik-tesisleri",
+  },
+  {
+    title: "Enerji ve Biyogaz Sistemleri",
+    description:
+      "Biyogaz, biyometan, organik atık hazırlama ve enerji prosesleri.",
+    href: "/sektorler/enerji-ve-biyogaz-sistemleri",
+  },
+  {
+    title: "Madencilik ve Mineral İşleme",
+    description:
+      "Kırma, eleme, kurutma, taşıma ve dökme katı malzeme prosesleri.",
+    href: "/sektorler/madencilik-ve-mineral-isleme",
+  },
+  {
+    title: "Kimya ve Proses Endüstrisi",
+    description:
+      "Reaktör, tank, karıştırma, dozajlama ve sıvı proses sistemleri.",
+    href: "/sektorler/kimya-ve-proses-endustrisi",
+  },
+  {
+    title: "Geri Dönüşüm ve Atık Yönetimi",
+    description:
+      "Atık hazırlama, parçalama, kurutma, taşıma ve ayrıştırma hatları.",
+    href: "/sektorler/geri-donusum-ve-atik-yonetimi",
+  },
+  {
+    title: "Atık Su Çamuru ve Arıtma Çözümleri",
+    description:
+      "Çamur kurutma, granülasyon, depolama ve son ürün hazırlama çözümleri.",
+    href: "/sektorler/atik-su-camuru-ve-aritma-cozumleri",
+  },
+  {
+    title: "Yem ve Dökme Katı Malzeme İşleme",
+    description:
+      "Toz, granül ve dökme katı ürünler için taşıma, depolama ve paketleme sistemleri.",
+    href: "/sektorler/yem-toz-ve-dokme-kati-malzeme-isleme-sistemleri",
+  },
+];
+
+const machineCards: CardLink[] = [
+  {
+    title: "Tambur Sistemleri",
+    description: "Granülasyon, kurutma, soğutma, kaplama ve kompost proses ekipmanları.",
+    href: "/makinalar-ekipman/tambur-sistemleri",
+  },
+  {
+    title: "Reaktörler ve Tanklar",
+    description: "Karıştırıcılı, basınçlı ve stok amaçlı proses tankı çözümleri.",
+    href: "/makinalar-ekipman/reaktorler-ve-tanklar",
+  },
+  {
+    title: "Kırıcılar ve Parçalayıcılar",
+    description: "Farklı malzeme yapıları için primer, sekonder ve shredder sistemleri.",
+    href: "/makinalar-ekipman/kiricilar-ve-parcalayicilar",
+  },
+  {
+    title: "Taşıma Ekipmanları",
+    description: "Konveyör, elevatör ve helezon çözümleriyle kontrollü ürün transferi.",
+    href: "/makinalar-ekipman/tasima-ekipmanlari",
+  },
+  {
+    title: "Toz Toplama Sistemleri",
+    description: "Jet pulse filtre, torba filtre ve siklon entegrasyonları.",
+    href: "/makinalar-ekipman/toz-toplama-sistemleri",
+  },
   {
     title: "Paketleme ve Dolum Sistemleri",
+    description: "Torbalama, big bag dolum ve sıvı dolum hatları.",
     href: "/makinalar-ekipman/paketleme-ve-dolum-sistemleri",
+  },
+  {
+    title: "Depolama ve Besleme Sistemleri",
+    description: "Bunker, silo ve kontrollü besleme altyapıları.",
+    href: "/makinalar-ekipman/depolama-ve-besleme-sistemleri",
+  },
+  {
+    title: "Eleme ve Sınıflandırma Sistemleri",
+    description: "Döner, vibrasyonlu ve trommel eleme çözümleri.",
+    href: "/makinalar-ekipman/eleme-ve-siniflandirma-sistemleri",
   },
 ];
 
-const processSteps = [
+const processSteps: ProcessStep[] = [
   {
     step: "01",
-    title: "İlk Görüşme ve İhtiyaç Analizi",
+    title: "İhtiyacı Anlama",
     description:
-      "Kapasite, ürün tipi, hammadde, nem oranı, saha koşulları ve yatırım hedefi birlikte değerlendirilir.",
+      "Ürün, hammadde, kapasite, saha koşulu ve üretim hedefi birlikte değerlendirilir.",
   },
   {
     step: "02",
     title: "Proses Kurgusu",
     description:
-      "Üretim akışı, ana makine grupları, taşıma noktaları, kurutma/eleme/reaktör ihtiyaçları ve yardımcı ekipmanlar belirlenir.",
+      "Hammaddeden son ürüne kadar çalışacak proses akışı ve ekipman ihtiyaçları belirlenir.",
   },
   {
     step: "03",
-    title: "Teknik Tasarım ve İmalat",
+    title: "Makine ve Hat Tasarımı",
     description:
-      "Makine ölçüleri, malzeme seçimi, tahrik yapısı, bağlantı detayları ve üretim kapsamı netleştirilerek imalata geçilir.",
+      "Makine ölçüleri, malzeme seçimi, yerleşim ve bağlantı detayları planlanır.",
   },
   {
     step: "04",
-    title: "Montaj ve Entegrasyon",
+    title: "İmalat ve Uygulama",
     description:
-      "Saha yerleşimi, mekanik montaj, yardımcı ekipman bağlantıları ve sistem entegrasyonu kontrollü şekilde yürütülür.",
+      "Projeye uygun makine ve ekipmanlar üretilir, sahaya uygun şekilde hazırlanır.",
   },
   {
     step: "05",
-    title: "Devreye Alma ve Teknik Destek",
+    title: "Kurulum ve Teknik Destek",
     description:
-      "Sistemin çalışması sahada kontrol edilir, ilk üretim süreci takip edilir ve ihtiyaç halinde teknik destek sağlanır.",
+      "Montaj, test, devreye alma ve ihtiyaç halinde teknik destek süreci yürütülür.",
   },
 ];
 
@@ -109,6 +254,65 @@ function JsonLd({ data }: { data: Record<string, unknown> }) {
       type="application/ld+json"
       dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
     />
+  );
+}
+
+function SectionHeading({
+  eyebrow,
+  title,
+  description,
+  titleClassName,
+  descriptionClassName,
+  eyebrowClassName,
+}: {
+  eyebrow?: string;
+  title: string;
+  description?: string;
+  titleClassName?: string;
+  descriptionClassName?: string;
+  eyebrowClassName?: string;
+}) {
+  return (
+    <div className="max-w-4xl">
+      {eyebrow ? (
+        <p
+          className={`text-sm font-semibold uppercase tracking-[0.16em] text-[#278DC0] ${eyebrowClassName ?? ""}`}
+        >
+          {eyebrow}
+        </p>
+      ) : null}
+      <h2
+        className={`mt-3 text-3xl font-semibold tracking-tight text-[#154764] md:text-4xl ${titleClassName ?? ""}`}
+      >
+        {title}
+      </h2>
+      {description ? (
+        <p
+          className={`mt-4 text-sm leading-8 text-slate-600 sm:text-base ${descriptionClassName ?? ""}`}
+        >
+          {description}
+        </p>
+      ) : null}
+    </div>
+  );
+}
+
+function LinkCard({ title, description, href }: CardLink) {
+  return (
+    <Link
+      href={href}
+      className="group rounded-[28px] border border-[#d9e6ee] bg-white p-6 shadow-sm transition duration-200 hover:-translate-y-0.5 hover:border-[#278DC0]/40 hover:shadow-[0_18px_45px_rgba(15,23,42,0.08)]"
+    >
+      <div className="flex items-start justify-between gap-4">
+        <h3 className="text-xl font-semibold tracking-tight text-slate-950 transition group-hover:text-[#154764]">
+          {title}
+        </h3>
+        <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[#d9e6ee] text-[#278DC0] transition group-hover:border-[#278DC0]/40 group-hover:text-[#154764]">
+          →
+        </span>
+      </div>
+      <p className="mt-4 text-sm leading-7 text-slate-600">{description}</p>
+    </Link>
   );
 }
 
@@ -126,7 +330,7 @@ export default function AboutPage() {
       {
         "@type": "ListItem",
         position: 2,
-        name: "Hakkımızda",
+        name: "Pro Makina Hakkında",
         item: canonical,
       },
     ],
@@ -135,69 +339,78 @@ export default function AboutPage() {
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "Pro Makina Process Engineering",
+    name: "Pro Makina",
     url: "https://www.promakina.com.tr",
-    logo: "https://www.promakina.com.tr/logo.png",
-    description: pageDescription,
-    email: "info@promakina.com.tr",
+    description: "Endüstriyel makine imalatı, proses mühendisliği ve tesis çözümleri",
+    areaServed: "Türkiye ve yurtdışı endüstriyel tesis projeleri",
     telephone: "+905320580104",
-    sameAs: [
-      "https://www.linkedin.com/in/promakinaengineering/",
-      "https://www.youtube.com/@ProMakinaProcessEngineering",
-      "https://www.instagram.com/promakinaengineering/",
-    ],
+    email: "info@promakina.com.tr",
   };
 
-  const localBusinessSchema = {
+  const aboutPageSchema = {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    name: "Pro Makina Process Engineering",
-    url: "https://www.promakina.com.tr",
-    telephone: "+905320580104",
-    email: "info@promakina.com.tr",
-    address: {
-      "@type": "PostalAddress",
-      streetAddress:
-        "75. Yıl Mahallesi, Teksan Sanayi Sitesi, Kilis Sokak D6 Blok No: 2E",
-      addressLocality: "Odunpazarı",
-      addressRegion: "Eskişehir",
-      postalCode: "26250",
-      addressCountry: "TR",
-    },
+    "@type": "AboutPage",
+    name: "Pro Makina Hakkında",
+    description: pageDescription,
+    url: canonical,
   };
 
   return (
     <main className="min-h-screen overflow-x-hidden bg-white text-slate-900">
       <JsonLd data={breadcrumbSchema} />
       <JsonLd data={organizationSchema} />
-      <JsonLd data={localBusinessSchema} />
+      <JsonLd data={aboutPageSchema} />
 
-      <section className="relative isolate overflow-hidden border-b border-slate-200 bg-gradient-to-br from-white via-sky-50 to-[#eef6fb]">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(39,141,192,0.10),transparent_32%)]" />
-        <div className="relative site-container flex min-h-[170px] items-center py-8 sm:min-h-[200px] sm:py-10 lg:min-h-[230px] lg:py-12">
-          <div className="max-w-[920px]">
-            <h1 className="max-w-[900px] text-4xl font-semibold leading-[1.1] tracking-tight text-[#020617] md:text-5xl">
-              40+ Yıllık Üretim Kültüründen Gelen Proses Mühendisliği
-            </h1>
-            <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-              <Link
-                href="/hizmetler"
-                className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-[#278DC0] px-6 text-sm font-semibold text-white transition hover:bg-[#154764]"
-              >
-                Hizmetleri İncele
-              </Link>
-              <Link
-                href="/makinalar-ekipman"
-                className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-[#d7e3ec] bg-white px-6 text-sm font-semibold text-[#154764] transition hover:border-[#278DC0] hover:bg-[#278DC0]/6"
-              >
-                Makinaları İncele
-              </Link>
-              <Link
-                href="/iletisim"
-                className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-[#d7e3ec] bg-white px-6 text-sm font-semibold text-[#154764] transition hover:border-[#278DC0] hover:bg-[#278DC0]/6"
-              >
-                Teknik Teklif Al
-              </Link>
+      <section className="border-b border-slate-200 bg-gradient-to-br from-white via-sky-50 to-[#eef6fb]">
+        <div className="site-container py-10 sm:py-12 lg:py-16">
+          <div className="grid items-center gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12">
+            <div className="max-w-3xl">
+              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#278DC0]">
+                Endüstriyel Makine İmalatı ve Proses Mühendisliği
+              </p>
+              <h1 className="mt-4 text-4xl font-semibold leading-[1.05] tracking-tight text-[#020617] md:text-5xl lg:text-6xl">
+                Pro Makina Hakkında
+              </h1>
+              <p className="mt-6 max-w-2xl text-sm leading-8 text-slate-600 sm:text-base">
+                Pro Makina; 40 yılı aşan üretim kültüründen gelen saha tecrübesini,
+                proses mühendisliği ve endüstriyel makine imalatı yaklaşımıyla
+                birleştirir. Gübre, kompost, geri dönüşüm, kimya, madencilik, atık su
+                çamuru ve dökme katı malzeme prosesleri için makine, ekipman ve tesis
+                çözümleri geliştirir.
+              </p>
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+                <Link
+                  href="/hizmetler"
+                  className="inline-flex min-h-[48px] items-center justify-center rounded-full bg-[#278DC0] px-6 text-sm font-semibold text-white transition hover:bg-[#154764]"
+                >
+                  Hizmetleri İncele
+                </Link>
+                <Link
+                  href="/makinalar-ekipman"
+                  className="inline-flex min-h-[48px] items-center justify-center rounded-full border border-[#d7e3ec] bg-white px-6 text-sm font-semibold text-[#154764] transition hover:border-[#278DC0] hover:bg-[#278DC0]/5"
+                >
+                  Makinaları İncele
+                </Link>
+                <Link
+                  href="/iletisim"
+                  className="inline-flex min-h-[48px] items-center justify-center rounded-full border border-[#d7e3ec] bg-white px-6 text-sm font-semibold text-[#154764] transition hover:border-[#278DC0] hover:bg-[#278DC0]/5"
+                >
+                  Teknik Teklif Al
+                </Link>
+              </div>
+            </div>
+
+            <div className="relative overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-[0_24px_60px_rgba(15,23,42,0.08)]">
+              <div className="relative aspect-[5/4] sm:aspect-[16/11]">
+                <Image
+                  src="/images/hero/kat22.jpg"
+                  alt="Pro Makina endüstriyel makine imalatı ve proses mühendisliği"
+                  fill
+                  priority
+                  sizes="(max-width: 1024px) 100vw, 48vw"
+                  className="object-cover object-center"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -205,30 +418,60 @@ export default function AboutPage() {
 
       <section className="section-space">
         <div className="site-container">
-          <div className="rounded-[32px] border border-slate-200 bg-white px-6 py-8 shadow-[0_18px_45px_rgba(15,23,42,0.05)] sm:px-8 sm:py-10 lg:px-12">
-            <div className="max-w-5xl">
-              <h2 className="text-3xl font-semibold tracking-tight text-slate-950 md:text-4xl">
-                Ustalıkla başlayan, mühendislikle büyüyen üretim anlayışı
-              </h2>
+          <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+            <div className="rounded-[32px] border border-[#d9e6ee] bg-white p-8 shadow-sm sm:p-10">
+              <SectionHeading title="Üretimden Gelen Mühendislik Yaklaşımı" />
               <div className="mt-6 space-y-5 text-sm leading-8 text-slate-600 sm:text-base">
                 <p>
-                  Pro Makina’nın temelinde, sahada öğrenilmiş gerçek üretim tecrübesi yer alır.
-                  Birinci kuşakta kaynak, çelik imalat, siklon, konveyör, helezon ve yardımcı
-                  proses ekipmanlarıyla başlayan bu üretim kültürü; yıllar içinde farklı
-                  sektörlerin ihtiyaçlarını tanıyan güçlü bir saha birikimine dönüşmüştür.
+                  Pro Makina’nın temelinde sahada öğrenilmiş gerçek üretim tecrübesi yer
+                  alır. Çelik konstrüksiyon, kaynaklı imalat, tambur sistemleri,
+                  konveyörler, helezonlar, siklonlar, reaktörler, tanklar ve yardımcı
+                  proses ekipmanlarıyla başlayan üretim kültürü; bugün farklı sektörlere
+                  özel proses ve tesis çözümlerine dönüşmüştür.
                 </p>
                 <p>
-                  Bugün ikinci kuşak olarak bu birikimi yalnızca parça veya ekipman imalatıyla
-                  sınırlamıyor; gübre tesisleri, kompost sistemleri, kurutma tamburları,
-                  kırıcılar, reaktörler, tanklar, eleme sistemleri, toz toplama hatları ve özel
-                  proses çözümleriyle daha geniş bir mühendislik çerçevesine taşıyoruz.
+                  Firma olarak yalnızca makine üretmeye değil; hammaddeden son ürüne kadar
+                  çalışan, sahaya uygun, bakım kolaylığı olan ve uzun ömürlü proses hatları
+                  kurmaya odaklanıyoruz. Bu nedenle her projede kapasite, hammadde yapısı,
+                  nem oranı, ürün formu, saha koşulları ve işletme hedefleri birlikte
+                  değerlendirilir.
                 </p>
-                <p>
-                  Bu nedenle Pro Makina için makine üretimi yalnızca gövde, motor ve çelik
-                  konstrüksiyon anlamına gelmez. Her ekipman; hammadde davranışı, kapasite
-                  hedefi, saha yerleşimi, bakım erişimi, enerji ihtiyacı ve son ürün kalitesiyle
-                  birlikte değerlendirilir.
-                </p>
+              </div>
+            </div>
+
+            <div className="grid gap-4 sm:grid-cols-2">
+              <div className="relative overflow-hidden rounded-[28px] border border-slate-200 bg-white shadow-sm sm:col-span-2">
+                <div className="relative aspect-[16/10]">
+                  <Image
+                    src="/images/01-genel/fabrika1.jpg"
+                    alt="Pro Makina üretim tesisi ve makine imalatı"
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 48vw"
+                    className="object-cover object-center"
+                  />
+                </div>
+              </div>
+              <div className="relative overflow-hidden rounded-[24px] border border-slate-200 bg-white shadow-sm">
+                <div className="relative aspect-[4/3]">
+                  <Image
+                    src="/images/01-genel/proses1.png"
+                    alt="Endüstriyel tesis kurulumu ve proses ekipmanları"
+                    fill
+                    sizes="(max-width: 640px) 100vw, 24vw"
+                    className="object-cover object-center"
+                  />
+                </div>
+              </div>
+              <div className="relative overflow-hidden rounded-[24px] border border-slate-200 bg-white shadow-sm">
+                <div className="relative aspect-[4/3]">
+                  <Image
+                    src="/images/01-genel/sahakontrol1.webp"
+                    alt="Pro Makina endüstriyel makine imalatı ve proses mühendisliği"
+                    fill
+                    sizes="(max-width: 640px) 100vw, 24vw"
+                    className="object-cover object-center"
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -237,142 +480,91 @@ export default function AboutPage() {
 
       <section className="section-bottom-space">
         <div className="site-container">
-          <div className="content-stack">
-            <div>
-              <h2 className="text-3xl font-semibold tracking-tight text-slate-950 md:text-4xl">
-                Neyi farklı yapıyoruz?
-              </h2>
-            </div>
-            <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-              {trustCards.map((item) => (
-                <article
-                  key={item.title}
-                  className="rounded-[28px] border border-slate-200 bg-white p-6 shadow-[0_16px_40px_rgba(15,23,42,0.04)]"
-                >
-                  <h3 className="text-xl font-semibold tracking-tight text-slate-950">
-                    {item.title}
-                  </h3>
-                  <p className="mt-3 text-sm leading-7 text-slate-600">{item.description}</p>
-                </article>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="section-bottom-space">
-        <div className="site-container">
-          <div className="content-stack">
-            <div className="max-w-4xl">
-              <h2 className="text-3xl font-semibold tracking-tight text-slate-950 md:text-4xl">
-                Birinci kuşaktan ikinci kuşağa aktarılan üretim disiplini
-              </h2>
-            </div>
-            <div className="grid gap-6 lg:grid-cols-2">
-              <article className="rounded-[32px] border border-slate-200 bg-slate-50 p-6 shadow-sm sm:p-8">
-                <h3 className="text-2xl font-semibold tracking-tight text-slate-950">
-                  Birinci Kuşak: Ustalık ve Saha İmalatı
-                </h3>
-                <p className="mt-4 text-sm leading-8 text-slate-600 sm:text-base">
-                  Kaynak ustalığı, çelik imalat, siklon, konveyör, helezon ve yardımcı ekipman
-                  üretimiyle oluşan ilk dönem tecrübe; Pro Makina’nın üretim kültürünün temelini
-                  oluşturur. Bu dönem, sahada çalışan makinenin neye ihtiyaç duyduğunu doğrudan
-                  görerek öğrenilen gerçek bir imalat okuludur.
-                </p>
-              </article>
-              <article className="rounded-[32px] border border-slate-200 bg-white p-6 shadow-[0_18px_45px_rgba(15,23,42,0.05)] sm:p-8">
-                <h3 className="text-2xl font-semibold tracking-tight text-slate-950">
-                  İkinci Kuşak: Proses ve Tesis Çözümleri
-                </h3>
-                <p className="mt-4 text-sm leading-8 text-slate-600 sm:text-base">
-                  Bugün bu üretim bilgisi; tambur sistemleri, kırıcılar, reaktörler, tanklar,
-                  eleme sistemleri, toz toplama, paketleme ve anahtar teslim tesis çözümleriyle
-                  daha kapsamlı bir mühendislik yapısına taşınmaktadır. Amaç, yalnız makine
-                  üretmek değil; çalışan ve sürdürülebilir tesis omurgası kurmaktır.
-                </p>
-              </article>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="section-bottom-space">
-        <div className="site-container">
-          <div className="rounded-[32px] border border-slate-200 bg-slate-50 px-6 py-8 sm:px-8 sm:py-10 lg:px-12">
-            <h2 className="text-3xl font-semibold tracking-tight text-slate-950 md:text-4xl">
-              Hizmet verdiğimiz ana alanlar
-            </h2>
-            <p className="mt-4 max-w-4xl text-sm leading-8 text-slate-600 sm:text-base">
-              Pro Makina, farklı sektörlerde kullanılan makine ve tesis çözümlerini proje bazlı
-              olarak geliştirir. Her sektörün hammadde yapısı, nem oranı, kapasite beklentisi ve
-              proses davranışı farklı olduğu için çözüm yaklaşımı da sahaya özel oluşturulur.
-            </p>
-            <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-              {serviceAreas.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className="rounded-[24px] border border-slate-200 bg-white px-5 py-5 text-base font-semibold text-slate-800 transition hover:border-[#278DC0]/20 hover:text-[#278DC0]"
-                >
+          <SectionHeading title="Öne Çıkan Güçlerimiz" />
+          <div className="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+            {trustCards.map((item) => (
+              <article
+                key={item.title}
+                className="rounded-[28px] border border-[#d9e6ee] bg-white p-6 shadow-sm"
+              >
+                <h3 className="text-xl font-semibold tracking-tight text-[#154764]">
                   {item.title}
-                </Link>
-              ))}
-            </div>
+                </h3>
+                <p className="mt-4 text-sm leading-7 text-slate-600">{item.description}</p>
+              </article>
+            ))}
           </div>
         </div>
       </section>
 
       <section className="section-bottom-space">
         <div className="site-container">
-          <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr]">
-            <div className="rounded-[32px] border border-slate-200 bg-white px-6 py-8 shadow-[0_18px_45px_rgba(15,23,42,0.05)] sm:px-8 sm:py-10 lg:px-12">
-              <h2 className="text-3xl font-semibold tracking-tight text-slate-950 md:text-4xl">
-                Makine ve ekipman üretim kabiliyetimiz
-              </h2>
-              <p className="mt-5 text-sm leading-8 text-slate-600 sm:text-base">
-                Pro Makina’nın üretim kabiliyeti; birinci kuşaktan gelen saha imalatı tecrübesi
-                ile ikinci kuşağın proses odaklı yaklaşımını bir araya getirir. Bu sayede yalnız
-                tekil ekipman değil, birbirini tamamlayan makine gruplarıyla çalışan proses
-                hatları geliştiriyoruz.
-              </p>
-            </div>
+          <SectionHeading
+            title="Pro Makina Ne Yapar?"
+            description="Pro Makina; endüstriyel üretim tesislerinde ihtiyaç duyulan makine, ekipman ve proses hatlarını tasarlar, imal eder, sahaya uygular ve teknik destek sağlar."
+          />
+          <div className="mt-8 grid gap-6 lg:grid-cols-2 xl:grid-cols-3">
+            {serviceCards.map((item) => (
+              <LinkCard key={item.href} {...item} />
+            ))}
+          </div>
+        </div>
+      </section>
 
-            <div className="rounded-[32px] border border-slate-200 bg-slate-50 px-6 py-8 sm:px-8 sm:py-10">
-              <div className="grid gap-4 sm:grid-cols-2">
-                {machineGroups.map((item) => (
+      <section className="section-bottom-space">
+        <div className="site-container">
+          <SectionHeading title="Hizmet Verdiğimiz Başlıca Sektörler" />
+          <div className="mt-8 grid gap-6 lg:grid-cols-2 xl:grid-cols-4">
+            {sectorCards.map((item) => (
+              <LinkCard key={item.href} {...item} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-bottom-space">
+        <div className="site-container">
+          <div className="grid gap-8 lg:grid-cols-[1.02fr_0.98fr] lg:items-start">
+            <div className="rounded-[32px] border border-[#d9e6ee] bg-white p-8 shadow-sm sm:p-10">
+              <SectionHeading
+                title="Makine ve Ekipman Üretim Kabiliyetimiz"
+                description="Pro Makina; proses ihtiyacına göre standart veya özel ölçülü makine ve ekipman imalatı yapar. İmalatlarda proje ihtiyacına göre paslanmaz çelik, galvaniz ve RAL boyalı çözümler uygulanabilir."
+              />
+              <div className="mt-8 grid gap-4 sm:grid-cols-2">
+                {machineCards.map((item) => (
                   <Link
                     key={item.href}
                     href={item.href}
-                    className="rounded-[22px] border border-slate-200 bg-white px-4 py-4 text-sm font-semibold text-slate-800 transition hover:border-[#278DC0]/20 hover:text-[#278DC0]"
+                    className="group rounded-[22px] border border-[#d9e6ee] bg-slate-50 px-5 py-5 transition hover:border-[#278DC0]/40 hover:bg-white"
                   >
-                    {item.title}
+                    <div className="flex items-start justify-between gap-3">
+                      <div>
+                        <h3 className="text-base font-semibold text-slate-950 transition group-hover:text-[#154764]">
+                          {item.title}
+                        </h3>
+                        <p className="mt-2 text-sm leading-7 text-slate-600">
+                          {item.description}
+                        </p>
+                      </div>
+                      <span className="text-[#278DC0] transition group-hover:text-[#154764]">
+                        →
+                      </span>
+                    </div>
                   </Link>
                 ))}
               </div>
             </div>
-          </div>
-        </div>
-      </section>
 
-      <section className="section-bottom-space">
-        <div className="site-container">
-          <div className="rounded-[32px] border border-slate-200 bg-white px-6 py-8 shadow-[0_18px_45px_rgba(15,23,42,0.05)] sm:px-8 sm:py-10 lg:px-12">
-            <h2 className="text-3xl font-semibold tracking-tight text-slate-950 md:text-4xl">
-              Projeye nasıl yaklaşıyoruz?
-            </h2>
-            <div className="mt-8 grid gap-5 lg:grid-cols-5">
-              {processSteps.map((item) => (
-                <article
-                  key={item.step}
-                  className="rounded-[24px] border border-slate-200 bg-slate-50 px-5 py-5"
-                >
-                  <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[#278DC0]">
-                    {item.step}
-                  </p>
-                  <h3 className="mt-3 text-lg font-semibold text-slate-950">{item.title}</h3>
-                  <p className="mt-3 text-sm leading-7 text-slate-600">{item.description}</p>
-                </article>
-              ))}
+            <div className="relative overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-sm">
+              <div className="relative aspect-[4/5] min-h-[320px]">
+                <Image
+                  src="/images/01-genel/proses1.png"
+                  alt="Endüstriyel tesis kurulumu ve proses ekipmanları"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 36vw"
+                  className="object-cover object-center"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -380,50 +572,90 @@ export default function AboutPage() {
 
       <section className="section-bottom-space">
         <div className="site-container">
-          <div className="rounded-[32px] border border-slate-200 bg-slate-950 px-6 py-8 text-white shadow-[0_22px_60px_rgba(15,23,42,0.16)] sm:px-8 sm:py-10 lg:px-12">
-            <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">
-              Yalnız makine değil, sahada çalışan proses omurgası kuruyoruz.
-            </h2>
-            <p className="mt-5 max-w-4xl text-sm leading-8 text-white/80 sm:text-base">
-              Endüstriyel tesis yatırımlarında doğru sonuç; tek tek makinelerin güçlü olmasından
-              çok, tüm hattın aynı proses mantığıyla çalışmasından gelir. Pro Makina, üretimden
-              gelen saha tecrübesini mühendislik yaklaşımıyla birleştirerek yatırımcıya daha net,
-              uygulanabilir ve uzun vadeli çözümler sunmayı hedefler.
-            </p>
+          <SectionHeading title="Her Projede Uyguladığımız Temel Yaklaşım" />
+          <div className="mt-8 grid gap-5 lg:grid-cols-5">
+            {processSteps.map((item) => (
+              <article
+                key={item.step}
+                className="rounded-[24px] border border-[#d9e6ee] bg-slate-50 px-5 py-5"
+              >
+                <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[#278DC0]">
+                  {item.step}
+                </p>
+                <h3 className="mt-3 text-lg font-semibold text-slate-950">{item.title}</h3>
+                <p className="mt-3 text-sm leading-7 text-slate-600">{item.description}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-bottom-space">
+        <div className="site-container">
+          <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
+            <div className="relative overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-sm">
+              <div className="relative aspect-[16/11]">
+                <Image
+                  src="/images/01-genel/sahakontrol1.webp"
+                  alt="Pro Makina üretim tesisi ve makine imalatı"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 40vw"
+                  className="object-cover object-center"
+                />
+              </div>
+            </div>
+            <div className="rounded-[32px] border border-[#d9e6ee] bg-slate-950 p-8 text-white shadow-[0_24px_60px_rgba(15,23,42,0.16)] sm:p-10">
+              <SectionHeading
+                eyebrow="Vizyon"
+                title="Sahada Çalışan, Uzun Ömürlü ve Uygulanabilir Çözümler"
+                description="Pro Makina için başarılı bir proje; yalnızca teslim edilen bir makine değil, sahada çalışan, işletmesi kolay, bakımı yapılabilir ve üretim hedefini karşılayan bir proses çözümüdür. Bu nedenle her projede mühendislik, imalat ve saha uygulaması birlikte düşünülür."
+                eyebrowClassName="text-sky-300"
+                titleClassName="text-white"
+                descriptionClassName="text-white/80"
+              />
+            </div>
           </div>
         </div>
       </section>
 
       <section className="section-bottom-space-lg">
         <div className="site-container">
-          <div className="rounded-[32px] bg-[#278DC0] px-6 py-10 text-white sm:px-8 sm:py-12 md:px-12">
+          <div className="rounded-[32px] bg-[#278DC0] px-6 py-10 text-white shadow-[0_20px_60px_rgba(39,141,192,0.28)] sm:px-8 sm:py-12 md:px-12">
             <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">
-              Projeniz için teknik görüşme talep edin
+              Prosesinize Uygun Makine ve Tesis Çözümünü Birlikte Planlayalım
             </h2>
             <p className="mt-4 max-w-3xl text-sm leading-8 text-white/84 sm:text-base">
-              Gübre tesisi, kompost tesisi, kurutma tamburu, konveyör hattı, maden işleme tesisi,
-              reaktör-tank sistemi veya özel makine ihtiyacınız için bizimle iletişime geçin.
-              Hammadde, kapasite ve saha bilgilerinize göre teknik değerlendirme yapalım.
+              Üretmek istediğiniz ürün, kapasite hedefiniz ve saha koşullarınızı birlikte
+              değerlendirelim. Pro Makina, ihtiyacınıza uygun makine, ekipman ve proses hattı
+              çözümünü teknik olarak planlasın.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <Link
                 href="/iletisim"
-                className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-white px-6 text-sm font-semibold text-[#154764] transition hover:bg-slate-100"
+                className="inline-flex min-h-[48px] items-center justify-center rounded-full bg-white px-6 text-sm font-semibold text-[#154764] transition hover:bg-slate-100"
               >
                 Teknik Teklif Al
               </Link>
-              <a
-                href="https://wa.me/905320580104"
-                className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/60 bg-white/12 px-6 text-sm font-semibold text-white backdrop-blur transition hover:border-white hover:bg-white/18"
-              >
-                WhatsApp ile Görüş
-              </a>
               <Link
                 href="/hizmetler"
-                className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/60 bg-white/12 px-6 text-sm font-semibold text-white backdrop-blur transition hover:border-white hover:bg-white/18"
+                className="inline-flex min-h-[48px] items-center justify-center rounded-full border border-white/60 bg-white/12 px-6 text-sm font-semibold text-white backdrop-blur transition hover:border-white hover:bg-white/18"
               >
                 Hizmetleri İncele
               </Link>
+              <Link
+                href="/makinalar-ekipman"
+                className="inline-flex min-h-[48px] items-center justify-center rounded-full border border-white/60 bg-white/12 px-6 text-sm font-semibold text-white backdrop-blur transition hover:border-white hover:bg-white/18"
+              >
+                Makinaları İncele
+              </Link>
+              <a
+                href="https://wa.me/905320580104"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex min-h-[48px] items-center justify-center rounded-full border border-white/60 bg-white/12 px-6 text-sm font-semibold text-white backdrop-blur transition hover:border-white hover:bg-white/18"
+              >
+                WhatsApp ile Görüş
+              </a>
             </div>
           </div>
         </div>

@@ -163,56 +163,56 @@ export const solutions: SolutionItem[] = [
 export const sectors: SectorItem[] = [
   {
     slug: "gubre-ve-granulasyon-tesisleri",
-    title: "Gübre Üretim Tesisleri",
+    title: "Gï¿½bre ï¿½retim Tesisleri",
     summary:
-      "Sıvı, granül ve toz gübre üretim hatları için proses tasarımı, ekipman seçimi ve tesis kurgusu.",
-    heroTitle: "Gübre üretim tesislerinde yüksek verim ve sürekli kalite.",
+      "S1v1, granï¿½l ve toz gï¿½bre ï¿½retim hatlar1 iï¿½in proses tasar1m1, ekipman seï¿½imi ve tesis kurgusu.",
+    heroTitle: "Gï¿½bre ï¿½retim tesislerinde yï¿½ksek verim ve sï¿½rekli kalite.",
     heroDescription:
-      "Ham madde hazırlamadan karışım, granülasyon, kurutma, eleme, soğutma ve paketlemeye kadar tüm üretim sürecini tek bir tesis mantığıyla planlıyoruz.",
+      "Ham madde haz1rlamadan kar1_1m, granï¿½lasyon, kurutma, eleme, soutma ve paketlemeye kadar tï¿½m ï¿½retim sï¿½recini tek bir tesis mant11yla planl1yoruz.",
     image:
       "https://images.unsplash.com/photo-1621905252507-b35492cc74b4cauto=format&fit=crop&w=1400&q=80",
   },
   {
     slug: "kompost-ve-organik-atik-tesisleri",
-    title: "Kompost ve Organik Atık Tesisleri",
+    title: "Kompost ve Organik At1k Tesisleri",
     summary:
-      "Organik atıkların geri kazanımı için kompost prosesleri, tambur sistemleri ve saha kurulumları.",
-    heroTitle: "Kompost ve organik atık işleme tesislerinde kontrollü ve verimli proses yapısı.",
+      "Organik at1klar1n geri kazan1m1 iï¿½in kompost prosesleri, tambur sistemleri ve saha kurulumlar1.",
+    heroTitle: "Kompost ve organik at1k i_leme tesislerinde kontrollï¿½ ve verimli proses yap1s1.",
     heroDescription:
-      "Atık karakterine ve kapasiteye uygun tesis tasarımı ile organik atıkları değerli son ürüne dönüştüren altyapıyı kuruyoruz.",
+      "At1k karakterine ve kapasiteye uygun tesis tasar1m1 ile organik at1klar1 deerli son ï¿½rï¿½ne dï¿½nï¿½_tï¿½ren altyap1y1 kuruyoruz.",
     image:
       "https://images.unsplash.com/photo-1464226184884-fa280b87c399cauto=format&fit=crop&w=1400&q=80",
   },
   {
     slug: "madencilik-ve-mineral-isleme",
-    title: "Madencilik ve Mineral İşleme",
+    title: "Madencilik ve Mineral 0_leme",
     summary:
-      "Kırma, eleme, taşıma, kurutma ve sınıflandırma adımlarına uygun ekipman ve hat kurguları.",
-    heroTitle: "Madencilik ve mineral işleme süreçlerinde dayanıklı ekipman ve proses sürekliliği.",
+      "K1rma, eleme, ta_1ma, kurutma ve s1n1fland1rma ad1mlar1na uygun ekipman ve hat kurgular1.",
+    heroTitle: "Madencilik ve mineral i_leme sï¿½reï¿½lerinde dayan1kl1 ekipman ve proses sï¿½reklilii.",
     heroDescription:
-      "Yüksek aşınma koşullarına uygun mekanik altyapı ve proses akışı ile sahada uzun ömürlü sistemler kurguluyoruz.",
+      "Yï¿½ksek a_1nma ko_ullar1na uygun mekanik altyap1 ve proses ak1_1 ile sahada uzun ï¿½mï¿½rlï¿½ sistemler kurguluyoruz.",
     image:
       "https://images.unsplash.com/photo-1513828583688-c52646db42dacauto=format&fit=crop&w=1400&q=80",
   },
   {
     slug: "kimya-ve-proses-endustrisi",
-    title: "Kimya ve Proses Endüstrisi",
+    title: "Kimya ve Proses Endï¿½strisi",
     summary:
-      "Reaktör, dozajlama, çözündürme, soğutma ve transfer sistemleriyle proses güvenliği ve verim odaklı kurgu.",
-    heroTitle: "Kimya ve proses endüstrisi için kontrollü üretim ve hassas ekipman seçimi.",
+      "Reaktï¿½r, dozajlama, ï¿½ï¿½zï¿½ndï¿½rme, soutma ve transfer sistemleriyle proses gï¿½venlii ve verim odakl1 kurgu.",
+    heroTitle: "Kimya ve proses endï¿½strisi iï¿½in kontrollï¿½ ï¿½retim ve hassas ekipman seï¿½imi.",
     heroDescription:
-      "Reaksiyon, karıştırma, depolama ve transfer aşamalarında ürün güvenliği ve proses kararlılığını merkeze alıyoruz.",
+      "Reaksiyon, kar1_t1rma, depolama ve transfer a_amalar1nda ï¿½rï¿½n gï¿½venlii ve proses kararl1l11n1 merkeze al1yoruz.",
     image:
       "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dccauto=format&fit=crop&w=1400&q=80",
   },
   {
     slug: "geri-donusum-ve-atik-yonetimi",
-    title: "Geri Dönüşüm ve Atık Yönetimi",
+    title: "Geri Dï¿½nï¿½_ï¿½m ve At1k Yï¿½netimi",
     summary:
-      "Parçalama, ayırma, taşıma ve geri kazanım odaklı tesis çözümleriyle atık yönetim altyapısı.",
-    heroTitle: "Geri dönüşüm ve atık yönetiminde işlenebilir ve ölçeklenebilir sistemler.",
+      "Parï¿½alama, ay1rma, ta_1ma ve geri kazan1m odakl1 tesis ï¿½ï¿½zï¿½mleriyle at1k yï¿½netim altyap1s1.",
+    heroTitle: "Geri dï¿½nï¿½_ï¿½m ve at1k yï¿½netiminde i_lenebilir ve ï¿½lï¿½eklenebilir sistemler.",
     heroDescription:
-      "Farklı atık akışları için parçalama, sınıflandırma ve proses yönetimini tek çatı altında topluyoruz.",
+      "Farkl1 at1k ak1_lar1 iï¿½in parï¿½alama, s1n1fland1rma ve proses yï¿½netimini tek ï¿½at1 alt1nda topluyoruz.",
     image:
       "https://images.unsplash.com/photo-1532996122724-e3c354a0b15bcauto=format&fit=crop&w=1400&q=80",
   },
@@ -220,32 +220,32 @@ export const sectors: SectorItem[] = [
     slug: "enerji-ve-biyogaz-sistemleri",
     title: "Enerji ve Biyogaz Sistemleri",
     summary:
-      "Biyogaz besleme, organik madde hazırlama ve yardımcı proses ekipmanlarıyla enerji odaklı tesis yapısı.",
-    heroTitle: "Enerji ve biyogaz sistemlerinde istikrarlı besleme ve sürdürülebilir işletme.",
+      "Biyogaz besleme, organik madde haz1rlama ve yard1mc1 proses ekipmanlar1yla enerji odakl1 tesis yap1s1.",
+    heroTitle: "Enerji ve biyogaz sistemlerinde istikrarl1 besleme ve sï¿½rdï¿½rï¿½lebilir i_letme.",
     heroDescription:
-      "Biyogaz tesislerinin ön hazırlık ve malzeme yönetimi adımlarını daha verimli hale getiren ekipman kurguları sunuyoruz.",
+      "Biyogaz tesislerinin ï¿½n haz1rl1k ve malzeme yï¿½netimi ad1mlar1n1 daha verimli hale getiren ekipman kurgular1 sunuyoruz.",
     image:
       "https://images.unsplash.com/photo-1473341304170-971dccb5ac1ecauto=format&fit=crop&w=1400&q=80",
   },
   {
     slug: "atik-su-camuru-ve-aritma-cozumleri",
-    title: "Atık Su Çamuru ve Arıtma Çözümleri",
+    title: "At1k Su ï¿½amuru ve Ar1tma ï¿½ï¿½zï¿½mleri",
     summary:
-      "Çamur taşıma, susuzlaştırma sonrası hazırlama ve kurutma adımlarına uygun proses çözümleri.",
-    heroTitle: "Atık su çamuru ve arıtma çözümlerinde kontrollü işleme altyapısı.",
+      "ï¿½amur ta_1ma, susuzla_t1rma sonras1 haz1rlama ve kurutma ad1mlar1na uygun proses ï¿½ï¿½zï¿½mleri.",
+    heroTitle: "At1k su ï¿½amuru ve ar1tma ï¿½ï¿½zï¿½mlerinde kontrollï¿½ i_leme altyap1s1.",
     heroDescription:
-      "Arıtma tesislerinden gelen farklı karakterdeki çamurlar için depolama, taşıma ve kurutma odaklı sistemler tasarlıyoruz.",
+      "Ar1tma tesislerinden gelen farkl1 karakterdeki ï¿½amurlar iï¿½in depolama, ta_1ma ve kurutma odakl1 sistemler tasarl1yoruz.",
     image:
       "https://images.unsplash.com/photo-1513828742140-ccaa28f3eda0cauto=format&fit=crop&w=1400&q=80",
   },
   {
     slug: "yem-toz-ve-dokme-kati-malzeme-isleme-sistemleri",
-    title: "Yem, Toz ve Dökme Katı Malzeme İşleme Sistemleri",
+    title: "Yem, Toz ve Dï¿½kme Kat1 Malzeme 0_leme Sistemleri",
     summary:
-      "Dökme katı malzemelerde depolama, dozajlama, taşıma, eleme ve karıştırma süreçleri için hat tasarımı.",
-    heroTitle: "Dökme katı malzeme işlemede hassas taşıma ve dengeli proses akışı.",
+      "Dï¿½kme kat1 malzemelerde depolama, dozajlama, ta_1ma, eleme ve kar1_t1rma sï¿½reï¿½leri iï¿½in hat tasar1m1.",
+    heroTitle: "Dï¿½kme kat1 malzeme i_lemede hassas ta_1ma ve dengeli proses ak1_1.",
     heroDescription:
-      "Yem, toz ve benzeri malzemelerde akışkanlık, nem ve kapasite değişkenlerini dikkate alan ekipman seçimi sunuyoruz.",
+      "Yem, toz ve benzeri malzemelerde ak1_kanl1k, nem ve kapasite dei_kenlerini dikkate alan ekipman seï¿½imi sunuyoruz.",
     image:
       "https://images.unsplash.com/photo-1517048676732-d65bc937f952cauto=format&fit=crop&w=1400&q=80",
   },
@@ -297,11 +297,11 @@ export const machineGroups: MachineGroupItem[] = [
       "Prosese ?zel ic geometri secenekleri",
     ],
     relatedSectors: [
-      "Gübre Üretim Tesisleri",
+      "Gï¿½bre ï¿½retim Tesisleri",
       "Kompost ve Organik Atik Tesisleri",
-      "Atık Su Çamuru ve Arıtma Çözümleri",
+      "At1k Su ï¿½amuru ve Ar1tma ï¿½ï¿½zï¿½mleri",
     ],
-    relatedServices: ["Proses Tasarimi ve M?hendislik", "Makine Imalati", "Anahtar Teslim Tesis Kurulumu"],
+    relatedServices: ["Proses Tasarımı ve Mühendislik", "Makine Imalati", "Anahtar Teslim Tesis Kurulumu"],
     relatedProjects: [
       "Kompost Tesisi Projeleri",
       "Organomineral G?bre Tesisi Projeleri",
@@ -333,7 +333,7 @@ export const machineGroups: MachineGroupItem[] = [
     image:
       "https://images.unsplash.com/photo-1581092919535-7146ff1a5902cauto=format&fit=crop&w=1400&q=80",
     variants: [
-      "Bant Konveyorler",
+      "Bantl? Konvey?rler",
       "Helezon Konveyorler",
       "Kovali Elevatorler",
       "Zincirli Konveyorler",
@@ -365,11 +365,11 @@ export const machineGroups: MachineGroupItem[] = [
       "Farkli ekipmanlarla kolay entegrasyon",
     ],
     relatedSectors: [
-      "Yem, Toz ve Dökme Katı Malzeme İşleme Sistemleri",
+      "Yem, Toz ve Dï¿½kme Kat1 Malzeme 0_leme Sistemleri",
       "Enerji ve Biyogaz Sistemleri",
-      "Geri Dönüşüm ve Atık Yönetimi",
+      "Geri Dï¿½nï¿½_ï¿½m ve At1k Yï¿½netimi",
     ],
-    relatedServices: ["Proses Tasarimi ve M?hendislik", "Makine Imalati"],
+    relatedServices: ["Proses Tasarımı ve Mühendislik", "Makine Imalati"],
     relatedProjects: ["Kompost Tesisi Projeleri", "?zel Proses ve Makine 0malat1"],
     faqs: [
       {
@@ -431,8 +431,8 @@ export const machineGroups: MachineGroupItem[] = [
       "Bakim kolayligi",
     ],
     relatedSectors: [
-      "Geri Dönüşüm ve Atık Yönetimi",
-      "Madencilik ve Mineral İşleme",
+      "Geri Dï¿½nï¿½_ï¿½m ve At1k Yï¿½netimi",
+      "Madencilik ve Mineral 0_leme",
       "Kompost ve Organik Atik Tesisleri",
     ],
     relatedServices: ["Makine Imalati", "Anahtar Teslim Tesis Kurulumu"],
@@ -495,11 +495,11 @@ export const machineGroups: MachineGroupItem[] = [
       "Uzun omurlu govde tasarimi",
     ],
     relatedSectors: [
-      "Kimya ve Proses Endüstrisi",
-      "Gübre Üretim Tesisleri",
-      "Atık Su Çamuru ve Arıtma Çözümleri",
+      "Kimya ve Proses Endï¿½strisi",
+      "Gï¿½bre ï¿½retim Tesisleri",
+      "At1k Su ï¿½amuru ve Ar1tma ï¿½ï¿½zï¿½mleri",
     ],
-    relatedServices: ["Proses Tasarimi ve M?hendislik", "Makine Imalati"],
+    relatedServices: ["Proses Tasarımı ve Mühendislik", "Makine Imalati"],
     relatedProjects: ["Organomineral G?bre Tesisi Projeleri", "?zel Proses ve Makine 0malat1"],
     faqs: [
       {
@@ -550,10 +550,10 @@ export const machineGroups: MachineGroupItem[] = [
     ],
     relatedSectors: [
       "Kompost ve Organik Atik Tesisleri",
-      "Gübre Üretim Tesisleri",
-      "Madencilik ve Mineral İşleme",
+      "Gï¿½bre ï¿½retim Tesisleri",
+      "Madencilik ve Mineral 0_leme",
     ],
-    relatedServices: ["Proses Tasarimi ve M?hendislik", "Anahtar Teslim Tesis Kurulumu"],
+    relatedServices: ["Proses Tasarımı ve Mühendislik", "Anahtar Teslim Tesis Kurulumu"],
     relatedProjects: ["Kompost Tesisi Projeleri", "Organomineral G?bre Tesisi Projeleri"],
     faqs: [
       {
@@ -603,11 +603,11 @@ export const machineGroups: MachineGroupItem[] = [
       "Is g?venligini destekleme",
     ],
     relatedSectors: [
-      "Yem, Toz ve Dökme Katı Malzeme İşleme Sistemleri",
-      "Kimya ve Proses Endüstrisi",
-      "Gübre Üretim Tesisleri",
+      "Yem, Toz ve Dï¿½kme Kat1 Malzeme 0_leme Sistemleri",
+      "Kimya ve Proses Endï¿½strisi",
+      "Gï¿½bre ï¿½retim Tesisleri",
     ],
-    relatedServices: ["Proses Tasarimi ve M?hendislik", "Anahtar Teslim Tesis Kurulumu"],
+    relatedServices: ["Proses Tasarımı ve Mühendislik", "Anahtar Teslim Tesis Kurulumu"],
     relatedProjects: ["Organomineral G?bre Tesisi Projeleri", "?zel Proses ve Makine 0malat1"],
     faqs: [
       {
@@ -657,9 +657,9 @@ export const machineGroups: MachineGroupItem[] = [
       "Operasyonel hiz artisi",
     ],
     relatedSectors: [
-      "Gübre Üretim Tesisleri",
-      "Kimya ve Proses Endüstrisi",
-      "Yem, Toz ve Dökme Katı Malzeme İşleme Sistemleri",
+      "Gï¿½bre ï¿½retim Tesisleri",
+      "Kimya ve Proses Endï¿½strisi",
+      "Yem, Toz ve Dï¿½kme Kat1 Malzeme 0_leme Sistemleri",
     ],
     relatedServices: ["Makine Imalati", "Anahtar Teslim Tesis Kurulumu"],
     relatedProjects: ["Organomineral G?bre Tesisi Projeleri", "?zel Proses ve Makine 0malat1"],
@@ -711,11 +711,11 @@ export const machineGroups: MachineGroupItem[] = [
       "Sahaya uygun ?zel imalat",
     ],
     relatedSectors: [
-      "Yem, Toz ve Dökme Katı Malzeme İşleme Sistemleri",
-      "Gübre Üretim Tesisleri",
+      "Yem, Toz ve Dï¿½kme Kat1 Malzeme 0_leme Sistemleri",
+      "Gï¿½bre ï¿½retim Tesisleri",
       "Enerji ve Biyogaz Sistemleri",
     ],
-    relatedServices: ["Proses Tasarimi ve M?hendislik", "Makine Imalati", "Anahtar Teslim Tesis Kurulumu"],
+    relatedServices: ["Proses Tasarımı ve Mühendislik", "Makine Imalati", "Anahtar Teslim Tesis Kurulumu"],
     relatedProjects: ["Kompost Tesisi Projeleri", "Organomineral G?bre Tesisi Projeleri"],
     faqs: [
       {
@@ -763,14 +763,14 @@ export const services: ServiceItem[] = [
       "S?re? b?t?nl??x?",
     ],
     relatedSectors: [
-      "Gübre Üretim Tesisleri",
+      "Gï¿½bre ï¿½retim Tesisleri",
       "Kompost ve Organik Atik Tesisleri",
-      "Atık Su Çamuru ve Arıtma Çözümleri",
-      "Geri Dönüşüm ve Atık Yönetimi",
+      "At1k Su ï¿½amuru ve Ar1tma ï¿½ï¿½zï¿½mleri",
+      "Geri Dï¿½nï¿½_ï¿½m ve At1k Yï¿½netimi",
       "Enerji ve Biyogaz Sistemleri",
-      "Madencilik ve Mineral İşleme",
-      "Kimya ve Proses Endüstrisi",
-      "Yem, Toz ve Dökme Katı Malzeme İşleme Sistemleri",
+      "Madencilik ve Mineral 0_leme",
+      "Kimya ve Proses Endï¿½strisi",
+      "Yem, Toz ve Dï¿½kme Kat1 Malzeme 0_leme Sistemleri",
     ],
     relatedMachines: ["Tambur Sistemleri", "Ta?x1ma Ekipmanlari", "Depolama ve Besleme Sistemleri"],
     relatedProjects: ["Kompost Tesisi Projeleri", "Organomineral G?bre Tesisi Projeleri"],
@@ -784,12 +784,12 @@ export const services: ServiceItem[] = [
   },
   {
     slug: "proses-tasarimi-ve-muhendislik",
-    title: "Proses Tasarimi ve M?hendislik",
+    title: "Proses Tasarımı ve Mühendislik",
     summary:
-      "Kapasite, ?r?n tipi ve saha ko?xullar1na g?re proses ak1?xlar1n1, ekipman dizilimini ve teknik altyap1y1 tasarl1yoruz.",
-    heroTitle: "Do?xru proses tasar1m1 ile tesis performans1n1 en ba?xtan g??lendirin",
+      "Kapasite, ürün tipi ve saha koşullarına göre proses akışlarını, ekipman dizilimini ve teknik altyapıyı tasarlıyoruz.",
+    heroTitle: "Doğru proses tasarımı ile tesis performansını en baştan güçlendirin",
     heroDescription:
-      "Malzeme ak1?x1, kapasite ihtiyac1, ?r?n hedefi ve saha ger?eklerini birlikte de?xerlendirerek verimli ve uygulanabilir bir m?hendislik kurgusu sunuyoruz.",
+      "Malzeme akışı, kapasite ihtiyacı, ürün hedefi ve saha gerçeklerini birlikte değerlendirerek verimli ve uygulanabilir bir mühendislik kurgusu sunuyoruz.",
     image:
       "https://images.unsplash.com/photo-1581092918484-8313b2f1141ccauto=format&fit=crop&w=1400&q=80",
     scope: [
@@ -810,14 +810,14 @@ export const services: ServiceItem[] = [
       "Gelecek b?y?meye a?ik altyapi",
     ],
     relatedSectors: [
-      "Gübre Üretim Tesisleri",
+      "Gï¿½bre ï¿½retim Tesisleri",
       "Kompost ve Organik Atik Tesisleri",
-      "Atık Su Çamuru ve Arıtma Çözümleri",
-      "Geri Dönüşüm ve Atık Yönetimi",
+      "At1k Su ï¿½amuru ve Ar1tma ï¿½ï¿½zï¿½mleri",
+      "Geri Dï¿½nï¿½_ï¿½m ve At1k Yï¿½netimi",
       "Enerji ve Biyogaz Sistemleri",
-      "Madencilik ve Mineral İşleme",
-      "Kimya ve Proses Endüstrisi",
-      "Yem, Toz ve Dökme Katı Malzeme İşleme Sistemleri",
+      "Madencilik ve Mineral 0_leme",
+      "Kimya ve Proses Endï¿½strisi",
+      "Yem, Toz ve Dï¿½kme Kat1 Malzeme 0_leme Sistemleri",
     ],
     relatedMachines: ["Reaktorler ve Tanklar", "Eleme ve Siniflandirma Sistemleri", "Toz Toplama Sistemleri"],
     relatedProjects: ["?zel Proses ve Makine 0malat1"],
@@ -841,18 +841,18 @@ export const services: ServiceItem[] = [
   },
   {
     slug: "makine-imalati",
-    title: "Makine Imalati",
+    title: "Makine İmalatı",
     summary:
-      "Prosese ?zel olculerde, sanayi tipi ve dayanikli ekipmanlar uretiyoruz.",
-    heroTitle: "Sahaya ve prosese uygun makine imalati ile dayanikli sistemler k?r?n.",
+      "Prosese özel ölçülerde, sanayi tipi ve dayanıklı ekipmanlar üretiyoruz.",
+    heroTitle: "Sahaya ve prosese uygun makine imalatı ile dayanıklı sistemler kurun.",
     heroDescription:
-      "Tambur, konveyor, bunker, kirici, reaktor ve yardimci proses ekipmanlarini proje gereksinimine gore imal ediyoruz.",
+      "Tambur, konveyör, bunker, kırıcı, reaktör ve yardımcı proses ekipmanlarını proje gereksinimine göre imal ediyoruz.",
     image:
       "https://images.unsplash.com/photo-1565008447742-97f6f38c985ccauto=format&fit=crop&w=1400&q=80",
     scope: ["?zel olcu imalat", "Malzeme se?imi", "Atolye ?retimi", "Kalite kontrol"],
     outputs: ["Sahaya uygun ekipman", "Uzun omurlu kullanim", "Teknik uyum"],
     advantages: ["?zel imalat", "Dayanikli yapi", "Hatla uyum", "Bakim kolayligi"],
-    relatedSectors: ["Madencilik ve Mineral İşleme", "Geri Dönüşüm ve Atık Yönetimi"],
+    relatedSectors: ["Madencilik ve Mineral 0_leme", "Geri Dï¿½nï¿½_ï¿½m ve At1k Yï¿½netimi"],
     relatedMachines: ["Kiricilar ve Parcalayicilar", "Tambur Sistemleri", "Ta?x1ma Ekipmanlari"],
     relatedProjects: ["?zel Proses ve Makine 0malat1"],
     faqs: [
@@ -876,7 +876,7 @@ export const services: ServiceItem[] = [
     scope: ["Montaj planlama", "Saha kurulum", "Test calismalari", "Ilk calistirma"],
     outputs: ["Daha hizli devreye alma", "Daha d???k saha riski", "?!al1?x1r teslim"],
     advantages: ["Saha koordinasyonu", "Surekli takip", "Performans kontrol?", "Ekip egitimi"],
-    relatedSectors: ["Enerji ve Biyogaz Sistemleri", "Atık Su Çamuru ve Arıtma Çözümleri"],
+    relatedSectors: ["Enerji ve Biyogaz Sistemleri", "At1k Su ï¿½amuru ve Ar1tma ï¿½ï¿½zï¿½mleri"],
     relatedMachines: ["Depolama ve Besleme Sistemleri", "Paketleme ve Dolum Sistemleri"],
     relatedProjects: ["Kompost Tesisi Projeleri"],
     faqs: [
@@ -900,7 +900,7 @@ export const services: ServiceItem[] = [
     scope: ["Mevcut hat analizi", "Darbogaz tespiti", "Ekipman degisimi", "Performans iyilestirme"],
     outputs: ["Kapasite artisi", "Enerji verimi", "Daha dengeli proses"],
     advantages: ["Yatirimi koruma", "Hizli iyilestirme", "Daha d???k durus maliyeti"],
-    relatedSectors: ["Gübre Üretim Tesisleri", "Kimya ve Proses Endüstrisi"],
+    relatedSectors: ["Gï¿½bre ï¿½retim Tesisleri", "Kimya ve Proses Endï¿½strisi"],
     relatedMachines: ["Toz Toplama Sistemleri", "Eleme ve Siniflandirma Sistemleri"],
     relatedProjects: ["Organomineral G?bre Tesisi Projeleri"],
     faqs: [
@@ -924,7 +924,7 @@ export const services: ServiceItem[] = [
     scope: ["Teknik analiz", "Yatirim degerlendirme", "Ekipman se?im destegi", "S?re? yonlendirme"],
     outputs: ["Daha net karar s?reci", "Yanlis ekipman riskinin azalmasi", "Proje netligi"],
     advantages: ["Uzman bakis", "Karar destegi", "Risk azaltma", "S?re? netligi"],
-    relatedSectors: ["Madencilik ve Mineral İşleme", "Geri Dönüşüm ve Atık Yönetimi"],
+    relatedSectors: ["Madencilik ve Mineral 0_leme", "Geri Dï¿½nï¿½_ï¿½m ve At1k Yï¿½netimi"],
     relatedMachines: ["Tambur Sistemleri", "Kiricilar ve Parcalayicilar"],
     relatedProjects: ["?zel Proses ve Makine 0malat1"],
     faqs: [
@@ -948,7 +948,7 @@ export const services: ServiceItem[] = [
     scope: ["Periyodik kontrol", "Yedek parca", "Ariza tespiti", "Saha servis destegi"],
     outputs: ["Daha az plansiz durus", "Daha y?ksek ekipman ?mr?", "Daha g?venli isletme"],
     advantages: ["Hizli mudahale", "Onleyici bakim", "Parca takibi", "0?xletme surekliligi"],
-    relatedSectors: ["Kompost ve Organik Atik Tesisleri", "Yem, Toz ve Dökme Katı Malzeme İşleme Sistemleri"],
+    relatedSectors: ["Kompost ve Organik Atik Tesisleri", "Yem, Toz ve Dï¿½kme Kat1 Malzeme 0_leme Sistemleri"],
     relatedMachines: ["Ta?x1ma Ekipmanlari", "Reaktorler ve Tanklar"],
     relatedProjects: ["Kompost Tesisi Projeleri"],
     faqs: [
@@ -961,18 +961,18 @@ export const services: ServiceItem[] = [
   },
   {
     slug: "pilot-tesis-ve-proses-test-calismalari",
-    title: "Pilot Tesis ve Proses Test ?!al1?xmalar1",
+    title: "Pilot Tesis ve Proses Test Ã‡alÄ±ÅŸmalarÄ±",
     summary:
-      "Tam yatirim oncesi prosesin gercek saha verisine yakin sekilde test edilmesini sagliyoruz.",
-    heroTitle: "Pilot tesis ve proses testleriyle yatirim riskini dusurup karari guclendirin.",
+      "Tam yatÄ±rÄ±m Ã¶ncesi prosesin gerÃ§ek saha verisine yakÄ±n ÅŸekilde test edilmesini saÄŸlÄ±yoruz.",
+    heroTitle: "Pilot tesis ve proses testleriyle yatÄ±rÄ±m riskini dÃ¼ÅŸÃ¼rÃ¼p kararÄ± gÃ¼Ã§lendirin.",
     heroDescription:
-      "Malzeme davranisi, ?r?n kalitesi ve proses parametrelerini pilot calismalarla daha net gorerek ana yatirimi daha saglikli planliyoruz.",
+      "Malzeme davranÄ±ÅŸÄ±, Ã¼rÃ¼n kalitesi ve proses parametrelerini pilot Ã§alÄ±ÅŸmalarÄ±yla daha net gÃ¶rerek ana yatÄ±rÄ±mÄ± daha saÄŸlÄ±klÄ± planlÄ±yoruz.",
     image:
       "https://images.unsplash.com/photo-1532187643603-ba119ca4109ecauto=format&fit=crop&w=1400&q=80",
     scope: ["Numune testleri", "Pilot denemeler", "Parametre analizi", "Sonu? raporlama"],
     outputs: ["Yatirim oncesi veri", "Malzeme davranisi analizi", "Daha do?xru ekipman se?imi"],
     advantages: ["Risk azaltma", "Veriye dayali karar", "Rakiplerden ayrisan uzmanlik"],
-    relatedSectors: ["Gübre Üretim Tesisleri", "Atık Su Çamuru ve Arıtma Çözümleri"],
+    relatedSectors: ["Gï¿½bre ï¿½retim Tesisleri", "At1k Su ï¿½amuru ve Ar1tma ï¿½ï¿½zï¿½mleri"],
     relatedMachines: ["Tambur Sistemleri", "Eleme ve Siniflandirma Sistemleri"],
     relatedProjects: ["Organomineral G?bre Tesisi Projeleri"],
     faqs: [
@@ -985,18 +985,18 @@ export const services: ServiceItem[] = [
   },
   {
     slug: "proje-yonetimi-ve-saha-koordinasyonu",
-    title: "Proje Yönetimi ve Saha Koordinasyonu",
+    title: "Proje YÃ¶netimi ve Saha Koordinasyonu",
     summary:
-      "Farkli ekipler, tedarikler ve saha uygulamalarini ayni takvim ve hedef etrafinda yonetiyoruz.",
-    heroTitle: "Proje yonetimi ve saha koordinasyonuyla kurulum s?recinde daginikligi onleyin.",
+      "FarklÄ± ekipler, tedarikler ve saha uygulamalarÄ±nÄ± aynÄ± takvim ve hedef etrafÄ±nda yÃ¶netiyoruz.",
+    heroTitle: "Proje yÃ¶netimi ve saha koordinasyonuyla kurulum sÃ¼recinde daÄŸÄ±nÄ±klÄ±ÄŸÄ± Ã¶nleyin.",
     heroDescription:
-      "Takvim, ekipler, lojistik, montaj ve test adimlarini tek bir saha koordinasyon mantigiyla yuruterek projeye netlik kazandiriyoruz.",
+      "Takvim, ekipler, lojistik, montaj ve test adÄ±mlarÄ±nÄ± tek bir saha koordinasyon mantÄ±ÄŸÄ±yla yÃ¼rÃ¼terek projeye netlik kazandÄ±rÄ±yoruz.",
     image:
       "https://images.unsplash.com/photo-1520607162513-77705c0f0d4acauto=format&fit=crop&w=1400&q=80",
     scope: ["Takvim yonetimi", "Saha koordinasyonu", "Tedarik takibi", "Ekip senkronizasyonu"],
     outputs: ["Daha kontroll? ilerleme", "Daha net saha duzeni", "Sure ve kapsam takibi"],
     advantages: ["Tek merkezli koordinasyon", "Daha az saha karisiklisi", "G?ven veren proje yonetimi"],
-    relatedSectors: ["Enerji ve Biyogaz Sistemleri", "Geri Dönüşüm ve Atık Yönetimi"],
+    relatedSectors: ["Enerji ve Biyogaz Sistemleri", "Geri Dï¿½nï¿½_ï¿½m ve At1k Yï¿½netimi"],
     relatedMachines: ["Depolama ve Besleme Sistemleri", "Paketleme ve Dolum Sistemleri"],
     relatedProjects: ["Kompost Tesisi Projeleri", "?zel Proses ve Makine 0malat1"],
     faqs: [
@@ -1035,7 +1035,7 @@ export const projects: ProjectItem[] = [
       "S?recin daha kontroll? hale gelmesi",
       "Daha verimli organik ?r?n cikisi",
     ],
-    similarProject: "Biyogaz ve Atık Yönetimi Projeleri",
+    similarProject: "Biyogaz ve At1k Yï¿½netimi Projeleri",
     relatedMachines: ["Tambur Sistemleri", "Ta?x1ma Ekipmanlari"],
     relatedSector: "Kompost ve Organik Atik Tesisleri",
     relatedSolutions: ["Teknik Dan1?xmanl1k", "Pilot Tesis ve Proses Test ?!al1?xmalar1"],
@@ -1069,17 +1069,17 @@ export const projects: ProjectItem[] = [
     ],
     similarProject: "?zel Proses ve Makine 0malat1 Projeleri",
     relatedMachines: ["Tambur Sistemleri", "Paketleme ve Dolum Sistemleri"],
-    relatedSector: "Gübre Üretim Tesisleri",
-    relatedSolutions: ["Proses Tasarimi ve M?hendislik", "Modernizasyon ve Revizyon"],
+    relatedSector: "Gï¿½bre ï¿½retim Tesisleri",
+    relatedSolutions: ["Proses Tasarımı ve Mühendislik", "Modernizasyon ve Revizyon"],
     image:
       "https://images.unsplash.com/photo-1621905252507-b35492cc74b4cauto=format&fit=crop&w=1400&q=80",
   },
   {
     slug: "deri-atik-isleme-tesisi-projeleri",
-    title: "Deri Atık İşleme Tesisi Projeleri",
+    title: "Deri At1k 0_leme Tesisi Projeleri",
     summary:
       "Deri end?strisi kaynakli atiklarin ayrisma, tasima ve geri kazanima uygun sekilde islenmesi icin tesis kurgusu.",
-    projectName: "Deri Atık Hazırlama ve İşleme Tesisi",
+    projectName: "Deri At1k Haz1rlama ve 0_leme Tesisi",
     location: "T?rkiye / Marmara",
     capacity: "8 ton/saat",
     customerType: "Sanayi tesisi",
@@ -1099,16 +1099,16 @@ export const projects: ProjectItem[] = [
       "Daha g?venli isleme adimlari",
       "Sonraki geri kazanim s?recine uygun malzeme hazirligi",
     ],
-    similarProject: "Geri Dönüşüm ve Atık Yönetimi Projeleri",
+    similarProject: "Geri Dï¿½nï¿½_ï¿½m ve At1k Yï¿½netimi Projeleri",
     relatedMachines: ["Kiricilar ve Parcalayicilar", "Toz Toplama Sistemleri"],
-    relatedSector: "Geri Dönüşüm ve Atık Yönetimi",
-    relatedSolutions: ["Teknik Dan1?xmanl1k", "Proje Yönetimi ve Saha Koordinasyonu"],
+    relatedSector: "Geri Dï¿½nï¿½_ï¿½m ve At1k Yï¿½netimi",
+    relatedSolutions: ["Teknik Dan1?xmanl1k", "Proje Yï¿½netimi ve Saha Koordinasyonu"],
     image:
       "https://images.unsplash.com/photo-1517048676732-d65bc937f952cauto=format&fit=crop&w=1400&q=80",
   },
   {
     slug: "biyogaz-ve-atik-yonetimi-projeleri",
-    title: "Biyogaz ve Atık Yönetimi Projeleri",
+    title: "Biyogaz ve At1k Yï¿½netimi Projeleri",
     summary:
       "Biyogaz besleme, organik madde hazirlama ve atik yonetim s?re?lerine uygun entegre proje yapisi.",
     projectName: "Biyogaz Besleme ve Atik Hazirlama Hatti",
@@ -1134,7 +1134,7 @@ export const projects: ProjectItem[] = [
     similarProject: "Kompost Tesisi Projeleri",
     relatedMachines: ["Depolama ve Besleme Sistemleri", "Ta?x1ma Ekipmanlari"],
     relatedSector: "Enerji ve Biyogaz Sistemleri",
-    relatedSolutions: ["Anahtar Teslim Tesis Kurulumu", "Proje Yönetimi ve Saha Koordinasyonu"],
+    relatedSolutions: ["Anahtar Teslim Tesis Kurulumu", "Proje Yï¿½netimi ve Saha Koordinasyonu"],
     image:
       "https://images.unsplash.com/photo-1473341304170-971dccb5ac1ecauto=format&fit=crop&w=1400&q=80",
   },
@@ -1165,17 +1165,17 @@ export const projects: ProjectItem[] = [
     ],
     similarProject: "Organomineral G?bre Tesisi Projeleri",
     relatedMachines: ["Reaktorler ve Tanklar", "Tambur Sistemleri"],
-    relatedSector: "Kimya ve Proses Endüstrisi",
+    relatedSector: "Kimya ve Proses Endï¿½strisi",
     relatedSolutions: ["Makine Imalati", "Pilot Tesis ve Proses Test ?!al1?xmalar1"],
     image:
       "https://images.unsplash.com/photo-1565008447742-97f6f38c985ccauto=format&fit=crop&w=1400&q=80",
   },
   {
     slug: "mineral-ve-dokme-kati-isleme-projeleri",
-    title: "Mineral ve Dökme Katı İşleme Projeleri",
+    title: "Mineral ve Dï¿½kme Kat1 0_leme Projeleri",
     summary:
       "Kirma, eleme, tasima, kurutma, siniflandirma ve stoklama s?re?lerine uygun mineral ve dokme kati malzeme proje ??z?mleri.",
-    projectName: "Mineral ve Dökme Katı İşleme Projesi",
+    projectName: "Mineral ve Dï¿½kme Kat1 0_leme Projesi",
     location: "T?rkiye / Farkli saha senaryolari",
     capacity: "Projeye gore ?zel",
     customerType: "Madencilik ve proses yatirimlari",
@@ -1206,9 +1206,9 @@ export const projects: ProjectItem[] = [
       "Eleme ve Siniflandirma Sistemleri",
       "Ta?x1ma Ekipmanlari",
     ],
-    relatedSector: "Madencilik ve Mineral İşleme",
+    relatedSector: "Madencilik ve Mineral 0_leme",
     relatedSolutions: [
-      "Proses Tasarimi ve M?hendislik",
+      "Proses Tasarımı ve Mühendislik",
       "Makine Imalati",
       "Anahtar Teslim Tesis Kurulumu",
     ],
@@ -1307,7 +1307,7 @@ export const libraryItems: LibraryItem[] = [
         text: "Do?xru ekipman ve s?re? tasar1m1 geri kazan1m oranini do?xrudan etkiler.",
       },
     ],
-    relatedLinks: ["Biyogaz ve Atık Yönetimi Projeleri", "Kompost Tesisi Nasil Kurulur"],
+    relatedLinks: ["Biyogaz ve At1k Yï¿½netimi Projeleri", "Kompost Tesisi Nasil Kurulur"],
   },
   {
     slug: "organomineral-gubre-uretim-sureci",
@@ -1427,7 +1427,7 @@ export const libraryItems: LibraryItem[] = [
         text: "Mineral, organik atik ve geri d?n???m malzemelerinde farkli kirici tipleri one cikar.",
       },
     ],
-    relatedLinks: ["Kiricilar ve Parcalayicilar", "Madencilik ve Mineral İşleme"],
+    relatedLinks: ["Kiricilar ve Parcalayicilar", "Madencilik ve Mineral 0_leme"],
   },
   {
     slug: "anahtar-teslim-tesis-kurulumu-nedir",
@@ -1447,7 +1447,7 @@ export const libraryItems: LibraryItem[] = [
         text: "S?re? butunlugu, zaman kontrol? ve daha net sorumluluk dagilimi saglar.",
       },
     ],
-    relatedLinks: ["Anahtar Teslim Tesis Kurulumu", "Proje Yönetimi ve Saha Koordinasyonu"],
+    relatedLinks: ["Anahtar Teslim Tesis Kurulumu", "Proje Yï¿½netimi ve Saha Koordinasyonu"],
   },
   {
     slug: "endustriyel-proses-tasariminda-dikkat-edilecekler",
@@ -1467,7 +1467,7 @@ export const libraryItems: LibraryItem[] = [
         text: "Do?xru proses tasar1m1 sadece yatirimi de?xil, uzun vadeli isletme maliyetlerini de belirler.",
       },
     ],
-    relatedLinks: ["Proses Tasarimi ve M?hendislik", "Pilot Tesis ve Proses Test ?!al1?xmalar1"],
+    relatedLinks: ["Proses Tasarımı ve Mühendislik", "Pilot Tesis ve Proses Test ?!al1?xmalar1"],
   },
   {
     slug: "toz-toplama-sistemleri-neden-onemlidir",
@@ -1487,7 +1487,7 @@ export const libraryItems: LibraryItem[] = [
         text: "Jet pulse, siklon ve torba filtre se?imi hava debisi ve toz karakterine gore yapilmalidir.",
       },
     ],
-    relatedLinks: ["Toz Toplama Sistemleri", "Kimya ve Proses Endüstrisi"],
+    relatedLinks: ["Toz Toplama Sistemleri", "Kimya ve Proses Endï¿½strisi"],
   },
   {
     slug: "granulasyon-nedir",
@@ -1571,123 +1571,123 @@ export const libraryItems: LibraryItem[] = [
   },
   {
     slug: "organomineral-gubre-tesisi-maliyeti",
-    title: "Organomineral Gübre Tesisi Maliyeti",
+    title: "Organomineral Gï¿½bre Tesisi Maliyeti",
     category: "Blog / Makaleler",
-    summary: "Organomineral gübre tesisi maliyeti, kapasite planı ve yatırım yaklaşımı hakkında kapsamlı içerik.",
-    heroTitle: "Organomineral gübre tesisi maliyeti nasıl planlanır?",
+    summary: "Organomineral gï¿½bre tesisi maliyeti, kapasite plan1 ve yat1r1m yakla_1m1 hakk1nda kapsaml1 iï¿½erik.",
+    heroTitle: "Organomineral gï¿½bre tesisi maliyeti nas1l planlan1r?",
     heroDescription:
-      "Türkiye pazarı için organomineral gübre tesisi yatırımında ekipman, proses ve saha maliyetlerini değerlendiren uzun form makale.",
+      "Tï¿½rkiye pazar1 iï¿½in organomineral gï¿½bre tesisi yat1r1m1nda ekipman, proses ve saha maliyetlerini deerlendiren uzun form makale.",
     sections: [
       {
-        heading: "Yatırım çerçevesi",
-        text: "Kapasite, ürün tipi, granülasyon ihtiyacı ve saha kurgusu toplam yatırım planını belirler.",
+        heading: "Yat1r1m ï¿½erï¿½evesi",
+        text: "Kapasite, ï¿½rï¿½n tipi, granï¿½lasyon ihtiyac1 ve saha kurgusu toplam yat1r1m plan1n1 belirler.",
       },
       {
         heading: "Maliyet kalemleri",
-        text: "Makina imalatı, çelik konstrüksiyon, otomasyon, montaj ve devreye alma toplam maliyetin ana parçalarıdır.",
+        text: "Makina imalat1, ï¿½elik konstrï¿½ksiyon, otomasyon, montaj ve devreye alma toplam maliyetin ana parï¿½alar1d1r.",
       },
     ],
-    relatedLinks: ["Gübre Tesisi Kurulumu", "Organomineral Gübre Tesisi Kurulumu"],
+    relatedLinks: ["Gï¿½bre Tesisi Kurulumu", "Organomineral Gï¿½bre Tesisi Kurulumu"],
   },
   {
     slug: "granul-gubre-uretim-sureci",
-    title: "Granül Gübre Üretim Süreci",
+    title: "Granï¿½l Gï¿½bre ï¿½retim Sï¿½reci",
     category: "Blog / Makaleler",
-    summary: "Granül gübre üretim süreci, kullanılan makinalar ve yatırım mantığını anlatan teknik makale.",
-    heroTitle: "Granül gübre üretim süreci nasıl çalışır?",
+    summary: "Granï¿½l gï¿½bre ï¿½retim sï¿½reci, kullan1lan makinalar ve yat1r1m mant11n1 anlatan teknik makale.",
+    heroTitle: "Granï¿½l gï¿½bre ï¿½retim sï¿½reci nas1l ï¿½al1_1r?",
     heroDescription:
-      "Granülasyon, kurutma, soğutma, eleme ve paketleme adımlarını Türkiye pazarı odağında açıklayan detaylı içerik.",
+      "Granï¿½lasyon, kurutma, soutma, eleme ve paketleme ad1mlar1n1 Tï¿½rkiye pazar1 oda1nda aï¿½1klayan detayl1 iï¿½erik.",
     sections: [
       {
-        heading: "Proses yapısı",
-        text: "Hammadde hazırlama, granülasyon, kurutma ve son ürün hazırlama adımları aynı hat dengesi içinde ele alınır.",
+        heading: "Proses yap1s1",
+        text: "Hammadde haz1rlama, granï¿½lasyon, kurutma ve son ï¿½rï¿½n haz1rlama ad1mlar1 ayn1 hat dengesi iï¿½inde ele al1n1r.",
       },
       {
-        heading: "Makina grupları",
-        text: "Granülatör tamburu, kurutma tamburu, soğutma tamburu ve elek sistemleri ana ekipman grubunu oluşturur.",
+        heading: "Makina gruplar1",
+        text: "Granï¿½latï¿½r tamburu, kurutma tamburu, soutma tamburu ve elek sistemleri ana ekipman grubunu olu_turur.",
       },
     ],
-    relatedLinks: ["Granül Gübre Üretim Tesisi", "Gübre Tesisi Kurulumu"],
+    relatedLinks: ["Granï¿½l Gï¿½bre ï¿½retim Tesisi", "Gï¿½bre Tesisi Kurulumu"],
   },
   {
     slug: "sivi-gubre-uretim-tesisi-nasil-kurulur",
-    title: "Sıvı Gübre Üretim Tesisi Nasıl Kurulur",
+    title: "S1v1 Gï¿½bre ï¿½retim Tesisi Nas1l Kurulur",
     category: "Blog / Makaleler",
-    summary: "Sıvı gübre üretim tesisi kurulumunda proses, ekipman, kapasite ve yatırım adımlarını anlatan rehber makale.",
-    heroTitle: "Sıvı gübre üretim tesisi nasıl kurulur?",
+    summary: "S1v1 gï¿½bre ï¿½retim tesisi kurulumunda proses, ekipman, kapasite ve yat1r1m ad1mlar1n1 anlatan rehber makale.",
+    heroTitle: "S1v1 gï¿½bre ï¿½retim tesisi nas1l kurulur?",
     heroDescription:
-      "Sıvı organomineral, amino asitli ve NPK ürünler için proses ve ekipman kurgusunu detaylandıran kapsamlı içerik.",
+      "S1v1 organomineral, amino asitli ve NPK ï¿½rï¿½nler iï¿½in proses ve ekipman kurgusunu detayland1ran kapsaml1 iï¿½erik.",
     sections: [
       {
-        heading: "Kurulum mantığı",
-        text: "Ürün tipi, tank yapısı, çözündürme, filtrasyon ve dolum planı proje başlangıcında birlikte değerlendirilir.",
+        heading: "Kurulum mant11",
+        text: "ï¿½rï¿½n tipi, tank yap1s1, ï¿½ï¿½zï¿½ndï¿½rme, filtrasyon ve dolum plan1 proje ba_lang1c1nda birlikte deerlendirilir.",
       },
       {
         heading: "Kapasite ve stok",
-        text: "Parti büyüklüğü, dolum hızı ve stok senaryosu sıvı gübre tesislerinde gerçek kapasiteyi belirler.",
+        text: "Parti bï¿½yï¿½klï¿½ï¿½, dolum h1z1 ve stok senaryosu s1v1 gï¿½bre tesislerinde gerï¿½ek kapasiteyi belirler.",
       },
     ],
-    relatedLinks: ["Sıvı Gübre Üretim Tesisi", "Gübre Tesisi Kurulumu"],
+    relatedLinks: ["S1v1 Gï¿½bre ï¿½retim Tesisi", "Gï¿½bre Tesisi Kurulumu"],
   },
   {
     slug: "kurutma-tamburu-tasarim-kriterleri",
-    title: "Kurutma Tamburu Tasarım Kriterleri",
+    title: "Kurutma Tamburu Tasar1m Kriterleri",
     category: "Teknik Rehberler",
-    summary: "Kurutma tamburu tasarımında çap, boy, eğim, devir ve enerji tüketimi kriterlerini anlatan teknik rehber.",
-    heroTitle: "Kurutma tamburu tasarım kriterleri nelerdir?",
+    summary: "Kurutma tamburu tasar1m1nda ï¿½ap, boy, eim, devir ve enerji tï¿½ketimi kriterlerini anlatan teknik rehber.",
+    heroTitle: "Kurutma tamburu tasar1m kriterleri nelerdir?",
     heroDescription:
-      "Tambur çapı, boyu, iç kanat yapısı, ürün nemi ve sıcak hava dengesini mühendislik perspektifiyle açıklayan rehber içerik.",
+      "Tambur ï¿½ap1, boyu, iï¿½ kanat yap1s1, ï¿½rï¿½n nemi ve s1cak hava dengesini mï¿½hendislik perspektifiyle aï¿½1klayan rehber iï¿½erik.",
     sections: [
       {
         heading: "Geometri ve devir",
-        text: "Çap, boy, eğim ve devir malzemenin tambur içinde ilerleme süresini ve ısı temasını belirler.",
+        text: "ï¿½ap, boy, eim ve devir malzemenin tambur iï¿½inde ilerleme sï¿½resini ve 1s1 temas1n1 belirler.",
       },
       {
         heading: "Enerji ve proses",
-        text: "Nem yükü, sıcak hava ve ürün davranışı birlikte ele alınmadan sağlıklı kurutma hesabı yapılamaz.",
+        text: "Nem yï¿½kï¿½, s1cak hava ve ï¿½rï¿½n davran1_1 birlikte ele al1nmadan sal1kl1 kurutma hesab1 yap1lamaz.",
       },
     ],
-    relatedLinks: ["Granül Gübre Üretim Tesisi", "Tambur Sistemleri"],
+    relatedLinks: ["Granï¿½l Gï¿½bre ï¿½retim Tesisi", "Tambur Sistemleri"],
   },
   {
     slug: "sik-sorulan-sorular",
-    title: "Sık Sorulan Sorular",
+    title: "S1k Sorulan Sorular",
     category: "Sik Sorulan Sorular",
-    summary: "Gübre, kompost, proses ekipmanları ve tesis yatırımları hakkında en çok sorulan soruların kısa cevapları.",
-    heroTitle: "Sık sorulan sorular",
+    summary: "Gï¿½bre, kompost, proses ekipmanlar1 ve tesis yat1r1mlar1 hakk1nda en ï¿½ok sorulan sorular1n k1sa cevaplar1.",
+    heroTitle: "S1k sorulan sorular",
     heroDescription:
-      "Gübre tesisi kurulumu, ekipman seçimi, kapasite hesabı ve yatırım planlaması hakkında hızlı yanıtlar sunan sayfa.",
+      "Gï¿½bre tesisi kurulumu, ekipman seï¿½imi, kapasite hesab1 ve yat1r1m planlamas1 hakk1nda h1zl1 yan1tlar sunan sayfa.",
     sections: [
       {
-        heading: "Hızlı yanıtlar",
-        text: "Yatırım ve teknik karar sürecinde en sık sorulan sorular tek sayfada toplandı.",
+        heading: "H1zl1 yan1tlar",
+        text: "Yat1r1m ve teknik karar sï¿½recinde en s1k sorulan sorular tek sayfada topland1.",
       },
       {
-        heading: "İlgili bağlantılar",
-        text: "Gerekli durumlarda hizmet sayfalarına geçiş yaparak daha detaylı içeriklere ulaşabilirsiniz.",
+        heading: "0lgili balant1lar",
+        text: "Gerekli durumlarda hizmet sayfalar1na geï¿½i_ yaparak daha detayl1 iï¿½eriklere ula_abilirsiniz.",
       },
     ],
-    relatedLinks: ["Gübre Tesisi Kurulumu", "Sıvı Gübre Üretim Tesisi"],
+    relatedLinks: ["Gï¿½bre Tesisi Kurulumu", "S1v1 Gï¿½bre ï¿½retim Tesisi"],
   },
   {
     slug: "terimler-sozlugu",
-    title: "Endüstriyel Proses ve Makina Terimleri Sözlüğü",
+    title: "Endï¿½striyel Proses ve Makina Terimleri Sï¿½zlï¿½ï¿½",
     category: "Terimler Sozlugu",
-    summary: "Granülasyon, kurutma tamburu, reaktör ve kapasite gibi temel kavramları açıklayan sözlük sayfası.",
-    heroTitle: "Endüstriyel proses ve makina terimleri sözlüğü",
+    summary: "Granï¿½lasyon, kurutma tamburu, reaktï¿½r ve kapasite gibi temel kavramlar1 aï¿½1klayan sï¿½zlï¿½k sayfas1.",
+    heroTitle: "Endï¿½striyel proses ve makina terimleri sï¿½zlï¿½ï¿½",
     heroDescription:
-      "Gübre, kompost, taşıma ve proses ekipmanlarında kullanılan temel terimleri kısa tanım ve kullanım alanıyla açıklıyoruz.",
+      "Gï¿½bre, kompost, ta_1ma ve proses ekipmanlar1nda kullan1lan temel terimleri k1sa tan1m ve kullan1m alan1yla aï¿½1kl1yoruz.",
     sections: [
       {
-        heading: "Kısa tanımlar",
-        text: "Sektörde sık kullanılan teknik terimler sade ama doğru mühendislik diliyle açıklanır.",
+        heading: "K1sa tan1mlar",
+        text: "Sektï¿½rde s1k kullan1lan teknik terimler sade ama doru mï¿½hendislik diliyle aï¿½1klan1r.",
       },
       {
-        heading: "Kullanım alanları",
-        text: "Her terim için hangi proseslerde ve hangi ekipman ailelerinde kullanıldığı özetlenir.",
+        heading: "Kullan1m alanlar1",
+        text: "Her terim iï¿½in hangi proseslerde ve hangi ekipman ailelerinde kullan1ld11 ï¿½zetlenir.",
       },
     ],
-    relatedLinks: ["Granül Gübre Üretim Süreci", "Kurutma Tamburu Tasarım Kriterleri"],
+    relatedLinks: ["Granï¿½l Gï¿½bre ï¿½retim Sï¿½reci", "Kurutma Tamburu Tasar1m Kriterleri"],
   },
 ];
 
@@ -1729,4 +1729,6 @@ normalizeCollectionInPlace(machineGroups);
 normalizeCollectionInPlace(services);
 normalizeCollectionInPlace(projects);
 normalizeCollectionInPlace(libraryItems);
+
+
 

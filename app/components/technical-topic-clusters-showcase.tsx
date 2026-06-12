@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import type { TechnicalTopicCluster } from "../lib/technical-topic-cluster-data";
+import { trText } from "../lib/tr-text";
 
 type Props = {
   clusters: TechnicalTopicCluster[];
@@ -21,10 +22,10 @@ export function TechnicalTopicClustersShowcase({ clusters }: Props) {
 
     return clusters.filter((cluster) => {
       const haystacks = [
-        cluster.title,
-        cluster.description,
-        cluster.category,
-        ...cluster.articles.map((article) => article.title),
+        trText(cluster.title),
+        trText(cluster.description),
+        trText(cluster.category),
+        ...cluster.articles.map((article) => trText(article.title)),
       ].map((value) => value.toLocaleLowerCase("tr-TR"));
 
       return haystacks.some((value) => value.includes(normalizedQuery));
@@ -75,13 +76,13 @@ export function TechnicalTopicClustersShowcase({ clusters }: Props) {
               className="rounded-[24px] border border-white/20 bg-gradient-to-br from-[#278DC0] to-[#154764] p-5 shadow-lg shadow-slate-900/10 sm:p-6"
             >
               <span className="inline-flex rounded-full border border-white/35 bg-white/16 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-white">
-                {cluster.category}
+                {trText(cluster.category)}
               </span>
               <h3 className="mt-4 text-2xl font-bold tracking-tight text-white">
-                {cluster.title}
+                {trText(cluster.title)}
               </h3>
               <p className="mt-3 text-sm leading-7 text-white/90 sm:text-base">
-                {cluster.description}
+                {trText(cluster.description)}
               </p>
 
               <div className="mt-6 grid gap-3">
@@ -96,7 +97,7 @@ export function TechnicalTopicClustersShowcase({ clusters }: Props) {
                         hidden ? "hidden" : ""
                       }`}
                     >
-                      <span className="pr-2">{article.title}</span>
+                      <span className="pr-2">{trText(article.title)}</span>
                       <span className="shrink-0 text-[#0F172A] transition-transform duration-200 group-hover:translate-x-1 group-hover:text-[#154764]">
                         <svg
                           aria-hidden="true"

@@ -9,37 +9,37 @@ const sectorCards = [
   {
     title: "Gübre ve Granülasyon Tesisleri",
     description:
-      "Granülasyon, kurutma, soğutma, eleme ve paketleme adımlarıyla gübre tesislerinin proses omurgasını sektör ihtiyacına göre şekillendiriyoruz.",
+      "Granülasyon, kurutma, so�xutma, eleme ve paketleme adımlarıyla gübre tesislerinin proses omurgasını sektör ihtiyacına göre �xekillendiriyoruz.",
     href: "/sektorler/gubre-ve-granulasyon-tesisleri",
   },
   {
     title: "Kompost ve Organik Atık Tesisleri",
     description:
-      "Evsel organik atık, tarımsal atık, digestat ve organik fraksiyonların kompost ürününe dönüştürülmesi için saha odaklı çözümler sunuyoruz.",
+      "Evsel organik atık, tarımsal atık, digestat ve organik fraksiyonların kompost ürününe dönü�xtürülmesi için saha odaklı çözümler sunuyoruz.",
     href: "/sektorler/kompost-ve-organik-atik-tesisleri",
   },
   {
-    title: "Atık Su Çamuru ve Arıtma Çözümleri",
+    title: "Atık Su �!amuru ve Arıtma �!özümleri",
     description:
-      "Arıtma çamuru, susuzlaştırma, kurutma ve ürün hazırlama hatlarında nem yönetimi ile proses güvenliğini birlikte ele alıyoruz.",
+      "Arıtma çamuru, susuzla�xtırma, kurutma ve ürün hazırlama hatlarında nem yönetimi ile proses güvenli�xini birlikte ele alıyoruz.",
     href: "/sektorler/atik-su-camuru-ve-aritma-cozumleri",
   },
   {
     title: "Enerji ve Biyogaz Sistemleri",
     description:
-      "Biyogaz ön işleme, besleme dengesi, organik yük kontrolü ve son ürün yönetimi için entegre mühendislik yaklaşımı geliştiriyoruz.",
+      "Biyogaz ön i�xleme, besleme dengesi, organik yük kontrolü ve son ürün yönetimi için entegre mühendislik yakla�xımı geli�xtiriyoruz.",
     href: "/sektorler/enerji-ve-biyogaz-sistemleri",
   },
   {
-    title: "Madencilik ve Mineral İşleme",
+    title: "Madencilik ve Mineral İ�xleme",
     description:
-      "Kırma, eleme, kurutma ve taşıma aşamalarını mineralin davranışına, kapasiteye ve saha yerleşimine göre kurguluyoruz.",
+      "Kırma, eleme, kurutma ve ta�xıma a�xamalarını mineralin davranı�xına, kapasiteye ve saha yerle�ximine göre kurguluyoruz.",
     href: "/sektorler/madencilik-ve-mineral-isleme",
   },
   {
     title: "Kimya ve Proses Endüstrisi",
     description:
-      "Reaktör, tank, dozaj, taşıma ve yardımcı ekipman gruplarıyla kimyasal proseslerde kontrollü ve sürdürülebilir üretim akışı kuruyoruz.",
+      "Reaktör, tank, dozaj, ta�xıma ve yardımcı ekipman gruplarıyla kimyasal proseslerde kontrollü ve sürdürülebilir üretim akı�xı kuruyoruz.",
     href: "/sektorler/kimya-ve-proses-endustrisi",
   },
 ];
@@ -47,32 +47,32 @@ const sectorCards = [
 const machineGroups = [
   {
     title: "Tambur Sistemleri",
-    description: "Kurutma, soğutma, kaplama ve kompost prosesleri için tambur bazlı ekipman çözümleri.",
+    description: "Kurutma, so�xutma, kaplama ve kompost prosesleri için tambur bazlı ekipman çözümleri.",
     href: "/makinalar-ekipman/tambur-sistemleri",
   },
   {
-    title: "Taşıma Ekipmanları",
+    title: "Ta�xıma Ekipmanları",
     description: "Bant konveyör, helezon konveyör, kovalı elevatör ve besleme ekipmanları.",
     href: "/makinalar-ekipman/tasima-ekipmanlari",
   },
   {
     title: "Kırıcılar ve Parçalayıcılar",
-    description: "Hammadde hazırlama ve boyut küçültme ihtiyaçları için ağır hizmet tipi çözümler.",
+    description: "Hammadde hazırlama ve boyut küçültme ihtiyaçları için a�xır hizmet tipi çözümler.",
     href: "/makinalar-ekipman/kiricilar-ve-parcalayicilar",
   },
   {
     title: "Reaktörler ve Tanklar",
-    description: "Karıştırma, çözündürme, reaksiyon ve depolama prosesleri için tasarlanmış ekipmanlar.",
+    description: "Karı�xtırma, çözündürme, reaksiyon ve depolama prosesleri için tasarlanmı�x ekipmanlar.",
     href: "/makinalar-ekipman/reaktorler-ve-tanklar",
   },
   {
     title: "Eleme ve Sınıflandırma Sistemleri",
-    description: "Ürün ayırma, fraksiyon kontrolü ve sınıflandırma için proses odaklı eleme çözümleri.",
+    description: "�Srün ayırma, fraksiyon kontrolü ve sınıflandırma için proses odaklı eleme çözümleri.",
     href: "/makinalar-ekipman/eleme-ve-siniflandirma-sistemleri",
   },
   {
     title: "Paketleme ve Dolum Sistemleri",
-    description: "Son ürün dolumu, tartımı ve sevkiyat hazırlığı için tamamlayıcı ekipman grupları.",
+    description: "Son ürün dolumu, tartımı ve sevkiyat hazırlı�xı için tamamlayıcı ekipman grupları.",
     href: "/makinalar-ekipman/paketleme-ve-dolum-sistemleri",
   },
 ];
@@ -80,7 +80,7 @@ const machineGroups = [
 export const metadata: Metadata = {
   title: "Hizmetler | Pro Makina",
   description:
-    "Anahtar teslim tesis kurulumu, proses mühendisliği, endüstriyel makine imalatı, montaj ve devreye alma hizmetleri.",
+    "Anahtar teslim tesis kurulumu, proses mühendisli�xi, endüstriyel makine imalatı, montaj ve devreye alma hizmetleri.",
   alternates: {
     canonical: "https://www.promakina.com.tr/hizmetler",
   },
@@ -91,7 +91,7 @@ export default function ServicesPage() {
     <main className="min-h-screen overflow-x-hidden bg-white text-slate-900">
       <Hero
         title="Hizmetler"
-        description="Planlama, mühendislik, imalat, kurulum, devreye alma ve teknik destek adımlarını entegre hizmet yapısı içinde sunuyoruz. Anahtar teslim tesis kurulumu, proses tasarımı, makine imalatı, modernizasyon, danışmanlık ve bakım hizmetlerini tek merkezden yönetiyoruz."
+        description="Planlama, mühendislik, imalat, kurulum, devreye alma ve teknik destek adımlarını entegre hizmet yapısı içinde sunuyoruz. Anahtar teslim tesis kurulumu, proses tasarımı, makine imalatı, modernizasyon, danı�xmanlık ve bakım hizmetlerini tek merkezden yönetiyoruz."
         image="/images/hizmetler1.png"
       >
         <Link
@@ -106,7 +106,7 @@ export default function ServicesPage() {
           rel="noreferrer"
           className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/60 bg-white/12 px-6 text-sm font-semibold text-white transition hover:border-white hover:bg-white/18"
         >
-          WhatsApp ile Görüş
+          WhatsApp ile Görü�x
         </Link>
         <Link
           href="tel:+905320580104"
@@ -154,12 +154,12 @@ export default function ServicesPage() {
           <section className="section-gap rounded-[32px] border border-slate-200 bg-white px-6 py-8 shadow-[0_18px_45px_rgba(15,23,42,0.06)] sm:px-8 sm:py-10 lg:px-12">
             <div className="max-w-4xl">
               <h2 className="text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">
-                Hizmet Verdiğimiz Sektörler
+                Hizmet Verdi�ximiz Sektörler
               </h2>
               <p className="mt-4 text-sm leading-8 text-slate-600 sm:text-base">
-                Her sektörün hammadde yapısı, kapasite hedefi, nem oranı, ürün davranışı ve saha
-                koşulu farklıdır. Bu nedenle tesis ve makine tasarımlarını sektör bazlı proses
-                ihtiyaçlarına göre şekillendiriyoruz.
+                Her sektörün hammadde yapısı, kapasite hedefi, nem oranı, ürün davranı�xı ve saha
+                ko�xulu farklıdır. Bu nedenle tesis ve makine tasarımlarını sektör bazlı proses
+                ihtiyaçlarına göre �xekillendiriyoruz.
               </p>
             </div>
 
@@ -171,9 +171,15 @@ export default function ServicesPage() {
                   className="group rounded-[26px] border border-slate-200 bg-slate-50 p-5 shadow-sm transition hover:-translate-y-1 hover:border-[#278DC0]/16 hover:bg-white hover:shadow-[0_18px_45px_rgba(15,23,42,0.08)]"
                 >
                   <h3 className="text-xl font-semibold tracking-tight text-slate-950">
-                    {item.title}
+                    {item.href === "/sektorler/atik-su-camuru-ve-aritma-cozumleri"
+                      ? "Atık Su Çamuru Çözümleri"
+                      : item.title}
                   </h3>
-                  <p className="mt-3 text-sm leading-7 text-slate-600">{item.description}</p>
+                  <p className="mt-3 text-sm leading-7 text-slate-600">
+                    {item.href === "/sektorler/atik-su-camuru-ve-aritma-cozumleri"
+                      ? "Arıtma sonrası oluşan çamurun susuzlaştırılması, kurutulması, stabilize edilmesi ve bertaraf ya da değerlendirme süreçlerine hazırlanması için proses çözümleri sunuyoruz."
+                      : item.description}
+                  </p>
                   <span className="mt-5 inline-flex text-sm font-semibold text-[#278DC0] transition group-hover:text-[#154764]">
                     Sektörü İncele
                   </span>
@@ -188,8 +194,8 @@ export default function ServicesPage() {
                 Makine ve Ekipman Grupları
               </h2>
               <p className="mt-4 text-sm leading-8 text-slate-600 sm:text-base">
-                Prosesin ihtiyaç duyduğu ana makine grupları; besleme, taşıma, karıştırma,
-                kurutma, eleme, toz toplama ve paketleme aşamalarına göre projelendirilir.
+                Prosesin ihtiyaç duydu�xu ana makine grupları; besleme, ta�xıma, karı�xtırma,
+                kurutma, eleme, toz toplama ve paketleme a�xamalarına göre projelendirilir.
               </p>
             </div>
 

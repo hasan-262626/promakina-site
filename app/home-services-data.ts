@@ -9,7 +9,7 @@ export type HomeServiceCard = {
 
 export const homeServiceTags = [
   {
-    label: "Gübre ve Granülasyon Tesisleri",
+    label: "Gübre Üretim Tesisleri",
     href: "/sektorler/gubre-ve-granulasyon-tesisleri",
   },
   {
@@ -17,7 +17,7 @@ export const homeServiceTags = [
     href: "/sektorler/kompost-ve-organik-atik-tesisleri",
   },
   {
-    label: "Atık Su Çamuru ve Arıtma Çözümleri",
+    label: "Atık Su Çamuru Çözümleri",
     href: "/sektorler/atik-su-camuru-ve-aritma-cozumleri",
   },
   {
@@ -103,7 +103,7 @@ export const homeServiceCards: HomeServiceCard[] = [
       "Ekipman ömrünü uzatmak ve plansız duruşları azaltmak için bakım ve teknik servis desteği sağlıyoruz.",
     buttonLabel: "Bakım ve Servis",
     href: "/hizmetler/bakim-ve-servis",
-    image: "/images/bakım1.webp",
+    image: "/images/bakim/bakim1.webp",
     imageAlt: "Bakım ve servis için ekipman müdahale görseli",
   },
   {

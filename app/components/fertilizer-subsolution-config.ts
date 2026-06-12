@@ -47,7 +47,7 @@ const liquidLinkSlugs = [
   "organik-biyostimulan",
 ];
 
-const granuleLinkSlugs = ["granul-organomineral", "granul-npk", "granul-kompost"];
+const granuleLinkSlugs = ["granul-organomineral", "granul-npk", "granul-kompost-tesisleri"];
 const powderLinkSlugs = ["toz-organomineral", "toz-npk"];
 
 function pickLinks(slugs: string[]) {
@@ -296,7 +296,7 @@ const granuleCriticalTopicsBySlug: Record<string, SubsolutionCard[]> = {
     { title: "Toz kontrol?", text: "Gran?l NPK hatlar?nda olu?an tozun etkin bi?imde y?netilmesi hem ?evre hem de ?r?n kayb? a??s?ndan ?nemlidir." },
     { title: "Paketleme performans?", text: "Son ?r?n?n ak1_ karakteri ve tane b?t?nl???, torbalama ve paletleme s?re?leriyle uyumlu olmal?d?r." },
   ],
-  "granul-kompost": [
+  "granul-kompost-tesisleri": [
     { title: "Kompost giri? nemi", text: "Gran?lasyon verimi i?in kompost hammaddenin nem seviyesi kontroll? olmal?d?r." },
     { title: "Organik yap?n?n gran?lle?me davran???", text: "Kompost bazl? hammaddelerin ba?lanma ve gran?l olu?turma karakteri dikkatle de?erlendirilmelidir." },
     { title: "Gran?l dayan?m?", text: "Son ?r?n?n ta??ma ve paketleme s?ras?nda da??lmamas? i?in gran?l mukavemeti ?nemlidir." },
@@ -384,7 +384,7 @@ const granuleFaqsBySlug: Record<string, SubsolutionFaq[]> = {
     { question: "Ayn? hatta farkl? NPK analizleri ?retilebilir mi?", answer: "Uygun re?ete altyap?s? ve proses ayarlar? ile farkl? NPK form?lleri ayn? gran?l hatta ?retilebilir." },
     { question: "Mevcut gran?l g?bre hatt? NPK odakl? iyile?tirilebilir mi?", answer: "Evet, hedef analiz ve gran?l boyutu standard?na g?re besleme, gran?lasyon ve son hat kademeleri revize edilebilir." },
   ],
-  "granul-kompost": [
+  "granul-kompost-tesisleri": [
     { question: "Gran?l kompost tesisi ile klasik kompost hatt? aras?ndaki fark nedir?", answer: "Gran?l kompost tesislerinde kompost bazl? malzeme son ?r?n olarak gran?l forma d?n??t?r?l?r; klasik kompost hatlar? ise daha ?ok olgunla?t?rma ve eleme odakl? ?al???r." },
     { question: "Gran?l kompost ?retiminde kurutma her zaman gerekli midir?", answer: "Hammadde nemi ve hedef gran?l kararl?l???na ba?l? olarak de?i?ir; ancak ?o?u senaryoda kontroll? kurutma ?r?n kalitesi i?in ?nemli rol oynar." },
     { question: "Kompost bazl? hammaddelerde gran?l dayan?m? nas?l sa?lan?r?", answer: "Doru nem dengesi, uygun kar1_1m yap?s?, ba?lay?c? ihtiyac? ve kontroll? kurutma ile gran?l dayan?m? desteklenir." },
@@ -522,7 +522,7 @@ const fertilizerSubsolutionConfigs: Record<string, FertilizerSubsolutionConfig> 
     formDescription: "Saatlik kapasite, hedef NPK analizi, gran?l boyutu ve paketleme ihtiyac?n?za g?re size uygun gran?l ?retim ??z?m?n? birlikte de?erlendirelim.",
     formFields: [...granuleCommonFields, { id: "npkFormula", label: "Hedef NPK Form?l?", type: "text" }],
   },
-  "granul-kompost": {
+  "granul-kompost-tesisleri": {
     heroBadge: "ALT ??Z?M",
     heroTitle: "Gran?l Kompost Tesisleri",
     heroDescription: "Kompost bazl? hammaddelerin gran?l formda son ?r?ne d?n??t?r?ld???, kar1_1m, gran?lasyon, kurutma, eleme, so?utma ve paketleme s?re?lerine uygun ?retim tesisleri.",
@@ -541,8 +541,8 @@ const fertilizerSubsolutionConfigs: Record<string, FertilizerSubsolutionConfig> 
     offerCards: [{ title: "Proses Tasar?m?", text: "Kompost bazl? hammaddenin yap?s?na g?re gran?l ?retim ak???n? planl?yoruz." }, { title: "Gran?lasyon Sistemi Se?imi", text: "Nem, organik yap? ve hedef gran?l boyutuna g?re uygun gran?lasyon kurgusunu belirliyoruz." }, { title: "Kurutma ve Eleme Hatt?", text: "Gran?l kompost ?r?nlerinde stabil nem ve uygun tane boyutu i?in hat yap?s?n? olu?turuyoruz." }, { title: "So?utma ve Son ?r?n Haz?rlama", text: "Depolama ve paketleme ?ncesi ?r?n kararl?l???n? art?ran son i?lemleri planl?yoruz." }, { title: "Toz ve Koku Kontrol?", text: "Organik i?erikli ?retim s?re?lerinde ?evresel kontrol ve saha temizli?i i?in uygun sistemler sunuyoruz." }, { title: "Anahtar Teslim Kurulum", text: "Makine imalat?, yerle?im, kurulum ve devreye alma dahil entegre tesis kurgusu sunuyoruz." }],
     equipmentTitle: granuleEquipmentTitle,
     equipment: granuleCompostEquipment,
-    criticalTopics: granuleCriticalTopicsBySlug["granul-kompost"],
-    faqs: granuleFaqsBySlug["granul-kompost"],
+    criticalTopics: granuleCriticalTopicsBySlug["granul-kompost-tesisleri"],
+    faqs: granuleFaqsBySlug["granul-kompost-tesisleri"],
     formTitle: "Gran?l kompost tesisi i?in teklif veya teknik g?r??me talep edin",
     formDescription: "Kompost yap?s?, hedef gran?l boyutu, kapasite ve kurulum modelinize g?re size uygun gran?l kompost ?retim ??z?m?n? birlikte de?erlendirelim.",
     formFields: [

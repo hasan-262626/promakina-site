@@ -426,7 +426,7 @@ export const sectorMachineGuideDetailPages: SectorMachineGuidePageData[] = [
       {
         title: "Sıvı Gübre Üretim Tesisi Nasıl Kurulur?",
         description: "Sektör ve yatırım tarafını anlatan tamamlayıcı blog içeriğini açın.",
-        href: "/kutuphane/blog/sivi-gubre-tesisi-nasil-kurulur",
+        href: "/kutuphane/blog/sivi-gubre-uretim-tesisi-nasil-kurulur",
       },
     ],
   }),
@@ -1079,29 +1079,29 @@ export const sectorMachineGuideDetailPages: SectorMachineGuidePageData[] = [
       {
         title: "Bant Konveyör Seçimi",
         description: "Bant konveyör ürün sayfası üzerinden saha ve tasarım yaklaşımını inceleyin.",
-        href: "/makinalar-ekipman/tasima-ekipmanlari/bant-konveyorler",
+        href: "/makinalar-ekipman/tasima-ekipmanlari/bantli-konveyorler",
       },
       {
         title: "Helezon Konveyör Seçimi",
         description: "Helezon konveyör ürün sayfasında mekanik yaklaşımı detaylı görün.",
-        href: "/makinalar-ekipman/tasima-ekipmanlari/helezon-konveyorler",
+        href: "/makinalar-ekipman/tasima-ekipmanlari/vidali-helezonlar",
       },
     ],
   }),
   guide({
     slug: "atik-su-camuru-ve-aritma-makinalari",
-    title: "Atık Su Çamuru ve Arıtma Makinaları",
+    title: "Atık Su Çamuru İşleme Makinaları",
     metaTitle:
-      "Atık Su Çamuru ve Arıtma Makinaları | Çamur Kurutma, Stabilizasyon ve Koku Kontrol",
+      "Atık Su Çamuru İşleme Makinaları | Çamur Kurutma, Stabilizasyon ve Koku Kontrol",
     description:
       "Arıtma çamuru, belediye çamuru ve digestat gibi yüksek nemli malzemeler için kurutma tamburu, stabilizasyon, sterilizasyon, taşıma, koku kontrol ve filtre sistemlerini inceleyin.",
     canonical:
       "https://www.promakina.com.tr/kutuphane/blog/atik-su-camuru-ve-aritma-makinalari",
-    openGraphTitle: "Atık Su Çamuru ve Arıtma Makinaları | Pro Makina",
+    openGraphTitle: "Atık Su Çamuru İşleme Makinaları | Pro Makina",
     openGraphDescription:
       "Çamur kurutma, stabilizasyon, koku kontrol ve gaz yönetimi ekipmanlarını teknik olarak inceleyin.",
     heroDescription:
-      "Atık su çamuru ve arıtma kaynaklı yüksek nemli ürünlerin işlenmesi; kurutma, stabilizasyon, koku kontrolü, gaz yönetimi ve güvenli taşıma ekipmanlarının birlikte değerlendirilmesini gerektirir.",
+      "Atık su arıtma tesislerinden çıkan yüksek nemli çamurun işlenmesi; kurutma, stabilizasyon, koku kontrolü, gaz yönetimi ve güvenli taşıma ekipmanlarının birlikte değerlendirilmesini gerektirir.",
     readingTime: "10-12 dk",
     heroTopic: "Çamur kurutma, stabilizasyon ve koku kontrolü",
     heroCtaLabel: "Çamur Kurutma Hizmetini Aç",
