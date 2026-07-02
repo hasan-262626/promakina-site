@@ -8,6 +8,8 @@ type GlobalBottomCtaProps = {
   primaryHref?: string;
   secondaryLabel?: string;
   secondaryHref?: string;
+  tertiaryLabel?: string;
+  tertiaryHref?: string;
 };
 
 export function GlobalBottomCta({
@@ -17,6 +19,8 @@ export function GlobalBottomCta({
   primaryHref = siteContact.whatsappHref,
   secondaryLabel = "Telefonla Ara",
   secondaryHref = siteContact.phoneHref,
+  tertiaryLabel,
+  tertiaryHref,
 }: GlobalBottomCtaProps) {
   return (
     <section className="rounded-[32px] bg-[linear-gradient(135deg,#278DC0_0%,#154764_100%)] px-6 py-8 text-white shadow-[0_24px_70px_rgba(39,141,192,0.24)] sm:px-8 sm:py-10">
@@ -43,6 +47,14 @@ export function GlobalBottomCta({
         >
           {secondaryLabel}
         </Link>
+        {tertiaryLabel && tertiaryHref ? (
+          <Link
+            href={tertiaryHref}
+            className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/25 px-6 text-sm font-semibold text-white transition hover:bg-white/10"
+          >
+            {tertiaryLabel}
+          </Link>
+        ) : null}
       </div>
     </section>
   );

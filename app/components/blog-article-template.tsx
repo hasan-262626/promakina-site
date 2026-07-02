@@ -1,4 +1,5 @@
-import type { ReactNode } from "react";
+﻿import type { ReactNode } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { getBlogArticleCtaConfig } from "../lib/blog-article-cta-map";
 import { getBlogTechnicalArticleData } from "../lib/blog-technical-article-data";
@@ -7,6 +8,7 @@ import { BlogArticleCta } from "./blog-article-cta";
 import { BlogTechnicalArticleBlocks } from "./blog-technical-article-blocks";
 import { SocialFollowPanel } from "./social-follow-panel";
 import type { LibraryFaqItem, LibraryServiceLink } from "../lib/library-page-data";
+import { getBlogTopicVisuals } from "../lib/blog-topic-ui";
 import { trText } from "../lib/tr-text";
 
 type BlogArticleSection = {
@@ -52,21 +54,26 @@ type BlogArticleTemplateProps = {
 };
 
 const defaultSocialDescription =
-  "Proses mühendisli�xi, makine imalatı ve saha uygulamalarına dair içeriklerimizi LinkedIn, YouTube ve Instagram kanallarımızda da payla�xıyoruz.";
-
-function normalizeTopicKey(value: string) {
-  return value
-    .toLocaleLowerCase("tr-TR")
-    .replace(/ı/g, "i")
-    .replace(/�x/g, "g")
-    .replace(/ü/g, "u")
-    .replace(/�x/g, "s")
-    .replace(/ö/g, "o")
-    .replace(/ç/g, "c");
-}
+  "Proses mühendisliği, makine imalatı ve saha uygulamalarına dair içeriklerimizi LinkedIn, YouTube ve Instagram kanallarımızda da paylaşıyoruz.";
 
 function getArticleSlug(canonical: string) {
   return canonical.split("/").filter(Boolean).pop() ?? "";
+}
+
+function normalizeTopicSearchKey(value: string) {
+  return trText(value)
+    .toLocaleLowerCase("tr-TR")
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/Ã„Â±/g, "i")
+    .replace(/Ã…Å¸/g, "s")
+    .replace(/Ã„Å¸/g, "g")
+    .replace(/ÃƒÂ§/g, "c")
+    .replace(/ÃƒÂ¶/g, "o")
+    .replace(/ÃƒÂ¼/g, "u")
+    .replace(/[^a-z0-9- ]/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
 }
 
 function dedupeLinks(links: { label: string; href: string }[]) {
@@ -91,527 +98,527 @@ function buildTopicConfig({
   categoryLabel: string;
   canonical: string;
 }): ArticleTopicConfig {
-  const slug = normalizeTopicKey(getArticleSlug(canonical));
-  const titleKey = normalizeTopicKey(title);
-  const categoryKey = normalizeTopicKey(categoryLabel);
+  const slug = normalizeTopicSearchKey(getArticleSlug(canonical));
+  const titleKey = normalizeTopicSearchKey(title);
+  const categoryKey = normalizeTopicSearchKey(categoryLabel);
   const key = `${slug} ${titleKey} ${categoryKey}`;
 
   const dryingConfig: ArticleTopicConfig = {
     actionEyebrow: "HESAPLAMA ARACI",
-    actionTitle: "Kurutma Tamburu Hesabınızı Yapın",
+    actionTitle: "Kurutma Tamburu HesabÃƒâ€žÃ‚Â±nÃƒâ€žÃ‚Â±zÃƒâ€žÃ‚Â± YapÃƒâ€žÃ‚Â±n",
     actionDescription:
-      "Kapasite, ba�xlangıç nemi, hedef çıkı�x nemi, su uçurma yükü ve tambur yakla�xımını ön de�xerlendirme mantı�xıyla hızlıca okuyun.",
+      "Kapasite, baÃƒÂ¯Ã‚Â¿Ã‚Â½xlangÃƒâ€žÃ‚Â±ÃƒÆ’Ã‚Â§ nemi, hedef ÃƒÆ’Ã‚Â§Ãƒâ€žÃ‚Â±kÃƒâ€žÃ‚Â±ÃƒÂ¯Ã‚Â¿Ã‚Â½x nemi, su uÃƒÆ’Ã‚Â§urma yÃƒÆ’Ã‚Â¼kÃƒÆ’Ã‚Â¼ ve tambur yaklaÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒâ€žÃ‚Â±mÃƒâ€žÃ‚Â±nÃƒâ€žÃ‚Â± ÃƒÆ’Ã‚Â¶n deÃƒÂ¯Ã‚Â¿Ã‚Â½xerlendirme mantÃƒâ€žÃ‚Â±ÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒâ€žÃ‚Â±yla hÃƒâ€žÃ‚Â±zlÃƒâ€žÃ‚Â±ca okuyun.",
     actionFeatures: [
-      "Su uçurma yükü yakla�xımı",
-      "Tambur çap-boy ön seçimi",
-      "Hava debisi ve fan mantı�xı",
-      "Brülör kapasite yakla�xımı",
+      "Su uÃƒÆ’Ã‚Â§urma yÃƒÆ’Ã‚Â¼kÃƒÆ’Ã‚Â¼ yaklaÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒâ€žÃ‚Â±mÃƒâ€žÃ‚Â±",
+      "Tambur ÃƒÆ’Ã‚Â§ap-boy ÃƒÆ’Ã‚Â¶n seÃƒÆ’Ã‚Â§imi",
+      "Hava debisi ve fan mantÃƒâ€žÃ‚Â±ÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒâ€žÃ‚Â±",
+      "BrÃƒÆ’Ã‚Â¼lÃƒÆ’Ã‚Â¶r kapasite yaklaÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒâ€žÃ‚Â±mÃƒâ€žÃ‚Â±",
     ],
     actionLink: "/programlar/kurutma-tamburu-hesabi",
-    actionButtonLabel: "Hesaplama Aracını Aç",
+    actionButtonLabel: "Hesaplama AracÃƒâ€žÃ‚Â±nÃƒâ€žÃ‚Â± AÃƒÆ’Ã‚Â§",
     highlights: [
       {
-        title: "Su uçurma yükü",
-        description: "Gerçek ısıl yükü ve enerji yakla�xımını belirleyen ana hesap kalemidir.",
+        title: "Su uÃƒÆ’Ã‚Â§urma yÃƒÆ’Ã‚Â¼kÃƒÆ’Ã‚Â¼",
+        description: "GerÃƒÆ’Ã‚Â§ek Ãƒâ€žÃ‚Â±sÃƒâ€žÃ‚Â±l yÃƒÆ’Ã‚Â¼kÃƒÆ’Ã‚Â¼ ve enerji yaklaÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒâ€žÃ‚Â±mÃƒâ€žÃ‚Â±nÃƒâ€žÃ‚Â± belirleyen ana hesap kalemidir.",
       },
       {
         title: "Tambur geometrisi",
-        description: "�!ap, boy, devir ve iç kanat yapısı ürünün residence time davranı�xını etkiler.",
+        description: "ÃƒÂ¯Ã‚Â¿Ã‚Â½!ap, boy, devir ve iÃƒÆ’Ã‚Â§ kanat yapÃƒâ€žÃ‚Â±sÃƒâ€žÃ‚Â± ÃƒÆ’Ã‚Â¼rÃƒÆ’Ã‚Â¼nÃƒÆ’Ã‚Â¼n residence time davranÃƒâ€žÃ‚Â±ÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒâ€žÃ‚Â±nÃƒâ€žÃ‚Â± etkiler.",
       },
       {
-        title: "Gaz hattı",
-        description: "Fan, siklon ve filtre hattı kurutma veriminin sahadaki kar�xılı�xını belirler.",
+        title: "Gaz hattÃƒâ€žÃ‚Â±",
+        description: "Fan, siklon ve filtre hattÃƒâ€žÃ‚Â± kurutma veriminin sahadaki karÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒâ€žÃ‚Â±lÃƒâ€žÃ‚Â±ÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒâ€žÃ‚Â±nÃƒâ€žÃ‚Â± belirler.",
       },
     ],
     supportLinks: [
-      { label: "Kurutma Tamburu İmalatı", href: "/hizmetler/kurutma-tamburu-imalati" },
+      { label: "Kurutma Tamburu Ãƒâ€žÃ‚Â°malatÃƒâ€žÃ‚Â±", href: "/hizmetler/kurutma-tamburu-imalati" },
       { label: "Tambur Sistemleri", href: "/makinalar-ekipman/tambur-sistemleri" },
-      { label: "Kurutma Tamburları", href: "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburu" },
+      { label: "Kurutma TamburlarÃƒâ€žÃ‚Â±", href: "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburu" },
       { label: "Programlar", href: "/programlar" },
     ],
-    ctaTitle: "Kurutma tamburu kapasite ve tasarım yakla�xımını birlikte netle�xtirelim",
+    ctaTitle: "Kurutma tamburu kapasite ve tasarÃƒâ€žÃ‚Â±m yaklaÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒâ€žÃ‚Â±mÃƒâ€žÃ‚Â±nÃƒâ€žÃ‚Â± birlikte netleÃƒÂ¯Ã‚Â¿Ã‚Â½xtirelim",
     ctaDescription:
-      "Kapasite, nem oranı, ürün tipi, enerji tercihi ve saha ko�xullarınızı payla�xın; kurutma tamburu, gaz hattı ve yardımcı ekipman yapısını birlikte de�xerlendirelim.",
-    primaryLabel: "Kurutma Tamburu İmalatı",
+      "Kapasite, nem oranÃƒâ€žÃ‚Â±, ÃƒÆ’Ã‚Â¼rÃƒÆ’Ã‚Â¼n tipi, enerji tercihi ve saha koÃƒÂ¯Ã‚Â¿Ã‚Â½xullarÃƒâ€žÃ‚Â±nÃƒâ€žÃ‚Â±zÃƒâ€žÃ‚Â± paylaÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒâ€žÃ‚Â±n; kurutma tamburu, gaz hattÃƒâ€žÃ‚Â± ve yardÃƒâ€žÃ‚Â±mcÃƒâ€žÃ‚Â± ekipman yapÃƒâ€žÃ‚Â±sÃƒâ€žÃ‚Â±nÃƒâ€žÃ‚Â± birlikte deÃƒÂ¯Ã‚Â¿Ã‚Â½xerlendirelim.",
+    primaryLabel: "Kurutma Tamburu Ãƒâ€žÃ‚Â°malatÃƒâ€žÃ‚Â±",
     primaryHref: "/hizmetler/kurutma-tamburu-imalati",
   };
 
   const screwConfig: ArticleTopicConfig = {
     actionEyebrow: "HESAPLAMA ARACI",
-    actionTitle: "Helezon Kapasite Hesabınızı Yapın",
+    actionTitle: "Helezon Kapasite HesabÃƒâ€žÃ‚Â±nÃƒâ€žÃ‚Â±zÃƒâ€žÃ‚Â± YapÃƒâ€žÃ‚Â±n",
     actionDescription:
-      "�!ap, hatve, devir, e�xim, doluluk oranı ve ürün yo�xunlu�xu bilgileriyle helezon konveyör için ön kapasite ve güç yakla�xımını görün.",
+      "ÃƒÂ¯Ã‚Â¿Ã‚Â½!ap, hatve, devir, eÃƒÂ¯Ã‚Â¿Ã‚Â½xim, doluluk oranÃƒâ€žÃ‚Â± ve ÃƒÆ’Ã‚Â¼rÃƒÆ’Ã‚Â¼n yoÃƒÂ¯Ã‚Â¿Ã‚Â½xunluÃƒÂ¯Ã‚Â¿Ã‚Â½xu bilgileriyle helezon konveyÃƒÆ’Ã‚Â¶r iÃƒÆ’Ã‚Â§in ÃƒÆ’Ã‚Â¶n kapasite ve gÃƒÆ’Ã‚Â¼ÃƒÆ’Ã‚Â§ yaklaÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒâ€žÃ‚Â±mÃƒâ€žÃ‚Â±nÃƒâ€žÃ‚Â± gÃƒÆ’Ã‚Â¶rÃƒÆ’Ã‚Â¼n.",
     actionFeatures: [
-      "Kapasite ön seçimi",
-      "Motor gücü yakla�xımı",
-      "E�xim etkisi de�xerlendirmesi",
-      "�Srün yo�xunlu�xu okuması",
+      "Kapasite ÃƒÆ’Ã‚Â¶n seÃƒÆ’Ã‚Â§imi",
+      "Motor gÃƒÆ’Ã‚Â¼cÃƒÆ’Ã‚Â¼ yaklaÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒâ€žÃ‚Â±mÃƒâ€žÃ‚Â±",
+      "EÃƒÂ¯Ã‚Â¿Ã‚Â½xim etkisi deÃƒÂ¯Ã‚Â¿Ã‚Â½xerlendirmesi",
+      "ÃƒÂ¯Ã‚Â¿Ã‚Â½SrÃƒÆ’Ã‚Â¼n yoÃƒÂ¯Ã‚Â¿Ã‚Â½xunluÃƒÂ¯Ã‚Â¿Ã‚Â½xu okumasÃƒâ€žÃ‚Â±",
     ],
     actionLink: "/programlar/helezon-kapasite-hesabi",
-    actionButtonLabel: "Hesaplama Aracını Aç",
+    actionButtonLabel: "Hesaplama AracÃƒâ€žÃ‚Â±nÃƒâ€žÃ‚Â± AÃƒÆ’Ã‚Â§",
     highlights: [
       {
         title: "Kapasite",
-        description: "�!ap, hatve ve devir kombinasyonu ta�xıma omurgasının çıkı�xını belirler.",
+        description: "ÃƒÂ¯Ã‚Â¿Ã‚Â½!ap, hatve ve devir kombinasyonu taÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒâ€žÃ‚Â±ma omurgasÃƒâ€žÃ‚Â±nÃƒâ€žÃ‚Â±n ÃƒÆ’Ã‚Â§Ãƒâ€žÃ‚Â±kÃƒâ€žÃ‚Â±ÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒâ€žÃ‚Â±nÃƒâ€žÃ‚Â± belirler.",
       },
       {
-        title: "Motor gücü",
-        description: "Tork, sürtünme ve servis faktörü birlikte okunmadan güvenli seçim yapılamaz.",
+        title: "Motor gÃƒÆ’Ã‚Â¼cÃƒÆ’Ã‚Â¼",
+        description: "Tork, sÃƒÆ’Ã‚Â¼rtÃƒÆ’Ã‚Â¼nme ve servis faktÃƒÆ’Ã‚Â¶rÃƒÆ’Ã‚Â¼ birlikte okunmadan gÃƒÆ’Ã‚Â¼venli seÃƒÆ’Ã‚Â§im yapÃƒâ€žÃ‚Â±lamaz.",
       },
       {
-        title: "E�xim etkisi",
-        description: "Yükselme arttıkça gerçek ta�xıma kapasitesi dü�xer ve güç ihtiyacı de�xi�xir.",
+        title: "EÃƒÂ¯Ã‚Â¿Ã‚Â½xim etkisi",
+        description: "YÃƒÆ’Ã‚Â¼kselme arttÃƒâ€žÃ‚Â±kÃƒÆ’Ã‚Â§a gerÃƒÆ’Ã‚Â§ek taÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒâ€žÃ‚Â±ma kapasitesi dÃƒÆ’Ã‚Â¼ÃƒÂ¯Ã‚Â¿Ã‚Â½xer ve gÃƒÆ’Ã‚Â¼ÃƒÆ’Ã‚Â§ ihtiyacÃƒâ€žÃ‚Â± deÃƒÂ¯Ã‚Â¿Ã‚Â½xiÃƒÂ¯Ã‚Â¿Ã‚Â½xir.",
       },
     ],
     supportLinks: [
-      { label: "Vidalı Helezonlar", href: "/makinalar-ekipman/tasima-ekipmanlari/vidali-helezonlar" },
-      { label: "Ta�xıma Ekipmanları", href: "/makinalar-ekipman/tasima-ekipmanlari" },
-      { label: "Bantlı Konveyörler", href: "/makinalar-ekipman/tasima-ekipmanlari/bantli-konveyorler" },
+      { label: "VidalÃƒâ€žÃ‚Â± Helezonlar", href: "/makinalar-ekipman/tasima-ekipmanlari/vidali-helezonlar" },
+      { label: "TaÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒâ€žÃ‚Â±ma EkipmanlarÃƒâ€žÃ‚Â±", href: "/makinalar-ekipman/tasima-ekipmanlari" },
+      { label: "BantlÃƒâ€žÃ‚Â± KonveyÃƒÆ’Ã‚Â¶rler", href: "/makinalar-ekipman/tasima-ekipmanlari/bantli-konveyorler" },
       { label: "Programlar", href: "/programlar" },
     ],
-    ctaTitle: "Helezon konveyör kapasite ve motor seçimini birlikte de�xerlendirelim",
+    ctaTitle: "Helezon konveyÃƒÆ’Ã‚Â¶r kapasite ve motor seÃƒÆ’Ã‚Â§imini birlikte deÃƒÂ¯Ã‚Â¿Ã‚Â½xerlendirelim",
     ctaDescription:
-      "�Srün yo�xunlu�xu, kapasite hedefi, ta�xıma mesafesi, e�xim ve saha ko�xullarınızı payla�xın; do�xru helezon omurgasını birlikte netle�xtirelim.",
-    primaryLabel: "Vidalı Helezonlar",
+      "ÃƒÂ¯Ã‚Â¿Ã‚Â½SrÃƒÆ’Ã‚Â¼n yoÃƒÂ¯Ã‚Â¿Ã‚Â½xunluÃƒÂ¯Ã‚Â¿Ã‚Â½xu, kapasite hedefi, taÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒâ€žÃ‚Â±ma mesafesi, eÃƒÂ¯Ã‚Â¿Ã‚Â½xim ve saha koÃƒÂ¯Ã‚Â¿Ã‚Â½xullarÃƒâ€žÃ‚Â±nÃƒâ€žÃ‚Â±zÃƒâ€žÃ‚Â± paylaÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒâ€žÃ‚Â±n; doÃƒÂ¯Ã‚Â¿Ã‚Â½xru helezon omurgasÃƒâ€žÃ‚Â±nÃƒâ€žÃ‚Â± birlikte netleÃƒÂ¯Ã‚Â¿Ã‚Â½xtirelim.",
+    primaryLabel: "VidalÃƒâ€žÃ‚Â± Helezonlar",
     primaryHref: "/makinalar-ekipman/tasima-ekipmanlari/vidali-helezonlar",
   };
 
   const conveyorConfig: ArticleTopicConfig = {
     actionEyebrow: "HESAPLAMA ARACI",
-    actionTitle: "Ta�xıma Sistemi �n Seçiminizi Yapın",
+    actionTitle: "TaÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒâ€žÃ‚Â±ma Sistemi ÃƒÂ¯Ã‚Â¿Ã‚Â½n SeÃƒÆ’Ã‚Â§iminizi YapÃƒâ€žÃ‚Â±n",
     actionDescription:
-      "Bant konveyör, kovalı elevatör ve genel ta�xıma hatları için kapasite, hız, güç ve saha akı�xını ön de�xerlendirme mantı�xıyla inceleyin.",
+      "Bant konveyÃƒÆ’Ã‚Â¶r, kovalÃƒâ€žÃ‚Â± elevatÃƒÆ’Ã‚Â¶r ve genel taÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒâ€žÃ‚Â±ma hatlarÃƒâ€žÃ‚Â± iÃƒÆ’Ã‚Â§in kapasite, hÃƒâ€žÃ‚Â±z, gÃƒÆ’Ã‚Â¼ÃƒÆ’Ã‚Â§ ve saha akÃƒâ€žÃ‚Â±ÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒâ€žÃ‚Â±nÃƒâ€žÃ‚Â± ÃƒÆ’Ã‚Â¶n deÃƒÂ¯Ã‚Â¿Ã‚Â½xerlendirme mantÃƒâ€žÃ‚Â±ÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒâ€žÃ‚Â±yla inceleyin.",
     actionFeatures: [
       "Kapasite planlama",
-      "Bant geni�xli�xi yakla�xımı",
-      "Elevatör ön seçimi",
-      "Hat akı�xı de�xerlendirmesi",
+      "Bant geniÃƒÂ¯Ã‚Â¿Ã‚Â½xliÃƒÂ¯Ã‚Â¿Ã‚Â½xi yaklaÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒâ€žÃ‚Â±mÃƒâ€žÃ‚Â±",
+      "ElevatÃƒÆ’Ã‚Â¶r ÃƒÆ’Ã‚Â¶n seÃƒÆ’Ã‚Â§imi",
+      "Hat akÃƒâ€žÃ‚Â±ÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒâ€žÃ‚Â± deÃƒÂ¯Ã‚Â¿Ã‚Â½xerlendirmesi",
     ],
     actionLink: "/programlar/konveyor-kapasite-hesabi",
-    actionButtonLabel: "Hesaplama Aracını Aç",
+    actionButtonLabel: "Hesaplama AracÃƒâ€žÃ‚Â±nÃƒâ€žÃ‚Â± AÃƒÆ’Ã‚Â§",
     highlights: [
       {
-        title: "Hat akı�xı",
-        description: "Ta�xıma hattı yalnız tek ekipman de�xil, tüm proses ritminin omurgasıdır.",
+        title: "Hat akÃƒâ€žÃ‚Â±ÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒâ€žÃ‚Â±",
+        description: "TaÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒâ€žÃ‚Â±ma hattÃƒâ€žÃ‚Â± yalnÃƒâ€žÃ‚Â±z tek ekipman deÃƒÂ¯Ã‚Â¿Ã‚Â½xil, tÃƒÆ’Ã‚Â¼m proses ritminin omurgasÃƒâ€žÃ‚Â±dÃƒâ€žÃ‚Â±r.",
       },
       {
-        title: "Güç dengesi",
-        description: "Motor seçimi sürtünme, yük da�xılımı ve çalı�xma süresiyle birlikte okunmalıdır.",
+        title: "GÃƒÆ’Ã‚Â¼ÃƒÆ’Ã‚Â§ dengesi",
+        description: "Motor seÃƒÆ’Ã‚Â§imi sÃƒÆ’Ã‚Â¼rtÃƒÆ’Ã‚Â¼nme, yÃƒÆ’Ã‚Â¼k daÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒâ€žÃ‚Â±lÃƒâ€žÃ‚Â±mÃƒâ€žÃ‚Â± ve ÃƒÆ’Ã‚Â§alÃƒâ€žÃ‚Â±ÃƒÂ¯Ã‚Â¿Ã‚Â½xma sÃƒÆ’Ã‚Â¼resiyle birlikte okunmalÃƒâ€žÃ‚Â±dÃƒâ€žÃ‚Â±r.",
       },
       {
         title: "Saha kurgusu",
-        description: "Yükleme noktaları, bo�xaltma mantı�xı ve bakım eri�ximi seçim kalitesini belirler.",
+        description: "YÃƒÆ’Ã‚Â¼kleme noktalarÃƒâ€žÃ‚Â±, boÃƒÂ¯Ã‚Â¿Ã‚Â½xaltma mantÃƒâ€žÃ‚Â±ÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒâ€žÃ‚Â± ve bakÃƒâ€žÃ‚Â±m eriÃƒÂ¯Ã‚Â¿Ã‚Â½ximi seÃƒÆ’Ã‚Â§im kalitesini belirler.",
       },
     ],
     supportLinks: [
-      { label: "Ta�xıma Ekipmanları", href: "/makinalar-ekipman/tasima-ekipmanlari" },
-      { label: "Bantlı Konveyörler", href: "/makinalar-ekipman/tasima-ekipmanlari/bantli-konveyorler" },
-      { label: "Zincirli Elevatörler", href: "/makinalar-ekipman/tasima-ekipmanlari/zincirli-elevatorler" },
+      { label: "TaÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒâ€žÃ‚Â±ma EkipmanlarÃƒâ€žÃ‚Â±", href: "/makinalar-ekipman/tasima-ekipmanlari" },
+      { label: "BantlÃƒâ€žÃ‚Â± KonveyÃƒÆ’Ã‚Â¶rler", href: "/makinalar-ekipman/tasima-ekipmanlari/bantli-konveyorler" },
+      { label: "Zincirli ElevatÃƒÆ’Ã‚Â¶rler", href: "/makinalar-ekipman/tasima-ekipmanlari/zincirli-elevatorler" },
       { label: "Programlar", href: "/programlar" },
     ],
-    ctaTitle: "Ta�xıma hattı kapasite ve ekipman seçimini birlikte de�xerlendirelim",
+    ctaTitle: "TaÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒâ€žÃ‚Â±ma hattÃƒâ€žÃ‚Â± kapasite ve ekipman seÃƒÆ’Ã‚Â§imini birlikte deÃƒÂ¯Ã‚Â¿Ã‚Â½xerlendirelim",
     ctaDescription:
-      "Kapasite, ürün yo�xunlu�xu, ta�xıma yönü, yükleme noktaları ve çalı�xma süresi bilgilerinizi payla�xın; do�xru ta�xıma hattını birlikte netle�xtirelim.",
-    primaryLabel: "Ta�xıma Ekipmanları",
+      "Kapasite, ÃƒÆ’Ã‚Â¼rÃƒÆ’Ã‚Â¼n yoÃƒÂ¯Ã‚Â¿Ã‚Â½xunluÃƒÂ¯Ã‚Â¿Ã‚Â½xu, taÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒâ€žÃ‚Â±ma yÃƒÆ’Ã‚Â¶nÃƒÆ’Ã‚Â¼, yÃƒÆ’Ã‚Â¼kleme noktalarÃƒâ€žÃ‚Â± ve ÃƒÆ’Ã‚Â§alÃƒâ€žÃ‚Â±ÃƒÂ¯Ã‚Â¿Ã‚Â½xma sÃƒÆ’Ã‚Â¼resi bilgilerinizi paylaÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒâ€žÃ‚Â±n; doÃƒÂ¯Ã‚Â¿Ã‚Â½xru taÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒâ€žÃ‚Â±ma hattÃƒâ€žÃ‚Â±nÃƒâ€žÃ‚Â± birlikte netleÃƒÂ¯Ã‚Â¿Ã‚Â½xtirelim.",
+    primaryLabel: "TaÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒâ€žÃ‚Â±ma EkipmanlarÃƒâ€žÃ‚Â±",
     primaryHref: "/makinalar-ekipman/tasima-ekipmanlari",
   };
 
   const elevatorConfig: ArticleTopicConfig = {
     actionEyebrow: "HESAPLAMA ARACI",
-    actionTitle: "Elevatör Kapasite Hesabınızı Yapın",
+    actionTitle: "ElevatÃƒÆ’Ã‚Â¶r Kapasite HesabÃƒâ€žÃ‚Â±nÃƒâ€žÃ‚Â±zÃƒâ€žÃ‚Â± YapÃƒâ€žÃ‚Â±n",
     actionDescription:
-      "Kova hacmi, bant veya zincir hızı, ürün yo�xunlu�xu ve dikey ta�xıma kapasitesini ön seçim mantı�xıyla de�xerlendirin.",
+      "Kova hacmi, bant veya zincir hÃƒâ€žÃ‚Â±zÃƒâ€žÃ‚Â±, ÃƒÆ’Ã‚Â¼rÃƒÆ’Ã‚Â¼n yoÃƒÂ¯Ã‚Â¿Ã‚Â½xunluÃƒÂ¯Ã‚Â¿Ã‚Â½xu ve dikey taÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒâ€žÃ‚Â±ma kapasitesini ÃƒÆ’Ã‚Â¶n seÃƒÆ’Ã‚Â§im mantÃƒâ€žÃ‚Â±ÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒâ€žÃ‚Â±yla deÃƒÂ¯Ã‚Â¿Ã‚Â½xerlendirin.",
     actionFeatures: [
       "Dikey kapasite planlama",
-      "Kova hacmi yakla�xımı",
-      "Hat yüksekli�xi etkisi",
-      "Servis güvenli�xi",
+      "Kova hacmi yaklaÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒâ€žÃ‚Â±mÃƒâ€žÃ‚Â±",
+      "Hat yÃƒÆ’Ã‚Â¼ksekliÃƒÂ¯Ã‚Â¿Ã‚Â½xi etkisi",
+      "Servis gÃƒÆ’Ã‚Â¼venliÃƒÂ¯Ã‚Â¿Ã‚Â½xi",
     ],
     actionLink: "/programlar/elevator-kapasite-hesabi",
-    actionButtonLabel: "Hesaplama Aracını Aç",
+    actionButtonLabel: "Hesaplama AracÃƒâ€žÃ‚Â±nÃƒâ€žÃ‚Â± AÃƒÆ’Ã‚Â§",
     highlights: [
       {
-        title: "Dikey ta�xıma",
-        description: "Kot farkı olan sahalarda stabil ürün transferi elevatör tasarımına ba�xlıdır.",
+        title: "Dikey taÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒâ€žÃ‚Â±ma",
+        description: "Kot farkÃƒâ€žÃ‚Â± olan sahalarda stabil ÃƒÆ’Ã‚Â¼rÃƒÆ’Ã‚Â¼n transferi elevatÃƒÆ’Ã‚Â¶r tasarÃƒâ€žÃ‚Â±mÃƒâ€žÃ‚Â±na baÃƒÂ¯Ã‚Â¿Ã‚Â½xlÃƒâ€žÃ‚Â±dÃƒâ€žÃ‚Â±r.",
       },
       {
-        title: "Kova dolulu�xu",
-        description: "Kapasite ile ürün dökülmesi riski arasındaki dengeyi belirler.",
+        title: "Kova doluluÃƒÂ¯Ã‚Â¿Ã‚Â½xu",
+        description: "Kapasite ile ÃƒÆ’Ã‚Â¼rÃƒÆ’Ã‚Â¼n dÃƒÆ’Ã‚Â¶kÃƒÆ’Ã‚Â¼lmesi riski arasÃƒâ€žÃ‚Â±ndaki dengeyi belirler.",
       },
       {
-        title: "Hat güvenli�xi",
-        description: "�~ase, tahrik ve geri kaçma kontrolü uzun vadeli i�xletmeyi etkiler.",
+        title: "Hat gÃƒÆ’Ã‚Â¼venliÃƒÂ¯Ã‚Â¿Ã‚Â½xi",
+        description: "ÃƒÂ¯Ã‚Â¿Ã‚Â½~ase, tahrik ve geri kaÃƒÆ’Ã‚Â§ma kontrolÃƒÆ’Ã‚Â¼ uzun vadeli iÃƒÂ¯Ã‚Â¿Ã‚Â½xletmeyi etkiler.",
       },
     ],
     supportLinks: [
-      { label: "Zincirli Elevatörler", href: "/makinalar-ekipman/tasima-ekipmanlari/zincirli-elevatorler" },
-      { label: "Ta�xıma Ekipmanları", href: "/makinalar-ekipman/tasima-ekipmanlari" },
-      { label: "Bantlı Konveyörler", href: "/makinalar-ekipman/tasima-ekipmanlari/bantli-konveyorler" },
+      { label: "Zincirli ElevatÃƒÆ’Ã‚Â¶rler", href: "/makinalar-ekipman/tasima-ekipmanlari/zincirli-elevatorler" },
+      { label: "TaÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒâ€žÃ‚Â±ma EkipmanlarÃƒâ€žÃ‚Â±", href: "/makinalar-ekipman/tasima-ekipmanlari" },
+      { label: "BantlÃƒâ€žÃ‚Â± KonveyÃƒÆ’Ã‚Â¶rler", href: "/makinalar-ekipman/tasima-ekipmanlari/bantli-konveyorler" },
       { label: "Programlar", href: "/programlar" },
     ],
-    ctaTitle: "Dikey ta�xıma hattınızı birlikte de�xerlendirelim",
+    ctaTitle: "Dikey taÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒâ€žÃ‚Â±ma hattÃƒâ€žÃ‚Â±nÃƒâ€žÃ‚Â±zÃƒâ€žÃ‚Â± birlikte deÃƒÂ¯Ã‚Â¿Ã‚Â½xerlendirelim",
     ctaDescription:
-      "�Srün yo�xunlu�xu, kapasite, yükselme yüksekli�xi ve saha ko�xullarınızı payla�xın; do�xru elevatör omurgasını birlikte netle�xtirelim.",
-    primaryLabel: "Zincirli Elevatörler",
+      "ÃƒÂ¯Ã‚Â¿Ã‚Â½SrÃƒÆ’Ã‚Â¼n yoÃƒÂ¯Ã‚Â¿Ã‚Â½xunluÃƒÂ¯Ã‚Â¿Ã‚Â½xu, kapasite, yÃƒÆ’Ã‚Â¼kselme yÃƒÆ’Ã‚Â¼ksekliÃƒÂ¯Ã‚Â¿Ã‚Â½xi ve saha koÃƒÂ¯Ã‚Â¿Ã‚Â½xullarÃƒâ€žÃ‚Â±nÃƒâ€žÃ‚Â±zÃƒâ€žÃ‚Â± paylaÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒâ€žÃ‚Â±n; doÃƒÂ¯Ã‚Â¿Ã‚Â½xru elevatÃƒÆ’Ã‚Â¶r omurgasÃƒâ€žÃ‚Â±nÃƒâ€žÃ‚Â± birlikte netleÃƒÂ¯Ã‚Â¿Ã‚Â½xtirelim.",
+    primaryLabel: "Zincirli ElevatÃƒÆ’Ã‚Â¶rler",
     primaryHref: "/makinalar-ekipman/tasima-ekipmanlari/zincirli-elevatorler",
   };
 
   const drumSystemsConfig: ArticleTopicConfig = {
     actionEyebrow: "HESAPLAMA ARACI",
-    actionTitle: "Tambur Sistemi �n De�xerlendirmesini Yapın",
+    actionTitle: "Tambur Sistemi ÃƒÂ¯Ã‚Â¿Ã‚Â½n DeÃƒÂ¯Ã‚Â¿Ã‚Â½xerlendirmesini YapÃƒâ€žÃ‚Â±n",
     actionDescription:
-      "Granülasyon, so�xutma, kaplama ve kompost tamburlarında kapasite, residence time ve ekipman yakla�xımını birlikte de�xerlendirin.",
+      "GranÃƒÆ’Ã‚Â¼lasyon, soÃƒÂ¯Ã‚Â¿Ã‚Â½xutma, kaplama ve kompost tamburlarÃƒâ€žÃ‚Â±nda kapasite, residence time ve ekipman yaklaÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒâ€žÃ‚Â±mÃƒâ€žÃ‚Â±nÃƒâ€žÃ‚Â± birlikte deÃƒÂ¯Ã‚Â¿Ã‚Â½xerlendirin.",
     actionFeatures: [
-      "Residence time yakla�xımı",
-      "Gövde geometrisi",
-      "�Srün hareketi",
+      "Residence time yaklaÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒâ€žÃ‚Â±mÃƒâ€žÃ‚Â±",
+      "GÃƒÆ’Ã‚Â¶vde geometrisi",
+      "ÃƒÂ¯Ã‚Â¿Ã‚Â½SrÃƒÆ’Ã‚Â¼n hareketi",
       "Hat entegrasyonu",
     ],
     actionLink: "/programlar/kurutma-tamburu-hesabi",
-    actionButtonLabel: "Hesaplama Aracını Aç",
+    actionButtonLabel: "Hesaplama AracÃƒâ€žÃ‚Â±nÃƒâ€žÃ‚Â± AÃƒÆ’Ã‚Â§",
     highlights: [
       {
-        title: "İ�xlem süresi",
-        description: "Tambur içindeki gerçek temas süresi proses ba�xarısını do�xrudan etkiler.",
+        title: "Ãƒâ€žÃ‚Â°ÃƒÂ¯Ã‚Â¿Ã‚Â½xlem sÃƒÆ’Ã‚Â¼resi",
+        description: "Tambur iÃƒÆ’Ã‚Â§indeki gerÃƒÆ’Ã‚Â§ek temas sÃƒÆ’Ã‚Â¼resi proses baÃƒÂ¯Ã‚Â¿Ã‚Â½xarÃƒâ€žÃ‚Â±sÃƒâ€žÃ‚Â±nÃƒâ€žÃ‚Â± doÃƒÂ¯Ã‚Â¿Ã‚Â½xrudan etkiler.",
       },
       {
-        title: "�Srün davranı�xı",
-        description: "Granül büyümesi, so�xuma veya kaplama homojenli�xi ürün hareketine ba�xlıdır.",
+        title: "ÃƒÂ¯Ã‚Â¿Ã‚Â½SrÃƒÆ’Ã‚Â¼n davranÃƒâ€žÃ‚Â±ÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒâ€žÃ‚Â±",
+        description: "GranÃƒÆ’Ã‚Â¼l bÃƒÆ’Ã‚Â¼yÃƒÆ’Ã‚Â¼mesi, soÃƒÂ¯Ã‚Â¿Ã‚Â½xuma veya kaplama homojenliÃƒÂ¯Ã‚Â¿Ã‚Â½xi ÃƒÆ’Ã‚Â¼rÃƒÆ’Ã‚Â¼n hareketine baÃƒÂ¯Ã‚Â¿Ã‚Â½xlÃƒâ€žÃ‚Â±dÃƒâ€žÃ‚Â±r.",
       },
       {
         title: "Hat uyumu",
-        description: "Besleme, çıkı�x ve yardımcı ekipmanlar tamburla aynı ritimde çalı�xmalıdır.",
+        description: "Besleme, ÃƒÆ’Ã‚Â§Ãƒâ€žÃ‚Â±kÃƒâ€žÃ‚Â±ÃƒÂ¯Ã‚Â¿Ã‚Â½x ve yardÃƒâ€žÃ‚Â±mcÃƒâ€žÃ‚Â± ekipmanlar tamburla aynÃƒâ€žÃ‚Â± ritimde ÃƒÆ’Ã‚Â§alÃƒâ€žÃ‚Â±ÃƒÂ¯Ã‚Â¿Ã‚Â½xmalÃƒâ€žÃ‚Â±dÃƒâ€žÃ‚Â±r.",
       },
     ],
     supportLinks: [
       { label: "Tambur Sistemleri", href: "/makinalar-ekipman/tambur-sistemleri" },
-      { label: "Granülatör Tamburu", href: "/makinalar-ekipman/tambur-sistemleri/granulator-tamburu" },
+      { label: "GranÃƒÆ’Ã‚Â¼latÃƒÆ’Ã‚Â¶r Tamburu", href: "/makinalar-ekipman/tambur-sistemleri/granulator-tamburu" },
       { label: "Kompost Tamburu", href: "/makinalar-ekipman/tambur-sistemleri/kompost-tamburu" },
       { label: "Programlar", href: "/programlar" },
     ],
-    ctaTitle: "Tambur sistemi seçimini birlikte netle�xtirelim",
+    ctaTitle: "Tambur sistemi seÃƒÆ’Ã‚Â§imini birlikte netleÃƒÂ¯Ã‚Â¿Ã‚Â½xtirelim",
     ctaDescription:
-      "�Srün tipi, kapasite hedefi, residence time beklentisi ve saha ko�xullarınızı payla�xın; do�xru tambur omurgasını birlikte de�xerlendirelim.",
+      "ÃƒÂ¯Ã‚Â¿Ã‚Â½SrÃƒÆ’Ã‚Â¼n tipi, kapasite hedefi, residence time beklentisi ve saha koÃƒÂ¯Ã‚Â¿Ã‚Â½xullarÃƒâ€žÃ‚Â±nÃƒâ€žÃ‚Â±zÃƒâ€žÃ‚Â± paylaÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒâ€žÃ‚Â±n; doÃƒÂ¯Ã‚Â¿Ã‚Â½xru tambur omurgasÃƒâ€žÃ‚Â±nÃƒâ€žÃ‚Â± birlikte deÃƒÂ¯Ã‚Â¿Ã‚Â½xerlendirelim.",
     primaryLabel: "Tambur Sistemleri",
     primaryHref: "/makinalar-ekipman/tambur-sistemleri",
   };
 
   const fertilizerConfig: ArticleTopicConfig = {
-    actionEyebrow: "TEKNİK �N DE�~ERLENDİRME",
-    actionTitle: "Gübre Tesisi �n De�xerlendirmesi Yapın",
+    actionEyebrow: "TEKNÃƒâ€žÃ‚Â°K ÃƒÂ¯Ã‚Â¿Ã‚Â½N DEÃƒÂ¯Ã‚Â¿Ã‚Â½~ERLENDÃƒâ€žÃ‚Â°RME",
+    actionTitle: "GÃƒÆ’Ã‚Â¼bre Tesisi ÃƒÂ¯Ã‚Â¿Ã‚Â½n DeÃƒÂ¯Ã‚Â¿Ã‚Â½xerlendirmesi YapÃƒâ€žÃ‚Â±n",
     actionDescription:
-      "Kapasite, ürün formu, hammadde dengesi, granülasyon, kurutma ve paketleme mantı�xını tek çerçevede okuyarak yatırım yakla�xımınızı netle�xtirin.",
+      "Kapasite, ÃƒÆ’Ã‚Â¼rÃƒÆ’Ã‚Â¼n formu, hammadde dengesi, granÃƒÆ’Ã‚Â¼lasyon, kurutma ve paketleme mantÃƒâ€žÃ‚Â±ÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒâ€žÃ‚Â±nÃƒâ€žÃ‚Â± tek ÃƒÆ’Ã‚Â§erÃƒÆ’Ã‚Â§evede okuyarak yatÃƒâ€žÃ‚Â±rÃƒâ€žÃ‚Â±m yaklaÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒâ€žÃ‚Â±mÃƒâ€žÃ‚Â±nÃƒâ€žÃ‚Â±zÃƒâ€žÃ‚Â± netleÃƒÂ¯Ã‚Â¿Ã‚Â½xtirin.",
     actionFeatures: [
-      "Proses akı�xı",
+      "Proses akÃƒâ€žÃ‚Â±ÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒâ€žÃ‚Â±",
       "Dozajlama hassasiyeti",
       "Kurutma ve paketleme",
-      "Yatırım omurgası",
+      "YatÃƒâ€žÃ‚Â±rÃƒâ€žÃ‚Â±m omurgasÃƒâ€žÃ‚Â±",
     ],
     actionLink: "/hizmetler/gubre-tesisi-kurulumu",
-    actionButtonLabel: "İlgili Hizmeti İncele",
+    actionButtonLabel: "Ãƒâ€žÃ‚Â°lgili Hizmeti Ãƒâ€žÃ‚Â°ncele",
     highlights: [
       {
-        title: "Proses akı�xı",
-        description: "Dozajlama, karı�xtırma, granülasyon, kurutma ve paketleme aynı ritimde çalı�xmalıdır.",
+        title: "Proses akÃƒâ€žÃ‚Â±ÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒâ€žÃ‚Â±",
+        description: "Dozajlama, karÃƒâ€žÃ‚Â±ÃƒÂ¯Ã‚Â¿Ã‚Â½xtÃƒâ€žÃ‚Â±rma, granÃƒÆ’Ã‚Â¼lasyon, kurutma ve paketleme aynÃƒâ€žÃ‚Â± ritimde ÃƒÆ’Ã‚Â§alÃƒâ€žÃ‚Â±ÃƒÂ¯Ã‚Â¿Ã‚Â½xmalÃƒâ€žÃ‚Â±dÃƒâ€žÃ‚Â±r.",
       },
       {
-        title: "�Srün standardı",
-        description: "Granül dayanımı, nem kararlılı�xı ve sınıflandırma ba�xarısı hat kalitesini belirler.",
+        title: "ÃƒÂ¯Ã‚Â¿Ã‚Â½SrÃƒÆ’Ã‚Â¼n standardÃƒâ€žÃ‚Â±",
+        description: "GranÃƒÆ’Ã‚Â¼l dayanÃƒâ€žÃ‚Â±mÃƒâ€žÃ‚Â±, nem kararlÃƒâ€žÃ‚Â±lÃƒâ€žÃ‚Â±ÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒâ€žÃ‚Â± ve sÃƒâ€žÃ‚Â±nÃƒâ€žÃ‚Â±flandÃƒâ€žÃ‚Â±rma baÃƒÂ¯Ã‚Â¿Ã‚Â½xarÃƒâ€žÃ‚Â±sÃƒâ€žÃ‚Â± hat kalitesini belirler.",
       },
       {
         title: "Ticari verim",
-        description: "Do�xru tesis omurgası yalnız üretimi de�xil satı�xa uygun son ürünü de destekler.",
+        description: "DoÃƒÂ¯Ã‚Â¿Ã‚Â½xru tesis omurgasÃƒâ€žÃ‚Â± yalnÃƒâ€žÃ‚Â±z ÃƒÆ’Ã‚Â¼retimi deÃƒÂ¯Ã‚Â¿Ã‚Â½xil satÃƒâ€žÃ‚Â±ÃƒÂ¯Ã‚Â¿Ã‚Â½xa uygun son ÃƒÆ’Ã‚Â¼rÃƒÆ’Ã‚Â¼nÃƒÆ’Ã‚Â¼ de destekler.",
       },
     ],
     supportLinks: [
-      { label: "Gübre Tesisi Kurulumu", href: "/hizmetler/gubre-tesisi-kurulumu" },
-      { label: "Granül Gübre Tesisi", href: "/hizmetler/granul-gubre-uretim-tesisi" },
-      { label: "Organomineral Gübre Tesisi", href: "/hizmetler/organomineral-gubre-tesisi" },
+      { label: "GÃƒÆ’Ã‚Â¼bre Tesisi Kurulumu", href: "/hizmetler/gubre-tesisi-kurulumu" },
+      { label: "GranÃƒÆ’Ã‚Â¼l GÃƒÆ’Ã‚Â¼bre Tesisi", href: "/hizmetler/granul-gubre-uretim-tesisi" },
+      { label: "Organomineral GÃƒÆ’Ã‚Â¼bre Tesisi", href: "/hizmetler/organomineral-gubre-tesisi" },
       { label: "Paketleme ve Dolum", href: "/makinalar-ekipman/paketleme-ve-dolum-sistemleri" },
     ],
-    ctaTitle: "Gübre tesisi yatırımınızı birlikte projelendirelim",
+    ctaTitle: "GÃƒÆ’Ã‚Â¼bre tesisi yatÃƒâ€žÃ‚Â±rÃƒâ€žÃ‚Â±mÃƒâ€žÃ‚Â±nÃƒâ€žÃ‚Â±zÃƒâ€žÃ‚Â± birlikte projelendirelim",
     ctaDescription:
-      "�Srün formu, kapasite hedefi, hammadde dengesi, kurutma ihtiyacı ve paketleme senaryonuzu payla�xın; do�xru tesis omurgasını birlikte kuralım.",
-    primaryLabel: "Gübre Tesisi Kurulumu",
+      "ÃƒÂ¯Ã‚Â¿Ã‚Â½SrÃƒÆ’Ã‚Â¼n formu, kapasite hedefi, hammadde dengesi, kurutma ihtiyacÃƒâ€žÃ‚Â± ve paketleme senaryonuzu paylaÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒâ€žÃ‚Â±n; doÃƒÂ¯Ã‚Â¿Ã‚Â½xru tesis omurgasÃƒâ€žÃ‚Â±nÃƒâ€žÃ‚Â± birlikte kuralÃƒâ€žÃ‚Â±m.",
+    primaryLabel: "GÃƒÆ’Ã‚Â¼bre Tesisi Kurulumu",
     primaryHref: "/hizmetler/gubre-tesisi-kurulumu",
   };
 
   const liquidConfig: ArticleTopicConfig = {
-    actionEyebrow: "TEKNİK �N DE�~ERLENDİRME",
-    actionTitle: "Sıvı Gübre ve Proses Tankı �n De�xerlendirmesi Yapın",
+    actionEyebrow: "TEKNÃƒâ€žÃ‚Â°K ÃƒÂ¯Ã‚Â¿Ã‚Â½N DEÃƒÂ¯Ã‚Â¿Ã‚Â½~ERLENDÃƒâ€žÃ‚Â°RME",
+    actionTitle: "SÃƒâ€žÃ‚Â±vÃƒâ€žÃ‚Â± GÃƒÆ’Ã‚Â¼bre ve Proses TankÃƒâ€žÃ‚Â± ÃƒÂ¯Ã‚Â¿Ã‚Â½n DeÃƒÂ¯Ã‚Â¿Ã‚Â½xerlendirmesi YapÃƒâ€žÃ‚Â±n",
     actionDescription:
-      "Reaktör, çözündürme tankı, filtrasyon, stoklama ve dolum yapısını ürün formülünüz ve kapasite hedefinizle birlikte de�xerlendirin.",
+      "ReaktÃƒÆ’Ã‚Â¶r, ÃƒÆ’Ã‚Â§ÃƒÆ’Ã‚Â¶zÃƒÆ’Ã‚Â¼ndÃƒÆ’Ã‚Â¼rme tankÃƒâ€žÃ‚Â±, filtrasyon, stoklama ve dolum yapÃƒâ€žÃ‚Â±sÃƒâ€žÃ‚Â±nÃƒâ€žÃ‚Â± ÃƒÆ’Ã‚Â¼rÃƒÆ’Ã‚Â¼n formÃƒÆ’Ã‚Â¼lÃƒÆ’Ã‚Â¼nÃƒÆ’Ã‚Â¼z ve kapasite hedefinizle birlikte deÃƒÂ¯Ã‚Â¿Ã‚Â½xerlendirin.",
     actionFeatures: [
-      "Reaktör seçimi",
-      "Tank hacmi yakla�xımı",
-      "Filtrasyon mantı�xı",
-      "Dolum hattı planı",
+      "ReaktÃƒÆ’Ã‚Â¶r seÃƒÆ’Ã‚Â§imi",
+      "Tank hacmi yaklaÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒâ€žÃ‚Â±mÃƒâ€žÃ‚Â±",
+      "Filtrasyon mantÃƒâ€žÃ‚Â±ÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒâ€žÃ‚Â±",
+      "Dolum hattÃƒâ€žÃ‚Â± planÃƒâ€žÃ‚Â±",
     ],
     actionLink: "/hizmetler/sivi-gubre-uretim-tesisi",
-    actionButtonLabel: "İlgili Hizmeti İncele",
+    actionButtonLabel: "Ãƒâ€žÃ‚Â°lgili Hizmeti Ãƒâ€žÃ‚Â°ncele",
     highlights: [
       {
-        title: "Reaktör kurgusu",
-        description: "Karı�xtırma, çözündürme ve reaksiyon süreleri ürün kalitesinin merkezindedir.",
+        title: "ReaktÃƒÆ’Ã‚Â¶r kurgusu",
+        description: "KarÃƒâ€žÃ‚Â±ÃƒÂ¯Ã‚Â¿Ã‚Â½xtÃƒâ€žÃ‚Â±rma, ÃƒÆ’Ã‚Â§ÃƒÆ’Ã‚Â¶zÃƒÆ’Ã‚Â¼ndÃƒÆ’Ã‚Â¼rme ve reaksiyon sÃƒÆ’Ã‚Â¼releri ÃƒÆ’Ã‚Â¼rÃƒÆ’Ã‚Â¼n kalitesinin merkezindedir.",
       },
       {
-        title: "Tank altyapısı",
-        description: "Stok, tampon ve proses tanklarının do�xru dizilimi hat süreklili�xini belirler.",
+        title: "Tank altyapÃƒâ€žÃ‚Â±sÃƒâ€žÃ‚Â±",
+        description: "Stok, tampon ve proses tanklarÃƒâ€žÃ‚Â±nÃƒâ€žÃ‚Â±n doÃƒÂ¯Ã‚Â¿Ã‚Â½xru dizilimi hat sÃƒÆ’Ã‚Â¼rekliliÃƒÂ¯Ã‚Â¿Ã‚Â½xini belirler.",
       },
       {
         title: "Dolum disiplini",
-        description: "Filtrasyon ve son dolum hattı ticari ürüne geçi�x kalitesini etkiler.",
+        description: "Filtrasyon ve son dolum hattÃƒâ€žÃ‚Â± ticari ÃƒÆ’Ã‚Â¼rÃƒÆ’Ã‚Â¼ne geÃƒÆ’Ã‚Â§iÃƒÂ¯Ã‚Â¿Ã‚Â½x kalitesini etkiler.",
       },
     ],
     supportLinks: [
-      { label: "Sıvı Gübre �Sretim Tesisi", href: "/hizmetler/sivi-gubre-uretim-tesisi" },
-      { label: "Reaktörler ve Tanklar", href: "/makinalar-ekipman/reaktorler-ve-tanklar" },
+      { label: "SÃƒâ€žÃ‚Â±vÃƒâ€žÃ‚Â± GÃƒÆ’Ã‚Â¼bre ÃƒÂ¯Ã‚Â¿Ã‚Â½Sretim Tesisi", href: "/hizmetler/sivi-gubre-uretim-tesisi" },
+      { label: "ReaktÃƒÆ’Ã‚Â¶rler ve Tanklar", href: "/makinalar-ekipman/reaktorler-ve-tanklar" },
       { label: "Paketleme ve Dolum", href: "/makinalar-ekipman/paketleme-ve-dolum-sistemleri" },
       { label: "Kimya ve Proses", href: "/sektorler/kimya-ve-proses-endustrisi" },
     ],
-    ctaTitle: "Sıvı gübre ve proses tankı kurgusunu birlikte netle�xtirelim",
+    ctaTitle: "SÃƒâ€žÃ‚Â±vÃƒâ€žÃ‚Â± gÃƒÆ’Ã‚Â¼bre ve proses tankÃƒâ€žÃ‚Â± kurgusunu birlikte netleÃƒÂ¯Ã‚Â¿Ã‚Â½xtirelim",
     ctaDescription:
-      "Formülasyon, kapasite, hammaddeler, reaktör tipi ve dolum senaryonuzu payla�xın; do�xru sıvı proses omurgasını birlikte kuralım.",
-    primaryLabel: "Sıvı Gübre �Sretim Tesisi",
+      "FormÃƒÆ’Ã‚Â¼lasyon, kapasite, hammaddeler, reaktÃƒÆ’Ã‚Â¶r tipi ve dolum senaryonuzu paylaÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒâ€žÃ‚Â±n; doÃƒÂ¯Ã‚Â¿Ã‚Â½xru sÃƒâ€žÃ‚Â±vÃƒâ€žÃ‚Â± proses omurgasÃƒâ€žÃ‚Â±nÃƒâ€žÃ‚Â± birlikte kuralÃƒâ€žÃ‚Â±m.",
+    primaryLabel: "SÃƒâ€žÃ‚Â±vÃƒâ€žÃ‚Â± GÃƒÆ’Ã‚Â¼bre ÃƒÂ¯Ã‚Â¿Ã‚Â½Sretim Tesisi",
     primaryHref: "/hizmetler/sivi-gubre-uretim-tesisi",
   };
 
   const compostConfig: ArticleTopicConfig = {
-    actionEyebrow: "TEKNİK �N DE�~ERLENDİRME",
-    actionTitle: "Kompost Tesisi �n De�xerlendirmesi Yapın",
+    actionEyebrow: "TEKNÃƒâ€žÃ‚Â°K ÃƒÂ¯Ã‚Â¿Ã‚Â½N DEÃƒÂ¯Ã‚Â¿Ã‚Â½~ERLENDÃƒâ€žÃ‚Â°RME",
+    actionTitle: "Kompost Tesisi ÃƒÂ¯Ã‚Â¿Ã‚Â½n DeÃƒÂ¯Ã‚Â¿Ã‚Â½xerlendirmesi YapÃƒâ€žÃ‚Â±n",
     actionDescription:
-      "Atık türü, nem yükü, olgunla�xtırma süresi, eleme yakla�xımı ve son ürün standardını birlikte okuyarak kompost omurgasını de�xerlendirin.",
+      "AtÃƒâ€žÃ‚Â±k tÃƒÆ’Ã‚Â¼rÃƒÆ’Ã‚Â¼, nem yÃƒÆ’Ã‚Â¼kÃƒÆ’Ã‚Â¼, olgunlaÃƒÂ¯Ã‚Â¿Ã‚Â½xtÃƒâ€žÃ‚Â±rma sÃƒÆ’Ã‚Â¼resi, eleme yaklaÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒâ€žÃ‚Â±mÃƒâ€žÃ‚Â± ve son ÃƒÆ’Ã‚Â¼rÃƒÆ’Ã‚Â¼n standardÃƒâ€žÃ‚Â±nÃƒâ€žÃ‚Â± birlikte okuyarak kompost omurgasÃƒâ€žÃ‚Â±nÃƒâ€žÃ‚Â± deÃƒÂ¯Ã‚Â¿Ã‚Â½xerlendirin.",
     actionFeatures: [
-      "Nem yönetimi",
-      "Olgunla�xtırma süresi",
-      "Eleme ve son ürün",
-      "Koku kontrolü",
+      "Nem yÃƒÆ’Ã‚Â¶netimi",
+      "OlgunlaÃƒÂ¯Ã‚Â¿Ã‚Â½xtÃƒâ€žÃ‚Â±rma sÃƒÆ’Ã‚Â¼resi",
+      "Eleme ve son ÃƒÆ’Ã‚Â¼rÃƒÆ’Ã‚Â¼n",
+      "Koku kontrolÃƒÆ’Ã‚Â¼",
     ],
     actionLink: "/hizmetler/kompost-tesisi-kurulumu",
-    actionButtonLabel: "İlgili Hizmeti İncele",
+    actionButtonLabel: "Ãƒâ€žÃ‚Â°lgili Hizmeti Ãƒâ€žÃ‚Â°ncele",
     highlights: [
       {
-        title: "Nem yönetimi",
-        description: "Kompost kalitesini belirleyen ilk ba�xlık, karı�xımın do�xru nem aralı�xında tutulmasıdır.",
+        title: "Nem yÃƒÆ’Ã‚Â¶netimi",
+        description: "Kompost kalitesini belirleyen ilk baÃƒÂ¯Ã‚Â¿Ã‚Â½xlÃƒâ€žÃ‚Â±k, karÃƒâ€žÃ‚Â±ÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒâ€žÃ‚Â±mÃƒâ€žÃ‚Â±n doÃƒÂ¯Ã‚Â¿Ã‚Â½xru nem aralÃƒâ€žÃ‚Â±ÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒâ€žÃ‚Â±nda tutulmasÃƒâ€žÃ‚Â±dÃƒâ€žÃ‚Â±r.",
       },
       {
-        title: "Olgunla�xtırma süresi",
-        description: "Yeterli residence time ve biyolojik denge olmadan ticari son ürün kararlı olmaz.",
+        title: "OlgunlaÃƒÂ¯Ã‚Â¿Ã‚Â½xtÃƒâ€žÃ‚Â±rma sÃƒÆ’Ã‚Â¼resi",
+        description: "Yeterli residence time ve biyolojik denge olmadan ticari son ÃƒÆ’Ã‚Â¼rÃƒÆ’Ã‚Â¼n kararlÃƒâ€žÃ‚Â± olmaz.",
       },
       {
-        title: "Son ürün hazırlı�xı",
-        description: "Eleme, geri devir ve paketleme adımları yatırımın ticari çıktısını belirler.",
+        title: "Son ÃƒÆ’Ã‚Â¼rÃƒÆ’Ã‚Â¼n hazÃƒâ€žÃ‚Â±rlÃƒâ€žÃ‚Â±ÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒâ€žÃ‚Â±",
+        description: "Eleme, geri devir ve paketleme adÃƒâ€žÃ‚Â±mlarÃƒâ€žÃ‚Â± yatÃƒâ€žÃ‚Â±rÃƒâ€žÃ‚Â±mÃƒâ€žÃ‚Â±n ticari ÃƒÆ’Ã‚Â§Ãƒâ€žÃ‚Â±ktÃƒâ€žÃ‚Â±sÃƒâ€žÃ‚Â±nÃƒâ€žÃ‚Â± belirler.",
       },
     ],
     supportLinks: [
       { label: "Kompost Tesisi Kurulumu", href: "/hizmetler/kompost-tesisi-kurulumu" },
-      { label: "Kompost ve Organik Atık", href: "/sektorler/kompost-ve-organik-atik-tesisleri" },
+      { label: "Kompost ve Organik AtÃƒâ€žÃ‚Â±k", href: "/sektorler/kompost-ve-organik-atik-tesisleri" },
       { label: "Kompost Tamburu", href: "/makinalar-ekipman/tambur-sistemleri/kompost-tamburu" },
       { label: "Trommel Elekler", href: "/makinalar-ekipman/eleme-ve-siniflandirma-sistemleri/trommel-elekler" },
     ],
-    ctaTitle: "Kompost tesisi proses kurgusunu birlikte netle�xtirelim",
+    ctaTitle: "Kompost tesisi proses kurgusunu birlikte netleÃƒÂ¯Ã‚Â¿Ã‚Â½xtirelim",
     ctaDescription:
-      "Atık tipi, günlük tonaj, nem seviyesi, olgunla�xtırma hedefi ve saha ko�xullarınızı payla�xın; do�xru kompost prosesini birlikte kuralım.",
+      "AtÃƒâ€žÃ‚Â±k tipi, gÃƒÆ’Ã‚Â¼nlÃƒÆ’Ã‚Â¼k tonaj, nem seviyesi, olgunlaÃƒÂ¯Ã‚Â¿Ã‚Â½xtÃƒâ€žÃ‚Â±rma hedefi ve saha koÃƒÂ¯Ã‚Â¿Ã‚Â½xullarÃƒâ€žÃ‚Â±nÃƒâ€žÃ‚Â±zÃƒâ€žÃ‚Â± paylaÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒâ€žÃ‚Â±n; doÃƒÂ¯Ã‚Â¿Ã‚Â½xru kompost prosesini birlikte kuralÃƒâ€žÃ‚Â±m.",
     primaryLabel: "Kompost Tesisi Kurulumu",
     primaryHref: "/hizmetler/kompost-tesisi-kurulumu",
   };
 
   const sludgeConfig: ArticleTopicConfig = {
-    actionEyebrow: "TEKNİK �N DE�~ERLENDİRME",
-    actionTitle: "�!amur Kurutma �n De�xerlendirmesi Yapın",
+    actionEyebrow: "TEKNÃƒâ€žÃ‚Â°K ÃƒÂ¯Ã‚Â¿Ã‚Â½N DEÃƒÂ¯Ã‚Â¿Ã‚Â½~ERLENDÃƒâ€žÃ‚Â°RME",
+    actionTitle: "ÃƒÂ¯Ã‚Â¿Ã‚Â½!amur Kurutma ÃƒÂ¯Ã‚Â¿Ã‚Â½n DeÃƒÂ¯Ã‚Â¿Ã‚Â½xerlendirmesi YapÃƒâ€žÃ‚Â±n",
     actionDescription:
-      "Besleme, susuzla�xtırma destek, kurutma, koku kontrolü ve son ürün hazırlama mantı�xını günlük tonaj ve nem hedefiyle birlikte de�xerlendirin.",
+      "Besleme, susuzlaÃƒÂ¯Ã‚Â¿Ã‚Â½xtÃƒâ€žÃ‚Â±rma destek, kurutma, koku kontrolÃƒÆ’Ã‚Â¼ ve son ÃƒÆ’Ã‚Â¼rÃƒÆ’Ã‚Â¼n hazÃƒâ€žÃ‚Â±rlama mantÃƒâ€žÃ‚Â±ÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒâ€žÃ‚Â±nÃƒâ€žÃ‚Â± gÃƒÆ’Ã‚Â¼nlÃƒÆ’Ã‚Â¼k tonaj ve nem hedefiyle birlikte deÃƒÂ¯Ã‚Â¿Ã‚Â½xerlendirin.",
     actionFeatures: [
-      "Besleme omurgası",
-      "Nem dü�xürme hedefi",
-      "Koku ve toz kontrolü",
-      "Enerji yakla�xımı",
+      "Besleme omurgasÃƒâ€žÃ‚Â±",
+      "Nem dÃƒÆ’Ã‚Â¼ÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒÆ’Ã‚Â¼rme hedefi",
+      "Koku ve toz kontrolÃƒÆ’Ã‚Â¼",
+      "Enerji yaklaÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒâ€žÃ‚Â±mÃƒâ€žÃ‚Â±",
     ],
     actionLink: "/hizmetler/camur-kurutma-tesisi",
-    actionButtonLabel: "İlgili Hizmeti İncele",
+    actionButtonLabel: "Ãƒâ€žÃ‚Â°lgili Hizmeti Ãƒâ€žÃ‚Â°ncele",
     highlights: [
       {
         title: "Besleme disiplini",
-        description: "�!amur kurutma hattında sürekli ve kontrollü besleme tüm kapasite hesabını etkiler.",
+        description: "ÃƒÂ¯Ã‚Â¿Ã‚Â½!amur kurutma hattÃƒâ€žÃ‚Â±nda sÃƒÆ’Ã‚Â¼rekli ve kontrollÃƒÆ’Ã‚Â¼ besleme tÃƒÆ’Ã‚Â¼m kapasite hesabÃƒâ€žÃ‚Â±nÃƒâ€žÃ‚Â± etkiler.",
       },
       {
-        title: "Enerji yükü",
-        description: "Yüksek ba�xlangıç nemi nedeniyle teorik ve gerçek saha yükü birlikte okunmalıdır.",
+        title: "Enerji yÃƒÆ’Ã‚Â¼kÃƒÆ’Ã‚Â¼",
+        description: "YÃƒÆ’Ã‚Â¼ksek baÃƒÂ¯Ã‚Â¿Ã‚Â½xlangÃƒâ€žÃ‚Â±ÃƒÆ’Ã‚Â§ nemi nedeniyle teorik ve gerÃƒÆ’Ã‚Â§ek saha yÃƒÆ’Ã‚Â¼kÃƒÆ’Ã‚Â¼ birlikte okunmalÃƒâ€žÃ‚Â±dÃƒâ€žÃ‚Â±r.",
       },
       {
-        title: "�!evresel kontrol",
-        description: "Koku, toz ve baca hattı kurutma tamburundan ayrı dü�xünülemez.",
+        title: "ÃƒÂ¯Ã‚Â¿Ã‚Â½!evresel kontrol",
+        description: "Koku, toz ve baca hattÃƒâ€žÃ‚Â± kurutma tamburundan ayrÃƒâ€žÃ‚Â± dÃƒÆ’Ã‚Â¼ÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒÆ’Ã‚Â¼nÃƒÆ’Ã‚Â¼lemez.",
       },
     ],
     supportLinks: [
-      { label: "�!amur Kurutma Tesisi", href: "/hizmetler/camur-kurutma-tesisi" },
-      { label: "Atık Su �!amuru �!özümleri", href: "/sektorler/atik-su-camuru-ve-aritma-cozumleri" },
+      { label: "ÃƒÂ¯Ã‚Â¿Ã‚Â½!amur Kurutma Tesisi", href: "/hizmetler/camur-kurutma-tesisi" },
+      { label: "AtÃƒâ€žÃ‚Â±k Su ÃƒÂ¯Ã‚Â¿Ã‚Â½!amuru ÃƒÂ¯Ã‚Â¿Ã‚Â½!ÃƒÆ’Ã‚Â¶zÃƒÆ’Ã‚Â¼mleri", href: "/sektorler/atik-su-camuru-ve-aritma-cozumleri" },
       { label: "Toz Toplama Sistemleri", href: "/makinalar-ekipman/toz-toplama-sistemleri" },
-      { label: "Kurutma Tamburları", href: "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburu" },
+      { label: "Kurutma TamburlarÃƒâ€žÃ‚Â±", href: "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburu" },
     ],
-    ctaTitle: "�!amur kurutma hattınızı birlikte de�xerlendirelim",
+    ctaTitle: "ÃƒÂ¯Ã‚Â¿Ã‚Â½!amur kurutma hattÃƒâ€žÃ‚Â±nÃƒâ€žÃ‚Â±zÃƒâ€žÃ‚Â± birlikte deÃƒÂ¯Ã‚Â¿Ã‚Â½xerlendirelim",
     ctaDescription:
-      "Günlük tonaj, ba�xlangıç nemi, hedef kuruluk, koku kontrol ihtiyacı ve saha ko�xullarınızı payla�xın; do�xru çamur kurutma omurgasını birlikte netle�xtirelim.",
-    primaryLabel: "�!amur Kurutma Tesisi",
+      "GÃƒÆ’Ã‚Â¼nlÃƒÆ’Ã‚Â¼k tonaj, baÃƒÂ¯Ã‚Â¿Ã‚Â½xlangÃƒâ€žÃ‚Â±ÃƒÆ’Ã‚Â§ nemi, hedef kuruluk, koku kontrol ihtiyacÃƒâ€žÃ‚Â± ve saha koÃƒÂ¯Ã‚Â¿Ã‚Â½xullarÃƒâ€žÃ‚Â±nÃƒâ€žÃ‚Â±zÃƒâ€žÃ‚Â± paylaÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒâ€žÃ‚Â±n; doÃƒÂ¯Ã‚Â¿Ã‚Â½xru ÃƒÆ’Ã‚Â§amur kurutma omurgasÃƒâ€žÃ‚Â±nÃƒâ€žÃ‚Â± birlikte netleÃƒÂ¯Ã‚Â¿Ã‚Â½xtirelim.",
+    primaryLabel: "ÃƒÂ¯Ã‚Â¿Ã‚Â½!amur Kurutma Tesisi",
     primaryHref: "/hizmetler/camur-kurutma-tesisi",
   };
 
   const biogasConfig: ArticleTopicConfig = {
-    actionEyebrow: "TEKNİK �N DE�~ERLENDİRME",
-    actionTitle: "Biyogaz ve �n İ�xlem Kurgusunu De�xerlendirin",
+    actionEyebrow: "TEKNÃƒâ€žÃ‚Â°K ÃƒÂ¯Ã‚Â¿Ã‚Â½N DEÃƒÂ¯Ã‚Â¿Ã‚Â½~ERLENDÃƒâ€žÃ‚Â°RME",
+    actionTitle: "Biyogaz ve ÃƒÂ¯Ã‚Â¿Ã‚Â½n Ãƒâ€žÃ‚Â°ÃƒÂ¯Ã‚Â¿Ã‚Â½xlem Kurgusunu DeÃƒÂ¯Ã‚Â¿Ã‚Â½xerlendirin",
     actionDescription:
-      "Atık kabulü, ön hazırlama, besleme ritmi, digestat yönetimi ve entegre proses yakla�xımını aynı çerçevede de�xerlendirin.",
+      "AtÃƒâ€žÃ‚Â±k kabulÃƒÆ’Ã‚Â¼, ÃƒÆ’Ã‚Â¶n hazÃƒâ€žÃ‚Â±rlama, besleme ritmi, digestat yÃƒÆ’Ã‚Â¶netimi ve entegre proses yaklaÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒâ€žÃ‚Â±mÃƒâ€žÃ‚Â±nÃƒâ€žÃ‚Â± aynÃƒâ€žÃ‚Â± ÃƒÆ’Ã‚Â§erÃƒÆ’Ã‚Â§evede deÃƒÂ¯Ã‚Â¿Ã‚Â½xerlendirin.",
     actionFeatures: [
-      "Atık kabulü",
-      "�n hazırlama hattı",
+      "AtÃƒâ€žÃ‚Â±k kabulÃƒÆ’Ã‚Â¼",
+      "ÃƒÂ¯Ã‚Â¿Ã‚Â½n hazÃƒâ€žÃ‚Â±rlama hattÃƒâ€žÃ‚Â±",
       "Besleme ritmi",
-      "Digestat yönetimi",
+      "Digestat yÃƒÆ’Ã‚Â¶netimi",
     ],
     actionLink: "/sektorler/enerji-ve-biyogaz-sistemleri",
-    actionButtonLabel: "Sektörü İncele",
+    actionButtonLabel: "SektÃƒÆ’Ã‚Â¶rÃƒÆ’Ã‚Â¼ Ãƒâ€žÃ‚Â°ncele",
     highlights: [
       {
-        title: "�n i�xlem disiplini",
-        description: "Reaktöre girecek akı�xın düzeni tüm biyogaz veriminin temelini olu�xturur.",
+        title: "ÃƒÂ¯Ã‚Â¿Ã‚Â½n iÃƒÂ¯Ã‚Â¿Ã‚Â½xlem disiplini",
+        description: "ReaktÃƒÆ’Ã‚Â¶re girecek akÃƒâ€žÃ‚Â±ÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒâ€žÃ‚Â±n dÃƒÆ’Ã‚Â¼zeni tÃƒÆ’Ã‚Â¼m biyogaz veriminin temelini oluÃƒÂ¯Ã‚Â¿Ã‚Â½xturur.",
       },
       {
         title: "Besleme dengesi",
-        description: "Dalgalı akı�x ve yanlı�x boyutlandırma i�xletme güvenli�xini zayıflatır.",
+        description: "DalgalÃƒâ€žÃ‚Â± akÃƒâ€žÃ‚Â±ÃƒÂ¯Ã‚Â¿Ã‚Â½x ve yanlÃƒâ€žÃ‚Â±ÃƒÂ¯Ã‚Â¿Ã‚Â½x boyutlandÃƒâ€žÃ‚Â±rma iÃƒÂ¯Ã‚Â¿Ã‚Â½xletme gÃƒÆ’Ã‚Â¼venliÃƒÂ¯Ã‚Â¿Ã‚Â½xini zayÃƒâ€žÃ‚Â±flatÃƒâ€žÃ‚Â±r.",
       },
       {
-        title: "Yan akı�x yönetimi",
-        description: "Digestat, kompost ve yardımcı akı�xlar ana yatırım kadar önemlidir.",
+        title: "Yan akÃƒâ€žÃ‚Â±ÃƒÂ¯Ã‚Â¿Ã‚Â½x yÃƒÆ’Ã‚Â¶netimi",
+        description: "Digestat, kompost ve yardÃƒâ€žÃ‚Â±mcÃƒâ€žÃ‚Â± akÃƒâ€žÃ‚Â±ÃƒÂ¯Ã‚Â¿Ã‚Â½xlar ana yatÃƒâ€žÃ‚Â±rÃƒâ€žÃ‚Â±m kadar ÃƒÆ’Ã‚Â¶nemlidir.",
       },
     ],
     supportLinks: [
       { label: "Enerji ve Biyogaz", href: "/sektorler/enerji-ve-biyogaz-sistemleri" },
-      { label: "Kompost ve Organik Atık", href: "/sektorler/kompost-ve-organik-atik-tesisleri" },
-      { label: "Kırıcılar ve Parçalayıcılar", href: "/makinalar-ekipman/kiricilar-ve-parcalayicilar" },
-      { label: "Ta�xıma Ekipmanları", href: "/makinalar-ekipman/tasima-ekipmanlari" },
+      { label: "Kompost ve Organik AtÃƒâ€žÃ‚Â±k", href: "/sektorler/kompost-ve-organik-atik-tesisleri" },
+      { label: "KÃƒâ€žÃ‚Â±rÃƒâ€žÃ‚Â±cÃƒâ€žÃ‚Â±lar ve ParÃƒÆ’Ã‚Â§alayÃƒâ€žÃ‚Â±cÃƒâ€žÃ‚Â±lar", href: "/makinalar-ekipman/kiricilar-ve-parcalayicilar" },
+      { label: "TaÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒâ€žÃ‚Â±ma EkipmanlarÃƒâ€žÃ‚Â±", href: "/makinalar-ekipman/tasima-ekipmanlari" },
     ],
-    ctaTitle: "Biyogaz ön i�xlem ve atık yönetimi kurgusunu birlikte netle�xtirelim",
+    ctaTitle: "Biyogaz ÃƒÆ’Ã‚Â¶n iÃƒÂ¯Ã‚Â¿Ã‚Â½xlem ve atÃƒâ€žÃ‚Â±k yÃƒÆ’Ã‚Â¶netimi kurgusunu birlikte netleÃƒÂ¯Ã‚Â¿Ã‚Â½xtirelim",
     ctaDescription:
-      "Atık tipi, günlük besleme, ön i�xlem ihtiyacı, digestat senaryosu ve saha ko�xullarınızı payla�xın; uygun biyogaz ön hazırlık omurgasını birlikte de�xerlendirelim.",
+      "AtÃƒâ€žÃ‚Â±k tipi, gÃƒÆ’Ã‚Â¼nlÃƒÆ’Ã‚Â¼k besleme, ÃƒÆ’Ã‚Â¶n iÃƒÂ¯Ã‚Â¿Ã‚Â½xlem ihtiyacÃƒâ€žÃ‚Â±, digestat senaryosu ve saha koÃƒÂ¯Ã‚Â¿Ã‚Â½xullarÃƒâ€žÃ‚Â±nÃƒâ€žÃ‚Â±zÃƒâ€žÃ‚Â± paylaÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒâ€žÃ‚Â±n; uygun biyogaz ÃƒÆ’Ã‚Â¶n hazÃƒâ€žÃ‚Â±rlÃƒâ€žÃ‚Â±k omurgasÃƒâ€žÃ‚Â±nÃƒâ€žÃ‚Â± birlikte deÃƒÂ¯Ã‚Â¿Ã‚Â½xerlendirelim.",
     primaryLabel: "Enerji ve Biyogaz Sistemleri",
     primaryHref: "/sektorler/enerji-ve-biyogaz-sistemleri",
   };
 
   const miningConfig: ArticleTopicConfig = {
-    actionEyebrow: "TEKNİK �N DE�~ERLENDİRME",
-    actionTitle: "Maden ve Mineral Prosesinizi De�xerlendirin",
+    actionEyebrow: "TEKNÃƒâ€žÃ‚Â°K ÃƒÂ¯Ã‚Â¿Ã‚Â½N DEÃƒÂ¯Ã‚Â¿Ã‚Â½~ERLENDÃƒâ€žÃ‚Â°RME",
+    actionTitle: "Maden ve Mineral Prosesinizi DeÃƒÂ¯Ã‚Â¿Ã‚Â½xerlendirin",
     actionDescription:
-      "Kırma, eleme, kurutma, ta�xıma ve toz toplama hattını ürün tipi, kapasite ve saha yerle�ximiyle birlikte teknik olarak okuyun.",
+      "KÃƒâ€žÃ‚Â±rma, eleme, kurutma, taÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒâ€žÃ‚Â±ma ve toz toplama hattÃƒâ€žÃ‚Â±nÃƒâ€žÃ‚Â± ÃƒÆ’Ã‚Â¼rÃƒÆ’Ã‚Â¼n tipi, kapasite ve saha yerleÃƒÂ¯Ã‚Â¿Ã‚Â½ximiyle birlikte teknik olarak okuyun.",
     actionFeatures: [
-      "Kırma ve eleme",
-      "Kurutma yakla�xımı",
-      "Toz kontrolü",
-      "Hat akı�xı planlama",
+      "KÃƒâ€žÃ‚Â±rma ve eleme",
+      "Kurutma yaklaÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒâ€žÃ‚Â±mÃƒâ€žÃ‚Â±",
+      "Toz kontrolÃƒÆ’Ã‚Â¼",
+      "Hat akÃƒâ€žÃ‚Â±ÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒâ€žÃ‚Â± planlama",
     ],
     actionLink: "/hizmetler/maden-kurutma-ve-eleme-tesisi",
-    actionButtonLabel: "İlgili Hizmeti İncele",
+    actionButtonLabel: "Ãƒâ€žÃ‚Â°lgili Hizmeti Ãƒâ€žÃ‚Â°ncele",
     highlights: [
       {
-        title: "�Srün davranı�xı",
-        description: "A�xındırıcılık, tane boyutu ve toz yükü makine seçiminde belirleyici olur.",
+        title: "ÃƒÂ¯Ã‚Â¿Ã‚Â½SrÃƒÆ’Ã‚Â¼n davranÃƒâ€žÃ‚Â±ÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒâ€žÃ‚Â±",
+        description: "AÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒâ€žÃ‚Â±ndÃƒâ€žÃ‚Â±rÃƒâ€žÃ‚Â±cÃƒâ€žÃ‚Â±lÃƒâ€žÃ‚Â±k, tane boyutu ve toz yÃƒÆ’Ã‚Â¼kÃƒÆ’Ã‚Â¼ makine seÃƒÆ’Ã‚Â§iminde belirleyici olur.",
       },
       {
         title: "Hat kombinasyonu",
-        description: "Kırıcı, elek, tambur ve konveyörler aynı kapasite ritmine göre seçilmelidir.",
+        description: "KÃƒâ€žÃ‚Â±rÃƒâ€žÃ‚Â±cÃƒâ€žÃ‚Â±, elek, tambur ve konveyÃƒÆ’Ã‚Â¶rler aynÃƒâ€žÃ‚Â± kapasite ritmine gÃƒÆ’Ã‚Â¶re seÃƒÆ’Ã‚Â§ilmelidir.",
       },
       {
         title: "Saha verimi",
-        description: "Toz toplama ve stoklama omurgası do�xru kurulmadı�xında nominal kapasite sahada dü�xer.",
+        description: "Toz toplama ve stoklama omurgasÃƒâ€žÃ‚Â± doÃƒÂ¯Ã‚Â¿Ã‚Â½xru kurulmadÃƒâ€žÃ‚Â±ÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒâ€žÃ‚Â±nda nominal kapasite sahada dÃƒÆ’Ã‚Â¼ÃƒÂ¯Ã‚Â¿Ã‚Â½xer.",
       },
     ],
     supportLinks: [
       { label: "Maden Kurutma ve Eleme", href: "/hizmetler/maden-kurutma-ve-eleme-tesisi" },
-      { label: "Madencilik ve Mineral İ�xleme", href: "/sektorler/madencilik-ve-mineral-isleme" },
-      { label: "Kırıcılar ve Parçalayıcılar", href: "/makinalar-ekipman/kiricilar-ve-parcalayicilar" },
-      { label: "Eleme ve Sınıflandırma", href: "/makinalar-ekipman/eleme-ve-siniflandirma-sistemleri" },
+      { label: "Madencilik ve Mineral Ãƒâ€žÃ‚Â°ÃƒÂ¯Ã‚Â¿Ã‚Â½xleme", href: "/sektorler/madencilik-ve-mineral-isleme" },
+      { label: "KÃƒâ€žÃ‚Â±rÃƒâ€žÃ‚Â±cÃƒâ€žÃ‚Â±lar ve ParÃƒÆ’Ã‚Â§alayÃƒâ€žÃ‚Â±cÃƒâ€žÃ‚Â±lar", href: "/makinalar-ekipman/kiricilar-ve-parcalayicilar" },
+      { label: "Eleme ve SÃƒâ€žÃ‚Â±nÃƒâ€žÃ‚Â±flandÃƒâ€žÃ‚Â±rma", href: "/makinalar-ekipman/eleme-ve-siniflandirma-sistemleri" },
     ],
-    ctaTitle: "Maden ve mineral i�xleme hattınızı birlikte de�xerlendirelim",
+    ctaTitle: "Maden ve mineral iÃƒÂ¯Ã‚Â¿Ã‚Â½xleme hattÃƒâ€žÃ‚Â±nÃƒâ€žÃ‚Â±zÃƒâ€žÃ‚Â± birlikte deÃƒÂ¯Ã‚Â¿Ã‚Â½xerlendirelim",
     ctaDescription:
-      "�Srün tipi, tane boyutu, kapasite hedefi, nem yükü ve saha ko�xullarınızı payla�xın; do�xru maden proses omurgasını birlikte netle�xtirelim.",
+      "ÃƒÂ¯Ã‚Â¿Ã‚Â½SrÃƒÆ’Ã‚Â¼n tipi, tane boyutu, kapasite hedefi, nem yÃƒÆ’Ã‚Â¼kÃƒÆ’Ã‚Â¼ ve saha koÃƒÂ¯Ã‚Â¿Ã‚Â½xullarÃƒâ€žÃ‚Â±nÃƒâ€žÃ‚Â±zÃƒâ€žÃ‚Â± paylaÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒâ€žÃ‚Â±n; doÃƒÂ¯Ã‚Â¿Ã‚Â½xru maden proses omurgasÃƒâ€žÃ‚Â±nÃƒâ€žÃ‚Â± birlikte netleÃƒÂ¯Ã‚Â¿Ã‚Â½xtirelim.",
     primaryLabel: "Maden Kurutma ve Eleme Tesisi",
     primaryHref: "/hizmetler/maden-kurutma-ve-eleme-tesisi",
   };
 
   const processConfig: ArticleTopicConfig = {
-    actionEyebrow: "TEKNİK �N DE�~ERLENDİRME",
-    actionTitle: "Reaktör ve Proses Ekipmanı Kurgusunu De�xerlendirin",
+    actionEyebrow: "TEKNÃƒâ€žÃ‚Â°K ÃƒÂ¯Ã‚Â¿Ã‚Â½N DEÃƒÂ¯Ã‚Â¿Ã‚Â½~ERLENDÃƒâ€žÃ‚Â°RME",
+    actionTitle: "ReaktÃƒÆ’Ã‚Â¶r ve Proses EkipmanÃƒâ€žÃ‚Â± Kurgusunu DeÃƒÂ¯Ã‚Â¿Ã‚Â½xerlendirin",
     actionDescription:
-      "Karı�xtırma, çözündürme, reaksiyon, stoklama ve kontrollü dozajlama ihtiyaçlarını proses güvenli�xiyle birlikte okuyun.",
+      "KarÃƒâ€žÃ‚Â±ÃƒÂ¯Ã‚Â¿Ã‚Â½xtÃƒâ€žÃ‚Â±rma, ÃƒÆ’Ã‚Â§ÃƒÆ’Ã‚Â¶zÃƒÆ’Ã‚Â¼ndÃƒÆ’Ã‚Â¼rme, reaksiyon, stoklama ve kontrollÃƒÆ’Ã‚Â¼ dozajlama ihtiyaÃƒÆ’Ã‚Â§larÃƒâ€žÃ‚Â±nÃƒâ€žÃ‚Â± proses gÃƒÆ’Ã‚Â¼venliÃƒÂ¯Ã‚Â¿Ã‚Â½xiyle birlikte okuyun.",
     actionFeatures: [
-      "Reaktör seçimi",
-      "Tank yerle�ximi",
+      "ReaktÃƒÆ’Ã‚Â¶r seÃƒÆ’Ã‚Â§imi",
+      "Tank yerleÃƒÂ¯Ã‚Â¿Ã‚Â½ximi",
       "Dozajlama disiplini",
-      "Hat güvenli�xi",
+      "Hat gÃƒÆ’Ã‚Â¼venliÃƒÂ¯Ã‚Â¿Ã‚Â½xi",
     ],
     actionLink: "/makinalar-ekipman/reaktorler-ve-tanklar",
-    actionButtonLabel: "Makinaları İncele",
+    actionButtonLabel: "MakinalarÃƒâ€žÃ‚Â± Ãƒâ€žÃ‚Â°ncele",
     highlights: [
       {
-        title: "Reaktör hacmi",
-        description: "Süre, karı�xtırma tipi ve ürün davranı�xı do�xru hacim seçiminin temelidir.",
+        title: "ReaktÃƒÆ’Ã‚Â¶r hacmi",
+        description: "SÃƒÆ’Ã‚Â¼re, karÃƒâ€žÃ‚Â±ÃƒÂ¯Ã‚Â¿Ã‚Â½xtÃƒâ€žÃ‚Â±rma tipi ve ÃƒÆ’Ã‚Â¼rÃƒÆ’Ã‚Â¼n davranÃƒâ€žÃ‚Â±ÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒâ€žÃ‚Â± doÃƒÂ¯Ã‚Â¿Ã‚Â½xru hacim seÃƒÆ’Ã‚Â§iminin temelidir.",
       },
       {
-        title: "Tank altyapısı",
-        description: "Stok ve tampon hacimlerin do�xru kurgulanması üretim süreklili�xi sa�xlar.",
+        title: "Tank altyapÃƒâ€žÃ‚Â±sÃƒâ€žÃ‚Â±",
+        description: "Stok ve tampon hacimlerin doÃƒÂ¯Ã‚Â¿Ã‚Â½xru kurgulanmasÃƒâ€žÃ‚Â± ÃƒÆ’Ã‚Â¼retim sÃƒÆ’Ã‚Â¼rekliliÃƒÂ¯Ã‚Â¿Ã‚Â½xi saÃƒÂ¯Ã‚Â¿Ã‚Â½xlar.",
       },
       {
-        title: "Dozaj ve güvenlik",
-        description: "Kimyasal veya sıvı proseslerde hat ba�xlantıları ve kontrol mantı�xı kritik rol oynar.",
+        title: "Dozaj ve gÃƒÆ’Ã‚Â¼venlik",
+        description: "Kimyasal veya sÃƒâ€žÃ‚Â±vÃƒâ€žÃ‚Â± proseslerde hat baÃƒÂ¯Ã‚Â¿Ã‚Â½xlantÃƒâ€žÃ‚Â±larÃƒâ€žÃ‚Â± ve kontrol mantÃƒâ€žÃ‚Â±ÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒâ€žÃ‚Â± kritik rol oynar.",
       },
     ],
     supportLinks: [
-      { label: "Reaktörler ve Tanklar", href: "/makinalar-ekipman/reaktorler-ve-tanklar" },
+      { label: "ReaktÃƒÆ’Ã‚Â¶rler ve Tanklar", href: "/makinalar-ekipman/reaktorler-ve-tanklar" },
       { label: "Kimya ve Proses", href: "/sektorler/kimya-ve-proses-endustrisi" },
-      { label: "Sıvı Gübre �Sretim Tesisi", href: "/hizmetler/sivi-gubre-uretim-tesisi" },
+      { label: "SÃƒâ€žÃ‚Â±vÃƒâ€žÃ‚Â± GÃƒÆ’Ã‚Â¼bre ÃƒÂ¯Ã‚Â¿Ã‚Â½Sretim Tesisi", href: "/hizmetler/sivi-gubre-uretim-tesisi" },
       { label: "Programlar", href: "/programlar" },
     ],
-    ctaTitle: "Reaktör ve tank sistemi yakla�xımını birlikte netle�xtirelim",
+    ctaTitle: "ReaktÃƒÆ’Ã‚Â¶r ve tank sistemi yaklaÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒâ€žÃ‚Â±mÃƒâ€žÃ‚Â±nÃƒâ€žÃ‚Â± birlikte netleÃƒÂ¯Ã‚Â¿Ã‚Â½xtirelim",
     ctaDescription:
-      "Kapasite, ürün formülü, reaksiyon süresi, stok ihtiyacı ve saha ko�xullarınızı payla�xın; proses ekipman omurgasını birlikte de�xerlendirelim.",
-    primaryLabel: "Reaktörler ve Tanklar",
+      "Kapasite, ÃƒÆ’Ã‚Â¼rÃƒÆ’Ã‚Â¼n formÃƒÆ’Ã‚Â¼lÃƒÆ’Ã‚Â¼, reaksiyon sÃƒÆ’Ã‚Â¼resi, stok ihtiyacÃƒâ€žÃ‚Â± ve saha koÃƒÂ¯Ã‚Â¿Ã‚Â½xullarÃƒâ€žÃ‚Â±nÃƒâ€žÃ‚Â±zÃƒâ€žÃ‚Â± paylaÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒâ€žÃ‚Â±n; proses ekipman omurgasÃƒâ€žÃ‚Â±nÃƒâ€žÃ‚Â± birlikte deÃƒÂ¯Ã‚Â¿Ã‚Â½xerlendirelim.",
+    primaryLabel: "ReaktÃƒÆ’Ã‚Â¶rler ve Tanklar",
     primaryHref: "/makinalar-ekipman/reaktorler-ve-tanklar",
   };
 
   const dustConfig: ArticleTopicConfig = {
-    actionEyebrow: "TEKNİK �N DE�~ERLENDİRME",
-    actionTitle: "Toz Toplama Hattınızı De�xerlendirin",
+    actionEyebrow: "TEKNÃƒâ€žÃ‚Â°K ÃƒÂ¯Ã‚Â¿Ã‚Â½N DEÃƒÂ¯Ã‚Â¿Ã‚Â½~ERLENDÃƒâ€žÃ‚Â°RME",
+    actionTitle: "Toz Toplama HattÃƒâ€žÃ‚Â±nÃƒâ€žÃ‚Â±zÃƒâ€žÃ‚Â± DeÃƒÂ¯Ã‚Â¿Ã‚Â½xerlendirin",
     actionDescription:
-      "Siklon, jet pulse filtre, fan, kanal kaybı ve emisyon yakla�xımını proses debisi ve ürün toz yüküyle birlikte inceleyin.",
+      "Siklon, jet pulse filtre, fan, kanal kaybÃƒâ€žÃ‚Â± ve emisyon yaklaÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒâ€žÃ‚Â±mÃƒâ€žÃ‚Â±nÃƒâ€žÃ‚Â± proses debisi ve ÃƒÆ’Ã‚Â¼rÃƒÆ’Ã‚Â¼n toz yÃƒÆ’Ã‚Â¼kÃƒÆ’Ã‚Â¼yle birlikte inceleyin.",
     actionFeatures: [
-      "Debi yakla�xımı",
+      "Debi yaklaÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒâ€žÃ‚Â±mÃƒâ€žÃ‚Â±",
       "Siklon ve filtre",
-      "Fan basıncı",
-      "Emisyon kontrolü",
+      "Fan basÃƒâ€žÃ‚Â±ncÃƒâ€žÃ‚Â±",
+      "Emisyon kontrolÃƒÆ’Ã‚Â¼",
     ],
     actionLink: "/makinalar-ekipman/toz-toplama-sistemleri",
-    actionButtonLabel: "Makinaları İncele",
+    actionButtonLabel: "MakinalarÃƒâ€žÃ‚Â± Ãƒâ€žÃ‚Â°ncele",
     highlights: [
       {
         title: "Debi dengesi",
-        description: "Yetersiz veya a�xırı hava debisi hem ürün kaybı hem enerji maliyeti do�xurabilir.",
+        description: "Yetersiz veya aÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒâ€žÃ‚Â±rÃƒâ€žÃ‚Â± hava debisi hem ÃƒÆ’Ã‚Â¼rÃƒÆ’Ã‚Â¼n kaybÃƒâ€žÃ‚Â± hem enerji maliyeti doÃƒÂ¯Ã‚Â¿Ã‚Â½xurabilir.",
       },
       {
-        title: "Filtreleme omurgası",
-        description: "Siklon ve jet pulse filtre birlikte ele alınmadı�xında saha performansı zayıflar.",
+        title: "Filtreleme omurgasÃƒâ€žÃ‚Â±",
+        description: "Siklon ve jet pulse filtre birlikte ele alÃƒâ€žÃ‚Â±nmadÃƒâ€žÃ‚Â±ÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒâ€žÃ‚Â±nda saha performansÃƒâ€žÃ‚Â± zayÃƒâ€žÃ‚Â±flar.",
       },
       {
-        title: "Negatif basınç",
-        description: "Kontrollü çeki�x, güvenli i�xletme ve temiz saha için belirleyici olur.",
+        title: "Negatif basÃƒâ€žÃ‚Â±nÃƒÆ’Ã‚Â§",
+        description: "KontrollÃƒÆ’Ã‚Â¼ ÃƒÆ’Ã‚Â§ekiÃƒÂ¯Ã‚Â¿Ã‚Â½x, gÃƒÆ’Ã‚Â¼venli iÃƒÂ¯Ã‚Â¿Ã‚Â½xletme ve temiz saha iÃƒÆ’Ã‚Â§in belirleyici olur.",
       },
     ],
     supportLinks: [
       { label: "Toz Toplama Sistemleri", href: "/makinalar-ekipman/toz-toplama-sistemleri" },
-      { label: "Kurutma Tamburları", href: "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburu" },
-      { label: "Eleme ve Sınıflandırma", href: "/makinalar-ekipman/eleme-ve-siniflandirma-sistemleri" },
+      { label: "Kurutma TamburlarÃƒâ€žÃ‚Â±", href: "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburu" },
+      { label: "Eleme ve SÃƒâ€žÃ‚Â±nÃƒâ€žÃ‚Â±flandÃƒâ€žÃ‚Â±rma", href: "/makinalar-ekipman/eleme-ve-siniflandirma-sistemleri" },
       { label: "Makinalar & Ekipman", href: "/makinalar-ekipman" },
     ],
-    ctaTitle: "Toz toplama ve filtre hattını birlikte de�xerlendirelim",
+    ctaTitle: "Toz toplama ve filtre hattÃƒâ€žÃ‚Â±nÃƒâ€žÃ‚Â± birlikte deÃƒÂ¯Ã‚Â¿Ã‚Â½xerlendirelim",
     ctaDescription:
-      "Debi, ürün tipi, emisyon hedefi, saha yerle�ximi ve bakım beklentilerinizi payla�xın; do�xru toz toplama omurgasını birlikte netle�xtirelim.",
+      "Debi, ÃƒÆ’Ã‚Â¼rÃƒÆ’Ã‚Â¼n tipi, emisyon hedefi, saha yerleÃƒÂ¯Ã‚Â¿Ã‚Â½ximi ve bakÃƒâ€žÃ‚Â±m beklentilerinizi paylaÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒâ€žÃ‚Â±n; doÃƒÂ¯Ã‚Â¿Ã‚Â½xru toz toplama omurgasÃƒâ€žÃ‚Â±nÃƒâ€žÃ‚Â± birlikte netleÃƒÂ¯Ã‚Â¿Ã‚Â½xtirelim.",
     primaryLabel: "Toz Toplama Sistemleri",
     primaryHref: "/makinalar-ekipman/toz-toplama-sistemleri",
   };
@@ -748,9 +755,9 @@ export function BlogArticleTemplate({
     sameAs: siteSocialSameAs,
     address: {
       "@type": "PostalAddress",
-      streetAddress: "75. Yıl Mah. Teksan Sanayi Sitesi Kilis Sokak D6 Blok No:2E",
-      addressLocality: "Odunpazarı",
-      addressRegion: "Eski�xehir",
+      streetAddress: "75. YÃƒâ€žÃ‚Â±l Mah. Teksan Sanayi Sitesi Kilis Sokak D6 Blok No:2E",
+      addressLocality: "OdunpazarÃ„Â±",
+      addressRegion: "EskiÃ…Å¸ehir",
       postalCode: "26250",
       addressCountry: "TR",
     },
@@ -769,7 +776,7 @@ export function BlogArticleTemplate({
       {
         "@type": "ListItem",
         position: 2,
-        name: "Kütüphane",
+        name: "KÃ¼tÃ¼phane",
         item: "https://www.promakina.com.tr/kutuphane",
       },
       {
@@ -789,10 +796,12 @@ export function BlogArticleTemplate({
 
   const articleSchema = {
     "@context": "https://schema.org",
-    "@type": "Article",
-    headline: title,
-    description,
+    "@type": "BlogPosting",
+    headline: trText(title),
+    description: trText(description),
     mainEntityOfPage: canonical,
+    url: canonical,
+    inLanguage: "tr-TR",
     author: {
       "@type": "Organization",
       name: "Pro Makina",
@@ -816,10 +825,10 @@ export function BlogArticleTemplate({
           "@type": "FAQPage",
           mainEntity: faqs.map((faq) => ({
             "@type": "Question",
-            name: faq.question,
+            name: trText(faq.question),
             acceptedAnswer: {
               "@type": "Answer",
-              text: faq.answer,
+              text: trText(faq.answer),
             },
           })),
         }
@@ -831,6 +840,7 @@ export function BlogArticleTemplate({
   ]).slice(0, 8);
 
   const ctaDescription = ctaText || topicConfig.ctaDescription;
+  const topicVisuals = getBlogTopicVisuals(`${articleSlug} ${title} ${categoryLabel}`).slice(0, 3);
 
   return (
     <main className="min-h-screen overflow-x-hidden bg-white text-slate-900">
@@ -867,65 +877,167 @@ export function BlogArticleTemplate({
       <article className="section-bottom-space-lg">
         <div className="site-container">
           <div className="mx-auto max-w-5xl">
-            <div className="max-w-4xl">
-              <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[#278DC0]">
-                {trText(categoryLabel)}
-              </p>
-              <h1 className="mt-3 text-4xl font-semibold tracking-tight text-slate-950 md:text-5xl">
-                {trText(title)}
-              </h1>
-              <p className="mt-5 text-base leading-8 text-slate-600 sm:text-lg">
-                {trText(heroDescription)}
-              </p>
-              <p className="mt-4 text-base leading-8 text-slate-600 sm:text-lg">
-                {trText(description)}
-              </p>
-              {ctaVariant === "sector-guide" ? (
-                <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+            <section className="rounded-[32px] border border-slate-200 bg-gradient-to-br from-white via-sky-50 to-[#eef6fb] px-6 py-8 shadow-[0_18px_50px_rgba(15,23,42,0.06)] sm:px-8 sm:py-10">
+              <div className="max-w-4xl">
+                <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#278DC0]">
+                  {trText(categoryLabel)}
+                </p>
+                <h1 className="mt-3 text-4xl font-semibold tracking-tight text-slate-950 md:text-5xl">
+                  {trText(title)}
+                </h1>
+                <div className="mt-6">
                   <Link
-                    href={siteContact.whatsappHref}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-[#278DC0] px-6 text-sm font-semibold text-white transition hover:bg-[#154764]"
+                    href={ctaVariant === "sector-guide" ? siteContact.whatsappHref : topicConfig.actionLink}
+                    target={ctaVariant === "sector-guide" ? "_blank" : undefined}
+                    rel={ctaVariant === "sector-guide" ? "noreferrer" : undefined}
+                    className="inline-flex min-h-[48px] items-center justify-center rounded-full bg-[#278DC0] px-6 text-sm font-semibold text-white transition hover:bg-[#154764]"
                   >
-                    WhatsApp ile Teklif Al
-                  </Link>
-                  <Link
-                    href={siteContact.phoneHref}
-                    className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-[#278DC0]/20 bg-white px-6 text-sm font-semibold text-[#154764] transition hover:bg-[#278DC0]/10"
-                  >
-                    Telefonla Ara
+                    {ctaVariant === "sector-guide"
+                      ? "WhatsApp ile Teklif Al"
+                      : trText(topicConfig.actionButtonLabel)}
                   </Link>
                 </div>
-              ) : null}
-              {quickLinks.length ? (
-                <div className="mt-6 flex flex-wrap gap-3">
-                  {quickLinks.map((link) => (
-                    <Link
-                      key={link.href}
-                      href={link.href}
-                      className="inline-flex rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-[#278DC0] hover:bg-white hover:text-[#278DC0]"
-                    >
-                      {trText(link.label)}
-                    </Link>
-                  ))}
-                </div>
-              ) : null}
-            </div>
+              </div>
+            </section>
 
             <div className="section-gap space-y-12">
+              <section className="grid gap-6 lg:grid-cols-[minmax(0,1.2fr)_minmax(320px,0.8fr)]">
+                <div className="rounded-[30px] border border-slate-200 bg-white p-6 shadow-sm md:p-8">
+                  <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[#278DC0]">
+                    {trText("Premium Giriş")}
+                  </p>
+                  <div className="mt-4 space-y-5 text-base leading-8 text-slate-600">
+                    <p>{trText(heroDescription)}</p>
+                    <p>{trText(description)}</p>
+                  </div>
+                  {quickLinks.length ? (
+                    <div className="mt-6 flex flex-wrap gap-3">
+                      {quickLinks.map((link) => (
+                        <Link
+                          key={link.href}
+                          href={link.href}
+                          className="inline-flex rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-[#278DC0] hover:bg-white hover:text-[#278DC0]"
+                        >
+                          {trText(link.label)}
+                        </Link>
+                      ))}
+                    </div>
+                  ) : null}
+                </div>
+
+                <div className="grid gap-4">
+                  {topicConfig.highlights.concat(topicConfig.highlights).slice(0, 4).map((item, index) => (
+                    <div
+                      key={`${item.title}-${index}`}
+                      className="rounded-[24px] border border-slate-200 bg-slate-50 p-5 shadow-sm"
+                    >
+                      <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#278DC0]">
+                        {trText(`Bilgi Kartı ${index + 1}`)}
+                      </p>
+                      <h2 className="mt-2 text-lg font-semibold text-slate-950">
+                        {trText(item.title)}
+                      </h2>
+                      <p className="mt-2 text-sm leading-7 text-slate-600">
+                        {trText(item.description)}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </section>
+
+              {topicVisuals.length ? (
+                <section className="rounded-[30px] border border-slate-200 bg-white p-6 shadow-sm md:p-8">
+                  <div className="max-w-3xl">
+                    <h2 className="text-2xl font-semibold tracking-tight text-slate-950 md:text-3xl">
+                      {trText("Görselli Proses ve Uygulama Blokları")}
+                    </h2>
+                    <p className="mt-4 text-base leading-8 text-slate-600">
+                      {trText(
+                        "Sayfanın konusuna uygun proses, makine ve saha örneklerini aşağıdaki görsel kartlarda inceleyebilirsiniz.",
+                      )}
+                    </p>
+                  </div>
+                  <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+                    {topicVisuals.map((visual, index) => {
+                      const cardContent = (
+                        <>
+                          <div className="relative aspect-[4/3] overflow-hidden rounded-[22px]">
+                            <Image
+                              src={visual.src}
+                              alt={trText(visual.alt)}
+                              fill
+                              className="object-cover transition duration-500 group-hover:scale-[1.03]"
+                              sizes="(max-width: 1280px) 100vw, 360px"
+                            />
+                          </div>
+                          <div className="mt-4">
+                            <h3 className="text-lg font-semibold text-slate-950">
+                              {trText(visual.title)}
+                            </h3>
+                            <p className="mt-2 text-sm leading-7 text-slate-600">
+                              {trText(visual.description)}
+                            </p>
+                            {visual.href ? (
+                              <span className="mt-4 inline-flex text-sm font-semibold text-[#278DC0] transition group-hover:text-[#154764]">
+                                {trText("İlgili sayfayı incele")}
+                              </span>
+                            ) : null}
+                          </div>
+                        </>
+                      );
+
+                      return visual.href ? (
+                        <Link
+                          key={`${visual.src}-${index}`}
+                          href={visual.href}
+                          className="group rounded-[24px] border border-slate-200 bg-slate-50 p-4 shadow-sm transition hover:-translate-y-1 hover:border-[#278DC0] hover:bg-white hover:shadow-[0_18px_45px_rgba(15,23,42,0.08)]"
+                        >
+                          {cardContent}
+                        </Link>
+                      ) : (
+                        <div
+                          key={`${visual.src}-${index}`}
+                          className="group rounded-[24px] border border-slate-200 bg-slate-50 p-4 shadow-sm"
+                        >
+                          {cardContent}
+                        </div>
+                      );
+                    })}
+                  </div>
+                </section>
+              ) : null}
+
               <BlogTechnicalArticleBlocks data={technicalArticleData} />
 
-              <section className="grid gap-4 md:grid-cols-3">
-                {topicConfig.highlights.map((item) => (
-                  <div
-                    key={item.title}
-                    className="rounded-[24px] border border-slate-200 bg-slate-50 p-5 shadow-sm"
-                  >
-                    <h2 className="text-lg font-semibold text-slate-950">{trText(item.title)}</h2>
-                    <p className="mt-2 text-sm leading-7 text-slate-600">{trText(item.description)}</p>
-                  </div>
-                ))}
+              <section className="rounded-[30px] border border-slate-200 bg-white p-6 shadow-sm md:p-8">
+                <div className="max-w-3xl">
+                  <h2 className="text-2xl font-semibold tracking-tight text-slate-950 md:text-3xl">
+                    {trText("Konu Neden Önemlidir?")}
+                  </h2>
+                  <p className="mt-4 text-base leading-8 text-slate-600">
+                    {trText(
+                      "Aşağıdaki karar başlıkları, bu teknik içeriğin saha performansı ve yatırım kalitesi üzerindeki etkisini özetler.",
+                    )}
+                  </p>
+                </div>
+                <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+                  {topicConfig.highlights.concat(topicConfig.highlights).slice(0, 4).map((item, index) => (
+                    <div
+                      key={`${item.title}-reason-${index}`}
+                      className="rounded-[22px] border border-slate-200 bg-slate-50 p-5 shadow-sm"
+                    >
+                      <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">
+                        {trText(`Kriter ${index + 1}`)}
+                      </p>
+                      <h3 className="mt-2 text-lg font-semibold text-slate-950">
+                        {trText(item.title)}
+                      </h3>
+                      <p className="mt-3 text-sm leading-7 text-slate-600">
+                        {trText(item.description)}
+                      </p>
+                    </div>
+                  ))}
+                </div>
               </section>
 
               <div className="space-y-8">
@@ -945,7 +1057,7 @@ export function BlogArticleTemplate({
                               {trText(block.heading)}
                             </h3>
                           ) : null}
-                          <div className="mt-3 space-y-5 text-sm leading-8 text-slate-700 sm:text-base">
+                          <div className={`space-y-5 text-sm leading-8 text-slate-700 sm:text-base ${block.heading ? "mt-3" : ""}`}>
                             {block.content}
                           </div>
                         </div>
@@ -957,15 +1069,50 @@ export function BlogArticleTemplate({
 
               {extraSection}
 
+              {relatedServices.length ? (
+                <section className="rounded-[30px] border border-slate-200 bg-white p-6 shadow-sm md:p-8">
+                  <div className="max-w-3xl">
+                    <h2 className="text-2xl font-semibold tracking-tight text-slate-950 md:text-3xl">
+                      {trText("İlgili Hizmetler ve Çözümler")}
+                    </h2>
+                    <p className="mt-4 text-base leading-8 text-slate-600">
+                      {trText(
+                        "Bu teknik içeriği doğrudan destekleyen hizmet, tesis ve ekipman sayfalarına aşağıdan ulaşabilirsiniz.",
+                      )}
+                    </p>
+                  </div>
+                  <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+                    {relatedServices.map((service) => (
+                      <Link
+                        key={service.href}
+                        href={service.href}
+                        className="group rounded-[24px] border border-slate-200 bg-slate-50 p-5 shadow-sm transition hover:-translate-y-1 hover:border-[#278DC0] hover:bg-white hover:shadow-[0_18px_45px_rgba(15,23,42,0.08)]"
+                      >
+                        <span className="block text-lg font-semibold text-slate-950">
+                          {trText(service.title)}
+                        </span>
+                        <span className="mt-3 block text-sm leading-7 text-slate-600">
+                          {trText(service.description)}
+                        </span>
+                        <span className="mt-4 inline-flex text-sm font-semibold text-[#278DC0] transition group-hover:text-[#154764]">
+                          {trText("İlgili sayfayı incele")}
+                        </span>
+                      </Link>
+                    ))}
+                  </div>
+                </section>
+              ) : null}
+
               {faqs.length ? (
                 <section className="rounded-[30px] border border-slate-200 bg-white p-6 shadow-sm md:p-8">
                   <div className="max-w-3xl">
                     <h2 className="text-2xl font-semibold tracking-tight text-slate-950 md:text-3xl">
-                      Sık Sorulan Sorular
+                      {trText("Sık Sorulan Sorular")}
                     </h2>
                     <p className="mt-4 text-base leading-8 text-slate-600">
-                      Teknik teklif öncesi en sık gelen soruları kısa ama mühendislik odaklı
-                      yanıtlarla özetledik.
+                      {trText(
+                        "Teknik teklif öncesi en sık gelen soruları kısa ama mühendislik odaklı yanıtlarla özetledik.",
+                      )}
                     </p>
                   </div>
                   <div className="mt-8 grid gap-4 md:grid-cols-2">
@@ -975,7 +1122,7 @@ export function BlogArticleTemplate({
                         className="rounded-[22px] border border-slate-200 bg-slate-50 p-5 shadow-sm"
                       >
                         <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">
-                          Soru {index + 1}
+                          {trText(`Soru ${index + 1}`)}
                         </p>
                         <h3 className="mt-2 text-lg font-semibold text-slate-950">
                           {trText(faq.question)}
@@ -990,7 +1137,7 @@ export function BlogArticleTemplate({
               {nextContent ? (
                 <section className="rounded-[30px] border border-slate-200 bg-white p-6 shadow-sm md:p-8">
                   <h2 className="text-2xl font-semibold tracking-tight text-slate-950 md:text-3xl">
-                    Bir Sonraki Teknik İçerik
+                    {trText("Bir Sonraki Teknik İçerik")}
                   </h2>
                   <Link
                     href={nextContent.href}
@@ -1003,7 +1150,7 @@ export function BlogArticleTemplate({
                       {trText(nextContent.description)}
                     </span>
                     <span className="mt-4 inline-flex text-sm font-semibold text-[#278DC0]">
-                      İçeri�xi İncele
+                      {trText("İçeriği İncele")}
                     </span>
                   </Link>
                 </section>
@@ -1013,7 +1160,7 @@ export function BlogArticleTemplate({
                 <div className="max-w-3xl">
                   <h2 className="text-3xl font-semibold tracking-tight text-white md:text-4xl">
                     {ctaVariant === "sector-guide"
-                      ? "Projeniz için makine ve ekipman seçimini birlikte de�xerlendirelim."
+                      ? trText("Projeniz için makine ve ekipman seçimini birlikte değerlendirelim.")
                       : trText(topicConfig.ctaTitle)}
                   </h2>
                   <p className="mt-4 text-base leading-8 text-white/90 sm:text-lg">
@@ -1028,13 +1175,13 @@ export function BlogArticleTemplate({
                       rel="noreferrer"
                       className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-white px-6 text-sm font-semibold text-[#154764] transition hover:bg-slate-100"
                     >
-                      WhatsApp ile Teklif Al
+                      {trText("WhatsApp ile Teklif Al")}
                     </Link>
                     <Link
                       href={siteContact.phoneHref}
                       className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/25 px-6 text-sm font-semibold text-white transition hover:bg-white/10"
                     >
-                      Telefonla Ara
+                      {trText("Telefonla Ara")}
                     </Link>
                   </div>
                 ) : (
@@ -1043,7 +1190,7 @@ export function BlogArticleTemplate({
                       href="/iletisim"
                       className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-white px-6 text-sm font-semibold text-[#154764] transition hover:bg-slate-100"
                     >
-                      Teknik Görü�xme Talep Et
+                      {trText("Teknik Görüşme Talep Et")}
                     </Link>
                     <Link
                       href={siteContact.whatsappHref}
@@ -1051,27 +1198,27 @@ export function BlogArticleTemplate({
                       rel="noreferrer"
                       className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/25 px-6 text-sm font-semibold text-white transition hover:bg-white/10"
                     >
-                      WhatsApp ile Görü�x
+                      {trText("WhatsApp ile Görüş")}
                     </Link>
                     <Link
                       href={topicConfig.primaryHref}
                       className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/25 px-6 text-sm font-semibold text-white transition hover:bg-white/10"
                     >
-                      {topicConfig.primaryLabel}
+                      {trText(topicConfig.primaryLabel)}
                     </Link>
                     <Link
                       href={topicConfig.actionLink}
                       className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/25 px-6 text-sm font-semibold text-white transition hover:bg-white/10"
                     >
-                      {topicConfig.actionButtonLabel}
+                      {trText(topicConfig.actionButtonLabel)}
                     </Link>
                   </div>
                 )}
               </section>
 
               <SocialFollowPanel
-                title="Teknik içeriklerimizi sosyal medyada da takip edin"
-                description={defaultSocialDescription}
+                title={trText("Teknik içeriklerimizi sosyal medyada da takip edin")}
+                description={trText(defaultSocialDescription)}
               />
             </div>
           </div>
@@ -1080,4 +1227,7 @@ export function BlogArticleTemplate({
     </main>
   );
 }
+
+
+
 

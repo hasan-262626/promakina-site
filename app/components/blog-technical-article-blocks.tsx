@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { BlogTechnicalArticleData } from "../lib/blog-technical-article-data";
+import { trText } from "../lib/tr-text";
 
 export function BlogTechnicalArticleBlocks({
   data,
@@ -11,10 +12,10 @@ export function BlogTechnicalArticleBlocks({
       <section className="rounded-[30px] border border-slate-200 bg-white p-6 shadow-sm md:p-8">
         <div className="max-w-3xl">
           <h2 className="text-2xl font-semibold tracking-tight text-slate-950 md:text-3xl">
-            {data.requiredDataTitle}
+            {trText(data.requiredDataTitle)}
           </h2>
           <p className="mt-4 text-base leading-8 text-slate-600">
-            {data.requiredDataDescription}
+            {trText(data.requiredDataDescription)}
           </p>
         </div>
         <div className="mt-8 hidden overflow-hidden rounded-[24px] border border-slate-200 md:block">
@@ -29,9 +30,15 @@ export function BlogTechnicalArticleBlocks({
             <tbody>
               {data.requiredDataRows.map((row) => (
                 <tr key={row.label} className="border-t border-slate-200 align-top">
-                  <td className="px-4 py-4 text-sm font-semibold text-slate-950">{row.label}</td>
-                  <td className="px-4 py-4 text-sm leading-7 text-slate-600">{row.purpose}</td>
-                  <td className="px-4 py-4 text-sm leading-7 text-slate-600">{row.request}</td>
+                  <td className="px-4 py-4 text-sm font-semibold text-slate-950">
+                    {trText(row.label)}
+                  </td>
+                  <td className="px-4 py-4 text-sm leading-7 text-slate-600">
+                    {trText(row.purpose)}
+                  </td>
+                  <td className="px-4 py-4 text-sm leading-7 text-slate-600">
+                    {trText(row.request)}
+                  </td>
                 </tr>
               ))}
             </tbody>
@@ -39,13 +46,18 @@ export function BlogTechnicalArticleBlocks({
         </div>
         <div className="mt-6 grid gap-4 md:hidden">
           {data.requiredDataRows.map((row) => (
-            <div key={row.label} className="rounded-[22px] border border-slate-200 bg-slate-50 p-5 shadow-sm">
-              <h3 className="text-lg font-semibold text-slate-950">{row.label}</h3>
+            <div
+              key={row.label}
+              className="rounded-[22px] border border-slate-200 bg-slate-50 p-5 shadow-sm"
+            >
+              <h3 className="text-lg font-semibold text-slate-950">{trText(row.label)}</h3>
               <p className="mt-3 text-sm leading-7 text-slate-600">
-                <span className="font-semibold text-slate-950">Ne için:</span> {row.purpose}
+                <span className="font-semibold text-slate-950">Ne için:</span>{" "}
+                {trText(row.purpose)}
               </p>
               <p className="mt-2 text-sm leading-7 text-slate-600">
-                <span className="font-semibold text-slate-950">Gerekli bilgi:</span> {row.request}
+                <span className="font-semibold text-slate-950">Gerekli bilgi:</span>{" "}
+                {trText(row.request)}
               </p>
             </div>
           ))}
@@ -55,10 +67,10 @@ export function BlogTechnicalArticleBlocks({
       <section className="rounded-[30px] border border-slate-200 bg-white p-6 shadow-sm md:p-8">
         <div className="max-w-3xl">
           <h2 className="text-2xl font-semibold tracking-tight text-slate-950 md:text-3xl">
-            {data.exampleTitle}
+            {trText(data.exampleTitle)}
           </h2>
           <p className="mt-4 text-base leading-8 text-slate-600">
-            {data.exampleDescription}
+            {trText(data.exampleDescription)}
           </p>
         </div>
         <div className="mt-8 hidden overflow-hidden rounded-[24px] border border-slate-200 md:block">
@@ -73,9 +85,15 @@ export function BlogTechnicalArticleBlocks({
             <tbody>
               {data.exampleRows.map((row) => (
                 <tr key={row.label} className="border-t border-slate-200 align-top">
-                  <td className="px-4 py-4 text-sm font-semibold text-slate-950">{row.label}</td>
-                  <td className="px-4 py-4 text-sm leading-7 text-slate-600">{row.value}</td>
-                  <td className="px-4 py-4 text-sm leading-7 text-slate-600">{row.comment}</td>
+                  <td className="px-4 py-4 text-sm font-semibold text-slate-950">
+                    {trText(row.label)}
+                  </td>
+                  <td className="px-4 py-4 text-sm leading-7 text-slate-600">
+                    {trText(row.value)}
+                  </td>
+                  <td className="px-4 py-4 text-sm leading-7 text-slate-600">
+                    {trText(row.comment)}
+                  </td>
                 </tr>
               ))}
             </tbody>
@@ -83,13 +101,18 @@ export function BlogTechnicalArticleBlocks({
         </div>
         <div className="mt-6 grid gap-4 md:hidden">
           {data.exampleRows.map((row) => (
-            <div key={row.label} className="rounded-[22px] border border-slate-200 bg-slate-50 p-5 shadow-sm">
-              <h3 className="text-lg font-semibold text-slate-950">{row.label}</h3>
+            <div
+              key={row.label}
+              className="rounded-[22px] border border-slate-200 bg-slate-50 p-5 shadow-sm"
+            >
+              <h3 className="text-lg font-semibold text-slate-950">{trText(row.label)}</h3>
               <p className="mt-3 text-sm leading-7 text-slate-600">
-                <span className="font-semibold text-slate-950">Değer:</span> {row.value}
+                <span className="font-semibold text-slate-950">Değer:</span>{" "}
+                {trText(row.value)}
               </p>
               <p className="mt-2 text-sm leading-7 text-slate-600">
-                <span className="font-semibold text-slate-950">Yorum:</span> {row.comment}
+                <span className="font-semibold text-slate-950">Yorum:</span>{" "}
+                {trText(row.comment)}
               </p>
             </div>
           ))}
@@ -99,10 +122,10 @@ export function BlogTechnicalArticleBlocks({
       <section className="rounded-[30px] border border-slate-200 bg-white p-6 shadow-sm md:p-8">
         <div className="max-w-3xl">
           <h2 className="text-2xl font-semibold tracking-tight text-slate-950 md:text-3xl">
-            {data.decisionTableTitle}
+            {trText(data.decisionTableTitle)}
           </h2>
           <p className="mt-4 text-base leading-8 text-slate-600">
-            {data.decisionTableDescription}
+            {trText(data.decisionTableDescription)}
           </p>
         </div>
         <div className="mt-8 hidden overflow-hidden rounded-[24px] border border-slate-200 md:block">
@@ -118,10 +141,18 @@ export function BlogTechnicalArticleBlocks({
             <tbody>
               {data.decisionTableRows.map((row) => (
                 <tr key={row.criterion} className="border-t border-slate-200 align-top">
-                  <td className="px-4 py-4 text-sm font-semibold text-slate-950">{row.criterion}</td>
-                  <td className="px-4 py-4 text-sm leading-7 text-slate-600">{row.description}</td>
-                  <td className="px-4 py-4 text-sm leading-7 text-slate-600">{row.importance}</td>
-                  <td className="px-4 py-4 text-sm leading-7 text-slate-600">{row.effect}</td>
+                  <td className="px-4 py-4 text-sm font-semibold text-slate-950">
+                    {trText(row.criterion)}
+                  </td>
+                  <td className="px-4 py-4 text-sm leading-7 text-slate-600">
+                    {trText(row.description)}
+                  </td>
+                  <td className="px-4 py-4 text-sm leading-7 text-slate-600">
+                    {trText(row.importance)}
+                  </td>
+                  <td className="px-4 py-4 text-sm leading-7 text-slate-600">
+                    {trText(row.effect)}
+                  </td>
                 </tr>
               ))}
             </tbody>
@@ -129,16 +160,24 @@ export function BlogTechnicalArticleBlocks({
         </div>
         <div className="mt-6 grid gap-4 md:hidden">
           {data.decisionTableRows.map((row) => (
-            <div key={row.criterion} className="rounded-[22px] border border-slate-200 bg-slate-50 p-5 shadow-sm">
-              <h3 className="text-lg font-semibold text-slate-950">{row.criterion}</h3>
+            <div
+              key={row.criterion}
+              className="rounded-[22px] border border-slate-200 bg-slate-50 p-5 shadow-sm"
+            >
+              <h3 className="text-lg font-semibold text-slate-950">
+                {trText(row.criterion)}
+              </h3>
               <p className="mt-3 text-sm leading-7 text-slate-600">
-                <span className="font-semibold text-slate-950">Açıklama:</span> {row.description}
+                <span className="font-semibold text-slate-950">Açıklama:</span>{" "}
+                {trText(row.description)}
               </p>
               <p className="mt-2 text-sm leading-7 text-slate-600">
-                <span className="font-semibold text-slate-950">Önemi:</span> {row.importance}
+                <span className="font-semibold text-slate-950">Önemi:</span>{" "}
+                {trText(row.importance)}
               </p>
               <p className="mt-2 text-sm leading-7 text-slate-600">
-                <span className="font-semibold text-slate-950">Sahadaki etki:</span> {row.effect}
+                <span className="font-semibold text-slate-950">Sahadaki etki:</span>{" "}
+                {trText(row.effect)}
               </p>
             </div>
           ))}
@@ -148,17 +187,22 @@ export function BlogTechnicalArticleBlocks({
       <section className="rounded-[30px] border border-slate-200 bg-white p-6 shadow-sm md:p-8">
         <div className="max-w-3xl">
           <h2 className="text-2xl font-semibold tracking-tight text-slate-950 md:text-3xl">
-            {data.factorCardsTitle}
+            {trText(data.factorCardsTitle)}
           </h2>
           <p className="mt-4 text-base leading-8 text-slate-600">
-            {data.factorCardsDescription}
+            {trText(data.factorCardsDescription)}
           </p>
         </div>
         <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
           {data.factorCards.map((card) => (
-            <div key={card.title} className="rounded-[22px] border border-slate-200 bg-slate-50 p-5 shadow-sm">
-              <h3 className="text-lg font-semibold text-slate-950">{card.title}</h3>
-              <p className="mt-3 text-sm leading-7 text-slate-600">{card.description}</p>
+            <div
+              key={card.title}
+              className="rounded-[22px] border border-slate-200 bg-slate-50 p-5 shadow-sm"
+            >
+              <h3 className="text-lg font-semibold text-slate-950">{trText(card.title)}</h3>
+              <p className="mt-3 text-sm leading-7 text-slate-600">
+                {trText(card.description)}
+              </p>
             </div>
           ))}
         </div>
@@ -167,10 +211,10 @@ export function BlogTechnicalArticleBlocks({
       <section className="rounded-[30px] border border-slate-200 bg-white p-6 shadow-sm md:p-8">
         <div className="max-w-3xl">
           <h2 className="text-2xl font-semibold tracking-tight text-slate-950 md:text-3xl">
-            {data.relatedLinksTitle}
+            {trText(data.relatedLinksTitle)}
           </h2>
           <p className="mt-4 text-base leading-8 text-slate-600">
-            {data.relatedLinksDescription}
+            {trText(data.relatedLinksDescription)}
           </p>
         </div>
         <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
@@ -180,8 +224,12 @@ export function BlogTechnicalArticleBlocks({
               href={link.href}
               className="group rounded-[24px] border border-slate-200 bg-slate-50 p-5 shadow-sm transition hover:-translate-y-1 hover:border-[#278DC0] hover:bg-white hover:shadow-[0_18px_45px_rgba(15,23,42,0.08)]"
             >
-              <h3 className="text-lg font-semibold text-slate-950">{link.title}</h3>
-              <p className="mt-3 text-sm leading-7 text-slate-600">{link.description}</p>
+              <h3 className="text-lg font-semibold text-slate-950">
+                {trText(link.title)}
+              </h3>
+              <p className="mt-3 text-sm leading-7 text-slate-600">
+                {trText(link.description)}
+              </p>
               <span className="mt-4 inline-flex text-sm font-semibold text-[#278DC0] transition group-hover:text-[#154764]">
                 İçeriği İncele
               </span>

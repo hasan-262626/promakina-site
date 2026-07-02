@@ -341,12 +341,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
-      url: `${siteUrl}/makinalar-ekipman/eleme-ve-siniflandirma-sistemleri/doner-elekler`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
       url: `${siteUrl}/makinalar-ekipman/kiricilar-ve-parcalayicilar/cekicli-kiricilar`,
       lastModified,
       changeFrequency: "weekly",

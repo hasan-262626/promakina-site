@@ -592,6 +592,28 @@ const machinePages: Record<string, MachinePageRecord> = {
       { label: "Granül Gübre Üretim Tesisi", href: "/hizmetler/granul-gubre-uretim-tesisi" },
     ],
     technicalContents: commonTechnicalContents,
+    applicationLinksSection: {
+      title: "Ürüne Göre Kurutma Tamburu Uygulamaları",
+      description:
+        "Pro Makina; silis kumu, perlit, kalsit, maden, gübre, arıtma çamuru, kompost, biyogaz digestat, talaş, bentonit ve kedi kumu gibi farklı ürünler için kurutma tamburu, brülör, fan, siklon, filtre, eleme, soğutma ve paketleme sistemlerini birlikte tasarlar.",
+      links: [
+        { label: "Silis Kumu Kurutma Tamburu", href: "/kutuphane/blog/silis-kumu-kurutma-tamburu" },
+        { label: "Perlit Kurutma Tamburu", href: "/kutuphane/blog/perlit-kurutma-tamburu" },
+        { label: "Kalsit Kurutma Tamburu", href: "/kutuphane/blog/kalsit-kurutma-tamburu" },
+        { label: "Maden Kurutma Tamburu", href: "/kutuphane/blog/maden-kurutma-tamburu" },
+        { label: "Gübre Kurutma Tamburu", href: "/kutuphane/blog/gubre-kurutma-tamburu" },
+        { label: "Organomineral Gübre Kurutma Tamburu", href: "/kutuphane/blog/organomineral-gubre-kurutma-tamburu" },
+        { label: "Kompost Kurutma Tamburu", href: "/kutuphane/blog/kompost-kurutma-tamburu" },
+        { label: "Arıtma Çamuru Kurutma Tamburu", href: "/kutuphane/blog/aritma-camuru-kurutma-tamburu" },
+        { label: "Biyogaz Digestat Kurutma Tamburu", href: "/kutuphane/blog/biyogaz-digestat-kurutma-tamburu" },
+        { label: "Talaş Kurutma Tamburu", href: "/kutuphane/blog/talas-kurutma-tamburu" },
+        { label: "Odun Yongası Kurutma Tamburu", href: "/kutuphane/blog/odun-yongasi-kurutma-tamburu" },
+        { label: "Kedi Kumu Kurutma Tamburu", href: "/kutuphane/blog/kedi-kumu-kurutma-tamburu" },
+        { label: "Bentonit Kurutma Tamburu", href: "/kutuphane/blog/bentonit-kurutma-tamburu" },
+        { label: "Kuvars Kumu Kurutma Tamburu", href: "/kutuphane/blog/kuvars-kumu-kurutma-tamburu" },
+        { label: "Feldspat Kurutma Tamburu", href: "/kutuphane/blog/feldspat-kurutma-tamburu" },
+      ],
+    },
     faqs: [
       {
         question: "Kurutma tamburları hangi sektörlerde kullanılır?",

@@ -491,13 +491,158 @@ const crusherSeed: CategorySeed = {
     "Kapak ve bağlantı parçaları",
   ],
   products: [
-    { slug: "cekicli-kiricilar", title: "Çekiçli Kırıcılar", shortDescription: "Gübre, kompost ve kırılgan mineral hatları için çekiçli kırıcı imalatı yapıyoruz." },
-    { slug: "ceneli-kiricilar", title: "Çeneli Kırıcılar", shortDescription: "Sert ve iri boyutlu malzemelerin ilk kademe kırılması için çeneli kırıcı çözümleri sunuyoruz.", image: "/images/ceneli1.png" },
-    { slug: "dik-milli-kiricilar", title: "Dik Milli Kırıcılar", shortDescription: "Agrega, mineral ve benzeri malzemelerde kontrollü boyut küçültme için dik milli kırıcı çözümleri sunuyoruz.", image: "/images/pim1.png" },
-    { slug: "zincirli-kiricilar", title: "Zincirli Kırıcılar", shortDescription: "Topaklı ve yarı nemli ürünler için zincirli kırıcı imalatı yapıyoruz.", image: "/images/zincirli1.jpg" },
-    { slug: "shredder-sistemleri", title: "Shredder Sistemleri", shortDescription: "Karma atık ve hacimli malzemeler için shredder sistemleri üretiyoruz.", image: "/images/shredder6.jpg" },
-    { slug: "bicakli-primer-kiricilar", title: "Bıçaklı Primer Kırıcılar", shortDescription: "İlk kademe boyut küçültme için bıçaklı primer kırıcı çözümleri sunuyoruz.", image: "/images/primer1.png" },
-    { slug: "bicakli-sekonder-kiricilar", title: "Bıçaklı Sekonder Kırıcılar", shortDescription: "Kontrollü çıkış boyutu için bıçaklı sekonder kırıcı imalatı yapıyoruz.", image: "/images/primer2.png" },
+    {
+      slug: "cekicli-kiricilar",
+      title: "Çekiçli Kırıcılar",
+      shortDescription:
+        "Gübre, kompost ve kırılgan mineral hatları için çekiçli kırıcı imalatı yapıyoruz.",
+      image: "/images/kirici cekicli/kiricicekic1.jpg",
+      gallery: makeGalleryWithPrimary(
+        {
+          src: "/images/kirici cekicli/kiricicekic1.jpg",
+          alt: "Çekiçli kırıcı ve endüstriyel boyut küçültme ekipmanı",
+        },
+        [
+          "/images/kirici cekicli/kiricicekic2.jpg",
+          "/images/kirici cekicli/kiricicekic3.jpg",
+          "/images/kirici cekicli/kiricicekic4.jpg",
+        ],
+        "Çekiçli kırıcılar galeri görseli",
+      ),
+    },
+    {
+      slug: "ceneli-kiricilar",
+      title: "Çeneli Kırıcılar",
+      shortDescription:
+        "Sert ve iri boyutlu malzemelerin ilk kademe kırılması için çeneli kırıcı çözümleri sunuyoruz.",
+      image: "/images/kirici ceneli/kiriciceneli1.png",
+      gallery: makeGalleryWithPrimary(
+        {
+          src: "/images/kirici ceneli/kiriciceneli1.png",
+          alt: "Çeneli kırıcı ve maden kırma ekipmanı",
+        },
+        [
+          "/images/kirici ceneli/kiriciceneli3.jpg",
+          "/images/kirici ceneli/kiriciceneli4.jpg",
+          "/images/kirici ceneli/kiriciceneli5.jpg",
+          "/images/kirici ceneli/kiriciceneli6.png",
+          "/images/kirici ceneli/kiriciceneli7.jpg",
+        ],
+        "Çeneli kırıcılar galeri görseli",
+      ),
+    },
+    {
+      slug: "dik-milli-kiricilar",
+      title: "Dik Milli Kırıcılar",
+      shortDescription:
+        "Agrega, mineral ve benzeri malzemelerde kontrollü boyut küçültme için dik milli kırıcı çözümleri sunuyoruz.",
+      image: "/images/kirici dik milli/kiricidikmil8.jpg",
+      gallery: makeGalleryWithPrimary(
+        {
+          src: "/images/kirici dik milli/kiricidikmil8.jpg",
+          alt: "Dik milli kırıcı ve mineral işleme ekipmanı",
+        },
+        [
+          "/images/kirici dik milli/kiricidikmil1.jpg",
+          "/images/kirici dik milli/kiricidikmil2.jpg",
+          "/images/kirici dik milli/kiricidikmil3.jpg",
+          "/images/kirici dik milli/kiricidikmil4.jpg",
+          "/images/kirici dik milli/kiricidikmil5.jpg",
+          "/images/kirici dik milli/kiricidikmil6.jpg",
+          "/images/kirici dik milli/kiricidikmil7.jpg",
+          "/images/kirici dik milli/kiricidikmil9.png",
+        ],
+        "Dik milli kırıcılar galeri görseli",
+      ),
+    },
+    {
+      slug: "zincirli-kiricilar",
+      title: "Zincirli Kırıcılar",
+      shortDescription:
+        "Topaklı ve yarı nemli ürünler için zincirli kırıcı imalatı yapıyoruz.",
+      image: "/images/kirici zincirli/kiricizincir1.jpg",
+      gallery: makeGalleryWithPrimary(
+        {
+          src: "/images/kirici zincirli/kiricizincir1.jpg",
+          alt: "Zincirli kırıcı ve gübre kırma sistemi",
+        },
+        [
+          "/images/kirici zincirli/kiricizincir2.jpg",
+          "/images/kirici zincirli/kiricizincir3.jpg",
+          "/images/kirici zincirli/kiricizincir4.jpg",
+          "/images/kirici zincirli/kiricizincir5.jpg",
+          "/images/kirici zincirli/kiricizincir6.jpg",
+          "/images/kirici zincirli/kiricizincir7.jpg",
+          "/images/kirici zincirli/kiricizincir8.jpg",
+          "/images/kirici zincirli/kiricizincir9.jpg",
+          "/images/kirici zincirli/kiricizincir10.jpg",
+        ],
+        "Zincirli kırıcılar galeri görseli",
+      ),
+    },
+    {
+      slug: "shredder-sistemleri",
+      title: "Shredder Sistemleri",
+      shortDescription:
+        "Karma atık ve hacimli malzemeler için shredder sistemleri üretiyoruz.",
+      image: "/images/kirici shredder/kiricishred7.jpg",
+      gallery: makeGalleryWithPrimary(
+        {
+          src: "/images/kirici shredder/kiricishred7.jpg",
+          alt: "Shredder sistemi ve atık parçalama ekipmanı",
+        },
+        [
+          "/images/kirici shredder/kiricishred1.jpg",
+          "/images/kirici shredder/kiricishred2.jpg",
+          "/images/kirici shredder/kiricishred3.jpg",
+          "/images/kirici shredder/kiricishred4.jpg",
+          "/images/kirici shredder/kiricishred6.jpg",
+          "/images/kirici shredder/kiricishred8.jpg",
+        ],
+        "Shredder sistemleri galeri görseli",
+      ),
+    },
+    {
+      slug: "bicakli-primer-kiricilar",
+      title: "Bıçaklı Primer Kırıcılar",
+      shortDescription:
+        "İlk kademe boyut küçültme için bıçaklı primer kırıcı çözümleri sunuyoruz.",
+      image: "/images/kirici primer 1/kiricibirinci6.png",
+      gallery: makeGalleryWithPrimary(
+        {
+          src: "/images/kirici primer 1/kiricibirinci6.png",
+          alt: "Bıçaklı primer kırıcı ve ön parçalama ekipmanı",
+        },
+        [
+          "/images/kirici primer 1/kiricibirinci1.jpg",
+          "/images/kirici primer 1/kiricibirinci2.jpg",
+          "/images/kirici primer 1/kiricibirinci3.jpg",
+          "/images/kirici primer 1/kiricibirinci4.jpg",
+          "/images/kirici primer 1/kiricibirinci5.png",
+        ],
+        "Bıçaklı primer kırıcılar galeri görseli",
+      ),
+    },
+    {
+      slug: "bicakli-sekonder-kiricilar",
+      title: "Bıçaklı Sekonder Kırıcılar",
+      shortDescription:
+        "Kontrollü çıkış boyutu için bıçaklı sekonder kırıcı imalatı yapıyoruz.",
+      image: "/images/kirici seconder/kiriciseconder2.jpg",
+      gallery: makeGalleryWithPrimary(
+        {
+          src: "/images/kirici seconder/kiriciseconder2.jpg",
+          alt: "Bıçaklı sekonder kırıcı ve ikinci kademe parçalama sistemi",
+        },
+        [
+          "/images/kirici seconder/kiriciseconder1.jpg",
+          "/images/kirici seconder/kiriciseconder3.jpg",
+          "/images/kirici seconder/kiriciseconder4.jpg",
+          "/images/kirici seconder/kiriciseconder5.jpg",
+        ],
+        "Bıçaklı sekonder kırıcılar galeri görseli",
+      ),
+    },
   ],
 };
 
@@ -546,11 +691,161 @@ const reactorSeed: CategorySeed = {
     "Servis kapak elemanları",
   ],
   products: [
-    { slug: "sogutma-tanklari", title: "Soğutma Tankları", shortDescription: "Sıvı ürün ve proses akışları için özel ölçülerde soğutma tankı imalatı yapıyoruz.", image: "/images/tank8.png" },
-    { slug: "karistiricili-reaktorler", title: "Karıştırıcılı Reaktörler", shortDescription: "Kimyasal ve sıvı proses hatları için karıştırıcılı reaktör imalatı yapıyoruz.", image: "/images/reaktor1.avif" },
-    { slug: "basincli-reaktorler", title: "Basınçlı Reaktörler", shortDescription: "Basınç altında çalışan prosesler için basınçlı reaktör imalatı yapıyoruz.", image: "/images/tank5.webp" },
-    { slug: "cozundurme-tanklari", title: "Çözündürme Tankları", shortDescription: "Katı-sıvı hazırlama süreçleri için çözündürme tankı çözümleri sunuyoruz.", image: "/images/cozundurme1.png" },
-    { slug: "stok-tanklari", title: "Stok Tankları", shortDescription: "Güvenli depolama ve proses dengesi için stok tankı imalatı yapıyoruz.", image: "/images/tank6.jpg" },
+    {
+      slug: "sogutma-tanklari",
+      title: "Soğutma Tankları",
+      shortDescription:
+        "Sıvı ürün ve proses akışları için özel ölçülerde soğutma tankı imalatı yapıyoruz.",
+      image: "/images/sıvı/sivi14.png",
+      gallery: makeGalleryWithPrimary(
+        {
+          src: "/images/sıvı/sivi14.png",
+          alt: "Soğutma tankları ve endüstriyel proses ekipmanı",
+        },
+        [
+          "/images/sıvı/sivi1.jpg",
+          "/images/sıvı/sivi2.png",
+          "/images/sıvı/sivi3.jpg",
+          "/images/sıvı/sivi4.png",
+          "/images/sıvı/sivi5.webp",
+          "/images/sıvı/sivi6.jpg",
+          "/images/sıvı/sivi8.jpg",
+          "/images/sıvı/sivi9.webp",
+          "/images/sıvı/sivi10.webp",
+          "/images/sıvı/sivi11.webp",
+          "/images/sıvı/sivi12.jpg",
+          "/images/sıvı/sivi13.webp",
+          "/images/sıvı/sivi21.jpg",
+          "/images/sıvı/sivi22.jpg",
+          "/images/sıvı/sivi23.jpg",
+        ],
+        "Reaktör ve tank sistemleri galeri görseli",
+      ),
+    },
+    {
+      slug: "karistiricili-reaktorler",
+      title: "Karıştırıcılı Reaktörler",
+      shortDescription:
+        "Kimyasal ve sıvı proses hatları için karıştırıcılı reaktör imalatı yapıyoruz.",
+      image: "/images/sıvı/sivi4.png",
+      gallery: makeGalleryWithPrimary(
+        {
+          src: "/images/sıvı/sivi4.png",
+          alt: "Karıştırıcılı reaktör ve sıvı proses ekipmanı",
+        },
+        [
+          "/images/sıvı/sivi1.jpg",
+          "/images/sıvı/sivi2.png",
+          "/images/sıvı/sivi3.jpg",
+          "/images/sıvı/sivi5.webp",
+          "/images/sıvı/sivi6.jpg",
+          "/images/sıvı/sivi8.jpg",
+          "/images/sıvı/sivi9.webp",
+          "/images/sıvı/sivi10.webp",
+          "/images/sıvı/sivi11.webp",
+          "/images/sıvı/sivi12.jpg",
+          "/images/sıvı/sivi13.webp",
+          "/images/sıvı/sivi14.png",
+          "/images/sıvı/sivi21.jpg",
+          "/images/sıvı/sivi22.jpg",
+          "/images/sıvı/sivi23.jpg",
+        ],
+        "Reaktör ve tank sistemleri galeri görseli",
+      ),
+    },
+    {
+      slug: "basincli-reaktorler",
+      title: "Basınçlı Reaktörler",
+      shortDescription:
+        "Basınç altında çalışan prosesler için basınçlı reaktör imalatı yapıyoruz.",
+      image: "/images/sıvı/sivi11.webp",
+      gallery: makeGalleryWithPrimary(
+        {
+          src: "/images/sıvı/sivi11.webp",
+          alt: "Basınçlı reaktör ve kimyasal proses tankı",
+        },
+        [
+          "/images/sıvı/sivi1.jpg",
+          "/images/sıvı/sivi2.png",
+          "/images/sıvı/sivi3.jpg",
+          "/images/sıvı/sivi4.png",
+          "/images/sıvı/sivi5.webp",
+          "/images/sıvı/sivi6.jpg",
+          "/images/sıvı/sivi8.jpg",
+          "/images/sıvı/sivi9.webp",
+          "/images/sıvı/sivi10.webp",
+          "/images/sıvı/sivi12.jpg",
+          "/images/sıvı/sivi13.webp",
+          "/images/sıvı/sivi14.png",
+          "/images/sıvı/sivi21.jpg",
+          "/images/sıvı/sivi22.jpg",
+          "/images/sıvı/sivi23.jpg",
+        ],
+        "Reaktör ve tank sistemleri galeri görseli",
+      ),
+    },
+    {
+      slug: "cozundurme-tanklari",
+      title: "Çözündürme Tankları",
+      shortDescription:
+        "Katı-sıvı hazırlama süreçleri için çözündürme tankı çözümleri sunuyoruz.",
+      image: "/images/sıvı/sivi2.png",
+      gallery: makeGalleryWithPrimary(
+        {
+          src: "/images/sıvı/sivi2.png",
+          alt: "Çözündürme tankı ve karıştırma sistemi",
+        },
+        [
+          "/images/sıvı/sivi1.jpg",
+          "/images/sıvı/sivi3.jpg",
+          "/images/sıvı/sivi4.png",
+          "/images/sıvı/sivi5.webp",
+          "/images/sıvı/sivi6.jpg",
+          "/images/sıvı/sivi8.jpg",
+          "/images/sıvı/sivi9.webp",
+          "/images/sıvı/sivi10.webp",
+          "/images/sıvı/sivi11.webp",
+          "/images/sıvı/sivi12.jpg",
+          "/images/sıvı/sivi13.webp",
+          "/images/sıvı/sivi14.png",
+          "/images/sıvı/sivi21.jpg",
+          "/images/sıvı/sivi22.jpg",
+          "/images/sıvı/sivi23.jpg",
+        ],
+        "Reaktör ve tank sistemleri galeri görseli",
+      ),
+    },
+    {
+      slug: "stok-tanklari",
+      title: "Stok Tankları",
+      shortDescription:
+        "Güvenli depolama ve proses dengesi için stok tankı imalatı yapıyoruz.",
+      image: "/images/sıvı/sivi12.jpg",
+      gallery: makeGalleryWithPrimary(
+        {
+          src: "/images/sıvı/sivi12.jpg",
+          alt: "Stok tankı ve endüstriyel depolama ekipmanı",
+        },
+        [
+          "/images/sıvı/sivi1.jpg",
+          "/images/sıvı/sivi2.png",
+          "/images/sıvı/sivi3.jpg",
+          "/images/sıvı/sivi4.png",
+          "/images/sıvı/sivi5.webp",
+          "/images/sıvı/sivi6.jpg",
+          "/images/sıvı/sivi8.jpg",
+          "/images/sıvı/sivi9.webp",
+          "/images/sıvı/sivi10.webp",
+          "/images/sıvı/sivi11.webp",
+          "/images/sıvı/sivi13.webp",
+          "/images/sıvı/sivi14.png",
+          "/images/sıvı/sivi21.jpg",
+          "/images/sıvı/sivi22.jpg",
+          "/images/sıvı/sivi23.jpg",
+        ],
+        "Reaktör ve tank sistemleri galeri görseli",
+      ),
+    },
   ],
 };
 
@@ -559,15 +854,15 @@ const screeningSeed: CategorySeed = {
   title: "Eleme ve Sınıflandırma Sistemleri",
   heroImage: "/images/elek2.jpeg",
   shortDescription:
-    "Granül gübre, kompost, mineral ve proses hatları için döner elek, vibrasyonlu elek, trommel elek, sınıflandırma eleği ve susuzlandırma eleği imalatı yapıyoruz.",
+    "Granül gübre, kompost, mineral ve proses hatları için vibrasyonlu elek, trommel elek ve susuzlandırma eleği imalatı yapıyoruz.",
   heroDescription:
-    "Döner elek, vibrasyonlu elek, trommel elek, sınıflandırma eleği ve susuzlandırma eleği çözümlerini tek kategori altında sunuyoruz.",
+    "Vibrasyonlu elek, trommel elek ve susuzlandırma eleği çözümlerini tek kategori altında sunuyoruz.",
   seoNote:
-    "Granül gübre, kompost, mineral ve proses hatları için döner elek, vibrasyonlu elek, trommel elek, sınıflandırma eleği ve susuzlandırma eleği imalatı yapıyoruz.",
+    "Granül gübre, kompost, mineral ve proses hatları için vibrasyonlu elek, trommel elek ve susuzlandırma eleği imalatı yapıyoruz.",
   calculatorFamily: "screening",
   ctaTitle: "Eleme ve sınıflandırma sistemleri için doğru makina çözümünü birlikte netleştirelim",
   ctaText:
-    "Döner elek, vibrasyonlu elek, trommel elek, sınıflandırma eleği ve susuzlandırma eleği ihtiyaçlarınız için ürün davranışı, nem ve kapasite verilerine göre doğru sistemi birlikte seçelim.",
+    "Vibrasyonlu elek, trommel elek ve susuzlandırma eleği ihtiyaçlarınız için ürün davranışı, nem ve kapasite verilerine göre doğru sistemi birlikte seçelim.",
   specs: [
     "Projeye uygun elek yüzeyi ve kapasite",
     "Tek katlı veya çok katlı gövde yapısı",
@@ -600,48 +895,67 @@ const screeningSeed: CategorySeed = {
   ],
   products: [
     {
-      slug: "doner-elekler",
-      title: "Döner Elekler",
+      slug: "vibrasyonlu-elekler",
+      title: "Vibrasyonlu Elekler",
       shortDescription:
-        "Granül, mineral ve farklı dökme katı malzemelerde dengeli fraksiyon ayırma için döner elek çözümleri sunuyoruz.",
-      image: "/images/elek2.jpeg",
-      heroDescription:
-        "Döner elek çözümleri; granül, mineral ve farklı dökme katı malzemelerde dengeli fraksiyon ayırma ve sınıflandırma sağlar.",
-      overviewParagraphs: [
-        "Döner elekler, farklı tane boylarındaki ürünlerin kontrollü sınıflandırılması için kullanılan endüstriyel eleme ekipmanlarıdır. Granül, mineral ve dökme katı malzeme akışları için sürekli çalışma karakteri sunar.",
-        "Pro Makina döner elek çözümlerini kapasite, ürün davranışı, elek açıklığı ve saha entegrasyonuna göre projelendirir. Doğru çap, boy ve devir seçimi ile ayırma verimi ve işletme kararlılığı birlikte korunur.",
-      ],
-      highlightText:
-        "Döner elek seçiminde elek açıklığı, tambur ölçüleri, ürün akışı ve çalışma rejimi birlikte değerlendirilir. Doğru gövde kurgusu, kararlı sınıflandırma performansı ve düşük bakım ihtiyacı sağlar.",
-      specs: [
-        "Elek açıklığı hedef son ürün tane boyuna göre belirlenir",
-        "Tambur çapı ve boyu kapasite ile ayırma süresini etkiler",
-        "Devir ve doluluk oranı eleme verimini doğrudan belirler",
-        "Besleme karakteri ve ürün yoğunluğu mekanik boyutlandırmaya dahil edilir",
-        "Hat yerleşimine uygun giriş, çıkış ve destek şasesi tasarlanır",
-      ],
-      applications: [
-        "Mineral hazırlama tesisleri",
-        "Granül ürün sınıflandırma hatları",
-        "Kompost son ürün ayırma prosesleri",
-        "Farklı dökme katı malzeme akışlarında sürekli eleme uygulamaları",
-      ],
-      optionalEquipment: [
-        "Bakım platformu",
-        "Toz emiş bağlantısı",
-        "Temizleme sistemi",
-        "Otomasyon ve sensör altyapısı",
-      ],
-      spareParts: [
-        "Elek yüzeyi ve panelleri",
-        "Support rulo ve yatak grupları",
-        "Motor-redüktör grubu",
-        "Kapak ve bağlantı parçaları",
-      ],
+        "Hassas ayırma ve yüksek verimli sınıflandırma için vibrasyonlu elek çözümleri üretiyoruz.",
+      image: "/images/elek/elek2.jpeg",
+      gallery: makeGalleryWithPrimary(
+        {
+          src: "/images/elek/elek2.jpeg",
+          alt: "Vibrasyonlu elek ve eleme sistemi",
+        },
+        ["/images/elek/elek1.png"],
+        "Vibrasyonlu elekler galeri görseli",
+      ),
     },
-    { slug: "vibrasyonlu-elekler", title: "Vibrasyonlu Elekler", shortDescription: "Hassas ayırma ve yüksek verimli sınıflandırma için vibrasyonlu elek çözümleri üretiyoruz.", image: "/images/elek1.png" },
-    { slug: "trommel-elekler", title: "Trommel Elekler", shortDescription: "Organik atık ve kompost hatları için trommel elek imalatı yapıyoruz.", image: "/images/trommel2.jpg" },
-    { slug: "susuzlandirma-elekleri", title: "Susuzlandırma Elekleri", shortDescription: "Yüksek nemli ürünlerde su ayrımı için susuzlandırma eleği çözümleri geliştiriyoruz." },
+    {
+      slug: "trommel-elekler",
+      title: "Trommel Elekler",
+      shortDescription:
+        "Organik atık ve kompost hatları için trommel elek imalatı yapıyoruz.",
+      image: "/images/elek/elek1.png",
+      gallery: makeGalleryWithPrimary(
+        {
+          src: "/images/elek/elek1.png",
+          alt: "Trommel elek ve sınıflandırma sistemi",
+        },
+        ["/images/elek/elek2.jpeg"],
+        "Trommel elekler galeri görseli",
+      ),
+    },
+    {
+      slug: "susuzlandirma-elekleri",
+      title: "Susuzlandırma Elekleri",
+      shortDescription:
+        "Yüksek nemli ürünlerde su ayrımı için susuzlandırma eleği çözümleri geliştiriyoruz.",
+      image: "/images/trommel/tromm11.jpg",
+      gallery: makeGalleryWithPrimary(
+        {
+          src: "/images/trommel/tromm11.jpg",
+          alt: "Susuzlandırma eleği ve katı sıvı ayırma sistemi",
+        },
+        [
+          "/images/trommel/tromm1.jpg",
+          "/images/trommel/tromm2.jpg",
+          "/images/trommel/tromm3.jpg",
+          "/images/trommel/tromm4.jpg",
+          "/images/trommel/tromm5.jpg",
+          "/images/trommel/tromm6.jpg",
+          "/images/trommel/tromm7.jpg",
+          "/images/trommel/tromm9.jpg",
+          "/images/trommel/tromm10.jpg",
+          "/images/trommel/tromm12.png",
+          "/images/trommel/tromm13.jpg",
+          "/images/trommel/tromm14.jpg",
+          "/images/trommel/tromm15.jpg",
+          "/images/trommel/tromm16.jpg",
+          "/images/trommel/tromm17.jpeg",
+          "/images/trommel/tromm18.jpg",
+        ],
+        "Susuzlandırma elekleri galeri görseli",
+      ),
+    },
   ],
 };
 
@@ -690,8 +1004,57 @@ const dustSeed: CategorySeed = {
     "Conta ve kapak parçaları",
   ],
   products: [
-    { slug: "pulse-jet-filtreler", title: "Jet Pulse Filtreler", shortDescription: "Endüstriyel toz toplama hatları için jet pulse filtre sistemleri üretiyoruz.", image: "/images/jetpulse3.jpg" },
-    { slug: "siklon-ayiricilar", title: "Siklon Ayırıcılar", shortDescription: "Partikül ön ayırma ve toz yükü düşürme için siklon ayırıcı sistemleri sunuyoruz.", image: "/images/toz10.jpg" },
+    {
+      slug: "pulse-jet-filtreler",
+      title: "Jet Pulse Filtreler",
+      shortDescription: "Endüstriyel toz toplama hatları için jet pulse filtre sistemleri üretiyoruz.",
+      image: "/images/jet pulse/jerpul4.jpg",
+      gallery: makeGalleryWithPrimary(
+        {
+          src: "/images/jet pulse/jerpul4.jpg",
+          alt: "Jet pulse filtre ve toz toplama sistemi",
+          caption: "Genel ürün görünümü",
+        },
+        [
+          "/images/jet pulse/jerpul1.webp",
+          "/images/jet pulse/jerpul2.jpg",
+          "/images/jet pulse/jerpul3.jpg",
+          "/images/jet pulse/jerpul5.jpg",
+          "/images/jet pulse/jerpul6.jpg",
+          "/images/jet pulse/jerpul7.jpg",
+          "/images/jet pulse/jerpul8.jpg",
+          "/images/jet pulse/jerpul9.jpg",
+          "/images/jet pulse/jerpul10.png",
+          "/images/jet pulse/jerpul12.png",
+        ],
+        "Jet pulse filtreler galeri görseli",
+        "Jet pulse filtreler galeri görseli",
+      ),
+    },
+    {
+      slug: "siklon-ayiricilar",
+      title: "Siklon Ayırıcılar",
+      shortDescription: "Partikül ön ayırma ve toz yükü düşürme için siklon ayırıcı sistemleri sunuyoruz.",
+      image: "/images/siklon/siklon2.jpg",
+      gallery: makeGalleryWithPrimary(
+        {
+          src: "/images/siklon/siklon2.jpg",
+          alt: "Siklon ayırıcı ve endüstriyel toz toplama ekipmanı",
+          caption: "Genel ürün görünümü",
+        },
+        [
+          "/images/siklon/siklon1.jpg",
+          "/images/siklon/toz2.webp",
+          "/images/siklon/toz3.webp",
+          "/images/siklon/toz4.webp",
+          "/images/siklon/toz5.webp",
+          "/images/siklon/toz7.jpg",
+          "/images/siklon/toz9.jpg",
+        ],
+        "Siklon ayırıcılar galeri görseli",
+        "Siklon ayırıcılar galeri görseli",
+      ),
+    },
   ],
 };
 
@@ -890,7 +1253,31 @@ const auxiliaryFlowSeed: CategorySeed = {
       title: "Silobas Yükleme Körüğü",
       shortDescription:
         "Toz ve granül malzemelerin silobas, kamyon, vagon veya gemilere tozsuz ve güvenli şekilde aktarılması için silobas yükleme körüğü çözümleri sunuyoruz.",
-      image: "/images/koruk1.jpg",
+      image: "/images/silobas/silbas9.jpg",
+      gallery: makeGalleryWithPrimary(
+        {
+          src: "/images/silobas/silbas9.jpg",
+          alt: "Silobas yükleme körüğü ve dökme malzeme yükleme ekipmanı",
+        },
+        [
+          "/images/silobas/silbas1.jpg",
+          "/images/silobas/silbas2.webp",
+          "/images/silobas/silbas3.webp",
+          "/images/silobas/silbas4.webp",
+          "/images/silobas/silbas5.webp",
+          "/images/silobas/silbas6.jpg",
+          "/images/silobas/silbas7.jpg",
+          "/images/silobas/silbas8.jpg",
+          "/images/silobas/silbas10.jpg",
+          "/images/silobas/silbas11.jpg",
+          "/images/silobas/silbas12.jpg",
+          "/images/silobas/silbas13.jpg",
+          "/images/silobas/silbas14.jpg",
+          "/images/silobas/silbas15.jpg",
+          "/images/silobas/silbas16.jpg",
+        ],
+        "Silobas yükleme körüğü galeri görseli",
+      ),
       heroDescription:
         "Silobas yükleme körüğü, toz ve granül malzemelerin silobas, kamyon, vagon veya gemilere tozsuz ve güvenli şekilde aktarılmasını sağlayan sistemdir. Otomatik sensör mekanizması sayesinde dolum sürecini kontrol eder, çevresel toz emisyonunu en aza indirir.",
       overviewParagraphs: [
@@ -927,7 +1314,24 @@ const auxiliaryFlowSeed: CategorySeed = {
       title: "Distribütör",
       shortDescription:
         "Granül, toz ve pelet formundaki malzemelerin farklı proses hatlarına kontrollü yönlendirilmesi için distribütör sistemleri sunuyoruz.",
-      image: "/images/dist1.jpg",
+      image: "/images/distrubutor/dist1.jpg",
+      gallery: makeGalleryWithPrimary(
+        {
+          src: "/images/distrubutor/dist1.jpg",
+          alt: "Distribütör ve malzeme dağıtım ekipmanı",
+        },
+        [
+          "/images/distrubutor/dist2.jpg",
+          "/images/distrubutor/dist3.jpg",
+          "/images/distrubutor/dist4.jpg",
+          "/images/distrubutor/dist5.jpg",
+          "/images/distrubutor/dist6.jpg",
+          "/images/distrubutor/dist7.jpg",
+          "/images/distrubutor/dist8.jpg",
+          "/images/distrubutor/dist9.avif",
+        ],
+        "Distribütör galeri görseli",
+      ),
       heroDescription:
         "Distribütör sistemleri, üretim tesislerinde granül, toz veya pelet formundaki malzemelerin farklı proses hatlarına yönlendirilmesini sağlar. Tek veya çoklu giriş-çıkış yapısıyla silo, bunker, taşıma hattı ve torbalama sistemleri arasında yönlendirme işlevi görerek lojistik esnekliği artırır.",
       overviewParagraphs: [
@@ -962,7 +1366,27 @@ const auxiliaryFlowSeed: CategorySeed = {
       title: "Klapeler",
       shortDescription:
         "Dökme malzeme taşıma sistemlerinde ürün akışını yönlendirmek, durdurmak ve kontrol altında tutmak için klape çözümleri sunuyoruz.",
-      image: "/images/klape1.jpg",
+      image: "/images/klape/klap1.png",
+      gallery: makeGalleryWithPrimary(
+        {
+          src: "/images/klape/klap1.png",
+          alt: "Klape ve akış kontrol ekipmanları",
+        },
+        [
+          "/images/klape/klap2.jpg",
+          "/images/klape/klap3.jpg",
+          "/images/klape/klap4.jpg",
+          "/images/klape/klap5.jpg",
+          "/images/klape/klap6.jpg",
+          "/images/klape/klap7.jpg",
+          "/images/klape/klap8.jpg",
+          "/images/klape/klap9.jpg",
+          "/images/klape/klap10.jpg",
+          "/images/klape/klap11.jpg",
+          "/images/klape/klap12.png",
+        ],
+        "Klapeler galeri görseli",
+      ),
       heroDescription:
         "Klapeler, dökme malzeme taşıma sistemlerinde ürün akışını yönlendirmek, durdurmak veya kontrol altında tutmak için kullanılan yüksek performanslı kontrol ekipmanlarıdır. Özellikle silo, bunker, helezon ve konveyör sistemlerinde ürün geçişini yöneterek üretim hattının güvenli ve verimli çalışmasını sağlar.",
       overviewParagraphs: [
@@ -997,7 +1421,26 @@ const auxiliaryFlowSeed: CategorySeed = {
       title: "Sürgülü Kapaklar",
       shortDescription:
         "Silo, bunker, helezon ve konveyör çıkışlarında ürün akışını güvenli ve kontrollü yönetmek için sürgülü kapak çözümleri sunuyoruz.",
-      image: "/images/surgu1.webp",
+      image: "/images/surgu kapak/surgu7.jpg",
+      gallery: makeGalleryWithPrimary(
+        {
+          src: "/images/surgu kapak/surgu7.jpg",
+          alt: "Sürgülü kapak ve malzeme akış kontrol sistemi",
+        },
+        [
+          "/images/surgu kapak/surgu1.jpg",
+          "/images/surgu kapak/surgu2.jpg",
+          "/images/surgu kapak/surgu3.jpg",
+          "/images/surgu kapak/surgu4.jpg",
+          "/images/surgu kapak/surgu5.jpg",
+          "/images/surgu kapak/surgu6.jpg",
+          "/images/surgu kapak/surgu8.jpg",
+          "/images/surgu kapak/surgu9.jpg",
+          "/images/surgu kapak/surgu10.png",
+          "/images/surgu kapak/surgu11.png",
+        ],
+        "Sürgülü kapaklar galeri görseli",
+      ),
       heroDescription:
         "Sürgülü kapaklar, dökme malzeme taşıma ve depolama sistemlerinde ürün akışını durdurmak, başlatmak veya yönlendirmek için kullanılan etkili kontrol ekipmanlarıdır. Silo, bunker, helezon ve konveyör çıkışlarında kullanılarak üretim sürecinin güvenli ve kontrollü ilerlemesini sağlar.",
       overviewParagraphs: [
@@ -1032,7 +1475,15 @@ const auxiliaryFlowSeed: CategorySeed = {
       title: "Hava Kilidi",
       shortDescription:
         "Toz ve granül ürünlerin kontrollü geçişi, hava sızdırmazlığı ve hatlar arası dengeli ürün aktarımı için hava kilidi çözümleri sunuyoruz.",
-      image: "/images/hava2.png",
+      image: "/images/hava kilidi/havakil1.png",
+      gallery: makeGalleryWithPrimary(
+        {
+          src: "/images/hava kilidi/havakil1.png",
+          alt: "Hava kilidi ve dökme katı malzeme aktarım ekipmanı",
+        },
+        ["/images/hava kilidi/havakil2.jpg"],
+        "Hava kilidi galeri görseli",
+      ),
       heroDescription:
         "Hava kilidi sistemleri, toz ve granül malzemelerin kontrollü geçişini sağlarken hat içi basınç dengesini koruyan, ürün akışını güvenli ve kararlı şekilde yöneten yardımcı ekipmanlardır. Özellikle pnömatik taşıma, filtre altı boşaltma, silo çıkışları ve dozajlama hatlarında yaygın olarak kullanılır.",
       overviewParagraphs: [
@@ -1074,7 +1525,15 @@ const auxiliaryFlowSeed: CategorySeed = {
       title: "Blower",
       shortDescription:
         "Pnömatik taşıma ve hava destekli ürün transfer hatları için yüksek verimli blower sistemleri sunuyoruz.",
-      image: "/images/blower1.jpg",
+      image: "/images/blower/blower1.jpg",
+      gallery: makeGalleryWithPrimary(
+        {
+          src: "/images/blower/blower1.jpg",
+          alt: "Blower ve hava üfleme ekipmanı",
+        },
+        [],
+        "Blower galeri görseli",
+      ),
       heroDescription:
         "Blower sistemleri, pnömatik taşıma ve hava destekli ürün transfer uygulamalarında gerekli hava debisini ve basıncı sağlayan yardımcı ekipmanlardır. Toz ve granül malzemelerin hat boyunca verimli şekilde taşınmasına destek olur ve proses sürekliliğini artırır.",
       overviewParagraphs: [
@@ -1166,7 +1625,18 @@ const dosageSeed: CategorySeed = {
       title: "Mikro Dozajlama",
       shortDescription:
         "Premiks, vitamin, mineral ve katkı maddelerinin düşük miktarlarda yüksek hassasiyetle tartılması ve prosese kontrollü aktarılması için mikro dozajlama sistemleri sunuyoruz.",
-      image: "/images/mikro2.png",
+      image: "/images/dozaj mikro/mikro3.jpg",
+      gallery: makeGalleryWithPrimary(
+        {
+          src: "/images/dozaj mikro/mikro3.jpg",
+          alt: "Mikro dozajlama sistemi ve hassas besleme ekipmanı",
+        },
+        [
+          "/images/dozaj mikro/mikro1.jpg",
+          "/images/dozaj mikro/mikro2.jpg",
+        ],
+        "Mikro dozajlama galeri görseli",
+      ),
       heroDescription:
         "Mikro dozajlama, premiks, vitamin, mineral ve diğer katkı maddelerinin düşük miktarlarda ve farklı oranlarda yüksek hassasiyetle dozajlanmasını sağlayan bir sistemdir. Dozajlama helezonları aracılığıyla ürünler dozaj kantarına yönlendirilir. Genellikle merkezi otomasyonla senkronize çalışan bu sistem, modern yem, gübre, kimya ve gıda üretim hatlarının kritik bir parçasıdır.",
       overviewParagraphs: [
@@ -1206,7 +1676,15 @@ const dosageSeed: CategorySeed = {
       title: "Makro Dozajlama",
       shortDescription:
         "Mineral, tuz, DCP, mermer tozu ve benzeri hammaddelerin reçeteye uygun şekilde hassas tartımı ve kontrollü beslenmesi için makro dozajlama sistemleri sunuyoruz.",
-      image: "/images/makro1.png",
+      image: "/images/dozaj makro/makro1.png",
+      gallery: makeGalleryWithPrimary(
+        {
+          src: "/images/dozaj makro/makro1.png",
+          alt: "Makro dozajlama sistemi ve endüstriyel dozajlama ekipmanı",
+        },
+        [],
+        "Makro dozajlama galeri görseli",
+      ),
       heroDescription:
         "Makro dozajlama sistemleri, mineral, tuz, DCP, mermer tozu ve benzeri hammaddelerin üretim formülasyonlarına doğru oranlarda eklenmesini sağlar. Bu hammaddeler genellikle ana bileşenlerden daha düşük miktarda kullanılsa da doğru dozajlama ürün kalitesi açısından kritik öneme sahiptir.",
       overviewParagraphs: [
@@ -1249,7 +1727,19 @@ const dosageSeed: CategorySeed = {
       title: "Dozaj Bant Kantarı",
       shortDescription:
         "Sürekli akış halinde çalışan üretim hatlarında hammaddeyi hassas biçimde tartmak ve kontrollü beslemek için dozaj bant kantarı çözümleri sunuyoruz.",
-      image: "/images/dozaj1.jpg",
+      image: "/images/dozaj konveyor/dozaj1.jpg",
+      gallery: makeGalleryWithPrimary(
+        {
+          src: "/images/dozaj konveyor/dozaj1.jpg",
+          alt: "Dozaj bant kantarı ve kontrollü besleme sistemi",
+        },
+        [
+          "/images/dozaj konveyor/dozaj2.jpg",
+          "/images/dozaj konveyor/dozaj3.png",
+          "/images/dozaj konveyor/dozaj4.jpg",
+        ],
+        "Dozaj bant kantarı galeri görseli",
+      ),
       heroDescription:
         "Dozaj bant kantarları, üretim süreçlerinde hammadde akışını kontrol altında tutarak hassas tartım ve sürekli besleme imkanı sağlar. Sistem, hammaddeyi hareket halindeyken tartar ve belirlenen debide aktarım yapılmasına olanak tanır. Özellikle karmaşık formülasyonların bulunduğu otomatik üretim hatlarında yüksek doğruluk ve verimlilik sunar.",
       overviewParagraphs: [

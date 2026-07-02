@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Hero } from "./Hero";
 import {
@@ -6,6 +6,7 @@ import {
   siteContact,
   siteSocialSameAs,
 } from "../lib/site-contact";
+import { trText } from "../lib/tr-text";
 import {
   ServiceRelatedTechnicalContents,
   type TechnicalContentCard,
@@ -25,6 +26,12 @@ export type MachineLandingFaq = {
 export type MachineLandingLink = {
   label: string;
   href: string;
+};
+
+export type MachineLandingLinkSection = {
+  title: string;
+  description: string;
+  links: MachineLandingLink[];
 };
 
 export type MachineLandingCard = {
@@ -54,6 +61,7 @@ export type MachineSeoLandingPageProps = {
   technicalContents: TechnicalContentCard[];
   faqs: MachineLandingFaq[];
   ctaText: string;
+  applicationLinksSection?: MachineLandingLinkSection;
 };
 
 const siteName = "Pro Makina";
@@ -68,14 +76,14 @@ export function buildMachineLandingMetadata({
   canonical: string;
 }): Metadata {
   return {
-    title,
-    description,
+    title: trText(title),
+    description: trText(description),
     alternates: {
       canonical,
     },
     openGraph: {
-      title,
-      description,
+      title: trText(title),
+      description: trText(description),
       url: canonical,
       siteName,
       locale: "tr_TR",
@@ -83,8 +91,8 @@ export function buildMachineLandingMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      title,
-      description,
+      title: trText(title),
+      description: trText(description),
     },
   };
 }
@@ -92,12 +100,12 @@ export function buildMachineLandingMetadata({
 function ListCard({ title, items }: { title: string; items: string[] }) {
   return (
     <article className="rounded-[24px] border border-slate-200 bg-white p-5 shadow-sm">
-      <h2 className="text-xl font-semibold tracking-tight text-slate-950">{title}</h2>
+      <h2 className="text-xl font-semibold tracking-tight text-slate-950">{trText(title)}</h2>
       <ul className="mt-4 space-y-3 text-sm leading-7 text-slate-600 sm:text-base">
         {items.map((item) => (
           <li key={item} className="flex gap-3">
             <span className="mt-2 h-1.5 w-1.5 rounded-full bg-blue-600" />
-            <span>{item}</span>
+            <span>{trText(item)}</span>
           </li>
         ))}
       </ul>
@@ -115,11 +123,11 @@ function ParagraphListSection({
   return (
     <article>
       <h2 className="text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">
-        {title}
+        {trText(title)}
       </h2>
       <div className="mt-5 space-y-5 text-sm leading-8 text-slate-700 sm:text-base">
         {items.map((item) => (
-          <p key={item}>{item}</p>
+          <p key={item}>{trText(item)}</p>
         ))}
       </div>
     </article>
@@ -148,12 +156,15 @@ export function MachineSeoLandingPage({
   technicalContents,
   faqs,
   ctaText,
+  applicationLinksSection,
 }: MachineSeoLandingPageProps) {
   const quoteCtaTitle = "Projeniz iÃ§in teknik teklif alÄ±n";
   const quoteCtaDescription =
     "Kapasite, hammadde, nem oranÄ±, proses hedefi ve saha koÅŸullarÄ±na gÃ¶re size Ã¶zel makine ve tesis Ã§Ã¶zÃ¼mÃ¼ hazÄ±rlayalÄ±m.";
   const whatsappHref = createWhatsAppHref(
-    `Merhaba, Pro Makina web sitenizden ulaÅŸÄ±yorum. AÅŸaÄŸÄ±daki Ã¼rÃ¼n/hizmet iÃ§in teklif almak istiyorum: ${title}`,
+    trText(
+      `Merhaba, Pro Makina web sitenizden ulaÃ…Å¸Ã„Â±yorum. AÃ…Å¸aÃ„Å¸Ã„Â±daki ÃƒÂ¼rÃƒÂ¼n/hizmet iÃƒÂ§in teklif almak istiyorum: ${title}`,
+    ),
   );
   const organizationSchema = {
     "@context": "https://schema.org",
@@ -167,15 +178,15 @@ export function MachineSeoLandingPage({
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
-    name: productName,
-    description,
+    name: trText(productName),
     provider: {
       "@type": "Organization",
       name: siteName,
       url: "https://www.promakina.com.tr",
     },
-    serviceType: `${categoryName} - ${productName}`,
-    category: categoryName,
+    description: trText(description),
+    serviceType: `${trText(categoryName)} - ${trText(productName)}`,
+    category: trText(categoryName),
     areaServed: ["TÃ¼rkiye", "Avrupa", "Orta DoÄŸu", "Kuzey Afrika"],
     url: canonical,
   };
@@ -199,7 +210,7 @@ export function MachineSeoLandingPage({
       {
         "@type": "ListItem",
         position: 3,
-        name: categoryName,
+        name: trText(categoryName),
         item: `https://www.promakina.com.tr/makinalar-ekipman/${canonical
           .split("/makinalar-ekipman/")[1]
           ?.split("/")[0] ?? ""}`,
@@ -207,7 +218,7 @@ export function MachineSeoLandingPage({
       {
         "@type": "ListItem",
         position: 4,
-        name: productName,
+        name: trText(productName),
         item: canonical,
       },
     ],
@@ -259,9 +270,7 @@ export function MachineSeoLandingPage({
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/60 bg-white/12 px-6 text-sm font-semibold text-white transition hover:border-white hover:bg-white/18"
-        >
-          WhatsApp ile GÃ¶nder
-        </a>
+        >{trText("WhatsApp ile Gönder")}</a>
         <a
           href={siteContact.phoneHref}
           className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/60 bg-white/12 px-6 text-sm font-semibold text-white transition hover:border-white hover:bg-white/18"
@@ -273,14 +282,14 @@ export function MachineSeoLandingPage({
       <section className="section-space">
         <div className="site-container">
           <div className="rounded-[32px] border border-slate-200 bg-white px-6 py-8 shadow-[0_18px_50px_rgba(15,23,42,0.06)] sm:px-8 sm:py-10">
-            {introTitle ? (
+              {introTitle ? (
               <h2 className="text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">
-                {introTitle}
+                {trText(introTitle)}
               </h2>
             ) : null}
             <div className="mt-5 space-y-5 text-sm leading-8 text-slate-600 sm:text-base">
               {introParagraphs.map((paragraph) => (
-                <p key={paragraph}>{paragraph}</p>
+                <p key={paragraph}>{trText(paragraph)}</p>
               ))}
             </div>
             <div className="mt-6 flex flex-wrap gap-3">
@@ -290,7 +299,7 @@ export function MachineSeoLandingPage({
                   href={link.href}
                   className="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-blue-200 hover:bg-blue-50 hover:text-blue-700"
                 >
-                  {link.label}
+                  {trText(link.label)}
                 </Link>
               ))}
             </div>
@@ -313,7 +322,7 @@ export function MachineSeoLandingPage({
           <div className="overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-[0_18px_45px_rgba(15,23,42,0.06)]">
             <div className="border-b border-slate-200 px-6 py-6 sm:px-8">
               <h2 className="text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">
-                Teknik DeÄŸerlendirme Ã–zeti
+                Teknik Değerlendirme Özeti
               </h2>
             </div>
             <div className="overflow-x-auto">
@@ -323,25 +332,21 @@ export function MachineSeoLandingPage({
                     <th className="px-6 py-4 text-left text-sm font-semibold text-slate-950 sm:px-8">
                       Kriter
                     </th>
-                    <th className="px-6 py-4 text-left text-sm font-semibold text-slate-950 sm:px-8">
-                      AÃ§Ä±klama
-                    </th>
-                    <th className="px-6 py-4 text-left text-sm font-semibold text-slate-950 sm:px-8">
-                      Proje AÃ§Ä±sÄ±ndan Ã–nemi
-                    </th>
+                    <th className="px-6 py-4 text-left text-sm font-semibold text-slate-950 sm:px-8">{trText("Açıklama")}</th>
+                    <th className="px-6 py-4 text-left text-sm font-semibold text-slate-950 sm:px-8">{trText("Proje Açısından Önemi")}</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-slate-200 bg-white">
                   {summaryRows.map((row) => (
                     <tr key={row.criterion}>
                       <td className="px-6 py-4 text-sm font-semibold text-slate-950 sm:px-8">
-                        {row.criterion}
+                        {trText(row.criterion)}
                       </td>
                       <td className="px-6 py-4 text-sm leading-7 text-slate-600 sm:px-8">
-                        {row.description}
+                        {trText(row.description)}
                       </td>
                       <td className="px-6 py-4 text-sm leading-7 text-slate-600 sm:px-8">
-                        {row.importance}
+                        {trText(row.importance)}
                       </td>
                     </tr>
                   ))}
@@ -356,12 +361,12 @@ export function MachineSeoLandingPage({
         <div className="site-container">
           <div className="rounded-[32px] border border-slate-200 bg-slate-50 px-6 py-8 shadow-[0_18px_45px_rgba(15,23,42,0.06)] sm:px-8 sm:py-10 lg:px-12">
             <div className="content-stack">
-              <ParagraphListSection title="Teknik Ã–zellikler" items={technicalFeatures} />
-              <ParagraphListSection title="Kapasite ve TasarÄ±m Kriterleri" items={capacityCriteria} />
-              <ParagraphListSection title="Proses Ä°Ã§indeki Yeri" items={processRole} />
+              <ParagraphListSection title="Teknik Özellikler" items={technicalFeatures} />
+              <ParagraphListSection title="Kapasite ve Tasarım Kriterleri" items={capacityCriteria} />
+              <ParagraphListSection title="Proses İçindeki Yeri" items={processRole} />
               <ParagraphListSection title="Opsiyonel Ekipmanlar" items={optionalEquipment} />
               <ParagraphListSection title="Avantajlar" items={advantages} />
-              <ParagraphListSection title="Teklif Almak Ä°Ã§in Gerekli Bilgiler" items={quoteRequirements} />
+              <ParagraphListSection title="Teklif Almak İçin Gerekli Bilgiler" items={quoteRequirements} />
             </div>
           </div>
         </div>
@@ -371,10 +376,10 @@ export function MachineSeoLandingPage({
         <div className="site-container">
           <div className="rounded-[28px] border border-slate-200 bg-blue-700 px-6 py-8 text-white shadow-[0_24px_70px_rgba(29,78,216,0.22)] sm:px-8 sm:py-10">
             <h2 className="text-2xl font-semibold tracking-tight text-white sm:text-3xl">
-              {quoteCtaTitle}
+              {trText(quoteCtaTitle)}
             </h2>
             <p className="mt-4 max-w-3xl text-sm leading-8 text-white/88 sm:text-base">
-              {quoteCtaDescription}
+              {trText(quoteCtaDescription)}
             </p>
             <div className="mt-6 flex flex-col gap-3 sm:flex-row">
               <a
@@ -382,9 +387,7 @@ export function MachineSeoLandingPage({
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-white px-6 text-sm font-semibold text-blue-800 transition hover:bg-slate-100"
-              >
-                WhatsApp ile GÃ¶rÃ¼ÅŸ
-              </a>
+              >{trText("WhatsApp ile Görüş")}</a>
               <Link
                 href="/iletisim"
                 data-cta-event="quote_button_click"
@@ -406,13 +409,42 @@ export function MachineSeoLandingPage({
 
       <ServiceRelatedTechnicalContents items={technicalContents} />
 
+      {applicationLinksSection ? (
+        <section className="section-bottom-space">
+          <div className="site-container">
+            <div className="rounded-[32px] border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+              <div className="max-w-3xl">
+                <h2 className="text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">
+                  {trText(applicationLinksSection.title)}
+                </h2>
+                <p className="mt-4 text-sm leading-8 text-slate-600 sm:text-base">
+                  {trText(applicationLinksSection.description)}
+                </p>
+              </div>
+              <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+                {applicationLinksSection.links.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="group rounded-[24px] border border-slate-200 bg-slate-50 p-5 shadow-sm transition hover:-translate-y-1 hover:border-[#278DC0] hover:bg-white hover:shadow-[0_18px_45px_rgba(15,23,42,0.08)]"
+                  >
+                    <span className="block text-lg font-semibold text-slate-950">
+                      {trText(link.label)}
+                    </span>
+                    <span className="mt-4 inline-flex text-sm font-semibold text-[#278DC0] transition group-hover:text-[#154764]">{trText("İçeriği İncele")}</span>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+      ) : null}
+
       <section className="section-bottom-space">
         <div className="site-container">
           <div className="grid gap-6 lg:grid-cols-2">
             <div className="rounded-[28px] border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
-              <h2 className="text-2xl font-semibold tracking-tight text-slate-950">
-                Ä°lgili Makinalar ve Sayfalar
-              </h2>
+              <h2 className="text-2xl font-semibold tracking-tight text-slate-950">{trText("İlgili Makinalar ve Sayfalar")}</h2>
               <div className="mt-5 flex flex-wrap gap-3">
                 {relatedPages.map((link) => (
                   <Link
@@ -420,15 +452,13 @@ export function MachineSeoLandingPage({
                     href={link.href}
                     className="inline-flex rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-blue-200 hover:bg-blue-50 hover:text-blue-700"
                   >
-                    {link.label}
+                    {trText(link.label)}
                   </Link>
                 ))}
               </div>
             </div>
             <div className="rounded-[28px] border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
-              <h2 className="text-2xl font-semibold tracking-tight text-slate-950">
-                Ä°lgili Hizmetler
-              </h2>
+              <h2 className="text-2xl font-semibold tracking-tight text-slate-950">{trText("İlgili Hizmetler")}</h2>
               <div className="mt-5 flex flex-wrap gap-3">
                 {relatedServices.map((link) => (
                   <Link
@@ -436,7 +466,7 @@ export function MachineSeoLandingPage({
                     href={link.href}
                     className="inline-flex rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-blue-200 hover:bg-blue-50 hover:text-blue-700"
                   >
-                    {link.label}
+                    {trText(link.label)}
                   </Link>
                 ))}
               </div>
@@ -448,17 +478,15 @@ export function MachineSeoLandingPage({
       <section className="section-bottom-space">
         <div className="site-container">
           <div className="rounded-[32px] border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
-            <h2 className="text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">
-              SÄ±k Sorulan Sorular
-            </h2>
+            <h2 className="text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">{trText("Sık Sorulan Sorular")}</h2>
             <div className="mt-6 space-y-4">
               {faqs.map((faq) => (
                 <details key={faq.question} className="rounded-2xl border border-slate-200 px-5 py-4">
                   <summary className="cursor-pointer list-none text-lg font-semibold text-slate-950 [&::-webkit-details-marker]:hidden">
-                    {faq.question}
+                    {trText(faq.question)}
                   </summary>
                   <p className="mt-3 text-sm leading-7 text-slate-600 sm:text-base">
-                    {faq.answer}
+                    {trText(faq.answer)}
                   </p>
                 </details>
               ))}
@@ -471,12 +499,14 @@ export function MachineSeoLandingPage({
         <div className="site-container">
           <div className="rounded-[28px] bg-blue-700 px-6 py-8 text-white shadow-[0_24px_70px_rgba(29,78,216,0.28)] sm:px-8 sm:py-10">
             <h2 className="text-2xl font-semibold tracking-tight text-white sm:text-3xl">
-              {quoteCtaTitle}
+              {trText(quoteCtaTitle)}
             </h2>
             <p className="max-w-3xl text-base leading-8 text-white/90 sm:text-lg">
-              {quoteCtaDescription}
+              {trText(quoteCtaDescription)}
             </p>
-            <p className="mt-3 max-w-3xl text-sm leading-8 text-white/82 sm:text-base">{ctaText}</p>
+            <p className="mt-3 max-w-3xl text-sm leading-8 text-white/82 sm:text-base">
+              {trText(ctaText)}
+            </p>
             <div className="mt-6 flex flex-col gap-3 sm:flex-row">
               <Link
                 href="/iletisim"
@@ -491,9 +521,7 @@ export function MachineSeoLandingPage({
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/25 px-6 text-sm font-semibold text-white transition hover:bg-white/10"
-              >
-                WhatsApp ile GÃ¶rÃ¼ÅŸ
-              </a>
+              >{trText("WhatsApp ile Görüş")}</a>
               <a
                 href={siteContact.phoneHref}
                 className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/25 px-6 text-sm font-semibold text-white transition hover:bg-white/10"

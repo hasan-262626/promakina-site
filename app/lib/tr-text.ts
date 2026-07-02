@@ -1,4 +1,11 @@
 const exactReplacements: Array<[string, string]> = [
+  ["Kurutma Tamburu Kapasite Hesab1", "Kurutma Tamburu Kapasite Hesabı"],
+  ["Kurutma Tamburu ï¿½ap Boy Hesab1", "Kurutma Tamburu Çap Boy Hesabı"],
+  ["Tambur Kurutucu Nas1l ï¿½al1_1r?", "Tambur Kurutucu Nasıl Çalışır?"],
+  ["ï¿½amur Kurutma Tesisi Maliyeti", "Çamur Kurutma Tesisi Maliyeti"],
+  ["Kurutma Tamburu Tasar1m Kriterleri", "Kurutma Tamburu Tasarım Kriterleri"],
+  ["Kurutma Tamburunda Brï¿½lï¿½r Seï¿½imi", "Kurutma Tamburunda Brülör Seçimi"],
+  ["Kurutma Tamburunda Fan, Siklon ve Filtre Seï¿½imi", "Kurutma Tamburunda Fan, Siklon ve Filtre Seçimi"],
   ["ATIK SU Ã‡AMURU VE ARITMA Ã‡Ã–ZÃœMLERÄ°", "ATIK SU Ã‡AMURU Ã‡Ã–ZÃœMLERÄ°"],
   ["AtÄ±k su Ã§amuru ve arÄ±tma Ã§Ã¶zÃ¼mleri iÃ§in sunduÄŸumuz Ã§Ã¶zÃ¼mler", "AtÄ±k su Ã§amuru Ã§Ã¶zÃ¼mleri iÃ§in sunduÄŸumuz Ã§Ã¶zÃ¼mler"],
   ["AtÄ±k su Ã§amuru ve arÄ±tma Ã§Ã¶zÃ¼mlerinde kullanÄ±lan baÅŸlÄ±ca makine ve ekipmanlar", "AtÄ±k su Ã§amuru Ã§Ã¶zÃ¼mlerinde kullanÄ±lan baÅŸlÄ±ca makine ve ekipmanlar"],

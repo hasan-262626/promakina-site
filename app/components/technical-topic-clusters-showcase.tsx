@@ -43,10 +43,10 @@ export function TechnicalTopicClustersShowcase({ clusters }: Props) {
             Konu Başlığına Göre Teknik Makaleler
           </h2>
           <p className="mt-4 text-sm leading-8 text-slate-600 sm:text-base">
-            Pro Makina’nın gübre tesisleri, sıvı gübre hatları, kompost ve atık yönetimi,
-            kurutma tamburları, proses tankları, maden işleme, biyogaz, arıtma çamuru ve
-            dökme katı malzeme sistemleri için hazırladığı teknik blog, hesaplama, tasarım ve
-            ekipman seçim içeriklerine konu başlığına göre ulaşabilirsiniz.
+            Pro Makina&apos;nın gübre tesisleri, sıvı gübre hatları, kompost ve atık yönetimi,
+            kurutma tamburları, proses tankları, maden işleme, biyogaz, arıtma çamuru ve dökme
+            katı malzeme sistemleri için hazırladığı teknik blog, hesaplama, tasarım ve ekipman
+            seçim içeriklerine konu başlığına göre ulaşabilirsiniz.
           </p>
         </div>
 

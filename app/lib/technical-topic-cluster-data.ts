@@ -485,6 +485,57 @@ const technicalTopicClusters: TechnicalTopicCluster[] = [
   },
 ];
 
+const dryingClusterAdditionalArticles: TechnicalTopicClusterArticle[] = [
+  { title: "Silis Kumu Kurutma Tamburu", slug: "silis-kumu-kurutma-tamburu", type: "blog", priority: 11 },
+  { title: "Perlit Kurutma Tamburu", slug: "perlit-kurutma-tamburu", type: "blog", priority: 12 },
+  { title: "Kalsit Kurutma Tamburu", slug: "kalsit-kurutma-tamburu", type: "blog", priority: 13 },
+  { title: "Maden Kurutma Tamburu", slug: "maden-kurutma-tamburu", type: "blog", priority: 14 },
+  { title: "Gübre Kurutma Tamburu", slug: "gubre-kurutma-tamburu", type: "blog", priority: 15 },
+  { title: "Organomineral Gübre Kurutma Tamburu", slug: "organomineral-gubre-kurutma-tamburu", type: "blog", priority: 16 },
+  { title: "Kompost Kurutma Tamburu", slug: "kompost-kurutma-tamburu", type: "blog", priority: 17 },
+  { title: "Arıtma Çamuru Kurutma Tamburu", slug: "aritma-camuru-kurutma-tamburu", type: "blog", priority: 18 },
+  { title: "Biyogaz Digestat Kurutma Tamburu", slug: "biyogaz-digestat-kurutma-tamburu", type: "blog", priority: 19 },
+  { title: "Talaş Kurutma Tamburu", slug: "talas-kurutma-tamburu", type: "blog", priority: 20 },
+  { title: "Odun Yongası Kurutma Tamburu", slug: "odun-yongasi-kurutma-tamburu", type: "blog", priority: 21 },
+  { title: "Kedi Kumu Kurutma Tamburu", slug: "kedi-kumu-kurutma-tamburu", type: "blog", priority: 22 },
+  { title: "Bentonit Kurutma Tamburu", slug: "bentonit-kurutma-tamburu", type: "blog", priority: 23 },
+  { title: "Kuvars Kumu Kurutma Tamburu", slug: "kuvars-kumu-kurutma-tamburu", type: "blog", priority: 24 },
+  { title: "Feldspat Kurutma Tamburu", slug: "feldspat-kurutma-tamburu", type: "blog", priority: 25 },
+];
+
+const dryingCluster = technicalTopicClusters.find(
+  (cluster) => cluster.slug === "kurutma-tamburu-ve-kurutma-sistemleri",
+);
+
+if (dryingCluster) {
+  dryingCluster.title = "Kurutma Tamburu ve Endüstriyel Kurutma Sistemleri";
+  dryingCluster.description =
+    "Kurutma tamburu seçimi, kapasite hesabı, çap-boy oranı, brülör, fan, siklon, filtre ve rotary dryer design konularını; silis kumu, perlit, kalsit, maden, gübre, çamur, talaş ve kedi kumu prosesleriyle birlikte ele alan teknik içerik clusterı.";
+
+  const correctedTitles: Record<string, string> = {
+    "kurutma-tamburu-kapasite-hesabi": "Kurutma Tamburu Kapasite Hesabı",
+    "kurutma-tamburu-cap-boy-hesabi": "Kurutma Tamburu Çap Boy Hesabı",
+    "tambur-kurutucu-nasil-calisir": "Tambur Kurutucu Nasıl Çalışır?",
+    "camur-kurutma-tesisi-maliyeti": "Çamur Kurutma Tesisi Maliyeti",
+    "kurutma-tamburu-tasarim-kriterleri": "Kurutma Tamburu Tasarım Kriterleri",
+    "kurutma-tamburunda-brulor-secimi": "Kurutma Tamburunda Brülör Seçimi",
+    "kurutma-tamburunda-fan-siklon-filtre-secimi":
+      "Kurutma Tamburunda Fan, Siklon ve Filtre Seçimi",
+  };
+
+  dryingCluster.articles = dryingCluster.articles.map((article) => ({
+    ...article,
+    title: correctedTitles[article.slug] ?? article.title,
+  }));
+
+  const existingSlugsInCluster = new Set(dryingCluster.articles.map((article) => article.slug));
+  dryingClusterAdditionalArticles.forEach((article) => {
+    if (!existingSlugsInCluster.has(article.slug)) {
+      dryingCluster.articles.push(article);
+    }
+  });
+}
+
 const existingSlugs = new Set([
   "kurutma-tamburu-cap-boy-hesabi",
   "endustriyel-kurutma-sistemleri",

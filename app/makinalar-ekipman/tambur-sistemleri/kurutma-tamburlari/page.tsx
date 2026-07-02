@@ -1,5 +1,17 @@
-import { permanentRedirect } from "next/navigation";
+import {
+  MachineSeoLandingPage,
+  buildMachineLandingMetadata,
+} from "../../../components/machine-seo-landing-page";
+import { getWaveOneMachinePage } from "../../../lib/seo-wave-one-machine-data";
 
-export default function Page() {
-  permanentRedirect("/makinalar-ekipman/tambur-sistemleri/kurutma-tamburu");
+const pageData = getWaveOneMachinePage("kurutma-tamburlari");
+
+export const metadata = buildMachineLandingMetadata({
+  title: pageData.title,
+  description: pageData.description,
+  canonical: pageData.canonical,
+});
+
+export default function KurutmaTamburlariPage() {
+  return <MachineSeoLandingPage {...pageData} />;
 }

@@ -216,7 +216,7 @@ export const topicalBlogCategories: TopicalCategory[] = [
 function makeCommonLinks() {
   return [
     { label: "Hizmetler", href: "/hizmetler" },
-    { label: "Makinalar", href: "/makinalar" },
+    { label: "Makinalar & Ekipman", href: "/makinalar-ekipman" },
     { label: "Sektörler", href: "/sektorler" },
     { label: "İletişim", href: "/iletisim" },
     { label: "Blog", href: "/kutuphane/blog" },
