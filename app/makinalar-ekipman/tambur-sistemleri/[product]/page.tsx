@@ -64,10 +64,12 @@ export default async function DrumProductDetailPage({ params, searchParams }: Pa
     calculatorFamily: "drum",
     title: activeProduct.title,
   });
+
   const sidebarItems = drumProductPages.map((item) => ({
     label: item.title,
     href: `/makinalar-ekipman/tambur-sistemleri/${item.slug}`,
   }));
+
   const activeHref = `/makinalar-ekipman/tambur-sistemleri/${activeProduct.slug}`;
 
   return (
@@ -86,6 +88,9 @@ export default async function DrumProductDetailPage({ params, searchParams }: Pa
         highlightText={activeProduct.highlightText}
         specs={activeProduct.specs}
         applications={activeProduct.applications}
+        processFlow={activeProduct.processFlow}
+        relatedSectors={activeProduct.relatedSectors}
+        relatedMachines={activeProduct.relatedMachines}
         gallery={activeProduct.gallery}
         galleryLayout="grid"
         optionalEquipment={activeProduct.optionalEquipment}
@@ -93,7 +98,9 @@ export default async function DrumProductDetailPage({ params, searchParams }: Pa
         auxiliarySystems={auxiliarySystems}
         calculatorFamily="drum"
         openCalculatorOnLoad={resolvedSearchParams.tab === "kapasite-hesabi"}
-        ctaTitle={activeProduct.ctaTitle ?? "Tambur sistemleri için doğru makina çözümünü birlikte netleştirelim"}
+        ctaTitle={
+          activeProduct.ctaTitle ?? "Tambur sistemleri için doğru makina çözümünü birlikte netleştirelim"
+        }
         ctaText={
           activeProduct.ctaText ??
           "Granülatör tamburu, kurutma tamburu, soğutma tamburu, kaplama tamburu ve kompost tamburu için kapasite, proses ve saha verilerinize uygun teknik çözümü birlikte belirleyelim."

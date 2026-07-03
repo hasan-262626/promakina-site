@@ -481,8 +481,6 @@ export const sectorCategoryConfigs: Record<string, SectorCategoryConfig> = {
       { title: "Açık Sistem Çamur Kurutma", text: "Uygun saha şartlarında daha yalın akış mantığıyla açık sistem kurutma çözümleri kurguluyoruz." },
       { title: "Atık Su Çamurundan ATY Hazırlama", text: "Kurutulmuş çamurun alternatif yakıt senaryolarına hazırlanması için ürün stabilitesi, tane boyutu ve sevkiyat mantığını birlikte ele alıyoruz." },
       { title: "Atık Su Çamurundan Kompost Üretimi", text: "Uygun organik fraksiyon, analiz ve proses şartlarında çamurun kompost değerlendirme senaryolarını teknik olarak planlıyoruz." },
-      { title: "Çamur Granül / Pelet Hazırlama", text: "Kurutulmuş çamurun granül veya pelet formuna hazırlanmasına yönelik son ürün kurgusu, transfer ve stoklama çözümleri geliştiriyoruz." },
-      { title: "Atık Su Çamuru Bertaraf ve Değerlendirme Prosesleri", text: "Kurutulmuş veya stabilize edilmiş çamurun bertaraf, stoklama, sevkiyat veya geri kazanım alternatiflerini projeye göre şekillendiriyoruz." },
     ],
     machinesEyebrow: "Kullanılan Makinalar",
     machinesTitle: "Atık Su Çamuru Çözümleri İçin Kullanılan Makinalar",

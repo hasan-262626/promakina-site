@@ -335,6 +335,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: `${siteUrl}/makinalar-ekipman/tambur-sistemleri/karistirma-tamburu`,
+      lastModified,
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    {
+      url: `${siteUrl}/makinalar-ekipman/tambur-sistemleri/sterilizasyon-ve-stabilizasyon-tamburu`,
+      lastModified,
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    {
+      url: `${siteUrl}/makinalar-ekipman/tambur-sistemleri/ozel-tambur`,
+      lastModified,
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    {
       url: `${siteUrl}/makinalar-ekipman/eleme-ve-siniflandirma-sistemleri/trommel-elekler`,
       lastModified,
       changeFrequency: "weekly",
@@ -371,12 +389,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
-      url: `${siteUrl}/makinalar-ekipman/kiricilar-ve-parcalayicilar/bicakli-sekonder-kiricilar`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
       url: `${siteUrl}/makinalar-ekipman/kiricilar-ve-parcalayicilar/zincirli-kiricilar`,
       lastModified,
       changeFrequency: "weekly",
@@ -384,12 +396,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${siteUrl}/makinalar-ekipman/depolama-ve-besleme-sistemleri/bunker-ve-hazneler`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: `${siteUrl}/makinalar-ekipman/depolama-ve-besleme-sistemleri/surgulu-klapeler`,
       lastModified,
       changeFrequency: "weekly",
       priority: 0.8,
@@ -455,61 +461,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
-      url: `${siteUrl}/sektorler/atik-su-camuru-ve-aritma-cozumleri/camur-granul-pelet-hazirlama`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.7,
-    },
-    {
-      url: `${siteUrl}/sektorler/atik-su-camuru-ve-aritma-cozumleri/bertaraf-ve-degerlendirme-prosesleri`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.7,
-    },
-    {
       url: `${siteUrl}/sektorler/kompost-ve-organik-atik-tesisleri/evsel-organik-atiklar`,
       lastModified,
       changeFrequency: "weekly",
       priority: 0.7,
     },
     {
-      url: `${siteUrl}/sektorler/kompost-ve-organik-atik-tesisleri/hayvansal-ahir-atiklari`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.7,
-    },
-    {
-      url: `${siteUrl}/sektorler/kompost-ve-organik-atik-tesisleri/olgunlastirma-tamburlari`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.7,
-    },
-    {
-      url: `${siteUrl}/sektorler/kompost-ve-organik-atik-tesisleri/balik-atiklari`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.7,
-    },
-    {
       url: `${siteUrl}/sektorler/enerji-ve-biyogaz-sistemleri/tarimsal-atik-biyogaz-tesisleri`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.7,
-    },
-    {
-      url: `${siteUrl}/sektorler/enerji-ve-biyogaz-sistemleri/besleme-ve-transfer-hatlari`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.7,
-    },
-    {
-      url: `${siteUrl}/sektorler/geri-donusum-ve-atik-yonetimi/son-urun-hazirlama-cozumleri`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.7,
-    },
-    {
-      url: `${siteUrl}/sektorler/geri-donusum-ve-atik-yonetimi/shredder-sistemleri`,
       lastModified,
       changeFrequency: "weekly",
       priority: 0.7,

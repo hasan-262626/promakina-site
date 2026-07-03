@@ -224,7 +224,7 @@ export const crusherPublicProductRecords: CrusherPublicProductRecord[] = [
       "Bıçak koruma ve sensör grubu",
     ],
     relatedPages: [
-      { label: "Bıçaklı Sekonder Kırıcılar", href: "/makinalar-ekipman/kiricilar-ve-parcalayicilar/bicakli-sekonder-kiricilar" },
+      { label: "Kırıcılar ve Parçalayıcılar", href: "/makinalar-ekipman/kiricilar-ve-parcalayicilar" },
       { label: "Shredder Sistemleri", href: "/makinalar-ekipman/kiricilar-ve-parcalayicilar/shredder-sistemleri" },
       { label: "İletişim", href: "/iletisim" },
     ],

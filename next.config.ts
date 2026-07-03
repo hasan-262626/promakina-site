@@ -7,6 +7,191 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
+        source: "/sektorler/atik-su-camuru-ve-aritma-cozumleri/susuzlastirma-destek-sistemleri",
+        destination: "/sektorler/atik-su-camuru-ve-aritma-cozumleri",
+        permanent: true,
+      },
+      {
+        source: "/makinalar/toz-toplama-sistemleri/siklon-ayiricilar",
+        destination: "/makinalar-ekipman/toz-toplama-sistemleri/siklon-ayiricilar",
+        permanent: true,
+      },
+      {
+        source: "/programlar/vida-acim-olculeri",
+        destination: "/programlar",
+        permanent: true,
+      },
+      {
+        source: "/sektorler/enerji-ve-biyogaz-sistemleri/yardimci-akis-sistemleri",
+        destination: "/sektorler/enerji-ve-biyogaz-sistemleri",
+        permanent: true,
+      },
+      {
+        source: "/sektorler/enerji-ve-biyogaz-sistemleri/depolama-ve-dozajlama-cozumleri",
+        destination: "/sektorler/enerji-ve-biyogaz-sistemleri",
+        permanent: true,
+      },
+      {
+        source: "/makinalar-ekipman/eleme-ve-siniflandirma-sistemleri/siniflandirma-elekleri",
+        destination: "/makinalar-ekipman/eleme-ve-siniflandirma-sistemleri",
+        permanent: true,
+      },
+      {
+        source: "/sektorler/enerji-ve-biyogaz-sistemleri/besleme-ve-transfer-hatlari",
+        destination: "/sektorler/enerji-ve-biyogaz-sistemleri",
+        permanent: true,
+      },
+      {
+        source: "/makinalar-ekipman/paketleme-ve-dolum-sistemleri/ffs-torbalama",
+        destination: "/makinalar-ekipman/paketleme-ve-dolum-sistemleri",
+        permanent: true,
+      },
+      {
+        source: "/sektorler/geri-donusum-ve-atik-yonetimi/son-urun-hazirlama-cozumleri",
+        destination: "/sektorler/geri-donusum-ve-atik-yonetimi",
+        permanent: true,
+      },
+      {
+        source: "/makinalar/dozajlama-ve-tartim-sistemleri",
+        destination: "/makinalar-ekipman/dozajlama-sistemleri",
+        permanent: true,
+      },
+      {
+        source: "/makinalar/yardimci-ekipmanlar-ve-akis-sistemleri/klapeler",
+        destination: "/makinalar-ekipman/yardimci-ekipmanlar-ve-akis-sistemleri/klapeler",
+        permanent: true,
+      },
+      {
+        source: "/makinalar/kiricilar-ve-parcalayicilar/ceneli-kırıcılar",
+        destination: "/makinalar-ekipman/kiricilar-ve-parcalayicilar/ceneli-kiricilar",
+        permanent: true,
+      },
+      {
+        source: "/makinalar/tasima-ekipmanlari/kovali-elevatorler",
+        destination: "/makinalar-ekipman/tasima-ekipmanlari/zincirli-elevatorler",
+        permanent: true,
+      },
+      {
+        source: "/sektorler/kompost-ve-organik-atik-tesisleri/hayvansal-ahir-atiklari",
+        destination: "/sektorler/kompost-ve-organik-atik-tesisleri",
+        permanent: true,
+      },
+      {
+        source: "/sektorler/atik-su-camuru-ve-aritma-cozumleri/son-urun-yonetimi",
+        destination: "/sektorler/atik-su-camuru-ve-aritma-cozumleri",
+        permanent: true,
+      },
+      {
+        source: "/makinalar/yardimci-ekipmanlar-ve-akis-sistemleri/distributor",
+        destination: "/makinalar-ekipman/yardimci-ekipmanlar-ve-akis-sistemleri/distributor",
+        permanent: true,
+      },
+      {
+        source: "/makinalar-ekipman/kırıcılar-ve-parcalayicilar",
+        destination: "/makinalar-ekipman/kiricilar-ve-parcalayicilar",
+        permanent: true,
+      },
+      {
+        source: "/sektorler/kompost-ve-organik-atik-tesisleri/olgunlastirma-tamburlari",
+        destination: "/makinalar-ekipman/tambur-sistemleri/kompost-tamburu",
+        permanent: true,
+      },
+      {
+        source: "/makinalar-ekipman/kırıcılar-ve-parcalayicilar/bicakli-primer-kırıcılar",
+        destination: "/makinalar-ekipman/kiricilar-ve-parcalayicilar/bicakli-primer-kiricilar",
+        permanent: true,
+      },
+      {
+        source: "/makinalar-ekipman/kırıcılar-ve-parcalayicilar/bicakli-sekonder-kırıcılar",
+        destination: "/makinalar-ekipman/kiricilar-ve-parcalayicilar",
+        permanent: true,
+      },
+      {
+        source: "/makinalar-ekipman/kırıcılar-ve-parcalayicilar/cekicli-kırıcılar",
+        destination: "/makinalar-ekipman/kiricilar-ve-parcalayicilar/cekicli-kiricilar",
+        permanent: true,
+      },
+      {
+        source: "/makinalar-ekipman/kırıcılar-ve-parcalayicilar/ceneli-kırıcılar",
+        destination: "/makinalar-ekipman/kiricilar-ve-parcalayicilar/ceneli-kiricilar",
+        permanent: true,
+      },
+      {
+        source: "/makinalar-ekipman/kırıcılar-ve-parcalayicilar/dik-milli-kırıcılar",
+        destination: "/makinalar-ekipman/kiricilar-ve-parcalayicilar/dik-milli-kiricilar",
+        permanent: true,
+      },
+      {
+        source: "/makinalar-ekipman/kırıcılar-ve-parcalayicilar/shredder-sistemleri",
+        destination: "/makinalar-ekipman/kiricilar-ve-parcalayicilar/shredder-sistemleri",
+        permanent: true,
+      },
+      {
+        source: "/makinalar-ekipman/kırıcılar-ve-parcalayicilar/zincirli-kırıcılar",
+        destination: "/makinalar-ekipman/kiricilar-ve-parcalayicilar/zincirli-kiricilar",
+        permanent: true,
+      },
+      {
+        source: "/makinalar/dozajlama-sistemleri/dozaj-bant-kantari",
+        destination: "/makinalar-ekipman/dozajlama-sistemleri/dozaj-bant-kantari",
+        permanent: true,
+      },
+      {
+        source: "/makinalar/yardimci-ekipmanlar-ve-akis-sistemleri/yukleme-korugu",
+        destination: "/makinalar-ekipman/yardimci-ekipmanlar-ve-akis-sistemleri/yukleme-korugu",
+        permanent: true,
+      },
+      {
+        source: "/makinalar/dozajlama-sistemleri/makro-dozajlama",
+        destination: "/makinalar-ekipman/dozajlama-sistemleri/makro-dozajlama",
+        permanent: true,
+      },
+      {
+        source: "/makinalar/depolama-ve-besleme-sistemleri/bunker-ve-hazneler",
+        destination: "/makinalar-ekipman/depolama-ve-besleme-sistemleri/bunker-ve-hazneler",
+        permanent: true,
+      },
+      {
+        source: "/makinalar/kiricilar-ve-parcalayicilar/dik-milli-kırıcılar",
+        destination: "/makinalar-ekipman/kiricilar-ve-parcalayicilar/dik-milli-kiricilar",
+        permanent: true,
+      },
+      {
+        source: "/makinalar/kiricilar-ve-parcalayicilar/cekicli-kırıcılar",
+        destination: "/makinalar-ekipman/kiricilar-ve-parcalayicilar/cekicli-kiricilar",
+        permanent: true,
+      },
+      {
+        source: "/sektorler/geri-donusum-ve-atik-yonetimi/shredder-sistemleri",
+        destination: "/makinalar-ekipman/kiricilar-ve-parcalayicilar/shredder-sistemleri",
+        permanent: true,
+      },
+      {
+        source: "/makinalar/tasima-ekipmanlari/bant-konveyorler",
+        destination: "/makinalar-ekipman/tasima-ekipmanlari/bantli-konveyorler",
+        permanent: true,
+      },
+      {
+        source: "/makinalar-ekipman/depolama-ve-besleme-sistemleri/surgulu-klapeler",
+        destination: "/makinalar-ekipman/yardimci-ekipmanlar-ve-akis-sistemleri/surgulu-kapaklar",
+        permanent: true,
+      },
+      {
+        source: "/makinalar/dozajlama-sistemleri/mikro-dozajlama",
+        destination: "/makinalar-ekipman/dozajlama-sistemleri/mikro-dozajlama",
+        permanent: true,
+      },
+      {
+        source: "/makinalar-ekipman/kiricilar-ve-parcalayicilar/bicakli-sekonder-kiricilar",
+        destination: "/makinalar-ekipman/kiricilar-ve-parcalayicilar",
+        permanent: true,
+      },
+      {
+        source: "/sektorler/kompost-ve-organik-atik-tesisleri/balik-atiklari",
+        destination: "/sektorler/kompost-ve-organik-atik-tesisleri",
+        permanent: true,
+      },
+      {
         source: "/makinalar-ekipman/tasima-ekipmanlari/bant-konveyorler",
         destination: "/makinalar-ekipman/tasima-ekipmanlari/bantli-konveyorler",
         permanent: true,
@@ -72,18 +257,28 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: "/sektorler/enerji-ve-biyogaz-sistemleri/biyogaz-tesisleri",
+        destination: "/sektorler/enerji-ve-biyogaz-sistemleri",
+        permanent: true,
+      },
+      {
+        source: "/sektorler/madencilik-ve-mineral-isleme/kurutma-ve-sogutma-cozumleri",
+        destination: "/sektorler/madencilik-ve-mineral-isleme",
+        permanent: true,
+      },
+      {
+        source: "/sektorler/atik-su-camuru-ve-aritma-cozumleri/camur-granul-pelet-hazirlama",
+        destination: "/sektorler/atik-su-camuru-ve-aritma-cozumleri",
+        permanent: true,
+      },
+      {
+        source: "/sektorler/atik-su-camuru-ve-aritma-cozumleri/bertaraf-ve-degerlendirme-prosesleri",
+        destination: "/sektorler/atik-su-camuru-ve-aritma-cozumleri",
+        permanent: true,
+      },
+      {
         source: "/sektorler/atik-su-camuru-ve-aritma-cozumleri/camur-besleme",
         destination: "/sektorler/atik-su-camuru-ve-aritma-cozumleri/kapali-sistem-camur-kurutma",
-        permanent: true,
-      },
-      {
-        source: "/sektorler/atik-su-camuru-ve-aritma-cozumleri/susuzlastirma-destek-sistemleri",
-        destination: "/sektorler/atik-su-camuru-ve-aritma-cozumleri/camur-susuzlastirma-sistemleri",
-        permanent: true,
-      },
-      {
-        source: "/sektorler/atik-su-camuru-ve-aritma-cozumleri/son-urun-yonetimi",
-        destination: "/sektorler/atik-su-camuru-ve-aritma-cozumleri/bertaraf-ve-degerlendirme-prosesleri",
         permanent: true,
       },
     ];

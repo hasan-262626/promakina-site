@@ -344,7 +344,7 @@ const servicePages: Record<string, ServicePageRecord> = {
       { label: "Kompost Tesisi Kurulumu", href: "/hizmetler/kompost-tesisi-kurulumu" },
       { label: "Koku ve Toz Kontrol", href: "/makinalar-ekipman/toz-toplama-sistemleri" },
       { label: "Kapalı Sistem Çamur Kurutma", href: "/sektorler/atik-su-camuru-ve-aritma-cozumleri/kapali-sistem-camur-kurutma" },
-      { label: "Atık Su Çamuru Bertaraf ve Değerlendirme Prosesleri", href: "/sektorler/atik-su-camuru-ve-aritma-cozumleri/bertaraf-ve-degerlendirme-prosesleri" },
+      { label: "Atık Su Çamuru Bertaraf ve Değerlendirme Prosesleri", href: "/sektorler/atik-su-camuru-ve-aritma-cozumleri" },
     ],
   },
   "silis-kumu-kurutma-tesisi": {

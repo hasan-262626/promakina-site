@@ -503,7 +503,7 @@ export const machineCategoryLandingConfigs: Record<string, MachineCategoryLandin
       },
       {
         title: "Bıçaklı Sekonder Kırıcılar",
-        href: "/makinalar-ekipman/kiricilar-ve-parcalayicilar/bicakli-sekonder-kiricilar",
+        href: "/makinalar-ekipman/kiricilar-ve-parcalayicilar",
         description:
           "Daha dar ürün dağılımı ve nihai boyut kontrolü için kullanılan ikinci kademe çözüm.",
       },

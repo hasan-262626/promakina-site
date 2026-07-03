@@ -2,9 +2,16 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import ProjectDetailLandingPage from "../../components/project-detail-landing-page";
 import {
+  getProjectDetailContent,
+  getResolvedProjectSeoDescription,
+  getResolvedProjectSeoTitle,
+  resolveProjectImagePath,
+} from "../../lib/project-detail-content";
+import {
   getAllProjectSlugs,
   getProjectPageBySlug,
 } from "../../lib/project-pages-data";
+import { trText } from "../../lib/tr-text";
 
 type PageProps = {
   params: Promise<{
@@ -22,7 +29,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   if (!project) {
     return {
-      title: "Proje Detayi | Pro Makina",
+      title: "Proje Detayı | Pro Makina",
       alternates: {
         canonical: "https://www.promakina.com.tr/projeler",
       },
@@ -30,17 +37,31 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 
   const canonical = `https://www.promakina.com.tr/projeler/${project.slug}`;
+  const detail = getProjectDetailContent(project);
+  const title = getResolvedProjectSeoTitle(project, detail);
+  const description = getResolvedProjectSeoDescription(project, detail);
+  const image = resolveProjectImagePath(detail?.heroImage ?? project.image);
 
   return {
-    title: project.metadataTitle,
-    description: project.metadataDescription,
+    title,
+    description,
+    robots: {
+      index: true,
+      follow: true,
+    },
     alternates: {
       canonical,
     },
     openGraph: {
-      title: project.metadataTitle,
-      description: project.metadataDescription,
+      title,
+      description,
       url: canonical,
+      images: [
+        {
+          url: image,
+          alt: trText(detail?.heroImageAlt ?? project.imageAlt),
+        },
+      ],
     },
   };
 }
@@ -53,5 +74,13 @@ export default async function ProjectDetailPage({ params }: PageProps) {
     notFound();
   }
 
-  return <ProjectDetailLandingPage project={project} canonicalPath={`/projeler/${project.slug}`} />;
+  const detail = getProjectDetailContent(project);
+
+  return (
+    <ProjectDetailLandingPage
+      project={project}
+      detail={detail}
+      canonicalPath={`/projeler/${project.slug}`}
+    />
+  );
 }

@@ -45,6 +45,9 @@ type ProductDetailSystemProps = {
   highlightText: string;
   specs: string[];
   applications: string[];
+  processFlow?: string[];
+  relatedSectors?: Array<{ label: string; href: string }>;
+  relatedMachines?: Array<{ label: string; href: string }>;
   gallery: GalleryItem[];
   galleryLayout?: "carousel" | "grid";
   optionalEquipment: string[];
@@ -701,6 +704,9 @@ export function ProductDetailSystem({
   highlightText,
   specs,
   applications,
+  processFlow,
+  relatedSectors,
+  relatedMachines,
   gallery,
   galleryLayout = "carousel",
   optionalEquipment,
@@ -813,6 +819,65 @@ export function ProductDetailSystem({
                   </div>
                 </div>
               </section>
+
+              {processFlow?.length || relatedSectors?.length ? (
+                <section>
+                  <div className="grid gap-6 lg:grid-cols-2">
+                    {processFlow?.length ? <DetailListCard title="Proses Akışı" items={processFlow} /> : null}
+
+                    {relatedSectors?.length ? (
+                      <div className="rounded-[28px] border border-slate-200 bg-white p-6 shadow-[0_16px_46px_rgba(15,23,42,0.05)] sm:p-7">
+                        <h2 className="text-2xl font-semibold tracking-tight text-slate-950">
+                          İlgili Sektörler
+                        </h2>
+                        <div className="mt-5 space-y-3">
+                          {relatedSectors.map((sector) => (
+                            <Link
+                              key={sector.href}
+                              href={sector.href}
+                              className="flex items-center justify-between gap-3 rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm font-semibold text-slate-900 transition hover:border-[#278DC0]/30 hover:bg-white hover:text-[#154764]"
+                            >
+                              <span>{sector.label}</span>
+                              <span aria-hidden="true" className="text-slate-400">
+                                →
+                              </span>
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    ) : null}
+                  </div>
+                </section>
+              ) : null}
+
+              {relatedMachines?.length ? (
+                <section>
+                  <div className="rounded-[30px] border border-slate-200 bg-white p-6 shadow-[0_18px_50px_rgba(15,23,42,0.05)] sm:p-7">
+                    <h2 className="text-3xl font-semibold tracking-tight text-slate-950">
+                      İlgili Makinalar
+                    </h2>
+                    <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+                      {relatedMachines.map((machine) => (
+                        <Link
+                          key={machine.href}
+                          href={machine.href}
+                          className="group rounded-[24px] border border-slate-200 bg-slate-50 p-5 shadow-sm transition hover:-translate-y-1 hover:border-[#278DC0]/25 hover:bg-white hover:shadow-[0_18px_45px_rgba(15,23,42,0.08)]"
+                        >
+                          <span className="text-base font-semibold text-slate-950 transition group-hover:text-[#154764]">
+                            {machine.label}
+                          </span>
+                          <span className="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-[#154764] transition group-hover:text-[#278DC0]">
+                            İncele
+                            <span aria-hidden="true" className="transition group-hover:translate-x-1">
+                              →
+                            </span>
+                          </span>
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                </section>
+              ) : null}
 
               <section id="galeri" className="scroll-mt-[210px] xl:scroll-mt-[220px]">
                 <div className="rounded-[30px] border border-slate-200 bg-white p-6 shadow-[0_18px_50px_rgba(15,23,42,0.05)] sm:p-7">

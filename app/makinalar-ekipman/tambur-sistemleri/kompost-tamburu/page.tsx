@@ -81,18 +81,24 @@ export default function Page() {
         activeSidebarHref={canonical.replace("https://www.promakina.com.tr", "")}
         title={activeProduct.title}
         heroDescription={activeProduct.heroDescription}
-        heroImage="/images/kurutmatam2.jpg"
-        mainImage={activeProduct.gallery[0]?.src ?? "/images/kurutmatam2.jpg"}
+        heroImage={activeProduct.mainImage}
+        mainImage={activeProduct.mainImage}
+        mainImageAlt={activeProduct.mainImageAlt}
         overviewParagraphs={activeProduct.overviewParagraphs}
         highlightText={activeProduct.highlightText}
         specs={activeProduct.specs}
         applications={activeProduct.applications}
+        processFlow={activeProduct.processFlow}
+        relatedSectors={activeProduct.relatedSectors}
+        relatedMachines={activeProduct.relatedMachines}
         gallery={activeProduct.gallery}
+        galleryLayout="grid"
         optionalEquipment={activeProduct.optionalEquipment}
         spareParts={activeProduct.spareParts}
         auxiliarySystems={auxiliarySystems}
         faqItems={faqItems}
         calculatorFamily="drum"
+        ctaTitle={activeProduct.ctaTitle}
         ctaText={
           activeProduct.ctaText ??
           "Kompost tamburu için kapasite, proses ve saha verilerinize uygun teknik çözümü birlikte belirleyelim."

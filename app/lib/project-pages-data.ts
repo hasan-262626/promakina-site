@@ -649,7 +649,7 @@ export const projectPages: ProjectPageData[] = [
       },
       {
         label: "Atık Su Çamuru Bertaraf ve Değerlendirme Prosesleri",
-        href: "/sektorler/atik-su-camuru-ve-aritma-cozumleri/bertaraf-ve-degerlendirme-prosesleri",
+        href: "/sektorler/atik-su-camuru-ve-aritma-cozumleri",
       },
       {
         label: "Atık Su Çamuru Çözümleri",
