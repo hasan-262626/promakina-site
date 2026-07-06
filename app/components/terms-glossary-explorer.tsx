@@ -10,7 +10,7 @@ import type {
 
 type Props = {
   sections: Array<
-    GlossarySection & {
+    Omit<GlossarySection, "groups"> & {
       groups: Array<{
         title: string;
         description: string;

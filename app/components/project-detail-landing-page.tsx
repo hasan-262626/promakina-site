@@ -5,6 +5,7 @@ import { ProjectPageData } from "../lib/project-pages-data";
 import {
   getResolvedProjectTitle,
   ProjectDetailAction,
+  ProjectDetailCard,
   ProjectDetailContent,
   resolveProjectImagePath,
 } from "../lib/project-detail-content";
@@ -63,19 +64,19 @@ export default function ProjectDetailLandingPage({
     detail?.overviewParagraphs ?? [trText(project.heroDescription), ...project.projectScope.slice(0, 1).map(trText)];
   const overviewImage = resolveProjectImagePath(detail?.overviewImage ?? project.image);
   const overviewImageAlt = detail?.overviewImageAlt ?? trText(project.imageAlt);
-  const scopeCards =
+  const scopeCards: ProjectDetailCard[] =
     detail?.scopeCards ??
     project.projectScope.map((item) => ({
       title: trText(item),
       description: "Projede değerlendirilen temel kapsam başlıklarından biridir.",
     }));
-  const processSteps =
+  const processSteps: ProjectDetailCard[] =
     detail?.processSteps ??
     project.processFlow.map((item) => ({
       title: trText(item),
       description: "Bu adım, proje akışının kritik operasyon halkalarından birini temsil eder.",
     }));
-  const equipmentCards =
+  const equipmentCards: ProjectDetailCard[] =
     detail?.equipmentCards ??
     project.machineGroups.map((item) => ({
       title: trText(item),

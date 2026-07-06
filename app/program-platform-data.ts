@@ -39,7 +39,15 @@ export type ProgramShellDiagram =
   | "shaft"
   | "sheet"
   | "filter"
-  | "tank";
+  | "tank"
+  | "tolerance"
+  | "keyway"
+  | "coupling"
+  | "pulley"
+  | "rack"
+  | "circlip"
+  | "machining"
+  | "chain";
 
 export type ProgramShellConfig = {
   title: string;

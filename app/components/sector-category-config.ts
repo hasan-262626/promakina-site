@@ -21,7 +21,7 @@ export type SectorCategoryConfig = {
   solutionsEyebrow: string;
   solutionsTitle: string;
   solutionsDescription: string;
-  solutionCards: SectorCategoryInfoCard[];
+  solutionCards: readonly SectorCategoryInfoCard[];
   machinesEyebrow: string;
   machinesTitle: string;
   machinesDescription: string;

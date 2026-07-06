@@ -1298,7 +1298,7 @@ function buildFanOutput(values: ProgramModalValues): ProgramModalOutput {
   const efficiency = Math.max(parseNumber(values.fanEfficiencyPercent) || 65, 35) / 100;
   const fanPowerKw = airFlowM3H > 0 ? (airFlowM3H * pressurePa) / (3600 * 1000 * efficiency) : 0;
   const suggestedFanType =
-    values.gasTemp > 180
+    parseNumber(values.gasTemp) > 180
       ? "Sıcak gaz fanı"
       : pressurePa > 3000
         ? "Yüksek basınçlı radyal fan"

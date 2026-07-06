@@ -234,7 +234,7 @@ export function ElevatorSelectionCalculator() {
     const spacingMm = getBucketSpacing(selectedBucket, spacingMode, num(manualSpacing));
     const speedValue = recommendedElevatorType === "Bantli elevatör" && beltSpeedMode === "Manuel girilsin" ? num(manualBeltSpeed) : (speedRange.min + speedRange.max) / 2;
     const suitability = evaluateBucketSelection({ bucket: selectedBucket, fillRatio: fillRatioValue, spacingMm, designVolumetricCapacity: volumetricCapacity, speed: speedValue });
-    const heavyDuty = getSystemClass({ designCapacity, density: densityValue, grain, moisture, workingTime }) === "Agir hizmet";
+    const heavyDuty = getSystemClass({ designCapacity, density: densityValue, grain, moisture, workingTime }) === "Ağır hizmet";
     const motorPower = estimateMotorPower({ designCapacity, liftHeight: Math.max(num(liftHeight), 1), density: densityValue, elevatorType: recommendedElevatorType, heavyDuty });
     const chainPitch = chainPitchMode === "Manuel giris" ? `${num(manualChainPitch)} mm` : getChainPitchRecommendation(selectedBucket.width, heavyDuty);
     const chosenBeltType = temperatureBand === "Sicak" || temperatureBand === "Çok sicak" ? "Isiya dayan?ml? bant" : usage === "Gida ortami" ? "Gida tipi bant" : usage === "Kimyasal ortam" ? "Kimyasala dayan?ml? bant" : beltType;

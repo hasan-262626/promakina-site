@@ -4170,22 +4170,6 @@ const programConfigMap: Record<string, () => ProgramModalConfig> = {
     buildRatioConfig("triger-disli-hesabi", "Triger Dişli Hesabı", "Triger / kasnak"),
   "sonsuz-vida-disli-hesabi": () =>
     buildRatioConfig("sonsuz-vida-disli-hesabi", "Sonsuz Vida Dişli Hesabı", "Sonsuz vida / dişli"),
-  "donusum-araclari": () =>
-    createToolConfig({
-      id: "donusum-araclari",
-      title: "Dönüşüm Araçları",
-      categoryLabel: "Dönüşüm Araçları",
-      submitLabel: "Dönüştür",
-      intro:
-        "Seçilen dönüşüm tipine göre yalnızca gerekli alanları gösteren sade mühendislik dönüşüm modülüdür.",
-      initialValues: {
-        conversionType: "",
-      },
-      fields: buildConversionFields,
-      validate: validateConversion,
-      buildComments: buildConversionComments,
-      calculate: calculateConversion,
-    }),
   "ahir-atigi-hesaplama": buildBarnWasteConfig,
   "evsel-atik-cop-hesaplama": buildMunicipalWasteConfig,
   "atik-su-ve-aritma-camuru-hesaplama": buildSludgeConfig,

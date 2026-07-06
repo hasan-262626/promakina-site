@@ -29,17 +29,14 @@ type ProgramsPageSectionsProps = {
 };
 
 function ProgramCard({ tool }: { tool: ProgramToolCard }) {
-  const CardTag = tool.active ? Link : "div";
+  const cardClassName = `group block overflow-hidden rounded-[28px] border bg-white shadow-sm transition duration-300 ${
+    tool.active
+      ? "border-slate-200 hover:-translate-y-1.5 hover:border-[#278DC0]/30 hover:shadow-[0_28px_70px_rgba(15,23,42,0.10)]"
+      : "border-slate-200/90"
+  }`;
 
-  return (
-    <CardTag
-      {...(tool.active ? { href: tool.href } : {})}
-      className={`group block overflow-hidden rounded-[28px] border bg-white shadow-sm transition duration-300 ${
-        tool.active
-          ? "border-slate-200 hover:-translate-y-1.5 hover:border-[#278DC0]/30 hover:shadow-[0_28px_70px_rgba(15,23,42,0.10)]"
-          : "border-slate-200/90"
-      }`}
-    >
+  const cardContent = (
+    <>
       <div className="relative aspect-[4/3] overflow-hidden bg-slate-100">
         <Image
           src={tool.image}
@@ -95,7 +92,15 @@ function ProgramCard({ tool }: { tool: ProgramToolCard }) {
           ))}
         </div>
       </div>
-    </CardTag>
+    </>
+  );
+
+  return tool.active ? (
+    <Link href={tool.href} className={cardClassName}>
+      {cardContent}
+    </Link>
+  ) : (
+    <div className={cardClassName}>{cardContent}</div>
   );
 }
 

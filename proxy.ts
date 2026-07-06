@@ -28,11 +28,7 @@ const LEGACY_PATH_REDIRECTS: Record<string, string> = {
     "/makinalar-ekipman/kiricilar-ve-parcalayicilar",
   "/makinalar-ekipman/kırıcılar-ve-parcalayicilar":
     "/makinalar-ekipman/kiricilar-ve-parcalayicilar",
-  "/makinalar-ekipman/kırıcılar-ve-parcalayicilar":
-    "/makinalar-ekipman/kiricilar-ve-parcalayicilar",
   "/makinalar-ekipman/kÄ±rÄ±cÄ±lar-ve-parcalayicilar/bicakli-primer-kÄ±rÄ±cÄ±lar":
-    "/makinalar-ekipman/kiricilar-ve-parcalayicilar/bicakli-primer-kiricilar",
-  "/makinalar-ekipman/kırıcılar-ve-parcalayicilar/bicakli-primer-kırıcılar":
     "/makinalar-ekipman/kiricilar-ve-parcalayicilar/bicakli-primer-kiricilar",
   "/makinalar-ekipman/kırıcılar-ve-parcalayicilar/bicakli-primer-kırıcılar":
     "/makinalar-ekipman/kiricilar-ve-parcalayicilar/bicakli-primer-kiricilar",
@@ -40,11 +36,7 @@ const LEGACY_PATH_REDIRECTS: Record<string, string> = {
     "/makinalar-ekipman/kiricilar-ve-parcalayicilar/bicakli-sekonder-kiricilar",
   "/makinalar-ekipman/kırıcılar-ve-parcalayicilar/bicakli-sekonder-kırıcılar":
     "/makinalar-ekipman/kiricilar-ve-parcalayicilar/bicakli-sekonder-kiricilar",
-  "/makinalar-ekipman/kırıcılar-ve-parcalayicilar/bicakli-sekonder-kırıcılar":
-    "/makinalar-ekipman/kiricilar-ve-parcalayicilar/bicakli-sekonder-kiricilar",
   "/makinalar-ekipman/kÄ±rÄ±cÄ±lar-ve-parcalayicilar/cekicli-kÄ±rÄ±cÄ±lar":
-    "/makinalar-ekipman/kiricilar-ve-parcalayicilar/cekicli-kiricilar",
-  "/makinalar-ekipman/kırıcılar-ve-parcalayicilar/cekicli-kırıcılar":
     "/makinalar-ekipman/kiricilar-ve-parcalayicilar/cekicli-kiricilar",
   "/makinalar-ekipman/kırıcılar-ve-parcalayicilar/cekicli-kırıcılar":
     "/makinalar-ekipman/kiricilar-ve-parcalayicilar/cekicli-kiricilar",
@@ -52,11 +44,7 @@ const LEGACY_PATH_REDIRECTS: Record<string, string> = {
     "/makinalar-ekipman/kiricilar-ve-parcalayicilar/ceneli-kiricilar",
   "/makinalar-ekipman/kırıcılar-ve-parcalayicilar/ceneli-kırıcılar":
     "/makinalar-ekipman/kiricilar-ve-parcalayicilar/ceneli-kiricilar",
-  "/makinalar-ekipman/kırıcılar-ve-parcalayicilar/ceneli-kırıcılar":
-    "/makinalar-ekipman/kiricilar-ve-parcalayicilar/ceneli-kiricilar",
   "/makinalar-ekipman/kÄ±rÄ±cÄ±lar-ve-parcalayicilar/dik-milli-kÄ±rÄ±cÄ±lar":
-    "/makinalar-ekipman/kiricilar-ve-parcalayicilar/dik-milli-kiricilar",
-  "/makinalar-ekipman/kırıcılar-ve-parcalayicilar/dik-milli-kırıcılar":
     "/makinalar-ekipman/kiricilar-ve-parcalayicilar/dik-milli-kiricilar",
   "/makinalar-ekipman/kırıcılar-ve-parcalayicilar/dik-milli-kırıcılar":
     "/makinalar-ekipman/kiricilar-ve-parcalayicilar/dik-milli-kiricilar",
@@ -64,11 +52,7 @@ const LEGACY_PATH_REDIRECTS: Record<string, string> = {
     "/makinalar-ekipman/kiricilar-ve-parcalayicilar/shredder-sistemleri",
   "/makinalar-ekipman/kırıcılar-ve-parcalayicilar/shredder-sistemleri":
     "/makinalar-ekipman/kiricilar-ve-parcalayicilar/shredder-sistemleri",
-  "/makinalar-ekipman/kırıcılar-ve-parcalayicilar/shredder-sistemleri":
-    "/makinalar-ekipman/kiricilar-ve-parcalayicilar/shredder-sistemleri",
   "/makinalar-ekipman/kÄ±rÄ±cÄ±lar-ve-parcalayicilar/zincirli-kÄ±rÄ±cÄ±lar":
-    "/makinalar-ekipman/kiricilar-ve-parcalayicilar/zincirli-kiricilar",
-  "/makinalar-ekipman/kırıcılar-ve-parcalayicilar/zincirli-kırıcılar":
     "/makinalar-ekipman/kiricilar-ve-parcalayicilar/zincirli-kiricilar",
   "/makinalar-ekipman/kırıcılar-ve-parcalayicilar/zincirli-kırıcılar":
     "/makinalar-ekipman/kiricilar-ve-parcalayicilar/zincirli-kiricilar",

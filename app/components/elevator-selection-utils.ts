@@ -131,13 +131,13 @@ export function evaluateBucketSelection(params: {
   const ratio = hourlyVolume / Math.max(params.designVolumetricCapacity, 0.001);
 
   let statusLabel = "✔ Uygun";
-  let statusTone = "info" as const;
+  let statusTone: "info" | "warning" | "critical" = "info";
   if (ratio < 1) {
     statusLabel = "✖ Yetersiz";
-    statusTone = "critical" as const;
+    statusTone = "critical";
   } else if (ratio < 1.15) {
     statusLabel = "⚠ Sınırda";
-    statusTone = "warning" as const;
+    statusTone = "warning";
   }
 
   return {

@@ -1791,6 +1791,6 @@ export const sectorTechnicalBlogGroups = sectorGroups.map((group) => ({
         readingTime: article.readingTime ?? DEFAULT_READING_TIME,
       };
     })
-    .filter(Boolean),
+    .filter((item): item is NonNullable<typeof item> => item !== null),
 }));
 
