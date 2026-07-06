@@ -17,7 +17,7 @@ const relatedServices = [
   },
   {
     title: "Makinalar",
-    href: "/makinalar",
+    href: "/makinalar-ekipman",
     description:
       "Granül gübre üretim hattında görev alan tambur sistemleri, konveyörler ve proses ekipmanlarını toplu görün.",
   },

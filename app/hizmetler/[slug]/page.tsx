@@ -2277,7 +2277,7 @@ const premiumServiceConfigs: Record<string, PremiumServiceConfig> = {
     introTitle: "Endüstriyel Proses ve Makine Yatırımları İçin Teknik Danışmanlık",
     introDescription:
       "Pro Makina; yeni tesis yatırımı, mevcut hat iyileştirme, makine seçimi, kapasite planlama ve proses değerlendirme süreçlerinde teknik danışmanlık hizmeti sunar. Amaç, yatırım öncesinde doğru kararları almak ve sahada çalışabilir bir proses yapısı oluşturmaktır.",
-    image: "/images/hizmetler1.png",
+    image: "/images/01-genel/hizmetler1.png",
     imageAlt: "Endüstriyel proses ve makine yatırımları için teknik danışmanlık",
     approachCards: [
       {
@@ -2639,7 +2639,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
   }
 
   const heroImage = isTurnkey
-    ? "/images/anahtar1.jpg"
+    ? "/images/01-genel/fabrika1.jpg"
     : isProcessDesign
       ? "/images/01-genel/proses1.png"
       : service.image;

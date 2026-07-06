@@ -116,7 +116,7 @@ export default async function MachineCategoryPage({ params }: PageProps) {
                     <Image
                       src={product.gallery[0]?.src ?? category.heroImage}
                       alt={
-                        product.gallery[0]?.src === "/images/reaktor1.avif"
+                        product.gallery[0]?.src === "/images/siyah beyaz/tank 1.jpg"
                           ? "Pro Makina reaktör ve tank sistemleri"
                           : product.title
                       }

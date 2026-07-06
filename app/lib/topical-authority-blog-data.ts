@@ -561,7 +561,7 @@ export const topicalBlogArticles: TopicalArticle[] = [
     ],
     relatedServices: [
       { title: "Gübre Tesisi Kurulumu", description: "Hizmet sayfasında tesis yaklaşımımızı görün.", href: "/hizmetler/gubre-tesisi-kurulumu" },
-      { title: "Makinalar", description: "Ana makina ailelerini kategori bazında inceleyin.", href: "/makinalar" },
+      { title: "Makinalar", description: "Ana makina ailelerini kategori bazında inceleyin.", href: "/makinalar-ekipman" },
     ],
     nextContent: { title: "Gübre Üretim Hattı Nasıl Kurulur?", description: "Kurulumu daha detaylı adım adım değerlendirin.", href: "/kutuphane/blog/gubre-uretim-hatti-nasil-kurulur" },
     ctaText: "Gübre tesisi kurulumu, kapasite planı ve anahtar teslim mühendislik desteği için Pro Makina ile iletişime geçebilirsiniz.",

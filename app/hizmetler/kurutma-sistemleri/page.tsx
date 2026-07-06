@@ -111,7 +111,7 @@ export default function Page() {
       title={title}
       description={description}
       canonical={canonical}
-      image="/images/kurutmatam2.jpg"
+      image="/images/tambur kurutma/tamkurutma1.jpg"
       serviceName="Kurutma Sistemleri"
       introTitle="Kurutma Sistemleri Nedir?"
       introParagraphs={[

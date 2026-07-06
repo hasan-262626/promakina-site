@@ -21,22 +21,22 @@ type TransportProduct = {
 
 const transportGallery = [
   {
-    src: "/images/konveyor2.jpg",
+    src: "/images/konveyor/konvey2.jpg",
     alt: "Taşıma ekipmanları genel görünüm",
     caption: "Genel sistem görünümü",
   },
   {
-    src: "/images/konveyor1.jpg",
+    src: "/images/konveyor/konvey1.jpeg",
     alt: "Konveyör imalat detayı",
     caption: "İmalat ve şase detayı",
   },
   {
-    src: "/images/konveyor2.jpg",
+    src: "/images/konveyor/konvey2.jpg",
     alt: "Taşıma hattı saha kurgusu",
     caption: "Hat yerleşimi ve transfer kurgusu",
   },
   {
-    src: "/images/konveyor1.jpg",
+    src: "/images/konveyor/konvey1.jpeg",
     alt: "Tahrik ve destek elemanları",
     caption: "Tahrik ve destek ekipmanları",
   },
@@ -293,7 +293,7 @@ export default function TransportEquipmentExperience() {
       categoryHref="/makinalar-ekipman/tasima-ekipmanlari"
       title={activeProduct.title}
       heroDescription={activeProduct.heroDescription}
-      heroImage="/images/konveyor2.jpg"
+      heroImage="/images/konveyor/konvey2.jpg"
       overviewParagraphs={activeProduct.overviewParagraphs}
       highlightText={activeProduct.highlightText}
       specs={activeProduct.specs}

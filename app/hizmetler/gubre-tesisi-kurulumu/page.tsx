@@ -157,7 +157,7 @@ const technicalContents = [
 
 const keyLinks = [
   { label: "Hizmetler", href: "/hizmetler" },
-  { label: "Makinalar", href: "/makinalar" },
+  { label: "Makinalar", href: "/makinalar-ekipman" },
   { label: "Sektörler", href: "/sektorler" },
   { label: "İletişim", href: "/iletisim" },
 ];
@@ -168,7 +168,7 @@ export default function Page() {
       title="Gübre Tesisi Kurulumu ve Anahtar Teslim Çözümler"
       description="Organomineral, granül ve sıvı gübre üretim tesisleri için anahtar teslim mühendislik ve makine çözümleri sunuyoruz."
       canonical={canonical}
-      image="/images/hizmetler1.png"
+      image="/images/01-genel/hizmetler1.png"
       serviceName="Gübre Tesisi Kurulumu"
       introTitle="Türkiye Pazarı ve İhracat İçin Güçlü Gübre Üretim Altyapısı"
       introParagraphs={[

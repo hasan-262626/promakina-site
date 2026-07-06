@@ -21,7 +21,7 @@ const relatedServices = [
   },
   {
     title: "Makinalar",
-    href: "/makinalar",
+    href: "/makinalar-ekipman",
     description:
       "Organomineral gübre tesisinde çalışan tambur, konveyör, bunker ve diğer ekipman gruplarını toplu görün.",
   },

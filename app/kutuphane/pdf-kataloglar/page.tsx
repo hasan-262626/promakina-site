@@ -17,7 +17,7 @@ export default function PdfCatalogsPage() {
       <Hero
         title="PDF Kataloglar"
         description="Makina ve sistem ailelerini toplu biçimde incelemek isteyen ekipler için katalog içerikleri bu bölümde yer alacaktır."
-        image="/images/makinalar1.png"
+        image="/images/01-genel/makinalar1.png"
       />
 
       <section className="section-space">

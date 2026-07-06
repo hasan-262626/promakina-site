@@ -37,42 +37,42 @@ const libraryCategories: LibraryCategoryCard[] = [
     description:
       "Sektör, proses, makina seçimi ve yatırım kararlarını destekleyen teknik makaleleri inceleyin.",
     href: "/kutuphane/blog",
-    image: "/images/proses1.jpg",
+    image: "/images/01-genel/proses1.png",
   },
   {
     title: "Programlar",
     description:
       "Mühendislik hesapları, kapasite araçları ve ön seçim programlarıyla teknik kararlarınızı hızlandırın.",
     href: "/programlar",
-    image: "/images/proses1.png",
+    image: "/images/01-genel/proses1.png",
   },
   {
     title: "Terimler Sözlüğü",
     description:
       "Gübre, kompost, kurutma, taşıma ve proses ekipmanlarıyla ilgili teknik terimleri sade açıklamalarla okuyun.",
     href: "/kutuphane/terimler-sozlugu",
-    image: "/images/kimya1.jpg",
+    image: "/images/01-genel/proses1.png",
   },
   {
     title: "PDF Kataloglar",
     description:
       "Makina, ekipman ve tesis çözümlerimize ait katalogları tek merkezden inceleyin.",
     href: "/kutuphane/pdf-kataloglar",
-    image: "/images/makinalar1.png",
+    image: "/images/01-genel/makinalar1.png",
   },
   {
     title: "Video İçerikler",
     description:
       "Makina çalışma prensipleri, saha uygulamaları ve proses anlatımlarını video içeriklerle görün.",
     href: "/kutuphane/video-icerikler",
-    image: "/images/konveyor1.jpg",
+    image: "/images/konveyor/konvey1.jpeg",
   },
   {
     title: "Sık Sorulan Sorular",
     description:
       "Tesis kurulumu, makine seçimi, kapasite, teklif ve süreç hakkında sık sorulan sorulara hızlıca ulaşın.",
     href: "/kutuphane/sik-sorulan-sorular",
-    image: "/images/hizmetler1.png",
+    image: "/images/01-genel/hizmetler1.png",
   },
 ];
 
@@ -145,7 +145,7 @@ export default function LibraryPage() {
       <Hero
         title="Kütüphane"
         description="Blog makaleleri, mühendislik programları, sözlük içerikleri ve karar sürecini hızlandıran teknik kaynaklarla yatırım hazırlığınızı güçlendirin."
-        image="/images/proses1.jpg"
+        image="/images/01-genel/proses1.png"
       >
         <Link
           href="/programlar"

@@ -35,7 +35,7 @@ const machinePages: Record<string, MachinePageRecord> = {
     description:
       "Helezon konveyör, vidalı konveyör ve paslanmaz helezon konveyör çözümleri için kapasiteye özel endüstriyel imalat sunuyoruz.",
     canonical: "https://www.promakina.com.tr/makinalar-ekipman/tasima-ekipmanlari/vidali-helezonlar",
-    image: "/images/helezon2.jpg",
+    image: "/images/helezon/helezon2.png",
     productName: "Vidalı Helezonlar",
     categoryName: "Taşıma Ekipmanları",
     introTitle: "Toz, Granül ve Kontrollü Besleme Gerektiren Hatlar İçin Vida Taşıma Çözümleri",
@@ -183,7 +183,7 @@ const machinePages: Record<string, MachinePageRecord> = {
     description:
       "Bant konveyör ve endüstriyel taşıma bandı sistemleri için kapasiteye özel bant konveyör imalatı ve saha entegrasyonu sunuyoruz.",
     canonical: "https://www.promakina.com.tr/makinalar-ekipman/tasima-ekipmanlari/bantli-konveyorler",
-    image: "/images/konveyor6.jpeg",
+    image: "/images/konveyor/konvey5.jpg",
     productName: "Bantlı Konveyörler",
     categoryName: "Taşıma Ekipmanları",
     introTitle: "Uzun ve Orta Mesafeli Transferlerde Güvenilir Endüstriyel Konveyör Omurgası",
@@ -331,7 +331,7 @@ const machinePages: Record<string, MachinePageRecord> = {
     description:
       "Kovalı elevatör ve zincirli kovalı elevatör çözümleri için dikey taşıma elevatörü imalatı ve kapasiteye özel tasarım sunuyoruz.",
     canonical: "https://www.promakina.com.tr/makinalar-ekipman/tasima-ekipmanlari/zincirli-elevatorler",
-    image: "/images/bantlielevator.jpg",
+    image: "/images/elevator bantlı/elevbant2.jpg",
     productName: "Zincirli Elevatörler",
     categoryName: "Taşıma Ekipmanları",
     introTitle: "Granül, Toz ve Dökme Katı Ürünler İçin Güvenli Dikey Taşıma",
@@ -479,7 +479,7 @@ const machinePages: Record<string, MachinePageRecord> = {
     description:
       "Kurutma tamburları, döner kurutma tamburu ve endüstriyel rotary dryer çözümleri için yüksek kapasiteli makina tasarımı sunuyoruz.",
     canonical: "https://www.promakina.com.tr/makinalar-ekipman/tambur-sistemleri/kurutma-tamburlari",
-    image: "/images/kurutmatam2.jpg",
+    image: "/images/tambur kurutma/tamkurutma1.jpg",
     productName: "Kurutma Tamburları",
     categoryName: "Tambur Sistemleri",
     introTitle: "Gübre, Çamur, Kum ve Mineral İçin Döner Kurutma Tamburu Çözümleri",

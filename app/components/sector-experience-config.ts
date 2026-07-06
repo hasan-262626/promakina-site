@@ -48,7 +48,7 @@ export const sectorExperienceConfigs: Record<string, SectorExperienceConfig> = {
     heroTitle: "Kompost ve Organik Atık Tesisleri",
     heroDescription:
       "Evsel, tarımsal ve hayvansal organik atıkların kontrollü i�xlenmesi için kompost, kurutma, eleme ve son ürün hazırlama süreçlerine uygun tesis çözümleri sunuyoruz.",
-    heroImage: "/images/kompost1.jpg",
+    heroImage: "/images/kompost/kompost1.jpg",
     primaryEyebrow: "Temel Yakla�xım",
     primaryTitle: "İ�xlenen organik materyaller ve proses yakla�xımı",
     primaryDescription:
@@ -101,7 +101,7 @@ export const sectorExperienceConfigs: Record<string, SectorExperienceConfig> = {
     heroTitle: "Enerji ve Biyogaz Sistemleri",
     heroDescription:
       "Biyogaz ve enerji odaklı proseslerde organik girdilerin hazırlanması, beslenmesi, aktarılması ve destek ekipmanlarının kurulumu için teknik çözümler sunuyoruz.",
-    heroImage: "/images/biogaz1.jpg",
+    heroImage: "/images/biyogaz/biogaz1.jpg",
     primaryEyebrow: "Temel Yakla�xım",
     primaryTitle: "Girdi yapısı ve proses sistemi yakla�xımı",
     primaryDescription:
@@ -154,7 +154,7 @@ export const sectorExperienceConfigs: Record<string, SectorExperienceConfig> = {
     heroTitle: "Madencilik ve Mineral İ�xleme",
     heroDescription:
       "Agrega, mineral ve cevher hazırlama hatlarında kırma, eleme, sınıflandırma, besleme, kurutma ve transfer süreçleri için proses ve ekipman çözümleri sunuyoruz.",
-    heroImage: "/images/maden1.jpg",
+    heroImage: "/images/maden/maden1.jpg",
     primaryEyebrow: "Temel Yakla�xım",
     primaryTitle: "İ�xlenen malzeme yapısı ve proses mantı�xı",
     primaryDescription:
@@ -208,7 +208,7 @@ export const sectorExperienceConfigs: Record<string, SectorExperienceConfig> = {
     heroTitle: "Kimya ve Proses Endüstrisi",
     heroDescription:
       "Kimyasal ve proses hatlarında reaktör, tank, çözündürme, so�xutma, dozajlama ve transfer ekipmanları ile kontrollü ve güvenli üretim altyapıları sunuyoruz.",
-    heroImage: "/images/kimya1.jpg",
+    heroImage: "/images/01-genel/proses1.png",
     primaryEyebrow: "Temel Yakla�xım",
     primaryTitle: "Proses yapısı ve ekipman yakla�xımı",
     primaryDescription:
@@ -261,7 +261,7 @@ export const sectorExperienceConfigs: Record<string, SectorExperienceConfig> = {
     heroTitle: "Geri Dönü�xüm ve Atık Yönetimi",
     heroDescription:
       "Katı atık, endüstriyel atık ve geri kazanılabilir materyallerin ayrı�xtırılması, küçültülmesi, ta�xınması ve prosese uygun hazırlanması için ekipman ve tesis çözümleri sunuyoruz.",
-    heroImage: "/images/geridonusum1.jpg",
+    heroImage: "/images/01-genel/geridonusum1.jpg",
     primaryEyebrow: "Temel Yakla�xım",
     primaryTitle: "İ�xlenen atık tipi ve sistem kurgusu",
     primaryDescription:
@@ -314,7 +314,7 @@ export const sectorExperienceConfigs: Record<string, SectorExperienceConfig> = {
     heroTitle: "Atık Su �!amuru ve Arıtma �!özümleri",
     heroDescription:
       "Atık su arıtma süreçlerinden çıkan çamurun susuzla�xtırılması, kurutulması, ta�xınması ve i�xlenmesi için ekipman ve tesis çözümleri sunuyoruz.",
-    heroImage: "/images/sucamuru1.jpg",
+    heroImage: "/images/atik su camuru/sucamuru1.jpg",
     primaryEyebrow: "Temel Yakla�xım",
     primaryTitle: "Giri�x çamuru özellikleri ve proses yakla�xımı",
     primaryDescription:
@@ -367,7 +367,7 @@ export const sectorExperienceConfigs: Record<string, SectorExperienceConfig> = {
     heroTitle: "Yem, Toz ve Dökme Katı Malzeme İ�xleme Sistemleri",
     heroDescription:
       "Yem, un, premiks, mineral ve benzeri dökme katı ürünlerde depolama, dozajlama, ta�xıma, eleme, bo�xaltma ve son ürün hazırlama süreçleri için ekipman ve tesis çözümleri sunuyoruz.",
-    heroImage: "/images/yem1.jpg",
+    heroImage: "/images/01-genel/yem1.jpg",
     primaryEyebrow: "Temel Yakla�xım",
     primaryTitle: "Malzeme tipi ve akı�x / dozajlama yakla�xımı",
     primaryDescription:

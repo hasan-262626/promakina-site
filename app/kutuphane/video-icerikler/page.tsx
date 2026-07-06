@@ -17,7 +17,7 @@ export default function VideoContentsPage() {
       <Hero
         title="Video İçerikler"
         description="Saha uygulamaları, proses akışları ve ekipman mantıklarını görsel anlatımla destekleyen video içerikler bu bölümde yayınlanacaktır."
-        image="/images/konveyor1.jpg"
+        image="/images/konveyor/konvey1.jpeg"
       />
 
       <section className="section-space">

@@ -82,7 +82,7 @@ export const industrialSolutionLandingConfigs: IndustrialSolutionLandingConfig[]
       "Granül, organomineral, NPK ve toz ürün akışları için anahtar teslim gübre tesisi kurulumu, proses tasarımı, makina imalatı ve devreye alma çözümleri.",
     heroDescription:
       "Kapasiteye, ürün reçetesine ve saha koşullarına göre şekillenen anahtar teslim gübre üretim tesisi çözümleriyle yatırım kararınızı teknik olarak güvence altına alın.",
-    image: "/images/hizmetler1.png",
+    image: "/images/01-genel/hizmetler1.png",
     eyebrow: "ENDÜSTRİYEL ÇÖZÜM",
     trustNote: "Proses mühendisliği, makina imalatı ve saha devreye alma aynı proje omurgasında birleşir.",
     introParagraphs: [
@@ -160,7 +160,7 @@ export const industrialSolutionLandingConfigs: IndustrialSolutionLandingConfig[]
       "Evsel, tarımsal ve endüstriyel organik akışlar için kompost tesisi kurulumu, ekipman seçimi, proses mühendisliği ve anahtar teslim saha çözümleri.",
     heroDescription:
       "Organik atığı değerli son ürüne dönüştüren kompost tesislerini, nem yönetimi, proses akışı ve saha uygulamasıyla birlikte tasarlıyoruz.",
-    image: "/images/kompost1.jpg",
+    image: "/images/kompost/kompost1.jpg",
     eyebrow: "ENDÜSTRİYEL ÇÖZÜM",
     trustNote: "Kompost yatırımlarında çevresel kontrol, son ürün kalitesi ve işletme sürekliliği aynı sistemde ele alınır.",
     introParagraphs: [
@@ -238,7 +238,7 @@ export const industrialSolutionLandingConfigs: IndustrialSolutionLandingConfig[]
       "Industrial rotary dryer manufacturer for fertilizer, compost, mineral and sludge applications. Custom drum design, process engineering and turnkey drying systems.",
     heroDescription:
       "High-capacity rotary dryer manufacturing with process-based engineering, custom drum geometry and industrial-duty thermal system integration.",
-    image: "/images/kurutmatam2.jpg",
+    image: "/images/tambur kurutma/tamkurutma1.jpg",
     eyebrow: "INDUSTRIAL SOLUTION",
     trustNote: "Rotary dryer design is handled as a full process system, not just a single machine supply.",
     introParagraphs: [
@@ -316,7 +316,7 @@ export const industrialSolutionLandingConfigs: IndustrialSolutionLandingConfig[]
       "Toz, granül, yarı nemli ve kontrollü besleme gerektiren prosesler için özel imalat helezon konveyör üretimi ve mühendislik çözümleri.",
     heroDescription:
       "Ürün davranışına, kapasiteye ve saha geometrisine göre tasarlanan vidalı taşıma sistemleriyle kontrollü ve güvenilir hat kurguları oluşturuyoruz.",
-    image: "/images/helezon2.jpg",
+    image: "/images/helezon/helezon2.png",
     eyebrow: "ENDÜSTRİYEL ÇÖZÜM",
     trustNote: "Helezon üretimi, vida geometrisi ile proses akışının doğru eşleştirilmesiyle değer üretir.",
     introParagraphs: [
@@ -394,7 +394,7 @@ export const industrialSolutionLandingConfigs: IndustrialSolutionLandingConfig[]
       "Gübre, kompost, mineral ve çamur akışları için endüstriyel kurutma sistemleri, rotary dryer çözümleri, proses tasarımı ve anahtar teslim mühendislik yaklaşımı.",
     heroDescription:
       "Yüksek nemli akışları enerji, kapasite ve saha uygulanabilirliği ekseninde yöneten endüstriyel kurutma sistemleri tasarlıyoruz.",
-    image: "/images/kurutmatam2.jpg",
+    image: "/images/tambur kurutma/tamkurutma1.jpg",
     eyebrow: "ENDÜSTRİYEL ÇÖZÜM",
     trustNote: "Kurutma sistemleri, proses performansı ile enerji maliyetini aynı anda belirleyen kritik yatırım kalemidir.",
     introParagraphs: [
@@ -472,7 +472,7 @@ export const industrialSolutionLandingConfigs: IndustrialSolutionLandingConfig[]
       "Organik ve mineral bileşenleri kontrollü üretime dönüştüren organomineral gübre tesisi çözümleri, proses tasarımı ve makina imalatı.",
     heroDescription:
       "Organik bazlı hammaddeleri mineral bileşenlerle dengeli şekilde işleyen, yüksek kaliteli son ürün hedefleyen organomineral gübre tesisleri kuruyoruz.",
-    image: "/images/hizmetler1.png",
+    image: "/images/01-genel/hizmetler1.png",
     eyebrow: "ENDÜSTRİYEL ÇÖZÜM",
     trustNote: "Organomineral hatlarda reçete dengesi, karışım homojenliği ve son ürün standardı birlikte korunur.",
     introParagraphs: [
@@ -550,7 +550,7 @@ export const industrialSolutionLandingConfigs: IndustrialSolutionLandingConfig[]
       "Sıvı organomineral, amino asitli, NPK ve deniz yosunu bazlı formülasyonlar için sıvı gübre üretim tesisi çözümleri.",
     heroDescription:
       "Karıştırma, çözündürme, dozajlama, depolama ve dolum adımlarını kontrollü şekilde yöneten sıvı gübre üretim sistemleri kuruyoruz.",
-    image: "/images/tank8.png",
+    image: "/images/siyah beyaz/tank 1.jpg",
     eyebrow: "ENDÜSTRİYEL ÇÖZÜM",
     trustNote: "Sıvı hatlarda reaktör, tank, çözündürme ve dolum omurgası tek proses mantığıyla planlanır.",
     introParagraphs: [
@@ -628,7 +628,7 @@ export const industrialSolutionLandingConfigs: IndustrialSolutionLandingConfig[]
       "Toz, granül ve kontrollü besleme gerektiren prosesler için vidalı konveyör sistemleri, özel imalat helezon çözümleri ve taşıma mühendisliği yaklaşımı.",
     heroDescription:
       "Vida geometrisi, gövde yapısı ve tahrik seçimini ürün davranışıyla eşleştirerek güvenilir vidalı taşıma sistemleri kuruyoruz.",
-    image: "/images/helezon2.jpg",
+    image: "/images/helezon/helezon2.png",
     eyebrow: "ENDÜSTRİYEL ÇÖZÜM",
     trustNote: "Vidalı sistemlerde doğru mühendislik, kapasite kadar bakım ve operasyon güvenliğini de belirler.",
     introParagraphs: [

@@ -52,7 +52,7 @@ export const technicalAuthorityHubs: TechnicalAuthorityHub[] = [
       "Helezon konveyör sistemleri için çalışma prensibi, kapasite hesabı, motor seçimi, uygulama alanları ve ilgili mühendislik içeriklerini tek sayfada toplayan premium hub.",
     heroDescription:
       "Helezon konveyörlerde kapasite, tork, vida geometrisi, ürün davranışı ve saha entegrasyonunu birlikte yorumlayan B2B satın alma niyeti odaklı teknik merkez.",
-    image: "/images/helezon2.jpg",
+    image: "/images/helezon/helezon2.png",
     introParagraphs: [
       "Helezon konveyör sistemleri, dökme katı malzeme taşıma hatlarında kompakt yerleşim, kontrollü besleme ve kapalı transfer avantajı sunduğu için çok geniş bir uygulama alanına sahiptir. Gübre, kompost, kimya, yem, mineral ve toz ürün hatlarında vidalı taşıma sistemleri çoğu zaman prosesin görünmeyen ama en kritik omurgalarından biri olur. Çünkü doğru seçilmiş bir helezon ürün akışını dengelerken, yanlış seçilmiş bir vida hattı tıkanma, düzensiz besleme, yüksek güç tüketimi ve yoğun bakım yükü üretebilir.",
       "Bu hub sayfa, helezon konveyör konusunu yalnız tek bir makine gibi değil; hesaplama araçları, blog ağı, ilgili makinalar ve hizmet sayfalarıyla bir topical authority sistemi olarak ele alır. Böylece ziyaretçi yalnız temel bilgi almakla kalmaz, aynı zamanda kapasite hesabından motor seçimine, uygulama örneklerinden teklif kararına kadar tüm dönüşüm yolculuğunu tek merkezde yaşar. Pro Makina’nın amacı da tam olarak budur: teknik aramayı, güvene ve proje talebine dönüşen mühendislik deneyimine çevirmek.",
@@ -222,7 +222,7 @@ export const technicalAuthorityHubs: TechnicalAuthorityHub[] = [
       "Tambur sistemleri, rotary dryer design, kurutma tamburu hesabı, çap-boy seçimi ve endüstriyel kurutma teknolojileri için premium teknik hub.",
     heroDescription:
       "Kurutma, soğutma, granülasyon ve kompost proseslerinde kullanılan tambur sistemlerini hesap, blog ve makina ağıyla bir araya getiren mühendislik merkezi.",
-    image: "/images/kurutmatam2.jpg",
+    image: "/images/tambur kurutma/tamkurutma1.jpg",
     introParagraphs: [
       "Tambur sistemleri, endüstriyel proseslerde ürünün döner bir gövde içinde ilerletildiği, karıştırıldığı, ısıtıldığı, soğutulduğu veya kaplandığı ekipman ailesidir. Kurutma tamburları, granülatör tamburları, kompost tamburları ve soğutma tamburları farklı prosesler için farklı geometriler ve iç düzenler gerektirir. Bu yüzden tambur sistemleri, yalnız görünüş olarak değil; proses fiziği açısından da birbirinden ayrılır.",
       "Bu hub sayfa, tambur sistemleri etrafında güçlü bir topical authority oluşturmak için kurgulandı. Blog içerikleri, hesap sayfaları, ilgili makine kategorileri ve hizmet bağlantıları aynı tema altında toplanarak hem arama motorlarına net sinyal verir hem de kullanıcıyı dağınık bilgi yerine bütünsel mühendislik deneyimine taşır. Amaç yalnız trafik almak değil; doğru ziyaretçiyi doğru teknik çerçeve ile güvene dönüştürmektir.",
@@ -397,7 +397,7 @@ export const technicalAuthorityHubs: TechnicalAuthorityHub[] = [
       "Konveyör sistemleri için kapasite, hat boyu, bant hızı, entegrasyon ve ilgili blog-program ağıyla sektör odaklı premium teknik hub.",
     heroDescription:
       "Bantlı, zincirli ve yardımcı taşıma sistemlerinde kapasite hesabı, hat entegrasyonu ve saha kurgusunu birlikte ele alan mühendislik merkezi.",
-    image: "/images/konveyor1.jpg",
+    image: "/images/konveyor/konvey1.jpeg",
     introParagraphs: [
       "Konveyör sistemleri, endüstriyel tesislerde hammaddenin, ara ürünün ve son ürünün düzenli akışını sağlayan ana taşıma omurgasıdır. Doğru seçilmiş bir konveyör hattı, tüm tesiste ritim ve temizlik sağlar; yanlış seçilmiş hat ise üretimin görünmeyen darboğazı haline gelir. Bu nedenle konveyörler yalnız taşıma ekipmanı değil, proses mimarisinin merkezindeki karar alanıdır.",
       "Bu hub sayfa, konveyör sistemlerini yalnız bir makina kategorisi olarak değil; blog ağı, hesap sayfaları, ilgili hizmetler ve makina sayfalarıyla bağlayan bir otorite sistemi olarak ele alır. Böylece kullanıcı bir konuyu araştırırken dağılmak yerine tek merkezden ilerler; Google tarafında ise aynı ana niyet etrafında güçlü iç link sinyali oluşur.",
@@ -567,7 +567,7 @@ export const technicalAuthorityHubs: TechnicalAuthorityHub[] = [
       "Kompost tesisi sistemleri için organik atık işleme, kompost üretim süreci, biyogaz ön işlem ve ilgili hesaplama-makina ağını birleştiren teknik hub.",
     heroDescription:
       "Kompost ve organik atık yatırımlarında proses akışı, makina seçimi, blog ağı ve ilgili hesap sayfalarını aynı premium yapıda buluşturan merkez.",
-    image: "/images/kompost1.png",
+    image: "/images/kompost/kompost1.jpg",
     introParagraphs: [
       "Kompost tesisi sistemleri, yalnız birkaç makineden oluşan bir akış değil; atık kabulünden son ürün hazırlığına kadar uzanan biyolojik ve mekanik bir süreçtir. Organik atık karakteri, nem seviyesi, yabancı madde oranı, saha tipi ve hedef son ürün kalitesi bu sistemin tüm kararlarını etkiler. Bu yüzden kompost yatırımları yalnız çevresel zorunluluk değil, ciddi bir proses mühendisliği konusudur.",
       "Bu hub sayfa, kompost ve organik atık başlığını hizmet sayfaları, blog makaleleri, makina kategorileri ve ilgili hesaplama araçlarıyla bağlayarak güçlü bir SEO authority alanı kurar. Kullanıcı bir yandan kompost tesisinin nasıl kurulduğunu öğrenirken, diğer yandan ilgili taşıma, tambur ve kurutma konularına kontrollü biçimde yönlendirilir. Böylece hem bilgi derinliği hem dönüşüm ihtimali birlikte artar.",
@@ -742,7 +742,7 @@ export const technicalAuthorityHubs: TechnicalAuthorityHub[] = [
       "Granül gübre üretim sistemleri için üretim hattı, granülasyon, kurutma, NPK, organomineral ve ilgili hesaplama ağına sahip ultra premium SEO hub.",
     heroDescription:
       "Granül gübre üretimi, organomineral yatırım planı, NPK prosesleri ve ilgili makina-program ağıyla birbirine bağlanan sektör otoritesi sayfası.",
-    image: "/images/hizmetler1.png",
+    image: "/images/01-genel/hizmetler1.png",
     introParagraphs: [
       "Granül gübre üretim sistemleri, hammadde hazırlama, karıştırma, granülasyon, kurutma, soğutma, eleme, kaplama ve paketleme adımlarının aynı ritimde çalıştığı kompleks endüstriyel yapılardır. Bu nedenle gübre tesisi yatırımlarında yalnız bir makine seçmek değil, bütün bir proses omurgası kurmak gerekir. Organomineral, NPK ve farklı granül ürün ailelerinde aynı başlıklar görünse de proses hassasiyetleri birbirinden ayrılır.",
       "Bu hub sayfa, granül gübre konusunu yalnız bir hizmet sayfasına bırakmaz; blog ağı, ilgili hesap sayfaları, makina kategorileri ve hizmet bağlantılarıyla tam bir topical authority sistemi haline getirir. Kullanıcı teknik aramadan gelir, üretim sürecini anlar, ilgili makina ve hesap sayfalarına geçer, ardından teklif CTA’sına ulaşır. Google açısından da bu yapı, gübre teknolojileri alanında net konu derinliği ve iç link gücü üretir.",

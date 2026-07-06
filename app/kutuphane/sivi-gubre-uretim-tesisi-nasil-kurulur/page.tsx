@@ -18,7 +18,7 @@ const relatedServices = [
   },
   {
     title: "Makinalar",
-    href: "/makinalar",
+    href: "/makinalar-ekipman",
     description:
       "Sıvı gübre tesislerinde kullanılan tank, reaktör, taşıma ve yardımcı proses ekipmanlarını toplu görün.",
   },

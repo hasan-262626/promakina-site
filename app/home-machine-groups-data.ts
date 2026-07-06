@@ -55,7 +55,7 @@ const homeMachineGroupCardVisuals: Record<string, { image: string; alt: string }
     alt: "Bunker ve besleme sistemleri",
   },
   "yardimci-ekipmanlar-ve-akis-sistemleri": {
-    image: "/images/klape/klappe19.jpg",
+    image: "/images/klape/klap1.png",
     alt: "Klape ve yardımcı akış ekipmanları",
   },
   "dozajlama-sistemleri": {

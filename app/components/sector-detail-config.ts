@@ -105,7 +105,7 @@ const imageOverrides: Record<
   },
   "gubre-ve-granulasyon-tesisleri/organik-biyostimulan": {
     imageOne: "/images/sıvı/sivi6.jpg",
-    imageTwo: "/images/sıvı/sivi7.png",
+    imageTwo: "/images/sıvı/sivi6.jpg",
   },
   "gubre-ve-granulasyon-tesisleri/granul-organomineral": {
     imageOne: "/images/tambur granulator/tamgranulator1.png",
@@ -125,7 +125,7 @@ const imageOverrides: Record<
   },
   "gubre-ve-granulasyon-tesisleri/toz-npk": {
     imageOne: "/images/bunker/bunker1.jpg",
-    imageTwo: "/images/paketleme/paket2.webp",
+    imageTwo: "/images/paketleme/paket1.jpg",
   },
   "kompost-ve-organik-atik-tesisleri/evsel-atiklardan-kompost-tesisi": {
     imageOne: "/images/kompost/kompost1.jpg",
@@ -165,7 +165,7 @@ const imageOverrides: Record<
   },
   "enerji-ve-biyogaz-sistemleri/biyometan-gaz-aritma-cozumleri": {
     imageOne: "/images/biyogaz/biogaz1.jpg",
-    imageTwo: "/images/jet pulse/jetpulse3.jpg",
+    imageTwo: "/images/jet pulse/jerpul3.jpg",
   },
 };
 
@@ -619,11 +619,11 @@ function getFallbackImages(family: DetailFamily, sector: SectorCardItem) {
     case "biogas":
       return { imageOne: "/images/biyogaz/biogaz1.jpg", imageTwo: "/images/bunker/bunker1.jpg" };
     case "biogas-gas":
-      return { imageOne: "/images/biyogaz/biogaz1.jpg", imageTwo: "/images/jet pulse/jetpulse3.jpg" };
+      return { imageOne: "/images/biyogaz/biogaz1.jpg", imageTwo: "/images/jet pulse/jerpul3.jpg" };
     case "mining":
       return { imageOne: "/images/maden/maden1.jpg", imageTwo: "/images/maden/maden2.webp" };
     case "chemistry":
-      return { imageOne: "/images/01-genel/proses1.jpg", imageTwo: "/images/sivi dolum/sividol1.jpg" };
+      return { imageOne: "/images/01-genel/proses1.png", imageTwo: "/images/sivi dolum/sividol1.jpg" };
     case "recycling":
       return {
         imageOne: "/images/01-genel/geridonusum1.jpg",

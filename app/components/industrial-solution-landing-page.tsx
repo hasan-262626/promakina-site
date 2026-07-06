@@ -169,7 +169,7 @@ export function IndustrialSolutionLandingPage({
                 Hizmetler
               </Link>
               <Link
-                href="/makinalar"
+                href="/makinalar-ekipman"
                 className="inline-flex rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-800 transition hover:border-blue-200 hover:bg-blue-50 hover:text-blue-700"
               >
                 Makinalar

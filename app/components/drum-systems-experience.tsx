@@ -26,7 +26,7 @@ export default function DrumSystemsExperience() {
       categoryHref="/makinalar-ekipman/tambur-sistemleri"
       title={activeProduct.title}
       heroDescription={activeProduct.heroDescription}
-      heroImage="/images/kurutmatam2.jpg"
+      heroImage="/images/tambur kurutma/tamkurutma1.jpg"
       overviewParagraphs={activeProduct.overviewParagraphs}
       highlightText={activeProduct.highlightText}
       specs={activeProduct.specs}

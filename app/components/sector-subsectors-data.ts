@@ -43,7 +43,7 @@ export const sectorCards: SectorCardItem[] = [
     title: "Gübre Üretim Tesisleri",
     summary:
       "Sıvı, toz ve granül gübre üretim tesisleri için proses tasarımı, ekipman seçimi, makina imalatı ve anahtar teslim çözüm seçenekleri sunuyoruz.",
-    image: sectorImageMap.get("gubre-ve-granulasyon-tesisleri")?.image ?? "/images/granul1.jpg",
+    image: sectorImageMap.get("gubre-ve-granulasyon-tesisleri")?.image ?? "/images/granulator disk/diskgran2.jpg",
     alt: sectorImageMap.get("gubre-ve-granulasyon-tesisleri")?.alt ?? "Gübre üretim tesisleri görseli",
     subLinks: [
       { slug: "sivi-organomineral", label: "Sıvı Organomineral", title: "Sıvı Organomineral Gübre Üretim Tesisleri", description: "Sıvı organomineral formülasyonlara uygun üretim tesisi çözümleri." },
@@ -63,7 +63,7 @@ export const sectorCards: SectorCardItem[] = [
     title: "Kompost ve Organik Atık Tesisleri",
     summary:
       "Evsel, tarımsal ve hayvansal organik atıkları kontrollü biçimde işleyerek kompost ve son ürün hazırlama çözümleri sunuyoruz.",
-    image: sectorImageMap.get("kompost-ve-organik-atik-tesisleri")?.image ?? "/images/kompost1.jpg",
+    image: sectorImageMap.get("kompost-ve-organik-atik-tesisleri")?.image ?? "/images/kompost/kompost1.jpg",
     alt: sectorImageMap.get("kompost-ve-organik-atik-tesisleri")?.alt ?? "Kompost ve organik atık tesisleri",
     subLinks: [
       { slug: "evsel-atiklardan-kompost-tesisi", label: "Evsel Atıklardan Kompost Tesisi", title: "Evsel Atıklardan Kompost Tesisi", description: "Evsel organik atıkların kompost ürününe dönüştürüldüğü tesis çözümleri." },
@@ -79,7 +79,7 @@ export const sectorCards: SectorCardItem[] = [
     title: "Enerji ve Biyogaz Sistemleri",
     summary:
       "Organik girdilerin enerji geri kazanımına uygun biçimde hazırlanması, beslenmesi ve yönetilmesi için biyogaz ve biyokütle çözümleri sunuyoruz.",
-    image: sectorImageMap.get("enerji-ve-biyogaz-sistemleri")?.image ?? "/images/biogaz1.jpg",
+    image: sectorImageMap.get("enerji-ve-biyogaz-sistemleri")?.image ?? "/images/biyogaz/biogaz1.jpg",
     alt: sectorImageMap.get("enerji-ve-biyogaz-sistemleri")?.alt ?? "Enerji ve biyogaz sistemleri",
     subLinks: [
       { slug: "tarimsal-atik-biyogaz-tesisleri", label: "Tarımsal Atık Biyogaz Tesisleri", title: "Tarımsal Atık Biyogaz Tesisleri", description: "Tarımsal atıklardan biyogaz üretimine uygun süreç çözümleri." },
@@ -94,7 +94,7 @@ export const sectorCards: SectorCardItem[] = [
     title: "Madencilik ve Mineral İşleme",
     summary:
       "Mineral ve cevher hazırlama hatlarında kırma, eleme, sınıflandırma, kurutma ve transfer süreçleri için tesis çözümleri geliştiriyoruz.",
-    image: sectorImageMap.get("madencilik-ve-mineral-isleme")?.image ?? "/images/maden1.jpg",
+    image: sectorImageMap.get("madencilik-ve-mineral-isleme")?.image ?? "/images/maden/maden1.jpg",
     alt: sectorImageMap.get("madencilik-ve-mineral-isleme")?.alt ?? "Madencilik ve mineral işleme",
     subLinks: [
       { slug: "silis-maden-tesisleri", label: "Silis Maden Tesisleri", title: "Silis Maden Tesisleri", description: "Silis bazlı hammaddeler için hazırlama ve işleme tesisleri." },
@@ -109,7 +109,7 @@ export const sectorCards: SectorCardItem[] = [
     title: "Kimya ve Proses Endüstrisi",
     summary:
       "Reaktör, tank, çözündürme, dozajlama ve transfer altyapılarıyla kontrollü ve güvenli kimyasal üretim tesisleri tasarlıyoruz.",
-    image: sectorImageMap.get("kimya-ve-proses-endustrisi")?.image ?? "/images/kimya1.jpg",
+    image: sectorImageMap.get("kimya-ve-proses-endustrisi")?.image ?? "/images/01-genel/proses1.png",
     alt: sectorImageMap.get("kimya-ve-proses-endustrisi")?.alt ?? "Kimya ve proses endüstrisi",
     subLinks: [
       { slug: "sivi-kimyasal-hazirlama-tesisleri", label: "Sıvı Kimyasal Hazırlama Tesisleri", title: "Sıvı Kimyasal Hazırlama Tesisleri", description: "Sıvı kimyasallar için karıştırma, dozajlama ve depolama tesisleri." },
@@ -125,7 +125,7 @@ export const sectorCards: SectorCardItem[] = [
     title: "Geri Dönüşüm ve Atık Yönetimi",
     summary:
       "Evsel ve endüstriyel atıkların ayrıştırılması, küçültülmesi ve geri kazanıma hazırlanması için entegre tesis çözümleri sunuyoruz.",
-    image: sectorImageMap.get("geri-donusum-ve-atik-yonetimi")?.image ?? "/images/geridonusum1.jpg",
+    image: sectorImageMap.get("geri-donusum-ve-atik-yonetimi")?.image ?? "/images/01-genel/geridonusum1.jpg",
     alt: sectorImageMap.get("geri-donusum-ve-atik-yonetimi")?.alt ?? "Geri dönüşüm ve atık yönetimi",
     subLinks: [
       { slug: "evsel-atik-geri-donusum-tesisleri", label: "Evsel Atık Geri Dönüşüm Tesisleri", title: "Evsel Atık Geri Dönüşüm Tesisleri", description: "Evsel atık akışları için ayrıştırma ve geri kazanım tesisleri." },
@@ -141,7 +141,7 @@ export const sectorCards: SectorCardItem[] = [
     title: "Atık Su Çamuru Çözümleri",
     summary:
       "Pro Makina, atık su arıtma tesisi kurmaz; arıtma sonrası oluşan çamurun susuzlaştırılması, kurutulması, stabilize edilmesi ve bertaraf veya değerlendirme formuna hazırlanması için proses çözümleri sunar.",
-    image: sectorImageMap.get("atik-su-camuru-ve-aritma-cozumleri")?.image ?? "/images/sucamuru1.jpg",
+    image: sectorImageMap.get("atik-su-camuru-ve-aritma-cozumleri")?.image ?? "/images/atik su camuru/sucamuru1.jpg",
     alt: sectorImageMap.get("atik-su-camuru-ve-aritma-cozumleri")?.alt ?? "Atık su çamuru çözümleri",
     subLinks: [
       { slug: "kapali-sistem-camur-kurutma", label: "Kapalı Sistem Çamur Kurutma", title: "Kapalı Sistem Çamur Kurutma", description: "Koku kontrolü, çevresel uyum ve kontrollü proses akışı gereken projeler için kapalı sistem kurutma kurguları." },
@@ -155,7 +155,7 @@ export const sectorCards: SectorCardItem[] = [
     title: "Yem, Toz ve Dökme Katı Malzeme İşleme Sistemleri",
     summary:
       "Yem, premiks ve toz ürünlerde depolama, dozajlama, taşıma, eleme ve son ürün hazırlama süreçleri için tesis çözümleri sunuyoruz.",
-    image: sectorImageMap.get("yem-toz-ve-dokme-kati-malzeme-isleme-sistemleri")?.image ?? "/images/yem1.jpg",
+    image: sectorImageMap.get("yem-toz-ve-dokme-kati-malzeme-isleme-sistemleri")?.image ?? "/images/01-genel/yem1.jpg",
     alt: sectorImageMap.get("yem-toz-ve-dokme-kati-malzeme-isleme-sistemleri")?.alt ?? "Yem, toz ve dökme katı malzeme işleme sistemleri",
     subLinks: [
       { slug: "buyukbas-yem-tesisleri", label: "Büyükbaş Yem Tesisleri", title: "Büyükbaş Yem Tesisleri", description: "Büyükbaş yem üretimi için dozajlama ve karışım odaklı tesisler." },

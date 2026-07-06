@@ -151,7 +151,7 @@ const rawProgramDefinitions: ProgramMeta[] = [
     title: "Helezon (Screw Conveyor) Kapasite ve Mekanik Seçim Programı",
     description:
       "Helezon çapı, hatve, devir, kapasite uygunluğu, motor gücü ve mekanik seçim önerileri için profesyonel ön seçim aracıdır.",
-    image: "/images/konveyor2.jpg",
+    image: "/images/konveyor/konvey2.jpg",
     alt: "Helezon kapasite ve mekanik seçim programı görseli",
     groupId: "makina-kapasite-hesaplari",
   },
@@ -160,7 +160,7 @@ const rawProgramDefinitions: ProgramMeta[] = [
     title: "Elevatör Kapasite ve Seçim Programı",
     description:
       "Bantlı veya zincirli elevatör seçimi, kova ölçüsü, hat hızı ve temel mekanik uygunluk için ön seçim aracıdır.",
-    image: "/images/konveyor2.jpg",
+    image: "/images/konveyor/konvey2.jpg",
     alt: "Elevatör kapasite ve seçim programı görseli",
     groupId: "makina-kapasite-hesaplari",
   },
@@ -169,7 +169,7 @@ const rawProgramDefinitions: ProgramMeta[] = [
     title: "Konveyör Kapasite ve Seçim Hesap Programı",
     description:
       "Bantlı konveyör kapasitesi, bant genişliği, bant hızı, tambur çapı ve tahrik önerileri için profesyonel seçim ekranıdır.",
-    image: "/images/konveyor2.jpg",
+    image: "/images/konveyor/konvey2.jpg",
     alt: "Konveyör kapasite ve seçim hesap programı görseli",
     groupId: "makina-kapasite-hesaplari",
   },
@@ -178,7 +178,7 @@ const rawProgramDefinitions: ProgramMeta[] = [
     title: "Tambur Hesabı",
     description:
       "Tambur çapı, boyu, dönüş hızı ve doluluk yaklaşımına göre ön boyutlandırma ve proses uygunluğu sunar.",
-    image: "/images/tambur1.jpg",
+    image: "/images/tambur kurutma/tamkurutma1.jpg",
     alt: "Tambur hesabı görseli",
     groupId: "makina-kapasite-hesaplari",
     genericKind: "tambur",
@@ -213,7 +213,7 @@ const rawProgramDefinitions: ProgramMeta[] = [
     title: "Siklon Hesabı",
     description:
       "Gaz debisi, partikül yükü ve hedef ayırma performansına göre siklon gövdesi ve akış uygunluğunu değerlendirir.",
-    image: "/images/proses1.jpg",
+    image: "/images/01-genel/proses1.png",
     alt: "Siklon hesabı görseli",
     groupId: "makina-kapasite-hesaplari",
     genericKind: "siklon",
@@ -248,7 +248,7 @@ const rawProgramDefinitions: ProgramMeta[] = [
     title: "Jet Pulse Hesabı",
     description:
       "Filtre yüzeyi, hava debisi ve temizleme periyoduna göre jet pulse filtre sistemi için ön kapasite ve ekipman önerisi sunar.",
-    image: "/images/fabrika1.jpg",
+    image: "/images/01-genel/fabrika1.jpg",
     alt: "Jet pulse hesabı görseli",
     groupId: "makina-kapasite-hesaplari",
     genericKind: "jet-pulse",
@@ -283,7 +283,7 @@ const rawProgramDefinitions: ProgramMeta[] = [
     title: "Tank Hesabı",
     description:
       "Hacim, bekleme süresi, ürün yoğunluğu ve proses gereksinimlerine göre tank kapasitesi ve temel boyutlandırma yaklaşımı sağlar.",
-    image: "/images/tank1.jpg",
+    image: "/images/siyah beyaz/tank 1.jpg",
     alt: "Tank hesabı görseli",
     groupId: "makina-kapasite-hesaplari",
     genericKind: "tank",
@@ -318,7 +318,7 @@ const rawProgramDefinitions: ProgramMeta[] = [
     title: "Bunker Hesabı",
     description:
       "Malzeme akışı, stok süresi ve boşaltma gereksinimine göre bunker hacmi ve geometrik ön seçim sunar.",
-    image: "/images/konveyor2.jpg",
+    image: "/images/konveyor/konvey2.jpg",
     alt: "Bunker hesabı görseli",
     groupId: "makina-kapasite-hesaplari",
     genericKind: "bunker",
@@ -353,7 +353,7 @@ const rawProgramDefinitions: ProgramMeta[] = [
     title: "Elek Hesabı",
     description:
       "Eleme alanı, tane boyutu dağılımı ve kapasite hedeflerine göre elek seçimi ve ön boyutlandırma değerlendirmesi sunar.",
-    image: "/images/makinalar1.png",
+    image: "/images/01-genel/makinalar1.png",
     alt: "Elek hesabı görseli",
     groupId: "makina-kapasite-hesaplari",
     genericKind: "elek",
@@ -388,7 +388,7 @@ const rawProgramDefinitions: ProgramMeta[] = [
     title: "Sac, Kaynak ve İmalat Hesapları",
     description:
       "Sac ağırlık, büküm açılım boyu, abkant tonajı ve kaynak dolgu miktarı için hızlı imalat ön hesapları sunar.",
-    image: "https://images.unsplash.com/photo-1532619187608-e5375cab36aa?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/celik/celik2.jpg",
     alt: "Sac ve kaynak hesapları görseli",
     groupId: "maliyet-hesaplari",
     shell: {
@@ -422,7 +422,7 @@ const rawProgramDefinitions: ProgramMeta[] = [
     title: "Malzeme Ağırlık Hesabı",
     description:
       "Sac, lama, dolu mil, profil ve disk gibi geometriler için boyut ve yoğunluk bilgisine göre ağırlık hesabını hızla değerlendirin.",
-    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/celik/celik5.jpeg",
     alt: "Malzeme ağırlık hesabı görseli",
     groupId: "maliyet-hesaplari",
   },
@@ -431,7 +431,7 @@ const rawProgramDefinitions: ProgramMeta[] = [
     title: "Mil Çapı Hesabı",
     description:
       "Burulma momenti, eğilme etkisi ve malzeme seçimine göre dolu mil veya boru mil ön boyutlandırması yapar.",
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/celik/celik6.jpeg",
     alt: "Mil çapı hesabı görseli",
     groupId: "mil-kaplin-ve-baglanti-hesaplari",
     shell: {
@@ -465,7 +465,7 @@ const rawProgramDefinitions: ProgramMeta[] = [
     title: "Kaplin Seçimi Ön Hesabı",
     description:
       "Tork, devir ve mil çapına göre kaplin sınıfı, esnek-rijit karşılaştırması ve ön uygunluk yorumu sunar.",
-    image: "https://images.unsplash.com/photo-1494412651409-8963ce7935a7?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/otomasyon/oromas1.jpg",
     alt: "Kaplin seçimi ön hesabı görseli",
     groupId: "mil-kaplin-ve-baglanti-hesaplari",
     shell: {
@@ -499,7 +499,7 @@ const rawProgramDefinitions: ProgramMeta[] = [
     title: "Kama Kanalı Açım Ölçüleri",
     description:
       "Kama eni, kama yüksekliği, mile girilecek t1 ve deliğe girilecek t2 değerlerini standart aralığa göre sunar.",
-    image: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/celik/celik7.jpeg",
     alt: "Kama kanalı açım ölçüleri görseli",
     groupId: "mil-kaplin-ve-baglanti-hesaplari",
     shell: {
@@ -533,7 +533,7 @@ const rawProgramDefinitions: ProgramMeta[] = [
     title: "Segman ve Kanal Ölçüleri",
     description:
       "DIN 472 iç segman ve DIN 471 dış segman standartlarına göre segman kalınlığı, kanal genişliği ve kanal derinliği bilgilerini sunar.",
-    image: "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/celik/celik8.jpg",
     alt: "Segman ve kanal ölçüleri görseli",
     groupId: "mil-kaplin-ve-baglanti-hesaplari",
     shell: {
@@ -567,7 +567,7 @@ const rawProgramDefinitions: ProgramMeta[] = [
     title: "Motor Gücü Ön Hesabı",
     description:
       "Tork, devir, verim ve servis faktörüne göre gerekli motor gücü ve redüktör çıkış değerlendirmesi yapar.",
-    image: "https://images.unsplash.com/photo-1581092335397-9fa34110866f?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/otomasyon/oromas2.jpg",
     alt: "Motor gücü ön hesabı görseli",
     groupId: "guc-aktarim-hesaplari",
     shell: {
@@ -601,7 +601,7 @@ const rawProgramDefinitions: ProgramMeta[] = [
     title: "Kayış-Kasnak Oran Hesabı",
     description:
       "Kasnak çapı, devir, kayış hızı ve merkez mesafesine göre oran ve kayış boyu ön hesabı sunar.",
-    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/celik/celik5.jpeg",
     alt: "Kayış kasnak oran hesabı görseli",
     groupId: "guc-aktarim-hesaplari",
     shell: {
@@ -635,7 +635,7 @@ const rawProgramDefinitions: ProgramMeta[] = [
     title: "Zincir ve Dişli Hesapları",
     description:
       "Zincir ve dişli seçim süreçlerinde kullanılabilecek temel ölçü, oran ve uyum hesaplarını inceleyin.",
-    image: "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/konveyor zincirli/konveyorzinc11.png",
     alt: "Zincir ve dişli hesapları görseli",
     groupId: "guc-aktarim-hesaplari",
     shell: {
@@ -669,7 +669,7 @@ const rawProgramDefinitions: ProgramMeta[] = [
     title: "Düz / Helis Dişli Hesabı",
     description:
       "Düz ve helisel dişli hesaplarında temel ölçü, oran ve mekanik uyum verilerini tek ekranda değerlendirin.",
-    image: "https://images.unsplash.com/photo-1565008447742-97f6f38c985c?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/celik/celik10.jpg",
     alt: "Düz helis dişli hesabı görseli",
     groupId: "guc-aktarim-hesaplari",
   },
@@ -678,7 +678,7 @@ const rawProgramDefinitions: ProgramMeta[] = [
     title: "Kremayer Dişli Hesabı",
     description:
       "Lineer hareket sistemlerinde kremayer ve dişli uyumunu değerlendirmek için teknik bir yardımcı araç sunar.",
-    image: "https://images.unsplash.com/photo-1581092918484-8313b2f1141c?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/celik/celik4.jpeg",
     alt: "Kremayer dişli hesabı görseli",
     groupId: "guc-aktarim-hesaplari",
   },
@@ -687,7 +687,7 @@ const rawProgramDefinitions: ProgramMeta[] = [
     title: "Triger Dişli Hesabı",
     description:
       "Triger dişli seçiminde ölçü, hatve ve temel aktarım uygunluğunu değerlendiren sade mühendislik aracıdır.",
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/celik/celik6.jpeg",
     alt: "Triger dişli hesabı görseli",
     groupId: "guc-aktarim-hesaplari",
     genericKind: "triger",
@@ -722,7 +722,7 @@ const rawProgramDefinitions: ProgramMeta[] = [
     title: "Sonsuz Vida Dişli Hesabı",
     description:
       "Sonsuz vida ve dişli kombinasyonlarında temel oran, güç aktarımı ve ölçü yaklaşımını değerlendiren ön seçim ekranıdır.",
-    image: "https://images.unsplash.com/photo-1532619187608-e5375cab36aa?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/celik/celik2.jpg",
     alt: "Sonsuz vida dişli hesabı görseli",
     groupId: "guc-aktarim-hesaplari",
     genericKind: "sonsuz-vida",
@@ -757,7 +757,7 @@ const rawProgramDefinitions: ProgramMeta[] = [
     title: "Dönüşüm Araçları",
     description:
       "Uzunluk, güç, tork, basınç, sıcaklık ve yoğunluk tabanlı mühendislik dönüşümlerini tek ekranda yönetin.",
-    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/otomasyon/oromas3.jpeg",
     alt: "Dönüşüm araçları görseli",
     groupId: "donusum-araclari",
     shell: {
@@ -791,7 +791,7 @@ const rawProgramDefinitions: ProgramMeta[] = [
     title: "Ahır Atığı Hesaplama",
     description:
       "Hayvan türü ve işletme yapısına göre günlük, aylık ve yıllık atık miktarını hesaplayarak kompost, biyogaz ve taşıma sistemleri için ön veri üretir.",
-    image: "/images/fabrika1.jpg",
+    image: "/images/01-genel/fabrika1.jpg",
     alt: "Ahır atığı hesaplama programı görseli",
     groupId: "diger-hesaplamalar",
   },
@@ -800,7 +800,7 @@ const rawProgramDefinitions: ProgramMeta[] = [
     title: "Evsel Atık / Çöp Hesaplama",
     description:
       "Nüfus, yerleşim tipi ve organik oran verilerine göre evsel atık miktarını hesaplayarak ayrıştırma ve organik atık tesisleri için ön kapasite çıkarır.",
-    image: "/images/fabrika1.jpg",
+    image: "/images/01-genel/fabrika1.jpg",
     alt: "Evsel atık ve çöp hesaplama programı görseli",
     groupId: "diger-hesaplamalar",
   },
@@ -809,7 +809,7 @@ const rawProgramDefinitions: ProgramMeta[] = [
     title: "Atık Su ve Arıtma Çamuru Hesaplama",
     description:
       "Debi veya mevcut çamur verileriyle susuzlaştırma ve kurutma sonrası tonajları hesaplayarak arıtma çamuru prosesleri için ön fizibilite sağlar.",
-    image: "/images/proses1.jpg",
+    image: "/images/01-genel/proses1.png",
     alt: "Atık su ve arıtma çamuru hesaplama programı görseli",
     groupId: "diger-hesaplamalar",
   },
@@ -818,7 +818,7 @@ const rawProgramDefinitions: ProgramMeta[] = [
     title: "Biyogaz Güç (kW) Hesaplama",
     description:
       "Besleme tipi ve tonaja göre biyogaz potansiyeli, elektrik gücü ve yıllık enerji üretimi için ön hesap oluşturur.",
-    image: "/images/proses1.jpg",
+    image: "/images/01-genel/proses1.png",
     alt: "Biyogaz güç hesaplama programı görseli",
     groupId: "diger-hesaplamalar",
   },
@@ -827,7 +827,7 @@ const rawProgramDefinitions: ProgramMeta[] = [
     title: "Kompost Son Ürün Hesaplama",
     description:
       "Giriş atığı, nem ve kütle kaybı yaklaşımına göre son kompost miktarını hesaplayarak ürün ve depolama planlamasına destek olur.",
-    image: "/images/tambur1.jpg",
+    image: "/images/tambur kurutma/tamkurutma1.jpg",
     alt: "Kompost son ürün hesaplama programı görseli",
     groupId: "diger-hesaplamalar",
   },
@@ -836,7 +836,7 @@ const rawProgramDefinitions: ProgramMeta[] = [
     title: "Kurutma / Nem Düşürme Hesaplama",
     description:
       "Giriş tonajı ile giriş ve çıkış nemine göre buharlaşacak suyu ve kurutma yükünü hesaplayarak proses ön boyutlandırması sağlar.",
-    image: "/images/tambur1.jpg",
+    image: "/images/tambur kurutma/tamkurutma1.jpg",
     alt: "Kurutma ve nem düşürme hesaplama programı görseli",
     groupId: "diger-hesaplamalar",
   },
@@ -845,7 +845,7 @@ const rawProgramDefinitions: ProgramMeta[] = [
     title: "Depolama Hacmi / Stok Süresi Hesaplama",
     description:
       "Yoğunluk, tüketim ve stok süresine göre bunker, silo veya açık stok hacmi için ön kapasite hesabı yapar.",
-    image: "/images/tank1.jpg",
+    image: "/images/siyah beyaz/tank 1.jpg",
     alt: "Depolama hacmi ve stok süresi hesaplama programı görseli",
     groupId: "diger-hesaplamalar",
   },
@@ -854,7 +854,7 @@ const rawProgramDefinitions: ProgramMeta[] = [
     title: "Talaşlı İmalat Hesapları",
     description:
       "Havşa, delik yerleşimi ve temel talaşlı imalat referansları için çok amaçlı yardımcı mühendislik ekranıdır.",
-    image: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/celik/celik2.jpg",
     alt: "Talaşlı imalat hesapları görseli",
     groupId: "diger-hesaplamalar",
     shell: {
@@ -888,7 +888,7 @@ const rawProgramDefinitions: ProgramMeta[] = [
     title: "ISO Geçme Toleransları",
     description:
       "Mil toleransı, delik toleransı ve geçme karşılaştırması için limit ölçüleri değerlendiren teknik hesap aracıdır.",
-    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/otomasyon/oromas1.jpg",
     alt: "ISO geçme toleransları görseli",
     groupId: "diger-hesaplamalar",
     shell: {
@@ -921,7 +921,7 @@ const rawProgramDefinitions: ProgramMeta[] = [
     slug: tool.slug,
     title: drumProgramTitleMap[tool.slug] ?? tool.title,
     description: tool.categoryDescription,
-    image: "/images/tambur1.jpg",
+    image: "/images/tambur kurutma/tamkurutma1.jpg",
     alt: `${drumProgramTitleMap[tool.slug] ?? tool.title} görseli`,
     groupId: "tambur-hesaplari" as ProgramGroup["id"],
   })),

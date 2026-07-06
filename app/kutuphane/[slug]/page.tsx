@@ -67,7 +67,7 @@ export default async function LibraryDetailPage({ params }: PageProps) {
 
   return (
     <main className="min-h-screen overflow-x-hidden bg-white text-slate-900">
-      <Hero title={trText(item.title)} description={trText(item.summary)} image="/images/proses1.jpg" />
+      <Hero title={trText(item.title)} description={trText(item.summary)} image="/images/01-genel/proses1.png" />
 
       <section className="section-space">
         <div className="site-container">

@@ -30,7 +30,7 @@ export const projectPages: ProjectPageData[] = [
       "Belediye kaynaklÄ± evsel organik atÄ±klarÄ±n ayrÄ±ï¿½xtÄ±rma, kompostlaï¿½xtÄ±rma, kurutma, eleme ve nihai Ã¼rÃ¼n hazÄ±rlama sÃ¼reÃ§lerini kapsayan kompost tesisi projeleri geliï¿½xtiriyoruz.",
     heroDescription:
       "Evsel organik atÄ±ï¿½xÄ±n kabulÃ¼nden son Ã¼rÃ¼n hazÄ±rlamaya kadar uzanan kompost tesislerinde proses akÄ±ï¿½xÄ±nÄ±, ekipman seÃ§imini ve saha yerleï¿½ximini birlikte kurguluyoruz.",
-    image: "/images/kompost1.jpg",
+    image: "/images/kompost/kompost1.jpg",
     imageAlt: "Evsel atÄ±klardan kompost tesisi projesi",
     metadataTitle: "Evsel AtÄ±klardan Kompost Tesisi Projesi | Pro Makina",
     metadataDescription:
@@ -83,7 +83,7 @@ export const projectPages: ProjectPageData[] = [
       "BÃ¼yÃ¼kbaï¿½x, kÃ¼Ã§Ã¼kbaï¿½x ve kanatlÄ± hayvan atÄ±klarÄ±nÄ±n kontrollÃ¼ kompostlaï¿½xtÄ±rma, nem yÃ¶netimi, olgunlaï¿½xtÄ±rma ve Ã¼rÃ¼n hazÄ±rlama sÃ¼reÃ§lerini proje bazlÄ± ele alÄ±yoruz.",
     heroDescription:
       "Hayvansal atÄ±ï¿½xÄ±n karakterine gÃ¶re nem dengesi, yapÄ±sal katkÄ±, kompost ritmi ve ekipman yerleï¿½ximi belirlenerek uygulanabilir tesis kurgularÄ± geliï¿½xtiriyoruz.",
-    image: "/images/kompost1.jpg",
+    image: "/images/kompost/kompost1.jpg",
     imageAlt: "Hayvansal atÄ±klardan kompost tesisi projesi",
     metadataTitle: "Hayvansal AtÄ±klardan Kompost Tesisi Projesi | Pro Makina",
     metadataDescription:
@@ -136,7 +136,7 @@ export const projectPages: ProjectPageData[] = [
       "Bitkisel Ã¼retim artÄ±klarÄ±, sera atÄ±klarÄ±, dal-budak, yaprak ve tarÄ±msal organik atÄ±klarÄ±n kompost Ã¼rÃ¼nÃ¼ne dÃ¶nÃ¼ï¿½xtÃ¼rÃ¼lmesi iÃ§in tesis projeleri hazÄ±rlÄ±yoruz.",
     heroDescription:
       "TarÄ±msal organik atÄ±klarda parÃ§alama, karÄ±ï¿½xÄ±m dengesi, kompostlaï¿½xtÄ±rma ve son Ã¼rÃ¼n hazÄ±rlama aï¿½xamalarÄ±nÄ± saha gerÃ§eklerine gÃ¶re projelendiriyoruz.",
-    image: "/images/kompost1.jpg",
+    image: "/images/kompost/kompost1.jpg",
     imageAlt: "TarÄ±msal atÄ±klardan kompost tesisi projesi",
     metadataTitle: "TarÄ±msal AtÄ±klardan Kompost Tesisi Projesi | Pro Makina",
     metadataDescription:
@@ -190,7 +190,7 @@ export const projectPages: ProjectPageData[] = [
       "Hayvansal, tarÄ±msal ve organik atÄ±k kaynaklÄ± biyogaz Ã¼retimi iÃ§in besleme, Ã¶n iï¿½xlem, digestat yÃ¶netimi ve enerji Ã¼retim sÃ¼reÃ§lerini kapsayan 1 MW biyogaz tesisi projeleri geliï¿½xtiriyoruz.",
     heroDescription:
       "1 MW biyogaz yatÄ±rÄ±mlarÄ±nda besleme dÃ¼zeni, Ã¶n iï¿½xlem, digestat sonrasÄ± yÃ¶netim ve enerji sÃ¼rekliliï¿½xini birlikte ele alan saha odaklÄ± proje kurgularÄ± hazÄ±rlÄ±yoruz.",
-    image: "/images/biogaz1.jpg",
+    image: "/images/biyogaz/biogaz1.jpg",
     imageAlt: "1 MW biyogaz tesisi projesi",
     metadataTitle: "1 MW Biyogaz Tesisi Projesi | Pro Makina",
     metadataDescription:
@@ -237,7 +237,7 @@ export const projectPages: ProjectPageData[] = [
       "Biyogaz tesisinden Ã§Ä±kan digestatÄ±n katÄ±-sÄ±vÄ± ayÄ±rma, kurutma, kompostlaï¿½xtÄ±rma, eleme ve son Ã¼rÃ¼n hazÄ±rlama sÃ¼reÃ§lerini entegre tesis mantÄ±ï¿½xÄ±yla projelendiriyoruz.",
     heroDescription:
       "DigestatÄ±n yalnÄ±zca bertaraf edilmediï¿½xi, kurutma ve kompostlaï¿½xtÄ±rma adÄ±mlarÄ±yla deï¿½xerli son Ã¼rÃ¼ne dÃ¶nÃ¼ï¿½xtÃ¼rÃ¼ldÃ¼ï¿½xÃ¼ entegre tesis projeleri geliï¿½xtiriyoruz.",
-    image: "/images/biogaz1.jpg",
+    image: "/images/biyogaz/biogaz1.jpg",
     imageAlt: "Biyogaz digestat kurutma ve kompost projesi",
     metadataTitle: "Biyogaz Digestat Kurutma ve Kompost Projesi | Pro Makina",
     metadataDescription:
@@ -285,7 +285,7 @@ export const projectPages: ProjectPageData[] = [
       "Kompost, organik hammadde ve mineral bileï¿½xenlerin dozajlama, karÄ±ï¿½xtÄ±rma, granÃ¼lasyon, kurutma, soï¿½xutma, eleme ve paketleme sÃ¼reÃ§leriyle organomineral gÃ¼breye dÃ¶nÃ¼ï¿½xtÃ¼rÃ¼ldÃ¼ï¿½xÃ¼ tesis projeleri hazÄ±rlÄ±yoruz.",
     heroDescription:
       "10 ton/saat Ã¶lÃ§eï¿½xinde organomineral gÃ¼bre yatÄ±rÄ±mlarÄ±nda formÃ¼lasyon, kapasite, granÃ¼l kalitesi ve saha yerleï¿½ximini birlikte ele alan proses kurgularÄ± geliï¿½xtiriyoruz.",
-    image: "/images/granul1.jpg",
+    image: "/images/granulator disk/diskgran2.jpg",
     imageAlt: "10 ton saat organomineral gÃ¼bre tesisi projesi",
     metadataTitle: "10 Ton/Saat Organomineral GÃ¼bre Tesisi Projesi | Pro Makina",
     metadataDescription:
@@ -342,7 +342,7 @@ export const projectPages: ProjectPageData[] = [
       "NPK, organomineral ve Ã¶zel formÃ¼lasyonlu granÃ¼l gÃ¼bre Ã¼retimi iÃ§in dozajlama, granÃ¼lasyon, kurutma, soï¿½xutma, kaplama ve paketleme hattÄ±nÄ± tek proses akÄ±ï¿½xÄ±nda ele alÄ±yoruz.",
     heroDescription:
       "GranÃ¼l gÃ¼bre yatÄ±rÄ±mlarÄ±nda proses akÄ±ï¿½xÄ±nÄ± yalnÄ±zca makine listesiyle deï¿½xil, kapasite, Ã¼rÃ¼n standardÄ± ve saha kurgusuyla birlikte deï¿½xerlendiriyoruz.",
-    image: "/images/granul1.jpg",
+    image: "/images/granulator disk/diskgran2.jpg",
     imageAlt: "GranÃ¼l gÃ¼bre Ã¼retim tesisi projesi",
     metadataTitle: "GranÃ¼l GÃ¼bre ï¿½Sretim Tesisi Projesi | Pro Makina",
     metadataDescription:
@@ -396,7 +396,7 @@ export const projectPages: ProjectPageData[] = [
       "SÄ±vÄ± organomineral gÃ¼bre, sÄ±vÄ± NPK, amino asitli Ã¼rÃ¼nler ve biyostimÃ¼lan Ã¼retimi iÃ§in reaktÃ¶r, tank, karÄ±ï¿½xtÄ±rma, filtrasyon, stoklama ve dolum hattÄ± projeleri geliï¿½xtiriyoruz.",
     heroDescription:
       "SÄ±vÄ± gÃ¼bre hatlarÄ±nda reaktÃ¶r hacmi, karÄ±ï¿½xtÄ±rma yapÄ±sÄ±, stoklama senaryosu ve dolum ritmini birlikte okuyarak daha uygulanabilir tesis kurgularÄ± oluï¿½xturuyoruz.",
-    image: "/images/reaktor1.avif",
+    image: "/images/siyah beyaz/tank 1.jpg",
     imageAlt: "SÄ±vÄ± gÃ¼bre Ã¼retim tesisi projesi",
     metadataTitle: "SÄ±vÄ± GÃ¼bre ï¿½Sretim Tesisi Projesi | Pro Makina",
     metadataDescription:
@@ -450,7 +450,7 @@ export const projectPages: ProjectPageData[] = [
       "Silis kumu ve kuvars kumu proseslerinde besleme, kurutma tamburu, sÄ±cak gaz hattÄ±, siklon, fan, toz toplama, eleme ve stoklama ekipmanlarÄ±nÄ± birlikte projelendiriyoruz.",
     heroDescription:
       "Silis kumu kurutma tesislerinde kurutma yÃ¼kÃ¼, Ã¼rÃ¼n akÄ±ï¿½xÄ±, toz kontrolÃ¼ ve stoklama ihtiyaÃ§larÄ±nÄ± aynÄ± termal proses kurgusu iÃ§inde ele alÄ±yoruz.",
-    image: "/images/maden1.jpg",
+    image: "/images/maden/maden1.jpg",
     imageAlt: "Silis kumu kurutma tesisi projesi",
     metadataTitle: "Silis Kumu Kurutma Tesisi Projesi | Pro Makina",
     metadataDescription:
@@ -503,7 +503,7 @@ export const projectPages: ProjectPageData[] = [
       "Perlit ve benzeri hafif mineral hammaddelerde kontrollÃ¼ kurutma, eleme, taï¿½xÄ±ma, toz toplama ve Ã¼rÃ¼n sÄ±nÄ±flandÄ±rma sÃ¼reÃ§lerini kapsayan tesis projeleri hazÄ±rlÄ±yoruz.",
     heroDescription:
       "Perlit gibi hafif ve hassas mineral hammaddelerde Ã¼rÃ¼n kaybÄ±nÄ± azaltan, sÄ±nÄ±flandÄ±rmayÄ± netleï¿½xtiren ve termal sÃ¼reci kontrollÃ¼ kÄ±lan proje kurgularÄ± geliï¿½xtiriyoruz.",
-    image: "/images/maden1.jpg",
+    image: "/images/maden/maden1.jpg",
     imageAlt: "Perlit kurutma ve eleme tesisi projesi",
     metadataTitle: "Perlit Kurutma ve Eleme Tesisi Projesi | Pro Makina",
     metadataDescription:
@@ -557,7 +557,7 @@ export const projectPages: ProjectPageData[] = [
       "KireÃ§ taï¿½xÄ±, bentonit, kil, kÃ¼kÃ¼rt, kuvars ve benzeri mineral hammaddeler iÃ§in kÄ±rÄ±cÄ±lar, elekler, kurutma tamburu, konveyÃ¶rler ve stoklama sistemlerini proje bazlÄ± kurguluyoruz.",
     heroDescription:
       "KÄ±rma, eleme ve kurutma sÃ¼reÃ§lerini aynÄ± proje mantÄ±ï¿½xÄ±nda ele alarak maden ve mineral iï¿½xleme hatlarÄ±nda daha dengeli bir kapasite omurgasÄ± kuruyoruz.",
-    image: "/images/maden1.jpg",
+    image: "/images/maden/maden1.jpg",
     imageAlt: "Maden kÄ±rma eleme kurutma tesisi projesi",
     metadataTitle: "Maden KÄ±rma, Eleme ve Kurutma Tesisi Projesi | Pro Makina",
     metadataDescription:
@@ -611,7 +611,7 @@ export const projectPages: ProjectPageData[] = [
       "Belediye ve endÃ¼striyel arÄ±tma Ã§amurlarÄ±nÄ±n besleme, susuzlaï¿½xtÄ±rma destek, kurutma, koku kontrol, toz toplama ve nihai Ã¼rÃ¼n hazÄ±rlama sÃ¼reÃ§lerini projelendiriyoruz.",
     heroDescription:
       "ArÄ±tma Ã§amuru kurutma projelerinde nem dÃ¼ï¿½xÃ¼rme hedefi, koku kontrolÃ¼, Ã¼rÃ¼n hazÄ±rlama ve saha akÄ±ï¿½xÄ± aynÄ± termal proses mantÄ±ï¿½xÄ± iÃ§inde okunur.",
-    image: "/images/fabrika1.jpg",
+    image: "/images/01-genel/fabrika1.jpg",
     imageAlt: "ArÄ±tma Ã§amuru kurutma tesisi projesi",
     metadataTitle: "ArÄ±tma ï¿½!amuru Kurutma Tesisi Projesi | Pro Makina",
     metadataDescription:
@@ -665,7 +665,7 @@ export const projectPages: ProjectPageData[] = [
       "Deri kaynaklÄ± atÄ±klarÄ±n parÃ§alama, taï¿½xÄ±ma, proses hazÄ±rlÄ±ï¿½xÄ±, geri kazanÄ±m ve son Ã¼rÃ¼n deï¿½xerlendirme aï¿½xamalarÄ±nÄ± kapsayan Ã¶zel tesis projeleri hazÄ±rlÄ±yoruz.",
     heroDescription:
       "Deri atÄ±ï¿½xÄ±nÄ±n lifli ve zorlu yapÄ±sÄ±nÄ± dikkate alan parÃ§alama, taï¿½xÄ±ma ve geri kazanÄ±m odaklÄ± Ã¶zel proses kurgularÄ± geliï¿½xtiriyoruz.",
-    image: "/images/geridonusum1.jpg",
+    image: "/images/01-genel/geridonusum1.jpg",
     imageAlt: "Deri atÄ±klarÄ±ndan geri kazanÄ±m tesisi projesi",
     metadataTitle: "Deri AtÄ±klarÄ±ndan Geri KazanÄ±m Tesisi Projesi | Pro Makina",
     metadataDescription:
@@ -713,7 +713,7 @@ export const projectPages: ProjectPageData[] = [
       "DÃ¶kme katÄ±, toz, granÃ¼l, gÃ¼bre, maden ve kompost Ã¼rÃ¼nleri iÃ§in helezon konveyÃ¶r, bant konveyÃ¶r, zincirli konveyÃ¶r ve kovalÄ± elevatÃ¶r hatlarÄ±nÄ± proje bazlÄ± tasarlÄ±yoruz.",
     heroDescription:
       "Malzeme transferinin yalnÄ±zca makine seÃ§imi deï¿½xil, hat boyu, eï¿½xim, dozaj ve bakÄ±m eriï¿½ximiyle birlikte planlandÄ±ï¿½xÄ± taï¿½xÄ±ma sistemi projeleri geliï¿½xtiriyoruz.",
-    image: "/images/makinalar1.png",
+    image: "/images/01-genel/makinalar1.png",
     imageAlt: "Helezon konveyÃ¶r ve elevatÃ¶r hat projesi",
     metadataTitle: "Helezon, KonveyÃ¶r ve ElevatÃ¶r Hat Projesi | Pro Makina",
     metadataDescription:
@@ -770,7 +770,7 @@ export const projectPages: ProjectPageData[] = [
       "SÄ±vÄ± gÃ¼bre, kimyasal proses, Ã§Ã¶zÃ¼ndÃ¼rme, karÄ±ï¿½xtÄ±rma, stoklama ve kontrollÃ¼ dozajlama ihtiyaÃ§larÄ± iÃ§in reaktÃ¶r, tank ve proses baï¿½xlantÄ± sistemleri projeleri geliï¿½xtiriyoruz.",
     heroDescription:
       "ReaktÃ¶r ve tank sistemlerinde hacim, karÄ±ï¿½xtÄ±rÄ±cÄ± tipi, malzeme seÃ§imi ve proses baï¿½xlantÄ±larÄ± birlikte deï¿½xerlendirilerek daha gÃ¼venli Ã¼retim omurgalarÄ± kurgulanÄ±r.",
-    image: "/images/reaktor1.avif",
+    image: "/images/siyah beyaz/tank 1.jpg",
     imageAlt: "ReaktÃ¶r ve tank sistemleri projesi",
     metadataTitle: "ReaktÃ¶r ve Tank Sistemleri Projesi | Pro Makina",
     metadataDescription:
@@ -818,7 +818,7 @@ export const projectPages: ProjectPageData[] = [
       "Standart makine seÃ§iminin yeterli olmadÄ±ï¿½xÄ± sahalarda kapasite, Ã¶lÃ§Ã¼, Ã¼rÃ¼n davranÄ±ï¿½xÄ± ve proses hedefine gÃ¶re Ã¶zel makine ve hat projeleri geliï¿½xtiriyoruz.",
     heroDescription:
       "Saha Ã¶lÃ§Ã¼lerine, kapasiteye ve proses hedefine gÃ¶re katalog dÄ±ï¿½xÄ± ekipman ve hat Ã§Ã¶zÃ¼mleri tasarlayarak Ã¶zel Ã¼retim gerektiren yatÄ±rÄ±mlarÄ± destekliyoruz.",
-    image: "/images/makinalar1.png",
+    image: "/images/01-genel/makinalar1.png",
     imageAlt: "ï¿½zel proses ve makine imalatÄ± projesi",
     metadataTitle: "ï¿½zel Proses ve Makine Ä°malatÄ± Projesi | Pro Makina",
     metadataDescription:

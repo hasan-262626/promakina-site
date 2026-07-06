@@ -27,7 +27,7 @@ export default function Page() {
       <Hero
         title="Endüstriyel Çözümler"
         description="Google’dan gelen teknik ve yatırımcı kullanıcıları, güçlü mühendislik içeriği ve net teklif akışıyla projeye dönüştüren premium çözüm sayfaları."
-        image="/images/anahtar1.jpg"
+        image="/images/01-genel/fabrika1.jpg"
       >
         <Link
           href="/iletisim"

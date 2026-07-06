@@ -838,13 +838,13 @@ const projectDetailOverrides: Record<string, ProjectDetailContent> = {
 };
 
 const imageAliasMap: Record<string, string> = {
-  "/images/kompost1.jpg": "/images/kompost/kompost1.jpg",
-  "/images/biogaz1.jpg": "/images/biyogaz/biogaz1.jpg",
-  "/images/granul1.jpg": "/images/01-genel/gran1.jpg",
-  "/images/maden1.jpg": "/images/maden/maden1.jpg",
-  "/images/fabrika1.jpg": "/images/01-genel/fabrika1.jpg",
-  "/images/makinalar1.png": "/images/01-genel/projelendirme.jpg",
-  "/images/reaktor1.avif": "/images/01-genel/proses1.png",
+  "/images/kompost/kompost1.jpg": "/images/kompost/kompost1.jpg",
+  "/images/biyogaz/biogaz1.jpg": "/images/biyogaz/biogaz1.jpg",
+  "/images/granulator disk/diskgran2.jpg": "/images/01-genel/gran1.jpg",
+  "/images/maden/maden1.jpg": "/images/maden/maden1.jpg",
+  "/images/01-genel/fabrika1.jpg": "/images/01-genel/fabrika1.jpg",
+  "/images/01-genel/makinalar1.png": "/images/01-genel/projelendirme.jpg",
+  "/images/siyah beyaz/tank 1.jpg": "/images/01-genel/proses1.png",
 };
 
 export function resolveProjectImagePath(path: string | undefined) {

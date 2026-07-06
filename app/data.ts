@@ -97,641 +97,6 @@ export type LibraryItem = {
   relatedLinks: string[];
 };
 
-export const solutions: SolutionItem[] = [
-  {
-    slug: "turquality-danismanligi",
-    navTitle: "Turquality Hizmetleri",
-    title: "Turquality Danismanligi",
-    heroEyebrow: "Turquality",
-    heroTitle: "Markanizi global pazarlarda daha guclu konumlandirin.",
-    heroDescription:
-      "Markanizin global pazarlarda daha guclu konumlanmasi icin stratejik basvuru, gelisim ve s?re? yonetimi sunuyoruz.",
-    ctaLabel: "Turquality ile Tani?xin",
-    image:
-      "https://images.unsplash.com/photo-1552664730-d307ca884978cauto=format&fit=crop&w=1200&q=80",
-  },
-  {
-    slug: "greenquality-hizmetleri",
-    navTitle: "Greenquality Hizmetleri",
-    title: "Greenquality",
-    heroEyebrow: "Greenquality",
-    heroTitle: "S?rd?rulebilir ve verimli uygulamalar gelistirin.",
-    heroDescription:
-      "Yesil d?n???m hedefleri do?xrultusunda surdurulebilirlik, uyum ve rekabet avantajini birlikte planliyoruz.",
-    ctaLabel: "Greenquality ile Tani?xin",
-    image:
-      "https://images.unsplash.com/photo-1517048676732-d65bc937f952cauto=format&fit=crop&w=1200&q=80",
-  },
-  {
-    slug: "dijital-donusum-hizmetleri",
-    navTitle: "Dijital D?n??x?m Hizmetleri",
-    title: "Dijital D?n??x?m",
-    heroEyebrow: "Dijital D?n??x?m",
-    heroTitle: "S?re?lerinizi daha hizli, olculebilir ve verimli hale getirin.",
-    heroDescription:
-      "Operasyonlarinizi daha izlenebilir, olculebilir ve hizli hale getiren kurumsal d?n???m adimlari tasarliyoruz.",
-    ctaLabel: "D?n??x?m? Kesfedin",
-    image:
-      "https://images.unsplash.com/photo-1451187580459-43490279c0facauto=format&fit=crop&w=1200&q=80",
-  },
-  {
-    slug: "kurumsallasma-danismanligi",
-    navTitle: "Kurumsallasma Danismanligi",
-    title: "Kurumsallasma",
-    heroEyebrow: "Kurumsallasma",
-    heroTitle: "Sirket yapinizi b?y?meye hazir, saglam bir zemine oturtun.",
-    heroDescription:
-      "B?y?me yolculugunda sirket yapinizi guclendiren yonetim modeli, rol dagilimi ve s?re? altyapisi kuruyoruz.",
-    ctaLabel: "Kurumsallasmayi Inceleyin",
-    image:
-      "https://images.unsplash.com/photo-1521737604893-d14cc237f11dcauto=format&fit=crop&w=1200&q=80",
-  },
-  {
-    slug: "egitim-hizmetleri",
-    navTitle: "Egitim Hizmetleri",
-    title: "Egitim Hizmetleri",
-    heroEyebrow: "Egitim",
-    heroTitle: "Ekiplerinizi degisime hazirlayan uygulamali egitim programlari.",
-    heroDescription:
-      "Y?netim, d?n???m ve saha uygulamalarina yonelik egitimlerle ekibinizin bilgi ve uygulama kapasitesini guclendiriyoruz.",
-    ctaLabel: "Egitimleri Inceleyin",
-    image:
-      "https://images.unsplash.com/photo-1522202176988-66273c2fd55fcauto=format&fit=crop&w=1200&q=80",
-  },
-];
-
-export const sectors: SectorItem[] = [
-  {
-    slug: "gubre-ve-granulasyon-tesisleri",
-    title: "Gï¿½bre ï¿½retim Tesisleri",
-    summary:
-      "S1v1, granï¿½l ve toz gï¿½bre ï¿½retim hatlar1 iï¿½in proses tasar1m1, ekipman seï¿½imi ve tesis kurgusu.",
-    heroTitle: "Gï¿½bre ï¿½retim tesislerinde yï¿½ksek verim ve sï¿½rekli kalite.",
-    heroDescription:
-      "Ham madde haz1rlamadan kar1_1m, granï¿½lasyon, kurutma, eleme, soutma ve paketlemeye kadar tï¿½m ï¿½retim sï¿½recini tek bir tesis mant11yla planl1yoruz.",
-    image:
-      "https://images.unsplash.com/photo-1621905252507-b35492cc74b4cauto=format&fit=crop&w=1400&q=80",
-  },
-  {
-    slug: "kompost-ve-organik-atik-tesisleri",
-    title: "Kompost ve Organik At1k Tesisleri",
-    summary:
-      "Organik at1klar1n geri kazan1m1 iï¿½in kompost prosesleri, tambur sistemleri ve saha kurulumlar1.",
-    heroTitle: "Kompost ve organik at1k i_leme tesislerinde kontrollï¿½ ve verimli proses yap1s1.",
-    heroDescription:
-      "At1k karakterine ve kapasiteye uygun tesis tasar1m1 ile organik at1klar1 deerli son ï¿½rï¿½ne dï¿½nï¿½_tï¿½ren altyap1y1 kuruyoruz.",
-    image:
-      "https://images.unsplash.com/photo-1464226184884-fa280b87c399cauto=format&fit=crop&w=1400&q=80",
-  },
-  {
-    slug: "madencilik-ve-mineral-isleme",
-    title: "Madencilik ve Mineral 0_leme",
-    summary:
-      "K1rma, eleme, ta_1ma, kurutma ve s1n1fland1rma ad1mlar1na uygun ekipman ve hat kurgular1.",
-    heroTitle: "Madencilik ve mineral i_leme sï¿½reï¿½lerinde dayan1kl1 ekipman ve proses sï¿½reklilii.",
-    heroDescription:
-      "Yï¿½ksek a_1nma ko_ullar1na uygun mekanik altyap1 ve proses ak1_1 ile sahada uzun ï¿½mï¿½rlï¿½ sistemler kurguluyoruz.",
-    image:
-      "https://images.unsplash.com/photo-1513828583688-c52646db42dacauto=format&fit=crop&w=1400&q=80",
-  },
-  {
-    slug: "kimya-ve-proses-endustrisi",
-    title: "Kimya ve Proses Endï¿½strisi",
-    summary:
-      "Reaktï¿½r, dozajlama, ï¿½ï¿½zï¿½ndï¿½rme, soutma ve transfer sistemleriyle proses gï¿½venlii ve verim odakl1 kurgu.",
-    heroTitle: "Kimya ve proses endï¿½strisi iï¿½in kontrollï¿½ ï¿½retim ve hassas ekipman seï¿½imi.",
-    heroDescription:
-      "Reaksiyon, kar1_t1rma, depolama ve transfer a_amalar1nda ï¿½rï¿½n gï¿½venlii ve proses kararl1l11n1 merkeze al1yoruz.",
-    image:
-      "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dccauto=format&fit=crop&w=1400&q=80",
-  },
-  {
-    slug: "geri-donusum-ve-atik-yonetimi",
-    title: "Geri Dï¿½nï¿½_ï¿½m ve At1k Yï¿½netimi",
-    summary:
-      "Parï¿½alama, ay1rma, ta_1ma ve geri kazan1m odakl1 tesis ï¿½ï¿½zï¿½mleriyle at1k yï¿½netim altyap1s1.",
-    heroTitle: "Geri dï¿½nï¿½_ï¿½m ve at1k yï¿½netiminde i_lenebilir ve ï¿½lï¿½eklenebilir sistemler.",
-    heroDescription:
-      "Farkl1 at1k ak1_lar1 iï¿½in parï¿½alama, s1n1fland1rma ve proses yï¿½netimini tek ï¿½at1 alt1nda topluyoruz.",
-    image:
-      "https://images.unsplash.com/photo-1532996122724-e3c354a0b15bcauto=format&fit=crop&w=1400&q=80",
-  },
-  {
-    slug: "enerji-ve-biyogaz-sistemleri",
-    title: "Enerji ve Biyogaz Sistemleri",
-    summary:
-      "Biyogaz besleme, organik madde haz1rlama ve yard1mc1 proses ekipmanlar1yla enerji odakl1 tesis yap1s1.",
-    heroTitle: "Enerji ve biyogaz sistemlerinde istikrarl1 besleme ve sï¿½rdï¿½rï¿½lebilir i_letme.",
-    heroDescription:
-      "Biyogaz tesislerinin ï¿½n haz1rl1k ve malzeme yï¿½netimi ad1mlar1n1 daha verimli hale getiren ekipman kurgular1 sunuyoruz.",
-    image:
-      "https://images.unsplash.com/photo-1473341304170-971dccb5ac1ecauto=format&fit=crop&w=1400&q=80",
-  },
-  {
-    slug: "atik-su-camuru-ve-aritma-cozumleri",
-    title: "At1k Su ï¿½amuru ve Ar1tma ï¿½ï¿½zï¿½mleri",
-    summary:
-      "ï¿½amur ta_1ma, susuzla_t1rma sonras1 haz1rlama ve kurutma ad1mlar1na uygun proses ï¿½ï¿½zï¿½mleri.",
-    heroTitle: "At1k su ï¿½amuru ve ar1tma ï¿½ï¿½zï¿½mlerinde kontrollï¿½ i_leme altyap1s1.",
-    heroDescription:
-      "Ar1tma tesislerinden gelen farkl1 karakterdeki ï¿½amurlar iï¿½in depolama, ta_1ma ve kurutma odakl1 sistemler tasarl1yoruz.",
-    image:
-      "https://images.unsplash.com/photo-1513828742140-ccaa28f3eda0cauto=format&fit=crop&w=1400&q=80",
-  },
-  {
-    slug: "yem-toz-ve-dokme-kati-malzeme-isleme-sistemleri",
-    title: "Yem, Toz ve Dï¿½kme Kat1 Malzeme 0_leme Sistemleri",
-    summary:
-      "Dï¿½kme kat1 malzemelerde depolama, dozajlama, ta_1ma, eleme ve kar1_t1rma sï¿½reï¿½leri iï¿½in hat tasar1m1.",
-    heroTitle: "Dï¿½kme kat1 malzeme i_lemede hassas ta_1ma ve dengeli proses ak1_1.",
-    heroDescription:
-      "Yem, toz ve benzeri malzemelerde ak1_kanl1k, nem ve kapasite dei_kenlerini dikkate alan ekipman seï¿½imi sunuyoruz.",
-    image:
-      "https://images.unsplash.com/photo-1517048676732-d65bc937f952cauto=format&fit=crop&w=1400&q=80",
-  },
-];
-
-export const machineGroups: MachineGroupItem[] = [
-  {
-    slug: "tambur-sistemleri",
-    title: "Tambur Sistemleri",
-    summary:
-      "Kurutma, kompost, gran?lasyon ve sogutma gibi farkli prosesler i?in tek ?ati tambur ??z?mleri.",
-    shortDescription:
-      "Tamburlari tek sayfada toplayip ihtiyaca gore kurutma, kompost, gran?lasyon ve sogutma varyantlari sunuyoruz.",
-    heroTitle: "Tambur sistemlerinde prosese g?re do?xru kurgu ve do?xru kapasite se?imi.",
-    heroDescription:
-      "Kurutma tamburu, kompost tamburu, gran?lasyon tamburu ve sogutma tamburu se?eneklerini ayni yapi i?inde sunarak ?r?n ve proses uyumunu g??lendiriyoruz.",
-    image:
-      "https://images.unsplash.com/photo-1565793298595-6a879b1d9492cauto=format&fit=crop&w=1400&q=80",
-    variants: [
-      "Kurutma Tamburlari",
-      "Kompost Tamburlari",
-      "Gran?lasyon Tamburlari",
-      "Sogutma Tamburlari",
-    ],
-    technicalSpecs: [
-      "Asinmaya dayanikli govde yapisi",
-      "Farkli cap ve boy secenekleri",
-      "Ayarlanabilir donus hizi",
-      "Tahrik, sasi ve ic kaplama alternatifleri",
-    ],
-    capacities: ["5-100 ton/saat", "Projeye gore ?zel cap ve uzunluk"],
-    applications: [
-      "G?bre ?retim hatlari",
-      "Kompost tesisleri",
-      "Mineral kurutma prosesleri",
-      "Organik madde hazirlama hatlari",
-    ],
-    optionalEquipment: [
-      "Brulor sistemi",
-      "Besleme bunkeri",
-      "Toz toplama hatti",
-      "Otomasyon ve sensor seti",
-    ],
-    materialTypes: ["Organik atik", "Gran?l g?bre", "Mineral", "?!amur ve yari nemli malzeme"],
-    advantages: [
-      "Y?ksek isleme verimi",
-      "Surekli hat entegrasyonu",
-      "Bakim dostu mekanik yapi",
-      "Prosese ?zel ic geometri secenekleri",
-    ],
-    relatedSectors: [
-      "Gï¿½bre ï¿½retim Tesisleri",
-      "Kompost ve Organik Atik Tesisleri",
-      "At1k Su ï¿½amuru ve Ar1tma ï¿½ï¿½zï¿½mleri",
-    ],
-    relatedServices: ["Proses Tasarımı ve Mühendislik", "Makine Imalati", "Anahtar Teslim Tesis Kurulumu"],
-    relatedProjects: [
-      "Kompost Tesisi Projeleri",
-      "Organomineral G?bre Tesisi Projeleri",
-      "?zel Proses ve Makine 0malat1",
-    ],
-    faqs: [
-      {
-        question: "Tambur tipi nasil secilir?",
-        answer:
-          "Malzemenin nemi, tane yapisi, hedef kapasite ve proses amacina gore kurutma, kompost, granulasyon veya sogutma tamburu belirlenir.",
-      },
-      {
-        question: "Tamburlar ?zel olculerde uretilebilir mi?",
-        answer:
-          "Evet, saha kosullari ve kapasite ihtiyacina gore cap, uzunluk, tahrik ve ic tasarim ozellestirilebilir.",
-      },
-    ],
-  },
-  {
-    slug: "tasima-ekipmanlari",
-    title: "Ta?x1ma Ekipmanlari",
-    summary:
-      "Bant konveyor, helezon, kovali elevat?r ve zincirli konveyor gibi ta?x1ma ekipmanlarini tek ?at1 alt1nda topluyoruz.",
-    shortDescription:
-      "Helezon, elevat?r ve konveyor gruplarini dagitmadan ayni kategori icinde sunuyoruz.",
-    heroTitle: "Ta?x1ma ekipmanlarinda dengeli ak1?x, g?venli transfer ve s?rekli hat ba?xlantisi.",
-    heroDescription:
-      "Bant konveyorler, helezon konveyorler, kovali elevat?rler ve zincirli konveyorler ile hammadde ve ?r?n transferini s?re?le uyumlu hale getiriyoruz.",
-    image:
-      "https://images.unsplash.com/photo-1581092919535-7146ff1a5902cauto=format&fit=crop&w=1400&q=80",
-    variants: [
-      "Bantl? Konvey?rler",
-      "Helezon Konveyorler",
-      "Kovali Elevatorler",
-      "Zincirli Konveyorler",
-    ],
-    technicalSpecs: [
-      "Farkli hat uzunlugu ve egim secenekleri",
-      "Asinmaya dayanikli tasiyici yuzey",
-      "Degisken hiz kontroll? surucu opsiyonu",
-      "Kapali veya acik govde secenekleri",
-    ],
-    capacities: ["1-250 ton/saat", "Malzeme yogunluguna gore ?zel projelendirme"],
-    applications: [
-      "G?bre tesisleri",
-      "Kompost hatlari",
-      "Biyogaz besleme sistemleri",
-      "D?kme kati malzeme transferi",
-    ],
-    optionalEquipment: [
-      "Manyetik ayirici entegrasyonu",
-      "Tartim sistemleri",
-      "Kapali toz kontroll? hatlar",
-      "Platform ve yurume yollari",
-    ],
-    materialTypes: ["Toz ?r?n", "Gran?l ?r?n", "Organik malzeme", "Mineral ve dokme kati"],
-    advantages: [
-      "Hat ici duzenli transfer",
-      "D???k isletme kaybi",
-      "Sahaya gore esnek yerle?im",
-      "Farkli ekipmanlarla kolay entegrasyon",
-    ],
-    relatedSectors: [
-      "Yem, Toz ve Dï¿½kme Kat1 Malzeme 0_leme Sistemleri",
-      "Enerji ve Biyogaz Sistemleri",
-      "Geri Dï¿½nï¿½_ï¿½m ve At1k Yï¿½netimi",
-    ],
-    relatedServices: ["Proses Tasarımı ve Mühendislik", "Makine Imalati"],
-    relatedProjects: ["Kompost Tesisi Projeleri", "?zel Proses ve Makine 0malat1"],
-    faqs: [
-      {
-        question: "Hangi tasima ekipmani secilmeli?",
-        answer:
-          "Malzeme tipi, mesafe, egim, nem orani ve istenen kapasiteye gore bant, helezon, elevat?r veya zincirli konveyor secilir.",
-      },
-      {
-        question: "Kapali sistem ??z?mleri sunuyor musunuz?",
-        answer:
-          "Evet, tozlu veya kokulu ?r?nler icin kapali govde ve filtre entegrasyonlu tasima hatlari projelendirebiliyoruz.",
-      },
-    ],
-  },
-  {
-    slug: "kiricilar-ve-parcalayicilar",
-    title: "Kiricilar ve Parcalayicilar",
-    summary:
-      "?!eki?li degirmen, zincirli k1r1c1, ceneli k1r1c1, primer k1r1c1 ve tek/?ift milli par?alay1c1lar1 tek grupta sunuyoruz.",
-    shortDescription:
-      "Kirici ve parcalayici seceneklerini uygulama t?r?ne gore ayni sayfada karsilastirmali sunuyoruz.",
-    heroTitle: "Kirici ve parcalayicilarda malzemeye uygun kademeli boyut dusurme.",
-    heroDescription:
-      "Hammadde hazirlama ve geri kazanim s?re?lerinde farkli malzemeler icin uygun kirma ve parcalama cozumlerini tek cati altinda topluyoruz.",
-    image:
-      "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122cauto=format&fit=crop&w=1400&q=80",
-    variants: [
-      "?!eki?li Degirmen",
-      "Zincirli Kirici",
-      "?!eneli K1r1c1",
-      "Primer Kirici",
-      "Cift Milli Parcalayici",
-      "Tek Milli Parcalayici",
-    ],
-    technicalSpecs: [
-      "Y?ksek dayanimli govde yapisi",
-      "Degistirilebilir asinma parcasi setleri",
-      "Farkli rotor ve bicak konfig?rasyonlari",
-      "Besleme olcusune gore ?zel giris agzi",
-    ],
-    capacities: ["2-80 ton/saat", "Malzeme sertligine gore ?zel se?im"],
-    applications: [
-      "Geri d?n???m tesisleri",
-      "Mineral isleme",
-      "G?bre ve organik hammadde hazirlama",
-      "Atik azaltma hatlari",
-    ],
-    optionalEquipment: [
-      "Manyetik ayirma",
-      "Besleme bunkeri",
-      "Konveyor entegrasyonu",
-      "Toz toplama baglantisi",
-    ],
-    materialTypes: ["Plastik", "Organik atik", "Mineral", "Topak ?r?n ve dokme malzeme"],
-    advantages: [
-      "Istikrarli boyut k???ltme",
-      "Prosese uygun farkli parcalama seviyeleri",
-      "Asinmaya karsi guclu yapi",
-      "Bakim kolayligi",
-    ],
-    relatedSectors: [
-      "Geri Dï¿½nï¿½_ï¿½m ve At1k Yï¿½netimi",
-      "Madencilik ve Mineral 0_leme",
-      "Kompost ve Organik Atik Tesisleri",
-    ],
-    relatedServices: ["Makine Imalati", "Anahtar Teslim Tesis Kurulumu"],
-    relatedProjects: ["?zel Proses ve Makine 0malat1", "Kompost Tesisi Projeleri"],
-    faqs: [
-      {
-        question: "Tek milli mi cift milli mi secilmeli?",
-        answer:
-          "Malzemenin tipi, hedef parcacik boyutu ve besleme duzensizligi dikkate alinarak tek veya cift milli se?im yapilir.",
-      },
-      {
-        question: "Kiricilar hat icinde kullanilabilir mi?",
-        answer:
-          "Evet, besleme bunkeri, konveyor ve eleme sistemleriyle entegre edilerek surekli hat icinde calisabilir.",
-      },
-    ],
-  },
-  {
-    slug: "reaktorler-ve-tanklar",
-    title: "Reaktorler ve Tanklar",
-    summary:
-      "Kar1?xt1r1c1l1 reakt?rler, ??z?nd?rme tanklar1, stok tanklar1 ve bas1n?l1 reakt?rleri tek ?at1 alt1nda topluyoruz.",
-    shortDescription:
-      "Tanklari ve reaktorleri ayirmadan ayni proses ailesi icinde sunuyoruz.",
-    heroTitle: "Reaktor ve tank cozumlerinde kontroll? reaksiyon, depolama ve karistirma altyapisi.",
-    heroDescription:
-      "Karistiricili reaktorler, cozumdurme tanklari, stok tanklari ve basincli reaktorlerle kimyasal ve proses hatlarina uygun altyapi kuruyoruz.",
-    image:
-      "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dccauto=format&fit=crop&w=1400&q=80",
-    variants: [
-      "Karistiricili Reaktorler",
-      "Cozundurme Tanklari",
-      "Stok Tanklari",
-      "Basincli Reaktorler",
-    ],
-    technicalSpecs: [
-      "Paslanmaz veya karbon celik govde secenegi",
-      "Karistirici tipi ve devir secenekleri",
-      "Isi yalitimi veya ceket sistemi opsiyonu",
-      "Basinc ve sicaklik izleme altyapisi",
-    ],
-    capacities: ["500 litre - 100 m3+", "Proses ihtiyacina gore ?zel imalat"],
-    applications: [
-      "Kimya tesisleri",
-      "Sivi g?bre hatlari",
-      "Hammadde hazirlama ve depolama",
-      "Reaksiyon ve cozumdurme prosesleri",
-    ],
-    optionalEquipment: [
-      "Loadcell sistemleri",
-      "Seviye ve sicaklik sensorleri",
-      "Dozaj pompasi entegrasyonu",
-      "Platform ve servis merdiveni",
-    ],
-    materialTypes: ["Kimyasal solusyonlar", "Sivi g?bre", "Proses sivisi", "Bulamac ve karisimlar"],
-    advantages: [
-      "Prosese gore ozellestirme",
-      "G?venli depolama ve reaksiyon ortami",
-      "Bakim ve temizlik kolayligi",
-      "Uzun omurlu govde tasarimi",
-    ],
-    relatedSectors: [
-      "Kimya ve Proses Endï¿½strisi",
-      "Gï¿½bre ï¿½retim Tesisleri",
-      "At1k Su ï¿½amuru ve Ar1tma ï¿½ï¿½zï¿½mleri",
-    ],
-    relatedServices: ["Proses Tasarımı ve Mühendislik", "Makine Imalati"],
-    relatedProjects: ["Organomineral G?bre Tesisi Projeleri", "?zel Proses ve Makine 0malat1"],
-    faqs: [
-      {
-        question: "Hangi tank malzemesi kullanilmali?",
-        answer:
-          "Akiskan tipi, sicaklik, kimyasal etkilesim ve basin? gereksinimine gore paslanmaz veya karbon celik tercih edilir.",
-      },
-      {
-        question: "Basincli reaktorler ?zel hesapla mi yapiliyor?",
-        answer:
-          "Evet, basin?, sicaklik ve proses ko?ullar?na gore m?hendislik hesaplariyla projelendirme yapilir.",
-      },
-    ],
-  },
-  {
-    slug: "eleme-ve-siniflandirma-sistemleri",
-    title: "Eleme ve Siniflandirma Sistemleri",
-    summary:
-      "D?ner elek, vibrasyonlu elek ve trommel sistemlerini ayni kategori i?inde sunuyoruz.",
-    shortDescription:
-      "Eleme sistemlerini ayri ayri dagitmadan ayni grup icinde secenekli olarak listeliyoruz.",
-    heroTitle: "Eleme ve siniflandirma sistemlerinde temiz ayirma ve dengeli ?r?n ak???.",
-    heroDescription:
-      "D?ner elek, vibrasyonlu elek ve trommel sistemleri ile farkli tane boyutlari icin net siniflandirma yapisi kuruyoruz.",
-    image:
-      "https://images.unsplash.com/photo-1517048676732-d65bc937f952cauto=format&fit=crop&w=1400&q=80",
-    variants: ["Doner Elek", "Vibrasyonlu Elek", "Trommel Sistemleri"],
-    technicalSpecs: [
-      "Farkli goz acikligi secenekleri",
-      "Titre?xim veya donus bazli ayirma mekanizmasi",
-      "Asinmaya dayanikli elek yuzeyi",
-      "Hat ici veya bagimsiz kurulum secenekleri",
-    ],
-    capacities: ["3-120 ton/saat", "Malzeme tane boyuna gore degisken kapasite"],
-    applications: [
-      "Kompost siniflandirma",
-      "Gran?l ?r?n eleme",
-      "Geri d?n???m ak??? ayirma",
-      "Mineral ve dokme kati siniflandirma",
-    ],
-    optionalEquipment: ["Toz emme baglantisi", "By-pass hatti", "Alt-ust ?r?n konveyorleri"],
-    materialTypes: ["Gran?l", "Toz", "Organik karisim", "Kuru mineral ?r?n"],
-    advantages: [
-      "Net ?r?n siniflandirmasi",
-      "Hat verimini artirma",
-      "Farkli elek tipleriyle esnek se?im",
-      "Bakim kolayligi",
-    ],
-    relatedSectors: [
-      "Kompost ve Organik Atik Tesisleri",
-      "Gï¿½bre ï¿½retim Tesisleri",
-      "Madencilik ve Mineral 0_leme",
-    ],
-    relatedServices: ["Proses Tasarımı ve Mühendislik", "Anahtar Teslim Tesis Kurulumu"],
-    relatedProjects: ["Kompost Tesisi Projeleri", "Organomineral G?bre Tesisi Projeleri"],
-    faqs: [
-      {
-        question: "Hangi elek tipi secilmeli?",
-        answer:
-          "Malzeme yapisi, nem orani, istenen tane sinifi ve kapasiteye gore doner, vibrasyonlu veya trommel tercih edilir.",
-      },
-      {
-        question: "Mevcut hatta entegre olabilir mi?",
-        answer:
-          "Evet, eleme sistemleri mevcut besleme ve cikis konveyorleriyle uyumlu sekilde projelendirilebilir.",
-      },
-    ],
-  },
-  {
-    slug: "toz-toplama-sistemleri",
-    title: "Toz Toplama Sistemleri",
-    summary:
-      "Jet pulse filtreler, siklonlar ve torba filtreleri tek ?ati filtreleme kategorisinde topluyoruz.",
-    shortDescription:
-      "Filtreleme ekipmanlarini ayri sayfalara bolmeden ortak bir sistem mantigiyla sunuyoruz.",
-    heroTitle: "Toz toplama sistemlerinde temiz hava, ekipman korumasi ve daha duzenli isletme.",
-    heroDescription:
-      "Jet pulse filtreler, siklonlar ve torba filtrelerle toz kontrolunu s?re?e uygun sekilde yonetiyoruz.",
-    image:
-      "https://images.unsplash.com/photo-1494415859740-21e878dd929dcauto=format&fit=crop&w=1400&q=80",
-    variants: ["Jet Pulse Filtreler", "Siklonlar", "Torba Filtreler"],
-    technicalSpecs: [
-      "Farkli filtre y?zeyi secenekleri",
-      "Hava debisine uygun fan entegrasyonu",
-      "Toz toplama bunkeri ve valf secenekleri",
-      "Hat ici veya merkezi filtre sistemi kurulumu",
-    ],
-    capacities: ["1.000 - 100.000 m3/h", "Prosese gore fan ve filtre se?imi"],
-    applications: [
-      "Kurutma hatlari",
-      "Kirma ve eleme sistemleri",
-      "Torbalama ve dolum alanlari",
-      "Tozlu dokme kati malzeme prosesleri",
-    ],
-    optionalEquipment: ["Rotary valve", "Ex-proof ekipman", "Diferansiyel basin? takibi"],
-    materialTypes: ["Toz ?r?n", "Ince partikullu malzeme", "Gran?l kirintisi"],
-    advantages: [
-      "Daha temiz ?al??ma ortami",
-      "Hat ekipmanlarini koruma",
-      "Toz kaybini azaltma",
-      "Is g?venligini destekleme",
-    ],
-    relatedSectors: [
-      "Yem, Toz ve Dï¿½kme Kat1 Malzeme 0_leme Sistemleri",
-      "Kimya ve Proses Endï¿½strisi",
-      "Gï¿½bre ï¿½retim Tesisleri",
-    ],
-    relatedServices: ["Proses Tasarımı ve Mühendislik", "Anahtar Teslim Tesis Kurulumu"],
-    relatedProjects: ["Organomineral G?bre Tesisi Projeleri", "?zel Proses ve Makine 0malat1"],
-    faqs: [
-      {
-        question: "Filtre se?imi nasil yapiliyor?",
-        answer:
-          "Toz yuk?, hava debisi, partik?l karakteri ve saha yerlesimine gore jet pulse, siklon veya torba filtre secilir.",
-      },
-      {
-        question: "Patlama riskli alanlarda ??z?m var mi?",
-        answer:
-          "Evet, gerekli oldugunda ex-proof ekipman ve uygun g?venlik ekipmanlariyla ??z?m sunulabilir.",
-      },
-    ],
-  },
-  {
-    slug: "paketleme-ve-dolum-sistemleri",
-    title: "Paketleme ve Dolum Sistemleri",
-    summary:
-      "A?1k a?x1z torbalama, big bag dolum ve ?xi?xeleme/dolum hatlarini tek ?at1 dolum grubunda birle?xtiriyoruz.",
-    shortDescription:
-      "Torbalama ve dolum seceneklerini tek sistem ailesi icinde sunuyoruz.",
-    heroTitle: "Paketleme ve dolum sistemlerinde d?zenli tartim, temiz dolum ve hizli cikis.",
-    heroDescription:
-      "Acik agiz torbalama, big bag dolum ve sisleme/dolum hatlari ile ?r?nun son asamadaki sevk hazirligini guclendiriyoruz.",
-    image:
-      "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310dcauto=format&fit=crop&w=1400&q=80",
-    variants: ["Acik Agiz Torbalama", "Big Bag Dolum", "Siseleme ve Dolum Hatlari"],
-    technicalSpecs: [
-      "Tartim kontroll? dolum altyapisi",
-      "Yari otomatik veya otomatik sistem secenekleri",
-      "Konveyor ve dikis/kapama entegrasyonu",
-      "Farkli ambalaj tiplerine uyum",
-    ],
-    capacities: ["4-30 paket/dakika", "?Sr?ne ve ambalaja gore ?zel kurgu"],
-    applications: [
-      "Gran?l g?bre paketleme",
-      "Toz ?r?n torbalama",
-      "Sivi ?r?n dolum hatlari",
-      "Big bag sevkiyat hazirlama",
-    ],
-    optionalEquipment: ["Etiketleme", "Paletleme entegrasyonu", "Toz emme baglantisi"],
-    materialTypes: ["Gran?l", "Toz", "Sivi ?r?n", "D?kme kati"],
-    advantages: [
-      "Daha duzenli son ?r?n cikisi",
-      "Tartim hassasiyeti",
-      "Hatla uyumlu sevkiyat ak???",
-      "Operasyonel hiz artisi",
-    ],
-    relatedSectors: [
-      "Gï¿½bre ï¿½retim Tesisleri",
-      "Kimya ve Proses Endï¿½strisi",
-      "Yem, Toz ve Dï¿½kme Kat1 Malzeme 0_leme Sistemleri",
-    ],
-    relatedServices: ["Makine Imalati", "Anahtar Teslim Tesis Kurulumu"],
-    relatedProjects: ["Organomineral G?bre Tesisi Projeleri", "?zel Proses ve Makine 0malat1"],
-    faqs: [
-      {
-        question: "Hem toz hem granul ?r?n icin ??z?m olur mu?",
-        answer:
-          "Evet, ?r?n davranisina uygun tartim ve dolum ekipmanlariyla farkli ?r?nler icin uygun hat kurulabilir.",
-      },
-      {
-        question: "Big bag ve standart torba ayni hatta olur mu?",
-        answer:
-          "Uygun layout ve operasyon senaryosuyla ayni tesiste farkli dolum ??z?mleri birlikte planlanabilir.",
-      },
-    ],
-  },
-  {
-    slug: "depolama-ve-besleme-sistemleri",
-    title: "Depolama ve Besleme Sistemleri",
-    summary:
-      "Silo sistemleri, bunkerler ve ?r?n alma/besleme sistemlerini tek ?ati altinda topluyoruz.",
-    shortDescription:
-      "Depolama ve beslemeyi ayirmadan birbiriyle calisan tek grup olarak kurguluyoruz.",
-    heroTitle: "Depolama ve besleme sistemlerinde duzenli stok yonetimi ve kontroll? ak1?x.",
-    heroDescription:
-      "Silo sistemleri, bunkerler ve ?r?n alma-besleme ekipmanlari ile hattan onceki stok ve dozaj altyapisini guclendiriyoruz.",
-    image:
-      "https://images.unsplash.com/photo-1489515217757-5fd1be406fefcauto=format&fit=crop&w=1400&q=80",
-    variants: ["Silo Sistemleri", "Bunkerler", "?Sr?n Alma ve Besleme Sistemleri"],
-    technicalSpecs: [
-      "Farkli hacim ve geometri secenekleri",
-      "Akis yardimci ekipman entegrasyonu",
-      "Dozaj ve seviye kontrol baglantilari",
-      "Ic ve dis ortam kurulum secenekleri",
-    ],
-    capacities: ["1 m3 - 500 m3+", "Hat kapasitesine gore ?zel stok hacmi"],
-    applications: [
-      "Hammadde depolama",
-      "Hat oncesi tampon stok",
-      "Dozaj ve kontroll? besleme",
-      "D?kme ?r?n sevk hazirlama",
-    ],
-    optionalEquipment: ["Vibrator", "Helezon besleyici", "Loadcell", "Seviye sensoru"],
-    materialTypes: ["Toz ?r?n", "Gran?l ?r?n", "Organik malzeme", "Mineral ve karisimlar"],
-    advantages: [
-      "Duzenli stok yonetimi",
-      "kontroll? ?r?n besleme",
-      "Hat surekliligini destekleme",
-      "Sahaya uygun ?zel imalat",
-    ],
-    relatedSectors: [
-      "Yem, Toz ve Dï¿½kme Kat1 Malzeme 0_leme Sistemleri",
-      "Gï¿½bre ï¿½retim Tesisleri",
-      "Enerji ve Biyogaz Sistemleri",
-    ],
-    relatedServices: ["Proses Tasarımı ve Mühendislik", "Makine Imalati", "Anahtar Teslim Tesis Kurulumu"],
-    relatedProjects: ["Kompost Tesisi Projeleri", "Organomineral G?bre Tesisi Projeleri"],
-    faqs: [
-      {
-        question: "Bunker ve silo farki nedir?",
-        answer:
-          "Bunkerler daha ?ok ara stok ve hizli besleme icin, silolar ise daha b?y?k hacimli uzun sureli depolama icin tercih edilir.",
-      },
-      {
-        question: "Besleme sistemi ?r?ne gore degisir mi?",
-        answer:
-          "Evet, akiskanlik, tane boyu, nem ve koprulenme riski gibi faktorler besleme sisteminin tipini belirler.",
-      },
-    ],
-  },
-];
-
 export const services: ServiceItem[] = [
   {
     slug: "anahtar-teslim-tesis-kurulumu",
@@ -742,7 +107,7 @@ export const services: ServiceItem[] = [
     heroDescription:
       "Anahtar teslim tesis kurulumunda t?m s?reci tek bir koordinasyonla y?netiyoruz. Kompost, g?bre, geri d?n??x?m ve proses tesisleri i?in planlama, imalat, montaj ve devreye alma ad1mlar1n1 tek ?at1 alt1nda topluyoruz.",
     image:
-      "https://images.unsplash.com/photo-1504307651254-35680f356dfdcauto=format&fit=crop&w=1400&q=80",
+      "/images/01-genel/fabrika1.jpg",
     scope: [
       "Tesis yerle?xim plan1",
       "Ekipman se?imi",
@@ -791,7 +156,7 @@ export const services: ServiceItem[] = [
     heroDescription:
       "Malzeme akışı, kapasite ihtiyacı, ürün hedefi ve saha gerçeklerini birlikte değerlendirerek verimli ve uygulanabilir bir mühendislik kurgusu sunuyoruz.",
     image:
-      "https://images.unsplash.com/photo-1581092918484-8313b2f1141ccauto=format&fit=crop&w=1400&q=80",
+      "/images/01-genel/proses1.png",
     scope: [
       "Proses ak1?x1",
       "Hat yerle?ximi",
@@ -848,7 +213,7 @@ export const services: ServiceItem[] = [
     heroDescription:
       "Tambur, konveyör, bunker, kırıcı, reaktör ve yardımcı proses ekipmanlarını proje gereksinimine göre imal ediyoruz.",
     image:
-      "https://images.unsplash.com/photo-1565008447742-97f6f38c985ccauto=format&fit=crop&w=1400&q=80",
+      "/images/celik/celik2.jpg",
     scope: ["?zel olcu imalat", "Malzeme se?imi", "Atolye ?retimi", "Kalite kontrol"],
     outputs: ["Sahaya uygun ekipman", "Uzun omurlu kullanim", "Teknik uyum"],
     advantages: ["?zel imalat", "Dayanikli yapi", "Hatla uyum", "Bakim kolayligi"],
@@ -872,7 +237,7 @@ export const services: ServiceItem[] = [
     heroDescription:
       "Makinalarin sahaya alinmasindan ilk ?retim testlerine kadar her adimi planli, olculebilir ve koordineli sekilde ilerletiyoruz.",
     image:
-      "https://images.unsplash.com/photo-1503387762-592deb58ef4ecauto=format&fit=crop&w=1400&q=80",
+      "/images/01-genel/hizmetler1.png",
     scope: ["Montaj planlama", "Saha kurulum", "Test calismalari", "Ilk calistirma"],
     outputs: ["Daha hizli devreye alma", "Daha d???k saha riski", "?!al1?x1r teslim"],
     advantages: ["Saha koordinasyonu", "Surekli takip", "Performans kontrol?", "Ekip egitimi"],
@@ -896,7 +261,7 @@ export const services: ServiceItem[] = [
     heroDescription:
       "Revizyon, kapasite artisi ve ekipman yenileme adimlariyla mevcut hattin performansini gelistiriyoruz.",
     image:
-      "https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3cauto=format&fit=crop&w=1400&q=80",
+      "/images/otomasyon/oromas1.jpg",
     scope: ["Mevcut hat analizi", "Darbogaz tespiti", "Ekipman degisimi", "Performans iyilestirme"],
     outputs: ["Kapasite artisi", "Enerji verimi", "Daha dengeli proses"],
     advantages: ["Yatirimi koruma", "Hizli iyilestirme", "Daha d???k durus maliyeti"],
@@ -920,7 +285,7 @@ export const services: ServiceItem[] = [
     heroDescription:
       "Yeni tesis yatirimi veya mevcut hattin iyilestirilmesi s?recinde karar vericilere teknik yol haritasi sunuyoruz.",
     image:
-      "https://images.unsplash.com/photo-1552664730-d307ca884978cauto=format&fit=crop&w=1400&q=80",
+      "/images/01-genel/proses1.png",
     scope: ["Teknik analiz", "Yatirim degerlendirme", "Ekipman se?im destegi", "S?re? yonlendirme"],
     outputs: ["Daha net karar s?reci", "Yanlis ekipman riskinin azalmasi", "Proje netligi"],
     advantages: ["Uzman bakis", "Karar destegi", "Risk azaltma", "S?re? netligi"],
@@ -944,7 +309,7 @@ export const services: ServiceItem[] = [
     heroDescription:
       "Periyodik kontrol, parca degisimi, ayar ve teknik servis deste?xi ile ekipman performans1n1n surekliligini destekliyoruz.",
     image:
-      "https://images.unsplash.com/photo-1581092335397-9583eb92d232cauto=format&fit=crop&w=1400&q=80",
+      "/images/bakim/bakim1.webp",
     scope: ["Periyodik kontrol", "Yedek parca", "Ariza tespiti", "Saha servis destegi"],
     outputs: ["Daha az plansiz durus", "Daha y?ksek ekipman ?mr?", "Daha g?venli isletme"],
     advantages: ["Hizli mudahale", "Onleyici bakim", "Parca takibi", "0?xletme surekliligi"],
@@ -968,7 +333,7 @@ export const services: ServiceItem[] = [
     heroDescription:
       "Malzeme davranÄ±ÅŸÄ±, Ã¼rÃ¼n kalitesi ve proses parametrelerini pilot Ã§alÄ±ÅŸmalarÄ±yla daha net gÃ¶rerek ana yatÄ±rÄ±mÄ± daha saÄŸlÄ±klÄ± planlÄ±yoruz.",
     image:
-      "https://images.unsplash.com/photo-1532187643603-ba119ca4109ecauto=format&fit=crop&w=1400&q=80",
+      "/images/bakim/bakim2.webp",
     scope: ["Numune testleri", "Pilot denemeler", "Parametre analizi", "Sonu? raporlama"],
     outputs: ["Yatirim oncesi veri", "Malzeme davranisi analizi", "Daha do?xru ekipman se?imi"],
     advantages: ["Risk azaltma", "Veriye dayali karar", "Rakiplerden ayrisan uzmanlik"],
@@ -992,7 +357,7 @@ export const services: ServiceItem[] = [
     heroDescription:
       "Takvim, ekipler, lojistik, montaj ve test adÄ±mlarÄ±nÄ± tek bir saha koordinasyon mantÄ±ÄŸÄ±yla yÃ¼rÃ¼terek projeye netlik kazandÄ±rÄ±yoruz.",
     image:
-      "https://images.unsplash.com/photo-1520607162513-77705c0f0d4acauto=format&fit=crop&w=1400&q=80",
+      "/images/01-genel/hizmetler1.png",
     scope: ["Takvim yonetimi", "Saha koordinasyonu", "Tedarik takibi", "Ekip senkronizasyonu"],
     outputs: ["Daha kontroll? ilerleme", "Daha net saha duzeni", "Sure ve kapsam takibi"],
     advantages: ["Tek merkezli koordinasyon", "Daha az saha karisiklisi", "G?ven veren proje yonetimi"],
@@ -1040,7 +405,7 @@ export const projects: ProjectItem[] = [
     relatedSector: "Kompost ve Organik Atik Tesisleri",
     relatedSolutions: ["Teknik Dan1?xmanl1k", "Pilot Tesis ve Proses Test ?!al1?xmalar1"],
     image:
-      "https://images.unsplash.com/photo-1464226184884-fa280b87c399cauto=format&fit=crop&w=1400&q=80",
+      "/images/kompost/kompost1.jpg",
   },
   {
     slug: "organomineral-gubre-tesisi-projeleri",
@@ -1072,7 +437,7 @@ export const projects: ProjectItem[] = [
     relatedSector: "Gï¿½bre ï¿½retim Tesisleri",
     relatedSolutions: ["Proses Tasarımı ve Mühendislik", "Modernizasyon ve Revizyon"],
     image:
-      "https://images.unsplash.com/photo-1621905252507-b35492cc74b4cauto=format&fit=crop&w=1400&q=80",
+      "/images/gubre/sivibidon.png",
   },
   {
     slug: "deri-atik-isleme-tesisi-projeleri",
@@ -1104,7 +469,7 @@ export const projects: ProjectItem[] = [
     relatedSector: "Geri Dï¿½nï¿½_ï¿½m ve At1k Yï¿½netimi",
     relatedSolutions: ["Teknik Dan1?xmanl1k", "Proje Yï¿½netimi ve Saha Koordinasyonu"],
     image:
-      "https://images.unsplash.com/photo-1517048676732-d65bc937f952cauto=format&fit=crop&w=1400&q=80",
+      "/images/01-genel/geridonusum1.jpg",
   },
   {
     slug: "biyogaz-ve-atik-yonetimi-projeleri",
@@ -1136,7 +501,7 @@ export const projects: ProjectItem[] = [
     relatedSector: "Enerji ve Biyogaz Sistemleri",
     relatedSolutions: ["Anahtar Teslim Tesis Kurulumu", "Proje Yï¿½netimi ve Saha Koordinasyonu"],
     image:
-      "https://images.unsplash.com/photo-1473341304170-971dccb5ac1ecauto=format&fit=crop&w=1400&q=80",
+      "/images/biyogaz/biogaz1.jpg",
   },
   {
     slug: "ozel-proses-ve-makine-imalati-projeleri",
@@ -1168,7 +533,7 @@ export const projects: ProjectItem[] = [
     relatedSector: "Kimya ve Proses Endï¿½strisi",
     relatedSolutions: ["Makine Imalati", "Pilot Tesis ve Proses Test ?!al1?xmalar1"],
     image:
-      "https://images.unsplash.com/photo-1565008447742-97f6f38c985ccauto=format&fit=crop&w=1400&q=80",
+      "/images/celik/celik2.jpg",
   },
   {
     slug: "mineral-ve-dokme-kati-isleme-projeleri",
@@ -1213,7 +578,7 @@ export const projects: ProjectItem[] = [
       "Anahtar Teslim Tesis Kurulumu",
     ],
     image:
-      "https://images.unsplash.com/photo-1513828583688-c52646db42dacauto=format&fit=crop&w=1400&q=80",
+      "/images/maden/maden1.jpg",
   },
 ];
 
@@ -1723,9 +1088,6 @@ function normalizeCollectionInPlace<T extends object[]>(collection: T) {
   }
 }
 
-normalizeCollectionInPlace(solutions);
-normalizeCollectionInPlace(sectors);
-normalizeCollectionInPlace(machineGroups);
 normalizeCollectionInPlace(services);
 normalizeCollectionInPlace(projects);
 normalizeCollectionInPlace(libraryItems);

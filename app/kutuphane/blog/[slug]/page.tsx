@@ -191,7 +191,7 @@ function CategoryPage({ slug }: { slug: string }) {
       <Hero
         title={category.title}
         description={category.description}
-        image="/images/proses1.jpg"
+        image="/images/01-genel/proses1.png"
       >
         {category.ctaVariant === "sector-guide" ? (
           <>

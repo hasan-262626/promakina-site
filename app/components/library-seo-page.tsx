@@ -78,7 +78,7 @@ export function LibrarySeoPage({
   relatedServices = [],
   faqs = [],
   extraSection,
-  heroImage = "/images/proses1.jpg",
+  heroImage = "/images/01-genel/proses1.png",
   internalLinks = [],
   nextContent,
   breadcrumbs,

@@ -281,6 +281,61 @@ const nextConfig: NextConfig = {
         destination: "/sektorler/atik-su-camuru-ve-aritma-cozumleri/kapali-sistem-camur-kurutma",
         permanent: true,
       },
+      {
+        source: "/cozumler/turquality-danismanligi",
+        destination: "/hizmetler",
+        permanent: true,
+      },
+      {
+        source: "/cozumler/greenquality-hizmetleri",
+        destination: "/hizmetler",
+        permanent: true,
+      },
+      {
+        source: "/cozumler/dijital-donusum-hizmetleri",
+        destination: "/hizmetler",
+        permanent: true,
+      },
+      {
+        source: "/cozumler/kurumsallasma-danismanligi",
+        destination: "/hizmetler",
+        permanent: true,
+      },
+      {
+        source: "/cozumler/egitim-hizmetleri",
+        destination: "/hizmetler",
+        permanent: true,
+      },
+      {
+        source: "/makinalar",
+        destination: "/makinalar-ekipman",
+        permanent: true,
+      },
+      {
+        source: "/makinalar/tasima-sistemleri",
+        destination: "/makinalar-ekipman/tasima-ekipmanlari",
+        permanent: true,
+      },
+      {
+        source: "/makinalar/tasima-sistemleri/:product",
+        destination: "/makinalar-ekipman/tasima-ekipmanlari/:product",
+        permanent: true,
+      },
+      {
+        source: "/makinalar/depolama-sistemleri",
+        destination: "/makinalar-ekipman/depolama-ve-besleme-sistemleri",
+        permanent: true,
+      },
+      {
+        source: "/makinalar/depolama-sistemleri/:product",
+        destination: "/makinalar-ekipman/depolama-ve-besleme-sistemleri/:product",
+        permanent: true,
+      },
+      {
+        source: "/makinalar/:path*",
+        destination: "/makinalar-ekipman/:path*",
+        permanent: true,
+      },
     ];
   },
   images: {

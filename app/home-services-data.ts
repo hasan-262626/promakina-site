@@ -94,7 +94,7 @@ export const homeServiceCards: HomeServiceCard[] = [
       "Yeni yatırım planlaması, ürün geliştirme, kapasite büyütme, ekipman seçimi ve proses optimizasyonu için teknik danışmanlık sunuyoruz.",
     buttonLabel: "Danışmanlık Alın",
     href: "/hizmetler/teknik-danismanlik",
-    image: "/images/kimya1.jpg",
+    image: "/images/01-genel/proses1.png",
     imageAlt: "Teknik danışmanlık için endüstriyel tesis ve ekipman görseli",
   },
   {
@@ -112,7 +112,7 @@ export const homeServiceCards: HomeServiceCard[] = [
       "Yatırım öncesinde proses doğrulaması, ürün davranışı ve kapasite senaryolarını test ederek daha kontrollü proje kararları oluşturuyoruz.",
     buttonLabel: "Test Süreçleri",
     href: "/hizmetler/pilot-tesis-ve-proses-test-calismalari",
-    image: "/images/tank6.jpg",
+    image: "/images/siyah beyaz/tank 1.jpg",
     imageAlt: "Pilot tesis ve proses test çalışmaları için pilot proses görseli",
   },
   {

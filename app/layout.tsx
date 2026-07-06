@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "https://www.promakina.com.tr/images/fabrika1.jpg",
+        url: "https://www.promakina.com.tr/images/01-genel/fabrika1.jpg",
         width: 1200,
         height: 630,
         alt: "Pro Makina endüstriyel tesis ve makina çözümleri",

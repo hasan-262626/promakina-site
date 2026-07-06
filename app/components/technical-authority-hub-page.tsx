@@ -368,7 +368,7 @@ export function TechnicalAuthorityHubPage({ hub }: TechnicalAuthorityHubPageProp
                     Blog
                   </Link>
                   <Link
-                    href="/makinalar"
+                    href="/makinalar-ekipman"
                     className="inline-flex rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-[#278DC0] hover:bg-[#278DC0]/10 hover:text-[#154764]"
                   >
                     Makinalar

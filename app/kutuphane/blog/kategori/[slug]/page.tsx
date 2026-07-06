@@ -62,7 +62,7 @@ export default async function BlogCategoryPage({ params }: PageProps) {
       <Hero
         title={category.title}
         description={category.description}
-        image="/images/proses1.jpg"
+        image="/images/01-genel/proses1.png"
       >
         <a
           href="https://wa.me/905320580104"

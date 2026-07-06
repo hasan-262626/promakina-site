@@ -35,7 +35,7 @@ const servicePages: Record<string, ServicePageRecord> = {
     description:
       "Kurutma tamburu imalatÄ±, dÃ¶ner kurutucu ve rotary dryer Ã§Ã¶zÃ¼mleri iÃ§in kapasiteye Ã¶zel endÃ¼striyel kurutma tamburu tasarÄ±mÄ± sunuyoruz.",
     canonical: "https://www.promakina.com.tr/hizmetler/kurutma-tamburu-imalati",
-    image: "/images/kurutmatam2.jpg",
+    image: "/images/tambur kurutma/tamkurutma1.jpg",
     serviceName: "Kurutma Tamburu Ä°malatÄ±",
     introTitle: "Rotary Dryer ve EndÃ¼striyel Kurutma Tamburu ï¿½!Ã¶zÃ¼mleri",
     introParagraphs: [
@@ -194,7 +194,7 @@ const servicePages: Record<string, ServicePageRecord> = {
     description:
       "ï¿½!amur kurutma tesisi, arÄ±tma Ã§amuru kurutma ve digestat kurutma hatlarÄ± iÃ§in belediye ve sanayiye Ã¶zel anahtar teslim Ã§Ã¶zÃ¼mler sunuyoruz.",
     canonical: "https://www.promakina.com.tr/hizmetler/camur-kurutma-tesisi",
-    image: "/images/kurutma3.png",
+    image: "/images/tambur kurutma/tamkurutma1.jpg",
     serviceName: "ï¿½!amur Kurutma Tesisi",
     introTitle: "ArÄ±tma ï¿½!amuru ve Digestat Kurutma HatlarÄ±",
     introParagraphs: [
@@ -352,7 +352,7 @@ const servicePages: Record<string, ServicePageRecord> = {
     description:
       "Silis kumu kurutma tesisi, kuvars kumu kurutma ve maden kurutma hatlarÄ± iÃ§in kurutma tamburu, eleme ve taï¿½xÄ±ma Ã§Ã¶zÃ¼mleri sunuyoruz.",
     canonical: "https://www.promakina.com.tr/hizmetler/silis-kumu-kurutma-tesisi",
-    image: "/images/kurutmatam2.jpg",
+    image: "/images/tambur kurutma/tamkurutma1.jpg",
     serviceName: "Silis Kumu Kurutma Tesisi",
     introTitle: "Kuvars ve Silis TÃ¼revleri Ä°Ã§in KontrollÃ¼ Kurutma HatlarÄ±",
     introParagraphs: [
@@ -511,7 +511,7 @@ const servicePages: Record<string, ServicePageRecord> = {
     description:
       "Maden kurutma ve eleme tesisi, mineral iï¿½xleme ekipmanlarÄ± ve kÄ±rma eleme kurutma tesisi Ã§Ã¶zÃ¼mleri iÃ§in anahtar teslim mÃ¼hendislik sunuyoruz.",
     canonical: "https://www.promakina.com.tr/hizmetler/maden-kurutma-ve-eleme-tesisi",
-    image: "/images/makinalar1.png",
+    image: "/images/01-genel/makinalar1.png",
     serviceName: "Maden Kurutma ve Eleme Tesisi",
     introTitle: "KÄ±rma, Eleme, Kurutma ve SÄ±nÄ±flandÄ±rma Ä°Ã§in Entegre Tesis Yaklaï¿½xÄ±mÄ±",
     introParagraphs: [
@@ -670,7 +670,7 @@ const servicePages: Record<string, ServicePageRecord> = {
     description:
       "GranÃ¼l gÃ¼bre Ã¼retim tesisi ve organomineral granÃ¼l gÃ¼bre hattÄ± iÃ§in granÃ¼lasyon, kurutma, eleme ve paketleme Ã§Ã¶zÃ¼mleri sunuyoruz.",
     canonical: "https://www.promakina.com.tr/hizmetler/granul-gubre-uretim-tesisi",
-    image: "/images/hizmetler1.png",
+    image: "/images/01-genel/hizmetler1.png",
     serviceName: "GranÃ¼l GÃ¼bre ï¿½Sretim Tesisi",
     introTitle: "GranÃ¼lasyon, Kurutma ve SÄ±nÄ±flandÄ±rma Ä°Ã§in Entegre GÃ¼bre HattÄ±",
     introParagraphs: [
@@ -829,7 +829,7 @@ const servicePages: Record<string, ServicePageRecord> = {
     description:
       "Organomineral gÃ¼bre tesisi ve organomineral gÃ¼bre Ã¼retim hattÄ± iÃ§in granÃ¼lasyon, kurutma, eleme ve paketleme Ã§Ã¶zÃ¼mleri sunuyoruz.",
     canonical: "https://www.promakina.com.tr/hizmetler/organomineral-gubre-tesisi",
-    image: "/images/hizmetler1.png",
+    image: "/images/01-genel/hizmetler1.png",
     serviceName: "Organomineral GÃ¼bre Tesisi",
     introTitle: "Organik ve Mineral Ä°Ã§eriï¿½xi Tek Hatta Buluï¿½xturan ï¿½Sretim Kurgusu",
     introParagraphs: [
@@ -988,7 +988,7 @@ const servicePages: Record<string, ServicePageRecord> = {
     description:
       "SÄ±vÄ± gÃ¼bre Ã¼retim tesisi, sÄ±vÄ± gÃ¼bre Ã¼retim hattÄ± ve organomineral sÄ±vÄ± gÃ¼bre tesisleri iÃ§in tank, reaktÃ¶r ve dolum Ã§Ã¶zÃ¼mleri sunuyoruz.",
     canonical: "https://www.promakina.com.tr/hizmetler/sivi-gubre-uretim-tesisi",
-    image: "/images/hizmetler1.png",
+    image: "/images/01-genel/hizmetler1.png",
     serviceName: "SÄ±vÄ± GÃ¼bre ï¿½Sretim Tesisi",
     introTitle: "SÄ±vÄ± Organomineral, NPK ve ï¿½zel FormÃ¼l ï¿½Sretim HatlarÄ±",
     introParagraphs: [
@@ -1138,7 +1138,7 @@ const servicePages: Record<string, ServicePageRecord> = {
     keyLinks: [
       { label: "Organomineral GÃ¼bre Tesisi", href: "/hizmetler/organomineral-gubre-tesisi" },
       { label: "ReaktÃ¶rler ve Tanklar", href: "/makinalar-ekipman/reaktorler-ve-tanklar" },
-      { label: "Makinalar", href: "/makinalar" },
+      { label: "Makinalar", href: "/makinalar-ekipman" },
       { label: "Ä°letiï¿½xim", href: "/iletisim" },
     ],
   },

@@ -157,7 +157,7 @@ const technicalContents = [
 
 const keyLinks = [
   { label: "Hizmetler", href: "/hizmetler" },
-  { label: "Makinalar", href: "/makinalar" },
+  { label: "Makinalar", href: "/makinalar-ekipman" },
   { label: "Sektörler", href: "/sektorler" },
   { label: "İletişim", href: "/iletisim" },
 ];
@@ -168,7 +168,7 @@ export default function Page() {
       title="Kompost Tesisi Kurulumu"
       description="Kompost üretimi için anahtar teslim mühendislik, makine imalatı, proses tasarımı, montaj ve devreye alma çözümleri sunuyoruz."
       canonical={canonical}
-      image="/images/hizmetler1.png"
+      image="/images/01-genel/hizmetler1.png"
       serviceName="Kompost Tesisi Kurulumu"
       introTitle="Organik Atığı Değere Dönüştüren Kompost Tesisleri"
       introParagraphs={[

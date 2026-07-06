@@ -56,7 +56,7 @@ export const engineeringCalculationFilters: EngineeringCalculationFilter[] = [
 
 const commonLinks = [
   { label: "Hizmetler", href: "/hizmetler" },
-  { label: "Makinalar", href: "/makinalar" },
+  { label: "Makinalar", href: "/makinalar-ekipman" },
   { label: "Sektörler", href: "/sektorler" },
   { label: "İletişim", href: "/iletisim" },
 ];
@@ -70,7 +70,7 @@ export const engineeringCalculationCards: EngineeringCalculationCard[] = [
       "Helezon konveyör kapasitesi, doluluk oranı, devir ve motor gücü hesaplama sistemi.",
     shortDescription:
       "Vidalı konveyörlerde kapasite, çap, hatve, yoğunluk ve doluluk oranını birlikte değerlendiren profesyonel ön hesap sayfası.",
-    image: "/images/konveyor2.jpg",
+    image: "/images/konveyor/konvey2.jpg",
     filter: "Taşıma Sistemleri",
     heroDescription:
       "Vidalı konveyör hatlarında kapasite, çap, hatve, ürün yoğunluğu ve motor seçimi için hızlı ama mühendislik mantığı güçlü bir değerlendirme altyapısı sunar.",
@@ -212,7 +212,7 @@ export const engineeringCalculationCards: EngineeringCalculationCard[] = [
       "Bant konveyör kapasitesi, bant hızı, genişlik ve tahrik yaklaşımını profesyonel mühendislik mantığıyla okumaya yardımcı olur.",
     shortDescription:
       "Bantlı konveyörlerde kapasite, bant genişliği, hız, ürün yoğunluğu ve tahrik seçimini aynı değerlendirme panelinde toplayan SEO odaklı hesap sayfası.",
-    image: "/images/konveyor1.jpg",
+    image: "/images/konveyor/konvey1.jpeg",
     filter: "Kapasite Hesapları",
     heroDescription:
       "Bantlı konveyör sistemlerinde ürün debisi, hat uzunluğu, hız ve motor gereksinimini daha kontrollü okumak için profesyonel ön boyutlandırma yaklaşımı sunar.",
@@ -354,7 +354,7 @@ export const engineeringCalculationCards: EngineeringCalculationCard[] = [
       "Kurutma tamburu kapasitesi, çap-boy seçimi, hava debisi ve enerji ihtiyacını teknik karar sistemine dönüştüren profesyonel sayfa.",
     shortDescription:
       "Rotary dryer design yaklaşımıyla kapasite, L/D oranı, residence time, hava debisi ve enerji yükünü değerlendiren premium hesap içeriği.",
-    image: "/images/kurutmatam2.jpg",
+    image: "/images/tambur kurutma/tamkurutma1.jpg",
     filter: "Tambur Sistemleri",
     heroDescription:
       "Kurutma tamburu tasarımında su uçurma yükü, tambur geometrisi, gaz akışı ve güç ihtiyacını aynı mühendislik dilinde toplayan ön boyutlandırma sayfasıdır.",
@@ -496,7 +496,7 @@ export const engineeringCalculationCards: EngineeringCalculationCard[] = [
       "Bantlı ve zincirli kovalı elevatörlerde kapasite, kova seçimi, hat hızı ve motor ön seçimi için profesyonel hesap rehberi.",
     shortDescription:
       "Dikey taşıma hatlarında kapasite, kova aralığı, deşarj tipi, hız ve motor gücünü birlikte değerlendiren premium ön seçim sayfası.",
-    image: "/images/konveyor2.jpg",
+    image: "/images/konveyor/konvey2.jpg",
     filter: "Kapasite Hesapları",
     heroDescription:
       "Kovalı elevatörlerde ürün yoğunluğu, dikey yükseklik, deşarj tipi ve çalışma rejimine göre ön kapasite ve ekipman seçimi yapmayı kolaylaştırır.",
@@ -638,7 +638,7 @@ export const engineeringCalculationCards: EngineeringCalculationCard[] = [
       "Zincirli sürüklemeli konveyörlerde kapasite, kanal kesiti, zincir hızı ve motor yaklaşımını profesyonel ön değerlendirme mantığında sunar.",
     shortDescription:
       "Redler sistemlerinde ürün hacmi, zincir hızı, doluluk ve güç ihtiyacını okuyarak doğru ekipman ön seçimine yardımcı olan teknik SEO sayfası.",
-    image: "/images/zincirlikonveyor.jpg",
+    image: "/images/konveyor zincirli/konveyorzinc11.png",
     filter: "Taşıma Sistemleri",
     heroDescription:
       "Sürüklemeli zincirli konveyör uygulamalarında kapasite, kanal geometri, zincir hızı ve aşınma yönetimini birlikte değerlendiren karar sayfasıdır.",

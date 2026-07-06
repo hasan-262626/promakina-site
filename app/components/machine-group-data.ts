@@ -80,7 +80,7 @@ type CategorySeed = {
 
 function makeGallery(image: string, subject: string) {
   const primaryAlt =
-    image === "/images/reaktor1.avif"
+    image === "/images/siyah beyaz/tank 1.jpg"
       ? "Pro Makina reaktör ve tank sistemleri"
       : `${subject} genel görünüm`;
   return [
@@ -152,7 +152,7 @@ function expandCategory(seed: CategorySeed): MachineCategoryPage {
 const transportSeed: CategorySeed = {
   slug: "tasima-ekipmanlari",
   title: "Taşıma Ekipmanları",
-  heroImage: "/images/konveyor2.jpg",
+  heroImage: "/images/konveyor/konvey2.jpg",
   shortDescription:
     "Bantlı konveyör, zincirli konveyör, vidalı helezon, zincirli elevatör ve bantlı elevatör imalatı yapıyoruz.",
   heroDescription:
@@ -449,7 +449,7 @@ const transportSeed: CategorySeed = {
 const crusherSeed: CategorySeed = {
   slug: "kiricilar-ve-parcalayicilar",
   title: "Kırıcılar ve Parçalayıcılar",
-  heroImage: "/images/kirici3.jpg",
+  heroImage: "/images/kirici cekicli/kiricicekic3.jpg",
   shortDescription:
     "Kompost, gübre, geri dönüşüm ve endüstriyel proses hatları için çekiçli kırıcı, zincirli kırıcı, shredder, primer kırıcı ve sekonder kırıcı imalatı yapıyoruz.",
   heroDescription:
@@ -649,7 +649,7 @@ const crusherSeed: CategorySeed = {
 const reactorSeed: CategorySeed = {
   slug: "reaktorler-ve-tanklar",
   title: "Reaktörler ve Tanklar",
-  heroImage: "/images/tank1.jpg",
+  heroImage: "/images/siyah beyaz/tank 1.jpg",
   shortDescription:
     "Sıvı gübre, kimyasal proses ve endüstriyel üretim hatları için soğutma tankı, karıştırıcılı reaktör, basınçlı reaktör, çözündürme tankı ve stok tankı imalatı yapıyoruz.",
   heroDescription:
@@ -852,7 +852,7 @@ const reactorSeed: CategorySeed = {
 const screeningSeed: CategorySeed = {
   slug: "eleme-ve-siniflandirma-sistemleri",
   title: "Eleme ve Sınıflandırma Sistemleri",
-  heroImage: "/images/elek2.jpeg",
+  heroImage: "/images/elek/elek2.jpeg",
   shortDescription:
     "Granül gübre, kompost, mineral ve proses hatları için vibrasyonlu elek, trommel elek ve susuzlandırma eleği imalatı yapıyoruz.",
   heroDescription:
@@ -962,7 +962,7 @@ const screeningSeed: CategorySeed = {
 const dustSeed: CategorySeed = {
   slug: "toz-toplama-sistemleri",
   title: "Toz Toplama Sistemleri",
-  heroImage: "/images/toz8.png",
+  heroImage: "/images/jet pulse/jerpul4.jpg",
   shortDescription:
     "Toz toplama sistemi, pulse jet filtre, siklon ayırıcı, torba filtre, kartuş filtre ve bin vent filtre imalatı yapıyoruz.",
   heroDescription:
@@ -1061,7 +1061,7 @@ const dustSeed: CategorySeed = {
 const packagingSeed: CategorySeed = {
   slug: "paketleme-ve-dolum-sistemleri",
   title: "Paketleme ve Dolum Sistemleri",
-  heroImage: "/images/dolum1.jpg",
+  heroImage: "/images/sivi dolum/sividol1.jpg",
   shortDescription:
     "Açık ağız torbalama, valfli torba dolum, big bag dolum, FFS torbalama ve paletleme hattı çözümleri sunuyoruz.",
   heroDescription:
@@ -1103,18 +1103,18 @@ const packagingSeed: CategorySeed = {
     "Kapama ve tutucu elemanlar",
   ],
   products: [
-    { slug: "acik-agiz-torbalama", title: "Açık Ağız Torbalama", shortDescription: "Granül ve toz ürünler için açık ağız torbalama sistemleri üretiyoruz.", image: "/images/paket4.jpg" },
-    { slug: "big-bag-dolum", title: "Big Bag Dolum", shortDescription: "Yüksek tonajlı torbalama ihtiyaçları için big bag dolum sistemleri üretiyoruz.", image: "/images/dolum15.jpg" },
-    { slug: "paletleme-hatlari", title: "Paletleme Hatları", shortDescription: "Dolum sonrası sevkiyat hazırlığı için paletleme hattı çözümleri geliştiriyoruz.", image: "/images/paket1.jpg" },
-    { slug: "sivi-dolum-siseleme", title: "Sıvı Dolum Şişeleme", shortDescription: "Sıvı ürünlerin hassas dozajla doldurulması ve şişeleme hatlarında kontrollü akış için sıvı dolum şişeleme çözümleri sunuyoruz.", image: "/images/dolum2.jpg" },
-    { slug: "sise-etiketleme-makinasi", title: "Şişe Etiketleme Makinası", shortDescription: "Şişe ve benzeri ambalajlarda düzgün, hızlı ve standart etiket uygulaması için şişe etiketleme makinası çözümleri sunuyoruz.", image: "/images/etiket1.jpg" },
+    { slug: "acik-agiz-torbalama", title: "Açık Ağız Torbalama", shortDescription: "Granül ve toz ürünler için açık ağız torbalama sistemleri üretiyoruz.", image: "/images/paketleme/paket4.jpg" },
+    { slug: "big-bag-dolum", title: "Big Bag Dolum", shortDescription: "Yüksek tonajlı torbalama ihtiyaçları için big bag dolum sistemleri üretiyoruz.", image: "/images/big bag/bigdol1.jpg" },
+    { slug: "paletleme-hatlari", title: "Paletleme Hatları", shortDescription: "Dolum sonrası sevkiyat hazırlığı için paletleme hattı çözümleri geliştiriyoruz.", image: "/images/paketleme/paket1.jpg" },
+    { slug: "sivi-dolum-siseleme", title: "Sıvı Dolum Şişeleme", shortDescription: "Sıvı ürünlerin hassas dozajla doldurulması ve şişeleme hatlarında kontrollü akış için sıvı dolum şişeleme çözümleri sunuyoruz.", image: "/images/sivi dolum/sividol2.jpg" },
+    { slug: "sise-etiketleme-makinasi", title: "Şişe Etiketleme Makinası", shortDescription: "Şişe ve benzeri ambalajlarda düzgün, hızlı ve standart etiket uygulaması için şişe etiketleme makinası çözümleri sunuyoruz.", image: "/images/paketleme/paket4.jpg" },
   ],
 };
 
 const storageSeed: CategorySeed = {
   slug: "depolama-ve-besleme-sistemleri",
   title: "Depolama ve Besleme Sistemleri",
-  heroImage: "/images/bunker2.jpg",
+  heroImage: "/images/bunker/bunker2.jpg",
   shortDescription:
     "Silo sistemi, bunker, vidalı besleyici, rotary valf ve sürgülü klape imalatı ile depolama ve besleme çözümleri sunuyoruz.",
   heroDescription:
@@ -1156,15 +1156,15 @@ const storageSeed: CategorySeed = {
     "Kapak ve bağlantı parçaları",
   ],
   products: [
-    { slug: "silo-sistemleri", title: "Silo Sistemleri", shortDescription: "Dökme katı ürünler için güvenli ve proses uyumlu silo sistemleri üretiyoruz.", image: "/images/silo1.png" },
+    { slug: "silo-sistemleri", title: "Silo Sistemleri", shortDescription: "Dökme katı ürünler için güvenli ve proses uyumlu silo sistemleri üretiyoruz.", image: "/images/silo/silo1.jpg" },
     { slug: "bunker-ve-hazneler", title: "Bunker ve Hazneler", shortDescription: "Kontrollü ürün kabulü ve besleme için bunker ve hazne sistemleri üretiyoruz." },
-    { slug: "teremi-bunkeri", title: "Teremi Bunkeri", shortDescription: "Dökme katı ürünlerin kontrollü alınması, tamponlanması ve prosese düzenli beslenmesi için teremi bunkeri çözümleri sunuyoruz.", image: "/images/teremi6.png" },
+    { slug: "teremi-bunkeri", title: "Teremi Bunkeri", shortDescription: "Dökme katı ürünlerin kontrollü alınması, tamponlanması ve prosese düzenli beslenmesi için teremi bunkeri çözümleri sunuyoruz.", image: "/images/trommel/tromm1.jpg" },
     {
       slug: "surgulu-klapeler",
       title: "Sürgülü Klapeler",
       shortDescription:
         "Silo ve bunker çıkışlarında ürün akış kontrolünü güvenli ve sürekli hale getiren sürgülü klape çözümleri sunuyoruz.",
-      image: "/images/surgu1.webp",
+      image: "/images/surgu kapak/surgu1.jpg",
       heroDescription:
         "Sürgülü klapeler, silo ve bunker çıkışlarında ürün akışının başlatılması, durdurulması ve kontrollü yönetimi için kullanılan yardımcı ekipmanlardır.",
       overviewParagraphs: [
@@ -1205,8 +1205,8 @@ const storageSeed: CategorySeed = {
 const auxiliaryFlowSeed: CategorySeed = {
   slug: "yardimci-ekipmanlar-ve-akis-sistemleri",
   title: "Yardımcı Ekipmanlar ve Akış Sistemleri",
-  heroImage: "/images/teremi6.png",
-  cardImage: "/images/surgu1.webp",
+  heroImage: "/images/trommel/tromm1.jpg",
+  cardImage: "/images/surgu kapak/surgu1.jpg",
   shortDescription:
     "Silobas yükleme, ürün yönlendirme, akış kontrolü ve kontrollü boşaltma ihtiyaçları için yardımcı ekipman ve akış sistemi çözümleri sunuyoruz.",
   heroDescription:
@@ -1576,8 +1576,8 @@ const auxiliaryFlowSeed: CategorySeed = {
 const dosageSeed: CategorySeed = {
   slug: "dozajlama-sistemleri",
   title: "Dozajlama Sistemleri",
-  heroImage: "/images/bant1.webp",
-  cardImage: "/images/mikro2.png",
+  heroImage: "/images/konveyor/konvey1.jpeg",
+  cardImage: "/images/dozaj mikro/mikro2.jpg",
   shortDescription:
     "Hassas tartım, kontrollü besleme ve reçeteye uygun hammadde yönetimi için dozajlama sistemleri çözümleri sunuyoruz.",
   heroDescription:
@@ -1784,7 +1784,7 @@ export const machineCategoryPages: MachineCategoryPage[] = [
   {
     slug: "tambur-sistemleri",
     title: "Tambur Sistemleri",
-    heroImage: "/images/kurutmatam2.jpg",
+    heroImage: "/images/tambur kurutma/tamkurutma1.jpg",
     shortDescription:
       "Endüstriyel tambur imalatı için granülatör, kurutma, soğutma, kaplama ve kompost tamburu çözümleri sunuyoruz.",
     heroDescription:

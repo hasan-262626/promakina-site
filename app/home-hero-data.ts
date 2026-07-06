@@ -24,7 +24,7 @@ export const homeHeroSlides: HomeHeroSlide[] = [
     primaryLink: "/sektorler",
     secondaryButton: "Çözümleri Gör",
     secondaryLink: "/sektorler",
-    image: "/images/sektorler2.png",
+    image: "/images/01-genel/sektorler2.png",
     imageAlt: "Sektörel proses ve tesis çözümleri",
   },
   {
@@ -38,7 +38,7 @@ export const homeHeroSlides: HomeHeroSlide[] = [
     primaryLink: "/hizmetler",
     secondaryButton: "Teklif Al",
     secondaryLink: "/iletisim",
-    image: "/images/hizmetler1.png",
+    image: "/images/01-genel/hizmetler1.png",
     imageAlt: "Endüstriyel tesis mühendislik hizmetleri",
   },
   {
@@ -52,7 +52,7 @@ export const homeHeroSlides: HomeHeroSlide[] = [
     primaryLink: "/makinalar-ekipman",
     secondaryButton: "Kategoriye Git",
     secondaryLink: "/makinalar-ekipman",
-    image: "/images/makinalar1.png",
+    image: "/images/01-genel/makinalar1.png",
     imageAlt: "Endüstriyel makina ve ekipman üretim sistemleri",
   },
 ];

@@ -17,7 +17,7 @@ const relatedServices = [
   },
   {
     title: "Makinalar",
-    href: "/makinalar",
+    href: "/makinalar-ekipman",
     description:
       "Kurutma tamburu ile birlikte çalışan tambur, konveyör ve diğer proses ekipmanlarını toplu görün.",
   },

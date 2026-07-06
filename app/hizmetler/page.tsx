@@ -92,7 +92,7 @@ export default function ServicesPage() {
       <Hero
         title="Hizmetler"
         description="Planlama, mühendislik, imalat, kurulum, devreye alma ve teknik destek adımlarını entegre hizmet yapısı içinde sunuyoruz. Anahtar teslim tesis kurulumu, proses tasarımı, makine imalatı, modernizasyon, danı�xmanlık ve bakım hizmetlerini tek merkezden yönetiyoruz."
-        image="/images/hizmetler1.png"
+        image="/images/01-genel/hizmetler1.png"
       >
         <Link
           href="/iletisim"
