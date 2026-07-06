@@ -1,6 +1,24 @@
+import type { Metadata } from "next";
 import { ProgramPageHero } from "../../components/program-page-hero";
 import { ProgramToolShell } from "../../components/program-tool-shell";
 import SpurHelicalGearCalculator from "../../components/spur-helical-gear-calculator";
+
+
+export const metadata: Metadata = {
+  title: "Düz Helis Dişli Hesabı | Mühendislik Hesap Araçları",
+  description: "Düz dişli hesabı, helisel dişli hesabı, devir oranı hesabı ve dişli çapı hesaplama ihtiyaçları için mühendislik odaklı, kullanıcı dostu ve ön boyutlandırma mantığında çalışan teknik araç sayfası.",
+  alternates: {
+    canonical: "https://www.promakina.com.tr/programlar/duz-helis-disli-hesabi",
+  },
+  openGraph: {
+    title: "Düz Helis Dişli Hesabı | Pro Makina",
+    description: "Düz dişli hesabı, helisel dişli hesabı, devir oranı hesabı ve dişli çapı hesaplama ihtiyaçları için mühendislik odaklı, kullanıcı dostu ve ön boyutlandırma mantığında çalışan teknik araç sayfası.",
+    url: "https://www.promakina.com.tr/programlar/duz-helis-disli-hesabi",
+    siteName: "Pro Makina",
+    locale: "tr_TR",
+    type: "website",
+  },
+};
 
 export default function SpurHelicalGearPage() {
   return (

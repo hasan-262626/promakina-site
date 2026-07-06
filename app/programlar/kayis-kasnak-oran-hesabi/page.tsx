@@ -1,6 +1,24 @@
+import type { Metadata } from "next";
 import { BeltPulleyCalculator } from "../../components/belt-pulley-calculator";
 import { ProgramPageHero } from "../../components/program-page-hero";
 import { ProgramToolShell } from "../../components/program-tool-shell";
+
+
+export const metadata: Metadata = {
+  title: "Kayış-Kasnak Oran Hesabı | Mühendislik Hesap Araçları",
+  description: "Kasnak çapı, giriş devri, kayış hızı ve merkez mesafesine göre oran, çıkış devri ve kayış boyu için hızlı teknik ön hesap alın.",
+  alternates: {
+    canonical: "https://www.promakina.com.tr/programlar/kayis-kasnak-oran-hesabi",
+  },
+  openGraph: {
+    title: "Kayış-Kasnak Oran Hesabı | Pro Makina",
+    description: "Kasnak çapı, giriş devri, kayış hızı ve merkez mesafesine göre oran, çıkış devri ve kayış boyu için hızlı teknik ön hesap alın.",
+    url: "https://www.promakina.com.tr/programlar/kayis-kasnak-oran-hesabi",
+    siteName: "Pro Makina",
+    locale: "tr_TR",
+    type: "website",
+  },
+};
 
 export default function BeltPulleyPage() {
   return (

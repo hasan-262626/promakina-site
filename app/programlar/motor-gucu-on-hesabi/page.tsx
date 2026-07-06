@@ -1,6 +1,24 @@
+import type { Metadata } from "next";
 import { MotorPowerCalculator } from "../../components/motor-power-calculator";
 import { ProgramPageHero } from "../../components/program-page-hero";
 import { ProgramToolShell } from "../../components/program-tool-shell";
+
+
+export const metadata: Metadata = {
+  title: "Motor Gücü Ön Hesabı | Mühendislik Hesap Araçları",
+  description: "Tork, devir, verim, servis faktörü ve konveyör verilerine göre gerekli motor gücü ve redüktör çıkış değerlendirmesi yapın.",
+  alternates: {
+    canonical: "https://www.promakina.com.tr/programlar/motor-gucu-on-hesabi",
+  },
+  openGraph: {
+    title: "Motor Gücü Ön Hesabı | Pro Makina",
+    description: "Tork, devir, verim, servis faktörü ve konveyör verilerine göre gerekli motor gücü ve redüktör çıkış değerlendirmesi yapın.",
+    url: "https://www.promakina.com.tr/programlar/motor-gucu-on-hesabi",
+    siteName: "Pro Makina",
+    locale: "tr_TR",
+    type: "website",
+  },
+};
 
 export default function MotorPowerPage() {
   return (

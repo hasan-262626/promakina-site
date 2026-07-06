@@ -1,6 +1,24 @@
+import type { Metadata } from "next";
 import { KeywayDimensionsCalculator } from "../../components/keyway-dimensions-calculator";
 import { ProgramPageHero } from "../../components/program-page-hero";
 import { ProgramToolShell } from "../../components/program-tool-shell";
+
+
+export const metadata: Metadata = {
+  title: "Kama Kanalı Açım Ölçüleri | Mühendislik Hesap Araçları",
+  description: "Mil veya delik çapına göre standart kama eni, kama yüksekliği, mile giriş ve deliğe giriş ölçülerini teknik olarak hızlıca görüntüleyin.",
+  alternates: {
+    canonical: "https://www.promakina.com.tr/programlar/kama-kanali-acim-olculeri",
+  },
+  openGraph: {
+    title: "Kama Kanalı Açım Ölçüleri | Pro Makina",
+    description: "Mil veya delik çapına göre standart kama eni, kama yüksekliği, mile giriş ve deliğe giriş ölçülerini teknik olarak hızlıca görüntüleyin.",
+    url: "https://www.promakina.com.tr/programlar/kama-kanali-acim-olculeri",
+    siteName: "Pro Makina",
+    locale: "tr_TR",
+    type: "website",
+  },
+};
 
 export default function KeywayDimensionsPage() {
   return (

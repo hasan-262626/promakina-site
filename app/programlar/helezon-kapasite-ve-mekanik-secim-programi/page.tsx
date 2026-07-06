@@ -1,6 +1,24 @@
+import type { Metadata } from "next";
 import { ProgramPageHero } from "../../components/program-page-hero";
 import { ProgramToolShell } from "../../components/program-tool-shell";
 import { ScrewConveyorSelectionCalculator } from "../../components/screw-conveyor-selection-calculator";
+
+
+export const metadata: Metadata = {
+  title: "Helezon (Screw Conveyor) Kapasite ve Mekanik Seçim Programı | Mühendislik Hesap Araçları",
+  description: "Helezon çapı, hatve, devir, kapasite uygunluğu, motor gücü, redüktör ve mekanik yapı önerileri için profesyonel ön seçim ve teklif hazırlama aracıdır.",
+  alternates: {
+    canonical: "https://www.promakina.com.tr/programlar/helezon-kapasite-ve-mekanik-secim-programi",
+  },
+  openGraph: {
+    title: "Helezon (Screw Conveyor) Kapasite ve Mekanik Seçim Programı | Pro Makina",
+    description: "Helezon çapı, hatve, devir, kapasite uygunluğu, motor gücü, redüktör ve mekanik yapı önerileri için profesyonel ön seçim ve teklif hazırlama aracıdır.",
+    url: "https://www.promakina.com.tr/programlar/helezon-kapasite-ve-mekanik-secim-programi",
+    siteName: "Pro Makina",
+    locale: "tr_TR",
+    type: "website",
+  },
+};
 
 export default function ScrewConveyorSelectionProgramPage() {
   return (

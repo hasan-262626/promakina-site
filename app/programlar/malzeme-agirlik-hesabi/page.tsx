@@ -1,6 +1,24 @@
+import type { Metadata } from "next";
 import { MaterialWeightCalculator } from "../../components/material-weight-calculator";
 import { ProgramPageHero } from "../../components/program-page-hero";
 import { ProgramToolShell } from "../../components/program-tool-shell";
+
+
+export const metadata: Metadata = {
+  title: "Malzeme Ağırlık Hesabı | Mühendislik Hesap Araçları",
+  description: "Sac, lama, dolu mil, profil ve disk gibi geometriler için boyut ve yoğunluk bilgisine göre ağırlık hesabını hızlıca değerlendirin.",
+  alternates: {
+    canonical: "https://www.promakina.com.tr/programlar/malzeme-agirlik-hesabi",
+  },
+  openGraph: {
+    title: "Malzeme Ağırlık Hesabı | Pro Makina",
+    description: "Sac, lama, dolu mil, profil ve disk gibi geometriler için boyut ve yoğunluk bilgisine göre ağırlık hesabını hızlıca değerlendirin.",
+    url: "https://www.promakina.com.tr/programlar/malzeme-agirlik-hesabi",
+    siteName: "Pro Makina",
+    locale: "tr_TR",
+    type: "website",
+  },
+};
 
 export default function MaterialWeightPage() {
   return (

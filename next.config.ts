@@ -336,6 +336,11 @@ const nextConfig: NextConfig = {
         destination: "/makinalar-ekipman/:path*",
         permanent: true,
       },
+      {
+        source: "/kutuphane/sss",
+        destination: "/kutuphane/sik-sorulan-sorular",
+        permanent: true,
+      },
     ];
   },
   images: {

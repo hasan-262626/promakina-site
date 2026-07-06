@@ -1,6 +1,24 @@
+import type { Metadata } from "next";
 import { ConveyorSelectionCalculator } from "../../components/conveyor-selection-calculator";
 import { ProgramPageHero } from "../../components/program-page-hero";
 import { ProgramToolShell } from "../../components/program-tool-shell";
+
+
+export const metadata: Metadata = {
+  title: "Konveyör Kapasite ve Seçim Hesap Programı | Mühendislik Hesap Araçları",
+  description: "Bantlı konveyör kapasitesi, bant genişliği, bant hızı, tambur çapı, tahrik yapısı ve ön mekanik tavsiyeler için profesyonel seçim aracıdır.",
+  alternates: {
+    canonical: "https://www.promakina.com.tr/programlar/konveyor-kapasite-ve-secim-hesap-programi",
+  },
+  openGraph: {
+    title: "Konveyör Kapasite ve Seçim Hesap Programı | Pro Makina",
+    description: "Bantlı konveyör kapasitesi, bant genişliği, bant hızı, tambur çapı, tahrik yapısı ve ön mekanik tavsiyeler için profesyonel seçim aracıdır.",
+    url: "https://www.promakina.com.tr/programlar/konveyor-kapasite-ve-secim-hesap-programi",
+    siteName: "Pro Makina",
+    locale: "tr_TR",
+    type: "website",
+  },
+};
 
 export default function ConveyorCapacitySelectionProgramPage() {
   return (

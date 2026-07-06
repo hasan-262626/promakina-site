@@ -1,525 +1,146 @@
+import fs from "node:fs";
+import path from "node:path";
 import type { MetadataRoute } from "next";
+import { drumProductPages } from "./components/drum-product-data";
+import { machineCategoryPages } from "./components/machine-group-data";
 import { compostSystemDetailMap } from "./lib/compost-system-detail-data";
 import { dryingSystemDetailMap } from "./lib/drying-system-detail-data";
 import { drumSystemDetailMap } from "./lib/drum-system-detail-data";
 import { fertilizerSystemDetailMap } from "./lib/fertilizer-system-detail-data";
 import { liquidFertilizerDetailMap } from "./lib/liquid-fertilizer-detail-data";
+import {
+  getMachinePublicCategorySlug,
+  getMachinePublicProductSlug,
+} from "./lib/machine-route-utils";
 import { topicalBlogDynamicSlugs } from "./lib/topical-authority-blog-data";
+import { projectPages } from "./lib/project-pages-data";
 
 const siteUrl = "https://www.promakina.com.tr";
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const lastModified = new Date();
-  const dynamicBlogRoutes = Array.from(
-    new Set([
-      ...topicalBlogDynamicSlugs,
-      "granulator-tamburu-secimi",
-      ...Object.keys(compostSystemDetailMap),
-      ...Object.keys(drumSystemDetailMap),
-      ...Object.keys(dryingSystemDetailMap),
-      ...Object.keys(fertilizerSystemDetailMap),
-      ...Object.keys(liquidFertilizerDetailMap),
-    ]),
-  ).map((slug) => ({
-    url: `${siteUrl}/kutuphane/blog/${slug}`,
-    lastModified,
-    changeFrequency: "weekly" as const,
-    priority: 0.8,
-  }));
+// Deploy tarihinde manuel güncellenir; her istekte değişen tarih Google'a
+// yanlış güncellik sinyali verdiği için sabit tutulur.
+const lastModified = new Date("2026-07-06");
 
-  return [
-    {
-      url: `${siteUrl}/`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 1,
-    },
-    {
-      url: `${siteUrl}/hizmetler`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    {
-      url: `${siteUrl}/hizmetler/gubre-tesisi-kurulumu`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    {
-      url: `${siteUrl}/hizmetler/kurutma-tamburu-imalati`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    {
-      url: `${siteUrl}/hizmetler/camur-kurutma-tesisi`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    {
-      url: `${siteUrl}/hizmetler/silis-kumu-kurutma-tesisi`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    {
-      url: `${siteUrl}/hizmetler/maden-kurutma-ve-eleme-tesisi`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    {
-      url: `${siteUrl}/hizmetler/organomineral-gubre-tesisi`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    {
-      url: `${siteUrl}/hizmetler/granul-gubre-uretim-tesisi`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    {
-      url: `${siteUrl}/hizmetler/kompost-tesisi-kurulumu`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    {
-      url: `${siteUrl}/hizmetler/sivi-gubre-uretim-tesisi`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    {
-      url: `${siteUrl}/makinalar-ekipman`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    {
-      url: `${siteUrl}/makinalar-ekipman/tambur-sistemleri`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: `${siteUrl}/makinalar-ekipman/tasima-ekipmanlari`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: `${siteUrl}/makinalar-ekipman/kiricilar-ve-parcalayicilar`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: `${siteUrl}/makinalar-ekipman/eleme-ve-siniflandirma-sistemleri`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: `${siteUrl}/makinalar-ekipman/toz-toplama-sistemleri`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: `${siteUrl}/makinalar-ekipman/paketleme-ve-dolum-sistemleri`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: `${siteUrl}/makinalar-ekipman/reaktorler-ve-tanklar`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: `${siteUrl}/makinalar-ekipman/dozajlama-sistemleri`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: `${siteUrl}/makinalar-ekipman/depolama-ve-besleme-sistemleri`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: `${siteUrl}/makinalar-ekipman/yardimci-ekipmanlar-ve-akis-sistemleri`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: `${siteUrl}/sektorler`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    {
-      url: `${siteUrl}/projeler`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: `${siteUrl}/projeler/evsel-atiklardan-kompost-tesisi`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: `${siteUrl}/projeler/hayvansal-atiklardan-kompost-tesisi`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: `${siteUrl}/projeler/tarimsal-atiklardan-kompost-tesisi`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: `${siteUrl}/projeler/1mw-biyogaz-tesisi`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: `${siteUrl}/projeler/biyogaz-digestat-kurutma-kompost-projesi`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: `${siteUrl}/projeler/10-ton-saat-organomineral-gubre-tesisi`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: `${siteUrl}/projeler/granul-gubre-uretim-tesisi`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: `${siteUrl}/projeler/sivi-gubre-uretim-tesisi`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: `${siteUrl}/projeler/silis-kumu-kurutma-tesisi`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: `${siteUrl}/projeler/perlit-kurutma-eleme-tesisi`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: `${siteUrl}/projeler/maden-kirma-eleme-kurutma-tesisi`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: `${siteUrl}/projeler/aritma-camuru-kurutma-tesisi`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: `${siteUrl}/projeler/deri-atiklarindan-geri-kazanim-tesisi`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: `${siteUrl}/projeler/helezon-konveyor-elevator-hat-projesi`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: `${siteUrl}/projeler/reaktor-ve-tank-sistemleri-projesi`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: `${siteUrl}/projeler/ozel-proses-ve-makine-imalati-projesi`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: `${siteUrl}/iletisim`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: `${siteUrl}/hakkimizda`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.7,
-    },
-    {
-      url: `${siteUrl}/kariyer`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.7,
-    },
-    {
-      url: `${siteUrl}/makinalar-ekipman/tasima-ekipmanlari/vidali-helezonlar`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: `${siteUrl}/makinalar-ekipman/tasima-ekipmanlari/bantli-konveyorler`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: `${siteUrl}/makinalar-ekipman/tasima-ekipmanlari/zincirli-elevatorler`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: `${siteUrl}/makinalar-ekipman/tambur-sistemleri/granulator-tamburu`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: `${siteUrl}/makinalar-ekipman/tambur-sistemleri/kurutma-tamburu`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: `${siteUrl}/makinalar-ekipman/tambur-sistemleri/sogutma-tamburu`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: `${siteUrl}/makinalar-ekipman/tambur-sistemleri/kompost-tamburu`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: `${siteUrl}/makinalar-ekipman/tambur-sistemleri/kaplama-tamburu`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: `${siteUrl}/makinalar-ekipman/tambur-sistemleri/karistirma-tamburu`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: `${siteUrl}/makinalar-ekipman/tambur-sistemleri/sterilizasyon-ve-stabilizasyon-tamburu`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: `${siteUrl}/makinalar-ekipman/tambur-sistemleri/ozel-tambur`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: `${siteUrl}/makinalar-ekipman/eleme-ve-siniflandirma-sistemleri/trommel-elekler`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: `${siteUrl}/makinalar-ekipman/kiricilar-ve-parcalayicilar/cekicli-kiricilar`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: `${siteUrl}/makinalar-ekipman/kiricilar-ve-parcalayicilar/shredder-sistemleri`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: `${siteUrl}/makinalar-ekipman/kiricilar-ve-parcalayicilar/dik-milli-kiricilar`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: `${siteUrl}/makinalar-ekipman/kiricilar-ve-parcalayicilar/ceneli-kiricilar`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: `${siteUrl}/makinalar-ekipman/kiricilar-ve-parcalayicilar/bicakli-primer-kiricilar`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: `${siteUrl}/makinalar-ekipman/kiricilar-ve-parcalayicilar/zincirli-kiricilar`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: `${siteUrl}/makinalar-ekipman/depolama-ve-besleme-sistemleri/bunker-ve-hazneler`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: `${siteUrl}/makinalar-ekipman/yardimci-ekipmanlar-ve-akis-sistemleri/yukleme-korugu`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: `${siteUrl}/makinalar-ekipman/yardimci-ekipmanlar-ve-akis-sistemleri/distributor`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: `${siteUrl}/makinalar-ekipman/yardimci-ekipmanlar-ve-akis-sistemleri/klapeler`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: `${siteUrl}/makinalar-ekipman/dozajlama-sistemleri/mikro-dozajlama`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: `${siteUrl}/makinalar-ekipman/dozajlama-sistemleri/makro-dozajlama`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: `${siteUrl}/makinalar-ekipman/dozajlama-sistemleri/dozaj-bant-kantari`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: `${siteUrl}/sektorler/atik-su-camuru-ve-aritma-cozumleri/kapali-sistem-camur-kurutma`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.7,
-    },
-    {
-      url: `${siteUrl}/sektorler/atik-su-camuru-ve-aritma-cozumleri/acik-sistem-camur-kurutma`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.7,
-    },
-    {
-      url: `${siteUrl}/sektorler/atik-su-camuru-ve-aritma-cozumleri/atik-su-camurundan-aty-hazirlama`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.7,
-    },
-    {
-      url: `${siteUrl}/sektorler/atik-su-camuru-ve-aritma-cozumleri/atik-su-camurundan-kompost-uretimi`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.7,
-    },
-    {
-      url: `${siteUrl}/sektorler/kompost-ve-organik-atik-tesisleri/evsel-organik-atiklar`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.7,
-    },
-    {
-      url: `${siteUrl}/sektorler/enerji-ve-biyogaz-sistemleri/tarimsal-atik-biyogaz-tesisleri`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.7,
-    },
-    {
-      url: `${siteUrl}/kutuphane/organomineral-gubre-tesisi-maliyeti`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: `${siteUrl}/kutuphane/organik-atiklarin-geri-kazanimi`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: `${siteUrl}/kutuphane/blog`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: `${siteUrl}/kutuphane/granul-gubre-uretim-sureci`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: `${siteUrl}/kutuphane/sivi-gubre-uretim-tesisi-nasil-kurulur`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: `${siteUrl}/kutuphane/kurutma-tamburu-tasarim-kriterleri`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.7,
-    },
-    {
-      url: `${siteUrl}/kutuphane/sik-sorulan-sorular`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.7,
-    },
-    {
-      url: `${siteUrl}/kutuphane/terimler-sozlugu`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.7,
-    },
-    ...dynamicBlogRoutes,
-  ];
+// Fiziksel sayfası olsa bile 301 ile başka adrese yönlendirilen eski rotalar.
+const redirectedRoutes = new Set([
+  "/sektorler/atik-su-camuru-ve-aritma-cozumleri/susuzlastirma-destek-sistemleri",
+  "/sektorler/atik-su-camuru-ve-aritma-cozumleri/son-urun-yonetimi",
+  "/sektorler/atik-su-camuru-ve-aritma-cozumleri/camur-besleme",
+  "/sektorler/enerji-ve-biyogaz-sistemleri/besleme-ve-transfer-hatlari",
+  "/sektorler/geri-donusum-ve-atik-yonetimi/son-urun-hazirlama-cozumleri",
+  "/sektorler/geri-donusum-ve-atik-yonetimi/shredder-sistemleri",
+  "/sektorler/kompost-ve-organik-atik-tesisleri/hayvansal-ahir-atiklari",
+  "/sektorler/kompost-ve-organik-atik-tesisleri/olgunlastirma-tamburlari",
+  "/sektorler/kompost-ve-organik-atik-tesisleri/balik-atiklari",
+  "/makinalar-ekipman/kiricilar-ve-parcalayicilar/bicakli-sekonder-kiricilar",
+  "/makinalar-ekipman/tasima-ekipmanlari/bant-konveyorler",
+  "/makinalar-ekipman/tasima-ekipmanlari/helezon-konveyorler",
+  "/makinalar-ekipman/tasima-ekipmanlari/kovali-elevatorler",
+  "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburlari",
+  "/makinalar-ekipman/depolama-ve-besleme-sistemleri/surgulu-klapeler",
+  "/kutuphane/blog/sivi-gubre-tesisi-nasil-kurulur",
+]);
+
+// İndekslenmesi istenmeyen sayfalar.
+const excludedRoutes = new Set(["/tesekkurler", "/kutuphane/sss"]);
+
+function collectStaticRoutes(dir: string, routePrefix: string, out: string[]) {
+  const entries = fs.readdirSync(dir, { withFileTypes: true });
+
+  if (entries.some((entry) => entry.isFile() && entry.name === "page.tsx")) {
+    out.push(routePrefix === "" ? "/" : routePrefix);
+  }
+
+  for (const entry of entries) {
+    if (!entry.isDirectory()) continue;
+    if (entry.name.startsWith("[") || entry.name === "api") continue;
+    collectStaticRoutes(
+      path.join(dir, entry.name),
+      `${routePrefix}/${entry.name}`,
+      out,
+    );
+  }
+}
+
+function priorityFor(route: string) {
+  if (route === "/") return 1;
+  const depth = route.split("/").filter(Boolean).length;
+  if (route.startsWith("/hizmetler") || route.startsWith("/sektorler")) {
+    return depth === 1 ? 0.9 : 0.8;
+  }
+  if (route.startsWith("/makinalar-ekipman")) {
+    return depth === 1 ? 0.9 : 0.8;
+  }
+  if (route.startsWith("/programlar")) return 0.7;
+  if (route.startsWith("/kutuphane/blog")) return 0.7;
+  if (route.startsWith("/kutuphane")) return 0.7;
+  if (route.startsWith("/projeler")) return 0.8;
+  if (route === "/iletisim") return 0.8;
+  return 0.6;
+}
+
+export default function sitemap(): MetadataRoute.Sitemap {
+  const routes = new Set<string>();
+
+  // 1) Fiziksel (statik) sayfalar
+  const appDir = path.join(process.cwd(), "app");
+  const staticRoutes: string[] = [];
+  collectStaticRoutes(appDir, "", staticRoutes);
+  for (const route of staticRoutes) {
+    routes.add(route);
+  }
+
+  // 2) Makine ürün detay sayfaları (dinamik route üzerinden)
+  for (const category of machineCategoryPages) {
+    const categorySlug = getMachinePublicCategorySlug(category.slug);
+    routes.add(`/makinalar-ekipman/${categorySlug}`);
+
+    if (category.slug === "tambur-sistemleri") continue;
+
+    for (const product of category.products) {
+      routes.add(
+        `/makinalar-ekipman/${categorySlug}/${getMachinePublicProductSlug(product.slug)}`,
+      );
+    }
+  }
+
+  for (const product of drumProductPages) {
+    routes.add(`/makinalar-ekipman/tambur-sistemleri/${product.slug}`);
+  }
+
+  // 3) Projeler
+  for (const project of projectPages) {
+    routes.add(`/projeler/${project.slug}`);
+  }
+
+  // 4) Blog dinamik içerikleri
+  const blogSlugs = new Set([
+    ...topicalBlogDynamicSlugs,
+    "granulator-tamburu-secimi",
+    ...Object.keys(compostSystemDetailMap),
+    ...Object.keys(drumSystemDetailMap),
+    ...Object.keys(dryingSystemDetailMap),
+    ...Object.keys(fertilizerSystemDetailMap),
+    ...Object.keys(liquidFertilizerDetailMap),
+  ]);
+  for (const slug of blogSlugs) {
+    routes.add(`/kutuphane/blog/${slug}`);
+  }
+
+  // 5) Yönlendirilen ve hariç tutulan rotaları çıkar
+  for (const route of redirectedRoutes) {
+    routes.delete(route);
+  }
+  for (const route of excludedRoutes) {
+    routes.delete(route);
+  }
+
+  return [...routes]
+    .sort()
+    .map((route) => ({
+      url: route === "/" ? `${siteUrl}/` : `${siteUrl}${route}`,
+      lastModified,
+      changeFrequency: "weekly" as const,
+      priority: priorityFor(route),
+    }));
 }

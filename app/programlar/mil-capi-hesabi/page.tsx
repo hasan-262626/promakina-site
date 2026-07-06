@@ -1,6 +1,24 @@
+import type { Metadata } from "next";
 import { ProgramPageHero } from "../../components/program-page-hero";
 import { ProgramToolShell } from "../../components/program-tool-shell";
 import { ShaftDiameterCalculator } from "../../components/shaft-diameter-calculator";
+
+
+export const metadata: Metadata = {
+  title: "Mil Çapı Hesabı | Mühendislik Hesap Araçları",
+  description: "Burulma momentine göre mil çapı, eğilme + burulma ön hesabı ve katı mil / boru mil karşılaştırmasını mühendislik odaklı şekilde değerlendirin.",
+  alternates: {
+    canonical: "https://www.promakina.com.tr/programlar/mil-capi-hesabi",
+  },
+  openGraph: {
+    title: "Mil Çapı Hesabı | Pro Makina",
+    description: "Burulma momentine göre mil çapı, eğilme + burulma ön hesabı ve katı mil / boru mil karşılaştırmasını mühendislik odaklı şekilde değerlendirin.",
+    url: "https://www.promakina.com.tr/programlar/mil-capi-hesabi",
+    siteName: "Pro Makina",
+    locale: "tr_TR",
+    type: "website",
+  },
+};
 
 export default function ShaftDiameterPage() {
   return (

@@ -5,6 +5,10 @@ export const metadata: Metadata = {
   title: "Teşekkürler",
   description:
     "İletişim talebiniz Pro Makina proje ekibine iletildi. Teknik değerlendirme için en kısa sürede sizinle iletişime geçeceğiz.",
+  robots: {
+    index: false,
+    follow: true,
+  },
   alternates: {
     canonical: "https://www.promakina.com.tr/tesekkurler",
   },

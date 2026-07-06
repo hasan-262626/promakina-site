@@ -1,6 +1,24 @@
+import type { Metadata } from "next";
 import { MachiningCalculationsCalculator } from "../../components/machining-calculations-calculator";
 import { ProgramPageHero } from "../../components/program-page-hero";
 import { ProgramToolShell } from "../../components/program-tool-shell";
+
+
+export const metadata: Metadata = {
+  title: "Talaşlı İmalat Hesapları | Mühendislik Hesap Araçları",
+  description: "Vida açım, kılavuz delik, kesme hızı, devir, ilerleme ve delik yerleşimi için çok amaçlı talaşlı imalat yardımcı ekranı kullanın.",
+  alternates: {
+    canonical: "https://www.promakina.com.tr/programlar/talasli-imalat-hesaplari",
+  },
+  openGraph: {
+    title: "Talaşlı İmalat Hesapları | Pro Makina",
+    description: "Vida açım, kılavuz delik, kesme hızı, devir, ilerleme ve delik yerleşimi için çok amaçlı talaşlı imalat yardımcı ekranı kullanın.",
+    url: "https://www.promakina.com.tr/programlar/talasli-imalat-hesaplari",
+    siteName: "Pro Makina",
+    locale: "tr_TR",
+    type: "website",
+  },
+};
 
 export default function MachiningCalculationsPage() {
   return (

@@ -1,6 +1,24 @@
+import type { Metadata } from "next";
 import { ConversionToolsCalculator } from "../../components/conversion-tools-calculator";
 import { ProgramPageHero } from "../../components/program-page-hero";
 import { ProgramToolShell } from "../../components/program-tool-shell";
+
+
+export const metadata: Metadata = {
+  title: "Dönüşüm Araçları | Mühendislik Hesap Araçları",
+  description: "İmalat, makine, gübre, kompost, geri dönüşüm ve proses uygulamalarında en çok kullanılan teknik dönüşümleri hızlıca yapın.",
+  alternates: {
+    canonical: "https://www.promakina.com.tr/programlar/donusum-araclari",
+  },
+  openGraph: {
+    title: "Dönüşüm Araçları | Pro Makina",
+    description: "İmalat, makine, gübre, kompost, geri dönüşüm ve proses uygulamalarında en çok kullanılan teknik dönüşümleri hızlıca yapın.",
+    url: "https://www.promakina.com.tr/programlar/donusum-araclari",
+    siteName: "Pro Makina",
+    locale: "tr_TR",
+    type: "website",
+  },
+};
 
 export default function ConversionToolsPage() {
   return (

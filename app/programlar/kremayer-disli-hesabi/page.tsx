@@ -1,6 +1,24 @@
+import type { Metadata } from "next";
 import { ProgramPageHero } from "../../components/program-page-hero";
 import { ProgramToolShell } from "../../components/program-tool-shell";
 import { RackGearCalculator } from "../../components/rack-gear-calculator";
+
+
+export const metadata: Metadata = {
+  title: "Kremayer Dişli Hesabı | Mühendislik Hesap Araçları",
+  description: "Kremayer dişli ve kremayer kapı sistemi uygulamalarında modül, lineer hareket ve uygunluk değerlendirmesi yapabileceğiniz teknik yardımcı araç. Üst bölüm kısa tutulur ve giriş alanı hızlıca görünür.",
+  alternates: {
+    canonical: "https://www.promakina.com.tr/programlar/kremayer-disli-hesabi",
+  },
+  openGraph: {
+    title: "Kremayer Dişli Hesabı | Pro Makina",
+    description: "Kremayer dişli ve kremayer kapı sistemi uygulamalarında modül, lineer hareket ve uygunluk değerlendirmesi yapabileceğiniz teknik yardımcı araç. Üst bölüm kısa tutulur ve giriş alanı hızlıca görünür.",
+    url: "https://www.promakina.com.tr/programlar/kremayer-disli-hesabi",
+    siteName: "Pro Makina",
+    locale: "tr_TR",
+    type: "website",
+  },
+};
 
 export default function RackGearPage() {
   return (

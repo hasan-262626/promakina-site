@@ -1,6 +1,24 @@
+import type { Metadata } from "next";
 import { ElevatorSelectionCalculator } from "../../components/elevator-selection-calculator";
 import { ProgramPageHero } from "../../components/program-page-hero";
 import { ProgramToolShell } from "../../components/program-tool-shell";
+
+
+export const metadata: Metadata = {
+  title: "Elevatör Kapasite ve Seçim Programı | Mühendislik Hesap Araçları",
+  description: "Bantlı elevatör, zincirli elevatör, kova tipi, kova ölçüsü, boşaltma tipi ve ön mekanik tavsiyeler için profesyonel ön seçim aracıdır.",
+  alternates: {
+    canonical: "https://www.promakina.com.tr/programlar/elevator-kapasite-ve-secim-programi",
+  },
+  openGraph: {
+    title: "Elevatör Kapasite ve Seçim Programı | Pro Makina",
+    description: "Bantlı elevatör, zincirli elevatör, kova tipi, kova ölçüsü, boşaltma tipi ve ön mekanik tavsiyeler için profesyonel ön seçim aracıdır.",
+    url: "https://www.promakina.com.tr/programlar/elevator-kapasite-ve-secim-programi",
+    siteName: "Pro Makina",
+    locale: "tr_TR",
+    type: "website",
+  },
+};
 
 export default function ElevatorSelectionProgramPage() {
   return (

@@ -1,6 +1,24 @@
+import type { Metadata } from "next";
 import { CouplingSelectionCalculator } from "../../components/coupling-selection-calculator";
 import { ProgramPageHero } from "../../components/program-page-hero";
 import { ProgramToolShell } from "../../components/program-tool-shell";
+
+
+export const metadata: Metadata = {
+  title: "Kaplin Seçimi Ön Hesabı | Mühendislik Hesap Araçları",
+  description: "Tork, devir, mil çapı ve servis faktörüne göre kaplin sınıfı ve bağlantı uygunluğu için hızlı teknik ön değerlendirme yapın.",
+  alternates: {
+    canonical: "https://www.promakina.com.tr/programlar/kaplin-secimi-on-hesabi",
+  },
+  openGraph: {
+    title: "Kaplin Seçimi Ön Hesabı | Pro Makina",
+    description: "Tork, devir, mil çapı ve servis faktörüne göre kaplin sınıfı ve bağlantı uygunluğu için hızlı teknik ön değerlendirme yapın.",
+    url: "https://www.promakina.com.tr/programlar/kaplin-secimi-on-hesabi",
+    siteName: "Pro Makina",
+    locale: "tr_TR",
+    type: "website",
+  },
+};
 
 export default function CouplingSelectionPage() {
   return (

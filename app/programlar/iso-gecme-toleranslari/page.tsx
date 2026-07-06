@@ -1,6 +1,24 @@
+import type { Metadata } from "next";
 import { IsoFitTolerancesCalculator } from "../../components/iso-fit-tolerances-calculator";
 import { ProgramPageHero } from "../../components/program-page-hero";
 import { ProgramToolShell } from "../../components/program-tool-shell";
+
+
+export const metadata: Metadata = {
+  title: "ISO Geçme Toleransları | Mühendislik Hesap Araçları",
+  description: "ISO Geçme Toleransları (TS 1845-2 EN ISO 286-2) standardına göre mil, delik ve geçme karşılaştırmalarını teknik olarak değerlendirin.",
+  alternates: {
+    canonical: "https://www.promakina.com.tr/programlar/iso-gecme-toleranslari",
+  },
+  openGraph: {
+    title: "ISO Geçme Toleransları | Pro Makina",
+    description: "ISO Geçme Toleransları (TS 1845-2 EN ISO 286-2) standardına göre mil, delik ve geçme karşılaştırmalarını teknik olarak değerlendirin.",
+    url: "https://www.promakina.com.tr/programlar/iso-gecme-toleranslari",
+    siteName: "Pro Makina",
+    locale: "tr_TR",
+    type: "website",
+  },
+};
 
 export default function IsoFitTolerancesPage() {
   return (

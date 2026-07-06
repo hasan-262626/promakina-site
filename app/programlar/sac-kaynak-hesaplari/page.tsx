@@ -1,6 +1,24 @@
+import type { Metadata } from "next";
 import { ProgramPageHero } from "../../components/program-page-hero";
 import { ProgramToolShell } from "../../components/program-tool-shell";
 import { SheetFabricationCalculator } from "../../components/sheet-fabrication-calculator";
+
+
+export const metadata: Metadata = {
+  title: "Sac-Kaynak Hesapları | Mühendislik Hesap Araçları",
+  description: "Sac ağırlık hesabı, büküm açılım boyu, abkant tonaj hesabı ve kaynak dolgu miktarı için imalat odaklı ön hesap alın.",
+  alternates: {
+    canonical: "https://www.promakina.com.tr/programlar/sac-kaynak-hesaplari",
+  },
+  openGraph: {
+    title: "Sac-Kaynak Hesapları | Pro Makina",
+    description: "Sac ağırlık hesabı, büküm açılım boyu, abkant tonaj hesabı ve kaynak dolgu miktarı için imalat odaklı ön hesap alın.",
+    url: "https://www.promakina.com.tr/programlar/sac-kaynak-hesaplari",
+    siteName: "Pro Makina",
+    locale: "tr_TR",
+    type: "website",
+  },
+};
 
 export default function SheetFabricationPage() {
   return (

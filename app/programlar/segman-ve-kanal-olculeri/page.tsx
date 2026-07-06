@@ -1,6 +1,24 @@
+import type { Metadata } from "next";
 import { CirclipGrooveCalculator } from "../../components/circlip-groove-calculator";
 import { ProgramPageHero } from "../../components/program-page-hero";
 import { ProgramToolShell } from "../../components/program-tool-shell";
+
+
+export const metadata: Metadata = {
+  title: "Segman ve Kanal Ölçüleri | Mühendislik Hesap Araçları",
+  description: "DIN 472 iç segman ve DIN 471 dış segman ölçülerine göre standart segman ve kanal açım bilgilerini teknik olarak hızlıca görüntüleyin.",
+  alternates: {
+    canonical: "https://www.promakina.com.tr/programlar/segman-ve-kanal-olculeri",
+  },
+  openGraph: {
+    title: "Segman ve Kanal Ölçüleri | Pro Makina",
+    description: "DIN 472 iç segman ve DIN 471 dış segman ölçülerine göre standart segman ve kanal açım bilgilerini teknik olarak hızlıca görüntüleyin.",
+    url: "https://www.promakina.com.tr/programlar/segman-ve-kanal-olculeri",
+    siteName: "Pro Makina",
+    locale: "tr_TR",
+    type: "website",
+  },
+};
 
 export default function CirclipGroovePage() {
   return (

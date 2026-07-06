@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { GenericProgramEngine } from "../../components/generic-program-engine";
 import { ProgramPageHero } from "../../components/program-page-hero";
@@ -12,6 +13,35 @@ type PageProps = {
 
 export function generateStaticParams() {
   return programItems.map((program) => ({ slug: program.slug }));
+}
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const program = getProgramMeta(slug);
+
+  if (!program) {
+    return {
+      title: "Hesaplama Araçları | Pro Makina",
+    };
+  }
+
+  const canonical = `https://www.promakina.com.tr/programlar/${program.slug}`;
+
+  return {
+    title: `${program.title} | Mühendislik Hesap Araçları`,
+    description: program.description,
+    alternates: {
+      canonical,
+    },
+    openGraph: {
+      title: `${program.title} | Pro Makina`,
+      description: program.description,
+      url: canonical,
+      siteName: "Pro Makina",
+      locale: "tr_TR",
+      type: "website",
+    },
+  };
 }
 
 export default async function ProgramDetailPage({ params }: PageProps) {
