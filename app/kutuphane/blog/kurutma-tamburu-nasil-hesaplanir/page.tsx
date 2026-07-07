@@ -2,7 +2,7 @@ import Link from "next/link";
 import { buildLibraryMetadata } from "../../../components/library-seo-page";
 import { BlogArticleTemplate } from "../../../components/blog-article-template";
 
-const title = "Kurutma Tamburu Nasıl Hesaplanır? | Pro Makina";
+const title = "Kurutma Tamburu Nasıl Hesaplanır?";
 const description =
   "Kurutma tamburu kapasite hesabı, çap-boy seçimi, nem oranı, ürün debisi, sıcaklık ve proses tasarımı hakkında teknik rehber.";
 const canonical = "https://www.promakina.com.tr/kutuphane/blog/kurutma-tamburu-nasil-hesaplanir";

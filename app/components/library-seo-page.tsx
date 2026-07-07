@@ -120,7 +120,7 @@ export function LibrarySeoPage({
       "@type": "PostalAddress",
       streetAddress: "75. Yıl Mah. Teksan Sanayi Sitesi Kilis Sokak D6 Blok No:2E",
       addressLocality: "Odunpazarı",
-      addressRegion: "EskiÅŸehir",
+      addressRegion: "Eskişehir",
       postalCode: "26250",
       addressCountry: "TR",
     },

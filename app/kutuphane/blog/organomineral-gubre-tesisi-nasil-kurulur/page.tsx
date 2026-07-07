@@ -2,7 +2,7 @@ import Link from "next/link";
 import { buildLibraryMetadata } from "../../../components/library-seo-page";
 import { BlogArticleTemplate } from "../../../components/blog-article-template";
 
-const title = "Organomineral Gübre Tesisi Nasıl Kurulur? | Pro Makina";
+const title = "Organomineral Gübre Tesisi Nasıl Kurulur?";
 const description =
   "Organomineral gübre tesisi kurulumu, hammadde hazırlama, karıştırma, granülasyon, kurutma, soğutma, eleme ve paketleme süreçleri.";
 const canonical =

@@ -8,14 +8,14 @@ import {
 import { TechnicalArticlesShortcut } from "../components/technical-articles-shortcut";
 
 export const metadata: Metadata = {
-  title: "Kütüphane | Blog, Programlar ve Teknik İçerikler | Pro Makina",
+  title: "Kütüphane | Blog, Programlar ve Teknik İçerikler",
   description:
     "Blog makaleleri, mühendislik programları, terimler sözlüğü, PDF kataloglar, video içerikler ve sık sorulan sorular ile endüstriyel proses bilgi merkezi.",
   alternates: {
     canonical: "https://www.promakina.com.tr/kutuphane",
   },
   openGraph: {
-    title: "Kütüphane | Blog, Programlar ve Teknik İçerikler | Pro Makina",
+    title: "Kütüphane | Blog, Programlar ve Teknik İçerikler",
     description:
       "Blog makaleleri, mühendislik programları, terimler sözlüğü, PDF kataloglar, video içerikler ve sık sorulan sorular ile endüstriyel proses bilgi merkezi.",
     url: "https://www.promakina.com.tr/kutuphane",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Kütüphane | Blog, Programlar ve Teknik İçerikler | Pro Makina",
+    title: "Kütüphane | Blog, Programlar ve Teknik İçerikler",
     description:
       "Blog makaleleri, mühendislik programları, terimler sözlüğü, PDF kataloglar, video içerikler ve sık sorulan sorular ile endüstriyel proses bilgi merkezi.",
   },

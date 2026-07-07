@@ -7,14 +7,14 @@ import { programGroups, type ProgramGroup } from "../program-groups";
 const canonical = "https://www.promakina.com.tr/programlar";
 
 export const metadata: Metadata = {
-  title: "Proses ve Makine Hesaplama Araçları | Pro Makina",
+  title: "Proses ve Makine Hesaplama Araçları",
   description:
     "Kurutma tamburu, konveyör, helezon, elevatör, siklon, jet pulse, maliyet, güç aktarımı ve mühendislik hesapları için Pro Makina hesaplama araçları.",
   alternates: {
     canonical,
   },
   openGraph: {
-    title: "Programlar | Pro Makina",
+    title: "Programlar",
     description:
       "Makine kapasitesi, tambur tasarımı, siklon, jet pulse, maliyet, güç aktarımı ve mühendislik hesaplama araçlarını inceleyin.",
     url: canonical,

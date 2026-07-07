@@ -39,7 +39,7 @@ export const drumSystemDetailPages: DrumSystemDetailPageData[] = [
       "Kurutma tamburu seçimi için kapasite, giriş-çıkış nemi, buharlaşacak su, brülör kapasitesi, fan, siklon, filtre, kalış süresi, devir ve eğim kriterlerini inceleyin.",
     canonical:
       "https://www.promakina.com.tr/kutuphane/blog/kurutma-tamburu-secimi",
-    openGraphTitle: "Kurutma Tamburu Seçimi | Pro Makina",
+    openGraphTitle: "Kurutma Tamburu Seçimi",
     openGraphDescription:
       "Kapasite, nem, brülör, fan, siklon ve filtre ilişkisi üzerinden kurutma tamburu seçimini teknik olarak inceleyin.",
     heroDescription:
@@ -251,7 +251,7 @@ export const drumSystemDetailPages: DrumSystemDetailPageData[] = [
       "Soğutma tamburunun çalışma prensibi, ürün sıcaklığı, hava debisi, fan, toz kontrolü, doluluk, kalış süresi, devir ve iç yapı seçim kriterlerini inceleyin.",
     canonical:
       "https://www.promakina.com.tr/kutuphane/blog/sogutma-tamburu-nasil-calisir",
-    openGraphTitle: "Soğutma Tamburu Nasıl Çalışır? | Pro Makina",
+    openGraphTitle: "Soğutma Tamburu Nasıl Çalışır?",
     openGraphDescription:
       "Soğutma tamburunun çalışma mantığı, hava akış yönü, fan ve filtre tasarımı ile ürün kırılganlığını teknik olarak inceleyin.",
     heroDescription:
@@ -420,7 +420,7 @@ export const drumSystemDetailPages: DrumSystemDetailPageData[] = [
       "Kaplama tamburunun kullanım alanları, sıvı inhibitör kaplama, polimer, yağ, organik katkı, nozul sistemi, doluluk, devir ve homojen kaplama kriterlerini inceleyin.",
     canonical:
       "https://www.promakina.com.tr/kutuphane/blog/kaplama-tamburu-kullanim-alanlari",
-    openGraphTitle: "Kaplama Tamburu Kullanım Alanları | Pro Makina",
+    openGraphTitle: "Kaplama Tamburu Kullanım Alanları",
     openGraphDescription:
       "Granül ürünlerde sıvı veya toz katkı uygulamak için kullanılan kaplama tamburu, nozul ve sprey bar sistemlerini inceleyin.",
     heroDescription:
@@ -598,7 +598,7 @@ export const drumSystemDetailPages: DrumSystemDetailPageData[] = [
       "Kompost tamburu seçimi için organik atık tipi, nem, yoğunluk, olgunlaştırma süresi, havalandırma, koku kontrolü, doluluk, devir ve iç yapı kriterlerini inceleyin.",
     canonical:
       "https://www.promakina.com.tr/kutuphane/blog/kompost-tamburu-secim-kriterleri",
-    openGraphTitle: "Kompost Tamburu Seçim Kriterleri | Pro Makina",
+    openGraphTitle: "Kompost Tamburu Seçim Kriterleri",
     openGraphDescription:
       "Organik atık, digestat ve kompost proseslerinde kompost tamburu seçimini, havalandırma ve doluluk bakışıyla teknik olarak inceleyin.",
     heroDescription:
@@ -770,7 +770,7 @@ export const drumSystemDetailPages: DrumSystemDetailPageData[] = [
       "Tambur devir hesabı için kritik devir formülü, çap, proses tipi, ürün davranışı, doluluk, granülasyon, kurutma, soğutma ve kaplama tamburlarında uygun RPM aralıklarını inceleyin.",
     canonical:
       "https://www.promakina.com.tr/kutuphane/blog/tambur-devir-hesabi",
-    openGraphTitle: "Tambur Devir Hesabı | Pro Makina",
+    openGraphTitle: "Tambur Devir Hesabı",
     openGraphDescription:
       "Kritik devir formülü, çevresel hız ve proses tipine göre rpm yaklaşımını teknik olarak inceleyin.",
     heroDescription:
@@ -947,7 +947,7 @@ export const drumSystemDetailPages: DrumSystemDetailPageData[] = [
       "Tambur eğimi ve doluluk oranı hesabı; kapasite, kalış süresi, ürün yoğunluğu, tambur çapı, boyu, devir ve proses tipine göre nasıl yapılır?",
     canonical:
       "https://www.promakina.com.tr/kutuphane/blog/tambur-egim-ve-doluluk-orani",
-    openGraphTitle: "Tambur Eğim ve Doluluk Oranı | Pro Makina",
+    openGraphTitle: "Tambur Eğim ve Doluluk Oranı",
     openGraphDescription:
       "Kalış süresi, tambur hacmi, aktif ürün hacmi ve proses tipine göre doluluk-eğim yaklaşımını teknik olarak inceleyin.",
     heroDescription:
@@ -1129,7 +1129,7 @@ export const drumSystemDetailPages: DrumSystemDetailPageData[] = [
       "Tambur ring, gale, taşıyıcı makara, fener dişli, pinyon, motor, redüktör ve tahrik sistemi seçim kriterlerini teknik olarak inceleyin.",
     canonical:
       "https://www.promakina.com.tr/kutuphane/blog/tambur-ring-ve-tahrik-sistemi",
-    openGraphTitle: "Tambur Ring ve Tahrik Sistemi | Pro Makina",
+    openGraphTitle: "Tambur Ring ve Tahrik Sistemi",
     openGraphDescription:
       "Ring, gale, pinyon, redüktör ve motor ilişkisini ağır hizmet döner tambur tasarımı açısından teknik olarak inceleyin.",
     heroDescription:
@@ -1293,7 +1293,7 @@ export const drumSystemDetailPages: DrumSystemDetailPageData[] = [
       "Tambur redüktör hesabı için motor devri, tambur devri, aktarım oranı, fener dişli-pinyon oranı, tork, servis faktörü ve motor gücü seçim kriterlerini inceleyin.",
     canonical:
       "https://www.promakina.com.tr/kutuphane/blog/tambur-reduktor-hesabi",
-    openGraphTitle: "Tambur Redüktör Hesabı | Pro Makina",
+    openGraphTitle: "Tambur Redüktör Hesabı",
     openGraphDescription:
       "Motor devri, tambur devri, toplam oran, tork ve servis faktörüyle redüktör hesabını teknik olarak inceleyin.",
     heroDescription:
@@ -1465,7 +1465,7 @@ export const drumSystemDetailPages: DrumSystemDetailPageData[] = [
       "Tambur kapasite hesabı için ürün yoğunluğu, giriş kapasitesi, nem, doluluk oranı, kalış süresi, çap, boy, devir, eğim ve proses tipine göre mühendislik hesabını inceleyin.",
     canonical:
       "https://www.promakina.com.tr/kutuphane/blog/tambur-kapasite-hesabi",
-    openGraphTitle: "Tambur Kapasite Hesabı | Pro Makina",
+    openGraphTitle: "Tambur Kapasite Hesabı",
     openGraphDescription:
       "Yoğunluk, doluluk, kalış süresi, L/D oranı ve proses tipine göre tambur kapasite hesabını teknik olarak inceleyin.",
     heroDescription:

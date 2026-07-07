@@ -44,7 +44,7 @@ export const fertilizerSystemDetailPages: DrumSystemDetailPageData[] = [
       "Organomineral gübre tesisi maliyeti; kapasite, makine listesi, inşaat, enerji, personel, hammadde, granülasyon, kurutma, soğutma ve paketleme hattına göre nasıl hesaplanır?",
     canonical:
       "https://www.promakina.com.tr/kutuphane/blog/organomineral-gubre-tesisi-maliyeti",
-    openGraphTitle: "Organomineral Gübre Tesisi Maliyeti | Pro Makina",
+    openGraphTitle: "Organomineral Gübre Tesisi Maliyeti",
     openGraphDescription:
       "Organomineral gübre tesisi maliyetini kapasite, makine, enerji ve paketleme yüküyle birlikte inceleyin.",
     heroDescription:
@@ -209,7 +209,7 @@ export const fertilizerSystemDetailPages: DrumSystemDetailPageData[] = [
       "Granül gübre üretim süreci; hammadde dozajlama, mikser, granülasyon tamburu, kurutma, soğutma, eleme, recycle, kaplama ve paketleme aşamalarıyla nasıl ilerler?",
     canonical:
       "https://www.promakina.com.tr/kutuphane/blog/granul-gubre-uretim-sureci",
-    openGraphTitle: "Granül Gübre Üretim Süreci | Pro Makina",
+    openGraphTitle: "Granül Gübre Üretim Süreci",
     openGraphDescription:
       "Granül gübre prosesini hammadde kabulden paketlemeye kadar adım adım inceleyin.",
     heroDescription:
@@ -349,7 +349,7 @@ export const fertilizerSystemDetailPages: DrumSystemDetailPageData[] = [
     description:
       "NPK gübre üretimi için hammadde dozajlama, karıştırma, granülasyon, kurutma, soğutma, eleme, kaplama, paketleme ve proses ekipmanlarını inceleyin.",
     canonical: "https://www.promakina.com.tr/kutuphane/blog/npk-gubre-uretimi",
-    openGraphTitle: "NPK Gübre Üretimi | Pro Makina",
+    openGraphTitle: "NPK Gübre Üretimi",
     openGraphDescription:
       "NPK gübre üretiminde reçete, granülasyon, kurutma ve kalite kontrol ilişkisini inceleyin.",
     heroDescription:
@@ -490,7 +490,7 @@ export const fertilizerSystemDetailPages: DrumSystemDetailPageData[] = [
     description:
       "Gübre tesisi kurulumu için kapasite belirleme, proses seçimi, makine listesi, saha yerleşimi, otomasyon, montaj, devreye alma ve yatırım planlama adımlarını inceleyin.",
     canonical: "https://www.promakina.com.tr/kutuphane/blog/gubre-tesisi-kurulumu",
-    openGraphTitle: "Gübre Tesisi Kurulumu | Pro Makina",
+    openGraphTitle: "Gübre Tesisi Kurulumu",
     openGraphDescription:
       "Gübre tesisi kurulumunu kapasite, proses, makine listesi ve devreye alma adımlarıyla inceleyin.",
     heroDescription:
@@ -626,7 +626,7 @@ export const fertilizerSystemDetailPages: DrumSystemDetailPageData[] = [
     description:
       "Gübre üretim hattında kullanılan hammadde besleme, dozajlama, mikser, granülasyon tamburu, kurutma, soğutma, eleme, kaplama ve paketleme sistemlerini inceleyin.",
     canonical: "https://www.promakina.com.tr/kutuphane/blog/gubre-uretim-hatti",
-    openGraphTitle: "Gübre Üretim Hattı | Pro Makina",
+    openGraphTitle: "Gübre Üretim Hattı",
     openGraphDescription:
       "Gübre üretim hattını hammadde kabulden paketlemeye kadar teknik olarak inceleyin.",
     heroDescription:
@@ -758,7 +758,7 @@ export const fertilizerSystemDetailPages: DrumSystemDetailPageData[] = [
       "Granül ve organomineral gübre üretiminde kurutma ve soğutma prosesi; ürün nemi, sıcaklığı, kurutma tamburu, soğutma tamburu, fan, siklon ve filtre sistemiyle nasıl yönetilir?",
     canonical:
       "https://www.promakina.com.tr/kutuphane/blog/gubre-kurutma-ve-sogutma-prosesi",
-    openGraphTitle: "Gübre Kurutma ve Soğutma Prosesi | Pro Makina",
+    openGraphTitle: "Gübre Kurutma ve Soğutma Prosesi",
     openGraphDescription:
       "Gübre kurutma ve soğutma hattında nem, sıcaklık, fan ve filtre ilişkisini inceleyin.",
     heroDescription:
@@ -896,7 +896,7 @@ export const fertilizerSystemDetailPages: DrumSystemDetailPageData[] = [
     description:
       "Gübre paketleme hattında açık ağız torbalama, big bag dolum, tartım sistemi, konveyör, dikiş/kapatma, etiketleme, toz kontrol ve sevkiyat ekipmanlarını inceleyin.",
     canonical: "https://www.promakina.com.tr/kutuphane/blog/gubre-paketleme-hatti",
-    openGraphTitle: "Gübre Paketleme Hattı | Pro Makina",
+    openGraphTitle: "Gübre Paketleme Hattı",
     openGraphDescription:
       "Gübre paketleme hattında torbalama, tartım, toz kontrolü ve sevkiyat adımlarını inceleyin.",
     heroDescription:
@@ -1022,7 +1022,7 @@ export const fertilizerSystemDetailPages: DrumSystemDetailPageData[] = [
     description:
       "Granülasyon prosesi; toz hammadde, bağlayıcı, recycle, nem, granülasyon tamburu, kurutma, eleme ve ürün kalite kriterleriyle nasıl yönetilir?",
     canonical: "https://www.promakina.com.tr/kutuphane/blog/granulasyon-prosesi",
-    openGraphTitle: "Granülasyon Prosesi | Pro Makina",
+    openGraphTitle: "Granülasyon Prosesi",
     openGraphDescription:
       "Granülasyon prosesinde bağlayıcı, recycle, tambur hareketi ve kurutma ilişkisini inceleyin.",
     heroDescription:
@@ -1151,7 +1151,7 @@ export const fertilizerSystemDetailPages: DrumSystemDetailPageData[] = [
       "Organomineral gübre üretiminde kullanılan hammadde hazırlama, dozajlama, mikser, granülasyon tamburu, kurutma, soğutma, eleme, kaplama ve paketleme makinelerini inceleyin.",
     canonical:
       "https://www.promakina.com.tr/kutuphane/blog/organomineral-gubre-makinalari",
-    openGraphTitle: "Organomineral Gübre Makinaları | Pro Makina",
+    openGraphTitle: "Organomineral Gübre Makinaları",
     openGraphDescription:
       "Organomineral gübre üretiminde kullanılan ana makineleri ve görevlerini inceleyin.",
     heroDescription:
@@ -1276,7 +1276,7 @@ export const fertilizerSystemDetailPages: DrumSystemDetailPageData[] = [
       "Granül gübre tesisi makine listesi; silo, bunker, dozajlama, mikser, granülasyon tamburu, kurutma, soğutma, elek, recycle, kaplama, filtre ve paketleme ekipmanlarını içerir.",
     canonical:
       "https://www.promakina.com.tr/kutuphane/blog/granul-gubre-tesisi-makine-listesi",
-    openGraphTitle: "Granül Gübre Tesisi Makine Listesi | Pro Makina",
+    openGraphTitle: "Granül Gübre Tesisi Makine Listesi",
     openGraphDescription:
       "Granül gübre tesisi için gerekli ana ve yardımcı ekipman listesini teknik sırayla inceleyin.",
     heroDescription:

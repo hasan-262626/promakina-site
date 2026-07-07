@@ -32,7 +32,7 @@ export const projectPages: ProjectPageData[] = [
       "Evsel organik atığın kabulünden son ürün hazırlamaya kadar uzanan kompost tesislerinde proses akışını, ekipman seçimini ve saha yerleşimini birlikte kurguluyoruz.",
     image: "/images/kompost/kompost1.jpg",
     imageAlt: "Evsel atıklardan kompost tesisi projesi",
-    metadataTitle: "Evsel Atıklardan Kompost Tesisi Projesi | Pro Makina",
+    metadataTitle: "Evsel Atıklardan Kompost Tesisi Projesi",
     metadataDescription:
       "Evsel organik atıkların kompostlaştırılması için ayrıştırma, kurutma, eleme ve ürün hazırlama odaklı tesis projesini inceleyin.",
     projectScope: [
@@ -85,7 +85,7 @@ export const projectPages: ProjectPageData[] = [
       "Hayvansal atığın karakterine göre nem dengesi, yapısal katkı, kompost ritmi ve ekipman yerleşimi belirlenerek uygulanabilir tesis kurguları geliştiriyoruz.",
     image: "/images/kompost/kompost1.jpg",
     imageAlt: "Hayvansal atıklardan kompost tesisi projesi",
-    metadataTitle: "Hayvansal Atıklardan Kompost Tesisi Projesi | Pro Makina",
+    metadataTitle: "Hayvansal Atıklardan Kompost Tesisi Projesi",
     metadataDescription:
       "Hayvansal atıklardan kompost üretimi için nem yönetimi, olgunlaştırma ve son ürün hazırlama odaklı tesis projesini inceleyin.",
     projectScope: [
@@ -138,7 +138,7 @@ export const projectPages: ProjectPageData[] = [
       "Tarımsal organik atıklarda parçalama, karışım dengesi, kompostlaştırma ve son ürün hazırlama aşamalarını saha gerçeklerine göre projelendiriyoruz.",
     image: "/images/kompost/kompost1.jpg",
     imageAlt: "Tarımsal atıklardan kompost tesisi projesi",
-    metadataTitle: "Tarımsal Atıklardan Kompost Tesisi Projesi | Pro Makina",
+    metadataTitle: "Tarımsal Atıklardan Kompost Tesisi Projesi",
     metadataDescription:
       "Tarımsal organik atıkların kompost ürününe dönüştürülmesi için parçalama, kompostlaştırma ve ürün hazırlama odaklı tesis projesini inceleyin.",
     projectScope: [
@@ -192,7 +192,7 @@ export const projectPages: ProjectPageData[] = [
       "1 MW biyogaz yatırımlarında besleme düzeni, ön işlem, digestat sonrası yönetim ve enerji sürekliliğini birlikte ele alan saha odaklı proje kurguları hazırlıyoruz.",
     image: "/images/biyogaz/biogaz1.jpg",
     imageAlt: "1 MW biyogaz tesisi projesi",
-    metadataTitle: "1 MW Biyogaz Tesisi Projesi | Pro Makina",
+    metadataTitle: "1 MW Biyogaz Tesisi Projesi",
     metadataDescription:
       "1 MW biyogaz tesisi için besleme, ön işlem, digestat yönetimi ve enerji üretim odaklı proje kurgusunu inceleyin.",
     projectScope: [
@@ -239,7 +239,7 @@ export const projectPages: ProjectPageData[] = [
       "Digestatın yalnızca bertaraf edilmediği, kurutma ve kompostlaştırma adımlarıyla değerli son ürüne dönüştürüldüğü entegre tesis projeleri geliştiriyoruz.",
     image: "/images/biyogaz/biogaz1.jpg",
     imageAlt: "Biyogaz digestat kurutma ve kompost projesi",
-    metadataTitle: "Biyogaz Digestat Kurutma ve Kompost Projesi | Pro Makina",
+    metadataTitle: "Biyogaz Digestat Kurutma ve Kompost Projesi",
     metadataDescription:
       "Biyogaz digestatının kurutma, kompostlaştırma, eleme ve son ürün hazırlama süreçlerini kapsayan entegre proje yapısını inceleyin.",
     projectScope: [
@@ -287,7 +287,7 @@ export const projectPages: ProjectPageData[] = [
       "10 ton/saat ölçeşinde organomineral gübre yatırımlarında formülasyon, kapasite, granül kalitesi ve saha yerleşimini birlikte ele alan proses kurguları geliştiriyoruz.",
     image: "/images/granulator disk/diskgran2.jpg",
     imageAlt: "10 ton saat organomineral gübre tesisi projesi",
-    metadataTitle: "10 Ton/Saat Organomineral Gübre Tesisi Projesi | Pro Makina",
+    metadataTitle: "10 Ton/Saat Organomineral Gübre Tesisi Projesi",
     metadataDescription:
       "10 ton/saat organomineral gübre tesisi için granülasyon, kurutma, eleme ve paketleme odaklı proje yapısını inceleyin.",
     projectScope: [
@@ -344,7 +344,7 @@ export const projectPages: ProjectPageData[] = [
       "Granül gübre yatırımlarında proses akışını yalnızca makine listesiyle değil, kapasite, ürün standardı ve saha kurgusuyla birlikte değerlendiriyoruz.",
     image: "/images/granulator disk/diskgran2.jpg",
     imageAlt: "Granül gübre üretim tesisi projesi",
-    metadataTitle: "Granül Gübre Üretim Tesisi Projesi | Pro Makina",
+    metadataTitle: "Granül Gübre Üretim Tesisi Projesi",
     metadataDescription:
       "Granül gübre üretimi için dozajlama, granülasyon, kurutma, soğutma ve paketleme odaklı proje yapısını inceleyin.",
     projectScope: [
@@ -398,7 +398,7 @@ export const projectPages: ProjectPageData[] = [
       "Sıvı gübre hatlarında reaktör hacmi, karıştırma yapısı, stoklama senaryosu ve dolum ritmini birlikte okuyarak daha uygulanabilir tesis kurguları oluşturuyoruz.",
     image: "/images/siyah beyaz/tank 1.jpg",
     imageAlt: "Sıvı gübre üretim tesisi projesi",
-    metadataTitle: "Sıvı Gübre Üretim Tesisi Projesi | Pro Makina",
+    metadataTitle: "Sıvı Gübre Üretim Tesisi Projesi",
     metadataDescription:
       "Sıvı gübre üretimi için reaktör, tank, filtrasyon, stoklama ve dolum odaklı proje yapısını inceleyin.",
     projectScope: [
@@ -452,7 +452,7 @@ export const projectPages: ProjectPageData[] = [
       "Silis kumu kurutma tesislerinde kurutma yükü, ürün akışı, toz kontrolü ve stoklama ihtiyaçlarını aynı termal proses kurgusu içinde ele alıyoruz.",
     image: "/images/maden/maden1.jpg",
     imageAlt: "Silis kumu kurutma tesisi projesi",
-    metadataTitle: "Silis Kumu Kurutma Tesisi Projesi | Pro Makina",
+    metadataTitle: "Silis Kumu Kurutma Tesisi Projesi",
     metadataDescription:
       "Silis kumu ve kuvars kumu için kurutma tamburu, sıcak gaz hattı, eleme ve toz toplama odaklı tesis projesini inceleyin.",
     projectScope: [
@@ -505,7 +505,7 @@ export const projectPages: ProjectPageData[] = [
       "Perlit gibi hafif ve hassas mineral hammaddelerde ürün kaybını azaltan, sınıflandırmayı netleştiren ve termal süreci kontrollü kılan proje kurguları geliştiriyoruz.",
     image: "/images/maden/maden1.jpg",
     imageAlt: "Perlit kurutma ve eleme tesisi projesi",
-    metadataTitle: "Perlit Kurutma ve Eleme Tesisi Projesi | Pro Makina",
+    metadataTitle: "Perlit Kurutma ve Eleme Tesisi Projesi",
     metadataDescription:
       "Perlit kurutma ve eleme tesisleri için kontrollü kurutma, sınıflandırma, taşıma ve toz toplama odaklı proje yapısını inceleyin.",
     projectScope: [
@@ -559,7 +559,7 @@ export const projectPages: ProjectPageData[] = [
       "Kırma, eleme ve kurutma süreçlerini aynı proje mantığında ele alarak maden ve mineral işleme hatlarında daha dengeli bir kapasite omurgası kuruyoruz.",
     image: "/images/maden/maden1.jpg",
     imageAlt: "Maden kırma eleme kurutma tesisi projesi",
-    metadataTitle: "Maden Kırma, Eleme ve Kurutma Tesisi Projesi | Pro Makina",
+    metadataTitle: "Maden Kırma, Eleme ve Kurutma Tesisi Projesi",
     metadataDescription:
       "Maden kırma, eleme ve kurutma tesisleri için kırıcılar, elekler, kurutma tamburu ve konveyör odaklı proje yapısını inceleyin.",
     projectScope: [
@@ -613,7 +613,7 @@ export const projectPages: ProjectPageData[] = [
       "Arıtma çamuru kurutma projelerinde nem düğürme hedefi, koku kontrolü, ürün hazırlama ve saha akışı aynı termal proses mantığı içinde okunur.",
     image: "/images/01-genel/fabrika1.jpg",
     imageAlt: "Arıtma çamuru kurutma tesisi projesi",
-    metadataTitle: "Arıtma Çamuru Kurutma Tesisi Projesi | Pro Makina",
+    metadataTitle: "Arıtma Çamuru Kurutma Tesisi Projesi",
     metadataDescription:
       "Arıtma çamuru kurutma tesisi için besleme, kurutma, koku kontrolü ve nihai ürün hazırlama odaklı proje yapısını inceleyin.",
     projectScope: [
@@ -667,7 +667,7 @@ export const projectPages: ProjectPageData[] = [
       "Deri atığının lifli ve zorlu yapısını dikkate alan parçalama, taşıma ve geri kazanım odaklı özel proses kurguları geliştiriyoruz.",
     image: "/images/01-genel/geridonusum1.jpg",
     imageAlt: "Deri atıklarından geri kazanım tesisi projesi",
-    metadataTitle: "Deri Atıklarından Geri Kazanım Tesisi Projesi | Pro Makina",
+    metadataTitle: "Deri Atıklarından Geri Kazanım Tesisi Projesi",
     metadataDescription:
       "Deri atıklarının parçalama, taşıma, proses hazırlığı ve geri kazanım aşamalarını kapsayan özel tesis projesini inceleyin.",
     projectScope: [
@@ -715,7 +715,7 @@ export const projectPages: ProjectPageData[] = [
       "Malzeme transferinin yalnızca makine seçimi değil, hat boyu, eşim, dozaj ve bakım erişimiyle birlikte planlandığı taşıma sistemi projeleri geliştiriyoruz.",
     image: "/images/01-genel/makinalar1.png",
     imageAlt: "Helezon konveyör ve elevatör hat projesi",
-    metadataTitle: "Helezon, Konveyör ve Elevatör Hat Projesi | Pro Makina",
+    metadataTitle: "Helezon, Konveyör ve Elevatör Hat Projesi",
     metadataDescription:
       "Helezon, bant konveyör, zincirli konveyör ve kovalı elevatör hatlarını kapsayan taşıma sistemi projesini inceleyin.",
     projectScope: [
@@ -772,7 +772,7 @@ export const projectPages: ProjectPageData[] = [
       "Reaktör ve tank sistemlerinde hacim, karıştırıcı tipi, malzeme seçimi ve proses bağlantıları birlikte değerlendirilerek daha güvenli üretim omurgaları kurgulanır.",
     image: "/images/siyah beyaz/tank 1.jpg",
     imageAlt: "Reaktör ve tank sistemleri projesi",
-    metadataTitle: "Reaktör ve Tank Sistemleri Projesi | Pro Makina",
+    metadataTitle: "Reaktör ve Tank Sistemleri Projesi",
     metadataDescription:
       "Reaktör, tank, çözündürme, karıştırma ve stoklama odaklı proses ekipmanı projesini inceleyin.",
     projectScope: [
@@ -820,7 +820,7 @@ export const projectPages: ProjectPageData[] = [
       "Saha ölçülerine, kapasiteye ve proses hedefine göre katalog dığı ekipman ve hat çözümleri tasarlayarak özel üretim gerektiren yatırımları destekliyoruz.",
     image: "/images/01-genel/makinalar1.png",
     imageAlt: "özel proses ve makine imalatı projesi",
-    metadataTitle: "özel Proses ve Makine İmalatı Projesi | Pro Makina",
+    metadataTitle: "özel Proses ve Makine İmalatı Projesi",
     metadataDescription:
       "özel proses ve makine imalatı gerektiren sahalar için kapasite, ölçü ve entegrasyon odaklı proje yapısını inceleyin.",
     projectScope: [

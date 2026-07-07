@@ -2,7 +2,7 @@ import Link from "next/link";
 import { buildLibraryMetadata } from "../../../components/library-seo-page";
 import { BlogArticleTemplate } from "../../../components/blog-article-template";
 
-const title = "Kompost Tesisi Nasıl Kurulur? | Proses, Makine, Kapasite | Pro Makina";
+const title = "Kompost Tesisi Nasıl Kurulur? | Proses, Makine, Kapasite";
 const description =
   "Kompost tesisi kurulumu; hammadde kabul, ayrıştırma, nem yönetimi, olgunlaştırma, kurutma, eleme ve paketleme süreçleriyle teknik yatırım rehberi.";
 const canonical = "https://www.promakina.com.tr/kutuphane/blog/kompost-tesisi-nasil-kurulur";

@@ -123,14 +123,14 @@ export const services: ServiceItem[] = [
     ],
     advantages: [
       "Tek muhatap",
-      "Sahaya uygun çöz?m",
+      "Sahaya uygun çözüm",
       "Daha kontroll? kurulum",
       "Süreç bütünl??x?",
     ],
     relatedSectors: [
       "Gübre üretim Tesisleri",
       "Kompost ve Organik Atik Tesisleri",
-      "Atık Su çamuru ve Arıtma çöz?mleri",
+      "Atık Su çamuru ve Arıtma çözümleri",
       "Geri Dönü_?m ve Atık Yönetimi",
       "Enerji ve Biyogaz Sistemleri",
       "Madencilik ve Mineral 0_leme",
@@ -177,7 +177,7 @@ export const services: ServiceItem[] = [
     relatedSectors: [
       "Gübre üretim Tesisleri",
       "Kompost ve Organik Atik Tesisleri",
-      "Atık Su çamuru ve Arıtma çöz?mleri",
+      "Atık Su çamuru ve Arıtma çözümleri",
       "Geri Dönü_?m ve Atık Yönetimi",
       "Enerji ve Biyogaz Sistemleri",
       "Madencilik ve Mineral 0_leme",
@@ -224,7 +224,7 @@ export const services: ServiceItem[] = [
       {
         question: "Standart disi imalat yapiliyor mu?",
         answer:
-          "Evet, kapasite, saha olculeri ve proses ihtiyacina gore tamamen ?zel imalat yapabiliyoruz.",
+          "Evet, kapasite, saha olculeri ve proses ihtiyacina gore tamamen özel imalat yapabiliyoruz.",
       },
     ],
   },
@@ -241,7 +241,7 @@ export const services: ServiceItem[] = [
     scope: ["Montaj planlama", "Saha kurulum", "Test calismalari", "Ilk calistirma"],
     outputs: ["Daha hizli devreye alma", "Daha d???k saha riski", "Çalığır teslim"],
     advantages: ["Saha koordinasyonu", "Surekli takip", "Performans kontrol?", "Ekip egitimi"],
-    relatedSectors: ["Enerji ve Biyogaz Sistemleri", "Atık Su çamuru ve Arıtma çöz?mleri"],
+    relatedSectors: ["Enerji ve Biyogaz Sistemleri", "Atık Su çamuru ve Arıtma çözümleri"],
     relatedMachines: ["Depolama ve Besleme Sistemleri", "Paketleme ve Dolum Sistemleri"],
     relatedProjects: ["Kompost Tesisi Projeleri"],
     faqs: [
@@ -337,7 +337,7 @@ export const services: ServiceItem[] = [
     scope: ["Numune testleri", "Pilot denemeler", "Parametre analizi", "Sonu? raporlama"],
     outputs: ["Yatirim oncesi veri", "Malzeme davranisi analizi", "Daha doğru ekipman seçimi"],
     advantages: ["Risk azaltma", "Veriye dayali karar", "Rakiplerden ayrisan uzmanlik"],
-    relatedSectors: ["Gübre üretim Tesisleri", "Atık Su çamuru ve Arıtma çöz?mleri"],
+    relatedSectors: ["Gübre üretim Tesisleri", "Atık Su çamuru ve Arıtma çözümleri"],
     relatedMachines: ["Tambur Sistemleri", "Eleme ve Siniflandirma Sistemleri"],
     relatedProjects: ["Organomineral Gübre Tesisi Projeleri"],
     faqs: [
@@ -507,14 +507,14 @@ export const projects: ProjectItem[] = [
     slug: "ozel-proses-ve-makine-imalati-projeleri",
     title: "özel Proses ve Makine 0malatı Projeleri",
     summary:
-      "Sahaya özel ölçü, kapasite ve proses ihtiyacina gore uyarlanmis özel makina ve sistem çöz?mleri.",
+      "Sahaya özel ölçü, kapasite ve proses ihtiyacina gore uyarlanmis özel makina ve sistem çözümleri.",
     projectName: "özel Proses Hatti ve Makine Üretimi",
     location: "Yurt ici / Yurt disi",
-    capacity: "Projeye ?zel",
+    capacity: "Projeye özel",
     customerType: "Farkli sanayi kollari",
     systems: ["Reaktorler ve Tanklar", "Tambur Sistemleri", "Taşıma Ekipmanlari"],
     processSummary:
-      "Standart katalog disinda kalan proses gereksinimleri için özel imalat ve hat entegrasyonu odakli çöz?m kurgulandi.",
+      "Standart katalog disinda kalan proses gereksinimleri için özel imalat ve hat entegrasyonu odakli çözüm kurgulandi.",
     technicalScope: [
       "özel tasarim ekipman",
       "Mühendislik ve projelendirme",
@@ -522,7 +522,7 @@ export const projects: ProjectItem[] = [
       "Saha uyarlama ve entegrasyon",
     ],
     photosNote:
-      "Bu bolume teknik cizimler, ?zel imalat detaylari ve uygulama fotograflari eklenebilir.",
+      "Bu bolume teknik cizimler, özel imalat detaylari ve uygulama fotograflari eklenebilir.",
     outcomes: [
       "Standart disi ihtiyaca uygun sistem",
       "Sahaya uyarlanmis makina yapisi",
@@ -539,10 +539,10 @@ export const projects: ProjectItem[] = [
     slug: "mineral-ve-dokme-kati-isleme-projeleri",
     title: "Mineral ve Dökme Katı 0_leme Projeleri",
     summary:
-      "Kirma, eleme, taşıma, kurutma, sınıflandırma ve stoklama süreçlerine uygun mineral ve dökme kati malzeme proje çöz?mleri.",
+      "Kirma, eleme, taşıma, kurutma, sınıflandırma ve stoklama süreçlerine uygun mineral ve dökme kati malzeme proje çözümleri.",
     projectName: "Mineral ve Dökme Katı 0_leme Projesi",
     location: "Türkiye / Farkli saha senaryolari",
-    capacity: "Projeye gore ?zel",
+    capacity: "Projeye gore özel",
     customerType: "Madencilik ve proses yatirimlari",
     systems: [
       "Kiricilar ve Parcalayicilar",
@@ -559,7 +559,7 @@ export const projects: ProjectItem[] = [
       "Toz, asinma ve kapasite yonetimi",
     ],
     photosNote:
-      "Bu alana kirma-eleme hatlari, taşıma sistemleri, stoklama çöz?mleri ve saha uygulama gorselleri eklenebilir.",
+      "Bu alana kirma-eleme hatlari, taşıma sistemleri, stoklama çözümleri ve saha uygulama gorselleri eklenebilir.",
     outcomes: [
       "Proses akisina uygun hat kurgusu",
       "Kapasiteye uygun ekipman seçimi",
@@ -778,7 +778,7 @@ export const libraryItems: LibraryItem[] = [
     slug: "endustriyel-kirici-tipleri-ve-kullanim-alanlari",
     title: "Endustriyel Kirici Tipleri ve Kullanim Alanlari",
     category: "Blog / Makaleler",
-    summary: "Çeki?li degirmen, ceneli kırıcı, zincirli kırıcı ve parcalayici tiplerinin kullanim farklari.",
+    summary: "Çekiçli degirmen, ceneli kırıcı, zincirli kırıcı ve parcalayici tiplerinin kullanim farklari.",
     heroTitle: "Endustriyel kirici tipleri ve kullanim alanlari nasil ayrisir?",
     heroDescription:
       "Farkli malzemeler icin kullanilan kirici ve parcalayici tiplerini proses mantigina gore karsilastiriyoruz.",

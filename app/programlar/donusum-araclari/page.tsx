@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     canonical: "https://www.promakina.com.tr/programlar/donusum-araclari",
   },
   openGraph: {
-    title: "Dönüşüm Araçları | Pro Makina",
+    title: "Dönüşüm Araçları",
     description: "İmalat, makine, gübre, kompost, geri dönüşüm ve proses uygulamalarında en çok kullanılan teknik dönüşümleri hızlıca yapın.",
     url: "https://www.promakina.com.tr/programlar/donusum-araclari",
     siteName: "Pro Makina",

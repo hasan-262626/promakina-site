@@ -4,14 +4,14 @@ import { Hero } from "../components/Hero";
 import { industrialSolutionLandingConfigs } from "../lib/industrial-solution-landing-data";
 
 export const metadata: Metadata = {
-  title: "Endüstriyel Çözümler | Anahtar Teslim Tesis ve Makina Çözümleri | Pro Makina",
+  title: "Endüstriyel Çözümler | Anahtar Teslim Tesis ve Makina Çözümleri",
   description:
     "Gübre tesisi, kompost tesisi, endüstriyel kurutma, rotary dryer, sıvı gübre ve vidalı konveyör sistemleri için dönüşüm odaklı endüstriyel çözüm sayfaları.",
   alternates: {
     canonical: "https://www.promakina.com.tr/cozumler",
   },
   openGraph: {
-    title: "Endüstriyel Çözümler | Anahtar Teslim Tesis ve Makina Çözümleri | Pro Makina",
+    title: "Endüstriyel Çözümler | Anahtar Teslim Tesis ve Makina Çözümleri",
     description:
       "Gübre tesisi, kompost tesisi, endüstriyel kurutma, rotary dryer, sıvı gübre ve vidalı konveyör sistemleri için dönüşüm odaklı endüstriyel çözüm sayfaları.",
     url: "https://www.promakina.com.tr/cozumler",

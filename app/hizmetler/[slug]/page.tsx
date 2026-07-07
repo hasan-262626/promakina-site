@@ -18,7 +18,7 @@ const siteUrl = "https://www.promakina.com.tr";
 const sectorHrefMap: Record<string, string> = {
   "Gübre üretim Tesisleri": "/sektorler/gubre-ve-granulasyon-tesisleri",
   "Kompost ve Organik Atık Tesisleri": "/sektorler/kompost-ve-organik-atik-tesisleri",
-  "Atık Su çamuru ve Arıtma çöz?mleri": "/sektorler/atik-su-camuru-ve-aritma-cozumleri",
+  "Atık Su çamuru ve Arıtma çözümleri": "/sektorler/atik-su-camuru-ve-aritma-cozumleri",
   "Geri Dönü_?m ve Atık Yönetimi": "/sektorler/geri-donusum-ve-atik-yonetimi",
   "Enerji ve Biyogaz Sistemleri": "/sektorler/enerji-ve-biyogaz-sistemleri",
   "Madencilik ve Mineral 0_leme": "/sektorler/madencilik-ve-mineral-isleme",
@@ -99,7 +99,7 @@ const turnkeyAdvantages = [
 const turnkeySectors = [
   "Gübre üretim Tesisleri",
   "Kompost ve Organik Atık Tesisleri",
-  "Atık Su çamuru ve Arıtma çöz?mleri",
+  "Atık Su çamuru ve Arıtma çözümleri",
   "Geri Dönü_?m ve Atık Yönetimi",
   "Enerji ve Biyogaz Sistemleri",
   "Madencilik ve Mineral 0_leme",
@@ -199,7 +199,7 @@ const machineAdvantages = [
 const machineSectors = [
   "Gübre üretim Tesisleri",
   "Kompost ve Organik Atık Tesisleri",
-  "Atık Su çamuru ve Arıtma çöz?mleri",
+  "Atık Su çamuru ve Arıtma çözümleri",
   "Geri Dönü_?m ve Atık Yönetimi",
   "Enerji ve Biyogaz Sistemleri",
   "Madencilik ve Mineral 0_leme",
@@ -320,7 +320,7 @@ const commissioningAdvantages = [
 const commissioningSectors = [
   "Gübre üretim Tesisleri",
   "Kompost ve Organik Atık Tesisleri",
-  "Atık Su çamuru ve Arıtma çöz?mleri",
+  "Atık Su çamuru ve Arıtma çözümleri",
   "Geri Dönü_?m ve Atık Yönetimi",
   "Enerji ve Biyogaz Sistemleri",
   "Madencilik ve Mineral 0_leme",
@@ -395,7 +395,7 @@ const commissioningFaqs = [
 
 const modernizationIntro = [
   "Mevcut tesisinizi sifirdan yatırım yapmadan daha verimli, daha dengeli ve daha yüksek kapasiteli hale getiriyoruz. Modernizasyon ve revizyon hizmetimiz ile mevcut üretim hatlarini analiz ederek darboşazlari tespit ediyor, ekipman ve proses iyileştirmeleri ile performansi artiriyoruz.",
-  "Kompost, gübre, geri dönüşm ve endüstriyel proses tesislerinde yapilan do?ru modernizasyon çal1_malari ile kapasite artişi, enerji verimlilii ve üretim kalitesinde önemli iyileşmeler saşlanir.",
+  "Kompost, gübre, geri dönüşm ve endüstriyel proses tesislerinde yapilan doğru modernizasyon çal1_malari ile kapasite artişi, enerji verimlilii ve üretim kalitesinde önemli iyileşmeler saşlanir.",
 ];
 
 const modernizationScopeIntro =
@@ -405,7 +405,7 @@ const modernizationOutputs = [
   "Mevcut hat üzerinden kapasite artışı",
   "Enerji tüketiminde verimlilik",
   "Daha dengeli ve stabil proses",
-  "Ãœretim kalitesinde iyileÅŸme",
+  "Üretim kalitesinde iyileşme",
   "Yeni yatırım ihtiyacının azaltılması",
 ];
 
@@ -429,7 +429,7 @@ const modernizationAdvantages = [
 const modernizationSectors = [
   "Gübre üretim Tesisleri",
   "Kompost ve Organik Atık Tesisleri",
-  "Atık Su çamuru ve Arıtma çöz?mleri",
+  "Atık Su çamuru ve Arıtma çözümleri",
   "Geri Dönü_?m ve Atık Yönetimi",
   "Enerji ve Biyogaz Sistemleri",
   "Madencilik ve Mineral 0_leme",
@@ -493,7 +493,7 @@ const modernizationFaqs = [
   {
     question: "Modernizasyon ile kapasite ne kadar artar?",
     answer:
-      "Artiş orani tesisin mevcut durumuna bağlıdir ancak do?ru revizyon ile %20?50 arasi kapasite artişi saşlanabilir.",
+      "Artiş orani tesisin mevcut durumuna bağlıdir ancak doğru revizyon ile %20?50 arasi kapasite artişi saşlanabilir.",
   },
   {
     question: "?oretim durmadan modernizasyon yapilabilir mi?",
@@ -503,7 +503,7 @@ const modernizationFaqs = [
   {
     question: "Mevcut makineler tamamen deşişmek zorunda mi?",
     answer:
-      "Hayır. ?ou projede mevcut ekipmanlar korunur, sadece kritik noktalar iyileştirilir.",
+      "Hayır. çoğu projede mevcut ekipmanlar korunur, sadece kritik noktalar iyileştirilir.",
   },
   {
     question: "Modernizasyon yatırım geri dönüY? ne kadar s?rer?",
@@ -513,15 +513,15 @@ const modernizationFaqs = [
 ];
 
 const consultingIntro = [
-  "Do?ru yatırım ve proses kararlari, tesisin uzun vadeli başarisini do?rudan belirler. Teknik dan1_manlık hizmetimiz ile yeni tesis yatirimlarinda ve mevcut hat iyileştirme süreçlerinde karar vericilere net, uygulanabilir ve mühendislik temelli bir yol haritasi sunuyoruz.",
-  "Kompost, gübre, geri dönüşm ve endüstriyel proses tesislerinde do?ru ekipman seçimi, do?ru kapasite planlamasi ve do?ru proses kurgusu ile yatırım risklerini minimize ediyoruz.",
+  "Doğru yatırım ve proses kararlari, tesisin uzun vadeli başarisini doğrudan belirler. Teknik dan1_manlık hizmetimiz ile yeni tesis yatirimlarinda ve mevcut hat iyileştirme süreçlerinde karar vericilere net, uygulanabilir ve mühendislik temelli bir yol haritasi sunuyoruz.",
+  "Kompost, gübre, geri dönüşm ve endüstriyel proses tesislerinde doğru ekipman seçimi, doğru kapasite planlamasi ve doğru proses kurgusu ile yatırım risklerini minimize ediyoruz.",
 ];
 
 const consultingScopeIntro =
-  "Yatırım karari, proses seçimi, ekipman tercihi ve saha planlamasi için teknik bak? a?isi sunuyoruz. Projenin başindan itibaren do?ru yönlendirme ile zaman, maliyet ve performans a?isindan optimum çözüm oluşturulmasini saşliyoruz.";
+  "Yatırım karari, proses seçimi, ekipman tercihi ve saha planlamasi için teknik bak? a?isi sunuyoruz. Projenin başindan itibaren doğru yönlendirme ile zaman, maliyet ve performans a?isindan optimum çözüm oluşturulmasini saşliyoruz.";
 
 const consultingOutputs = [
-  "Daha net ve do?ru yatırım kararlari",
+  "Daha net ve doğru yatırım kararlari",
   "Yanliş ekipman seçimi riskinin azalmasi",
   "Proje sürecinde belirsizliklerin ortadan kalkmasi",
   "Daha hızlı ve kontrollü ilerleyen yatırım süreci",
@@ -539,7 +539,7 @@ const consultingScope = [
 
 const consultingAdvantages = [
   "Uzman mühendislik bak? a?isi",
-  "Do?ru ve hızlı karar alma imk?n?",
+  "Doğru ve hızlı karar alma imk?n?",
   "Yatirim risklerinin azaltilmasi",
   "Süreçlerin net ve planli ilerlemesi",
   "Gereksiz maliyetlerin ?nlenmesi",
@@ -548,7 +548,7 @@ const consultingAdvantages = [
 const consultingSectors = [
   "Gübre üretim Tesisleri",
   "Kompost ve Organik Atık Tesisleri",
-  "Atık Su çamuru ve Arıtma çöz?mleri",
+  "Atık Su çamuru ve Arıtma çözümleri",
   "Geri Dönü_?m ve Atık Yönetimi",
   "Enerji ve Biyogaz Sistemleri",
   "Madencilik ve Mineral 0_leme",
@@ -603,7 +603,7 @@ const consultingFaqs = [
   {
     question: "Yatırım maliyetini d?_?r?r m?",
     answer:
-      "Evet. Do?ru planlama ile gereksiz ekipman ve yanliş yatirimlar engellenir.",
+      "Evet. Doğru planlama ile gereksiz ekipman ve yanliş yatirimlar engellenir.",
   },
   {
     question: "Danışmanlık sonrasi proje devam ediyor mu?",
@@ -613,7 +613,7 @@ const consultingFaqs = [
 ];
 
 const maintenanceIntro = [
-  "Endüstriyel tesislerde bakım ve servis süreçleri, ekipman ömrün? ve üretim süreklilişini do?rudan etkiler. Bakım ve servis hizmetimiz ile tesislerinizin güvenli, verimli ve kesintisiz çal1_masini saşliyoruz.",
+  "Endüstriyel tesislerde bakım ve servis süreçleri, ekipman ömrün? ve üretim süreklilişini doğrudan etkiler. Bakım ve servis hizmetimiz ile tesislerinizin güvenli, verimli ve kesintisiz çal1_masini saşliyoruz.",
   "Periyodik bakım, ariza tespiti, yedek parça yönetimi ve saha servis desteşi ile sistem performansının sürdürülebilirlişini garanti altina aliyoruz.",
 ];
 
@@ -664,7 +664,7 @@ const maintenanceAdvantages = [
 const maintenanceSectors = [
   "Gübre üretim Tesisleri",
   "Kompost ve Organik Atık Tesisleri",
-  "Atık Su çamuru ve Arıtma çöz?mleri",
+  "Atık Su çamuru ve Arıtma çözümleri",
   "Geri Dönü_?m ve Atık Yönetimi",
   "Enerji ve Biyogaz Sistemleri",
   "Madencilik ve Mineral 0_leme",
@@ -732,7 +732,7 @@ const maintenanceFaqs = [
   {
     question: "?nleyici bakım gerçekten gerekli mi?",
     answer:
-      "Evet. ?nleyici bakım sayesinde b?yük arizalar ve yüksek maliyetler ?nlenir.",
+      "Evet. ?nleyici bakım sayesinde büyük arizalar ve yüksek maliyetler ?nlenir.",
   },
 ];
 
@@ -756,7 +756,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   if (!service) {
     return {
-      title: "Hizmetler | Pro Makina",
+      title: "Hizmetler",
       description: "Pro Makina hizmetleri",
     };
   }
@@ -788,7 +788,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
         canonical,
       },
       openGraph: {
-        title: "Makine İmalatı | Endüstriyel Makine ve Proses Ekipmanı Üretimi | Pro Makina",
+        title: "Makine İmalatı | Endüstriyel Makine ve Proses Ekipmanı Üretimi",
         description:
           "Pro Makina; tambur sistemleri, reaktör ve tanklar, konveyörler, kırıcılar, bunker, silo, paketleme ve özel proses ekipmanları için endüstriyel makine imalatı yapar.",
         url: canonical,
@@ -824,13 +824,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const canonical = `${siteUrl}/hizmetler/${resolvedSlug}`;
 
   return {
-    title: `${trText(service.title)} | Pro Makina`,
+    title: `${trText(service.title)}`,
     description: trText(service.summary),
     alternates: {
       canonical,
     },
     openGraph: {
-      title: `${trText(service.title)} | Pro Makina`,
+      title: `${trText(service.title)}`,
       description: trText(service.summary),
       url: canonical,
       siteName: "Pro Makina",
@@ -2807,8 +2807,8 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                 <p>{trText(scopeIntro)}</p>
                 {isLiquidFertilizer ? (
                   <p>
-                    Genel gübre tesisi planlama ve anahtar teslim çöz?mler hakkında daha
-                    fazla bilgi iï¿½in{" "}
+                    Genel gübre tesisi planlama ve anahtar teslim çözümler hakkında daha
+                    fazla bilgi için{" "}
                     <Link
                       href="/hizmetler/gubre-tesisi-kurulumu"
                       className="font-semibold text-[#278DC0] transition hover:text-[#154764]"
@@ -3016,7 +3016,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
               Projeniz için teknik teklif alın
             </h2>
             <p className="mt-4 max-w-3xl text-base leading-8 text-white/86">
-              Kapasite, hammadde, nem oran1, proses hedefi ve saha ko_ullar1na gï¿½re size ï¿½zel makine ve tesis ï¿½ï¿½zï¿½mï¿½ haz1rlayal1m.
+              Kapasite, hammadde, nem oranı, proses hedefi ve saha koşullarına göre size özel makine ve tesis çözümü hazırlayalım.
             </p>
             <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:flex-wrap">
               <a
@@ -3071,58 +3071,58 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                 <>
                   <p>{trText(`
                     Kurulum ve devreye alma süreci yalnizca ekipmanlarin sahaya
-                    yerleştirilmesi değil, ayni zamanda tüm mekanik, elektrik ve
-                    otomasyon ba?Ylantilarinin kontroll? bi?imde ?ali?Ytirilmasidir.
-                    End?striyel kurulum ve tesis devreye alma a_amalarinda do?ru
-                    planlama yapilmadişinda saha montaji uzayabilir ve üretime
-                    geï¿½i_ gecikebilir.
+yerleştirilmesi değil, ayni zamanda tüm mekanik, elektrik ve
+otomasyon başlantilarinin kontrollü bi?imde ?aliştirilmasidir.
+endüstriyel kurulum ve tesis devreye alma a_amalarinda doğru
+planlama yapilmadişinda saha montaji uzayabilir ve üretime
+geïi_ gecikebilir.
                   `)}</p>
                   <p>{trText(`
-                    Commissioning hizmeti; ilk ï¿½al1_t1rma, proses devreye alma,
-                    performans dorulama ve operat?r adaptasyonunu kapsayan kritik
-                    bir geï¿½i_ sï¿½recidir. Bu nedenle her adim ï¿½lï¿½ï¿½lebilir, gï¿½venli
-                    ve koordineli ilerletilmelidir.
+                    Commissioning hizmeti; ilk ïal1_t1rma, proses devreye alma,
+performans dorulama ve operat?r adaptasyonunu kapsayan kritik
+bir geïi_ sïrecidir. Bu nedenle her adim ïlïïlebilir, gïvenli
+ve koordineli ilerletilmelidir.
                   `)}</p>
                 </>
               ) : isModernization ? (
                 <>
                   <p>{trText(`
-                    Tesis modernizasyonu ï¿½al1_malari, mevcut yatirimin daha yï¿½ksek
-                    performansla ï¿½al1_masini sa?Ylayan stratejik iyile?Ytirme projeleridir.
-                    Proses iyile?Ytirme, kapasite artirimi ve hat optimizasyonu adimlari;
-                    kompost, g?bre, geri d?n??m ve end?striyel proses tesislerinde
-                    yeni yatirim yapmadan verimlilik artirma imkani sunar.
+                    Tesis modernizasyonu ïal1_malari, mevcut yatirimin daha yïksek
+performansla ïal1_masini saşlayan stratejik iyileştirme projeleridir.
+Proses iyileştirme, kapasite artirimi ve hat optimizasyonu adimlari;
+kompost, gübre, geri dönüşüm ve endüstriyel proses tesislerinde
+yeni yatırım yapmadan verimlilik artirma imkânı sunar.
                   `)}</p>
                   <p>{trText(`
-                    End?striyel revizyon projelerinde do?ru mï¿½hendislik yakla_1m1 ile
-                    darbo?Yazlar azaltilir, enerji kullanimi dengelenir ve proses geli?Ytirme
-                    ï¿½al1_malari ile sistem daha stabil hale getirilir. B?ylece mevcut hat
-                    ?zerinden daha kontroll? kapasite arti?Yi sa?Ylanabilir.
+                    endüstriyel revizyon projelerinde doğru mïhendislik yakla_1m1 ile
+darboşazlar azaltilir, enerji kullanimi dengelenir ve proses geliştirme
+ïal1_malari ile sistem daha stabil hale getirilir. B?ylece mevcut hat
+?zerinden daha kontrollü kapasite artişi saşlanabilir.
                   `)}</p>
                 </>
               ) : isConsulting ? (
                 <>
                   <p>{trText(`
-                    Teknik dan1_manl1k hizmeti, yatirim ï¿½ncesinde do?ru kararlari
-                    almayi sa?Ylayan en kritik a_amalardan biridir. Proses dani?Ymanli?Yi,
-                    tesis dani?Ymanli?Yi ve yatirim dani?Ymanli?Yi ï¿½al1_malari; yanli?Y
-                    kapasite planlamasi, hatali ekipman tercihi ve uygunsuz proses
-                    kurgusu gibi yüksek maliyetli hatalarin ?n?ne ge?er.
+                    Teknik dan1_manl1k hizmeti, yatırım ïncesinde doğru kararlari
+almayi saşlayan en kritik a_amalardan biridir. Proses danişmanlişi,
+tesis danişmanlişi ve yatırım danişmanlişi ïal1_malari; yanliş
+kapasite planlamasi, hatali ekipman tercihi ve uygunsuz proses
+kurgusu gibi yüksek maliyetli hatalarin ?n?ne ge?er.
                   `)}</p>
                   <p>{trText(`
-                    End?striyel dan1_manl1k ve proses m?hendisli?Yi dani?Ymanli?Yi
-                    yakla_1m1 ile saha verileri, malzeme yapisi ve ï¿½retim hedefleri
-                    birlikte deerlendirilir. B?ylece yatirim sï¿½reci daha net, daha
-                    kontroll? ve daha s?rd?r?lebilir bir yapiya kavu_ur.
+                    endüstriyel dan1_manl1k ve proses m?hendislişi danişmanlişi
+yakla_1m1 ile saha verileri, malzeme yapısı ve ïretim hedefleri
+birlikte deerlendirilir. B?ylece yatırım sïreci daha net, daha
+kontrollü ve daha s?rd?r?lebilir bir yapiya kavu_ur.
                   `)}</p>
                 </>
               ) : isMaintenance ? (
                 <>
                   <p>{trText(`
-                    End?striyel bak1m hizmeti, yalnizca ariza sonrasi m?dahale de?Yildir.
-                    Tesis bak1m hizmeti ve makine bak1m servisi yakla_1m1; ekipman
-                    ï¿½mrï¿½n? koruyan, ï¿½retim kayiplarini azaltan ve i_letme gï¿½venli?Yini
-                    artiran planli bir sistem yönetimi sunar.
+                    endüstriyel bak1m hizmeti, yalnizca ariza sonrasi m?dahale değildir.
+Tesis bak1m hizmeti ve makine bak1m servisi yakla_1m1; ekipman
+ïmrïn? koruyan, ïretim kayiplarini azaltan ve i_letme gïvenlişini
+artiran planli bir sistem yönetimi sunar.
                   `)}</p>
                   <p>{trText(`
                     Periyodik bakım, ?nleyici bakım ve saha servis hizmeti birlikte
@@ -3134,17 +3134,17 @@ export default async function ServiceDetailPage({ params }: PageProps) {
               ) : (
                 <>
                   <p>{trText(`
-                    Anahtar teslim tesis kurulumu yakla_1m1; mï¿½hendislik, ekipman se?imi,
-                    makina imalatı, saha montaji ve devreye alma süreçlerini tek bir
-                    planlama disiplini içinde birleştirir. Bu yapi, özellikle kompost
-                    tesisi kurulumu, g?bre tesisi kurulumu, geri d?n??m tesisi kurulumu
-                    ve end?striyel tesis kurulumu projelerinde koordinasyon riskini azaltir.
+                    Anahtar teslim tesis kurulumu yakla_1m1; mïhendislik, ekipman seçimi,
+makina imalatı, saha montaji ve devreye alma süreçlerini tek bir
+planlama disiplini içinde birleştirir. Bu yapi, özellikle kompost
+tesisi kurulumu, gübre tesisi kurulumu, geri dönüşüm tesisi kurulumu
+ve endüstriyel tesis kurulumu projelerinde koordinasyon riskini azaltir.
                   `)}</p>
                   <p>{trText(`
                     Proje boyunca tek merkezden karar alinmasi; maliyet kontrol?n?,
-                    termin yönetimini ve teknik uyumu g?lendirir. Böylece yatirimci,
-                    sadece ekipman satin alan de?Yil, bï¿½tï¿½nle_ik ve ï¿½al1_1r bir proses tesisi
-                    kurulumu hizmeti alan tarafta olur.
+termin yönetimini ve teknik uyumu g?lendirir. Böylece yatirimci,
+sadece ekipman satin alan değil, bïtïnle_ik ve ïal1_1r bir proses tesisi
+kurulumu hizmeti alan tarafta olur.
                   `)}</p>
                 </>
               )}
@@ -3160,21 +3160,21 @@ export default async function ServiceDetailPage({ params }: PageProps) {
               Projeniz için teknik teklif alın
             </h2>
             <p className="mt-4 max-w-3xl text-base leading-8 text-white/86">
-              Kapasite, hammadde, nem oran1, proses hedefi ve saha ko_ullar1na gï¿½re size ï¿½zel makine ve tesis ï¿½ï¿½zï¿½mï¿½ haz1rlayal1m.
+              Kapasite, hammadde, nem oranı, proses hedefi ve saha koşullarına göre size özel makine ve tesis çözümü hazırlayalım.
             </p>
             <p className="mt-3 max-w-2xl text-base leading-8 text-white/82">
               {trText(
                 isMachineManufacturing
-                  ? "Projenize en uygun makina çözümlerini, do?ru malzeme seçimini ve yüksek performansli üretim sistemlerini birlikte planlayalim."
+                  ? "Projenize en uygun makina çözümlerini, doğru malzeme seçimini ve yüksek performansli üretim sistemlerini birlikte planlayalim."
                   : isCommissioning
                     ? "Tesisinizin sorunsuz _ekilde devreye alinmasi, hızlı üretime geçi_ ve maksimum performans için birlikte planlama yapalim."
                     : isModernization
                       ? "Mevcut tesisinizin performansını artirmak, kapasitenizi y?kseltmek ve verimlilii maksimum seviyeye ?ikarmak için birlikte planlama yapalim."
                       : isConsulting
-                        ? "Yatiriminizi do?ru planlamak, riskleri azaltmak ve en verimli sistemi kurmak için birlikte teknik yol haritanizi oluşturalım."
+                        ? "Yatiriminizi doğru planlamak, riskleri azaltmak ve en verimli sistemi kurmak için birlikte teknik yol haritanizi oluşturalım."
                         : isMaintenance
                           ? "Tesisinizin kesintisiz çal1_masi, ekipman ?mrının uzamasi ve üretim verimliliinin korunmasi için birlikte planlama yapalim."
-                          : "Projenize en uygun teknik çözüm?, do?ru ekipman seçimini ve optimum yatırım planini birlikte belirleyelim.",
+                          : "Projenize en uygun teknik çözüm?, doğru ekipman seçimini ve optimum yatırım planini birlikte belirleyelim.",
               )}
             </p>
             <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:flex-wrap">

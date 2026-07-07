@@ -47,7 +47,7 @@ export const technicalAuthorityHubs: TechnicalAuthorityHub[] = [
   {
     slug: "helezon-konveyor-sistemleri",
     title: "Helezon Konveyör Sistemleri",
-    metaTitle: "Helezon Konveyör Sistemleri | Teknik Rehber ve Hesaplama Merkezi | Pro Makina",
+    metaTitle: "Helezon Konveyör Sistemleri | Teknik Rehber ve Hesaplama Merkezi",
     description:
       "Helezon konveyör sistemleri için çalışma prensibi, kapasite hesabı, motor seçimi, uygulama alanları ve ilgili mühendislik içeriklerini tek sayfada toplayan premium hub.",
     heroDescription:
@@ -217,7 +217,7 @@ export const technicalAuthorityHubs: TechnicalAuthorityHub[] = [
   {
     slug: "tambur-sistemleri",
     title: "Tambur Sistemleri",
-    metaTitle: "Tambur Sistemleri | Kurutma ve Rotary Dryer Teknik Merkezi | Pro Makina",
+    metaTitle: "Tambur Sistemleri | Kurutma ve Rotary Dryer Teknik Merkezi",
     description:
       "Tambur sistemleri, rotary dryer design, kurutma tamburu hesabı, çap-boy seçimi ve endüstriyel kurutma teknolojileri için premium teknik hub.",
     heroDescription:
@@ -392,7 +392,7 @@ export const technicalAuthorityHubs: TechnicalAuthorityHub[] = [
   {
     slug: "konveyor-sistemleri",
     title: "Konveyör Sistemleri",
-    metaTitle: "Konveyör Sistemleri | Kapasite, Taşıma ve Hat Tasarımı | Pro Makina",
+    metaTitle: "Konveyör Sistemleri | Kapasite, Taşıma ve Hat Tasarımı",
     description:
       "Konveyör sistemleri için kapasite, hat boyu, bant hızı, entegrasyon ve ilgili blog-program ağıyla sektör odaklı premium teknik hub.",
     heroDescription:
@@ -562,7 +562,7 @@ export const technicalAuthorityHubs: TechnicalAuthorityHub[] = [
   {
     slug: "kompost-tesisi-sistemleri",
     title: "Kompost Tesisi Sistemleri",
-    metaTitle: "Kompost Tesisi Sistemleri | Organik Atık ve Kompost Hub | Pro Makina",
+    metaTitle: "Kompost Tesisi Sistemleri | Organik Atık ve Kompost Hub",
     description:
       "Kompost tesisi sistemleri için organik atık işleme, kompost üretim süreci, biyogaz ön işlem ve ilgili hesaplama-makina ağını birleştiren teknik hub.",
     heroDescription:
@@ -737,7 +737,7 @@ export const technicalAuthorityHubs: TechnicalAuthorityHub[] = [
   {
     slug: "granul-gubre-uretim-sistemleri",
     title: "Granül Gübre Üretim Sistemleri",
-    metaTitle: "Granül Gübre Üretim Sistemleri | Gübre Hub ve Teknik Rehber | Pro Makina",
+    metaTitle: "Granül Gübre Üretim Sistemleri | Gübre Hub ve Teknik Rehber",
     description:
       "Granül gübre üretim sistemleri için üretim hattı, granülasyon, kurutma, NPK, organomineral ve ilgili hesaplama ağına sahip ultra premium SEO hub.",
     heroDescription:

@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     canonical: "https://www.promakina.com.tr/tesekkurler",
   },
   openGraph: {
-    title: "Teşekkürler | Pro Makina",
+    title: "Teşekkürler",
     description:
       "İletişim talebiniz Pro Makina proje ekibine iletildi. Teknik değerlendirme için en kısa sürede sizinle iletişime geçeceğiz.",
     url: "https://www.promakina.com.tr/tesekkurler",

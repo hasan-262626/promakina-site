@@ -190,7 +190,7 @@ export function IndustrialSolutionLandingPage({
           <div className="grid gap-6 lg:grid-cols-2">
             <div className="rounded-[28px] border border-slate-200 bg-white px-6 py-8 shadow-[0_18px_45px_rgba(15,23,42,0.05)] sm:px-8 sm:py-10">
               <h2 className="text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">
-                Teknik GiriÅŸ
+                Teknik Giriş
               </h2>
               <div className="mt-5 space-y-5 text-sm leading-8 text-slate-600 sm:text-base">
                 {config.sections[0]?.paragraphs.map((paragraph) => (

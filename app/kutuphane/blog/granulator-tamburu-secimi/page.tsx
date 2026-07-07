@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     canonical,
   },
   openGraph: {
-    title: "Granülatör Tamburu Seçimi | Pro Makina",
+    title: "Granülatör Tamburu Seçimi",
     description:
       "Granülasyon tamburlarında kullanım alanları, iç yapı, nozzle sistemi, bağlayıcı, recycle, çap-boy, devir, eğim ve proses tasarım kriterleri.",
     url: canonical,
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Granülatör Tamburu Seçimi | Pro Makina",
+    title: "Granülatör Tamburu Seçimi",
     description:
       "Granülasyon tamburlarında kullanım alanları, iç yapı, nozzle sistemi, bağlayıcı, recycle, çap-boy, devir, eğim ve proses tasarım kriterleri.",
   },

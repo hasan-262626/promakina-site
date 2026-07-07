@@ -28,13 +28,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const canonical = `https://www.promakina.com.tr/makinalar-ekipman/tambur-sistemleri/${activeProduct.slug}`;
 
   return {
-    title: `${activeProduct.title} | Tambur Sistemleri | Pro Makina`,
+    title: `${activeProduct.title} | Tambur Sistemleri`,
     description: activeProduct.shortDescription,
     alternates: {
       canonical,
     },
     openGraph: {
-      title: `${activeProduct.title} | Pro Makina`,
+      title: `${activeProduct.title}`,
       description: activeProduct.shortDescription,
       url: canonical,
       siteName: "Pro Makina",
@@ -43,7 +43,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     },
     twitter: {
       card: "summary_large_image",
-      title: `${activeProduct.title} | Pro Makina`,
+      title: `${activeProduct.title}`,
       description: activeProduct.shortDescription,
     },
   };

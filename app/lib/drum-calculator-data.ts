@@ -269,7 +269,7 @@ export const drumCalculatorTools: DrumCalculatorTool[] = [
   {
     slug: "tambur-kapasite-hesabi",
     title: "Tambur Kapasite Hesabi",
-    seoTitle: "Tambur Kapasite Hesabi | Pro Makina",
+    seoTitle: "Tambur Kapasite Hesabi",
     seoDescription:
       "Tambur kapasite hesabi ile kurutma, sogutma, granulasyon ve kaplama tamburlarinda kapasite, su yuku, kalis suresi ve hacim yaklasimini degerlendirin.",
     heroDescription:
@@ -305,7 +305,7 @@ export const drumCalculatorTools: DrumCalculatorTool[] = [
   {
     slug: "tambur-devir-hesabi",
     title: "Tambur Devir Hesabi",
-    seoTitle: "Tambur Devir Hesabi ve Kritik Hiz Hesabi | Pro Makina",
+    seoTitle: "Tambur Devir Hesabi ve Kritik Hiz Hesabi",
     seoDescription:
       "Tambur capina, kritik hiza ve proses davranisina gore uygun tambur devrini ve kritik hiz oranini hesaplayin.",
     heroDescription:
@@ -344,7 +344,7 @@ export const drumCalculatorTools: DrumCalculatorTool[] = [
   {
     slug: "tambur-egim-doluluk-hesabi",
     title: "Tambur Egim ve Doluluk Orani Hesabi",
-    seoTitle: "Tambur Egim ve Doluluk Orani Hesabi | Pro Makina",
+    seoTitle: "Tambur Egim ve Doluluk Orani Hesabi",
     seoDescription:
       "Tambur egimi, doluluk orani, urun akisi ve kalis suresini birlikte degerlendiren on tasarim hesabi.",
     heroDescription:
@@ -375,7 +375,7 @@ export const drumCalculatorTools: DrumCalculatorTool[] = [
   {
     slug: "tambur-ring-tahrik-hesabi",
     title: "Tambur Ring ve Tahrik Sistemi",
-    seoTitle: "Tambur Ring ve Tahrik Sistemi Hesabi | Pro Makina",
+    seoTitle: "Tambur Ring ve Tahrik Sistemi Hesabi",
     seoDescription:
       "Tambur ring capi, ring genisligi, roller yuku ve pinyon-fener disli on secimi icin muhendislik hesabi.",
     heroDescription:
@@ -415,7 +415,7 @@ export const drumCalculatorTools: DrumCalculatorTool[] = [
   {
     slug: "tambur-reduktor-hesabi",
     title: "Tambur Reduktor Hesabi",
-    seoTitle: "Tambur Reduktor Hesabi | Pro Makina",
+    seoTitle: "Tambur Reduktor Hesabi",
     seoDescription:
       "Tambur devri, motor devri, toplam cevrim orani ve servis faktorune gore reduktor ve cikis torku hesabini yapin.",
     heroDescription:
@@ -445,7 +445,7 @@ export const drumCalculatorTools: DrumCalculatorTool[] = [
   {
     slug: "tambur-fan-secimi",
     title: "Tambur Fan Secimi",
-    seoTitle: "Kurutma Tamburu Fan Secimi | Pro Makina",
+    seoTitle: "Kurutma Tamburu Fan Secimi",
     seoDescription:
       "Kurutma tamburu hava debisi, kanal hizi, basinc kaybi ve fan motor gucunu hesaplayarak fan secimi yapin.",
     heroDescription:
@@ -494,7 +494,7 @@ export const drumCalculatorTools: DrumCalculatorTool[] = [
   {
     slug: "tambur-siklon-secimi",
     title: "Tambur Siklon Secimi",
-    seoTitle: "Kurutma Tamburu Siklon Secimi | Pro Makina",
+    seoTitle: "Kurutma Tamburu Siklon Secimi",
     seoDescription:
       "Hava debisi, toz tipi, partikül yogunlugu ve giris hizina gore tambur hatti icin siklon secimi yapin.",
     heroDescription:
@@ -530,7 +530,7 @@ export const drumCalculatorTools: DrumCalculatorTool[] = [
   {
     slug: "tambur-brulor-secimi",
     title: "Tambur Brulor Secimi",
-    seoTitle: "Kurutma Tamburu Brulor Secimi | Pro Makina",
+    seoTitle: "Kurutma Tamburu Brulor Secimi",
     seoDescription:
       "Buharlastirilacak su miktari, urun sicakligi, yakit tipi ve verim degerlerine gore tambur brulor kapasitesini hesaplayin.",
     heroDescription:

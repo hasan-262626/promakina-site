@@ -2,7 +2,7 @@ import Link from "next/link";
 import { buildLibraryMetadata } from "../../../components/library-seo-page";
 import { BlogArticleTemplate } from "../../../components/blog-article-template";
 
-const title = "Helezon Konveyör Kapasite Hesabı | Çap, Hatve, Devir | Pro Makina";
+const title = "Helezon Konveyör Kapasite Hesabı | Çap, Hatve, Devir";
 const description =
   "Helezon konveyör kapasite hesabı, ürün yoğunluğu, doluluk oranı, çap, hatve, devir, eğim ve motor gücü seçimi için teknik mühendislik rehberi.";
 const canonical = "https://www.promakina.com.tr/kutuphane/blog/helezon-konveyor-kapasite-hesabi";

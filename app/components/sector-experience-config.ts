@@ -43,7 +43,7 @@ export type SectorExperienceConfig = {
 
 export const sectorExperienceConfigs: Record<string, SectorExperienceConfig> = {
   "kompost-ve-organik-atik-tesisleri": {
-    heroBadge: "KOMPOST VE ORGANİK ATIK İĞLEME Ç?Z?SMLERİ",
+    heroBadge: "KOMPOST VE ORGANİK ATIK İĞLEME ÇÖZÜMLERİ",
     heroIntro: "Organik atıkları kontrollü biçimde kompost ve son ürüne dönüştüren tesis yaklaşımları.",
     heroTitle: "Kompost ve Organik Atık Tesisleri",
     heroDescription:
@@ -96,7 +96,7 @@ export const sectorExperienceConfigs: Record<string, SectorExperienceConfig> = {
     ],
   },
   "enerji-ve-biyogaz-sistemleri": {
-    heroBadge: "ENERJİ VE BİYOGAZ PROSES Ç?Z?SMLERİ",
+    heroBadge: "ENERJİ VE BİYOGAZ PROSES ÇÖZÜMLERİ",
     heroIntro: "Organik girdileri enerji geri kazanımına hazırlayan kontrollü proses ve ekipman çözümleri.",
     heroTitle: "Enerji ve Biyogaz Sistemleri",
     heroDescription:
@@ -149,7 +149,7 @@ export const sectorExperienceConfigs: Record<string, SectorExperienceConfig> = {
     ],
   },
   "madencilik-ve-mineral-isleme": {
-    heroBadge: "MADENCİLİK VE MİNERAL İĞLEME Ç?Z?SMLERİ",
+    heroBadge: "MADENCİLİK VE MİNERAL İĞLEME ÇÖZÜMLERİ",
     heroIntro: "Kırma, eleme, transfer ve kurutma süreçleri için dengeli ve güçlü tesis kurguları.",
     heroTitle: "Madencilik ve Mineral İşleme",
     heroDescription:
@@ -203,7 +203,7 @@ export const sectorExperienceConfigs: Record<string, SectorExperienceConfig> = {
     ],
   },
   "kimya-ve-proses-endustrisi": {
-    heroBadge: "KİMYA VE PROSES ENDÜSTRİSİ Ç?Z?SMLERİ",
+    heroBadge: "KİMYA VE PROSES ENDÜSTRİSİ ÇÖZÜMLERİ",
     heroIntro: "Reaktör, tank ve proses destek ekipmanlarıyla güvenli ve kontrollü üretim kurguları.",
     heroTitle: "Kimya ve Proses Endüstrisi",
     heroDescription:
@@ -256,7 +256,7 @@ export const sectorExperienceConfigs: Record<string, SectorExperienceConfig> = {
     ],
   },
   "geri-donusum-ve-atik-yonetimi": {
-    heroBadge: "GERİ DÖNÜS?~?SM VE ATIK Y?NETİMİ Ç?Z?SMLERİ",
+    heroBadge: "GERİ DÖNÜS?~?SM VE ATIK Y?NETİMİ ÇÖZÜMLERİ",
     heroIntro: "Ayrıştırma, küçültme ve geri kazanım için esnek ve kontrollü proses sistemleri.",
     heroTitle: "Geri Dönüşüm ve Atık Yönetimi",
     heroDescription:
@@ -309,7 +309,7 @@ export const sectorExperienceConfigs: Record<string, SectorExperienceConfig> = {
     ],
   },
   "atik-su-camuru-ve-aritma-cozumleri": {
-    heroBadge: "ATIK SU ÇAMURU VE ARITMA Ç?Z?SMLERİ",
+    heroBadge: "ATIK SU ÇAMURU VE ARITMA ÇÖZÜMLERİ",
     heroIntro: "Çamur işleme, susuzlaştırma ve kurutma süreçleri için kontrollü tesis kurguları.",
     heroTitle: "Atık Su Çamuru Çözümleri",
     heroDescription:
@@ -362,7 +362,7 @@ export const sectorExperienceConfigs: Record<string, SectorExperienceConfig> = {
     ],
   },
   "yem-toz-ve-dokme-kati-malzeme-isleme-sistemleri": {
-    heroBadge: "YEM, TOZ VE DÖKME KATI MALZEME İĞLEME Ç?Z?SMLERİ",
+    heroBadge: "YEM, TOZ VE DÖKME KATI MALZEME İĞLEME ÇÖZÜMLERİ",
     heroIntro: "Depolama, dozajlama ve transfer süreçleri için düzenli ve verimli tesis çözümleri.",
     heroTitle: "Yem, Toz ve Dökme Katı Malzeme İşleme Sistemleri",
     heroDescription:

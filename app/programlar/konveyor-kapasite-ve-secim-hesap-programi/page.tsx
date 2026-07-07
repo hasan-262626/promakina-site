@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     canonical: "https://www.promakina.com.tr/programlar/konveyor-kapasite-ve-secim-hesap-programi",
   },
   openGraph: {
-    title: "Konveyör Kapasite ve Seçim Hesap Programı | Pro Makina",
+    title: "Konveyör Kapasite ve Seçim Hesap Programı",
     description: "Bantlı konveyör kapasitesi, bant genişliği, bant hızı, tambur çapı, tahrik yapısı ve ön mekanik tavsiyeler için profesyonel seçim aracıdır.",
     url: "https://www.promakina.com.tr/programlar/konveyor-kapasite-ve-secim-hesap-programi",
     siteName: "Pro Makina",

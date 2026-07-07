@@ -141,7 +141,7 @@ const baseSectorMachineGuideArticles: TopicalArticle[] = [
     slug: "maden-ve-mineral-isleme-makinalari",
     title: "Maden ve Mineral 0_leme Makinaları",
     metaTitle:
-      "Maden ve Mineral 0_leme Makinaları | Proses Ekipmanları ve Tesis çöz?mleri",
+      "Maden ve Mineral 0_leme Makinaları | Proses Ekipmanları ve Tesis çözümleri",
     description:
       "Maden, mineral, silis kumu, kuvars ve benzeri dökme katı malzemelerin kırma, eleme, kurutma, taşıma ve sınıflandırma proseslerinde kullanılan makinaları teknik a?1dan inceleyin.",
     heroDescription:
@@ -162,16 +162,16 @@ const baseSectorMachineGuideArticles: TopicalArticle[] = [
         ],
         [
           {
-            heading: "çeki?li kırıcılar",
+            heading: "çekiçli kırıcılar",
             paragraphs: [
-              "çeki?li kırıcılar, özellikle kırılgan ve orta sertlikteki minerallerde hızlı boyut k??ültme salamak için kullanılır. Yüksek rotor hız1 sayesinde ürün kısa sürede inceltilir; ancak a_1r1 ince malzeme oluşumu ve a_1nma hız1 dikkatle izlenmelidir.",
+              "çekiçli kırıcılar, özellikle kırılgan ve orta sertlikteki minerallerde hızlı boyut k??ültme salamak için kullanılır. Yüksek rotor hız1 sayesinde ürün kısa sürede inceltilir; ancak a_1r1 ince malzeme oluşumu ve a_1nma hız1 dikkatle izlenmelidir.",
               "Bu ekipmanlar genellikle eleme sistemleri, bant konveyörler ve bunker besleme hatlarıyla birlikte çal1_1r. Tasarım a_amasında rotor balansı, çeki? malzemesi, elek açıkl11 ve toz toplama balantısı kritik öneme sahiptir.",
             ],
           },
           {
             heading: "çeneli kırıcılar",
             paragraphs: [
-              "çeneli kırıcılar, iri besleme malzemelerinin primer kırma kademesinde en yaygın kullanılan ekipmanlardan biridir. B?yük blokları kontrollü biçimde k???ltür ve hattın sonraki ekipmanlarına dengeli yük salar.",
+              "çeneli kırıcılar, iri besleme malzemelerinin primer kırma kademesinde en yaygın kullanılan ekipmanlardan biridir. Büyük blokları kontrollü biçimde k???ltür ve hattın sonraki ekipmanlarına dengeli yük salar.",
               "çeneli kırıcı ?ninde bunker ve dozajlı besleme olması, kırıcının darbeli y?klenmesini azaltır. Tasarımda ?ene açıkl11, eksantrik sistem, yatak dayanımı ve _ase rijitlii mutlaka dikkate alınmalıdır.",
             ],
           },
@@ -185,7 +185,7 @@ const baseSectorMachineGuideArticles: TopicalArticle[] = [
           {
             heading: "Zincirli kırıcılar",
             paragraphs: [
-              "Zincirli kırıcılar, topaklı veya kolay daılabilen malzemelerin parçalanmasında pratik çöz?m sunar. özellikle gübre, mineral toz veya kısmen nemli akışlarda topak çözme amacıyla kullanılabilir.",
+              "Zincirli kırıcılar, topaklı veya kolay daılabilen malzemelerin parçalanmasında pratik çözüm sunar. özellikle gübre, mineral toz veya kısmen nemli akışlarda topak çözme amacıyla kullanılabilir.",
               "Zincir boyu, _aft devri, gövde i? geometrisi ve bakım eri_imi tasarımın ana noktalarıdır. Besleme dengesizlii oluşursa ekipman titre_imli çal1_abilir; bu yüzden Ön bunker ve kontrollü besleme tavsiye edilir.",
             ],
           },
@@ -194,7 +194,7 @@ const baseSectorMachineGuideArticles: TopicalArticle[] = [
       section(
         "Eleme ve sınıflandırma sistemleri",
         [
-          "Eleme sistemleri, kırma veya kurutma sonrası ?rının ticari fraksiyonlara ayrılmasını salar. Maden tesislerinde doru elek seçimi; nihai ürün kalitesi, geri devir miktarı ve paketleme öncesi standartların salanması açısından belirleyicidir.",
+          "Eleme sistemleri, kırma veya kurutma sonrası ürünün ticari fraksiyonlara ayrılmasını salar. Maden tesislerinde doru elek seçimi; nihai ürün kalitesi, geri devir miktarı ve paketleme öncesi standartların salanması açısından belirleyicidir.",
           "Elek tipi seçilirken ürün nemi, tane _ekli, ince malzeme oranı ve tıkanma riski g?z ?ninde bulundurulmalıdır. Ayn1 tesis içinde döner elek, vibrasyonlu elek ve trommel elek farklı görevler ?stlenebilir.",
         ],
         [
@@ -215,7 +215,7 @@ const baseSectorMachineGuideArticles: TopicalArticle[] = [
           {
             heading: "Trommel elekler",
             paragraphs: [
-              "Trommel elekler, özellikle nemli veya kısmen topaklı akışlarda tıkanmaya kar_1 daha toleranslı çöz?mler sunar. Kompost ve organik atık proseslerinde olduu kadar baz1 maden Ön eleme uygulamalarında da kullanılır.",
+              "Trommel elekler, özellikle nemli veya kısmen topaklı akışlarda tıkanmaya kar_1 daha toleranslı çözümler sunar. Kompost ve organik atık proseslerinde olduu kadar baz1 maden Ön eleme uygulamalarında da kullanılır.",
               "Trommel ?ap1, boyu, i? kaldırıcı yapıları ve elek panellerinin dei_tirilebilir olması bakım s?relerini ciddi ölçüde etkiler. Besleme ve çıkı_ konveyörleriyle ayn1 ritimde çal1_mas1 gerekir.",
             ],
           },
@@ -224,15 +224,15 @@ const baseSectorMachineGuideArticles: TopicalArticle[] = [
       section(
         "Kurutma tamburları ve termal prosesler",
         [
-          "Birçok mineral akışta ürün pazarlanabilir kaliteye ula_madan önce neminin d?_?r?lmesi gerekir. Kurutma tamburu, sıcak hava sistemi, brülör, fan, siklon ve filtre birlikte çal1_arak ?rının hedef rutubet aral11na indirilmesini salar.",
-          "Kurutma hattında yalnız tambur boyutu deil; ?rının giri_ nemi, hedef çıkı_ nemi, tane boyutu, tozuma eilimi ve 1sıya dayanımı da önemlidir. Maden kurutma tesislerinde doru tambur hesabı, hem yakıt tüketimini hem de ürün kaybını azaltır.",
+          "Birçok mineral akışta ürün pazarlanabilir kaliteye ula_madan önce neminin d?_?r?lmesi gerekir. Kurutma tamburu, sıcak hava sistemi, brülör, fan, siklon ve filtre birlikte çal1_arak ürünün hedef rutubet aral11na indirilmesini salar.",
+          "Kurutma hattında yalnız tambur boyutu deil; ürünün giri_ nemi, hedef çıkı_ nemi, tane boyutu, tozuma eilimi ve 1sıya dayanımı da önemlidir. Maden kurutma tesislerinde doru tambur hesabı, hem yakıt tüketimini hem de ürün kaybını azaltır.",
         ],
       ),
       section(
         "Bant konveyör, helezon ve elevatör sistemleri",
         [
           "K1rma, eleme ve kurutma hatlarının kararlı çal1_abilmesi için malzemenin kontrollü ta_1nması gerekir. Bant konveyörler yüksek debili yatay taşıma için, helezon konveyörler kapalı kısa hatlar için, kovalı elevatörler ise dikey transfer için kullanılır.",
-          "Ta_1ma hattı seçimi yapılırken kapasite kadar ?rının a_1ndırıcıl11, toz yükü, sıcakl11 ve bakım eri_imi de dikkate alınmalıdır. özellikle sıcak ürün ?1kan maden tesislerinde elevatör ve konveyör malzemeleri proses ko_ullarına uygun seçilmelidir.",
+          "Ta_1ma hattı seçimi yapılırken kapasite kadar ürünün a_1ndırıcıl11, toz yükü, sıcakl11 ve bakım eri_imi de dikkate alınmalıdır. özellikle sıcak ürün ?1kan maden tesislerinde elevatör ve konveyör malzemeleri proses ko_ullarına uygun seçilmelidir.",
         ],
       ),
       section(
@@ -265,7 +265,7 @@ const baseSectorMachineGuideArticles: TopicalArticle[] = [
     ],
     faqs: [
       faq("Maden işleme tesisinde ilk hangi ekipman seçilmelidir?", "0lk ekipman seçimi genellikle besleme boyutu ve hedef ürün fraksiyonuna balıdır. Bu yüzden primer kırma ve eleme mant11 ba_ta netle_tirilmelidir."),
-      faq("Her maden hattında kurutma tamburu gerekir mi?", "Hayır. ?rının sat1_ veya sonraki proses için belirli bir nemin altına inmesi gerekiyorsa kurutma hattı devreye alınır."),
+      faq("Her maden hattında kurutma tamburu gerekir mi?", "Hayır. ürünün sat1_ veya sonraki proses için belirli bir nemin altına inmesi gerekiyorsa kurutma hattı devreye alınır."),
       faq("Vibrasyonlu elek mi trommel elek mi daha uygundur?", "Bu karar ürün nemi, tıkanma riski, fraksiyon hassasiyeti ve kapasite ihtiyacına göre verilir."),
       faq("Toz toplama sistemi olmadan maden hattı çal1_1r m1?", "çal1_abilir; ancak ürün kaybı, saha kirlilii, ekipman a_1nması ve emisyon sorunları ciddi biçimde artar."),
       faq("Maden tesisi Ön tasarımı için hangi veriler gerekir?", "Malzeme tipi, giri_ tane boyutu, hedef çıkı_ fraksiyonu, nem, kapasite ve saha yerle_imi ilk teknik deerlendirme için yeterli ba_langı? verileridir."),
@@ -284,7 +284,7 @@ const baseSectorMachineGuideArticles: TopicalArticle[] = [
     ],
     relatedServices: [
       { title: "Maden Kurutma ve Eleme Tesisi", description: "Sektöre özel tesis kurgusunu inceleyin.", href: "/hizmetler/maden-kurutma-ve-eleme-tesisi" },
-      { title: "Madencilik ve Mineral 0_leme", description: "Sektör çöz?m yakla_1mımızı görün.", href: "/sektorler/madencilik-ve-mineral-isleme" },
+      { title: "Madencilik ve Mineral 0_leme", description: "Sektör çözüm yakla_1mımızı görün.", href: "/sektorler/madencilik-ve-mineral-isleme" },
     ],
     nextContent: machineGuideCards.liquidFertilizer,
     ctaText: COMMON_CTA_TEXT,
@@ -346,7 +346,7 @@ const baseSectorMachineGuideArticles: TopicalArticle[] = [
           {
             heading: "Torba filtre sistemleri",
             paragraphs: [
-              "Torba filtreler, nispeten yüksek debili ve orta hassasiyetteki filtrasyon ihtiyaçlarında ekonomik çöz?m sunar. Servis kolayl11 ve filtre torbasının hızlı dei_tirilebilmesi bakım avantajı salar.",
+              "Torba filtreler, nispeten yüksek debili ve orta hassasiyetteki filtrasyon ihtiyaçlarında ekonomik çözüm sunar. Servis kolayl11 ve filtre torbasının hızlı dei_tirilebilmesi bakım avantajı salar.",
               "Ancak sürekli ince filtrasyon gereken ürünlerde tek ba_1na yeterli olmayabilir. Ön filtre veya kartu_ filtre ile kombine edilmesi sık g?r?len bir uygulamadır.",
             ],
           },
@@ -376,7 +376,7 @@ const baseSectorMachineGuideArticles: TopicalArticle[] = [
       section(
         "Mamul tankları ve stoklama sistemleri",
         [
-          "Mamul tankları, doluma gidecek son ?rının kontrollü biçimde bekletildii ve kalite dengelemesinin sürdür?ld?? alandır. Tank kapasitesi, dolum hız1 ve sevkiyat senaryosuyla uyumlu seçilmelidir.",
+          "Mamul tankları, doluma gidecek son ürünün kontrollü biçimde bekletildii ve kalite dengelemesinin sürdür?ld?? alandır. Tank kapasitesi, dolum hız1 ve sevkiyat senaryosuyla uyumlu seçilmelidir.",
           "Stok tankları arasında doru borulama, vana planı ve CIP/temizlik yakla_1m1 kurulmazsa ürün geçi_lerinde kontaminasyon riski oluşabilir. Bu nedenle tank dizilimi proses mühendisliinin temel kararlarından biridir.",
         ],
       ),
@@ -390,7 +390,7 @@ const baseSectorMachineGuideArticles: TopicalArticle[] = [
       section(
         "Sıvı gübre tesislerinde otomasyon ve dozaj kontrolü",
         [
-          "Sıvı gübre üretiminde otomasyon, reçete tekrar edilebilirlii ve hata riskinin d?_?r?lmesi için b?yük avantaj salar. Loadcell tabanlı tanklar, dozaj pompaları, seviye sens?rleri ve HMI ekranlar üretim disiplinini artırır.",
+          "Sıvı gübre üretiminde otomasyon, reçete tekrar edilebilirlii ve hata riskinin d?_?r?lmesi için büyük avantaj salar. Loadcell tabanlı tanklar, dozaj pompaları, seviye sens?rleri ve HMI ekranlar üretim disiplinini artırır.",
           "Otomasyon seviyesi ürün ?e_itlilii ve hat büyükl??ne göre kademeli planlanabilir. Ancak temel veri izleme, alarm yönetimi ve reçete kayıt yapısı daha en ba_tan d?_?n?lmelidir.",
         ],
       ),
@@ -410,7 +410,7 @@ const baseSectorMachineGuideArticles: TopicalArticle[] = [
     ],
     faqs: [
       faq("Sıvı gübre üretiminde reaktör _art mıdır?", "Her ürün için zorunlu deildir; ancak çözündürme, 1sıtma veya reaksiyon gerektiren reçetelerde reaktör önemli avantaj salar."),
-      faq("Torba filtre mi kartu_ filtre mi seçilmeli?", "Bu karar ?rının partikül yüküne, hedef berraklıa ve debi ihtiyacına göre verilir. ?ou hatta iki kademeli filtrasyon daha güvenli sonu? verir."),
+      faq("Torba filtre mi kartu_ filtre mi seçilmeli?", "Bu karar ürünün partikül yüküne, hedef berraklıa ve debi ihtiyacına göre verilir. çoğu hatta iki kademeli filtrasyon daha güvenli sonu? verir."),
       faq("Dolum hattı kapasitesi nasıl belirlenir?", "Günlük üretim hedefi, ambalaj tipi, ürün viskozitesi ve hat üzerindeki operatör seviyesi birlikte deerlendirilir."),
       faq("Sıvı gübre tesisinde otomasyon gerekli midir?", "ürün ?e_itlilii ve kalite tekrarı arttık?a otomasyonun önemi de artar. özellikle reçeteli üretimlerde ciddi fayda salar."),
       faq("0lk teklif için hangi veriler gerekir?", "ürün tipi, parti veya saatlik kapasite, ambalaj _ekli ve temel reçete mant11 ilk Ön deerlendirme için yeterli olur."),
@@ -427,8 +427,8 @@ const baseSectorMachineGuideArticles: TopicalArticle[] = [
       machineGuideCards.granularFertilizer,
     ],
     relatedServices: [
-      { title: "Sıvı Gübre üretim Tesisi", description: "Sıvı ürünlere özel tesis çöz?mlerini inceleyin.", href: "/hizmetler/sivi-gubre-uretim-tesisi" },
-      { title: "Kimya ve Proses Endüstrisi", description: "Sektörel çöz?m yakla_1mımızı görün.", href: "/sektorler/kimya-ve-proses-endustrisi" },
+      { title: "Sıvı Gübre üretim Tesisi", description: "Sıvı ürünlere özel tesis çözümlerini inceleyin.", href: "/hizmetler/sivi-gubre-uretim-tesisi" },
+      { title: "Kimya ve Proses Endüstrisi", description: "Sektörel çözüm yakla_1mımızı görün.", href: "/sektorler/kimya-ve-proses-endustrisi" },
     ],
     nextContent: machineGuideCards.granularFertilizer,
     ctaText: COMMON_CTA_TEXT,
@@ -474,7 +474,7 @@ const baseSectorMachineGuideArticles: TopicalArticle[] = [
       section(
         "Kurutma tamburu ve nem kontrolü",
         [
-          "Granülasyon sonrası ürün ?ou zaman kurutma tamburuna alınır. Burada ama? yalnızca nem d?_?rmek deil, granül yüzeyini kararlı hale getirerek eleme ve paketleme için uygun ürün elde etmektir.",
+          "Granülasyon sonrası ürün çoğu zaman kurutma tamburuna alınır. Burada ama? yalnızca nem d?_?rmek deil, granül yüzeyini kararlı hale getirerek eleme ve paketleme için uygun ürün elde etmektir.",
           "Kurutma hattı; giri_ nemi, hedef çıkı_ nemi, su u?urma yükü ve ürün 1s1 hassasiyeti dikkate alınarak tasarlanmalıdır. Brülör, fan, siklon ve filtre sistemi kurutma tamburunun ayrılmaz parçalarıdır.",
         ],
       ),
@@ -488,7 +488,7 @@ const baseSectorMachineGuideArticles: TopicalArticle[] = [
       section(
         "Eleme, kırma ve recycle hattı",
         [
-          "Granül gübre hatlarında ?rının ticari fraksiyona ayrılması için döner elek veya vibrasyonlu elek kullanılır. Elek alt1 ince ürün ve elek üst? iri parçalar recycle hattına alınarak yeniden granülasyon tamburuna beslenebilir.",
+          "Granül gübre hatlarında ürünün ticari fraksiyona ayrılması için döner elek veya vibrasyonlu elek kullanılır. Elek alt1 ince ürün ve elek üst? iri parçalar recycle hattına alınarak yeniden granülasyon tamburuna beslenebilir.",
           "Recycle oranı, tamburun gerçek yükün? dorudan artırd11 için tüm hat kapasitesi buna göre kurgulanmalıdır. Gerekli durumlarda kırıcı ile iri ürün parçalanır ve kontrollü biçimde geri d?nd?r?l?r.",
         ],
       ),
@@ -510,20 +510,20 @@ const baseSectorMachineGuideArticles: TopicalArticle[] = [
         "Organomineral gübre tesisinde otomasyonun önemi",
         [
           "Organomineral gübre hatlarında farklı hammaddelerin dozaj, nem ve proses y?kleri sürekli dei_ebilir. Bu nedenle otomasyon; reçete yönetimi, besleme hızları, tambur devirleri ve filtre/brülör kontrolü açısından ciddi avantaj salar.",
-          "PLC ve HMI destekli bir yap1, operatör baımlıl11n1 azaltır ve üretim tekrar edilebilirliini artırır. özellikle çok ürünl? tesislerde veri kaydı ve alarm yönetimi b?yük önem ta_1r.",
+          "PLC ve HMI destekli bir yap1, operatör baımlıl11n1 azaltır ve üretim tekrar edilebilirliini artırır. özellikle çok ürünl? tesislerde veri kaydı ve alarm yönetimi büyük önem ta_1r.",
         ],
       ),
     ],
     summaryRows: [
       row("Dozajlama", "Makro ve mikro hammaddelerin kontrollü beslenmesi gerekir.", "Granül kalitesini ve reçete doruluunu belirler."),
-      row("Granülasyon", "Recycle, balayıcı ve tambur i?i hareket birlikte yönetilir.", "?rının boyut ve dayanım standardını oluşturur."),
+      row("Granülasyon", "Recycle, balayıcı ve tambur i?i hareket birlikte yönetilir.", "ürünün boyut ve dayanım standardını oluşturur."),
       row("Kurutma/Soutma", "Nem ve sıcaklık dengesi ürün stabilitesi için birlikte ele alınır.", "Depolama ve paketleme ba_arısını etkiler."),
       row("Paketleme", "Son ürün akışı ve tartım doruluu hat kapasitesini tamamlar.", "Ticari çıktı kalitesini belirler."),
     ],
     faqs: [
       faq("Granül gübre hattında en kritik ekipman hangisidir?", "Granülasyon tamburu merkezi ekipmandır; ancak dozajlama, kurutma, eleme ve recycle hattı doru kurulmadan tek ba_1na yeterli deildir."),
       faq("Recycle oranı neden önemlidir?", "Recycle yükü tamburun gerçek besleme tonajını artırır ve kapasite hesabını dorudan etkiler."),
-      faq("Her granül hat için kurutma tamburu gerekir mi?", "?ou granülasyon hattında gerekir; ancak reçete, balayıcı ve hedef ürün tipine göre deerlendirme yapılmalıdır."),
+      faq("Her granül hat için kurutma tamburu gerekir mi?", "çoğu granülasyon hattında gerekir; ancak reçete, balayıcı ve hedef ürün tipine göre deerlendirme yapılmalıdır."),
       faq("Kaplama tamburu zorunlu mudur?", "Hayır. Ak1_ iyile_tirme, toz azaltma veya premium yüzey kalitesi isteniyorsa tercih edilir."),
       faq("Organomineral gübre tesisi için ilk hangi veriler gerekir?", "Saatlik nihai kapasite, ürün tipi, hammadde listesi, granül hedefi ve saha yerle_imi ilk Ön deerlendirme için yeterlidir."),
     ],
@@ -539,7 +539,7 @@ const baseSectorMachineGuideArticles: TopicalArticle[] = [
       machineGuideCards.conveying,
     ],
     relatedServices: [
-      { title: "Organomineral Gübre Tesisi", description: "Organomineral hat çöz?mlerimizi inceleyin.", href: "/hizmetler/organomineral-gubre-tesisi" },
+      { title: "Organomineral Gübre Tesisi", description: "Organomineral hat çözümlerimizi inceleyin.", href: "/hizmetler/organomineral-gubre-tesisi" },
       { title: "Granül Gübre üretim Tesisi", description: "Granül gübre hat hizmetimizi görün.", href: "/hizmetler/granul-gubre-uretim-tesisi" },
     ],
     nextContent: machineGuideCards.compost,
@@ -572,7 +572,7 @@ const baseSectorMachineGuideArticles: TopicalArticle[] = [
       section(
         "Parçalayıcı ve shredder sistemleri",
         [
-          "Organik atık içinde bulunan iri parçalar, torbalı içerikler veya lifli yapılar prosesin homojenliini bozar. Bu nedenle shredder, b1?akl1 kırıcı veya çeki?li kırıcı sistemleri Ön hazırlıkta devreye alınabilir.",
+          "Organik atık içinde bulunan iri parçalar, torbalı içerikler veya lifli yapılar prosesin homojenliini bozar. Bu nedenle shredder, b1?akl1 kırıcı veya çekiçli kırıcı sistemleri Ön hazırlıkta devreye alınabilir.",
           "Parçalayıcı seçimi yapılırken malzemenin yap1_kanl11, yabancı madde riski ve hedef parça boyutu birlikte deerlendirilmelidir. Aksi durumda gereksiz a_1nma ve yüksek bakım maliyeti oluşabilir.",
         ],
       ),
@@ -593,8 +593,8 @@ const baseSectorMachineGuideArticles: TopicalArticle[] = [
       section(
         "Kurutma tamburu ve nem d?_?rme",
         [
-          "Baz1 kompost ve organik atık hatlarında son ?rının ticari kullanımına uygun hale gelmesi için ek kurutma gerekir. özellikle organomineral gübre girdisi oluşturulacaksa veya yüksek nemli akış deerlendirilecekse kurutma tamburu devreye alınır.",
-          "Bu a_amada giri_ nemi, koku/gaz çıkı_1 ve ?rının termal hassasiyeti birlikte deerlendirilmelidir. Kurutma hattı çoğu zaman fan, siklon, filtre ve koku kontrol sistemiyle birlikte planlanır.",
+          "Baz1 kompost ve organik atık hatlarında son ürünün ticari kullanımına uygun hale gelmesi için ek kurutma gerekir. özellikle organomineral gübre girdisi oluşturulacaksa veya yüksek nemli akış deerlendirilecekse kurutma tamburu devreye alınır.",
+          "Bu a_amada giri_ nemi, koku/gaz çıkı_1 ve ürünün termal hassasiyeti birlikte deerlendirilmelidir. Kurutma hattı çoğu zaman fan, siklon, filtre ve koku kontrol sistemiyle birlikte planlanır.",
         ],
       ),
       section(
@@ -607,7 +607,7 @@ const baseSectorMachineGuideArticles: TopicalArticle[] = [
       section(
         "Koku, toz ve gaz kontrol sistemleri",
         [
-          "Kompost ve organik atık tesislerinde koku kontrolü ?ou zaman teknik ve çevresel a?1dan en kritik ba_lıklardan biridir. Negatif basınçlı hava toplama, biyofiltre, scrubber veya filtre sistemleri ihtiyaca göre kombine edilir.",
+          "Kompost ve organik atık tesislerinde koku kontrolü çoğu zaman teknik ve çevresel a?1dan en kritik ba_lıklardan biridir. Negatif basınçlı hava toplama, biyofiltre, scrubber veya filtre sistemleri ihtiyaca göre kombine edilir.",
           "Koku kontrolü yalnızca sonradan eklenen bir yardımcı sistem olarak d?_?n?lmemelidir. Atık kabul, karıştırma, tambur ve eleme noktaları ba_tan bu mimariye uygun tasarlanmalıdır.",
         ],
       ),
@@ -619,7 +619,7 @@ const baseSectorMachineGuideArticles: TopicalArticle[] = [
         ],
       ),
       section(
-        "Pro Makina ile kompost tesisi çöz?mleri",
+        "Pro Makina ile kompost tesisi çözümleri",
         [
           "Pro Makina, kompost ve organik atık tesislerinde makine omurgasını atık karakteri ve hedef son ürün üzerinden kurgular. Parçalayıcı, tambur, elek, taşıma ve koku kontrol ekipmanları ayn1 saha mant11nda projelendirilir.",
           "Kompost, organik atık veya digestat hatlarınız için doru makine kombinasyonunu deerlendirmek isterseniz, teknik Ön analizle birlikte ilerleyebiliriz.",
@@ -652,7 +652,7 @@ const baseSectorMachineGuideArticles: TopicalArticle[] = [
     ],
     relatedServices: [
       { title: "Kompost Tesisi Kurulumu", description: "Kompost ve organik atık tesis hizmetimizi inceleyin.", href: "/hizmetler/kompost-tesisi-kurulumu" },
-      { title: "Kompost ve Organik Atık Tesisleri", description: "Sektör çöz?m yakla_1mımızı görün.", href: "/sektorler/kompost-ve-organik-atik-tesisleri" },
+      { title: "Kompost ve Organik Atık Tesisleri", description: "Sektör çözüm yakla_1mımızı görün.", href: "/sektorler/kompost-ve-organik-atik-tesisleri" },
     ],
     nextContent: machineGuideCards.thermal,
     ctaText: COMMON_CTA_TEXT,
@@ -677,8 +677,8 @@ const baseSectorMachineGuideArticles: TopicalArticle[] = [
       section(
         "Kurutma tamburu nasıl çal1_1r?",
         [
-          "Kurutma tamburu, ?rının döner gövde içinde ilerlerken sıcak gazla temas etmesini salayan ana proses ekipmanıdır. 0? kanatlar veya lifter yapıları, ürün? perde halinde kaldırarak yüzey alanını artırır ve kurutma verimini y?kseltir.",
-          "Tambur ?ap1, boyu, eimi, deviri ve doluluk oranı ?rının kal1_ süresini belirler. Bu nedenle kurutma tamburu hesabı, yalnız geometri deil; proses yükü ve su u?urma mant11 açısından da yapılmalıdır.",
+          "Kurutma tamburu, ürünün döner gövde içinde ilerlerken sıcak gazla temas etmesini salayan ana proses ekipmanıdır. 0? kanatlar veya lifter yapıları, ürün? perde halinde kaldırarak yüzey alanını artırır ve kurutma verimini y?kseltir.",
+          "Tambur ?ap1, boyu, eimi, deviri ve doluluk oranı ürünün kal1_ süresini belirler. Bu nedenle kurutma tamburu hesabı, yalnız geometri deil; proses yükü ve su u?urma mant11 açısından da yapılmalıdır.",
         ],
       ),
       section(
@@ -719,7 +719,7 @@ const baseSectorMachineGuideArticles: TopicalArticle[] = [
       section(
         "Kurutma sonrası soutma ve eleme sistemleri",
         [
-          "Kurutma sonrası ürün dorudan stok veya paketleme sistemine girmeden önce soutma ve gerekirse eleme adımlarından geçirilebilir. özellikle granül ürünlerde bu adım son ürün kararlıl11 ve toz kontrolü açısından b?yük avantaj salar.",
+          "Kurutma sonrası ürün dorudan stok veya paketleme sistemine girmeden önce soutma ve gerekirse eleme adımlarından geçirilebilir. özellikle granül ürünlerde bu adım son ürün kararlıl11 ve toz kontrolü açısından büyük avantaj salar.",
           "Soutma tamburu, elek ve recycle hattı kurutma hattının doal devamı olarak d?_?n?lmelidir. Böylece termal ve mekanik proses dengesi korunur.",
         ],
       ),
@@ -731,7 +731,7 @@ const baseSectorMachineGuideArticles: TopicalArticle[] = [
         ],
       ),
       section(
-        "Pro Makina ile kurutma ve termal proses çöz?mleri",
+        "Pro Makina ile kurutma ve termal proses çözümleri",
         [
           "Pro Makina, kurutma ve termal proses hatlarında tambur, sıcak hava sistemi, fan, siklon, filtre ve yardımcı ekipmanları entegre biçimde projelendirir. Ama? yalnızca ürün kurutmak deil, enerji ve bakım açısından sürdürülebilir bir sistem kurmaktır.",
           "Kurutma hattınız için doru makine kombinasyonunu ve Ön tasarım deerlerini birlikte deerlendirmek isterseniz teknik g?r?_me ile ilerleyebiliriz.",
@@ -747,9 +747,9 @@ const baseSectorMachineGuideArticles: TopicalArticle[] = [
     faqs: [
       faq("Kurutma hattında en kritik ekipman tambur mudur?", "Tambur merkezi ekipmandır; ancak brülör, fan, siklon ve filtre birlikte doru seçilmediinde hat verimli çal1_maz."),
       faq("Brülör kapasitesi nasıl belirlenir?", "Buharla_acak su, ürün 1sıtma yükü, güvenlik pay1 ve yakıt tipi üzerinden Ön seçim yapılır."),
-      faq("Her kurutma hattında siklon gerekir mi?", "?ou tozlu proseste ?nerilir. özellikle mineral ve granül uygulamalarda ürün kaybını azaltır."),
-      faq("Kurutma sonrası soutma neden gerekir?", "S1cak ?rının stokta terlemesini, topaklanmasını veya paketleme sorunlarını azaltmak için kullanılır."),
-      faq("Tambur hesabı olmadan kurutma hattı kurulabilir mi?", "Kurulabilir; ancak kapasite, enerji ve ürün kalitesi açısından yüksek sapma riski oluşur. Ön hesap b?yük avantaj salar."),
+      faq("Her kurutma hattında siklon gerekir mi?", "çoğu tozlu proseste ?nerilir. özellikle mineral ve granül uygulamalarda ürün kaybını azaltır."),
+      faq("Kurutma sonrası soutma neden gerekir?", "S1cak ürünün stokta terlemesini, topaklanmasını veya paketleme sorunlarını azaltmak için kullanılır."),
+      faq("Tambur hesabı olmadan kurutma hattı kurulabilir mi?", "Kurulabilir; ancak kapasite, enerji ve ürün kalitesi açısından yüksek sapma riski oluşur. Ön hesap büyük avantaj salar."),
     ],
     internalLinks: [
       { label: "Tambur Sistemleri", href: "/makinalar-ekipman/tambur-sistemleri" },
@@ -763,7 +763,7 @@ const baseSectorMachineGuideArticles: TopicalArticle[] = [
       machineGuideCards.sludge,
     ],
     relatedServices: [
-      { title: "Maden Kurutma ve Eleme Tesisi", description: "Termal proses odaklı tesis çöz?mlerimizi inceleyin.", href: "/hizmetler/maden-kurutma-ve-eleme-tesisi" },
+      { title: "Maden Kurutma ve Eleme Tesisi", description: "Termal proses odaklı tesis çözümlerimizi inceleyin.", href: "/hizmetler/maden-kurutma-ve-eleme-tesisi" },
       { title: "çamur Kurutma Tesisi", description: "Yüksek nemli ürünler için saha yakla_1mımızı görün.", href: "/hizmetler/camur-kurutma-tesisi" },
     ],
     nextContent: machineGuideCards.conveying,
@@ -796,21 +796,21 @@ const baseSectorMachineGuideArticles: TopicalArticle[] = [
       section(
         "Helezon konveyör sistemleri",
         [
-          "Helezon konveyörler, kapalı gövde içinde kontrollü ve nispeten kısa mesafeli taşıma için g??l? çöz?mler sunar. Tozlu ürünler, katkılar ve dozaj gerektiren malzemeler için özellikle uygundur.",
+          "Helezon konveyörler, kapalı gövde içinde kontrollü ve nispeten kısa mesafeli taşıma için g??l? çözümler sunar. Tozlu ürünler, katkılar ve dozaj gerektiren malzemeler için özellikle uygundur.",
           "çap, hatve, devir, doluluk oranı ve eim; helezon kapasitesini belirleyen ana parametrelerdir. Yap1_kan veya a_1ndırıcı ürünlerde gövde ve flight malzemesi dikkatle seçilmelidir.",
         ],
       ),
       section(
         "Kovalı elevatörler",
         [
-          "Kovalı elevatörler, ?rının dikey ta_1nması gereken tesislerde vazgeçilmez ekipmanlardır. Granül, toz ve baz1 kırılgan ürünlerin kontrollü biçimde üst kotlara alınmasını salar.",
+          "Kovalı elevatörler, ürünün dikey ta_1nması gereken tesislerde vazgeçilmez ekipmanlardır. Granül, toz ve baz1 kırılgan ürünlerin kontrollü biçimde üst kotlara alınmasını salar.",
           "Kova hacmi, bant/zincir hız1, merkezka? etkisi ve bo_altma düzeni tasarımın ana noktalarıdır. özellikle sıcak veya tozlu ürünlerde gövde sızdırmazl11 ve bakım eri_imi önemlidir.",
         ],
       ),
       section(
         "Zincirli konveyörler",
         [
-          "Zincirli konveyörler, aır hizmet ko_ulları ve kısa-orta mesafeli s?r?klemeli taşıma için tercih edilir. K1rılgan olmayan veya kontrollü s?r?klenebilen ürünlerde g??l? ve dayanıklı bir çöz?m sunar.",
+          "Zincirli konveyörler, aır hizmet ko_ulları ve kısa-orta mesafeli s?r?klemeli taşıma için tercih edilir. K1rılgan olmayan veya kontrollü s?r?klenebilen ürünlerde g??l? ve dayanıklı bir çözüm sunar.",
           "Zincir seçimi, palet yapısı, kanal gövdesi ve tahrik sistemi malzeme karakterine göre belirlenmelidir. A_1r1 doldurma durumunda sürtünme yükü hızla artabilecei için besleme kontrolü gereklidir.",
         ],
       ),
@@ -831,7 +831,7 @@ const baseSectorMachineGuideArticles: TopicalArticle[] = [
       section(
         "Tartımlı besleme ve reçete kontrolü",
         [
-          "Tartımlı besleme ekipmanları, operatör kaynaklı varyasyonu azaltır ve reçete doruluunu artırır. özellikle gübre, kimya ve katkı dozajı gereken hatlarda loadcell altyapısı ve yazılım entegrasyonu b?yük avantaj salar.",
+          "Tartımlı besleme ekipmanları, operatör kaynaklı varyasyonu azaltır ve reçete doruluunu artırır. özellikle gübre, kimya ve katkı dozajı gereken hatlarda loadcell altyapısı ve yazılım entegrasyonu büyük avantaj salar.",
           "Bu yap1 yalnızca anlık kapasite kontrolü deil, ge?mi_ üretim kayıtlarının takibi için de önemlidir. Böylece proses iyile_tirme ve maliyet analizi daha salıklı yapılabilir.",
         ],
       ),
@@ -843,7 +843,7 @@ const baseSectorMachineGuideArticles: TopicalArticle[] = [
         ],
       ),
       section(
-        "Pro Makina ile taşıma ve dozajlama çöz?mleri",
+        "Pro Makina ile taşıma ve dozajlama çözümleri",
         [
           "Pro Makina, taşıma ve dozajlama sistemlerini ana prosesin ayrılmaz parçası olarak ele alır. Konveyör, elevatör, silo, bunker ve tartımlı besleme ekipmanları ayn1 kapasite omurgasında projelendirilir.",
           "Yeni bir hat kurarken veya mevcut tesisinizi revize ederken, malzeme akışının en doru _ekilde nasıl kurgulanacaını birlikte deerlendirebiliriz.",
@@ -859,8 +859,8 @@ const baseSectorMachineGuideArticles: TopicalArticle[] = [
     faqs: [
       faq("Bant konveyör m? helezon mu seçilmeli?", "Karar kapasite, mesafe, ürün tipi, kapalı hat ihtiyacı ve eim ko_ullarına göre verilir."),
       faq("Kovalı elevatör hangi ürünlerde uygundur?", "Granül, toz ve dikey ta_1nması gereken birçok dökme katı ?rinde uygundur; ancak kırılganlık ve sıcaklık ayrıca deerlendirilmelidir."),
-      faq("Silo ile bunker arasında ne fark vardır?", "Silo genellikle daha b?yük ve uzun s?reli stok için, bunker ise prosese yakın tampon besleme için kullanılır."),
-      faq("Mikro dozaj sistemlerinde hangi ekipmanlar tercih edilir?", "Tartımlı helezonlar, k???k dozaj bunkerleri ve loadcell tabanlı çöz?mler yaygın olarak kullanılır."),
+      faq("Silo ile bunker arasında ne fark vardır?", "Silo genellikle daha büyük ve uzun s?reli stok için, bunker ise prosese yakın tampon besleme için kullanılır."),
+      faq("Mikro dozaj sistemlerinde hangi ekipmanlar tercih edilir?", "Tartımlı helezonlar, k???k dozaj bunkerleri ve loadcell tabanlı çözümler yaygın olarak kullanılır."),
       faq("Ta_1ma hattı toz kontrolü neden önemlidir?", "ürün kaybını, saha kirliliini ve i_ güvenlii risklerini azaltır; ayrıca dozaj doruluunu korur."),
     ],
     internalLinks: [
@@ -900,7 +900,7 @@ const baseSectorMachineGuideArticles: TopicalArticle[] = [
       section(
         "çamur besleme ve taşıma ekipmanları",
         [
-          "çamur besleme bunkerleri, helezon konveyörler ve kapalı transfer hatları, yüksek nemli malzemenin kontrollü yönetilmesini salar. Serbest akışlı olmayan ürünlerde besleme noktası tasarımı b?yük önem ta_1r.",
+          "çamur besleme bunkerleri, helezon konveyörler ve kapalı transfer hatları, yüksek nemli malzemenin kontrollü yönetilmesini salar. Serbest akışlı olmayan ürünlerde besleme noktası tasarımı büyük önem ta_1r.",
           "Bunker çıkı_ a?1s1, helezon tipi, _aft dayanımı ve sızdırmazlık detayları iyi kurgulanmalıdır. Aksi durumda malzeme köprüle_ir veya hatta yap1_arak kapasite kaybına yol a?ar.",
         ],
       ),
@@ -908,13 +908,13 @@ const baseSectorMachineGuideArticles: TopicalArticle[] = [
         "Kar1_tırma ve şartlandırma sistemleri",
         [
           "çamur akışlarında şartlandırma veya taşıyıcı kuru malzeme ile karıştırma ihtiyaçı sık g?r?l?r. Bu sayede hem daha iyi i_lenebilir bir karışım elde edilir hem de kurutma veya stabilizasyon a_aması daha verimli hale gelir.",
-          "Kar1_tırıcı seçimi; ?rının viskozitesine, katkı oranına ve istenen homojenlie göre yapılmalıdır. S1yırıcı, özel palet ve bakım eri_imi burada önemli mühendislik detaylarıdır.",
+          "Kar1_tırıcı seçimi; ürünün viskozitesine, katkı oranına ve istenen homojenlie göre yapılmalıdır. S1yırıcı, özel palet ve bakım eri_imi burada önemli mühendislik detaylarıdır.",
         ],
       ),
       section(
         "Kurutma tamburu ile nem d?_?rme",
         [
-          "Arıtma çamurunun bertaraf maliyetini d?_?rmek veya sonraki deerlendirme süreçlerine uygun hale getirmek için nem d?_?rme kritik bir adımdır. Kurutma tamburu, doru besleme ve gaz hattı ile birlikte çamur proseslerinde g??l? bir çöz?m sunabilir.",
+          "Arıtma çamurunun bertaraf maliyetini d?_?rmek veya sonraki deerlendirme süreçlerine uygun hale getirmek için nem d?_?rme kritik bir adımdır. Kurutma tamburu, doru besleme ve gaz hattı ile birlikte çamur proseslerinde g??l? bir çözüm sunabilir.",
           "Ancak giri_ nemi çok yüksek olan akışlarda Ön susuzla_tırma veya taşıyıcı malzeme ile karıştırma gerekebilir. Kurutma hattı tasarlanırken yap1_ma, topaklanma ve koku kontrolü mutlaka dikkate alınmalıdır.",
         ],
       ),
@@ -933,7 +933,7 @@ const baseSectorMachineGuideArticles: TopicalArticle[] = [
         ],
       ),
       section(
-        "Siklon, filtre, scrubber ve biyofiltre çöz?mleri",
+        "Siklon, filtre, scrubber ve biyofiltre çözümleri",
         [
           "Siklon sistemleri iri partikül yükün? azaltırken, jet pulse filtreler daha ince tozun tutulmasını salar. Gaz içinde koku veya kimyasal yük varsa scrubber ve biyofiltre gibi ek arıtma sistemleri devreye alınabilir.",
           "Bu sistemlerin seçimi yapılırken sıcaklık, nem, partikül yapısı ve hedef emisyon seviyesi birlikte deerlendirilmelidir. Yüksek nemli gazlarda tıkanma riski ayrıca dikkate alınmalıdır.",
@@ -954,7 +954,7 @@ const baseSectorMachineGuideArticles: TopicalArticle[] = [
         ],
       ),
       section(
-        "Pro Makina ile arıtma çamuru proses çöz?mleri",
+        "Pro Makina ile arıtma çamuru proses çözümleri",
         [
           "Pro Makina, arıtma çamuru ve benzeri yüksek nemli akışlarda besleme, kurutma, stabilizasyon ve gaz kontrolü ekipmanlarını ayn1 hat mant11nda projelendirir. Böylece proses yalnız teknik olarak deil, saha i_letmesi açısından da daha kontrollü hale gelir.",
           "çamur prosesiniz için uygun makine zincirini ve Ön hesap yakla_1mın1 birlikte deerlendirmek isterseniz teknik g?r?_me ile ilerleyebiliriz.",
@@ -968,7 +968,7 @@ const baseSectorMachineGuideArticles: TopicalArticle[] = [
       row("Otomasyon", "S1caklık ve yük izleme riskli çal1_ma ko_ullarında önemlidir.", "0_letme güvenliini artırır."),
     ],
     faqs: [
-      faq("çamur kurutmada en b?yük risk nedir?", "Yüksek nemli ve yap1_kan akışın hatta tıkanma, topaklanma ve yüksek enerji tüketimi yaratmasıdır."),
+      faq("çamur kurutmada en büyük risk nedir?", "Yüksek nemli ve yap1_kan akışın hatta tıkanma, topaklanma ve yüksek enerji tüketimi yaratmasıdır."),
       faq("Sterilizasyon tamburu ile kurutma tamburu ayn1 _ey midir?", "Hayır. Baz1 projelerde benzer ekipman yapısı kullanılsa da hedef sıcaklık, temas süresi ve gaz kontrolü farklıdır."),
       faq("çamur hattında scrubber ne zaman gerekir?", "Koku, korozif gaz veya özel emisyon gereksinimi olan projelerde deerlendirilebilir."),
       faq("Kurutulmu_ çamur ticari ürüne dönü_ebilir mi?", "Uygulamaya bal1 olarak kompost girdisi, yakıt veya özel son ürün senaryoları mümkünd?r; detay mühendislik gerekir."),
@@ -985,8 +985,8 @@ const baseSectorMachineGuideArticles: TopicalArticle[] = [
       machineGuideCards.biogas,
     ],
     relatedServices: [
-      { title: "çamur Kurutma Tesisi", description: "Arıtma çamuru proses çöz?mlerimizi inceleyin.", href: "/hizmetler/camur-kurutma-tesisi" },
-      { title: "Atık Su çamuru ve Arıtma çöz?mleri", description: "Sektörel yakla_1mımızı görün.", href: "/sektorler/atik-su-camuru-ve-aritma-cozumleri" },
+      { title: "çamur Kurutma Tesisi", description: "Arıtma çamuru proses çözümlerimizi inceleyin.", href: "/hizmetler/camur-kurutma-tesisi" },
+      { title: "Atık Su çamuru ve Arıtma çözümleri", description: "Sektörel yakla_1mımızı görün.", href: "/sektorler/atik-su-camuru-ve-aritma-cozumleri" },
     ],
     nextContent: machineGuideCards.biogas,
     ctaText: COMMON_CTA_TEXT,
@@ -1025,7 +1025,7 @@ const baseSectorMachineGuideArticles: TopicalArticle[] = [
       section(
         "??tme ve boyut k??ültme ekipmanları",
         [
-          "Baz1 biyogaz hatlarında ince ??tme gerekmese de, belirli atık t?rlerinde daha homojen bir akış için ek boyut k??ültme ekipmanları devreye alınabilir. çeki?li kırıcı veya b1?akl1 sistemler bu amaçla kullanılabilir.",
+          "Baz1 biyogaz hatlarında ince ??tme gerekmese de, belirli atık t?rlerinde daha homojen bir akış için ek boyut k??ültme ekipmanları devreye alınabilir. çekiçli kırıcı veya b1?akl1 sistemler bu amaçla kullanılabilir.",
           "Bu karar, reaktör tipi, pompalama sistemi ve hedef kuru madde yönetimiyle birlikte deerlendirilmelidir. Her biyogaz tesisi için ayn1 ??tme _iddeti uygun deildir.",
         ],
       ),
@@ -1065,7 +1065,7 @@ const baseSectorMachineGuideArticles: TopicalArticle[] = [
         ],
       ),
       section(
-        "Pro Makina ile biyogaz Ön i_lem çöz?mleri",
+        "Pro Makina ile biyogaz Ön i_lem çözümleri",
         [
           "Pro Makina, biyogaz Ön i_lem projelerinde parçalayıcı, besleme, taşıma, karıştırma ve digestat yönetimi ekipmanlarını birlikte planlar. Böylece tesis yalnız besleme yapabilen deil, sürdürülebilir akış kurabilen bir yapıya kavu_ur.",
           "Biyogaz Ön i_lem hattınız için makine seçimini ve hat akışını birlikte deerlendirmek isterseniz teknik g?r?_me ile ilerleyebiliriz.",
@@ -1097,7 +1097,7 @@ const baseSectorMachineGuideArticles: TopicalArticle[] = [
       machineGuideCards.conveying,
     ],
     relatedServices: [
-      { title: "Enerji ve Biyogaz Sistemleri", description: "Sektörel çöz?m yakla_1mımızı inceleyin.", href: "/sektorler/enerji-ve-biyogaz-sistemleri" },
+      { title: "Enerji ve Biyogaz Sistemleri", description: "Sektörel çözüm yakla_1mımızı inceleyin.", href: "/sektorler/enerji-ve-biyogaz-sistemleri" },
       { title: "Makinalar & Ekipman", description: "0lgili ekipman ailelerini tek merkezden görün.", href: "/makinalar-ekipman" },
     ],
     nextContent: machineGuideCards.chemical,
@@ -1116,7 +1116,7 @@ const baseSectorMachineGuideArticles: TopicalArticle[] = [
       section(
         "Kimya ve proses tesislerinde ekipman seçimi",
         [
-          "Kimya ve proses tesislerinde ekipman seçimi, ürün kalitesi kadar güvenlik ve süreklilik açısından da belirleyicidir. Basit görünen bir tank veya pompa tercihi; reaksiyon kontrolü, temizlik, bakım ve proses güvenlii üzerinde b?yük etki yaratabilir.",
+          "Kimya ve proses tesislerinde ekipman seçimi, ürün kalitesi kadar güvenlik ve süreklilik açısından da belirleyicidir. Basit görünen bir tank veya pompa tercihi; reaksiyon kontrolü, temizlik, bakım ve proses güvenlii üzerinde büyük etki yaratabilir.",
           "Bu yüzden reaktör, tank, filtrasyon, borulama ve otomasyon bile_enleri ayr1 ayr1 deil; bir proses sistemi olarak deerlendirilmelidir. ürün kimyası ve çal1_ma senaryosu bu kararların merkezindedir.",
         ],
       ),
@@ -1151,7 +1151,7 @@ const baseSectorMachineGuideArticles: TopicalArticle[] = [
       section(
         "Homojenizasyon ve kalite dengeleme",
         [
-          "Birçok kimyasal proseste son ?rının her partide ayn1 karakterde olması gerekir. Homojenizasyon ekipmanları ve sirk?lasyon hatları, younluk veya partikül daılımını dengeleyerek ürün standardını korur.",
+          "Birçok kimyasal proseste son ürünün her partide ayn1 karakterde olması gerekir. Homojenizasyon ekipmanları ve sirk?lasyon hatları, younluk veya partikül daılımını dengeleyerek ürün standardını korur.",
           "özellikle katkı içeren veya çok bile_enli karışımlarda bu a_ama son kaliteyi belirler. Tank içinde ?l? hacim bırakmayan geometri önemli avantaj salar.",
         ],
       ),
@@ -1165,19 +1165,19 @@ const baseSectorMachineGuideArticles: TopicalArticle[] = [
       section(
         "Paslanmaz, galvaniz ve RAL boyalı ekipman tasarımı",
         [
-          "Malzeme seçimi, kimyasal proses ekipmanlarında ömür ve güvenlik üzerinde belirleyici etkidedir. Paslanmaz çelik, galvaniz veya boyalı karbon çelik seçenekleri ?rının kimyasına ve saha ko_ullarına göre deerlendirilir.",
-          "Hijyen, korozyon dayanımı, sıcaklık ve temizlik prosed?rleri bu kararın temel girdileridir. Baz1 projelerde hibrit malzeme yakla_1m1 en uygun çöz?m olabilir.",
+          "Malzeme seçimi, kimyasal proses ekipmanlarında ömür ve güvenlik üzerinde belirleyici etkidedir. Paslanmaz çelik, galvaniz veya boyalı karbon çelik seçenekleri ürünün kimyasına ve saha ko_ullarına göre deerlendirilir.",
+          "Hijyen, korozyon dayanımı, sıcaklık ve temizlik prosed?rleri bu kararın temel girdileridir. Baz1 projelerde hibrit malzeme yakla_1m1 en uygun çözüm olabilir.",
         ],
       ),
       section(
         "Otomasyon, sens?r ve proses kontrol sistemleri",
         [
           "Kimyasal proses hatlarında sens?rler ve otomasyon, yalnız kolaylık deil güvenlik unsurudur. S1caklık, basın?, seviye, pH ve debi gibi parametrelerin izlenmesi proses kontrolün? g??lendirir.",
-          "PLC ve HMI destekli sistemler, alarm yönetimi ve reçete takibi sayesinde hem kaliteyi hem izlenebilirlii artırır. özellikle çok ürünl? veya hassas proseslerde b?yük avantaj salar.",
+          "PLC ve HMI destekli sistemler, alarm yönetimi ve reçete takibi sayesinde hem kaliteyi hem izlenebilirlii artırır. özellikle çok ürünl? veya hassas proseslerde büyük avantaj salar.",
         ],
       ),
       section(
-        "Pro Makina ile kimyasal proses çöz?mleri",
+        "Pro Makina ile kimyasal proses çözümleri",
         [
           "Pro Makina, kimya ve proses endüstrisi ekipmanlarını proses mant11, malzeme uyumu ve saha uygulanabilirlii üzerinden projelendirir. Reaktör, tank, filtre, pompa ve otomasyon bile_enleri tek sistem olarak ele alınır.",
           "Kimyasal üretim hattınız için doru ekipman kombinasyonunu belirlemek istiyorsanız, Ön mühendislik yakla_1mıyla birlikte ilerleyebiliriz.",
@@ -1186,7 +1186,7 @@ const baseSectorMachineGuideArticles: TopicalArticle[] = [
     ],
     summaryRows: [
       row("Malzeme Uyumu", "Paslanmaz, kaplama veya farklı çelik seçenekleri ürün kimyasına göre belirlenir.", "Güvenlii ve ömrü etkiler."),
-      row("Reakt�r/Tank", "Kar1_tırma ve hacim seçimi ürün kalitesini belirler.", "Proses tekrar edilebilirliini salar."),
+      row("Reaktr/Tank", "Kar1_tırma ve hacim seçimi ürün kalitesini belirler.", "Proses tekrar edilebilirliini salar."),
       row("Filtrasyon", "ürün standardı ve ekipman koruması için kritik a_amadır.", "Kalite ve bakım performansını etkiler."),
       row("Otomasyon", "Sens?r ve reçete takibi proses güvenliini g??lendirir.", "Operasyonel hatayı azaltır."),
     ],
@@ -1209,7 +1209,7 @@ const baseSectorMachineGuideArticles: TopicalArticle[] = [
     ],
     relatedServices: [
       { title: "Sıvı Gübre üretim Tesisi", description: "Kimyasal proses hatlarına yakın hizmetimizi inceleyin.", href: "/hizmetler/sivi-gubre-uretim-tesisi" },
-      { title: "Kimya ve Proses Endüstrisi", description: "Sektör çöz?m yakla_1mımızı görün.", href: "/sektorler/kimya-ve-proses-endustrisi" },
+      { title: "Kimya ve Proses Endüstrisi", description: "Sektör çözüm yakla_1mımızı görün.", href: "/sektorler/kimya-ve-proses-endustrisi" },
     ],
     nextContent: machineGuideCards.packaging,
     ctaText: COMMON_CTA_TEXT,
@@ -1234,7 +1234,7 @@ const baseSectorMachineGuideArticles: TopicalArticle[] = [
       section(
         "Açık aız torbalama sistemleri",
         [
-          "Açık aız torbalama sistemleri, granül ve toz ürünlerin kontrollü _ekilde standart torbalara doldurulması için kullanılır. Gübre, mineral toz ve kompost bazlı ürünlerde yaygın bir çöz?md?r.",
+          "Açık aız torbalama sistemleri, granül ve toz ürünlerin kontrollü _ekilde standart torbalara doldurulması için kullanılır. Gübre, mineral toz ve kompost bazlı ürünlerde yaygın bir çözümd?r.",
           "Bu sistemlerde tartım hassasiyeti, torba yerle_tirme ergonomisi ve ürün akışının kesintisiz olması önemlidir. Tozlu ürünlerde lokal aspirasyon ve operatör güvenlii ayrıca dikkate alınmalıdır.",
         ],
       ),
@@ -1255,7 +1255,7 @@ const baseSectorMachineGuideArticles: TopicalArticle[] = [
       section(
         "^i_e etiketleme ve kapaklama sistemleri",
         [
-          "Etiketleme ve kapaklama sistemleri, ?rının pazara hazır hale gelmesini tamamlar. Görsel doruluk, seri numarası takibi ve d?zgün kapaklama lojistik ve sat1_ sonrası süreçleri etkiler.",
+          "Etiketleme ve kapaklama sistemleri, ürünün pazara hazır hale gelmesini tamamlar. Görsel doruluk, seri numarası takibi ve düzgün kapaklama lojistik ve sat1_ sonrası süreçleri etkiler.",
           "Makine seçimi yapılırken ambalaj ?e_itlilii, etiket boyutları ve hat hız1 birlikte deerlendirilmelidir. Entegrasyon zayıfsa dolum hattında sık duru_lar oluşabilir.",
         ],
       ),
@@ -1263,7 +1263,7 @@ const baseSectorMachineGuideArticles: TopicalArticle[] = [
         "Eleme, soutma ve son kalite kontrol",
         [
           "Granül ürünlerde paketleme öncesi eleme ve soutma adımları, son ürün kararlıl11 açısından kritik rol oynar. S1cak veya fazla ince ürün paketlenirse hem torba içinde problem ?1kar hem de m?_teri tarafında kalite algısı d?_er.",
-          "Bu yüzden son ürün hazırlama hattı ?ou zaman elek, soutma tamburu ve tartım sistemleriyle birlikte kurgulanır. Kalite kontrol noktaları ba_tan tanımlanmalıdır.",
+          "Bu yüzden son ürün hazırlama hattı çoğu zaman elek, soutma tamburu ve tartım sistemleriyle birlikte kurgulanır. Kalite kontrol noktaları ba_tan tanımlanmalıdır.",
         ],
       ),
       section(
@@ -1284,11 +1284,11 @@ const baseSectorMachineGuideArticles: TopicalArticle[] = [
         "Depolama, sevkiyat ve paletleme entegrasyonu",
         [
           "Paketleme hattı depo ve sevkiyat akışından baımsız d?_?n?lemez. Dolu torba veya _i_elerin konveyörle çıkı_1, paletleme hazırl11 ve sevkiyat alanına transferi bütün sistemin ritmini etkiler.",
-          "Yüksek tonajlı tesislerde paletleme veya ara stok çöz?m? de deerlendirilebilir. Böylece dolum hattı durmadan sevkiyat operasyonu ayr1 akışta sürdürülebilir.",
+          "Yüksek tonajlı tesislerde paletleme veya ara stok çözüm? de deerlendirilebilir. Böylece dolum hattı durmadan sevkiyat operasyonu ayr1 akışta sürdürülebilir.",
         ],
       ),
       section(
-        "Pro Makina ile paketleme ve dolum çöz?mleri",
+        "Pro Makina ile paketleme ve dolum çözümleri",
         [
           "Pro Makina, paketleme ve dolum sistemlerini ana proses hattının devamı olarak projelendirir. Torbalama, big bag, sıvı dolum, etiketleme ve taşıma ekipmanları birlikte deerlendirilerek daha dengeli çıkı_ hatları oluşturulur.",
           "Son ürün hazırlama hattınız için doru makine dizilimini ve kapasite yakla_1mın1 birlikte deerlendirmek isterseniz teknik Ön g?r?_me planlayabiliriz.",
@@ -1303,9 +1303,9 @@ const baseSectorMachineGuideArticles: TopicalArticle[] = [
     ],
     faqs: [
       faq("Açık aız torbalama ile big bag dolum arasında nasıl seçim yapılır?", "Bu seçim m?_teri tipi, sevkiyat senaryosu, tonaj ve ürün sunum stratejisine göre yapılır."),
-      faq("Sıvı dolum hattında en kritik konu nedir?", "Ambalaj tipiyle uyumlu dolum hassasiyeti ve ?rının k?p?rme/viskozite davran1_1dır."),
+      faq("Sıvı dolum hattında en kritik konu nedir?", "Ambalaj tipiyle uyumlu dolum hassasiyeti ve ürünün k?p?rme/viskozite davran1_1dır."),
       faq("Granül ürün paketlemeden önce neden soutulmalıdır?", "S1cak ürün torba içinde terleme, yap1_ma veya kalite kaybına neden olabilir."),
-      faq("Paketleme hattında filtre gerekir mi?", "Tozlu ürünlerde ?ou zaman evet. Operatör güvenlii ve saha temizlii için lokal aspirasyon ?nerilir."),
+      faq("Paketleme hattında filtre gerekir mi?", "Tozlu ürünlerde çoğu zaman evet. Operatör güvenlii ve saha temizlii için lokal aspirasyon ?nerilir."),
       faq("Son ürün hazırlama hattı için hangi veriler gerekir?", "Saatlik kapasite, ürün tipi, ambalaj formu, dolum aırl11 ve sevkiyat senaryosu ilk deerlendirme için yeterlidir."),
     ],
     internalLinks: [

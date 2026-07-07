@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     canonical: "https://www.promakina.com.tr/programlar/talasli-imalat-hesaplari",
   },
   openGraph: {
-    title: "Talaşlı İmalat Hesapları | Pro Makina",
+    title: "Talaşlı İmalat Hesapları",
     description: "Vida açım, kılavuz delik, kesme hızı, devir, ilerleme ve delik yerleşimi için çok amaçlı talaşlı imalat yardımcı ekranı kullanın.",
     url: "https://www.promakina.com.tr/programlar/talasli-imalat-hesaplari",
     siteName: "Pro Makina",

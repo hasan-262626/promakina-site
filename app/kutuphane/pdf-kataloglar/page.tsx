@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Hero } from "../../components/Hero";
 
 export const metadata: Metadata = {
-  title: "PDF Kataloglar | Kütüphane | Pro Makina",
+  title: "PDF Kataloglar | Kütüphane",
   description:
     "Makina, ekipman ve proses ailelerini toplu biçimde incelemek isteyen ekipler için PDF katalog sayfası.",
   alternates: {

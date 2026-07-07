@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import ProjectsHubExperience from "../components/projects-hub-experience";
 
 export const metadata: Metadata = {
-  title: "Projeler | Endüstriyel Tesis, Makine ve Proses Çözümleri | Pro Makina",
+  title: "Projeler | Endüstriyel Tesis, Makine ve Proses Çözümleri",
   description:
     "Pro Makina; gübre, kompost, geri dönüşüm, kimya, madencilik, atık su çamuru ve dökme katı malzeme prosesleri için endüstriyel tesis, makine ve ekipman projeleri geliştirir.",
   keywords: [
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     canonical: "https://www.promakina.com.tr/projeler",
   },
   openGraph: {
-    title: "Projeler | Endüstriyel Tesis, Makine ve Proses Çözümleri | Pro Makina",
+    title: "Projeler | Endüstriyel Tesis, Makine ve Proses Çözümleri",
     description:
       "Pro Makina; gübre, kompost, geri dönüşüm, kimya, madencilik, atık su çamuru ve dökme katı malzeme prosesleri için endüstriyel tesis, makine ve ekipman projeleri geliştirir.",
     url: "https://www.promakina.com.tr/projeler",

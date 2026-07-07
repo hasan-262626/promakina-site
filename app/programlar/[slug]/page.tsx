@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   if (!program) {
     return {
-      title: "Hesaplama Araçları | Pro Makina",
+      title: "Hesaplama Araçları",
     };
   }
 
@@ -34,7 +34,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       canonical,
     },
     openGraph: {
-      title: `${program.title} | Pro Makina`,
+      title: `${program.title}`,
       description: program.description,
       url: canonical,
       siteName: "Pro Makina",

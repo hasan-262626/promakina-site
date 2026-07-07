@@ -275,7 +275,7 @@ const featuredMachineLinks = [
 ];
 
 export const metadata: Metadata = {
-  title: "Makinalar & Ekipman | Pro Makina",
+  title: "Makinalar & Ekipman",
   description:
     "Tambur sistemleri, taşıma ekipmanları, kırıcılar, reaktörler, eleme ve paketleme çözümleriyle proses odaklı makine gruplarını inceleyin.",
   alternates: {

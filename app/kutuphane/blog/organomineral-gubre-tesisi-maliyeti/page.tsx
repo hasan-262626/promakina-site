@@ -2,7 +2,7 @@ import Link from "next/link";
 import { buildLibraryMetadata } from "../../../components/library-seo-page";
 import { BlogArticleTemplate } from "../../../components/blog-article-template";
 
-const title = "Organomineral Gübre Tesisi Maliyeti | Pro Makina";
+const title = "Organomineral Gübre Tesisi Maliyeti";
 const description =
   "Organomineral gübre tesisi maliyeti; kapasite, tambur sistemleri, taşıma ekipmanları, paketleme ve saha kurulum kalemleriyle yatırım rehberi.";
 const canonical = "https://www.promakina.com.tr/kutuphane/blog/organomineral-gubre-tesisi-maliyeti";

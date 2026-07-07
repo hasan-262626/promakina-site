@@ -43,7 +43,7 @@ const productSpecificDryingSelectionTable = table(
   [
     ["Kurutulacak ürün", "Silis kumu, perlit, kompost, çamur, gübre veya diğer ürün tipi net olarak belirtilmelidir."],
     ["Saatlik kapasite", "Yaş bazda veya kuru bazda hedef ton/saat değeri paylaşılmalıdır."],
-    ["GiriÅŸ nemi", "Ürünün tambura girişteki yaklaşık nem oranı bilinmelidir."],
+    ["Giriş nemi", "Ürünün tambura girişteki yaklaşık nem oranı bilinmelidir."],
     ["Hedef çıkış nemi", "Tambur çıkışında ulaşılması istenen son nem değeri tanımlanmalıdır."],
     ["Ürün tane boyutu", "Ürünün ince toz, granül, iri fraksiyon veya karışık yapıdaki davranışı belirtilmelidir."],
     ["Yakıt tipi", "Doğalgaz, LNG, LPG, motorin, biyogaz veya farklı sıcak hava üretim seçeneği netleştirilmelidir."],
@@ -68,12 +68,12 @@ const productSpecificDryingMistakesTable = table(
 function buildProductSpecificDryingFaqs(materialName: string) {
   return [
     faq(
-      `${materialName} iÃ§in kurutma tamburu kullanÄ±lÄ±r mÄ±?`,
-      `${materialName} prosesinde hedef neme ulaÅŸmak, eleme ve son Ã¼rÃ¼n hazÄ±rlÄ±ÄŸÄ±nÄ± daha kararlÄ± hale getirmek iÃ§in kurutma tamburu yaygÄ±n olarak kullanÄ±lÄ±r.`,
+      `${materialName} için kurutma tamburu kullanılır mı?`,
+      `${materialName} prosesinde hedef neme ulaşmak, eleme ve son ürün hazırlığını daha kararlı hale getirmek için kurutma tamburu yaygın olarak kullanılır.`,
     ),
     faq(
-      `${materialName} kurutma tamburu kapasitesi nasÄ±l hesaplanÄ±r?`,
-      `${materialName} kurutma tamburu kapasitesi; saatlik besleme, giriÅŸ nemi, hedef Ã§Ä±kÄ±ÅŸ nemi, Ã¼rÃ¼n yoÄŸunluÄŸu ve gÃ¼nlÃ¼k Ã§alÄ±ÅŸma senaryosuna gÃ¶re hesaplanÄ±r.`,
+      `${materialName} kurutma tamburu kapasitesi nasıl hesaplanır?`,
+      `${materialName} kurutma tamburu kapasitesi; saatlik besleme, giriş nemi, hedef çıkış nemi, ürün yoğunluğu ve günlük çalışma senaryosuna göre hesaplanır.`,
     ),
     faq(
       "Kurutma tamburu fiyatını hangi kriterler belirler?",
@@ -81,7 +81,7 @@ function buildProductSpecificDryingFaqs(materialName: string) {
     ),
     faq(
       "Kurutma sonrası eleme veya soğutma gerekir mi?",
-      `${materialName} Ã¼rÃ¼nÃ¼nÃ¼n son kullanÄ±mÄ±na gÃ¶re kurutma sonrasÄ± eleme, soÄŸutma, silo veya paketleme adÄ±mlarÄ± gerekebilir.`,
+      `${materialName} ürününün son kullanımına göre kurutma sonrası eleme, soğutma, silo veya paketleme adımları gerekebilir.`,
     ),
     faq(
       "Teknik teklif için hangi bilgiler gerekir?",
@@ -109,17 +109,17 @@ function buildProductSpecificDryingPage({
     canonical,
     openGraphTitle: metaTitle,
     openGraphDescription: description,
-    heroDescription: `${materialName} kurutma tamburu; hammaddenin proses Ã¶ncesi veya proses sonrasÄ± hedef nem deÄŸerine getirilmesi iÃ§in kullanÄ±lan endÃ¼striyel dÃ¶ner kurutma sistemidir. Pro Makina, Ã¼rÃ¼nÃ¼n giriÅŸ nemi, hedef Ã§Ä±kÄ±ÅŸ nemi, saatlik kapasitesi, tane boyutu, sÄ±caklÄ±k hassasiyeti, tozuma davranÄ±ÅŸÄ± ve kurutma sonrasÄ± eleme, soÄŸutma, silo veya paketleme ihtiyacÄ±na gÃ¶re kurutma tamburu tasarÄ±mÄ± yapar.`,
+    heroDescription: `${materialName} kurutma tamburu; hammaddenin proses öncesi veya proses sonrası hedef nem değerine getirilmesi için kullanılan endüstriyel döner kurutma sistemidir. Pro Makina, ürünün giriş nemi, hedef çıkış nemi, saatlik kapasitesi, tane boyutu, sıcaklık hassasiyeti, tozuma davranışı ve kurutma sonrası eleme, soğutma, silo veya paketleme ihtiyacına göre kurutma tamburu tasarımı yapar.`,
     readingTime: "8-10 dk",
-    heroTopic: `${materialName} iÃ§in kurutma tamburu seÃ§imi, kapasite hesabÄ± ve proses tasarÄ±mÄ±`,
+    heroTopic: `${materialName} için kurutma tamburu seçimi, kapasite hesabı ve proses tasarımı`,
     heroCtaLabel: "Teknik Teklif Al",
     heroCtaHref: "/iletisim",
     heroSecondaryLabel: "WhatsApp ile Bilgi Gönder",
     heroSecondaryHref: "https://wa.me/905320580104",
     heroLinks: commonHeroLinks,
     introParagraphs: [
-      `${materialName} kurutma tamburu; hammaddenin proses Ã¶ncesi veya proses sonrasÄ± hedef nem deÄŸerine getirilmesi iÃ§in kullanÄ±lan endÃ¼striyel dÃ¶ner kurutma sistemidir. Pro Makina, Ã¼rÃ¼nÃ¼n giriÅŸ nemi, hedef Ã§Ä±kÄ±ÅŸ nemi, saatlik kapasitesi, tane boyutu, sÄ±caklÄ±k hassasiyeti, tozuma davranÄ±ÅŸÄ± ve kurutma sonrasÄ± eleme, soÄŸutma, silo veya paketleme ihtiyacÄ±na gÃ¶re kurutma tamburu tasarÄ±mÄ± yapar.`,
-      `${productParagraph} Teknik yaklaÅŸÄ±mda yalnÄ±z tambur gÃ¶vdesi deÄŸil; brÃ¼lÃ¶r, fan, siklon, filtre, besleme, eleme ve son Ã¼rÃ¼n hazÄ±rlama adÄ±mlarÄ± da birlikte ele alÄ±nmalÄ±dÄ±r.`,
+      `${materialName} kurutma tamburu; hammaddenin proses öncesi veya proses sonrası hedef nem değerine getirilmesi için kullanılan endüstriyel döner kurutma sistemidir. Pro Makina, ürünün giriş nemi, hedef çıkış nemi, saatlik kapasitesi, tane boyutu, sıcaklık hassasiyeti, tozuma davranışı ve kurutma sonrası eleme, soğutma, silo veya paketleme ihtiyacına göre kurutma tamburu tasarımı yapar.`,
+      `${productParagraph} Teknik yaklaşımda yalnız tambur gövdesi değil; brülör, fan, siklon, filtre, besleme, eleme ve son ürün hazırlama adımları da birlikte ele alınmalıdır.`,
     ],
     flowTitle: `${materialName} Kurutma Tamburu Prosesi`,
     flowSteps: [
@@ -137,18 +137,18 @@ function buildProductSpecificDryingPage({
       section(`${materialName} Neden Kurutulur?`, {
         paragraphs: [
           productParagraph,
-          `${materialName} prosesinde kurutmanÄ±n temel amacÄ±; Ã¼rÃ¼nÃ¼n eleme, depolama, paketleme, Ã¶ÄŸÃ¼tme veya sonraki termal adÄ±mlar Ã¶ncesinde daha dÃ¼ÅŸÃ¼k ve stabil neme getirilmesidir. DoÄŸru son nem; Ã¼rÃ¼n akÄ±ÅŸÄ±nÄ±, stok davranÄ±ÅŸÄ±nÄ± ve ticari kaliteyi doÄŸrudan etkiler.`,
+          `${materialName} prosesinde kurutmanın temel amacı; ürünün eleme, depolama, paketleme, öğütme veya sonraki termal adımlar öncesinde daha düşük ve stabil neme getirilmesidir. Doğru son nem; ürün akışını, stok davranışını ve ticari kaliteyi doğrudan etkiler.`,
         ],
       }),
       section("Kurutma Tamburu Bu Proseste Nasıl Çalışır?", {
         paragraphs: [
-          `${materialName} kurutma tamburunda Ã¼rÃ¼n, dÃ¶ner gÃ¶vde iÃ§indeki flight yapÄ±sÄ± ile kaldÄ±rÄ±lÄ±p sÄ±cak hava akÄ±mÄ± iÃ§ine perdelenir. BÃ¶ylece hem yÃ¼zeydeki nem hem de Ã¼rÃ¼n iÃ§indeki su yÃ¼kÃ¼ kontrollÃ¼ biÃ§imde uzaklaÅŸtÄ±rÄ±lÄ±r.`,
+          `${materialName} kurutma tamburunda ürün, döner gövde içindeki flight yapısı ile kaldırılıp sıcak hava akımı içine perdelenir. Böylece hem yüzeydeki nem hem de ürün içindeki su yükü kontrollü biçimde uzaklaştırılır.`,
           "Tambur eğimi, dönüş hızı, kalış süresi ve gaz debisi birlikte ayarlanmadığında ya hedef neme ulaşılamaz ya da ürün gereğinden fazla ısıl yük görür. Bu nedenle mekanik tasarım ile termal hesap aynı tabloda okunmalıdır.",
         ],
       }),
       section("Giriş Nemi ve Hedef Çıkış Nemi", {
         paragraphs: [
-          `${materialName} kurutma tasarÄ±mÄ±nda ilk kritik veri giriÅŸ nemidir. Hedef Ã§Ä±kÄ±ÅŸ nemiyle arasÄ±ndaki fark, uzaklaÅŸtÄ±rÄ±lacak su miktarÄ±nÄ± ve dolayÄ±sÄ±yla tambur, brÃ¼lÃ¶r ve fan yÃ¼kÃ¼nÃ¼ belirler.`,
+          `${materialName} kurutma tasarımında ilk kritik veri giriş nemidir. Hedef çıkış nemiyle arasındaki fark, uzaklaştırılacak su miktarını ve dolayısıyla tambur, brülör ve fan yükünü belirler.`,
           "Ön mühendislikte gerçek numune verisi, mevsimsel değişim, ürün besleme sürekliliği ve istenen son ürün kalitesi birlikte değerlendirilmelidir.",
         ],
       }),
@@ -166,44 +166,44 @@ function buildProductSpecificDryingPage({
       }),
       section("Brülör, Fan, Siklon ve Filtre Seçimi", {
         paragraphs: [
-          `${materialName} kurutma hattÄ±nda brÃ¼lÃ¶r kapasitesi, uzaklaÅŸtÄ±rÄ±lacak su yÃ¼kÃ¼ne gÃ¶re belirlenir. Fan, siklon ve filtre hattÄ± ise bu termal yÃ¼kÃ¼n sahada gÃ¼venli ve kararlÄ± Ã§alÄ±ÅŸmasÄ±nÄ± saÄŸlar.`,
+          `${materialName} kurutma hattında brülör kapasitesi, uzaklaştırılacak su yüküne göre belirlenir. Fan, siklon ve filtre hattı ise bu termal yükün sahada güvenli ve kararlı çalışmasını sağlar.`,
           "Tozuma eğilimi yüksek, hafif veya aşındırıcı ürünlerde gaz hattı ve filtre yaklaşımı mutlaka ürün davranışına göre özelleştirilmelidir.",
         ],
       }),
       section("Kurutma Sonrası Eleme, Soğutma ve Paketleme", {
         paragraphs: [
-          `${materialName} kurutma prosesinin baÅŸarÄ± kriteri yalnÄ±z tambur Ã§Ä±kÄ±ÅŸÄ± deÄŸildir. Ã‡Ä±kÄ±ÅŸtaki Ã¼rÃ¼nÃ¼n eleme, soÄŸutma, stoklama, paketleme veya Ã¶ÄŸÃ¼tme adÄ±mlarÄ±na uygun halde olmasÄ± gerekir.`,
+          `${materialName} kurutma prosesinin başarı kriteri yalnız tambur çıkışı değildir. Çıkıştaki ürünün eleme, soğutma, stoklama, paketleme veya öğütme adımlarına uygun halde olması gerekir.`,
           "Bu nedenle kurutma tamburu çoğu projede elek, soğutma tamburu, bunker, silo, konveyör ve paketleme hatları ile birlikte değerlendirilir.",
         ],
       }),
       section("Pro Makina Bu Proseste Ne SaÄŸlar?", {
         paragraphs: [
-          `Pro Makina; ${materialName.toLocaleLowerCase("tr-TR")} proseslerinde yalnÄ±z tambur gÃ¶vdesi deÄŸil, brÃ¼lÃ¶r, fan, siklon, filtre, besleme, eleme, soÄŸutma ve paketleme sistemlerini birlikte tasarlar.`,
+          `Pro Makina; ${materialName.toLocaleLowerCase("tr-TR")} proseslerinde yalnız tambur gövdesi değil, brülör, fan, siklon, filtre, besleme, eleme, soğutma ve paketleme sistemlerini birlikte tasarlar.`,
           "Bu yaklaşım saha yerleşimi, bakım erişimi, yakıt altyapısı, ürün davranışı ve yatırım hedefi ile uyumlu daha kararlı bir kurutma hattı kurulmasını sağlar.",
         ],
       }),
       section("Teknik Teklif İçin Gerekli Bilgiler", {
         paragraphs: [
-          `${materialName} kurutma tamburu iÃ§in teknik teklif hazÄ±rlanÄ±rken aÅŸaÄŸÄ±daki bilgiler paylaÅŸÄ±ldÄ±ÄŸÄ±nda daha doÄŸru boyutlandÄ±rma ve yardÄ±mcÄ± ekipman kurgusu yapÄ±labilir.`,
+          `${materialName} kurutma tamburu için teknik teklif hazırlanırken aşağıdaki bilgiler paylaşıldığında daha doğru boyutlandırma ve yardımcı ekipman kurgusu yapılabilir.`,
         ],
         table: productSpecificDryingSelectionTable,
       }),
     ],
     selectionCriteria: table(
-      `${materialName} Kurutma Tamburu SeÃ§im Kriterleri`,
+      `${materialName} Kurutma Tamburu Seçim Kriterleri`,
       ["Kriter", "Etkisi"],
       [
         ["Ürün tipi", "Tambur iç geometri, flight yapısı ve malzeme seçimini belirler."],
         ["Nem yükü", "Brülör, hava debisi ve tambur boyutlandırmasının temelini oluşturur."],
         ["Tane boyutu", "Sürüklenme, tozuma ve eleme ihtiyacını etkiler."],
         ["Yakıt tipi", "Brülör altyapısı ve işletme maliyetini belirler."],
-        ["Sonraki proses", "Eleme, soÄŸutma, silo veya paketleme gereksinimini ÅŸekillendirir."],
-        ["Saha koşulları", "YerleÅŸim, servis eriÅŸimi ve otomasyon tercihlerini etkiler."],
+        ["Sonraki proses", "Eleme, soğutma, silo veya paketleme gereksinimini şekillendirir."],
+        ["Saha koşulları", "Yerleşim, servis erişimi ve otomasyon tercihlerini etkiler."],
       ],
     ),
     mistakes: productSpecificDryingMistakesTable,
     approachParagraphs: [
-      `Pro Makina ${materialName.toLocaleLowerCase("tr-TR")} uygulamalarÄ±nda Ã¼rÃ¼n davranÄ±ÅŸÄ±nÄ±, nem yÃ¼kÃ¼nÃ¼ ve hedef kapasiteyi birlikte okuyarak kurutma tamburu seÃ§imi yapar.`,
+      `Pro Makina ${materialName.toLocaleLowerCase("tr-TR")} uygulamalarında ürün davranışını, nem yükünü ve hedef kapasiteyi birlikte okuyarak kurutma tamburu seçimi yapar.`,
       "Teknik teklif aşamasında yalnız ekipman listesi değil; enerji yükü, gaz hattı, saha yerleşimi ve kurutma sonrası ürün hazırlama adımları da projeye dahil edilir.",
     ],
     approachBullets: [
@@ -256,7 +256,7 @@ function buildProductSpecificDryingPage({
     ctaSecondaryHref: "https://wa.me/905320580104",
     ctaTertiaryLabel: "Kurutma Tamburu Hesabı Yap",
     ctaTertiaryHref: "/programlar/tambur-hesaplari",
-    faqIntro: `${materialName} kurutma tamburu seÃ§imi, kapasite hesabÄ± ve yardÄ±mcÄ± ekipman kurgusu hakkÄ±nda en sÄ±k sorulan sorularÄ± aÅŸaÄŸÄ±da toparladÄ±k.`,
+    faqIntro: `${materialName} kurutma tamburu seçimi, kapasite hesabı ve yardımcı ekipman kurgusu hakkında en sık sorulan soruları aşağıda toparladık.`,
     relatedIntro:
       "Bu blogu destekleyen ana ürün sayfası, kapasite ve çap-boy hesabı ile brülör ve gaz hattı içeriklerine aşağıdan ulaşabilirsiniz.",
   });
@@ -426,7 +426,7 @@ export const dryingSystemDetailPages: DrumSystemDetailPageData[] = [
       "Kurutma tamburu kapasite hesabı için giriş-çıkış nemi, kuru madde, buharlaşacak su, ısı yükü, tambur hacmi, doluluk, kalış süresi, çap ve boy hesaplarını inceleyin.",
     canonical:
       "https://www.promakina.com.tr/kutuphane/blog/kurutma-tamburu-kapasite-hesabi",
-    openGraphTitle: "Kurutma Tamburu Kapasite Hesabı | Pro Makina",
+    openGraphTitle: "Kurutma Tamburu Kapasite Hesabı",
     openGraphDescription:
       "Kurutma tamburu kapasite hesabında nem, su yükü, ısı yükü, tambur hacmi ve yardımcı ekipman seçimini teknik olarak inceleyin.",
     heroDescription:
@@ -445,10 +445,10 @@ export const dryingSystemDetailPages: DrumSystemDetailPageData[] = [
     flowTitle: "Kurutma Tamburu Kapasite Hesabı Proses Akışı",
     flowSteps: [
       "Yaş ürün kapasitesi",
-      "GiriÅŸ nemi",
+      "Giriş nemi",
       "Kuru madde hesabı",
       "Çıkış nemi hedefi",
-      "BuharlaÅŸacak su",
+      "Buharlaşacak su",
       "Isı yükü",
       "Tambur hacmi",
       "Çap-boy seçimi",
@@ -472,13 +472,13 @@ export const dryingSystemDetailPages: DrumSystemDetailPageData[] = [
           ["Veri", "Birim", "Neden gerekli?"],
           [
             ["Yaş ürün kapasitesi", "ton/saat", "Ana giriş yükünü belirler"],
-            ["GiriÅŸ nemi", "%", "Üründeki su miktarını gösterir"],
+            ["Giriş nemi", "%", "Üründeki su miktarını gösterir"],
             ["Hedef çıkış nemi", "%", "Kurutma hedefini tanımlar"],
             ["Yığın yoğunluğu", "kg/mÂ³", "Tambur hacmi hesabı için gerekir"],
             ["Kalış süresi", "dakika", "Tambur içi ürün miktarını belirler"],
             ["Doluluk oranı", "%", "Gerekli geometrik hacmi verir"],
             ["Ürün sıcaklığı", "Â°C", "Isı yükü hesabını etkiler"],
-            ["Toz yükü", "dÃ¼ÅŸÃ¼k/orta/yÃ¼ksek", "Filtre ve fan tasarımını belirler"],
+            ["Toz yükü", "düşük/orta/yüksek", "Filtre ve fan tasarımını belirler"],
           ],
         ),
       }),
@@ -489,13 +489,13 @@ export const dryingSystemDetailPages: DrumSystemDetailPageData[] = [
         formulas: [
           formula(
             "Kuru Madde, Çıkış Kapasitesi ve Buharlaşacak Su",
-            "Kuru madde miktarÄ± = YaÅŸ Ã¼rÃ¼n kapasitesi Ã— (1 - GiriÅŸ nemi / 100)\n\nÃ‡Ä±kÄ±ÅŸ Ã¼rÃ¼n kapasitesi = Kuru madde miktarÄ± / (1 - Hedef Ã§Ä±kÄ±ÅŸ nemi / 100)\n\nBuharlaÅŸacak su = YaÅŸ Ã¼rÃ¼n kapasitesi - Ã‡Ä±kÄ±ÅŸ Ã¼rÃ¼n kapasitesi",
+            "Kuru madde miktarı = Yaş ürün kapasitesi × (1 - Giriş nemi / 100)\n\nÇıkış ürün kapasitesi = Kuru madde miktarı / (1 - Hedef çıkış nemi / 100)\n\nBuharlaşacak su = Yaş ürün kapasitesi - Çıkış ürün kapasitesi",
             [
               "Örnek: Yaş ürün kapasitesi = 10 ton/saat",
               "Giriş nemi = %25, çıkış nemi = %10",
               "Kuru madde = 10 Ã— 0,75 = 7,5 ton/saat",
               "Çıkış ürün = 7,5 / 0,90 = 8,33 ton/saat",
-              "BuharlaÅŸacak su = 10 - 8,33 = 1,67 ton/saat",
+              "Buharlaşacak su = 10 - 8,33 = 1,67 ton/saat",
             ],
           ),
         ],
@@ -507,7 +507,7 @@ export const dryingSystemDetailPages: DrumSystemDetailPageData[] = [
         formulas: [
           formula(
             "Isı Yükü Ön Hesabı",
-            "BuharlaÅŸacak su (kg/saat) = BuharlaÅŸacak su (ton/saat) Ã— 1000\n\nYaklaÅŸÄ±k Ä±sÄ± yÃ¼kÃ¼ (kW) = BuharlaÅŸacak su (kg/saat) Ã— 0,75\n\nYaklaÅŸÄ±k Ä±sÄ± yÃ¼kÃ¼ (kcal/saat) = IsÄ± yÃ¼kÃ¼ (kW) Ã— 860",
+            "Buharlaşacak su (kg/saat) = Buharlaşacak su (ton/saat) × 1000\n\nYaklaşık ısı yükü (kW) = Buharlaşacak su (kg/saat) × 0,75\n\nYaklaşık ısı yükü (kcal/saat) = Isı yükü (kW) × 860",
             [
               "0,75 kW/kg su katsayısı ön mühendislik yaklaşımıdır.",
               "Kesin hesap ürün özgül ısısı, hava sıcaklığı, sistem verimi ve ısı kayıplarıyla detaylandırılır.",
@@ -522,7 +522,7 @@ export const dryingSystemDetailPages: DrumSystemDetailPageData[] = [
         formulas: [
           formula(
             "Tambur İçi Ürün ve Hacim",
-            "Tambur iÃ§inde bulunacak Ã¼rÃ¼n = YaÅŸ Ã¼rÃ¼n kapasitesi Ã— KalÄ±ÅŸ sÃ¼resi / 60\n\nAktif Ã¼rÃ¼n hacmi = Tambur iÃ§indeki Ã¼rÃ¼n Ã— 1000 / YÄ±ÄŸÄ±n yoÄŸunluÄŸu\n\nGerekli tambur hacmi = Aktif Ã¼rÃ¼n hacmi / Doluluk oranÄ±",
+            "Tambur içinde bulunacak ürün = Yaş ürün kapasitesi × Kalış süresi / 60\n\nAktif ürün hacmi = Tambur içindeki ürün × 1000 / Yığın yoğunluğu\n\nGerekli tambur hacmi = Aktif ürün hacmi / Doluluk oranı",
           ),
         ],
       }),
@@ -560,7 +560,7 @@ export const dryingSystemDetailPages: DrumSystemDetailPageData[] = [
       "Sık Yapılan Kapasite Hesabı Hataları",
       ["Hata", "Sonuç"],
       [
-        ["Sadece yaÅŸ ton/saat kapasiteye bakmak", "Brülör ve tambur küçük kalabilir"],
+        ["Sadece yaş ton/saat kapasiteye bakmak", "Brülör ve tambur küçük kalabilir"],
         ["Giriş nemini yanlış almak", "Buharlaşacak su hatalı çıkar"],
         ["Çıkış nemini çok düşük hedeflemek", "Enerji maliyeti artar"],
         ["Doluluk oranını yüksek seçmek", "Kurutma yüzeyi azalır"],
@@ -610,7 +610,7 @@ export const dryingSystemDetailPages: DrumSystemDetailPageData[] = [
       "Kurutma tamburu çap-boy hesabı için gerekli tambur hacmi, L/D oranı, doluluk oranı, kalış süresi, ürün yoğunluğu ve kapasiteye göre ön tasarım yöntemini inceleyin.",
     canonical:
       "https://www.promakina.com.tr/kutuphane/blog/kurutma-tamburu-cap-boy-hesabi",
-    openGraphTitle: "Kurutma Tamburu Çap Boy Hesabı | Pro Makina",
+    openGraphTitle: "Kurutma Tamburu Çap Boy Hesabı",
     openGraphDescription:
       "Kurutma tamburu çap, boy, L/D oranı ve hacim hesabını teknik olarak inceleyin.",
     heroDescription:
@@ -654,7 +654,7 @@ export const dryingSystemDetailPages: DrumSystemDetailPageData[] = [
         formulas: [
           formula(
             "Tambur Geometrik Hacmi",
-            "Tambur hacmi = Ï€ Ã— DÂ² Ã— L / 4\n\nD = tambur Ã§apÄ±, m\nL = tambur boyu, m",
+            "Tambur hacmi = Ï€ Ã— DÂ² Ã— L / 4\n\nD = tambur çapı, m\nL = tambur boyu, m",
           ),
         ],
       }),
@@ -665,7 +665,7 @@ export const dryingSystemDetailPages: DrumSystemDetailPageData[] = [
         formulas: [
           formula(
             "Aktif Ürün Hacmi",
-            "Tambur iÃ§indeki Ã¼rÃ¼n miktarÄ± = Kapasite Ã— KalÄ±ÅŸ sÃ¼resi / 60\n\nAktif Ã¼rÃ¼n hacmi = Tambur iÃ§indeki Ã¼rÃ¼n miktarÄ± Ã— 1000 / YÄ±ÄŸÄ±n yoÄŸunluÄŸu\n\nGerekli geometrik tambur hacmi = Aktif Ã¼rÃ¼n hacmi / Doluluk oranÄ±",
+            "Tambur içindeki ürün miktarı = Kapasite × Kalış süresi / 60\n\nAktif ürün hacmi = Tambur içindeki ürün miktarı × 1000 / Yığın yoğunluğu\n\nGerekli geometrik tambur hacmi = Aktif ürün hacmi / Doluluk oranı",
           ),
         ],
       }),
@@ -728,7 +728,7 @@ export const dryingSystemDetailPages: DrumSystemDetailPageData[] = [
     approachBullets: [
       "Aktif hacim doğrulaması",
       "L/D oranı kontrolü",
-      "Ring ve ÅŸase yerleÅŸimi",
+      "Ring ve şase yerleşimi",
       "İç kanat uygunluğu",
       "Bakım platformu ve servis alanı",
       "Yardımcı ekipman entegrasyonu",
@@ -763,7 +763,7 @@ export const dryingSystemDetailPages: DrumSystemDetailPageData[] = [
       "Rotary dryer design principles including capacity calculation, moisture balance, heat load, drum sizing, retention time, airflow, burner, cyclone and dust collection system.",
     canonical:
       "https://www.promakina.com.tr/kutuphane/blog/rotary-dryer-design",
-    openGraphTitle: "Rotary Dryer Design | Pro Makina",
+    openGraphTitle: "Rotary Dryer Design",
     openGraphDescription:
       "Rotary dryer design principles for capacity, moisture balance, drum sizing and airflow.",
     heroDescription:
@@ -930,7 +930,7 @@ export const dryingSystemDetailPages: DrumSystemDetailPageData[] = [
       "Endüstriyel kurutma sistemlerinde döner kurutucu, brülör, sıcak hava odası, fan, siklon, filtre, baca, konveyör ve otomasyon ekipmanlarını teknik olarak inceleyin.",
     canonical:
       "https://www.promakina.com.tr/kutuphane/blog/endustriyel-kurutma-sistemleri",
-    openGraphTitle: "Endüstriyel Kurutma Sistemleri | Pro Makina",
+    openGraphTitle: "Endüstriyel Kurutma Sistemleri",
     openGraphDescription:
       "Kurutma tamburu, brülör, fan, siklon, filtre ve otomasyon entegrasyonunu teknik olarak inceleyin.",
     heroDescription:
@@ -1021,9 +1021,9 @@ export const dryingSystemDetailPages: DrumSystemDetailPageData[] = [
       [
         ["Ürün tipi", "Kurutma yaklaşımı ve sıcaklık sınırını belirler."],
         ["Nem farkı", "Brülör ve fan yükünü etkiler."],
-        ["Toz yükü", "Siklon ve filtre boyutunu deÄŸiÅŸtirir."],
+        ["Toz yükü", "Siklon ve filtre boyutunu değiştirir."],
         ["Kapasite", "Tambur, konveyör ve silo ölçeğini belirler."],
-        ["Saha yerleÅŸimi", "Sıcak hava odası ve baca planını etkiler."],
+        ["Saha yerleşimi", "Sıcak hava odası ve baca planını etkiler."],
         ["Otomasyon seviyesi", "Kararlı ve güvenli işletme sağlar."],
       ],
     ),
@@ -1033,7 +1033,7 @@ export const dryingSystemDetailPages: DrumSystemDetailPageData[] = [
       [
         ["Kurutma hattını tek makine gibi düşünmek", "Yardımcı sistemler yetersiz kalır"],
         ["Sadece tambur seçimine odaklanmak", "Gaz ve toz hattı zayıf kalır"],
-        ["Direkt ve dolaylı sistemi ürüne göre ayırmamak", "Kalite sorunu oluÅŸur"],
+        ["Direkt ve dolaylı sistemi ürüne göre ayırmamak", "Kalite sorunu oluşur"],
         ["Fan basıncını küçümsemek", "Hava akışı dengesizleşir"],
         ["Filtre ve baca tarafını sona bırakmak", "Emisyon ve saha güvenliği sorunları büyür"],
       ],
@@ -1077,7 +1077,7 @@ export const dryingSystemDetailPages: DrumSystemDetailPageData[] = [
       "Tambur kurutucu çalışma prensibi, ürün besleme, sıcak hava, tambur devri, iç kanatlar, kalış süresi, fan, siklon, filtre ve kuru ürün çıkış mantığını inceleyin.",
     canonical:
       "https://www.promakina.com.tr/kutuphane/blog/tambur-kurutucu-nasil-calisir",
-    openGraphTitle: "Tambur Kurutucu Nasıl Çalışır? | Pro Makina",
+    openGraphTitle: "Tambur Kurutucu Nasıl Çalışır?",
     openGraphDescription:
       "Tambur kurutucunun iç çalışma prensibi, lifter davranışı ve sıcak hava akışını inceleyin.",
     heroDescription:
@@ -1197,7 +1197,7 @@ export const dryingSystemDetailPages: DrumSystemDetailPageData[] = [
     faqs: [
       faq("Tambur kurutucu nasıl çalışır?", "Ürün döner tambur içinde sıcak hava ile temas ederek nemini kaybeder ve eğim etkisiyle çıkışa ilerler."),
       faq("Tambur kurutucuda sıcak hava nasıl verilir?", "Brülör, sıcak hava odası veya dolaylı sistem üzerinden kontrollü şekilde verilir."),
-      faq("Lifter ne iÅŸe yarar?", "Ürünü kaldırıp düşürerek hava ile temas yüzeyini artırır."),
+      faq("Lifter ne işe yarar?", "Ürünü kaldırıp düşürerek hava ile temas yüzeyini artırır."),
       faq("Paralel akış mı ters akış mı daha iyidir?", "Bu ürün tipine ve sıcaklık hassasiyetine göre değişir."),
       faq("Tambur kurutucuda siklon neden kullanılır?", "Tozlu egzoz havasındaki kaba partikülleri ayırmak ve filtre yükünü azaltmak için kullanılır."),
     ],
@@ -1222,7 +1222,7 @@ export const dryingSystemDetailPages: DrumSystemDetailPageData[] = [
       "Silis kumu kurutma prosesi; kurutma tamburu, brülör, fan, siklon, filtre, eleme ve silo sistemleriyle birlikte tasarlanır. Pro Makina’dan silis kumu kurutma tesisi için teknik teklif alın.",
     canonical:
       "https://www.promakina.com.tr/kutuphane/blog/silis-kumu-kurutma-prosesi",
-    openGraphTitle: "Silis Kumu Kurutma Prosesi | Pro Makina",
+    openGraphTitle: "Silis Kumu Kurutma Prosesi",
     openGraphDescription:
       "Silis kumu ve kuvars kumu için kurutma tamburu, sıcak hava hattı, toz toplama, eleme, silo ve paketleme sistemleriyle entegre proses çözümleri.",
     heroDescription:
@@ -1591,7 +1591,7 @@ export const dryingSystemDetailPages: DrumSystemDetailPageData[] = [
       "Çamur kurutma tesisi maliyetini etkileyen kapasite, giriş nemi, hedef çıkış nemi, buharlaşacak su, enerji tüketimi, brülör, fan, filtre, scrubber ve ekipman seçimlerini inceleyin.",
     canonical:
       "https://www.promakina.com.tr/kutuphane/blog/camur-kurutma-tesisi-maliyeti",
-    openGraphTitle: "Ã‡amur Kurutma Tesisi Maliyeti | Pro Makina",
+    openGraphTitle: "Ã‡amur Kurutma Tesisi Maliyeti",
     openGraphDescription:
       "Çamur kurutma maliyetini etkileyen kapasite, enerji, koku kontrolü ve ekipman kararlarını inceleyin.",
     heroDescription:
@@ -1629,7 +1629,7 @@ export const dryingSystemDetailPages: DrumSystemDetailPageData[] = [
           "Ana Maliyet Faktörleri",
           ["Faktör", "Maliyete etkisi"],
           [
-            ["GiriÅŸ nemi", "Enerji yükünü artırır"],
+            ["Giriş nemi", "Enerji yükünü artırır"],
             ["Kapasite", "Tambur ve ekipman boyutunu büyütür"],
             ["Hedef çıkış nemi", "Brülör ve kalış süresini etkiler"],
             ["Koku kontrolü", "Scrubber / biyofiltre maliyeti"],
@@ -1638,14 +1638,14 @@ export const dryingSystemDetailPages: DrumSystemDetailPageData[] = [
           ],
         ),
       }),
-      section("BuharlaÅŸacak su maliyetin merkezidir", {
+      section("Buharlaşacak su maliyetin merkezidir", {
         paragraphs: [
           "Çamur kurutmada en büyük maliyet baskısı genellikle buharlaştırılacak su miktarından gelir. Yüksek giriş nemli akışlarda aynı ton/saat kapasite için çok daha büyük ısı yükü gerekir.",
         ],
         formulas: [
           formula(
             "Çamurda Kuru Madde ve Su Yükü",
-            "Kuru madde = YaÅŸ Ã§amur Ã— (1 - GiriÅŸ nemi)\n\nÃ‡Ä±kÄ±ÅŸ Ã¼rÃ¼n = Kuru madde / (1 - Ã‡Ä±kÄ±ÅŸ nemi)\n\nBuharlaÅŸacak su = YaÅŸ Ã§amur - Ã‡Ä±kÄ±ÅŸ Ã¼rÃ¼n",
+            "Kuru madde = Yaş çamur × (1 - Giriş nemi)\n\nÇıkış ürün = Kuru madde / (1 - Çıkış nemi)\n\nBuharlaşacak su = Yaş çamur - Çıkış ürün",
           ),
         ],
       }),
@@ -1656,7 +1656,7 @@ export const dryingSystemDetailPages: DrumSystemDetailPageData[] = [
         formulas: [
           formula(
             "Enerji Ön Hesabı",
-            "IsÄ± yÃ¼kÃ¼ = BuharlaÅŸacak su (kg/saat) Ã— 0,75 kW\n\nYakÄ±t tÃ¼ketimi = IsÄ± yÃ¼kÃ¼ / sistem verimi",
+            "Isı yükü = Buharlaşacak su (kg/saat) × 0,75 kW\n\nYakıt tüketimi = Isı yükü / sistem verimi",
           ),
         ],
       }),
@@ -1698,7 +1698,7 @@ export const dryingSystemDetailPages: DrumSystemDetailPageData[] = [
       "Çamur Kurutma Tesisi Maliyetinde Seçim Kriterleri",
       ["Kriter", "Maliyete etkisi"],
       [
-        ["GiriÅŸ nemi", "Enerji giderini büyütür."],
+        ["Giriş nemi", "Enerji giderini büyütür."],
         ["Kapasite", "Makine ölçeğini artırır."],
         ["Koku kontrolü", "Ek yatırım ve işletme maliyeti doğurur."],
         ["Yakıt tipi", "İşletme maliyetini değiştirir."],
@@ -1757,7 +1757,7 @@ export const dryingSystemDetailPages: DrumSystemDetailPageData[] = [
       "Kurutma tamburu tasarım kriterleri; kapasite, nem, ısı yükü, hava debisi, çap-boy, doluluk, kalış süresi, iç kanatlar, tahrik, ring ve otomasyon başlıklarıyla açıklanır.",
     canonical:
       "https://www.promakina.com.tr/kutuphane/blog/kurutma-tamburu-tasarim-kriterleri",
-    openGraphTitle: "Kurutma Tamburu Tasarım Kriterleri | Pro Makina",
+    openGraphTitle: "Kurutma Tamburu Tasarım Kriterleri",
     openGraphDescription:
       "Kurutma tamburu tasarımında kapasite, hava, iç kanat, ring-tahrik ve otomasyon ilişkisini inceleyin.",
     heroDescription:
@@ -1898,7 +1898,7 @@ export const dryingSystemDetailPages: DrumSystemDetailPageData[] = [
       "Kurutma tamburunda brülör seçimi için buharlaşacak su, ısı yükü, kW, kcal/h, yakıt tipi, direkt alev, cehennemlik, sıcak hava odası ve emniyet payı hesaplarını inceleyin.",
     canonical:
       "https://www.promakina.com.tr/kutuphane/blog/kurutma-tamburunda-brulor-secimi",
-    openGraphTitle: "Kurutma Tamburunda Brülör Seçimi | Pro Makina",
+    openGraphTitle: "Kurutma Tamburunda Brülör Seçimi",
     openGraphDescription:
       "Kurutma tamburunda brülör kapasitesi, yakıt seçimi ve sıcak hava yaklaşımını inceleyin.",
     heroDescription:
@@ -1918,7 +1918,7 @@ export const dryingSystemDetailPages: DrumSystemDetailPageData[] = [
     flowSteps: [
       "Yaş ürün kapasitesi",
       "Giriş / çıkış nemi",
-      "BuharlaÅŸacak su",
+      "Buharlaşacak su",
       "Ürün ısıtma yükü",
       "Toplam ısı yükü",
       "Emniyet payı",
@@ -1938,10 +1938,10 @@ export const dryingSystemDetailPages: DrumSystemDetailPageData[] = [
           "Brülör seçiminin ilk adımı, /kutuphane/blog/kurutma-tamburu-kapasite-hesabi içeriğinde anlatıldığı gibi su yükünü doğru okumaktır. Buna ek olarak ürünün ısıtma yükü de toplam ısı ihtiyacına dahil edilmelidir.",
         ],
         formulas: [
-          formula("BuharlaÅŸacak Su", "Buharlaşacak su = Yaş ürün kapasitesi - Hedef çıkış kapasitesi"),
+          formula("Buharlaşacak Su", "Buharlaşacak su = Yaş ürün kapasitesi - Hedef çıkış kapasitesi"),
           formula(
             "Toplam Isı Yükü",
-            "BuharlaÅŸma Ä±sÄ± yÃ¼kÃ¼ = BuharlaÅŸacak su (kg/saat) Ã— 0,75 kW\n\nÃœrÃ¼n Ä±sÄ±tma yÃ¼kÃ¼ = Kapasite Ã— 1000 Ã— Ã–zgÃ¼l Ä±sÄ± Ã— SÄ±caklÄ±k artÄ±ÅŸÄ± / 3600\n\nToplam Ä±sÄ± yÃ¼kÃ¼ = BuharlaÅŸma Ä±sÄ± yÃ¼kÃ¼ + ÃœrÃ¼n Ä±sÄ±tma yÃ¼kÃ¼\n\nÃ–nerilen brÃ¼lÃ¶r kapasitesi = Toplam Ä±sÄ± yÃ¼kÃ¼ Ã— Emniyet payÄ±",
+            "Buharlaşma ısı yükü = Buharlaşacak su (kg/saat) × 0,75 kW\n\nÜrün ısıtma yükü = Kapasite × 1000 × Özgül ısı × Sıcaklık artışı / 3600\n\nToplam ısı yükü = Buharlaşma ısı yükü + Ürün ısıtma yükü\n\nÖnerilen brülör kapasitesi = Toplam ısı yükü × Emniyet payı",
           ),
           formula("kW - kcal/h Dönüşümü", "kcal/h = kW Ã— 860"),
         ],
@@ -1972,7 +1972,7 @@ export const dryingSystemDetailPages: DrumSystemDetailPageData[] = [
           ["Sistem", "Avantaj", "Risk"],
           [
             ["Direkt alev", "Yüksek verim", "Hassas üründe kalite riski"],
-            ["Cehennemlik", "Alev kontrollü", "YerleÅŸim ve izolasyon"],
+            ["Cehennemlik", "Alev kontrollü", "Yerleşim ve izolasyon"],
             ["Eşanjörlü dolaylı", "Temiz hava", "Verim ve maliyet"],
             ["IR destekli", "Hızlı destek ısı", "Özel mühendislik"],
           ],
@@ -1983,7 +1983,7 @@ export const dryingSystemDetailPages: DrumSystemDetailPageData[] = [
       "Brülör Seçim Kriterleri",
       ["Kriter", "Neden önemlidir?"],
       [
-        ["BuharlaÅŸacak su", "Ana ısı yükünü belirler."],
+        ["Buharlaşacak su", "Ana ısı yükünü belirler."],
         ["Ürün ısıtma ihtiyaçı", "Toplam enerji gereksinimini etkiler."],
         ["Yakıt tipi", "İşletme maliyeti ve altyapıyı belirler."],
         ["Modülasyon aralığı", "Kapasite değişimlerinde stabil çalışmayı sağlar."],
@@ -1995,7 +1995,7 @@ export const dryingSystemDetailPages: DrumSystemDetailPageData[] = [
       "Sık Yapılan Brülör Seçim Hataları",
       ["Hata", "Sonuç"],
       [
-        ["BuharlaÅŸacak suyu hesaplamamak", "Kapasite yanlış seçilir"],
+        ["Buharlaşacak suyu hesaplamamak", "Kapasite yanlış seçilir"],
         ["Gaz basıncını kontrol etmemek", "Saha devreye almada sorun çıkar"],
         ["Isıya hassas ürün için direkt alev kullanmak", "Ürün kalitesi bozulur"],
         ["Modülasyon aralığını dikkate almamak", "Kararsız çalışma oluşur"],
@@ -2042,7 +2042,7 @@ export const dryingSystemDetailPages: DrumSystemDetailPageData[] = [
       "Kurutma tamburunda fan, siklon ve filtre seçimi için hava debisi, statik basınç, toz yükü, kanal kaybı, siklon çapı, jet pulse filtre ve fan motor gücü hesaplarını inceleyin.",
     canonical:
       "https://www.promakina.com.tr/kutuphane/blog/kurutma-tamburunda-fan-siklon-filtre-secimi",
-    openGraphTitle: "Kurutma Tamburunda Fan, Siklon ve Filtre Seçimi | Pro Makina",
+    openGraphTitle: "Kurutma Tamburunda Fan, Siklon ve Filtre Seçimi",
     openGraphDescription:
       "Hava debisi, statik basınç, siklon ve jet pulse filtre seçimini teknik olarak inceleyin.",
     heroDescription:
@@ -2118,7 +2118,7 @@ export const dryingSystemDetailPages: DrumSystemDetailPageData[] = [
           ),
           formula(
             "Siklon Ön Hesabı",
-            "Hava debisi (mÂ³/s) = Hava debisi (mÂ³/saat) / 3600\n\nSiklon giriÅŸ alanÄ± = Hava debisi / GiriÅŸ hÄ±zÄ±\n\nYaklaÅŸÄ±k siklon Ã§apÄ± = âˆš(GiriÅŸ alanÄ± / 0,18)",
+            "Hava debisi (mÂ³/s) = Hava debisi (mÂ³/saat) / 3600\n\nSiklon giriş alanı = Hava debisi / Giriş hızı\n\nYaklaşık siklon çapı = √(Giriş alanı / 0,18)",
           ),
         ],
       }),
@@ -2169,7 +2169,7 @@ export const dryingSystemDetailPages: DrumSystemDetailPageData[] = [
       "Siklon ön ayırma doğrulaması",
       "Jet pulse filtre alanı",
       "Sıcak gaz fanı seçimi",
-      "Kanal ve baca yerleÅŸimi",
+      "Kanal ve baca yerleşimi",
       "Aşınma ve servis ömrü",
     ],
     faqs: [
@@ -2204,7 +2204,7 @@ const kurutmaTamburuKapasiteHesabiOverride = page({
     "Kurutma tamburu kapasite hesabı; ürün debisi, giriş nemi, hedef nem, kurutulacak su miktarı, tambur çapı, tambur boyu, fan ve brülör seçimiyle yapılır.",
   canonical:
     "https://www.promakina.com.tr/kutuphane/blog/kurutma-tamburu-kapasite-hesabi",
-  openGraphTitle: "Kurutma Tamburu Kapasite Hesabı | Pro Makina",
+  openGraphTitle: "Kurutma Tamburu Kapasite Hesabı",
   openGraphDescription:
     "Kurutma tamburu hesabında kapasite, nem farkı, kurutulacak su miktarı, tambur geometrisi, fan debisi ve brülör kapasitesi birlikte değerlendirilir.",
   heroDescription:

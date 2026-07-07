@@ -31,7 +31,7 @@ export type TechnicalTopicCluster = {
 
 const DEFAULT_READING_TIME = "6-8 dk";
 const CLUSTER_CTA_TEXT =
-  "Kapasite, hammadde, nem oranı, ürün hedefi ve saha yerle_iminize göre uygun makine ve proses çöz?m?n? birlikte netle_tirebiliriz.";
+  "Kapasite, hammadde, nem oranı, ürün hedefi ve saha yerle_iminize göre uygun makine ve proses çözüm?n? birlikte netle_tirebiliriz.";
 
 function articleLink(slug: string) {
   return `/kutuphane/blog/${slug}`;
@@ -338,7 +338,7 @@ const technicalTopicClusters: TechnicalTopicCluster[] = [
       { title: "Mineral Toz Kurutma Sistemi", slug: "mineral-toz-kurutma-sistemi", type: "rehber", priority: 5 },
       { title: "Kuvars ve Silis Kumu Eleme Hatt1", slug: "kuvars-ve-silis-kumu-eleme-hatti", type: "rehber", priority: 6 },
       { title: "Maden Tesislerinde Toz Toplama Sistemleri", slug: "maden-tesislerinde-toz-toplama-sistemleri", type: "rehber", priority: 7 },
-      { title: "çeki?li K1rıc1 Seçimi", slug: "cekicli-kirici-secimi", type: "makine", priority: 8 },
+      { title: "çekiçli K1rıc1 Seçimi", slug: "cekicli-kirici-secimi", type: "makine", priority: 8 },
       { title: "Döner Elek ve Vibrasyonlu Elek Kar_1la_tırması", slug: "doner-elek-ve-vibrasyonlu-elek-karsilastirmasi", type: "rehber", priority: 9 },
     ],
   },
@@ -374,7 +374,7 @@ const technicalTopicClusters: TechnicalTopicCluster[] = [
     slug: "yem-toz-ve-dokme-kati-malzeme-isleme-sistemleri",
     title: "Yem, Toz ve Dökme Katı Malzeme 0_leme Sistemleri",
     description:
-      "Yem, premiks, toz karışım, granül ve dökme katı ürünlerde taşıma, dozajlama, karıştırma, depolama, filtreleme ve paketleme çöz?mlerini inceleyin.",
+      "Yem, premiks, toz karışım, granül ve dökme katı ürünlerde taşıma, dozajlama, karıştırma, depolama, filtreleme ve paketleme çözümlerini inceleyin.",
     category: "Dökme Katı",
     allPostsUrl: "/kutuphane/blog/kategori/yem-toz-ve-dokme-kati-malzeme-isleme-sistemleri",
     relatedMachineUrl: "/makinalar-ekipman/tasima-ekipmanlari",
@@ -565,7 +565,7 @@ function buildClusterCards(cluster: TechnicalTopicCluster) {
   return cluster.articles.map((item) =>
     card(
       item.title,
-      `${cluster.title} k�mesi i�indeki ${item.title.toLocaleLowerCase("tr-TR")} i�eriini a�1n.`,
+      `${cluster.title} kmesi iindeki ${item.title.toLocaleLowerCase("tr-TR")} ieriini a1n.`,
       articleLink(item.slug),
       cluster.category,
     ),
@@ -576,7 +576,7 @@ function buildSummaryRows(criteria: string[]): TopicalSummaryRow[] {
   return criteria.slice(0, 4).map((criterion, index) =>
     row(
       criterion,
-      `${criterion} bu i�erik k�mesinde ekipman se�imini dorudan etkileyen temel veri ba_l1klar1ndan biridir.`,
+      `${criterion} bu ierik kmesinde ekipman seimini dorudan etkileyen temel veri ba_l1klar1ndan biridir.`,
       index === 0
         ? "0lk teknik deerlendirme kalitesini belirler."
         : index === 1
@@ -592,23 +592,23 @@ function buildFaqs(cluster: TechnicalTopicCluster, article: TechnicalTopicCluste
   return [
     faq(
       `${article.title} hangi verilerle deerlendirilir?`,
-      `Saatlik kapasite, �r�n davran1_1, younluk, nem, proses hedefi ve saha yerle_imi ${article.title.toLocaleLowerCase("tr-TR")} karar1nda birlikte okunur.`,
+      `Saatlik kapasite, ürün davran1_1, younluk, nem, proses hedefi ve saha yerle_imi ${article.title.toLocaleLowerCase("tr-TR")} karar1nda birlikte okunur.`,
     ),
     faq(
-      `${cluster.title} i�inde bu ba_l1k neden �nemlidir?`,
-      `${article.title}, ${cluster.title.toLocaleLowerCase("tr-TR")} k�mesinde makine zincirinin dengeli kurulmas1 i�in kritik teknik karar noktalar1ndan biridir.`,
+      `${cluster.title} iinde bu ba_l1k neden önemlidir?`,
+      `${article.title}, ${cluster.title.toLocaleLowerCase("tr-TR")} kmesinde makine zincirinin dengeli kurulmas1 iin kritik teknik karar noktalar1ndan biridir.`,
     ),
     faq(
-      `Bu konu i�in hangi makineler birlikte �al1_1r?`,
-      `0lgili prosese g�re besleme, ta_1ma, ana proses ekipmanlar1, filtreleme, otomasyon ve son �r�n haz1rlama ekipmanlar1 birlikte deerlendirilir.`,
+      `Bu konu iin hangi makineler birlikte al1_1r?`,
+      `0lgili prosese göre besleme, ta_1ma, ana proses ekipmanlar1, filtreleme, otomasyon ve son ürün haz1rlama ekipmanlar1 birlikte deerlendirilir.`,
     ),
     faq(
-      `�n m�hendislik sonucu dorudan imalat �l��s� m�d�r?`,
-      `Hay1r. �n hesap ve teknik rehber i�erikleri tekliflendirme ve ilk proje deerlendirmesi i�indir; kesin imalat deerleri �r�n numunesi, proses dorulamas1 ve detay m�hendislik ile netle_tirilir.`,
+      `n mhendislik sonucu dorudan imalat ls mdr?`,
+      `Hay1r. n hesap ve teknik rehber ierikleri tekliflendirme ve ilk proje deerlendirmesi iindir; kesin imalat deerleri ürün numunesi, proses dorulamas1 ve detay mhendislik ile netle_tirilir.`,
     ),
     faq(
       `Pro Makina bu konuda nas1l destek verir?`,
-      `Pro Makina; proses analizi, makine se�imi, �n m�hendislik, imalat, saha kurulum ve devreye alma a_amalar1n1 birlikte deerlendirir.`,
+      `Pro Makina; proses analizi, makine seimi, n mhendislik, imalat, saha kurulum ve devreye alma a_amalar1n1 birlikte deerlendirir.`,
     ),
   ];
 }
@@ -624,24 +624,24 @@ function buildSections(
     .map((item) => ({
       heading: item.title,
       paragraphs: [
-        `${item.title}, ${cluster.title.toLocaleLowerCase("tr-TR")} i�inde ${article.title.toLocaleLowerCase("tr-TR")} ile birlikte okunduunda proses b�t�nl��n� daha net g�sterir.`,
-        `${item.title} ba_l11nda yer alan ekipman ve hesap kararlar1; kapasite, �r�n davran1_1 ve saha uygulanabilirlii a�1s1ndan bu konuyu destekleyen teknik arka plan1 olu_turur.`,
+        `${item.title}, ${cluster.title.toLocaleLowerCase("tr-TR")} iinde ${article.title.toLocaleLowerCase("tr-TR")} ile birlikte okunduunda proses btnln daha net gsterir.`,
+        `${item.title} ba_l11nda yer alan ekipman ve hesap kararlar1; kapasite, ürün davran1_1 ve saha uygulanabilirlii a1s1ndan bu konuyu destekleyen teknik arka plan1 olu_turur.`,
       ],
     }));
 
   return [
     {
-      title: `${article.title} neden �nemlidir?`,
+      title: `${article.title} neden önemlidir?`,
       paragraphs: [
-        `${article.title}, ${cluster.title.toLocaleLowerCase("tr-TR")} k�mesinde s1k sorulan teknik karar ba_l1klar1ndan biridir. Bu i�erik; yat1r1m �ncesi ekipman se�imi, kapasite yakla_1m1 ve proses omurgas1n1n nas1l okunaca1n1 daha net hale getirmek i�in haz1rlanm1_t1r.`,
-        `${cluster.description} Bu nedenle ${article.title.toLocaleLowerCase("tr-TR")} konusu yaln1z tek bir makine tercihi deil; hat ak1_1, yard1mc1 ekipmanlar, �r�n davran1_1 ve saha ko_ullar1yla birlikte deerlendirilmelidir.`,
+        `${article.title}, ${cluster.title.toLocaleLowerCase("tr-TR")} kmesinde s1k sorulan teknik karar ba_l1klar1ndan biridir. Bu ierik; yat1r1m ncesi ekipman seimi, kapasite yakla_1m1 ve proses omurgas1n1n nas1l okunaca1n1 daha net hale getirmek iin haz1rlanm1_t1r.`,
+        `${cluster.description} Bu nedenle ${article.title.toLocaleLowerCase("tr-TR")} konusu yaln1z tek bir makine tercihi deil; hat ak1_1, yard1mc1 ekipmanlar, ürün davran1_1 ve saha ko_ullar1yla birlikte deerlendirilmelidir.`,
       ],
     },
     {
       title: "Bu alanda hangi makineler ve prosesler kullanılır?",
       paragraphs: [
-        `${cluster.title} ba_l11 alt1nda �ou zaman besleme, ta_1ma, ana proses ekipmanlar1, filtreleme, otomasyon ve son �r�n haz1rlama bir arada kurgulan1r. ${article.title} de bu zincirin kritik karar ad1mlar1ndan birini olu_turur.`,
-        `Makine se�imi yap1l1rken yaln1z nominal kapasiteye deil; �r�n�n nemi, younluu, tane boyutu, tozuma davran1_1, a_1nd1r1c1l11 ve saha yerle_imine bak1l1r. Bu y�zden ayn1 �r�n farkl1 sahalarda farkl1 ekipman kombinasyonlar1 gerektirebilir.`,
+        `${cluster.title} ba_l11 alt1nda ou zaman besleme, ta_1ma, ana proses ekipmanlar1, filtreleme, otomasyon ve son ürün haz1rlama bir arada kurgulan1r. ${article.title} de bu zincirin kritik karar ad1mlar1ndan birini olu_turur.`,
+        `Makine seimi yap1l1rken yaln1z nominal kapasiteye deil; ürünn nemi, younluu, tane boyutu, tozuma davran1_1, a_1nd1r1c1l11 ve saha yerle_imine bak1l1r. Bu yzden ayn1 ürün farkl1 sahalarda farkl1 ekipman kombinasyonlar1 gerektirebilir.`,
       ],
       subsections: supportingArticles,
     },
@@ -649,21 +649,21 @@ function buildSections(
       title: "örnek proses akışı",
       paragraphs: [
         cluster.processFlow,
-        `${article.title} genellikle bu ak1_ i�inde kapasite dengesini, proses g�venliini veya makine zincirinin doru e_le_mesini etkileyen ana kontrol ba_l1klar1ndan biri olarak ele al1n1r.`,
+        `${article.title} genellikle bu ak1_ iinde kapasite dengesini, proses gvenliini veya makine zincirinin doru e_le_mesini etkileyen ana kontrol ba_l1klar1ndan biri olarak ele al1n1r.`,
       ],
     },
     {
       title: "Makine seçim kriterleri",
       paragraphs: [
-        `Bu i�erikte deerlendirilen se�im kriterleri; ${cluster.selectionCriteria.join(", ")} _eklinde �zetlenebilir.`,
-        `Yat1r1m1n ilk a_amas1nda bu kriterler birlikte okunursa, hem gereinden b�y�k ekipman se�me riski hem de yetersiz kapasiteyle sahada darboaz olu_turma ihtimali azal1r.`,
+        `Bu ierikte deerlendirilen seim kriterleri; ${cluster.selectionCriteria.join(", ")} _eklinde zetlenebilir.`,
+        `Yat1r1m1n ilk a_amas1nda bu kriterler birlikte okunursa, hem gereinden büyük ekipman seme riski hem de yetersiz kapasiteyle sahada darboaz olu_turma ihtimali azal1r.`,
       ],
     },
     {
       title: "Pro Makina mühendislik yakla_1m1",
       paragraphs: [
-        `Pro Makina, ${article.title.toLocaleLowerCase("tr-TR")} konusunu sadece katalog bilgisiyle deil; hat ak1_1, saha ger�ekleri, bak1m eri_imi ve uzun d�nem i_letme disipliniyle birlikte deerlendirir.`,
-        `Bu nedenle teknik �n deerlendirme yap1l1rken ilgili hizmet, makine, sekt�r ve hesap programlar1 birlikte okunur; sonras1nda teklif ve detay m�hendislik ad1m1na ge�ilir.`,
+        `Pro Makina, ${article.title.toLocaleLowerCase("tr-TR")} konusunu sadece katalog bilgisiyle deil; hat ak1_1, saha gerekleri, bak1m eri_imi ve uzun dnem i_letme disipliniyle birlikte deerlendirir.`,
+        `Bu nedenle teknik n deerlendirme yap1l1rken ilgili hizmet, makine, sektr ve hesap programlar1 birlikte okunur; sonras1nda teklif ve detay mhendislik ad1m1na geilir.`,
       ],
     },
   ];
@@ -672,16 +672,16 @@ function buildSections(
 function buildRelatedServices(cluster: TechnicalTopicCluster): TopicalBlogCard[] {
   return [
     cluster.relatedServiceUrl
-      ? card("0lgili Hizmet", `${cluster.title} i�in hizmet yakla_1m1m1z1 inceleyin.`, cluster.relatedServiceUrl, "Hizmet")
+      ? card("0lgili Hizmet", `${cluster.title} iin hizmet yakla_1m1m1z1 inceleyin.`, cluster.relatedServiceUrl, "Hizmet")
       : null,
     cluster.relatedMachineUrl
-      ? card("0lgili Makine Grubu", `${cluster.title} i�in �ne �1kan makine ailelerini g�r�n.`, cluster.relatedMachineUrl, "Makine")
+      ? card("0lgili Makine Grubu", `${cluster.title} iin ne 1kan makine ailelerini gürün.`, cluster.relatedMachineUrl, "Makine")
       : null,
     cluster.relatedSectorUrl
-      ? card("0lgili Sektör Sayfası", `${cluster.title} ile ili_kili sekt�r ��z�m ba_l1klar1n1 g�r�n.`, cluster.relatedSectorUrl, "Sektör")
+      ? card("0lgili Sektör Sayfası", `${cluster.title} ile ili_kili sektr çözüm ba_l1klar1n1 gürün.`, cluster.relatedSectorUrl, "Sektör")
       : null,
     cluster.calculatorUrl
-      ? card("Hesaplama Arac1", `${cluster.title} i�in �n m�hendislik ara�lar1n1 a�1n.`, cluster.calculatorUrl, "Program")
+      ? card("Hesaplama Arac1", `${cluster.title} iin n mhendislik aralar1n1 a1n.`, cluster.calculatorUrl, "Program")
       : null,
   ].filter(Boolean) as TopicalBlogCard[];
 }
@@ -712,9 +712,9 @@ function buildGeneratedArticle(
   return {
     slug: article.slug,
     title: article.title,
-    metaTitle: `${article.title} | ${cluster.title} | Pro Makina`,
-    description: `${article.title} ba_l11n1; ${cluster.title.toLocaleLowerCase("tr-TR")} i�inde kapasite, ekipman se�imi, proses ak1_1 ve saha kararlar1 a�1s1ndan teknik olarak inceleyin.`,
-    heroDescription: `${article.title}, ${cluster.title.toLocaleLowerCase("tr-TR")} i�inde makine se�imi, proses omurgas1 ve �n m�hendislik kararlar1n1 daha net okumak i�in haz1rlanm1_ teknik blog i�eriidir.`,
+    metaTitle: `${article.title} | ${cluster.title}`,
+    description: `${article.title} ba_l11n1; ${cluster.title.toLocaleLowerCase("tr-TR")} iinde kapasite, ekipman seimi, proses ak1_1 ve saha kararlar1 a1s1ndan teknik olarak inceleyin.`,
+    heroDescription: `${article.title}, ${cluster.title.toLocaleLowerCase("tr-TR")} iinde makine seimi, proses omurgas1 ve n mhendislik kararlar1n1 daha net okumak iin haz1rlanm1_ teknik blog ieriidir.`,
     categorySlug: cluster.slug,
     excerpt: cluster.description,
     readingTime: DEFAULT_READING_TIME,
@@ -743,12 +743,12 @@ export const technicalTopicClusterCategories: TopicalCategory[] = technicalTopic
     title: cluster.title,
     description: cluster.description,
     introParagraphs: [
-      `${cluster.description} Bu kategori sayfas1, konu ba_l11na g�re gruplanm1_ teknik i�erikleri tek merkezden okumak isteyen kullan1c1lar i�in haz1rlanm1_t1r.`,
-      `Bu k�mede kapasite, nem, younluk, proses ak1_1, otomasyon, bak1m ve ekipman e_le_mesi gibi karar ba_l1klar1 bir arada deerlendirilir. B�ylece ayn1 konuda farkl1 bloglar aras1nda daha g��l� bir i� link ve SEO cluster yap1s1 kurulur.`,
+      `${cluster.description} Bu kategori sayfas1, konu ba_l11na göre gruplanm1_ teknik ierikleri tek merkezden okumak isteyen kullan1c1lar iin haz1rlanm1_t1r.`,
+      `Bu kmede kapasite, nem, younluk, proses ak1_1, otomasyon, bak1m ve ekipman e_le_mesi gibi karar ba_l1klar1 bir arada deerlendirilir. böylece ayn1 konuda farkl1 bloglar aras1nda daha gl bir i link ve SEO cluster yap1s1 kurulur.`,
     ],
     relatedContents: buildClusterCards(cluster),
     ctaText:
-      "Projeniz için doru makine ve proses seçimini birlikte deerlendirelim. Kapasite, hammadde, nem oranı, ürün hedefi ve saha yerle_iminize göre uygun çöz?m? birlikte netle_tirebiliriz.",
+      "Projeniz için doru makine ve proses seçimini birlikte deerlendirelim. Kapasite, hammadde, nem oranı, ürün hedefi ve saha yerle_iminize göre uygun çözüm? birlikte netle_tirebiliriz.",
     ctaVariant: "sector-guide",
   }),
 );

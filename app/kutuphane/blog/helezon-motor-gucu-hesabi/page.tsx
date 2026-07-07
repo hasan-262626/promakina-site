@@ -2,7 +2,7 @@ import Link from "next/link";
 import { buildLibraryMetadata } from "../../../components/library-seo-page";
 import { BlogArticleTemplate } from "../../../components/blog-article-template";
 
-const title = "Helezon Motor Gücü Hesabı | Pro Makina";
+const title = "Helezon Motor Gücü Hesabı";
 const description =
   "Helezon motor gücü hesabı; ürün yoğunluğu, hat boyu, eğim, doluluk oranı, sürtünme ve redüktör seçimi için teknik rehber.";
 const canonical = "https://www.promakina.com.tr/kutuphane/blog/helezon-motor-gucu-hesabi";

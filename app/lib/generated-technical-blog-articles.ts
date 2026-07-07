@@ -69,45 +69,45 @@ function createDryingArticle(config: DryingArticleConfig): TopicalArticle {
     categorySlug: "kurutma-sistemleri",
     sections: makeSections([
       {
-        title: `${config.title} neden Ã¶nemlidir?`,
+        title: `${config.title} neden önemlidir?`,
         paragraphs: [
-          `${config.title}, yalnÄ±z tek bir makine parÃ§asÄ±nÄ±n seÃ§imi deÄŸildir. DoÄŸru karar; kapasite, giriÅŸ nemi, hedef Ã§Ä±kÄ±ÅŸ standardÄ±, Ã¼rÃ¼nÃ¼n tambur iÃ§indeki davranÄ±ÅŸÄ± ve yardÄ±mcÄ± gaz hattÄ±nÄ±n birlikte okunmasÄ±yla verilir. Ã–zellikle ${config.applicationText} gibi uygulamalarda aynÄ± ekipman adÄ± kullanÄ±lsa da gerÃ§ek mÃ¼hendislik yaklaÅŸÄ±mÄ± Ã¼rÃ¼n karakterine gÃ¶re deÄŸiÅŸir.`,
-          `Bu nedenle Pro Makina yaklaÅŸÄ±mÄ±nda ${config.focus} kararÄ± yalnÄ±z katalog verisi Ã¼zerinden deÄŸil; saha ritmi, bakÄ±m eriÅŸimi, enerji modeli ve son Ã¼rÃ¼n kalitesi Ã¼zerinden deÄŸerlendirilir. BÃ¶ylece tasarÄ±m kaÄŸÄ±t Ã¼zerinde deÄŸil sahada da tutarlÄ± hale gelir.`,
+          `${config.title}, yalnız tek bir makine parçasının seçimi değildir. Doğru karar; kapasite, giriş nemi, hedef çıkış standardı, ürünün tambur içindeki davranışı ve yardımcı gaz hattının birlikte okunmasıyla verilir. Özellikle ${config.applicationText} gibi uygulamalarda aynı ekipman adı kullanılsa da gerçek mühendislik yaklaşımı ürün karakterine göre değişir.`,
+          `Bu nedenle Pro Makina yaklaşımında ${config.focus} kararı yalnız katalog verisi üzerinden değil; saha ritmi, bakım erişimi, enerji modeli ve son ürün kalitesi üzerinden değerlendirilir. Böylece tasarım kağıt üzerinde değil sahada da tutarlı hale gelir.`,
         ],
       },
       {
         title: "Hangi temel veriler gerekir?",
         paragraphs: [
-          `Kurutma ve tambur projelerinde saatlik besleme kapasitesi, baÅŸlangÄ±Ã§ nemi, hedef Ã§Ä±kÄ±ÅŸ nemi, Ã¼rÃ¼n yoÄŸunluÄŸu, tane boyutu, hava debisi ve yakÄ±t tercihi aynÄ± tabloda gÃ¶rÃ¼lmelidir. Bu veriler olmadan yapÄ±lan seÃ§imler Ã§oÄŸu zaman eksik fan hattÄ±, yetersiz residence time veya gereÄŸinden bÃ¼yÃ¼k yatÄ±rÄ±m maliyeti ile sonuÃ§lanÄ±r.`,
-          `${config.productExamples} gibi Ã¼rÃ¼nlerde nem davranÄ±ÅŸÄ± kadar yapÄ±ÅŸkanlÄ±k, toz yÃ¼kÃ¼ ve sÄ±caklÄ±k hassasiyeti de hesaba katÄ±lÄ±r. Bu nedenle ilk fizibilite aÅŸamasÄ±nda hem proses hem mekanik verinin birlikte toplanmasÄ± gerekir.`,
+          `Kurutma ve tambur projelerinde saatlik besleme kapasitesi, başlangıç nemi, hedef çıkış nemi, ürün yoğunluğu, tane boyutu, hava debisi ve yakıt tercihi aynı tabloda görülmelidir. Bu veriler olmadan yapılan seçimler çoğu zaman eksik fan hattı, yetersiz residence time veya gereğinden büyük yatırım maliyeti ile sonuçlanır.`,
+          `${config.productExamples} gibi ürünlerde nem davranışı kadar yapışkanlık, toz yükü ve sıcaklık hassasiyeti de hesaba katılır. Bu nedenle ilk fizibilite aşamasında hem proses hem mekanik verinin birlikte toplanması gerekir.`,
         ],
       },
       {
-        title: `${config.focus} nasÄ±l deÄŸerlendirilir?`,
+        title: `${config.focus} nasıl değerlendirilir?`,
         paragraphs: [
-          `${config.focus} deÄŸerlendirmesinde temel amaÃ§, Ã¼rÃ¼nÃ¼n hedef neme gÃ¼venli biÃ§imde ulaÅŸmasÄ±nÄ± saÄŸlarken enerji tÃ¼ketimini ve bakÄ±m yÃ¼kÃ¼nÃ¼ dengede tutmaktÄ±r. Bu aÅŸamada tambur geometrisi, iÃ§ kanat yapÄ±sÄ±, devir, eÄŸim, fan kapasitesi ve gerekiyorsa brÃ¼lÃ¶r yaklaÅŸÄ±mÄ± birlikte okunur.`,
-          `YalnÄ±z bir parametreyi bÃ¼yÃ¼tmek Ã§oÄŸu zaman Ã§Ã¶zÃ¼m Ã¼retmez. Ã–rneÄŸin uzun tambur yetersiz hava debisini telafi etmez; yÃ¼ksek sÄ±caklÄ±k da yanlÄ±ÅŸ lifter dÃ¼zenini dÃ¼zeltmez. SaÄŸlÄ±klÄ± mÃ¼hendislik kararÄ±, tÃ¼m hattÄ±n birbirini desteklediÄŸi dengeli kombinasyondur.`,
+          `${config.focus} değerlendirmesinde temel amaç, ürünün hedef neme güvenli biçimde ulaşmasını sağlarken enerji tüketimini ve bakım yükünü dengede tutmaktır. Bu aşamada tambur geometrisi, iç kanat yapısı, devir, eğim, fan kapasitesi ve gerekiyorsa brülör yaklaşımı birlikte okunur.`,
+          `Yalnız bir parametreyi büyütmek çoğu zaman çözüm üretmez. Örneğin uzun tambur yetersiz hava debisini telafi etmez; yüksek sıcaklık da yanlış lifter düzenini düzeltmez. Sağlıklı mühendislik kararı, tüm hattın birbirini desteklediği dengeli kombinasyondur.`,
         ],
       },
       {
         title: "Makine ve proses tasarımına etkisi",
         paragraphs: [
-          `${config.focus} sonucu; tambur Ã§apÄ± ve boyu, gÃ¶vde malzemesi, taÅŸÄ±yÄ±cÄ± konstrÃ¼ksiyon, tahrik yapÄ±sÄ±, siklon ve filtre hattÄ± gibi ana ekipman kararlarÄ±nÄ± doÄŸrudan etkiler. Ã–zellikle yÃ¼ksek su uÃ§urma yÃ¼kÃ¼ olan senaryolarda yardÄ±mcÄ± ekipmanlarÄ±n doÄŸru seÃ§ilmesi kurutma kadar kritiktir.`,
-          `AyrÄ±ca saha yerleÅŸimi, baca hattÄ±, bakÄ±m platformlarÄ± ve Ã¼rÃ¼n transfer omurgasÄ± da bu kararÄ±n parÃ§asÄ±dÄ±r. Bu nedenle kurutma hattÄ± hiÃ§bir zaman yalnÄ±z tambur gÃ¶vdesi Ã¼zerinden okunmaz; entegre proses omurgasÄ± olarak ele alÄ±nÄ±r.`,
+          `${config.focus} sonucu; tambur çapı ve boyu, gövde malzemesi, taşıyıcı konstrüksiyon, tahrik yapısı, siklon ve filtre hattı gibi ana ekipman kararlarını doğrudan etkiler. Özellikle yüksek su uçurma yükü olan senaryolarda yardımcı ekipmanların doğru seçilmesi kurutma kadar kritiktir.`,
+          `Ayrıca saha yerleşimi, baca hattı, bakım platformları ve ürün transfer omurgası da bu kararın parçasıdır. Bu nedenle kurutma hattı hiçbir zaman yalnız tambur gövdesi üzerinden okunmaz; entegre proses omurgası olarak ele alınır.`,
         ],
       },
       {
         title: "Uygulama alanları ve ürün örnekleri",
         paragraphs: [
-          `${config.productExamples} gibi uygulamalarda aynÄ± ana prensip Ã§alÄ±ÅŸsa da proses riski deÄŸiÅŸir. BazÄ± Ã¼rÃ¼nlerde aÅŸÄ±ndÄ±rÄ±cÄ±lÄ±k ve toz yÃ¼kÃ¼ Ã¶ne Ã§Ä±karken, bazÄ± Ã¼rÃ¼nlerde yapÄ±ÅŸma ve koku kontrolÃ¼ daha belirleyici olur.`,
-          `Bu yÃ¼zden /hizmetler/kurutma-tamburu-imalati, /hizmetler/silis-kumu-kurutma-tesisi ve /hizmetler/camur-kurutma-tesisi gibi sayfalarda gÃ¶rÃ¼len farklÄ± Ã§Ã¶zÃ¼m aileleri, tek bir tambur tipinden deÄŸil farklÄ± proses gereksinimlerinden doÄŸar.`,
+          `${config.productExamples} gibi uygulamalarda aynı ana prensip çalışsa da proses riski değişir. Bazı ürünlerde aşındırıcılık ve toz yükü öne çıkarken, bazı ürünlerde yapışma ve koku kontrolü daha belirleyici olur.`,
+          `Bu yüzden /hizmetler/kurutma-tamburu-imalatı, /hizmetler/silis-kumu-kurutma-tesisi ve /hizmetler/çamur-kurutma-tesisi gibi sayfalarda görülen farklı çözüm aileleri, tek bir tambur tipinden değil farklı proses gereksinimlerinden doğar.`,
         ],
       },
       {
         title: "Pro Makina ile teknik değerlendirme yaklaşımı",
         paragraphs: [
-          `Pro Makina, ${config.title.toLocaleLowerCase("tr-TR")} konusunu saha gerÃ§ekleriyle birlikte ele alÄ±r. Ä°lk aÅŸamada Ã¼rÃ¼n davranÄ±ÅŸÄ±, nem yÃ¼kÃ¼ ve kapasite ritmi okunur; ikinci aÅŸamada tambur, fan, filtre, brÃ¼lÃ¶r ve transfer omurgasÄ± birlikte doÄŸrulanÄ±r.`,
-          `EÄŸer siz de ${config.serviceLabel.toLocaleLowerCase("tr-TR")} veya ilgili proses yatÄ±rÄ±mÄ±nÄ±z iÃ§in net bir Ã¶n deÄŸerlendirme almak istiyorsanÄ±z ${config.serviceHref} ve /iletisim Ã¼zerinden teknik ekibimizle gÃ¶rÃ¼ÅŸebilirsiniz.`,
+          `Pro Makina, ${config.title.toLocaleLowerCase("tr-TR")} konusunu saha gerçekleriyle birlikte ele alır. İlk aşamada ürün davranışı, nem yükü ve kapasite ritmi okunur; ikinci aşamada tambur, fan, filtre, brülör ve transfer omurgası birlikte doğrulanır.`,
+          `EÄŸer siz de ${config.serviceLabel.toLocaleLowerCase("tr-TR")} veya ilgili proses yatırımınız için net bir ön değerlendirme almak istiyorsanız ${config.serviceHref} ve /iletişim üzerinden teknik ekibimizle görüşebilirsiniz.`,
         ],
       },
     ]),
@@ -118,7 +118,7 @@ function createDryingArticle(config: DryingArticleConfig): TopicalArticle {
       summaryRow("Servis ve saha", "Bakım erişimi, platform ve yerleşim tasarımın parçasıdır.", "Uzun vadeli işletme güvenliğini sağlar."),
     ],
     faqs: [
-      faq(`${config.title} hangi verilere gÃ¶re deÄŸerlendirilir?`, "Kapasite, başlangıç nemi, hedef çıkış nemi, ürün yoğunluğu, tane boyutu, hava debisi ve saha koşulları birlikte okunur."),
+      faq(`${config.title} hangi verilere göre değerlendirilir?`, "Kapasite, başlangıç nemi, hedef çıkış nemi, ürün yoğunluğu, tane boyutu, hava debisi ve saha koşulları birlikte okunur."),
       faq("Su uçurma yükü neden önemlidir?", "Çünkü gerçek ısıl yükü ve yardımcı ekipman ihtiyacını belirleyen ana değer, saatte uzaklaştırılacak su miktarıdır."),
       faq("Tambur boyu ve çapı nasıl etkilenir?", "Geometri; residence time, ürün davranışı ve hava hattı ile birlikte belirlenir, yalnız katalog boyutu üzerinden seçilmez."),
       faq("Fan ve filtre hattı neden aynı hesapta düşünülür?", "Buharlaşan suyun ve tozlu gazın sistemden kontrollü atılması için fan, siklon ve filtre hattı kurutma veriminin ayrılmaz parçasıdır."),
@@ -149,45 +149,45 @@ function createDrumSystemArticle(config: DrumSystemArticleConfig): TopicalArticl
     categorySlug: "endustriyel-ekipmanlar",
     sections: makeSections([
       {
-        title: `${config.title} neden ayrÄ± deÄŸerlendirilmelidir?`,
+        title: `${config.title} neden ayrı değerlendirilmelidir?`,
         paragraphs: [
-          `${config.processName} iÃ§in kullanÄ±lan tambur sistemleri, yalnÄ±z silindirik bir gÃ¶vde deÄŸildir. ÃœrÃ¼nÃ¼n tambur iÃ§inde nasÄ±l ilerlediÄŸi, ne kadar sÃ¼re kaldÄ±ÄŸÄ± ve hangi yardÄ±mcÄ± ekipmanlarla beslendiÄŸi sonuÃ§ kalitesini doÄŸrudan etkiler.`,
-          `${config.applicationText} gibi uygulamalarda aynÄ± tambur ailesi kullanÄ±lsa da geometri, iÃ§ dÃ¼zen ve tahrik yaklaÅŸÄ±mÄ± farklÄ±laÅŸÄ±r. Bu nedenle tasarÄ±m, proses gÃ¶revine gÃ¶re kurgulanmalÄ±dÄ±r.`,
+          `${config.processName} için kullanılan tambur sistemleri, yalnız silindirik bir gövde değildir. Ürünün tambur içinde nasıl ilerlediği, ne kadar süre kaldığı ve hangi yardımcı ekipmanlarla beslendiği sonuç kalitesini doğrudan etkiler.`,
+          `${config.applicationText} gibi uygulamalarda aynı tambur ailesi kullanılsa da geometri, iç düzen ve tahrik yaklaşımı farklılaşır. Bu nedenle tasarım, proses görevine göre kurgulanmalıdır.`,
         ],
       },
       {
         title: "Hangi veriler gerekir?",
         paragraphs: [
-          `Kapasite, Ã¼rÃ¼n yoÄŸunluÄŸu, tane boyutu, tutulma sÃ¼resi beklentisi, yÃ¼zey iÅŸlem ihtiyacÄ± ve besleme dÃ¼zeni tambur sistemlerinin temel girdileridir. EÄŸer proses kurutma veya soÄŸutma ile baÄŸlantÄ±lÄ±ysa yardÄ±mcÄ± hava hattÄ± da ilk aÅŸamadan itibaren hesaba katÄ±lmalÄ±dÄ±r.`,
-          `BazÄ± senaryolarda granÃ¼l dayanÄ±mÄ±, bazÄ± senaryolarda kaplama homojenliÄŸi, bazÄ± senaryolarda ise Ã¼rÃ¼n sÄ±caklÄ±ÄŸÄ± belirleyici olur. Bu nedenle Ã¼rÃ¼n davranÄ±ÅŸÄ± kadar hat ritmi de Ã¶lÃ§Ã¼lmelidir.`,
+          `Kapasite, ürün yoğunluğu, tane boyutu, tutulma süresi beklentisi, yüzey işlem ihtiyaçı ve besleme düzeni tambur sistemlerinin temel girdileridir. Eğer proses kurutma veya soğutma ile bağlantılıysa yardımcı hava hattı da ilk aşamadan itibaren hesaba katılmalıdır.`,
+          `Bazı senaryolarda granül dayanımı, bazı senaryolarda kaplama homojenliği, bazı senaryolarda ise ürün sıcaklığı belirleyici olur. Bu nedenle ürün davranışı kadar hat ritmi de ölçülmelidir.`,
         ],
       },
       {
         title: "Seçim mantığı nasıl kurulur?",
         paragraphs: [
-          `${config.processName} iÃ§in doÄŸru tambur seÃ§imi; gÃ¶vde Ã¶lÃ§Ã¼sÃ¼, devir, eÄŸim, iÃ§ kaldÄ±rÄ±cÄ±lar veya kaplama dÃ¼zeni, giriÅŸ-Ã§Ä±kÄ±ÅŸ yataklamasÄ± ve tahrik sisteminin birlikte okunmasÄ±yla yapÄ±lÄ±r. YalnÄ±z gÃ¶vde Ã§apÄ±nÄ± bÃ¼yÃ¼tmek her zaman performansÄ± iyileÅŸtirmez.`,
-          `DoÄŸru seÃ§im, Ã¼rÃ¼nÃ¼n istenen iÅŸlem sÃ¼resini saÄŸlarken kÄ±rÄ±lma, tozlaÅŸma, yapÄ±ÅŸma veya dengesiz ilerleme riskini kontrol altÄ±nda tutmalÄ±dÄ±r. Bu yÃ¼zden mekanik tasarÄ±m ile proses hedefi aynÄ± dosyada Ã§Ã¶zÃ¼lÃ¼r.`,
+          `${config.processName} için doğru tambur seçimi; gövde ölçüsü, devir, eğim, iç kaldırıcılar veya kaplama düzeni, giriş-çıkış yataklaması ve tahrik sisteminin birlikte okunmasıyla yapılır. Yalnız gövde çapını büyütmek her zaman performansı iyileştirmez.`,
+          `Doğru seçim, ürünün istenen işlem süresini sağlarken kırılma, tozlaşma, yapışma veya dengesiz ilerleme riskini kontrol altında tutmalıdır. Bu yüzden mekanik tasarım ile proses hedefi aynı dosyada çözülür.`,
         ],
       },
       {
         title: "Proses ve tesis tasarımına etkisi",
         paragraphs: [
-          `Tambur tipi ve kapasite yaklaÅŸÄ±mÄ±; besleme bunkeri, transfer konveyÃ¶rleri, Ã§Ä±kÄ±ÅŸ ekipmanlarÄ±, toz toplama ve gerektiÄŸinde kurutma/soÄŸutma omurgasÄ± Ã¼zerinde doÄŸrudan etki yaratÄ±r. Ã–zellikle granÃ¼l hatlarÄ±nda bir tamburun kararÄ±, tÃ¼m tesis ritmini etkileyebilir.`,
-          `Bu nedenle tambur sistemi kararÄ± yalnÄ±z makine satÄ±n alÄ±mÄ± olarak deÄŸil, hat akÄ±ÅŸÄ±nÄ± taÅŸÄ±yan ana proses bileÅŸeni olarak gÃ¶rÃ¼lmelidir.`,
+          `Tambur tipi ve kapasite yaklaşımı; besleme bunkeri, transfer konveyörleri, çıkış ekipmanları, toz toplama ve gerektiğinde kurutma/soğutma omurgası üzerinde doğrudan etki yaratır. Özellikle granül hatlarında bir tamburun kararı, tüm tesis ritmini etkileyebilir.`,
+          `Bu nedenle tambur sistemi kararı yalnız makine satın alımı olarak değil, hat akışını taşıyan ana proses bileşeni olarak görülmelidir.`,
         ],
       },
       {
         title: "Uygulama alanları",
         paragraphs: [
-          `${config.applicationText} kapsamÄ±nda tambur sistemleri; gÃ¼bre hatlarÄ±, organik atÄ±k hazÄ±rlama uygulamalarÄ±, kaplama ve son Ã¼rÃ¼n kondisyonlama senaryolarÄ± ile farklÄ± mineral proseslerinde kullanÄ±labilir.`,
-          `Uygulama alanÄ± deÄŸiÅŸtikÃ§e aÅŸÄ±nma, hijyen, toz, sÄ±caklÄ±k ve bakÄ±m eriÅŸimi gibi baÅŸlÄ±klar da deÄŸiÅŸir. Bu yÃ¼zden her proje iÃ§in ayrÄ± Ã¶n mÃ¼hendislik deÄŸerlendirmesi yapÄ±lmalÄ±dÄ±r.`,
+          `${config.applicationText} kapsamında tambur sistemleri; gübre hatları, organik atık hazırlama uygulamaları, kaplama ve son ürün kondisyonlama senaryoları ile farklı mineral proseslerinde kullanılabilir.`,
+          `Uygulama alanı değiştikçe aşınma, hijyen, toz, sıcaklık ve bakım erişimi gibi başlıklar da değişir. Bu yüzden her proje için ayrı ön mühendislik değerlendirmesi yapılmalıdır.`,
         ],
       },
       {
         title: "Pro Makina yaklaşımı",
         paragraphs: [
-          `Pro Makina, ${config.processName.toLocaleLowerCase("tr-TR")} iÃ§in tambur sistemlerini yalnÄ±z Ã¼rÃ¼n etiketiyle deÄŸil; kapasite, Ã¼rÃ¼n davranÄ±ÅŸÄ±, saha yerleÅŸimi ve bakÄ±m gereksinimiyle birlikte ele alÄ±r.`,
-          `BÃ¶ylece ${config.machineLabel.toLocaleLowerCase("tr-TR")} kararÄ±, daha geniÅŸ proses omurgasÄ± iÃ§inde gÃ¼venli biÃ§imde konumlandÄ±rÄ±lÄ±r. Teknik gÃ¶rÃ¼ÅŸme iÃ§in /iletisim sayfasÄ±ndan bizimle doÄŸrudan iletiÅŸime geÃ§ebilirsiniz.`,
+          `Pro Makina, ${config.processName.toLocaleLowerCase("tr-TR")} için tambur sistemlerini yalnız ürün etiketiyle değil; kapasite, ürün davranışı, saha yerleşimi ve bakım gereksinimiyle birlikte ele alır.`,
+          `Böylece ${config.machineLabel.toLocaleLowerCase("tr-TR")} kararı, daha geniş proses omurgası içinde güvenli biçimde konumlandırılır. Teknik görüşme için /iletişim sayfasından bizimle doğrudan iletişime geçebilirsiniz.`,
         ],
       },
     ]),
@@ -198,10 +198,10 @@ function createDrumSystemArticle(config: DrumSystemArticleConfig): TopicalArticl
       summaryRow("Yardımcı omurga", "Transfer, toz kontrolü ve çıkış ekipmanları birlikte çözülür.", "Tesis ritmini ve servis güvenliğini belirler."),
     ],
     faqs: [
-      faq(`${config.processName} iÃ§in tambur seÃ§imi hangi verilere gÃ¶re yapÄ±lÄ±r?`, "Kapasite, ürün yoğunluğu, tutulma süresi, granül davranışı ve yardımcı ekipman yapısı birlikte değerlendirilir."),
+      faq(`${config.processName} için tambur seçimi hangi verilere göre yapılır?`, "Kapasite, ürün yoğunluğu, tutulma süresi, granül davranışı ve yardımcı ekipman yapısı birlikte değerlendirilir."),
       faq("Tambur çapını büyütmek her zaman avantaj sağlar mı?", "Hayır. Daha büyük çap, yardımcı hatlarla uyumlu değilse yatırım maliyeti artarken proses kalitesi düşebilir."),
       faq("İç kanat veya iç yüzey düzeni neden önemlidir?", "Çünkü ürünün gövde içindeki dağılımı, temas süresi ve son ürün kalitesi bu düzenle doğrudan ilişkilidir."),
-      faq("Tambur sistemi baÅŸka hangi ekipmanlarla birlikte deÄŸerlendirilmelidir?", "Besleme, taşıma, toz toplama, gerekiyorsa kurutma/soğutma ve çıkış ekipmanları aynı dosyada ele alınmalıdır."),
+      faq("Tambur sistemi başka hangi ekipmanlarla birlikte değerlendirilmelidir?", "Besleme, taşıma, toz toplama, gerekiyorsa kurutma/soğutma ve çıkış ekipmanları aynı dosyada ele alınmalıdır."),
       faq("Teklif öncesi hangi veriler hazırlanmalıdır?", "Ürün tipi, kapasite, işlem hedefi, saha ölçüleri ve son ürün beklentisi teknik ön seçim için güçlü başlangıç verileridir."),
     ],
     internalLinks: [...commonLinks, ...(config.internalLinks ?? []), { label: "Endüstriyel Ekipmanlar", href: "/kutuphane/blog/endustriyel-ekipmanlar" }],
@@ -229,45 +229,45 @@ function createTransportArticle(config: TransportArticleConfig): TopicalArticle 
     categorySlug: "konveyor-ve-helezon",
     sections: makeSections([
       {
-        title: `${config.equipmentName} seÃ§iminde neden Ã¶n hesap gerekir?`,
+        title: `${config.equipmentName} seçiminde neden ön hesap gerekir?`,
         paragraphs: [
-          `${config.equipmentName}, proses hattÄ±ndaki malzeme akÄ±ÅŸÄ±nÄ± doÄŸrudan belirleyen ana ekipmanlardan biridir. Bu nedenle seÃ§im yalnÄ±z Ã¼rÃ¼n taÅŸÄ±r mÄ± sorusuna deÄŸil; hangi kapasitede, hangi servis rejiminde ve hangi gÃ¼venlik payÄ±yla taÅŸÄ±r sorusuna yanÄ±t vermelidir.`,
-          `${config.processText} gibi senaryolarda kÃ¼Ã§Ã¼k bir boyut hatasÄ± bile darboÄŸaz, geri kaÃ§ma veya yÃ¼ksek enerji tÃ¼ketimi yaratabilir. Bu yÃ¼zden Ã¶n hesap, teklif ve imalat aÅŸamasÄ±nÄ±n temelidir.`,
+          `${config.equipmentName}, proses hattındaki malzeme akışını doğrudan belirleyen ana ekipmanlardan biridir. Bu nedenle seçim yalnız ürün taşır mı sorusuna değil; hangi kapasitede, hangi servis rejiminde ve hangi güvenlik payıyla taşır sorusuna yanıt vermelidir.`,
+          `${config.processText} gibi senaryolarda küçük bir boyut hatası bile darboğaz, geri kaçma veya yüksek enerji tüketimi yaratabilir. Bu yüzden ön hesap, teklif ve imalat aşamasının temelidir.`,
         ],
       },
       {
         title: "Hangi temel veriler gerekir?",
         paragraphs: [
-          `Kapasite hedefi, Ã¼rÃ¼n yoÄŸunluÄŸu, hat uzunluÄŸu, eÄŸim, yÃ¼kleme-boÅŸaltma dÃ¼zeni ve Ã§alÄ±ÅŸma sÃ¼resi taÅŸima ekipmanlarÄ±nÄ±n ana girdileridir. EÄŸer sistem dozajlÄ± Ã§alÄ±ÅŸacaksa besleme hassasiyeti de ayrÄ±ca deÄŸerlendirilmelidir.`,
-          `AyrÄ±ca Ã¼rÃ¼nÃ¼n aÅŸÄ±ndÄ±rÄ±cÄ±, tozlu, nemli veya serbest akÄ±ÅŸlÄ± olmasÄ±; gÃ¶vde tipi, hÄ±z, tahrik yapÄ±sÄ± ve bakÄ±m stratejisinde doÄŸrudan fark yaratÄ±r.`,
+          `Kapasite hedefi, ürün yoğunluğu, hat uzunluğu, eğim, yükleme-boşaltma düzeni ve çalışma süresi taşima ekipmanlarının ana girdileridir. Eğer sistem dozajlı çalışacaksa besleme hassasiyeti de ayrıca değerlendirilmelidir.`,
+          `Ayrıca ürünün aşındırıcı, tozlu, nemli veya serbest akışlı olması; gövde tipi, hız, tahrik yapısı ve bakım stratejisinde doğrudan fark yaratır.`,
         ],
       },
       {
         title: "Kapasite ve tahrik mantığı",
         paragraphs: [
-          `DoÄŸru seÃ§imde Ã¶nce hacimsel ve kÃ¼tlesel kapasite birlikte okunur, ardÄ±ndan tahrik yapÄ±sÄ± bu yÃ¼kÃ¼ gÃ¼venle taÅŸÄ±yacak ÅŸekilde belirlenir. EÄŸim veya hat boyu arttÄ±kÃ§a yalnÄ±z gÃ¼Ã§ deÄŸil, gerÃ§ek efektif kapasite de deÄŸiÅŸebilir.`,
-          `Bu nedenle yalnÄ±z motor gÃ¼cÃ¼ne bakarak ekipman seÃ§mek saÄŸlÄ±klÄ± deÄŸildir. Geometri, devir, hÄ±z ve servis faktÃ¶rÃ¼ aynÄ± denklem iÃ§inde Ã§Ã¶zÃ¼lmelidir.`,
+          `Doğru seçimde önce hacimsel ve kütlesel kapasite birlikte okunur, ardından tahrik yapısı bu yükü güvenle taşıyacak şekilde belirlenir. Eğim veya hat boyu arttıkça yalnız güç değil, gerçek efektif kapasite de değişebilir.`,
+          `Bu nedenle yalnız motor gücüne bakarak ekipman seçmek sağlıklı değildir. Geometri, devir, hız ve servis faktörü aynı denklem içinde çözülmelidir.`,
         ],
       },
       {
         title: "Tesis tasarımına etkisi",
         paragraphs: [
-          `${config.equipmentName} kararÄ±; upstream besleme ekipmanlarÄ±nÄ±, downstream stok veya paketleme noktalarÄ±nÄ± ve tÃ¼m hat ritmini etkiler. Ã–zellikle zincirli, bantlÄ± veya elevatÃ¶rlÃ¼ taÅŸÄ±ma sistemlerinde bir ekipmanÄ±n hÄ±z kararÄ± tÃ¼m tesis akÄ±ÅŸÄ±nÄ± deÄŸiÅŸtirebilir.`,
-          `Bu nedenle taÅŸÄ±ma hatlarÄ±, proses ekipmanlarÄ±ndan ayrÄ± deÄŸil onlarÄ±n tamamlayÄ±cÄ± omurgasÄ± olarak dÃ¼ÅŸÃ¼nÃ¼lmelidir.`,
+          `${config.equipmentName} kararı; upstream besleme ekipmanlarını, downstream stok veya paketleme noktalarını ve tüm hat ritmini etkiler. Özellikle zincirli, bantlı veya elevatörlü taşıma sistemlerinde bir ekipmanın hız kararı tüm tesis akışını değiştirebilir.`,
+          `Bu nedenle taşıma hatları, proses ekipmanlarından ayrı değil onların tamamlayıcı omurgası olarak düşünülmelidir.`,
         ],
       },
       {
         title: "Uygulama alanları",
         paragraphs: [
-          `${config.equipmentName}; gÃ¼bre, kompost, biyogaz, madencilik, kimya ve dÃ¶kme katÄ± malzeme hatlarÄ±nda farklÄ± amaÃ§larla kullanÄ±labilir. Her sektÃ¶rde Ã¼rÃ¼n yapÄ±sÄ± ve Ã§evresel koÅŸullar farklÄ± olduÄŸu iÃ§in tasarÄ±m yaklaÅŸÄ±mÄ± da deÄŸiÅŸir.`,
-          `Serbest akÄ±ÅŸlÄ± kuru Ã¼rÃ¼nler ile yapÄ±ÅŸkan veya lifli akÄ±ÅŸlar aynÄ± geometriyle taÅŸÄ±nmaz. Bu nedenle doÄŸru uygulama eÅŸleÅŸtirmesi mÃ¼hendislik kararÄ±nÄ±n merkezindedir.`,
+          `${config.equipmentName}; gübre, kompost, biyogaz, madencilik, kimya ve dökme katı malzeme hatlarında farklı amaçlarla kullanılabilir. Her sektörde ürün yapısı ve çevresel koşullar farklı olduğu için tasarım yaklaşımı da değişir.`,
+          `Serbest akışlı kuru ürünler ile yapışkan veya lifli akışlar aynı geometriyle taşınmaz. Bu nedenle doğru uygulama eşleştirmesi mühendislik kararının merkezindedir.`,
         ],
       },
       {
         title: "Pro Makina ile seçim yaklaşımı",
         paragraphs: [
-          `Pro Makina, ${config.equipmentName.toLocaleLowerCase("tr-TR")} kararÄ±nÄ± kapasite formÃ¼lÃ¼yle sÄ±nÄ±rlamaz; Ã¼rÃ¼n davranÄ±ÅŸÄ±, hat yerleÅŸimi, bakÄ±m eriÅŸimi ve servis sÃ¼rekliliÄŸini birlikte ele alÄ±r.`,
-          `Bu sayede /makinalar-ekipman/tasima-ekipmanlari ve ${config.programHref} tarafÄ±ndaki mÃ¼hendislik araÃ§larÄ±, sahada uygulanabilir ekipman kararÄ±na dÃ¶nÃ¼ÅŸÃ¼r.`,
+          `Pro Makina, ${config.equipmentName.toLocaleLowerCase("tr-TR")} kararını kapasite formülüyle sınırlamaz; ürün davranışı, hat yerleşimi, bakım erişimi ve servis sürekliliğini birlikte ele alır.`,
+          `Bu sayede /makinalar-ekipman/tasima-ekipmanlari ve ${config.programHref} tarafındaki mühendislik araçları, sahada uygulanabilir ekipman kararına dönüşür.`,
         ],
       },
     ]),
@@ -278,7 +278,7 @@ function createTransportArticle(config: TransportArticleConfig): TopicalArticle 
       summaryRow("Servis güvenliği", "Bakım erişimi ve çalışma rejimini kapsar.", "Uzun vadeli işletme sürekliliğini belirler."),
     ],
     faqs: [
-      faq(`${config.equipmentName} kapasitesi nasÄ±l deÄŸerlendirilir?`, "Kapasite; ürün yoğunluğu, geometri, hız ve servis rejimi birlikte okunarak belirlenir."),
+      faq(`${config.equipmentName} kapasitesi nasıl değerlendirilir?`, "Kapasite; ürün yoğunluğu, geometri, hız ve servis rejimi birlikte okunarak belirlenir."),
       faq("EÄŸim kapasiteyi neden etkiler?", "Çünkü eğim arttıkça ürün hareketi zorlaşır, geri kaçma ve efektif kapasite kaybı büyür."),
       faq("Motor gücü yalnız tonaja göre seçilebilir mi?", "Hayır. Hat boyu, sürtünme, kalkış yükü ve çalışma rejimi de birlikte değerlendirilmelidir."),
       faq("Aşındırıcı ürünlerde nelere dikkat edilir?", "Gövde malzemesi, kaplama, bakım stratejisi ve servis faktörü daha güçlü seçilmelidir."),
@@ -309,45 +309,45 @@ function createFertilizerArticle(config: FertilizerArticleConfig): TopicalArticl
     categorySlug: "gubre-teknolojileri",
     sections: makeSections([
       {
-        title: `${config.productFamily} neden ayrÄ± proses yaklaÅŸÄ±mÄ± ister?`,
+        title: `${config.productFamily} neden ayrı proses yaklaşımı ister?`,
         paragraphs: [
-          `${config.productFamily}, yalnÄ±z bir reÃ§ete konusu deÄŸildir. Hammadde hazÄ±rlama, dozajlama, granÃ¼lasyon veya reaktÃ¶r yapÄ±sÄ±, kurutma ihtiyacÄ± ve son Ã¼rÃ¼n hazÄ±rlÄ±ÄŸÄ± aynÄ± teknik omurgada Ã§Ã¶zÃ¼lmelidir.`,
-          `${config.marketText} gibi ticari beklentiler olduÄŸunda Ã¼rÃ¼n standardÄ±, tane boyutu, nem kararlÄ±lÄ±ÄŸÄ± ve paketleme kalitesi yatÄ±rÄ±mÄ±n gerÃ§ek deÄŸerini belirler.`,
+          `${config.productFamily}, yalnız bir reçete konusu değildir. Hammadde hazırlama, dozajlama, granülasyon veya reaktör yapısı, kurutma ihtiyaçı ve son ürün hazırlığı aynı teknik omurgada çözülmelidir.`,
+          `${config.marketText} gibi ticari beklentiler olduğunda ürün standardı, tane boyutu, nem kararlılığı ve paketleme kalitesi yatırımın gerçek değerini belirler.`,
         ],
       },
       {
         title: "İlk teknik değerlendirmede hangi veriler gerekir?",
         paragraphs: [
-          `ÃœrÃ¼n tipi, saatlik kapasite, hammadde yapÄ±sÄ±, giriÅŸ nemi, hedef Ã¼rÃ¼n formu, granÃ¼l boyutu ve paketleme senaryosu gÃ¼bre tesislerinde en kritik girdilerdir. EÄŸer sÄ±vÄ± veya hibrit proses varsa reaktÃ¶r ve tank hacimleri de aynÄ± aÅŸamada deÄŸerlendirilmelidir.`,
-          `Bu veriler olmadan yapÄ±lan teklifler, tambur, elek, dozajlama veya paketleme kararlarÄ±nda gereksiz revizyona neden olur. SaÄŸlÄ±klÄ± yatÄ±rÄ±m planÄ± veri setiyle baÅŸlar.`,
+          `Ürün tipi, saatlik kapasite, hammadde yapısı, giriş nemi, hedef ürün formu, granül boyutu ve paketleme senaryosu gübre tesislerinde en kritik girdilerdir. Eğer sıvı veya hibrit proses varsa reaktör ve tank hacimleri de aynı aşamada değerlendirilmelidir.`,
+          `Bu veriler olmadan yapılan teklifler, tambur, elek, dozajlama veya paketleme kararlarında gereksiz revizyona neden olur. Sağlıklı yatırım planı veri setiyle başlar.`,
         ],
       },
       {
         title: "Hat kurgusu nasıl okunur?",
         paragraphs: [
-          `GÃ¼bre tesislerinde sÃ¼reÃ§ Ã§oÄŸu zaman dozajlama ile baÅŸlar, karÄ±ÅŸtÄ±rma ile devam eder; granÃ¼lasyon, kurutma, soÄŸutma, eleme, kaplama ve paketleme ile tamamlanÄ±r. Ancak her Ã¼rÃ¼n ailesi bu adÄ±mlarÄ±n tamamÄ±nÄ± aynÄ± yoÄŸunlukta kullanmaz.`,
-          `DoÄŸru mÃ¼hendislik, gerekli ekipmanlarÄ± doÄŸru sÄ±raya dizmek kadar gereksiz adÄ±mlarÄ± da sÃ¼recin dÄ±ÅŸÄ±nda bÄ±rakabilmektir. BÃ¶ylece yatÄ±rÄ±m daha kompakt ve daha verimli hale gelir.`,
+          `Gübre tesislerinde süreç çoğu zaman dozajlama ile başlar, karıştırma ile devam eder; granülasyon, kurutma, soğutma, eleme, kaplama ve paketleme ile tamamlanır. Ancak her ürün ailesi bu adımların tamamını aynı yoğunlukta kullanmaz.`,
+          `Doğru mühendislik, gerekli ekipmanları doğru sıraya dizmek kadar gereksiz adımları da sürecin dışında bırakabilmektir. Böylece yatırım daha kompakt ve daha verimli hale gelir.`,
         ],
       },
       {
         title: "Makine seçimine etkisi",
         paragraphs: [
-          `${config.productFamily} projelerinde tambur sistemleri, dozajlama hatlarÄ±, eleme omurgasÄ±, filtreler ve paketleme ekipmanlarÄ± aynÄ± kapasite ritmine gÃ¶re seÃ§ilmelidir. Bir bÃ¶lÃ¼mÃ¼n aÅŸÄ±rÄ± bÃ¼yÃ¼k ya da yetersiz kalmasÄ±, tÃ¼m hattÄ±n darboÄŸaz oluÅŸturmasÄ±na neden olur.`,
-          `Bu nedenle makine seÃ§imi; yalnÄ±z Ã¼rÃ¼nÃ¼n Ã¼retilebilir olmasÄ±na deÄŸil, ticari olarak stabil ve sÃ¼rdÃ¼rÃ¼lebilir Ã¼retilebilmesine odaklanmalÄ±dÄ±r.`,
+          `${config.productFamily} projelerinde tambur sistemleri, dozajlama hatları, eleme omurgası, filtreler ve paketleme ekipmanları aynı kapasite ritmine göre seçilmelidir. Bir bölümün aşırı büyük ya da yetersiz kalması, tüm hattın darboğaz oluşturmasına neden olur.`,
+          `Bu nedenle makine seçimi; yalnız ürünün üretilebilir olmasına değil, ticari olarak stabil ve sürdürülebilir üretilebilmesine odaklanmalıdır.`,
         ],
       },
       {
         title: "Uygulama alanları",
         paragraphs: [
-          `${config.productFamily}; organomineral, granÃ¼l, toz, sÄ±vÄ± veya Ã¶zel reÃ§eteli gÃ¼bre yatÄ±rÄ±mlarÄ±nda farklÄ± proses kurgularÄ±yla uygulanabilir. AynÄ± ana tesis iÃ§inde birden fazla Ã¼rÃ¼n ailesi planlanacaksa proses esnekliÄŸi ayrÄ±ca deÄŸerlendirilmelidir.`,
-          `Pazar hedefi, hammadde temini ve saha lojistiÄŸi de doÄŸrudan mÃ¼hendislik kararlarÄ±nÄ± etkiler. Bu yÃ¼zden teknik tasarÄ±m ile ticari beklenti arasÄ±nda denge kurulmalÄ±dÄ±r.`,
+          `${config.productFamily}; organomineral, granül, toz, sıvı veya özel reçeteli gübre yatırımlarında farklı proses kurgularıyla uygulanabilir. Aynı ana tesis içinde birden fazla ürün ailesi planlanacaksa proses esnekliği ayrıca değerlendirilmelidir.`,
+          `Pazar hedefi, hammadde temini ve saha lojistiği de doğrudan mühendislik kararlarını etkiler. Bu yüzden teknik tasarım ile ticari beklenti arasında denge kurulmalıdır.`,
         ],
       },
       {
         title: "Pro Makina çözüm yaklaşımı",
         paragraphs: [
-          `Pro Makina, ${config.productFamily.toLocaleLowerCase("tr-TR")} yatÄ±rÄ±mlarÄ±nda makine seÃ§imini yalnÄ±z ekipman listesi olarak deÄŸil; proses akÄ±ÅŸÄ±, saha yerleÅŸimi, servis eriÅŸimi ve devreye alma disiplininin parÃ§asÄ± olarak ele alÄ±r.`,
-          `Bu sayede ${config.serviceLabel.toLocaleLowerCase("tr-TR")} iÃ§in yapÄ±lan teknik Ã§alÄ±ÅŸma, yatÄ±rÄ±mcÄ±ya yalnÄ±z teklif deÄŸil uygulanabilir tesis omurgasÄ± sunar.`,
+          `Pro Makina, ${config.productFamily.toLocaleLowerCase("tr-TR")} yatırımlarında makine seçimini yalnız ekipman listesi olarak değil; proses akışı, saha yerleşimi, servis erişimi ve devreye alma disiplininin parçası olarak ele alır.`,
+          `Bu sayede ${config.serviceLabel.toLocaleLowerCase("tr-TR")} için yapılan teknik çalışma, yatırımcıya yalnız teklif değil uygulanabilir tesis omurgası sunar.`,
         ],
       },
     ]),
@@ -358,7 +358,7 @@ function createFertilizerArticle(config: FertilizerArticleConfig): TopicalArticl
       summaryRow("Son ürün hazırlığı", "Eleme, kaplama ve paketleme disiplinini kapsar.", "Ticari kaliteyi belirleyen son aşamadır."),
     ],
     faqs: [
-      faq(`${config.productFamily} yatÄ±rÄ±mÄ± iÃ§in ilk hangi veriler gerekir?`, "Ürün tipi, kapasite, hammadde yapısı, nem seviyesi ve hedef paketleme modeli ilk teknik değerlendirme için yeterlidir."),
+      faq(`${config.productFamily} yatırımı için ilk hangi veriler gerekir?`, "Ürün tipi, kapasite, hammadde yapısı, nem seviyesi ve hedef paketleme modeli ilk teknik değerlendirme için yeterlidir."),
       faq("Her gübre hattında kurutma gerekir mi?", "Hayır. Reçete, nem seviyesi ve hedef son ürün standardına göre bazı hatlarda kurutma zorunlu, bazılarında ikincil olabilir."),
       faq("Granülasyon ve eleme neden birlikte düşünülür?", "Çünkü granül boyut dağılımı ve geri devir oranı son ürün kalitesini doğrudan etkiler."),
       faq("Tek bir tesiste birden fazla gübre ürünü üretilebilir mi?", "Uygun proses esnekliği ve ekipman seçimiyle mümkündür; ancak reçete farkları baştan planlanmalıdır."),
@@ -388,45 +388,45 @@ function createCompostArticle(config: CompostArticleConfig): TopicalArticle {
     categorySlug: "kompost-ve-atik",
     sections: makeSections([
       {
-        title: `${config.title} neden dikkatli kurgulanmalÄ±dÄ±r?`,
+        title: `${config.title} neden dikkatli kurgulanmalıdır?`,
         paragraphs: [
-          `${config.feedstockText} gibi organik akÄ±ÅŸlarda en kritik konu, atÄ±ÄŸÄ±n kontrollÃ¼ biÃ§imde stabil son Ã¼rÃ¼ne dÃ¶nÃ¼ÅŸtÃ¼rÃ¼lmesidir. Bu sÃ¼reÃ§ yalnÄ±z biyolojik deÄŸil mekanik ve lojistik kararlar da iÃ§erir.`,
-          `YanlÄ±ÅŸ nem seviyesi, zayÄ±f havalanma, yetersiz eleme veya eksik koku kontrolÃ¼ tÃ¼m tesis performansÄ±nÄ± olumsuz etkileyebilir. Bu yÃ¼zden kompost tarafÄ±nda sÃ¼reÃ§, baÅŸtan sona tek bir mÃ¼hendislik omurgasÄ± olarak ele alÄ±nmalÄ±dÄ±r.`,
+          `${config.feedstockText} gibi organik akışlarda en kritik konu, atığın kontrollü biçimde stabil son ürüne dönüştürülmesidir. Bu süreç yalnız biyolojik değil mekanik ve lojistik kararlar da içerir.`,
+          `Yanlış nem seviyesi, zayıf havalanma, yetersiz eleme veya eksik koku kontrolü tüm tesis performansını olumsuz etkileyebilir. Bu yüzden kompost tarafında süreç, baştan sona tek bir mühendislik omurgası olarak ele alınmalıdır.`,
         ],
       },
       {
         title: "Hangi veriler gerekir?",
         paragraphs: [
-          `GÃ¼nlÃ¼k tonaj, atÄ±k bileÅŸimi, giriÅŸ nemi, hedef son Ã¼rÃ¼n nemi, olgunlaÅŸtÄ±rma sÃ¼resi, koku kontrol ihtiyacÄ± ve yabancÄ± madde oranÄ± kompost projelerinin ana girdileridir. EÄŸer son Ã¼rÃ¼nde kurutma veya paketleme planlanÄ±yorsa bu baÅŸlÄ±klar da ilk fizibiliteye dahil edilmelidir.`,
-          `Her atÄ±k tipi aynÄ± karÄ±ÅŸÄ±m stratejisiyle ilerlemez. Bu nedenle reÃ§ete ve yapÄ±landÄ±rÄ±cÄ± yaklaÅŸÄ±mÄ±, Ã¼rÃ¼n kalitesi kadar proses gÃ¼venliÄŸi iÃ§in de Ã¶nemlidir.`,
+          `Günlük tonaj, atık bileşimi, giriş nemi, hedef son ürün nemi, olgunlaştırma süresi, koku kontrol ihtiyaçı ve yabancı madde oranı kompost projelerinin ana girdileridir. Eğer son üründe kurutma veya paketleme planlanıyorsa bu başlıklar da ilk fizibiliteye dahil edilmelidir.`,
+          `Her atık tipi aynı karışım stratejisiyle ilerlemez. Bu nedenle reçete ve yapılandırıcı yaklaşımı, ürün kalitesi kadar proses güvenliği için de önemlidir.`,
         ],
       },
       {
         title: "Süreç mantığı nasıl kurulur?",
         paragraphs: [
-          `Kompost hatlarÄ± genel olarak kabul, Ã¶n ayÄ±rma, parÃ§alama, karÄ±ÅŸtÄ±rma, aktif kompostlaÅŸtÄ±rma, olgunlaÅŸtÄ±rma, eleme ve gerekiyorsa kurutma veya paketleme adÄ±mlarÄ±yla ilerler. Ancak her projede bu adÄ±mlarÄ±n sÃ¼resi ve makine yapÄ±sÄ± farklÄ±laÅŸÄ±r.`,
-          `DoÄŸru sÃ¼reÃ§; yalnÄ±z atÄ±ÄŸÄ± bertaraf eden deÄŸil, ticari deÄŸeri olan stabil son Ã¼rÃ¼nÃ¼ gÃ¼venle hazÄ±rlayan yapÄ± demektir. Bu yÃ¼zden residence time, nem dengesi ve eleme kalitesi birlikte dÃ¼ÅŸÃ¼nÃ¼lmelidir.`,
+          `Kompost hatları genel olarak kabul, ön ayırma, parçalama, karıştırma, aktif kompostlaştırma, olgunlaştırma, eleme ve gerekiyorsa kurutma veya paketleme adımlarıyla ilerler. Ancak her projede bu adımların süresi ve makine yapısı farklılaşır.`,
+          `Doğru süreç; yalnız atığı bertaraf eden değil, ticari değeri olan stabil son ürünü güvenle hazırlayan yapı demektir. Bu yüzden residence time, nem dengesi ve eleme kalitesi birlikte düşünülmelidir.`,
         ],
       },
       {
         title: "Makine ve tesis tasarımına etkisi",
         paragraphs: [
-          `Kompost projelerinde tambur sistemleri, trommel elekler, taÅŸÄ±ma hatlarÄ±, fan ve filtre omurgasÄ± aynÄ± kapasite ritmine gÃ¶re seÃ§ilir. Ã–zellikle koku ve toz kontrolÃ¼, ana proses kadar kritik yardÄ±mcÄ± bir katmandÄ±r.`,
-          `YanlÄ±ÅŸ seÃ§ilen Ã¶n ayÄ±rma veya eleme sistemi, tÃ¼m kompost hattÄ±nda gereksiz geri devir ve bakÄ±m yÃ¼kÃ¼ yaratabilir. Bu nedenle ekipman kararÄ± tÃ¼m akÄ±ÅŸÄ± gÃ¶zeterek verilmelidir.`,
+          `Kompost projelerinde tambur sistemleri, trommel elekler, taşıma hatları, fan ve filtre omurgası aynı kapasite ritmine göre seçilir. Özellikle koku ve toz kontrolü, ana proses kadar kritik yardımcı bir katmandır.`,
+          `Yanlış seçilen ön ayırma veya eleme sistemi, tüm kompost hattında gereksiz geri devir ve bakım yükü yaratabilir. Bu nedenle ekipman kararı tüm akışı gözeterek verilmelidir.`,
         ],
       },
       {
         title: "Uygulama alanları",
         paragraphs: [
-          `${config.feedstockText} uygulamalarÄ±nda proses hedefi deÄŸiÅŸse de temel mÃ¼hendislik mantÄ±ÄŸÄ± aynÄ±dÄ±r: atÄ±ÄŸÄ± kararlÄ± Ã¼rÃ¼ne dÃ¶nÃ¼ÅŸtÃ¼rmek. Belediyeler, hayvancÄ±lÄ±k iÅŸletmeleri, gÄ±da prosesleri ve entegre organik atÄ±k sahalarÄ± bu yaklaÅŸÄ±mÄ±n tipik Ã¶rnekleridir.`,
-          `BazÄ± projelerde son Ã¼rÃ¼n doÄŸrudan kompost olarak kullanÄ±lÄ±r; bazÄ± projelerde ise organomineral veya granÃ¼l gÃ¼bre Ã¶n Ã¼rÃ¼nÃ¼ olarak deÄŸerlendirilir. Bu hedef, prosesin son adÄ±mlarÄ±nÄ± doÄŸrudan deÄŸiÅŸtirir.`,
+          `${config.feedstockText} uygulamalarında proses hedefi değişse de temel mühendislik mantığı aynıdır: atığı kararlı ürüne dönüştürmek. Belediyeler, hayvancılık işletmeleri, gıda prosesleri ve entegre organik atık sahaları bu yaklaşımın tipik örnekleridir.`,
+          `Bazı projelerde son ürün doğrudan kompost olarak kullanılır; bazı projelerde ise organomineral veya granül gübre ön ürünü olarak değerlendirilir. Bu hedef, prosesin son adımlarını doğrudan değiştirir.`,
         ],
       },
       {
         title: "Pro Makina yaklaşımı",
         paragraphs: [
-          `Pro Makina, ${config.title.toLocaleLowerCase("tr-TR")} konusunu atÄ±k tÃ¼rÃ¼, gÃ¼nlÃ¼k tonaj, saha koÅŸulu ve son Ã¼rÃ¼n hedefiyle birlikte ele alÄ±r. BÃ¶ylece kompost tesisi yalnÄ±z kurulan deÄŸil sahada sÃ¼rdÃ¼rÃ¼lebilir Ã§alÄ±ÅŸan bir yapÄ± haline gelir.`,
-          `Teknik Ã¶n deÄŸerlendirme almak iÃ§in ${config.serviceHref} ve /iletisim Ã¼zerinden ekibimizle gÃ¶rÃ¼ÅŸebilir, ilgili proses ve ekipman omurgasÄ±nÄ± birlikte netleÅŸtirebilirsiniz.`,
+          `Pro Makina, ${config.title.toLocaleLowerCase("tr-TR")} konusunu atık türü, günlük tonaj, saha koşulu ve son ürün hedefiyle birlikte ele alır. Böylece kompost tesisi yalnız kurulan değil sahada sürdürülebilir çalışan bir yapı haline gelir.`,
+          `Teknik ön değerlendirme almak için ${config.serviceHref} ve /iletişim üzerinden ekibimizle görüşebilir, ilgili proses ve ekipman omurgasını birlikte netleştirebilirsiniz.`,
         ],
       },
     ]),
@@ -466,45 +466,45 @@ function createBiogasArticle(config: BiogasArticleConfig): TopicalArticle {
     categorySlug: "biyogaz-ve-enerji",
     sections: makeSections([
       {
-        title: `${config.title} neden proses bazlÄ± ele alÄ±nmalÄ±dÄ±r?`,
+        title: `${config.title} neden proses bazlı ele alınmalıdır?`,
         paragraphs: [
-          `${config.streamText} gibi biyogaz akÄ±ÅŸlarÄ±nda temel hedef yalnÄ±z enerji Ã¼retmek deÄŸil; besleme, Ã¶n hazÄ±rlÄ±k ve yan akÄ±ÅŸ yÃ¶netimini kararlÄ± hale getirmektir. Bu yÃ¼zden biyogaz projeleri, mekanik besleme ve biyolojik proses disiplinini aynÄ± Ã§erÃ§evede toplar.`,
-          `YanlÄ±ÅŸ kapasite okumasÄ± veya eksik Ã¶n iÅŸlem, reaktÃ¶r verimini dÃ¼ÅŸÃ¼rÃ¼r; digestat yÃ¶netimi ihmal edilirse saha operasyonu zayÄ±flar. Bu nedenle proje bÃ¼tÃ¼nsel olarak okunmalÄ±dÄ±r.`,
+          `${config.streamText} gibi biyogaz akışlarında temel hedef yalnız enerji üretmek değil; besleme, ön hazırlık ve yan akış yönetimini kararlı hale getirmektir. Bu yüzden biyogaz projeleri, mekanik besleme ve biyolojik proses disiplinini aynı çerçevede toplar.`,
+          `Yanlış kapasite okuması veya eksik ön işlem, reaktör verimini düşürür; digestat yönetimi ihmal edilirse saha operasyonu zayıflar. Bu nedenle proje bütünsel olarak okunmalıdır.`,
         ],
       },
       {
         title: "Hangi veriler gerekir?",
         paragraphs: [
-          `AtÄ±k tipi, gÃ¼nlÃ¼k tonaj, kuru madde, organik madde oranÄ±, yabancÄ± madde riski, besleme rejimi ve digestat miktarÄ± biyogaz projelerinin ilk teknik girdileridir. EÄŸer Ã¶n iÅŸlem hattÄ±nda parÃ§alama, ayÄ±rma veya kurutma hedefi varsa bu baÅŸlÄ±klar da ayrÄ±ca deÄŸerlendirilmelidir.`,
-          `Bu veriler, reaktÃ¶re girecek akÄ±ÅŸÄ±n ne kadar stabil hazÄ±rlanabileceÄŸini ve yan akÄ±ÅŸlarÄ±n nasÄ±l yÃ¶netileceÄŸini belirler.`,
+          `Atık tipi, günlük tonaj, kuru madde, organik madde oranı, yabancı madde riski, besleme rejimi ve digestat miktarı biyogaz projelerinin ilk teknik girdileridir. Eğer ön işlem hattında parçalama, ayırma veya kurutma hedefi varsa bu başlıklar da ayrıca değerlendirilmelidir.`,
+          `Bu veriler, reaktöre girecek akışın ne kadar stabil hazırlanabileceğini ve yan akışların nasıl yönetileceğini belirler.`,
         ],
       },
       {
         title: "Kapasite ve akış mantığı",
         paragraphs: [
-          `Biyogaz hattÄ±nda kapasite hesabÄ± yalnÄ±z toplam tonaj deÄŸildir. Besleme sÃ¼rekliliÄŸi, tampon hacimler, kabul alanÄ± ve yan akÄ±ÅŸlarÄ±n gÃ¼nlÃ¼k yÃ¼kÃ¼ birlikte dÃ¼ÅŸÃ¼nÃ¼lmelidir. Ã–zellikle heterojen organik atÄ±klarda bu yaklaÅŸÄ±m daha da Ã¶nem kazanÄ±r.`,
-          `DoÄŸru Ã¶n hazÄ±rlÄ±k omurgasÄ±, reaktÃ¶re daha kararlÄ± akÄ±ÅŸ gÃ¶nderir; bu da gaz Ã¼retim dengesine doÄŸrudan yansÄ±r.`,
+          `Biyogaz hattında kapasite hesabı yalnız toplam tonaj değildir. Besleme sürekliliği, tampon hacimler, kabul alanı ve yan akışların günlük yükü birlikte düşünülmelidir. Özellikle heterojen organik atıklarda bu yaklaşım daha da önem kazanır.`,
+          `Doğru ön hazırlık omurgası, reaktöre daha kararlı akış gönderir; bu da gaz üretim dengesine doğrudan yansır.`,
         ],
       },
       {
         title: "Tesis tasarımına etkisi",
         paragraphs: [
-          `KÄ±rÄ±cÄ±, ayÄ±rÄ±cÄ±, bunker, helezon, pompa ve gerekiyorsa kurutma sistemleri; biyogaz hattÄ±nÄ±n mekanik omurgasÄ±nÄ± oluÅŸturur. Bu ekipmanlarÄ±n yanlÄ±ÅŸ Ã¶lÃ§eklenmesi enerji hattÄ±nÄ±n toplam verimini azaltabilir.`,
-          `AyrÄ±ca digestat tarafÄ±nda kompostlaÅŸtÄ±rma, kurutma veya stok yÃ¶netimi planlanÄ±yorsa, bu bÃ¶lÃ¼m de ana yatÄ±rÄ±m kadar dikkatle Ã§Ã¶zÃ¼lmelidir.`,
+          `Kırıcı, ayırıcı, bunker, helezon, pompa ve gerekiyorsa kurutma sistemleri; biyogaz hattının mekanik omurgasını oluşturur. Bu ekipmanların yanlış ölçeklenmesi enerji hattının toplam verimini azaltabilir.`,
+          `Ayrıca digestat tarafında kompostlaştırma, kurutma veya stok yönetimi planlanıyorsa, bu bölüm de ana yatırım kadar dikkatle çözülmelidir.`,
         ],
       },
       {
         title: "Uygulama alanları",
         paragraphs: [
-          `${config.streamText} senaryolarÄ±; tarÄ±msal, hayvansal, belediyesel veya endÃ¼striyel organik akÄ±ÅŸlarda farklÄ± kombinasyonlarla karÅŸÄ±mÄ±za Ã§Ä±kar. AynÄ± ana prensipler geÃ§erli olsa da yabancÄ± madde, kuru madde ve hijyen ihtiyaÃ§larÄ± ciddi farklar yaratÄ±r.`,
-          `Bu yÃ¼zden her biyogaz tesisi iÃ§in tek tip Ã¶n iÅŸlem kurgusu yerine veri bazlÄ± mÃ¼hendislik yaklaÅŸÄ±mÄ± gerekir.`,
+          `${config.streamText} senaryoları; tarımsal, hayvansal, belediyesel veya endüstriyel organik akışlarda farklı kombinasyonlarla karşımıza çıkar. Aynı ana prensipler geçerli olsa da yabancı madde, kuru madde ve hijyen ihtiyaçları ciddi farklar yaratır.`,
+          `Bu yüzden her biyogaz tesisi için tek tip ön işlem kurgusu yerine veri bazlı mühendislik yaklaşımı gerekir.`,
         ],
       },
       {
         title: "Pro Makina yaklaşımı",
         paragraphs: [
-          `Pro Makina, ${config.title.toLocaleLowerCase("tr-TR")} konusunu atÄ±k kabulÃ¼nden digestat yÃ¶netimine kadar uzanan bir sÃ¼reÃ§ olarak ele alÄ±r. Besleme omurgasÄ±, yardÄ±mcÄ± ekipmanlar ve yan akÄ±ÅŸlar birlikte deÄŸerlendirilir.`,
-          `Teknik gÃ¶rÃ¼ÅŸme almak iÃ§in /sektorler/enerji-ve-biyogaz-sistemleri ve /iletisim sayfalarÄ± Ã¼zerinden bizimle iletiÅŸime geÃ§ebilirsiniz.`,
+          `Pro Makina, ${config.title.toLocaleLowerCase("tr-TR")} konusunu atık kabulünden digestat yönetimine kadar uzanan bir süreç olarak ele alır. Besleme omurgası, yardımcı ekipmanlar ve yan akışlar birlikte değerlendirilir.`,
+          `Teknik görüşme almak için /sektörler/enerji-ve-biyogaz-sistemleri ve /iletişim sayfaları üzerinden bizimle iletişime geçebilirsiniz.`,
         ],
       },
     ]),
@@ -545,45 +545,45 @@ function createProcessArticle(config: ProcessArticleConfig): TopicalArticle {
     categorySlug: "proses-muhendisligi",
     sections: makeSections([
       {
-        title: `${config.title} neden Ã¶nemlidir?`,
+        title: `${config.title} neden önemlidir?`,
         paragraphs: [
-          `${config.processFamily} tarafÄ±nda alÄ±nan ekipman kararÄ±, yalnÄ±z tek bir makinenin deÄŸil; hattÄ±n gÃ¼venli, temiz ve sÃ¼rdÃ¼rÃ¼lebilir Ã§alÄ±ÅŸmasÄ±nÄ±n temelini oluÅŸturur. Bu nedenle seÃ§im yalÄ±n Ã¼rÃ¼n kataloÄŸu mantÄ±ÄŸÄ±yla deÄŸil proses hedefiyle birlikte yapÄ±lmalÄ±dÄ±r.`,
-          `YanlÄ±ÅŸ Ã¶n seÃ§im kÄ±sa vadede Ã§alÄ±ÅŸÄ±yor gibi gÃ¶rÃ¼nse bile bakÄ±m yÃ¼kÃ¼, kalite dalgalanmasÄ± veya kapasite kaybÄ± yaratabilir. SaÄŸlÄ±klÄ± mÃ¼hendislik yaklaÅŸÄ±mÄ± bu riskleri baÅŸtan gÃ¶rmeyi amaÃ§lar.`,
+          `${config.processFamily} tarafında alınan ekipman kararı, yalnız tek bir makinenin değil; hattın güvenli, temiz ve sürdürülebilir çalışmasının temelini oluşturur. Bu nedenle seçim yalın ürün kataloğu mantığıyla değil proses hedefiyle birlikte yapılmalıdır.`,
+          `Yanlış ön seçim kısa vadede çalışıyor gibi görünse bile bakım yükü, kalite dalgalanması veya kapasite kaybı yaratabilir. Sağlıklı mühendislik yaklaşımı bu riskleri baştan görmeyi amaçlar.`,
         ],
       },
       {
         title: "İlk değerlendirmede hangi veriler gerekir?",
         paragraphs: [
-          `Kapasite, Ã¼rÃ¼n veya akÄ±ÅŸ tipi, sÄ±caklÄ±k, viskozite, toz yÃ¼kÃ¼, servis rejimi ve saha yerleÅŸimi bu ailedeki ekipman kararlarÄ±nÄ±n temel girdileridir. EÄŸer sistem kimyasal uyum veya emisyon hedefi taÅŸÄ±yorsa malzeme ve gÃ¼venlik kriterleri de ilk aÅŸamaya dahil edilmelidir.`,
-          `Bu veriler, yalnÄ±z ekipman boyutunu deÄŸil bakÄ±m stratejisini ve uzun vadeli iÅŸletme maliyetini de etkiler.`,
+          `Kapasite, ürün veya akış tipi, sıcaklık, viskozite, toz yükü, servis rejimi ve saha yerleşimi bu ailedeki ekipman kararlarının temel girdileridir. Eğer sistem kimyasal uyum veya emisyon hedefi taşıyorsa malzeme ve güvenlik kriterleri de ilk aşamaya dahil edilmelidir.`,
+          `Bu veriler, yalnız ekipman boyutunu değil bakım stratejisini ve uzun vadeli işletme maliyetini de etkiler.`,
         ],
       },
       {
         title: "Seçim mantığı",
         paragraphs: [
-          `DoÄŸru seÃ§im; proses gÃ¶revi, tutulma sÃ¼resi, akÄ±ÅŸ davranÄ±ÅŸÄ±, baÄŸlantÄ± noktalarÄ± ve yardÄ±mcÄ± sistem ihtiyacÄ± birlikte okunarak yapÄ±lÄ±r. Bu yaklaÅŸÄ±m hem mekanik hem operasyonel riskleri azaltÄ±r.`,
-          `Ã–zellikle proses ekipmanlarÄ±nda yalnÄ±z nominal kapasiteye odaklanmak yanÄ±ltÄ±cÄ±dÄ±r. ÃœrÃ¼nÃ¼n sisteme nasÄ±l girdiÄŸi, nasÄ±l Ã§Ä±ktÄ±ÄŸÄ± ve saha ekibinin buna nasÄ±l mÃ¼dahale edeceÄŸi de aynÄ± Ã¶lÃ§Ã¼de Ã¶nemlidir.`,
+          `Doğru seçim; proses görevi, tutulma süresi, akış davranışı, bağlantı noktaları ve yardımcı sistem ihtiyaçı birlikte okunarak yapılır. Bu yaklaşım hem mekanik hem operasyonel riskleri azaltır.`,
+          `Özellikle proses ekipmanlarında yalnız nominal kapasiteye odaklanmak yanıltıcıdır. Ürünün sisteme nasıl girdiği, nasıl çıktığı ve saha ekibinin buna nasıl müdahale edeceği de aynı ölçüde önemlidir.`,
         ],
       },
       {
         title: "Tasarım ve saha etkisi",
         paragraphs: [
-          `${config.processFamily} kararlarÄ±; tank hacmi, filtre alanÄ±, fan kapasitesi, dolum ritmi veya baÄŸlantÄ± hattÄ± gibi birÃ§ok yardÄ±mcÄ± unsur Ã¼zerinde doÄŸrudan etkili olur. Bu yÃ¼zden ekipman seÃ§imi Ã§oÄŸu zaman tÃ¼m akÄ±ÅŸ ÅŸemasÄ±nÄ± yeniden tanÄ±mlar.`,
-          `AyrÄ±ca servis kapaklarÄ±, platformlar, temizlenebilirlik ve otomasyon entegrasyonu da tasarÄ±mÄ±n ayrÄ±lmaz parÃ§asÄ±dÄ±r.`,
+          `${config.processFamily} kararları; tank hacmi, filtre alanı, fan kapasitesi, dolum ritmi veya bağlantı hattı gibi birçok yardımcı unsur üzerinde doğrudan etkili olur. Bu yüzden ekipman seçimi çoğu zaman tüm akış şemasını yeniden tanımlar.`,
+          `Ayrıca servis kapakları, platformlar, temizlenebilirlik ve otomasyon entegrasyonu da tasarımın ayrılmaz parçasıdır.`,
         ],
       },
       {
         title: "Uygulama alanları",
         paragraphs: [
-          `${config.processFamily}, sÄ±vÄ± gÃ¼bre, kimya, kurutma, madencilik, dolum ve toz toplama gibi Ã§ok farklÄ± hatlarda kullanÄ±lÄ±r. Uygulama alanÄ± deÄŸiÅŸtikÃ§e malzeme seÃ§imi, gÃ¼venlik seviyesi ve Ã§evresel kontrol ihtiyaÃ§larÄ± da deÄŸiÅŸir.`,
-          `Bu nedenle genel gÃ¶rÃ¼nÃ¼ÅŸÃ¼ benzer ekipmanlar bile farklÄ± sektÃ¶rlerde tamamen farklÄ± mÃ¼hendislik detaylarÄ±yla Ã¼retilir.`,
+          `${config.processFamily}, sıvı gübre, kimya, kurutma, madencilik, dolum ve toz toplama gibi çok farklı hatlarda kullanılır. Uygulama alanı değiştikçe malzeme seçimi, güvenlik seviyesi ve çevresel kontrol ihtiyaçları da değişir.`,
+          `Bu nedenle genel görünüşü benzer ekipmanlar bile farklı sektörlerde tamamen farklı mühendislik detaylarıyla üretilir.`,
         ],
       },
       {
         title: "Pro Makina yaklaşımı",
         paragraphs: [
-          `Pro Makina, ${config.title.toLocaleLowerCase("tr-TR")} konusunu proses gÃ¶revi, saha kÄ±sÄ±tlarÄ± ve bakÄ±m gereksinimiyle birlikte ele alÄ±r. BÃ¶ylece seÃ§im yalnÄ±z makine listesi deÄŸil; Ã§alÄ±ÅŸabilir bir tesis omurgasÄ± Ã¼retir.`,
-          `Daha detaylÄ± teknik deÄŸerlendirme iÃ§in ${config.serviceHref}, ${config.machineHref} ve /iletisim Ã¼zerinden ekibimizle gÃ¶rÃ¼ÅŸebilirsiniz.`,
+          `Pro Makina, ${config.title.toLocaleLowerCase("tr-TR")} konusunu proses görevi, saha kısıtları ve bakım gereksinimiyle birlikte ele alır. Böylece seçim yalnız makine listesi değil; çalışabilir bir tesis omurgası üretir.`,
+          `Daha detaylı teknik değerlendirme için ${config.serviceHref}, ${config.machineHref} ve /iletişim üzerinden ekibimizle görüşebilirsiniz.`,
         ],
       },
     ]),
@@ -594,7 +594,7 @@ function createProcessArticle(config: ProcessArticleConfig): TopicalArticle {
       summaryRow("Bakım erişimi", "Temizlik ve servis kabiliyetini tanımlar.", "İşletme sürekliliğini korur."),
     ],
     faqs: [
-      faq(`${config.title} iÃ§in ilk hangi veriler gerekir?`, "Kapasite, akış tipi, sıcaklık veya toz yükü, servis rejimi ve saha yerleşimi ilk teknik değerlendirme için gereklidir."),
+      faq(`${config.title} için ilk hangi veriler gerekir?`, "Kapasite, akış tipi, sıcaklık veya toz yükü, servis rejimi ve saha yerleşimi ilk teknik değerlendirme için gereklidir."),
       faq("Malzeme seçimi neden önemlidir?", "Çünkü kimyasal uyum, aşınma ve sıcaklık dayanımı yanlış malzeme seçildiğinde hızla sorun yaratır."),
       faq("Bakım erişimi neden tasarımın parçasıdır?", "Servis ve temizlik imkanı zayıfsa nominal olarak doğru ekipman sahada sürdürülebilir olmaz."),
       faq("Yalnız katalog değerleriyle seçim yapılabilir mi?", "Hayır. Katalog verisi başlangıç sağlar; proses ve saha koşulları nihai kararı belirler."),
@@ -612,7 +612,7 @@ const generatedDryingArticles: TopicalArticle[] = [
   createDryingArticle({
     slug: "kurutma-tamburu-nasil-calisir",
     title: "Kurutma Tamburu Nasıl Çalışır?",
-    metaTitle: "Kurutma Tamburu Nasıl Çalışır? | Pro Makina",
+    metaTitle: "Kurutma Tamburu Nasıl Çalışır?",
     description: "Kurutma tamburu çalışma prensibi; sıcak gaz akışı, iç kanat yapısı, ürün perdesi ve nem düşürme mantığı için teknik rehber.",
     heroDescription: "Tambur içindeki ürün hareketi, sıcak gaz teması ve residence time ilişkisini müşterinin anlayacağı açıklıkta anlatan teknik içerik.",
     focus: "kurutma tamburunun çalışma prensibi",
@@ -634,7 +634,7 @@ const generatedDryingArticles: TopicalArticle[] = [
   createDryingArticle({
     slug: "kurutma-tamburu-fan-secimi",
     title: "Kurutma Tamburu Fan Seçimi",
-    metaTitle: "Kurutma Tamburu Fan Seçimi | Pro Makina",
+    metaTitle: "Kurutma Tamburu Fan Seçimi",
     description: "Kurutma tamburu fan seçimi; hava debisi, negatif basınç, kanal kayıpları, siklon ve filtre hattı için teknik seçim rehberi.",
     heroDescription: "Kurutma hattında fanın yalnız yardımcı ekipman değil, kapasite ve ürün kalitesi üzerinde belirleyici bir ana proses bileşeni olduğunu anlatır.",
     focus: "kurutma tamburunda fan seçimi",
@@ -656,7 +656,7 @@ const generatedDryingArticles: TopicalArticle[] = [
   createDryingArticle({
     slug: "kurutma-tamburu-brulor-secimi",
     title: "Kurutma Tamburu Brülör Seçimi",
-    metaTitle: "Kurutma Tamburu Brülör Seçimi | Pro Makina",
+    metaTitle: "Kurutma Tamburu Brülör Seçimi",
     description: "Kurutma tamburu brülör seçimi; ısı yükü, yakıt türü, modülasyon, güvenlik ve proses kararlılığı için teknik rehber.",
     heroDescription: "Brülör gücünün yalnız tonaja göre değil su uçurma yükü, ürün sıcaklık limiti ve saha verimiyle birlikte seçilmesi gerektiğini açıklar.",
     focus: "kurutma tamburunda brülör seçimi",
@@ -678,7 +678,7 @@ const generatedDryingArticles: TopicalArticle[] = [
   createDryingArticle({
     slug: "tavuk-gubresi-kurutma",
     title: "Tavuk Gübresi Kurutma",
-    metaTitle: "Tavuk Gübresi Kurutma | Pro Makina",
+    metaTitle: "Tavuk Gübresi Kurutma",
     description: "Tavuk gübresi kurutma; giriş nemi, koku kontrolü, hava debisi, tambur seçimi ve nihai ürün hazırlığı için teknik rehber.",
     heroDescription: "Yüksek nem, koku ve organik yük nedeniyle tavuk gübresi kurutma hatlarında öne çıkan teknik kararları açıklayan süreç rehberi.",
     focus: "tavuk gübresi kurutma hattı seçimi",
@@ -700,7 +700,7 @@ const generatedDryingArticles: TopicalArticle[] = [
   createDryingArticle({
     slug: "maden-kurutma-tamburu",
     title: "Maden Kurutma Tamburu",
-    metaTitle: "Maden Kurutma Tamburu Seçimi | Pro Makina",
+    metaTitle: "Maden Kurutma Tamburu Seçimi",
     description: "Maden kurutma tamburu seçimi; aşındırıcılık, tane boyutu, nem yükü, hava debisi ve toz toplama kriterleri için teknik rehber.",
     heroDescription: "Silis kumu, kalsit, feldspat ve benzeri mineral ürünlerde tambur kurutma yaklaşımını saha ve proses mantığıyla ele alır.",
     focus: "maden kurutma tamburu seçimi",
@@ -722,7 +722,7 @@ const generatedDryingArticles: TopicalArticle[] = [
   createDryingArticle({
     slug: "kum-kurutma-tesisi",
     title: "Kum Kurutma Tesisi",
-    metaTitle: "Kum Kurutma Tesisi Nasıl Kurgulanır? | Pro Makina",
+    metaTitle: "Kum Kurutma Tesisi Nasıl Kurgulanır?",
     description: "Kum kurutma tesisi; kurutma tamburu, hava debisi, siklon, filtre, stoklama ve sevkiyat omurgası için teknik rehber.",
     heroDescription: "Kum ve benzeri mineral ürünlerde kurutma, toz toplama ve saha akışını birlikte değerlendiren tesis odaklı içerik.",
     focus: "kum kurutma tesisi kurgusu",
@@ -744,7 +744,7 @@ const generatedDryingArticles: TopicalArticle[] = [
   createDryingArticle({
     slug: "digestat-kurutma",
     title: "Digestat Kurutma",
-    metaTitle: "Digestat Kurutma Sistemi | Pro Makina",
+    metaTitle: "Digestat Kurutma Sistemi",
     description: "Digestat kurutma; nem yükü, koku kontrolü, lifli yapı, tambur seçimi ve son ürün hazırlığı için teknik rehber.",
     heroDescription: "Biyogaz yan ürünü olan digestatın kurutularak yönetilmesinde öne çıkan proses, enerji ve ekipman kararlarını açıklar.",
     focus: "digestat kurutma yaklaşımı",
@@ -769,7 +769,7 @@ const generatedDrumArticles: TopicalArticle[] = [
   createDrumSystemArticle({
     slug: "tambur-granulator-kapasite-hesabi",
     title: "Tambur Granülatör Kapasite Hesabı",
-    metaTitle: "Tambur Granülatör Kapasite Hesabı | Pro Makina",
+    metaTitle: "Tambur Granülatör Kapasite Hesabı",
     description: "Tambur granülatör kapasite hesabı; residence time, nem dengesi, geri devir oranı ve granül büyüme mantığı için teknik rehber.",
     heroDescription: "Granülatör tamburlarında kapasitenin yalnız tonaj değil granül büyümesi, geri devir ve tambur ritmiyle birlikte okunması gerektiğini anlatır.",
     processName: "tambur granülasyon",
@@ -790,7 +790,7 @@ const generatedDrumArticles: TopicalArticle[] = [
   createDrumSystemArticle({
     slug: "tambur-granulator-calisma-prensibi",
     title: "Tambur Granülatör Çalışma Prensibi",
-    metaTitle: "Tambur Granülatör Çalışma Prensibi | Pro Makina",
+    metaTitle: "Tambur Granülatör Çalışma Prensibi",
     description: "Tambur granülatör çalışma prensibi; çekirdek oluşumu, katman büyümesi, bağlayıcı kullanımı ve geri devir mantığı için teknik rehber.",
     heroDescription: "Tambur granülatör içinde çekirdek oluşumu, granül büyümesi ve proses kararlılığının nasıl kurulduğunu sade ama teknik bir dille anlatır.",
     processName: "tambur granülatör çalışma mantığı",
@@ -811,7 +811,7 @@ const generatedDrumArticles: TopicalArticle[] = [
   createDrumSystemArticle({
     slug: "sogutma-tamburu-kapasite-hesabi",
     title: "Soğutma Tamburu Kapasite Hesabı",
-    metaTitle: "Soğutma Tamburu Kapasite Hesabı | Pro Makina",
+    metaTitle: "Soğutma Tamburu Kapasite Hesabı",
     description: "Soğutma tamburu kapasite hesabı; ürün sıcaklığı, hava akışı, residence time ve çıkış stabilitesi için teknik rehber.",
     heroDescription: "Granül veya kurutulmuş ürünün kontrollü soğutulmasında tambur kapasitesinin nasıl değerlendirileceğini açıklar.",
     processName: "soğutma tamburu seçimi",
@@ -832,7 +832,7 @@ const generatedDrumArticles: TopicalArticle[] = [
   createDrumSystemArticle({
     slug: "kaplama-tamburu-kullanim-alanlari",
     title: "Kaplama Tamburu Kullanım Alanları",
-    metaTitle: "Kaplama Tamburu Kullanım Alanları | Pro Makina",
+    metaTitle: "Kaplama Tamburu Kullanım Alanları",
     description: "Kaplama tamburu kullanım alanları; granül yüzey koruma, toz azaltma, akış iyileştirme ve son ürün kondisyonlama için teknik rehber.",
     heroDescription: "Kaplama tamburlarının yalnız kozmetik değil ürün akışkanlığı, depolama ve pazarlanabilir kalite üzerinde nasıl rol oynadığını anlatır.",
     processName: "kaplama tamburu uygulamaları",
@@ -856,7 +856,7 @@ const generatedTransportArticles: TopicalArticle[] = [
   createTransportArticle({
     slug: "bant-konveyor-kapasite-hesabi",
     title: "Bant Konveyör Kapasite Hesabı",
-    metaTitle: "Bant Konveyör Kapasite Hesabı | Pro Makina",
+    metaTitle: "Bant Konveyör Kapasite Hesabı",
     description: "Bant konveyör kapasite hesabı; bant genişliği, bant hızı, ürün yoğunluğu, yükleme kesiti ve eğim için teknik rehber.",
     heroDescription: "Bant konveyörlerde kapasitenin yalnız hızla değil kesit, ürün davranışı ve saha geometrisiyle birlikte okunması gerektiğini anlatır.",
     equipmentName: "bant konveyör",
@@ -877,7 +877,7 @@ const generatedTransportArticles: TopicalArticle[] = [
   createTransportArticle({
     slug: "kovali-elevator-kapasite-hesabi",
     title: "Kovalı Elevatör Kapasite Hesabı",
-    metaTitle: "Kovalı Elevatör Kapasite Hesabı ve Seçim Kriterleri | Pro Makina",
+    metaTitle: "Kovalı Elevatör Kapasite Hesabı ve Seçim Kriterleri",
     description: "Kovalı elevatör kapasite hesabı; kova aralığı, bant veya zincir hızı, ürün yoğunluğu ve dolum verimi için teknik rehber.",
     heroDescription: "Kovalı elevatör seçiminde dikey taşıma kapasitesi, ürün dökülmesi ve servis güvenliğinin nasıl birlikte değerlendirileceğini açıklar.",
     equipmentName: "kovalı elevatör",
@@ -898,7 +898,7 @@ const generatedTransportArticles: TopicalArticle[] = [
   createTransportArticle({
     slug: "zincirli-konveyor-secimi",
     title: "Zincirli Konveyör Seçimi",
-    metaTitle: "Zincirli Konveyör Seçimi | Pro Makina",
+    metaTitle: "Zincirli Konveyör Seçimi",
     description: "Zincirli konveyör seçimi; kapasite, hat uzunluğu, sürükleme tipi, aşınma ve ağır hizmet şartları için teknik rehber.",
     heroDescription: "Ağır hizmet taşıma hatlarında zincirli konveyör seçiminin hangi verilerle yapılacağını ve ne zaman daha doğru çözüm olduğunu anlatır.",
     equipmentName: "zincirli konveyör",
@@ -919,7 +919,7 @@ const generatedTransportArticles: TopicalArticle[] = [
   createTransportArticle({
     slug: "helezyon-konveyor-kapasite-hesabi",
     title: "Helezon Konveyör Kapasite Hesabı",
-    metaTitle: "Helezon Konveyör Kapasite Hesabı | Pro Makina",
+    metaTitle: "Helezon Konveyör Kapasite Hesabı",
     description: "Helezon konveyör kapasite hesabı; çap, hatve, devir, ürün yoğunluğu ve motor yükü açısından teknik seçim rehberi.",
     heroDescription: "Helezon kapasite hesabı aramasında aynı teknik içeriğe alternatif slug ile erişmek isteyen kullanıcılar için hazırlanmış eşdeğer teknik sayfa.",
     equipmentName: "helezon konveyör",
@@ -943,7 +943,7 @@ const generatedFertilizerArticles: TopicalArticle[] = [
   createFertilizerArticle({
     slug: "granul-gubre-uretim-tesisi-nasil-kurulur",
     title: "Granül Gübre Üretim Tesisi Nasıl Kurulur?",
-    metaTitle: "Granül Gübre Üretim Tesisi Nasıl Kurulur? | Pro Makina",
+    metaTitle: "Granül Gübre Üretim Tesisi Nasıl Kurulur?",
     description: "Granül gübre üretim tesisi kurulumu; hammadde hazırlama, granülasyon, kurutma, soğutma, eleme ve paketleme açısından teknik rehber.",
     heroDescription: "Granül gübre yatırımını ürün formu, proses akışı ve makine omurgasıyla birlikte okumak isteyenler için kapsamlı teknik makale.",
     productFamily: "granül gübre üretim tesisi",
@@ -964,7 +964,7 @@ const generatedFertilizerArticles: TopicalArticle[] = [
   createFertilizerArticle({
     slug: "organomineral-gubre-uretimi",
     title: "Organomineral Gübre Üretimi",
-    metaTitle: "Organomineral Gübre Üretimi | Pro Makina",
+    metaTitle: "Organomineral Gübre Üretimi",
     description: "Organomineral gübre üretimi; organik fraksiyon dengesi, granülasyon, kurutma, eleme ve paketleme süreçleri için teknik rehber.",
     heroDescription: "Organik ve mineral bileşenlerin aynı hatta dengeli biçimde işlenmesi için gerekli proses ve ekipman mantığını anlatır.",
     productFamily: "organomineral gübre üretimi",
@@ -988,7 +988,7 @@ const generatedCompostArticles: TopicalArticle[] = [
   createCompostArticle({
     slug: "kompost-tesisi-kapasite-hesabi",
     title: "Kompost Tesisi Kapasite Hesabı",
-    metaTitle: "Kompost Tesisi Kapasite Hesabı ve Proses Tasarımı | Pro Makina",
+    metaTitle: "Kompost Tesisi Kapasite Hesabı ve Proses Tasarımı",
     description: "Kompost tesisi kapasite hesabı; günlük tonaj, giriş nemi, olgunlaştırma süresi, eleme ve nihai ürün hedefi için teknik rehber.",
     heroDescription: "Kompost tesislerinde kapasite hesabının yalnız günlük tonaj değil residence time, alan ihtiyaçı ve son ürün kalitesiyle birlikte okunması gerektiğini açıklar.",
     feedstockText: "evsel, hayvansal, tarımsal ve karışık organik atık akışları",
@@ -1008,7 +1008,7 @@ const generatedCompostArticles: TopicalArticle[] = [
   createCompostArticle({
     slug: "kompost-kurutma-sistemi",
     title: "Kompost Kurutma Sistemi",
-    metaTitle: "Kompost Kurutma Sistemi | Pro Makina",
+    metaTitle: "Kompost Kurutma Sistemi",
     description: "Kompost kurutma sistemi; nem düşürme, son ürün standardı, tambur seçimi, fan hattı ve koku kontrolü için teknik rehber.",
     heroDescription: "Kompost son ürününü daha stabil, depolanabilir ve ticari hale getirmek için kurutma aşamasının nasıl kurgulanacağını açıklar.",
     feedstockText: "olgunlaşmış kompost, organik son ürün ve karışım bazlı toprak düzenleyiciler",
@@ -1028,7 +1028,7 @@ const generatedCompostArticles: TopicalArticle[] = [
   createCompostArticle({
     slug: "buyukbas-hayvan-gubresi-kompost",
     title: "Büyükbaş Hayvan Gübresi Kompost",
-    metaTitle: "Büyükbaş Hayvan Gübresi Kompost Süreci | Pro Makina",
+    metaTitle: "Büyükbaş Hayvan Gübresi Kompost Süreci",
     description: "Büyükbaş hayvan gübresi kompost süreci; nem dengesi, yapılandırıcı kullanımı, olgunlaştırma ve son ürün hazırlığı için teknik rehber.",
     heroDescription: "Büyükbaş gübresi bazlı kompost projelerinde karışım hazırlığı, residence time ve saha akışını birlikte ele alan teknik içerik.",
     feedstockText: "büyükbaş hayvan gübresi ve yapısal yardımcı organik malzemeler",
@@ -1051,7 +1051,7 @@ const generatedBiogasArticles: TopicalArticle[] = [
   createBiogasArticle({
     slug: "biyogaz-tesisi-kapasite-hesabi",
     title: "Biyogaz Tesisi Kapasite Hesabı",
-    metaTitle: "Biyogaz Tesisi Kapasite Hesabı | Pro Makina",
+    metaTitle: "Biyogaz Tesisi Kapasite Hesabı",
     description: "Biyogaz tesisi kapasite hesabı; günlük besleme, kuru madde, organik yük, ön işlem ve digestat yönetimi açısından teknik rehber.",
     heroDescription: "Biyogaz tesislerinde kapasite hesabının yalnız günlük tonaj değil besleme kalitesi ve yan akış yönetimiyle birlikte değerlendirilmesi gerektiğini anlatır.",
     streamText: "tarımsal, hayvansal, gıda ve karışık organik atık akışları",
@@ -1073,7 +1073,7 @@ const generatedProcessArticles: TopicalArticle[] = [
   createProcessArticle({
     slug: "reaktor-ve-tank-secimi",
     title: "Reaktör ve Tank Seçimi",
-    metaTitle: "Reaktör ve Tank Seçimi | Pro Makina",
+    metaTitle: "Reaktör ve Tank Seçimi",
     description: "Reaktör ve tank seçimi; hacim, karıştırma, kimyasal uyum, sıcaklık ve proses güvenliği için teknik rehber.",
     heroDescription: "Reaktör ve tank seçiminde hacim hesabı ile proses görevinin birlikte değerlendirilmesi gerektiğini anlatan teknik içerik.",
     processFamily: "reaktör, tank ve karıştırmalı proses sistemleri",
@@ -1093,7 +1093,7 @@ const generatedProcessArticles: TopicalArticle[] = [
   createProcessArticle({
     slug: "sivi-dolum-hatti-secimi",
     title: "Sıvı Dolum Hattı Seçimi",
-    metaTitle: "Sıvı Dolum Hattı Seçimi | Pro Makina",
+    metaTitle: "Sıvı Dolum Hattı Seçimi",
     description: "Sıvı dolum hattı seçimi; ürün viskozitesi, ambalaj tipi, dolum hızı, etiketleme ve proses bütünlüğü için teknik rehber.",
     heroDescription: "Sıvı ürünlerde dolum hattının yalnız ambalaj makinesi değil, tüm prosesin ticari çıkış kapısı olduğunu teknik olarak açıklar.",
     processFamily: "sıvı dolum, etiketleme ve son ürün hazırlama hatları",
@@ -1113,7 +1113,7 @@ const generatedProcessArticles: TopicalArticle[] = [
   createProcessArticle({
     slug: "toz-toplama-sistemi-secimi",
     title: "Toz Toplama Sistemi Seçimi",
-    metaTitle: "Toz Toplama Sistemi Seçimi | Pro Makina",
+    metaTitle: "Toz Toplama Sistemi Seçimi",
     description: "Toz toplama sistemi seçimi; debi, emisyon hedefi, siklon, jet pulse filtre ve fan hattı için teknik rehber.",
     heroDescription: "Toz toplama hattının yalnız çevresel değil proses güvenliği açısından da neden kritik olduğunu açıklayan teknik makale.",
     processFamily: "toz toplama, siklon ve filtre sistemleri",
@@ -1133,7 +1133,7 @@ const generatedProcessArticles: TopicalArticle[] = [
   createProcessArticle({
     slug: "sivi-gubre-uretim-tesisi",
     title: "Sıvı Gübre Üretim Tesisi",
-    metaTitle: "Sıvı Gübre Üretim Tesisi Nasıl Kurgulanır? | Pro Makina",
+    metaTitle: "Sıvı Gübre Üretim Tesisi Nasıl Kurgulanır?",
     description: "Sıvı gübre üretim tesisi; reaktör, tank, filtrasyon, dolum, formülasyon ve stok yönetimi için teknik rehber.",
     heroDescription: "Sıvı gübre hatlarında proses kurgusunun yalnız karıştırma değil tank mimarisi, filtrasyon ve dolum disipliniyle birlikte kurulması gerektiğini anlatır.",
     processFamily: "sıvı gübre üretimi ve proses tankı sistemleri",

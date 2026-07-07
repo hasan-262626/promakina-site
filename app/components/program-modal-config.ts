@@ -487,7 +487,7 @@ const omitKeys = (values: ProgramModalValues, keys: string[]) => {
   return nextValues;
 };
 
-const buildElevatorConfig = () =>
+const buildElevatorConfig = (): ProgramModalConfig =>
   createToolConfig({
     id: "elevator-kapasite-ve-secim-programi",
     title: "Elevatör Kapasite ve Seçim Programı",
@@ -1071,7 +1071,7 @@ const buildElevatorConfigV2 = () => {
   });
 };
 
-const buildConveyorConfig = () =>
+const buildConveyorConfig = (): ProgramModalConfig =>
   createToolConfig({
     id: "konveyor-kapasite-ve-secim-hesap-programi",
     title: "Konveyör Kapasite ve Seçim Hesap Programı",
@@ -1243,7 +1243,7 @@ const buildConveyorConfig = () =>
     },
   });
 
-const buildDrumConfig = () =>
+const buildDrumConfig = (): ProgramModalConfig =>
   createToolConfig({
     id: "tambur-hesabi",
     title: "Tambur Hesabı",
@@ -1411,7 +1411,7 @@ const buildDrumConfig = () =>
     },
   });
 
-const buildCycloneConfig = () =>
+const buildCycloneConfig = (): ProgramModalConfig =>
   createToolConfig({
     id: "siklon-hesabi",
     title: "Siklon Hesabı",
@@ -1531,7 +1531,7 @@ const buildCycloneConfig = () =>
     },
   });
 
-const buildJetPulseConfig = () =>
+const buildJetPulseConfig = (): ProgramModalConfig =>
   createToolConfig({
     id: "jet-pulse-hesabi",
     title: "Jet Pulse Hesabı",
@@ -1647,7 +1647,7 @@ const buildJetPulseConfig = () =>
     },
   });
 
-const buildTankConfig = () =>
+const buildTankConfig = (): ProgramModalConfig =>
   createToolConfig({
     id: "tank-hesabi",
     title: "Tank Hesabı",
@@ -1780,7 +1780,7 @@ const buildTankConfig = () =>
     },
   });
 
-const buildBunkerConfig = () =>
+const buildBunkerConfig = (): ProgramModalConfig =>
   createToolConfig({
     id: "bunker-hesabi",
     title: "Bunker Hesabı",
@@ -1911,7 +1911,7 @@ const buildBunkerConfig = () =>
     },
   });
 
-const buildScreenConfig = () =>
+const buildScreenConfig = (): ProgramModalConfig =>
   createToolConfig({
     id: "elek-hesabi",
     title: "Elek Hesabı",
@@ -2028,7 +2028,7 @@ const buildScreenConfig = () =>
     },
   });
 
-const buildMaterialWeightConfig = () => {
+const buildMaterialWeightConfig = (): ProgramModalConfig => {
   const materialOptions = [
     { label: "ST37 (S235JR)", value: "st37", density: 7850 },
     { label: "ST42 (S275JR)", value: "st42", density: 7850 },
@@ -2284,7 +2284,7 @@ const buildMaterialWeightConfig = () => {
   });
 };
 
-const buildFabricationConfig = () =>
+const buildFabricationConfig = (): ProgramModalConfig =>
   createToolConfig({
     id: "sac-kaynak-hesaplari",
     title: "Sac, Kaynak ve İmalat Hesapları",
@@ -2395,7 +2395,7 @@ const buildFabricationConfig = () =>
     },
   });
 
-const buildShaftConfig = () =>
+const buildShaftConfig = (): ProgramModalConfig =>
   createToolConfig({
     id: "mil-capi-hesabi",
     title: "Mil Çapı Ön Hesabı",
@@ -2475,7 +2475,7 @@ const buildShaftConfig = () =>
     },
   });
 
-const buildCouplingConfig = () =>
+const buildCouplingConfig = (): ProgramModalConfig =>
   createToolConfig({
     id: "kaplin-secimi-on-hesabi",
     title: "Kaplin Seçimi Ön Hesabı",
@@ -2547,7 +2547,7 @@ const buildCouplingConfig = () =>
     },
   });
 
-const buildKeywayConfig = () =>
+const buildKeywayConfig = (): ProgramModalConfig =>
   createToolConfig({
     id: "kama-kanali-acim-olculeri",
     title: "Kama Ölçüleri",
@@ -2598,7 +2598,7 @@ const buildKeywayConfig = () =>
     },
   });
 
-const buildRetainingRingConfig = () =>
+const buildRetainingRingConfig = (): ProgramModalConfig =>
   createToolConfig({
     id: "segman-ve-kanal-olculeri",
     title: "Segman / Kanal Ölçüleri",
@@ -2644,7 +2644,7 @@ const buildRetainingRingConfig = () =>
     },
   });
 
-const buildMotorConfig = () =>
+const buildMotorConfig = (): ProgramModalConfig =>
   createToolConfig({
     id: "motor-gucu-on-hesabi",
     title: "Motor Gücü Ön Hesabı",
@@ -2729,7 +2729,7 @@ const buildRatioConfig = (
   id: string,
   title: string,
   mechanismLabel: string,
-) =>
+): ProgramModalConfig =>
   createToolConfig({
     id,
     title,
@@ -3063,7 +3063,7 @@ const calculateConversion = (values: ProgramModalValues): ProgramModalOutput => 
   );
 };
 
-const buildEngineeringConversionConfig = () =>
+const buildEngineeringConversionConfig = (): ProgramModalConfig =>
   createToolConfig({
     id: "donusum-araclari",
     title: "Mühendislik Hesapları",
@@ -3131,7 +3131,7 @@ const safePercent = (value: string) => parseNumber(value) / 100;
 
 const roundCapacity = (value: number, step: number) => Math.ceil(value / step) * step;
 
-const buildBarnWasteConfig = () =>
+const buildBarnWasteConfig = (): ProgramModalConfig =>
   createToolConfig({
     id: "ahir-atigi-hesaplama",
     title: "Ahır Atığı Hesaplama",
@@ -3273,7 +3273,7 @@ const buildBarnWasteConfig = () =>
     },
   });
 
-const buildMunicipalWasteConfig = () =>
+const buildMunicipalWasteConfig = (): ProgramModalConfig =>
   createToolConfig({
     id: "evsel-atik-cop-hesaplama",
     title: "Evsel Atık / Çöp Hesaplama",
@@ -3386,7 +3386,7 @@ const buildMunicipalWasteConfig = () =>
     },
   });
 
-const buildSludgeConfig = () =>
+const buildSludgeConfig = (): ProgramModalConfig =>
   createToolConfig({
     id: "atik-su-ve-aritma-camuru-hesaplama",
     title: "Atık Su ve Arıtma Çamuru Hesaplama",
@@ -3506,7 +3506,7 @@ const buildSludgeConfig = () =>
     },
   });
 
-const buildBiogasPowerConfig = () =>
+const buildBiogasPowerConfig = (): ProgramModalConfig =>
   createToolConfig({
     id: "biyogaz-guc-kw-hesaplama",
     title: "Biyogaz Güç (kW) Hesaplama",
@@ -3657,7 +3657,7 @@ const buildBiogasPowerConfig = () =>
     },
   });
 
-const buildCompostOutputConfig = () =>
+const buildCompostOutputConfig = (): ProgramModalConfig =>
   createToolConfig({
     id: "kompost-son-urun-hesaplama",
     title: "Kompost Son Ürün Hesaplama",
@@ -3742,7 +3742,7 @@ const buildCompostOutputConfig = () =>
     },
   });
 
-const buildDryingConfig = () =>
+const buildDryingConfig = (): ProgramModalConfig =>
   createToolConfig({
     id: "kurutma-nem-dusurme-hesaplama",
     title: "Kurutma / Nem Düşürme Hesaplama",
@@ -3805,7 +3805,7 @@ const buildDryingConfig = () =>
     },
   });
 
-const buildStorageConfig = () =>
+const buildStorageConfig = (): ProgramModalConfig =>
   createToolConfig({
     id: "depolama-hacmi-stok-suresi-hesaplama",
     title: "Depolama Hacmi / Stok Süresi Hesaplama",
@@ -3891,7 +3891,7 @@ const buildStorageConfig = () =>
     },
   });
 
-const buildMachiningConfig = () =>
+const buildMachiningConfig = (): ProgramModalConfig =>
   createToolConfig({
     id: "talasli-imalat-hesaplari",
     title: "Talaşlı İmalat Hesapları",
@@ -3944,7 +3944,7 @@ const buildMachiningConfig = () =>
     },
   });
 
-const buildToleranceConfig = () =>
+const buildToleranceConfig = (): ProgramModalConfig =>
   createToolConfig({
     id: "iso-gecme-toleranslari",
     title: "ISO Geçme Toleransları",

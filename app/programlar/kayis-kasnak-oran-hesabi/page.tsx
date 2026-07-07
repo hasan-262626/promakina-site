@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     canonical: "https://www.promakina.com.tr/programlar/kayis-kasnak-oran-hesabi",
   },
   openGraph: {
-    title: "Kayış-Kasnak Oran Hesabı | Pro Makina",
+    title: "Kayış-Kasnak Oran Hesabı",
     description: "Kasnak çapı, giriş devri, kayış hızı ve merkez mesafesine göre oran, çıkış devri ve kayış boyu için hızlı teknik ön hesap alın.",
     url: "https://www.promakina.com.tr/programlar/kayis-kasnak-oran-hesabi",
     siteName: "Pro Makina",

@@ -2,7 +2,7 @@ import Link from "next/link";
 import { buildLibraryMetadata } from "../../../components/library-seo-page";
 import { BlogArticleTemplate } from "../../../components/blog-article-template";
 
-const title = "Vidalı Konveyör Tasarımı | Pro Makina";
+const title = "Vidalı Konveyör Tasarımı";
 const description =
   "Vidalı konveyör tasarımı; çap, hatve, gövde tipi, doluluk oranı, ürün davranışı ve motor seçimi için teknik mühendislik rehberi.";
 const canonical = "https://www.promakina.com.tr/kutuphane/blog/vidali-konveyor-tasarimi";

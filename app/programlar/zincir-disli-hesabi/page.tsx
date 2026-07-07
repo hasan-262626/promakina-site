@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     canonical: "https://www.promakina.com.tr/programlar/zincir-disli-hesabi",
   },
   openGraph: {
-    title: "Zincir Dişli Hesabı | Pro Makina",
+    title: "Zincir Dişli Hesabı",
     description: "DIN 8187 zincir dişli, ASA zincir dişli, konveyör zincir dişlisi ve oran hesapları için hazırlanan teknik yardımcı araçlar. Kısa üst yapıdan sonra doğrudan giriş alanına geçerek hesaplamaya başlayabilirsiniz.",
     url: "https://www.promakina.com.tr/programlar/zincir-disli-hesabi",
     siteName: "Pro Makina",

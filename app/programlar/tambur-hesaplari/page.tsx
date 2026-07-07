@@ -20,14 +20,14 @@ const allowedDrumTypes: DrumType[] = [
 ];
 
 export const metadata: Metadata = {
-  title: "Tambur Hesapları | Pro Makina",
+  title: "Tambur Hesapları",
   description:
     "Kurutma tamburu, soğutma tamburu, granülasyon tamburu, kaplama tamburu, kompost/olgunlaştırma tamburu, karıştırma tamburu, sterilizasyon tamburu ve özel tambur sistemleri için ön mühendislik hesabı yapın.",
   alternates: {
     canonical: "https://www.promakina.com.tr/programlar/tambur-hesaplari",
   },
   openGraph: {
-    title: "Tambur Hesapları | Pro Makina",
+    title: "Tambur Hesapları",
     description:
       "Tambur çapı, boyu, devir aralığı, eğim, doluluk oranı, kalış süresi ve motor gücü için mühendislik odaklı ön tasarım paneli.",
     url: "https://www.promakina.com.tr/programlar/tambur-hesaplari",
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Tambur Hesapları | Pro Makina",
+    title: "Tambur Hesapları",
     description:
       "Kurutma, soğutma, granülasyon, kaplama, kompost ve özel tambur sistemleri için profesyonel ön mühendislik hesabı.",
   },

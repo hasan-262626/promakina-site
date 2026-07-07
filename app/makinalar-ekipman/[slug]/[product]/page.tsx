@@ -57,13 +57,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const canonical = `https://www.promakina.com.tr/makinalar-ekipman/${publicCategorySlug}/${publicProductSlug}`;
 
   return {
-    title: `${activeProduct.title} | ${category.title} | Pro Makina`,
+    title: `${activeProduct.title} | ${category.title}`,
     description: activeProduct.shortDescription,
     alternates: {
       canonical,
     },
     openGraph: {
-      title: `${activeProduct.title} | ${category.title} | Pro Makina`,
+      title: `${activeProduct.title} | ${category.title}`,
       description: activeProduct.shortDescription,
       url: canonical,
       siteName: "Pro Makina",

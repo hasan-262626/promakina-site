@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     canonical: "https://www.promakina.com.tr",
   },
   openGraph: {
-    title: "Endüstriyel Tesis ve Makina Üretimi | Pro Makina",
+    title: "Endüstriyel Tesis ve Makina Üretimi",
     description:
       "Gübre, kompost, biyogaz, geri dönüşüm, madencilik ve endüstriyel proses tesisleri için anahtar teslim mühendislik, makina imalatı ve tesis kurulum çözümleri.",
     url: "https://www.promakina.com.tr",

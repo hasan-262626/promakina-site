@@ -12,14 +12,14 @@ import {
 const canonical = "https://www.promakina.com.tr/kutuphane/terimler-sozlugu";
 
 export const metadata: Metadata = {
-  title: "Proses ve Makine Terimleri Sözlüğü | Pro Makina",
+  title: "Proses ve Makine Terimleri Sözlüğü",
   description:
     "Gübre, maden, kompost, çamur kurutma, sıvı proses, taşıma, dozajlama, tambur, siklon, filtre ve paketleme sistemleri için teknik terimler sözlüğü.",
   alternates: {
     canonical,
   },
   openGraph: {
-    title: "Proses ve Makine Terimleri Sözlüğü | Pro Makina",
+    title: "Proses ve Makine Terimleri Sözlüğü",
     description:
       "Endüstriyel proses, makine, ekipman ve hesaplama terimlerini sektör ve makine bazlı inceleyin.",
     url: canonical,

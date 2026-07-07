@@ -105,7 +105,7 @@ const calculatorFields: Record<CalculatorFamily, FieldConfig[]> = {
     { key: "capacity", label: "Kapasite (ton/saat)", type: "number", placeholder: "12" },
     { key: "material", label: "Ürün tipi / malzeme", type: "select", options: materialOptions },
     { key: "bulkDensity", label: "Yığın yoğunluğu (kg/m³)", type: "number", placeholder: "950" },
-    { key: "inletMoisture", label: "GiriÅŸ nemi (%)", type: "number", placeholder: "18" },
+    { key: "inletMoisture", label: "Giriş nemi (%)", type: "number", placeholder: "18" },
     { key: "outletMoisture", label: "Çıkış nemi (%)", type: "number", placeholder: "8" },
     { key: "safetyMargin", label: "Güvenlik payı (%)", type: "number", placeholder: "10" },
     { key: "workingSchedule", label: "Çalışma süresi", type: "select", options: ["8 saat", "16 saat", "24 saat", "Sürekli çalışma"] },
@@ -118,13 +118,13 @@ const calculatorFields: Record<CalculatorFamily, FieldConfig[]> = {
     { key: "lineLength", label: "Hat uzunluÄŸu (m)", type: "number", placeholder: "18" },
     { key: "incline", label: "EÄŸim (Â°)", type: "number", placeholder: "8" },
     { key: "workingType", label: "Çalışma tipi", type: "select", options: ["Sürekli", "Partili", "Ağır hizmet", "Standart"] },
-    { key: "feedType", label: "Besleme ÅŸekli", type: "select", options: ["Bunker altı", "Konveyörden", "Serbest düşüş", "Dozajlı besleme"] },
+    { key: "feedType", label: "Besleme şekli", type: "select", options: ["Bunker altı", "Konveyörden", "Serbest düşüş", "Dozajlı besleme"] },
     { key: "notes", label: "Notlar", type: "textarea", placeholder: "Hat veya ürün notu" },
   ],
   crusher: [
     { key: "material", label: "Malzeme tipi", type: "select", options: materialOptions },
     { key: "capacity", label: "Kapasite (ton/saat)", type: "number", placeholder: "15" },
-    { key: "feedSize", label: "GiriÅŸ boyutu (mm)", type: "number", placeholder: "120" },
+    { key: "feedSize", label: "Giriş boyutu (mm)", type: "number", placeholder: "120" },
     { key: "targetSize", label: "Hedef çıkış boyutu (mm)", type: "number", placeholder: "20" },
     { key: "moisture", label: "Nem (%)", type: "number", placeholder: "25" },
     { key: "workingType", label: "Çalışma tipi", type: "select", options: ["Sürekli", "Partili", "Ağır hizmet"] },
@@ -171,7 +171,7 @@ const calculatorFields: Record<CalculatorFamily, FieldConfig[]> = {
   auxiliary: [
     { key: "material", label: "Ürün tipi", type: "select", options: materialOptions },
     { key: "capacity", label: "Kapasite / akış ihtiyaçı", placeholder: "20 ton/saat" },
-    { key: "lineLength", label: "Hat / boÅŸaltma mesafesi", placeholder: "12 m" },
+    { key: "lineLength", label: "Hat / boşaltma mesafesi", placeholder: "12 m" },
     { key: "feedType", label: "Uygulama tipi", type: "select", options: ["Silobas yükleme", "Hat yönlendirme", "Akış kontrolü", "Boşaltma kontrolü"] },
     { key: "notes", label: "Notlar", type: "textarea", placeholder: "Saha ve ürün akışı notları" },
   ],
@@ -523,26 +523,26 @@ function formatSummary(title: string, family: CalculatorFamily, values: Record<s
   const notes = values.notes?.trim();
 
   if (family === "drum") {
-    return `${title} iÃ§in ${capacity || "belirtilmeyen"} ton/saat kapasite, ${values.inletMoisture ? `%${values.inletMoisture} giriÅŸ nemi, ` : ""}${values.outletMoisture ? `%${values.outletMoisture} Ã§Ä±kÄ±ÅŸ nemi ve ` : ""}${material} verisine gÃ¶re teknik deÄŸerlendirme talebi oluÅŸturuldu${notes ? `. Not: ${notes}` : "."}`;
+    return `${title} için ${capacity || "belirtilmeyen"} ton/saat kapasite, ${values.inletMoisture ? `%${values.inletMoisture} giriş nemi, ` : ""}${values.outletMoisture ? `%${values.outletMoisture} çıkış nemi ve ` : ""}${material} verisine göre teknik değerlendirme talebi oluşturuldu${notes ? `. Not: ${notes}` : "."}`;
   }
 
   if (family === "transport") {
-    return `${title} iÃ§in ${capacity || "belirtilmeyen"} ton/saat kapasite, ${values.lineLength || "belirtilmeyen"} metre hat uzunluÄŸu ve ${material} taÅŸÄ±ma ihtiyacÄ±na gÃ¶re Ã§Ã¶zÃ¼m talebi hazÄ±rlandÄ±${notes ? `. Not: ${notes}` : "."}`;
+    return `${title} için ${capacity || "belirtilmeyen"} ton/saat kapasite, ${values.lineLength || "belirtilmeyen"} metre hat uzunluÄŸu ve ${material} taşıma ihtiyacına göre çözüm talebi hazırlandı${notes ? `. Not: ${notes}` : "."}`;
   }
 
   if (family === "crusher") {
-    return `${title} iÃ§in ${capacity || "belirtilmeyen"} ton/saat kapasite, ${values.feedSize || "belirtilmeyen"} mm giriÅŸ boyutu ve ${values.targetSize || "belirtilmeyen"} mm hedef Ã§Ä±kÄ±ÅŸ Ã¶lÃ§Ã¼sÃ¼ne gÃ¶re kÄ±rma Ã§Ã¶zÃ¼mÃ¼ talebi oluÅŸturuldu${notes ? `. Not: ${notes}` : "."}`;
+    return `${title} için ${capacity || "belirtilmeyen"} ton/saat kapasite, ${values.feedSize || "belirtilmeyen"} mm giriş boyutu ve ${values.targetSize || "belirtilmeyen"} mm hedef çıkış ölçüsüne göre kırma çözümü talebi oluşturuldu${notes ? `. Not: ${notes}` : "."}`;
   }
 
   if (family === "reactor") {
-    return `${title} iÃ§in ${values.batchVolume || "belirtilmeyen"} mÂ³ batch hacmi, ${values.dailyCapacity || "belirtilmeyen"} gÃ¼nlÃ¼k kapasite ve ${material} prosesi iÃ§in teknik Ã§Ã¶zÃ¼m talebi oluÅŸturuldu${notes ? `. Not: ${notes}` : "."}`;
+    return `${title} için ${values.batchVolume || "belirtilmeyen"} mÂ³ batch hacmi, ${values.dailyCapacity || "belirtilmeyen"} günlük kapasite ve ${material} prosesi için teknik çözüm talebi oluşturuldu${notes ? `. Not: ${notes}` : "."}`;
   }
 
-  return `${title} iÃ§in ${capacity || values.volume || "belirtilmeyen"} kapasite/hacim, ${material} ve girilen proses verilerine gÃ¶re teknik deÄŸerlendirme talebi oluÅŸturuldu${notes ? `. Not: ${notes}` : "."}`;
+  return `${title} için ${capacity || values.volume || "belirtilmeyen"} kapasite/hacim, ${material} ve girilen proses verilerine göre teknik değerlendirme talebi oluşturuldu${notes ? `. Not: ${notes}` : "."}`;
 }
 
 function buildMessage(title: string, categoryLabel: string, family: CalculatorFamily, values: Record<string, string>, summary: string) {
-  const lines = [`Merhaba, ${title} iÃ§in kapasite hesabÄ± oluÅŸturdum.`, "", `ÃœrÃ¼n grubu: ${categoryLabel}`];
+  const lines = [`Merhaba, ${title} için kapasite hesabı oluşturdum.`, "", `Ürün grubu: ${categoryLabel}`];
   const entries: [string, string | undefined][] = [
     ["Ad Soyad", values.name],
     ["Firma", values.company],
@@ -552,13 +552,13 @@ function buildMessage(title: string, categoryLabel: string, family: CalculatorFa
     ["Kapasite", values.capacity ? `${values.capacity} ton/saat` : undefined],
     ["Ürün tipi", values.materialOther || values.material],
     ["Yığın yoğunluğu", values.bulkDensity ? `${values.bulkDensity} kg/mÂ³` : undefined],
-    ["GiriÅŸ nemi", values.inletMoisture ? `%${values.inletMoisture}` : undefined],
+    ["Giriş nemi", values.inletMoisture ? `%${values.inletMoisture}` : undefined],
     ["Çıkış nemi", values.outletMoisture ? `%${values.outletMoisture}` : undefined],
     ["Güvenlik payı", values.safetyMargin ? `%${values.safetyMargin}` : undefined],
     ["Çalışma süresi", values.workingSchedule],
     ["Hat uzunluÄŸu", values.lineLength ? `${values.lineLength} m` : undefined],
     ["EÄŸim", values.incline ? `${values.incline}Â°` : undefined],
-    ["GiriÅŸ boyutu", values.feedSize ? `${values.feedSize} mm` : undefined],
+    ["Giriş boyutu", values.feedSize ? `${values.feedSize} mm` : undefined],
     ["Hedef çıkış boyutu", values.targetSize ? `${values.targetSize} mm` : undefined],
     ["Batch hacmi", values.batchVolume ? `${values.batchVolume} mÂ³` : undefined],
     ["Günlük kapasite", values.dailyCapacity],
@@ -569,7 +569,7 @@ function buildMessage(title: string, categoryLabel: string, family: CalculatorFa
     if (value) lines.push(`${label}: ${value}`);
   });
 
-  lines.push("", "Teknik Ã–zet:", summary, "", `Bu veriler iÃ§in ${familyLabels[family]} Ã§Ã¶zÃ¼mÃ¼ ve teklif talep ediyorum.`);
+  lines.push("", "Teknik Ã–zet:", summary, "", `Bu veriler için ${familyLabels[family]} çözümü ve teklif talep ediyorum.`);
   return lines.join("\n");
 }
 
@@ -663,7 +663,7 @@ function ProductCalculatorModal(props: {
                   Vazgeç
                 </button>
                 <button type="button" onClick={onCreateSummary} className="rounded-full bg-blue-600 px-6 py-3 text-sm font-semibold text-white transition hover:bg-blue-500">
-                  Teknik Ã–zeti OluÅŸtur
+                  Teknik Özeti Oluştur
                 </button>
               </div>
             ) : (

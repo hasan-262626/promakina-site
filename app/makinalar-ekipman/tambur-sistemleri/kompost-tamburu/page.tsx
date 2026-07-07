@@ -8,14 +8,14 @@ const canonical =
   "https://www.promakina.com.tr/makinalar-ekipman/tambur-sistemleri/kompost-tamburu";
 
 export const metadata: Metadata = {
-  title: "Kompost Tamburu | Belediye Kompost Tesisi Tamburu | Pro Makina",
+  title: "Kompost Tamburu | Belediye Kompost Tesisi Tamburu",
   description:
     "Kompost tamburu, organik atık kompost tamburu ve döner kompost reaktörü çözümleriyle belediye ve endüstriyel kompost tesisleri için proje bazlı imalat.",
   alternates: {
     canonical,
   },
   openGraph: {
-    title: "Kompost Tamburu | Belediye Kompost Tesisi Tamburu | Pro Makina",
+    title: "Kompost Tamburu | Belediye Kompost Tesisi Tamburu",
     description:
       "Kompost tamburu, organik atık kompost tamburu ve döner kompost reaktörü çözümleriyle belediye ve endüstriyel kompost tesisleri için proje bazlı imalat.",
     url: canonical,

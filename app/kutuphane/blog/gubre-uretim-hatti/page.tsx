@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import SourcePage from "../[slug]/page";
 
 export const metadata: Metadata = {
-  title: "Gübre Üretim Hattı | Proses, Makine, Kapasite | Pro Makina",
+  title: "Gübre Üretim Hattı | Proses, Makine, Kapasite",
   description:
     "Gübre üretim hattı kurulumu; hammadde hazırlama, granülasyon, kurutma, eleme ve paketleme akışları için teknik rehber.",
   alternates: {

@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     canonical: "https://www.promakina.com.tr/programlar/kaplin-secimi-on-hesabi",
   },
   openGraph: {
-    title: "Kaplin Seçimi Ön Hesabı | Pro Makina",
+    title: "Kaplin Seçimi Ön Hesabı",
     description: "Tork, devir, mil çapı ve servis faktörüne göre kaplin sınıfı ve bağlantı uygunluğu için hızlı teknik ön değerlendirme yapın.",
     url: "https://www.promakina.com.tr/programlar/kaplin-secimi-on-hesabi",
     siteName: "Pro Makina",

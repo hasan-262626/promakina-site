@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     canonical: "https://www.promakina.com.tr/programlar/kama-kanali-acim-olculeri",
   },
   openGraph: {
-    title: "Kama Kanalı Açım Ölçüleri | Pro Makina",
+    title: "Kama Kanalı Açım Ölçüleri",
     description: "Mil veya delik çapına göre standart kama eni, kama yüksekliği, mile giriş ve deliğe giriş ölçülerini teknik olarak hızlıca görüntüleyin.",
     url: "https://www.promakina.com.tr/programlar/kama-kanali-acim-olculeri",
     siteName: "Pro Makina",

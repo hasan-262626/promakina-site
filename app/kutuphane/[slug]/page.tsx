@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     return {};
   }
 
-  const title = `${trText(item.title)} | Kütüphane | Pro Makina`;
+  const title = `${trText(item.title)} | Kütüphane`;
   const description = trText(item.summary);
   const canonical = `${siteUrl}/kutuphane/${slug}`;
 

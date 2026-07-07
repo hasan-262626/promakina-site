@@ -4,7 +4,7 @@ import { ContactForm } from "@/components/contact-form";
 import { siteContact, siteSocialSameAs } from "../lib/site-contact";
 
 const canonical = "https://www.promakina.com.tr/iletisim";
-const pageTitle = "İletişim | Pro Makina";
+const pageTitle = "İletişim | Teknik Teklif ve Proje Görüşmesi | Pro Makina";
 const pageDescription =
   "Pro Makina ile iletişime geçin. Makine imalatı, proses tasarımı, tesis kurulumu, modernizasyon, bakım servis ve teknik destek talepleriniz için doğrudan iletişim kurun.";
 

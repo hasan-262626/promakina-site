@@ -8,14 +8,14 @@ const canonical =
   "https://www.promakina.com.tr/makinalar-ekipman/eleme-ve-siniflandirma-sistemleri/trommel-elekler";
 
 export const metadata: Metadata = {
-  title: "Trommel Elekler | Döner Elek ve Tambur Elek | Pro Makina",
+  title: "Trommel Elekler | Döner Elek ve Tambur Elek",
   description:
     "Trommel elek, döner elek ve tambur elek çözümleriyle kompost, atık, gübre, maden ve kum eleme uygulamalarına uygun endüstriyel sistemler.",
   alternates: {
     canonical,
   },
   openGraph: {
-    title: "Trommel Elekler | Döner Elek ve Tambur Elek | Pro Makina",
+    title: "Trommel Elekler | Döner Elek ve Tambur Elek",
     description:
       "Trommel elek, döner elek ve tambur elek çözümleriyle kompost, atık, gübre, maden ve kum eleme uygulamalarına uygun endüstriyel sistemler.",
     url: canonical,

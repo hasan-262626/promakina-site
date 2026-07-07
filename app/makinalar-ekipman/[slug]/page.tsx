@@ -48,13 +48,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const canonical = `https://www.promakina.com.tr/makinalar-ekipman/${getPublicCategorySlug(category.slug)}`;
 
   return {
-    title: `${category.title} | Pro Makina`,
+    title: `${category.title}`,
     description: category.shortDescription,
     alternates: {
       canonical,
     },
     openGraph: {
-      title: `${category.title} | Pro Makina`,
+      title: `${category.title}`,
       description: category.shortDescription,
       url: canonical,
       siteName: "Pro Makina",

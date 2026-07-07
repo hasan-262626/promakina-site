@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const description = trText(sector.summary);
 
   return {
-    title: `${title} | Pro Makina`,
+    title: `${title}`,
     description,
     alternates: {
       canonical,

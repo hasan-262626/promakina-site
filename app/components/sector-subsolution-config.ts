@@ -66,7 +66,7 @@ function buildFaqs(title: string, answers: string[]): Faq[] {
 
 function buildConfig(current: SectorSubsectorItem, family: Family): SectorSubsolutionConfig {
   return {
-    heroBadge: "ALT çöz?m",
+    heroBadge: "ALT çözüm",
     heroTitle: current.title,
     heroDescription: current.description,
     primaryEyebrow: "Proses Mantigi",
@@ -133,7 +133,7 @@ const compostFamily: Family = {
   ],
   faqAnswers: [
     "Kapasite; atik tipi, nem yapisi ve gunluk kabul miktarina gore belirlenir.",
-    "Evet, uygun saha ve ekipman kurgusuyla yeni çöz?mler mevcut hatlara eklenebilir.",
+    "Evet, uygun saha ve ekipman kurgusuyla yeni çözümler mevcut hatlara eklenebilir.",
     "Otomasyon seviyesi besleme, tambur ve son hat surekliligine gore netlesir.",
     "Doğru tambur, elek ve transfer seçimi hem kaliteyi hem verimi belirler.",
     "Evet, proses tasarımı, imalat, montaj ve devreye alma dahil kurulum yapiyoruz.",
@@ -163,7 +163,7 @@ const miningFamily: Family = {
     { title: "Proses tasarımı", text: "Kirma, eleme ve transfer akisini teknik olarak planliyoruz." },
     { title: "Kırıcı ve elek seçimi", text: "Malzeme ve kapasiteye uygun kombinasyonlari belirliyoruz." },
     { title: "hat yerleşimi", text: "Bunker, transfer ve cikis noktalarini saha lojistigine gore kuruyoruz." },
-    { title: "Makine imalatı", text: "Projeye ?zel kırıcı, elek ve transfer ekipmanlari uretiyoruz." },
+    { title: "Makine imalatı", text: "Projeye özel kırıcı, elek ve transfer ekipmanlari uretiyoruz." },
     { title: "Revizyon ve kapasite artisi", text: "Mevcut hatlarda darboğaz ve verim iyilestirmesi yapiyoruz." },
     { title: "Kurulum ve devreye alma", text: "Saha kurulumu ve isletmeye alma sürecini yonetiyoruz." },
   ],
@@ -193,7 +193,7 @@ const miningFamily: Family = {
     "Evet, uygun ekipman secimiyle mevcut kirma-eleme hatlari revize edilebilir.",
     "Otomasyon seviyesi besleme dengesi ve cikis takibi icin büyük avantaj saglar.",
     "Yanlis kırıcı, elek veya transfer seçimi verimi dusurur ve bakım maliyetini artirir.",
-    "Evet, proses tasarımı, ekipman imalatı, saha kurulumu ve devreye alma dahil çöz?m sunuyoruz.",
+    "Evet, proses tasarımı, ekipman imalatı, saha kurulumu ve devreye alma dahil çözüm sunuyoruz.",
   ],
   formDescription:
     "Malzeme turu, saatlik kapasite, giris boyutu ve hedef cikis boyutunu paylasin; size uygun mineral isleme cozumunu birlikte netlestirelim.",
@@ -332,7 +332,7 @@ const recyclingFamily: Family = {
   primaryDescription:
     "Geri dönüşüm cozumlerinde proses kurgusu; atigin heterojen yapısı, yabanci madde riski ve hedef boyut kucultme seviyesine gore belirlenir.",
   primaryCards: [
-    { title: "Atık heterojenligi", text: "Karışık akıslar ve degisken nem yapisi ?zel yaklasim gerektirir." },
+    { title: "Atık heterojenligi", text: "Karışık akıslar ve degisken nem yapisi özel yaklasim gerektirir." },
     { title: "Boyut kucultme", text: "Primer ve sekonder kademe ihtiyaci hedef cikisa gore belirlenir." },
     { title: "Ayirma verimi", text: "Elek ve ayirma noktalarinin uyumu geri kazanımi etkiler." },
     { title: "Güvenlik", text: "Toz, gurultu ve yabanci madde riski tasarımın parcasidir." },
@@ -371,7 +371,7 @@ const recyclingFamily: Family = {
     "Evet, uygun on ayirma ve transfer altyapisi ile mevcut hatlar guclendirilebilir.",
     "Otomasyon; besleme dengesi ve proses güvenligi acisindan büyük avantaj saglar.",
     "Doğru parcalama, ayırma ve transfer seçimi geri kazanım verimini etkiler.",
-    "Evet, muhendislikten saha devreye almaya kadar anahtar teslim çöz?m sunuyoruz.",
+    "Evet, muhendislikten saha devreye almaya kadar anahtar teslim çözüm sunuyoruz.",
   ],
   formDescription:
     "Atık turu, kapasite, giriş boyutu ve hedef çıkış boyutunu paylasin; size uygun geri dönüşüm cozumunu birlikte netlestirelim.",
@@ -391,13 +391,13 @@ const biogasFamily: Family = {
   primaryDescription:
     "Enerji ve biyogaz cozumlerinde hat kurgusu; organik girdinin nemi, lif yapisi, akiskanligi ve besleme senaryosuna gore sekillenir.",
   primaryCards: [
-    { title: "Girdi karakteri", text: "Yari kati, lifli veya değişken yapili girdiler farkli çöz?mler gerektirir." },
+    { title: "Girdi karakteri", text: "Yari kati, lifli veya değişken yapili girdiler farkli çözümler gerektirir." },
     { title: "Besleme surekliligi", text: "Duzenli ve kontroll? girdi ak??? kararlı performans icin kritiktir." },
     { title: "Dozaj ve transfer", text: "Depolama ve transfer ekipmanlarinin birbirini desteklemesi gerekir." },
     { title: "Dayanim ve bakım", text: "Yapiskan veya zor akan girdilerde dayaniklilik on plana cikar." },
   ],
   offerCards: [
-    { title: "Girdi hazirlama sistemleri", text: "Organik girdileri prosese uygun hale getiren on işleme çöz?mleri sunuyoruz." },
+    { title: "Girdi hazirlama sistemleri", text: "Organik girdileri prosese uygun hale getiren on işleme çözümleri sunuyoruz." },
     { title: "Besleme ve dozajlama", text: "Kararlı ve kontroll? besleme icin uygun bunker ve dozaj kurgusu yapiyoruz." },
     { title: "Yardimci akis ekipmanlari", text: "Akis kontrolunu ve surekliligi destekleyen ekipmanlari belirliyoruz." },
     { title: "Toz ve koku kontrol?", text: "Saha güvenligi icin emis ve filtrasyon altyapisini kuruyoruz." },
@@ -455,7 +455,7 @@ const sludgeFamily: Family = {
   ],
   offerCards: [
     { title: "Kurutma ve destek kurgusu", text: "Giris yapisina gore kurutma hattini ve yardimci ekipmanlari belirliyoruz." },
-    { title: "Taşıma ve besleme sistemleri", text: "Çamur akisini kararlı hale getirecek çöz?mleri planliyoruz." },
+    { title: "Taşıma ve besleme sistemleri", text: "Çamur akisini kararlı hale getirecek çözümleri planliyoruz." },
     { title: "Enerji optimizasyonu", text: "Enerji tuketimi ve sureklilik dengesini birlikte ele aliyoruz." },
     { title: "Toz ve koku kontrol?", text: "Emisyon ve saha konforu icin kontrol altyapisi kuruyoruz." },
     { title: "Revizyon ve modernizasyon", text: "Mevcut aritma hatlarinda kapasite ve proses iyilestirmesi yapiyoruz." },
@@ -487,7 +487,7 @@ const sludgeFamily: Family = {
     "Evet, mevcut aritma tesislerine kurutma, transfer ve yardimci ekipmanlar entegre edilebilir.",
     "Otomasyon; besleme ve kurutma dengesini korumak icin onemlidir.",
     "Doğru susuzlastirma, kurutma ve transfer ekipmani isletme verimini etkiler.",
-    "Evet, proses tasarımı, imalat ve devreye alma dahil çöz?m sunuyoruz.",
+    "Evet, proses tasarımı, imalat ve devreye alma dahil çözüm sunuyoruz.",
   ],
   formDescription:
     "Giris camur tipi, gunluk miktar, hedef cikis nemi ve son ürün beklentinizi paylasin; size uygun camur isleme cozumunu birlikte netlestirelim.",

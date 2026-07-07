@@ -7,7 +7,7 @@ import { sectorTechnicalBlogGroups } from "../lib/sector-technical-blog-data";
 import { trText } from "../lib/tr-text";
 
 export const metadata: Metadata = {
-  title: "Sektörler | Pro Makina",
+  title: "Sektörler",
   description:
     "Gübre, kompost, organik atık, biyogaz, madencilik, kimya, yem ve dökme katı malzeme sektörleri için çözümler.",
   alternates: {

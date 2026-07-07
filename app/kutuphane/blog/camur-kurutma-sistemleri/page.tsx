@@ -2,7 +2,7 @@ import Link from "next/link";
 import { buildLibraryMetadata } from "../../../components/library-seo-page";
 import { BlogArticleTemplate } from "../../../components/blog-article-template";
 
-const title = "Çamur Kurutma Sistemleri | Pro Makina";
+const title = "Çamur Kurutma Sistemleri";
 const description =
   "Çamur kurutma sistemleri; arıtma çamuru, endüstriyel çamur ve organik çamur uygulamalarında proses, enerji ve ekipman rehberi.";
 const canonical = "https://www.promakina.com.tr/kutuphane/blog/camur-kurutma-sistemleri";

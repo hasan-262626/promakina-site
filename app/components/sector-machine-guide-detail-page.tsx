@@ -281,7 +281,7 @@ function ProcessDiagram({
           viewBox={`0 0 ${width} 220`}
           className="min-w-[860px]"
           role="img"
-          aria-label={`${title} proses ÅŸemasÄ±`}
+          aria-label={`${title} proses şeması`}
         >
           <defs>
             <linearGradient id="sectorGuideGradient" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -539,7 +539,7 @@ export function SectorMachineGuideDetailPage({
 
         <div className="site-container mt-8">
           <div className="grid gap-8">
-            <SectionCard title="GiriÅŸ">
+            <SectionCard title="Giriş">
               {normalizedGuide.introParagraphs.map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>
               ))}
@@ -672,7 +672,7 @@ export function SectorMachineGuideDetailPage({
                 </h2>
                 <p className="mt-4 text-base leading-8 text-slate-600">
                   Bu makaleyi destekleyen hizmet, makine, sektör ve hesaplama sayfalarına aşağıdan
-                  eriÅŸebilirsiniz.
+                  erişebilirsiniz.
                 </p>
               </div>
               <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-3">

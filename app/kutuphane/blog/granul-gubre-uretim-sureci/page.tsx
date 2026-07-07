@@ -2,7 +2,7 @@ import Link from "next/link";
 import { buildLibraryMetadata } from "../../../components/library-seo-page";
 import { BlogArticleTemplate } from "../../../components/blog-article-template";
 
-const title = "Granül Gübre Üretim Süreci | Hammadde, Granülasyon, Kurutma | Pro Makina";
+const title = "Granül Gübre Üretim Süreci | Hammadde, Granülasyon, Kurutma";
 const description =
   "Granül gübre üretim süreci; hammadde hazırlama, karıştırma, granülasyon, kurutma, soğutma, eleme, kaplama ve paketleme adımlarıyla teknik rehber.";
 const canonical = "https://www.promakina.com.tr/kutuphane/blog/granul-gubre-uretim-sureci";

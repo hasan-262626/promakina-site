@@ -13,14 +13,14 @@ function getCrusherCategory() {
 }
 
 export const metadata: Metadata = {
-  title: "Kırıcılar ve Parçalayıcılar | Pro Makina",
+  title: "Kırıcılar ve Parçalayıcılar",
   description:
     "Çekiçli kırıcı, zincirli kırıcı, shredder, bıçaklı primer kırıcı, bıçaklı sekonder kırıcı, çeneli kırıcı ve dik milli kırıcı çözümlerini inceleyin.",
   alternates: {
     canonical: "https://www.promakina.com.tr/makinalar-ekipman/kiricilar-ve-parcalayicilar",
   },
   openGraph: {
-    title: "Kırıcılar ve Parçalayıcılar | Pro Makina",
+    title: "Kırıcılar ve Parçalayıcılar",
     description:
       "Çekiçli kırıcı, zincirli kırıcı, shredder, bıçaklı primer kırıcı, bıçaklı sekonder kırıcı, çeneli kırıcı ve dik milli kırıcı çözümlerini inceleyin.",
     url: "https://www.promakina.com.tr/makinalar-ekipman/kiricilar-ve-parcalayicilar",

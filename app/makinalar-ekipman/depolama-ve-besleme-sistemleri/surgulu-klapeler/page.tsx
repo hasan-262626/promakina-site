@@ -8,14 +8,14 @@ const canonical =
   "https://www.promakina.com.tr/makinalar-ekipman/depolama-ve-besleme-sistemleri/surgulu-klapeler";
 
 export const metadata: Metadata = {
-  title: "Sürgülü Klapeler | Depolama ve Besleme Sistemleri | Pro Makina",
+  title: "Sürgülü Klapeler | Depolama ve Besleme Sistemleri",
   description:
     "Sürgülü klape çözümleriyle silo ve bunker çıkışlarında ürün akış kontrolünü güvenli ve sürekli hale getirin.",
   alternates: {
     canonical,
   },
   openGraph: {
-    title: "Sürgülü Klapeler | Depolama ve Besleme Sistemleri | Pro Makina",
+    title: "Sürgülü Klapeler | Depolama ve Besleme Sistemleri",
     description:
       "Sürgülü klape çözümleriyle silo ve bunker çıkışlarında ürün akış kontrolünü güvenli ve sürekli hale getirin.",
     url: canonical,

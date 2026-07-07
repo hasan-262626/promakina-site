@@ -28,13 +28,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 
   return {
-    title: `${category.title} | Blog Kategorisi | Pro Makina`,
+    title: `${category.title} | Blog Kategorisi`,
     description: category.description,
     alternates: {
       canonical: `https://www.promakina.com.tr/kutuphane/blog/kategori/${slug}`,
     },
     openGraph: {
-      title: `${category.title} | Blog Kategorisi | Pro Makina`,
+      title: `${category.title} | Blog Kategorisi`,
       description: category.description,
       url: `https://www.promakina.com.tr/kutuphane/blog/kategori/${slug}`,
       siteName: "Pro Makina",
@@ -43,7 +43,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     },
     twitter: {
       card: "summary_large_image",
-      title: `${category.title} | Blog Kategorisi | Pro Makina`,
+      title: `${category.title} | Blog Kategorisi`,
       description: category.description,
     },
   };

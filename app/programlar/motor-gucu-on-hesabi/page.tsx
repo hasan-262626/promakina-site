@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     canonical: "https://www.promakina.com.tr/programlar/motor-gucu-on-hesabi",
   },
   openGraph: {
-    title: "Motor Gücü Ön Hesabı | Pro Makina",
+    title: "Motor Gücü Ön Hesabı",
     description: "Tork, devir, verim, servis faktörü ve konveyör verilerine göre gerekli motor gücü ve redüktör çıkış değerlendirmesi yapın.",
     url: "https://www.promakina.com.tr/programlar/motor-gucu-on-hesabi",
     siteName: "Pro Makina",

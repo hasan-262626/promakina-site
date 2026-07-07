@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     canonical: "https://www.promakina.com.tr/programlar/kremayer-disli-hesabi",
   },
   openGraph: {
-    title: "Kremayer Dişli Hesabı | Pro Makina",
+    title: "Kremayer Dişli Hesabı",
     description: "Kremayer dişli ve kremayer kapı sistemi uygulamalarında modül, lineer hareket ve uygunluk değerlendirmesi yapabileceğiniz teknik yardımcı araç. Üst bölüm kısa tutulur ve giriş alanı hızlıca görünür.",
     url: "https://www.promakina.com.tr/programlar/kremayer-disli-hesabi",
     siteName: "Pro Makina",

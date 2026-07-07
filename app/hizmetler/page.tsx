@@ -78,7 +78,7 @@ const machineGroups = [
 ];
 
 export const metadata: Metadata = {
-  title: "Hizmetler | Pro Makina",
+  title: "Hizmetler",
   description:
     "Anahtar teslim tesis kurulumu, proses mühendisliği, endüstriyel makine imalatı, montaj ve devreye alma hizmetleri.",
   alternates: {

@@ -1,6 +1,6 @@
 import { ServiceSeoPage, buildServiceMetadata } from "../../components/service-seo-page";
 
-const title = "Kompost Tesisi Kurulumu | Pro Makina";
+const title = "Kompost Tesisi Kurulumu";
 const description =
   "Kompost tesisi kurulumu için anahtar teslim mühendislik, makine imalatı, proses tasarımı, montaj ve devreye alma çözümleri.";
 const canonical = "https://www.promakina.com.tr/hizmetler/kompost-tesisi-kurulumu";

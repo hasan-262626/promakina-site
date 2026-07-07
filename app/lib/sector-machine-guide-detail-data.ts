@@ -40,7 +40,7 @@ export const sectorMachineGuideDetailPages: SectorMachineGuidePageData[] = [
       "Maden, mineral, silis kumu, kuvars, kükürt ve dökme katı hammaddelerin kırma, eleme, kurutma, taşıma, sınıflandırma ve toz toplama proseslerinde kullanılan makineleri teknik olarak inceleyin.",
     canonical:
       "https://www.promakina.com.tr/kutuphane/blog/maden-ve-mineral-isleme-makinalari",
-    openGraphTitle: "Maden ve Mineral İşleme Makinaları | Pro Makina",
+    openGraphTitle: "Maden ve Mineral İşleme Makinaları",
     openGraphDescription:
       "Kırma, eleme, kurutma, taşıma ve toz kontrolü açısından maden ve mineral işleme makinelerini teknik olarak inceleyin.",
     heroDescription:
@@ -235,7 +235,7 @@ export const sectorMachineGuideDetailPages: SectorMachineGuidePageData[] = [
       "Sıvı gübre, organomineral sıvı gübre, AAP/APP bazlı ürünler, amino asitli sıvı ürünler ve biyostimülan üretiminde kullanılan reaktör, tank, filtrasyon, homojenizasyon ve dolum makinelerini inceleyin.",
     canonical:
       "https://www.promakina.com.tr/kutuphane/blog/sivi-gubre-uretim-makinalari",
-    openGraphTitle: "Sıvı Gübre Üretim Makinaları | Pro Makina",
+    openGraphTitle: "Sıvı Gübre Üretim Makinaları",
     openGraphDescription:
       "Sıvı gübre hatlarında reaktör, tank, filtrasyon, soğutma ve dolum ekipmanlarını teknik olarak inceleyin.",
     heroDescription:
@@ -439,7 +439,7 @@ export const sectorMachineGuideDetailPages: SectorMachineGuidePageData[] = [
       "Granül gübre ve organomineral gübre üretiminde kullanılan silo, dozajlama, mikser, granülasyon tamburu, kurutma, soğutma, eleme, kaplama ve paketleme makinelerini inceleyin.",
     canonical:
       "https://www.promakina.com.tr/kutuphane/blog/granul-ve-organomineral-gubre-makinalari",
-    openGraphTitle: "Granül ve Organomineral Gübre Makinaları | Pro Makina",
+    openGraphTitle: "Granül ve Organomineral Gübre Makinaları",
     openGraphDescription:
       "Granülasyon, kurutma, soğutma, eleme, kaplama ve paketleme hatlarında kullanılan ekipmanları teknik olarak inceleyin.",
     heroDescription:
@@ -625,7 +625,7 @@ export const sectorMachineGuideDetailPages: SectorMachineGuidePageData[] = [
       "Evsel organik atık, arıtma çamuru, digestat, hayvansal atık ve tarımsal atıkların kompost ürününe dönüştürülmesinde kullanılan makineleri inceleyin.",
     canonical:
       "https://www.promakina.com.tr/kutuphane/blog/kompost-ve-organik-atik-makinalari",
-    openGraphTitle: "Kompost ve Organik Atık Makinaları | Pro Makina",
+    openGraphTitle: "Kompost ve Organik Atık Makinaları",
     openGraphDescription:
       "Shredder, kompost tamburu, kurutma, trommel ve koku kontrol ekipmanlarını teknik olarak inceleyin.",
     heroDescription:
@@ -796,7 +796,7 @@ export const sectorMachineGuideDetailPages: SectorMachineGuidePageData[] = [
       "Kurutma tamburu, brülör, sıcak hava odası, fan, siklon, jet pulse filtre, baca ve termal proses ekipmanlarının çalışma mantığını inceleyin.",
     canonical:
       "https://www.promakina.com.tr/kutuphane/blog/kurutma-ve-termal-proses-makinalari",
-    openGraphTitle: "Kurutma ve Termal Proses Makinaları | Pro Makina",
+    openGraphTitle: "Kurutma ve Termal Proses Makinaları",
     openGraphDescription:
       "Kurutma tamburu, brülör, fan, siklon ve filtre zincirini teknik olarak inceleyin.",
     heroDescription:
@@ -947,7 +947,7 @@ export const sectorMachineGuideDetailPages: SectorMachineGuidePageData[] = [
       "Bant konveyör, helezon konveyör, kovalı elevatör, zincirli konveyör, silo, bunker, tartımlı besleme ve dozajlama sistemlerini teknik olarak inceleyin.",
     canonical:
       "https://www.promakina.com.tr/kutuphane/blog/tasima-dozajlama-ve-depolama-ekipmanlari",
-    openGraphTitle: "Taşıma, Dozajlama ve Depolama Ekipmanları | Pro Makina",
+    openGraphTitle: "Taşıma, Dozajlama ve Depolama Ekipmanları",
     openGraphDescription:
       "Konveyör, elevatör, silo, bunker ve tartımlı besleme ekipmanlarını proses bakışıyla inceleyin.",
     heroDescription:
@@ -1097,7 +1097,7 @@ export const sectorMachineGuideDetailPages: SectorMachineGuidePageData[] = [
       "Arıtma çamuru, belediye çamuru ve digestat gibi yüksek nemli malzemeler için kurutma tamburu, stabilizasyon, sterilizasyon, taşıma, koku kontrol ve filtre sistemlerini inceleyin.",
     canonical:
       "https://www.promakina.com.tr/kutuphane/blog/atik-su-camuru-ve-aritma-makinalari",
-    openGraphTitle: "Atık Su Çamuru İşleme Makinaları | Pro Makina",
+    openGraphTitle: "Atık Su Çamuru İşleme Makinaları",
     openGraphDescription:
       "Çamur kurutma, stabilizasyon, koku kontrol ve gaz yönetimi ekipmanlarını teknik olarak inceleyin.",
     heroDescription:
@@ -1252,7 +1252,7 @@ export const sectorMachineGuideDetailPages: SectorMachineGuidePageData[] = [
       "Biyogaz tesislerinde organik atık besleme, parçalayıcı, karıştırma, pompa, helezon, ön işlem ve digestat kurutma/kompostlaştırma ekipmanlarını inceleyin.",
     canonical:
       "https://www.promakina.com.tr/kutuphane/blog/biyogaz-on-islem-ve-digestat-makinalari",
-    openGraphTitle: "Biyogaz Ön İşlem ve Digestat Makinaları | Pro Makina",
+    openGraphTitle: "Biyogaz Ön İşlem ve Digestat Makinaları",
     openGraphDescription:
       "Biyogaz ön işlem, besleme, shredding, digestat kurutma ve kompostlaştırma ekipmanlarını inceleyin.",
     heroDescription:
@@ -1408,7 +1408,7 @@ export const sectorMachineGuideDetailPages: SectorMachineGuidePageData[] = [
       "Kimya ve proses endüstrisinde kullanılan reaktör, karıştırıcılı tank, basınçlı tank, filtrasyon, homojenizasyon, pompa, dozajlama ve otomasyon sistemlerini inceleyin.",
     canonical:
       "https://www.promakina.com.tr/kutuphane/blog/kimya-ve-proses-endustrisi-ekipmanlari",
-    openGraphTitle: "Kimya ve Proses Endüstrisi Ekipmanları | Pro Makina",
+    openGraphTitle: "Kimya ve Proses Endüstrisi Ekipmanları",
     openGraphDescription:
       "Reaktör, tank, eşanjör, filtrasyon ve otomasyon sistemlerini teknik bakışla inceleyin.",
     heroDescription:

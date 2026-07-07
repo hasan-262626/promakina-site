@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     canonical: "https://www.promakina.com.tr/programlar/malzeme-agirlik-hesabi",
   },
   openGraph: {
-    title: "Malzeme Ağırlık Hesabı | Pro Makina",
+    title: "Malzeme Ağırlık Hesabı",
     description: "Sac, lama, dolu mil, profil ve disk gibi geometriler için boyut ve yoğunluk bilgisine göre ağırlık hesabını hızlıca değerlendirin.",
     url: "https://www.promakina.com.tr/programlar/malzeme-agirlik-hesabi",
     siteName: "Pro Makina",

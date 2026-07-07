@@ -227,7 +227,7 @@ export const topicalBlogArticles: TopicalArticle[] = [
   {
     slug: "kurutma-tamburu-cap-boy-hesabi",
     title: "Kurutma Tamburu Çap Boy Hesabı",
-    metaTitle: "Kurutma Tamburu Çap Boy Hesabı | Pro Makina",
+    metaTitle: "Kurutma Tamburu Çap Boy Hesabı",
     description:
       "Kurutma tamburu çap boy hesabı, tutulma süresi, ürün perdesi, L/D oranı ve saha kapasitesi için teknik rehber.",
     heroDescription:
@@ -317,7 +317,7 @@ export const topicalBlogArticles: TopicalArticle[] = [
   {
     slug: "tambur-kurutucu-nasil-calisir",
     title: "Tambur Kurutucu Nasıl Çalışır?",
-    metaTitle: "Tambur Kurutucu Nasıl Çalışır? | Pro Makina",
+    metaTitle: "Tambur Kurutucu Nasıl Çalışır?",
     description: "Tambur kurutucu sisteminin çalışma mantığı, iç kanatlar, gaz akışı ve ürün hareketi açısından teknik rehber.",
     heroDescription: "Tambur kurutucunun ürün hareketi, iç kanat düzeni ve sıcak gaz hattı üzerinden nasıl çalıştığını açıklayan proses rehberi.",
     categorySlug: "kurutma-sistemleri",
@@ -359,7 +359,7 @@ export const topicalBlogArticles: TopicalArticle[] = [
   {
     slug: "endustriyel-kurutma-sistemleri",
     title: "Endüstriyel Kurutma Sistemleri",
-    metaTitle: "Endüstriyel Kurutma Sistemleri | Pro Makina",
+    metaTitle: "Endüstriyel Kurutma Sistemleri",
     description: "Endüstriyel kurutma sistemleri; tamburlu, bantlı, indirekt ve özel kurutma çözümlerini karşılaştıran teknik rehber.",
     heroDescription: "Endüstriyel kurutma sistemlerini ürün tipi, enerji modeli ve saha uygulanabilirliği üzerinden karşılaştıran rehber.",
     categorySlug: "kurutma-sistemleri",
@@ -401,7 +401,7 @@ export const topicalBlogArticles: TopicalArticle[] = [
   {
     slug: "vidali-konveyor-hesabi",
     title: "Vidalı Konveyör Hesabı",
-    metaTitle: "Vidalı Konveyör Hesabı | Pro Makina",
+    metaTitle: "Vidalı Konveyör Hesabı",
     description: "Vidalı konveyör hesabı; kapasite, ürün yoğunluğu, çap, hatve, motor gücü ve eğim etkisi için teknik rehber.",
     heroDescription: "Vidalı konveyörlerin kapasite ve tahrik seçimini ürün davranışıyla birlikte okuyan mühendislik rehberi.",
     categorySlug: "konveyor-ve-helezon",
@@ -443,7 +443,7 @@ export const topicalBlogArticles: TopicalArticle[] = [
   {
     slug: "konveyor-kapasite-hesabi",
     title: "Konveyör Kapasite Hesabı",
-    metaTitle: "Konveyör Kapasite Hesabı | Pro Makina",
+    metaTitle: "Konveyör Kapasite Hesabı",
     description: "Konveyör kapasite hesabı; bant genişliği, hat boyu, hız, ürün yoğunluğu ve motor yaklaşımı için teknik rehber.",
     heroDescription: "Bantlı ve zincirli konveyör hatlarında kapasite hesabını ürün, hız ve hat mimarisi üzerinden açıklayan rehber.",
     categorySlug: "konveyor-ve-helezon",
@@ -485,7 +485,7 @@ export const topicalBlogArticles: TopicalArticle[] = [
   {
     slug: "egimli-helezon-hesabi",
     title: "Eğimli Helezon Hesabı",
-    metaTitle: "Eğimli Helezon Hesabı | Pro Makina",
+    metaTitle: "Eğimli Helezon Hesabı",
     description: "Eğimli helezon hesabı; kapasite kaybı, ürün davranışı, doluluk ve motor yükü için teknik rehber.",
     heroDescription: "Eğimli helezonlarda kapasite düşüşünü, tork artışını ve geometri seçimini açıklayan teknik içerik.",
     categorySlug: "konveyor-ve-helezon",
@@ -527,7 +527,7 @@ export const topicalBlogArticles: TopicalArticle[] = [
   {
     slug: "gubre-tesisi-kurulumu",
     title: "Gübre Tesisi Kurulumu",
-    metaTitle: "Gübre Tesisi Kurulumu | Proses ve Yatırım Rehberi | Pro Makina",
+    metaTitle: "Gübre Tesisi Kurulumu | Proses ve Yatırım Rehberi",
     description: "Gübre tesisi kurulumu için proses akışı, kullanılan makineler, kapasite, yatırım ve anahtar teslim kurulum rehberi.",
     heroDescription: "Gübre tesisi kurulumunu ürün tipi, kapasite, proses akışı ve ana makina omurgasıyla birlikte ele alan kapsamlı rehber.",
     categorySlug: "gubre-teknolojileri",
@@ -569,7 +569,7 @@ export const topicalBlogArticles: TopicalArticle[] = [
   {
     slug: "gubre-uretim-hatti-nasil-kurulur",
     title: "Gübre Üretim Hattı Nasıl Kurulur?",
-    metaTitle: "Gübre Üretim Hattı Nasıl Kurulur? | Pro Makina",
+    metaTitle: "Gübre Üretim Hattı Nasıl Kurulur?",
     description: "Gübre üretim hattı kurulumu için proses akışı, makine seçimi, kapasite planı ve saha kurulum rehberi.",
     heroDescription: "Gübre üretim hattını hammadde kabulünden paketlemeye kadar adım adım ele alan teknik rehber.",
     categorySlug: "gubre-teknolojileri",
@@ -611,7 +611,7 @@ export const topicalBlogArticles: TopicalArticle[] = [
   {
     slug: "organik-atik-isleme-tesisi",
     title: "Organik Atık İşleme Tesisi",
-    metaTitle: "Organik Atık İşleme Tesisi | Pro Makina",
+    metaTitle: "Organik Atık İşleme Tesisi",
     description: "Organik atık işleme tesisi için kabul, ayrıştırma, taşıma, kompost, biyogaz ve son ürün hazırlama rehberi.",
     heroDescription: "Organik atık akışlarını kompost, biyogaz veya son ürün hazırlığı yönünde değerlendiren tesis kurgusu rehberi.",
     categorySlug: "kompost-ve-atik",
@@ -653,7 +653,7 @@ export const topicalBlogArticles: TopicalArticle[] = [
   {
     slug: "kompost-uretim-sureci",
     title: "Kompost Üretim Süreci",
-    metaTitle: "Kompost Üretim Süreci | Pro Makina",
+    metaTitle: "Kompost Üretim Süreci",
     description: "Kompost üretim süreci; atık kabul, reçete, olgunlaştırma, eleme ve son ürün hazırlama için teknik rehber.",
     heroDescription: "Kompost üretim sürecini hammadde dengesinden olgunlaştırma ve son ürün hazırlığına kadar teknik açıdan anlatan rehber.",
     categorySlug: "kompost-ve-atik",
@@ -695,7 +695,7 @@ export const topicalBlogArticles: TopicalArticle[] = [
   {
     slug: "biyogaz-on-islem-sistemleri",
     title: "Biyogaz Ön İşlem Sistemleri",
-    metaTitle: "Biyogaz Ön İşlem Sistemleri | Pro Makina",
+    metaTitle: "Biyogaz Ön İşlem Sistemleri",
     description: "Biyogaz ön işlem sistemleri; besleme hazırlığı, ayrıştırma, kırma, karıştırma ve akış dengeleme için teknik rehber.",
     heroDescription: "Biyogaz tesislerinde besleme öncesi organik akışın nasıl hazırlanacağını anlatan proses rehberi.",
     categorySlug: "biyogaz-ve-enerji",

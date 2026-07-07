@@ -2,7 +2,7 @@ import Link from "next/link";
 import { buildLibraryMetadata } from "../../../components/library-seo-page";
 import { BlogArticleTemplate } from "../../../components/blog-article-template";
 
-const title = "NPK Gübre Üretimi | Pro Makina";
+const title = "NPK Gübre Üretimi";
 const description =
   "NPK gübre üretimi; hammadde, karıştırma, granülasyon, kurutma, soğutma, eleme ve paketleme adımları için teknik rehber.";
 const canonical = "https://www.promakina.com.tr/kutuphane/blog/npk-gubre-uretimi";

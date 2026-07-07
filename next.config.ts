@@ -1,9 +1,6 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  typescript: {
-    ignoreBuildErrors: true,
-  },
   async redirects() {
     return [
       {
@@ -339,6 +336,26 @@ const nextConfig: NextConfig = {
       {
         source: "/kutuphane/sss",
         destination: "/kutuphane/sik-sorulan-sorular",
+        permanent: true,
+      },
+      {
+        source: "/makinalar-ekipman/tasima-ekipmanlari/helezon-konveyor",
+        destination: "/makinalar-ekipman/tasima-ekipmanlari/vidali-helezonlar",
+        permanent: true,
+      },
+      {
+        source: "/makinalar-ekipman/tasima-ekipmanlari/bantli-konveyor",
+        destination: "/makinalar-ekipman/tasima-ekipmanlari/bantli-konveyorler",
+        permanent: true,
+      },
+      {
+        source: "/makinalar-ekipman/dozajlama",
+        destination: "/makinalar-ekipman/dozajlama-sistemleri",
+        permanent: true,
+      },
+      {
+        source: "/sektorler/gubre-uretim-tesisleri",
+        destination: "/sektorler/gubre-ve-granulasyon-tesisleri",
         permanent: true,
       },
     ];

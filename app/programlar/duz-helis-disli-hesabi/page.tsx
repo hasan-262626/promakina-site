@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     canonical: "https://www.promakina.com.tr/programlar/duz-helis-disli-hesabi",
   },
   openGraph: {
-    title: "Düz Helis Dişli Hesabı | Pro Makina",
+    title: "Düz Helis Dişli Hesabı",
     description: "Düz dişli hesabı, helisel dişli hesabı, devir oranı hesabı ve dişli çapı hesaplama ihtiyaçları için mühendislik odaklı, kullanıcı dostu ve ön boyutlandırma mantığında çalışan teknik araç sayfası.",
     url: "https://www.promakina.com.tr/programlar/duz-helis-disli-hesabi",
     siteName: "Pro Makina",

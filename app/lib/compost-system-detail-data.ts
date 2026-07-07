@@ -74,7 +74,7 @@ export const compostSystemDetailPages: DrumSystemDetailPageData[] = [
     description:
       "Kompost tesisi kurulumu için organik atık kabulü, shredder, karıştırma, kompost tamburu, olgunlaştırma, kurutma, trommel elek, koku kontrolü ve paketleme süreçlerini inceleyin.",
     canonical: "https://www.promakina.com.tr/kutuphane/blog/kompost-tesisi-kurulumu",
-    openGraphTitle: "Kompost Tesisi Kurulumu | Pro Makina",
+    openGraphTitle: "Kompost Tesisi Kurulumu",
     openGraphDescription:
       "Kompost tesisi kurulumunda proses akışı, makine seçimi, koku kontrolü ve son ürün hazırlığını teknik olarak inceleyin.",
     heroDescription:
@@ -225,7 +225,7 @@ export const compostSystemDetailPages: DrumSystemDetailPageData[] = [
     description:
       "Organik atık tesisi tasarımında atık kabul, ayırma, parçalama, karıştırma, kompostlaştırma, kurutma, eleme, koku kontrolü ve ürün hazırlama süreçlerini inceleyin.",
     canonical: "https://www.promakina.com.tr/kutuphane/blog/organik-atik-tesisi",
-    openGraphTitle: "Organik Atık Tesisi | Pro Makina",
+    openGraphTitle: "Organik Atık Tesisi",
     openGraphDescription:
       "Evsel, tarımsal ve hayvansal organik atıkların kompost veya ürün hattına nasıl işlendiğini teknik akışla görün.",
     heroDescription:
@@ -359,7 +359,7 @@ export const compostSystemDetailPages: DrumSystemDetailPageData[] = [
     description:
       "Çamur kurutma sistemi için arıtma çamuru, digestat ve yüksek nemli atıklarda besleme, karıştırma, kurutma tamburu, brülör, fan, siklon, filtre, scrubber ve koku kontrolünü inceleyin.",
     canonical: "https://www.promakina.com.tr/kutuphane/blog/camur-kurutma-sistemi",
-    openGraphTitle: "Çamur Kurutma Sistemi | Pro Makina",
+    openGraphTitle: "Çamur Kurutma Sistemi",
     openGraphDescription:
       "Arıtma çamuru ve digestat gibi yüksek nemli akışlarda kurutma, gaz arıtma ve ürün hazırlama mantığını inceleyin.",
     heroDescription:
@@ -490,7 +490,7 @@ export const compostSystemDetailPages: DrumSystemDetailPageData[] = [
     description:
       "Biyogaz ön işlem sistemlerinde organik atık kabulü, yabancı madde ayırma, shredder, karıştırma, pompa, helezon besleme ve digestat sonrası ürün hazırlama süreçlerini inceleyin.",
     canonical: "https://www.promakina.com.tr/kutuphane/blog/biyogaz-on-islem",
-    openGraphTitle: "Biyogaz Ön İşlem | Pro Makina",
+    openGraphTitle: "Biyogaz Ön İşlem",
     openGraphDescription:
       "Biyogaz tesislerinde atık hazırlama, yabancı madde ayırma ve digestat sonrası ürün hazırlama mantığını inceleyin.",
     heroDescription:
@@ -609,7 +609,7 @@ export const compostSystemDetailPages: DrumSystemDetailPageData[] = [
     description:
       "Kompost üretim süreci; organik atık kabulü, parçalama, karıştırma, nem ve havalandırma kontrolü, olgunlaştırma, kurutma, eleme ve ürün hazırlama aşamalarıyla nasıl ilerler?",
     canonical: "https://www.promakina.com.tr/kutuphane/blog/kompost-uretim-sureci",
-    openGraphTitle: "Kompost Üretim Süreci | Pro Makina",
+    openGraphTitle: "Kompost Üretim Süreci",
     openGraphDescription:
       "Organik atıktan stabil kompost üretiminde proses adımlarını ve ekipman dengesini teknik olarak inceleyin.",
     heroDescription:
@@ -742,7 +742,7 @@ export const compostSystemDetailPages: DrumSystemDetailPageData[] = [
     description:
       "Trommel elek seçimi için kapasite, tambur çapı, elek boyu, delik ölçüsü, nem, ürün yoğunluğu, devir, eğim ve temizleme sistemi kriterlerini inceleyin.",
     canonical: "https://www.promakina.com.tr/kutuphane/blog/trommel-elek-secimi",
-    openGraphTitle: "Trommel Elek Seçimi | Pro Makina",
+    openGraphTitle: "Trommel Elek Seçimi",
     openGraphDescription:
       "Kompost, organik atık ve maden hatlarında trommel elek tasarımı ve kapasite yaklaşımını görün.",
     heroDescription:
@@ -883,7 +883,7 @@ export const compostSystemDetailPages: DrumSystemDetailPageData[] = [
     description:
       "Kompost tamburu seçimi için organik atık tipi, nem, yoğunluk, bekletme süresi, havalandırma, koku kontrolü, doluluk, devir, iç yapı ve kapasite kriterlerini inceleyin.",
     canonical: "https://www.promakina.com.tr/kutuphane/blog/kompost-tamburu-secim-kriterleri",
-    openGraphTitle: "Kompost Tamburu Seçim Kriterleri | Pro Makina",
+    openGraphTitle: "Kompost Tamburu Seçim Kriterleri",
     openGraphDescription:
       "Kompost tamburunda bekletme, doluluk, havalandırma ve yapışkan ürün yönetimini teknik olarak görün.",
     heroDescription:
@@ -1027,7 +1027,7 @@ export const compostSystemDetailPages: DrumSystemDetailPageData[] = [
       "Evsel organik atık işleme tesisi için atık kabul, ayrıştırma, shredder, karıştırma, kompostlaştırma, kurutma, eleme, koku kontrolü ve ürün hazırlama süreçlerini inceleyin.",
     canonical:
       "https://www.promakina.com.tr/kutuphane/blog/evsel-organik-atik-isleme-tesisi",
-    openGraphTitle: "Evsel Organik Atık İşleme Tesisi | Pro Makina",
+    openGraphTitle: "Evsel Organik Atık İşleme Tesisi",
     openGraphDescription:
       "Belediye kaynaklı organik fraksiyonun ayrıştırma, kompost ve ürün hazırlama mantığını teknik olarak görün.",
     heroDescription:
@@ -1148,7 +1148,7 @@ export const compostSystemDetailPages: DrumSystemDetailPageData[] = [
       "Kompost ve organomineral gübre entegrasyonu ile organik atıklardan elde edilen kompostun mineral hammaddelerle birleştirilerek granül gübre üretim hattına nasıl entegre edildiğini inceleyin.",
     canonical:
       "https://www.promakina.com.tr/kutuphane/blog/kompost-ve-organomineral-gubre-entegrasyonu",
-    openGraphTitle: "Kompost ve Organomineral Gübre Entegrasyonu | Pro Makina",
+    openGraphTitle: "Kompost ve Organomineral Gübre Entegrasyonu",
     openGraphDescription:
       "Kompostun mineral hammaddelerle granül organomineral gübreye dönüştürülme mantığını teknik olarak inceleyin.",
     heroDescription:
@@ -1274,7 +1274,7 @@ export const compostSystemDetailPages: DrumSystemDetailPageData[] = [
     description:
       "Koku kontrol sistemi için kompost, arıtma çamuru, digestat ve organik atık tesislerinde kapalı alan, negatif basınç, scrubber, biyofiltre, fan, kanal ve gaz arıtma çözümlerini inceleyin.",
     canonical: "https://www.promakina.com.tr/kutuphane/blog/koku-kontrol-sistemi",
-    openGraphTitle: "Koku Kontrol Sistemi | Pro Makina",
+    openGraphTitle: "Koku Kontrol Sistemi",
     openGraphDescription:
       "Kompost ve organik atık tesislerinde kokulu havanın toplanması ve arıtılması için tasarım yaklaşımını görün.",
     heroDescription:

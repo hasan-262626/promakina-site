@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     canonical: "https://www.promakina.com.tr/programlar/sac-kaynak-hesaplari",
   },
   openGraph: {
-    title: "Sac-Kaynak Hesapları | Pro Makina",
+    title: "Sac-Kaynak Hesapları",
     description: "Sac ağırlık hesabı, büküm açılım boyu, abkant tonaj hesabı ve kaynak dolgu miktarı için imalat odaklı ön hesap alın.",
     url: "https://www.promakina.com.tr/programlar/sac-kaynak-hesaplari",
     siteName: "Pro Makina",

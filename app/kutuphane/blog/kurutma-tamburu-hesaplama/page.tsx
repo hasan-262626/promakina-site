@@ -3,7 +3,7 @@ import Link from "next/link";
 import { BlogArticleTemplate } from "../../../components/blog-article-template";
 
 export const metadata: Metadata = {
-  title: "Kurutma Tamburu Hesaplama (2026) | Kapasite, Çap-Boy, Hava Debisi | Pro Makina",
+  title: "Kurutma Tamburu Hesaplama (2026) | Kapasite, Çap-Boy, Hava Debisi",
   description:
     "Kurutma tamburu kapasite hesabı, çap-boy seçimi, nem dengesi, hava debisi ve enerji ihtiyacı. Mühendislik yaklaşımı ve örnek hesaplar.",
   alternates: {

@@ -126,7 +126,7 @@ export function SeoRichLandingPage({
   };
 
   const whatsappHref = createWhatsAppHref(
-    `Merhaba, Pro Makina web sitenizden ulaÅŸÄ±yorum. AÅŸaÄŸÄ±daki Ã¼rÃ¼n/hizmet iÃ§in teklif almak istiyorum: ${heroTitle}`,
+    `Merhaba, Pro Makina web sitenizden ulaşıyorum. Aşağıdaki ürün/hizmet için teklif almak istiyorum: ${heroTitle}`,
   );
 
   return (

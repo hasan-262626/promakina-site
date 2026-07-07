@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     canonical: "https://www.promakina.com.tr/programlar/helezon-kapasite-ve-mekanik-secim-programi",
   },
   openGraph: {
-    title: "Helezon (Screw Conveyor) Kapasite ve Mekanik Seçim Programı | Pro Makina",
+    title: "Helezon (Screw Conveyor) Kapasite ve Mekanik Seçim Programı",
     description: "Helezon çapı, hatve, devir, kapasite uygunluğu, motor gücü, redüktör ve mekanik yapı önerileri için profesyonel ön seçim ve teklif hazırlama aracıdır.",
     url: "https://www.promakina.com.tr/programlar/helezon-kapasite-ve-mekanik-secim-programi",
     siteName: "Pro Makina",

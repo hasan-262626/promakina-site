@@ -11,7 +11,7 @@ import { sectorMachineGuideCards } from "./sector-machine-guide-blog-data";
 const DEFAULT_READING_TIME = "6-8 dk";
 const CATEGORY_BADGE = "Sektörel Teknik Rehber";
 const COMMON_CTA_TEXT =
-  "Kapasite, hammadde, nem oranı, ürün hedefi ve saha yerle_iminize göre uygun makine ve proses çöz?m?n? birlikte netle_tirebiliriz.";
+  "Kapasite, hammadde, nem oranı, ürün hedefi ve saha yerle_iminize göre uygun makine ve proses çözüm?n? birlikte netle_tirebiliriz.";
 
 type LinkItem = {
   label: string;
@@ -99,19 +99,19 @@ function buildSectionParagraphs(spec: ArticleSpec, sectionTitle: string, index: 
     sectionTitle.includes("kontrol");
   const first =
     isProcess
-      ? `${sectionTitle} ba_l11nda ama�, ${slugTitle(spec.title)} kurgusunun sahada nas1l i_leyeceini netle_tirmektir. ${spec.sector} taraf1nda kapasite, nem, younluk, toz y�k� ve �r�n davran1_1 birlikte ele al1nmadan kurulan hatlar �ou zaman teoride doru g�r�nse de pratikte darboaz �retir.`
+      ? `${sectionTitle} ba_l11nda ama, ${slugTitle(spec.title)} kurgusunun sahada nas1l i_leyeceini netle_tirmektir. ${spec.sector} taraf1nda kapasite, nem, younluk, toz yk ve ürün davran1_1 birlikte ele al1nmadan kurulan hatlar ou zaman teoride doru gürünse de pratikte darboaz retir.`
       : isSelection
-        ? `${sectionTitle} konusu deerlendirilirken yaln1z tek bir ekipman etiketi �zerinden deil, hatt1n tamam1 �zerinden d�_�nmek gerekir. ${spec.sector} projelerinde ${machineText} gibi ekipmanlar birbirini besleyen halkalar _eklinde �al1_1r; bu nedenle se�im kriterleri kapasite, a_1nma, bak1m ve �r�n kalitesiyle birlikte okunmal1d1r.`
-        : `${sectionTitle} b�l�m�nde ${spec.sector} projelerinde sahada en �ok kar_1la_1lan m�hendislik kararlar1 ele al1n1r. �zellikle ${machineText} gibi makine gruplar1, proses i�indeki g�revlerine g�re farkl1 boyut, malzeme ve otomasyon seviyeleriyle se�ilir.`;
+        ? `${sectionTitle} konusu deerlendirilirken yaln1z tek bir ekipman etiketi zerinden deil, hatt1n tamam1 zerinden d_nmek gerekir. ${spec.sector} projelerinde ${machineText} gibi ekipmanlar birbirini besleyen halkalar _eklinde al1_1r; bu nedenle seim kriterleri kapasite, a_1nma, bak1m ve ürün kalitesiyle birlikte okunmal1d1r.`
+        : `${sectionTitle} blmnde ${spec.sector} projelerinde sahada en çok kar_1la_1lan mhendislik kararlar1 ele al1n1r. özellikle ${machineText} gibi makine gruplar1, proses iindeki görevlerine göre farkl1 boyut, malzeme ve otomasyon seviyeleriyle seilir.`;
   const second =
     isAutomation
-      ? `Bu ba_l1k alt1nda sens�r, dozaj, PLC, operat�r ekran1 ve g�venlik mant11 da �nem kazan1r. ${keywordText} gibi aramalarda �ne �1kan teknik beklentiler yaln1z �retim kapasitesini deil, tekrarlanabilir kaliteyi ve g�venli i_letmeyi de dorudan etkiler.`
-      : `${spec.excerpt} Bu nedenle ${sectionTitle.toLocaleLowerCase("tr-TR")} yaln1z teorik bilgi olarak deil; saha yerle_imi, enerji ihtiyac1, bak1m kolayl11 ve b�y�me plan1 ile birlikte deerlendirilmelidir.`;
+      ? `Bu ba_l1k alt1nda sensr, dozaj, PLC, operatr ekran1 ve gvenlik mant11 da nem kazan1r. ${keywordText} gibi aramalarda ne 1kan teknik beklentiler yaln1z üretim kapasitesini deil, tekrarlanabilir kaliteyi ve gvenli i_letmeyi de dorudan etkiler.`
+      : `${spec.excerpt} Bu nedenle ${sectionTitle.toLocaleLowerCase("tr-TR")} yaln1z teorik bilgi olarak deil; saha yerle_imi, enerji ihtiyac1, bak1m kolayl11 ve byme plan1 ile birlikte deerlendirilmelidir.`;
 
   const third =
     index % 2 === 0
-      ? `Pro Makina yakla_1m1nda bu b�l�m, ilgili makinenin ne i_e yarad11n1 anlatman1n �tesinde hangi ekipmanlarla birlikte �al1_t11n1 ve tasar1m s1ras1nda hangi risklerin kontrol edilmesi gerektiini de a�1klar. B�ylece yat1r1m kararlar1 katalog yerine proses mant11 �zerinden _ekillenir.`
-      : `Doru ekipman karar1 verildiinde yaln1z kapasite artmaz; �r�n standard1, enerji verimi, bak1m d�zeni ve operat�r g�venlii de daha �ng�r�lebilir hale gelir. �zellikle uzun �m�rl� tesis yat1r1mlar1nda bu bak1_ a�1s1 toplam i_letme maliyetini ciddi �l��de etkiler.`;
+      ? `Pro Makina yakla_1m1nda bu blm, ilgili makinenin ne i_e yarad11n1 anlatman1n tesinde hangi ekipmanlarla birlikte al1_t11n1 ve tasar1m s1ras1nda hangi risklerin kontrol edilmesi gerektiini de a1klar. böylece yat1r1m kararlar1 katalog yerine proses mant11 zerinden _ekillenir.`
+      : `Doru ekipman karar1 verildiinde yaln1z kapasite artmaz; ürün standard1, enerji verimi, bak1m dzeni ve operatr gvenlii de daha ngrlebilir hale gelir. özellikle uzun mrl tesis yat1r1mlar1nda bu bak1_ a1s1 toplam i_letme maliyetini ciddi lde etkiler.`;
 
   return [first, second, third];
 }
@@ -126,7 +126,7 @@ function buildSummaryRows(spec: ArticleSpec): TopicalSummaryRow[] {
   return [
     row(
       "Kapasite ve akış dengesi",
-      `${spec.title} kapsam1nda saatlik kapasite, besleme d�zeni ve ekipman ritmi birlikte deerlendirilir.`,
+      `${spec.title} kapsam1nda saatlik kapasite, besleme dzeni ve ekipman ritmi birlikte deerlendirilir.`,
       "Darboaz oluşumunu ?nler.",
     ),
     row(
@@ -150,8 +150,8 @@ function buildSummaryRows(spec: ArticleSpec): TopicalSummaryRow[] {
 function buildFaqs(spec: ArticleSpec): TopicalFaq[] {
   return [
     faq(
-      `${spec.title} i�in hangi makineler gerekir?`,
-      `${spec.sector} projelerinde ihtiya� duyulan makine zinciri; kapasite, �r�n yap1s1, proses hedefi ve son �r�n standard1na g�re belirlenir. �ou projede ta_1ma, ana proses, eleme/filtrasyon ve paketleme veya stok ekipmanlar1 birlikte deerlendirilir.`,
+      `${spec.title} iin hangi makineler gerekir?`,
+      `${spec.sector} projelerinde ihtiya duyulan makine zinciri; kapasite, ürün yap1s1, proses hedefi ve son ürün standard1na göre belirlenir. ou projede ta_1ma, ana proses, eleme/filtrasyon ve paketleme veya stok ekipmanlar1 birlikte deerlendirilir.`,
     ),
     faq(
       "Kapasite nasıl belirlenir?",
@@ -170,7 +170,7 @@ function buildFaqs(spec: ArticleSpec): TopicalFaq[] {
       "Kapasite, otomasyon seviyesi, malzeme seçimi, 1sıl yük, taşıma mesafeleri, yap1 ?elii, platformlar ve çevresel kontrol ekipmanları toplam yatırım tutarını etkiler.",
     ),
     faq(
-      "Pro Makina bu konuda hangi çöz?mleri sunar?",
+      "Pro Makina bu konuda hangi çözümleri sunar?",
       "Pro Makina; Ön mühendislik, makine seçimi, imalat, saha kurulumu, otomasyon ve devreye alma yakla_1mın1 birlikte sunarak proje bütünl??n? korur.",
     ),
   ];
@@ -183,7 +183,7 @@ function buildRelatedServiceCards(spec: ArticleSpec): TopicalBlogCard[] {
     .map((link) =>
       card(
         link.label,
-        `${link.label} sayfas1nda ilgili hizmet, sekt�r veya makine ailesini daha detayl1 inceleyebilirsiniz.`,
+        `${link.label} sayfas1nda ilgili hizmet, sektr veya makine ailesini daha detayl1 inceleyebilirsiniz.`,
         link.href,
         {
           eyebrow: "0lgili Sayfa",
@@ -529,7 +529,7 @@ const articleSpecs: ArticleSpec[] = [
       "Yabancı madde ayırma ve proses güvenlii",
       "Digestat sonrası kompost ve kurutma hatları",
       "Biyogaz tesislerinde ekipman seçiminin verime etkisi",
-      "Pro Makina ile biyogaz Ön i_lem çöz?mleri",
+      "Pro Makina ile biyogaz Ön i_lem çözümleri",
     ],
     internalLinks: [
       { label: "Enerji ve Biyogaz Sistemleri", href: "/sektorler/enerji-ve-biyogaz-sistemleri" },
@@ -580,7 +580,7 @@ const articleSpecs: ArticleSpec[] = [
       "Sterilizasyon ve stabilizasyon senaryoları",
       "Koku, gaz ve sızıntı suyu yönetimi",
       "Son ürün kullanımı: kompost, gübre veya yakıt hazırl11",
-      "Pro Makina ile digestat deerlendirme çöz?mleri",
+      "Pro Makina ile digestat deerlendirme çözümleri",
     ],
     internalLinks: [
       { label: "Enerji ve Biyogaz Sistemleri", href: "/sektorler/enerji-ve-biyogaz-sistemleri" },
@@ -607,7 +607,7 @@ const articleSpecs: ArticleSpec[] = [
       "biyofiltre",
       "scrubber",
     ],
-    relatedServiceLabels: ["Biyogaz sistemleri", "Kompost ve organik atık çöz?mleri"],
+    relatedServiceLabels: ["Biyogaz sistemleri", "Kompost ve organik atık çözümleri"],
     nextSlug: "hayvansal-atiklardan-biyogaz-tesisi-kurulumu",
   },
   {
@@ -753,7 +753,7 @@ const articleSpecs: ArticleSpec[] = [
     ],
     relatedMachines: [
       "çeneli kırıcı",
-      "çeki?li kırıcı",
+      "çekiçli kırıcı",
       "kurutma tamburu",
       "vibrasyonlu elek",
       "bant konveyör",
@@ -835,7 +835,7 @@ const articleSpecs: ArticleSpec[] = [
       "Pompa, vana ve borulama entegrasyonu",
       "Paslanmaz, galvaniz ve RAL boyalı ekipman tasarımı",
       "Otomasyon, sens?r ve proses kontrol sistemleri",
-      "Pro Makina ile kimyasal proses çöz?mleri",
+      "Pro Makina ile kimyasal proses çözümleri",
     ],
     internalLinks: [
       { label: "Reaktörler ve Tanklar", href: "/makinalar-ekipman/reaktorler-ve-tanklar" },
@@ -862,7 +862,7 @@ const articleSpecs: ArticleSpec[] = [
       "filtre sistemi",
       "dozaj pompası",
     ],
-    relatedServiceLabels: ["Reaktör ve tank sistemleri", "Kimya ve proses çöz?mleri"],
+    relatedServiceLabels: ["Reaktör ve tank sistemleri", "Kimya ve proses çözümleri"],
     nextSlug: "sivi-kimyasal-hazirlama-tanki-proses-akisi",
   },
   {
@@ -962,7 +962,7 @@ const articleSpecs: ArticleSpec[] = [
       "dozaj pompası",
       "havalandırma ekipmanı",
     ],
-    relatedServiceLabels: ["Kimya ve proses çöz?mleri", "Reaktör ve tank sistemleri"],
+    relatedServiceLabels: ["Kimya ve proses çözümleri", "Reaktör ve tank sistemleri"],
     nextSlug: "evsel-atik-ayristirma-tesisi-ekipman-secimi",
   },
   {
@@ -1063,7 +1063,7 @@ const articleSpecs: ArticleSpec[] = [
       "kurutma tamburu",
       "konveyör",
     ],
-    relatedServiceLabels: ["Geri dönü_?m hatları", "Kurutma ve termal proses çöz?mleri"],
+    relatedServiceLabels: ["Geri dönü_?m hatları", "Kurutma ve termal proses çözümleri"],
     nextSlug: "geri-donusum-hatlarinda-kirici-ve-eleme-sistemleri",
   },
   {
@@ -1108,7 +1108,7 @@ const articleSpecs: ArticleSpec[] = [
     ],
     relatedMachines: [
       "shredder",
-      "çeki?li kırıcı",
+      "çekiçli kırıcı",
       "trommel elek",
       "vibrasyonlu elek",
       "konveyör",
@@ -1128,7 +1128,7 @@ const articleSpecs: ArticleSpec[] = [
     heroDescription:
       "Arıtma çamuru kurutma tesisi kurulurken yüksek nem, koku, gaz ve termal yükün nasıl yönetileceini adım adım anlatan sektör odaklı blog sayfası.",
     categorySlug: "atik-su-camuru-ve-aritma-rehberleri",
-    sector: "Atık su çamuru ve arıtma çöz?mleri",
+    sector: "Atık su çamuru ve arıtma çözümleri",
     sectionTitles: [
       "Arıtma çamuru proseslerinde makine seçimi neden kritiktir?",
       "çamur besleme ve taşıma ekipmanları",
@@ -1136,14 +1136,14 @@ const articleSpecs: ArticleSpec[] = [
       "Kurutma tamburu ile nem d?_?rme",
       "Sterilizasyon ve stabilizasyon tamburları",
       "Koku ve gaz kontrol sistemleri",
-      "Siklon, filtre, scrubber ve biyofiltre çöz?mleri",
+      "Siklon, filtre, scrubber ve biyofiltre çözümleri",
       "Kurutulmu_ çamurdan kompost veya yakıt hazırlama",
       "çamur kurutma hattında otomasyon ve güvenlik",
-      "Pro Makina ile arıtma çamuru proses çöz?mleri",
+      "Pro Makina ile arıtma çamuru proses çözümleri",
     ],
     internalLinks: [
       { label: "çamur Kurutma Tesisi", href: "/hizmetler/camur-kurutma-tesisi" },
-      { label: "Atık Su çamuru ve Arıtma çöz?mleri", href: "/sektorler/atik-su-camuru-ve-aritma-cozumleri" },
+      { label: "Atık Su çamuru ve Arıtma çözümleri", href: "/sektorler/atik-su-camuru-ve-aritma-cozumleri" },
       { label: "Tambur Sistemleri", href: "/makinalar-ekipman/tambur-sistemleri" },
       { label: "Tambur Hesapları", href: "/programlar/tambur-hesaplari" },
     ],
@@ -1194,7 +1194,7 @@ const articleSpecs: ArticleSpec[] = [
     ],
     internalLinks: [
       { label: "çamur Kurutma Tesisi", href: "/hizmetler/camur-kurutma-tesisi" },
-      { label: "Atık Su çamuru ve Arıtma çöz?mleri", href: "/sektorler/atik-su-camuru-ve-aritma-cozumleri" },
+      { label: "Atık Su çamuru ve Arıtma çözümleri", href: "/sektorler/atik-su-camuru-ve-aritma-cozumleri" },
       { label: "Kurutma ve Termal Proses Makinaları", href: "/kutuphane/blog/kurutma-ve-termal-proses-makinalari" },
       { label: "0leti_im", href: "/iletisim" },
     ],
@@ -1217,7 +1217,7 @@ const articleSpecs: ArticleSpec[] = [
       "kapalı helezon",
       "baca sistemi",
     ],
-    relatedServiceLabels: ["çamur kurutma tesisi", "Koku kontrol çöz?mleri"],
+    relatedServiceLabels: ["çamur kurutma tesisi", "Koku kontrol çözümleri"],
     nextSlug: "camur-kurutma-maliyeti-ve-kapasite-hesabi",
   },
   {
@@ -1246,7 +1246,7 @@ const articleSpecs: ArticleSpec[] = [
     internalLinks: [
       { label: "çamur Kurutma Tesisi", href: "/hizmetler/camur-kurutma-tesisi" },
       { label: "Tambur Hesapları", href: "/programlar/tambur-hesaplari" },
-      { label: "Atık Su çamuru ve Arıtma çöz?mleri", href: "/sektorler/atik-su-camuru-ve-aritma-cozumleri" },
+      { label: "Atık Su çamuru ve Arıtma çözümleri", href: "/sektorler/atik-su-camuru-ve-aritma-cozumleri" },
       { label: "0leti_im", href: "/iletisim" },
     ],
     relatedSlugs: [
@@ -1292,7 +1292,7 @@ const articleSpecs: ArticleSpec[] = [
       "Silo, bunker ve ara stok sistemleri",
       "Tartımlı besleme ve reçete kontrolü",
       "Toz sızdırmazlık ve esnek balantılar",
-      "Pro Makina ile taşıma ve dozajlama çöz?mleri",
+      "Pro Makina ile taşıma ve dozajlama çözümleri",
     ],
     internalLinks: [
       { label: "Ta_1ma Ekipmanları", href: "/makinalar-ekipman/tasima-ekipmanlari" },
@@ -1389,7 +1389,7 @@ const articleSpecs: ArticleSpec[] = [
       "Bunker geometri ve bo_altma davran1_1",
       "Silo tasarımında kapasite ve akışkanlık ili_kisi",
       "Helezon ve rotary valf görev payla_1m1",
-      "Köprüle_me, akış t?neli ve vibrasyon çöz?mleri",
+      "Köprüle_me, akış t?neli ve vibrasyon çözümleri",
       "Toz sızdırmazlık ve kapalı transfer",
       "Tartımlı dozajlama ve reçete kontrolü",
       "Pro Makina ile bunker ve silo omurgası",
@@ -1419,7 +1419,7 @@ const articleSpecs: ArticleSpec[] = [
       "tartımlı helezon",
       "konveyör",
     ],
-    relatedServiceLabels: ["Dökme katı malzeme sistemleri", "Ta_1ma ve dozajlama çöz?mleri"],
+    relatedServiceLabels: ["Dökme katı malzeme sistemleri", "Ta_1ma ve dozajlama çözümleri"],
   },
 ];
 
@@ -1672,7 +1672,7 @@ export const sectorTechnicalCategoryCards: TopicalBlogCard[] = sectorTechnicalBl
       `/kutuphane/blog/${category.slug}`,
       {
         eyebrow: "Blog Kategorisi",
-        readingTime: `${category.relatedContents.length} i�erik`,
+        readingTime: `${category.relatedContents.length} ierik`,
         category: category.slug,
       },
     ),
@@ -1681,7 +1681,7 @@ export const sectorTechnicalCategoryCards: TopicalBlogCard[] = sectorTechnicalBl
 const sectorGroups: SectorGroup[] = [
   {
     id: "fertilizer",
-    title: "Gübre üretim Tesisleri 0?in Teknik 0?erikler",
+    title: "Gübre üretim Tesisleri 0?in Teknik 0İçerikler",
     description:
       "Granül gübre, organomineral gübre ve sıvı gübre üretim hatlarında proses akışı, makine seçimi, granülasyon, kurutma ve tank sistemleri üzerine teknik blog içerikleri.",
     slugs: [
@@ -1692,7 +1692,7 @@ const sectorGroups: SectorGroup[] = [
   },
   {
     id: "compost",
-    title: "Kompost ve Organik Atık Tesisleri 0?in Teknik 0?erikler",
+    title: "Kompost ve Organik Atık Tesisleri 0?in Teknik 0İçerikler",
     description:
       "Kompostla_tırma, organik atık işleme, trommel elek, kompost tamburu, koku kontrolü ve nihai ürün hazırlama ba_lıklarını kapsayan teknik rehberler.",
     slugs: [
@@ -1703,7 +1703,7 @@ const sectorGroups: SectorGroup[] = [
   },
   {
     id: "biogas",
-    title: "Biyogaz ve Enerji Tesisleri 0?in Teknik 0?erikler",
+    title: "Biyogaz ve Enerji Tesisleri 0?in Teknik 0İçerikler",
     description:
       "Biyogaz Ön i_lem, besleme, digestat kurutma ve hayvansal atık kaynaklı enerji projeleri için hazırlanan teknik blog içerikleri.",
     slugs: [
@@ -1714,7 +1714,7 @@ const sectorGroups: SectorGroup[] = [
   },
   {
     id: "mining",
-    title: "Maden ve Mineral 0_leme 0?in Teknik 0?erikler",
+    title: "Maden ve Mineral 0_leme 0?in Teknik 0İçerikler",
     description:
       "Silis kumu kurutma, maden eleme, kırıcı-elek-konveyör kombinasyonları ve mineral işleme ekipmanlarını anlatan SEO odaklı rehberler.",
     slugs: [
@@ -1725,7 +1725,7 @@ const sectorGroups: SectorGroup[] = [
   },
   {
     id: "chemical",
-    title: "Kimya ve Proses Endüstrisi 0?in Teknik 0?erikler",
+    title: "Kimya ve Proses Endüstrisi 0?in Teknik 0İçerikler",
     description:
       "Reaktör, tank, filtrasyon, sıvı kimyasal hazırlama ve özel çözelti sistemleri için teknik blog ve rehber içerikleri.",
     slugs: [
@@ -1736,7 +1736,7 @@ const sectorGroups: SectorGroup[] = [
   },
   {
     id: "recycling",
-    title: "Geri Dönü_?m ve Atık Yönetimi 0?in Teknik 0?erikler",
+    title: "Geri Dönü_?m ve Atık Yönetimi 0?in Teknik 0İçerikler",
     description:
       "Ayr1_tırma, RDF/SRF hazırlama, kırıcı, shredder, trommel elek ve taşıma hatlarına odaklanan geri dönü_?m rehberleri.",
     slugs: [
@@ -1747,7 +1747,7 @@ const sectorGroups: SectorGroup[] = [
   },
   {
     id: "sludge",
-    title: "Atık Su çamuru ve Arıtma çöz?mleri 0?in Teknik 0?erikler",
+    title: "Atık Su çamuru ve Arıtma çözümleri 0?in Teknik 0İçerikler",
     description:
       "çamur kurutma, stabilizasyon, koku kontrolü, enerji yükü ve tambur kapasite yakla_1m1 üzerine teknik içerikler.",
     slugs: [
@@ -1758,7 +1758,7 @@ const sectorGroups: SectorGroup[] = [
   },
   {
     id: "bulk-solid",
-    title: "Yem, Toz ve Dökme Katı Malzeme 0?in Teknik 0?erikler",
+    title: "Yem, Toz ve Dökme Katı Malzeme 0?in Teknik 0İçerikler",
     description:
       "Konveyör sistemleri, bunker, silo, helezon, premiks ve toz ürün işleme hatları için teknik rehber içerikleri.",
     slugs: [

@@ -33,7 +33,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const config = getSectorDetailConfig(sector, current);
   const sectorTitle = trText(sector.title);
   const heroTitle = trText(config.heroTitle);
-  const title = `${heroTitle} | ${sectorTitle} | Pro Makina`;
+  const title = `${heroTitle} | ${sectorTitle}`;
   const description = trText(
     current.description ||
       `${sectorTitle} içinde ${heroTitle.toLocaleLowerCase("tr-TR")} için proses, ekipman ve mühendislik çözümleri.`,

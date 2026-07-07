@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     canonical,
   },
   openGraph: {
-    title: "Teknik Rehberler | Pro Makina",
+    title: "Teknik Rehberler",
     description:
       "Endüstriyel tesis, proses ekipmanı, kurutma tamburu, taşıma, toz toplama ve kapasite hesabı konularında teknik rehberleri inceleyin.",
     url: canonical,

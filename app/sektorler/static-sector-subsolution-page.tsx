@@ -20,7 +20,7 @@ export function buildStaticSectorSubsolutionMetadata(
 
   const templateConfig = getSectorDetailConfig(sector, config.subsector);
   const canonical = `https://www.promakina.com.tr/sektorler/${config.sectorSlug}/${config.subsector.slug}`;
-  const title = `${templateConfig.heroTitle} | ${sector.title} | Pro Makina`;
+  const title = `${templateConfig.heroTitle} | ${sector.title}`;
 
   return {
     title,

@@ -44,7 +44,7 @@ export const liquidFertilizerDetailPages: DrumSystemDetailPageData[] = [
       "Sıvı gübre üretim tesisi kurulumu için hammadde hazırlama, çözündürme, reaktör, soğutma, filtrasyon, homojenizasyon, mamul tankı, dolum ve etiketleme süreçlerini inceleyin.",
     canonical:
       "https://www.promakina.com.tr/kutuphane/blog/sivi-gubre-uretim-tesisi-nasil-kurulur",
-    openGraphTitle: "Sıvı Gübre Üretim Tesisi Nasıl Kurulur? | Pro Makina",
+    openGraphTitle: "Sıvı Gübre Üretim Tesisi Nasıl Kurulur?",
     openGraphDescription:
       "Sıvı gübre tesisi kurulumunda reaktör, tank, filtrasyon ve dolum sistemlerini proses akışıyla inceleyin.",
     heroDescription:
@@ -217,7 +217,7 @@ export const liquidFertilizerDetailPages: DrumSystemDetailPageData[] = [
       "Sıvı gübre, organomineral sıvı gübre, AAP/APP bazlı ürünler, amino asitli sıvı ürünler ve biyostimülan üretiminde kullanılan reaktör, tank, filtrasyon, homojenizasyon ve dolum makinelerini inceleyin.",
     canonical:
       "https://www.promakina.com.tr/kutuphane/blog/sivi-gubre-uretim-makinalari",
-    openGraphTitle: "Sıvı Gübre Üretim Makinaları | Pro Makina",
+    openGraphTitle: "Sıvı Gübre Üretim Makinaları",
     openGraphDescription:
       "Sıvı gübre üretiminde kullanılan reaktör, tank, filtre ve dolum ekipmanlarını teknik olarak inceleyin.",
     heroDescription:
@@ -352,7 +352,7 @@ export const liquidFertilizerDetailPages: DrumSystemDetailPageData[] = [
       "Sıvı gübre reaktör seçimi için tank hacmi, karıştırıcı tipi, pH, sıcaklık, basınç, malzeme, sensörler, otomasyon ve proses güvenliği kriterlerini inceleyin.",
     canonical:
       "https://www.promakina.com.tr/kutuphane/blog/sivi-gubre-reaktor-secimi",
-    openGraphTitle: "Sıvı Gübre Reaktör Seçimi | Pro Makina",
+    openGraphTitle: "Sıvı Gübre Reaktör Seçimi",
     openGraphDescription:
       "Sıvı gübre reaktöründe hacim, karıştırıcı, pH, malzeme ve güvenlik kriterlerini inceleyin.",
     heroDescription:
@@ -517,7 +517,7 @@ export const liquidFertilizerDetailPages: DrumSystemDetailPageData[] = [
       "Karıştırıcılı tank tasarımında hacim, karıştırıcı tipi, devir, motor gücü, baffle, ürün viskozitesi, yoğunluk, pH, malzeme ve proses bağlantılarını inceleyin.",
     canonical:
       "https://www.promakina.com.tr/kutuphane/blog/karistiricili-tank-tasarim-kriterleri",
-    openGraphTitle: "Karıştırıcılı Tank Tasarım Kriterleri | Pro Makina",
+    openGraphTitle: "Karıştırıcılı Tank Tasarım Kriterleri",
     openGraphDescription:
       "Karıştırıcılı tankta hacim, karıştırıcı, baffle ve malzeme seçimini teknik olarak inceleyin.",
     heroDescription:
@@ -668,7 +668,7 @@ export const liquidFertilizerDetailPages: DrumSystemDetailPageData[] = [
       "Çözündürme tankı kullanımı; katı hammaddelerin sıvı faza alınması, karıştırma, sıcaklık, bekleme süresi, tortu kontrolü ve filtrasyon bağlantılarıyla nasıl yapılır?",
     canonical:
       "https://www.promakina.com.tr/kutuphane/blog/cozundurma-tanki-kullanimi",
-    openGraphTitle: "Çözündürme Tankı Kullanımı | Pro Makina",
+    openGraphTitle: "Çözündürme Tankı Kullanımı",
     openGraphDescription:
       "Çözündürme tankında katı hammaddelerin sıvıya alınması, tortu kontrolü ve filtrasyon ilişkisini inceleyin.",
     heroDescription:
@@ -802,7 +802,7 @@ export const liquidFertilizerDetailPages: DrumSystemDetailPageData[] = [
       "Sıvı gübre filtrasyon sistemi için torba filtre, kartuş filtre, cross-flow mikrofiltre, tortu kontrolü, mikron seçimi, debi, viskozite ve dolum kalitesini inceleyin.",
     canonical:
       "https://www.promakina.com.tr/kutuphane/blog/sivi-gubre-filtrasyon-sistemi",
-    openGraphTitle: "Sıvı Gübre Filtrasyon Sistemi | Pro Makina",
+    openGraphTitle: "Sıvı Gübre Filtrasyon Sistemi",
     openGraphDescription:
       "Sıvı gübrede torba, kartuş ve cross-flow filtre seçim kriterlerini teknik olarak inceleyin.",
     heroDescription:
@@ -942,7 +942,7 @@ export const liquidFertilizerDetailPages: DrumSystemDetailPageData[] = [
       "Sıvı dolum ve etiketleme hattı için şişe dolum, bidon dolum, IBC dolum, kapaklama, etiketleme, lot kodlama, viskozite, köpürme ve dolum hassasiyetini inceleyin.",
     canonical:
       "https://www.promakina.com.tr/kutuphane/blog/sivi-dolum-ve-etiketleme-hatti",
-    openGraphTitle: "Sıvı Dolum ve Etiketleme Hattı | Pro Makina",
+    openGraphTitle: "Sıvı Dolum ve Etiketleme Hattı",
     openGraphDescription:
       "Şişe, bidon ve IBC dolum hattında dolum hassasiyeti, köpürme ve etiketleme kararlarını inceleyin.",
     heroDescription:
@@ -1072,7 +1072,7 @@ export const liquidFertilizerDetailPages: DrumSystemDetailPageData[] = [
       "Amino asitli sıvı ürün prosesinde hammadde hazırlama, hidrolizat kullanımı, karıştırma, pH ayarı, filtrasyon, homojenizasyon, mamul tankı ve dolum hattını inceleyin.",
     canonical:
       "https://www.promakina.com.tr/kutuphane/blog/amino-asitli-sivi-urun-prosesi",
-    openGraphTitle: "Amino Asitli Sıvı Ürün Prosesi | Pro Makina",
+    openGraphTitle: "Amino Asitli Sıvı Ürün Prosesi",
     openGraphDescription:
       "Amino asitli sıvı ürünlerde pH, filtrasyon, homojenizasyon ve dolum kriterlerini inceleyin.",
     heroDescription:
@@ -1193,7 +1193,7 @@ export const liquidFertilizerDetailPages: DrumSystemDetailPageData[] = [
       "Biyostimülan üretim hattında deniz yosunu ekstraktı, amino asit, organik katkı, reaktör, karıştırıcı tank, filtrasyon, homojenizasyon ve dolum sistemlerini inceleyin.",
     canonical:
       "https://www.promakina.com.tr/kutuphane/blog/biyostimulan-uretim-hatti",
-    openGraphTitle: "Biyostimülan Üretim Hattı | Pro Makina",
+    openGraphTitle: "Biyostimülan Üretim Hattı",
     openGraphDescription:
       "Biyostimülan üretim hattında ekstraksiyon, filtrasyon, homojenizasyon ve dolum kararlarını inceleyin.",
     heroDescription:
@@ -1325,7 +1325,7 @@ export const liquidFertilizerDetailPages: DrumSystemDetailPageData[] = [
       "AAP / APP bazlı sıvı gübre üretiminde fosfor esaslı sıvı ürünlerin reaktör, karıştırma, sıcaklık kontrolü, soğutma, filtrasyon, homojenizasyon ve dolum proseslerini inceleyin.",
     canonical:
       "https://www.promakina.com.tr/kutuphane/blog/app-bazli-sivi-gubre-uretimi",
-    openGraphTitle: "AAP / APP Bazlı Sıvı Gübre Üretimi | Pro Makina",
+    openGraphTitle: "AAP / APP Bazlı Sıvı Gübre Üretimi",
     openGraphDescription:
       "APP/AAP bazlı sıvı gübrelerde reaktör, soğutma, filtrasyon ve dolum gereksinimlerini inceleyin.",
     heroDescription:

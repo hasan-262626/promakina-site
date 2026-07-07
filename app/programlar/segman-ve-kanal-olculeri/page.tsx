@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     canonical: "https://www.promakina.com.tr/programlar/segman-ve-kanal-olculeri",
   },
   openGraph: {
-    title: "Segman ve Kanal Ölçüleri | Pro Makina",
+    title: "Segman ve Kanal Ölçüleri",
     description: "DIN 472 iç segman ve DIN 471 dış segman ölçülerine göre standart segman ve kanal açım bilgilerini teknik olarak hızlıca görüntüleyin.",
     url: "https://www.promakina.com.tr/programlar/segman-ve-kanal-olculeri",
     siteName: "Pro Makina",

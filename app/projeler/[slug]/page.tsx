@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   if (!project) {
     return {
-      title: "Proje Detayı | Pro Makina",
+      title: "Proje Detayı",
       alternates: {
         canonical: "https://www.promakina.com.tr/projeler",
       },

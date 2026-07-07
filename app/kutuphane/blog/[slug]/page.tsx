@@ -38,13 +38,13 @@ function buildCategoryMetadata(slug: string): Metadata {
   const description = trText(category.description);
 
   return {
-    title: `${title} | Blog Kategorisi | Pro Makina`,
+    title: `${title} | Blog Kategorisi`,
     description,
     alternates: {
       canonical: `https://www.promakina.com.tr/kutuphane/blog/${slug}`,
     },
     openGraph: {
-      title: `${title} | Blog Kategorisi | Pro Makina`,
+      title: `${title} | Blog Kategorisi`,
       description,
       url: `https://www.promakina.com.tr/kutuphane/blog/${slug}`,
       siteName: "Pro Makina",
@@ -53,7 +53,7 @@ function buildCategoryMetadata(slug: string): Metadata {
     },
     twitter: {
       card: "summary_large_image",
-      title: `${title} | Blog Kategorisi | Pro Makina`,
+      title: `${title} | Blog Kategorisi`,
       description,
     },
   };

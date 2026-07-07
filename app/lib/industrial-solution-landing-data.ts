@@ -155,7 +155,7 @@ export const industrialSolutionLandingConfigs: IndustrialSolutionLandingConfig[]
   {
     slug: "kompost-tesisi-kurulumu",
     title: "Kompost Tesisi Kurulumu",
-    metaTitle: "Kompost Tesisi Kurulumu | Organik Atık İşleme ve Kompost Çözümleri | Pro Makina",
+    metaTitle: "Kompost Tesisi Kurulumu | Organik Atık İşleme ve Kompost Çözümleri",
     description:
       "Evsel, tarımsal ve endüstriyel organik akışlar için kompost tesisi kurulumu, ekipman seçimi, proses mühendisliği ve anahtar teslim saha çözümleri.",
     heroDescription:
@@ -233,7 +233,7 @@ export const industrialSolutionLandingConfigs: IndustrialSolutionLandingConfig[]
   {
     slug: "rotary-dryer-manufacturer",
     title: "Rotary Dryer Manufacturer",
-    metaTitle: "Rotary Dryer Manufacturer | Industrial Drum Dryer Solutions | Pro Makina",
+    metaTitle: "Rotary Dryer Manufacturer | Industrial Drum Dryer Solutions",
     description:
       "Industrial rotary dryer manufacturer for fertilizer, compost, mineral and sludge applications. Custom drum design, process engineering and turnkey drying systems.",
     heroDescription:
@@ -311,7 +311,7 @@ export const industrialSolutionLandingConfigs: IndustrialSolutionLandingConfig[]
   {
     slug: "helezon-konveyor-uretimi",
     title: "Helezon Konveyör Üretimi",
-    metaTitle: "Helezon Konveyör Üretimi | Özel İmalat Vidalı Konveyör | Pro Makina",
+    metaTitle: "Helezon Konveyör Üretimi | Özel İmalat Vidalı Konveyör",
     description:
       "Toz, granül, yarı nemli ve kontrollü besleme gerektiren prosesler için özel imalat helezon konveyör üretimi ve mühendislik çözümleri.",
     heroDescription:
@@ -389,7 +389,7 @@ export const industrialSolutionLandingConfigs: IndustrialSolutionLandingConfig[]
   {
     slug: "endustriyel-kurutma-sistemleri",
     title: "Endüstriyel Kurutma Sistemleri",
-    metaTitle: "Endüstriyel Kurutma Sistemleri | Tambur Kurutucu ve Proses Çözümleri | Pro Makina",
+    metaTitle: "Endüstriyel Kurutma Sistemleri | Tambur Kurutucu ve Proses Çözümleri",
     description:
       "Gübre, kompost, mineral ve çamur akışları için endüstriyel kurutma sistemleri, rotary dryer çözümleri, proses tasarımı ve anahtar teslim mühendislik yaklaşımı.",
     heroDescription:
@@ -467,7 +467,7 @@ export const industrialSolutionLandingConfigs: IndustrialSolutionLandingConfig[]
   {
     slug: "organomineral-gubre-tesisi",
     title: "Organomineral Gübre Tesisi",
-    metaTitle: "Organomineral Gübre Tesisi | Anahtar Teslim Üretim Çözümleri | Pro Makina",
+    metaTitle: "Organomineral Gübre Tesisi | Anahtar Teslim Üretim Çözümleri",
     description:
       "Organik ve mineral bileşenleri kontrollü üretime dönüştüren organomineral gübre tesisi çözümleri, proses tasarımı ve makina imalatı.",
     heroDescription:
@@ -545,7 +545,7 @@ export const industrialSolutionLandingConfigs: IndustrialSolutionLandingConfig[]
   {
     slug: "sivi-gubre-uretim-tesisi",
     title: "Sıvı Gübre Üretim Tesisi",
-    metaTitle: "Sıvı Gübre Üretim Tesisi | Anahtar Teslim Sıvı Gübre Çözümleri | Pro Makina",
+    metaTitle: "Sıvı Gübre Üretim Tesisi | Anahtar Teslim Sıvı Gübre Çözümleri",
     description:
       "Sıvı organomineral, amino asitli, NPK ve deniz yosunu bazlı formülasyonlar için sıvı gübre üretim tesisi çözümleri.",
     heroDescription:
@@ -623,7 +623,7 @@ export const industrialSolutionLandingConfigs: IndustrialSolutionLandingConfig[]
   {
     slug: "vidali-konveyor-sistemleri",
     title: "Vidalı Konveyör Sistemleri",
-    metaTitle: "Vidalı Konveyör Sistemleri | Helezon ve Vida Taşıma Çözümleri | Pro Makina",
+    metaTitle: "Vidalı Konveyör Sistemleri | Helezon ve Vida Taşıma Çözümleri",
     description:
       "Toz, granül ve kontrollü besleme gerektiren prosesler için vidalı konveyör sistemleri, özel imalat helezon çözümleri ve taşıma mühendisliği yaklaşımı.",
     heroDescription:

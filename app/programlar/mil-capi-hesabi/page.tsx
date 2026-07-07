@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     canonical: "https://www.promakina.com.tr/programlar/mil-capi-hesabi",
   },
   openGraph: {
-    title: "Mil Çapı Hesabı | Pro Makina",
+    title: "Mil Çapı Hesabı",
     description: "Burulma momentine göre mil çapı, eğilme + burulma ön hesabı ve katı mil / boru mil karşılaştırmasını mühendislik odaklı şekilde değerlendirin.",
     url: "https://www.promakina.com.tr/programlar/mil-capi-hesabi",
     siteName: "Pro Makina",

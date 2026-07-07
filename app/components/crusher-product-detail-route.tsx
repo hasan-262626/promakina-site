@@ -46,13 +46,13 @@ export function getCrusherProductMetadata(publicSlug: string): Metadata {
   const canonical = `https://www.promakina.com.tr/makinalar-ekipman/${publicCategorySlug}/${record.publicSlug}`;
 
   return {
-    title: `${record.title} | ${category.title} | Pro Makina`,
+    title: `${record.title} | ${category.title}`,
     description: record.description,
     alternates: {
       canonical,
     },
     openGraph: {
-      title: `${record.title} | ${category.title} | Pro Makina`,
+      title: `${record.title} | ${category.title}`,
       description: record.description,
       url: canonical,
       siteName: "Pro Makina",
@@ -111,7 +111,7 @@ export function CrusherProductDetailRoute({ publicSlug }: { publicSlug: string }
         spareParts={product.spareParts}
         auxiliarySystems={auxiliarySystems}
         calculatorFamily={category.calculatorFamily}
-        ctaTitle={product.ctaTitle ?? `${record.title} iÃ§in doÄŸru makina Ã§Ã¶zÃ¼mÃ¼nÃ¼ birlikte netleÅŸtirelim`}
+        ctaTitle={product.ctaTitle ?? `${record.title} için doğru makina çözümünü birlikte netleştirelim`}
         ctaText={product.ctaText ?? category.ctaText}
       />
     </main>
