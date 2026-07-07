@@ -30,17 +30,17 @@ const relatedServices = [
   },
   {
     title: "Sıvı Gübre Üretim Tesisi",
-    href: "/hizmetler/sivi-gubre-uretim-tesisi",
+    href: "/sektorler/gubre-ve-granulasyon-tesisleri",
     description: "Sıvı organomineral, amino asitli ve NPK ürünler için proses ve dolum altyapısı.",
   },
   {
     title: "Gübre Tesisi Kurulumu",
-    href: "/hizmetler/gubre-tesisi-kurulumu",
+    href: "/sektorler/gubre-ve-granulasyon-tesisleri",
     description: "Genel yatırım kurgusu, makina imalatı ve saha devreye alma çözümleri.",
   },
   {
     title: "Organomineral Gübre Tesisi",
-    href: "/hizmetler/organomineral-gubre-tesisi",
+    href: "/sektorler/gubre-ve-granulasyon-tesisleri",
     description: "Organik ve mineral içerikli ürünlerin farklı proses ihtiyaçları için çözümler.",
   },
 ];
@@ -68,8 +68,8 @@ const sections = [
               reçeteleri, hedef pazar, ambalaj tipi ve üretim adedi birlikte değerlendirilmelidir.
             </p>
             <p>
-              Doğru başlangıç için yatırımcıların önce genel <Link href="/hizmetler/gubre-tesisi-kurulumu" className="font-semibold text-blue-700 hover:text-blue-800">gübre tesisi kurulumu</Link> mantığını anlaması,
-              ardından <Link href="/hizmetler/sivi-gubre-uretim-tesisi" className="font-semibold text-blue-700 hover:text-blue-800">sıvı gübre üretim tesisi</Link> özelinde proses ihtiyaçlarını detaylandırması
+              Doğru başlangıç için yatırımcıların önce genel <Link href="/sektorler/gubre-ve-granulasyon-tesisleri" className="font-semibold text-blue-700 hover:text-blue-800">gübre tesisi kurulumu</Link> mantığını anlaması,
+              ardından <Link href="/sektorler/gubre-ve-granulasyon-tesisleri" className="font-semibold text-blue-700 hover:text-blue-800">sıvı gübre üretim tesisi</Link> özelinde proses ihtiyaçlarını detaylandırması
               faydalı olur. Böylece yanlış ekipman yatırımının önüne geçilir.
             </p>
           </>

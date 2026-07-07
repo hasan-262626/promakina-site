@@ -185,6 +185,122 @@ export default function ProgramsPage() {
           </Suspense>
         </div>
       </section>
+
+      <section className="border-t border-slate-200 bg-slate-50 py-12 sm:py-16">
+        <div className="site-container max-w-4xl">
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(tamburCalcSchema) }}
+          />
+          <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#278DC0]">
+            Öne Çıkan Araç
+          </p>
+          <h2 className="mt-2 text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">
+            Tambur Kapasite Hesabı
+          </h2>
+          <p className="mt-3 text-base leading-8 text-slate-600">
+            Kurutma tamburu, soğutma tamburu, granülasyon tamburu, kaplama tamburu ve
+            kompost tamburu için ön mühendislik hesaplama aracı. Tambur tipini
+            seçtiğinizde dökme yoğunluk, doluluk oranı, bekleme süresi, tambur devri ve
+            eğim gibi tasarım varsayımları otomatik doldurulur; kapasite ve nem
+            verilerinize göre kuru madde, buharlaşacak su, gerekli tambur hacmi ve
+            önerilen çap-boy aralıkları hesaplanır. Döner kurutucu (rotary dryer)
+            boyutlandırması ve endüstriyel tambur tasarımına başlamadan önce ilk
+            değerlendirmeyi bu araçla yapabilirsiniz.
+          </p>
+          <div className="mt-5">
+            <Link
+              href="/programlar?modal=tambur-kapasite-hesabi"
+              className="inline-flex min-h-[48px] items-center justify-center rounded-full bg-[#278DC0] px-7 text-sm font-semibold text-white transition hover:bg-[#154764]"
+            >
+              Tambur Kapasite Hesabını Aç
+            </Link>
+          </div>
+
+          <div className="mt-8 space-y-4">
+            {tamburCalcFaqs.map((faq) => (
+              <div key={faq.question} className="rounded-2xl border border-slate-200 bg-white p-5">
+                <h3 className="text-sm font-bold text-slate-900">{faq.question}</h3>
+                <p className="mt-2 text-sm leading-7 text-slate-600">{faq.answer}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-8 flex flex-wrap items-center gap-2 text-sm">
+            <span className="font-semibold text-[#154764]">İlgili sayfalar:</span>
+            {[
+              { href: "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburu", label: "Kurutma Tamburu" },
+              { href: "/makinalar-ekipman/tambur-sistemleri", label: "Tambur Sistemleri" },
+              { href: "/sektorler/gubre-ve-granulasyon-tesisleri", label: "Gübre Üretim Tesisleri" },
+              { href: "/sektorler/kompost-ve-organik-atik-tesisleri", label: "Kompost Tesisleri" },
+              { href: "/sektorler/atik-su-camuru-ve-aritma-cozumleri", label: "Atık Su Çamuru Kurutma" },
+              { href: "/iletisim", label: "Teknik Teklif Al" },
+            ].map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="inline-flex min-h-[38px] items-center rounded-full border border-slate-200 bg-white px-4 font-medium text-slate-700 transition hover:border-[#278DC0] hover:text-[#154764]"
+              >
+                {item.label}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
     </main>
   );
 }
+
+const tamburCalcFaqs = [
+  {
+    question: "Tambur kapasite hesabı hangi tambur tiplerini kapsar?",
+    answer:
+      "Araç; kurutma tamburu, soğutma tamburu, granülasyon tamburu, kaplama tamburu ve kompost / olgunlaştırma tamburu için ön mühendislik hesabı yapar. Tambur tipi seçildiğinde tipe uygun tasarım varsayımları otomatik doldurulur.",
+  },
+  {
+    question: "Kurutma tamburu kapasite hesabında hangi veriler gerekir?",
+    answer:
+      "Yaş ürün giriş kapasitesi, giriş nemi, hedef çıkış nemi ve ürün dökme yoğunluğu temel girdilerdir. Araç bu verilerle kuru madde miktarını, buharlaşacak su yükünü, gerekli tambur hacmini ve önerilen çap-boy aralıklarını hesaplar.",
+  },
+  {
+    question: "Hesap sonucu kesin tambur ölçüsü müdür?",
+    answer:
+      "Hayır. Sonuçlar ön mühendislik değerlendirmesidir. Nihai tambur çapı, boyu, brülör kapasitesi, fan debisi ve siklon/filtre seçimi; ürün numunesi, nem analizi ve saha verilerine göre Pro Makina mühendislik ekibi tarafından netleştirilir.",
+  },
+  {
+    question: "Hesap sonuçlarıyla nasıl teklif alabilirim?",
+    answer:
+      "Sonuç ekranındaki WhatsApp ile Gönder butonu, girdiğiniz değerleri mesaj taslağına ekler. Dilerseniz Teknik Teklif Al butonuyla iletişim sayfası üzerinden proje detaylarınızı paylaşabilirsiniz.",
+  },
+];
+
+const tamburCalcSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      name: "Tambur Kapasite Hesabı",
+      url: "https://www.promakina.com.tr/programlar?modal=tambur-kapasite-hesabi",
+      applicationCategory: "EngineeringApplication",
+      operatingSystem: "Web",
+      description:
+        "Kurutma, soğutma, granülasyon, kaplama ve kompost tamburları için ön mühendislik kapasite ve boyutlandırma hesabı.",
+      publisher: {
+        "@type": "Organization",
+        name: "Pro Makina",
+        url: "https://www.promakina.com.tr",
+      },
+    },
+    {
+      "@type": "FAQPage",
+      mainEntity: tamburCalcFaqs.map((faq) => ({
+        "@type": "Question",
+        name: faq.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: faq.answer,
+        },
+      })),
+    },
+  ],
+};

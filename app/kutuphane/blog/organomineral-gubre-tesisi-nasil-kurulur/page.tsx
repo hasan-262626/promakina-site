@@ -13,12 +13,12 @@ export const metadata = buildLibraryMetadata({ title, description, canonical });
 const relatedServices = [
   {
     title: "Organomineral Gübre Tesisi",
-    href: "/hizmetler/organomineral-gubre-tesisi",
+    href: "/sektorler/gubre-ve-granulasyon-tesisleri",
     description: "Ürün reçetesi, proses tasarımı ve makina imalatını birlikte ele alan hizmet sayfasını inceleyin.",
   },
   {
     title: "Gübre Tesisi Kurulumu",
-    href: "/hizmetler/gubre-tesisi-kurulumu",
+    href: "/sektorler/gubre-ve-granulasyon-tesisleri",
     description: "Genel tesis planlaması, anahtar teslim kurulum ve kapasite yaklaşımı için detaylı hizmet içeriğine gidin.",
   },
 ];
@@ -48,7 +48,7 @@ const sections = [
             <p>
               Türkiye ve yakın ihracat pazarları için çalışan üreticiler açısından tesisin esnekliği de önemlidir. Aynı
               hatta farklı organik girdiler, farklı granül boyutları veya farklı besin dengeleri üretilecekse süreç buna
-              göre planlanmalıdır. Bu yüzden <Link href="/hizmetler/organomineral-gubre-tesisi" className="font-semibold text-blue-700 hover:text-blue-800">organomineral gübre tesisi</Link> tasarımı, yalnızca
+              göre planlanmalıdır. Bu yüzden <Link href="/sektorler/gubre-ve-granulasyon-tesisleri" className="font-semibold text-blue-700 hover:text-blue-800">organomineral gübre tesisi</Link> tasarımı, yalnızca
               bugünkü reçete üzerinden değil, gelecekteki ürün portföyü düşünülerek yapılmalıdır.
             </p>
           </>
@@ -80,7 +80,7 @@ const sections = [
             <p>
               Birçok yatırımda sorun, hammaddelerin üretim hattına yalnızca tonaj bazında verilmesi ve gerçek ürün
               davranışının göz ardı edilmesidir. Oysa hammadde hazırlama, tüm tesisin ritmini belirleyen ilk karar
-              noktasıdır. Doğru planlanmış bir <Link href="/hizmetler/gubre-tesisi-kurulumu" className="font-semibold text-blue-700 hover:text-blue-800">gübre tesisi kurulumu</Link>, bu aşamayı sadece depolama alanı değil,
+              noktasıdır. Doğru planlanmış bir <Link href="/sektorler/gubre-ve-granulasyon-tesisleri" className="font-semibold text-blue-700 hover:text-blue-800">gübre tesisi kurulumu</Link>, bu aşamayı sadece depolama alanı değil,
               proses kalitesinin başlangıç kontrol noktası olarak ele alır.
             </p>
           </>

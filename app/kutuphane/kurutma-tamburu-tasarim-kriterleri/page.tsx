@@ -29,12 +29,12 @@ const relatedServices = [
   },
   {
     title: "Granül Gübre Üretim Tesisi",
-    href: "/hizmetler/granul-gubre-uretim-tesisi",
+    href: "/sektorler/gubre-ve-granulasyon-tesisleri",
     description: "Kurutma tamburu, soğutma tamburu ve granülasyon dengesi kuran tesis yapıları.",
   },
   {
     title: "Gübre Tesisi Kurulumu",
-    href: "/hizmetler/gubre-tesisi-kurulumu",
+    href: "/sektorler/gubre-ve-granulasyon-tesisleri",
     description: "Tambur sistemlerini genel proses içinde konumlandıran anahtar teslim çözümler.",
   },
 ];
@@ -93,7 +93,7 @@ const sections = [
               çap, boy, eğim ve devir ayrı ayrı değil, aynı modelin dört ana değişkeni olarak ele alınmalıdır.
             </p>
             <p>
-              Özellikle <Link href="/hizmetler/granul-gubre-uretim-tesisi" className="font-semibold text-blue-700 hover:text-blue-800">granül gübre üretim hattı</Link> içinde çalışan kurutma tamburlarında ürünün fiziksel
+              Özellikle <Link href="/sektorler/gubre-ve-granulasyon-tesisleri" className="font-semibold text-blue-700 hover:text-blue-800">granül gübre üretim hattı</Link> içinde çalışan kurutma tamburlarında ürünün fiziksel
               dayanımı korunmalıdır. Bu nedenle devir ve eğim ayarı yalnızca kurutma performansı için değil, granül
               kırılmasını azaltmak için de optimize edilir.
             </p>
@@ -168,7 +168,7 @@ const sections = [
               tasarlanmamış bir sistem aynı ürünü daha fazla yakıtla ve daha düşük kaliteyle kurutabilir.
             </p>
             <p>
-              Kurutma tamburu çoğu zaman süreç sonunda <Link href="/hizmetler/granul-gubre-uretim-tesisi" className="font-semibold text-blue-700 hover:text-blue-800">soğutma tamburu</Link> veya başka bir soğutma kurgusu ile
+              Kurutma tamburu çoğu zaman süreç sonunda <Link href="/sektorler/gubre-ve-granulasyon-tesisleri" className="font-semibold text-blue-700 hover:text-blue-800">soğutma tamburu</Link> veya başka bir soğutma kurgusu ile
               birlikte düşünülmelidir. Çünkü ürünü yalnızca kurutmak yeterli değildir; depolamaya ve paketlemeye uygun
               sıcaklığa da getirmek gerekir. Bu nedenle tasarımda kurutma ve soğutma adımları ayrı değil, birbirini
               tamamlayan iki ekipman olarak ele alınmalıdır.
@@ -183,7 +183,7 @@ const sections = [
             <p>
               Kurutma tamburu tek başına çalışan bir ekipman olarak düşünülmemelidir. Besleme sistemi, konveyör
               bağlantıları, toz toplama, sıcak hava üretimi, çıkış ürün transferi ve soğutma hattı ile aynı denge içinde
-              kurgulanmalıdır. Bu yüzden <Link href="/hizmetler/gubre-tesisi-kurulumu" className="font-semibold text-blue-700 hover:text-blue-800">gübre tesisi kurulumu</Link> veya genel proses yatırımlarında tambur
+              kurgulanmalıdır. Bu yüzden <Link href="/sektorler/gubre-ve-granulasyon-tesisleri" className="font-semibold text-blue-700 hover:text-blue-800">gübre tesisi kurulumu</Link> veya genel proses yatırımlarında tambur
               tasarımı, tüm hat üzerinde okunmalıdır. Ancak bu şekilde hem kapasite hem enerji hem de ürün kalitesi
               açısından güvenilir sonuç alınabilir.
             </p>

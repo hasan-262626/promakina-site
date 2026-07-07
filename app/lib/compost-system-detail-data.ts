@@ -24,7 +24,7 @@ function page(data: DrumSystemDetailPageData): DrumSystemDetailPageData {
 }
 
 const commonHeroLinks = [
-  { label: "Kompost Tesisi Kurulumu", href: "/hizmetler/kompost-tesisi-kurulumu" },
+  { label: "Kompost Tesisi Kurulumu", href: "/sektorler/kompost-ve-organik-atik-tesisleri" },
   { label: "Tambur Sistemleri", href: "/makinalar-ekipman/tambur-sistemleri" },
   { label: "Kırıcılar ve Parçalayıcılar", href: "/makinalar-ekipman/kiricilar-ve-parcalayicilar" },
 ];
@@ -84,7 +84,7 @@ export const compostSystemDetailPages: DrumSystemDetailPageData[] = [
     heroCtaLabel: "Kompost Tesisi İçin Teklif Al",
     heroCtaHref: "https://wa.me/905320580104",
     heroSecondaryLabel: "Tambur Hesaplarını Aç",
-    heroSecondaryHref: "/programlar/tambur-hesaplari",
+    heroSecondaryHref: "/programlar?modal=tambur-kapasite-hesabi",
     heroLinks: commonHeroLinks,
     introParagraphs: [
       "Kompost yatırımlarında başarı yalnız tambur veya shredder seçimine bağlı değildir. Atığın giriş nemi, yabancı madde oranı, koku yükü, ürün hedefi ve saha yerleşimi birlikte değerlendirilmelidir.",
@@ -209,7 +209,7 @@ export const compostSystemDetailPages: DrumSystemDetailPageData[] = [
       faq("Kompost üretiminde trommel elek neden kullanılır?", "Olgun ürünün boyutuna göre sınıflandırılması, yabancı madde kontrolü ve ticari kalite için kullanılır."),
     ],
     relatedLinks: commonRelatedLinks(
-      "/hizmetler/kompost-tesisi-kurulumu",
+      "/sektorler/kompost-ve-organik-atik-tesisleri",
       "Kompost Tesisi Kurulum Hizmeti",
       "Hizmet sayfasında yatırım ve kurulum yaklaşımımızı inceleyin.",
     ),
@@ -235,7 +235,7 @@ export const compostSystemDetailPages: DrumSystemDetailPageData[] = [
     heroCtaLabel: "Kompost Tesisi İçin Teklif Al",
     heroCtaHref: "https://wa.me/905320580104",
     heroSecondaryLabel: "Tambur Hesaplarını Aç",
-    heroSecondaryHref: "/programlar/tambur-hesaplari",
+    heroSecondaryHref: "/programlar?modal=tambur-kapasite-hesabi",
     heroLinks: commonHeroLinks,
     introParagraphs: [
       "Organik atık tesisleri yalnız bertaraf mantığıyla değil, geri kazanım ve ürün üretimi yaklaşımıyla planlanmalıdır. Bu bakış açısı, saha yerleşiminden makine listesine kadar tüm kararlara yön verir.",
@@ -343,7 +343,7 @@ export const compostSystemDetailPages: DrumSystemDetailPageData[] = [
       faq("Organik atık tesisi gübre üretimine entegre edilebilir mi?", "Olgun kompost organomineral gübre hatlarında organik baz olarak kullanılabilir."),
     ],
     relatedLinks: commonRelatedLinks(
-      "/hizmetler/kompost-tesisi-kurulumu",
+      "/sektorler/kompost-ve-organik-atik-tesisleri",
       "Kompost Tesisi Kurulumu",
       "Organik atığın kompost hattına dönüştürülme yaklaşımını hizmet sayfasında görün.",
     ),
@@ -369,7 +369,7 @@ export const compostSystemDetailPages: DrumSystemDetailPageData[] = [
     heroCtaLabel: "Kompost Tesisi İçin Teklif Al",
     heroCtaHref: "https://wa.me/905320580104",
     heroSecondaryLabel: "Tambur Hesaplarını Aç",
-    heroSecondaryHref: "/programlar/tambur-hesaplari",
+    heroSecondaryHref: "/programlar?modal=tambur-kapasite-hesabi",
     heroLinks: commonHeroLinks,
     introParagraphs: [
       "Çamur kurutma projelerinde asıl yük, yalnız ton/saat kapasite değil; üründen uzaklaştırılacak su ve kokulu buhar miktarıdır.",
@@ -474,7 +474,7 @@ export const compostSystemDetailPages: DrumSystemDetailPageData[] = [
       faq("Kurutulmuş çamur nasıl değerlendirilir?", "Komposta, yakıt hazırlığına, hacim azaltılmış bertarafa veya başka geri kazanım senaryolarına yönlendirilebilir."),
     ],
     relatedLinks: commonRelatedLinks(
-      "/hizmetler/camur-kurutma-tesisi",
+      "/sektorler/atik-su-camuru-ve-aritma-cozumleri",
       "Çamur Kurutma Tesisi",
       "Yüksek nemli akışlar için kurutma ve çevresel kontrol hizmetimizi inceleyin.",
     ),
@@ -500,7 +500,7 @@ export const compostSystemDetailPages: DrumSystemDetailPageData[] = [
     heroCtaLabel: "Kompost Tesisi İçin Teklif Al",
     heroCtaHref: "https://wa.me/905320580104",
     heroSecondaryLabel: "Tambur Hesaplarını Aç",
-    heroSecondaryHref: "/programlar/tambur-hesaplari",
+    heroSecondaryHref: "/programlar?modal=tambur-kapasite-hesabi",
     heroLinks: commonHeroLinks,
     introParagraphs: [
       "Biyogaz tesislerinde reaktör hacmi kadar önemli olan konu, reaktöre giren atığın kalitesidir. Tane boyutu, yabancı madde miktarı ve kuru madde oranı doğrudan gaz üretimini etkiler.",
@@ -619,7 +619,7 @@ export const compostSystemDetailPages: DrumSystemDetailPageData[] = [
     heroCtaLabel: "Kompost Tesisi İçin Teklif Al",
     heroCtaHref: "https://wa.me/905320580104",
     heroSecondaryLabel: "Tambur Hesaplarını Aç",
-    heroSecondaryHref: "/programlar/tambur-hesaplari",
+    heroSecondaryHref: "/programlar?modal=tambur-kapasite-hesabi",
     heroLinks: commonHeroLinks,
     introParagraphs: [
       "Kompost üretiminde hedef yalnız atığın çürümesi değildir; kontrollü bir biyolojik süreç sonunda kullanılabilir ve pazarlanabilir ürün elde etmektir.",
@@ -752,7 +752,7 @@ export const compostSystemDetailPages: DrumSystemDetailPageData[] = [
     heroCtaLabel: "Kompost Tesisi İçin Teklif Al",
     heroCtaHref: "https://wa.me/905320580104",
     heroSecondaryLabel: "Tambur Hesaplarını Aç",
-    heroSecondaryHref: "/programlar/tambur-hesaplari",
+    heroSecondaryHref: "/programlar?modal=tambur-kapasite-hesabi",
     heroLinks: commonHeroLinks,
     introParagraphs: [
       "Trommel elek seçimi, ürün boyutunu ayırmanın ötesinde tüm hattın kapasite ve kalite dengesini belirler. Özellikle nemli kompostta delik tıkanması ve besleme düzensizliği büyük kayıplar yaratabilir.",
@@ -893,7 +893,7 @@ export const compostSystemDetailPages: DrumSystemDetailPageData[] = [
     heroCtaLabel: "Kompost Tesisi İçin Teklif Al",
     heroCtaHref: "https://wa.me/905320580104",
     heroSecondaryLabel: "Tambur Hesaplarını Aç",
-    heroSecondaryHref: "/programlar/tambur-hesaplari",
+    heroSecondaryHref: "/programlar?modal=tambur-kapasite-hesabi",
     heroLinks: commonHeroLinks,
     introParagraphs: [
       "Kompost tamburunda tasarım mantığı granülasyon veya kurutma tamburundan farklıdır. Ana hedef ürünü yüksekten düşürmek değil, kontrollü karıştırma ve havalandırma ile biyolojik olgunlaştırmayı desteklemektir.",
@@ -1037,7 +1037,7 @@ export const compostSystemDetailPages: DrumSystemDetailPageData[] = [
     heroCtaLabel: "Kompost Tesisi İçin Teklif Al",
     heroCtaHref: "https://wa.me/905320580104",
     heroSecondaryLabel: "Tambur Hesaplarını Aç",
-    heroSecondaryHref: "/programlar/tambur-hesaplari",
+    heroSecondaryHref: "/programlar?modal=tambur-kapasite-hesabi",
     heroLinks: commonHeroLinks,
     introParagraphs: [
       "Evsel organik atık yatırımlarında en kritik nokta, karışık belediye atıkları içindeki organik fraksiyonun ne kadar temiz ve düzenli ayrılabildiğidir.",
@@ -1158,7 +1158,7 @@ export const compostSystemDetailPages: DrumSystemDetailPageData[] = [
     heroCtaLabel: "Kompost Tesisi İçin Teklif Al",
     heroCtaHref: "https://wa.me/905320580104",
     heroSecondaryLabel: "Tambur Hesaplarını Aç",
-    heroSecondaryHref: "/programlar/tambur-hesaplari",
+    heroSecondaryHref: "/programlar?modal=tambur-kapasite-hesabi",
     heroLinks: commonHeroLinks,
     introParagraphs: [
       "Komposttan yüksek katma değer üretmenin en güçlü yollarından biri, kompostu mineral besin kaynaklarıyla organomineral gübre hattına entegre etmektir.",
@@ -1258,7 +1258,7 @@ export const compostSystemDetailPages: DrumSystemDetailPageData[] = [
       faq("Organomineral gübre hattı için hangi makineler gerekir?", "Dozajlama, mikser, granülasyon tamburu, kurutma, soğutma, elek, recycle, kaplama ve paketleme ekipmanları gerekir."),
     ],
     relatedLinks: commonRelatedLinks(
-      "/hizmetler/organomineral-gubre-tesisi",
+      "/sektorler/gubre-ve-granulasyon-tesisleri",
       "Organomineral Gübre Tesisi",
       "Kompost bazın gübre hattına nasıl bağlandığını hizmet tarafında inceleyin.",
     ),
@@ -1284,7 +1284,7 @@ export const compostSystemDetailPages: DrumSystemDetailPageData[] = [
     heroCtaLabel: "Kompost Tesisi İçin Teklif Al",
     heroCtaHref: "https://wa.me/905320580104",
     heroSecondaryLabel: "Tambur Hesaplarını Aç",
-    heroSecondaryHref: "/programlar/tambur-hesaplari",
+    heroSecondaryHref: "/programlar?modal=tambur-kapasite-hesabi",
     heroLinks: commonHeroLinks,
     introParagraphs: [
       "Koku kontrolü organik atık yatırımlarında çevresel kabulün temel koşullarından biridir. Sorun yalnız filtre seçimi değil, kokulu havanın kaynağında nasıl toplandığıdır.",

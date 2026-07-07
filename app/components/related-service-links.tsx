@@ -3,25 +3,25 @@ import Link from "next/link";
 const relatedServices = [
   {
     title: "Organomineral Gübre Tesisi Kurulumu",
-    href: "/hizmetler/organomineral-gubre-tesisi",
+    href: "/sektorler/gubre-ve-granulasyon-tesisleri",
     description:
       "Organik ve mineral bileşenleri dengeli biçimde işleyen, granül kalite ve proses kararlılığı odaklı tesis çözümleri sunuyoruz.",
   },
   {
     title: "Granül Gübre Üretim Tesisi",
-    href: "/hizmetler/granul-gubre-uretim-tesisi",
+    href: "/sektorler/gubre-ve-granulasyon-tesisleri",
     description:
       "Granülasyon, kurutma, soğutma ve eleme süreçlerini birlikte yöneten yüksek verimli üretim hatları tasarlıyoruz.",
   },
   {
     title: "Sıvı Gübre Üretim Tesisi",
-    href: "/hizmetler/sivi-gubre-uretim-tesisi",
+    href: "/sektorler/gubre-ve-granulasyon-tesisleri",
     description:
       "Sıvı organomineral, amino asitli ve NPK ürün grupları için esnek formülasyon ve dolum altyapıları geliştiriyoruz.",
   },
   {
     title: "Gübre Tesisi Kurulumu",
-    href: "/hizmetler/gubre-tesisi-kurulumu",
+    href: "/sektorler/gubre-ve-granulasyon-tesisleri",
     description:
       "Anahtar teslim mühendislik, makine imalatı, montaj ve devreye alma süreçlerini tek merkezden yönetiyoruz.",
   },

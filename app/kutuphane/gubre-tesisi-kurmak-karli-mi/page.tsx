@@ -15,22 +15,22 @@ export const metadata = buildLibraryMetadata({
 const relatedServices = [
   {
     title: "Gübre Tesisi Kurulumu",
-    href: "/hizmetler/gubre-tesisi-kurulumu",
+    href: "/sektorler/gubre-ve-granulasyon-tesisleri",
     description: "Anahtar teslim tesis kurgusu, proses planı ve saha uygulama yaklaşımı.",
   },
   {
     title: "Organomineral Gübre Tesisi",
-    href: "/hizmetler/organomineral-gubre-tesisi",
+    href: "/sektorler/gubre-ve-granulasyon-tesisleri",
     description: "Organik ve mineral girdiler için proses ve makina altyapısı.",
   },
   {
     title: "Granül Gübre Üretim Tesisi",
-    href: "/hizmetler/granul-gubre-uretim-tesisi",
+    href: "/sektorler/gubre-ve-granulasyon-tesisleri",
     description: "Granülasyon, kurutma, soğutma ve eleme odaklı üretim hatları.",
   },
   {
     title: "Sıvı Gübre Üretim Tesisi",
-    href: "/hizmetler/sivi-gubre-uretim-tesisi",
+    href: "/sektorler/gubre-ve-granulasyon-tesisleri",
     description: "Sıvı organomineral, amino asitli ve NPK bazlı üretim tesisleri.",
   },
 ];
@@ -49,7 +49,7 @@ const sections = [
               verebilmek için yalnızca ürün satış fiyatına veya makine yatırım tutarına bakmak yeterli değildir.
               Karlılık; hammadde tedariği, ürün portföyü, hedef pazar, enerji tüketimi, işletme modeli, otomasyon
               seviyesi ve üretim sürekliliği gibi birçok parametrenin birlikte okunmasını gerektirir. Özellikle
-              <Link href="/hizmetler/gubre-tesisi-kurulumu" className="font-semibold text-blue-700 hover:text-blue-800"> gübre tesisi kurulumu</Link> planlayan firmalar için
+              <Link href="/sektorler/gubre-ve-granulasyon-tesisleri" className="font-semibold text-blue-700 hover:text-blue-800"> gübre tesisi kurulumu</Link> planlayan firmalar için
               ilk doğru adım, yatırımın hangi ürün segmentine hitap edeceğini netleştirmektir.
             </p>
             <p>
@@ -74,10 +74,10 @@ const sections = [
         content: (
           <>
             <p>
-              Karlılık değerlendirmesinde ürün tipi çok kritik rol oynar. Örneğin <Link href="/hizmetler/organomineral-gubre-tesisi" className="font-semibold text-blue-700 hover:text-blue-800">organomineral gübre tesisi</Link>
+              Karlılık değerlendirmesinde ürün tipi çok kritik rol oynar. Örneğin <Link href="/sektorler/gubre-ve-granulasyon-tesisleri" className="font-semibold text-blue-700 hover:text-blue-800">organomineral gübre tesisi</Link>
               yatırımı, daha yüksek formülasyon esnekliği ve farklı ürün hikâyeleri ile pazarda öne çıkabilir. Buna
-              karşılık <Link href="/hizmetler/granul-gubre-uretim-tesisi" className="font-semibold text-blue-700 hover:text-blue-800">granül gübre üretim tesisi</Link> yatırımı; standart ürün, paketleme disiplini ve lojistik
-              rahatlığı sayesinde yüksek hacimli satış modeline daha uygun olabilir. <Link href="/hizmetler/sivi-gubre-uretim-tesisi" className="font-semibold text-blue-700 hover:text-blue-800">Sıvı gübre üretim tesisi</Link> ise
+              karşılık <Link href="/sektorler/gubre-ve-granulasyon-tesisleri" className="font-semibold text-blue-700 hover:text-blue-800">granül gübre üretim tesisi</Link> yatırımı; standart ürün, paketleme disiplini ve lojistik
+              rahatlığı sayesinde yüksek hacimli satış modeline daha uygun olabilir. <Link href="/sektorler/gubre-ve-granulasyon-tesisleri" className="font-semibold text-blue-700 hover:text-blue-800">Sıvı gübre üretim tesisi</Link> ise
               daha farklı bir ticari yapıyla çalışır; stok, dolum, etiketleme ve formül geliştirme tarafında başka
               avantajlar sunar.
             </p>
@@ -207,7 +207,7 @@ const sections = [
             <p>
               Türkiye’de ve yakın ihracat pazarlarında güçlü talep fırsatları bulunuyor. Ancak bu fırsatları gerçek gelire
               dönüştürmek için yatırımın başında detaylı fizibilite, ürün stratejisi ve doğru makina altyapısı gerekir.
-              İşte bu noktada <Link href="/hizmetler/gubre-tesisi-kurulumu" className="font-semibold text-blue-700 hover:text-blue-800">anahtar teslim gübre tesisi çözümleri</Link>, yalnızca kurulum hizmeti değil,
+              İşte bu noktada <Link href="/sektorler/gubre-ve-granulasyon-tesisleri" className="font-semibold text-blue-700 hover:text-blue-800">anahtar teslim gübre tesisi çözümleri</Link>, yalnızca kurulum hizmeti değil,
               yatırımın ticari güvenliğini artıran bir planlama modeli haline gelir.
             </p>
             <p>

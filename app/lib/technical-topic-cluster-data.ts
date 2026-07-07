@@ -103,7 +103,7 @@ const technicalTopicClusters: TechnicalTopicCluster[] = [
     category: "Kurutma Sistemleri",
     allPostsUrl: "/kutuphane/blog/kategori/kurutma-tamburu-ve-kurutma-sistemleri",
     calculatorUrl: "/programlar?modal=tambur-kapasite-hesabi",
-    relatedServiceUrl: "/hizmetler/kurutma-sistemleri",
+    relatedServiceUrl: "/makinalar-ekipman/tambur-sistemleri",
     relatedMachineUrl: "/makinalar-ekipman/tambur-sistemleri",
     relatedSectorUrl: "/sektorler/madencilik-ve-mineral-isleme",
     processFlow:
@@ -165,7 +165,7 @@ const technicalTopicClusters: TechnicalTopicCluster[] = [
       "Organomineral, granül, NPK ve sıvı gübre yatırımları için proses, ekipman ve ticari kararları tek cluster altında birle_tirir.",
     category: "Gübre üretimi",
     allPostsUrl: "/kutuphane/blog/kategori/gubre-tesisi",
-    relatedServiceUrl: "/hizmetler/organomineral-gubre-tesisi",
+    relatedServiceUrl: "/sektorler/gubre-ve-granulasyon-tesisleri",
     relatedMachineUrl: "/makinalar-ekipman/tambur-sistemleri",
     relatedSectorUrl: "/sektorler/gubre-ve-granulasyon-tesisleri",
     processFlow:
@@ -196,7 +196,7 @@ const technicalTopicClusters: TechnicalTopicCluster[] = [
       "Sıvı organomineral, sıvı NPK, amino asitli ürünler ve biyostimülan üretimi için reaktör, tank, filtrasyon ve dolum içeriklerini inceleyin.",
     category: "Sıvı Gübre",
     allPostsUrl: "/kutuphane/blog/kategori/sivi-gubre-ve-proses-tanklari",
-    relatedServiceUrl: "/hizmetler/sivi-gubre-uretim-tesisi",
+    relatedServiceUrl: "/sektorler/gubre-ve-granulasyon-tesisleri",
     relatedMachineUrl: "/makinalar-ekipman/reaktorler-ve-tanklar",
     relatedSectorUrl: "/sektorler/kimya-ve-proses-endustrisi",
     processFlow:
@@ -227,7 +227,7 @@ const technicalTopicClusters: TechnicalTopicCluster[] = [
       "Kompost, organik atık, çamur kurutma ve biyogaz Ön i_lem konularını ayn1 teknik içerik halkasında toplayan cluster yapısı.",
     category: "Kompost & Atık",
     allPostsUrl: "/kutuphane/blog/kategori/kompost-ve-organik-atik",
-    relatedServiceUrl: "/hizmetler/kompost-tesisi-kurulumu",
+    relatedServiceUrl: "/sektorler/kompost-ve-organik-atik-tesisleri",
     relatedMachineUrl: "/makinalar-ekipman/kiricilar-ve-parcalayicilar",
     relatedSectorUrl: "/sektorler/kompost-ve-organik-atik-tesisleri",
     processFlow:
@@ -288,7 +288,7 @@ const technicalTopicClusters: TechnicalTopicCluster[] = [
       "Arıtma çamuru, belediye çamuru, digestat ve yüksek nemli atıkların kurutma, stabilizasyon, sterilizasyon, koku kontrolü ve ürün hazırlama proseslerini inceleyin.",
     category: "Arıtma çamuru",
     allPostsUrl: "/kutuphane/blog/kategori/atik-su-camuru-aritma-ve-kurutma",
-    relatedServiceUrl: "/hizmetler/camur-kurutma-tesisi",
+    relatedServiceUrl: "/sektorler/atik-su-camuru-ve-aritma-cozumleri",
     relatedMachineUrl: "/makinalar-ekipman/tambur-sistemleri",
     relatedSectorUrl: "/sektorler/atik-su-camuru-ve-aritma-cozumleri",
     processFlow:
@@ -319,7 +319,7 @@ const technicalTopicClusters: TechnicalTopicCluster[] = [
       "Silis kumu, kuvars, k?k?rt, mineral toz ve dökme katı hammaddelerin kırma, eleme, kurutma, sınıflandırma, taşıma ve toz kontrol süreçlerini inceleyin.",
     category: "Maden & Mineral",
     allPostsUrl: "/kutuphane/blog/kategori/maden-ve-mineral-isleme",
-    relatedServiceUrl: "/hizmetler/maden-kurutma-ve-eleme-tesisi",
+    relatedServiceUrl: "/sektorler/madencilik-ve-mineral-isleme",
     relatedMachineUrl: "/makinalar-ekipman/kiricilar-ve-parcalayicilar",
     relatedSectorUrl: "/sektorler/madencilik-ve-mineral-isleme",
     processFlow:

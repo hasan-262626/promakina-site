@@ -12,13 +12,13 @@ export const metadata = buildLibraryMetadata({ title, description, canonical });
 const relatedServices = [
   {
     title: "Gübre Tesisi Kurulumu",
-    href: "/hizmetler/gubre-tesisi-kurulumu",
+    href: "/sektorler/gubre-ve-granulasyon-tesisleri",
     description:
       "NPK ve granül gübre hatları için anahtar teslim mühendislik yaklaşımımızı hizmet bazında inceleyin.",
   },
   {
     title: "Granül Gübre Üretim Tesisi",
-    href: "/hizmetler/granul-gubre-uretim-tesisi",
+    href: "/sektorler/gubre-ve-granulasyon-tesisleri",
     description:
       "Granül hat kurulumu, proses akışı ve saha entegrasyonunu tesis sayfasında görün.",
   },

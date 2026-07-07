@@ -153,22 +153,22 @@ export function SiteFooterCta() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/hizmetler/gubre-tesisi-kurulumu" className="transition hover:text-white">
+                  <Link href="/sektorler/gubre-ve-granulasyon-tesisleri" className="transition hover:text-white">
                     Gübre Tesisi Kurulumu
                   </Link>
                 </li>
                 <li>
-                  <Link href="/hizmetler/kompost-tesisi-kurulumu" className="transition hover:text-white">
+                  <Link href="/sektorler/kompost-ve-organik-atik-tesisleri" className="transition hover:text-white">
                     Kompost Tesisi Kurulumu
                   </Link>
                 </li>
                 <li>
-                  <Link href="/hizmetler/organomineral-gubre-tesisi" className="transition hover:text-white">
+                  <Link href="/sektorler/gubre-ve-granulasyon-tesisleri" className="transition hover:text-white">
                     Organomineral Gübre
                   </Link>
                 </li>
                 <li>
-                  <Link href="/hizmetler/sivi-gubre-uretim-tesisi" className="transition hover:text-white">
+                  <Link href="/sektorler/gubre-ve-granulasyon-tesisleri" className="transition hover:text-white">
                     Sıvı Gübre Üretimi
                   </Link>
                 </li>
@@ -234,7 +234,7 @@ export function SiteFooterCta() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/programlar/kurutma-tamburu-hesabi" className="transition hover:text-white">
+                  <Link href="/programlar?modal=tambur-kapasite-hesabi" className="transition hover:text-white">
                     Tambur Hesabı
                   </Link>
                 </li>

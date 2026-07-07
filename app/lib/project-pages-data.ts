@@ -61,7 +61,7 @@ export const projectPages: ProjectPageData[] = [
       "Saha büyüklüğü ve açık / kapalı alan durumu",
     ],
     relatedLinks: [
-      { label: "Kompost Tesisi Kurulumu", href: "/hizmetler/kompost-tesisi-kurulumu" },
+      { label: "Kompost Tesisi Kurulumu", href: "/sektorler/kompost-ve-organik-atik-tesisleri" },
       {
         label: "Evsel Organik Atıklar",
         href: "/sektorler/kompost-ve-organik-atik-tesisleri/evsel-organik-atiklar",
@@ -114,7 +114,7 @@ export const projectPages: ProjectPageData[] = [
       "Beklenen son ürün ve depolama koşulları",
     ],
     relatedLinks: [
-      { label: "Kompost Tesisi Kurulumu", href: "/hizmetler/kompost-tesisi-kurulumu" },
+      { label: "Kompost Tesisi Kurulumu", href: "/sektorler/kompost-ve-organik-atik-tesisleri" },
       {
         label: "Kompost ve Organik Atık Tesisleri",
         href: "/sektorler/kompost-ve-organik-atik-tesisleri",
@@ -167,7 +167,7 @@ export const projectPages: ProjectPageData[] = [
       "Son ürün kullanım amacı ve paketleme beklentisi",
     ],
     relatedLinks: [
-      { label: "Kompost Tesisi Kurulumu", href: "/hizmetler/kompost-tesisi-kurulumu" },
+      { label: "Kompost Tesisi Kurulumu", href: "/sektorler/kompost-ve-organik-atik-tesisleri" },
       {
         label: "Kompost ve Organik Atık Tesisleri",
         href: "/sektorler/kompost-ve-organik-atik-tesisleri",
@@ -227,7 +227,7 @@ export const projectPages: ProjectPageData[] = [
       },
       { label: "Biyogaz Ön İşlem", href: "/kutuphane/blog/biyogaz-on-islem" },
       { label: "Taşıma Ekipmanları", href: "/makinalar-ekipman/tasima-ekipmanlari" },
-      { label: "Kompost Tesisi Kurulumu", href: "/hizmetler/kompost-tesisi-kurulumu" },
+      { label: "Kompost Tesisi Kurulumu", href: "/sektorler/kompost-ve-organik-atik-tesisleri" },
     ],
   },
   {
@@ -268,8 +268,8 @@ export const projectPages: ProjectPageData[] = [
       "Kurutma veya kompostlaştırma önceliği",
     ],
     relatedLinks: [
-      { label: "Camur Kurutma Tesisi", href: "/hizmetler/camur-kurutma-tesisi" },
-      { label: "Kompost Tesisi Kurulumu", href: "/hizmetler/kompost-tesisi-kurulumu" },
+      { label: "Camur Kurutma Tesisi", href: "/sektorler/atik-su-camuru-ve-aritma-cozumleri" },
+      { label: "Kompost Tesisi Kurulumu", href: "/sektorler/kompost-ve-organik-atik-tesisleri" },
       {
         label: "Kompost Tamburu",
         href: "/makinalar-ekipman/tambur-sistemleri/kompost-tamburu",
@@ -318,11 +318,11 @@ export const projectPages: ProjectPageData[] = [
     relatedLinks: [
       {
         label: "Organomineral Gübre Tesisi",
-        href: "/hizmetler/organomineral-gubre-tesisi",
+        href: "/sektorler/gubre-ve-granulasyon-tesisleri",
       },
       {
         label: "Granül Gübre Üretim Tesisi",
-        href: "/hizmetler/granul-gubre-uretim-tesisi",
+        href: "/sektorler/gubre-ve-granulasyon-tesisleri",
       },
       {
         label: "Kurutma Tamburları",
@@ -375,7 +375,7 @@ export const projectPages: ProjectPageData[] = [
     relatedLinks: [
       {
         label: "Granül Gübre Üretim Tesisi",
-        href: "/hizmetler/granul-gubre-uretim-tesisi",
+        href: "/sektorler/gubre-ve-granulasyon-tesisleri",
       },
       {
         label: "Granül Gübre Üretim Süreci",
@@ -429,7 +429,7 @@ export const projectPages: ProjectPageData[] = [
     relatedLinks: [
       {
         label: "Sıvı Gübre Üretim Tesisi",
-        href: "/hizmetler/sivi-gubre-uretim-tesisi",
+        href: "/sektorler/gubre-ve-granulasyon-tesisleri",
       },
       { label: "Reaktörler ve Tanklar", href: "/makinalar-ekipman/reaktorler-ve-tanklar" },
       {
@@ -481,7 +481,7 @@ export const projectPages: ProjectPageData[] = [
       "Eleme fraksiyonu ve depolama beklentisi",
     ],
     relatedLinks: [
-      { label: "Silis Kumu Kurutma Tesisi", href: "/hizmetler/silis-kumu-kurutma-tesisi" },
+      { label: "Silis Kumu Kurutma Tesisi", href: "/sektorler/madencilik-ve-mineral-isleme" },
       {
         label: "Kurutma Tamburları",
         href: "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburu",
@@ -492,7 +492,7 @@ export const projectPages: ProjectPageData[] = [
       },
       {
         label: "Maden Kurutma ve Eleme Tesisi",
-        href: "/hizmetler/maden-kurutma-ve-eleme-tesisi",
+        href: "/sektorler/madencilik-ve-mineral-isleme",
       },
     ],
   },
@@ -534,7 +534,7 @@ export const projectPages: ProjectPageData[] = [
       "Toz kontrolü ve stoklama ihtiyaçı",
     ],
     relatedLinks: [
-      { label: "Maden Kurutma ve Eleme Tesisi", href: "/hizmetler/maden-kurutma-ve-eleme-tesisi" },
+      { label: "Maden Kurutma ve Eleme Tesisi", href: "/sektorler/madencilik-ve-mineral-isleme" },
       {
         label: "Eleme ve Sınıflandırma Sistemleri",
         href: "/makinalar-ekipman/eleme-ve-siniflandirma-sistemleri",
@@ -588,7 +588,7 @@ export const projectPages: ProjectPageData[] = [
       "Stoklama, paketleme veya sevkiyat beklentisi",
     ],
     relatedLinks: [
-      { label: "Maden Kurutma ve Eleme Tesisi", href: "/hizmetler/maden-kurutma-ve-eleme-tesisi" },
+      { label: "Maden Kurutma ve Eleme Tesisi", href: "/sektorler/madencilik-ve-mineral-isleme" },
       {
         label: "Kırıcılar ve Parçalayıcılar",
         href: "/makinalar-ekipman/kiricilar-ve-parcalayicilar",
@@ -642,7 +642,7 @@ export const projectPages: ProjectPageData[] = [
       "Koku kontrolü ve kapalı alan beklentisi",
     ],
     relatedLinks: [
-      { label: "Çamur Kurutma Tesisi", href: "/hizmetler/camur-kurutma-tesisi" },
+      { label: "Çamur Kurutma Tesisi", href: "/sektorler/atik-su-camuru-ve-aritma-cozumleri" },
       {
         label: "Kapalı Sistem Çamur Kurutma",
         href: "/sektorler/atik-su-camuru-ve-aritma-cozumleri/kapali-sistem-camur-kurutma",
@@ -802,7 +802,7 @@ export const projectPages: ProjectPageData[] = [
     ],
     relatedLinks: [
       { label: "Reaktörler ve Tanklar", href: "/makinalar-ekipman/reaktorler-ve-tanklar" },
-      { label: "Sıvı Gübre Üretim Tesisi", href: "/hizmetler/sivi-gubre-uretim-tesisi" },
+      { label: "Sıvı Gübre Üretim Tesisi", href: "/sektorler/gubre-ve-granulasyon-tesisleri" },
       {
         label: "Kimya ve Proses Endüstrisi",
         href: "/sektorler/kimya-ve-proses-endustrisi",

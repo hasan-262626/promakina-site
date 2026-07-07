@@ -387,7 +387,7 @@ export const drumCalculatorTools: DrumCalculatorTool[] = [
     relatedBlogLabel: "Tambur Granulator Calisma Prensibi",
     relatedBlogHref: "/kutuphane/blog/tambur-granulator-calisma-prensibi",
     relatedServiceLabel: "Tambur Imalati ve Tasarimi",
-    relatedServiceHref: "/hizmetler/kurutma-tamburu-imalati",
+    relatedServiceHref: "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburu",
     ctaButtonLabel: "Hesaplamaya Basla",
     fields: [
       numberField("drumDiameter", "Tambur capi", "Birim: metre"),
@@ -542,7 +542,7 @@ export const drumCalculatorTools: DrumCalculatorTool[] = [
     relatedBlogLabel: "Kurutma Tamburu Brulor Secimi",
     relatedBlogHref: "/kutuphane/blog/kurutma-tamburu-brulor-secimi",
     relatedServiceLabel: "Kurutma Tamburu Imalati",
-    relatedServiceHref: "/hizmetler/kurutma-tamburu-imalati",
+    relatedServiceHref: "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburu",
     ctaButtonLabel: "Hesaplamaya Basla",
     fields: [
       selectField("materialType", "Urun tipi", drumMaterialOptions),

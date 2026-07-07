@@ -97,12 +97,12 @@ const dryingData: BlogTechnicalArticleData = {
   relatedLinksDescription:
     "Kurutma tamburu, gaz hattı, toz toplama ve saha uygulamasını tamamlayan teknik sayfaları aşağıda bir arada bulabilirsiniz.",
   relatedLinks: [
-    { title: "Kurutma Tamburu İmalatı", description: "Kurutma tamburu ve hat mühendisliği hizmet yaklaşımını inceleyin.", href: "/hizmetler/kurutma-tamburu-imalati" },
+    { title: "Kurutma Tamburu İmalatı", description: "Kurutma tamburu ve hat mühendisliği hizmet yaklaşımını inceleyin.", href: "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburu" },
     { title: "Tambur Sistemleri", description: "Kurutma, granülasyon ve kompost tamburu ailelerini görün.", href: "/makinalar-ekipman/tambur-sistemleri" },
     { title: "Kurutma Tamburları", description: "Ürün detay sayfası üzerinden kapasite ve ekipman yaklaşımını değerlendirin.", href: "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburu" },
-    { title: "Kurutma Tamburu Hesabı", description: "Programlar alanındaki ilgili hesaplama yaklaşımına gidin.", href: "/programlar/kurutma-tamburu-hesabi" },
-    { title: "Silis Kumu Kurutma Tesisi", description: "Mineral ürünlerde kurutma ve toz toplama kurgusunu görün.", href: "/hizmetler/silis-kumu-kurutma-tesisi" },
-    { title: "Ã‡amur Kurutma Tesisi", description: "Yüksek nemli akışlarda kurutma ve koku kontrolü yaklaşımını inceleyin.", href: "/hizmetler/camur-kurutma-tesisi" },
+    { title: "Kurutma Tamburu Hesabı", description: "Programlar alanındaki ilgili hesaplama yaklaşımına gidin.", href: "/programlar?modal=tambur-kapasite-hesabi" },
+    { title: "Silis Kumu Kurutma Tesisi", description: "Mineral ürünlerde kurutma ve toz toplama kurgusunu görün.", href: "/sektorler/madencilik-ve-mineral-isleme" },
+    { title: "Ã‡amur Kurutma Tesisi", description: "Yüksek nemli akışlarda kurutma ve koku kontrolü yaklaşımını inceleyin.", href: "/sektorler/atik-su-camuru-ve-aritma-cozumleri" },
   ],
 };
 
@@ -277,9 +277,9 @@ const fertilizerData: BlogTechnicalArticleData = {
   relatedLinksDescription:
     "Gübre tesisi yatırımı, ekipman omurgası ve ilgili proses içeriklerini aşağıdaki sayfalardan birlikte inceleyebilirsiniz.",
   relatedLinks: [
-    { title: "Gübre Tesisi Kurulumu", description: "Anahtar teslim hat yaklaşımımızı hizmet sayfasında görün.", href: "/hizmetler/gubre-tesisi-kurulumu" },
-    { title: "Granül Gübre Üretim Tesisi", description: "Granül üretim hatları için özel hizmet sayfasına gidin.", href: "/hizmetler/granul-gubre-uretim-tesisi" },
-    { title: "Organomineral Gübre Tesisi", description: "Organomineral projeleri için ilgili hizmet alanını inceleyin.", href: "/hizmetler/organomineral-gubre-tesisi" },
+    { title: "Gübre Tesisi Kurulumu", description: "Anahtar teslim hat yaklaşımımızı hizmet sayfasında görün.", href: "/sektorler/gubre-ve-granulasyon-tesisleri" },
+    { title: "Granül Gübre Üretim Tesisi", description: "Granül üretim hatları için özel hizmet sayfasına gidin.", href: "/sektorler/gubre-ve-granulasyon-tesisleri" },
+    { title: "Organomineral Gübre Tesisi", description: "Organomineral projeleri için ilgili hizmet alanını inceleyin.", href: "/sektorler/gubre-ve-granulasyon-tesisleri" },
     { title: "Paketleme ve Dolum Sistemleri", description: "Son ürün hazırlama ekipman ailelerini makina tarafında görün.", href: "/makinalar-ekipman/paketleme-ve-dolum-sistemleri" },
     { title: "Tambur Sistemleri", description: "Granülasyon, kurutma ve soğutma tamburu ailelerini inceleyin.", href: "/makinalar-ekipman/tambur-sistemleri" },
     { title: "İletişim", description: "Projenize özel teknik değerlendirme ve teklif talep edin.", href: "/iletisim" },
@@ -337,7 +337,7 @@ const compostData: BlogTechnicalArticleData = {
   relatedLinksDescription:
     "Kompost, organik atık ve tamamlayıcı makina ailelerini aşağıdaki sayfalardan birlikte değerlendirebilirsiniz.",
   relatedLinks: [
-    { title: "Kompost Tesisi Kurulumu", description: "Kompost projeleri için hizmet sayfamızı inceleyin.", href: "/hizmetler/kompost-tesisi-kurulumu" },
+    { title: "Kompost Tesisi Kurulumu", description: "Kompost projeleri için hizmet sayfamızı inceleyin.", href: "/sektorler/kompost-ve-organik-atik-tesisleri" },
     { title: "Kompost ve Organik Atık Tesisleri", description: "Sektör sayfasında uygulama alanlarını görün.", href: "/sektorler/kompost-ve-organik-atik-tesisleri" },
     { title: "Kompost Tamburu", description: "Tamburlu ön fermentasyon için ilgili ekipman sayfasına gidin.", href: "/makinalar-ekipman/tambur-sistemleri/kompost-tamburu" },
     { title: "Trommel Elekler", description: "Son ürün eleme ve fraksiyon ayırma ekipmanlarını inceleyin.", href: "/makinalar-ekipman/eleme-ve-siniflandirma-sistemleri/trommel-elekler" },
@@ -399,7 +399,7 @@ const biogasData: BlogTechnicalArticleData = {
   relatedLinks: [
     { title: "Enerji ve Biyogaz Sistemleri", description: "Sektör sayfasında biyogaz uygulamalarını görün.", href: "/sektorler/enerji-ve-biyogaz-sistemleri" },
     { title: "Organik Atık Tesisi", description: "Biyogaz öncesi hazırlık akışını blog içeriğinde inceleyin.", href: "/kutuphane/blog/organik-atik-tesisi" },
-    { title: "Kompost Tesisi Kurulumu", description: "Digestat ve organik çıkışların kompost tarafını değerlendirin.", href: "/hizmetler/kompost-tesisi-kurulumu" },
+    { title: "Kompost Tesisi Kurulumu", description: "Digestat ve organik çıkışların kompost tarafını değerlendirin.", href: "/sektorler/kompost-ve-organik-atik-tesisleri" },
     { title: "Taşıma Ekipmanları", description: "Besleme ve dozaj omurgasında kullanılan ekipman ailelerini görün.", href: "/makinalar-ekipman/tasima-ekipmanlari" },
     { title: "Bunker ve Besleme Sistemleri", description: "Atık kabul ve besleme noktalarını makina ailesinde inceleyin.", href: "/makinalar-ekipman/depolama-ve-besleme-sistemleri" },
     { title: "İletişim", description: "Biyogaz ön işlem hattı için teknik değerlendirme talep edin.", href: "/iletisim" },
@@ -457,11 +457,11 @@ const liquidData: BlogTechnicalArticleData = {
   relatedLinksDescription:
     "Sıvı gübre, kimyasal proses ve reaktör-tank sistemleriyle ilgili teknik sayfaları aşağıda bulabilirsiniz.",
   relatedLinks: [
-    { title: "Sıvı Gübre Üretim Tesisi", description: "Sıvı üretim hatları için hizmet sayfamızı inceleyin.", href: "/hizmetler/sivi-gubre-uretim-tesisi" },
+    { title: "Sıvı Gübre Üretim Tesisi", description: "Sıvı üretim hatları için hizmet sayfamızı inceleyin.", href: "/sektorler/gubre-ve-granulasyon-tesisleri" },
     { title: "Reaktörler ve Tanklar", description: "Makina kategorisinde proses tankı ve reaktör ailelerini görün.", href: "/makinalar-ekipman/reaktorler-ve-tanklar" },
     { title: "Kimya ve Proses Endüstrisi", description: "Sektör sayfasında uygulama alanlarını değerlendirin.", href: "/sektorler/kimya-ve-proses-endustrisi" },
     { title: "Paketleme ve Dolum Sistemleri", description: "Dolum ve etiketleme ekipmanlarını makina tarafında inceleyin.", href: "/makinalar-ekipman/paketleme-ve-dolum-sistemleri" },
-    { title: "Organomineral Gübre Tesisi", description: "Sıvı ve hibrit proses kurguları için ilgili hizmeti görün.", href: "/hizmetler/organomineral-gubre-tesisi" },
+    { title: "Organomineral Gübre Tesisi", description: "Sıvı ve hibrit proses kurguları için ilgili hizmeti görün.", href: "/sektorler/gubre-ve-granulasyon-tesisleri" },
     { title: "İletişim", description: "Reaktör ve hat kurgusu için teknik görüşme talep edin.", href: "/iletisim" },
   ],
 };

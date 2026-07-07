@@ -358,6 +358,61 @@ const nextConfig: NextConfig = {
         destination: "/sektorler/gubre-ve-granulasyon-tesisleri",
         permanent: true,
       },
+      {
+        source: "/hizmetler/kurutma-tamburu-imalati",
+        destination: "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburu",
+        permanent: true,
+      },
+      {
+        source: "/hizmetler/kurutma-sistemleri",
+        destination: "/makinalar-ekipman/tambur-sistemleri",
+        permanent: true,
+      },
+      {
+        source: "/hizmetler/camur-kurutma-tesisi",
+        destination: "/sektorler/atik-su-camuru-ve-aritma-cozumleri",
+        permanent: true,
+      },
+      {
+        source: "/hizmetler/gubre-tesisi-kurulumu",
+        destination: "/sektorler/gubre-ve-granulasyon-tesisleri",
+        permanent: true,
+      },
+      {
+        source: "/hizmetler/granul-gubre-uretim-tesisi",
+        destination: "/sektorler/gubre-ve-granulasyon-tesisleri",
+        permanent: true,
+      },
+      {
+        source: "/hizmetler/organomineral-gubre-tesisi",
+        destination: "/sektorler/gubre-ve-granulasyon-tesisleri",
+        permanent: true,
+      },
+      {
+        source: "/hizmetler/sivi-gubre-uretim-tesisi",
+        destination: "/sektorler/gubre-ve-granulasyon-tesisleri",
+        permanent: true,
+      },
+      {
+        source: "/hizmetler/kompost-tesisi-kurulumu",
+        destination: "/sektorler/kompost-ve-organik-atik-tesisleri",
+        permanent: true,
+      },
+      {
+        source: "/hizmetler/maden-kurutma-ve-eleme-tesisi",
+        destination: "/sektorler/madencilik-ve-mineral-isleme",
+        permanent: true,
+      },
+      {
+        source: "/hizmetler/silis-kumu-kurutma-tesisi",
+        destination: "/sektorler/madencilik-ve-mineral-isleme",
+        permanent: true,
+      },
+      {
+        source: "/hizmetler/makina-ve-ekipman-imalati",
+        destination: "/hizmetler/makine-imalati",
+        permanent: true,
+      },
     ];
   },
   images: {

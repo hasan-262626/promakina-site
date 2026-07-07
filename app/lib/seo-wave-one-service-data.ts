@@ -50,13 +50,13 @@ const servicePages: Record<string, ServicePageRecord> = {
         title: "Silis Kumu Kurutma",
         description:
           "Kuvars ve silis kumu hatlarında düğük son nem ve kararlı tane akışı için kurutma kurgusunu inceleyin.",
-        href: "/hizmetler/silis-kumu-kurutma-tesisi",
+        href: "/sektorler/madencilik-ve-mineral-isleme",
       },
       {
         title: "Çamur Kurutma Tesisi",
         description:
           "Arıtma çamuru, digestat ve yüksek nemli yan ürünlerde termal kurutma yaklaşımını görün.",
-        href: "/hizmetler/camur-kurutma-tesisi",
+        href: "/sektorler/atik-su-camuru-ve-aritma-cozumleri",
       },
       {
         title: "Jet Pulse Filtreler",
@@ -183,9 +183,9 @@ const servicePages: Record<string, ServicePageRecord> = {
     showForm: true,
     technicalContents: commonTechnicalContents,
     keyLinks: [
-      { label: "Silis Kumu Kurutma Tesisi", href: "/hizmetler/silis-kumu-kurutma-tesisi" },
-      { label: "Çamur Kurutma Tesisi", href: "/hizmetler/camur-kurutma-tesisi" },
-      { label: "Granül Gübre Üretim Tesisi", href: "/hizmetler/granul-gubre-uretim-tesisi" },
+      { label: "Silis Kumu Kurutma Tesisi", href: "/sektorler/madencilik-ve-mineral-isleme" },
+      { label: "Çamur Kurutma Tesisi", href: "/sektorler/atik-su-camuru-ve-aritma-cozumleri" },
+      { label: "Granül Gübre Üretim Tesisi", href: "/sektorler/gubre-ve-granulasyon-tesisleri" },
       { label: "Bantlı Konveyörler", href: "/makinalar-ekipman/tasima-ekipmanlari/bantli-konveyorler" },
     ],
   },
@@ -211,7 +211,7 @@ const servicePages: Record<string, ServicePageRecord> = {
         title: "Kompost Tesisi Bağlantısı",
         description:
           "Organik içerikli akışların kompost veya stabilizasyon senaryolarıyla ilişkili kullanım alanlarını görün.",
-        href: "/hizmetler/kompost-tesisi-kurulumu",
+        href: "/sektorler/kompost-ve-organik-atik-tesisleri",
       },
       {
         title: "Toz Toplama ve Koku Kontrol",
@@ -341,7 +341,7 @@ const servicePages: Record<string, ServicePageRecord> = {
     showForm: true,
     technicalContents: commonTechnicalContents,
     keyLinks: [
-      { label: "Kompost Tesisi Kurulumu", href: "/hizmetler/kompost-tesisi-kurulumu" },
+      { label: "Kompost Tesisi Kurulumu", href: "/sektorler/kompost-ve-organik-atik-tesisleri" },
       { label: "Koku ve Toz Kontrol", href: "/makinalar-ekipman/toz-toplama-sistemleri" },
       { label: "Kapalı Sistem Çamur Kurutma", href: "/sektorler/atik-su-camuru-ve-aritma-cozumleri/kapali-sistem-camur-kurutma" },
       { label: "Atık Su Çamuru Bertaraf ve Değerlendirme Prosesleri", href: "/sektorler/atik-su-camuru-ve-aritma-cozumleri" },
@@ -364,7 +364,7 @@ const servicePages: Record<string, ServicePageRecord> = {
         title: "Maden Kurutma ve Eleme",
         description:
           "Kuruma sonrası eleme, sınıflandırma ve stoklamanın birlikte planlandığı mineral işleme altyapısını görün.",
-        href: "/hizmetler/maden-kurutma-ve-eleme-tesisi",
+        href: "/sektorler/madencilik-ve-mineral-isleme",
       },
       {
         title: "Kurutma Tamburları",
@@ -500,7 +500,7 @@ const servicePages: Record<string, ServicePageRecord> = {
     showForm: true,
     technicalContents: commonTechnicalContents,
     keyLinks: [
-      { label: "Maden Kurutma ve Eleme Tesisi", href: "/hizmetler/maden-kurutma-ve-eleme-tesisi" },
+      { label: "Maden Kurutma ve Eleme Tesisi", href: "/sektorler/madencilik-ve-mineral-isleme" },
       { label: "Kurutma Tamburları", href: "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburu" },
       { label: "Bantlı Konveyörler", href: "/makinalar-ekipman/tasima-ekipmanlari/bantli-konveyorler" },
       { label: "Makinalar & Ekipman", href: "/makinalar-ekipman" },
@@ -523,13 +523,13 @@ const servicePages: Record<string, ServicePageRecord> = {
         title: "Kurutma Tamburu",
         description:
           "Mineral nemini kontrollü düğürmek için endüstriyel rotary dryer çözümlerini inceleyin.",
-        href: "/hizmetler/kurutma-tamburu-imalati",
+        href: "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburu",
       },
       {
         title: "Silis ve Kuvars Hatları",
         description:
           "Silis kumu kurutma ve eleme senaryolarında öne çıkan proses yaklaşımını görün.",
-        href: "/hizmetler/silis-kumu-kurutma-tesisi",
+        href: "/sektorler/madencilik-ve-mineral-isleme",
       },
       {
         title: "Eleme ve Sınıflandırma",
@@ -659,8 +659,8 @@ const servicePages: Record<string, ServicePageRecord> = {
     showForm: true,
     technicalContents: commonTechnicalContents,
     keyLinks: [
-      { label: "Silis Kumu Kurutma Tesisi", href: "/hizmetler/silis-kumu-kurutma-tesisi" },
-      { label: "Kurutma Tamburu İmalatı", href: "/hizmetler/kurutma-tamburu-imalati" },
+      { label: "Silis Kumu Kurutma Tesisi", href: "/sektorler/madencilik-ve-mineral-isleme" },
+      { label: "Kurutma Tamburu İmalatı", href: "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburu" },
       { label: "Makinalar & Ekipman", href: "/makinalar-ekipman" },
       { label: "Sektörler", href: "/sektorler" },
     ],
@@ -818,7 +818,7 @@ const servicePages: Record<string, ServicePageRecord> = {
     showForm: true,
     technicalContents: commonTechnicalContents,
     keyLinks: [
-      { label: "Kurutma Tamburu İmalatı", href: "/hizmetler/kurutma-tamburu-imalati" },
+      { label: "Kurutma Tamburu İmalatı", href: "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburu" },
       { label: "Granülatör Tamburu", href: "/makinalar-ekipman/tambur-sistemleri/granulator-tamburu" },
       { label: "Kaplama Tamburu", href: "/makinalar-ekipman/tambur-sistemleri/kaplama-tamburu" },
       { label: "Eleme Sistemleri", href: "/makinalar-ekipman/eleme-ve-siniflandirma-sistemleri" },
@@ -841,13 +841,13 @@ const servicePages: Record<string, ServicePageRecord> = {
         title: "Granül Gübre Üretim Tesisi",
         description:
           "Granül ürün odaklı tesis kurgusunun ana omurgasını daha geniş perspektifle inceleyin.",
-        href: "/hizmetler/granul-gubre-uretim-tesisi",
+        href: "/sektorler/gubre-ve-granulasyon-tesisleri",
       },
       {
         title: "Kurutma Tamburu",
         description:
           "Son nem ve granül dayanımını şekillendiren tambur sistemi seçimini görün.",
-        href: "/hizmetler/kurutma-tamburu-imalati",
+        href: "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburu",
       },
       {
         title: "Helezon ve Besleme Hatları",
@@ -977,8 +977,8 @@ const servicePages: Record<string, ServicePageRecord> = {
     showForm: true,
     technicalContents: commonTechnicalContents,
     keyLinks: [
-      { label: "Granül Gübre Üretim Tesisi", href: "/hizmetler/granul-gubre-uretim-tesisi" },
-      { label: "Kurutma Tamburu İmalatı", href: "/hizmetler/kurutma-tamburu-imalati" },
+      { label: "Granül Gübre Üretim Tesisi", href: "/sektorler/gubre-ve-granulasyon-tesisleri" },
+      { label: "Kurutma Tamburu İmalatı", href: "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburu" },
       { label: "Vidalı Helezonlar", href: "/makinalar-ekipman/tasima-ekipmanlari/vidali-helezonlar" },
       { label: "Sektörler", href: "/sektorler" },
     ],
@@ -1012,7 +1012,7 @@ const servicePages: Record<string, ServicePageRecord> = {
         title: "Organomineral Gübre Tesisi",
         description:
           "Katı ve sıvı ürün ailelerini birlikte değerlendirmek için ilgili üretim altyapısını görün.",
-        href: "/hizmetler/organomineral-gubre-tesisi",
+        href: "/sektorler/gubre-ve-granulasyon-tesisleri",
       },
       {
         title: "İletişim ve Teknik Görüşme",
@@ -1136,7 +1136,7 @@ const servicePages: Record<string, ServicePageRecord> = {
     showForm: true,
     technicalContents: commonTechnicalContents,
     keyLinks: [
-      { label: "Organomineral Gübre Tesisi", href: "/hizmetler/organomineral-gubre-tesisi" },
+      { label: "Organomineral Gübre Tesisi", href: "/sektorler/gubre-ve-granulasyon-tesisleri" },
       { label: "Reaktörler ve Tanklar", href: "/makinalar-ekipman/reaktorler-ve-tanklar" },
       { label: "Makinalar", href: "/makinalar-ekipman" },
       { label: "İletişim", href: "/iletisim" },

@@ -16,13 +16,13 @@ const canonical = "https://www.promakina.com.tr/kutuphane/blog/kurutma-tamburu-h
 const relatedServices = [
   {
     title: "Gübre Tesisi Kurulumu",
-    href: "/hizmetler/gubre-tesisi-kurulumu",
+    href: "/sektorler/gubre-ve-granulasyon-tesisleri",
     description:
       "Kurutma tamburunun granül ve organomineral hatlar içindeki rolünü anahtar teslim tesis bakışıyla inceleyin.",
   },
   {
     title: "Kompost Tesisi Kurulumu",
-    href: "/hizmetler/kompost-tesisi-kurulumu",
+    href: "/sektorler/kompost-ve-organik-atik-tesisleri",
     description:
       "Nemli organik ürünlerde kurutma, dengeleme ve son ürün hazırlama süreçlerini sahaya uygun çözüm yaklaşımıyla görün.",
   },
@@ -89,7 +89,7 @@ const sections = [
             <p>
               Eksik veriyle yapılan tasarımlar çoğu zaman aşırı büyük tambur, zayıf hava hattı veya gereksiz
               yüksek brülör seçimine yol açar. Eğer sistem{" "}
-              <Link href="/hizmetler/gubre-tesisi-kurulumu" className="font-semibold text-blue-700 transition hover:text-blue-800">
+              <Link href="/sektorler/gubre-ve-granulasyon-tesisleri" className="font-semibold text-blue-700 transition hover:text-blue-800">
                 gübre tesisi kurulumu
               </Link>{" "}
               içinde yer alıyorsa granül dayanımı, toz kontrolü ve tambur sonrasındaki soğutma ihtiyacı da
@@ -117,7 +117,7 @@ const sections = [
               Bu yaklaşım; hem ısıl yükün hem de gaz debisi ihtiyacının temelini oluşturur. Elbette sahada
               ürünün tutulma davranışı, ince fraksiyon kaybı ve toz toplama hattı gibi etkiler vardır; ancak
               ilk mühendislik çerçevesi mutlaka bu denge üzerinden kurulmalıdır. Bu mantık,{" "}
-              <Link href="/hizmetler/kompost-tesisi-kurulumu" className="font-semibold text-blue-700 transition hover:text-blue-800">
+              <Link href="/sektorler/kompost-ve-organik-atik-tesisleri" className="font-semibold text-blue-700 transition hover:text-blue-800">
                 kompost tesisi kurulumu
               </Link>{" "}
               gibi yüksek nemli ürünlerde daha da kritik hale gelir.
@@ -255,11 +255,11 @@ const sections = [
             </p>
             <p>
               Özellikle{" "}
-              <Link href="/hizmetler/gubre-tesisi-kurulumu" className="font-semibold text-blue-700 transition hover:text-blue-800">
+              <Link href="/sektorler/gubre-ve-granulasyon-tesisleri" className="font-semibold text-blue-700 transition hover:text-blue-800">
                 gübre tesisi kurulumu
               </Link>{" "}
               ve{" "}
-              <Link href="/hizmetler/kompost-tesisi-kurulumu" className="font-semibold text-blue-700 transition hover:text-blue-800">
+              <Link href="/sektorler/kompost-ve-organik-atik-tesisleri" className="font-semibold text-blue-700 transition hover:text-blue-800">
                 kompost tesisi kurulumu
               </Link>{" "}
               projelerinde tambur; konveyör sistemleri, bunkerler, filtreler ve son ürün hatlarıyla birlikte

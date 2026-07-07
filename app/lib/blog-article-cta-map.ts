@@ -13,11 +13,11 @@ const defaultBlogArticleCta: BlogArticleCtaConfig = {
   buttonHref: "/iletisim",
 };
 
-const dryingDrumHref = "/programlar/tambur-hesaplari?drumType=kurutma";
-const coolingDrumHref = "/programlar/tambur-hesaplari?drumType=sogutma";
-const granulationDrumHref = "/programlar/tambur-hesaplari?drumType=granulasyon";
-const coatingDrumHref = "/programlar/tambur-hesaplari?drumType=kaplama";
-const compostDrumHref = "/programlar/tambur-hesaplari?drumType=kompost";
+const dryingDrumHref = "/programlar?modal=tambur-kapasite-hesabi";
+const coolingDrumHref = "/programlar?modal=tambur-kapasite-hesabi";
+const granulationDrumHref = "/programlar?modal=tambur-kapasite-hesabi";
+const coatingDrumHref = "/programlar?modal=tambur-kapasite-hesabi";
+const compostDrumHref = "/programlar?modal=tambur-kapasite-hesabi";
 const screwCalculatorHref = "/programlar/helezon-kapasite-hesabi";
 const conveyorCalculatorHref = "/programlar/konveyor-kapasite-hesabi";
 const elevatorCalculatorHref = "/programlar/elevator-kapasite-hesabi";
@@ -92,21 +92,21 @@ const blogArticleCtaMap: Record<string, BlogArticleCtaConfig> = {
     description:
       "Kurutma teknolojileri, ürün davranışı, enerji modeli ve tesis kurgusunu aynı mühendislik çerçevesinde değerlendirin.",
     buttonLabel: "Kurutma Sistemlerini İncele",
-    buttonHref: "/hizmetler/kurutma-tamburu-imalati",
+    buttonHref: "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburu",
   },
   "camur-kurutma-sistemleri": {
     title: "Çamur Kurutma Sistemi Ön Değerlendirmesi Yapın",
     description:
       "Arıtma çamuru nemi, kurutma yükü, koku kontrolü, fan hattı ve nihai ürün yaklaşımını değerlendirin.",
     buttonLabel: "Çamur Kurutma Tesisi İncele",
-    buttonHref: "/hizmetler/camur-kurutma-tesisi",
+    buttonHref: "/sektorler/atik-su-camuru-ve-aritma-cozumleri",
   },
   "camur-kurutma-sistemi": {
     title: "Çamur Kurutma Sistemi Ön Değerlendirmesi Yapın",
     description:
       "Arıtma çamuru nemi, kurutma yükü, koku kontrolü, fan hattı ve nihai ürün yaklaşımını değerlendirin.",
     buttonLabel: "Çamur Kurutma Tesisi İncele",
-    buttonHref: "/hizmetler/camur-kurutma-tesisi",
+    buttonHref: "/sektorler/atik-su-camuru-ve-aritma-cozumleri",
   },
   "tavuk-gubresi-kurutma": {
     title: "Tavuk Gübresi Kurutma Hesabını Yapın",
@@ -253,14 +253,14 @@ const blogArticleCtaMap: Record<string, BlogArticleCtaConfig> = {
     description:
       "Kapasite, hammadde, proses akışı, ekipman grupları ve yatırım yaklaşımını birlikte değerlendirin.",
     buttonLabel: "Organomineral Gübre Tesisi İncele",
-    buttonHref: "/hizmetler/organomineral-gubre-tesisi",
+    buttonHref: "/sektorler/gubre-ve-granulasyon-tesisleri",
   },
   "granul-gubre-uretim-sureci": {
     title: "Granül Gübre Üretim Hattını İnceleyin",
     description:
       "Dozajlama, karıştırma, granülasyon, kurutma, soğutma, eleme, kaplama ve paketleme adımlarını teknik olarak değerlendirin.",
     buttonLabel: "Granül Gübre Tesisi İncele",
-    buttonHref: "/hizmetler/granul-gubre-uretim-tesisi",
+    buttonHref: "/sektorler/gubre-ve-granulasyon-tesisleri",
   },
   "granul-gubre-uretim-tesisi-nasil-kurulur": {
     title: "Granül Gübre Üretim Tesisini İnceleyin",
@@ -281,49 +281,49 @@ const blogArticleCtaMap: Record<string, BlogArticleCtaConfig> = {
     description:
       "NPK formülasyon, hammadde dozajlama, granülasyon, kurutma, eleme ve paketleme proseslerini değerlendirin.",
     buttonLabel: "NPK Gübre Tesisi İncele",
-    buttonHref: "/hizmetler/gubre-tesisi-kurulumu",
+    buttonHref: "/sektorler/gubre-ve-granulasyon-tesisleri",
   },
   "gubre-tesisi-kurulumu": {
     title: "Gübre Tesisi Kurulum Sürecini İnceleyin",
     description:
       "Kapasite, ürün tipi, hammadde hazırlığı, proses tasarımı, makine seçimi ve saha kurulumunu birlikte değerlendirin.",
     buttonLabel: "Gübre Tesisi Kurulumu",
-    buttonHref: "/hizmetler/gubre-tesisi-kurulumu",
+    buttonHref: "/sektorler/gubre-ve-granulasyon-tesisleri",
   },
   "gubre-uretim-hatti-nasil-kurulur": {
     title: "Gübre Üretim Hattı Ön Değerlendirmesi Yapın",
     description:
       "Toz, sıvı, granül ve organomineral gübre üretim hatlarında proses ve ekipman kurgusunu inceleyin.",
     buttonLabel: "Gübre Üretim Hattı İncele",
-    buttonHref: "/hizmetler/gubre-tesisi-kurulumu",
+    buttonHref: "/sektorler/gubre-ve-granulasyon-tesisleri",
   },
   "gubre-uretim-hatti": {
     title: "Gübre Üretim Hattı Ön Değerlendirmesi Yapın",
     description:
       "Toz, sıvı, granül ve organomineral gübre üretim hatlarında proses ve ekipman kurgusunu inceleyin.",
     buttonLabel: "Gübre Üretim Hattı İncele",
-    buttonHref: "/hizmetler/gubre-tesisi-kurulumu",
+    buttonHref: "/sektorler/gubre-ve-granulasyon-tesisleri",
   },
   "organomineral-gubre-tesisi-nasil-kurulur": {
     title: "Organomineral Gübre Tesisi Ön Değerlendirmesi Yapın",
     description:
       "Kapasite, hammadde, proses akışı, ekipman grupları ve yatırım yaklaşımını birlikte değerlendirin.",
     buttonLabel: "Gübre Tesisi İncele",
-    buttonHref: "/hizmetler/organomineral-gubre-tesisi",
+    buttonHref: "/sektorler/gubre-ve-granulasyon-tesisleri",
   },
   "kompost-tesisi-nasil-kurulur": {
     title: "Kompost Tesisi Kurulum Sürecini İnceleyin",
     description:
       "Organik atık kabulü, nem yönetimi, olgunlaştırma, eleme, kurutma ve son ürün hazırlığını değerlendirin.",
     buttonLabel: "Kompost Tesisi İncele",
-    buttonHref: "/hizmetler/kompost-tesisi-kurulumu",
+    buttonHref: "/sektorler/kompost-ve-organik-atik-tesisleri",
   },
   "kompost-tesisi-kurulumu": {
     title: "Kompost Tesisi Kurulum Sürecini İnceleyin",
     description:
       "Organik atık kabulü, nem yönetimi, olgunlaştırma, eleme, kurutma ve son ürün hazırlığını değerlendirin.",
     buttonLabel: "Kompost Tesisi İncele",
-    buttonHref: "/hizmetler/kompost-tesisi-kurulumu",
+    buttonHref: "/sektorler/kompost-ve-organik-atik-tesisleri",
   },
   "kompost-tesisi-kapasite-hesabi": {
     title: "Kompost Tesisi Ön Hesabını Yapın",
@@ -365,7 +365,7 @@ const blogArticleCtaMap: Record<string, BlogArticleCtaConfig> = {
     description:
       "Organik atık kabulünden olgunlaştırma, eleme ve nihai ürün hazırlığına kadar kompost prosesini değerlendirin.",
     buttonLabel: "Kompost Tesisi İncele",
-    buttonHref: "/hizmetler/kompost-tesisi-kurulumu",
+    buttonHref: "/sektorler/kompost-ve-organik-atik-tesisleri",
   },
   "biyogaz-on-islem-sistemleri": {
     title: "Biyogaz Ön İşlem Hattını İnceleyin",
@@ -393,7 +393,7 @@ const blogArticleCtaMap: Record<string, BlogArticleCtaConfig> = {
     description:
       "Reaktör, tank, filtrasyon, stoklama ve dolum yapısını kapasite ve ürün formülünüzle birlikte değerlendirin.",
     buttonLabel: "Sıvı Gübre Tesisi İncele",
-    buttonHref: "/hizmetler/sivi-gubre-uretim-tesisi",
+    buttonHref: "/sektorler/gubre-ve-granulasyon-tesisleri",
   },
   "sivi-gubre-uretim-tesisi": {
     title: "Sıvı Gübre Proses Ön Değerlendirmesi Yapın",

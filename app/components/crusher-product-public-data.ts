@@ -65,7 +65,7 @@ export const crusherPublicProductRecords: CrusherPublicProductRecord[] = [
     ],
     relatedPages: [
       { label: "Shredder Sistemleri", href: "/makinalar-ekipman/kiricilar-ve-parcalayicilar/shredder-sistemleri" },
-      { label: "Gübre Tesisi Kurulumu", href: "/hizmetler/gubre-tesisi-kurulumu" },
+      { label: "Gübre Tesisi Kurulumu", href: "/sektorler/gubre-ve-granulasyon-tesisleri" },
       { label: "İletişim", href: "/iletisim" },
     ],
   },
@@ -105,7 +105,7 @@ export const crusherPublicProductRecords: CrusherPublicProductRecord[] = [
     ],
     relatedPages: [
       { label: "Bıçaklı Primer Kırıcılar", href: "/makinalar-ekipman/kiricilar-ve-parcalayicilar/bicakli-primer-kiricilar" },
-      { label: "Kompost Tesisi Kurulumu", href: "/hizmetler/kompost-tesisi-kurulumu" },
+      { label: "Kompost Tesisi Kurulumu", href: "/sektorler/kompost-ve-organik-atik-tesisleri" },
       { label: "İletişim", href: "/iletisim" },
     ],
   },

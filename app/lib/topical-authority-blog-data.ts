@@ -308,7 +308,7 @@ export const topicalBlogArticles: TopicalArticle[] = [
       { title: "Endüstriyel Kurutma Sistemleri", description: "Farklı kurutma mimarilerini karşılaştırın.", href: "/kutuphane/blog/endustriyel-kurutma-sistemleri" },
     ],
     relatedServices: [
-      { title: "Kurutma Sistemleri", description: "Hizmet kapsamında kurutma hattı mühendisliği.", href: "/hizmetler/kurutma-sistemleri" },
+      { title: "Kurutma Sistemleri", description: "Hizmet kapsamında kurutma hattı mühendisliği.", href: "/makinalar-ekipman/tambur-sistemleri" },
       { title: "Tambur Sistemleri", description: "Tambur kategorisini ekipman bazında inceleyin.", href: "/makinalar-ekipman/tambur-sistemleri" },
     ],
     nextContent: { title: "Tambur Kurutucu Nasıl Çalışır?", description: "Tambur, gaz akışı ve lifter düzenini mekanik bakışla okuyun.", href: "/kutuphane/blog/tambur-kurutucu-nasil-calisir" },
@@ -350,7 +350,7 @@ export const topicalBlogArticles: TopicalArticle[] = [
       { title: "Rotary Dryer Design", description: "Tambur tasarımını daha geniş mühendislik çerçevesinde inceleyin.", href: "/kutuphane/blog/rotary-dryer-design" },
     ],
     relatedServices: [
-      { title: "Kurutma Sistemleri", description: "Kurutma projeleri için hizmet çerçevemiz.", href: "/hizmetler/kurutma-sistemleri" },
+      { title: "Kurutma Sistemleri", description: "Kurutma projeleri için hizmet çerçevemiz.", href: "/makinalar-ekipman/tambur-sistemleri" },
       { title: "Tambur Sistemleri", description: "Tambur ekipman ailesini kategori olarak inceleyin.", href: "/makinalar-ekipman/tambur-sistemleri" },
     ],
     nextContent: { title: "Endüstriyel Kurutma Sistemleri", description: "Farklı kurutma teknolojilerini bir arada değerlendirin.", href: "/kutuphane/blog/endustriyel-kurutma-sistemleri" },
@@ -392,7 +392,7 @@ export const topicalBlogArticles: TopicalArticle[] = [
       { title: "Çamur Kurutma Sistemleri", description: "Yüksek nemli akışlar için özel gereksinimleri görün.", href: "/kutuphane/blog/camur-kurutma-sistemleri" },
     ],
     relatedServices: [
-      { title: "Kurutma Sistemleri", description: "Endüstriyel kurutma hizmet yaklaşımımızı inceleyin.", href: "/hizmetler/kurutma-sistemleri" },
+      { title: "Kurutma Sistemleri", description: "Endüstriyel kurutma hizmet yaklaşımımızı inceleyin.", href: "/makinalar-ekipman/tambur-sistemleri" },
       { title: "Tambur Sistemleri", description: "Kurutma, soğutma ve diğer tambur ekipmanlarına bakın.", href: "/makinalar-ekipman/tambur-sistemleri" },
     ],
     nextContent: { title: "Rotary Dryer Design", description: "Rotary dryer tasarımını detaylı teknik çerçevede inceleyin.", href: "/kutuphane/blog/rotary-dryer-design" },
@@ -560,7 +560,7 @@ export const topicalBlogArticles: TopicalArticle[] = [
       { title: "Gübre Üretim Hattı Nasıl Kurulur?", description: "Tesis planını sıfırdan okuyan kapsamlı rehber.", href: "/kutuphane/blog/gubre-uretim-hatti-nasil-kurulur" },
     ],
     relatedServices: [
-      { title: "Gübre Tesisi Kurulumu", description: "Hizmet sayfasında tesis yaklaşımımızı görün.", href: "/hizmetler/gubre-tesisi-kurulumu" },
+      { title: "Gübre Tesisi Kurulumu", description: "Hizmet sayfasında tesis yaklaşımımızı görün.", href: "/sektorler/gubre-ve-granulasyon-tesisleri" },
       { title: "Makinalar", description: "Ana makina ailelerini kategori bazında inceleyin.", href: "/makinalar-ekipman" },
     ],
     nextContent: { title: "Gübre Üretim Hattı Nasıl Kurulur?", description: "Kurulumu daha detaylı adım adım değerlendirin.", href: "/kutuphane/blog/gubre-uretim-hatti-nasil-kurulur" },
@@ -595,15 +595,15 @@ export const topicalBlogArticles: TopicalArticle[] = [
       { question: "Kurutma hattı her gübre üretiminde gerekli midir?", answer: "Hayır. Ürün tipi ve hedef son nem değerine göre gereklilik değişir." },
       { question: "Hattın ileride büyümesi baştan planlanabilir mi?", answer: "Evet. Modüler tasarım yaklaşımıyla kapasite artışı için uygun omurga kurulabilir." },
     ],
-    internalLinks: [...makeCommonLinks(), { label: "Gübre Teknolojileri", href: "/kutuphane/blog/gubre-teknolojileri" }, { label: "Gübre Tesisi Kurulumu", href: "/hizmetler/gubre-tesisi-kurulumu" }],
+    internalLinks: [...makeCommonLinks(), { label: "Gübre Teknolojileri", href: "/kutuphane/blog/gubre-teknolojileri" }, { label: "Gübre Tesisi Kurulumu", href: "/sektorler/gubre-ve-granulasyon-tesisleri" }],
     relatedContents: [
       { title: "Gübre Tesisi Kurulumu", description: "Kurulum yaklaşımını yatırım perspektifiyle görün.", href: "/kutuphane/blog/gubre-tesisi-kurulumu" },
       { title: "Granül Gübre Üretim Süreci", description: "Granül hat adımlarını detaylı inceleyin.", href: "/kutuphane/blog/granul-gubre-uretim-sureci" },
       { title: "Organomineral Gübre Tesisi Maliyeti", description: "Yatırım kalemlerini maliyet diliyle görün.", href: "/kutuphane/blog/organomineral-gubre-tesisi-maliyeti" },
     ],
     relatedServices: [
-      { title: "Gübre Tesisi Kurulumu", description: "Ana hizmet sayfasında kapsamı görün.", href: "/hizmetler/gubre-tesisi-kurulumu" },
-      { title: "Granül Gübre Üretim Tesisi", description: "Granül odaklı üretim tesisini inceleyin.", href: "/hizmetler/granul-gubre-uretim-tesisi" },
+      { title: "Gübre Tesisi Kurulumu", description: "Ana hizmet sayfasında kapsamı görün.", href: "/sektorler/gubre-ve-granulasyon-tesisleri" },
+      { title: "Granül Gübre Üretim Tesisi", description: "Granül odaklı üretim tesisini inceleyin.", href: "/sektorler/gubre-ve-granulasyon-tesisleri" },
     ],
     nextContent: { title: "NPK Gübre Üretimi", description: "Gübre hattını reçete bazlı daha özel açıdan inceleyin.", href: "/kutuphane/blog/npk-gubre-uretimi" },
     ctaText: "Yeni gübre üretim hattınız için proses akışı, kapasite planı ve makine seçimi desteği almak üzere Pro Makina ile iletişime geçebilirsiniz.",
@@ -644,7 +644,7 @@ export const topicalBlogArticles: TopicalArticle[] = [
       { title: "Kompost Üretim Süreci", description: "Son ürün hazırlama mantığını okuyun.", href: "/kutuphane/blog/kompost-uretim-sureci" },
     ],
     relatedServices: [
-      { title: "Kompost Tesisi Kurulumu", description: "Kompost tabanlı kurulum hizmetimizi inceleyin.", href: "/hizmetler/kompost-tesisi-kurulumu" },
+      { title: "Kompost Tesisi Kurulumu", description: "Kompost tabanlı kurulum hizmetimizi inceleyin.", href: "/sektorler/kompost-ve-organik-atik-tesisleri" },
       { title: "Sektörler", description: "Organik atık odaklı sektör sayfalarını görün.", href: "/sektorler/kompost-ve-organik-atik-tesisleri" },
     ],
     nextContent: { title: "Biyogaz Ön İşlem Sistemleri", description: "Enerji odaklı organik atık hazırlığını inceleyin.", href: "/kutuphane/blog/biyogaz-on-islem-sistemleri" },
@@ -679,14 +679,14 @@ export const topicalBlogArticles: TopicalArticle[] = [
       { question: "Eleme neden yapılır?", answer: "Son ürün fraksiyonunu düzenlemek ve istenmeyen iri parçaları ayırmak için yapılır." },
       { question: "Kompost üretimi için teklif alırken hangi veriler gerekir?", answer: "Atık tipi, günlük tonaj, nem aralığı ve hedef son ürün kullanımı ilk değerlendirme için yeterlidir." },
     ],
-    internalLinks: [...makeCommonLinks(), { label: "Kompost ve Atık", href: "/kutuphane/blog/kompost-ve-atik" }, { label: "Kompost Tesisi Kurulumu", href: "/hizmetler/kompost-tesisi-kurulumu" }],
+    internalLinks: [...makeCommonLinks(), { label: "Kompost ve Atık", href: "/kutuphane/blog/kompost-ve-atik" }, { label: "Kompost Tesisi Kurulumu", href: "/sektorler/kompost-ve-organik-atik-tesisleri" }],
     relatedContents: [
       { title: "Kompost Tesisi Nasıl Kurulur?", description: "Tesisi yatırım bakışıyla kurulum adımlarıyla görün.", href: "/kutuphane/blog/kompost-tesisi-nasil-kurulur" },
       { title: "Organik Atık İşleme Tesisi", description: "Kompost öncesi atık yönetimini okuyun.", href: "/kutuphane/blog/organik-atik-isleme-tesisi" },
       { title: "Biyogaz Ön İşlem Sistemleri", description: "Alternatif biyolojik değerlendirme yolunu görün.", href: "/kutuphane/blog/biyogaz-on-islem-sistemleri" },
     ],
     relatedServices: [
-      { title: "Kompost Tesisi Kurulumu", description: "Kompost tesislerini hizmet bazlı inceleyin.", href: "/hizmetler/kompost-tesisi-kurulumu" },
+      { title: "Kompost Tesisi Kurulumu", description: "Kompost tesislerini hizmet bazlı inceleyin.", href: "/sektorler/kompost-ve-organik-atik-tesisleri" },
       { title: "Kompost ve Organik Atık Tesisleri", description: "Sektörel çözüm sayfasına göz atın.", href: "/sektorler/kompost-ve-organik-atik-tesisleri" },
     ],
     nextContent: { title: "Organik Atık İşleme Tesisi", description: "Kompost öncesi atık akışını daha geniş çerçevede görün.", href: "/kutuphane/blog/organik-atik-isleme-tesisi" },

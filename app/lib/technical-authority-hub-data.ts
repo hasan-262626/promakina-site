@@ -203,12 +203,12 @@ export const technicalAuthorityHubs: TechnicalAuthorityHub[] = [
       {
         title: "Gübre Tesisi Kurulumu",
         description: "Helezonların karışım, besleme ve transfer tarafındaki rolünü hizmet perspektifiyle görün.",
-        href: "/hizmetler/gubre-tesisi-kurulumu",
+        href: "/sektorler/gubre-ve-granulasyon-tesisleri",
       },
       {
         title: "Kompost Tesisi Kurulumu",
         description: "Organik malzeme taşıma ve dozajlama tarafını saha mantığıyla inceleyin.",
-        href: "/hizmetler/kompost-tesisi-kurulumu",
+        href: "/sektorler/kompost-ve-organik-atik-tesisleri",
       },
     ],
     ctaText:
@@ -322,7 +322,7 @@ export const technicalAuthorityHubs: TechnicalAuthorityHub[] = [
       {
         title: "Kurutma Tamburu Hesabı",
         description: "Kapasite, çap-boy ve hava debisi açısından rotary dryer ön boyutlandırması yapın.",
-        href: "/programlar/kurutma-tamburu-hesabi",
+        href: "/programlar?modal=tambur-kapasite-hesabi",
       },
       {
         title: "Redler Konveyör Kapasite Hesabı",
@@ -378,12 +378,12 @@ export const technicalAuthorityHubs: TechnicalAuthorityHub[] = [
       {
         title: "Gübre Tesisi Kurulumu",
         description: "Kurutma ve granülasyon tarafında tambur sistemlerinin rolünü hizmet perspektifiyle görün.",
-        href: "/hizmetler/gubre-tesisi-kurulumu",
+        href: "/sektorler/gubre-ve-granulasyon-tesisleri",
       },
       {
         title: "Kompost Tesisi Kurulumu",
         description: "Organik atık hatlarında tambur sistemlerinin saha karşılığını inceleyin.",
-        href: "/hizmetler/kompost-tesisi-kurulumu",
+        href: "/sektorler/kompost-ve-organik-atik-tesisleri",
       },
     ],
     ctaText:
@@ -548,12 +548,12 @@ export const technicalAuthorityHubs: TechnicalAuthorityHub[] = [
       {
         title: "Gübre Tesisi Kurulumu",
         description: "Konveyörlerin granülasyon ve stok transferi içindeki rolünü görün.",
-        href: "/hizmetler/gubre-tesisi-kurulumu",
+        href: "/sektorler/gubre-ve-granulasyon-tesisleri",
       },
       {
         title: "Sıvı Gübre Üretim Tesisi",
         description: "Katı hammadde ve yardımcı taşıma hatlarının sıvı tesislerle ilişkisini inceleyin.",
-        href: "/hizmetler/sivi-gubre-uretim-tesisi",
+        href: "/sektorler/gubre-ve-granulasyon-tesisleri",
       },
     ],
     ctaText:
@@ -672,7 +672,7 @@ export const technicalAuthorityHubs: TechnicalAuthorityHub[] = [
       {
         title: "Kurutma Tamburu Hesabı",
         description: "Kompost sonrası yardımcı kurutma veya termal yük tarafını inceleyin.",
-        href: "/programlar/kurutma-tamburu-hesabi",
+        href: "/programlar?modal=tambur-kapasite-hesabi",
       },
       {
         title: "Konveyör Kapasite Hesabı",
@@ -723,7 +723,7 @@ export const technicalAuthorityHubs: TechnicalAuthorityHub[] = [
       {
         title: "Kompost Tesisi Kurulumu",
         description: "Kompost sistemlerini hizmet ve yatırım perspektifiyle daha detaylı görün.",
-        href: "/hizmetler/kompost-tesisi-kurulumu",
+        href: "/sektorler/kompost-ve-organik-atik-tesisleri",
       },
       {
         title: "Sektörler / Kompost ve Organik Atık",
@@ -842,7 +842,7 @@ export const technicalAuthorityHubs: TechnicalAuthorityHub[] = [
       {
         title: "Kurutma Tamburu Hesabı",
         description: "Granül gübre hattındaki kurutma yükünü ve geometri kararını okuyun.",
-        href: "/programlar/kurutma-tamburu-hesabi",
+        href: "/programlar?modal=tambur-kapasite-hesabi",
       },
       {
         title: "Helezon Kapasite Hesabı",
@@ -898,12 +898,12 @@ export const technicalAuthorityHubs: TechnicalAuthorityHub[] = [
       {
         title: "Gübre Tesisi Kurulumu",
         description: "Granül hat yatırımlarını anahtar teslim bakışla inceleyin.",
-        href: "/hizmetler/gubre-tesisi-kurulumu",
+        href: "/sektorler/gubre-ve-granulasyon-tesisleri",
       },
       {
         title: "Organomineral Gübre Tesisi",
         description: "Organomineral ürün özelinde proses ve ekipman yaklaşımını görün.",
-        href: "/hizmetler/organomineral-gubre-tesisi",
+        href: "/sektorler/gubre-ve-granulasyon-tesisleri",
       },
     ],
     ctaText:

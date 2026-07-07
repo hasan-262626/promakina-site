@@ -40,27 +40,7 @@ export function getMachineCalculatorHref({
   const normalizedTitle = title ? normalizeMachineTitle(title) : "";
 
   if (family === "drum") {
-    if (normalizedTitle.includes("gran")) {
-      return "/programlar/tambur-hesaplari?drumType=granulasyon";
-    }
-
-    if (normalizedTitle.includes("kurut")) {
-      return "/programlar/tambur-hesaplari?drumType=kurutma";
-    }
-
-    if (normalizedTitle.includes("sogut")) {
-      return "/programlar/tambur-hesaplari?drumType=sogutma";
-    }
-
-    if (normalizedTitle.includes("kaplama")) {
-      return "/programlar/tambur-hesaplari?drumType=kaplama";
-    }
-
-    if (normalizedTitle.includes("kompost") || normalizedTitle.includes("olgun")) {
-      return "/programlar/tambur-hesaplari?drumType=kompost";
-    }
-
-    return "/programlar/tambur-hesaplari";
+    return "/programlar?modal=tambur-kapasite-hesabi";
   }
 
   if (family === "transport") {

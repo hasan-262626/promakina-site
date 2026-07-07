@@ -2810,7 +2810,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                     Genel gübre tesisi planlama ve anahtar teslim çözümler hakkında daha
                     fazla bilgi için{" "}
                     <Link
-                      href="/hizmetler/gubre-tesisi-kurulumu"
+                      href="/sektorler/gubre-ve-granulasyon-tesisleri"
                       className="font-semibold text-[#278DC0] transition hover:text-[#154764]"
                     >
                       gübre tesisi kurulumu

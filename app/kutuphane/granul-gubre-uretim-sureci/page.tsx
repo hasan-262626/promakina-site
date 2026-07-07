@@ -29,17 +29,17 @@ const relatedServices = [
   },
   {
     title: "Granül Gübre Üretim Tesisi",
-    href: "/hizmetler/granul-gubre-uretim-tesisi",
+    href: "/sektorler/gubre-ve-granulasyon-tesisleri",
     description: "Granülasyon, kurutma, soğutma ve eleme odaklı üretim hatları.",
   },
   {
     title: "Gübre Tesisi Kurulumu",
-    href: "/hizmetler/gubre-tesisi-kurulumu",
+    href: "/sektorler/gubre-ve-granulasyon-tesisleri",
     description: "Anahtar teslim mühendislik, makine imalatı ve saha kurulum çözümleri.",
   },
   {
     title: "Organomineral Gübre Tesisi",
-    href: "/hizmetler/organomineral-gubre-tesisi",
+    href: "/sektorler/gubre-ve-granulasyon-tesisleri",
     description: "Organomineral ürünlerde karışım, granülasyon ve son ürün standardı çözümleri.",
   },
 ];
@@ -67,8 +67,8 @@ const sections = [
               metresinde kalite standardını belirlemeye başlar.
             </p>
             <p>
-              Doğru başlangıç yapmak isteyen yatırımcılar için <Link href="/hizmetler/granul-gubre-uretim-tesisi" className="font-semibold text-blue-700 hover:text-blue-800">granül gübre üretim tesisi</Link> kurgusu ile
-              genel <Link href="/hizmetler/gubre-tesisi-kurulumu" className="font-semibold text-blue-700 hover:text-blue-800">gübre tesisi kurulumu</Link> yaklaşımını birlikte değerlendirmek önemlidir.
+              Doğru başlangıç yapmak isteyen yatırımcılar için <Link href="/sektorler/gubre-ve-granulasyon-tesisleri" className="font-semibold text-blue-700 hover:text-blue-800">granül gübre üretim tesisi</Link> kurgusu ile
+              genel <Link href="/sektorler/gubre-ve-granulasyon-tesisleri" className="font-semibold text-blue-700 hover:text-blue-800">gübre tesisi kurulumu</Link> yaklaşımını birlikte değerlendirmek önemlidir.
               Böylece hem mekanik hem ticari açıdan daha sağlam bir yol haritası oluşturulabilir.
             </p>
           </>
@@ -133,11 +133,11 @@ const sections = [
               Doğru makine seçimi, yalnızca ürün kalitesini değil, bakım planını ve toplam işletme maliyetini de
               belirler. Aşırı büyük seçilen ekipman ilk yatırım maliyetini yükseltirken, yetersiz seçilen sistemler
               darboğaz oluşturur. Türkiye’de yatırım kararı veren üreticiler için en güvenli yol, prosesi
-              <Link href="/hizmetler/gubre-tesisi-kurulumu" className="font-semibold text-blue-700 hover:text-blue-800"> anahtar teslim gübre tesisi kurulumu</Link> bakışıyla ele almak ve
+              <Link href="/sektorler/gubre-ve-granulasyon-tesisleri" className="font-semibold text-blue-700 hover:text-blue-800"> anahtar teslim gübre tesisi kurulumu</Link> bakışıyla ele almak ve
               ardından ürün bazlı makina seçimlerine inmektir.
             </p>
             <p>
-              Eğer reçete organik içerik de taşıyorsa, proje zaman zaman <Link href="/hizmetler/organomineral-gubre-tesisi" className="font-semibold text-blue-700 hover:text-blue-800">organomineral gübre tesisi</Link> mantığıyla
+              Eğer reçete organik içerik de taşıyorsa, proje zaman zaman <Link href="/sektorler/gubre-ve-granulasyon-tesisleri" className="font-semibold text-blue-700 hover:text-blue-800">organomineral gübre tesisi</Link> mantığıyla
               da değerlendirilmelidir. Çünkü ürün davranışındaki küçük farklar, makine seçimini ve sonuçta yatırım
               bütçesini doğrudan etkileyebilir.
             </p>

@@ -12,7 +12,7 @@ export const metadata = buildLibraryMetadata({ title, description, canonical });
 const relatedServices = [
   {
     title: "Kompost Tesisi Kurulumu",
-    href: "/hizmetler/kompost-tesisi-kurulumu",
+    href: "/sektorler/kompost-ve-organik-atik-tesisleri",
     description:
       "Kompost hatları için anahtar teslim proses kurgusu, ekipman seçimi ve saha entegrasyonu yaklaşımımızı inceleyin.",
   },
@@ -186,7 +186,7 @@ const sections = [
             </p>
             <p>
               Özellikle{" "}
-              <Link href="/hizmetler/kompost-tesisi-kurulumu" className="font-semibold text-blue-700 transition hover:text-blue-800">
+              <Link href="/sektorler/kompost-ve-organik-atik-tesisleri" className="font-semibold text-blue-700 transition hover:text-blue-800">
                 anahtar teslim kompost tesisi kurulumu
               </Link>{" "}
               projelerinde bu bütüncül yaklaşım, devreye alma süresini kısaltır ve yatırım riskini azaltır.

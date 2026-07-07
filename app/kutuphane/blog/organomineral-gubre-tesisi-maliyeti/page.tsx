@@ -12,13 +12,13 @@ export const metadata = buildLibraryMetadata({ title, description, canonical });
 const relatedServices = [
   {
     title: "Organomineral Gübre Tesisi",
-    href: "/hizmetler/organomineral-gubre-tesisi",
+    href: "/sektorler/gubre-ve-granulasyon-tesisleri",
     description:
       "Hizmet sayfasında proses akışı, makine yapısı ve kapasite kriterlerini daha geniş çerçevede inceleyin.",
   },
   {
     title: "Gübre Tesisi Kurulumu",
-    href: "/hizmetler/gubre-tesisi-kurulumu",
+    href: "/sektorler/gubre-ve-granulasyon-tesisleri",
     description:
       "Anahtar teslim gübre tesisi yaklaşımını ve farklı ürün aileleri için mühendislik yapısını görün.",
   },

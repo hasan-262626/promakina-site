@@ -134,7 +134,7 @@ export const industrialSolutionLandingConfigs: IndustrialSolutionLandingConfig[]
     ],
     relatedCalculations: [
       { title: "Helezon Kapasite Hesabı", description: "Dozajlama ve transfer hatlarında vida geometrisini hızlıca ön seçin.", href: "/programlar/helezon-kapasite-hesabi" },
-      { title: "Kurutma Tamburu Hesabı", description: "Kurutma adımında boyut, devir ve güç yaklaşımını değerlendirin.", href: "/programlar/kurutma-tamburu-hesabi" },
+      { title: "Kurutma Tamburu Hesabı", description: "Kurutma adımında boyut, devir ve güç yaklaşımını değerlendirin.", href: "/programlar?modal=tambur-kapasite-hesabi" },
       { title: "Elevatör Kapasite Hesabı", description: "Dikey granül taşıma senaryoları için kova ve hız yaklaşımı alın.", href: "/programlar/elevator-kapasite-hesabi" },
     ],
     relatedArticles: [
@@ -212,7 +212,7 @@ export const industrialSolutionLandingConfigs: IndustrialSolutionLandingConfig[]
     ],
     relatedCalculations: [
       { title: "Redler Kapasite Hesabı", description: "Nemli ve ağır akışlarda zincirli taşıma ön seçimi yapın.", href: "/programlar/redler-kapasite-hesabi" },
-      { title: "Kurutma Tamburu Hesabı", description: "Yüksek nemli son ürün senaryolarında termal yaklaşımı görün.", href: "/programlar/kurutma-tamburu-hesabi" },
+      { title: "Kurutma Tamburu Hesabı", description: "Yüksek nemli son ürün senaryolarında termal yaklaşımı görün.", href: "/programlar?modal=tambur-kapasite-hesabi" },
       { title: "Konveyör Kapasite Hesabı", description: "Yatay transfer ve stok yönetimi için hat kapasitesini değerlendirin.", href: "/programlar/konveyor-kapasite-hesabi" },
     ],
     relatedArticles: [
@@ -289,7 +289,7 @@ export const industrialSolutionLandingConfigs: IndustrialSolutionLandingConfig[]
       { title: "Cyclone / Screening Pairings", description: "Dust and classification support via related downstream equipment.", href: "/makinalar-ekipman/eleme-ve-siniflandirma-sistemleri" },
     ],
     relatedCalculations: [
-      { title: "Kurutma Tamburu Hesabı", description: "Quickly assess drum size, speed and power logic for pre-selection.", href: "/programlar/kurutma-tamburu-hesabi" },
+      { title: "Kurutma Tamburu Hesabı", description: "Quickly assess drum size, speed and power logic for pre-selection.", href: "/programlar?modal=tambur-kapasite-hesabi" },
       { title: "Konveyör Kapasite Hesabı", description: "Check material transfer synchronization around the drying system.", href: "/programlar/konveyor-kapasite-hesabi" },
       { title: "Helezon Kapasite Hesabı", description: "Evaluate controlled feed systems upstream of the dryer.", href: "/programlar/helezon-kapasite-hesabi" },
     ],
@@ -445,7 +445,7 @@ export const industrialSolutionLandingConfigs: IndustrialSolutionLandingConfig[]
       { title: "Trommel Elekler", description: "Kurutma sonrası boyut kontrolü ve ayrım için kullanılır.", href: "/makinalar-ekipman/eleme-ve-siniflandirma-sistemleri/trommel-elekler" },
     ],
     relatedCalculations: [
-      { title: "Kurutma Tamburu Hesabı", description: "Tambur çapı, boyu ve güç yaklaşımını teknik ön seçimle görün.", href: "/programlar/kurutma-tamburu-hesabi" },
+      { title: "Kurutma Tamburu Hesabı", description: "Tambur çapı, boyu ve güç yaklaşımını teknik ön seçimle görün.", href: "/programlar?modal=tambur-kapasite-hesabi" },
       { title: "Konveyör Kapasite Hesabı", description: "Besleme ve çıkış transferlerini hat kapasitesiyle eşleştirin.", href: "/programlar/konveyor-kapasite-hesabi" },
       { title: "Helezon Kapasite Hesabı", description: "Kurutma öncesi kontrollü besleme sistemlerini değerlendirin.", href: "/programlar/helezon-kapasite-hesabi" },
     ],
@@ -523,7 +523,7 @@ export const industrialSolutionLandingConfigs: IndustrialSolutionLandingConfig[]
       { title: "Vibrasyonlu Elekler", description: "Ürün boyut dağılımını kontrol etmek için sınıflandırma ekipmanı.", href: "/makinalar-ekipman/eleme-ve-siniflandirma-sistemleri/vibrasyonlu-elekler" },
     ],
     relatedCalculations: [
-      { title: "Kurutma Tamburu Hesabı", description: "Nem yükü ve termal tasarımı ön seçim düzeyinde değerlendirin.", href: "/programlar/kurutma-tamburu-hesabi" },
+      { title: "Kurutma Tamburu Hesabı", description: "Nem yükü ve termal tasarımı ön seçim düzeyinde değerlendirin.", href: "/programlar?modal=tambur-kapasite-hesabi" },
       { title: "Helezon Kapasite Hesabı", description: "Toz ve granül hammaddelerin kontrollü besleme mantığını görün.", href: "/programlar/helezon-kapasite-hesabi" },
       { title: "Konveyör Kapasite Hesabı", description: "Hat içi transfer ve stok yönetimini senkronize düşünün.", href: "/programlar/konveyor-kapasite-hesabi" },
     ],

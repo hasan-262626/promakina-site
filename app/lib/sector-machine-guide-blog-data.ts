@@ -275,7 +275,7 @@ const baseSectorMachineGuideArticles: TopicalArticle[] = [
       { label: "Tambur Sistemleri", href: "/makinalar-ekipman/tambur-sistemleri" },
       { label: "K1rıcılar ve Parçalayıcılar", href: "/makinalar-ekipman/kiricilar-ve-parcalayicilar" },
       { label: "Eleme ve S1nıflandırma Sistemleri", href: "/makinalar-ekipman/eleme-ve-siniflandirma-sistemleri" },
-      { label: "Tambur Hesapları", href: "/programlar/tambur-hesaplari" },
+      { label: "Tambur Hesapları", href: "/programlar?modal=tambur-kapasite-hesabi" },
     ],
     relatedContents: [
       machineGuideCards.thermal,
@@ -283,7 +283,7 @@ const baseSectorMachineGuideArticles: TopicalArticle[] = [
       machineGuideCards.packaging,
     ],
     relatedServices: [
-      { title: "Maden Kurutma ve Eleme Tesisi", description: "Sektöre özel tesis kurgusunu inceleyin.", href: "/hizmetler/maden-kurutma-ve-eleme-tesisi" },
+      { title: "Maden Kurutma ve Eleme Tesisi", description: "Sektöre özel tesis kurgusunu inceleyin.", href: "/sektorler/madencilik-ve-mineral-isleme" },
       { title: "Madencilik ve Mineral 0_leme", description: "Sektör çözüm yakla_1mımızı görün.", href: "/sektorler/madencilik-ve-mineral-isleme" },
     ],
     nextContent: machineGuideCards.liquidFertilizer,
@@ -416,7 +416,7 @@ const baseSectorMachineGuideArticles: TopicalArticle[] = [
       faq("0lk teklif için hangi veriler gerekir?", "ürün tipi, parti veya saatlik kapasite, ambalaj _ekli ve temel reçete mant11 ilk Ön deerlendirme için yeterli olur."),
     ],
     internalLinks: [
-      { label: "Sıvı Gübre üretim Tesisi", href: "/hizmetler/sivi-gubre-uretim-tesisi" },
+      { label: "Sıvı Gübre üretim Tesisi", href: "/sektorler/gubre-ve-granulasyon-tesisleri" },
       { label: "Reaktörler ve Tanklar", href: "/makinalar-ekipman/reaktorler-ve-tanklar" },
       { label: "Paketleme ve Dolum Sistemleri", href: "/makinalar-ekipman/paketleme-ve-dolum-sistemleri" },
       { label: "0leti_im", href: "/iletisim" },
@@ -427,7 +427,7 @@ const baseSectorMachineGuideArticles: TopicalArticle[] = [
       machineGuideCards.granularFertilizer,
     ],
     relatedServices: [
-      { title: "Sıvı Gübre üretim Tesisi", description: "Sıvı ürünlere özel tesis çözümlerini inceleyin.", href: "/hizmetler/sivi-gubre-uretim-tesisi" },
+      { title: "Sıvı Gübre üretim Tesisi", description: "Sıvı ürünlere özel tesis çözümlerini inceleyin.", href: "/sektorler/gubre-ve-granulasyon-tesisleri" },
       { title: "Kimya ve Proses Endüstrisi", description: "Sektörel çözüm yakla_1mımızı görün.", href: "/sektorler/kimya-ve-proses-endustrisi" },
     ],
     nextContent: machineGuideCards.granularFertilizer,
@@ -528,10 +528,10 @@ const baseSectorMachineGuideArticles: TopicalArticle[] = [
       faq("Organomineral gübre tesisi için ilk hangi veriler gerekir?", "Saatlik nihai kapasite, ürün tipi, hammadde listesi, granül hedefi ve saha yerle_imi ilk Ön deerlendirme için yeterlidir."),
     ],
     internalLinks: [
-      { label: "Organomineral Gübre Tesisi", href: "/hizmetler/organomineral-gubre-tesisi" },
-      { label: "Granül Gübre üretim Tesisi", href: "/hizmetler/granul-gubre-uretim-tesisi" },
+      { label: "Organomineral Gübre Tesisi", href: "/sektorler/gubre-ve-granulasyon-tesisleri" },
+      { label: "Granül Gübre üretim Tesisi", href: "/sektorler/gubre-ve-granulasyon-tesisleri" },
       { label: "Tambur Sistemleri", href: "/makinalar-ekipman/tambur-sistemleri" },
-      { label: "Tambur Hesapları", href: "/programlar/tambur-hesaplari" },
+      { label: "Tambur Hesapları", href: "/programlar?modal=tambur-kapasite-hesabi" },
     ],
     relatedContents: [
       machineGuideCards.thermal,
@@ -539,8 +539,8 @@ const baseSectorMachineGuideArticles: TopicalArticle[] = [
       machineGuideCards.conveying,
     ],
     relatedServices: [
-      { title: "Organomineral Gübre Tesisi", description: "Organomineral hat çözümlerimizi inceleyin.", href: "/hizmetler/organomineral-gubre-tesisi" },
-      { title: "Granül Gübre üretim Tesisi", description: "Granül gübre hat hizmetimizi görün.", href: "/hizmetler/granul-gubre-uretim-tesisi" },
+      { title: "Organomineral Gübre Tesisi", description: "Organomineral hat çözümlerimizi inceleyin.", href: "/sektorler/gubre-ve-granulasyon-tesisleri" },
+      { title: "Granül Gübre üretim Tesisi", description: "Granül gübre hat hizmetimizi görün.", href: "/sektorler/gubre-ve-granulasyon-tesisleri" },
     ],
     nextContent: machineGuideCards.compost,
     ctaText: COMMON_CTA_TEXT,
@@ -640,10 +640,10 @@ const baseSectorMachineGuideArticles: TopicalArticle[] = [
       faq("Kompost hattı organomineral gübre tesisine balanabilir mi?", "Evet. Uygun eleme, kurutma ve stoklama adımlarıyla kompost hattı gübre prosesine entegre edilebilir."),
     ],
     internalLinks: [
-      { label: "Kompost Tesisi Kurulumu", href: "/hizmetler/kompost-tesisi-kurulumu" },
+      { label: "Kompost Tesisi Kurulumu", href: "/sektorler/kompost-ve-organik-atik-tesisleri" },
       { label: "K1rıcılar ve Parçalayıcılar", href: "/makinalar-ekipman/kiricilar-ve-parcalayicilar" },
       { label: "Tambur Sistemleri", href: "/makinalar-ekipman/tambur-sistemleri" },
-      { label: "Tambur Hesapları", href: "/programlar/tambur-hesaplari" },
+      { label: "Tambur Hesapları", href: "/programlar?modal=tambur-kapasite-hesabi" },
     ],
     relatedContents: [
       machineGuideCards.granularFertilizer,
@@ -651,7 +651,7 @@ const baseSectorMachineGuideArticles: TopicalArticle[] = [
       machineGuideCards.biogas,
     ],
     relatedServices: [
-      { title: "Kompost Tesisi Kurulumu", description: "Kompost ve organik atık tesis hizmetimizi inceleyin.", href: "/hizmetler/kompost-tesisi-kurulumu" },
+      { title: "Kompost Tesisi Kurulumu", description: "Kompost ve organik atık tesis hizmetimizi inceleyin.", href: "/sektorler/kompost-ve-organik-atik-tesisleri" },
       { title: "Kompost ve Organik Atık Tesisleri", description: "Sektör çözüm yakla_1mımızı görün.", href: "/sektorler/kompost-ve-organik-atik-tesisleri" },
     ],
     nextContent: machineGuideCards.thermal,
@@ -753,8 +753,8 @@ const baseSectorMachineGuideArticles: TopicalArticle[] = [
     ],
     internalLinks: [
       { label: "Tambur Sistemleri", href: "/makinalar-ekipman/tambur-sistemleri" },
-      { label: "Tambur Hesapları", href: "/programlar/tambur-hesaplari" },
-      { label: "Kurutma Tamburu Hesabı", href: "/programlar/kurutma-tamburu-hesabi" },
+      { label: "Tambur Hesapları", href: "/programlar?modal=tambur-kapasite-hesabi" },
+      { label: "Kurutma Tamburu Hesabı", href: "/programlar?modal=tambur-kapasite-hesabi" },
       { label: "0leti_im", href: "/iletisim" },
     ],
     relatedContents: [
@@ -763,8 +763,8 @@ const baseSectorMachineGuideArticles: TopicalArticle[] = [
       machineGuideCards.sludge,
     ],
     relatedServices: [
-      { title: "Maden Kurutma ve Eleme Tesisi", description: "Termal proses odaklı tesis çözümlerimizi inceleyin.", href: "/hizmetler/maden-kurutma-ve-eleme-tesisi" },
-      { title: "çamur Kurutma Tesisi", description: "Yüksek nemli ürünler için saha yakla_1mımızı görün.", href: "/hizmetler/camur-kurutma-tesisi" },
+      { title: "Maden Kurutma ve Eleme Tesisi", description: "Termal proses odaklı tesis çözümlerimizi inceleyin.", href: "/sektorler/madencilik-ve-mineral-isleme" },
+      { title: "çamur Kurutma Tesisi", description: "Yüksek nemli ürünler için saha yakla_1mımızı görün.", href: "/sektorler/atik-su-camuru-ve-aritma-cozumleri" },
     ],
     nextContent: machineGuideCards.conveying,
     ctaText: COMMON_CTA_TEXT,
@@ -874,7 +874,7 @@ const baseSectorMachineGuideArticles: TopicalArticle[] = [
       machineGuideCards.packaging,
     ],
     relatedServices: [
-      { title: "Gübre Tesisi Kurulumu", description: "Dozaj ve taşıma altyapısı youn projelerimizi inceleyin.", href: "/hizmetler/gubre-tesisi-kurulumu" },
+      { title: "Gübre Tesisi Kurulumu", description: "Dozaj ve taşıma altyapısı youn projelerimizi inceleyin.", href: "/sektorler/gubre-ve-granulasyon-tesisleri" },
       { title: "Makinalar & Ekipman", description: "Tüm taşıma ekipman gruplarını görün.", href: "/makinalar-ekipman" },
     ],
     nextContent: machineGuideCards.sludge,
@@ -975,9 +975,9 @@ const baseSectorMachineGuideArticles: TopicalArticle[] = [
       faq("0lk teklif için hangi veriler gerekir?", "Saatlik tonaj, giri_ nemi, son ürün hedefi, koku/gaz beklentisi ve saha kısıtları ilk teknik deerlendirme için yeterlidir."),
     ],
     internalLinks: [
-      { label: "çamur Kurutma Tesisi", href: "/hizmetler/camur-kurutma-tesisi" },
+      { label: "çamur Kurutma Tesisi", href: "/sektorler/atik-su-camuru-ve-aritma-cozumleri" },
       { label: "Tambur Sistemleri", href: "/makinalar-ekipman/tambur-sistemleri" },
-      { label: "Tambur Hesapları", href: "/programlar/tambur-hesaplari" },
+      { label: "Tambur Hesapları", href: "/programlar?modal=tambur-kapasite-hesabi" },
     ],
     relatedContents: [
       machineGuideCards.compost,
@@ -985,7 +985,7 @@ const baseSectorMachineGuideArticles: TopicalArticle[] = [
       machineGuideCards.biogas,
     ],
     relatedServices: [
-      { title: "çamur Kurutma Tesisi", description: "Arıtma çamuru proses çözümlerimizi inceleyin.", href: "/hizmetler/camur-kurutma-tesisi" },
+      { title: "çamur Kurutma Tesisi", description: "Arıtma çamuru proses çözümlerimizi inceleyin.", href: "/sektorler/atik-su-camuru-ve-aritma-cozumleri" },
       { title: "Atık Su çamuru ve Arıtma çözümleri", description: "Sektörel yakla_1mımızı görün.", href: "/sektorler/atik-su-camuru-ve-aritma-cozumleri" },
     ],
     nextContent: machineGuideCards.biogas,
@@ -1208,7 +1208,7 @@ const baseSectorMachineGuideArticles: TopicalArticle[] = [
       machineGuideCards.conveying,
     ],
     relatedServices: [
-      { title: "Sıvı Gübre üretim Tesisi", description: "Kimyasal proses hatlarına yakın hizmetimizi inceleyin.", href: "/hizmetler/sivi-gubre-uretim-tesisi" },
+      { title: "Sıvı Gübre üretim Tesisi", description: "Kimyasal proses hatlarına yakın hizmetimizi inceleyin.", href: "/sektorler/gubre-ve-granulasyon-tesisleri" },
       { title: "Kimya ve Proses Endüstrisi", description: "Sektör çözüm yakla_1mımızı görün.", href: "/sektorler/kimya-ve-proses-endustrisi" },
     ],
     nextContent: machineGuideCards.packaging,
@@ -1319,8 +1319,8 @@ const baseSectorMachineGuideArticles: TopicalArticle[] = [
       machineGuideCards.conveying,
     ],
     relatedServices: [
-      { title: "Granül Gübre üretim Tesisi", description: "Paketleme entegrasyonu youn projelerimizi inceleyin.", href: "/hizmetler/granul-gubre-uretim-tesisi" },
-      { title: "Sıvı Gübre üretim Tesisi", description: "Sıvı dolum hat yakla_1mımızı görün.", href: "/hizmetler/sivi-gubre-uretim-tesisi" },
+      { title: "Granül Gübre üretim Tesisi", description: "Paketleme entegrasyonu youn projelerimizi inceleyin.", href: "/sektorler/gubre-ve-granulasyon-tesisleri" },
+      { title: "Sıvı Gübre üretim Tesisi", description: "Sıvı dolum hat yakla_1mımızı görün.", href: "/sektorler/gubre-ve-granulasyon-tesisleri" },
     ],
     nextContent: machineGuideCards.mining,
     ctaText: COMMON_CTA_TEXT,

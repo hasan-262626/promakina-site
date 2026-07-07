@@ -241,7 +241,7 @@ const engineeringTools = [
     title: "Tambur Hesabı",
     description:
       "Kurutma, soğutma, granülasyon ve kaplama tamburları için çap, boy, devir, doluluk ve kapasite yaklaşımını inceleyin.",
-    href: "/programlar/kurutma-tamburu-hesabi",
+    href: "/programlar?modal=tambur-kapasite-hesabi",
     buttonLabel: "Programı Aç",
   },
   {

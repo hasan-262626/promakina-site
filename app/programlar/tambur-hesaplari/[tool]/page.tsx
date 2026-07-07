@@ -8,14 +8,14 @@ type PageProps = {
 };
 
 const drumToolRedirects: Record<string, string> = {
-  "tambur-kapasite-hesabi": "/programlar/tambur-hesaplari?drumType=kurutma",
-  "tambur-devir-hesabi": "/programlar/tambur-hesaplari?drumType=kurutma",
-  "tambur-egim-doluluk-hesabi": "/programlar/tambur-hesaplari?drumType=kurutma",
-  "tambur-ring-tahrik-hesabi": "/programlar/tambur-hesaplari?drumType=kurutma",
-  "tambur-reduktor-hesabi": "/programlar/tambur-hesaplari?drumType=kurutma",
-  "tambur-fan-secimi": "/programlar/tambur-hesaplari?drumType=kurutma",
-  "tambur-siklon-secimi": "/programlar/tambur-hesaplari?drumType=kurutma",
-  "tambur-brulor-secimi": "/programlar/tambur-hesaplari?drumType=kurutma",
+  "tambur-kapasite-hesabi": "/programlar?modal=tambur-kapasite-hesabi",
+  "tambur-devir-hesabi": "/programlar?modal=tambur-devir-hesabi",
+  "tambur-egim-doluluk-hesabi": "/programlar?modal=tambur-egim-doluluk-hesabi",
+  "tambur-ring-tahrik-hesabi": "/programlar?modal=tambur-ring-tahrik-hesabi",
+  "tambur-reduktor-hesabi": "/programlar?modal=tambur-reduktor-hesabi",
+  "tambur-fan-secimi": "/programlar?modal=tambur-fan-secimi",
+  "tambur-siklon-secimi": "/programlar?modal=tambur-siklon-secimi",
+  "tambur-brulor-secimi": "/programlar?modal=tambur-brulor-secimi",
 };
 
 export function generateStaticParams() {
@@ -24,5 +24,5 @@ export function generateStaticParams() {
 
 export default async function DrumCalculatorLegacyRoute({ params }: PageProps) {
   const { tool } = await params;
-  redirect(drumToolRedirects[tool] ?? "/programlar/tambur-hesaplari");
+  redirect(drumToolRedirects[tool] ?? "/programlar?modal=tambur-kapasite-hesabi");
 }

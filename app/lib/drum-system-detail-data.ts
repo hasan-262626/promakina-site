@@ -25,7 +25,7 @@ function page(data: DrumSystemDetailPageData): DrumSystemDetailPageData {
 
 const commonHeroLinks = [
   { label: "Tambur Sistemleri", href: "/makinalar-ekipman/tambur-sistemleri" },
-  { label: "Tambur Hesapları", href: "/programlar/tambur-hesaplari" },
+  { label: "Tambur Hesapları", href: "/programlar?modal=tambur-kapasite-hesabi" },
   { label: "İletişim", href: "/iletisim" },
 ];
 
@@ -47,7 +47,7 @@ export const drumSystemDetailPages: DrumSystemDetailPageData[] = [
     readingTime: "10-12 dk",
     heroTopic: "Kapasite, nem, brülör, fan ve kurutma tasarımı",
     heroCtaLabel: "Tambur Hesabını Aç",
-    heroCtaHref: "/programlar/tambur-hesaplari",
+    heroCtaHref: "/programlar?modal=tambur-kapasite-hesabi",
     heroSecondaryLabel: "WhatsApp ile Teklif Al",
     heroSecondaryHref: "https://wa.me/905320580104",
     heroLinks: commonHeroLinks,
@@ -213,7 +213,7 @@ export const drumSystemDetailPages: DrumSystemDetailPageData[] = [
       {
         title: "Tambur Hesapları",
         description: "Kapasite, devir, eğim, fan, siklon ve brülör araçlarını açın.",
-        href: "/programlar/tambur-hesaplari",
+        href: "/programlar?modal=tambur-kapasite-hesabi",
       },
       {
         title: "Tambur Brülör Seçimi",
@@ -238,7 +238,7 @@ export const drumSystemDetailPages: DrumSystemDetailPageData[] = [
       {
         title: "Organomineral Gübre Tesisi",
         description: "Kurutma tamburunun yoğun kullanıldığı hizmet sayfasına gidin.",
-        href: "/hizmetler/organomineral-gubre-tesisi",
+        href: "/sektorler/gubre-ve-granulasyon-tesisleri",
       },
     ],
   }),
@@ -259,7 +259,7 @@ export const drumSystemDetailPages: DrumSystemDetailPageData[] = [
     readingTime: "10-11 dk",
     heroTopic: "Soğutma yükü, hava debisi, fan ve ürün kırılganlığı",
     heroCtaLabel: "Tambur Hesabını Aç",
-    heroCtaHref: "/programlar/tambur-hesaplari",
+    heroCtaHref: "/programlar?modal=tambur-kapasite-hesabi",
     heroSecondaryLabel: "WhatsApp ile Teklif Al",
     heroSecondaryHref: "https://wa.me/905320580104",
     heroLinks: commonHeroLinks,
@@ -392,7 +392,7 @@ export const drumSystemDetailPages: DrumSystemDetailPageData[] = [
       {
         title: "Tambur Hesapları",
         description: "Soğutma ve diğer tambur araçlarını tek merkezden açın.",
-        href: "/programlar/tambur-hesaplari",
+        href: "/programlar?modal=tambur-kapasite-hesabi",
       },
       {
         title: "Kurutma ve Termal Proses Makinaları",
@@ -428,7 +428,7 @@ export const drumSystemDetailPages: DrumSystemDetailPageData[] = [
     readingTime: "10-11 dk",
     heroTopic: "Nozul sistemi, homojen kaplama ve ürün kırılganlığı",
     heroCtaLabel: "Tambur Hesabını Aç",
-    heroCtaHref: "/programlar/tambur-hesaplari",
+    heroCtaHref: "/programlar?modal=tambur-kapasite-hesabi",
     heroSecondaryLabel: "WhatsApp ile Teklif Al",
     heroSecondaryHref: "https://wa.me/905320580104",
     heroLinks: commonHeroLinks,
@@ -560,7 +560,7 @@ export const drumSystemDetailPages: DrumSystemDetailPageData[] = [
       {
         title: "Tambur Hesapları",
         description: "Tambur tipi ve kapasite hesabını destekleyen araçları açın.",
-        href: "/programlar/tambur-hesaplari",
+        href: "/programlar?modal=tambur-kapasite-hesabi",
       },
       {
         title: "Tambur Sistemleri",
@@ -606,11 +606,11 @@ export const drumSystemDetailPages: DrumSystemDetailPageData[] = [
     readingTime: "10-11 dk",
     heroTopic: "Olgunlaştırma, havalandırma, koku kontrolü ve doluluk",
     heroCtaLabel: "Tambur Hesabını Aç",
-    heroCtaHref: "/programlar/tambur-hesaplari",
+    heroCtaHref: "/programlar?modal=tambur-kapasite-hesabi",
     heroSecondaryLabel: "WhatsApp ile Teklif Al",
     heroSecondaryHref: "https://wa.me/905320580104",
     heroLinks: [
-      { label: "Kompost Tesisi Kurulumu", href: "/hizmetler/kompost-tesisi-kurulumu" },
+      { label: "Kompost Tesisi Kurulumu", href: "/sektorler/kompost-ve-organik-atik-tesisleri" },
       { label: "Tambur Sistemleri", href: "/makinalar-ekipman/tambur-sistemleri" },
       { label: "Kompost ve Organik Atık Makinaları", href: "/kutuphane/blog/kompost-ve-organik-atik-makinalari" },
     ],
@@ -732,7 +732,7 @@ export const drumSystemDetailPages: DrumSystemDetailPageData[] = [
       {
         title: "Kompost Tesisi Kurulumu",
         description: "Kompost tesisinin hizmet ve yatırım yaklaşımını inceleyin.",
-        href: "/hizmetler/kompost-tesisi-kurulumu",
+        href: "/sektorler/kompost-ve-organik-atik-tesisleri",
       },
       {
         title: "Tambur Sistemleri",
@@ -747,7 +747,7 @@ export const drumSystemDetailPages: DrumSystemDetailPageData[] = [
       {
         title: "Tambur Hesapları",
         description: "Kompost tamburu dahil ilgili hesap araçlarını açın.",
-        href: "/programlar/tambur-hesaplari",
+        href: "/programlar?modal=tambur-kapasite-hesabi",
       },
       {
         title: "Tambur Eğim ve Doluluk Oranı",
@@ -757,7 +757,7 @@ export const drumSystemDetailPages: DrumSystemDetailPageData[] = [
       {
         title: "Çamur Kurutma Tesisi",
         description: "Organik ve yüksek nemli akışlarda ilgili hizmet sayfasına geçin.",
-        href: "/hizmetler/camur-kurutma-tesisi",
+        href: "/sektorler/atik-su-camuru-ve-aritma-cozumleri",
       },
     ],
   }),
@@ -778,7 +778,7 @@ export const drumSystemDetailPages: DrumSystemDetailPageData[] = [
     readingTime: "10-11 dk",
     heroTopic: "Kritik devir, çalışma devri ve ürün davranışı",
     heroCtaLabel: "Tambur Hesabını Aç",
-    heroCtaHref: "/programlar/tambur-hesaplari",
+    heroCtaHref: "/programlar?modal=tambur-kapasite-hesabi",
     heroSecondaryLabel: "WhatsApp ile Teklif Al",
     heroSecondaryHref: "https://wa.me/905320580104",
     heroLinks: commonHeroLinks,
@@ -914,7 +914,7 @@ export const drumSystemDetailPages: DrumSystemDetailPageData[] = [
       {
         title: "Tambur Hesapları",
         description: "Kapasite, eğim, doluluk ve diğer tambur araçlarını açın.",
-        href: "/programlar/tambur-hesaplari",
+        href: "/programlar?modal=tambur-kapasite-hesabi",
       },
       {
         title: "Granülatör Tamburu Seçimi",
@@ -955,7 +955,7 @@ export const drumSystemDetailPages: DrumSystemDetailPageData[] = [
     readingTime: "10-11 dk",
     heroTopic: "Doluluk, eğim, kalış süresi ve tambur hacmi",
     heroCtaLabel: "Tambur Hesabını Aç",
-    heroCtaHref: "/programlar/tambur-hesaplari",
+    heroCtaHref: "/programlar?modal=tambur-kapasite-hesabi",
     heroSecondaryLabel: "WhatsApp ile Teklif Al",
     heroSecondaryHref: "https://wa.me/905320580104",
     heroLinks: commonHeroLinks,
@@ -1096,7 +1096,7 @@ export const drumSystemDetailPages: DrumSystemDetailPageData[] = [
       {
         title: "Tambur Hesapları",
         description: "Tüm tambur hesap programlarını tek merkezden inceleyin.",
-        href: "/programlar/tambur-hesaplari",
+        href: "/programlar?modal=tambur-kapasite-hesabi",
       },
       {
         title: "Tambur Devir Hesabı",
@@ -1137,7 +1137,7 @@ export const drumSystemDetailPages: DrumSystemDetailPageData[] = [
     readingTime: "10-11 dk",
     heroTopic: "Ring yükü, gale, pinyon ve ağır hizmet tahrik",
     heroCtaLabel: "Tambur Hesabını Aç",
-    heroCtaHref: "/programlar/tambur-hesaplari",
+    heroCtaHref: "/programlar?modal=tambur-kapasite-hesabi",
     heroSecondaryLabel: "WhatsApp ile Teklif Al",
     heroSecondaryHref: "https://wa.me/905320580104",
     heroLinks: commonHeroLinks,
@@ -1255,7 +1255,7 @@ export const drumSystemDetailPages: DrumSystemDetailPageData[] = [
       {
         title: "Tambur Ring ve Tahrik Sistemi Programı",
         description: "Ön seçim ve yük yaklaşımını program üzerinden açın.",
-        href: "/programlar/tambur-hesaplari",
+        href: "/programlar?modal=tambur-kapasite-hesabi",
       },
       {
         title: "Tambur Redüktör Hesabı",
@@ -1275,7 +1275,7 @@ export const drumSystemDetailPages: DrumSystemDetailPageData[] = [
       {
         title: "Tambur Hesapları",
         description: "Kapasite, redüktör ve mekanik seçim araçlarını açın.",
-        href: "/programlar/tambur-hesaplari",
+        href: "/programlar?modal=tambur-kapasite-hesabi",
       },
       {
         title: "İletişim",
@@ -1301,7 +1301,7 @@ export const drumSystemDetailPages: DrumSystemDetailPageData[] = [
     readingTime: "10-11 dk",
     heroTopic: "Oran, tork, servis faktörü ve kalkış tipi",
     heroCtaLabel: "Tambur Hesabını Aç",
-    heroCtaHref: "/programlar/tambur-hesaplari",
+    heroCtaHref: "/programlar?modal=tambur-kapasite-hesabi",
     heroSecondaryLabel: "WhatsApp ile Teklif Al",
     heroSecondaryHref: "https://wa.me/905320580104",
     heroLinks: commonHeroLinks,
@@ -1442,7 +1442,7 @@ export const drumSystemDetailPages: DrumSystemDetailPageData[] = [
       {
         title: "Tambur Hesapları",
         description: "Tambur programlarını ve diğer hesap araçlarını açın.",
-        href: "/programlar/tambur-hesaplari",
+        href: "/programlar?modal=tambur-kapasite-hesabi",
       },
       {
         title: "Tambur Sistemleri",
@@ -1473,7 +1473,7 @@ export const drumSystemDetailPages: DrumSystemDetailPageData[] = [
     readingTime: "10-12 dk",
     heroTopic: "Hacim, doluluk, kalış süresi ve proses yükü",
     heroCtaLabel: "Tambur Hesabını Aç",
-    heroCtaHref: "/programlar/tambur-hesaplari",
+    heroCtaHref: "/programlar?modal=tambur-kapasite-hesabi",
     heroSecondaryLabel: "WhatsApp ile Teklif Al",
     heroSecondaryHref: "https://wa.me/905320580104",
     heroLinks: commonHeroLinks,
@@ -1618,7 +1618,7 @@ export const drumSystemDetailPages: DrumSystemDetailPageData[] = [
       {
         title: "Tambur Hesapları",
         description: "Tüm tambur hesap araçlarını tek merkezde görün.",
-        href: "/programlar/tambur-hesaplari",
+        href: "/programlar?modal=tambur-kapasite-hesabi",
       },
       {
         title: "Kurutma Tamburu Seçimi",

@@ -162,8 +162,8 @@ const projectDetailOverrides: Record<string, ProjectDetailContent> = {
     relatedDescription:
       "Bu proje detayını tamamlarken ilgili sektör, hizmet, makine ve teknik içerik sayfalarını da birlikte inceleyebilirsiniz.",
     relatedLinks: [
-      { label: "Organomineral Gübre Tesisi", href: "/hizmetler/organomineral-gubre-tesisi" },
-      { label: "Granül Gübre Üretim Tesisi", href: "/hizmetler/granul-gubre-uretim-tesisi" },
+      { label: "Organomineral Gübre Tesisi", href: "/sektorler/gubre-ve-granulasyon-tesisleri" },
+      { label: "Granül Gübre Üretim Tesisi", href: "/sektorler/gubre-ve-granulasyon-tesisleri" },
       { label: "Gübre Üretim Tesisleri", href: "/sektorler/gubre-ve-granulasyon-tesisleri" },
       { label: "Granülatör Tamburu", href: "/makinalar-ekipman/tambur-sistemleri/granulator-tamburu" },
       { label: "Kurutma Tamburu", href: "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburu" },
@@ -295,7 +295,7 @@ const projectDetailOverrides: Record<string, ProjectDetailContent> = {
     ],
     relatedTitle: "İlgili Sayfalar",
     relatedLinks: [
-      { label: "Granül Gübre Üretim Tesisi", href: "/hizmetler/granul-gubre-uretim-tesisi" },
+      { label: "Granül Gübre Üretim Tesisi", href: "/sektorler/gubre-ve-granulasyon-tesisleri" },
       { label: "Gübre Üretim Tesisleri", href: "/sektorler/gubre-ve-granulasyon-tesisleri" },
       { label: "Granül Gübre Üretim Süreci", href: "/kutuphane/blog/granul-gubre-uretim-sureci" },
       { label: "Tambur Sistemleri", href: "/makinalar-ekipman/tambur-sistemleri" },
@@ -387,7 +387,7 @@ const projectDetailOverrides: Record<string, ProjectDetailContent> = {
     relatedTitle: "İlgili Sayfalar",
     relatedLinks: [
       { label: "Kompost ve Organik Atık Tesisleri", href: "/sektorler/kompost-ve-organik-atik-tesisleri" },
-      { label: "Kompost Tesisi Kurulumu", href: "/hizmetler/kompost-tesisi-kurulumu" },
+      { label: "Kompost Tesisi Kurulumu", href: "/sektorler/kompost-ve-organik-atik-tesisleri" },
       { label: "Kompost Tamburu", href: "/makinalar-ekipman/tambur-sistemleri/kompost-tamburu" },
       { label: "Trommel Elekler", href: "/makinalar-ekipman/eleme-ve-siniflandirma-sistemleri/trommel-elekler" },
       { label: "Kompost Tesisi Kurulumu Blogu", href: "/kutuphane/blog/kompost-tesisi-kurulumu" },
@@ -477,8 +477,8 @@ const projectDetailOverrides: Record<string, ProjectDetailContent> = {
     relatedLinks: [
       { label: "Enerji ve Biyogaz Sistemleri", href: "/sektorler/enerji-ve-biyogaz-sistemleri" },
       { label: "Kompost ve Organik Atık Tesisleri", href: "/sektorler/kompost-ve-organik-atik-tesisleri" },
-      { label: "Kompost Tesisi Kurulumu", href: "/hizmetler/kompost-tesisi-kurulumu" },
-      { label: "Çamur Kurutma Tesisi", href: "/hizmetler/camur-kurutma-tesisi" },
+      { label: "Kompost Tesisi Kurulumu", href: "/sektorler/kompost-ve-organik-atik-tesisleri" },
+      { label: "Çamur Kurutma Tesisi", href: "/sektorler/atik-su-camuru-ve-aritma-cozumleri" },
       { label: "Biyogaz Ön İşlem", href: "/kutuphane/blog/biyogaz-on-islem" },
     ],
     faqTitle: "Biyogaz Digestat Kurutma ve Kompost Hakkında Sık Sorulan Sorular",
@@ -561,7 +561,7 @@ const projectDetailOverrides: Record<string, ProjectDetailContent> = {
     relatedTitle: "İlgili Sayfalar",
     relatedLinks: [
       { label: "Atık Su Çamuru Çözümleri", href: "/sektorler/atik-su-camuru-ve-aritma-cozumleri" },
-      { label: "Çamur Kurutma Tesisi", href: "/hizmetler/camur-kurutma-tesisi" },
+      { label: "Çamur Kurutma Tesisi", href: "/sektorler/atik-su-camuru-ve-aritma-cozumleri" },
       { label: "Kurutma Tamburu", href: "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburu" },
       { label: "Toz Toplama Sistemleri", href: "/makinalar-ekipman/toz-toplama-sistemleri" },
       { label: "Kurutma Tamburu Kapasite Hesabı", href: "/kutuphane/blog/kurutma-tamburu-kapasite-hesabi" },
@@ -646,7 +646,7 @@ const projectDetailOverrides: Record<string, ProjectDetailContent> = {
     relatedTitle: "İlgili Sayfalar",
     relatedLinks: [
       { label: "Madencilik ve Mineral İşleme", href: "/sektorler/madencilik-ve-mineral-isleme" },
-      { label: "Maden Kurutma ve Eleme Tesisi", href: "/hizmetler/maden-kurutma-ve-eleme-tesisi" },
+      { label: "Maden Kurutma ve Eleme Tesisi", href: "/sektorler/madencilik-ve-mineral-isleme" },
       { label: "Kurutma Tamburu", href: "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburu" },
       { label: "Silis Kumu Kurutma Prosesi", href: "/kutuphane/blog/silis-kumu-kurutma-prosesi" },
       { label: "Toz Toplama Sistemleri", href: "/makinalar-ekipman/toz-toplama-sistemleri" },
@@ -732,7 +732,7 @@ const projectDetailOverrides: Record<string, ProjectDetailContent> = {
     relatedLinks: [
       { label: "Reaktörler ve Tanklar", href: "/makinalar-ekipman/reaktorler-ve-tanklar" },
       { label: "Kimya ve Proses Endüstrisi", href: "/sektorler/kimya-ve-proses-endustrisi" },
-      { label: "Sıvı Gübre Üretim Tesisi", href: "/hizmetler/sivi-gubre-uretim-tesisi" },
+      { label: "Sıvı Gübre Üretim Tesisi", href: "/sektorler/gubre-ve-granulasyon-tesisleri" },
       { label: "Paketleme ve Dolum Sistemleri", href: "/makinalar-ekipman/paketleme-ve-dolum-sistemleri" },
     ],
     faqTitle: "Reaktör ve Tank Sistemleri Hakkında Sık Sorulan Sorular",

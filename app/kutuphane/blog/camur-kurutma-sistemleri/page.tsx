@@ -12,7 +12,7 @@ export const metadata = buildLibraryMetadata({ title, description, canonical });
 const relatedServices = [
   {
     title: "Kurutma Sistemleri",
-    href: "/hizmetler/kurutma-sistemleri",
+    href: "/makinalar-ekipman/tambur-sistemleri",
     description:
       "Çamur kurutma projelerinde proses mühendisliği ve ekipman kurgusunu hizmet bazlı görün.",
   },

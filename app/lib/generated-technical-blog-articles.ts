@@ -619,7 +619,7 @@ const generatedDryingArticles: TopicalArticle[] = [
     applicationText: "granül gübre, kompost, çamur ve mineral kurutma",
     productExamples: "Granül gübre, kompost, tavuk gübresi, çamur ve mineral bazlı kurutma uygulamaları",
     serviceLabel: "Kurutma tamburu imalatı",
-    serviceHref: "/hizmetler/kurutma-tamburu-imalati",
+    serviceHref: "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburu",
     ctaText: "Kurutma tamburunun çalışma prensibini kendi ürününüz için değerlendirmek isterseniz Pro Makina ile teknik görüşme planlayabilirsiniz.",
     relatedContents: [
       card("Kurutma Tamburu Kapasite Hesabı", "Nem yükü, su uçurma hesabı ve enerji ihtiyacını birlikte okuyun.", "/kutuphane/blog/kurutma-tamburu-kapasite-hesabi"),
@@ -627,7 +627,7 @@ const generatedDryingArticles: TopicalArticle[] = [
       card("Rotary Dryer Design", "Uluslararası terminolojiyle kurutma tasarım yaklaşımını inceleyin.", "/kutuphane/blog/rotary-dryer-design"),
     ],
     relatedServices: [
-      card("Kurutma Tamburu İmalatı", "Tambur sistemlerini hizmet tarafında inceleyin.", "/hizmetler/kurutma-tamburu-imalati"),
+      card("Kurutma Tamburu İmalatı", "Tambur sistemlerini hizmet tarafında inceleyin.", "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburu"),
       card("Kurutma Tamburları", "Makina kategorisinde ürün ailesini görün.", "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburu"),
     ],
   }),
@@ -641,7 +641,7 @@ const generatedDryingArticles: TopicalArticle[] = [
     applicationText: "yüksek nemli ve tozlu ürün kurutma hatları",
     productExamples: "Çamur, kompost, silis kumu, organomineral gübre ve granül ürünler",
     serviceLabel: "Kurutma tamburu imalatı",
-    serviceHref: "/hizmetler/kurutma-tamburu-imalati",
+    serviceHref: "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburu",
     ctaText: "Fan debisi, negatif basınç ve filtre hattı kurgusunu kendi ürününüz için netleştirmek isterseniz Pro Makina ile görüşebilirsiniz.",
     relatedContents: [
       card("Toz Toplama Sistemi Seçimi", "Siklon, filtre ve negatif basınç yaklaşımını detaylı görün.", "/kutuphane/blog/toz-toplama-sistemi-secimi"),
@@ -650,7 +650,7 @@ const generatedDryingArticles: TopicalArticle[] = [
     ],
     relatedServices: [
       card("Toz Toplama Sistemleri", "Siklon ve filtre omurgasını makina tarafında görün.", "/makinalar-ekipman/toz-toplama-sistemleri"),
-      card("Kurutma Tamburu İmalatı", "Tambur ve gaz hattı yaklaşımımızı hizmet sayfasında inceleyin.", "/hizmetler/kurutma-tamburu-imalati"),
+      card("Kurutma Tamburu İmalatı", "Tambur ve gaz hattı yaklaşımımızı hizmet sayfasında inceleyin.", "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburu"),
     ],
   }),
   createDryingArticle({
@@ -663,7 +663,7 @@ const generatedDryingArticles: TopicalArticle[] = [
     applicationText: "yakıt tüketiminin ve sıcaklık hassasiyetinin öne çıktığı kurutma hatları",
     productExamples: "Granül gübre, çamur, tavuk gübresi ve mineral ürün kurutma senaryoları",
     serviceLabel: "Kurutma tamburu imalatı",
-    serviceHref: "/hizmetler/kurutma-tamburu-imalati",
+    serviceHref: "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburu",
     ctaText: "Brülör kapasitesi, modülasyon ve yakıt tercihini ürününüze göre birlikte değerlendirmek için Pro Makina ile görüşebilirsiniz.",
     relatedContents: [
       card("Kurutma Tamburu Kapasite Hesabı", "Isıl yükün nasıl okunduğunu ana kapasite içeriğinde görün.", "/kutuphane/blog/kurutma-tamburu-kapasite-hesabi"),
@@ -671,8 +671,8 @@ const generatedDryingArticles: TopicalArticle[] = [
       card("Maden Kurutma Tamburu", "Sıcaklık ve aşındırıcılığın birlikte öne çıktığı uygulamayı görün.", "/kutuphane/blog/maden-kurutma-tamburu"),
     ],
     relatedServices: [
-      card("Kurutma Tamburu İmalatı", "Brülör ve tambur omurgasını hizmet tarafında inceleyin.", "/hizmetler/kurutma-tamburu-imalati"),
-      card("Silis Kumu Kurutma Tesisi", "Yakıt ve toz yükünün birlikte okunduğu özel hizmet sayfasına gidin.", "/hizmetler/silis-kumu-kurutma-tesisi"),
+      card("Kurutma Tamburu İmalatı", "Brülör ve tambur omurgasını hizmet tarafında inceleyin.", "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburu"),
+      card("Silis Kumu Kurutma Tesisi", "Yakıt ve toz yükünün birlikte okunduğu özel hizmet sayfasına gidin.", "/sektorler/madencilik-ve-mineral-isleme"),
     ],
   }),
   createDryingArticle({
@@ -685,7 +685,7 @@ const generatedDryingArticles: TopicalArticle[] = [
     applicationText: "hayvansal atıkların kurutularak depolanabilir veya gübre ön ürününe dönüştürüldüğü senaryolar",
     productExamples: "Tavuk gübresi, organik karışımlar, kompost ön ürünleri ve organomineral gübre girdileri",
     serviceLabel: "Kurutma tamburu imalatı",
-    serviceHref: "/hizmetler/kurutma-tamburu-imalati",
+    serviceHref: "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburu",
     ctaText: "Tavuk gübresi kurutma hattı için kapasite, koku kontrolü ve tambur yaklaşımını birlikte netleştirelim.",
     relatedContents: [
       card("Kompost Tesisi Kapasite Hesabı", "Organik atık akışlarında günlük tonaj ve nem yönetimi mantığını görün.", "/kutuphane/blog/kompost-tesisi-kapasite-hesabi"),
@@ -693,8 +693,8 @@ const generatedDryingArticles: TopicalArticle[] = [
       card("Büyükbaş Hayvan Gübresi Kompost", "Hayvansal akışın kompost tarafındaki yaklaşımını okuyun.", "/kutuphane/blog/buyukbas-hayvan-gubresi-kompost"),
     ],
     relatedServices: [
-      card("Kompost Tesisi Kurulumu", "Hayvansal atık değerlendirme projelerini hizmet sayfasında görün.", "/hizmetler/kompost-tesisi-kurulumu"),
-      card("Kurutma Tamburu İmalatı", "Organik kurutma omurgasını hizmet tarafında inceleyin.", "/hizmetler/kurutma-tamburu-imalati"),
+      card("Kompost Tesisi Kurulumu", "Hayvansal atık değerlendirme projelerini hizmet sayfasında görün.", "/sektorler/kompost-ve-organik-atik-tesisleri"),
+      card("Kurutma Tamburu İmalatı", "Organik kurutma omurgasını hizmet tarafında inceleyin.", "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburu"),
     ],
   }),
   createDryingArticle({
@@ -707,7 +707,7 @@ const generatedDryingArticles: TopicalArticle[] = [
     applicationText: "aşındırıcı mineral ürünlerin kurutma ve eleme hatları",
     productExamples: "Silis kumu, kalsit, feldspat, perlit ve benzeri mineral akışlar",
     serviceLabel: "Maden kurutma ve eleme tesisi",
-    serviceHref: "/hizmetler/maden-kurutma-ve-eleme-tesisi",
+    serviceHref: "/sektorler/madencilik-ve-mineral-isleme",
     ctaText: "Mineral ürününüz için doğru tambur, fan ve toz toplama omurgasını birlikte netleştirelim.",
     relatedContents: [
       card("Kum Kurutma Tesisi", "Silis ve kuvars bazlı uygulamalarda saha yaklaşımını inceleyin.", "/kutuphane/blog/kum-kurutma-tesisi"),
@@ -715,8 +715,8 @@ const generatedDryingArticles: TopicalArticle[] = [
       card("Toz Toplama Sistemi Seçimi", "Mineral hatlarda toz kontrolünün neden kritik olduğunu okuyun.", "/kutuphane/blog/toz-toplama-sistemi-secimi"),
     ],
     relatedServices: [
-      card("Maden Kurutma ve Eleme Tesisi", "Mineral prosesleri hizmet tarafında inceleyin.", "/hizmetler/maden-kurutma-ve-eleme-tesisi"),
-      card("Silis Kumu Kurutma Tesisi", "Silis ve kum uygulamaları için özel hizmet sayfasına gidin.", "/hizmetler/silis-kumu-kurutma-tesisi"),
+      card("Maden Kurutma ve Eleme Tesisi", "Mineral prosesleri hizmet tarafında inceleyin.", "/sektorler/madencilik-ve-mineral-isleme"),
+      card("Silis Kumu Kurutma Tesisi", "Silis ve kum uygulamaları için özel hizmet sayfasına gidin.", "/sektorler/madencilik-ve-mineral-isleme"),
     ],
   }),
   createDryingArticle({
@@ -729,7 +729,7 @@ const generatedDryingArticles: TopicalArticle[] = [
     applicationText: "silis kumu ve mineral bazlı yüksek toz yüklü uygulamalar",
     productExamples: "Kum, silis, kuvars ve benzeri mineral ürünler",
     serviceLabel: "Silis kumu kurutma tesisi",
-    serviceHref: "/hizmetler/silis-kumu-kurutma-tesisi",
+    serviceHref: "/sektorler/madencilik-ve-mineral-isleme",
     ctaText: "Kum kurutma hattı için tambur, siklon, filtre ve stoklama omurgasını birlikte değerlendirelim.",
     relatedContents: [
       card("Maden Kurutma Tamburu", "Mineral ürünlerde tambur seçimi mantığını detaylı görün.", "/kutuphane/blog/maden-kurutma-tamburu"),
@@ -737,7 +737,7 @@ const generatedDryingArticles: TopicalArticle[] = [
       card("Toz Toplama Sistemi Seçimi", "Siklon ve filtre tarafını daha yakından inceleyin.", "/kutuphane/blog/toz-toplama-sistemi-secimi"),
     ],
     relatedServices: [
-      card("Silis Kumu Kurutma Tesisi", "Kum kurutma çözümünü hizmet sayfasında görün.", "/hizmetler/silis-kumu-kurutma-tesisi"),
+      card("Silis Kumu Kurutma Tesisi", "Kum kurutma çözümünü hizmet sayfasında görün.", "/sektorler/madencilik-ve-mineral-isleme"),
       card("Toz Toplama Sistemleri", "Siklon ve filtre ürün ailesini makina tarafında inceleyin.", "/makinalar-ekipman/toz-toplama-sistemleri"),
     ],
   }),
@@ -760,7 +760,7 @@ const generatedDryingArticles: TopicalArticle[] = [
     ],
     relatedServices: [
       card("Enerji ve Biyogaz Sistemleri", "Digestat yönetimi ve biyogaz çözümlerini sektör sayfasında inceleyin.", "/sektorler/enerji-ve-biyogaz-sistemleri"),
-      card("Kurutma Tamburu İmalatı", "Organik akışlar için kurutma omurgasını hizmet tarafında görün.", "/hizmetler/kurutma-tamburu-imalati"),
+      card("Kurutma Tamburu İmalatı", "Organik akışlar için kurutma omurgasını hizmet tarafında görün.", "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburu"),
     ],
   }),
 ];
@@ -783,7 +783,7 @@ const generatedDrumArticles: TopicalArticle[] = [
       card("Tambur Granülatör Çalışma Prensibi", "Granül büyümesinin nasıl oluştuğunu detaylı okuyun.", "/kutuphane/blog/tambur-granulator-calisma-prensibi"),
     ],
     relatedServices: [
-      card("Granül Gübre Üretim Tesisi", "Granülatör tamburlarının kullanıldığı hizmet sayfasını inceleyin.", "/hizmetler/granul-gubre-uretim-tesisi"),
+      card("Granül Gübre Üretim Tesisi", "Granülatör tamburlarının kullanıldığı hizmet sayfasını inceleyin.", "/sektorler/gubre-ve-granulasyon-tesisleri"),
       card("Tambur Sistemleri", "Granülatör ve diğer tambur ailelerini makina tarafında görün.", "/makinalar-ekipman/tambur-sistemleri"),
     ],
   }),
@@ -804,7 +804,7 @@ const generatedDrumArticles: TopicalArticle[] = [
       card("NPK Gübre Üretimi", "Çok bileşenli granül üretim mantığını inceleyin.", "/kutuphane/blog/npk-gubre-uretimi"),
     ],
     relatedServices: [
-      card("Granül Gübre Üretim Tesisi", "Granülatör tamburu kullanan hatları hizmet tarafında inceleyin.", "/hizmetler/granul-gubre-uretim-tesisi"),
+      card("Granül Gübre Üretim Tesisi", "Granülatör tamburu kullanan hatları hizmet tarafında inceleyin.", "/sektorler/gubre-ve-granulasyon-tesisleri"),
       card("Tambur Sistemleri", "Granülasyon, kurutma ve kaplama tamburlarını aynı ailede görün.", "/makinalar-ekipman/tambur-sistemleri"),
     ],
   }),
@@ -826,7 +826,7 @@ const generatedDrumArticles: TopicalArticle[] = [
     ],
     relatedServices: [
       card("Tambur Sistemleri", "Soğutma tamburu ailelerini makina tarafında görün.", "/makinalar-ekipman/tambur-sistemleri"),
-      card("Granül Gübre Üretim Tesisi", "Kurutma ve soğutma birlikte çalışan hizmet omurgasını inceleyin.", "/hizmetler/granul-gubre-uretim-tesisi"),
+      card("Granül Gübre Üretim Tesisi", "Kurutma ve soğutma birlikte çalışan hizmet omurgasını inceleyin.", "/sektorler/gubre-ve-granulasyon-tesisleri"),
     ],
   }),
   createDrumSystemArticle({
@@ -846,7 +846,7 @@ const generatedDrumArticles: TopicalArticle[] = [
       card("Tambur Granülatör Çalışma Prensibi", "Granül oluşumundan kaplamaya uzanan süreci okuyun.", "/kutuphane/blog/tambur-granulator-calisma-prensibi"),
     ],
     relatedServices: [
-      card("Granül Gübre Üretim Tesisi", "Kaplama tamburunun kullanıldığı granül hatlarını inceleyin.", "/hizmetler/granul-gubre-uretim-tesisi"),
+      card("Granül Gübre Üretim Tesisi", "Kaplama tamburunun kullanıldığı granül hatlarını inceleyin.", "/sektorler/gubre-ve-granulasyon-tesisleri"),
       card("Tambur Sistemleri", "Kaplama ve diğer tambur tiplerini ürün ailesinde görün.", "/makinalar-ekipman/tambur-sistemleri"),
     ],
   }),
@@ -947,7 +947,7 @@ const generatedFertilizerArticles: TopicalArticle[] = [
     description: "Granül gübre üretim tesisi kurulumu; hammadde hazırlama, granülasyon, kurutma, soğutma, eleme ve paketleme açısından teknik rehber.",
     heroDescription: "Granül gübre yatırımını ürün formu, proses akışı ve makine omurgasıyla birlikte okumak isteyenler için kapsamlı teknik makale.",
     productFamily: "granül gübre üretim tesisi",
-    serviceHref: "/hizmetler/granul-gubre-uretim-tesisi",
+    serviceHref: "/sektorler/gubre-ve-granulasyon-tesisleri",
     serviceLabel: "Granül gübre üretim tesisi",
     marketText: "stoklanabilir, akışkan ve pazarlanabilir granül ürün üretimi",
     ctaText: "Granül gübre tesisi yatırımınız için proses akışı ve ekipman omurgasını birlikte planlayalım.",
@@ -957,8 +957,8 @@ const generatedFertilizerArticles: TopicalArticle[] = [
       card("Kurutma Tamburu Kapasite Hesabı", "Granül hattındaki kurutma yükünü ana hesap mantığıyla görün.", "/kutuphane/blog/kurutma-tamburu-kapasite-hesabi"),
     ],
     relatedServices: [
-      card("Granül Gübre Üretim Tesisi", "İlgili hizmet sayfasını inceleyin.", "/hizmetler/granul-gubre-uretim-tesisi"),
-      card("Gübre Tesisi Kurulumu", "Anahtar teslim gübre yatırım yaklaşımını görün.", "/hizmetler/gubre-tesisi-kurulumu"),
+      card("Granül Gübre Üretim Tesisi", "İlgili hizmet sayfasını inceleyin.", "/sektorler/gubre-ve-granulasyon-tesisleri"),
+      card("Gübre Tesisi Kurulumu", "Anahtar teslim gübre yatırım yaklaşımını görün.", "/sektorler/gubre-ve-granulasyon-tesisleri"),
     ],
   }),
   createFertilizerArticle({
@@ -968,7 +968,7 @@ const generatedFertilizerArticles: TopicalArticle[] = [
     description: "Organomineral gübre üretimi; organik fraksiyon dengesi, granülasyon, kurutma, eleme ve paketleme süreçleri için teknik rehber.",
     heroDescription: "Organik ve mineral bileşenlerin aynı hatta dengeli biçimde işlenmesi için gerekli proses ve ekipman mantığını anlatır.",
     productFamily: "organomineral gübre üretimi",
-    serviceHref: "/hizmetler/organomineral-gubre-tesisi",
+    serviceHref: "/sektorler/gubre-ve-granulasyon-tesisleri",
     serviceLabel: "Organomineral gübre tesisi",
     marketText: "stabil organik-mineral karışım, granül dayanımı ve son ürün standardı",
     ctaText: "Organomineral üretim hattınızı hammadde karakteriniz ve kapasite hedefinizle birlikte değerlendirelim.",
@@ -978,8 +978,8 @@ const generatedFertilizerArticles: TopicalArticle[] = [
       card("Granül Gübre Üretim Tesisi Nasıl Kurulur?", "Tesis kurulum mantığını bütün hat ölçeğinde inceleyin.", "/kutuphane/blog/granul-gubre-uretim-tesisi-nasil-kurulur"),
     ],
     relatedServices: [
-      card("Organomineral Gübre Tesisi", "İlgili hizmet sayfasını inceleyin.", "/hizmetler/organomineral-gubre-tesisi"),
-      card("Gübre Tesisi Kurulumu", "Genel gübre tesisi hizmet omurgasını görün.", "/hizmetler/gubre-tesisi-kurulumu"),
+      card("Organomineral Gübre Tesisi", "İlgili hizmet sayfasını inceleyin.", "/sektorler/gubre-ve-granulasyon-tesisleri"),
+      card("Gübre Tesisi Kurulumu", "Genel gübre tesisi hizmet omurgasını görün.", "/sektorler/gubre-ve-granulasyon-tesisleri"),
     ],
   }),
 ];
@@ -992,7 +992,7 @@ const generatedCompostArticles: TopicalArticle[] = [
     description: "Kompost tesisi kapasite hesabı; günlük tonaj, giriş nemi, olgunlaştırma süresi, eleme ve nihai ürün hedefi için teknik rehber.",
     heroDescription: "Kompost tesislerinde kapasite hesabının yalnız günlük tonaj değil residence time, alan ihtiyaçı ve son ürün kalitesiyle birlikte okunması gerektiğini açıklar.",
     feedstockText: "evsel, hayvansal, tarımsal ve karışık organik atık akışları",
-    serviceHref: "/hizmetler/kompost-tesisi-kurulumu",
+    serviceHref: "/sektorler/kompost-ve-organik-atik-tesisleri",
     serviceLabel: "Kompost Tesisi Kurulumu",
     ctaText: "Kompost tesisiniz için günlük tonaj, olgunlaştırma alanı ve ekipman omurgasını birlikte netleştirelim.",
     relatedContents: [
@@ -1001,7 +1001,7 @@ const generatedCompostArticles: TopicalArticle[] = [
       card("Organik Atık Tesisi", "Karışık akışların ilk hazırlık mantığını okuyun.", "/kutuphane/blog/organik-atik-tesisi"),
     ],
     relatedServices: [
-      card("Kompost Tesisi Kurulumu", "Hizmet sayfasında çözüm yaklaşımını inceleyin.", "/hizmetler/kompost-tesisi-kurulumu"),
+      card("Kompost Tesisi Kurulumu", "Hizmet sayfasında çözüm yaklaşımını inceleyin.", "/sektorler/kompost-ve-organik-atik-tesisleri"),
       card("Kompost ve Organik Atık Tesisleri", "Sektörel uygulama alanlarını görün.", "/sektorler/kompost-ve-organik-atik-tesisleri"),
     ],
   }),
@@ -1012,7 +1012,7 @@ const generatedCompostArticles: TopicalArticle[] = [
     description: "Kompost kurutma sistemi; nem düşürme, son ürün standardı, tambur seçimi, fan hattı ve koku kontrolü için teknik rehber.",
     heroDescription: "Kompost son ürününü daha stabil, depolanabilir ve ticari hale getirmek için kurutma aşamasının nasıl kurgulanacağını açıklar.",
     feedstockText: "olgunlaşmış kompost, organik son ürün ve karışım bazlı toprak düzenleyiciler",
-    serviceHref: "/hizmetler/kompost-tesisi-kurulumu",
+    serviceHref: "/sektorler/kompost-ve-organik-atik-tesisleri",
     serviceLabel: "Kompost Tesisi Kurulumu",
     ctaText: "Kompost kurutma hattınız için tambur, hava debisi ve son ürün standardını birlikte değerlendirelim.",
     relatedContents: [
@@ -1021,8 +1021,8 @@ const generatedCompostArticles: TopicalArticle[] = [
       card("Tavuk Gübresi Kurutma", "Organik kurutma tarafındaki benzer uygulamayı okuyun.", "/kutuphane/blog/tavuk-gubresi-kurutma"),
     ],
     relatedServices: [
-      card("Kompost Tesisi Kurulumu", "Kompost proses hizmetini inceleyin.", "/hizmetler/kompost-tesisi-kurulumu"),
-      card("Kurutma Tamburu İmalatı", "Kurutma ekipman omurgasını hizmet tarafında görün.", "/hizmetler/kurutma-tamburu-imalati"),
+      card("Kompost Tesisi Kurulumu", "Kompost proses hizmetini inceleyin.", "/sektorler/kompost-ve-organik-atik-tesisleri"),
+      card("Kurutma Tamburu İmalatı", "Kurutma ekipman omurgasını hizmet tarafında görün.", "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburu"),
     ],
   }),
   createCompostArticle({
@@ -1032,7 +1032,7 @@ const generatedCompostArticles: TopicalArticle[] = [
     description: "Büyükbaş hayvan gübresi kompost süreci; nem dengesi, yapılandırıcı kullanımı, olgunlaştırma ve son ürün hazırlığı için teknik rehber.",
     heroDescription: "Büyükbaş gübresi bazlı kompost projelerinde karışım hazırlığı, residence time ve saha akışını birlikte ele alan teknik içerik.",
     feedstockText: "büyükbaş hayvan gübresi ve yapısal yardımcı organik malzemeler",
-    serviceHref: "/hizmetler/kompost-tesisi-kurulumu",
+    serviceHref: "/sektorler/kompost-ve-organik-atik-tesisleri",
     serviceLabel: "Kompost Tesisi Kurulumu",
     ctaText: "Büyükbaş gübresi kompost hattı için karışım, olgunlaştırma ve eleme yaklaşımını birlikte planlayalım.",
     relatedContents: [
@@ -1041,7 +1041,7 @@ const generatedCompostArticles: TopicalArticle[] = [
       card("Kompost Üretim Süreci", "Kompost akışının genel proses mantığını okuyun.", "/kutuphane/blog/kompost-uretim-sureci"),
     ],
     relatedServices: [
-      card("Kompost Tesisi Kurulumu", "İlgili hizmet sayfasını inceleyin.", "/hizmetler/kompost-tesisi-kurulumu"),
+      card("Kompost Tesisi Kurulumu", "İlgili hizmet sayfasını inceleyin.", "/sektorler/kompost-ve-organik-atik-tesisleri"),
       card("Kompost ve Organik Atık Tesisleri", "Hayvansal atık uygulamalarını sektör sayfasında görün.", "/sektorler/kompost-ve-organik-atik-tesisleri"),
     ],
   }),
@@ -1064,7 +1064,7 @@ const generatedBiogasArticles: TopicalArticle[] = [
     ],
     relatedServices: [
       card("Enerji ve Biyogaz Sistemleri", "Sektörel çözüm yaklaşımını inceleyin.", "/sektorler/enerji-ve-biyogaz-sistemleri"),
-      card("Kompost Tesisi Kurulumu", "Digestat sonrası kompost senaryolarını görün.", "/hizmetler/kompost-tesisi-kurulumu"),
+      card("Kompost Tesisi Kurulumu", "Digestat sonrası kompost senaryolarını görün.", "/sektorler/kompost-ve-organik-atik-tesisleri"),
     ],
   }),
 ];
@@ -1077,7 +1077,7 @@ const generatedProcessArticles: TopicalArticle[] = [
     description: "Reaktör ve tank seçimi; hacim, karıştırma, kimyasal uyum, sıcaklık ve proses güvenliği için teknik rehber.",
     heroDescription: "Reaktör ve tank seçiminde hacim hesabı ile proses görevinin birlikte değerlendirilmesi gerektiğini anlatan teknik içerik.",
     processFamily: "reaktör, tank ve karıştırmalı proses sistemleri",
-    serviceHref: "/hizmetler/sivi-gubre-uretim-tesisi",
+    serviceHref: "/sektorler/gubre-ve-granulasyon-tesisleri",
     machineHref: "/makinalar-ekipman/reaktorler-ve-tanklar",
     ctaText: "Reaktör ve tank seçiminde hacim, malzeme ve karıştırma yaklaşımını birlikte netleştirelim.",
     relatedContents: [
@@ -1086,7 +1086,7 @@ const generatedProcessArticles: TopicalArticle[] = [
       card("Organomineral Gübre Üretimi", "Hibrit proseslerde reaktör ve karıştırma mantığını okuyun.", "/kutuphane/blog/organomineral-gubre-uretimi"),
     ],
     relatedServices: [
-      card("Sıvı Gübre Üretim Tesisi", "Reaktörlü üretim hizmet sayfasını inceleyin.", "/hizmetler/sivi-gubre-uretim-tesisi"),
+      card("Sıvı Gübre Üretim Tesisi", "Reaktörlü üretim hizmet sayfasını inceleyin.", "/sektorler/gubre-ve-granulasyon-tesisleri"),
       card("Reaktörler ve Tanklar", "Makina ailesini ürün tarafında görün.", "/makinalar-ekipman/reaktorler-ve-tanklar"),
     ],
   }),
@@ -1097,7 +1097,7 @@ const generatedProcessArticles: TopicalArticle[] = [
     description: "Sıvı dolum hattı seçimi; ürün viskozitesi, ambalaj tipi, dolum hızı, etiketleme ve proses bütünlüğü için teknik rehber.",
     heroDescription: "Sıvı ürünlerde dolum hattının yalnız ambalaj makinesi değil, tüm prosesin ticari çıkış kapısı olduğunu teknik olarak açıklar.",
     processFamily: "sıvı dolum, etiketleme ve son ürün hazırlama hatları",
-    serviceHref: "/hizmetler/sivi-gubre-uretim-tesisi",
+    serviceHref: "/sektorler/gubre-ve-granulasyon-tesisleri",
     machineHref: "/makinalar-ekipman/paketleme-ve-dolum-sistemleri",
     ctaText: "Sıvı dolum hattınızı ürün viskozitesi, ambalaj tipi ve hedef hızınızla birlikte değerlendirelim.",
     relatedContents: [
@@ -1107,7 +1107,7 @@ const generatedProcessArticles: TopicalArticle[] = [
     ],
     relatedServices: [
       card("Paketleme ve Dolum Sistemleri", "Dolum ve etiketleme ekipmanlarını makina tarafında görün.", "/makinalar-ekipman/paketleme-ve-dolum-sistemleri"),
-      card("Sıvı Gübre Üretim Tesisi", "Dolumla entegre üretim hizmetini inceleyin.", "/hizmetler/sivi-gubre-uretim-tesisi"),
+      card("Sıvı Gübre Üretim Tesisi", "Dolumla entegre üretim hizmetini inceleyin.", "/sektorler/gubre-ve-granulasyon-tesisleri"),
     ],
   }),
   createProcessArticle({
@@ -1137,7 +1137,7 @@ const generatedProcessArticles: TopicalArticle[] = [
     description: "Sıvı gübre üretim tesisi; reaktör, tank, filtrasyon, dolum, formülasyon ve stok yönetimi için teknik rehber.",
     heroDescription: "Sıvı gübre hatlarında proses kurgusunun yalnız karıştırma değil tank mimarisi, filtrasyon ve dolum disipliniyle birlikte kurulması gerektiğini anlatır.",
     processFamily: "sıvı gübre üretimi ve proses tankı sistemleri",
-    serviceHref: "/hizmetler/sivi-gubre-uretim-tesisi",
+    serviceHref: "/sektorler/gubre-ve-granulasyon-tesisleri",
     machineHref: "/makinalar-ekipman/reaktorler-ve-tanklar",
     ctaText: "Sıvı gübre üretim tesisinizi formülasyonunuz ve kapasite hedefinizle birlikte değerlendirelim.",
     relatedContents: [
@@ -1146,7 +1146,7 @@ const generatedProcessArticles: TopicalArticle[] = [
       card("Organomineral Gübre Üretimi", "Hibrit gübre hatlarıyla ilişkili bakış açısını görün.", "/kutuphane/blog/organomineral-gubre-uretimi"),
     ],
     relatedServices: [
-      card("Sıvı Gübre Üretim Tesisi", "İlgili hizmet sayfasını inceleyin.", "/hizmetler/sivi-gubre-uretim-tesisi"),
+      card("Sıvı Gübre Üretim Tesisi", "İlgili hizmet sayfasını inceleyin.", "/sektorler/gubre-ve-granulasyon-tesisleri"),
       card("Reaktörler ve Tanklar", "Makina ailesini ürün tarafında görün.", "/makinalar-ekipman/reaktorler-ve-tanklar"),
     ],
   }),

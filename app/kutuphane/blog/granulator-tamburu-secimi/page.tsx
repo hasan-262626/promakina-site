@@ -554,7 +554,7 @@ const relatedLinks = [
   },
   {
     title: "Tambur Hesapları",
-    href: "/programlar/tambur-hesaplari",
+    href: "/programlar?modal=tambur-kapasite-hesabi",
     description:
       "Granülasyon tamburu için kapasite, devir, eğim, doluluk ve yardımcı ekipman hesaplarını tek merkezden açın.",
   },
@@ -578,13 +578,13 @@ const relatedLinks = [
   },
   {
     title: "Organomineral Gübre Tesisi",
-    href: "/hizmetler/organomineral-gubre-tesisi",
+    href: "/sektorler/gubre-ve-granulasyon-tesisleri",
     description:
       "Organik ve mineral hammaddeli granülasyon hatlarında proses ve makine yaklaşımını hizmet tarafında inceleyin.",
   },
   {
     title: "Granül Gübre Üretim Tesisi",
-    href: "/hizmetler/granul-gubre-uretim-tesisi",
+    href: "/sektorler/gubre-ve-granulasyon-tesisleri",
     description:
       "Granül gübre üretim hattında granülatör tamburu, kurutucu, soğutucu, elek ve paketleme zincirini görün.",
   },
@@ -771,7 +771,7 @@ export default function Page() {
                 </div>
                 <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
                   <Link
-                    href="/programlar/tambur-hesaplari"
+                    href="/programlar?modal=tambur-kapasite-hesabi"
                     className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-[#278DC0] px-6 text-sm font-semibold text-white transition hover:bg-[#154764]"
                   >
                     Tambur Hesabını Aç

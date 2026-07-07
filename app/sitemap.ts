@@ -14,6 +14,7 @@ import {
 } from "./lib/machine-route-utils";
 import { topicalBlogDynamicSlugs } from "./lib/topical-authority-blog-data";
 import { projectPages } from "./lib/project-pages-data";
+import { services } from "./data";
 
 const siteUrl = "https://www.promakina.com.tr";
 
@@ -111,6 +112,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // 3) Projeler
   for (const project of projectPages) {
     routes.add(`/projeler/${project.slug}`);
+  }
+
+  // 3b) Hizmet sayfaları (dinamik [slug] üzerinden render edilir)
+  for (const service of services) {
+    routes.add(`/hizmetler/${service.slug}`);
   }
 
   // 4) Blog dinamik içerikleri

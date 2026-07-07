@@ -19,6 +19,7 @@ import {
   validateScrewConveyor,
 } from "./screw-conveyor-modal-config";
 import { TamburCapacityModalForm } from "./tambur-capacity-modal-form";
+import { TamburCapacityPremium } from "./tambur-capacity-premium";
 import { TamburSpecializedModalForm } from "./tambur-specialized-modal-form";
 import { isTamburSpecializedSlug } from "./tambur-specialized-modal-config";
 
@@ -32,6 +33,14 @@ const SCREW_SLUG = "helezon-kapasite-ve-mekanik-secim-programi";
 const TAMBUR_CAPACITY_SLUG = "tambur-kapasite-hesabi";
 
 export function ProgramModal({ slug, onClose, initialValues }: ProgramModalProps) {
+  if (slug === TAMBUR_CAPACITY_SLUG) {
+    return <TamburCapacityPremium onClose={onClose} />;
+  }
+
+  return <LegacyProgramModal slug={slug} onClose={onClose} initialValues={initialValues} />;
+}
+
+function LegacyProgramModal({ slug, onClose, initialValues }: ProgramModalProps) {
   const config = useMemo(
     () => (slug === SCREW_SLUG ? getScrewConveyorModalConfig() : getProgramModalConfig(slug)),
     [slug],

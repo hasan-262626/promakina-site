@@ -63,7 +63,7 @@ export function getBlogTopicVisuals(input: string): BlogVisualCard[] {
         description: "Granülasyon, kurutma ve eleme aynı proses dengesi içinde kurgulanır.",
         src: "/images/01-genel/gran3.jpg",
         alt: "Granül gübre üretim hattı",
-        href: "/hizmetler/granul-gubre-uretim-tesisi",
+        href: "/sektorler/gubre-ve-granulasyon-tesisleri",
       },
       {
         title: "Tambur Sistemleri",

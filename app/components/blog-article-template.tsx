@@ -114,7 +114,7 @@ function buildTopicConfig({
       "Hava debisi ve fan mantÃƒâ€žÃ‚Â±ÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒâ€žÃ‚Â±",
       "BrÃƒÆ’Ã‚Â¼lÃƒÆ’Ã‚Â¶r kapasite yaklaÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒâ€žÃ‚Â±mÃƒâ€žÃ‚Â±",
     ],
-    actionLink: "/programlar/kurutma-tamburu-hesabi",
+    actionLink: "/programlar?modal=tambur-kapasite-hesabi",
     actionButtonLabel: "Hesaplama AracÃƒâ€žÃ‚Â±nÃƒâ€žÃ‚Â± AÃƒÆ’Ã‚Â§",
     highlights: [
       {
@@ -131,7 +131,7 @@ function buildTopicConfig({
       },
     ],
     supportLinks: [
-      { label: "Kurutma Tamburu Ãƒâ€žÃ‚Â°malatÃƒâ€žÃ‚Â±", href: "/hizmetler/kurutma-tamburu-imalati" },
+      { label: "Kurutma Tamburu Ãƒâ€žÃ‚Â°malatÃƒâ€žÃ‚Â±", href: "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburu" },
       { label: "Tambur Sistemleri", href: "/makinalar-ekipman/tambur-sistemleri" },
       { label: "Kurutma TamburlarÃƒâ€žÃ‚Â±", href: "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburu" },
       { label: "Programlar", href: "/programlar" },
@@ -140,7 +140,7 @@ function buildTopicConfig({
     ctaDescription:
       "Kapasite, nem oranÃƒâ€žÃ‚Â±, ÃƒÆ’Ã‚Â¼rÃƒÆ’Ã‚Â¼n tipi, enerji tercihi ve saha koÃƒÂ¯Ã‚Â¿Ã‚Â½xullarÃƒâ€žÃ‚Â±nÃƒâ€žÃ‚Â±zÃƒâ€žÃ‚Â± paylaÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒâ€žÃ‚Â±n; kurutma tamburu, gaz hattÃƒâ€žÃ‚Â± ve yardÃƒâ€žÃ‚Â±mcÃƒâ€žÃ‚Â± ekipman yapÃƒâ€žÃ‚Â±sÃƒâ€žÃ‚Â±nÃƒâ€žÃ‚Â± birlikte deÃƒÂ¯Ã‚Â¿Ã‚Â½xerlendirelim.",
     primaryLabel: "Kurutma Tamburu Ãƒâ€žÃ‚Â°malatÃƒâ€žÃ‚Â±",
-    primaryHref: "/hizmetler/kurutma-tamburu-imalati",
+    primaryHref: "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburu",
   };
 
   const screwConfig: ArticleTopicConfig = {
@@ -274,7 +274,7 @@ function buildTopicConfig({
       "ÃƒÂ¯Ã‚Â¿Ã‚Â½SrÃƒÆ’Ã‚Â¼n hareketi",
       "Hat entegrasyonu",
     ],
-    actionLink: "/programlar/kurutma-tamburu-hesabi",
+    actionLink: "/programlar?modal=tambur-kapasite-hesabi",
     actionButtonLabel: "Hesaplama AracÃƒâ€žÃ‚Â±nÃƒâ€žÃ‚Â± AÃƒÆ’Ã‚Â§",
     highlights: [
       {
@@ -314,7 +314,7 @@ function buildTopicConfig({
       "Kurutma ve paketleme",
       "YatÃƒâ€žÃ‚Â±rÃƒâ€žÃ‚Â±m omurgasÃƒâ€žÃ‚Â±",
     ],
-    actionLink: "/hizmetler/gubre-tesisi-kurulumu",
+    actionLink: "/sektorler/gubre-ve-granulasyon-tesisleri",
     actionButtonLabel: "Ãƒâ€žÃ‚Â°lgili Hizmeti Ãƒâ€žÃ‚Â°ncele",
     highlights: [
       {
@@ -331,16 +331,16 @@ function buildTopicConfig({
       },
     ],
     supportLinks: [
-      { label: "GÃƒÆ’Ã‚Â¼bre Tesisi Kurulumu", href: "/hizmetler/gubre-tesisi-kurulumu" },
-      { label: "GranÃƒÆ’Ã‚Â¼l GÃƒÆ’Ã‚Â¼bre Tesisi", href: "/hizmetler/granul-gubre-uretim-tesisi" },
-      { label: "Organomineral GÃƒÆ’Ã‚Â¼bre Tesisi", href: "/hizmetler/organomineral-gubre-tesisi" },
+      { label: "GÃƒÆ’Ã‚Â¼bre Tesisi Kurulumu", href: "/sektorler/gubre-ve-granulasyon-tesisleri" },
+      { label: "GranÃƒÆ’Ã‚Â¼l GÃƒÆ’Ã‚Â¼bre Tesisi", href: "/sektorler/gubre-ve-granulasyon-tesisleri" },
+      { label: "Organomineral GÃƒÆ’Ã‚Â¼bre Tesisi", href: "/sektorler/gubre-ve-granulasyon-tesisleri" },
       { label: "Paketleme ve Dolum", href: "/makinalar-ekipman/paketleme-ve-dolum-sistemleri" },
     ],
     ctaTitle: "GÃƒÆ’Ã‚Â¼bre tesisi yatÃƒâ€žÃ‚Â±rÃƒâ€žÃ‚Â±mÃƒâ€žÃ‚Â±nÃƒâ€žÃ‚Â±zÃƒâ€žÃ‚Â± birlikte projelendirelim",
     ctaDescription:
       "ÃƒÂ¯Ã‚Â¿Ã‚Â½SrÃƒÆ’Ã‚Â¼n formu, kapasite hedefi, hammadde dengesi, kurutma ihtiyacÃƒâ€žÃ‚Â± ve paketleme senaryonuzu paylaÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒâ€žÃ‚Â±n; doÃƒÂ¯Ã‚Â¿Ã‚Â½xru tesis omurgasÃƒâ€žÃ‚Â±nÃƒâ€žÃ‚Â± birlikte kuralÃƒâ€žÃ‚Â±m.",
     primaryLabel: "GÃƒÆ’Ã‚Â¼bre Tesisi Kurulumu",
-    primaryHref: "/hizmetler/gubre-tesisi-kurulumu",
+    primaryHref: "/sektorler/gubre-ve-granulasyon-tesisleri",
   };
 
   const liquidConfig: ArticleTopicConfig = {
@@ -354,7 +354,7 @@ function buildTopicConfig({
       "Filtrasyon mantÃƒâ€žÃ‚Â±ÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒâ€žÃ‚Â±",
       "Dolum hattÃƒâ€žÃ‚Â± planÃƒâ€žÃ‚Â±",
     ],
-    actionLink: "/hizmetler/sivi-gubre-uretim-tesisi",
+    actionLink: "/sektorler/gubre-ve-granulasyon-tesisleri",
     actionButtonLabel: "Ãƒâ€žÃ‚Â°lgili Hizmeti Ãƒâ€žÃ‚Â°ncele",
     highlights: [
       {
@@ -371,7 +371,7 @@ function buildTopicConfig({
       },
     ],
     supportLinks: [
-      { label: "SÃƒâ€žÃ‚Â±vÃƒâ€žÃ‚Â± GÃƒÆ’Ã‚Â¼bre ÃƒÂ¯Ã‚Â¿Ã‚Â½Sretim Tesisi", href: "/hizmetler/sivi-gubre-uretim-tesisi" },
+      { label: "SÃƒâ€žÃ‚Â±vÃƒâ€žÃ‚Â± GÃƒÆ’Ã‚Â¼bre ÃƒÂ¯Ã‚Â¿Ã‚Â½Sretim Tesisi", href: "/sektorler/gubre-ve-granulasyon-tesisleri" },
       { label: "ReaktÃƒÆ’Ã‚Â¶rler ve Tanklar", href: "/makinalar-ekipman/reaktorler-ve-tanklar" },
       { label: "Paketleme ve Dolum", href: "/makinalar-ekipman/paketleme-ve-dolum-sistemleri" },
       { label: "Kimya ve Proses", href: "/sektorler/kimya-ve-proses-endustrisi" },
@@ -380,7 +380,7 @@ function buildTopicConfig({
     ctaDescription:
       "FormÃƒÆ’Ã‚Â¼lasyon, kapasite, hammaddeler, reaktÃƒÆ’Ã‚Â¶r tipi ve dolum senaryonuzu paylaÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒâ€žÃ‚Â±n; doÃƒÂ¯Ã‚Â¿Ã‚Â½xru sÃƒâ€žÃ‚Â±vÃƒâ€žÃ‚Â± proses omurgasÃƒâ€žÃ‚Â±nÃƒâ€žÃ‚Â± birlikte kuralÃƒâ€žÃ‚Â±m.",
     primaryLabel: "SÃƒâ€žÃ‚Â±vÃƒâ€žÃ‚Â± GÃƒÆ’Ã‚Â¼bre ÃƒÂ¯Ã‚Â¿Ã‚Â½Sretim Tesisi",
-    primaryHref: "/hizmetler/sivi-gubre-uretim-tesisi",
+    primaryHref: "/sektorler/gubre-ve-granulasyon-tesisleri",
   };
 
   const compostConfig: ArticleTopicConfig = {
@@ -394,7 +394,7 @@ function buildTopicConfig({
       "Eleme ve son ÃƒÆ’Ã‚Â¼rÃƒÆ’Ã‚Â¼n",
       "Koku kontrolÃƒÆ’Ã‚Â¼",
     ],
-    actionLink: "/hizmetler/kompost-tesisi-kurulumu",
+    actionLink: "/sektorler/kompost-ve-organik-atik-tesisleri",
     actionButtonLabel: "Ãƒâ€žÃ‚Â°lgili Hizmeti Ãƒâ€žÃ‚Â°ncele",
     highlights: [
       {
@@ -411,7 +411,7 @@ function buildTopicConfig({
       },
     ],
     supportLinks: [
-      { label: "Kompost Tesisi Kurulumu", href: "/hizmetler/kompost-tesisi-kurulumu" },
+      { label: "Kompost Tesisi Kurulumu", href: "/sektorler/kompost-ve-organik-atik-tesisleri" },
       { label: "Kompost ve Organik AtÃƒâ€žÃ‚Â±k", href: "/sektorler/kompost-ve-organik-atik-tesisleri" },
       { label: "Kompost Tamburu", href: "/makinalar-ekipman/tambur-sistemleri/kompost-tamburu" },
       { label: "Trommel Elekler", href: "/makinalar-ekipman/eleme-ve-siniflandirma-sistemleri/trommel-elekler" },
@@ -420,7 +420,7 @@ function buildTopicConfig({
     ctaDescription:
       "AtÃƒâ€žÃ‚Â±k tipi, gÃƒÆ’Ã‚Â¼nlÃƒÆ’Ã‚Â¼k tonaj, nem seviyesi, olgunlaÃƒÂ¯Ã‚Â¿Ã‚Â½xtÃƒâ€žÃ‚Â±rma hedefi ve saha koÃƒÂ¯Ã‚Â¿Ã‚Â½xullarÃƒâ€žÃ‚Â±nÃƒâ€žÃ‚Â±zÃƒâ€žÃ‚Â± paylaÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒâ€žÃ‚Â±n; doÃƒÂ¯Ã‚Â¿Ã‚Â½xru kompost prosesini birlikte kuralÃƒâ€žÃ‚Â±m.",
     primaryLabel: "Kompost Tesisi Kurulumu",
-    primaryHref: "/hizmetler/kompost-tesisi-kurulumu",
+    primaryHref: "/sektorler/kompost-ve-organik-atik-tesisleri",
   };
 
   const sludgeConfig: ArticleTopicConfig = {
@@ -434,7 +434,7 @@ function buildTopicConfig({
       "Koku ve toz kontrolÃƒÆ’Ã‚Â¼",
       "Enerji yaklaÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒâ€žÃ‚Â±mÃƒâ€žÃ‚Â±",
     ],
-    actionLink: "/hizmetler/camur-kurutma-tesisi",
+    actionLink: "/sektorler/atik-su-camuru-ve-aritma-cozumleri",
     actionButtonLabel: "Ãƒâ€žÃ‚Â°lgili Hizmeti Ãƒâ€žÃ‚Â°ncele",
     highlights: [
       {
@@ -451,7 +451,7 @@ function buildTopicConfig({
       },
     ],
     supportLinks: [
-      { label: "ÃƒÂ¯Ã‚Â¿Ã‚Â½!amur Kurutma Tesisi", href: "/hizmetler/camur-kurutma-tesisi" },
+      { label: "ÃƒÂ¯Ã‚Â¿Ã‚Â½!amur Kurutma Tesisi", href: "/sektorler/atik-su-camuru-ve-aritma-cozumleri" },
       { label: "AtÃƒâ€žÃ‚Â±k Su ÃƒÂ¯Ã‚Â¿Ã‚Â½!amuru ÃƒÂ¯Ã‚Â¿Ã‚Â½!ÃƒÆ’Ã‚Â¶zÃƒÆ’Ã‚Â¼mleri", href: "/sektorler/atik-su-camuru-ve-aritma-cozumleri" },
       { label: "Toz Toplama Sistemleri", href: "/makinalar-ekipman/toz-toplama-sistemleri" },
       { label: "Kurutma TamburlarÃƒâ€žÃ‚Â±", href: "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburu" },
@@ -460,7 +460,7 @@ function buildTopicConfig({
     ctaDescription:
       "GÃƒÆ’Ã‚Â¼nlÃƒÆ’Ã‚Â¼k tonaj, baÃƒÂ¯Ã‚Â¿Ã‚Â½xlangÃƒâ€žÃ‚Â±ÃƒÆ’Ã‚Â§ nemi, hedef kuruluk, koku kontrol ihtiyacÃƒâ€žÃ‚Â± ve saha koÃƒÂ¯Ã‚Â¿Ã‚Â½xullarÃƒâ€žÃ‚Â±nÃƒâ€žÃ‚Â±zÃƒâ€žÃ‚Â± paylaÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒâ€žÃ‚Â±n; doÃƒÂ¯Ã‚Â¿Ã‚Â½xru ÃƒÆ’Ã‚Â§amur kurutma omurgasÃƒâ€žÃ‚Â±nÃƒâ€žÃ‚Â± birlikte netleÃƒÂ¯Ã‚Â¿Ã‚Â½xtirelim.",
     primaryLabel: "ÃƒÂ¯Ã‚Â¿Ã‚Â½!amur Kurutma Tesisi",
-    primaryHref: "/hizmetler/camur-kurutma-tesisi",
+    primaryHref: "/sektorler/atik-su-camuru-ve-aritma-cozumleri",
   };
 
   const biogasConfig: ArticleTopicConfig = {
@@ -514,7 +514,7 @@ function buildTopicConfig({
       "Toz kontrolÃƒÆ’Ã‚Â¼",
       "Hat akÃƒâ€žÃ‚Â±ÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒâ€žÃ‚Â± planlama",
     ],
-    actionLink: "/hizmetler/maden-kurutma-ve-eleme-tesisi",
+    actionLink: "/sektorler/madencilik-ve-mineral-isleme",
     actionButtonLabel: "Ãƒâ€žÃ‚Â°lgili Hizmeti Ãƒâ€žÃ‚Â°ncele",
     highlights: [
       {
@@ -531,7 +531,7 @@ function buildTopicConfig({
       },
     ],
     supportLinks: [
-      { label: "Maden Kurutma ve Eleme", href: "/hizmetler/maden-kurutma-ve-eleme-tesisi" },
+      { label: "Maden Kurutma ve Eleme", href: "/sektorler/madencilik-ve-mineral-isleme" },
       { label: "Madencilik ve Mineral Ãƒâ€žÃ‚Â°ÃƒÂ¯Ã‚Â¿Ã‚Â½xleme", href: "/sektorler/madencilik-ve-mineral-isleme" },
       { label: "KÃƒâ€žÃ‚Â±rÃƒâ€žÃ‚Â±cÃƒâ€žÃ‚Â±lar ve ParÃƒÆ’Ã‚Â§alayÃƒâ€žÃ‚Â±cÃƒâ€žÃ‚Â±lar", href: "/makinalar-ekipman/kiricilar-ve-parcalayicilar" },
       { label: "Eleme ve SÃƒâ€žÃ‚Â±nÃƒâ€žÃ‚Â±flandÃƒâ€žÃ‚Â±rma", href: "/makinalar-ekipman/eleme-ve-siniflandirma-sistemleri" },
@@ -540,7 +540,7 @@ function buildTopicConfig({
     ctaDescription:
       "ÃƒÂ¯Ã‚Â¿Ã‚Â½SrÃƒÆ’Ã‚Â¼n tipi, tane boyutu, kapasite hedefi, nem yÃƒÆ’Ã‚Â¼kÃƒÆ’Ã‚Â¼ ve saha koÃƒÂ¯Ã‚Â¿Ã‚Â½xullarÃƒâ€žÃ‚Â±nÃƒâ€žÃ‚Â±zÃƒâ€žÃ‚Â± paylaÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒâ€žÃ‚Â±n; doÃƒÂ¯Ã‚Â¿Ã‚Â½xru maden proses omurgasÃƒâ€žÃ‚Â±nÃƒâ€žÃ‚Â± birlikte netleÃƒÂ¯Ã‚Â¿Ã‚Â½xtirelim.",
     primaryLabel: "Maden Kurutma ve Eleme Tesisi",
-    primaryHref: "/hizmetler/maden-kurutma-ve-eleme-tesisi",
+    primaryHref: "/sektorler/madencilik-ve-mineral-isleme",
   };
 
   const processConfig: ArticleTopicConfig = {
@@ -573,7 +573,7 @@ function buildTopicConfig({
     supportLinks: [
       { label: "ReaktÃƒÆ’Ã‚Â¶rler ve Tanklar", href: "/makinalar-ekipman/reaktorler-ve-tanklar" },
       { label: "Kimya ve Proses", href: "/sektorler/kimya-ve-proses-endustrisi" },
-      { label: "SÃƒâ€žÃ‚Â±vÃƒâ€žÃ‚Â± GÃƒÆ’Ã‚Â¼bre ÃƒÂ¯Ã‚Â¿Ã‚Â½Sretim Tesisi", href: "/hizmetler/sivi-gubre-uretim-tesisi" },
+      { label: "SÃƒâ€žÃ‚Â±vÃƒâ€žÃ‚Â± GÃƒÆ’Ã‚Â¼bre ÃƒÂ¯Ã‚Â¿Ã‚Â½Sretim Tesisi", href: "/sektorler/gubre-ve-granulasyon-tesisleri" },
       { label: "Programlar", href: "/programlar" },
     ],
     ctaTitle: "ReaktÃƒÆ’Ã‚Â¶r ve tank sistemi yaklaÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒâ€žÃ‚Â±mÃƒâ€žÃ‚Â±nÃƒâ€žÃ‚Â± birlikte netleÃƒÂ¯Ã‚Â¿Ã‚Â½xtirelim",

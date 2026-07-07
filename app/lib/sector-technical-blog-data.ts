@@ -222,10 +222,10 @@ const articleSpecs: ArticleSpec[] = [
       "Pro Makina ile granül gübre tesisi kurulumu",
     ],
     internalLinks: [
-      { label: "Granül Gübre üretim Tesisi", href: "/hizmetler/granul-gubre-uretim-tesisi" },
-      { label: "Organomineral Gübre Tesisi", href: "/hizmetler/organomineral-gubre-tesisi" },
+      { label: "Granül Gübre üretim Tesisi", href: "/sektorler/gubre-ve-granulasyon-tesisleri" },
+      { label: "Organomineral Gübre Tesisi", href: "/sektorler/gubre-ve-granulasyon-tesisleri" },
       { label: "Tambur Sistemleri", href: "/makinalar-ekipman/tambur-sistemleri" },
-      { label: "Tambur Hesapları", href: "/programlar/tambur-hesaplari" },
+      { label: "Tambur Hesapları", href: "/programlar?modal=tambur-kapasite-hesabi" },
     ],
     relatedSlugs: [
       "organomineral-gubre-tesisi-makine-secimi",
@@ -275,10 +275,10 @@ const articleSpecs: ArticleSpec[] = [
       "Tesis kapasitesi nasıl belirlenir?",
     ],
     internalLinks: [
-      { label: "Organomineral Gübre Tesisi", href: "/hizmetler/organomineral-gubre-tesisi" },
+      { label: "Organomineral Gübre Tesisi", href: "/sektorler/gubre-ve-granulasyon-tesisleri" },
       { label: "Tambur Sistemleri", href: "/makinalar-ekipman/tambur-sistemleri" },
       { label: "Ta_1ma Ekipmanları", href: "/makinalar-ekipman/tasima-ekipmanlari" },
-      { label: "Tambur Hesapları", href: "/programlar/tambur-hesaplari" },
+      { label: "Tambur Hesapları", href: "/programlar?modal=tambur-kapasite-hesabi" },
     ],
     relatedSlugs: [
       "granul-gubre-uretim-tesisi-nasil-kurulur",
@@ -328,7 +328,7 @@ const articleSpecs: ArticleSpec[] = [
       "Tank malzemesi seçimi",
     ],
     internalLinks: [
-      { label: "Sıvı Gübre üretim Tesisi", href: "/hizmetler/sivi-gubre-uretim-tesisi" },
+      { label: "Sıvı Gübre üretim Tesisi", href: "/sektorler/gubre-ve-granulasyon-tesisleri" },
       { label: "Reaktörler ve Tanklar", href: "/makinalar-ekipman/reaktorler-ve-tanklar" },
       { label: "Paketleme ve Dolum Sistemleri", href: "/makinalar-ekipman/paketleme-ve-dolum-sistemleri" },
     ],
@@ -380,7 +380,7 @@ const articleSpecs: ArticleSpec[] = [
       "Kompost tesislerinde otomasyon",
     ],
     internalLinks: [
-      { label: "Kompost Tesisi Kurulumu", href: "/hizmetler/kompost-tesisi-kurulumu" },
+      { label: "Kompost Tesisi Kurulumu", href: "/sektorler/kompost-ve-organik-atik-tesisleri" },
       { label: "K1rıcılar ve Parçalayıcılar", href: "/makinalar-ekipman/kiricilar-ve-parcalayicilar" },
       { label: "Tambur Sistemleri", href: "/makinalar-ekipman/tambur-sistemleri" },
       { label: "Kompost ve Organik Atık Tesisleri", href: "/sektorler/kompost-ve-organik-atik-tesisleri" },
@@ -432,7 +432,7 @@ const articleSpecs: ArticleSpec[] = [
     ],
     internalLinks: [
       { label: "Kompost ve Organik Atık Tesisleri", href: "/sektorler/kompost-ve-organik-atik-tesisleri" },
-      { label: "Kompost Tesisi Kurulumu", href: "/hizmetler/kompost-tesisi-kurulumu" },
+      { label: "Kompost Tesisi Kurulumu", href: "/sektorler/kompost-ve-organik-atik-tesisleri" },
       { label: "K1rıcılar ve Parçalayıcılar", href: "/makinalar-ekipman/kiricilar-ve-parcalayicilar" },
     ],
     relatedSlugs: [
@@ -483,8 +483,8 @@ const articleSpecs: ArticleSpec[] = [
     internalLinks: [
       { label: "Eleme ve S1nıflandırma Sistemleri", href: "/makinalar-ekipman/eleme-ve-siniflandirma-sistemleri" },
       { label: "Tambur Sistemleri", href: "/makinalar-ekipman/tambur-sistemleri" },
-      { label: "Tambur Hesapları", href: "/programlar/tambur-hesaplari" },
-      { label: "Kompost Tesisi Kurulumu", href: "/hizmetler/kompost-tesisi-kurulumu" },
+      { label: "Tambur Hesapları", href: "/programlar?modal=tambur-kapasite-hesabi" },
+      { label: "Kompost Tesisi Kurulumu", href: "/sektorler/kompost-ve-organik-atik-tesisleri" },
     ],
     relatedSlugs: [
       "kompost-tesisi-kurulumu-makine-proses-secimi",
@@ -585,7 +585,7 @@ const articleSpecs: ArticleSpec[] = [
     internalLinks: [
       { label: "Enerji ve Biyogaz Sistemleri", href: "/sektorler/enerji-ve-biyogaz-sistemleri" },
       { label: "Tambur Sistemleri", href: "/makinalar-ekipman/tambur-sistemleri" },
-      { label: "Tambur Hesapları", href: "/programlar/tambur-hesaplari" },
+      { label: "Tambur Hesapları", href: "/programlar?modal=tambur-kapasite-hesabi" },
       { label: "Kompost ve Organik Atık Tesisleri", href: "/sektorler/kompost-ve-organik-atik-tesisleri" },
     ],
     relatedSlugs: [
@@ -684,9 +684,9 @@ const articleSpecs: ArticleSpec[] = [
       "Pro Makina ile maden kurutma tesisi tasarımı",
     ],
     internalLinks: [
-      { label: "Maden Kurutma ve Eleme Tesisi", href: "/hizmetler/maden-kurutma-ve-eleme-tesisi" },
+      { label: "Maden Kurutma ve Eleme Tesisi", href: "/sektorler/madencilik-ve-mineral-isleme" },
       { label: "Tambur Sistemleri", href: "/makinalar-ekipman/tambur-sistemleri" },
-      { label: "Tambur Hesapları", href: "/programlar/tambur-hesaplari" },
+      { label: "Tambur Hesapları", href: "/programlar?modal=tambur-kapasite-hesabi" },
       { label: "Madencilik ve Mineral 0_leme", href: "/sektorler/madencilik-ve-mineral-isleme" },
     ],
     relatedSlugs: [
@@ -735,10 +735,10 @@ const articleSpecs: ArticleSpec[] = [
       "Pro Makina ile maden tesislerinde Ön mühendislik",
     ],
     internalLinks: [
-      { label: "Maden Kurutma ve Eleme Tesisi", href: "/hizmetler/maden-kurutma-ve-eleme-tesisi" },
+      { label: "Maden Kurutma ve Eleme Tesisi", href: "/sektorler/madencilik-ve-mineral-isleme" },
       { label: "K1rıcılar ve Parçalayıcılar", href: "/makinalar-ekipman/kiricilar-ve-parcalayicilar" },
       { label: "Eleme ve S1nıflandırma Sistemleri", href: "/makinalar-ekipman/eleme-ve-siniflandirma-sistemleri" },
-      { label: "Tambur Hesapları", href: "/programlar/tambur-hesaplari" },
+      { label: "Tambur Hesapları", href: "/programlar?modal=tambur-kapasite-hesabi" },
     ],
     relatedSlugs: [
       "silis-kumu-kurutma-tesisi-nasil-tasarlanir",
@@ -890,7 +890,7 @@ const articleSpecs: ArticleSpec[] = [
     ],
     internalLinks: [
       { label: "Reaktörler ve Tanklar", href: "/makinalar-ekipman/reaktorler-ve-tanklar" },
-      { label: "Sıvı Gübre üretim Tesisi", href: "/hizmetler/sivi-gubre-uretim-tesisi" },
+      { label: "Sıvı Gübre üretim Tesisi", href: "/sektorler/gubre-ve-granulasyon-tesisleri" },
       { label: "Paketleme ve Dolum Sistemleri", href: "/makinalar-ekipman/paketleme-ve-dolum-sistemleri" },
       { label: "0leti_im", href: "/iletisim" },
     ],
@@ -1142,10 +1142,10 @@ const articleSpecs: ArticleSpec[] = [
       "Pro Makina ile arıtma çamuru proses çözümleri",
     ],
     internalLinks: [
-      { label: "çamur Kurutma Tesisi", href: "/hizmetler/camur-kurutma-tesisi" },
+      { label: "çamur Kurutma Tesisi", href: "/sektorler/atik-su-camuru-ve-aritma-cozumleri" },
       { label: "Atık Su çamuru ve Arıtma çözümleri", href: "/sektorler/atik-su-camuru-ve-aritma-cozumleri" },
       { label: "Tambur Sistemleri", href: "/makinalar-ekipman/tambur-sistemleri" },
-      { label: "Tambur Hesapları", href: "/programlar/tambur-hesaplari" },
+      { label: "Tambur Hesapları", href: "/programlar?modal=tambur-kapasite-hesabi" },
     ],
     relatedSlugs: [
       "camur-kurutma-ve-koku-kontrol-sistemleri",
@@ -1193,7 +1193,7 @@ const articleSpecs: ArticleSpec[] = [
       "Pro Makina ile kapalı hat tasarımı",
     ],
     internalLinks: [
-      { label: "çamur Kurutma Tesisi", href: "/hizmetler/camur-kurutma-tesisi" },
+      { label: "çamur Kurutma Tesisi", href: "/sektorler/atik-su-camuru-ve-aritma-cozumleri" },
       { label: "Atık Su çamuru ve Arıtma çözümleri", href: "/sektorler/atik-su-camuru-ve-aritma-cozumleri" },
       { label: "Kurutma ve Termal Proses Makinaları", href: "/kutuphane/blog/kurutma-ve-termal-proses-makinalari" },
       { label: "0leti_im", href: "/iletisim" },
@@ -1244,8 +1244,8 @@ const articleSpecs: ArticleSpec[] = [
       "Pro Makina ile çamur kurutma fizibilitesi",
     ],
     internalLinks: [
-      { label: "çamur Kurutma Tesisi", href: "/hizmetler/camur-kurutma-tesisi" },
-      { label: "Tambur Hesapları", href: "/programlar/tambur-hesaplari" },
+      { label: "çamur Kurutma Tesisi", href: "/sektorler/atik-su-camuru-ve-aritma-cozumleri" },
+      { label: "Tambur Hesapları", href: "/programlar?modal=tambur-kapasite-hesabi" },
       { label: "Atık Su çamuru ve Arıtma çözümleri", href: "/sektorler/atik-su-camuru-ve-aritma-cozumleri" },
       { label: "0leti_im", href: "/iletisim" },
     ],
@@ -1629,7 +1629,7 @@ export const sectorTechnicalBlogCategories: TopicalCategory[] = categoryMeta.map
             card(
               "Tambur Hesapları",
               "Kurutma, soutma, granülasyon, kaplama ve özel tamburlar için Ön mühendislik hesabı yapın.",
-              "/programlar/tambur-hesaplari",
+              "/programlar?modal=tambur-kapasite-hesabi",
               { eyebrow: "Proses Hesabı", readingTime: "Ara?" },
             ),
             card(

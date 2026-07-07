@@ -63,7 +63,7 @@ const sections = [
             </p>
             <p>
               Eğer sistem{" "}
-              <Link href="/hizmetler/gubre-tesisi-kurulumu" className="font-semibold text-blue-700 transition hover:text-blue-800">
+              <Link href="/sektorler/gubre-ve-granulasyon-tesisleri" className="font-semibold text-blue-700 transition hover:text-blue-800">
                 gübre tesisi kurulumu
               </Link>{" "}
               veya{" "}

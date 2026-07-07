@@ -12,7 +12,7 @@ export const metadata = buildLibraryMetadata({ title, description, canonical });
 const relatedServices = [
   {
     title: "Gübre Tesisi Kurulumu",
-    href: "/hizmetler/gubre-tesisi-kurulumu",
+    href: "/sektorler/gubre-ve-granulasyon-tesisleri",
     description:
       "Granül hatlarının anahtar teslim kurulumu, proses seçimi ve saha entegrasyonu yaklaşımımızı inceleyin.",
   },
@@ -64,7 +64,7 @@ const sections = [
             <p>
               Eğer ön hazırlama zayıfsa, granülasyon aşamasında daha yüksek enerji ve daha fazla geri devir
               ihtiyacı doğar. Bu nedenle{" "}
-              <Link href="/hizmetler/gubre-tesisi-kurulumu" className="font-semibold text-blue-700 transition hover:text-blue-800">
+              <Link href="/sektorler/gubre-ve-granulasyon-tesisleri" className="font-semibold text-blue-700 transition hover:text-blue-800">
                 gübre tesisi kurulumu
               </Link>{" "}
               projelerinde dozajlama hattı genellikle en az granülasyon kadar detaylı çalışılır.
@@ -197,7 +197,7 @@ const sections = [
             </p>
             <p>
               Özellikle{" "}
-              <Link href="/hizmetler/gubre-tesisi-kurulumu" className="font-semibold text-blue-700 transition hover:text-blue-800">
+              <Link href="/sektorler/gubre-ve-granulasyon-tesisleri" className="font-semibold text-blue-700 transition hover:text-blue-800">
                 anahtar teslim gübre tesisi
               </Link>{" "}
               projelerinde bu yaklaşım, devreye alma süresini kısaltır ve ürün standardının daha hızlı

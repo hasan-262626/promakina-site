@@ -206,7 +206,7 @@ const sections = [
               rejimi okunur; sonra vida çapı, hatve, gövde tipi, tahrik paketi ve bakım yaklaşımı
               netleştirilir. Bu yöntem özellikle{" "}
               <Link
-                href="/hizmetler/gubre-tesisi-kurulumu"
+                href="/sektorler/gubre-ve-granulasyon-tesisleri"
                 className="font-semibold text-blue-700 transition hover:text-blue-800"
               >
                 gübre tesisi kurulumu

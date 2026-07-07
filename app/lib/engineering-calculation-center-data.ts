@@ -201,7 +201,7 @@ export const engineeringCalculationCards: EngineeringCalculationCard[] = [
     internalLinks: [
       ...commonLinks,
       { label: "Taşıma Ekipmanları", href: "/makinalar-ekipman/tasima-ekipmanlari" },
-      { label: "Gübre Tesisi Kurulumu", href: "/hizmetler/gubre-tesisi-kurulumu" },
+      { label: "Gübre Tesisi Kurulumu", href: "/sektorler/gubre-ve-granulasyon-tesisleri" },
     ],
   },
   {
@@ -343,7 +343,7 @@ export const engineeringCalculationCards: EngineeringCalculationCard[] = [
     internalLinks: [
       ...commonLinks,
       { label: "Taşıma Ekipmanları", href: "/makinalar-ekipman/tasima-ekipmanlari" },
-      { label: "Kompost Tesisi Kurulumu", href: "/hizmetler/kompost-tesisi-kurulumu" },
+      { label: "Kompost Tesisi Kurulumu", href: "/sektorler/kompost-ve-organik-atik-tesisleri" },
     ],
   },
   {

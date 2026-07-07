@@ -16,12 +16,12 @@ export const metadata = buildLibraryMetadata({
 const relatedServices = [
   {
     title: "Kurutma Sistemleri",
-    href: "/hizmetler/kurutma-sistemleri",
+    href: "/makinalar-ekipman/tambur-sistemleri",
     description: "Kurutma tamburu ve proses kurutma altyapıları için mühendislik çözümleri.",
   },
   {
     title: "Granül Gübre Üretim Tesisi",
-    href: "/hizmetler/granul-gubre-uretim-tesisi",
+    href: "/sektorler/gubre-ve-granulasyon-tesisleri",
     description: "Kurutma, soğutma ve granülasyon dengesini birlikte kurgulayan hat yapıları.",
   },
 ];
@@ -50,7 +50,7 @@ const sections = [
               kurutma tamburu hesabı, yalnız makine boyutlandırması değil, bir proses mühendisliği meselesidir.
             </p>
             <p>
-              Özellikle <Link href="/hizmetler/kurutma-sistemleri" className="font-semibold text-blue-700 hover:text-blue-800">kurutma sistemleri</Link> projelerinde tambur; sıcak gaz
+              Özellikle <Link href="/makinalar-ekipman/tambur-sistemleri" className="font-semibold text-blue-700 hover:text-blue-800">kurutma sistemleri</Link> projelerinde tambur; sıcak gaz
               üretimi, filtre sistemi, taşıma hatları ve son ürün hazırlama akışı ile birlikte düşünülmelidir. Doğru hesap,
               yalnız hedef nemi değil tüm tesis kararlılığını etkiler.
             </p>
@@ -107,7 +107,7 @@ const sections = [
               süreçleri açısından da belirlenmelidir.
             </p>
             <p>
-              Eğer kurutma tamburu <Link href="/hizmetler/granul-gubre-uretim-tesisi" className="font-semibold text-blue-700 hover:text-blue-800">granül gübre üretim tesisi</Link> içinde çalışıyorsa, çıkış
+              Eğer kurutma tamburu <Link href="/sektorler/gubre-ve-granulasyon-tesisleri" className="font-semibold text-blue-700 hover:text-blue-800">granül gübre üretim tesisi</Link> içinde çalışıyorsa, çıkış
               nemi sonraki soğutma ve paketleme aşamalarını doğrudan etkiler. Bu yüzden kurutma hedefi tek ekipmana değil,
               tüm hat dengesine göre tanımlanmalıdır.
             </p>

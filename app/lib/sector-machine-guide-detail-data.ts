@@ -48,7 +48,7 @@ export const sectorMachineGuideDetailPages: SectorMachineGuidePageData[] = [
     readingTime: "10-12 dk",
     heroTopic: "Kırma, eleme, kurutma ve toz kontrolü",
     heroCtaLabel: "Tambur Hesabını Aç",
-    heroCtaHref: "/programlar/tambur-hesaplari",
+    heroCtaHref: "/programlar?modal=tambur-kapasite-hesabi",
     heroSecondaryLabel: "WhatsApp ile Teklif Al",
     heroSecondaryHref: "https://wa.me/905320580104",
     heroLinks: [
@@ -217,7 +217,7 @@ export const sectorMachineGuideDetailPages: SectorMachineGuidePageData[] = [
       {
         title: "Tambur Hesapları",
         description: "Kurutma ve soğutma tamburu ön hesap araçlarını açın.",
-        href: "/programlar/tambur-hesaplari",
+        href: "/programlar?modal=tambur-kapasite-hesabi",
       },
       {
         title: "Silis Kumu Kurutma Tesisi Nasıl Tasarlanır?",
@@ -243,7 +243,7 @@ export const sectorMachineGuideDetailPages: SectorMachineGuidePageData[] = [
     readingTime: "10-12 dk",
     heroTopic: "Reaktör, tank, filtrasyon ve dolum",
     heroCtaLabel: "Sıvı Gübre Hattını İncele",
-    heroCtaHref: "/hizmetler/sivi-gubre-uretim-tesisi",
+    heroCtaHref: "/sektorler/gubre-ve-granulasyon-tesisleri",
     heroSecondaryLabel: "WhatsApp ile Teklif Al",
     heroSecondaryHref: "https://wa.me/905320580104",
     heroLinks: [
@@ -411,7 +411,7 @@ export const sectorMachineGuideDetailPages: SectorMachineGuidePageData[] = [
       {
         title: "Sıvı Gübre Üretim Tesisi",
         description: "Tesis kurulumu ve proses kurgusunu hizmet sayfasında inceleyin.",
-        href: "/hizmetler/sivi-gubre-uretim-tesisi",
+        href: "/sektorler/gubre-ve-granulasyon-tesisleri",
       },
       {
         title: "Reaktörler ve Tanklar",
@@ -447,12 +447,12 @@ export const sectorMachineGuideDetailPages: SectorMachineGuidePageData[] = [
     readingTime: "11-13 dk",
     heroTopic: "Granülasyon, kurutma, recycle ve paketleme",
     heroCtaLabel: "Tambur Hesabını Aç",
-    heroCtaHref: "/programlar/tambur-hesaplari",
+    heroCtaHref: "/programlar?modal=tambur-kapasite-hesabi",
     heroSecondaryLabel: "WhatsApp ile Teklif Al",
     heroSecondaryHref: "https://wa.me/905320580104",
     heroLinks: [
-      { label: "Organomineral Gübre Tesisi", href: "/hizmetler/organomineral-gubre-tesisi" },
-      { label: "Granül Gübre Tesisi", href: "/hizmetler/granul-gubre-uretim-tesisi" },
+      { label: "Organomineral Gübre Tesisi", href: "/sektorler/gubre-ve-granulasyon-tesisleri" },
+      { label: "Granül Gübre Tesisi", href: "/sektorler/gubre-ve-granulasyon-tesisleri" },
       { label: "Tambur Sistemleri", href: "/makinalar-ekipman/tambur-sistemleri" },
     ],
     introParagraphs: [
@@ -597,12 +597,12 @@ export const sectorMachineGuideDetailPages: SectorMachineGuidePageData[] = [
       {
         title: "Organomineral Gübre Tesisi",
         description: "Hizmet tarafında yatırım ve tesis kurulum yaklaşımını inceleyin.",
-        href: "/hizmetler/organomineral-gubre-tesisi",
+        href: "/sektorler/gubre-ve-granulasyon-tesisleri",
       },
       {
         title: "Granül Gübre Üretim Tesisi",
         description: "Granül üretim hattının hizmet kurgusunu görün.",
-        href: "/hizmetler/granul-gubre-uretim-tesisi",
+        href: "/sektorler/gubre-ve-granulasyon-tesisleri",
       },
       {
         title: "Tambur Sistemleri",
@@ -633,11 +633,11 @@ export const sectorMachineGuideDetailPages: SectorMachineGuidePageData[] = [
     readingTime: "10-12 dk",
     heroTopic: "Shredder, kompost tamburu, kurutma ve koku kontrolü",
     heroCtaLabel: "Kompost Tesisi Hizmetini Aç",
-    heroCtaHref: "/hizmetler/kompost-tesisi-kurulumu",
+    heroCtaHref: "/sektorler/kompost-ve-organik-atik-tesisleri",
     heroSecondaryLabel: "WhatsApp ile Teklif Al",
     heroSecondaryHref: "https://wa.me/905320580104",
     heroLinks: [
-      { label: "Kompost Tesisi Kurulumu", href: "/hizmetler/kompost-tesisi-kurulumu" },
+      { label: "Kompost Tesisi Kurulumu", href: "/sektorler/kompost-ve-organik-atik-tesisleri" },
       { label: "Kırıcılar ve Parçalayıcılar", href: "/makinalar-ekipman/kiricilar-ve-parcalayicilar" },
       { label: "Tambur Sistemleri", href: "/makinalar-ekipman/tambur-sistemleri" },
     ],
@@ -768,7 +768,7 @@ export const sectorMachineGuideDetailPages: SectorMachineGuidePageData[] = [
       {
         title: "Kompost Tesisi Kurulumu",
         description: "Kompost tesisi hizmet yaklaşımını ve yatırım çerçevesini görün.",
-        href: "/hizmetler/kompost-tesisi-kurulumu",
+        href: "/sektorler/kompost-ve-organik-atik-tesisleri",
       },
       {
         title: "Kırıcılar ve Parçalayıcılar",
@@ -804,7 +804,7 @@ export const sectorMachineGuideDetailPages: SectorMachineGuidePageData[] = [
     readingTime: "10-12 dk",
     heroTopic: "Kurutma tamburu, brülör, fan ve filtre",
     heroCtaLabel: "Tambur Hesabını Aç",
-    heroCtaHref: "/programlar/tambur-hesaplari",
+    heroCtaHref: "/programlar?modal=tambur-kapasite-hesabi",
     heroSecondaryLabel: "WhatsApp ile Teklif Al",
     heroSecondaryHref: "https://wa.me/905320580104",
     heroLinks: [
@@ -924,7 +924,7 @@ export const sectorMachineGuideDetailPages: SectorMachineGuidePageData[] = [
       {
         title: "Tambur Hesapları",
         description: "Kapasite, devir, fan, siklon ve brülör ön hesaplarını açın.",
-        href: "/programlar/tambur-hesaplari",
+        href: "/programlar?modal=tambur-kapasite-hesabi",
       },
       {
         title: "Brülör Seçimi",
@@ -1105,13 +1105,13 @@ export const sectorMachineGuideDetailPages: SectorMachineGuidePageData[] = [
     readingTime: "10-12 dk",
     heroTopic: "Çamur kurutma, stabilizasyon ve koku kontrolü",
     heroCtaLabel: "Çamur Kurutma Hizmetini Aç",
-    heroCtaHref: "/hizmetler/camur-kurutma-tesisi",
+    heroCtaHref: "/sektorler/atik-su-camuru-ve-aritma-cozumleri",
     heroSecondaryLabel: "WhatsApp ile Teklif Al",
     heroSecondaryHref: "https://wa.me/905320580104",
     heroLinks: [
-      { label: "Çamur Kurutma Tesisi", href: "/hizmetler/camur-kurutma-tesisi" },
+      { label: "Çamur Kurutma Tesisi", href: "/sektorler/atik-su-camuru-ve-aritma-cozumleri" },
       { label: "Tambur Sistemleri", href: "/makinalar-ekipman/tambur-sistemleri" },
-      { label: "Tambur Hesapları", href: "/programlar/tambur-hesaplari" },
+      { label: "Tambur Hesapları", href: "/programlar?modal=tambur-kapasite-hesabi" },
     ],
     introParagraphs: [
       "Arıtma çamuru, belediye çamuru ve benzeri yüksek nemli akışlarda proses davranışı granül ürünlerden çok farklıdır. Yapışkanlık, gaz çıkışı, koku, yüksek su yükü ve hijyen gereksinimi; besleme bunkerinden filtre sistemine kadar tüm makine seçimlerini değiştirir.",
@@ -1224,7 +1224,7 @@ export const sectorMachineGuideDetailPages: SectorMachineGuidePageData[] = [
       {
         title: "Çamur Kurutma Tesisi",
         description: "Hizmet tarafında proses ve yatırım yaklaşımını inceleyin.",
-        href: "/hizmetler/camur-kurutma-tesisi",
+        href: "/sektorler/atik-su-camuru-ve-aritma-cozumleri",
       },
       {
         title: "Tambur Sistemleri",
@@ -1422,7 +1422,7 @@ export const sectorMachineGuideDetailPages: SectorMachineGuidePageData[] = [
     heroLinks: [
       { label: "Reaktörler ve Tanklar", href: "/makinalar-ekipman/reaktorler-ve-tanklar" },
       { label: "İletişim", href: "/iletisim" },
-      { label: "Sıvı Gübre Üretim Tesisi", href: "/hizmetler/sivi-gubre-uretim-tesisi" },
+      { label: "Sıvı Gübre Üretim Tesisi", href: "/sektorler/gubre-ve-granulasyon-tesisleri" },
     ],
     introParagraphs: [
       "Kimyasal proses hatlarında makine seçimi doğrudan ürün güvenliği ve proses tekrar edilebilirliği ile ilişkilidir. Reaktör, tank, dozaj pompası, eşanjör ve filtre gibi ekipmanlar yanlış bir malzeme veya kapasite yaklaşımıyla seçildiğinde kalite problemleri kadar güvenlik riskleri de oluşur.",

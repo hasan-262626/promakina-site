@@ -70,7 +70,7 @@ const sections = [
           <>
             <p>
               Bu sayfa, yatırımcıların ve teknik ekiplerin en sık sorduğu başlıkları kısa ve net yanıtlarla toplar.
-              Soruların büyük bölümü; <Link href="/hizmetler/gubre-tesisi-kurulumu" className="font-semibold text-blue-700 hover:text-blue-800">gübre tesisi kurulumu</Link>, <Link href="/hizmetler/organomineral-gubre-tesisi" className="font-semibold text-blue-700 hover:text-blue-800">organomineral gübre tesisi</Link>, <Link href="/hizmetler/granul-gubre-uretim-tesisi" className="font-semibold text-blue-700 hover:text-blue-800">granül gübre üretim tesisi</Link> ve <Link href="/hizmetler/sivi-gubre-uretim-tesisi" className="font-semibold text-blue-700 hover:text-blue-800">sıvı gübre üretim tesisi</Link> kararları etrafında şekillenir.
+              Soruların büyük bölümü; <Link href="/sektorler/gubre-ve-granulasyon-tesisleri" className="font-semibold text-blue-700 hover:text-blue-800">gübre tesisi kurulumu</Link>, <Link href="/sektorler/gubre-ve-granulasyon-tesisleri" className="font-semibold text-blue-700 hover:text-blue-800">organomineral gübre tesisi</Link>, <Link href="/sektorler/gubre-ve-granulasyon-tesisleri" className="font-semibold text-blue-700 hover:text-blue-800">granül gübre üretim tesisi</Link> ve <Link href="/sektorler/gubre-ve-granulasyon-tesisleri" className="font-semibold text-blue-700 hover:text-blue-800">sıvı gübre üretim tesisi</Link> kararları etrafında şekillenir.
             </p>
             <p>
               Kısa cevap yapısı, kullanıcıların aradığı bilgiye hızlı ulaşmasını sağlar. Daha detaylı teknik veya ticari değerlendirme gerektiğinde ilgili hizmet sayfasına geçmek en doğru adımdır.

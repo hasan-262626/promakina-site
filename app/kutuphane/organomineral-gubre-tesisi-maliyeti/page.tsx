@@ -33,17 +33,17 @@ const relatedServices = [
   },
   {
     title: "Gübre Tesisi Kurulumu",
-    href: "/hizmetler/gubre-tesisi-kurulumu",
+    href: "/sektorler/gubre-ve-granulasyon-tesisleri",
     description: "Anahtar teslim yatırım planı, proses kurgusu ve saha kurulumu çözümleri.",
   },
   {
     title: "Organomineral Gübre Tesisi",
-    href: "/hizmetler/organomineral-gubre-tesisi",
+    href: "/sektorler/gubre-ve-granulasyon-tesisleri",
     description: "Organik ve mineral girdilere uygun proses ve makina altyapısı.",
   },
   {
     title: "Granül Gübre Üretim Tesisi",
-    href: "/hizmetler/granul-gubre-uretim-tesisi",
+    href: "/sektorler/gubre-ve-granulasyon-tesisleri",
     description: "Granül ürünlerde kurutma, soğutma ve eleme dengesi odaklı hat yapısı.",
   },
 ];
@@ -59,7 +59,7 @@ const sections = [
             <p>
               Organomineral gübre tesisi maliyeti tek bir rakamla ifade edilebilecek sabit bir kalem değildir. Türkiye
               pazarında yatırımcıların en sık yaptığı hata, yalnızca ana makinaların teklif bedeline bakarak toplam
-              proje bütçesi hakkında karar vermektir. Oysa bir <Link href="/hizmetler/organomineral-gubre-tesisi" className="font-semibold text-blue-700 hover:text-blue-800">organomineral gübre tesisi</Link> içinde
+              proje bütçesi hakkında karar vermektir. Oysa bir <Link href="/sektorler/gubre-ve-granulasyon-tesisleri" className="font-semibold text-blue-700 hover:text-blue-800">organomineral gübre tesisi</Link> içinde
               hammadde kabulü, depolama, dozajlama, karıştırma, granülasyon, kurutma, eleme, paketleme, toz kontrolü,
               çelik konstrüksiyon, otomasyon ve saha montajı gibi birçok başlık birlikte değerlendirilmelidir.
             </p>
@@ -92,7 +92,7 @@ const sections = [
               gibi okunmalıdır.
             </p>
             <p>
-              Doğru yaklaşım, ilk aşamada <Link href="/hizmetler/gubre-tesisi-kurulumu" className="font-semibold text-blue-700 hover:text-blue-800">gübre tesisi kurulumu</Link> bakışıyla genel proje kurgusunu
+              Doğru yaklaşım, ilk aşamada <Link href="/sektorler/gubre-ve-granulasyon-tesisleri" className="font-semibold text-blue-700 hover:text-blue-800">gübre tesisi kurulumu</Link> bakışıyla genel proje kurgusunu
               netleştirmek, ardından organomineral ürünün özel ihtiyaçlarına göre sistem detaylandırmaktır. Bu yöntem,
               hem gereksiz makine yatırımını azaltır hem de ileride çıkabilecek revizyon maliyetlerini düşürür.
             </p>
@@ -142,7 +142,7 @@ const sections = [
               ticari sonuç üzerinde doğrudan etkilidir.
             </p>
             <p>
-              Eğer tesis aynı zamanda <Link href="/hizmetler/granul-gubre-uretim-tesisi" className="font-semibold text-blue-700 hover:text-blue-800">granül gübre üretim tesisi</Link> mantığıyla daha yüksek standartlı
+              Eğer tesis aynı zamanda <Link href="/sektorler/gubre-ve-granulasyon-tesisleri" className="font-semibold text-blue-700 hover:text-blue-800">granül gübre üretim tesisi</Link> mantığıyla daha yüksek standartlı
               ürün verecekse eleme ve son ürün hazırlama tarafındaki ihtiyaçlar da artar. Bu nedenle yatırım hesabı
               yapılırken yalnızca “üretir miyiz?” sorusu değil, “satılabilir ve tekrarlanabilir standartta üretir
               miyiz?” sorusu sorulmalıdır.
@@ -224,8 +224,8 @@ const sections = [
               daha net görür.
             </p>
             <p>
-              Pro Makina olarak yatırımcıların önce konuya genel açıdan <Link href="/hizmetler/gubre-tesisi-kurulumu" className="font-semibold text-blue-700 hover:text-blue-800">gübre tesisi kurulumu</Link> perspektifiyle
-              bakmasını, ardından ürün bazında <Link href="/hizmetler/organomineral-gubre-tesisi" className="font-semibold text-blue-700 hover:text-blue-800">organomineral gübre tesisi</Link> detaylarına inmesini
+              Pro Makina olarak yatırımcıların önce konuya genel açıdan <Link href="/sektorler/gubre-ve-granulasyon-tesisleri" className="font-semibold text-blue-700 hover:text-blue-800">gübre tesisi kurulumu</Link> perspektifiyle
+              bakmasını, ardından ürün bazında <Link href="/sektorler/gubre-ve-granulasyon-tesisleri" className="font-semibold text-blue-700 hover:text-blue-800">organomineral gübre tesisi</Link> detaylarına inmesini
               öneriyoruz. Böylece maliyet hesabı daha gerçekçi, yatırım kararı daha güvenli olur.
             </p>
           </>

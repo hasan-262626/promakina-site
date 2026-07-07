@@ -75,22 +75,22 @@ export const libraryCategoryConfig: Record<
 const fertilizerServiceLinks: LibraryServiceLink[] = [
   {
     title: "Gübre Tesisi Kurulumu",
-    href: "/hizmetler/gubre-tesisi-kurulumu",
+    href: "/sektorler/gubre-ve-granulasyon-tesisleri",
     description: "Anahtar teslim gübre yatırımları için genel mühendislik ve kurulum yaklaşımı.",
   },
   {
     title: "Organomineral Gübre Tesisi Kurulumu",
-    href: "/hizmetler/organomineral-gubre-tesisi",
+    href: "/sektorler/gubre-ve-granulasyon-tesisleri",
     description: "Organik ve mineral hammaddelerin dengeli işlendiği üretim tesisleri.",
   },
   {
     title: "Granül Gübre Üretim Tesisi",
-    href: "/hizmetler/granul-gubre-uretim-tesisi",
+    href: "/sektorler/gubre-ve-granulasyon-tesisleri",
     description: "Granülasyon, kurutma, soğutma ve eleme odaklı yüksek verimli üretim hatları.",
   },
   {
     title: "Sıvı Gübre Üretim Tesisi",
-    href: "/hizmetler/sivi-gubre-uretim-tesisi",
+    href: "/sektorler/gubre-ve-granulasyon-tesisleri",
     description: "Sıvı organomineral, amino asitli ve NPK ürünler için proses ve dolum altyapısı.",
   },
 ];
@@ -98,12 +98,12 @@ const fertilizerServiceLinks: LibraryServiceLink[] = [
 const compostServiceLinks: LibraryServiceLink[] = [
   {
     title: "Kompost Tesisi Kurulumu",
-    href: "/hizmetler/kompost-tesisi-kurulumu",
+    href: "/sektorler/kompost-ve-organik-atik-tesisleri",
     description: "Organik atıkların kontrollü işlenmesi ve son ürün hazırlama çözümleri.",
   },
   {
     title: "Gübre Tesisi Kurulumu",
-    href: "/hizmetler/gubre-tesisi-kurulumu",
+    href: "/sektorler/gubre-ve-granulasyon-tesisleri",
     description: "Komposttan gübreye uzanan yatırım yapıları için bütünleşik yaklaşım.",
   },
 ];
@@ -111,12 +111,12 @@ const compostServiceLinks: LibraryServiceLink[] = [
 const generalServiceLinks: LibraryServiceLink[] = [
   {
     title: "Gübre Tesisi Kurulumu",
-    href: "/hizmetler/gubre-tesisi-kurulumu",
+    href: "/sektorler/gubre-ve-granulasyon-tesisleri",
     description: "Anahtar teslim üretim tesisi yatırımlarında proje, imalat ve kurulum çözümleri.",
   },
   {
     title: "Kompost Tesisi Kurulumu",
-    href: "/hizmetler/kompost-tesisi-kurulumu",
+    href: "/sektorler/kompost-ve-organik-atik-tesisleri",
     description: "Organik atık işleme ve kompost üretim tesisleri için saha odaklı mühendislik.",
   },
 ];

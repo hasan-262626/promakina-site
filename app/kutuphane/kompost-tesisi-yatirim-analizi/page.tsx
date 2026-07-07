@@ -15,17 +15,17 @@ export const metadata = buildLibraryMetadata({
 const relatedServices = [
   {
     title: "Kompost Tesisi Kurulumu",
-    href: "/hizmetler/kompost-tesisi-kurulumu",
+    href: "/sektorler/kompost-ve-organik-atik-tesisleri",
     description: "Organik atık işleme ve son ürün hazırlama için anahtar teslim kompost çözümleri.",
   },
   {
     title: "Gübre Tesisi Kurulumu",
-    href: "/hizmetler/gubre-tesisi-kurulumu",
+    href: "/sektorler/gubre-ve-granulasyon-tesisleri",
     description: "Komposttan gübreye uzanan entegre üretim yapıları için tesis planlama yaklaşımı.",
   },
   {
     title: "Organomineral Gübre Tesisi",
-    href: "/hizmetler/organomineral-gubre-tesisi",
+    href: "/sektorler/gubre-ve-granulasyon-tesisleri",
     description: "Kompost bazlı girdilerin mineral bileşenlerle işlendiği üretim tesisleri.",
   },
 ];
@@ -73,8 +73,8 @@ const sections = [
               bertaraf tasarrufu üzerinden de okunmalıdır.
             </p>
             <p>
-              Bazı projelerde kompost tesisi, doğrudan <Link href="/hizmetler/kompost-tesisi-kurulumu" className="font-semibold text-blue-700 hover:text-blue-800">kompost tesisi kurulumu</Link> mantığıyla bağımsız bir
-              hat olarak ele alınır. Bazı projelerde ise sonrasında <Link href="/hizmetler/organomineral-gubre-tesisi" className="font-semibold text-blue-700 hover:text-blue-800">organomineral gübre tesisi</Link> veya başka değer
+              Bazı projelerde kompost tesisi, doğrudan <Link href="/sektorler/kompost-ve-organik-atik-tesisleri" className="font-semibold text-blue-700 hover:text-blue-800">kompost tesisi kurulumu</Link> mantığıyla bağımsız bir
+              hat olarak ele alınır. Bazı projelerde ise sonrasında <Link href="/sektorler/gubre-ve-granulasyon-tesisleri" className="font-semibold text-blue-700 hover:text-blue-800">organomineral gübre tesisi</Link> veya başka değer
               artırıcı hatlara bağlanabilir. Bu ikinci model, kompostun yalnızca son ürün değil aynı zamanda bir ara girdi
               olarak da değerlendirilmesini sağlar. Dolayısıyla yatırım analizi, gelecekteki entegrasyon ihtimallerini de
               hesaba katmalıdır.
@@ -125,7 +125,7 @@ const sections = [
             <p>
               Bu noktada bazı projelerde kompost üretimi sonrasında ürünün başka bir değer zincirine girmesi planlanır. Eğer
               kompost ileride gübrelemede kullanılacaksa, tesisin son ürün hazırlama kısmı buna göre şekillenmelidir. Böyle
-              senaryolarda kompost yatırımı ile <Link href="/hizmetler/gubre-tesisi-kurulumu" className="font-semibold text-blue-700 hover:text-blue-800">gübre tesisi kurulumu</Link> arasında stratejik ilişki kurulması
+              senaryolarda kompost yatırımı ile <Link href="/sektorler/gubre-ve-granulasyon-tesisleri" className="font-semibold text-blue-700 hover:text-blue-800">gübre tesisi kurulumu</Link> arasında stratejik ilişki kurulması
               gerekir.
             </p>
           </>

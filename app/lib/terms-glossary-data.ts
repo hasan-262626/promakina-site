@@ -119,7 +119,7 @@ export const glossaryTerms: Record<string, GlossaryTerm> = {
     tags: ["Granül", "Gübre", "Paketleme"],
     filters: ["sector", "process"],
     links: [
-      page("Granül Gübre Üretim Tesisleri", "/hizmetler/granul-gubre-uretim-tesisi"),
+      page("Granül Gübre Üretim Tesisleri", "/sektorler/gubre-ve-granulasyon-tesisleri"),
       page("Soğutma Tamburu", "/makinalar-ekipman/tambur-sistemleri/sogutma-tamburu"),
       blog("Granül Gübre Üretim Süreci", "/kutuphane/blog/granul-gubre-uretim-sureci"),
     ],
@@ -317,7 +317,7 @@ export const glossaryTerms: Record<string, GlossaryTerm> = {
     tags: ["Çamur Kurutma", "Tambur", "Nem"],
     filters: ["sector", "drum", "process"],
     links: [
-      page("Çamur Kurutma Tesisi", "/hizmetler/camur-kurutma-tesisi"),
+      page("Çamur Kurutma Tesisi", "/sektorler/atik-su-camuru-ve-aritma-cozumleri"),
       calc("Tambur Kapasite Hesabı", "/programlar?modal=tambur-kapasite-hesabi"),
       blog("Çamur Kurutma Sistemleri", "/kutuphane/blog/camur-kurutma-sistemleri"),
     ],
