@@ -69,46 +69,46 @@ type FieldConfig = {
 };
 
 const materialOptions = [
-  "Toz ÃœrÃ¼n",
-  "GranÃ¼l ÃœrÃ¼n",
-  "Organik KarÄ±ÅŸÄ±m",
+  "Toz Ürün",
+  "Granül Ürün",
+  "Organik Karışım",
   "Kompost",
   "Mineral",
-  "GÃ¼bre Hammaddesi",
+  "Gübre Hammaddesi",
   "NPK / Organomineral",
-  "Nemli KarÄ±ÅŸÄ±m",
+  "Nemli Karışım",
   "DiÄŸer",
 ];
 
 const materialDensityDefaults: Record<string, string> = {
-  "Toz ÃœrÃ¼n": "850",
-  "GranÃ¼l ÃœrÃ¼n": "1100",
-  "Organik KarÄ±ÅŸÄ±m": "650",
+  "Toz Ürün": "850",
+  "Granül Ürün": "1100",
+  "Organik Karışım": "650",
   Kompost: "550",
   Mineral: "1400",
-  "GÃ¼bre Hammaddesi": "1200",
+  "Gübre Hammaddesi": "1200",
   "NPK / Organomineral": "1150",
-  "Nemli KarÄ±ÅŸÄ±m": "750",
+  "Nemli Karışım": "750",
   DiÄŸer: "1000",
 };
 
 const commonFields: FieldConfig[] = [
   { key: "name", label: "Ad Soyad", placeholder: "Ad Soyad" },
-  { key: "company", label: "Firma", placeholder: "Firma adÄ±" },
+  { key: "company", label: "Firma", placeholder: "Firma adı" },
   { key: "phone", label: "Telefon", placeholder: "+90..." },
   { key: "email", label: "E-posta", placeholder: "ornek@firma.com" },
 ];
 
 const calculatorFields: Record<CalculatorFamily, FieldConfig[]> = {
   drum: [
-    { key: "processType", label: "Ä°stenen proses", type: "select", options: ["GranÃ¼lasyon", "Kurutma", "SoÄŸutma", "Kaplama", "Kompost"] },
+    { key: "processType", label: "İstenen proses", type: "select", options: ["Granülasyon", "Kurutma", "SoÄŸutma", "Kaplama", "Kompost"] },
     { key: "capacity", label: "Kapasite (ton/saat)", type: "number", placeholder: "12" },
-    { key: "material", label: "ÃœrÃ¼n tipi / malzeme", type: "select", options: materialOptions },
-    { key: "bulkDensity", label: "YÄ±ÄŸÄ±n yoÄŸunluÄŸu (kg/mÂ³)", type: "number", placeholder: "950" },
+    { key: "material", label: "Ürün tipi / malzeme", type: "select", options: materialOptions },
+    { key: "bulkDensity", label: "Yığın yoğunluğu (kg/m³)", type: "number", placeholder: "950" },
     { key: "inletMoisture", label: "GiriÅŸ nemi (%)", type: "number", placeholder: "18" },
-    { key: "outletMoisture", label: "Ã‡Ä±kÄ±ÅŸ nemi (%)", type: "number", placeholder: "8" },
-    { key: "safetyMargin", label: "GÃ¼venlik payÄ± (%)", type: "number", placeholder: "10" },
-    { key: "workingSchedule", label: "Ã‡alÄ±ÅŸma sÃ¼resi", type: "select", options: ["8 saat", "16 saat", "24 saat", "SÃ¼rekli Ã§alÄ±ÅŸma"] },
+    { key: "outletMoisture", label: "Çıkış nemi (%)", type: "number", placeholder: "8" },
+    { key: "safetyMargin", label: "Güvenlik payı (%)", type: "number", placeholder: "10" },
+    { key: "workingSchedule", label: "Çalışma süresi", type: "select", options: ["8 saat", "16 saat", "24 saat", "Sürekli çalışma"] },
     { key: "notes", label: "Notlar", type: "textarea", placeholder: "Proses veya saha notu" },
   ],
   transport: [
@@ -117,83 +117,83 @@ const calculatorFields: Record<CalculatorFamily, FieldConfig[]> = {
     { key: "bulkDensity", label: "YoÄŸunluk (kg/mÂ³)", type: "number", placeholder: "950" },
     { key: "lineLength", label: "Hat uzunluÄŸu (m)", type: "number", placeholder: "18" },
     { key: "incline", label: "EÄŸim (Â°)", type: "number", placeholder: "8" },
-    { key: "workingType", label: "Ã‡alÄ±ÅŸma tipi", type: "select", options: ["SÃ¼rekli", "Partili", "AÄŸÄ±r hizmet", "Standart"] },
-    { key: "feedType", label: "Besleme ÅŸekli", type: "select", options: ["Bunker altÄ±", "KonveyÃ¶rden", "Serbest dÃ¼ÅŸÃ¼ÅŸ", "DozajlÄ± besleme"] },
-    { key: "notes", label: "Notlar", type: "textarea", placeholder: "Hat veya Ã¼rÃ¼n notu" },
+    { key: "workingType", label: "Çalışma tipi", type: "select", options: ["Sürekli", "Partili", "Ağır hizmet", "Standart"] },
+    { key: "feedType", label: "Besleme ÅŸekli", type: "select", options: ["Bunker altı", "Konveyörden", "Serbest düşüş", "Dozajlı besleme"] },
+    { key: "notes", label: "Notlar", type: "textarea", placeholder: "Hat veya ürün notu" },
   ],
   crusher: [
     { key: "material", label: "Malzeme tipi", type: "select", options: materialOptions },
     { key: "capacity", label: "Kapasite (ton/saat)", type: "number", placeholder: "15" },
     { key: "feedSize", label: "GiriÅŸ boyutu (mm)", type: "number", placeholder: "120" },
-    { key: "targetSize", label: "Hedef Ã§Ä±kÄ±ÅŸ boyutu (mm)", type: "number", placeholder: "20" },
+    { key: "targetSize", label: "Hedef çıkış boyutu (mm)", type: "number", placeholder: "20" },
     { key: "moisture", label: "Nem (%)", type: "number", placeholder: "25" },
-    { key: "workingType", label: "Ã‡alÄ±ÅŸma tipi", type: "select", options: ["SÃ¼rekli", "Partili", "AÄŸÄ±r hizmet"] },
+    { key: "workingType", label: "Çalışma tipi", type: "select", options: ["Sürekli", "Partili", "Ağır hizmet"] },
     { key: "notes", label: "Notlar", type: "textarea", placeholder: "Malzeme karakteri ve notlar" },
   ],
   reactor: [
-    { key: "processType", label: "ÃœrÃ¼n / proses tipi", placeholder: "SÄ±vÄ± gÃ¼bre Ã§Ã¶zeltisi" },
+    { key: "processType", label: "Ürün / proses tipi", placeholder: "Sıvı gübre çözeltisi" },
     { key: "batchVolume", label: "Batch hacmi (mÂ³)", type: "number", placeholder: "8" },
-    { key: "dailyCapacity", label: "GÃ¼nlÃ¼k kapasite", placeholder: "40 ton/gÃ¼n" },
-    { key: "mixingNeed", label: "KarÄ±ÅŸtÄ±rma ihtiyacÄ±", type: "select", options: ["DÃ¼ÅŸÃ¼k", "Orta", "YÃ¼ksek"] },
-    { key: "pressureMode", label: "BasÄ±nÃ§ durumu", type: "select", options: ["Atmosferik", "BasÄ±nÃ§lÄ±"] },
-    { key: "thermalNeed", label: "IsÄ±tma / soÄŸutma ihtiyacÄ±", type: "select", options: ["Yok", "IsÄ±tma", "SoÄŸutma", "Her ikisi"] },
-    { key: "notes", label: "Notlar", type: "textarea", placeholder: "Proses ve tesis notlarÄ±" },
+    { key: "dailyCapacity", label: "Günlük kapasite", placeholder: "40 ton/gün" },
+    { key: "mixingNeed", label: "Karıştırma ihtiyaçı", type: "select", options: ["Düşük", "Orta", "Yüksek"] },
+    { key: "pressureMode", label: "Basınç durumu", type: "select", options: ["Atmosferik", "Basınçlı"] },
+    { key: "thermalNeed", label: "Isıtma / soğutma ihtiyaçı", type: "select", options: ["Yok", "Isıtma", "SoÄŸutma", "Her ikisi"] },
+    { key: "notes", label: "Notlar", type: "textarea", placeholder: "Proses ve tesis notları" },
   ],
   screening: [
     { key: "material", label: "Malzeme tipi", type: "select", options: materialOptions },
     { key: "capacity", label: "Kapasite (ton/saat)", type: "number", placeholder: "20" },
     { key: "feedSize", label: "Besleme boyutu", placeholder: "0-30 mm" },
-    { key: "targetSize", label: "AyÄ±rma aralÄ±ÄŸÄ±", placeholder: "2-4 mm / 4-6 mm" },
+    { key: "targetSize", label: "Ayırma aralığı", placeholder: "2-4 mm / 4-6 mm" },
     { key: "moisture", label: "Nem (%)", type: "number", placeholder: "12" },
-    { key: "notes", label: "Notlar", type: "textarea", placeholder: "ÃœrÃ¼n davranÄ±ÅŸÄ± ve eleme notlarÄ±" },
+    { key: "notes", label: "Notlar", type: "textarea", placeholder: "Ürün davranışı ve eleme notları" },
   ],
   dust: [
-    { key: "material", label: "Toz / Ã¼rÃ¼n tipi", type: "select", options: materialOptions },
+    { key: "material", label: "Toz / ürün tipi", type: "select", options: materialOptions },
     { key: "airflow", label: "Hava debisi (mÂ³/saat)", type: "number", placeholder: "18000" },
-    { key: "dustLoad", label: "Toz yÃ¼kÃ¼", placeholder: "Orta / yÃ¼ksek" },
-    { key: "environment", label: "Ortam tipi", type: "select", options: ["KapalÄ± alan", "AÃ§Ä±k alan", "Kimyasal ortam", "ATEX riski"] },
-    { key: "notes", label: "Notlar", type: "textarea", placeholder: "Filtrasyon ve saha notlarÄ±" },
+    { key: "dustLoad", label: "Toz yükü", placeholder: "Orta / yüksek" },
+    { key: "environment", label: "Ortam tipi", type: "select", options: ["Kapalı alan", "Açık alan", "Kimyasal ortam", "ATEX riski"] },
+    { key: "notes", label: "Notlar", type: "textarea", placeholder: "Filtrasyon ve saha notları" },
   ],
   packaging: [
-    { key: "material", label: "ÃœrÃ¼n tipi", type: "select", options: materialOptions },
+    { key: "material", label: "Ürün tipi", type: "select", options: materialOptions },
     { key: "capacity", label: "Kapasite", placeholder: "6 ton/saat veya 240 torba/saat" },
-    { key: "packageType", label: "Ambalaj tipi", type: "select", options: ["AÃ§Ä±k aÄŸÄ±z torba", "Valfli torba", "Big Bag", "FFS"] },
-    { key: "bagSize", label: "Ambalaj Ã¶lÃ§Ã¼sÃ¼", placeholder: "25 kg / 50 kg / 1000 kg" },
-    { key: "notes", label: "Notlar", type: "textarea", placeholder: "Hat sonu ve otomasyon notlarÄ±" },
+    { key: "packageType", label: "Ambalaj tipi", type: "select", options: ["Açık ağız torba", "Valfli torba", "Big Bag", "FFS"] },
+    { key: "bagSize", label: "Ambalaj ölçüsü", placeholder: "25 kg / 50 kg / 1000 kg" },
+    { key: "notes", label: "Notlar", type: "textarea", placeholder: "Hat sonu ve otomasyon notları" },
   ],
   storage: [
-    { key: "material", label: "ÃœrÃ¼n tipi", type: "select", options: materialOptions },
-    { key: "capacity", label: "Kapasite / akÄ±ÅŸ ihtiyacÄ±", placeholder: "20 ton/saat" },
+    { key: "material", label: "Ürün tipi", type: "select", options: materialOptions },
+    { key: "capacity", label: "Kapasite / akış ihtiyaçı", placeholder: "20 ton/saat" },
     { key: "volume", label: "Depolama hacmi", placeholder: "50 mÂ³" },
-    { key: "feedType", label: "Besleme tipi", type: "select", options: ["Silo", "Bunker", "VidalÄ± besleyici", "Rotary valf", "SÃ¼rgÃ¼lÃ¼ klape"] },
-    { key: "notes", label: "Notlar", type: "textarea", placeholder: "AkÄ±ÅŸ ve saha notlarÄ±" },
+    { key: "feedType", label: "Besleme tipi", type: "select", options: ["Silo", "Bunker", "Vidalı besleyici", "Rotary valf", "Sürgülü klape"] },
+    { key: "notes", label: "Notlar", type: "textarea", placeholder: "Akış ve saha notları" },
   ],
   auxiliary: [
-    { key: "material", label: "ÃœrÃ¼n tipi", type: "select", options: materialOptions },
-    { key: "capacity", label: "Kapasite / akÄ±ÅŸ ihtiyacÄ±", placeholder: "20 ton/saat" },
+    { key: "material", label: "Ürün tipi", type: "select", options: materialOptions },
+    { key: "capacity", label: "Kapasite / akış ihtiyaçı", placeholder: "20 ton/saat" },
     { key: "lineLength", label: "Hat / boÅŸaltma mesafesi", placeholder: "12 m" },
-    { key: "feedType", label: "Uygulama tipi", type: "select", options: ["Silobas yÃ¼kleme", "Hat yÃ¶nlendirme", "AkÄ±ÅŸ kontrolÃ¼", "BoÅŸaltma kontrolÃ¼"] },
-    { key: "notes", label: "Notlar", type: "textarea", placeholder: "Saha ve Ã¼rÃ¼n akÄ±ÅŸÄ± notlarÄ±" },
+    { key: "feedType", label: "Uygulama tipi", type: "select", options: ["Silobas yükleme", "Hat yönlendirme", "Akış kontrolü", "Boşaltma kontrolü"] },
+    { key: "notes", label: "Notlar", type: "textarea", placeholder: "Saha ve ürün akışı notları" },
   ],
   dosage: [
-    { key: "material", label: "ÃœrÃ¼n tipi", type: "select", options: materialOptions },
-    { key: "capacity", label: "Kapasite / reÃ§ete ihtiyacÄ±", placeholder: "12 ton/saat" },
+    { key: "material", label: "Ürün tipi", type: "select", options: materialOptions },
+    { key: "capacity", label: "Kapasite / reçete ihtiyaçı", placeholder: "12 ton/saat" },
     { key: "bulkDensity", label: "YoÄŸunluk (kg/mÂ³)", type: "number", placeholder: "950" },
-    { key: "feedType", label: "Dozaj tipi", type: "select", options: ["Mikro dozajlama", "Makro dozajlama", "Dozaj bant kantarÄ±"] },
-    { key: "notes", label: "Notlar", type: "textarea", placeholder: "ReÃ§ete, hammadde ve proses notlarÄ±" },
+    { key: "feedType", label: "Dozaj tipi", type: "select", options: ["Mikro dozajlama", "Makro dozajlama", "Dozaj bant kantarı"] },
+    { key: "notes", label: "Notlar", type: "textarea", placeholder: "Reçete, hammadde ve proses notları" },
   ],
 };
 
 const familyLabels: Record<CalculatorFamily, string> = {
   drum: "tambur",
-  transport: "taÅŸÄ±ma ekipmanÄ±",
-  crusher: "kÄ±rÄ±cÄ±",
-  reactor: "reaktÃ¶r / tank",
+  transport: "taşıma ekipmanı",
+  crusher: "kırıcı",
+  reactor: "reaktör / tank",
   screening: "eleme sistemi",
   dust: "toz toplama sistemi",
   packaging: "paketleme sistemi",
   storage: "depolama / besleme sistemi",
-  auxiliary: "yardÄ±mcÄ± ekipman / akÄ±ÅŸ sistemi",
+  auxiliary: "yardımcı ekipman / akış sistemi",
   dosage: "dozajlama sistemi",
 };
 
@@ -548,20 +548,20 @@ function buildMessage(title: string, categoryLabel: string, family: CalculatorFa
     ["Firma", values.company],
     ["Telefon", values.phone],
     ["E-posta", values.email],
-    ["Ä°stenen proses", values.processType],
+    ["İstenen proses", values.processType],
     ["Kapasite", values.capacity ? `${values.capacity} ton/saat` : undefined],
-    ["ÃœrÃ¼n tipi", values.materialOther || values.material],
-    ["YÄ±ÄŸÄ±n yoÄŸunluÄŸu", values.bulkDensity ? `${values.bulkDensity} kg/mÂ³` : undefined],
+    ["Ürün tipi", values.materialOther || values.material],
+    ["Yığın yoğunluğu", values.bulkDensity ? `${values.bulkDensity} kg/mÂ³` : undefined],
     ["GiriÅŸ nemi", values.inletMoisture ? `%${values.inletMoisture}` : undefined],
-    ["Ã‡Ä±kÄ±ÅŸ nemi", values.outletMoisture ? `%${values.outletMoisture}` : undefined],
-    ["GÃ¼venlik payÄ±", values.safetyMargin ? `%${values.safetyMargin}` : undefined],
-    ["Ã‡alÄ±ÅŸma sÃ¼resi", values.workingSchedule],
+    ["Çıkış nemi", values.outletMoisture ? `%${values.outletMoisture}` : undefined],
+    ["Güvenlik payı", values.safetyMargin ? `%${values.safetyMargin}` : undefined],
+    ["Çalışma süresi", values.workingSchedule],
     ["Hat uzunluÄŸu", values.lineLength ? `${values.lineLength} m` : undefined],
     ["EÄŸim", values.incline ? `${values.incline}Â°` : undefined],
     ["GiriÅŸ boyutu", values.feedSize ? `${values.feedSize} mm` : undefined],
-    ["Hedef Ã§Ä±kÄ±ÅŸ boyutu", values.targetSize ? `${values.targetSize} mm` : undefined],
+    ["Hedef çıkış boyutu", values.targetSize ? `${values.targetSize} mm` : undefined],
     ["Batch hacmi", values.batchVolume ? `${values.batchVolume} mÂ³` : undefined],
-    ["GÃ¼nlÃ¼k kapasite", values.dailyCapacity],
+    ["Günlük kapasite", values.dailyCapacity],
     ["Notlar", values.notes],
   ];
 
@@ -576,7 +576,7 @@ function buildMessage(title: string, categoryLabel: string, family: CalculatorFa
 function getDefaultDrumProcess(title: string) {
   const normalized = title.toLocaleLowerCase("tr-TR");
 
-  if (normalized.includes("gran")) return "GranÃ¼latÃ¶r tamburu";
+  if (normalized.includes("gran")) return "Granülatör tamburu";
   if (normalized.includes("kurut")) return "Kurutma tamburu";
   if (normalized.includes("soÄŸut") || normalized.includes("sogut")) return "SoÄŸutma tamburu";
   if (normalized.includes("kaplama")) return "Kaplama tamburu";
@@ -608,7 +608,7 @@ function ProductCalculatorModal(props: {
       <div className="max-h-[90vh] w-full max-w-4xl overflow-hidden rounded-[28px] border border-slate-200 bg-white shadow-[0_32px_90px_rgba(15,23,42,0.24)]">
         <div className="flex items-center justify-between border-b border-slate-200 px-6 py-5 sm:px-8">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-blue-700">Kapasite HesabÄ±</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-blue-700">Kapasite Hesabı</p>
             <h3 className="mt-1 text-2xl font-semibold tracking-tight text-slate-950">{title}</h3>
           </div>
           <button type="button" onClick={onClose} className="rounded-full border border-slate-200 px-4 py-2 text-sm font-semibold text-slate-600 transition hover:border-slate-300 hover:text-slate-900">
@@ -627,7 +627,7 @@ function ProductCalculatorModal(props: {
                   <span className="text-sm font-semibold text-slate-800">{field.label}</span>
                   {field.type === "select" ? (
                     <select value={value} onChange={(e) => onChange(field.key, e.target.value)} className={commonClass}>
-                      <option value="">SeÃ§iniz</option>
+                      <option value="">Seçiniz</option>
                       {field.options?.map((option) => (
                         <option key={option} value={option}>
                           {option}
@@ -645,11 +645,11 @@ function ProductCalculatorModal(props: {
 
             {values.material === "DiÄŸer" ? (
               <label className="md:col-span-2">
-                <span className="text-sm font-semibold text-slate-800">DiÄŸer Ã¼rÃ¼n aÃ§Ä±klamasÄ±</span>
+                <span className="text-sm font-semibold text-slate-800">Diğer ürün açıklaması</span>
                 <input
                   value={values.materialOther ?? ""}
                   onChange={(e) => onChange("materialOther", e.target.value)}
-                  placeholder="ÃœrÃ¼n tipini yazÄ±n"
+                  placeholder="Ürün tipini yazın"
                   className="mt-2 w-full rounded-2xl border border-slate-300 bg-white px-4 py-3 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-blue-500 focus:ring-4 focus:ring-blue-100"
                 />
               </label>
@@ -660,7 +660,7 @@ function ProductCalculatorModal(props: {
             {!summary ? (
               <div className="flex flex-col gap-3 sm:flex-row sm:justify-end">
                 <button type="button" onClick={onClose} className="rounded-full border border-slate-300 px-6 py-3 text-sm font-semibold text-slate-700 transition hover:border-slate-400">
-                  VazgeÃ§
+                  Vazgeç
                 </button>
                 <button type="button" onClick={onCreateSummary} className="rounded-full bg-blue-600 px-6 py-3 text-sm font-semibold text-white transition hover:bg-blue-500">
                   Teknik Ã–zeti OluÅŸtur
@@ -671,13 +671,13 @@ function ProductCalculatorModal(props: {
                 <div className="rounded-[24px] border border-slate-200 bg-slate-50 px-5 py-4 text-sm leading-7 text-slate-700">{summary}</div>
                 <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:justify-end">
                   <button type="button" onClick={onCreateSummary} className="rounded-full border border-slate-300 px-6 py-3 text-sm font-semibold text-slate-700 transition hover:border-slate-400">
-                    Teknik Ã–zeti GÃ¼ncelle
+                    Teknik Özeti Güncelle
                   </button>
                   <a href={whatsappHref} target="_blank" rel="noopener noreferrer" className="rounded-full bg-green-600 px-6 py-3 text-center text-sm font-semibold text-white transition hover:bg-green-500">
-                    WhatsApp ile GÃ¶nder
+                    WhatsApp ile Gönder
                   </a>
                   <a href={mailHref} className="rounded-full border border-slate-300 px-6 py-3 text-center text-sm font-semibold text-slate-800 transition hover:border-slate-400">
-                    Mail ile GÃ¶nder
+                    Mail ile Gönder
                   </a>
                 </div>
               </>

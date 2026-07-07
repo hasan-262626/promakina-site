@@ -185,7 +185,7 @@ function buildTopicConfig({
 
   const conveyorConfig: ArticleTopicConfig = {
     actionEyebrow: "HESAPLAMA ARACI",
-    actionTitle: "TaÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒâ€žÃ‚Â±ma Sistemi ÃƒÂ¯Ã‚Â¿Ã‚Â½n SeÃƒÆ’Ã‚Â§iminizi YapÃƒâ€žÃ‚Â±n",
+    actionTitle: "Taşıma Sistemi Ön Seçiminizi Yapın",
     actionDescription:
       "Bant konveyÃƒÆ’Ã‚Â¶r, kovalÃƒâ€žÃ‚Â± elevatÃƒÆ’Ã‚Â¶r ve genel taÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒâ€žÃ‚Â±ma hatlarÃƒâ€žÃ‚Â± iÃƒÆ’Ã‚Â§in kapasite, hÃƒâ€žÃ‚Â±z, gÃƒÆ’Ã‚Â¼ÃƒÆ’Ã‚Â§ ve saha akÃƒâ€žÃ‚Â±ÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒâ€žÃ‚Â±nÃƒâ€žÃ‚Â± ÃƒÆ’Ã‚Â¶n deÃƒÂ¯Ã‚Â¿Ã‚Â½xerlendirme mantÃƒâ€žÃ‚Â±ÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒâ€žÃ‚Â±yla inceleyin.",
     actionFeatures: [
@@ -265,7 +265,7 @@ function buildTopicConfig({
 
   const drumSystemsConfig: ArticleTopicConfig = {
     actionEyebrow: "HESAPLAMA ARACI",
-    actionTitle: "Tambur Sistemi ÃƒÂ¯Ã‚Â¿Ã‚Â½n DeÃƒÂ¯Ã‚Â¿Ã‚Â½xerlendirmesini YapÃƒâ€žÃ‚Â±n",
+    actionTitle: "Tambur Sistemi Ön Değerlendirmesini Yapın",
     actionDescription:
       "GranÃƒÆ’Ã‚Â¼lasyon, soÃƒÂ¯Ã‚Â¿Ã‚Â½xutma, kaplama ve kompost tamburlarÃƒâ€žÃ‚Â±nda kapasite, residence time ve ekipman yaklaÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒâ€žÃ‚Â±mÃƒâ€žÃ‚Â±nÃƒâ€žÃ‚Â± birlikte deÃƒÂ¯Ã‚Â¿Ã‚Â½xerlendirin.",
     actionFeatures: [
@@ -304,8 +304,8 @@ function buildTopicConfig({
   };
 
   const fertilizerConfig: ArticleTopicConfig = {
-    actionEyebrow: "TEKNÃƒâ€žÃ‚Â°K ÃƒÂ¯Ã‚Â¿Ã‚Â½N DEÃƒÂ¯Ã‚Â¿Ã‚Â½~ERLENDÃƒâ€žÃ‚Â°RME",
-    actionTitle: "GÃƒÆ’Ã‚Â¼bre Tesisi ÃƒÂ¯Ã‚Â¿Ã‚Â½n DeÃƒÂ¯Ã‚Â¿Ã‚Â½xerlendirmesi YapÃƒâ€žÃ‚Â±n",
+    actionEyebrow: "TEKNİK ÖN DEĞERLENDİRME",
+    actionTitle: "Gübre Tesisi Ön Değerlendirmesi Yapın",
     actionDescription:
       "Kapasite, ÃƒÆ’Ã‚Â¼rÃƒÆ’Ã‚Â¼n formu, hammadde dengesi, granÃƒÆ’Ã‚Â¼lasyon, kurutma ve paketleme mantÃƒâ€žÃ‚Â±ÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒâ€žÃ‚Â±nÃƒâ€žÃ‚Â± tek ÃƒÆ’Ã‚Â§erÃƒÆ’Ã‚Â§evede okuyarak yatÃƒâ€žÃ‚Â±rÃƒâ€žÃ‚Â±m yaklaÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒâ€žÃ‚Â±mÃƒâ€žÃ‚Â±nÃƒâ€žÃ‚Â±zÃƒâ€žÃ‚Â± netleÃƒÂ¯Ã‚Â¿Ã‚Â½xtirin.",
     actionFeatures: [
@@ -344,8 +344,8 @@ function buildTopicConfig({
   };
 
   const liquidConfig: ArticleTopicConfig = {
-    actionEyebrow: "TEKNÃƒâ€žÃ‚Â°K ÃƒÂ¯Ã‚Â¿Ã‚Â½N DEÃƒÂ¯Ã‚Â¿Ã‚Â½~ERLENDÃƒâ€žÃ‚Â°RME",
-    actionTitle: "SÃƒâ€žÃ‚Â±vÃƒâ€žÃ‚Â± GÃƒÆ’Ã‚Â¼bre ve Proses TankÃƒâ€žÃ‚Â± ÃƒÂ¯Ã‚Â¿Ã‚Â½n DeÃƒÂ¯Ã‚Â¿Ã‚Â½xerlendirmesi YapÃƒâ€žÃ‚Â±n",
+    actionEyebrow: "TEKNİK ÖN DEĞERLENDİRME",
+    actionTitle: "Sıvı Gübre ve Proses Tankı Ön Değerlendirmesi Yapın",
     actionDescription:
       "ReaktÃƒÆ’Ã‚Â¶r, ÃƒÆ’Ã‚Â§ÃƒÆ’Ã‚Â¶zÃƒÆ’Ã‚Â¼ndÃƒÆ’Ã‚Â¼rme tankÃƒâ€žÃ‚Â±, filtrasyon, stoklama ve dolum yapÃƒâ€žÃ‚Â±sÃƒâ€žÃ‚Â±nÃƒâ€žÃ‚Â± ÃƒÆ’Ã‚Â¼rÃƒÆ’Ã‚Â¼n formÃƒÆ’Ã‚Â¼lÃƒÆ’Ã‚Â¼nÃƒÆ’Ã‚Â¼z ve kapasite hedefinizle birlikte deÃƒÂ¯Ã‚Â¿Ã‚Â½xerlendirin.",
     actionFeatures: [
@@ -384,8 +384,8 @@ function buildTopicConfig({
   };
 
   const compostConfig: ArticleTopicConfig = {
-    actionEyebrow: "TEKNÃƒâ€žÃ‚Â°K ÃƒÂ¯Ã‚Â¿Ã‚Â½N DEÃƒÂ¯Ã‚Â¿Ã‚Â½~ERLENDÃƒâ€žÃ‚Â°RME",
-    actionTitle: "Kompost Tesisi ÃƒÂ¯Ã‚Â¿Ã‚Â½n DeÃƒÂ¯Ã‚Â¿Ã‚Â½xerlendirmesi YapÃƒâ€žÃ‚Â±n",
+    actionEyebrow: "TEKNİK ÖN DEĞERLENDİRME",
+    actionTitle: "Kompost Tesisi Ön Değerlendirmesi Yapın",
     actionDescription:
       "AtÃƒâ€žÃ‚Â±k tÃƒÆ’Ã‚Â¼rÃƒÆ’Ã‚Â¼, nem yÃƒÆ’Ã‚Â¼kÃƒÆ’Ã‚Â¼, olgunlaÃƒÂ¯Ã‚Â¿Ã‚Â½xtÃƒâ€žÃ‚Â±rma sÃƒÆ’Ã‚Â¼resi, eleme yaklaÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒâ€žÃ‚Â±mÃƒâ€žÃ‚Â± ve son ÃƒÆ’Ã‚Â¼rÃƒÆ’Ã‚Â¼n standardÃƒâ€žÃ‚Â±nÃƒâ€žÃ‚Â± birlikte okuyarak kompost omurgasÃƒâ€žÃ‚Â±nÃƒâ€žÃ‚Â± deÃƒÂ¯Ã‚Â¿Ã‚Â½xerlendirin.",
     actionFeatures: [
@@ -424,8 +424,8 @@ function buildTopicConfig({
   };
 
   const sludgeConfig: ArticleTopicConfig = {
-    actionEyebrow: "TEKNÃƒâ€žÃ‚Â°K ÃƒÂ¯Ã‚Â¿Ã‚Â½N DEÃƒÂ¯Ã‚Â¿Ã‚Â½~ERLENDÃƒâ€žÃ‚Â°RME",
-    actionTitle: "ÃƒÂ¯Ã‚Â¿Ã‚Â½!amur Kurutma ÃƒÂ¯Ã‚Â¿Ã‚Â½n DeÃƒÂ¯Ã‚Â¿Ã‚Â½xerlendirmesi YapÃƒâ€žÃ‚Â±n",
+    actionEyebrow: "TEKNİK ÖN DEĞERLENDİRME",
+    actionTitle: "Çamur Kurutma Ön Değerlendirmesi Yapın",
     actionDescription:
       "Besleme, susuzlaÃƒÂ¯Ã‚Â¿Ã‚Â½xtÃƒâ€žÃ‚Â±rma destek, kurutma, koku kontrolÃƒÆ’Ã‚Â¼ ve son ÃƒÆ’Ã‚Â¼rÃƒÆ’Ã‚Â¼n hazÃƒâ€žÃ‚Â±rlama mantÃƒâ€žÃ‚Â±ÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒâ€žÃ‚Â±nÃƒâ€žÃ‚Â± gÃƒÆ’Ã‚Â¼nlÃƒÆ’Ã‚Â¼k tonaj ve nem hedefiyle birlikte deÃƒÂ¯Ã‚Â¿Ã‚Â½xerlendirin.",
     actionFeatures: [
@@ -464,13 +464,13 @@ function buildTopicConfig({
   };
 
   const biogasConfig: ArticleTopicConfig = {
-    actionEyebrow: "TEKNÃƒâ€žÃ‚Â°K ÃƒÂ¯Ã‚Â¿Ã‚Â½N DEÃƒÂ¯Ã‚Â¿Ã‚Â½~ERLENDÃƒâ€žÃ‚Â°RME",
-    actionTitle: "Biyogaz ve ÃƒÂ¯Ã‚Â¿Ã‚Â½n Ãƒâ€žÃ‚Â°ÃƒÂ¯Ã‚Â¿Ã‚Â½xlem Kurgusunu DeÃƒÂ¯Ã‚Â¿Ã‚Â½xerlendirin",
+    actionEyebrow: "TEKNİK ÖN DEĞERLENDİRME",
+    actionTitle: "Biyogaz ve Ön İşlem Kurgusunu Değerlendirin",
     actionDescription:
       "AtÃƒâ€žÃ‚Â±k kabulÃƒÆ’Ã‚Â¼, ÃƒÆ’Ã‚Â¶n hazÃƒâ€žÃ‚Â±rlama, besleme ritmi, digestat yÃƒÆ’Ã‚Â¶netimi ve entegre proses yaklaÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒâ€žÃ‚Â±mÃƒâ€žÃ‚Â±nÃƒâ€žÃ‚Â± aynÃƒâ€žÃ‚Â± ÃƒÆ’Ã‚Â§erÃƒÆ’Ã‚Â§evede deÃƒÂ¯Ã‚Â¿Ã‚Â½xerlendirin.",
     actionFeatures: [
       "AtÃƒâ€žÃ‚Â±k kabulÃƒÆ’Ã‚Â¼",
-      "ÃƒÂ¯Ã‚Â¿Ã‚Â½n hazÃƒâ€žÃ‚Â±rlama hattÃƒâ€žÃ‚Â±",
+      "Ön hazırlama hattı",
       "Besleme ritmi",
       "Digestat yÃƒÆ’Ã‚Â¶netimi",
     ],
@@ -478,7 +478,7 @@ function buildTopicConfig({
     actionButtonLabel: "SektÃƒÆ’Ã‚Â¶rÃƒÆ’Ã‚Â¼ Ãƒâ€žÃ‚Â°ncele",
     highlights: [
       {
-        title: "ÃƒÂ¯Ã‚Â¿Ã‚Â½n iÃƒÂ¯Ã‚Â¿Ã‚Â½xlem disiplini",
+        title: "Ön işlem disiplini",
         description: "ReaktÃƒÆ’Ã‚Â¶re girecek akÃƒâ€žÃ‚Â±ÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒâ€žÃ‚Â±n dÃƒÆ’Ã‚Â¼zeni tÃƒÆ’Ã‚Â¼m biyogaz veriminin temelini oluÃƒÂ¯Ã‚Â¿Ã‚Â½xturur.",
       },
       {
@@ -504,7 +504,7 @@ function buildTopicConfig({
   };
 
   const miningConfig: ArticleTopicConfig = {
-    actionEyebrow: "TEKNÃƒâ€žÃ‚Â°K ÃƒÂ¯Ã‚Â¿Ã‚Â½N DEÃƒÂ¯Ã‚Â¿Ã‚Â½~ERLENDÃƒâ€žÃ‚Â°RME",
+    actionEyebrow: "TEKNİK ÖN DEĞERLENDİRME",
     actionTitle: "Maden ve Mineral Prosesinizi DeÃƒÂ¯Ã‚Â¿Ã‚Â½xerlendirin",
     actionDescription:
       "KÃƒâ€žÃ‚Â±rma, eleme, kurutma, taÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒâ€žÃ‚Â±ma ve toz toplama hattÃƒâ€žÃ‚Â±nÃƒâ€žÃ‚Â± ÃƒÆ’Ã‚Â¼rÃƒÆ’Ã‚Â¼n tipi, kapasite ve saha yerleÃƒÂ¯Ã‚Â¿Ã‚Â½ximiyle birlikte teknik olarak okuyun.",
@@ -544,7 +544,7 @@ function buildTopicConfig({
   };
 
   const processConfig: ArticleTopicConfig = {
-    actionEyebrow: "TEKNÃƒâ€žÃ‚Â°K ÃƒÂ¯Ã‚Â¿Ã‚Â½N DEÃƒÂ¯Ã‚Â¿Ã‚Â½~ERLENDÃƒâ€žÃ‚Â°RME",
+    actionEyebrow: "TEKNİK ÖN DEĞERLENDİRME",
     actionTitle: "ReaktÃƒÆ’Ã‚Â¶r ve Proses EkipmanÃƒâ€žÃ‚Â± Kurgusunu DeÃƒÂ¯Ã‚Â¿Ã‚Â½xerlendirin",
     actionDescription:
       "KarÃƒâ€žÃ‚Â±ÃƒÂ¯Ã‚Â¿Ã‚Â½xtÃƒâ€žÃ‚Â±rma, ÃƒÆ’Ã‚Â§ÃƒÆ’Ã‚Â¶zÃƒÆ’Ã‚Â¼ndÃƒÆ’Ã‚Â¼rme, reaksiyon, stoklama ve kontrollÃƒÆ’Ã‚Â¼ dozajlama ihtiyaÃƒÆ’Ã‚Â§larÃƒâ€žÃ‚Â±nÃƒâ€žÃ‚Â± proses gÃƒÆ’Ã‚Â¼venliÃƒÂ¯Ã‚Â¿Ã‚Â½xiyle birlikte okuyun.",
@@ -584,7 +584,7 @@ function buildTopicConfig({
   };
 
   const dustConfig: ArticleTopicConfig = {
-    actionEyebrow: "TEKNÃƒâ€žÃ‚Â°K ÃƒÂ¯Ã‚Â¿Ã‚Â½N DEÃƒÂ¯Ã‚Â¿Ã‚Â½~ERLENDÃƒâ€žÃ‚Â°RME",
+    actionEyebrow: "TEKNİK ÖN DEĞERLENDİRME",
     actionTitle: "Toz Toplama HattÃƒâ€žÃ‚Â±nÃƒâ€žÃ‚Â±zÃƒâ€žÃ‚Â± DeÃƒÂ¯Ã‚Â¿Ã‚Â½xerlendirin",
     actionDescription:
       "Siklon, jet pulse filtre, fan, kanal kaybÃƒâ€žÃ‚Â± ve emisyon yaklaÃƒÂ¯Ã‚Â¿Ã‚Â½xÃƒâ€žÃ‚Â±mÃƒâ€žÃ‚Â±nÃƒâ€žÃ‚Â± proses debisi ve ÃƒÆ’Ã‚Â¼rÃƒÆ’Ã‚Â¼n toz yÃƒÆ’Ã‚Â¼kÃƒÆ’Ã‚Â¼yle birlikte inceleyin.",
@@ -757,7 +757,7 @@ export function BlogArticleTemplate({
       "@type": "PostalAddress",
       streetAddress: "75. YÃƒâ€žÃ‚Â±l Mah. Teksan Sanayi Sitesi Kilis Sokak D6 Blok No:2E",
       addressLocality: "OdunpazarÃ„Â±",
-      addressRegion: "EskiÃ…Å¸ehir",
+      addressRegion: "Eskişehir",
       postalCode: "26250",
       addressCountry: "TR",
     },
@@ -776,7 +776,7 @@ export function BlogArticleTemplate({
       {
         "@type": "ListItem",
         position: 2,
-        name: "KÃ¼tÃ¼phane",
+        name: "Kütüphane",
         item: "https://www.promakina.com.tr/kutuphane",
       },
       {

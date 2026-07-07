@@ -80,7 +80,7 @@ export function SectorSupportDetailPage({
         <div className="site-container content-stack">
           <section className="rounded-[32px] border border-slate-200 bg-slate-50 px-6 py-8 shadow-[0_18px_45px_rgba(15,23,42,0.06)] sm:px-8 sm:py-10 lg:px-12">
             <p className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-700">
-              SektÃƒÂ¶rel Proses Ã‡Ã¶zÃ¼mÃ¼
+              Sektörel Proses Çözümü
             </p>
             <h1 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
               {introTitle}
@@ -98,8 +98,8 @@ export function SectorSupportDetailPage({
                 KullanÃ„Â±m AlanlarÃ„Â±
               </h2>
               <p className="mt-4 text-sm leading-7 text-slate-600 sm:text-base sm:leading-8">
-                Bu Ã§Ã¶zÃ¼m; atÄ±k su, Ã§amur yÃ¶netimi, kurutma, taÅŸÄ±ma ve ara proses entegrasyonu
-                gereken tesislerde farklÄ± iÅŸletme senaryolarÄ±na gÃ¶re uyarlanabilir.
+                Bu çözüm; atık su, çamur yönetimi, kurutma, taşıma ve ara proses entegrasyonu
+                gereken tesislerde farklı işletme senaryolarına göre uyarlanabilir.
               </p>
             </div>
             <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
@@ -129,7 +129,7 @@ export function SectorSupportDetailPage({
 
           <section className="rounded-[32px] border border-slate-200 bg-white px-6 py-8 shadow-[0_18px_45px_rgba(15,23,42,0.05)] sm:px-8 sm:py-10 lg:px-12">
             <h2 className="text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
-              Ä°lgili Sayfalar
+              İlgili Sayfalar
             </h2>
             <div className="mt-6 grid gap-3 md:grid-cols-2">
               {relatedLinks.map((item) => (

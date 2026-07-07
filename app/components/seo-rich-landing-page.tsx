@@ -59,7 +59,7 @@ export function SeoRichLandingPage({
   heroTitle,
   heroDescription,
   image,
-  introLabel = "Teknik Ã‡Ã¶zÃ¼m",
+  introLabel = "Teknik Çözüm",
   introTitle,
   introParagraphs,
   breadcrumbs,
@@ -247,8 +247,8 @@ export function SeoRichLandingPage({
             <div className="mt-6 overflow-hidden rounded-[24px] border border-slate-200">
               <div className="grid grid-cols-1 border-b border-slate-200 bg-slate-50 text-sm font-semibold text-slate-900 md:grid-cols-3">
                 <div className="px-5 py-4">Kriter</div>
-                <div className="px-5 py-4">AÃ§Ä±klama</div>
-                <div className="px-5 py-4">MÃ¼hendislik Ã–nemi</div>
+                <div className="px-5 py-4">Açıklama</div>
+                <div className="px-5 py-4">Mühendislik Önemi</div>
               </div>
               {summaryRows.map((row) => (
                 <div
@@ -265,7 +265,7 @@ export function SeoRichLandingPage({
 
           <section className="rounded-[32px] border border-slate-200 bg-white px-6 py-8 shadow-[0_18px_45px_rgba(15,23,42,0.05)] sm:px-8 sm:py-10 lg:px-12">
             <h2 className="text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
-              SÄ±k Sorulan Sorular
+              Sık Sorulan Sorular
             </h2>
             <div className="mt-6 grid gap-4">
               {faqs.map((faq) => (
@@ -286,7 +286,7 @@ export function SeoRichLandingPage({
 
           <section className="rounded-[32px] border border-slate-200 bg-white px-6 py-8 shadow-[0_18px_45px_rgba(15,23,42,0.05)] sm:px-8 sm:py-10 lg:px-12">
             <h2 className="text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
-              Ä°lgili Sayfalar
+              İlgili Sayfalar
             </h2>
             <div className="mt-6 grid gap-6 lg:grid-cols-2">
               {relatedGroups.map((group) => (
@@ -310,7 +310,7 @@ export function SeoRichLandingPage({
 
           <section className="rounded-[32px] bg-blue-700 px-6 py-8 text-white shadow-[0_24px_70px_rgba(29,78,216,0.28)] sm:px-8 sm:py-10 lg:px-12">
             <h2 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-              Projeniz iÃ§in teknik teklif alÄ±n
+              Projeniz için teknik teklif alın
             </h2>
             <p className="mt-4 max-w-3xl text-sm leading-8 text-white/88 sm:text-base">
               {ctaText}

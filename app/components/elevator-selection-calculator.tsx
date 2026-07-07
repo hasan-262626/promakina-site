@@ -237,10 +237,10 @@ export function ElevatorSelectionCalculator() {
     const heavyDuty = getSystemClass({ designCapacity, density: densityValue, grain, moisture, workingTime }) === "Ağır hizmet";
     const motorPower = estimateMotorPower({ designCapacity, liftHeight: Math.max(num(liftHeight), 1), density: densityValue, elevatorType: recommendedElevatorType, heavyDuty });
     const chainPitch = chainPitchMode === "Manuel giris" ? `${num(manualChainPitch)} mm` : getChainPitchRecommendation(selectedBucket.width, heavyDuty);
-    const chosenBeltType = temperatureBand === "Sicak" || temperatureBand === "Çok sicak" ? "Isiya dayan?ml? bant" : usage === "Gida ortami" ? "Gida tipi bant" : usage === "Kimyasal ortam" ? "Kimyasala dayan?ml? bant" : beltType;
+    const chosenBeltType = temperatureBand === "Sicak" || temperatureBand === "Çok sicak" ? "Isiya dayanıml? bant" : usage === "Gida ortami" ? "Gida tipi bant" : usage === "Kimyasal ortam" ? "Kimyasala dayanıml? bant" : beltType;
     const beltClassRecommendation = heavyDuty || designCapacity > 25 ? "EP630" : chosenBeltType === "Gida tipi bant" ? "EP500" : beltClass;
     const selectedDriveType = driveType === "Sistem önerisiyle seç" ? (heavyDuty ? "Agir hizmet redüktörlü" : "Standart redüktörlü") : driveType;
-    const selectedChainMaterial = corrosion === "Korozif" || corrosion === "Çok korozif" ? "Paslanmaz" : grain === "Asindirici" ? "Asinma dayan?ml?" : chainMaterial;
+    const selectedChainMaterial = corrosion === "Korozif" || corrosion === "Çok korozif" ? "Paslanmaz" : grain === "Asindirici" ? "Asinma dayanıml?" : chainMaterial;
     const bodyRecommendation = getCorrosionRecommendation(usage, corrosion);
     const warnings = getWarnings({ plasticAllowed, selectedBucketMaterial: bucketMaterial, recommendedBucketMaterial, moisture, grain, corrosion, usage, temperatureBand, suitability: suitability.statusLabel });
 

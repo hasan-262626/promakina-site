@@ -85,7 +85,7 @@ export function LibrarySeoPage({
 }: LibrarySeoPageProps) {
   const defaultBreadcrumbs = breadcrumbs ?? [
     { label: "Ana Sayfa", href: "/" },
-    { label: "KÃ¼tÃ¼phane", href: "/kutuphane" },
+    { label: "Kütüphane", href: "/kutuphane" },
     { label: "Blog", href: "/kutuphane/blog" },
     { label: title, href: canonical.replace("https://www.promakina.com.tr", "") || canonical },
   ];
@@ -118,8 +118,8 @@ export function LibrarySeoPage({
     sameAs: siteSocialSameAs,
     address: {
       "@type": "PostalAddress",
-      streetAddress: "75. YÄ±l Mah. Teksan Sanayi Sitesi Kilis Sokak D6 Blok No:2E",
-      addressLocality: "OdunpazarÄ±",
+      streetAddress: "75. Yıl Mah. Teksan Sanayi Sitesi Kilis Sokak D6 Blok No:2E",
+      addressLocality: "Odunpazarı",
       addressRegion: "EskiÅŸehir",
       postalCode: "26250",
       addressCountry: "TR",
@@ -148,8 +148,8 @@ export function LibrarySeoPage({
       name: "Pro Makina",
     },
     about: [
-      "Proses mÃ¼hendisliÄŸi",
-      "EndÃ¼striyel makine imalatÄ±",
+      "Proses mühendisliği",
+      "Endüstriyel makine imalatı",
       "Anahtar teslim tesis kurulumu",
     ],
     publisher: {
@@ -296,25 +296,25 @@ export function LibrarySeoPage({
               <section>
                 <div className="rounded-[24px] border border-slate-200 bg-white px-5 py-5 shadow-sm">
                   <h2 className="text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">
-                    Teknik GÃ¶rÃ¼ÅŸme Talep Edin
+                    Teknik Görüşme Talep Edin
                   </h2>
                   <p className="mt-4 text-sm leading-8 text-slate-600 sm:text-base">
-                    Bu iÃ§erik Pro Makina proses mÃ¼hendisliÄŸi yaklaÅŸÄ±mÄ±yla hazÄ±rlanmÄ±ÅŸtÄ±r. Ä°Ã§erikteki
-                    teknik Ã§erÃ§eveyi kendi projenize uyarlamak, kapasite ve ekipman seÃ§imini birlikte
-                    netleÅŸtirmek iÃ§in bizimle teknik gÃ¶rÃ¼ÅŸme planlayabilirsiniz.
+                    Bu içerik Pro Makina proses mühendisliği yaklaşımıyla hazırlanmıştır. İçerikteki
+                    teknik çerçeveyi kendi projenize uyarlamak, kapasite ve ekipman seçimini birlikte
+                    netleştirmek için bizimle teknik görüşme planlayabilirsiniz.
                   </p>
                   <div className="mt-6 flex flex-col gap-3 sm:flex-row">
                     <Link
                       href="/iletisim"
                       className="inline-flex min-h-[44px] items-center justify-center rounded-full bg-blue-700 px-5 text-sm font-semibold text-white transition hover:bg-blue-800"
                     >
-                      Teknik GÃ¶rÃ¼ÅŸme Talep Edin
+                      Teknik Görüşme Talep Edin
                     </Link>
                     <Link
                       href="/hizmetler"
                       className="inline-flex min-h-[44px] items-center justify-center rounded-full border border-slate-200 px-5 text-sm font-semibold text-slate-800 transition hover:border-blue-200 hover:text-blue-700"
                     >
-                      Ä°lgili Hizmetleri Ä°ncele
+                      İlgili Hizmetleri İncele
                     </Link>
                   </div>
                 </div>
@@ -327,7 +327,7 @@ export function LibrarySeoPage({
               {faqs.length ? (
                 <section>
                   <h2 className="text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">
-                    SÄ±k Sorulan Sorular
+                    Sık Sorulan Sorular
                   </h2>
                   <div className="mt-6 space-y-4">
                     {faqs.map((faq) => (
@@ -345,7 +345,7 @@ export function LibrarySeoPage({
               {nextContent ? (
                 <section>
                   <h2 className="text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">
-                    SÄ±radaki Ä°Ã§erik Ã–nerisi
+                    Sıradaki İçerik Önerisi
                   </h2>
                   <Link
                     href={nextContent.href}
@@ -353,7 +353,7 @@ export function LibrarySeoPage({
                   >
                     <span className="text-lg font-semibold text-slate-950">{nextContent.title}</span>
                     <span className="mt-3 block text-sm leading-7 text-slate-600">{nextContent.description}</span>
-                    <span className="mt-4 inline-flex text-sm font-semibold text-blue-700">DevamÄ±nÄ± Oku</span>
+                    <span className="mt-4 inline-flex text-sm font-semibold text-blue-700">Devamını Oku</span>
                   </Link>
                 </section>
               ) : null}
@@ -366,7 +366,7 @@ export function LibrarySeoPage({
         <div className="site-container">
           <div className="rounded-[28px] bg-blue-700 px-6 py-8 text-white shadow-[0_24px_70px_rgba(29,78,216,0.28)] sm:px-8 sm:py-10">
             <p className="text-sm font-semibold uppercase tracking-[0.16em] text-white/80">
-              Teknik GÃ¶rÃ¼ÅŸme Talep Edin
+              Teknik Görüşme Talep Edin
             </p>
             <p className="max-w-3xl text-base leading-8 text-white/90 sm:text-lg">{ctaText}</p>
             <div className="mt-6 flex flex-col gap-3 sm:flex-row">
@@ -388,7 +388,7 @@ export function LibrarySeoPage({
                 href="/hizmetler/teknik-danismanlik"
                 className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/25 px-6 text-sm font-semibold text-white transition hover:bg-white/10"
               >
-                Teknik DanÄ±ÅŸmanlÄ±k
+                Teknik Danışmanlık
               </Link>
             </div>
           </div>

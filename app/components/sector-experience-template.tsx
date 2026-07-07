@@ -92,7 +92,7 @@ export function SectorExperienceTemplate({
 
             <aside className="xl:sticky xl:top-28 xl:self-start">
               <div className="rounded-[30px] border border-slate-200 bg-slate-50 p-6 shadow-[0_16px_40px_rgba(15,23,42,0.06)]">
-                <h3 className="text-2xl font-semibold text-slate-950">Ä°lgili alt baÅŸlÄ±klar</h3>
+                <h3 className="text-2xl font-semibold text-slate-950">İlgili alt başlıklar</h3>
                 <div className="mt-6 space-y-3">
                   {sector.subLinks.map((item) => (
                     <Link

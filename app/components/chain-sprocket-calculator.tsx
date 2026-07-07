@@ -390,7 +390,7 @@ export function ChainSprocketCalculator() {
 
   const ratioCalc = useMemo(() => {
     const z1 = Math.max(1, Math.round(n(ratio.z1))); const z2 = Math.max(1, Math.round(n(ratio.z2))); const i = z2 / z1; const n1 = n(ratio.inputRpm); const n2 = n1 * (z1 / z2); const p = n(ratio.pitch); const d1 = p > 0 ? pitchDiameter(p, z1) : 0; const v = p > 0 ? chainSpeed(d1, n1) : 0;
-    return { i, n2, oneTurn: z1 / z2, system: z2 > z1 ? "Hız Düşürücü" : z2 < z1 ? "Hız Artırıcı" : "1:1 İletim", change: n1 > 0 ? ((n2 - n1) / n1) * 100 : 0, v, tooth: teethStatus(Math.min(z1, z2)) };
+    return { i, n2, oneTurn: z1 / z2, system: z2 >z1 ? "Hız Düşürücü" : z2< z1 ? "Hız Artırıcı" : "1:1 İletim", change: n1 > 0 ? ((n2 - n1) / n1) * 100 : 0, v, tooth: teethStatus(Math.min(z1, z2)) };
   }, [ratio]);
 
   const chainLengthCalc = useMemo(() => {

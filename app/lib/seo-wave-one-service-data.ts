@@ -7,337 +7,337 @@ const commonTechnicalContents = [
     title: "Kurutma Tamburu Hesaplama",
     href: "/kutuphane/blog/kurutma-tamburu-hesaplama",
     description:
-      "Tambur boyutlandÄ±rma, nem yÃ¼kÃ¼, hava debisi ve enerji yaklaï¿½xÄ±mÄ±nÄ± teknik aÃ§Ä±dan inceleyin.",
+      "Tambur boyutlandırma, nem yükü, hava debisi ve enerji yaklaşımını teknik açıdan inceleyin.",
   },
   {
-    title: "Helezon KonveyÃ¶r Kapasite HesabÄ±",
+    title: "Helezon Konveyör Kapasite Hesabı",
     href: "/kutuphane/blog/helezon-konveyor-kapasite-hesabi",
     description:
-      "Besleme, transfer ve dozajlama hatlarÄ±nda vida Ã§apÄ±, hatve ve motor mantÄ±ï¿½xÄ±nÄ± gÃ¶rÃ¼n.",
+      "Besleme, transfer ve dozajlama hatlarında vida çapı, hatve ve motor mantığını görün.",
   },
   {
-    title: "GranÃ¼l GÃ¼bre ï¿½Sretim SÃ¼reci",
+    title: "Granül Gübre Üretim Süreci",
     href: "/kutuphane/blog/granul-gubre-uretim-sureci",
     description:
-      "GranÃ¼lasyon, kurutma, soï¿½xutma, eleme ve paketleme akÄ±ï¿½xÄ±nÄ± yatÄ±rÄ±m bakÄ±ï¿½xÄ±yla okuyun.",
+      "Granülasyon, kurutma, soğutma, eleme ve paketleme akışını yatırım bakışıyla okuyun.",
   },
   {
-    title: "Kompost Tesisi NasÄ±l Kurulur?",
+    title: "Kompost Tesisi Nasıl Kurulur?",
     href: "/kutuphane/blog/kompost-tesisi-kurulumu",
     description:
-      "Organik atÄ±k, Ã§amur ve kompost hatlarÄ±nda proses kurgusunun nasÄ±l kurulduï¿½xunu inceleyin.",
+      "Organik atık, çamur ve kompost hatlarında proses kurgusunun nasıl kurulduğunu inceleyin.",
   },
 ];
 
 const servicePages: Record<string, ServicePageRecord> = {
   "kurutma-tamburu-imalati": {
-    title: "Kurutma Tamburu Ä°malatÄ± | Rotary Dryer ï¿½!Ã¶zÃ¼mleri",
+    title: "Kurutma Tamburu İmalatı | Rotary Dryer Çözümleri",
     description:
-      "Kurutma tamburu imalatÄ±, dÃ¶ner kurutucu ve rotary dryer Ã§Ã¶zÃ¼mleri iÃ§in kapasiteye Ã¶zel endÃ¼striyel kurutma tamburu tasarÄ±mÄ± sunuyoruz.",
+      "Kurutma tamburu imalatı, döner kurutucu ve rotary dryer çözümleri için kapasiteye özel endüstriyel kurutma tamburu tasarımı sunuyoruz.",
     canonical: "https://www.promakina.com.tr/hizmetler/kurutma-tamburu-imalati",
     image: "/images/tambur kurutma/tamkurutma1.jpg",
-    serviceName: "Kurutma Tamburu Ä°malatÄ±",
-    introTitle: "Rotary Dryer ve EndÃ¼striyel Kurutma Tamburu ï¿½!Ã¶zÃ¼mleri",
+    serviceName: "Kurutma Tamburu İmalatı",
+    introTitle: "Rotary Dryer ve Endüstriyel Kurutma Tamburu Çözümleri",
     introParagraphs: [
-      "Kurutma tamburu imalatÄ±, yÃ¼ksek nemli Ã¼rÃ¼nlerin kontrollÃ¼ Ä±sÄ± transferi ile hedef son neme dÃ¼ï¿½xÃ¼rÃ¼lmesini saï¿½xlayan proses mÃ¼hendisliï¿½xi ve aï¿½xÄ±r hizmet tipi makina tasarÄ±mÄ± iï¿½xidir. GÃ¼bre, kompost, mineral, Ã§amur ve farklÄ± dÃ¶kme katÄ± Ã¼rÃ¼nlerde rotary dryer seÃ§imi yalnÄ±z gÃ¶vde Ã§apÄ± ile deï¿½xil; su uÃ§urma yÃ¼kÃ¼, gaz sÄ±caklÄ±ï¿½xÄ±, Ã¼rÃ¼n davranÄ±ï¿½xÄ± ve residence time mantÄ±ï¿½xÄ±yla belirlenir.",
-      "Pro Makina, endÃ¼striyel kurutma tamburu Ã§Ã¶zÃ¼mlerinde kapasite hesabÄ±nÄ±, gÃ¶vde Ã¶lÃ§Ã¼lendirmesini, iÃ§ flight tasarÄ±mÄ±nÄ±, fan-siklon-filtre entegrasyonunu ve saha yerleï¿½ximini birlikte deï¿½xerlendirir. BÃ¶ylece yalnÄ±z Ã§alÄ±ï¿½xan bir dÃ¶ner kurutucu deï¿½xil; daha dÃ¼ï¿½xÃ¼k enerji kaybÄ±, daha istikrarlÄ± Ã¼rÃ¼n nemi ve daha gÃ¼venilir bakÄ±m ritmi saï¿½xlayan bÃ¼tÃ¼ncÃ¼l bir kurutma hattÄ± elde edilir.",
+      "Kurutma tamburu imalatı, yüksek nemli ürünlerin kontrollü ısı transferi ile hedef son neme düğürülmesini sağlayan proses mühendisliği ve ağır hizmet tipi makina tasarımı işidir. Gübre, kompost, mineral, çamur ve farklı dökme katı ürünlerde rotary dryer seçimi yalnız gövde çapı ile değil; su uçurma yükü, gaz sıcaklığı, ürün davranışı ve residence time mantığıyla belirlenir.",
+      "Pro Makina, endüstriyel kurutma tamburu çözümlerinde kapasite hesabını, gövde ölçülendirmesini, iç flight tasarımını, fan-siklon-filtre entegrasyonunu ve saha yerleşimini birlikte değerlendirir. Böylece yalnız çalışan bir döner kurutucu değil; daha düğük enerji kaybı, daha istikrarlı ürün nemi ve daha güvenilir bakım ritmi sağlayan bütüncül bir kurutma hattı elde edilir.",
     ],
-    cardsTitle: "KullanÄ±m AlanlarÄ± ve Ä°lgili Ana Makineler",
+    cardsTitle: "Kullanım Alanları ve İlgili Ana Makineler",
     cardsDescription:
-      "Kurutma tamburu imalatÄ±, farklÄ± proseslerde farklÄ± yardÄ±mcÄ± ekipmanlarla birlikte dÃ¼ï¿½xÃ¼nÃ¼lmelidir. Aï¿½xaï¿½xÄ±daki baï¿½xlantÄ±lar bu omurgayÄ± hÄ±zla gÃ¶rmenizi saï¿½xlar.",
+      "Kurutma tamburu imalatı, farklı proseslerde farklı yardımcı ekipmanlarla birlikte düğünülmelidir. Aşağıdaki bağlantılar bu omurgayı hızla görmenizi sağlar.",
     cards: [
       {
         title: "Silis Kumu Kurutma",
         description:
-          "Kuvars ve silis kumu hatlarÄ±nda dÃ¼ï¿½xÃ¼k son nem ve kararlÄ± tane akÄ±ï¿½xÄ± iÃ§in kurutma kurgusunu inceleyin.",
+          "Kuvars ve silis kumu hatlarında düğük son nem ve kararlı tane akışı için kurutma kurgusunu inceleyin.",
         href: "/hizmetler/silis-kumu-kurutma-tesisi",
       },
       {
-        title: "ï¿½!amur Kurutma Tesisi",
+        title: "Çamur Kurutma Tesisi",
         description:
-          "ArÄ±tma Ã§amuru, digestat ve yÃ¼ksek nemli yan Ã¼rÃ¼nlerde termal kurutma yaklaï¿½xÄ±mÄ±nÄ± gÃ¶rÃ¼n.",
+          "Arıtma çamuru, digestat ve yüksek nemli yan ürünlerde termal kurutma yaklaşımını görün.",
         href: "/hizmetler/camur-kurutma-tesisi",
       },
       {
         title: "Jet Pulse Filtreler",
         description:
-          "Kurutma tamburunun ardÄ±ndan hava-temizleme ve toz toplama hattÄ±nÄ± tamamlayan filtre Ã§Ã¶zÃ¼mleri.",
+          "Kurutma tamburunun ardından hava-temizleme ve toz toplama hattını tamamlayan filtre çözümleri.",
         href: "/makinalar-ekipman/toz-toplama-sistemleri",
       },
       {
-        title: "Siklon AyÄ±rÄ±cÄ±lar",
+        title: "Siklon Ayırıcılar",
         description:
-          "ï¿½n ayÄ±rma ve taï¿½xÄ±yÄ±cÄ± gaz hattÄ±nda partikÃ¼l yÃ¼kÃ¼nÃ¼ dÃ¼ï¿½xÃ¼ren siklon entegrasyonunu inceleyin.",
+          "Ön ayırma ve taşıyıcı gaz hattında partikül yükünü düğüren siklon entegrasyonunu inceleyin.",
         href: "/makinalar-ekipman/toz-toplama-sistemleri/siklon-ayiricilar",
       },
     ],
     summaryRows: [
       {
-        criterion: "Nem YÃ¼kÃ¼",
+        criterion: "Nem Yükü",
         description:
-          "Giriï¿½x nemi, Ã§Ä±kÄ±ï¿½x nemi ve saatlik tonaj birlikte okunarak su uzaklaï¿½xtÄ±rma ihtiyacÄ± hesaplanÄ±r.",
+          "Giriş nemi, çıkış nemi ve saatlik tonaj birlikte okunarak su uzaklaştırma ihtiyaçı hesaplanır.",
         importance:
-          "Tambur Ã§apÄ±, boyu, hava debisi ve brÃ¼lÃ¶r yÃ¼kÃ¼nÃ¼n doï¿½xru seÃ§ilmesini saï¿½xlar.",
+          "Tambur çapı, boyu, hava debisi ve brülör yükünün doğru seçilmesini sağlar.",
       },
       {
-        criterion: "ï¿½SrÃ¼n DavranÄ±ï¿½xÄ±",
+        criterion: "Ürün Davranışı",
         description:
-          "YapÄ±ï¿½xma, tozuma, tane kÄ±rÄ±lmasÄ± ve sÄ±caklÄ±ï¿½xa hassasiyet gibi fiziksel veriler tasarÄ±ma dahil edilir.",
+          "Yapışma, tozuma, tane kırılması ve sıcaklışa hassasiyet gibi fiziksel veriler tasarıma dahil edilir.",
         importance:
-          "Ä°Ã§ flight geometrisi ve devir mantÄ±ï¿½xÄ± Ã¼zerinde doï¿½xrudan etkili olur.",
+          "İç flight geometrisi ve devir mantığı üzerinde doğrudan etkili olur.",
       },
       {
-        criterion: "YardÄ±mcÄ± Ekipmanlar",
+        criterion: "Yardımcı Ekipmanlar",
         description:
-          "Bant konveyÃ¶r, besleme bunkerleri, fan, siklon ve filtre hattÄ± tamburla aynÄ± ritimde Ã§Ã¶zÃ¼lÃ¼r.",
+          "Bant konveyör, besleme bunkerleri, fan, siklon ve filtre hattı tamburla aynı ritimde çözülür.",
         importance:
-          "Darboï¿½xaz oluï¿½xmasÄ±nÄ± ve termal verimin sahada dÃ¼ï¿½xmesini engeller.",
+          "Darboğaz oluşmasını ve termal verimin sahada düğmesini engeller.",
       },
       {
-        criterion: "BakÄ±m ve Eriï¿½xim",
+        criterion: "Bakım ve Erişim",
         description:
-          "Ring, support, drive ve iÃ§ ekipmanlara sahada eriï¿½xim tasarÄ±mÄ±n ilk aï¿½xamasÄ±nda planlanÄ±r.",
+          "Ring, support, drive ve iç ekipmanlara sahada erişim tasarımın ilk aşamasında planlanır.",
         importance:
-          "Uzun vardiyalÄ± iï¿½xletmelerde duruï¿½x sÃ¼resini azaltÄ±r ve servis gÃ¼veni saï¿½xlar.",
+          "Uzun vardiyalı işletmelerde duruş süresini azaltır ve servis güveni sağlar.",
       },
     ],
     sections: [
       {
-        title: "KullanÄ±m AlanlarÄ±",
+        title: "Kullanım Alanları",
         paragraphs: [
-          "Kurutma tamburu; granÃ¼l gÃ¼bre Ã¼retim tesislerinde son nemin dÃ¼ï¿½xÃ¼rÃ¼lmesi, kompost ve organik tÃ¼revlerde hacim azaltma, silis kumu ve kuvars kumu hatlarÄ±nda akÄ±ï¿½x kararlÄ±lÄ±ï¿½xÄ± saï¿½xlama, maden kurutma tesisi uygulamalarÄ±nda mineralin paketleme veya eleme Ã¶ncesi hazÄ±rlanmasÄ± ve belediye ya da endÃ¼striyel arÄ±tma Ã§amuru kurutma senaryolarÄ±nda nihai Ã¼rÃ¼nÃ¼n yÃ¶netilebilir hale getirilmesi iÃ§in kullanÄ±lÄ±r. Her kullanÄ±m alanÄ± aynÄ± rotary dryer mantÄ±ï¿½xÄ±na dayanÄ±yor gibi gÃ¶rÃ¼nse de gerÃ§ek tasarÄ±m kriterleri Ã¼rÃ¼n davranÄ±ï¿½xÄ±na gÃ¶re Ã¶nemli Ã¶lÃ§Ã¼de deï¿½xiï¿½xir.",
+          "Kurutma tamburu; granül gübre üretim tesislerinde son nemin düğürülmesi, kompost ve organik türevlerde hacim azaltma, silis kumu ve kuvars kumu hatlarında akış kararlılığı sağlama, maden kurutma tesisi uygulamalarında mineralin paketleme veya eleme öncesi hazırlanması ve belediye ya da endüstriyel arıtma çamuru kurutma senaryolarında nihai ürünün yönetilebilir hale getirilmesi için kullanılır. Her kullanım alanı aynı rotary dryer mantığına dayanıyor gibi görünse de gerçek tasarım kriterleri ürün davranışına göre önemli ölçüde değişir.",
         ],
       },
       {
-        title: "Hangi Hammaddeler ve ï¿½SrÃ¼nler Ä°Ã§in Uygundur?",
+        title: "Hangi Hammaddeler ve Ürünler İçin Uygundur?",
         paragraphs: [
-          "Organomineral granÃ¼l, NPK karÄ±ï¿½xÄ±mlarÄ±, kompost tÃ¼revleri, arÄ±tma Ã§amuru, digestat, silis kumu, kuvars kumu, farklÄ± mineral fraksiyonlarÄ± ve termal olarak son nemi dÃ¼ï¿½xÃ¼rÃ¼lmesi gereken dÃ¶kme katÄ± malzemeler kurutma tamburu ile iï¿½xlenebilir. Burada esas konu yalnÄ±z Ã¼rÃ¼nÃ¼n adÄ± deï¿½xil; nem seviyesi, tane boyutu, yoï¿½xunluï¿½xu ve sÄ±caklÄ±k altÄ±nda verdiï¿½xi davranÄ±ï¿½xtÄ±r. Bu veriler doï¿½xru okunmadan kurutma tamburu imalatÄ± yapmak, gereksiz enerji tÃ¼ketimi veya yetersiz kurutma riski doï¿½xurur.",
+          "Organomineral granül, NPK karışımları, kompost türevleri, arıtma çamuru, digestat, silis kumu, kuvars kumu, farklı mineral fraksiyonları ve termal olarak son nemi düğürülmesi gereken dökme katı malzemeler kurutma tamburu ile işlenebilir. Burada esas konu yalnız ürünün adı değil; nem seviyesi, tane boyutu, yoğunluğu ve sıcaklık altında verdiği davranıştır. Bu veriler doğru okunmadan kurutma tamburu imalatı yapmak, gereksiz enerji tüketimi veya yetersiz kurutma riski doşurur.",
         ],
       },
       {
-        title: "Teknik ï¿½zellikler",
+        title: "Teknik özellikler",
         paragraphs: [
-          "EndÃ¼striyel kurutma tamburu Ã§Ã¶zÃ¼mlerinde gÃ¶vde Ã§apÄ± ve boyu, iÃ§ flight geometrisi, ring-support yapÄ±sÄ±, tahrik sistemi, gÃ¶vde izolasyonu, sÄ±cak gaz akÄ±ï¿½xÄ±, fan debisi, siklon ve filtre entegrasyonu birlikte ele alÄ±nÄ±r. DÃ¶ner kurutucu tasarÄ±mÄ±nda yalnÄ±z tambur gÃ¶vdesini bÃ¼yÃ¼tmek Ã§Ã¶zÃ¼m deï¿½xildir; Ã¼rÃ¼n perdesi oluï¿½xturma kalitesi ve gaz ile Ã¼rÃ¼nÃ¼n temas karakteri de aynÄ± derecede belirleyicidir.",
+          "Endüstriyel kurutma tamburu çözümlerinde gövde çapı ve boyu, iç flight geometrisi, ring-support yapısı, tahrik sistemi, gövde izolasyonu, sıcak gaz akışı, fan debisi, siklon ve filtre entegrasyonu birlikte ele alınır. Döner kurutucu tasarımında yalnız tambur gövdesini büyütmek çözüm değildir; ürün perdesi oluşturma kalitesi ve gaz ile ürünün temas karakteri de aynı derecede belirleyicidir.",
         ],
       },
       {
-        title: "Kapasite ve TasarÄ±m Kriterleri",
+        title: "Kapasite ve Tasarım Kriterleri",
         paragraphs: [
-          "Kapasite hesabÄ±nda ton/saat deï¿½xeri kadar giriï¿½x ve Ã§Ä±kÄ±ï¿½x nemi, gaz sÄ±caklÄ±ï¿½xÄ±, hedef residence time, Ã¼rÃ¼n yoï¿½xunluï¿½xu ve saha yerleï¿½ximi de Ã¶nem taï¿½xÄ±r. ï¿½zellikle rotary dryer uygulamalarÄ±nda tambur L/D oranÄ±, support sayÄ±sÄ± ve devir aralÄ±ï¿½xÄ± sahadaki enerji kullanÄ±mÄ±nÄ± belirler. BÃ¼yÃ¼k tonajlÄ± hatlarda siklon, jet pulse filtre ve bant konveyÃ¶r omurgasÄ± doï¿½xru kurulmazsa kurutma tamburu teorik kapasitesine ulaï¿½xsa bile bÃ¼tÃ¼n hat verimi dÃ¼ï¿½xebilir.",
+          "Kapasite hesabında ton/saat değeri kadar giriş ve çıkış nemi, gaz sıcaklığı, hedef residence time, ürün yoğunluğu ve saha yerleşimi de önem tağır. özellikle rotary dryer uygulamalarında tambur L/D oranı, support sayısı ve devir aralığı sahadaki enerji kullanımını belirler. Büyük tonajlı hatlarda siklon, jet pulse filtre ve bant konveyör omurgası doğru kurulmazsa kurutma tamburu teorik kapasitesine ulaşsa bile bütün hat verimi düğebilir.",
         ],
       },
       {
-        title: "Proses Ä°Ã§indeki Yeri",
+        title: "Proses İçindeki Yeri",
         paragraphs: [
-          "Kurutma tamburu Ã§oï¿½xu hatta granÃ¼lasyon veya Ã¶n hazÄ±rlÄ±k sonrasÄ± gelir ve sonrasÄ±nda soï¿½xutma, eleme, stoklama ya da paketleme adÄ±mlarÄ±na Ã¼rÃ¼n hazÄ±rlar. ï¿½!amur kurutma tesislerinde dewatering sonrasÄ±, silis kumu kurutma tesislerinde ise eleme ve stoklama Ã¶ncesi kritik rol oynar. Yani tambur tek baï¿½xÄ±na bir makina deï¿½xil, tÃ¼m termal hazÄ±rlÄ±k omurgasÄ±nÄ±n merkezidir.",
+          "Kurutma tamburu çoşu hatta granülasyon veya ön hazırlık sonrası gelir ve sonrasında soğutma, eleme, stoklama ya da paketleme adımlarına ürün hazırlar. Çamur kurutma tesislerinde dewatering sonrası, silis kumu kurutma tesislerinde ise eleme ve stoklama öncesi kritik rol oynar. Yani tambur tek başına bir makina değil, tüm termal hazırlık omurgasının merkezidir.",
         ],
       },
       {
         title: "Opsiyonel Ekipmanlar",
         paragraphs: [
-          "BrÃ¼lÃ¶r sistemi, sÄ±cak hava fanÄ±, siklon ayÄ±rÄ±cÄ±, jet pulse filtre, bant konveyÃ¶r, bunker, elevatÃ¶r, PLC tabanlÄ± sÄ±caklÄ±k kontrolÃ¼, iÃ§ flight paketleri ve servis platformlarÄ± kurutma tamburunun performansÄ±nÄ± tamamlayan ana opsiyonlardÄ±r. Projeye gÃ¶re gaz hattÄ±, baca, izolasyon ve otomasyon seviyesi de bu pakete dahil edilir.",
+          "Brülör sistemi, sıcak hava fanı, siklon ayırıcı, jet pulse filtre, bant konveyör, bunker, elevatör, PLC tabanlı sıcaklık kontrolü, iç flight paketleri ve servis platformları kurutma tamburunun performansını tamamlayan ana opsiyonlardır. Projeye göre gaz hattı, baca, izolasyon ve otomasyon seviyesi de bu pakete dahil edilir.",
         ],
       },
       {
         title: "Avantajlar",
         paragraphs: [
-          "Doï¿½xru tasarlanmÄ±ï¿½x bir kurutma tamburu; daha kararlÄ± son nem, daha dÃ¼ï¿½xÃ¼k enerji kaybÄ±, Ã¼rÃ¼n kÄ±rÄ±lmasÄ±nÄ± azaltan kontrollÃ¼ hareket, bakÄ±m eriï¿½ximi kolay aï¿½xÄ±r hizmet tipi gÃ¶vde ve farklÄ± Ã¼rÃ¼n senaryolarÄ±na uyarlanabilir mÃ¼hendislik esnekliï¿½xi saï¿½xlar. ï¿½zellikle maden, gÃ¼bre ve Ã§amur kurutma hatlarÄ±nda bu avantajlar doï¿½xrudan iï¿½xletme kÃ¢rlÄ±lÄ±ï¿½xÄ±na yansÄ±r.",
+          "Doğru tasarlanmış bir kurutma tamburu; daha kararlı son nem, daha düğük enerji kaybı, ürün kırılmasını azaltan kontrollü hareket, bakım erişimi kolay ağır hizmet tipi gövde ve farklı ürün senaryolarına uyarlanabilir mühendislik esnekliği sağlar. özellikle maden, gübre ve çamur kurutma hatlarında bu avantajlar doğrudan işletme kârlılığına yansır.",
         ],
       },
       {
-        title: "Teklif Almak Ä°Ã§in Gerekli Bilgiler",
+        title: "Teklif Almak İçin Gerekli Bilgiler",
         paragraphs: [
-          "Saï¿½xlÄ±klÄ± bir teklif iÃ§in Ã¼rÃ¼n tipi, saatlik kapasite, giriï¿½x ve Ã§Ä±kÄ±ï¿½x nemi, Ã¼rÃ¼n yoï¿½xunluï¿½xu, parÃ§acÄ±k boyutu, mevcut veya planlanan yardÄ±mcÄ± ekipmanlar, yakÄ±t tercihi ve saha yerleï¿½xim bilgisi paylaï¿½xÄ±lmalÄ±dÄ±r. Bu veriler ile Pro Makina, kurutma tamburu imalatÄ± ve rotary dryer hattÄ± iÃ§in daha net boyutlandÄ±rma ve bÃ¼tÃ§e aralÄ±ï¿½xÄ± sunabilir.",
+          "Sağlıklı bir teklif için ürün tipi, saatlik kapasite, giriş ve çıkış nemi, ürün yoğunluğu, parçacık boyutu, mevcut veya planlanan yardımcı ekipmanlar, yakıt tercihi ve saha yerleşim bilgisi paylaşılmalıdır. Bu veriler ile Pro Makina, kurutma tamburu imalatı ve rotary dryer hattı için daha net boyutlandırma ve bütçe aralığı sunabilir.",
         ],
       },
     ],
     faqs: [
       {
-        question: "Kurutma tamburu ile rotary dryer aynÄ± ekipman mÄ±dÄ±r?",
+        question: "Kurutma tamburu ile rotary dryer aynı ekipman mıdır?",
         answer:
-          "Evet. Rotary dryer, endÃ¼striyel kurutma tamburu iÃ§in sÄ±k kullanÄ±lan Ä°ngilizce karï¿½xÄ±lÄ±ktÄ±r; tasarÄ±m yine Ã¼rÃ¼n nemi ve termal yÃ¼k Ã¼zerinden yapÄ±lÄ±r.",
+          "Evet. Rotary dryer, endüstriyel kurutma tamburu için sık kullanılan İngilizce karşılıktır; tasarım yine ürün nemi ve termal yük üzerinden yapılır.",
       },
       {
-        question: "Kurutma tamburu hangi sektÃ¶rlerde kullanÄ±lÄ±r?",
+        question: "Kurutma tamburu hangi sektörlerde kullanılır?",
         answer:
-          "GÃ¼bre, kompost, maden iï¿½xleme, silis kumu, kuvars kumu, arÄ±tma Ã§amuru ve farklÄ± dÃ¶kme katÄ± malzeme proseslerinde yaygÄ±n olarak kullanÄ±lÄ±r.",
+          "Gübre, kompost, maden işleme, silis kumu, kuvars kumu, arıtma çamuru ve farklı dökme katı malzeme proseslerinde yaygın olarak kullanılır.",
       },
       {
-        question: "Kurutma tamburu kapasitesi nasÄ±l belirlenir?",
+        question: "Kurutma tamburu kapasitesi nasıl belirlenir?",
         answer:
-          "Ton/saat, giriï¿½x-Ã§Ä±kÄ±ï¿½x nemi, Ã¼rÃ¼n yoï¿½xunluï¿½xu, gaz sÄ±caklÄ±ï¿½xÄ± ve hedef residence time birlikte deï¿½xerlendirilerek belirlenir.",
+          "Ton/saat, giriş-çıkış nemi, ürün yoğunluğu, gaz sıcaklığı ve hedef residence time birlikte değerlendirilerek belirlenir.",
       },
       {
-        question: "Jet pulse filtre ve siklon her kurutma hattÄ±nda gerekli midir?",
+        question: "Jet pulse filtre ve siklon her kurutma hattında gerekli midir?",
         answer:
-          "BirÃ§ok kurutma hattÄ±nda toz yÃ¼kÃ¼ ve emisyon kontrolÃ¼ iÃ§in siklon ve filtre hattÄ± bÃ¼yÃ¼k Ã¶nem taï¿½xÄ±r; ihtiyaÃ§ Ã¼rÃ¼n davranÄ±ï¿½xÄ±na gÃ¶re netleï¿½xtirilir.",
+          "Birçok kurutma hattında toz yükü ve emisyon kontrolü için siklon ve filtre hattı büyük önem tağır; ihtiyaç ürün davranışına göre netleştirilir.",
       },
       {
         question: "Kurutma tamburu teklifinde hangi bilgiler gerekir?",
         answer:
-          "ï¿½SrÃ¼n adÄ±, kapasite, nem deï¿½xerleri, yoï¿½xunluk, yakÄ±t tercihi ve yardÄ±mcÄ± ekipman beklentisi paylaï¿½xÄ±lmasÄ± en doï¿½xru baï¿½xlangÄ±Ã§tÄ±r.",
+          "Ürün adı, kapasite, nem değerleri, yoğunluk, yakıt tercihi ve yardımcı ekipman beklentisi paylaşılması en doğru bağlangıçtır.",
       },
     ],
     ctaText:
-      "Kurutma tamburu imalatÄ±, rotary dryer tasarÄ±mÄ± ve yardÄ±mcÄ± ekipman seÃ§imi iÃ§in Ã¼rÃ¼n verilerinizi paylaï¿½xÄ±n; teknik keï¿½xif ve teklif kurgusunu birlikte oluï¿½xturalÄ±m.",
+      "Kurutma tamburu imalatı, rotary dryer tasarımı ve yardımcı ekipman seçimi için ürün verilerinizi paylaşın; teknik keşif ve teklif kurgusunu birlikte oluşturalım.",
     showForm: true,
     technicalContents: commonTechnicalContents,
     keyLinks: [
       { label: "Silis Kumu Kurutma Tesisi", href: "/hizmetler/silis-kumu-kurutma-tesisi" },
-      { label: "ï¿½!amur Kurutma Tesisi", href: "/hizmetler/camur-kurutma-tesisi" },
-      { label: "GranÃ¼l GÃ¼bre ï¿½Sretim Tesisi", href: "/hizmetler/granul-gubre-uretim-tesisi" },
-      { label: "BantlÄ± KonveyÃ¶rler", href: "/makinalar-ekipman/tasima-ekipmanlari/bantli-konveyorler" },
+      { label: "Çamur Kurutma Tesisi", href: "/hizmetler/camur-kurutma-tesisi" },
+      { label: "Granül Gübre Üretim Tesisi", href: "/hizmetler/granul-gubre-uretim-tesisi" },
+      { label: "Bantlı Konveyörler", href: "/makinalar-ekipman/tasima-ekipmanlari/bantli-konveyorler" },
     ],
   },
   "camur-kurutma-tesisi": {
-    title: "ï¿½!amur Kurutma Tesisi | Anahtar Teslim Kurutma HattÄ±",
+    title: "Çamur Kurutma Tesisi | Anahtar Teslim Kurutma Hattı",
     description:
-      "ï¿½!amur kurutma tesisi, arÄ±tma Ã§amuru kurutma ve digestat kurutma hatlarÄ± iÃ§in belediye ve sanayiye Ã¶zel anahtar teslim Ã§Ã¶zÃ¼mler sunuyoruz.",
+      "Çamur kurutma tesisi, arıtma çamuru kurutma ve digestat kurutma hatları için belediye ve sanayiye özel anahtar teslim çözümler sunuyoruz.",
     canonical: "https://www.promakina.com.tr/hizmetler/camur-kurutma-tesisi",
     image: "/images/tambur kurutma/tamkurutma1.jpg",
-    serviceName: "ï¿½!amur Kurutma Tesisi",
-    introTitle: "ArÄ±tma ï¿½!amuru ve Digestat Kurutma HatlarÄ±",
+    serviceName: "Çamur Kurutma Tesisi",
+    introTitle: "Arıtma Çamuru ve Digestat Kurutma Hatları",
     introParagraphs: [
-      "ï¿½!amur kurutma tesisi, yÃ¼ksek nemli belediye Ã§amuru, arÄ±tma Ã§amuru, endÃ¼striyel proses Ã§amuru ve digestat gibi akÄ±ï¿½xlarÄ±n daha dÃ¼ï¿½xÃ¼k hacimde, daha yÃ¶netilebilir ve daha yÃ¼ksek kuru madde seviyesinde iï¿½xlenmesini saï¿½xlayan entegre termal proses Ã§Ã¶zÃ¼mÃ¼dÃ¼r. Bu tesislerde doï¿½xru mÃ¼hendislik yaklaï¿½xÄ±mÄ±, yalnÄ±z suyu uzaklaï¿½xtÄ±rmak deï¿½xil; aynÄ± zamanda koku, toz, besleme disiplini ve enerji verimini birlikte yÃ¶netmektir.",
-      "Pro Makina, belediye Ã§amuru kurutma hattÄ± ve digestat kurutma projelerinde besleme, termal kurutma, hava yÃ¶netimi, toz kontrolÃ¼ ve Ã§Ä±kÄ±ï¿½x Ã¼rÃ¼nÃ¼ hazÄ±rlama adÄ±mlarÄ±nÄ± tek merkezden planlar. BÃ¶ylece yatÄ±rÄ±mcÄ±, yalnÄ±z Ã§alÄ±ï¿½xan bir kurutucu deï¿½xil; sahada gÃ¼venli, sÃ¼rdÃ¼rÃ¼lebilir ve izin sÃ¼reÃ§lerine daha uyumlu bir tesis omurgasÄ± elde eder.",
+      "Çamur kurutma tesisi, yüksek nemli belediye çamuru, arıtma çamuru, endüstriyel proses çamuru ve digestat gibi akışların daha düğük hacimde, daha yönetilebilir ve daha yüksek kuru madde seviyesinde işlenmesini sağlayan entegre termal proses çözümüdür. Bu tesislerde doğru mühendislik yaklaşımı, yalnız suyu uzaklaştırmak değil; aynı zamanda koku, toz, besleme disiplini ve enerji verimini birlikte yönetmektir.",
+      "Pro Makina, belediye çamuru kurutma hattı ve digestat kurutma projelerinde besleme, termal kurutma, hava yönetimi, toz kontrolü ve çıkış ürünü hazırlama adımlarını tek merkezden planlar. Böylece yatırımcı, yalnız çalışan bir kurutucu değil; sahada güvenli, sürdürülebilir ve izin süreçlerine daha uyumlu bir tesis omurgası elde eder.",
     ],
     cards: [
       {
-        title: "ArÄ±tma ï¿½!amuru UygulamalarÄ±",
+        title: "Arıtma Çamuru Uygulamaları",
         description:
-          "Belediye ve endÃ¼striyel arÄ±tma Ã§Ä±kÄ±ï¿½xlarÄ±nda susuzlaï¿½xtÄ±rma sonrasÄ± termal kurutma yaklaï¿½xÄ±mÄ±nÄ± inceleyin.",
+          "Belediye ve endüstriyel arıtma çıkışlarında susuzlaştırma sonrası termal kurutma yaklaşımını inceleyin.",
       },
       {
-        title: "Kompost Tesisi Baï¿½xlantÄ±sÄ±",
+        title: "Kompost Tesisi Bağlantısı",
         description:
-          "Organik iÃ§erikli akÄ±ï¿½xlarÄ±n kompost veya stabilizasyon senaryolarÄ±yla iliï¿½xkili kullanÄ±m alanlarÄ±nÄ± gÃ¶rÃ¼n.",
+          "Organik içerikli akışların kompost veya stabilizasyon senaryolarıyla ilişkili kullanım alanlarını görün.",
         href: "/hizmetler/kompost-tesisi-kurulumu",
       },
       {
         title: "Toz Toplama ve Koku Kontrol",
         description:
-          "Koku yÃ¼kÃ¼ ve toz kontrolÃ¼ iÃ§in filtre, siklon ve kapalÄ± akÄ±ï¿½x altyapÄ±sÄ±nÄ± tamamlayÄ±n.",
+          "Koku yükü ve toz kontrolü için filtre, siklon ve kapalı akış altyapısını tamamlayın.",
         href: "/makinalar-ekipman/toz-toplama-sistemleri",
       },
       {
         title: "Digestat Kurutma",
         description:
-          "Biyogaz sonrasÄ± Ã§Ä±kan yÃ¼ksek nemli digestat akÄ±ï¿½xlarÄ±nÄ±n kurutma kurgusunu deï¿½xerlendirin.",
+          "Biyogaz sonrası çıkan yüksek nemli digestat akışlarının kurutma kurgusunu değerlendirin.",
         href: "/kutuphane/blog/camur-kurutma-sistemi",
       },
     ],
-    cardsTitle: "KullanÄ±m AlanlarÄ± ve Ä°lgili ï¿½!Ã¶zÃ¼m Baï¿½xlÄ±klarÄ±",
+    cardsTitle: "Kullanım Alanları ve İlgili Çözüm Bağlıkları",
     cardsDescription:
-      "ï¿½!amur kurutma tesislerinde yalnÄ±z tambur deï¿½xil; besleme, koku kontrolÃ¼, toz toplama ve organik atÄ±k yÃ¶netimi mantÄ±ï¿½xÄ± da birlikte ele alÄ±nÄ±r.",
+      "Çamur kurutma tesislerinde yalnız tambur değil; besleme, koku kontrolü, toz toplama ve organik atık yönetimi mantığı da birlikte ele alınır.",
     summaryRows: [
       {
         criterion: "Besleme Kuru Maddesi",
         description:
-          "Susuzlaï¿½xtÄ±rma sonrasÄ± gelen Ã§amurun baï¿½xlangÄ±Ã§ kuru maddesi kurutma yÃ¼kÃ¼nÃ¼ belirler.",
+          "Susuzlaştırma sonrası gelen çamurun bağlangıç kuru maddesi kurutma yükünü belirler.",
         importance:
-          "Kurutma tamburu boyutunu ve enerji tÃ¼ketimini doï¿½xrudan etkiler.",
+          "Kurutma tamburu boyutunu ve enerji tüketimini doğrudan etkiler.",
       },
       {
         criterion: "Koku ve Emisyon",
         description:
-          "ï¿½!amur karakterine gÃ¶re kapalÄ± akÄ±ï¿½x, negatif basÄ±nÃ§ ve filtreleme planlanmalÄ±dÄ±r.",
+          "Çamur karakterine göre kapalı akış, negatif basınç ve filtreleme planlanmalıdır.",
         importance:
-          "ï¿½!evresel uyum ve saha Ã§alÄ±ï¿½xma konforu iÃ§in kritik Ã¶nemdedir.",
+          "Çevresel uyum ve saha çalışma konforu için kritik önemdedir.",
       },
       {
-        criterion: "ï¿½SrÃ¼n ï¿½!Ä±kÄ±ï¿½x Senaryosu",
+        criterion: "Ürün Çıkış Senaryosu",
         description:
-          "Kurutulmuï¿½x Ã¼rÃ¼nÃ¼n depolanmasÄ±, kompostlanmasÄ± veya sevkiyatÄ± farklÄ± mekanik ihtiyaÃ§lar doï¿½xurur.",
+          "Kurutulmuş ürünün depolanması, kompostlanması veya sevkiyatı farklı mekanik ihtiyaçlar doşurur.",
         importance:
-          "Son Ã¼rÃ¼n ekipman seÃ§imini ve stoklama kurgusunu belirler.",
+          "Son ürün ekipman seçimini ve stoklama kurgusunu belirler.",
       },
       {
-        criterion: "YardÄ±mcÄ± Hatlar",
+        criterion: "Yardımcı Hatlar",
         description:
-          "Susuzlaï¿½xtÄ±rma destek sistemleri, besleme, konveyÃ¶r ve bunker yapÄ±sÄ± termal hattÄ±n sÃ¼rekliliï¿½xini saï¿½xlar.",
+          "Susuzlaştırma destek sistemleri, besleme, konveyör ve bunker yapısı termal hattın sürekliliğini sağlar.",
         importance:
-          "Kurutma Ã¼nitesinin gerÃ§ek saha kapasitesini korur.",
+          "Kurutma ünitesinin gerçek saha kapasitesini korur.",
       },
     ],
     sections: [
       {
-        title: "KullanÄ±m AlanlarÄ±",
+        title: "Kullanım Alanları",
         paragraphs: [
-          "ï¿½!amur kurutma tesisleri belediye atÄ±k su arÄ±tma tesisleri, endÃ¼striyel arÄ±tma tesisleri, biyogaz digestat hatlarÄ±, organik Ã§amur iÃ§eren prosesler ve atÄ±k yÃ¶netimi altyapÄ±larÄ±nda kullanÄ±lÄ±r. Bu projelerde nihai amaÃ§; hacmi azaltmak, kuru maddeyi yÃ¼kseltmek, depolama ve taï¿½xÄ±ma maliyetini dÃ¼ï¿½xÃ¼rmek, gerektiï¿½xinde son Ã¼rÃ¼nÃ¼ kompost veya yakÄ±t benzeri ikincil kullanÄ±m senaryolarÄ±na hazÄ±rlamaktÄ±r.",
+          "Çamur kurutma tesisleri belediye atık su arıtma tesisleri, endüstriyel arıtma tesisleri, biyogaz digestat hatları, organik çamur içeren prosesler ve atık yönetimi altyapılarında kullanılır. Bu projelerde nihai amaç; hacmi azaltmak, kuru maddeyi yükseltmek, depolama ve taşıma maliyetini düğürmek, gerektiğinde son ürünü kompost veya yakıt benzeri ikincil kullanım senaryolarına hazırlamaktır.",
         ],
       },
       {
-        title: "Hangi Hammaddeler ve ï¿½SrÃ¼nler Ä°Ã§in Uygundur?",
+        title: "Hangi Hammaddeler ve Ürünler İçin Uygundur?",
         paragraphs: [
-          "ArÄ±tma Ã§amuru, digestat, gÄ±da veya organik proses Ã§amurlarÄ±, filtre kekleri ve susuzlaï¿½xtÄ±rÄ±lmÄ±ï¿½x yan Ã¼rÃ¼nler bu tesislerde deï¿½xerlendirilir. Her akÄ±ï¿½xÄ±n nem seviyesi, organik yÃ¼kÃ¼, yapÄ±ï¿½xma eï¿½xilimi ve koku davranÄ±ï¿½xÄ± farklÄ± olduï¿½xu iÃ§in belediye Ã§amuru kurutma hattÄ± ile endÃ¼striyel Ã§amur kurutma hattÄ± aynÄ± kopya tasarÄ±mla kurulmaz.",
+          "Arıtma çamuru, digestat, gıda veya organik proses çamurları, filtre kekleri ve susuzlaştırılmış yan ürünler bu tesislerde değerlendirilir. Her akışın nem seviyesi, organik yükü, yapışma eşilimi ve koku davranışı farklı olduğu için belediye çamuru kurutma hattı ile endüstriyel çamur kurutma hattı aynı kopya tasarımla kurulmaz.",
         ],
       },
       {
-        title: "Teknik ï¿½zellikler",
+        title: "Teknik özellikler",
         paragraphs: [
-          "ï¿½!amur kurutma tesisinde besleme bunkerleri, helezon veya bantlÄ± transfer sistemleri, termal kurutucu, fan, siklon, filtre, koku kontrol noktalarÄ± ve Ã§Ä±kÄ±ï¿½x Ã¼rÃ¼nÃ¼ hazÄ±rlama ekipmanlarÄ± birlikte tasarlanÄ±r. YÃ¼ksek nemli Ã¼rÃ¼nlerde akÄ±ï¿½x sÃ¼rekliliï¿½xi, iÃ§ yapÄ±ï¿½xma kontrolÃ¼ ve emisyon gÃ¼venliï¿½xi en kritik teknik baï¿½xlÄ±klardÄ±r.",
+          "Çamur kurutma tesisinde besleme bunkerleri, helezon veya bantlı transfer sistemleri, termal kurutucu, fan, siklon, filtre, koku kontrol noktaları ve çıkış ürünü hazırlama ekipmanları birlikte tasarlanır. Yüksek nemli ürünlerde akış sürekliliği, iç yapışma kontrolü ve emisyon güvenliği en kritik teknik bağlıklardır.",
         ],
       },
       {
-        title: "Kapasite ve TasarÄ±m Kriterleri",
+        title: "Kapasite ve Tasarım Kriterleri",
         paragraphs: [
-          "Kapasite hesabÄ± yalnÄ±z ton/saat Ã¼zerinden deï¿½xil; baï¿½xlangÄ±Ã§ kuru madde, hedef son kuru madde, buharlaï¿½xacak su miktarÄ±, iï¿½xletme vardiyasÄ± ve koku kontrol ihtiyaÃ§larÄ± Ã¼zerinden yapÄ±lÄ±r. ï¿½!amur kurutma tesisi tasarÄ±mÄ±nda susuzlaï¿½xtÄ±rma desteï¿½xi, Ã§amur besleme mantÄ±ï¿½xÄ± ve yardÄ±mcÄ± konveyÃ¶r yapÄ±sÄ± doï¿½xru kurulmadÄ±ï¿½xÄ±nda termal hat tam kapasite Ã§alÄ±ï¿½xsa bile saha verimi dÃ¼ï¿½xer.",
+          "Kapasite hesabı yalnız ton/saat üzerinden değil; bağlangıç kuru madde, hedef son kuru madde, buharlaşacak su miktarı, işletme vardiyası ve koku kontrol ihtiyaçları üzerinden yapılır. Çamur kurutma tesisi tasarımında susuzlaştırma desteşi, çamur besleme mantığı ve yardımcı konveyör yapısı doğru kurulmadığında termal hat tam kapasite çalışsa bile saha verimi düğer.",
         ],
       },
       {
-        title: "Proses Ä°Ã§indeki Yeri",
+        title: "Proses İçindeki Yeri",
         paragraphs: [
-          "Bu tesisler Ã§oï¿½xu zaman susuzlaï¿½xtÄ±rma sonrasÄ±nda devreye girer ve Ã§Ä±kÄ±ï¿½x Ã¼rÃ¼nÃ¼nÃ¼ depolama, kompostlama, sevkiyat veya ileri deï¿½xerlendirme adÄ±mlarÄ±na hazÄ±rlar. Yani termal kurutma, tÃ¼m atÄ±k yÃ¶netimi zincirinin merkezinde duran bir ara proses deï¿½xil; nihai maliyeti ve Ã§evresel performansÄ± ï¿½xekillendiren kritik halkadÄ±r.",
+          "Bu tesisler çoşu zaman susuzlaştırma sonrasında devreye girer ve çıkış ürününü depolama, kompostlama, sevkiyat veya ileri değerlendirme adımlarına hazırlar. Yani termal kurutma, tüm atık yönetimi zincirinin merkezinde duran bir ara proses değil; nihai maliyeti ve çevresel performansı şekillendiren kritik halkadır.",
         ],
       },
       {
         title: "Opsiyonel Ekipmanlar",
         paragraphs: [
-          "Koku kontrol altyapÄ±sÄ±, jet pulse filtreler, siklon ayÄ±rÄ±cÄ±lar, bunker karÄ±ï¿½xtÄ±rÄ±cÄ±larÄ±, kapalÄ± konveyÃ¶rler, PLC tabanlÄ± sÄ±caklÄ±k kontrolÃ¼, servis platformlarÄ± ve farklÄ± Ã§Ä±kÄ±ï¿½x Ã¼rÃ¼nÃ¼ne uygun eleme veya kÄ±rma adÄ±mlarÄ± projeye gÃ¶re eklenebilir.",
+          "Koku kontrol altyapısı, jet pulse filtreler, siklon ayırıcılar, bunker karıştırıcıları, kapalı konveyörler, PLC tabanlı sıcaklık kontrolü, servis platformları ve farklı çıkış ürününe uygun eleme veya kırma adımları projeye göre eklenebilir.",
         ],
       },
       {
         title: "Avantajlar",
         paragraphs: [
-          "Doï¿½xru kurgulanmÄ±ï¿½x bir Ã§amur kurutma tesisi daha dÃ¼ï¿½xÃ¼k hacim, daha kontrollÃ¼ depolama, azaltÄ±lmÄ±ï¿½x nakliye maliyeti, daha gÃ¼venli saha hijyeni ve ileri deï¿½xerlendirme iÃ§in daha uygun Ã¼rÃ¼n karakteri saï¿½xlar. Belediye ve sanayi tarafÄ±nda bu avantajlar yatÄ±rÄ±mÄ±n operasyonel geri dÃ¶nÃ¼ï¿½xÃ¼nÃ¼ hÄ±zlandÄ±rÄ±r.",
+          "Doğru kurgulanmış bir çamur kurutma tesisi daha düğük hacim, daha kontrollü depolama, azaltılmış nakliye maliyeti, daha güvenli saha hijyeni ve ileri değerlendirme için daha uygun ürün karakteri sağlar. Belediye ve sanayi tarafında bu avantajlar yatırımın operasyonel geri dönüşünü hızlandırır.",
         ],
       },
       {
-        title: "Teklif Almak Ä°Ã§in Gerekli Bilgiler",
+        title: "Teklif Almak İçin Gerekli Bilgiler",
         paragraphs: [
-          "Teklif Ã§alÄ±ï¿½xmasÄ± iÃ§in Ã§amur tipi, baï¿½xlangÄ±Ã§ kuru maddesi, hedef son kuru madde, saatlik veya gÃ¼nlÃ¼k miktar, mevcut susuzlaï¿½xtÄ±rma altyapÄ±sÄ±, koku kontrol gereksinimi ve saha kÄ±sÄ±tlarÄ± paylaï¿½xÄ±lmalÄ±dÄ±r. Bu bilgilerle termal kurutma yÃ¼kÃ¼ ve yardÄ±mcÄ± ekipman seÃ§imi daha doï¿½xru belirlenir.",
+          "Teklif çalışması için çamur tipi, bağlangıç kuru maddesi, hedef son kuru madde, saatlik veya günlük miktar, mevcut susuzlaştırma altyapısı, koku kontrol gereksinimi ve saha kısıtları paylaşılmalıdır. Bu bilgilerle termal kurutma yükü ve yardımcı ekipman seçimi daha doğru belirlenir.",
         ],
       },
     ],
     faqs: [
       {
-        question: "ï¿½!amur kurutma tesisi hangi Ã§amur tipleri iÃ§in uygundur?",
+        question: "Çamur kurutma tesisi hangi çamur tipleri için uygundur?",
         answer:
-          "Belediye arÄ±tma Ã§amuru, endÃ¼striyel arÄ±tma Ã§amuru, digestat ve organik proses Ã§amurlarÄ± iÃ§in uygun Ã§Ã¶zÃ¼mler geliï¿½xtirilebilir.",
+          "Belediye arıtma çamuru, endüstriyel arıtma çamuru, digestat ve organik proses çamurları için uygun çözümler geliştirilebilir.",
       },
       {
-        question: "Digestat kurutma ile arÄ±tma Ã§amuru kurutma aynÄ± mÄ±dÄ±r?",
+        question: "Digestat kurutma ile arıtma çamuru kurutma aynı mıdır?",
         answer:
-          "HayÄ±r. Organik yÃ¼k, lif yapÄ±sÄ±, koku davranÄ±ï¿½xÄ± ve akÄ±ï¿½x karakteri farklÄ± olduï¿½xu iÃ§in tasarÄ±m yaklaï¿½xÄ±mÄ± da deï¿½xiï¿½xir.",
+          "Hayır. Organik yük, lif yapısı, koku davranışı ve akış karakteri farklı olduğu için tasarım yaklaşımı da değişir.",
       },
       {
-        question: "Koku kontrolÃ¼ neden kritik bir baï¿½xlÄ±ktÄ±r?",
+        question: "Koku kontrolü neden kritik bir bağlıktır?",
         answer:
-          "ï¿½zellikle belediye ve organik iÃ§erikli Ã§amurlarda saha konforu ve Ã§evresel uyum iÃ§in kapalÄ± akÄ±ï¿½x ve filtreleme yaklaï¿½xÄ±mÄ± Ã¶nemlidir.",
+          "özellikle belediye ve organik içerikli çamurlarda saha konforu ve çevresel uyum için kapalı akış ve filtreleme yaklaşımı önemlidir.",
       },
       {
-        question: "ï¿½!amur kurutma tesisi kompost tesisine entegre edilebilir mi?",
+        question: "Çamur kurutma tesisi kompost tesisine entegre edilebilir mi?",
         answer:
-          "Uygulamaya baï¿½xlÄ± olarak evet. Kurutulmuï¿½x veya stabilize edilmiï¿½x Ã¼rÃ¼n, kompost veya diï¿½xer deï¿½xerlendirme senaryolarÄ±na baï¿½xlanabilir.",
+          "Uygulamaya bağlı olarak evet. Kurutulmuş veya stabilize edilmiş ürün, kompost veya diğer değerlendirme senaryolarına bağlanabilir.",
       },
       {
-        question: "Teklif iÃ§in hangi veriler paylaï¿½xÄ±lmalÄ±dÄ±r?",
+        question: "Teklif için hangi veriler paylaşılmalıdır?",
         answer:
-          "Kuru madde oranÄ±, gÃ¼nlÃ¼k kapasite, Ã§amur tipi, mevcut susuzlaï¿½xtÄ±rma ekipmanÄ± ve saha kÄ±sÄ±tlarÄ± temel baï¿½xlangÄ±Ã§ bilgileridir.",
+          "Kuru madde oranı, günlük kapasite, çamur tipi, mevcut susuzlaştırma ekipmanı ve saha kısıtları temel bağlangıç bilgileridir.",
       },
     ],
     ctaText:
-      "ArÄ±tma Ã§amuru kurutma, digestat kurutma ve belediye Ã§amuru kurutma hattÄ± iÃ§in Ã¼rÃ¼n verilerinizi paylaï¿½xÄ±n; size uygun termal proses kurgusunu birlikte netleï¿½xtirelim.",
+      "Arıtma çamuru kurutma, digestat kurutma ve belediye çamuru kurutma hattı için ürün verilerinizi paylaşın; size uygun termal proses kurgusunu birlikte netleştirelim.",
     showForm: true,
     technicalContents: commonTechnicalContents,
     keyLinks: [
@@ -350,796 +350,796 @@ const servicePages: Record<string, ServicePageRecord> = {
   "silis-kumu-kurutma-tesisi": {
     title: "Silis Kumu Kurutma Tesisi | Kuvars Kumu Kurutma",
     description:
-      "Silis kumu kurutma tesisi, kuvars kumu kurutma ve maden kurutma hatlarÄ± iÃ§in kurutma tamburu, eleme ve taï¿½xÄ±ma Ã§Ã¶zÃ¼mleri sunuyoruz.",
+      "Silis kumu kurutma tesisi, kuvars kumu kurutma ve maden kurutma hatları için kurutma tamburu, eleme ve taşıma çözümleri sunuyoruz.",
     canonical: "https://www.promakina.com.tr/hizmetler/silis-kumu-kurutma-tesisi",
     image: "/images/tambur kurutma/tamkurutma1.jpg",
     serviceName: "Silis Kumu Kurutma Tesisi",
-    introTitle: "Kuvars ve Silis TÃ¼revleri Ä°Ã§in KontrollÃ¼ Kurutma HatlarÄ±",
+    introTitle: "Kuvars ve Silis Türevleri İçin Kontrollü Kurutma Hatları",
     introParagraphs: [
-      "Silis kumu kurutma tesisi, kuvars ve benzeri mineral fraksiyonlarÄ±n istenen son neme getirilmesi, eleme Ã¶ncesi akÄ±ï¿½x kararlÄ±lÄ±ï¿½xÄ± kazanmasÄ± ve paketleme veya sevkiyat iÃ§in uygun Ã¼rÃ¼n davranÄ±ï¿½xÄ±na ulaï¿½xmasÄ± amacÄ±yla kurulan termal proses altyapÄ±sÄ±dÄ±r. Maden kurutma tesisi uygulamalarÄ±nda doï¿½xru tambur seÃ§imi kadar, besleme disiplini ve toz kontrolÃ¼ de Ã¼retim kalitesini belirler.",
-      "Pro Makina, kum kurutma tamburu, besleme bunkerleri, bant konveyÃ¶r, eleme sistemleri, fan-siklon-filtre hattÄ± ve saha yerleï¿½ximini birlikte deï¿½xerlendirerek silis kumu kurutma tesislerini anahtar teslim mantÄ±kla kurgular. BÃ¶ylece yatÄ±rÄ±mcÄ±, dÃ¼ï¿½xÃ¼k son nem ve kararlÄ± tane daï¿½xÄ±lÄ±mÄ±nÄ± daha gÃ¼venli ï¿½xekilde yÃ¶netir.",
+      "Silis kumu kurutma tesisi, kuvars ve benzeri mineral fraksiyonların istenen son neme getirilmesi, eleme öncesi akış kararlılığı kazanması ve paketleme veya sevkiyat için uygun ürün davranışına ulaşması amacıyla kurulan termal proses altyapısıdır. Maden kurutma tesisi uygulamalarında doğru tambur seçimi kadar, besleme disiplini ve toz kontrolü de üretim kalitesini belirler.",
+      "Pro Makina, kum kurutma tamburu, besleme bunkerleri, bant konveyör, eleme sistemleri, fan-siklon-filtre hattı ve saha yerleşimini birlikte değerlendirerek silis kumu kurutma tesislerini anahtar teslim mantıkla kurgular. Böylece yatırımcı, düğük son nem ve kararlı tane daşılımını daha güvenli şekilde yönetir.",
     ],
     cards: [
       {
         title: "Maden Kurutma ve Eleme",
         description:
-          "Kuruma sonrasÄ± eleme, sÄ±nÄ±flandÄ±rma ve stoklamanÄ±n birlikte planlandÄ±ï¿½xÄ± mineral iï¿½xleme altyapÄ±sÄ±nÄ± gÃ¶rÃ¼n.",
+          "Kuruma sonrası eleme, sınıflandırma ve stoklamanın birlikte planlandığı mineral işleme altyapısını görün.",
         href: "/hizmetler/maden-kurutma-ve-eleme-tesisi",
       },
       {
-        title: "Kurutma TamburlarÄ±",
+        title: "Kurutma Tamburları",
         description:
-          "Silis kumu ve kuvars kumu uygulamalarÄ±nda kullanÄ±lan dÃ¶ner kurutma tamburu Ã§Ã¶zÃ¼mlerini inceleyin.",
+          "Silis kumu ve kuvars kumu uygulamalarında kullanılan döner kurutma tamburu çözümlerini inceleyin.",
         href: "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburu",
       },
       {
-        title: "BantlÄ± KonveyÃ¶rler",
+        title: "Bantlı Konveyörler",
         description:
-          "Kurutma sonrasÄ± sÄ±cak veya kuru mineralin kontrollÃ¼ transferi iÃ§in uygun taï¿½xÄ±ma sistemleri.",
+          "Kurutma sonrası sıcak veya kuru mineralin kontrollü transferi için uygun taşıma sistemleri.",
         href: "/makinalar-ekipman/tasima-ekipmanlari/bantli-konveyorler",
       },
       {
-        title: "Eleme ve SÄ±nÄ±flandÄ±rma",
+        title: "Eleme ve Sınıflandırma",
         description:
-          "Kurumuï¿½x Ã¼rÃ¼nÃ¼n tane daï¿½xÄ±lÄ±mÄ± ve ticari kalite standardÄ± iÃ§in eleme hattÄ±nÄ± tamamlayÄ±n.",
+          "Kurumuş ürünün tane daşılımı ve ticari kalite standardı için eleme hattını tamamlayın.",
         href: "/makinalar-ekipman/eleme-ve-siniflandirma-sistemleri",
       },
     ],
-    cardsTitle: "KullanÄ±m AlanlarÄ± ve Ä°lgili Ana Makineler",
+    cardsTitle: "Kullanım Alanları ve İlgili Ana Makineler",
     cardsDescription:
-      "Silis ve kuvars kumu kurutma projelerinde kurutma, eleme, taï¿½xÄ±ma ve toz kontrolÃ¼ tek bir mineral iï¿½xleme akÄ±ï¿½xÄ± olarak deï¿½xerlendirilmelidir.",
+      "Silis ve kuvars kumu kurutma projelerinde kurutma, eleme, taşıma ve toz kontrolü tek bir mineral işleme akışı olarak değerlendirilmelidir.",
     summaryRows: [
       {
         criterion: "Tane Boyutu",
         description:
-          "Kum fraksiyonunun boyut aralÄ±ï¿½xÄ±, tambur iÃ§ davranÄ±ï¿½xÄ±nÄ± ve eleme senaryosunu etkiler.",
+          "Kum fraksiyonunun boyut aralığı, tambur iç davranışını ve eleme senaryosunu etkiler.",
         importance:
-          "Residence time ve sonrasÄ± eleme kalitesini belirler.",
+          "Residence time ve sonrası eleme kalitesini belirler.",
       },
       {
-        criterion: "Giriï¿½x Nemi",
+        criterion: "Giriş Nemi",
         description:
-          "Besleme nemi termal yÃ¼kÃ¼ ve hedef son Ã¼rÃ¼n akÄ±ï¿½x davranÄ±ï¿½xÄ±nÄ± doï¿½xrudan belirler.",
+          "Besleme nemi termal yükü ve hedef son ürün akış davranışını doğrudan belirler.",
         importance:
-          "BrÃ¼lÃ¶r, tambur boyu ve hava hattÄ± seÃ§imini etkiler.",
+          "Brülör, tambur boyu ve hava hattı seçimini etkiler.",
       },
       {
-        criterion: "Toz DavranÄ±ï¿½xÄ±",
+        criterion: "Toz Davranışı",
         description:
-          "Silis tozu ve ince fraksiyonlarÄ±n taï¿½xÄ±nmasÄ± iÃ§in kapalÄ± akÄ±ï¿½x ve filtreleme gereksinimi planlanÄ±r.",
+          "Silis tozu ve ince fraksiyonların taşınması için kapalı akış ve filtreleme gereksinimi planlanır.",
         importance:
-          "Saha gÃ¼venliï¿½xi ve emisyon yÃ¶netimi iÃ§in kritiktir.",
+          "Saha güvenliği ve emisyon yönetimi için kritiktir.",
       },
       {
-        criterion: "ï¿½SrÃ¼n ï¿½!Ä±kÄ±ï¿½x Kalitesi",
+        criterion: "Ürün Çıkış Kalitesi",
         description:
-          "Son nem, tane bÃ¼tÃ¼nlÃ¼ï¿½xÃ¼ ve istenen elek fraksiyonu ticari kaliteyi tanÄ±mlar.",
+          "Son nem, tane bütünlüğü ve istenen elek fraksiyonu ticari kaliteyi tanımlar.",
         importance:
-          "Paketleme, stok ve sevkiyat performansÄ±nÄ± gÃ¼Ã§lendirir.",
+          "Paketleme, stok ve sevkiyat performansını güçlendirir.",
       },
     ],
     sections: [
       {
-        title: "KullanÄ±m AlanlarÄ±",
+        title: "Kullanım Alanları",
         paragraphs: [
-          "Silis kumu kurutma tesisleri cam, dÃ¶kÃ¼m, inï¿½xaat, dolgu mineralleri ve farklÄ± endÃ¼striyel mineral hazÄ±rlama hatlarÄ±nda kullanÄ±lÄ±r. ï¿½zellikle paketli veya kontrollÃ¼ tane sÄ±nÄ±flandÄ±rmalÄ± satÄ±ï¿½x yapan iï¿½xletmelerde kurutma ve eleme birlikte dÃ¼ï¿½xÃ¼nÃ¼lmelidir.",
+          "Silis kumu kurutma tesisleri cam, döküm, in?xaat, dolgu mineralleri ve farklı endüstriyel mineral hazırlama hatlarında kullanılır. özellikle paketli veya kontrollü tane sınıflandırmalı satığ yapan işletmelerde kurutma ve eleme birlikte düğünülmelidir.",
         ],
       },
       {
-        title: "Hangi Hammaddeler ve ï¿½SrÃ¼nler Ä°Ã§in Uygundur?",
+        title: "Hangi Hammaddeler ve Ürünler İçin Uygundur?",
         paragraphs: [
-          "Silis kumu, kuvars kumu, farklÄ± mineral kum karÄ±ï¿½xÄ±mlarÄ±, ince fraksiyonlu kuruya yakÄ±n ama stabil olmayan Ã¼rÃ¼nler ve eleme Ã¶ncesi nemi dÃ¼ï¿½xÃ¼rÃ¼lmesi gereken maden tÃ¼revleri bu tesislerde iï¿½xlenebilir. Her Ã¼rÃ¼nÃ¼n yoï¿½xunluï¿½xu ve tane boyutu farklÄ± olduï¿½xu iÃ§in tasarÄ±m mutlaka sahaya gÃ¶re yapÄ±lmalÄ±dÄ±r.",
+          "Silis kumu, kuvars kumu, farklı mineral kum karışımları, ince fraksiyonlu kuruya yakın ama stabil olmayan ürünler ve eleme öncesi nemi düğürülmesi gereken maden türevleri bu tesislerde işlenebilir. Her ürünün yoğunluğu ve tane boyutu farklı olduğu için tasarım mutlaka sahaya göre yapılmalıdır.",
         ],
       },
       {
-        title: "Teknik ï¿½zellikler",
+        title: "Teknik özellikler",
         paragraphs: [
-          "Kum kurutma tamburu, besleme bunkerleri, bant konveyÃ¶r, sÄ±cak gaz hattÄ±, siklon, filtre ve eleme sistemleri birlikte Ã§Ã¶zÃ¼lÃ¼r. Aï¿½xÄ±ndÄ±rÄ±cÄ± Ã¼rÃ¼nlerde gÃ¶vde ve iÃ§ ekipman seÃ§imi, servis Ã¶mrÃ¼ aÃ§Ä±sÄ±ndan ayrÄ± Ã¶nem taï¿½xÄ±r.",
+          "Kum kurutma tamburu, besleme bunkerleri, bant konveyör, sıcak gaz hattı, siklon, filtre ve eleme sistemleri birlikte çözülür. Aşındırıcı ürünlerde gövde ve iç ekipman seçimi, servis ömrü açısından ayrı önem tağır.",
         ],
       },
       {
-        title: "Kapasite ve TasarÄ±m Kriterleri",
+        title: "Kapasite ve Tasarım Kriterleri",
         paragraphs: [
-          "Silis kumu kurutma tesisi kapasitesi belirlenirken ton/saat deï¿½xeri, giriï¿½x nemi, istenen elek fraksiyonu, hava debisi ve toz yÃ¼kÃ¼ aynÄ± tabloda deï¿½xerlendirilir. Maden kurutma tesisi tarafÄ±nda dar boï¿½xaz Ã§oï¿½xu zaman kurutucudan Ã§ok sonrasÄ± eleme ve stok hattÄ±nda oluï¿½xur; bu yÃ¼zden hat bÃ¼tÃ¼nÃ¼ dengeli boyutlandÄ±rÄ±lmalÄ±dÄ±r.",
+          "Silis kumu kurutma tesisi kapasitesi belirlenirken ton/saat değeri, giriş nemi, istenen elek fraksiyonu, hava debisi ve toz yükü aynı tabloda değerlendirilir. Maden kurutma tesisi tarafında dar boğaz çoşu zaman kurutucudan çok sonrası eleme ve stok hattında oluğur; bu yüzden hat bütünü dengeli boyutlandırılmalıdır.",
         ],
       },
       {
-        title: "Proses Ä°Ã§indeki Yeri",
+        title: "Proses İçindeki Yeri",
         paragraphs: [
-          "Bu tesisler kÄ±rma-eleme sonrasÄ± Ã¼rÃ¼n hazÄ±rlama, ara stoklama Ã¶ncesi nem dÃ¼ï¿½xÃ¼rme veya satÄ±ï¿½x Ã¶ncesi son kalite hazÄ±rlÄ±ï¿½xÄ± iÃ§in kritik rol oynar. Kurutma sonrasÄ± eleme ile birlikte Ã§alÄ±ï¿½xtÄ±ï¿½xÄ±nda Ã¼rÃ¼n standardÄ± Ã§ok daha kararlÄ± hale gelir.",
+          "Bu tesisler kırma-eleme sonrası ürün hazırlama, ara stoklama öncesi nem düğürme veya satığ öncesi son kalite hazırlığı için kritik rol oynar. Kurutma sonrası eleme ile birlikte çalıştığında ürün standardı çok daha kararlı hale gelir.",
         ],
       },
       {
         title: "Opsiyonel Ekipmanlar",
         paragraphs: [
-          "Elek sistemleri, kapalÄ± bant konveyÃ¶rler, bunkerler, siklon ayÄ±rÄ±cÄ±lar, jet pulse filtreler, servis platformlarÄ± ve otomasyon destekli sÄ±caklÄ±k kontrolÃ¼ en sÄ±k kullanÄ±lan opsiyonel ekipmanlardÄ±r.",
+          "Elek sistemleri, kapalı bant konveyörler, bunkerler, siklon ayırıcılar, jet pulse filtreler, servis platformları ve otomasyon destekli sıcaklık kontrolü en sık kullanılan opsiyonel ekipmanlardır.",
         ],
       },
       {
         title: "Avantajlar",
         paragraphs: [
-          "Doï¿½xru kurulan silis kumu kurutma tesisi daha dÃ¼ï¿½xÃ¼k son nem, daha gÃ¼venli stok davranÄ±ï¿½xÄ±, daha stabil eleme kalitesi ve daha dÃ¼ï¿½xÃ¼k operasyon kesintisi saï¿½xlar. ï¿½zellikle yÃ¼ksek tozlu uygulamalarda kapalÄ± akÄ±ï¿½x ile saha dÃ¼zeni de belirgin ï¿½xekilde iyileï¿½xir.",
+          "Doğru kurulan silis kumu kurutma tesisi daha düğük son nem, daha güvenli stok davranışı, daha stabil eleme kalitesi ve daha düğük operasyon kesintisi sağlar. özellikle yüksek tozlu uygulamalarda kapalı akış ile saha düzeni de belirgin şekilde iyileşir.",
         ],
       },
       {
-        title: "Teklif Almak Ä°Ã§in Gerekli Bilgiler",
+        title: "Teklif Almak İçin Gerekli Bilgiler",
         paragraphs: [
-          "ï¿½SrÃ¼n tipi, tane boyutu, saatlik kapasite, giriï¿½x-Ã§Ä±kÄ±ï¿½x nemi, mevcut eleme yapÄ±sÄ±, toz kontrol ihtiyacÄ± ve saha yerleï¿½ximi paylaï¿½xÄ±lÄ±rsa daha doï¿½xru bir silis kumu kurutma tesisi teklifi hazÄ±rlanabilir.",
+          "Ürün tipi, tane boyutu, saatlik kapasite, giriş-çıkış nemi, mevcut eleme yapısı, toz kontrol ihtiyaçı ve saha yerleşimi paylaşılırsa daha doğru bir silis kumu kurutma tesisi teklifi hazırlanabilir.",
         ],
       },
     ],
     faqs: [
       {
-        question: "Silis kumu kurutma tesisi ile genel maden kurutma tesisi aynÄ± mÄ±dÄ±r?",
+        question: "Silis kumu kurutma tesisi ile genel maden kurutma tesisi aynı mıdır?",
         answer:
-          "Temel termal mantÄ±k benzese de Ã¼rÃ¼n tane boyutu, toz davranÄ±ï¿½xÄ± ve son kalite beklentisi nedeniyle silis kumu projeleri Ã¶zel deï¿½xerlendirilir.",
+          "Temel termal mantık benzese de ürün tane boyutu, toz davranışı ve son kalite beklentisi nedeniyle silis kumu projeleri özel değerlendirilir.",
       },
       {
-        question: "Kurutma sonrasÄ± eleme gerekli midir?",
+        question: "Kurutma sonrası eleme gerekli midir?",
         answer:
-          "BirÃ§ok uygulamada evet. Son fraksiyon standardÄ± ve ticari kalite iÃ§in eleme hattÄ± Ã¶nemli bir adÄ±mdÄ±r.",
+          "Birçok uygulamada evet. Son fraksiyon standardı ve ticari kalite için eleme hattı önemli bir adımdır.",
       },
       {
-        question: "Silis kumu kurutmada toz kontrolÃ¼ neden Ã¶nemlidir?",
+        question: "Silis kumu kurutmada toz kontrolü neden önemlidir?",
         answer:
-          "Ä°nce fraksiyon taï¿½xÄ±masÄ± ve emisyon yÃ¶netimi iÃ§in siklon ve filtre hattÄ± Ã§oï¿½xu projede kritik rol oynar.",
+          "İnce fraksiyon taşıması ve emisyon yönetimi için siklon ve filtre hattı çoşu projede kritik rol oynar.",
       },
       {
-        question: "Kapasite hesabÄ±nda hangi veriler gerekir?",
+        question: "Kapasite hesabında hangi veriler gerekir?",
         answer:
-          "Ton/saat, giriï¿½x nemi, istenen son nem, tane boyutu ve Ã¼rÃ¼n yoï¿½xunluï¿½xu temel baï¿½xlangÄ±Ã§ verileridir.",
+          "Ton/saat, giriş nemi, istenen son nem, tane boyutu ve ürün yoğunluğu temel bağlangıç verileridir.",
       },
       {
-        question: "Bant konveyÃ¶r ve bunker seÃ§imi neden Ã¶nemlidir?",
+        question: "Bant konveyör ve bunker seçimi neden önemlidir?",
         answer:
-          "Kurumuï¿½x mineralin kÄ±rÄ±lmadan ve tozuma artÄ±rÄ±lmadan taï¿½xÄ±nabilmesi iÃ§in yardÄ±mcÄ± taï¿½xÄ±ma omurgasÄ± doï¿½xru seÃ§ilmelidir.",
+          "Kurumuş mineralin kırılmadan ve tozuma artırılmadan taşınabilmesi için yardımcı taşıma omurgası doğru seçilmelidir.",
       },
     ],
     ctaText:
-      "Silis kumu kurutma tesisi ve kuvars kumu kurutma hattÄ± iÃ§in kapasite, nem ve eleme verilerinizi paylaï¿½xÄ±n; size uygun termal ve mekanik omurgayÄ± birlikte belirleyelim.",
+      "Silis kumu kurutma tesisi ve kuvars kumu kurutma hattı için kapasite, nem ve eleme verilerinizi paylaşın; size uygun termal ve mekanik omurgayı birlikte belirleyelim.",
     showForm: true,
     technicalContents: commonTechnicalContents,
     keyLinks: [
       { label: "Maden Kurutma ve Eleme Tesisi", href: "/hizmetler/maden-kurutma-ve-eleme-tesisi" },
-      { label: "Kurutma TamburlarÄ±", href: "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburu" },
-      { label: "BantlÄ± KonveyÃ¶rler", href: "/makinalar-ekipman/tasima-ekipmanlari/bantli-konveyorler" },
+      { label: "Kurutma Tamburları", href: "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburu" },
+      { label: "Bantlı Konveyörler", href: "/makinalar-ekipman/tasima-ekipmanlari/bantli-konveyorler" },
       { label: "Makinalar & Ekipman", href: "/makinalar-ekipman" },
     ],
   },
   "maden-kurutma-ve-eleme-tesisi": {
-    title: "Maden Kurutma ve Eleme Tesisi | Mineral Ä°ï¿½xleme",
+    title: "Maden Kurutma ve Eleme Tesisi | Mineral İşleme",
     description:
-      "Maden kurutma ve eleme tesisi, mineral iï¿½xleme ekipmanlarÄ± ve kÄ±rma eleme kurutma tesisi Ã§Ã¶zÃ¼mleri iÃ§in anahtar teslim mÃ¼hendislik sunuyoruz.",
+      "Maden kurutma ve eleme tesisi, mineral işleme ekipmanları ve kırma eleme kurutma tesisi çözümleri için anahtar teslim mühendislik sunuyoruz.",
     canonical: "https://www.promakina.com.tr/hizmetler/maden-kurutma-ve-eleme-tesisi",
     image: "/images/01-genel/makinalar1.png",
     serviceName: "Maden Kurutma ve Eleme Tesisi",
-    introTitle: "KÄ±rma, Eleme, Kurutma ve SÄ±nÄ±flandÄ±rma Ä°Ã§in Entegre Tesis Yaklaï¿½xÄ±mÄ±",
+    introTitle: "Kırma, Eleme, Kurutma ve Sınıflandırma İçin Entegre Tesis Yaklaşımı",
     introParagraphs: [
-      "Maden kurutma ve eleme tesisi, mineralin kÄ±rma, boyut kÃ¼Ã§Ã¼ltme, kurutma, eleme ve stoklama adÄ±mlarÄ±nÄ± aynÄ± Ã¼retim mantÄ±ï¿½xÄ± iÃ§inde yÃ¶neten entegre bir iï¿½xleme altyapÄ±sÄ±dÄ±r. Mineral iï¿½xleme ekipmanlarÄ± sahada tek tek gÃ¼Ã§lÃ¼ olabilir; ancak kÄ±rÄ±cÄ±nÄ±n Ã§Ä±kÄ±ï¿½xÄ±, eleï¿½xin ritmi, kurutma yÃ¼kÃ¼ ve stok hattÄ± uyumlu Ã§alÄ±ï¿½xmÄ±yorsa toplam verim dÃ¼ï¿½xer.",
-      "Pro Makina, kÄ±rma eleme kurutma tesisi projelerinde Ã¼rÃ¼n davranÄ±ï¿½xÄ±nÄ±, kapasite hedefini ve saha kÄ±sÄ±tlarÄ±nÄ± birlikte okuyarak tambur sistemleri, elekler, konveyÃ¶rler, bunkerler ve yardÄ±mcÄ± toz kontrol ekipmanlarÄ±nÄ± tek akÄ±ï¿½x iÃ§inde tasarlar. BÃ¶ylece yatÄ±rÄ±mcÄ± yalnÄ±z makina deï¿½xil; sÃ¼rdÃ¼rÃ¼lebilir bir maden kurutma tesisi omurgasÄ± elde eder.",
+      "Maden kurutma ve eleme tesisi, mineralin kırma, boyut küçültme, kurutma, eleme ve stoklama adımlarını aynı üretim mantığı içinde yöneten entegre bir işleme altyapısıdır. Mineral işleme ekipmanları sahada tek tek güçlü olabilir; ancak kırıcının çıkışı, eleşin ritmi, kurutma yükü ve stok hattı uyumlu çalışmıyorsa toplam verim düğer.",
+      "Pro Makina, kırma eleme kurutma tesisi projelerinde ürün davranışını, kapasite hedefini ve saha kısıtlarını birlikte okuyarak tambur sistemleri, elekler, konveyörler, bunkerler ve yardımcı toz kontrol ekipmanlarını tek akış içinde tasarlar. Böylece yatırımcı yalnız makina değil; sürdürülebilir bir maden kurutma tesisi omurgası elde eder.",
     ],
     cards: [
       {
         title: "Kurutma Tamburu",
         description:
-          "Mineral nemini kontrollÃ¼ dÃ¼ï¿½xÃ¼rmek iÃ§in endÃ¼striyel rotary dryer Ã§Ã¶zÃ¼mlerini inceleyin.",
+          "Mineral nemini kontrollü düğürmek için endüstriyel rotary dryer çözümlerini inceleyin.",
         href: "/hizmetler/kurutma-tamburu-imalati",
       },
       {
-        title: "Silis ve Kuvars HatlarÄ±",
+        title: "Silis ve Kuvars Hatları",
         description:
-          "Silis kumu kurutma ve eleme senaryolarÄ±nda Ã¶ne Ã§Ä±kan proses yaklaï¿½xÄ±mÄ±nÄ± gÃ¶rÃ¼n.",
+          "Silis kumu kurutma ve eleme senaryolarında öne çıkan proses yaklaşımını görün.",
         href: "/hizmetler/silis-kumu-kurutma-tesisi",
       },
       {
-        title: "Eleme ve SÄ±nÄ±flandÄ±rma",
+        title: "Eleme ve Sınıflandırma",
         description:
-          "Tane daï¿½xÄ±lÄ±mÄ± ve satÄ±ï¿½x standardÄ± iÃ§in eleme omurgasÄ±nÄ± tamamlayan ekipman ailesi.",
+          "Tane daşılımı ve satığ standardı için eleme omurgasını tamamlayan ekipman ailesi.",
         href: "/makinalar-ekipman/eleme-ve-siniflandirma-sistemleri",
       },
       {
-        title: "KÄ±rÄ±cÄ±lar ve ParÃ§alayÄ±cÄ±lar",
+        title: "Kırıcılar ve Parçalayıcılar",
         description:
-          "Hat baï¿½xÄ±nda boyut kÃ¼Ã§Ã¼ltme kararlarÄ±nÄ± ï¿½xekillendiren aï¿½xÄ±r hizmet tipi kÄ±rÄ±cÄ± Ã§Ã¶zÃ¼mleri.",
+          "Hat başında boyut küçültme kararlarını şekillendiren ağır hizmet tipi kırıcı çözümleri.",
         href: "/makinalar-ekipman/kiricilar-ve-parcalayicilar/cekicli-kiricilar",
       },
     ],
-    cardsTitle: "KullanÄ±m AlanlarÄ± ve Ä°lgili Ana Makineler",
+    cardsTitle: "Kullanım Alanları ve İlgili Ana Makineler",
     cardsDescription:
-      "Maden kurutma ve eleme tesislerinde kÄ±rÄ±cÄ±, elek, kurutucu ve konveyÃ¶r omurgasÄ± tek bir proses dengesiyle birlikte ele alÄ±nmalÄ±dÄ±r.",
+      "Maden kurutma ve eleme tesislerinde kırıcı, elek, kurutucu ve konveyör omurgası tek bir proses dengesiyle birlikte ele alınmalıdır.",
     summaryRows: [
       {
         criterion: "Besleme Boyutu",
         description:
-          "KÄ±rÄ±cÄ± Ã§Ä±kÄ±ï¿½x boyutu ve eleme Ã¶ncesi fraksiyon daï¿½xÄ±lÄ±mÄ± hat dengesini belirler.",
+          "Kırıcı çıkış boyutu ve eleme öncesi fraksiyon daşılımı hat dengesini belirler.",
         importance:
-          "Kurutma davranÄ±ï¿½xÄ± ve son sÄ±nÄ±flandÄ±rma kalitesini doï¿½xrudan etkiler.",
+          "Kurutma davranışı ve son sınıflandırma kalitesini doğrudan etkiler.",
       },
       {
-        criterion: "Nem ve Termal YÃ¼k",
+        criterion: "Nem ve Termal Yük",
         description:
-          "Mineralin giriï¿½x nemi kurutucu boyutunu ve enerji ihtiyacÄ±nÄ± belirleyen ana parametredir.",
+          "Mineralin giriş nemi kurutucu boyutunu ve enerji ihtiyacını belirleyen ana parametredir.",
         importance:
-          "Kurutma tamburu kapasitesinin saï¿½xlÄ±klÄ± hesaplanmasÄ±nÄ± saï¿½xlar.",
+          "Kurutma tamburu kapasitesinin sağlıklı hesaplanmasını sağlar.",
       },
       {
-        criterion: "Aï¿½xÄ±nma DayanÄ±mÄ±",
+        criterion: "Aşınma Dayanımı",
         description:
-          "Mineral karakterine baï¿½xlÄ± aï¿½xÄ±ndÄ±rÄ±cÄ± etkiler gÃ¶vde, iÃ§ ekipman ve aktarÄ±m parÃ§alarÄ±nda dikkate alÄ±nÄ±r.",
+          "Mineral karakterine bağlı aşındırıcı etkiler gövde, iç ekipman ve aktarım parçalarında dikkate alınır.",
         importance:
-          "BakÄ±m maliyetini ve servis Ã¶mrÃ¼nÃ¼ doï¿½xrudan etkiler.",
+          "Bakım maliyetini ve servis ömrünü doğrudan etkiler.",
       },
       {
         criterion: "Stok ve Sevkiyat",
         description:
-          "Son Ã¼rÃ¼nÃ¼n eleme sonrasÄ± stoklanmasÄ± ve yÃ¼klenmesi iÃ§in taï¿½xÄ±ma omurgasÄ± planlanÄ±r.",
+          "Son ürünün eleme sonrası stoklanması ve yüklenmesi için taşıma omurgası planlanır.",
         importance:
-          "Tesiste teorik kapasitenin ticari Ã§Ä±ktÄ±ya dÃ¶nÃ¼ï¿½xmesini saï¿½xlar.",
+          "Tesiste teorik kapasitenin ticari çıktıya dönüşmesini sağlar.",
       },
     ],
     sections: [
       {
-        title: "KullanÄ±m AlanlarÄ±",
+        title: "Kullanım Alanları",
         paragraphs: [
-          "Maden kurutma ve eleme tesisleri silis, kuvars, farklÄ± mineral karÄ±ï¿½xÄ±mlarÄ±, kÄ±rÄ±lmÄ±ï¿½x cevher fraksiyonlarÄ± ve ticari tane aralÄ±ï¿½xÄ± istenen dÃ¶kme katÄ± Ã¼rÃ¼nlerde kullanÄ±lÄ±r. ï¿½zellikle kÄ±rma eleme kurutma tesisi mantÄ±ï¿½xÄ±nda Ã§alÄ±ï¿½xan sahalarda, her ekipmanÄ±n bir sonraki adÄ±mÄ± besleyecek kararlÄ±lÄ±kta seÃ§ilmesi gerekir.",
+          "Maden kurutma ve eleme tesisleri silis, kuvars, farklı mineral karışımları, kırılmış cevher fraksiyonları ve ticari tane aralığı istenen dökme katı ürünlerde kullanılır. özellikle kırma eleme kurutma tesisi mantığında çalışan sahalarda, her ekipmanın bir sonraki adımı besleyecek kararlılıkta seçilmesi gerekir.",
         ],
       },
       {
-        title: "Hangi Hammaddeler ve ï¿½SrÃ¼nler Ä°Ã§in Uygundur?",
+        title: "Hangi Hammaddeler ve Ürünler İçin Uygundur?",
         paragraphs: [
-          "Kuvars kumu, silis fraksiyonlarÄ±, nemli mineral karÄ±ï¿½xÄ±mlar, ince veya orta tane yapÄ±lÄ± maden Ã¼rÃ¼nleri ve son nemi dÃ¼ï¿½xÃ¼rÃ¼lerek eleme sÄ±nÄ±fÄ±na sokulacak hammaddeler iÃ§in uygundur. Her mineralin aï¿½xÄ±ndÄ±rÄ±cÄ±lÄ±ï¿½xÄ± ve yoï¿½xunluï¿½xu farklÄ± olduï¿½xu iÃ§in makina seÃ§imi standart deï¿½xil, projeye Ã¶zel yapÄ±lmalÄ±dÄ±r.",
+          "Kuvars kumu, silis fraksiyonları, nemli mineral karışımlar, ince veya orta tane yapılı maden ürünleri ve son nemi düğürülerek eleme sınıfına sokulacak hammaddeler için uygundur. Her mineralin aşındırıcılığı ve yoğunluğu farklı olduğu için makina seçimi standart değil, projeye özel yapılmalıdır.",
         ],
       },
       {
-        title: "Teknik ï¿½zellikler",
+        title: "Teknik özellikler",
         paragraphs: [
-          "Maden kurutma tesisi omurgasÄ±nda kÄ±rÄ±cÄ±lar, tambur kurutucular, elek sistemleri, siklonlar, filtreler, konveyÃ¶rler, bunkerler ve stok ekipmanlarÄ± birlikte Ã§Ã¶zÃ¼lÃ¼r. Aï¿½xÄ±ndÄ±rÄ±cÄ± Ã¼rÃ¼nlerde malzeme kalÄ±nlÄ±ï¿½xÄ±, iÃ§ kaplama ve servis parÃ§alarÄ± ayrÄ±ca planlanmalÄ±dÄ±r.",
+          "Maden kurutma tesisi omurgasında kırıcılar, tambur kurutucular, elek sistemleri, siklonlar, filtreler, konveyörler, bunkerler ve stok ekipmanları birlikte çözülür. Aşındırıcı ürünlerde malzeme kalınlığı, iç kaplama ve servis parçaları ayrıca planlanmalıdır.",
         ],
       },
       {
-        title: "Kapasite ve TasarÄ±m Kriterleri",
+        title: "Kapasite ve Tasarım Kriterleri",
         paragraphs: [
-          "TasarÄ±m yapÄ±lÄ±rken Ã¼rÃ¼n nemi, hedef fraksiyon, giriï¿½x boyutu, ton/saat deï¿½xeri, kurutma sonrasÄ± eleme yÃ¼zeyi ve stok temposu birlikte deï¿½xerlendirilir. KÄ±rma eleme kurutma tesisi iÃ§inde tek bir ekipmanÄ±n aï¿½xÄ±rÄ± bÃ¼yÃ¼k seÃ§ilmesi Ã§Ã¶zÃ¼m olmaz; dengeli hat tasarÄ±mÄ± gerekir.",
+          "Tasarım yapılırken ürün nemi, hedef fraksiyon, giriş boyutu, ton/saat değeri, kurutma sonrası eleme yüzeyi ve stok temposu birlikte değerlendirilir. Kırma eleme kurutma tesisi içinde tek bir ekipmanın ağırı büyük seçilmesi çözüm olmaz; dengeli hat tasarımı gerekir.",
         ],
       },
       {
-        title: "Proses Ä°Ã§indeki Yeri",
+        title: "Proses İçindeki Yeri",
         paragraphs: [
-          "Bu tesisler kÄ±rma sonrasÄ± ara hazÄ±rlÄ±k, kurutma sonrasÄ± eleme ve nihai Ã¼rÃ¼n sÄ±nÄ±flandÄ±rmasÄ±nÄ±n merkezinde yer alÄ±r. Mineralin satÄ±ï¿½x standardÄ± Ã§oï¿½xu zaman bu adÄ±mlarÄ±n kalitesiyle belirlenir.",
+          "Bu tesisler kırma sonrası ara hazırlık, kurutma sonrası eleme ve nihai ürün sınıflandırmasının merkezinde yer alır. Mineralin satığ standardı çoşu zaman bu adımların kalitesiyle belirlenir.",
         ],
       },
       {
         title: "Opsiyonel Ekipmanlar",
         paragraphs: [
-          "KÄ±rÄ±cÄ±lar, siklonlar, jet pulse filtreler, stok bunkerleri, bant konveyÃ¶rler, manyetik ayÄ±rÄ±cÄ±lar, servis platformlarÄ± ve otomasyon sistemleri projeye gÃ¶re ilave edilebilir.",
+          "Kırıcılar, siklonlar, jet pulse filtreler, stok bunkerleri, bant konveyörler, manyetik ayırıcılar, servis platformları ve otomasyon sistemleri projeye göre ilave edilebilir.",
         ],
       },
       {
         title: "Avantajlar",
         paragraphs: [
-          "Doï¿½xru kurgulanmÄ±ï¿½x maden kurutma ve eleme tesisi daha dÃ¼ï¿½xÃ¼k nem, daha istikrarlÄ± tane daï¿½xÄ±lÄ±mÄ±, daha kontrollÃ¼ sevkiyat ve daha az duruï¿½x riski sunar. Bu yapÄ± Ã¶zellikle satÄ±ï¿½x standardÄ± aranan mineral uygulamalarÄ±nda yatÄ±rÄ±mÄ±n deï¿½xerini yÃ¼kseltir.",
+          "Doğru kurgulanmış maden kurutma ve eleme tesisi daha düğük nem, daha istikrarlı tane daşılımı, daha kontrollü sevkiyat ve daha az duruş riski sunar. Bu yapı özellikle satığ standardı aranan mineral uygulamalarında yatırımın değerini yükseltir.",
         ],
       },
       {
-        title: "Teklif Almak Ä°Ã§in Gerekli Bilgiler",
+        title: "Teklif Almak İçin Gerekli Bilgiler",
         paragraphs: [
-          "ï¿½SrÃ¼n tipi, tonaj, giriï¿½x nemi, istenen fraksiyonlar, mevcut kÄ±rma yapÄ±sÄ±, saha yerleï¿½ximi ve toz kontrol ihtiyacÄ± paylaï¿½xÄ±ldÄ±ï¿½xÄ±nda daha doï¿½xru bir tesis teklifi hazÄ±rlanabilir.",
+          "Ürün tipi, tonaj, giriş nemi, istenen fraksiyonlar, mevcut kırma yapısı, saha yerleşimi ve toz kontrol ihtiyaçı paylaşıldığında daha doğru bir tesis teklifi hazırlanabilir.",
         ],
       },
     ],
     faqs: [
       {
-        question: "Maden kurutma ve eleme tesisi hangi sektÃ¶rlerde kullanÄ±lÄ±r?",
+        question: "Maden kurutma ve eleme tesisi hangi sektörlerde kullanılır?",
         answer:
-          "Silis, kuvars ve farklÄ± mineral Ã¼rÃ¼nlerin kurutma, sÄ±nÄ±flandÄ±rma ve sevkiyat Ã¶ncesi hazÄ±rlanmasÄ±nda yaygÄ±n kullanÄ±lÄ±r.",
+          "Silis, kuvars ve farklı mineral ürünlerin kurutma, sınıflandırma ve sevkiyat öncesi hazırlanmasında yaygın kullanılır.",
       },
       {
-        question: "KÄ±rma eleme kurutma tesisi neden birlikte dÃ¼ï¿½xÃ¼nÃ¼lmelidir?",
+        question: "Kırma eleme kurutma tesisi neden birlikte düğünülmelidir?",
         answer:
-          "ï¿½!Ã¼nkÃ¼ kÄ±rÄ±cÄ± Ã§Ä±kÄ±ï¿½xÄ±, kurutma yÃ¼kÃ¼ ve eleme performansÄ± birbirine baï¿½xlÄ±dÄ±r; biri yanlÄ±ï¿½x seÃ§ilirse tÃ¼m hat verimi etkilenir.",
+          "Çünkü kırıcı çıkışı, kurutma yükü ve eleme performansı birbirine bağlıdır; biri yanlığ seçilirse tüm hat verimi etkilenir.",
       },
       {
         question: "Maden kurutma tesisinde filtre gerekli midir?",
         answer:
-          "BirÃ§ok mineral uygulamasÄ±nda toz kontrolÃ¼ iÃ§in siklon ve filtre hattÄ± Ã¶nemli bir ihtiyaÃ§tÄ±r.",
+          "Birçok mineral uygulamasında toz kontrolü için siklon ve filtre hattı önemli bir ihtiyaçtır.",
       },
       {
-        question: "Kapasite nasÄ±l belirlenir?",
+        question: "Kapasite nasıl belirlenir?",
         answer:
-          "Ton/saat, Ã¼rÃ¼n nemi, giriï¿½x boyutu ve hedef fraksiyonlara gÃ¶re kurutma ve eleme dengesi birlikte kurulur.",
+          "Ton/saat, ürün nemi, giriş boyutu ve hedef fraksiyonlara göre kurutma ve eleme dengesi birlikte kurulur.",
       },
       {
-        question: "KonveyÃ¶r seÃ§imi neden Ã¶nemlidir?",
+        question: "Konveyör seçimi neden önemlidir?",
         answer:
-          "Kurutma sonrasÄ± Ã¼rÃ¼nÃ¼n kÄ±rÄ±lmadan ve birikme yapmadan stok hattÄ±na taï¿½xÄ±nmasÄ± iÃ§in doï¿½xru konveyÃ¶r omurgasÄ± gerekir.",
+          "Kurutma sonrası ürünün kırılmadan ve birikme yapmadan stok hattına taşınması için doğru konveyör omurgası gerekir.",
       },
     ],
     ctaText:
-      "Maden kurutma ve eleme tesisi iÃ§in Ã¼rÃ¼n verilerinizi paylaï¿½xÄ±n; kÄ±rma, kurutma, sÄ±nÄ±flandÄ±rma ve taï¿½xÄ±ma omurgasÄ±nÄ± birlikte netleï¿½xtirelim.",
+      "Maden kurutma ve eleme tesisi için ürün verilerinizi paylaşın; kırma, kurutma, sınıflandırma ve taşıma omurgasını birlikte netleştirelim.",
     showForm: true,
     technicalContents: commonTechnicalContents,
     keyLinks: [
       { label: "Silis Kumu Kurutma Tesisi", href: "/hizmetler/silis-kumu-kurutma-tesisi" },
-      { label: "Kurutma Tamburu Ä°malatÄ±", href: "/hizmetler/kurutma-tamburu-imalati" },
+      { label: "Kurutma Tamburu İmalatı", href: "/hizmetler/kurutma-tamburu-imalati" },
       { label: "Makinalar & Ekipman", href: "/makinalar-ekipman" },
-      { label: "SektÃ¶rler", href: "/sektorler" },
+      { label: "Sektörler", href: "/sektorler" },
     ],
   },
   "granul-gubre-uretim-tesisi": {
-    title: "GranÃ¼l GÃ¼bre ï¿½Sretim Tesisi | GranÃ¼lasyon ï¿½!Ã¶zÃ¼mleri",
+    title: "Granül Gübre Üretim Tesisi | Granülasyon Çözümleri",
     description:
-      "GranÃ¼l gÃ¼bre Ã¼retim tesisi ve organomineral granÃ¼l gÃ¼bre hattÄ± iÃ§in granÃ¼lasyon, kurutma, eleme ve paketleme Ã§Ã¶zÃ¼mleri sunuyoruz.",
+      "Granül gübre üretim tesisi ve organomineral granül gübre hattı için granülasyon, kurutma, eleme ve paketleme çözümleri sunuyoruz.",
     canonical: "https://www.promakina.com.tr/hizmetler/granul-gubre-uretim-tesisi",
     image: "/images/01-genel/hizmetler1.png",
-    serviceName: "GranÃ¼l GÃ¼bre ï¿½Sretim Tesisi",
-    introTitle: "GranÃ¼lasyon, Kurutma ve SÄ±nÄ±flandÄ±rma Ä°Ã§in Entegre GÃ¼bre HattÄ±",
+    serviceName: "Granül Gübre Üretim Tesisi",
+    introTitle: "Granülasyon, Kurutma ve Sınıflandırma İçin Entegre Gübre Hattı",
     introParagraphs: [
-      "GranÃ¼l gÃ¼bre Ã¼retim tesisi, toz veya karÄ±ï¿½xÄ±m haldeki hammaddelerin kontrollÃ¼ granÃ¼l forma dÃ¶nÃ¼ï¿½xtÃ¼rÃ¼lmesi, kurutulmasÄ±, soï¿½xutulmasÄ±, elenmesi ve paketlenmesi iÃ§in tasarlanan entegre bir Ã¼retim hattÄ±dÄ±r. ï¿½zellikle organomineral granÃ¼l gÃ¼bre hattÄ± planlayan yatÄ±rÄ±mcÄ±lar iÃ§in granÃ¼latÃ¶r tamburu, kurutma tamburu ve eleme sistemi arasÄ±ndaki denge Ã¼retim baï¿½xarÄ±sÄ±nÄ± belirler.",
-      "Pro Makina, granÃ¼lasyon tesisi kurgusunda proses mÃ¼hendisliï¿½xi, tambur sistemleri, konveyÃ¶rler, bunkerden paketlemeye kadar tÃ¼m mekanik omurgayÄ± tek proje mantÄ±ï¿½xÄ±nda birleï¿½xtirir. BÃ¶ylece yatÄ±rÄ±mcÄ±, hem iÃ§ pazara hem ihracata uygun daha kararlÄ± granÃ¼l kalite standardÄ± elde eder.",
+      "Granül gübre üretim tesisi, toz veya karışım haldeki hammaddelerin kontrollü granül forma dönüştürülmesi, kurutulması, soğutulması, elenmesi ve paketlenmesi için tasarlanan entegre bir üretim hattıdır. özellikle organomineral granül gübre hattı planlayan yatırımcılar için granülatör tamburu, kurutma tamburu ve eleme sistemi arasındaki denge üretim başarısını belirler.",
+      "Pro Makina, granülasyon tesisi kurgusunda proses mühendisliği, tambur sistemleri, konveyörler, bunkerden paketlemeye kadar tüm mekanik omurgayı tek proje mantığında birleştirir. Böylece yatırımcı, hem iç pazara hem ihracata uygun daha kararlı granül kalite standardı elde eder.",
     ],
     cards: [
       {
-        title: "Kurutma TamburlarÄ±",
+        title: "Kurutma Tamburları",
         description:
-          "GranÃ¼l sonrasÄ± hedef son neme ulaï¿½xmak iÃ§in kullanÄ±lan endÃ¼striyel rotary dryer Ã§Ã¶zÃ¼mleri.",
+          "Granül sonrası hedef son neme ulaşmak için kullanılan endüstriyel rotary dryer çözümleri.",
         href: "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburu",
       },
       {
-        title: "GranÃ¼latÃ¶r Tamburu",
+        title: "Granülatör Tamburu",
         description:
-          "GranÃ¼l yapÄ± oluï¿½xumunun merkezinde yer alan tambur tipi ve proses iliï¿½xkisini inceleyin.",
+          "Granül yapı oluğumunun merkezinde yer alan tambur tipi ve proses ilişkisini inceleyin.",
         href: "/makinalar-ekipman/tambur-sistemleri/granulator-tamburu",
       },
       {
-        title: "Soï¿½xutma ve Kaplama Tamburu",
+        title: "Soğutma ve Kaplama Tamburu",
         description:
-          "GranÃ¼l dayanÄ±mÄ±, sÄ±caklÄ±k dÃ¼ï¿½xÃ¼rme ve son yÃ¼zey performansÄ± iÃ§in tamamlayÄ±cÄ± tambur sistemleri.",
+          "Granül dayanımı, sıcaklık düğürme ve son yüzey performansı için tamamlayıcı tambur sistemleri.",
         href: "/makinalar-ekipman/tambur-sistemleri/sogutma-tamburu",
       },
       {
         title: "Eleme Sistemleri",
         description:
-          "Ticari Ã¼rÃ¼n standardÄ± iÃ§in geri devir ve son fraksiyon kontrolÃ¼nÃ¼ yÃ¶neten eleme hattÄ±.",
+          "Ticari ürün standardı için geri devir ve son fraksiyon kontrolünü yöneten eleme hattı.",
         href: "/makinalar-ekipman/eleme-ve-siniflandirma-sistemleri",
       },
     ],
-    cardsTitle: "KullanÄ±m AlanlarÄ± ve Ä°lgili Ana Makineler",
+    cardsTitle: "Kullanım Alanları ve İlgili Ana Makineler",
     cardsDescription:
-      "GranÃ¼l gÃ¼bre Ã¼retim tesisinde granÃ¼lasyon, kurutma, soï¿½xutma, eleme ve paketleme aynÄ± kalite hedefi etrafÄ±nda Ã§Ã¶zÃ¼lmelidir.",
+      "Granül gübre üretim tesisinde granülasyon, kurutma, soğutma, eleme ve paketleme aynı kalite hedefi etrafında çözülmelidir.",
     summaryRows: [
       {
-        criterion: "GranÃ¼lasyon Dengesi",
+        criterion: "Granülasyon Dengesi",
         description:
-          "Baï¿½xlayÄ±cÄ±, geri devir, tambur yÃ¼kÃ¼ ve Ã¼rÃ¼n davranÄ±ï¿½xÄ± birlikte deï¿½xerlendirilir.",
+          "Bağlayıcı, geri devir, tambur yükü ve ürün davranışı birlikte değerlendirilir.",
         importance:
-          "GranÃ¼l dayanÄ±mÄ± ve hedef tane daï¿½xÄ±lÄ±mÄ±nÄ± belirler.",
+          "Granül dayanımı ve hedef tane daşılımını belirler.",
       },
       {
-        criterion: "Termal YÃ¼k",
+        criterion: "Termal Yük",
         description:
-          "Kurutma tamburunun nem azaltma yÃ¼kÃ¼ granÃ¼latÃ¶r Ã§Ä±kÄ±ï¿½xÄ±yla birlikte hesaplanÄ±r.",
+          "Kurutma tamburunun nem azaltma yükü granülatör çıkışıyla birlikte hesaplanır.",
         importance:
-          "HattÄ±n darboï¿½xaz oluï¿½xturmadan Ã§alÄ±ï¿½xmasÄ±nÄ± saï¿½xlar.",
+          "Hattın darboğaz oluşturmadan çalışmasını sağlar.",
       },
       {
         criterion: "Eleme ve Geri Devir",
         description:
-          "Ä°nce ve iri fraksiyonlarÄ±n geri dÃ¶nÃ¼ï¿½x oranÄ± stabil Ã¼rÃ¼n standardÄ± iÃ§in planlanÄ±r.",
+          "İnce ve iri fraksiyonların geri dönüş oranı stabil ürün standardı için planlanır.",
         importance:
-          "GerÃ§ek hat verimi ve paketleme temposunu gÃ¼Ã§lendirir.",
+          "Gerçek hat verimi ve paketleme temposunu güçlendirir.",
       },
       {
         criterion: "Paketleme Uyumu",
         description:
-          "Son Ã¼rÃ¼n sÄ±caklÄ±ï¿½xÄ± ve nemi torbalama davranÄ±ï¿½xÄ±nÄ± etkiler.",
+          "Son ürün sıcaklığı ve nemi torbalama davranışını etkiler.",
         importance:
-          "Ticari sevkiyat kalitesini doï¿½xrudan belirler.",
+          "Ticari sevkiyat kalitesini doğrudan belirler.",
       },
     ],
     sections: [
       {
-        title: "KullanÄ±m AlanlarÄ±",
+        title: "Kullanım Alanları",
         paragraphs: [
-          "GranÃ¼l gÃ¼bre Ã¼retim tesisi; NPK, organomineral granÃ¼l, mineral bazlÄ± karÄ±ï¿½xÄ±mlar ve farklÄ± ticari gÃ¼bre reÃ§etelerinde kullanÄ±lÄ±r. TarÄ±msal pazarÄ±n fiziksel dayanÄ±mÄ± yÃ¼ksek, sevkiyata uygun Ã¼rÃ¼n beklentisi nedeniyle granÃ¼lasyon tesisleri yatÄ±rÄ±m tarafÄ±nda gÃ¼Ã§lÃ¼ talep gÃ¶rÃ¼r.",
+          "Granül gübre üretim tesisi; NPK, organomineral granül, mineral bazlı karışımlar ve farklı ticari gübre reçetelerinde kullanılır. Tarımsal pazarın fiziksel dayanımı yüksek, sevkiyata uygun ürün beklentisi nedeniyle granülasyon tesisleri yatırım tarafında güçlü talep görür.",
         ],
       },
       {
-        title: "Hangi Hammaddeler ve ï¿½SrÃ¼nler Ä°Ã§in Uygundur?",
+        title: "Hangi Hammaddeler ve Ürünler İçin Uygundur?",
         paragraphs: [
-          "Ä°nce toz hammaddeler, mineral karÄ±ï¿½xÄ±mlar, organomineral reÃ§eteler, farklÄ± baï¿½xlayÄ±cÄ± stratejileriyle Ã§alÄ±ï¿½xan karÄ±ï¿½xÄ±mlar ve ticari granÃ¼l hedefi taï¿½xÄ±yan Ã¼rÃ¼nler iÃ§in uygundur. Her reÃ§ete farklÄ± nem ve davranÄ±ï¿½x gÃ¶sterdiï¿½xi iÃ§in granÃ¼lasyon tesisi mutlaka prosese gÃ¶re ï¿½xekillendirilmelidir.",
+          "İnce toz hammaddeler, mineral karışımlar, organomineral reçeteler, farklı bağlayıcı stratejileriyle çalışan karışımlar ve ticari granül hedefi taşıyan ürünler için uygundur. Her reçete farklı nem ve davranış gösterdiği için granülasyon tesisi mutlaka prosese göre şekillendirilmelidir.",
         ],
       },
       {
-        title: "Teknik ï¿½zellikler",
+        title: "Teknik özellikler",
         paragraphs: [
-          "GranÃ¼latÃ¶r tamburu, kurutma tamburu, soï¿½xutma tamburu, kaplama tamburu, elek sistemi, konveyÃ¶rler, helezonlar, bunkerler ve paketleme ekipmanlarÄ± hat omurgasÄ±nÄ± oluï¿½xturur. Bu makinelerin her biri yalnÄ±z kapasite deï¿½xil, Ã¼rÃ¼n davranÄ±ï¿½xÄ± Ã¼zerinden seÃ§ilir.",
+          "Granülatör tamburu, kurutma tamburu, soğutma tamburu, kaplama tamburu, elek sistemi, konveyörler, helezonlar, bunkerler ve paketleme ekipmanları hat omurgasını oluşturur. Bu makinelerin her biri yalnız kapasite değil, ürün davranışı üzerinden seçilir.",
         ],
       },
       {
-        title: "Kapasite ve TasarÄ±m Kriterleri",
+        title: "Kapasite ve Tasarım Kriterleri",
         paragraphs: [
-          "Ton/saat hedefi, geri devir oranÄ±, baï¿½xlayÄ±cÄ± ihtiyacÄ±, hedef tane boyutu, son nem ve paketleme temposu birlikte deï¿½xerlendirilir. GranÃ¼l gÃ¼bre Ã¼retim tesisinde tambur sistemlerinin uyumsuz seÃ§ilmesi, teorik kapasite yÃ¼ksek gÃ¶rÃ¼nse bile sahada darboï¿½xaz yaratÄ±r.",
+          "Ton/saat hedefi, geri devir oranı, bağlayıcı ihtiyaçı, hedef tane boyutu, son nem ve paketleme temposu birlikte değerlendirilir. Granül gübre üretim tesisinde tambur sistemlerinin uyumsuz seçilmesi, teorik kapasite yüksek görünse bile sahada darboğaz yaratır.",
         ],
       },
       {
-        title: "Proses Ä°Ã§indeki Yeri",
+        title: "Proses İçindeki Yeri",
         paragraphs: [
-          "GranÃ¼lasyon tesisi; hammaddenin ticari granÃ¼l Ã¼rÃ¼ne dÃ¶nÃ¼ï¿½xtÃ¼rÃ¼ldÃ¼ï¿½xÃ¼ ana deï¿½xer yaratma hattÄ±dÄ±r. KarÄ±ï¿½xtÄ±rma sonrasÄ± granÃ¼l oluï¿½xumu, kurutma, soï¿½xutma ve eleme adÄ±mlarÄ± bu hatta birbirine baï¿½xÄ±mlÄ± ï¿½xekilde Ã§alÄ±ï¿½xÄ±r.",
+          "Granülasyon tesisi; hammaddenin ticari granül ürüne dönüştürüldüğü ana değer yaratma hattıdır. Karıştırma sonrası granül oluğumu, kurutma, soğutma ve eleme adımları bu hatta birbirine başımlı şekilde çalığır.",
         ],
       },
       {
         title: "Opsiyonel Ekipmanlar",
         paragraphs: [
-          "Kaplama tamburu, jet pulse filtre, siklon, paketleme sistemleri, bunker karÄ±ï¿½xtÄ±rÄ±cÄ±larÄ±, dozajlama hatlarÄ± ve otomasyon altyapÄ±sÄ± proje bÃ¼yÃ¼klÃ¼ï¿½xÃ¼ne gÃ¶re ilave edilir.",
+          "Kaplama tamburu, jet pulse filtre, siklon, paketleme sistemleri, bunker karıştırıcıları, dozajlama hatları ve otomasyon altyapısı proje büyüklüğüne göre ilave edilir.",
         ],
       },
       {
         title: "Avantajlar",
         paragraphs: [
-          "Doï¿½xru planlanmÄ±ï¿½x granÃ¼l gÃ¼bre Ã¼retim tesisi daha kararlÄ± Ã¼rÃ¼n standardÄ±, daha dÃ¼ï¿½xÃ¼k geri devir stresi, daha iyi sevkiyat performansÄ± ve daha yÃ¼ksek ticari deï¿½xer saï¿½xlar. Organomineral granÃ¼l gÃ¼bre hattÄ±nda bu avantajlar marka farkÄ± yaratÄ±r.",
+          "Doğru planlanmış granül gübre üretim tesisi daha kararlı ürün standardı, daha düğük geri devir stresi, daha iyi sevkiyat performansı ve daha yüksek ticari değer sağlar. Organomineral granül gübre hattında bu avantajlar marka farkı yaratır.",
         ],
       },
       {
-        title: "Teklif Almak Ä°Ã§in Gerekli Bilgiler",
+        title: "Teklif Almak İçin Gerekli Bilgiler",
         paragraphs: [
-          "ï¿½SrÃ¼n reÃ§etesi, kapasite, hedef tane aralÄ±ï¿½xÄ±, giriï¿½x nemi, baï¿½xlayÄ±cÄ± yaklaï¿½xÄ±mÄ±, otomasyon seviyesi ve paketleme senaryosu paylaï¿½xÄ±lÄ±rsa daha doï¿½xru granÃ¼lasyon tesisi teklifi hazÄ±rlanabilir.",
+          "Ürün reçetesi, kapasite, hedef tane aralığı, giriş nemi, bağlayıcı yaklaşımı, otomasyon seviyesi ve paketleme senaryosu paylaşılırsa daha doğru granülasyon tesisi teklifi hazırlanabilir.",
         ],
       },
     ],
     faqs: [
       {
-        question: "GranÃ¼l gÃ¼bre Ã¼retim tesisi ile organomineral granÃ¼l gÃ¼bre hattÄ± aynÄ± mÄ±dÄ±r?",
+        question: "Granül gübre üretim tesisi ile organomineral granül gübre hattı aynı mıdır?",
         answer:
-          "Temel granÃ¼lasyon mantÄ±ï¿½xÄ± benzese de organik iÃ§erik ve nem davranÄ±ï¿½xÄ± nedeniyle organomineral hatlar daha Ã¶zel deï¿½xerlendirilir.",
+          "Temel granülasyon mantığı benzese de organik içerik ve nem davranışı nedeniyle organomineral hatlar daha özel değerlendirilir.",
       },
       {
-        question: "GranÃ¼latÃ¶r tamburu neden kritik ekipmandÄ±r?",
+        question: "Granülatör tamburu neden kritik ekipmandır?",
         answer:
-          "GranÃ¼l oluï¿½xumu burada baï¿½xladÄ±ï¿½xÄ± iÃ§in tambur yÃ¼kÃ¼, iÃ§ geometri ve baï¿½xlayÄ±cÄ± davranÄ±ï¿½xÄ± tÃ¼m hat kalitesini etkiler.",
+          "Granül oluğumu burada bağladığı için tambur yükü, iç geometri ve bağlayıcı davranışı tüm hat kalitesini etkiler.",
       },
       {
-        question: "Kurutma tamburu her granÃ¼l tesiste gerekir mi?",
+        question: "Kurutma tamburu her granül tesiste gerekir mi?",
         answer:
-          "BirÃ§ok granÃ¼l gÃ¼bre hattÄ±nda hedef son nem ve sevkiyat gÃ¼veni iÃ§in kurutma tamburu Ã¶nemli bir ihtiyaÃ§tÄ±r.",
+          "Birçok granül gübre hattında hedef son nem ve sevkiyat güveni için kurutma tamburu önemli bir ihtiyaçtır.",
       },
       {
-        question: "Eleme sistemi neden Ã¶nemlidir?",
+        question: "Eleme sistemi neden önemlidir?",
         answer:
-          "Ticari Ã¼rÃ¼n standardÄ± ve geri devir oranÄ±nÄ±n kontrolÃ¼ iÃ§in eleme sistemi kritik rol oynar.",
+          "Ticari ürün standardı ve geri devir oranının kontrolü için eleme sistemi kritik rol oynar.",
       },
       {
-        question: "Teklif Ã§alÄ±ï¿½xmasÄ± iÃ§in hangi veriler gereklidir?",
+        question: "Teklif çalışması için hangi veriler gereklidir?",
         answer:
-          "ReÃ§ete, kapasite, hedef granÃ¼l boyutu, nem deï¿½xerleri ve paketleme senaryosu teklif iÃ§in temel verileri oluï¿½xturur.",
+          "Reçete, kapasite, hedef granül boyutu, nem değerleri ve paketleme senaryosu teklif için temel verileri oluşturur.",
       },
     ],
     ctaText:
-      "GranÃ¼l gÃ¼bre Ã¼retim tesisi, organomineral granÃ¼l gÃ¼bre hattÄ± ve tambur sistemleri iÃ§in Ã¼rÃ¼n hedeflerinizi paylaï¿½xÄ±n; size uygun proses kurgusunu birlikte oluï¿½xturalÄ±m.",
+      "Granül gübre üretim tesisi, organomineral granül gübre hattı ve tambur sistemleri için ürün hedeflerinizi paylaşın; size uygun proses kurgusunu birlikte oluşturalım.",
     showForm: true,
     technicalContents: commonTechnicalContents,
     keyLinks: [
-      { label: "Kurutma Tamburu Ä°malatÄ±", href: "/hizmetler/kurutma-tamburu-imalati" },
-      { label: "GranÃ¼latÃ¶r Tamburu", href: "/makinalar-ekipman/tambur-sistemleri/granulator-tamburu" },
+      { label: "Kurutma Tamburu İmalatı", href: "/hizmetler/kurutma-tamburu-imalati" },
+      { label: "Granülatör Tamburu", href: "/makinalar-ekipman/tambur-sistemleri/granulator-tamburu" },
       { label: "Kaplama Tamburu", href: "/makinalar-ekipman/tambur-sistemleri/kaplama-tamburu" },
       { label: "Eleme Sistemleri", href: "/makinalar-ekipman/eleme-ve-siniflandirma-sistemleri" },
     ],
   },
   "organomineral-gubre-tesisi": {
-    title: "Organomineral GÃ¼bre Tesisi | GranÃ¼lasyon HattÄ±",
+    title: "Organomineral Gübre Tesisi | Granülasyon Hattı",
     description:
-      "Organomineral gÃ¼bre tesisi ve organomineral gÃ¼bre Ã¼retim hattÄ± iÃ§in granÃ¼lasyon, kurutma, eleme ve paketleme Ã§Ã¶zÃ¼mleri sunuyoruz.",
+      "Organomineral gübre tesisi ve organomineral gübre üretim hattı için granülasyon, kurutma, eleme ve paketleme çözümleri sunuyoruz.",
     canonical: "https://www.promakina.com.tr/hizmetler/organomineral-gubre-tesisi",
     image: "/images/01-genel/hizmetler1.png",
-    serviceName: "Organomineral GÃ¼bre Tesisi",
-    introTitle: "Organik ve Mineral Ä°Ã§eriï¿½xi Tek Hatta Buluï¿½xturan ï¿½Sretim Kurgusu",
+    serviceName: "Organomineral Gübre Tesisi",
+    introTitle: "Organik ve Mineral İçerişi Tek Hatta Buluşturan Üretim Kurgusu",
     introParagraphs: [
-      "Organomineral gÃ¼bre tesisi, organik kaynaklÄ± girdiler ile mineral bileï¿½xenleri dengeli biÃ§imde iï¿½xleyen, granÃ¼l veya toz Ã¼rÃ¼n standardÄ±na uygun son Ã¼rÃ¼n Ã§Ä±karan Ã¶zel bir Ã¼retim altyapÄ±sÄ±dÄ±r. Organomineral gÃ¼bre Ã¼retim hattÄ± kurulurken karÄ±ï¿½xÄ±m davranÄ±ï¿½xÄ±, nem dengesi, granÃ¼lasyon performansÄ± ve kurutma yÃ¼kÃ¼ birlikte okunmalÄ±dÄ±r.",
-      "Pro Makina, organomineral gÃ¼bre tesislerinde proses tasarÄ±mÄ±, taï¿½xÄ±ma ve dozajlama omurgasÄ±, granÃ¼latÃ¶r tamburu, kurutma-soï¿½xutma tamburlarÄ±, eleme ve paketleme altyapÄ±sÄ±nÄ± tek proje yÃ¶netimi iÃ§inde ele alÄ±r. BÃ¶ylece yatÄ±rÄ±mcÄ± yalnÄ±z makina deï¿½xil, sÃ¼rdÃ¼rÃ¼lebilir kalite sunan bir Ã¼retim sistemi kazanÄ±r.",
+      "Organomineral gübre tesisi, organik kaynaklı girdiler ile mineral bileşenleri dengeli biçimde işleyen, granül veya toz ürün standardına uygun son ürün çıkaran özel bir üretim altyapısıdır. Organomineral gübre üretim hattı kurulurken karışım davranışı, nem dengesi, granülasyon performansı ve kurutma yükü birlikte okunmalıdır.",
+      "Pro Makina, organomineral gübre tesislerinde proses tasarımı, taşıma ve dozajlama omurgası, granülatör tamburu, kurutma-soğutma tamburları, eleme ve paketleme altyapısını tek proje yönetimi içinde ele alır. Böylece yatırımcı yalnız makina değil, sürdürülebilir kalite sunan bir üretim sistemi kazanır.",
     ],
     cards: [
       {
-        title: "GranÃ¼l GÃ¼bre ï¿½Sretim Tesisi",
+        title: "Granül Gübre Üretim Tesisi",
         description:
-          "GranÃ¼l Ã¼rÃ¼n odaklÄ± tesis kurgusunun ana omurgasÄ±nÄ± daha geniï¿½x perspektifle inceleyin.",
+          "Granül ürün odaklı tesis kurgusunun ana omurgasını daha geniş perspektifle inceleyin.",
         href: "/hizmetler/granul-gubre-uretim-tesisi",
       },
       {
         title: "Kurutma Tamburu",
         description:
-          "Son nem ve granÃ¼l dayanÄ±mÄ±nÄ± ï¿½xekillendiren tambur sistemi seÃ§imini gÃ¶rÃ¼n.",
+          "Son nem ve granül dayanımını şekillendiren tambur sistemi seçimini görün.",
         href: "/hizmetler/kurutma-tamburu-imalati",
       },
       {
-        title: "Helezon ve Besleme HatlarÄ±",
+        title: "Helezon ve Besleme Hatları",
         description:
-          "Toz ve organik girdilerin kontrollÃ¼ dozaj ve transferi iÃ§in taï¿½xÄ±ma omurgasÄ±nÄ± inceleyin.",
+          "Toz ve organik girdilerin kontrollü dozaj ve transferi için taşıma omurgasını inceleyin.",
         href: "/makinalar-ekipman/tasima-ekipmanlari/vidali-helezonlar",
       },
       {
         title: "Eleme ve Geri Devir",
         description:
-          "Son Ã¼rÃ¼n standardÄ± ve geri dÃ¶nÃ¼ï¿½x akÄ±ï¿½xÄ±nÄ± belirleyen sÄ±nÄ±flandÄ±rma yapÄ±sÄ±nÄ± tamamlayÄ±n.",
+          "Son ürün standardı ve geri dönüş akışını belirleyen sınıflandırma yapısını tamamlayın.",
         href: "/makinalar-ekipman/eleme-ve-siniflandirma-sistemleri",
       },
     ],
-    cardsTitle: "KullanÄ±m AlanlarÄ± ve Ä°lgili Ana Makineler",
+    cardsTitle: "Kullanım Alanları ve İlgili Ana Makineler",
     cardsDescription:
-      "Organomineral gÃ¼bre tesisinde hammaddelerin davranÄ±ï¿½xÄ± kadar, besleme ve granÃ¼lasyon hattÄ±nÄ±n ritmi de kaliteyi belirler.",
+      "Organomineral gübre tesisinde hammaddelerin davranışı kadar, besleme ve granülasyon hattının ritmi de kaliteyi belirler.",
     summaryRows: [
       {
         criterion: "Hammadde Uyumu",
         description:
-          "Organik iÃ§erik, mineral bileï¿½xen ve baï¿½xlayÄ±cÄ± davranÄ±ï¿½xÄ± aynÄ± tabloda deï¿½xerlendirilir.",
+          "Organik içerik, mineral bileşen ve bağlayıcı davranışı aynı tabloda değerlendirilir.",
         importance:
-          "GranÃ¼l oluï¿½xumu ve Ã¼rÃ¼n homojenliï¿½xi aÃ§Ä±sÄ±ndan belirleyicidir.",
+          "Granül oluğumu ve ürün homojenliği açısından belirleyicidir.",
       },
       {
         criterion: "Besleme ve Dozajlama",
         description:
-          "Helezon, bant ve bunker yapÄ±sÄ± farklÄ± akÄ±ï¿½x karakterindeki hammaddeleri dengeli taï¿½xÄ±r.",
+          "Helezon, bant ve bunker yapısı farklı akış karakterindeki hammaddeleri dengeli tağır.",
         importance:
-          "KarÄ±ï¿½xÄ±m kararlÄ±lÄ±ï¿½xÄ± ve hat sÃ¼rekliliï¿½xini gÃ¼Ã§lendirir.",
+          "Karışım kararlılığı ve hat sürekliliğini güçlendirir.",
       },
       {
         criterion: "Termal Denge",
         description:
-          "Kurutma ve soï¿½xutma adÄ±mlarÄ± Ã¼rÃ¼n stabilitesi ve depolama davranÄ±ï¿½xÄ±na gÃ¶re boyutlandÄ±rÄ±lÄ±r.",
+          "Kurutma ve soğutma adımları ürün stabilitesi ve depolama davranışına göre boyutlandırılır.",
         importance:
-          "Son Ã¼rÃ¼n nemi ve ticari dayanÄ±mÄ± belirler.",
+          "Son ürün nemi ve ticari dayanımı belirler.",
       },
       {
-        criterion: "Geri Devir YÃ¶netimi",
+        criterion: "Geri Devir Yönetimi",
         description:
-          "Elek sonrasÄ± ince ve iri fraksiyon akÄ±ï¿½xÄ± proses iÃ§inde yeniden kullanÄ±lÄ±r.",
+          "Elek sonrası ince ve iri fraksiyon akışı proses içinde yeniden kullanılır.",
         importance:
-          "GranÃ¼l standardÄ±nÄ± ve hat verimini korur.",
+          "Granül standardını ve hat verimini korur.",
       },
     ],
     sections: [
       {
-        title: "KullanÄ±m AlanlarÄ±",
+        title: "Kullanım Alanları",
         paragraphs: [
-          "Organomineral gÃ¼bre tesisi, tarÄ±msal pazara daha yÃ¼ksek katma deï¿½xerli Ã¼rÃ¼n sunmak isteyen Ã¼reticiler iÃ§in uygundur. ï¿½zellikle granÃ¼l form talebinin yÃ¼ksek olduï¿½xu pazarlarda organik iÃ§erik ile mineral bileï¿½xenleri aynÄ± kalite standardÄ±nda birleï¿½xtiren hatlar Ã¶ne Ã§Ä±kar.",
+          "Organomineral gübre tesisi, tarımsal pazara daha yüksek katma değerli ürün sunmak isteyen üreticiler için uygundur. özellikle granül form talebinin yüksek olduğu pazarlarda organik içerik ile mineral bileşenleri aynı kalite standardında birleştiren hatlar öne çıkar.",
         ],
       },
       {
-        title: "Hangi Hammaddeler ve ï¿½SrÃ¼nler Ä°Ã§in Uygundur?",
+        title: "Hangi Hammaddeler ve Ürünler İçin Uygundur?",
         paragraphs: [
-          "Organik kaynaklÄ± fraksiyonlar, mineral katkÄ±lar, toz gÃ¼bre bileï¿½xenleri ve granÃ¼l son Ã¼rÃ¼n hedefleyen reÃ§eteler iÃ§in uygundur. Organik iÃ§eriï¿½xin lif yapÄ±sÄ± ve nemi, hattÄ±n karÄ±ï¿½xtÄ±rma ve kurutma mantÄ±ï¿½xÄ±nÄ± doï¿½xrudan etkiler.",
+          "Organik kaynaklı fraksiyonlar, mineral katkılar, toz gübre bileşenleri ve granül son ürün hedefleyen reçeteler için uygundur. Organik içerişin lif yapısı ve nemi, hattın karıştırma ve kurutma mantığını doğrudan etkiler.",
         ],
       },
       {
-        title: "Teknik ï¿½zellikler",
+        title: "Teknik özellikler",
         paragraphs: [
-          "Besleme bunkerleri, helezonlar, konveyÃ¶rler, karÄ±ï¿½xtÄ±rÄ±cÄ±lar, granÃ¼latÃ¶r tamburu, kurutma tamburu, soï¿½xutma tamburu, elekler ve paketleme ekipmanlarÄ± organomineral gÃ¼bre Ã¼retim hattÄ±nÄ±n omurgasÄ±nÄ± oluï¿½xturur.",
+          "Besleme bunkerleri, helezonlar, konveyörler, karıştırıcılar, granülatör tamburu, kurutma tamburu, soğutma tamburu, elekler ve paketleme ekipmanları organomineral gübre üretim hattının omurgasını oluşturur.",
         ],
       },
       {
-        title: "Kapasite ve TasarÄ±m Kriterleri",
+        title: "Kapasite ve Tasarım Kriterleri",
         paragraphs: [
-          "Kapasite belirlenirken ton/saat deï¿½xeri kadar organik iÃ§erik oranÄ±, geri devir ihtiyacÄ±, hedef tane aralÄ±ï¿½xÄ± ve Ã¼rÃ¼n nemi de deï¿½xerlendirilir. Organomineral gÃ¼bre tesisi tasarÄ±mÄ±nda standart reÃ§ete yaklaï¿½xÄ±mÄ± Ã§oï¿½xu zaman yeterli deï¿½xildir; gerÃ§ek Ã¼rÃ¼n davranÄ±ï¿½xÄ± sahaya gÃ¶re okunmalÄ±dÄ±r.",
+          "Kapasite belirlenirken ton/saat değeri kadar organik içerik oranı, geri devir ihtiyaçı, hedef tane aralığı ve ürün nemi de değerlendirilir. Organomineral gübre tesisi tasarımında standart reçete yaklaşımı çoşu zaman yeterli değildir; gerçek ürün davranışı sahaya göre okunmalıdır.",
         ],
       },
       {
-        title: "Proses Ä°Ã§indeki Yeri",
+        title: "Proses İçindeki Yeri",
         paragraphs: [
-          "Bu tesis, Ã¼rÃ¼nÃ¼n yalnÄ±z karÄ±ï¿½xtÄ±rÄ±ldÄ±ï¿½xÄ± deï¿½xil; ticari granÃ¼l forma dÃ¶nÃ¼ï¿½xtÃ¼rÃ¼ldÃ¼ï¿½xÃ¼ ana Ã¼retim hattÄ±dÄ±r. KarÄ±ï¿½xÄ±m, granÃ¼lasyon, kurutma, eleme ve paketleme aynÄ± kalite hedefiyle Ã§alÄ±ï¿½xÄ±r.",
+          "Bu tesis, ürünün yalnız karıştırıldığı değil; ticari granül forma dönüştürüldüğü ana üretim hattıdır. Karışım, granülasyon, kurutma, eleme ve paketleme aynı kalite hedefiyle çalığır.",
         ],
       },
       {
         title: "Opsiyonel Ekipmanlar",
         paragraphs: [
-          "Kaplama tamburu, toz toplama sistemleri, ek bunkerler, otomasyon modÃ¼lleri, farklÄ± paketleme formatlarÄ± ve servis platformlarÄ± projeye gÃ¶re ilave edilebilir.",
+          "Kaplama tamburu, toz toplama sistemleri, ek bunkerler, otomasyon modülleri, farklı paketleme formatları ve servis platformları projeye göre ilave edilebilir.",
         ],
       },
       {
         title: "Avantajlar",
         paragraphs: [
-          "Doï¿½xru tasarlanmÄ±ï¿½x organomineral gÃ¼bre tesisi daha kararlÄ± granÃ¼l kalite, daha dÃ¼ï¿½xÃ¼k Ã¼rÃ¼n kaybÄ±, daha iyi depolama davranÄ±ï¿½xÄ± ve yÃ¼ksek ticari farklÄ±laï¿½xma saï¿½xlar.",
+          "Doğru tasarlanmış organomineral gübre tesisi daha kararlı granül kalite, daha düğük ürün kaybı, daha iyi depolama davranışı ve yüksek ticari farklılaşma sağlar.",
         ],
       },
       {
-        title: "Teklif Almak Ä°Ã§in Gerekli Bilgiler",
+        title: "Teklif Almak İçin Gerekli Bilgiler",
         paragraphs: [
-          "ReÃ§ete yapÄ±sÄ±, kapasite, hedef Ã¼rÃ¼n formu, organik iÃ§erik oranÄ±, paketleme senaryosu ve saha bilgileri teklif oluï¿½xturmak iÃ§in kritik baï¿½xlangÄ±Ã§ verileridir.",
+          "Reçete yapısı, kapasite, hedef ürün formu, organik içerik oranı, paketleme senaryosu ve saha bilgileri teklif oluşturmak için kritik bağlangıç verileridir.",
         ],
       },
     ],
     faqs: [
       {
-        question: "Organomineral gÃ¼bre tesisi ile granÃ¼l gÃ¼bre tesisi aynÄ± mÄ±dÄ±r?",
+        question: "Organomineral gübre tesisi ile granül gübre tesisi aynı mıdır?",
         answer:
-          "Benzer ekipmanlar kullanÄ±labilir; ancak organik iÃ§erik ve nem davranÄ±ï¿½xÄ± nedeniyle organomineral hatlar daha Ã¶zel tasarÄ±m ister.",
+          "Benzer ekipmanlar kullanılabilir; ancak organik içerik ve nem davranışı nedeniyle organomineral hatlar daha özel tasarım ister.",
       },
       {
-        question: "Helezon ve konveyÃ¶r seÃ§imi neden Ã¶nemlidir?",
+        question: "Helezon ve konveyör seçimi neden önemlidir?",
         answer:
-          "FarklÄ± akÄ±ï¿½x karakterine sahip hammaddelerin kontrollÃ¼ dozaj ve transferi granÃ¼l kalitesini doï¿½xrudan etkiler.",
+          "Farklı akış karakterine sahip hammaddelerin kontrollü dozaj ve transferi granül kalitesini doğrudan etkiler.",
       },
       {
         question: "Kurutma tamburu organomineral hatta gerekli midir?",
         answer:
-          "BirÃ§ok granÃ¼l uygulamada Ã¼rÃ¼n stabilitesi ve depolama performansÄ± iÃ§in kurutma tamburu Ã¶nemli rol oynar.",
+          "Birçok granül uygulamada ürün stabilitesi ve depolama performansı için kurutma tamburu önemli rol oynar.",
       },
       {
         question: "Eleme sistemi neden kritiktir?",
         answer:
-          "Son Ã¼rÃ¼n standardÄ± ile geri devir oranÄ± elek sisteminde ï¿½xekillenir; bu adÄ±m proses verimini belirler.",
+          "Son ürün standardı ile geri devir oranı elek sisteminde şekillenir; bu adım proses verimini belirler.",
       },
       {
-        question: "Teklif iÃ§in hangi bilgiler gereklidir?",
+        question: "Teklif için hangi bilgiler gereklidir?",
         answer:
-          "ï¿½SrÃ¼n reÃ§etesi, kapasite, hedef Ã¼rÃ¼n formu ve mevcut saha verileri teklif kurgusunun temelini oluï¿½xturur.",
+          "Ürün reçetesi, kapasite, hedef ürün formu ve mevcut saha verileri teklif kurgusunun temelini oluşturur.",
       },
     ],
     ctaText:
-      "Organomineral gÃ¼bre tesisi, granÃ¼lasyon hattÄ± ve yardÄ±mcÄ± ekipman seÃ§imi iÃ§in Ã¼rÃ¼n ve kapasite hedeflerinizi paylaï¿½xÄ±n; size uygun tesis kurgusunu birlikte hazÄ±rlayalÄ±m.",
+      "Organomineral gübre tesisi, granülasyon hattı ve yardımcı ekipman seçimi için ürün ve kapasite hedeflerinizi paylaşın; size uygun tesis kurgusunu birlikte hazırlayalım.",
     showForm: true,
     technicalContents: commonTechnicalContents,
     keyLinks: [
-      { label: "GranÃ¼l GÃ¼bre ï¿½Sretim Tesisi", href: "/hizmetler/granul-gubre-uretim-tesisi" },
-      { label: "Kurutma Tamburu Ä°malatÄ±", href: "/hizmetler/kurutma-tamburu-imalati" },
-      { label: "VidalÄ± Helezonlar", href: "/makinalar-ekipman/tasima-ekipmanlari/vidali-helezonlar" },
-      { label: "SektÃ¶rler", href: "/sektorler" },
+      { label: "Granül Gübre Üretim Tesisi", href: "/hizmetler/granul-gubre-uretim-tesisi" },
+      { label: "Kurutma Tamburu İmalatı", href: "/hizmetler/kurutma-tamburu-imalati" },
+      { label: "Vidalı Helezonlar", href: "/makinalar-ekipman/tasima-ekipmanlari/vidali-helezonlar" },
+      { label: "Sektörler", href: "/sektorler" },
     ],
   },
   "sivi-gubre-uretim-tesisi": {
-    title: "SÄ±vÄ± GÃ¼bre ï¿½Sretim Tesisi | Anahtar Teslim ï¿½!Ã¶zÃ¼mler",
+    title: "Sıvı Gübre Üretim Tesisi | Anahtar Teslim Çözümler",
     description:
-      "SÄ±vÄ± gÃ¼bre Ã¼retim tesisi, sÄ±vÄ± gÃ¼bre Ã¼retim hattÄ± ve organomineral sÄ±vÄ± gÃ¼bre tesisleri iÃ§in tank, reaktÃ¶r ve dolum Ã§Ã¶zÃ¼mleri sunuyoruz.",
+      "Sıvı gübre üretim tesisi, sıvı gübre üretim hattı ve organomineral sıvı gübre tesisleri için tank, reaktör ve dolum çözümleri sunuyoruz.",
     canonical: "https://www.promakina.com.tr/hizmetler/sivi-gubre-uretim-tesisi",
     image: "/images/01-genel/hizmetler1.png",
-    serviceName: "SÄ±vÄ± GÃ¼bre ï¿½Sretim Tesisi",
-    introTitle: "SÄ±vÄ± Organomineral, NPK ve ï¿½zel FormÃ¼l ï¿½Sretim HatlarÄ±",
+    serviceName: "Sıvı Gübre Üretim Tesisi",
+    introTitle: "Sıvı Organomineral, NPK ve özel Formül Üretim Hatları",
     introParagraphs: [
-      "SÄ±vÄ± gÃ¼bre Ã¼retim tesisi, Ã§Ã¶zÃ¼ndÃ¼rme, reaksiyon, karÄ±ï¿½xtÄ±rma, homojenizasyon, filtrasyon ve dolum adÄ±mlarÄ±nÄ± bir arada yÃ¶neten hassas bir proses yatÄ±rÄ±m alanÄ±dÄ±r. SÄ±vÄ± gÃ¼bre Ã¼retim hattÄ± planlanÄ±rken Ã¼rÃ¼n formÃ¼lasyonu kadar tank malzemesi, karÄ±ï¿½xtÄ±rÄ±cÄ± gÃ¼cÃ¼, hat temizlenebilirliï¿½xi ve dolum disiplini de Ã¶nem taï¿½xÄ±r.",
-      "Pro Makina, organomineral sÄ±vÄ± gÃ¼bre tesisi ve sÄ±vÄ± NPK hatlarÄ±nda proses mÃ¼hendisliï¿½xi, reaktÃ¶r-tank seÃ§imi, borulama, pompalar, filtreleme ve dolum altyapÄ±sÄ±nÄ± tek proje akÄ±ï¿½xÄ±nda birleï¿½xtirir. BÃ¶ylece yatÄ±rÄ±mcÄ± daha tekrarlanabilir parti kalitesi ve daha kontrollÃ¼ ticari sevkiyat altyapÄ±sÄ± elde eder.",
+      "Sıvı gübre üretim tesisi, çözündürme, reaksiyon, karıştırma, homojenizasyon, filtrasyon ve dolum adımlarını bir arada yöneten hassas bir proses yatırım alanıdır. Sıvı gübre üretim hattı planlanırken ürün formülasyonu kadar tank malzemesi, karıştırıcı gücü, hat temizlenebilirliği ve dolum disiplini de önem tağır.",
+      "Pro Makina, organomineral sıvı gübre tesisi ve sıvı NPK hatlarında proses mühendisliği, reaktör-tank seçimi, borulama, pompalar, filtreleme ve dolum altyapısını tek proje akışında birleştirir. Böylece yatırımcı daha tekrarlanabilir parti kalitesi ve daha kontrollü ticari sevkiyat altyapısı elde eder.",
     ],
     cards: [
       {
-        title: "ReaktÃ¶rler ve Tanklar",
+        title: "Reaktörler ve Tanklar",
         description:
-          "SÄ±vÄ± Ã¼rÃ¼nlerde Ã§Ã¶zÃ¼ndÃ¼rme, reaksiyon ve stoklama iÃ§in kullanÄ±lan proses ekipmanlarÄ±nÄ± inceleyin.",
+          "Sıvı ürünlerde çözündürme, reaksiyon ve stoklama için kullanılan proses ekipmanlarını inceleyin.",
         href: "/makinalar-ekipman/reaktorler-ve-tanklar",
       },
       {
-        title: "Dozaj ve Besleme OmurgasÄ±",
+        title: "Dozaj ve Besleme Omurgası",
         description:
-          "SÄ±vÄ± ve katÄ± katkÄ±larÄ±n hassas karÄ±ï¿½xÄ±mÄ±nÄ± destekleyen yardÄ±mcÄ± akÄ±ï¿½x altyapÄ±sÄ±.",
+          "Sıvı ve katı katkıların hassas karışımını destekleyen yardımcı akış altyapısı.",
         href: "/makinalar-ekipman/dozajlama-sistemleri",
       },
       {
-        title: "Organomineral GÃ¼bre Tesisi",
+        title: "Organomineral Gübre Tesisi",
         description:
-          "KatÄ± ve sÄ±vÄ± Ã¼rÃ¼n ailelerini birlikte deï¿½xerlendirmek iÃ§in ilgili Ã¼retim altyapÄ±sÄ±nÄ± gÃ¶rÃ¼n.",
+          "Katı ve sıvı ürün ailelerini birlikte değerlendirmek için ilgili üretim altyapısını görün.",
         href: "/hizmetler/organomineral-gubre-tesisi",
       },
       {
-        title: "Ä°letiï¿½xim ve Teknik GÃ¶rÃ¼ï¿½xme",
+        title: "İletişim ve Teknik Görüşme",
         description:
-          "FormÃ¼lasyon ve kapasite verilerinizi paylaï¿½xarak Ã¶n teknik deï¿½xerlendirme alÄ±n.",
+          "Formülasyon ve kapasite verilerinizi paylaşarak ön teknik değerlendirme alın.",
         href: "/iletisim",
       },
     ],
-    cardsTitle: "KullanÄ±m AlanlarÄ± ve Ä°lgili Ana Makineler",
+    cardsTitle: "Kullanım Alanları ve İlgili Ana Makineler",
     cardsDescription:
-      "SÄ±vÄ± gÃ¼bre Ã¼retim tesislerinde proses kararlÄ±lÄ±ï¿½xÄ±, tank ve reaktÃ¶r seÃ§imi ile baï¿½xlar; dolum ve sevkiyat tarafÄ±nda tamamlanÄ±r.",
+      "Sıvı gübre üretim tesislerinde proses kararlılığı, tank ve reaktör seçimi ile bağlar; dolum ve sevkiyat tarafında tamamlanır.",
     summaryRows: [
       {
-        criterion: "FormÃ¼lasyon YapÄ±sÄ±",
+        criterion: "Formülasyon Yapısı",
         description:
-          "Organomineral, NPK veya Ã¶zel biyostimÃ¼lan formÃ¼ller farklÄ± Ã§Ã¶zÃ¼nÃ¼rlÃ¼k ve reaksiyon ihtiyacÄ± doï¿½xurur.",
+          "Organomineral, NPK veya özel biyostimülan formüller farklı çözünürlük ve reaksiyon ihtiyaçı doşurur.",
         importance:
-          "Tank, karÄ±ï¿½xtÄ±rÄ±cÄ± ve filtrasyon tasarÄ±mÄ±nÄ± belirler.",
+          "Tank, karıştırıcı ve filtrasyon tasarımını belirler.",
       },
       {
-        criterion: "Parti ï¿½!evrim SÃ¼resi",
+        criterion: "Parti Çevrim Süresi",
         description:
-          "ï¿½!Ã¶zÃ¼ndÃ¼rme, reaksiyon ve dolum sÃ¼releri toplam tesis kapasitesini belirler.",
+          "Çözündürme, reaksiyon ve dolum süreleri toplam tesis kapasitesini belirler.",
         importance:
-          "GerÃ§ek Ã¼retim ritmi ve yatÄ±rÄ±m verimliliï¿½xini etkiler.",
+          "Gerçek üretim ritmi ve yatırım verimliliğini etkiler.",
       },
       {
         criterion: "Hat Malzemesi",
         description:
-          "ï¿½SrÃ¼nÃ¼n kimyasal karakteri pompa, vana, hat ve tank malzemesini belirler.",
+          "Ürünün kimyasal karakteri pompa, vana, hat ve tank malzemesini belirler.",
         importance:
-          "Korozyon, bakÄ±m ve Ã¼rÃ¼n gÃ¼venliï¿½xi aÃ§Ä±sÄ±ndan kritiktir.",
+          "Korozyon, bakım ve ürün güvenliği açısından kritiktir.",
       },
       {
         criterion: "Dolum Senaryosu",
         description:
-          "Bidon, IBC veya dÃ¶kme sevkiyat tercihi dolum altyapÄ±sÄ±nÄ± ï¿½xekillendirir.",
+          "Bidon, IBC veya dökme sevkiyat tercihi dolum altyapısını şekillendirir.",
         importance:
-          "Ticari operasyon ve hat esnekliï¿½xini gÃ¼Ã§lendirir.",
+          "Ticari operasyon ve hat esnekliğini güçlendirir.",
       },
     ],
     sections: [
       {
-        title: "KullanÄ±m AlanlarÄ±",
+        title: "Kullanım Alanları",
         paragraphs: [
-          "SÄ±vÄ± gÃ¼bre Ã¼retim tesisleri organomineral sÄ±vÄ± Ã¼rÃ¼nler, sÄ±vÄ± NPK, amino asitli Ã¼rÃ¼nler, deniz yosunu bazlÄ± Ã§Ã¶zÃ¼mler ve benzeri tarÄ±msal sÄ±vÄ± formÃ¼lasyonlarda kullanÄ±lÄ±r. FarklÄ± pazarlara farklÄ± ambalaj ve formÃ¼lasyon esnekliï¿½xi sunmak isteyen Ã¼reticiler iÃ§in gÃ¼Ã§lÃ¼ bir yatÄ±rÄ±m alanÄ±dÄ±r.",
+          "Sıvı gübre üretim tesisleri organomineral sıvı ürünler, sıvı NPK, amino asitli ürünler, deniz yosunu bazlı çözümler ve benzeri tarımsal sıvı formülasyonlarda kullanılır. Farklı pazarlara farklı ambalaj ve formülasyon esnekliği sunmak isteyen üreticiler için güçlü bir yatırım alanıdır.",
         ],
       },
       {
-        title: "Hangi Hammaddeler ve ï¿½SrÃ¼nler Ä°Ã§in Uygundur?",
+        title: "Hangi Hammaddeler ve Ürünler İçin Uygundur?",
         paragraphs: [
-          "ï¿½!Ã¶zÃ¼nÃ¼r mineral girdiler, organik sÄ±vÄ± katkÄ±lar, mikro element Ã§Ã¶zeltileri ve farklÄ± yoï¿½xunlukta sÄ±vÄ± formÃ¼lasyonlar bu hatlarda Ã¼retilebilir. Burada belirleyici konu, hammaddelerin Ã§Ã¶zÃ¼nÃ¼rlÃ¼k davranÄ±ï¿½xÄ± ve parti kararlÄ±lÄ±ï¿½xÄ±dÄ±r.",
+          "Çözünür mineral girdiler, organik sıvı katkılar, mikro element çözeltileri ve farklı yoğunlukta sıvı formülasyonlar bu hatlarda üretilebilir. Burada belirleyici konu, hammaddelerin çözünürlük davranışı ve parti kararlılığıdır.",
         ],
       },
       {
-        title: "Teknik ï¿½zellikler",
+        title: "Teknik özellikler",
         paragraphs: [
-          "ï¿½!Ã¶zÃ¼ndÃ¼rme tanklarÄ±, reaktÃ¶rler, karÄ±ï¿½xtÄ±rÄ±cÄ±lar, homojenizatÃ¶rler, filtrasyon ekipmanlarÄ±, stok tanklarÄ±, pompalar ve dolum hatlarÄ± sÄ±vÄ± gÃ¼bre Ã¼retim tesisinin ana omurgasÄ±nÄ± oluï¿½xturur. Proses gÃ¼venliï¿½xi ve temizlenebilirlik tasarÄ±mÄ±n ayrÄ±lmaz parÃ§asÄ±dÄ±r.",
+          "Çözündürme tankları, reaktörler, karıştırıcılar, homojenizatörler, filtrasyon ekipmanları, stok tankları, pompalar ve dolum hatları sıvı gübre üretim tesisinin ana omurgasını oluşturur. Proses güvenliği ve temizlenebilirlik tasarımın ayrılmaz parçasıdır.",
         ],
       },
       {
-        title: "Kapasite ve TasarÄ±m Kriterleri",
+        title: "Kapasite ve Tasarım Kriterleri",
         paragraphs: [
-          "Parti hacmi, gÃ¼nlÃ¼k tonaj, formÃ¼l deï¿½xiï¿½xim sÄ±klÄ±ï¿½xÄ±, filtrasyon sÃ¼resi ve dolum temposu bir arada deï¿½xerlendirilir. SÄ±vÄ± gÃ¼bre Ã¼retim hattÄ± iÃ§in doï¿½xru tank hacmi yalnÄ±z tek parti bÃ¼yÃ¼klÃ¼ï¿½xÃ¼ne gÃ¶re deï¿½xil, toplam Ã§evrim sÃ¼resine gÃ¶re belirlenmelidir.",
+          "Parti hacmi, günlük tonaj, formül değişim sıklığı, filtrasyon süresi ve dolum temposu bir arada değerlendirilir. Sıvı gübre üretim hattı için doğru tank hacmi yalnız tek parti büyüklüğüne göre değil, toplam çevrim süresine göre belirlenmelidir.",
         ],
       },
       {
-        title: "Proses Ä°Ã§indeki Yeri",
+        title: "Proses İçindeki Yeri",
         paragraphs: [
-          "Bu tesis; hammaddenin kararlÄ± ve satÄ±labilir sÄ±vÄ± Ã¼rÃ¼ne dÃ¶nÃ¼ï¿½xtÃ¼ï¿½xÃ¼ ana Ã¼retim omurgasÄ±dÄ±r. ï¿½!Ã¶zÃ¼ndÃ¼rme ve reaksiyon adÄ±mÄ± ile baï¿½xlayan sÃ¼reÃ§, filtrasyon ve dolum ile ticari Ã¼rÃ¼ne dÃ¶nÃ¼ï¿½xÃ¼r.",
+          "Bu tesis; hammaddenin kararlı ve satılabilir sıvı ürüne dönüştüşü ana üretim omurgasıdır. Çözündürme ve reaksiyon adımı ile bağlayan süreç, filtrasyon ve dolum ile ticari ürüne dönüşür.",
         ],
       },
       {
         title: "Opsiyonel Ekipmanlar",
         paragraphs: [
-          "Ek stok tanklarÄ±, CIP benzeri temizlik sistemleri, ileri filtrasyon, dolum nozul paketleri, etiketleme ve otomasyon modÃ¼lleri projeye gÃ¶re ilave edilebilir.",
+          "Ek stok tankları, CIP benzeri temizlik sistemleri, ileri filtrasyon, dolum nozul paketleri, etiketleme ve otomasyon modülleri projeye göre ilave edilebilir.",
         ],
       },
       {
         title: "Avantajlar",
         paragraphs: [
-          "Doï¿½xru kurgulanmÄ±ï¿½x sÄ±vÄ± gÃ¼bre Ã¼retim tesisi daha tutarlÄ± parti kalitesi, daha hÄ±zlÄ± Ã¼rÃ¼n deï¿½xiï¿½ximi, daha gÃ¼venli dolum ve daha dÃ¼ï¿½xÃ¼k kalite dalgalanmasÄ± saï¿½xlar. Bu da hem iÃ§ pazar hem ihracat hedefi iÃ§in Ã¶nemli bir avantajdÄ±r.",
+          "Doğru kurgulanmış sıvı gübre üretim tesisi daha tutarlı parti kalitesi, daha hızlı ürün değişimi, daha güvenli dolum ve daha düğük kalite dalgalanması sağlar. Bu da hem iç pazar hem ihracat hedefi için önemli bir avantajdır.",
         ],
       },
       {
-        title: "Teklif Almak Ä°Ã§in Gerekli Bilgiler",
+        title: "Teklif Almak İçin Gerekli Bilgiler",
         paragraphs: [
-          "ï¿½SrÃ¼n ailesi, gÃ¼nlÃ¼k kapasite, parti hacmi, hedef ambalaj tipi, reaktÃ¶r gereksinimi ve kimyasal uyum bilgileri paylaï¿½xÄ±lÄ±rsa daha net bir tesis Ã§Ã¶zÃ¼mÃ¼ hazÄ±rlanabilir.",
+          "Ürün ailesi, günlük kapasite, parti hacmi, hedef ambalaj tipi, reaktör gereksinimi ve kimyasal uyum bilgileri paylaşılırsa daha net bir tesis çözümü hazırlanabilir.",
         ],
       },
     ],
     faqs: [
       {
-        question: "SÄ±vÄ± gÃ¼bre Ã¼retim tesisi hangi Ã¼rÃ¼nleri Ã¼retebilir?",
+        question: "Sıvı gübre üretim tesisi hangi ürünleri üretebilir?",
         answer:
-          "Organomineral sÄ±vÄ± Ã¼rÃ¼nler, sÄ±vÄ± NPK, amino asitli ve benzeri Ã¶zel formÃ¼ller uygun proses tasarÄ±mÄ± ile aynÄ± tesiste yÃ¶netilebilir.",
+          "Organomineral sıvı ürünler, sıvı NPK, amino asitli ve benzeri özel formüller uygun proses tasarımı ile aynı tesiste yönetilebilir.",
       },
       {
-        question: "ReaktÃ¶r mÃ¼ yoksa standart tank mÄ± gerekir?",
+        question: "Reaktör mü yoksa standart tank mı gerekir?",
         answer:
-          "Bu karar Ã¼rÃ¼nÃ¼n reaksiyon ihtiyacÄ±na, sÄ±caklÄ±k hassasiyetine ve Ã§Ã¶zÃ¼nÃ¼rlÃ¼k davranÄ±ï¿½xÄ±na gÃ¶re belirlenir.",
+          "Bu karar ürünün reaksiyon ihtiyacına, sıcaklık hassasiyetine ve çözünürlük davranışına göre belirlenir.",
       },
       {
         question: "Filtrasyon her hatta gerekli midir?",
         answer:
-          "BirÃ§ok sÄ±vÄ± gÃ¼bre hattÄ±nda Ã¼rÃ¼n kararlÄ±lÄ±ï¿½xÄ± ve saha uygulama gÃ¼veni iÃ§in filtrasyon Ã¶nemli bir ihtiyaÃ§tÄ±r.",
+          "Birçok sıvı gübre hattında ürün kararlılığı ve saha uygulama güveni için filtrasyon önemli bir ihtiyaçtır.",
       },
       {
-        question: "Dolum sistemi tasarÄ±mÄ±n parÃ§asÄ± mÄ±dÄ±r?",
+        question: "Dolum sistemi tasarımın parçası mıdır?",
         answer:
-          "Evet. Ambalaj tipi ve sevkiyat modeli, Ã¼retim hattÄ±nÄ±n ticari baï¿½xarÄ±sÄ± iÃ§in tasarÄ±mÄ±n erken aï¿½xamasÄ±nda dÃ¼ï¿½xÃ¼nÃ¼lmelidir.",
+          "Evet. Ambalaj tipi ve sevkiyat modeli, üretim hattının ticari başarısı için tasarımın erken aşamasında düğünülmelidir.",
       },
       {
-        question: "Teklif iÃ§in hangi bilgiler gerekir?",
+        question: "Teklif için hangi bilgiler gerekir?",
         answer:
-          "FormÃ¼l tipi, kapasite, parti hacmi, ambalaj yapÄ±sÄ± ve saha gereksinimleri saï¿½xlÄ±klÄ± bir teklif iÃ§in temel baï¿½xlangÄ±Ã§ verileridir.",
+          "Formül tipi, kapasite, parti hacmi, ambalaj yapısı ve saha gereksinimleri sağlıklı bir teklif için temel bağlangıç verileridir.",
       },
     ],
     ctaText:
-      "SÄ±vÄ± gÃ¼bre Ã¼retim tesisi, organomineral sÄ±vÄ± gÃ¼bre tesisi ve dolum altyapÄ±sÄ± iÃ§in Ã¼rÃ¼n yapÄ±nÄ±zÄ± paylaï¿½xÄ±n; size uygun mÃ¼hendislik kurgusunu birlikte planlayalÄ±m.",
+      "Sıvı gübre üretim tesisi, organomineral sıvı gübre tesisi ve dolum altyapısı için ürün yapınızı paylaşın; size uygun mühendislik kurgusunu birlikte planlayalım.",
     showForm: true,
     technicalContents: commonTechnicalContents,
     keyLinks: [
-      { label: "Organomineral GÃ¼bre Tesisi", href: "/hizmetler/organomineral-gubre-tesisi" },
-      { label: "ReaktÃ¶rler ve Tanklar", href: "/makinalar-ekipman/reaktorler-ve-tanklar" },
+      { label: "Organomineral Gübre Tesisi", href: "/hizmetler/organomineral-gubre-tesisi" },
+      { label: "Reaktörler ve Tanklar", href: "/makinalar-ekipman/reaktorler-ve-tanklar" },
       { label: "Makinalar", href: "/makinalar-ekipman" },
-      { label: "Ä°letiï¿½xim", href: "/iletisim" },
+      { label: "İletişim", href: "/iletisim" },
     ],
   },
 };

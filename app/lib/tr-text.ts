@@ -1,28 +1,28 @@
 const exactReplacements: Array<[string, string]> = [
-  ["Kurutma Tamburu Kapasite Hesab1", "Kurutma Tamburu Kapasite Hesabı"],
-  ["Kurutma Tamburu ï¿½ap Boy Hesab1", "Kurutma Tamburu Çap Boy Hesabı"],
-  ["Tambur Kurutucu Nas1l ï¿½al1_1r?", "Tambur Kurutucu Nasıl Çalışır?"],
-  ["ï¿½amur Kurutma Tesisi Maliyeti", "Çamur Kurutma Tesisi Maliyeti"],
-  ["Kurutma Tamburu Tasar1m Kriterleri", "Kurutma Tamburu Tasarım Kriterleri"],
-  ["Kurutma Tamburunda Brï¿½lï¿½r Seï¿½imi", "Kurutma Tamburunda Brülör Seçimi"],
-  ["Kurutma Tamburunda Fan, Siklon ve Filtre Seï¿½imi", "Kurutma Tamburunda Fan, Siklon ve Filtre Seçimi"],
-  ["ATIK SU Ã‡AMURU VE ARITMA Ã‡Ã–ZÃœMLERÄ°", "ATIK SU Ã‡AMURU Ã‡Ã–ZÃœMLERÄ°"],
-  ["AtÄ±k su Ã§amuru ve arÄ±tma Ã§Ã¶zÃ¼mleri iÃ§in sunduÄŸumuz Ã§Ã¶zÃ¼mler", "AtÄ±k su Ã§amuru Ã§Ã¶zÃ¼mleri iÃ§in sunduÄŸumuz Ã§Ã¶zÃ¼mler"],
-  ["AtÄ±k su Ã§amuru ve arÄ±tma Ã§Ã¶zÃ¼mlerinde kullanÄ±lan baÅŸlÄ±ca makine ve ekipmanlar", "AtÄ±k su Ã§amuru Ã§Ã¶zÃ¼mlerinde kullanÄ±lan baÅŸlÄ±ca makine ve ekipmanlar"],
-  ["AtÄ±k su Ã§amuru ve arÄ±tma Ã§Ã¶zÃ¼mleri hakkÄ±nda sÄ±k sorulan sorular", "AtÄ±k su Ã§amuru Ã§Ã¶zÃ¼mleri hakkÄ±nda sÄ±k sorulan sorular"],
-  ["AtÄ±k Su Ã‡amuru, ArÄ±tma ve Kurutma", "AtÄ±k Su Ã‡amuru Kurutma ve Ä°ÅŸleme"],
-  ["İlgili Sekt?rler", "İlgili Sektörler"],
-  ["Kimya ve Proses End?strisi", "Kimya ve Proses Endüstrisi"],
-  ["G?bre ?Sretim Tesisleri", "Gübre Üretim Tesisleri"],
+  ["Kurutma Tamburu Kapasite Hesabı", "Kurutma Tamburu Kapasite Hesabı"],
+  ["Kurutma Tamburu çap Boy Hesabı", "Kurutma Tamburu Çap Boy Hesabı"],
+  ["Tambur Kurutucu Nasıl çal1_1r?", "Tambur Kurutucu Nasıl Çalışır?"],
+  ["çamur Kurutma Tesisi Maliyeti", "Çamur Kurutma Tesisi Maliyeti"],
+  ["Kurutma Tamburu Tasarım Kriterleri", "Kurutma Tamburu Tasarım Kriterleri"],
+  ["Kurutma Tamburunda Brülör Seçimi", "Kurutma Tamburunda Brülör Seçimi"],
+  ["Kurutma Tamburunda Fan, Siklon ve Filtre Seçimi", "Kurutma Tamburunda Fan, Siklon ve Filtre Seçimi"],
+  ["ATIK SU ÇAMURU VE ARITMA ÇÖZÜMLERİ", "ATIK SU ÇAMURU ÇÖZÜMLERİ"],
+  ["Atık su çamuru çözümleri için sunduğumuz çözümler", "Atık su çamuru çözümleri için sunduğumuz çözümler"],
+  ["Atık su çamuru çözümlerinde kullanılan başlıca makine ve ekipmanlar", "Atık su çamuru çözümlerinde kullanılan başlıca makine ve ekipmanlar"],
+  ["Atık su çamuru çözümleri hakkında sık sorulan sorular", "Atık su çamuru çözümleri hakkında sık sorulan sorular"],
+  ["Atık Su Çamuru, Arıtma ve Kurutma", "Atık Su Çamuru Kurutma ve İşleme"],
+  ["İlgili Sektörler", "İlgili Sektörler"],
+  ["Kimya ve Proses Endüstrisi", "Kimya ve Proses Endüstrisi"],
+  ["Gübre Üretim Tesisleri", "Gübre Üretim Tesisleri"],
   ["Madencilik ve Mineral 0?xleme", "Madencilik ve Mineral İşleme"],
-  ["Geri D?n??x?m ve At1k Y?netimi", "Geri Dönüşüm ve Atık Yönetimi"],
-  ["At1k Su ?!amuru ve Ar1tma ?!?z?mleri", "Atık Su Çamuru ve Arıtma Çözümleri"],
+  ["Geri Dönüşüm ve Atık Yönetimi", "Geri Dönüşüm ve Atık Yönetimi"],
+  ["Atık Su Çamuru ve Arıtma Ççözümleri", "Atık Su Çamuru ve Arıtma Çözümleri"],
   ["Atık Su Çamuru ve Arıtma Çözümleri", "Atık Su Çamuru Çözümleri"],
   ["Atık su çamuru ve arıtma çözümleri", "Atık su çamuru çözümleri"],
   ["Atık Su Çamuru ve Arıtma Makinaları", "Atık Su Çamuru İşleme Makinaları"],
   ["Atık Su Çamuru ve Arıtma Rehberleri", "Atık Su Çamuru Rehberleri"],
   ["Atık Su Çamuru ve Arıtma Çözümleri İçin Teknik İçerikler", "Atık Su Çamuru Çözümleri İçin Teknik İçerikler"],
-  ["Yem, Toz ve D?kme Kat1 Malzeme 0?xleme Sistemleri", "Yem, Toz ve Dökme Katı Malzeme İşleme Sistemleri"],
+  ["Yem, Toz ve Dökme Katı Malzeme İşleme Sistemleri", "Yem, Toz ve Dökme Katı Malzeme İşleme Sistemleri"],
   ["Gübre ve Granülasyon Tesisleri", "Gübre Üretim Tesisleri"],
   ["MüÅŸteri GiriÅŸ Alanı", "Müşteri Giriş Alanı"],
   ["Otomatik Sistem Yorumları", "Otomatik Sistem Yorumları"],
@@ -37,7 +37,7 @@ const exactReplacements: Array<[string, string]> = [
   ["Bu alanı siz doldurun", "Bu alanı siz doldurun"],
   ["Bu alanı siz seçin", "Bu alanı siz seçin"],
   ["Kontroll? ve planlı kurulum süreci", "Kontrollü ve planlı kurulum süreci"],
-  ["Daha d?ş?k hata riski ve daha yüksek verimlilik", "Daha düşük hata riski ve daha yüksek verimlilik"],
+  ["Daha düşük hata riski ve daha yüksek verimlilik", "Daha düşük hata riski ve daha yüksek verimlilik"],
 ];
 
 const fragmentReplacements: Array<[RegExp, string]> = [
@@ -384,10 +384,34 @@ function countMojibakeMarkers(value: string) {
   return (value.match(mojibakeMarkerRegex) ?? []).length;
 }
 
+const cp1252Reverse: Record<number, number> = {
+  0x20ac: 0x80, 0x201a: 0x82, 0x0192: 0x83, 0x201e: 0x84, 0x2026: 0x85,
+  0x2020: 0x86, 0x2021: 0x87, 0x02c6: 0x88, 0x2030: 0x89, 0x0160: 0x8a,
+  0x2039: 0x8b, 0x0152: 0x8c, 0x017d: 0x8e, 0x2018: 0x91, 0x2019: 0x92,
+  0x201c: 0x93, 0x201d: 0x94, 0x2022: 0x95, 0x2013: 0x96, 0x2014: 0x97,
+  0x02dc: 0x98, 0x2122: 0x99, 0x0161: 0x9a, 0x203a: 0x9b, 0x0153: 0x9c,
+  0x017e: 0x9e, 0x0178: 0x9f,
+};
+
 function decodeLatin1AsUtf8(value: string) {
+  const bytes: number[] = [];
+
+  for (const char of value) {
+    const codePoint = char.codePointAt(0) ?? 0;
+
+    if (codePoint <= 0xff) {
+      bytes.push(codePoint);
+    } else if (cp1252Reverse[codePoint] !== undefined) {
+      bytes.push(cp1252Reverse[codePoint]);
+    } else {
+      // Latin-1/cp1252 dışı karakter (ör. düzgün Türkçe harf) içeren karışık
+      // metinlerde byte-decode veri kaybettirir; bu durumda dokunma.
+      return value;
+    }
+  }
+
   try {
-    const bytes = Uint8Array.from(Array.from(value, (char) => char.charCodeAt(0) & 0xff));
-    return new TextDecoder("utf-8").decode(bytes);
+    return new TextDecoder("utf-8", { fatal: true }).decode(Uint8Array.from(bytes));
   } catch {
     return value;
   }

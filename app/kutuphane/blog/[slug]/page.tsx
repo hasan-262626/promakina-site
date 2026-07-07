@@ -155,7 +155,7 @@ function CategoryPage({ slug }: { slug: string }) {
       {
         "@type": "ListItem",
         position: 2,
-        name: "KÃ¼tÃ¼phane",
+        name: "Kütüphane",
         item: "https://www.promakina.com.tr/kutuphane",
       },
       {
@@ -216,7 +216,7 @@ function CategoryPage({ slug }: { slug: string }) {
               href="/iletisim"
               className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-white px-6 text-sm font-semibold text-slate-950 transition hover:bg-slate-100"
             >
-              Teknik GÃ¶rÃ¼ÅŸme Talep Et
+              Teknik Görüşme Talep Et
             </Link>
             <a
               href="https://wa.me/905320580104"
@@ -239,7 +239,7 @@ function CategoryPage({ slug }: { slug: string }) {
               </Link>
               <span>/</span>
               <Link href="/kutuphane" className="transition hover:text-[#278DC0]">
-                KÃ¼tÃ¼phane
+                Kütüphane
               </Link>
               <span>/</span>
               <Link href="/kutuphane/blog" className="transition hover:text-[#278DC0]">
@@ -264,8 +264,8 @@ function CategoryPage({ slug }: { slug: string }) {
               {[
                 { label: "Hizmetler", href: "/hizmetler" },
                 { label: "Makinalar & Ekipman", href: "/makinalar-ekipman" },
-                { label: "SektÃ¶rler", href: "/sektorler" },
-                { label: "Teknik GÃ¶rÃ¼ÅŸme", href: "/iletisim" },
+                { label: "Sektörler", href: "/sektorler" },
+                { label: "Teknik Görüşme", href: "/iletisim" },
               ].map((item) => (
                 <Link
                   key={item.href}
@@ -284,12 +284,12 @@ function CategoryPage({ slug }: { slug: string }) {
         <div className="site-container">
           <div className="rounded-[32px] border border-slate-200 bg-slate-50 px-6 py-8 shadow-[0_18px_45px_rgba(15,23,42,0.06)] sm:px-8 sm:py-10 lg:px-12">
             <h2 className="text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">
-              Ä°lgili Ä°Ã§erikler
+              İlgili İçerikler
             </h2>
             <p className="mt-4 max-w-3xl text-sm leading-8 text-slate-600 sm:text-base">
-              Bu kategori, birbiriyle baÄŸlantÄ±lÄ± teknik iÃ§erikleri aynÄ± bilgi kÃ¼mesinde
-              toplar. Ä°Ã§erikleri birlikte okumak; ekipman seÃ§imi, kapasite hesabÄ± ve proses
-              tasarÄ±mÄ± aÃ§Ä±sÄ±ndan daha doÄŸru bir mÃ¼hendislik Ã§erÃ§evesi saÄŸlar.
+              Bu kategori, birbiriyle bağlantılı teknik içerikleri aynı bilgi kümesinde
+              toplar. İçerikleri birlikte okumak; ekipman seçimi, kapasite hesabı ve proses
+              tasarımı açısından daha doğru bir mühendislik çerçevesi sağlar.
             </p>
             <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
               {category.relatedContents.map((content) => (
@@ -307,7 +307,7 @@ function CategoryPage({ slug }: { slug: string }) {
                       ) : null}
                       {content.readingTime ? (
                         <span className="text-xs font-medium text-slate-500">
-                          Okuma sÃ¼resi: {content.readingTime}
+                          Okuma süresi: {content.readingTime}
                         </span>
                       ) : null}
                     </div>
@@ -319,7 +319,7 @@ function CategoryPage({ slug }: { slug: string }) {
                     {content.description}
                   </span>
                   <span className="mt-4 inline-flex text-sm font-semibold text-[#278DC0] transition group-hover:text-[#154764]">
-                    {content.readingTime ? "Makaleyi Oku" : "DevamÄ±nÄ± Oku"}
+                    {content.readingTime ? "Makaleyi Oku" : "Devamını Oku"}
                   </span>
                 </Link>
               ))}

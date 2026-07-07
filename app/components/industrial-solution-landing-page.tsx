@@ -61,7 +61,7 @@ export function IndustrialSolutionLandingPage({
       name: "Pro Makina",
       url: "https://www.promakina.com.tr",
     },
-    areaServed: ["TÃ¼rkiye", "Avrupa", "Orta DoÄŸu", "Kuzey Afrika"],
+    areaServed: ["Türkiye", "Avrupa", "Orta DoÄŸu", "Kuzey Afrika"],
     url: canonical,
   };
 
@@ -78,7 +78,7 @@ export function IndustrialSolutionLandingPage({
       {
         "@type": "ListItem",
         position: 2,
-        name: "Ã‡Ã¶zÃ¼mler",
+        name: "Çözümler",
         item: "https://www.promakina.com.tr/cozumler",
       },
       {
@@ -223,12 +223,12 @@ export function IndustrialSolutionLandingPage({
           <div className="rounded-[32px] border border-slate-200 bg-slate-50 px-6 py-8 shadow-[0_18px_45px_rgba(15,23,42,0.06)] sm:px-8 sm:py-10 lg:px-12">
             <div className="max-w-3xl">
               <h2 className="text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">
-                KullanÄ±m AlanlarÄ±
+                Kullanım Alanları
               </h2>
               <p className="mt-4 text-sm leading-8 text-slate-600 sm:text-base">
-                EndÃ¼striyel Ã§Ã¶zÃ¼m sayfalarÄ± yalnÄ±z tek sektÃ¶rÃ¼ deÄŸil, birden fazla proses senaryosunu
-                aynÄ± mÃ¼hendislik omurgasÄ±nda yorumlar. AÅŸaÄŸÄ±daki baÅŸlÄ±klar en sÄ±k karÅŸÄ±laÅŸÄ±lan uygulama
-                alanlarÄ±nÄ± temsil eder.
+                Endüstriyel çözüm sayfaları yalnız tek sektörü değil, birden fazla proses senaryosunu
+                aynı mühendislik omurgasında yorumlar. Aşağıdaki başlıklar en sık karşılaşılan uygulama
+                alanlarını temsil eder.
               </p>
             </div>
             <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
@@ -251,11 +251,11 @@ export function IndustrialSolutionLandingPage({
           <div className="rounded-[32px] border border-slate-200 bg-white px-6 py-8 shadow-[0_18px_45px_rgba(15,23,42,0.06)] sm:px-8 sm:py-10 lg:px-12">
             <div className="max-w-3xl">
               <h2 className="text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">
-                Proses AkÄ±ÅŸÄ±
+                Proses Akışı
               </h2>
               <p className="mt-4 text-sm leading-8 text-slate-600 sm:text-base">
-                Her projede Ã¶nce teknik veri okunur, sonra ekipman seÃ§ilir. AÅŸaÄŸÄ±daki zaman Ã§izgisi
-                landing page mantÄ±ÄŸÄ±nda kullanÄ±cÄ±yÄ± keÅŸiften devreye almaya kadar yÃ¶nlendirir.
+                Her projede önce teknik veri okunur, sonra ekipman seçilir. Aşağıdaki zaman çizgisi
+                landing page mantığında kullanıcıyı keşiften devreye almaya kadar yönlendirir.
               </p>
             </div>
             <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
@@ -299,7 +299,7 @@ export function IndustrialSolutionLandingPage({
         <div className="site-container grid gap-6 xl:grid-cols-3">
           <div className="rounded-[28px] border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
             <h2 className="text-2xl font-semibold tracking-tight text-slate-950">
-              Ä°lgili Makinalar
+              İlgili Makinalar
             </h2>
             <div className="mt-5 space-y-4">
               {config.relatedMachines.map((item) => (
@@ -317,7 +317,7 @@ export function IndustrialSolutionLandingPage({
 
           <div className="rounded-[28px] border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
             <h2 className="text-2xl font-semibold tracking-tight text-slate-950">
-              Ä°lgili Hesaplama AraÃ§larÄ±
+              İlgili Hesaplama Araçları
             </h2>
             <div className="mt-5 space-y-4">
               {config.relatedCalculations.map((item) => (
@@ -335,7 +335,7 @@ export function IndustrialSolutionLandingPage({
 
           <div className="rounded-[28px] border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
             <h2 className="text-2xl font-semibold tracking-tight text-slate-950">
-              Ä°lgili Teknik Makaleler
+              İlgili Teknik Makaleler
             </h2>
             <div className="mt-5 space-y-4">
               {config.relatedArticles.map((item) => (
@@ -363,7 +363,7 @@ export function IndustrialSolutionLandingPage({
         <div className="site-container">
           <div className="rounded-[32px] border border-slate-200 bg-slate-50 px-6 py-8 shadow-[0_18px_45px_rgba(15,23,42,0.06)] sm:px-8 sm:py-10 lg:px-12">
             <h2 className="text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">
-              SÄ±k Sorulan Sorular
+              Sık Sorulan Sorular
             </h2>
             <div className="mt-6 space-y-4">
               {config.faqs.map((faq) => (
@@ -381,10 +381,10 @@ export function IndustrialSolutionLandingPage({
         <div className="site-container">
           <div className="rounded-[32px] bg-[linear-gradient(135deg,#0f172a_0%,#153f8a_100%)] px-6 py-8 text-white shadow-[0_24px_70px_rgba(15,23,42,0.24)] sm:px-8 sm:py-10">
             <p className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-200">
-              TEKLÄ°F / KEÅžÄ°F Ã‡AÄžRISI
+              TEKLİF / KEŞİF ÇAĞRISI
             </p>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-              Projeniz iÃ§in teknik gÃ¶rÃ¼ÅŸme planlayÄ±n.
+              Projeniz için teknik görüşme planlayın.
             </h2>
             <p className="mt-4 max-w-3xl text-sm leading-8 text-white/84 sm:text-base">
               {config.ctaText}

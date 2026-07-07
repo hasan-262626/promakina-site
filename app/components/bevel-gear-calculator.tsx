@@ -312,7 +312,7 @@ function geometryModel(form: GeometryForm) {
     epsilon: epsilon <= 0 ? "Toplam çalışma açısı seçiniz" : "",
     rpm: rpm <= 0 ? "Döndüren dişli devri 0'dan büyük olmalıdır" : "",
     hub1:
-      hub1 > 0 && shaft1 > 0 && hub1 <= shaft1
+      hub1 > 0 && shaft1 >0 && hub1<= shaft1
         ? "Göbek çapı mil çapısından büyük olmalıdır"
         : hub1 > df1 && df1 > 0
           ? "Göbek çapı diş kökü geometrisine fazla yaklaşıyor"

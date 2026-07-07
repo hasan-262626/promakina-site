@@ -158,9 +158,9 @@ export function MachineSeoLandingPage({
   ctaText,
   applicationLinksSection,
 }: MachineSeoLandingPageProps) {
-  const quoteCtaTitle = "Projeniz iÃ§in teknik teklif alÄ±n";
+  const quoteCtaTitle = "Projeniz için teknik teklif alın";
   const quoteCtaDescription =
-    "Kapasite, hammadde, nem oranÄ±, proses hedefi ve saha koÅŸullarÄ±na gÃ¶re size Ã¶zel makine ve tesis Ã§Ã¶zÃ¼mÃ¼ hazÄ±rlayalÄ±m.";
+    "Kapasite, hammadde, nem oranı, proses hedefi ve saha koşullarına göre size özel makine ve tesis çözümü hazırlayalım.";
   const whatsappHref = createWhatsAppHref(
     trText(
       `Merhaba, Pro Makina web sitenizden ulaÃ…Å¸Ã„Â±yorum. AÃ…Å¸aÃ„Å¸Ã„Â±daki ÃƒÂ¼rÃƒÂ¼n/hizmet iÃƒÂ§in teklif almak istiyorum: ${title}`,
@@ -187,7 +187,7 @@ export function MachineSeoLandingPage({
     description: trText(description),
     serviceType: `${trText(categoryName)} - ${trText(productName)}`,
     category: trText(categoryName),
-    areaServed: ["TÃ¼rkiye", "Avrupa", "Orta DoÄŸu", "Kuzey Afrika"],
+    areaServed: ["Türkiye", "Avrupa", "Orta DoÄŸu", "Kuzey Afrika"],
     url: canonical,
   };
 

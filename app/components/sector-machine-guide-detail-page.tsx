@@ -215,7 +215,7 @@ function FormulaBox({ title, formula, example }: SectorGuideFormula) {
   return (
     <div className="rounded-[24px] border border-[#278DC0]/20 bg-[#F1F8FC] p-5 shadow-sm">
       <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#278DC0]">
-        FormÃ¼l Kutusu
+        Formül Kutusu
       </p>
       <h3 className="mt-2 text-lg font-semibold text-slate-950">{title}</h3>
       <pre className="mt-4 overflow-x-auto rounded-2xl bg-white px-4 py-4 text-sm font-semibold text-[#154764]">
@@ -391,7 +391,7 @@ function buildBreadcrumbSchema(guide: SectorMachineGuidePageData) {
       {
         "@type": "ListItem",
         position: 2,
-        name: "KÃ¼tÃ¼phane",
+        name: "Kütüphane",
         item: "https://www.promakina.com.tr/kutuphane",
       },
       {
@@ -470,7 +470,7 @@ export function SectorMachineGuideDetailPage({
               </Link>
               <span>/</span>
               <Link href="/kutuphane" className="transition hover:text-white">
-                KÃ¼tÃ¼phane
+                Kütüphane
               </Link>
               <span>/</span>
               <Link href="/kutuphane/blog" className="transition hover:text-white">
@@ -483,7 +483,7 @@ export function SectorMachineGuideDetailPage({
             <div className="mt-4 max-w-5xl rounded-[32px] border border-white/15 bg-white/8 p-5 shadow-[0_20px_65px_rgba(15,23,42,0.18)] backdrop-blur md:p-6">
               <div className="hidden">
                 <span className="inline-flex rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-white">
-                  SektÃ¶rel Makine Rehberi
+                  Sektörel Makine Rehberi
                 </span>
               </div>
 
@@ -494,7 +494,7 @@ export function SectorMachineGuideDetailPage({
 
               <div className="hidden">
                 <span className="rounded-full border border-white/15 bg-white/10 px-4 py-2">
-                  Okuma sÃ¼resi: {normalizedGuide.readingTime}
+                  Okuma süresi: {normalizedGuide.readingTime}
                 </span>
                 <span className="rounded-full border border-white/15 bg-white/10 px-4 py-2">
                   Konu: {normalizedGuide.heroTopic}
@@ -545,7 +545,7 @@ export function SectorMachineGuideDetailPage({
               ))}
             </SectionCard>
 
-            <SectionCard title="Proses AkÄ±ÅŸÄ±">
+            <SectionCard title="Proses Akışı">
               <FlowBox title={normalizedGuide.flowTitle} steps={normalizedGuide.flowSteps} note={normalizedGuide.flowNote} />
               <ProcessDiagram title={normalizedGuide.flowTitle} steps={normalizedGuide.flowSteps} />
             </SectionCard>
@@ -609,19 +609,19 @@ export function SectorMachineGuideDetailPage({
               </SectionCard>
             ))}
 
-            <SectionCard title="Makine SeÃ§im Kriterleri">
+            <SectionCard title="Makine Seçim Kriterleri">
               <p>
-                AÅŸaÄŸÄ±daki kriterler, sektÃ¶r fark etmeksizin ekipman zincirinin doÄŸru boyutlandÄ±rÄ±lmasÄ±
-                ve prosesin dengeli kurulmasÄ± iÃ§in Ã¶n mÃ¼hendislik aÅŸamasÄ±nda birlikte okunmalÄ±dÄ±r.
+                Aşağıdaki kriterler, sektör fark etmeksizin ekipman zincirinin doğru boyutlandırılması
+                ve prosesin dengeli kurulması için ön mühendislik aşamasında birlikte okunmalıdır.
               </p>
               <TableSection {...normalizedGuide.selectionCriteria} />
             </SectionCard>
 
-            <SectionCard title="SÄ±k YapÄ±lan TasarÄ±m HatalarÄ±">
+            <SectionCard title="Sık Yapılan Tasarım Hataları">
               <TableSection {...normalizedGuide.mistakes} />
             </SectionCard>
 
-            <SectionCard title="Pro Makina ile Ã‡Ã¶zÃ¼m YaklaÅŸÄ±mÄ±">
+            <SectionCard title="Pro Makina ile Çözüm Yaklaşımı">
               {normalizedGuide.approachParagraphs.map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>
               ))}
@@ -640,11 +640,11 @@ export function SectorMachineGuideDetailPage({
             <section className="rounded-[30px] border border-slate-200 bg-white p-6 shadow-sm md:p-8">
               <div className="max-w-3xl">
                 <h2 className="text-2xl font-semibold tracking-tight text-slate-950 md:text-3xl">
-                  SÄ±k Sorulan Sorular
+                  Sık Sorulan Sorular
                 </h2>
                 <p className="mt-4 text-base leading-8 text-slate-600">
-                  Makine seÃ§imi, proses akÄ±ÅŸÄ±, kapasite sÄ±nÄ±rlarÄ± ve saha uygulamalarÄ± hakkÄ±nda en
-                  Ã§ok sorulan sorularÄ± kÄ±sa ama teknik Ã§erÃ§evede yanÄ±tladÄ±k.
+                  Makine seçimi, proses akışı, kapasite sınırları ve saha uygulamaları hakkında en
+                  çok sorulan soruları kısa ama teknik çerçevede yanıtladık.
                 </p>
               </div>
               <div className="mt-8 grid gap-4 md:grid-cols-2">
@@ -668,10 +668,10 @@ export function SectorMachineGuideDetailPage({
             <section className="rounded-[30px] border border-slate-200 bg-white p-6 shadow-sm md:p-8">
               <div className="max-w-3xl">
                 <h2 className="text-2xl font-semibold tracking-tight text-slate-950 md:text-3xl">
-                  Ä°lgili Teknik Ä°Ã§erikler ve Programlar
+                  İlgili Teknik İçerikler ve Programlar
                 </h2>
                 <p className="mt-4 text-base leading-8 text-slate-600">
-                  Bu makaleyi destekleyen hizmet, makine, sektÃ¶r ve hesaplama sayfalarÄ±na aÅŸaÄŸÄ±dan
+                  Bu makaleyi destekleyen hizmet, makine, sektör ve hesaplama sayfalarına aşağıdan
                   eriÅŸebilirsiniz.
                 </p>
               </div>
@@ -689,7 +689,7 @@ export function SectorMachineGuideDetailPage({
                       {item.description}
                     </span>
                     <span className="mt-4 inline-flex text-sm font-semibold text-[#278DC0] transition group-hover:text-[#154764]">
-                      Ä°Ã§eriÄŸi Ä°ncele
+                      İçeriği İncele
                     </span>
                   </Link>
                 ))}
@@ -699,11 +699,11 @@ export function SectorMachineGuideDetailPage({
               <GlobalBottomCta
               title={
                 normalizedGuide.ctaTitle ??
-                "Projeniz iÃ§in teklif veya teknik gÃ¶rÃ¼ÅŸme talep edin"
+                "Projeniz için teklif veya teknik görüşme talep edin"
               }
               description={
                 normalizedGuide.ctaDescription ??
-                "Kapasite, hammadde, nem oranÄ±, hedef Ã¼rÃ¼n ve saha yerleÅŸiminize gÃ¶re uygun proses ve makine Ã§Ã¶zÃ¼mÃ¼nÃ¼ birlikte netleÅŸtirebiliriz."
+                "Kapasite, hammadde, nem oranı, hedef ürün ve saha yerleşiminize göre uygun proses ve makine çözümünü birlikte netleştirebiliriz."
               }
             />
           </div>
