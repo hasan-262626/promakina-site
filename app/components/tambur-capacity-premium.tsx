@@ -3,6 +3,12 @@
 import { useEffect, useMemo, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import {
+  OTHER_MATERIAL_ID,
+  getMaterialDefault,
+  materialCategoryOrder,
+  materialDefaults,
+} from "../lib/material-defaults";
 import { siteContact } from "../lib/site-contact";
 
 type DrumTypeKey = "kurutma" | "sogutma" | "granulasyon" | "kaplama" | "kompost";
@@ -191,7 +197,10 @@ export function TamburCapacityPremium({ onClose }: { onClose: () => void }) {
   const [outletMoisture, setOutletMoisture] = useState("");
   const [density, setDensity] = useState("");
   const [workHours, setWorkHours] = useState("16");
-  const [productName, setProductName] = useState("");
+  const [materialId, setMaterialId] = useState("");
+  const [customProduct, setCustomProduct] = useState("");
+  const [densityAuto, setDensityAuto] = useState<number | null>(null);
+  const [moistureAuto, setMoistureAuto] = useState<number | null>(null);
   // tip'e özel
   const [inletTemp, setInletTemp] = useState("80");
   const [outletTemp, setOutletTemp] = useState("40");
@@ -224,6 +233,30 @@ export function TamburCapacityPremium({ onClose }: { onClose: () => void }) {
   }, [onClose]);
 
   const preset = drumType ? DRUM_PRESETS[drumType] : null;
+  const selectedMaterial = materialId && materialId !== OTHER_MATERIAL_ID ? getMaterialDefault(materialId) : undefined;
+  const productName = selectedMaterial ? selectedMaterial.name : customProduct;
+  const densityManual = densityAuto !== null && density !== "" && num(density) !== densityAuto;
+  const moistureManual = moistureAuto !== null && inletMoisture !== "" && num(inletMoisture) !== moistureAuto;
+
+  const applyMaterial = (id: string) => {
+    setMaterialId(id);
+    if (id === OTHER_MATERIAL_ID || !id) {
+      setDensityAuto(null);
+      setMoistureAuto(null);
+      return;
+    }
+    const m = getMaterialDefault(id);
+    if (!m) return;
+    setDensity(String(m.density));
+    setDensityAuto(m.density);
+    const midMoisture = Math.round(((m.moistureRange[0] + m.moistureRange[1]) / 2) * 10) / 10;
+    if (drumType === "kurutma" || drumType === "kompost") {
+      setInletMoisture(String(midMoisture));
+      setMoistureAuto(midMoisture);
+      if (m.targetMoisture !== undefined) setOutletMoisture(String(m.targetMoisture));
+    }
+    setErrors({});
+  };
 
   const applyPreset = (key: DrumTypeKey) => {
     const p = DRUM_PRESETS[key];
@@ -473,6 +506,61 @@ export function TamburCapacityPremium({ onClose }: { onClose: () => void }) {
                 <span className="text-sm font-bold text-[#154764]">{preset.label}</span>
               </div>
               <div className="grid gap-4 sm:grid-cols-2">
+                <label className="block sm:col-span-2">
+                  <span className="text-sm font-semibold text-slate-800">Ürün / hammadde</span>
+                  <select
+                    value={materialId}
+                    onChange={(event) => applyMaterial(event.target.value)}
+                    className="mt-1.5 h-12 w-full rounded-2xl border border-slate-200 bg-white px-4 text-base text-slate-900 outline-none transition focus:border-[#278DC0]"
+                  >
+                    <option value="">Seçiniz...</option>
+                    {materialCategoryOrder.map((category) => (
+                      <optgroup key={category} label={category}>
+                        {materialDefaults
+                          .filter((m) => m.category === category)
+                          .map((m) => (
+                            <option key={m.id} value={m.id}>
+                              {m.name}
+                            </option>
+                          ))}
+                      </optgroup>
+                    ))}
+                    <option value={OTHER_MATERIAL_ID}>Diğer / özel ürün</option>
+                  </select>
+                  <span className="mt-1 block text-xs text-slate-500">
+                    Ürün seçildiğinde yoğunluk ve nem varsayımları otomatik dolar; tüm
+                    değerleri değiştirebilirsiniz.
+                  </span>
+                </label>
+                {materialId === OTHER_MATERIAL_ID ? (
+                  <Field
+                    label="Ürün adı / kısa açıklama"
+                    value={customProduct}
+                    onChange={setCustomProduct}
+                    placeholder="örn. özel granül karışım"
+                    type="text"
+                  />
+                ) : null}
+                {selectedMaterial ? (
+                  <div className="rounded-2xl border border-[#278DC0]/20 bg-[#eef6fb] p-4 text-xs leading-5 text-[#154764] sm:col-span-2">
+                    <p>
+                      <strong>{selectedMaterial.name} ön varsayımı:</strong> yoğunluk{" "}
+                      {selectedMaterial.densityRange[0]}–{selectedMaterial.densityRange[1]} kg/m³, tipik nem %
+                      {selectedMaterial.moistureRange[0]}–{selectedMaterial.moistureRange[1]},{" "}
+                      {selectedMaterial.flow}. {selectedMaterial.note}
+                    </p>
+                    {selectedMaterial.abrasive === "yüksek" ? (
+                      <p className="mt-1 font-semibold">
+                        ⚠ Aşındırıcı ürün: temas yüzeylerinde aşınma dayanımlı malzeme önerilir.
+                      </p>
+                    ) : null}
+                    {selectedMaterial.sticky === "yüksek" ? (
+                      <p className="mt-1 font-semibold">
+                        ⚠ Yapışkan ürün: özel iç kanat ve besleme kontrolü önerilir.
+                      </p>
+                    ) : null}
+                  </div>
+                ) : null}
                 <Field
                   label="Yaş ürün giriş kapasitesi"
                   unit="t/saat"
@@ -486,7 +574,13 @@ export function TamburCapacityPremium({ onClose }: { onClose: () => void }) {
                   unit="kg/m³"
                   value={density}
                   onChange={setDensity}
-                  helper={`Boş bırakılırsa tip varsayımı kullanılır (${preset.density} kg/m³)`}
+                  helper={
+                    densityManual
+                      ? "Manuel değiştirildi (ürün varsayımı: " + densityAuto + " kg/m³)"
+                      : selectedMaterial
+                        ? `Ürün varsayımından otomatik geldi (${selectedMaterial.density} kg/m³)`
+                        : `Boş bırakılırsa tip varsayımı kullanılır (${preset.density} kg/m³)`
+                  }
                   error={errors.density}
                 />
                 {drumType === "kurutma" || drumType === "kompost" ? (
@@ -497,6 +591,13 @@ export function TamburCapacityPremium({ onClose }: { onClose: () => void }) {
                       value={inletMoisture}
                       onChange={setInletMoisture}
                       placeholder="örn. 35"
+                      helper={
+                        moistureManual
+                          ? "Manuel değiştirildi (ürün varsayımı: %" + moistureAuto + ")"
+                          : selectedMaterial && (drumType === "kurutma" || drumType === "kompost")
+                            ? "Ürün varsayımından otomatik geldi"
+                            : undefined
+                      }
                       error={errors.inletMoisture}
                     />
                     <Field
@@ -544,13 +645,6 @@ export function TamburCapacityPremium({ onClose }: { onClose: () => void }) {
                   />
                 ) : null}
                 <Field label="Çalışma süresi" unit="saat/gün" value={workHours} onChange={setWorkHours} />
-                <Field
-                  label="Ürün cinsi / kısa açıklama"
-                  value={productName}
-                  onChange={setProductName}
-                  placeholder="örn. organomineral granül gübre"
-                  type="text"
-                />
               </div>
             </div>
           ) : null}
