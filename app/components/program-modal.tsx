@@ -194,11 +194,14 @@ function LegacyProgramModal({ slug, onClose, initialValues }: ProgramModalProps)
       calculator_slug: slug,
       link_url: "https://wa.me/",
     });
-    window.open(
-      `https://wa.me/?text=${encodeURIComponent(shareSummary)}`,
-      "_blank",
-      "noopener,noreferrer",
-    );
+    // Event push sonrası kısa gecikme: GTM event'i kaçırmasın.
+    window.setTimeout(() => {
+      window.open(
+        `https://wa.me/?text=${encodeURIComponent(shareSummary)}`,
+        "_blank",
+        "noopener,noreferrer",
+      );
+    }, 250);
   };
 
   const handleMail = () => {

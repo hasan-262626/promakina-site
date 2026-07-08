@@ -51,6 +51,8 @@ const requiredMessage =
 export function ContactForm() {
   const [form, setForm] = useState<FormState>(initialForm);
   const [error, setError] = useState("");
+  const [info, setInfo] = useState("");
+  const [sending, setSending] = useState(false);
 
   const hasRequiredFields = useMemo(() => {
     return Boolean(
@@ -120,20 +122,21 @@ export function ContactForm() {
       cta_location: "contact_form",
     });
 
-    window.open(whatsappHref, "_blank", "noopener,noreferrer");
+    // GTM event'i kaçırmasın diye yönlendirme kısa gecikmeyle başlar.
+    window.setTimeout(() => {
+      window.open(whatsappHref, "_blank", "noopener,noreferrer");
+    }, 250);
   }
 
-  function handleEmailClick() {
-    if (!validateBeforeExit()) {
+  async function handleEmailClick() {
+    if (!validateBeforeExit() || sending) {
       return;
     }
 
-    pushDataLayerEvent("email_click", {
-      ...baseEventParams(),
-      cta_label: "E-posta ile Gönder",
-      cta_location: "contact_form",
-      link_url: sanitizeLinkUrl(emailHref),
-    });
+    setSending(true);
+    setInfo("");
+
+    // Event, yönlendirme/istek başlamadan ÖNCE push edilir.
     pushDataLayerEvent("contact_form_submit", {
       ...baseEventParams(),
       submit_method: "email",
@@ -141,7 +144,55 @@ export function ContactForm() {
       cta_location: "contact_form",
     });
 
-    window.location.href = emailHref;
+    const apiMessage = [
+      form.city.trim() ? `Şehir / Ülke: ${form.city.trim()}` : "",
+      form.projectNeed.trim() ? `Proje / Makine İhtiyacı: ${form.projectNeed.trim()}` : "",
+      form.message.trim(),
+    ]
+      .filter(Boolean)
+      .join("\n\n");
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          fullName: form.fullName.trim(),
+          company: form.company.trim(),
+          phone: form.phone.trim(),
+          email: form.email.trim(),
+          subject: form.subject,
+          message: apiMessage,
+        }),
+      });
+
+      if (response.ok) {
+        setInfo("Mesajınız e-posta ile iletildi. En kısa sürede dönüş yapacağız.");
+        window.setTimeout(() => {
+          window.location.href = "/tesekkurler";
+        }, 400);
+        return;
+      }
+
+      throw new Error("mail-api-failed");
+    } catch {
+      // Sunucu mail servisi yapılandırılmamışsa kullanıcıyı boşa düşürme:
+      // e-posta uygulamasına mailto ile devam et.
+      pushDataLayerEvent("email_click", {
+        ...baseEventParams(),
+        cta_label: "E-posta ile Gönder",
+        cta_location: "contact_form",
+        link_url: sanitizeLinkUrl(emailHref),
+      });
+      setInfo(
+        "E-posta servisi şu anda yanıt vermedi; e-posta uygulamanız açılıyor. Dilerseniz WhatsApp veya telefonla da ulaşabilirsiniz.",
+      );
+      window.setTimeout(() => {
+        window.location.href = emailHref;
+      }, 300);
+    } finally {
+      setSending(false);
+    }
   }
 
   return (
@@ -276,6 +327,12 @@ export function ContactForm() {
         </div>
       ) : null}
 
+      {info ? (
+        <div className="mt-4 rounded-2xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm font-medium text-emerald-800">
+          {info}
+        </div>
+      ) : null}
+
       <div className="mt-6 flex flex-col gap-3 sm:flex-row">
         <button
           type="button"
@@ -287,9 +344,10 @@ export function ContactForm() {
         <button
           type="button"
           onClick={handleEmailClick}
-          className="inline-flex min-h-[50px] items-center justify-center rounded-full border border-slate-200 bg-white px-6 text-sm font-semibold text-[#154764] transition hover:border-[#278DC0] hover:bg-[#278DC0]/5"
+          disabled={sending}
+          className="inline-flex min-h-[50px] items-center justify-center rounded-full border border-slate-200 bg-white px-6 text-sm font-semibold text-[#154764] transition hover:border-[#278DC0] hover:bg-[#278DC0]/5 disabled:cursor-wait disabled:opacity-60"
         >
-          E-posta ile Gönder
+          {sending ? "Gönderiliyor..." : "E-posta ile Gönder"}
         </button>
       </div>
     </div>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -384,16 +384,23 @@ export function TamburCapacityPremium({ onClose }: { onClose: () => void }) {
     return `https://wa.me/${siteContact.phoneDigits}?text=${encodeURIComponent(lines.join("\n"))}`;
   }, [preset, productName, capacity, drumType, inletMoisture, outletMoisture, inletTemp, outletTemp, recycleRatio, granuleSize, results]);
 
+  const lastResultSignature = useRef("");
+
   const goNext = () => {
     if (step === 1 && !drumType) return;
     if (step === 2 && !validateStep2()) return;
     if (step === 3 && !validateStep3()) return;
     if (step === 3) {
-      trackEvent("calculator_result", {
-        calculator_slug: "tambur-kapasite-hesabi",
-        machine_type: drumType,
-        selected_material: materialId || undefined,
-      });
+      // Aynı girdilerle tekrarlanan hesaplarda event çoğalmasın.
+      const signature = [drumType, materialId, capacity, density, inletMoisture, outletMoisture, fillPercent, retention].join("|");
+      if (signature !== lastResultSignature.current) {
+        lastResultSignature.current = signature;
+        trackEvent("calculator_result", {
+          calculator_slug: "tambur-kapasite-hesabi",
+          machine_type: drumType,
+          selected_material: materialId || undefined,
+        });
+      }
     }
     setStep((s) => Math.min(s + 1, 4));
   };
@@ -815,14 +822,19 @@ export function TamburCapacityPremium({ onClose }: { onClose: () => void }) {
                   href={whatsappHref}
                   target="_blank"
                   rel="noopener noreferrer"
-                  onClick={() =>
+                  onClick={(event) => {
+                    // Önce event push, sonra kısa gecikmeyle WhatsApp — GTM kaçırmasın.
+                    event.preventDefault();
                     trackEvent("calculator_whatsapp_send", {
                       calculator_slug: "tambur-kapasite-hesabi",
                       machine_type: drumType,
                       selected_material: materialId || undefined,
                       link_url: "https://wa.me/" + siteContact.phoneDigits,
-                    })
-                  }
+                    });
+                    window.setTimeout(() => {
+                      window.open(whatsappHref, "_blank", "noopener,noreferrer");
+                    }, 250);
+                  }}
                   className="inline-flex min-h-[48px] items-center justify-center rounded-full border border-[#278DC0] bg-white px-6 text-sm font-semibold text-[#154764] transition hover:bg-[#eef6fb]"
                 >
                   WhatsApp ile Gönder
