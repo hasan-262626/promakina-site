@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import Link from "next/link";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { trackEvent } from "../lib/gtm-events";
 import type { HubCategory, HubTool } from "../lib/program-hub-data";
@@ -35,13 +36,22 @@ function ToolCard({ tool, onOpen }: { tool: HubTool; onOpen: (slug: string) => v
         </p>
       </div>
       <div className="mt-auto pt-4">
-        <button
-          type="button"
-          onClick={() => onOpen(tool.slug)}
-          className="inline-flex min-h-[44px] w-full items-center justify-center rounded-full bg-[#278DC0] px-5 text-sm font-semibold text-white transition hover:bg-[#154764]"
-        >
-          Hesapla
-        </button>
+        {tool.href ? (
+          <Link
+            href={tool.href}
+            className="inline-flex min-h-[44px] w-full items-center justify-center rounded-full bg-[#278DC0] px-5 text-sm font-semibold text-white transition hover:bg-[#154764]"
+          >
+            Hesapla
+          </Link>
+        ) : (
+          <button
+            type="button"
+            onClick={() => onOpen(tool.slug)}
+            className="inline-flex min-h-[44px] w-full items-center justify-center rounded-full bg-[#278DC0] px-5 text-sm font-semibold text-white transition hover:bg-[#154764]"
+          >
+            Hesapla
+          </button>
+        )}
       </div>
     </article>
   );

@@ -31,6 +31,7 @@ export const hubCategories: HubCategory[] = [
 ];
 
 type HubToolSeed = {
+  href?: string;
   slug: string;
   category: HubCategoryId;
   title?: string;
@@ -124,7 +125,7 @@ const hubToolSeeds: HubToolSeed[] = [
   { slug: "kurutma-nem-dusurme-hesaplama", category: "kurutma", title: "Kurutma / Nem Düşürme Hesabı", usedFor: "Nem farkına göre buharlaşan su ve kuru madde hesabı.", required: "Kapasite, giriş nemi, hedef nem.", keywords: "nem kurutma buharlaşma ısı" },
 
   // ── Malzeme / imalat ──
-  { slug: "malzeme-agirlik-hesabi", category: "malzeme", usedFor: "Sac, profil, boru ve mil ağırlıkları.", required: "Malzeme tipi ve ölçüler.", keywords: "ağırlık sac profil çelik" },
+  { slug: "malzeme-agirlik-hesabi", category: "malzeme", href: "/programlar/malzeme-agirlik-hesabi", title: "Malzeme Ağırlık ve Fiyat Hesaplama", usedFor: "Sac, profil, boru ve mil ağırlıkları.", required: "Malzeme tipi ve ölçüler.", keywords: "ağırlık sac profil çelik" },
   { slug: "sac-kaynak-hesaplari", category: "malzeme", usedFor: "Sac açınım ve kaynak dolgu ön hesapları.", keywords: "sac kaynak imalat" },
   { slug: "talasli-imalat-hesaplari", category: "malzeme", usedFor: "Havşa, delik yerleşimi ve talaşlı imalat referansları.", keywords: "talaşlı imalat havşa" },
   { slug: "iso-gecme-toleranslari", category: "malzeme", usedFor: "Mil/delik tolerans ve geçme kontrolü.", keywords: "tolerans geçme iso" },
@@ -152,6 +153,7 @@ const hubToolSeeds: HubToolSeed[] = [
 ];
 
 export type HubTool = {
+  href?: string;
   slug: string;
   category: HubCategoryId;
   title: string;
@@ -171,6 +173,7 @@ export function buildHubTools(): HubTool[] {
     const usedFor = seed.usedFor ?? hubCategories.find((c) => c.id === seed.category)?.blurb ?? "";
     const required = seed.required ?? "Kapasite, ürün tipi ve temel proses bilgileri.";
     return {
+      href: seed.href,
       slug: seed.slug,
       category: seed.category,
       title,
