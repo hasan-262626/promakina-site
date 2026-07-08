@@ -1,11 +1,18 @@
 "use client";
 
 import { useEffect } from "react";
-import { pushDataLayerEvent } from "../lib/gtm-events";
+import {
+  baseEventParams,
+  pushDataLayerEvent,
+  resolveCtaLocation,
+  sanitizeLinkUrl,
+} from "../lib/gtm-events";
 
 function normalizeHref(href: string) {
   return href.trim().toLowerCase();
 }
+
+const QUOTE_TEXT = /teknik teklif al|teklif al|teklif iste/i;
 
 export function GlobalContactEventTracker() {
   useEffect(() => {
@@ -22,15 +29,29 @@ export function GlobalContactEventTracker() {
         return;
       }
 
-      const customEventName = element.dataset.ctaEvent;
-      const customLabel = element.dataset.ctaLabel || element.textContent?.trim() || undefined;
+      const base = baseEventParams();
+      const ctaLocation = resolveCtaLocation(element);
+      const label = element.dataset.ctaLabel || element.textContent?.trim() || undefined;
+      const rawHref = element instanceof HTMLAnchorElement ? element.href : undefined;
+      const linkUrl = sanitizeLinkUrl(rawHref);
 
+      const customEventName = element.dataset.ctaEvent;
       if (customEventName) {
         pushDataLayerEvent(customEventName, {
-          cta_label: customLabel,
-          cta_href:
-            element instanceof HTMLAnchorElement ? element.href : undefined,
-          page_path: window.location.pathname,
+          ...base,
+          cta_label: label,
+          cta_location: ctaLocation,
+          link_url: linkUrl,
+        });
+      }
+
+      // Teknik Teklif Al / Teklif Al butonları
+      if (label && QUOTE_TEXT.test(label)) {
+        pushDataLayerEvent("quote_button_click", {
+          ...base,
+          cta_label: label,
+          cta_location: ctaLocation,
+          link_url: linkUrl,
         });
       }
 
@@ -42,21 +63,20 @@ export function GlobalContactEventTracker() {
 
       if (href.startsWith("tel:")) {
         pushDataLayerEvent("phone_click", {
-          cta_label: customLabel,
-          cta_href: element.href,
-          page_path: window.location.pathname,
+          ...base,
+          cta_label: label,
+          cta_location: ctaLocation,
+          link_url: linkUrl,
         });
         return;
       }
 
-      if (
-        href.startsWith("mailto:") ||
-        href.includes("mailto:")
-      ) {
+      if (href.startsWith("mailto:") || href.includes("mailto:")) {
         pushDataLayerEvent("email_click", {
-          cta_label: customLabel,
-          cta_href: element.href,
-          page_path: window.location.pathname,
+          ...base,
+          cta_label: label,
+          cta_location: ctaLocation,
+          link_url: linkUrl,
         });
         return;
       }
@@ -64,12 +84,14 @@ export function GlobalContactEventTracker() {
       if (
         href.startsWith("https://wa.me/") ||
         href.startsWith("http://wa.me/") ||
-        href.includes("api.whatsapp.com")
+        href.includes("api.whatsapp.com") ||
+        href.includes("whatsapp.com/send")
       ) {
         pushDataLayerEvent("whatsapp_click", {
-          cta_label: customLabel,
-          cta_href: element.href,
-          page_path: window.location.pathname,
+          ...base,
+          cta_label: label,
+          cta_location: ctaLocation,
+          link_url: linkUrl,
         });
       }
     }

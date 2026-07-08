@@ -73,6 +73,10 @@ export const metadata: Metadata = {
   },
 };
 
+// Sabit ID yerine ortam değişkeni; tanımlı değilse mevcut kurulum korunur.
+const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID || "GTM-NJT8ZQPC";
+const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || "";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -115,8 +119,23 @@ export default function RootLayout({
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-NJT8ZQPC');`}
+})(window,document,'script','dataLayer','${GTM_ID}');`}
         </Script>
+        {GA_MEASUREMENT_ID ? (
+          <>
+            <Script
+              id="ga4-src"
+              strategy="afterInteractive"
+              src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+            />
+            <Script id="ga4-init" strategy="afterInteractive">
+              {`window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', '${GA_MEASUREMENT_ID}');`}
+            </Script>
+          </>
+        ) : null}
       </head>
       <body className={`${montserrat.variable} font-sans`}>
         <script

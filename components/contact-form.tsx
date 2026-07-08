@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { createMailtoHref, createWhatsAppHref } from "@/app/lib/site-contact";
-import { pushDataLayerEvent } from "@/app/lib/gtm-events";
+import { pushDataLayerEvent, baseEventParams, sanitizeLinkUrl } from "@/app/lib/gtm-events";
 
 type ContactIntent =
   | "Teknik Teklif"
@@ -105,14 +105,19 @@ export function ContactForm() {
       return;
     }
 
+    // Kişisel veri (ad, telefon, mesaj) event parametresi olarak GÖNDERİLMEZ;
+    // link_url query'siz temizlenmiş halidir.
     pushDataLayerEvent("whatsapp_click", {
+      ...baseEventParams(),
       cta_label: "Mesajı Gönder",
-      cta_href: whatsappHref,
-      page_path: window.location.pathname,
+      cta_location: "contact_form",
+      link_url: sanitizeLinkUrl(whatsappHref),
     });
-    pushDataLayerEvent("contact_form_whatsapp_submit", {
+    pushDataLayerEvent("contact_form_submit", {
+      ...baseEventParams(),
+      submit_method: "whatsapp",
       request_type: form.subject,
-      page_path: window.location.pathname,
+      cta_location: "contact_form",
     });
 
     window.open(whatsappHref, "_blank", "noopener,noreferrer");
@@ -124,13 +129,16 @@ export function ContactForm() {
     }
 
     pushDataLayerEvent("email_click", {
+      ...baseEventParams(),
       cta_label: "E-posta ile Gönder",
-      cta_href: emailHref,
-      page_path: window.location.pathname,
+      cta_location: "contact_form",
+      link_url: sanitizeLinkUrl(emailHref),
     });
-    pushDataLayerEvent("contact_form_email_submit", {
+    pushDataLayerEvent("contact_form_submit", {
+      ...baseEventParams(),
+      submit_method: "email",
       request_type: form.subject,
-      page_path: window.location.pathname,
+      cta_location: "contact_form",
     });
 
     window.location.href = emailHref;

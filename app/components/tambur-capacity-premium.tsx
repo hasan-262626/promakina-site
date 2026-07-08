@@ -9,6 +9,7 @@ import {
   materialCategoryOrder,
   materialDefaults,
 } from "../lib/material-defaults";
+import { trackEvent } from "../lib/gtm-events";
 import { siteContact } from "../lib/site-contact";
 
 type DrumTypeKey = "kurutma" | "sogutma" | "granulasyon" | "kaplama" | "kompost";
@@ -387,6 +388,13 @@ export function TamburCapacityPremium({ onClose }: { onClose: () => void }) {
     if (step === 1 && !drumType) return;
     if (step === 2 && !validateStep2()) return;
     if (step === 3 && !validateStep3()) return;
+    if (step === 3) {
+      trackEvent("calculator_result", {
+        calculator_slug: "tambur-kapasite-hesabi",
+        machine_type: drumType,
+        selected_material: materialId || undefined,
+      });
+    }
     setStep((s) => Math.min(s + 1, 4));
   };
 
@@ -807,6 +815,14 @@ export function TamburCapacityPremium({ onClose }: { onClose: () => void }) {
                   href={whatsappHref}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() =>
+                    trackEvent("calculator_whatsapp_send", {
+                      calculator_slug: "tambur-kapasite-hesabi",
+                      machine_type: drumType,
+                      selected_material: materialId || undefined,
+                      link_url: "https://wa.me/" + siteContact.phoneDigits,
+                    })
+                  }
                   className="inline-flex min-h-[48px] items-center justify-center rounded-full border border-[#278DC0] bg-white px-6 text-sm font-semibold text-[#154764] transition hover:bg-[#eef6fb]"
                 >
                   WhatsApp ile Gönder

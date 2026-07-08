@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import { trackEvent } from "../lib/gtm-events";
 import { trText } from "../lib/tr-text";
 import { ProgramActionFooter } from "./program-action-footer";
 import { ProgramFormFields } from "./program-form-fields";
@@ -122,6 +123,7 @@ function LegacyProgramModal({ slug, onClose, initialValues }: ProgramModalProps)
       }
 
       setOutput(calculateScrewConveyor(customerValues, values));
+      trackEvent("calculator_result", { calculator_slug: slug });
       return;
     }
 
@@ -136,6 +138,7 @@ function LegacyProgramModal({ slug, onClose, initialValues }: ProgramModalProps)
     }
 
     setOutput(config.calculate(values));
+    trackEvent("calculator_result", { calculator_slug: slug });
   };
 
   const handleReset = () => {
@@ -187,6 +190,10 @@ function LegacyProgramModal({ slug, onClose, initialValues }: ProgramModalProps)
   const handleWhatsApp = () => {
     if (!output || typeof window === "undefined") return;
 
+    trackEvent("calculator_whatsapp_send", {
+      calculator_slug: slug,
+      link_url: "https://wa.me/",
+    });
     window.open(
       `https://wa.me/?text=${encodeURIComponent(shareSummary)}`,
       "_blank",

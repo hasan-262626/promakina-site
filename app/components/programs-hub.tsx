@@ -1,7 +1,8 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { trackEvent } from "../lib/gtm-events";
 import type { HubCategory, HubTool } from "../lib/program-hub-data";
 import { ProgramModal } from "./program-modal";
 import { MODAL_SLUG_ALIASES } from "./programs-modal-experience";
@@ -57,6 +58,15 @@ export function ProgramsHub({ categories, tools }: ProgramsHubProps) {
   const rawSlug = searchParams.get("modal");
   const resolvedSlug = rawSlug ? MODAL_SLUG_ALIASES[rawSlug] ?? rawSlug : null;
   const activeSlug = resolvedSlug && validSlugs.has(resolvedSlug) ? resolvedSlug : null;
+
+  useEffect(() => {
+    if (activeSlug) {
+      trackEvent("calculator_open", {
+        calculator_slug: activeSlug,
+        cta_location: "programs_hub",
+      });
+    }
+  }, [activeSlug]);
 
   const openModal = (slug: string | null) => {
     const params = new URLSearchParams(searchParams.toString());
