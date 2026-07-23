@@ -44,6 +44,8 @@ const redirectedRoutes = new Set([
   "/kutuphane/blog/kurutma-tamburu-kapasite-hesabi",
   "/kutuphane/blog/kurutma-tamburu-cap-boy-hesabi",
   "/kutuphane/blog/kurutma-tamburu-nasil-hesaplanir",
+  // Paket 2A: kütüphane çift içerik sürümü blog sürümüne 308 ile yönlendirildi.
+  "/kutuphane/granul-gubre-uretim-sureci",
 ]);
 
 // İndekslenmesi istenmeyen sayfalar.

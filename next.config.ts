@@ -369,6 +369,11 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: "/kutuphane/kompost-tesisi-nasil-kurulur",
+        destination: "/kutuphane/blog/kompost-tesisi-nasil-kurulur",
+        permanent: true,
+      },
+      {
         source: "/makinalar-ekipman/tasima-ekipmanlari/helezon-konveyor",
         destination: "/makinalar-ekipman/tasima-ekipmanlari/vidali-helezonlar",
         permanent: true,
