@@ -2,14 +2,14 @@ import type { Metadata } from "next";
 import { siteContact } from "../lib/site-contact";
 
 export const metadata: Metadata = {
-  title: "Kariyer | Pro Makina Process Engineering",
+  title: "Kariyer",
   description:
     "Pro Makina kariyer ve teknik ekip başvuruları. Makine imalatı, proses mühendisliği, montaj ve otomasyon alanlarında başvuru bilgileri.",
   alternates: {
     canonical: "https://www.promakina.com.tr/kariyer",
   },
   openGraph: {
-    title: "Kariyer | Pro Makina Process Engineering",
+    title: "Kariyer | Pro Makina",
     description:
       "Pro Makina kariyer ve teknik ekip başvuruları. Makine imalatı, proses mühendisliği, montaj ve otomasyon alanlarında başvuru bilgileri.",
     url: "https://www.promakina.com.tr/kariyer",

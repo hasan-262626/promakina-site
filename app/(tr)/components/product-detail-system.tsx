@@ -77,7 +77,7 @@ const materialOptions = [
   "Gübre Hammaddesi",
   "NPK / Organomineral",
   "Nemli Karışım",
-  "DiÄŸer",
+  "Diğer",
 ];
 
 const materialDensityDefaults: Record<string, string> = {
@@ -89,7 +89,7 @@ const materialDensityDefaults: Record<string, string> = {
   "Gübre Hammaddesi": "1200",
   "NPK / Organomineral": "1150",
   "Nemli Karışım": "750",
-  DiÄŸer: "1000",
+  Diğer: "1000",
 };
 
 const commonFields: FieldConfig[] = [
@@ -101,7 +101,7 @@ const commonFields: FieldConfig[] = [
 
 const calculatorFields: Record<CalculatorFamily, FieldConfig[]> = {
   drum: [
-    { key: "processType", label: "İstenen proses", type: "select", options: ["Granülasyon", "Kurutma", "SoÄŸutma", "Kaplama", "Kompost"] },
+    { key: "processType", label: "İstenen proses", type: "select", options: ["Granülasyon", "Kurutma", "Soğutma", "Kaplama", "Kompost"] },
     { key: "capacity", label: "Kapasite (ton/saat)", type: "number", placeholder: "12" },
     { key: "material", label: "Ürün tipi / malzeme", type: "select", options: materialOptions },
     { key: "bulkDensity", label: "Yığın yoğunluğu (kg/m³)", type: "number", placeholder: "950" },
@@ -114,9 +114,9 @@ const calculatorFields: Record<CalculatorFamily, FieldConfig[]> = {
   transport: [
     { key: "material", label: "Malzeme tipi", type: "select", options: materialOptions },
     { key: "capacity", label: "Kapasite (ton/saat)", type: "number", placeholder: "25" },
-    { key: "bulkDensity", label: "YoÄŸunluk (kg/mÂ³)", type: "number", placeholder: "950" },
-    { key: "lineLength", label: "Hat uzunluÄŸu (m)", type: "number", placeholder: "18" },
-    { key: "incline", label: "EÄŸim (Â°)", type: "number", placeholder: "8" },
+    { key: "bulkDensity", label: "Yoğunluk (kg/mÂ³)", type: "number", placeholder: "950" },
+    { key: "lineLength", label: "Hat uzunluğu (m)", type: "number", placeholder: "18" },
+    { key: "incline", label: "Eğim (°)", type: "number", placeholder: "8" },
     { key: "workingType", label: "Çalışma tipi", type: "select", options: ["Sürekli", "Partili", "Ağır hizmet", "Standart"] },
     { key: "feedType", label: "Besleme şekli", type: "select", options: ["Bunker altı", "Konveyörden", "Serbest düşüş", "Dozajlı besleme"] },
     { key: "notes", label: "Notlar", type: "textarea", placeholder: "Hat veya ürün notu" },
@@ -136,7 +136,7 @@ const calculatorFields: Record<CalculatorFamily, FieldConfig[]> = {
     { key: "dailyCapacity", label: "Günlük kapasite", placeholder: "40 ton/gün" },
     { key: "mixingNeed", label: "Karıştırma ihtiyaçı", type: "select", options: ["Düşük", "Orta", "Yüksek"] },
     { key: "pressureMode", label: "Basınç durumu", type: "select", options: ["Atmosferik", "Basınçlı"] },
-    { key: "thermalNeed", label: "Isıtma / soğutma ihtiyaçı", type: "select", options: ["Yok", "Isıtma", "SoÄŸutma", "Her ikisi"] },
+    { key: "thermalNeed", label: "Isıtma / soğutma ihtiyaçı", type: "select", options: ["Yok", "Isıtma", "Soğutma", "Her ikisi"] },
     { key: "notes", label: "Notlar", type: "textarea", placeholder: "Proses ve tesis notları" },
   ],
   screening: [
@@ -178,7 +178,7 @@ const calculatorFields: Record<CalculatorFamily, FieldConfig[]> = {
   dosage: [
     { key: "material", label: "Ürün tipi", type: "select", options: materialOptions },
     { key: "capacity", label: "Kapasite / reçete ihtiyaçı", placeholder: "12 ton/saat" },
-    { key: "bulkDensity", label: "YoÄŸunluk (kg/mÂ³)", type: "number", placeholder: "950" },
+    { key: "bulkDensity", label: "Yoğunluk (kg/mÂ³)", type: "number", placeholder: "950" },
     { key: "feedType", label: "Dozaj tipi", type: "select", options: ["Mikro dozajlama", "Makro dozajlama", "Dozaj bant kantarı"] },
     { key: "notes", label: "Notlar", type: "textarea", placeholder: "Reçete, hammadde ve proses notları" },
   ],
@@ -527,7 +527,7 @@ function formatSummary(title: string, family: CalculatorFamily, values: Record<s
   }
 
   if (family === "transport") {
-    return `${title} için ${capacity || "belirtilmeyen"} ton/saat kapasite, ${values.lineLength || "belirtilmeyen"} metre hat uzunluÄŸu ve ${material} taşıma ihtiyacına göre çözüm talebi hazırlandı${notes ? `. Not: ${notes}` : "."}`;
+    return `${title} için ${capacity || "belirtilmeyen"} ton/saat kapasite, ${values.lineLength || "belirtilmeyen"} metre hat uzunluğu ve ${material} taşıma ihtiyacına göre çözüm talebi hazırlandı${notes ? `. Not: ${notes}` : "."}`;
   }
 
   if (family === "crusher") {
@@ -556,8 +556,8 @@ function buildMessage(title: string, categoryLabel: string, family: CalculatorFa
     ["Çıkış nemi", values.outletMoisture ? `%${values.outletMoisture}` : undefined],
     ["Güvenlik payı", values.safetyMargin ? `%${values.safetyMargin}` : undefined],
     ["Çalışma süresi", values.workingSchedule],
-    ["Hat uzunluÄŸu", values.lineLength ? `${values.lineLength} m` : undefined],
-    ["EÄŸim", values.incline ? `${values.incline}Â°` : undefined],
+    ["Hat uzunluğu", values.lineLength ? `${values.lineLength} m` : undefined],
+    ["Eğim", values.incline ? `${values.incline}°` : undefined],
     ["Giriş boyutu", values.feedSize ? `${values.feedSize} mm` : undefined],
     ["Hedef çıkış boyutu", values.targetSize ? `${values.targetSize} mm` : undefined],
     ["Batch hacmi", values.batchVolume ? `${values.batchVolume} mÂ³` : undefined],
@@ -569,7 +569,7 @@ function buildMessage(title: string, categoryLabel: string, family: CalculatorFa
     if (value) lines.push(`${label}: ${value}`);
   });
 
-  lines.push("", "Teknik Ã–zet:", summary, "", `Bu veriler için ${familyLabels[family]} çözümü ve teklif talep ediyorum.`);
+  lines.push("", "Teknik Özet:", summary, "", `Bu veriler için ${familyLabels[family]} çözümü ve teklif talep ediyorum.`);
   return lines.join("\n");
 }
 
@@ -578,7 +578,7 @@ function getDefaultDrumProcess(title: string) {
 
   if (normalized.includes("gran")) return "Granülatör tamburu";
   if (normalized.includes("kurut")) return "Kurutma tamburu";
-  if (normalized.includes("soÄŸut") || normalized.includes("sogut")) return "SoÄŸutma tamburu";
+  if (normalized.includes("soğut") || normalized.includes("sogut")) return "Soğutma tamburu";
   if (normalized.includes("kaplama")) return "Kaplama tamburu";
   if (normalized.includes("kompost") || normalized.includes("olgun")) return "Kompost tamburu";
 
@@ -643,7 +643,7 @@ function ProductCalculatorModal(props: {
               );
             })}
 
-            {values.material === "DiÄŸer" ? (
+            {values.material === "Diğer" ? (
               <label className="md:col-span-2">
                 <span className="text-sm font-semibold text-slate-800">Diğer ürün açıklaması</span>
                 <input

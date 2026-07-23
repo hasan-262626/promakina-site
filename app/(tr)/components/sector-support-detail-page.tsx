@@ -95,7 +95,7 @@ export function SectorSupportDetailPage({
           <section>
             <div className="max-w-3xl">
               <h2 className="text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
-                KullanÃ„Â±m AlanlarÃ„Â±
+                Kullanım Alanları
               </h2>
               <p className="mt-4 text-sm leading-7 text-slate-600 sm:text-base sm:leading-8">
                 Bu çözüm; atık su, çamur yönetimi, kurutma, taşıma ve ara proses entegrasyonu
@@ -118,12 +118,12 @@ export function SectorSupportDetailPage({
           </section>
 
           <section className="grid gap-6 xl:grid-cols-2">
-            <ListCard title="Teknik Ãƒâ€“zellikler" items={technicalFeatures} />
+            <ListCard title="Teknik Özellikler" items={technicalFeatures} />
             <ListCard title="Avantajlar" items={advantages} />
           </section>
 
           <section className="grid gap-6 xl:grid-cols-2">
-            <ListCard title="Proses Ã„Â°ÃƒÂ§indeki Yeri" items={processRole} />
+            <ListCard title="Proses İçindeki Yeri" items={processRole} />
             <ListCard title="Opsiyonel Ekipmanlar" items={optionalEquipment} />
           </section>
 

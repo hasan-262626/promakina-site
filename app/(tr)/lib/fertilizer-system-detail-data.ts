@@ -58,7 +58,7 @@ export const fertilizerSystemDetailPages: DrumSystemDetailPageData[] = [
     heroLinks: commonHeroLinks,
     introParagraphs: [
       "Organomineral gübre tesisi yatırımlarında en yaygın hata, toplam maliyeti yalnız ana tambur ya da paketleme ünitesi üzerinden okumaktır. Oysa tesis maliyeti; proses kurgusu, kapasite hedefi, organik hammaddenin nemi, enerji altyapısı ve saha yerleşimiyle birlikte şekillenir.",
-      "Gerçekçi bir yatırım analizi için /hizmetler/organomineral-gubre-tesisi, /hizmetler/granul-gubre-uretim-tesisi ve /kutuphane/blog/gubre-kurutma-ve-sogutma-prosesi sayfalarında anlatılan proses bağımlılıkları aynı tabloda değerlendirilmelidir.",
+      "Gerçekçi bir yatırım analizi için /sektorler/gubre-ve-granulasyon-tesisleri ve /kutuphane/blog/gubre-kurutma-ve-sogutma-prosesi sayfalarında anlatılan proses bağımlılıkları aynı tabloda değerlendirilmelidir.",
     ],
     flowTitle: "Organomineral Gübre Tesisi Ana Proses Akışı",
     flowSteps: [
@@ -223,7 +223,7 @@ export const fertilizerSystemDetailPages: DrumSystemDetailPageData[] = [
     heroLinks: commonHeroLinks,
     introParagraphs: [
       "Granül gübre üretim sürecinin temel amacı; homojen besin içeriğine sahip, taşınabilir, depolanabilir, toz oranı düşük ve paketlemeye uygun granül ürün elde etmektir. Bu hedefe ulaşmak için her proses adımının kapasite dengesi korunmalıdır.",
-      "Özellikle /kutuphane/blog/granulator-tamburu-secimi ve /kutuphane/blog/kurutma-tamburu-kapasite-hesabi içeriklerinde anlatılan granülasyon ve kurutma tarafı, süreç performansının belirleyici bölümünü oluşturur.",
+      "Özellikle /kutuphane/blog/granulator-tamburu-secimi ve /kutuphane/blog/kurutma-tamburu-hesaplama içeriklerinde anlatılan granülasyon ve kurutma tarafı, süreç performansının belirleyici bölümünü oluşturur.",
     ],
     flowTitle: "Granül Gübre Üretim Süreci",
     flowSteps: [
@@ -504,7 +504,7 @@ export const fertilizerSystemDetailPages: DrumSystemDetailPageData[] = [
     heroLinks: commonHeroLinks,
     introParagraphs: [
       "Gübre tesisi kurulumu, sadece makine siparişi verilerek tamamlanan bir süreç değildir. Ürün tipi, kapasite, hammadde yapısı ve saha akışı başlangıçta doğru tanımlanmazsa yatırım gecikir veya beklenen performansa ulaşamaz.",
-      "Bu yüzden kurulum kararı, /hizmetler/gubre-tesisi-kurulumu, /hizmetler/organomineral-gubre-tesisi ve /hizmetler/granul-gubre-uretim-tesisi ile birlikte okunması gereken bir mühendislik ve planlama konusudur.",
+      "Bu yüzden kurulum kararı, /sektorler/gubre-ve-granulasyon-tesisleri sayfasında anlatılan tesis çözümleri ile birlikte okunması gereken bir mühendislik ve planlama konusudur.",
     ],
     flowTitle: "Gübre Tesisi Kurulum Yol Haritası",
     flowSteps: [
@@ -772,7 +772,7 @@ export const fertilizerSystemDetailPages: DrumSystemDetailPageData[] = [
     heroLinks: commonHeroLinks,
     introParagraphs: [
       "Granül ürünün ticari başarısı çoğu zaman kurutma ve soğutma bölümünde belirlenir. Ürün yeterince kurutulmazsa torbada bozulabilir; yeterince soğutulmazsa paket içinde terleme görülebilir.",
-      "Bu yüzden /kutuphane/blog/kurutma-tamburu-kapasite-hesabi, /kutuphane/blog/sogutma-tamburu-nasil-calisir ve bu sayfadaki gübre prosesi birlikte okunmalıdır.",
+      "Bu yüzden /kutuphane/blog/kurutma-tamburu-hesaplama, /kutuphane/blog/sogutma-tamburu-nasil-calisir ve bu sayfadaki gübre prosesi birlikte okunmalıdır.",
     ],
     flowTitle: "Gübre Kurutma ve Soğutma Prosesi",
     flowSteps: [
@@ -877,7 +877,7 @@ export const fertilizerSystemDetailPages: DrumSystemDetailPageData[] = [
       faq("Paketleme öncesi ürün sıcaklığı kaç olmalıdır?", "Ürün, torbada terleme yapmayacak kadar düşürülmelidir; kesin değer prosese göre belirlenir."),
     ],
     relatedLinks: [
-      { title: "Kurutma Tamburu Kapasite Hesabı", description: "Nem ve ısı yükünü teknik formüllerle inceleyin.", href: "/kutuphane/blog/kurutma-tamburu-kapasite-hesabi" },
+      { title: "Kurutma Tamburu Kapasite Hesabı", description: "Nem ve ısı yükünü teknik formüllerle inceleyin.", href: "/kutuphane/blog/kurutma-tamburu-hesaplama" },
       { title: "Soğutma Tamburu Nasıl Çalışır?", description: "Soğutma bölümünü detay teknik makaleyle tamamlayın.", href: "/kutuphane/blog/sogutma-tamburu-nasil-calisir" },
       { title: "Granül Gübre Üretim Süreci", description: "Kurutma-soğutma bölümünün bağlı olduğu ana hat akışını görün.", href: "/kutuphane/blog/granul-gubre-uretim-sureci" },
       { title: "Tambur Sistemleri", description: "Kurutma ve soğutma tamburlarını ürün bazında inceleyin.", href: "/makinalar-ekipman/tambur-sistemleri" },
@@ -1165,7 +1165,7 @@ export const fertilizerSystemDetailPages: DrumSystemDetailPageData[] = [
     heroLinks: commonHeroLinks,
     introParagraphs: [
       "Organomineral gübre hatlarında doğru makine seçimi, yalnız kapasite değil ürün davranışı için de kritiktir. Organik hammadde ve mineral fraksiyon birlikte işlendiği için standart mineral hatlara göre farklı besleme ve kurutma kararları gerekebilir.",
-      "Bu yüzden makine seçimi, /hizmetler/organomineral-gubre-tesisi ve /kutuphane/blog/organomineral-gubre-tesisi-maliyeti ile birlikte okunmalıdır.",
+      "Bu yüzden makine seçimi, /sektorler/gubre-ve-granulasyon-tesisleri ve /kutuphane/blog/organomineral-gubre-tesisi-maliyeti ile birlikte okunmalıdır.",
     ],
     flowTitle: "Organomineral Gübre Makine Akışı",
     flowSteps: [

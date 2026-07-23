@@ -100,7 +100,7 @@ function createDryingArticle(config: DryingArticleConfig): TopicalArticle {
         title: "Uygulama alanları ve ürün örnekleri",
         paragraphs: [
           `${config.productExamples} gibi uygulamalarda aynı ana prensip çalışsa da proses riski değişir. Bazı ürünlerde aşındırıcılık ve toz yükü öne çıkarken, bazı ürünlerde yapışma ve koku kontrolü daha belirleyici olur.`,
-          `Bu yüzden /hizmetler/kurutma-tamburu-imalatı, /hizmetler/silis-kumu-kurutma-tesisi ve /hizmetler/çamur-kurutma-tesisi gibi sayfalarda görülen farklı çözüm aileleri, tek bir tambur tipinden değil farklı proses gereksinimlerinden doğar.`,
+          `Bu yüzden /makinalar-ekipman/tambur-sistemleri/kurutma-tamburu, /sektorler/madencilik-ve-mineral-isleme ve /sektorler/atik-su-camuru-ve-aritma-cozumleri gibi sayfalarda görülen farklı çözüm aileleri, tek bir tambur tipinden değil farklı proses gereksinimlerinden doğar.`,
         ],
       },
       {
@@ -434,7 +434,7 @@ function createCompostArticle(config: CompostArticleConfig): TopicalArticle {
       summaryRow("Atık karakteri", "Nem, organik içerik ve yabancı madde yapısını tanımlar.", "Doğru proses kurgusunun başlangıç verisidir."),
       summaryRow("Olgunlaştırma süresi", "Ürünün ne kadar süre kontrol altında tutulacağını gösterir.", "Alan ihtiyacını ve saha ritmini belirler."),
       summaryRow("Eleme ve son ürün", "Fraksiyon ayrımı ile ticari kaliteyi tanımlar.", "Pazarlanabilir ürün standardını etkiler."),
-      summaryRow("Ã‡evresel kontrol", "Koku, toz ve drenaj yönetimini kapsar.", "Sürdürülebilir işletmenin ana şartıdır."),
+      summaryRow("Çevresel kontrol", "Koku, toz ve drenaj yönetimini kapsar.", "Sürdürülebilir işletmenin ana şartıdır."),
     ],
     faqs: [
       faq("Kompost tesisi hesabında hangi veriler gerekir?", "Atık tipi, günlük tonaj, nem aralığı, olgunlaştırma hedefi ve saha koşulları ilk teknik değerlendirme için yeterlidir."),
@@ -512,7 +512,7 @@ function createBiogasArticle(config: BiogasArticleConfig): TopicalArticle {
       summaryRow("Atık ve kuru madde", "Beslenecek akışın fiziksel yapısını tanımlar.", "Ön işlem ve besleme ekipmanını belirler."),
       summaryRow("Besleme ritmi", "Sürekli veya kesikli akışı ifade eder.", "Reaktör veriminin istikrarını etkiler."),
       summaryRow("Yan akış yönetimi", "Digestat ve yardımcı ürünleri kapsar.", "Toplam tesis çevrimini tamamlar."),
-      summaryRow("Ã‡evresel kontrol", "Hijyen, koku ve saha güvenliğini içerir.", "Operasyon sürekliliğini sağlar."),
+      summaryRow("Çevresel kontrol", "Hijyen, koku ve saha güvenliğini içerir.", "Operasyon sürekliliğini sağlar."),
     ],
     faqs: [
       faq("Biyogaz tesisi kapasitesi nasıl değerlendirilir?", "Günlük tonaj, kuru madde, organik madde ve besleme rejimi birlikte okunarak değerlendirilir."),
@@ -622,8 +622,8 @@ const generatedDryingArticles: TopicalArticle[] = [
     serviceHref: "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburu",
     ctaText: "Kurutma tamburunun çalışma prensibini kendi ürününüz için değerlendirmek isterseniz Pro Makina ile teknik görüşme planlayabilirsiniz.",
     relatedContents: [
-      card("Kurutma Tamburu Kapasite Hesabı", "Nem yükü, su uçurma hesabı ve enerji ihtiyacını birlikte okuyun.", "/kutuphane/blog/kurutma-tamburu-kapasite-hesabi"),
-      card("Kurutma Tamburu Çap Boy Hesabı", "Tambur geometrisi ve residence time ilişkisini görün.", "/kutuphane/blog/kurutma-tamburu-cap-boy-hesabi"),
+      card("Kurutma Tamburu Kapasite Hesabı", "Nem yükü, su uçurma hesabı ve enerji ihtiyacını birlikte okuyun.", "/kutuphane/blog/kurutma-tamburu-hesaplama"),
+      card("Kurutma Tamburu Çap Boy Hesabı", "Tambur geometrisi ve residence time ilişkisini görün.", "/kutuphane/blog/kurutma-tamburu-hesaplama"),
       card("Rotary Dryer Design", "Uluslararası terminolojiyle kurutma tasarım yaklaşımını inceleyin.", "/kutuphane/blog/rotary-dryer-design"),
     ],
     relatedServices: [
@@ -645,8 +645,8 @@ const generatedDryingArticles: TopicalArticle[] = [
     ctaText: "Fan debisi, negatif basınç ve filtre hattı kurgusunu kendi ürününüz için netleştirmek isterseniz Pro Makina ile görüşebilirsiniz.",
     relatedContents: [
       card("Toz Toplama Sistemi Seçimi", "Siklon, filtre ve negatif basınç yaklaşımını detaylı görün.", "/kutuphane/blog/toz-toplama-sistemi-secimi"),
-      card("Kurutma Tamburu Kapasite Hesabı", "Su uçurma yükü ile gaz hattı ilişkisinin ana çerçevesini okuyun.", "/kutuphane/blog/kurutma-tamburu-kapasite-hesabi"),
-      card("Ã‡amur Kurutma Sistemi", "Koku ve fan hattının daha kritik olduğu uygulamayı inceleyin.", "/kutuphane/blog/camur-kurutma-sistemi"),
+      card("Kurutma Tamburu Kapasite Hesabı", "Su uçurma yükü ile gaz hattı ilişkisinin ana çerçevesini okuyun.", "/kutuphane/blog/kurutma-tamburu-hesaplama"),
+      card("Çamur Kurutma Sistemi", "Koku ve fan hattının daha kritik olduğu uygulamayı inceleyin.", "/kutuphane/blog/camur-kurutma-sistemi"),
     ],
     relatedServices: [
       card("Toz Toplama Sistemleri", "Siklon ve filtre omurgasını makina tarafında görün.", "/makinalar-ekipman/toz-toplama-sistemleri"),
@@ -666,7 +666,7 @@ const generatedDryingArticles: TopicalArticle[] = [
     serviceHref: "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburu",
     ctaText: "Brülör kapasitesi, modülasyon ve yakıt tercihini ürününüze göre birlikte değerlendirmek için Pro Makina ile görüşebilirsiniz.",
     relatedContents: [
-      card("Kurutma Tamburu Kapasite Hesabı", "Isıl yükün nasıl okunduğunu ana kapasite içeriğinde görün.", "/kutuphane/blog/kurutma-tamburu-kapasite-hesabi"),
+      card("Kurutma Tamburu Kapasite Hesabı", "Isıl yükün nasıl okunduğunu ana kapasite içeriğinde görün.", "/kutuphane/blog/kurutma-tamburu-hesaplama"),
       card("Kurutma Tamburu Fan Seçimi", "Brülör gücünü gaz hattıyla birlikte değerlendiren bağlantılı içeriği inceleyin.", "/kutuphane/blog/kurutma-tamburu-fan-secimi"),
       card("Maden Kurutma Tamburu", "Sıcaklık ve aşındırıcılığın birlikte öne çıktığı uygulamayı görün.", "/kutuphane/blog/maden-kurutma-tamburu"),
     ],
@@ -689,7 +689,7 @@ const generatedDryingArticles: TopicalArticle[] = [
     ctaText: "Tavuk gübresi kurutma hattı için kapasite, koku kontrolü ve tambur yaklaşımını birlikte netleştirelim.",
     relatedContents: [
       card("Kompost Tesisi Kapasite Hesabı", "Organik atık akışlarında günlük tonaj ve nem yönetimi mantığını görün.", "/kutuphane/blog/kompost-tesisi-kapasite-hesabi"),
-      card("Kurutma Tamburu Kapasite Hesabı", "Nem yükü ve enerji ihtiyacını ana kapasite içeriğinde inceleyin.", "/kutuphane/blog/kurutma-tamburu-kapasite-hesabi"),
+      card("Kurutma Tamburu Kapasite Hesabı", "Nem yükü ve enerji ihtiyacını ana kapasite içeriğinde inceleyin.", "/kutuphane/blog/kurutma-tamburu-hesaplama"),
       card("Büyükbaş Hayvan Gübresi Kompost", "Hayvansal akışın kompost tarafındaki yaklaşımını okuyun.", "/kutuphane/blog/buyukbas-hayvan-gubresi-kompost"),
     ],
     relatedServices: [
@@ -755,7 +755,7 @@ const generatedDryingArticles: TopicalArticle[] = [
     ctaText: "Digestat kurutma hattı için enerji yükü, tambur seçimi ve koku kontrolünü birlikte netleştirelim.",
     relatedContents: [
       card("Biyogaz Tesisi Kapasite Hesabı", "Besleme ve yan akış yönetimini biyogaz odağında inceleyin.", "/kutuphane/blog/biyogaz-tesisi-kapasite-hesabi"),
-      card("Ã‡amur Kurutma Sistemi", "Yüksek nemli akışların termal yönetimine benzer yaklaşımı görün.", "/kutuphane/blog/camur-kurutma-sistemi"),
+      card("Çamur Kurutma Sistemi", "Yüksek nemli akışların termal yönetimine benzer yaklaşımı görün.", "/kutuphane/blog/camur-kurutma-sistemi"),
       card("Kompost Kurutma Sistemi", "Organik son ürün hazırlığında kurutma mantığını okuyun.", "/kutuphane/blog/kompost-kurutma-sistemi"),
     ],
     relatedServices: [
@@ -820,7 +820,7 @@ const generatedDrumArticles: TopicalArticle[] = [
     applicationText: "kurutma sonrası sıcak ürünlerin depolama ve paketlemeye hazırlanması",
     ctaText: "Soğutma tamburu kapasitesini kurutma hattınız ve son ürün sıcaklık hedefinizle birlikte netleştirelim.",
     relatedContents: [
-      card("Kurutma Tamburu Kapasite Hesabı", "Kurutma ve soğutma omurgasının nasıl eşleştirildiğini görün.", "/kutuphane/blog/kurutma-tamburu-kapasite-hesabi"),
+      card("Kurutma Tamburu Kapasite Hesabı", "Kurutma ve soğutma omurgasının nasıl eşleştirildiğini görün.", "/kutuphane/blog/kurutma-tamburu-hesaplama"),
       card("Granül Gübre Üretim Süreci", "Soğutma tamburunun granül hat içindeki rolünü inceleyin.", "/kutuphane/blog/granul-gubre-uretim-sureci"),
       card("Kaplama Tamburu Kullanım Alanları", "Soğutma sonrası kaplama senaryolarını görün.", "/kutuphane/blog/kaplama-tamburu-kullanim-alanlari"),
     ],
@@ -954,7 +954,7 @@ const generatedFertilizerArticles: TopicalArticle[] = [
     relatedContents: [
       card("Granül Gübre Üretim Süreci", "Hat adımlarını daha proses odaklı görün.", "/kutuphane/blog/granul-gubre-uretim-sureci"),
       card("Tambur Granülatör Kapasite Hesabı", "Granülasyon kapasitesini tambur odağında değerlendirin.", "/kutuphane/blog/tambur-granulator-kapasite-hesabi"),
-      card("Kurutma Tamburu Kapasite Hesabı", "Granül hattındaki kurutma yükünü ana hesap mantığıyla görün.", "/kutuphane/blog/kurutma-tamburu-kapasite-hesabi"),
+      card("Kurutma Tamburu Kapasite Hesabı", "Granül hattındaki kurutma yükünü ana hesap mantığıyla görün.", "/kutuphane/blog/kurutma-tamburu-hesaplama"),
     ],
     relatedServices: [
       card("Granül Gübre Üretim Tesisi", "İlgili hizmet sayfasını inceleyin.", "/sektorler/gubre-ve-granulasyon-tesisleri"),
@@ -1016,7 +1016,7 @@ const generatedCompostArticles: TopicalArticle[] = [
     serviceLabel: "Kompost Tesisi Kurulumu",
     ctaText: "Kompost kurutma hattınız için tambur, hava debisi ve son ürün standardını birlikte değerlendirelim.",
     relatedContents: [
-      card("Kurutma Tamburu Kapasite Hesabı", "Kompost kurutmada nem yükünün nasıl okunacağını görün.", "/kutuphane/blog/kurutma-tamburu-kapasite-hesabi"),
+      card("Kurutma Tamburu Kapasite Hesabı", "Kompost kurutmada nem yükünün nasıl okunacağını görün.", "/kutuphane/blog/kurutma-tamburu-hesaplama"),
       card("Kompost Tesisi Kapasite Hesabı", "Kurutma öncesi ana tesis kapasitesini inceleyin.", "/kutuphane/blog/kompost-tesisi-kapasite-hesabi"),
       card("Tavuk Gübresi Kurutma", "Organik kurutma tarafındaki benzer uygulamayı okuyun.", "/kutuphane/blog/tavuk-gubresi-kurutma"),
     ],

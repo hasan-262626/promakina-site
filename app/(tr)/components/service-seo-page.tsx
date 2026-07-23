@@ -306,7 +306,7 @@ export function ServiceSeoPage({
             <div className="overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-[0_18px_45px_rgba(15,23,42,0.06)]">
               <div className="border-b border-slate-200 px-6 py-6 sm:px-8">
                 <h2 className="text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">
-                  Teknik DeÄŸerlendirme Ã–zeti
+                  Teknik Değerlendirme Özeti
                 </h2>
               </div>
               <div className="overflow-x-auto">
@@ -508,7 +508,7 @@ export function ServiceSeoPage({
                       name="kapasite"
                       type="text"
                       className="w-full rounded-2xl border border-slate-200 px-4 py-3 text-sm outline-none transition focus:border-[#278DC0]"
-                      placeholder="Ã–rn. 10 ton/saat"
+                      placeholder="Örn. 10 ton/saat"
                     />
                   </label>
                 </div>

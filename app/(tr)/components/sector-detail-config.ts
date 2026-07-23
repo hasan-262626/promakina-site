@@ -815,9 +815,9 @@ function buildMachines(family: DetailFamily, currentSlug: string): SectorDetailM
     case "fertilizer-powder":
       return [
         makeMachine("Silo ve Bunkerler", "Toz hammaddelerin güvenli depolanması ve kontrollü beslenmesini sağlar.", "/makinalar-ekipman/depolama-ve-besleme-sistemleri"),
-        makeMachine("Bantlı Konveyörler", "Dökme katı ürünlerin hat boyunca düzenli şekilde taşınmasını destekler.", "/makinalar-ekipman/tasima-ekipmanlari/bant-konveyorler"),
-        makeMachine("Helezonlar", "Toz ve akışkan ürünlerde kontrollü yatay transfer imkanı sunar.", "/makinalar-ekipman/tasima-ekipmanlari/helezon-konveyorler"),
-        makeMachine("Elevatörler", "Ürünün dikey transferinde kapasite ve alan verimliliği sağlar.", "/makinalar-ekipman/tasima-ekipmanlari/kovali-elevatorler"),
+        makeMachine("Bantlı Konveyörler", "Dökme katı ürünlerin hat boyunca düzenli şekilde taşınmasını destekler.", "/makinalar-ekipman/tasima-ekipmanlari/bantli-konveyorler"),
+        makeMachine("Helezonlar", "Toz ve akışkan ürünlerde kontrollü yatay transfer imkanı sunar.", "/makinalar-ekipman/tasima-ekipmanlari/vidali-helezonlar"),
+        makeMachine("Elevatörler", "Ürünün dikey transferinde kapasite ve alan verimliliği sağlar.", "/makinalar-ekipman/tasima-ekipmanlari/zincirli-elevatorler"),
         makeMachine("Dozajlama Sistemleri", "Reçeteye uygun hassas besleme ve tartım altyapısı kurar.", "/makinalar-ekipman/dozajlama-sistemleri"),
         makeMachine("Paketleme Sistemleri", "Torbalama, sevkiyat ve son ürün düzeni için kontrollü dolum sağlar.", "/makinalar-ekipman/paketleme-ve-dolum-sistemleri"),
         makeMachine("Toz Toplama Sistemleri", "Tozlu transfer ve paketleme noktalarında emisyon kontrolü sağlar.", "/makinalar-ekipman/toz-toplama-sistemleri"),
@@ -828,7 +828,7 @@ function buildMachines(family: DetailFamily, currentSlug: string): SectorDetailM
         makeMachine("Kurutma Tamburu", "Yüksek nemli organik girdilerde hacim azaltma ve ürün kondisyonu sağlar.", "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburu"),
         makeMachine("Eleme Sistemleri", "Kompost ürününü fraksiyonlarına ayırarak son kaliteyi destekler.", "/makinalar-ekipman/eleme-ve-siniflandirma-sistemleri/trommel-elekler"),
         makeMachine("Bunker ve Besleme Sistemleri", "Farklı organik girdilerin kontrollü hatta alınmasını sağlar.", "/makinalar-ekipman/depolama-ve-besleme-sistemleri"),
-        makeMachine("Bantlı Konveyörler", "Hazırlama, tambur ve son ürün alanları arasında düzenli transfer sağlar.", "/makinalar-ekipman/tasima-ekipmanlari/bant-konveyorler"),
+        makeMachine("Bantlı Konveyörler", "Hazırlama, tambur ve son ürün alanları arasında düzenli transfer sağlar.", "/makinalar-ekipman/tasima-ekipmanlari/bantli-konveyorler"),
         makeMachine("Kırıcılar ve Parçalayıcılar", "Hacimli veya düzensiz organik girdilerin ön işleme alınmasını kolaylaştırır.", "/makinalar-ekipman/kiricilar-ve-parcalayicilar/shredder-sistemleri"),
         makeMachine("Paketleme Sistemleri", "Son ürünün torbalanması ve sevkiyata hazırlanmasını destekler.", "/makinalar-ekipman/paketleme-ve-dolum-sistemleri"),
       ];
@@ -838,7 +838,7 @@ function buildMachines(family: DetailFamily, currentSlug: string): SectorDetailM
         makeMachine("Karıştırıcılı Sistemler", "Homojen besleme ve yardımcı karışım akışlarında proses kararlılığı sağlar.", "/makinalar-ekipman/reaktorler-ve-tanklar/karistiricili-reaktorler"),
         makeMachine("Dozajlama Sistemleri", "Organik girdilerin kontrollü ve dengeli biçimde hatta verilmesini destekler.", "/makinalar-ekipman/dozajlama-sistemleri"),
         makeMachine("Bunker ve Besleme Sistemleri", "Girdi kabulü ve tampon kapasite için besleme altyapısı oluşturur.", "/makinalar-ekipman/depolama-ve-besleme-sistemleri"),
-        makeMachine("Helezon ve Konveyörler", "Lifli veya zor akan girdilerin saha içinde güvenli transferini sağlar.", "/makinalar-ekipman/tasima-ekipmanlari/helezon-konveyorler"),
+        makeMachine("Helezon ve Konveyörler", "Lifli veya zor akan girdilerin saha içinde güvenli transferini sağlar.", "/makinalar-ekipman/tasima-ekipmanlari/vidali-helezonlar"),
         makeMachine("Gaz Arıtma ve Filtrasyon Ekipmanları", "Yardımcı gaz hattı ve filtreleme kurgularında proses desteği sunar.", "/makinalar-ekipman/toz-toplama-sistemleri"),
         makeMachine("Yardımcı Proses Ekipmanları", "Akış kontrolü, yönlendirme ve saha bağlantılarını tamamlar.", "/makinalar-ekipman/yardimci-ekipmanlar-ve-akis-sistemleri"),
       ];
@@ -847,7 +847,7 @@ function buildMachines(family: DetailFamily, currentSlug: string): SectorDetailM
         makeMachine("Reaktörler ve Tanklar", "Yardımcı sıvı prosesleri ve dengeleme adımlarında kullanılır.", "/makinalar-ekipman/reaktorler-ve-tanklar"),
         makeMachine("Dozajlama Sistemleri", "Kimyasal veya yardımcı akışların kontrollü beslenmesini destekler.", "/makinalar-ekipman/dozajlama-sistemleri"),
         makeMachine("Bunker ve Besleme Sistemleri", "Yardımcı hammaddelerin hatta alınmasında düzenli akış sağlar.", "/makinalar-ekipman/depolama-ve-besleme-sistemleri"),
-        makeMachine("Helezon ve Konveyörler", "Saha içi yardımcı ürün transferlerinde güvenli akış kurar.", "/makinalar-ekipman/tasima-ekipmanlari/helezon-konveyorler"),
+        makeMachine("Helezon ve Konveyörler", "Saha içi yardımcı ürün transferlerinde güvenli akış kurar.", "/makinalar-ekipman/tasima-ekipmanlari/vidali-helezonlar"),
         makeMachine("Filtrasyon ve Toz Toplama Sistemleri", "Gaz hattını destekleyen yardımcı filtreleme ve emiş altyapısı sağlar.", "/makinalar-ekipman/toz-toplama-sistemleri"),
         makeMachine("Yardımcı Akış Sistemleri", "Vana, rotary valf ve akış kontrol ekipmanlarıyla sistem bütünlüğünü tamamlar.", "/makinalar-ekipman/yardimci-ekipmanlar-ve-akis-sistemleri"),
       ];
@@ -856,7 +856,7 @@ function buildMachines(family: DetailFamily, currentSlug: string): SectorDetailM
         makeMachine("Kırıcılar ve Parçalayıcılar", "Primer ve sekonder küçültme kademelerinde ana proses ekipmanıdır.", "/makinalar-ekipman/kiricilar-ve-parcalayicilar"),
         makeMachine("Eleme ve Sınıflandırma Sistemleri", "Hedef fraksiyonların ayrılması ve ürün standardının korunmasını sağlar.", "/makinalar-ekipman/eleme-ve-siniflandirma-sistemleri"),
         makeMachine("Kurutma Tamburu", "Nemli mineral ürünlerde hedef çıkış kondisyonunu sağlar.", "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburu"),
-        makeMachine("Bantlı Konveyörler", "Kırma, eleme ve stok alanları arasında malzeme transferi yapar.", "/makinalar-ekipman/tasima-ekipmanlari/bant-konveyorler"),
+        makeMachine("Bantlı Konveyörler", "Kırma, eleme ve stok alanları arasında malzeme transferi yapar.", "/makinalar-ekipman/tasima-ekipmanlari/bantli-konveyorler"),
         makeMachine("Bunker ve Besleme Sistemleri", "Ara stok ve kontrollü besleme noktalarında denge sağlar.", "/makinalar-ekipman/depolama-ve-besleme-sistemleri"),
         makeMachine("Toz Toplama Sistemleri", "İnce fraksiyonlu hatlarda emisyon ve saha güvenliğini destekler.", "/makinalar-ekipman/toz-toplama-sistemleri"),
       ];
@@ -875,7 +875,7 @@ function buildMachines(family: DetailFamily, currentSlug: string): SectorDetailM
         makeMachine("Shredder Sistemleri", "Heterojen atık akışlarında ilk kademe boyut küçültme sağlar.", "/makinalar-ekipman/kiricilar-ve-parcalayicilar/shredder-sistemleri"),
         makeMachine("Kırıcılar ve Parçalayıcılar", "Farklı atık tiplerinde kontrollü küçültme ve hazırlama sunar.", "/makinalar-ekipman/kiricilar-ve-parcalayicilar"),
         makeMachine("Eleme ve Ayırma Sistemleri", "Fraksiyon ayrımı ve geri kazanım kalitesini destekler.", "/makinalar-ekipman/eleme-ve-siniflandirma-sistemleri"),
-        makeMachine("Bantlı Konveyörler", "Ayırma ve son ürün hazırlama alanları arasında düzenli transfer sağlar.", "/makinalar-ekipman/tasima-ekipmanlari/bant-konveyorler"),
+        makeMachine("Bantlı Konveyörler", "Ayırma ve son ürün hazırlama alanları arasında düzenli transfer sağlar.", "/makinalar-ekipman/tasima-ekipmanlari/bantli-konveyorler"),
         makeMachine("Bunker ve Besleme Sistemleri", "Atık kabulü ve kontrollü besleme için ara stok alanı oluşturur.", "/makinalar-ekipman/depolama-ve-besleme-sistemleri"),
         makeMachine("Toz Toplama Sistemleri", "Kırma ve ayırma noktalarında emisyon kontrolünü destekler.", "/makinalar-ekipman/toz-toplama-sistemleri"),
       ];
@@ -884,16 +884,16 @@ function buildMachines(family: DetailFamily, currentSlug: string): SectorDetailM
         makeMachine("Kurutma Tamburu", "Yüksek nemli çamurun hedef çıkış nemine indirilmesini sağlar.", "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburu"),
         makeMachine("Karıştırma Sistemleri", "Yapışkan ve değişken akışlı çamur yapılarında homojen hazırlık sağlar.", "/makinalar-ekipman/reaktorler-ve-tanklar/karistiricili-reaktorler"),
         makeMachine("Bunker ve Besleme Sistemleri", "Çamurun kontrollü hatta alınması ve tamponlanması için kullanılır.", "/makinalar-ekipman/depolama-ve-besleme-sistemleri"),
-        makeMachine("Bantlı Konveyörler", "Kurutma öncesi ve sonrası ürün transferinde güvenli akış sağlar.", "/makinalar-ekipman/tasima-ekipmanlari/bant-konveyorler"),
+        makeMachine("Bantlı Konveyörler", "Kurutma öncesi ve sonrası ürün transferinde güvenli akış sağlar.", "/makinalar-ekipman/tasima-ekipmanlari/bantli-konveyorler"),
         makeMachine("Eleme Sistemleri", "Kurutma sonrası ürünün fraksiyon kontrolünü ve son hazırlığını destekler.", "/makinalar-ekipman/eleme-ve-siniflandirma-sistemleri"),
         makeMachine("Paketleme ve Stoklama Sistemleri", "Son ürünün depolanması, torbalanması veya sevkiyata hazırlanmasını destekler.", "/makinalar-ekipman/paketleme-ve-dolum-sistemleri"),
       ];
     case "bulk":
       return [
         makeMachine("Silo ve Bunkerler", "Dökme katı ürünlerin güvenli depolanmasını ve tamponlanmasını sağlar.", "/makinalar-ekipman/depolama-ve-besleme-sistemleri"),
-        makeMachine("Bantlı Konveyörler", "Yatay transfer ve hat içi akışın dengeli ilerlemesini destekler.", "/makinalar-ekipman/tasima-ekipmanlari/bant-konveyorler"),
-        makeMachine("Helezonlar", "Toz ve granül malzemede kontrollü ve kapalı transfer imkanı sunar.", "/makinalar-ekipman/tasima-ekipmanlari/helezon-konveyorler"),
-        makeMachine("Elevatörler", "Ürünün dikey transferinde kapasite ve alan verimliliği sağlar.", "/makinalar-ekipman/tasima-ekipmanlari/kovali-elevatorler"),
+        makeMachine("Bantlı Konveyörler", "Yatay transfer ve hat içi akışın dengeli ilerlemesini destekler.", "/makinalar-ekipman/tasima-ekipmanlari/bantli-konveyorler"),
+        makeMachine("Helezonlar", "Toz ve granül malzemede kontrollü ve kapalı transfer imkanı sunar.", "/makinalar-ekipman/tasima-ekipmanlari/vidali-helezonlar"),
+        makeMachine("Elevatörler", "Ürünün dikey transferinde kapasite ve alan verimliliği sağlar.", "/makinalar-ekipman/tasima-ekipmanlari/zincirli-elevatorler"),
         makeMachine("Dozajlama Sistemleri", "Reçete doğruluğu için hassas besleme ve tartım altyapısı kurar.", "/makinalar-ekipman/dozajlama-sistemleri"),
         makeMachine("Paketleme Sistemleri", "Torbalama ve sevkiyat hazırlığında kontrollü son hat performansı sunar.", "/makinalar-ekipman/paketleme-ve-dolum-sistemleri"),
         makeMachine("Toz Toplama Sistemleri", "Tozlu malzemelerde emisyon kontrolü ve saha temizliği sağlar.", "/makinalar-ekipman/toz-toplama-sistemleri"),

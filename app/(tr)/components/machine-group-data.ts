@@ -1158,7 +1158,7 @@ const storageSeed: CategorySeed = {
   products: [
     { slug: "silo-sistemleri", title: "Silo Sistemleri", shortDescription: "Dökme katı ürünler için güvenli ve proses uyumlu silo sistemleri üretiyoruz.", image: "/images/silo/silo1.jpg" },
     { slug: "bunker-ve-hazneler", title: "Bunker ve Hazneler", shortDescription: "Kontrollü ürün kabulü ve besleme için bunker ve hazne sistemleri üretiyoruz." },
-    { slug: "teremi-bunkeri", title: "Teremi Bunkeri", shortDescription: "Dökme katı ürünlerin kontrollü alınması, tamponlanması ve prosese düzenli beslenmesi için teremi bunkeri çözümleri sunuyoruz.", image: "/images/trommel/tromm1.jpg" },
+    { slug: "teremi-bunkeri", title: "Teremi Bunkeri", shortDescription: "Dökme katı ürünlerin kontrollü alınması, tamponlanması ve prosese düzenli beslenmesi için teremi bunkeri çözümleri sunuyoruz.", image: "/images/bunker/bunker4.jpg" },
     {
       slug: "surgulu-klapeler",
       title: "Sürgülü Klapeler",

@@ -163,7 +163,7 @@ export function MachineSeoLandingPage({
     "Kapasite, hammadde, nem oranı, proses hedefi ve saha koşullarına göre size özel makine ve tesis çözümü hazırlayalım.";
   const whatsappHref = createWhatsAppHref(
     trText(
-      `Merhaba, Pro Makina web sitenizden ulaÃ…Å¸Ã„Â±yorum. AÃ…Å¸aÃ„Å¸Ã„Â±daki ÃƒÂ¼rÃƒÂ¼n/hizmet iÃƒÂ§in teklif almak istiyorum: ${title}`,
+      `Merhaba, Pro Makina web sitenizden ulaşıyorum. Aşağıdaki ürün/hizmet için teklif almak istiyorum: ${title}`,
     ),
   );
   const organizationSchema = {

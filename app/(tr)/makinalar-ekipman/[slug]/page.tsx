@@ -2,7 +2,7 @@ import { trLanguageAlternates } from "../../../i18n/routes";
 import Image from "next/image";
 import Link from "next/link";
 import { Metadata } from "next";
-import { notFound, redirect } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
 import { MachinePageHero } from "../../components/machine-page-hero";
 import { machineCategoryMap, machineCategoryPages } from "../../components/machine-group-data";
 import { getMachineCalculatorHref } from "../../lib/machine-calculator-link";
@@ -72,7 +72,7 @@ export default async function MachineCategoryPage({ params }: PageProps) {
   const publicCategorySlug = getPublicCategorySlug(resolvedSlug);
 
   if (slug !== publicCategorySlug) {
-    redirect(`/makinalar-ekipman/${publicCategorySlug}`);
+    permanentRedirect(`/makinalar-ekipman/${publicCategorySlug}`);
   }
 
   const category = machineCategoryMap[resolvedSlug];

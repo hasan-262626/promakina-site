@@ -213,7 +213,7 @@ export function TechnicalAuthorityHubPage({ hub }: TechnicalAuthorityHubPageProp
 
               <section className="rounded-[28px] border border-slate-200 bg-white px-6 py-8 shadow-[0_18px_45px_rgba(15,23,42,0.06)] sm:px-8 sm:py-10">
                 <h2 className="text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">
-                  Teknik DeÄŸerlendirme Ã–zeti
+                  Teknik Değerlendirme Özeti
                 </h2>
                 <div className="mt-6 overflow-hidden rounded-[22px] border border-slate-200 bg-white">
                   <div className="grid grid-cols-3 border-b border-slate-200 bg-slate-50 text-sm font-semibold text-slate-950">

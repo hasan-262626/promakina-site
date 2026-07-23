@@ -20,6 +20,7 @@ export type TopicalBlogCard = {
   readingTime?: string;
   category?: string;
   sector?: string;
+  linkLabel?: string;
 };
 
 export type TopicalFaq = {
@@ -88,8 +89,6 @@ export const topicalBlogCategories: TopicalCategory[] = [
     ],
     relatedContents: [
       { title: "Kurutma Tamburu Hesaplama", description: "Kurutma tamburunun genel mühendislik yaklaşımı.", href: "/kutuphane/blog/kurutma-tamburu-hesaplama" },
-      { title: "Kurutma Tamburu Kapasite Hesabı", description: "Su uçurma yükü ve enerji ihtiyacını okuyan rehber.", href: "/kutuphane/blog/kurutma-tamburu-kapasite-hesabi" },
-      { title: "Kurutma Tamburu Çap Boy Hesabı", description: "Geometri, tutulma süresi ve tasarım boyutlandırması.", href: "/kutuphane/blog/kurutma-tamburu-cap-boy-hesabi" },
       { title: "Tambur Kurutucu Nasıl Çalışır?", description: "Tambur, lifter ve gaz akışı mantığını açıklayan içerik.", href: "/kutuphane/blog/tambur-kurutucu-nasil-calisir" },
       { title: "Rotary Dryer Design", description: "Rotary dryer tasarımını uluslararası terminoloji ile ele alır.", href: "/kutuphane/blog/rotary-dryer-design" },
       { title: "Endüstriyel Kurutma Sistemleri", description: "Farklı kurutma yaklaşım ve teknolojilerini karşılaştırır.", href: "/kutuphane/blog/endustriyel-kurutma-sistemleri" },
@@ -165,7 +164,7 @@ export const topicalBlogCategories: TopicalCategory[] = [
       "Buradaki makaleler, kapasite hesabı, geometri, enerji yükü, tork, çevresel kontrol ve yatırım ölçeklenmesi gibi başlıkları birlikte değerlendirir.",
     ],
     relatedContents: [
-      { title: "Kurutma Tamburu Kapasite Hesabı", description: "Kurutma yükünü proses bazında okuyan rehber.", href: "/kutuphane/blog/kurutma-tamburu-kapasite-hesabi" },
+      { title: "Kurutma Tamburu Kapasite Hesabı", description: "Kurutma yükünü proses bazında okuyan rehber.", href: "/kutuphane/blog/kurutma-tamburu-hesaplama" },
       { title: "Rotary Dryer Design", description: "Tambur tasarımını bütünsel mühendislik bakışıyla ele alır.", href: "/kutuphane/blog/rotary-dryer-design" },
       { title: "Helezon Motor Gücü Hesabı", description: "Taşıma ekipmanlarında tahrik seçimi yaklaşımı.", href: "/kutuphane/blog/helezon-motor-gucu-hesabi" },
       { title: "Gübre Üretim Hattı Nasıl Kurulur?", description: "Hat mimarisini baştan kurmak isteyenler için genel çerçeve.", href: "/kutuphane/blog/gubre-uretim-hatti-nasil-kurulur" },
@@ -225,11 +224,11 @@ function makeCommonLinks() {
 
 export const topicalBlogArticles: TopicalArticle[] = [
   {
-    slug: "kurutma-tamburu-cap-boy-hesabi",
-    title: "Kurutma Tamburu Çap Boy Hesabı",
-    metaTitle: "Kurutma Tamburu Çap Boy Hesabı",
+    slug: "kurutma-tamburu-hesaplama",
+    title: "Kurutma Tamburu Hesaplama",
+    metaTitle: "Kurutma Tamburu Hesaplama",
     description:
-      "Kurutma tamburu çap boy hesabı, tutulma süresi, ürün perdesi, L/D oranı ve saha kapasitesi için teknik rehber.",
+      "Kurutma tamburu hesaplama; kapasite, nem yükü, çap-boy, kalış süresi, hava hattı ve enerji ihtiyacını tek teknik rehberde toplar.",
     heroDescription:
       "Tambur çapı ve boyunu yalnız katalog değeri olarak değil, proses kapasitesi ve saha davranışı üzerinden okuyan mühendislik rehberi.",
     categorySlug: "kurutma-sistemleri",
@@ -273,7 +272,7 @@ export const topicalBlogArticles: TopicalArticle[] = [
         title: "Çap Boy Hesabında Fan Hattı ve Lifter Etkisi",
         paragraphs: [
           "Tambur geometrisi, fan hattı ve iç kanat yapısından bağımsız değildir. Hava debisi yetersizse uzun tambur bile performans vermez; iç kanat yapısı zayıfsa büyük çapın avantajı kullanılamaz. Bu yüzden geometri hesabı her zaman sistem hesabıdır.",
-          "Özellikle /kutuphane/blog/kurutma-tamburu-kapasite-hesabi ve /kutuphane/blog/rotary-dryer-design içeriklerinde anlatılan teknik çerçeve, çap-boy hesabının neden bütünsel okunması gerektiğini gösterir.",
+          "Özellikle /kutuphane/blog/kurutma-tamburu-hesaplama ve /kutuphane/blog/rotary-dryer-design içeriklerinde anlatılan teknik çerçeve, çap-boy hesabının neden bütünsel okunması gerektiğini gösterir.",
         ],
       },
       {
@@ -303,7 +302,7 @@ export const topicalBlogArticles: TopicalArticle[] = [
       { label: "Kurutma Tamburu", href: "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburu" },
     ],
     relatedContents: [
-      { title: "Kurutma Tamburu Kapasite Hesabı", description: "Su uçurma yükü ve kapasite dengesini inceleyin.", href: "/kutuphane/blog/kurutma-tamburu-kapasite-hesabi" },
+      { title: "Kurutma Tamburu Kapasite Hesabı", description: "Su uçurma yükü ve kapasite dengesini inceleyin.", href: "/kutuphane/blog/kurutma-tamburu-hesaplama" },
       { title: "Rotary Dryer Design", description: "Geometriyi bütünsel tasarım mantığıyla görün.", href: "/kutuphane/blog/rotary-dryer-design" },
       { title: "Endüstriyel Kurutma Sistemleri", description: "Farklı kurutma mimarilerini karşılaştırın.", href: "/kutuphane/blog/endustriyel-kurutma-sistemleri" },
     ],
@@ -327,7 +326,7 @@ export const topicalBlogArticles: TopicalArticle[] = [
       { title: "Sıcak Gaz Akışı ve Isı Transferi", paragraphs: ["Tambur kurutucuda ısı transferi, sıcak gazın ürün yüzeyiyle teması üzerinden gerçekleşir. Gaz sıcaklığı, debisi ve akış yönü ürünün kuruma hızını belirler.", "Doğru gaz hattı kurulmazsa tambur mekanik olarak sorunsuz çalışsa bile proses hedefi tutmaz. Bu nedenle fan, brülör ve bacanın tamamı kurutucu ile birlikte düşünülür."] },
       { title: "Ürün Hareketi ve Tutulma Süresi", paragraphs: ["Tambur içindeki hareket, ürünün ne kadar sürede girişten çıkışa ilerleyeceğini belirler. Bu süre ürünün hedef nemine ulaşması için yeterli olmalıdır.", "Aşırı hızlı akış kapasiteyi teorik olarak artırsa da ürün yeterince kuruyamaz. Aşırı yavaş akış ise enerji kaybı ve kalite problemi oluşturabilir."] },
       { title: "Direkt ve İndirekt Çalışma Farkı", paragraphs: ["Direkt sistemlerde ürün sıcak gazla doğrudan temas eder. Bu yöntem çoğu gübre, mineral ve kompost uygulamasında daha ekonomik olabilir.", "İndirekt sistemlerde ürün ile enerji kaynağı arasında metal yüzey veya ara akışkan vardır. Hassas veya özel ürünlerde bu yaklaşım daha güvenli olabilir."] },
-      { title: "Tambur Kurutucu Hangi Hatlarda Kullanılır?", paragraphs: ["Tambur kurutucular /hizmetler/gubre-tesisi-kurulumu, /hizmetler/kompost-tesisi-kurulumu ve çamur kurutma projelerinde sıkça kullanılır. Bunun yanında mineral işleme, biyokütle ve farklı dökme katı malzeme akışlarında da yer alabilir.", "Bu çeşitlilik, tek bir tambur mantığının her uygulama için yeterli olmadığını gösterir. Ürün tipi mutlaka belirleyici kabul edilmelidir."] },
+      { title: "Tambur Kurutucu Hangi Hatlarda Kullanılır?", paragraphs: ["Tambur kurutucular /sektorler/gubre-ve-granulasyon-tesisleri, /sektorler/kompost-ve-organik-atik-tesisleri ve çamur kurutma projelerinde sıkça kullanılır. Bunun yanında mineral işleme, biyokütle ve farklı dökme katı malzeme akışlarında da yer alabilir.", "Bu çeşitlilik, tek bir tambur mantığının her uygulama için yeterli olmadığını gösterir. Ürün tipi mutlaka belirleyici kabul edilmelidir."] },
       { title: "Pro Makina ile Çalışma Prensibinden Tasarıma Geçiş", paragraphs: ["Pro Makina, tambur kurutucunun çalışma mantığını saha tasarımına dönüştürürken ürün hareketi, ısı transferi ve mekanik güvenilirliği aynı anda değerlendirir.", "Bu sayede kurutma hattı yalnız teoride değil, gerçek işletme koşullarında da daha güvenli ve verimli hale gelir."] },
     ],
     summaryRows: [
@@ -346,7 +345,7 @@ export const topicalBlogArticles: TopicalArticle[] = [
     internalLinks: [...makeCommonLinks(), { label: "Kurutma Sistemleri", href: "/kutuphane/blog/kurutma-sistemleri" }, { label: "Çamur Kurutma Sistemleri", href: "/kutuphane/blog/camur-kurutma-sistemleri" }],
     relatedContents: [
       { title: "Kurutma Tamburu Hesaplama", description: "Çalışma mantığını hesap diliyle birleştiren rehber.", href: "/kutuphane/blog/kurutma-tamburu-hesaplama" },
-      { title: "Kurutma Tamburu Çap Boy Hesabı", description: "Geometri seçiminin neden önemli olduğunu görün.", href: "/kutuphane/blog/kurutma-tamburu-cap-boy-hesabi" },
+      { title: "Kurutma Tamburu Çap Boy Hesabı", description: "Geometri seçiminin neden önemli olduğunu görün.", href: "/kutuphane/blog/kurutma-tamburu-hesaplama" },
       { title: "Rotary Dryer Design", description: "Tambur tasarımını daha geniş mühendislik çerçevesinde inceleyin.", href: "/kutuphane/blog/rotary-dryer-design" },
     ],
     relatedServices: [
@@ -387,7 +386,7 @@ export const topicalBlogArticles: TopicalArticle[] = [
     ],
     internalLinks: [...makeCommonLinks(), { label: "Kurutma Sistemleri Kategorisi", href: "/kutuphane/blog/kurutma-sistemleri" }, { label: "Kurutma Tamburu", href: "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburu" }],
     relatedContents: [
-      { title: "Kurutma Tamburu Kapasite Hesabı", description: "Tamburlu sistemlerin yük hesabını inceleyin.", href: "/kutuphane/blog/kurutma-tamburu-kapasite-hesabi" },
+      { title: "Kurutma Tamburu Kapasite Hesabı", description: "Tamburlu sistemlerin yük hesabını inceleyin.", href: "/kutuphane/blog/kurutma-tamburu-hesaplama" },
       { title: "Rotary Dryer Design", description: "Tambur tasarımını mühendislik dilinde okuyun.", href: "/kutuphane/blog/rotary-dryer-design" },
       { title: "Çamur Kurutma Sistemleri", description: "Yüksek nemli akışlar için özel gereksinimleri görün.", href: "/kutuphane/blog/camur-kurutma-sistemleri" },
     ],

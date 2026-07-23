@@ -51,16 +51,16 @@ const dryingData: BlogTechnicalArticleData = {
   requiredDataDescription:
     "Kurutma projelerinde yalnız ton/saat bilgisi yeterli değildir. Nem yükü, ürün davranışı ve gaz hattı birlikte okunmalıdır.",
   requiredDataRows: [
-    { label: "Giriş kapasitesi", purpose: "Tamburun saatlik yaş ürün yükünü tanımlar.", request: "Ã–rn. 10 ton/saat" },
-    { label: "Başlangıç nemi", purpose: "Su uçurma yükünü ve enerji ihtiyacını belirler.", request: "Ã–rn. %25" },
-    { label: "Hedef çıkış nemi", purpose: "Residence time ve son ürün standardını etkiler.", request: "Ã–rn. %10" },
-    { label: "Ürün yoğunluğu", purpose: "Tambur doluluğu ve hacimsel davranışı okumayı sağlar.", request: "Ã–rn. 0,85 t/m3" },
-    { label: "Tane boyutu", purpose: "Isı transferi ve toz kaçışı riskini etkiler.", request: "Ã–rn. 0-6 mm" },
+    { label: "Giriş kapasitesi", purpose: "Tamburun saatlik yaş ürün yükünü tanımlar.", request: "Örn. 10 ton/saat" },
+    { label: "Başlangıç nemi", purpose: "Su uçurma yükünü ve enerji ihtiyacını belirler.", request: "Örn. %25" },
+    { label: "Hedef çıkış nemi", purpose: "Residence time ve son ürün standardını etkiler.", request: "Örn. %10" },
+    { label: "Ürün yoğunluğu", purpose: "Tambur doluluğu ve hacimsel davranışı okumayı sağlar.", request: "Örn. 0,85 t/m3" },
+    { label: "Tane boyutu", purpose: "Isı transferi ve toz kaçışı riskini etkiler.", request: "Örn. 0-6 mm" },
     { label: "Yakıt türü", purpose: "Brülör ve enerji modelini şekillendirir.", request: "Doğalgaz / LNG / sıcak gaz" },
     { label: "Hava debisi", purpose: "Fan ve filtre hattının taşıyacağı gaz yükünü tanımlar.", request: "Ön debi yaklaşımı" },
     { label: "Çalışma süresi", purpose: "Saatlik kapasite ile günlük üretim hedefini dengeler.", request: "Örn. 16 saat/gün" },
   ],
-  exampleTitle: "Ã–rnek Teknik DeÄŸerlendirme",
+  exampleTitle: "Örnek Teknik Değerlendirme",
   exampleDescription:
     "Aşağıdaki örnek, kurutma hattında kapasite ile nem yükü arasındaki ilişkinin nasıl okunduğunu gösteren ön mühendislik yaklaşımıdır.",
   exampleRows: [
@@ -71,7 +71,7 @@ const dryingData: BlogTechnicalArticleData = {
     { label: "Çıkış ürün miktarı", value: "8,33 ton/saat", comment: "Hedef neme göre tahmini değer" },
     { label: "Su uçurma yükü", value: "1,67 ton/saat", comment: "Brülör ve fan hattının ana girdisi" },
   ],
-  decisionTableTitle: "Teknik DeÄŸerlendirme Ã–zeti",
+  decisionTableTitle: "Teknik Değerlendirme Özeti",
   decisionTableDescription:
     "Kurutma tamburu tasarımında gövde ölçüsü kadar fan hattı, filtreleme, enerji ve ürün davranışı da birlikte değerlendirilmelidir.",
   decisionTableRows: [
@@ -102,7 +102,7 @@ const dryingData: BlogTechnicalArticleData = {
     { title: "Kurutma Tamburları", description: "Ürün detay sayfası üzerinden kapasite ve ekipman yaklaşımını değerlendirin.", href: "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburu" },
     { title: "Kurutma Tamburu Hesabı", description: "Programlar alanındaki ilgili hesaplama yaklaşımına gidin.", href: "/programlar?modal=tambur-kapasite-hesabi" },
     { title: "Silis Kumu Kurutma Tesisi", description: "Mineral ürünlerde kurutma ve toz toplama kurgusunu görün.", href: "/sektorler/madencilik-ve-mineral-isleme" },
-    { title: "Ã‡amur Kurutma Tesisi", description: "Yüksek nemli akışlarda kurutma ve koku kontrolü yaklaşımını inceleyin.", href: "/sektorler/atik-su-camuru-ve-aritma-cozumleri" },
+    { title: "Çamur Kurutma Tesisi", description: "Yüksek nemli akışlarda kurutma ve koku kontrolü yaklaşımını inceleyin.", href: "/sektorler/atik-su-camuru-ve-aritma-cozumleri" },
   ],
 };
 
@@ -111,10 +111,10 @@ const screwData: BlogTechnicalArticleData = {
   requiredDataDescription:
     "Helezon kapasitesi yalnız çapla belirlenmez; ürün yoğunluğu, eğim, hatve ve motor yükü birlikte değerlendirilmelidir.",
   requiredDataRows: [
-    { label: "Kapasite hedefi", purpose: "Saatlik taşıma ihtiyacını tanımlar.", request: "Ã–rn. 12 ton/saat" },
-    { label: "Ürün yoğunluğu", purpose: "Hacimsel doluluğu ve gerçek tonajı belirler.", request: "Ã–rn. 0,75 t/m3" },
-    { label: "Hat uzunluÄŸu", purpose: "Sürtünme ve motor yükünü etkiler.", request: "Ã–rn. 8 metre" },
-    { label: "Eğim açısı", purpose: "Kapasite kaybı ve geri kaçma riskini tanımlar.", request: "Ã–rn. 15Â°" },
+    { label: "Kapasite hedefi", purpose: "Saatlik taşıma ihtiyacını tanımlar.", request: "Örn. 12 ton/saat" },
+    { label: "Ürün yoğunluğu", purpose: "Hacimsel doluluğu ve gerçek tonajı belirler.", request: "Örn. 0,75 t/m3" },
+    { label: "Hat uzunluğu", purpose: "Sürtünme ve motor yükünü etkiler.", request: "Örn. 8 metre" },
+    { label: "Eğim açısı", purpose: "Kapasite kaybı ve geri kaçma riskini tanımlar.", request: "Örn. 15°" },
     { label: "Hatve", purpose: "Ürünün bir devirde ilerleme miktarını belirler.", request: "Standart / artırılmış" },
     { label: "Devir", purpose: "Kapasite ile aşınma dengesini kurar.", request: "Ön rpm aralığı" },
     { label: "Doluluk oranı", purpose: "Kesitin ne kadarının güvenli taşımaya ayrıldığını gösterir.", request: "%15 - %45 aralığı" },
@@ -129,16 +129,16 @@ const screwData: BlogTechnicalArticleData = {
     { label: "Helezon çapı", value: "323 mm", comment: "Ön seçim yaklaşımı" },
     { label: "Hatve", value: "323 mm", comment: "Standart tam hatve örneği" },
     { label: "Devir", value: "80 rpm", comment: "Güvenli hız yaklaşımı" },
-    { label: "Motor gücü", value: "Ã–n hesap gerekir", comment: "Hat uzunluğu ve eğime göre netleşir" },
+    { label: "Motor gücü", value: "Ön hesap gerekir", comment: "Hat uzunluğu ve eğime göre netleşir" },
   ],
   decisionTableTitle: "Teknik Karar Matrisi",
   decisionTableDescription:
     "Helezon hatlarında kapasite, motor gücü ve servis güvenliği aynı teknik çerçevede okunmalıdır.",
   decisionTableRows: [
-    { criterion: "Ã‡ap", description: "Taşınan hacmin ana belirleyicisidir.", importance: "Kapasite güvenliğini belirler.", effect: "Küçük çap dar boğaz oluşturur." },
+    { criterion: "Çap", description: "Taşınan hacmin ana belirleyicisidir.", importance: "Kapasite güvenliğini belirler.", effect: "Küçük çap dar boğaz oluşturur." },
     { criterion: "Hatve", description: "Ürünün bir turda ne kadar ilerleyeceğini tanımlar.", importance: "Kapasite ve dozajlama dengesini etkiler.", effect: "Yanlış hatve düzensiz akış yaratır." },
     { criterion: "Devir", description: "Hacimsel taşıma hızını belirler.", importance: "Kapasite ve aşınma arasında denge kurar.", effect: "Aşırı devir tozlaşma ve titreşim doğurur." },
-    { criterion: "EÄŸim", description: "Taşıma ekseninin yükselme oranıdır.", importance: "Etkin kapasiteyi düşürür.", effect: "Yüksek eğimde geriye kaçma artar." },
+    { criterion: "Eğim", description: "Taşıma ekseninin yükselme oranıdır.", importance: "Etkin kapasiteyi düşürür.", effect: "Yüksek eğimde geriye kaçma artar." },
     { criterion: "Tork", description: "Motor ve redüktör yükünü tanımlar.", importance: "Tahrik seçiminin güvenliğini belirler.", effect: "Eksik tork kalkış sorununa yol açar." },
     { criterion: "Aşınma", description: "Ürün karakterine bağlı mekanik yıpranmadır.", importance: "Malzeme seçimini etkiler.", effect: "Yanlış malzeme bakım süresini kısaltır." },
   ],
@@ -147,7 +147,7 @@ const screwData: BlogTechnicalArticleData = {
     "Taşıma hattının sahada kararlı çalışması için aşağıdaki başlıklar birlikte değerlendirilmelidir.",
   factorCards: [
     { title: "Ürün akışkanlığı", description: "Serbest akışlı ve yapışkan ürünlerde doluluk yaklaşımı değişir." },
-    { title: "EÄŸim etkisi", description: "Yükselme arttıkça efektif kapasite düşer." },
+    { title: "Eğim etkisi", description: "Yükselme arttıkça efektif kapasite düşer." },
     { title: "Nem", description: "Yapışma ve temizlenebilirlik gereksinimini büyütür." },
     { title: "Sürekli çalışma", description: "Servis faktörü ve motor güvenlik payını etkiler." },
     { title: "Aşındırıcılık", description: "Yaprak ve gövde malzeme seçimini belirler." },
@@ -171,12 +171,12 @@ const conveyorData: BlogTechnicalArticleData = {
   requiredDataDescription:
     "Bantlı ve sürekli taşıma sistemlerinde hız, kesit, eğim ve ürün yoğunluğu birlikte değerlendirilmelidir.",
   requiredDataRows: [
-    { label: "Kapasite", purpose: "Saatlik taşıma ihtiyacını belirler.", request: "Ã–rn. 40 ton/saat" },
-    { label: "Ürün yoğunluğu", purpose: "Kesit hesabını ve yük miktarını etkiler.", request: "Ã–rn. 1,2 t/m3" },
+    { label: "Kapasite", purpose: "Saatlik taşıma ihtiyacını belirler.", request: "Örn. 40 ton/saat" },
+    { label: "Ürün yoğunluğu", purpose: "Kesit hesabını ve yük miktarını etkiler.", request: "Örn. 1,2 t/m3" },
     { label: "Bant genişliği", purpose: "Taşınacak malzeme kesitini tanımlar.", request: "Ön seçim aralığı" },
     { label: "Bant hızı", purpose: "Kapasite ve ürün stabilitesini etkiler.", request: "Ön m/sn yaklaşımı" },
-    { label: "Taşıma açısı", purpose: "Geri kaçma ve kapasite kaybını tanımlar.", request: "Ã–rn. 18Â°" },
-    { label: "Hat boyu", purpose: "Motor yükü ve gerdirme ihtiyacını belirler.", request: "Ã–rn. 22 metre" },
+    { label: "Taşıma açısı", purpose: "Geri kaçma ve kapasite kaybını tanımlar.", request: "Örn. 18°" },
+    { label: "Hat boyu", purpose: "Motor yükü ve gerdirme ihtiyacını belirler.", request: "Örn. 22 metre" },
     { label: "Besleme şekli", purpose: "Yük dağılımını ve şasi yükünü etkiler.", request: "Merkez / tek taraf" },
     { label: "Çalışma rejimi", purpose: "Motor ve rulman güvenlik payını etkiler.", request: "Sürekli / partili" },
   ],
@@ -188,7 +188,7 @@ const conveyorData: BlogTechnicalArticleData = {
     { label: "Ürün yoğunluğu", value: "1,2 t/m3", comment: "Kesit hesabı için ana veri" },
     { label: "Bant genişliği", value: "650 mm", comment: "Ön seçim yaklaşımı" },
     { label: "Bant hızı", value: "1,4 m/sn", comment: "Güvenli akış aralığı" },
-    { label: "Taşıma açısı", value: "18Â°", comment: "Geri kaçma kontrolü gerekir" },
+    { label: "Taşıma açısı", value: "18°", comment: "Geri kaçma kontrolü gerekir" },
     { label: "Motor gücü", value: "Hat boyuna göre netleşir", comment: "Sürtünme ve yük dağılımı ile okunur" },
   ],
   decisionTableTitle: "Konveyör Karar Matrisi",
@@ -208,8 +208,8 @@ const conveyorData: BlogTechnicalArticleData = {
   factorCards: [
     { title: "Ürün akışı", description: "Dökülme ve savrulma riski bant hızını etkiler." },
     { title: "Yükleme noktası", description: "Şase yükü ve bant ömrü üzerinde belirleyicidir." },
-    { title: "Hat uzunluÄŸu", description: "Motor gücü ve gerdirme ihtiyacını artırır." },
-    { title: "EÄŸim", description: "Kapalı taşıma veya cleat ihtiyacını gündeme getirir." },
+    { title: "Hat uzunluğu", description: "Motor gücü ve gerdirme ihtiyacını artırır." },
+    { title: "Eğim", description: "Kapalı taşıma veya cleat ihtiyacını gündeme getirir." },
     { title: "Toz oluşumu", description: "Kapama ve filtreleme ihtiyaçlarını artırır." },
     { title: "Servis koşulu", description: "Ağır hizmet uygulamalarında daha güçlü omurga gerekir." },
   ],
@@ -232,13 +232,13 @@ const fertilizerData: BlogTechnicalArticleData = {
     "Gübre yatırımlarında ürün formu, kapasite ve proses sırası aynı dosyada ele alınmalıdır.",
   requiredDataRows: [
     { label: "Ürün tipi", purpose: "Toz, granül veya sıvı hat mimarisini belirler.", request: "NPK / organomineral / granül" },
-    { label: "Kapasite", purpose: "Tüm makine omurgasının ölçeğini belirler.", request: "Ã–rn. 5 ton/saat" },
+    { label: "Kapasite", purpose: "Tüm makine omurgasının ölçeğini belirler.", request: "Örn. 5 ton/saat" },
     { label: "Hammadde yapısı", purpose: "Dozajlama ve karıştırma sistemini etkiler.", request: "Toz / nemli / lifli" },
     { label: "Nem seviyesi", purpose: "Kurutma ihtiyacını ve residence time yaklaşımını etkiler.", request: "Giriş ve hedef nem" },
-    { label: "Granül boyutu", purpose: "Eleme ve kaplama kurgusunu belirler.", request: "Ã–rn. 2-4 mm" },
+    { label: "Granül boyutu", purpose: "Eleme ve kaplama kurgusunu belirler.", request: "Örn. 2-4 mm" },
     { label: "Kurutma ihtiyaçı", purpose: "Tambur ve enerji modelini tanımlar.", request: "Var / yok" },
     { label: "Paketleme tipi", purpose: "Torbalama, big bag veya dökme çıkışı belirler.", request: "25 kg / 50 kg / big bag" },
-    { label: "Çalışma rejimi", purpose: "Vardiya ve stok planını etkiler.", request: "Ã–rn. 2 vardiya" },
+    { label: "Çalışma rejimi", purpose: "Vardiya ve stok planını etkiler.", request: "Örn. 2 vardiya" },
   ],
   exampleTitle: "Örnek Süreç Akışı",
   exampleDescription:
@@ -293,8 +293,8 @@ const compostData: BlogTechnicalArticleData = {
   requiredDataRows: [
     { label: "Atık türü", purpose: "Hangi proses ve makine grubunun kullanılacağını belirler.", request: "Evsel / hayvansal / tarımsal" },
     { label: "Günlük tonaj", purpose: "Kabul alanı ve ana ekipman kapasitesini tanımlar.", request: "Örn. 40 ton/gün" },
-    { label: "Giriş nemi", purpose: "Karıştırma ve kurutma ihtiyacını belirler.", request: "Ã–rn. %55" },
-    { label: "Hedef ürün nemi", purpose: "Son ürün kararlılığını ve eleme davranışını etkiler.", request: "Ã–rn. %25-%35" },
+    { label: "Giriş nemi", purpose: "Karıştırma ve kurutma ihtiyacını belirler.", request: "Örn. %55" },
+    { label: "Hedef ürün nemi", purpose: "Son ürün kararlılığını ve eleme davranışını etkiler.", request: "Örn. %25-%35" },
     { label: "Olgunlaştırma süresi", purpose: "Saha hacmi ve çevrim planını belirler.", request: "Örn. 21-45 gün" },
     { label: "Koku kontrolü", purpose: "Çevresel uyum ve hava hattı gereksinimini etkiler.", request: "Biyofiltre / fan hattı" },
     { label: "Yabancı madde oranı", purpose: "Ön ayırma ve parçalama ihtiyacını tanımlar.", request: "Plastik / cam / metal oranı" },
@@ -353,7 +353,7 @@ const biogasData: BlogTechnicalArticleData = {
   requiredDataRows: [
     { label: "Atık türü", purpose: "Parçalama ve ayırma ihtiyacını belirler.", request: "Gıda / tarımsal / hayvansal" },
     { label: "Tonaj", purpose: "Besleme omurgasının ölçeğini tanımlar.", request: "Örn. 30 ton/gün" },
-    { label: "Kuru madde", purpose: "Pompalama ve karıştırma davranışını etkiler.", request: "Ã–rn. %18 KM" },
+    { label: "Kuru madde", purpose: "Pompalama ve karıştırma davranışını etkiler.", request: "Örn. %18 KM" },
     { label: "Organik madde", purpose: "Gaz üretim potansiyelini okumayı sağlar.", request: "VS / OM oranı" },
     { label: "Besleme tipi", purpose: "Helezon, bunker veya pompa seçimini etkiler.", request: "Kesikli / sürekli" },
     { label: "Yabancı madde", purpose: "Ön ayırma gereksinimini artırır.", request: "Plastik / metal / taş" },
@@ -391,7 +391,7 @@ const biogasData: BlogTechnicalArticleData = {
     { title: "Yabancı madde", description: "Parçalayıcı ve ayırıcı ihtiyacını büyütür." },
     { title: "Besleme ritmi", description: "Reaktör istikrarı için dengeli akış gerekir." },
     { title: "Digestat çıkışı", description: "Ayrıştırma ve kompostlaştırma kararını etkiler." },
-    { title: "Ã‡evresel kontrol", description: "Koku ve hijyen yönetimi saha operasyonunu belirler." },
+    { title: "Çevresel kontrol", description: "Koku ve hijyen yönetimi saha operasyonunu belirler." },
   ],
   relatedLinksTitle: "İlgili Teknik İçerikler",
   relatedLinksDescription:
@@ -412,7 +412,7 @@ const liquidData: BlogTechnicalArticleData = {
     "Reaktör, tank ve dozaj sistemlerinde ürün formülü, viskozite ve hat güvenliği birlikte değerlendirilmelidir.",
   requiredDataRows: [
     { label: "Ürün formülü", purpose: "Reaktör ve karıştırma yaklaşımını belirler.", request: "NPK / organomineral / kimyasal karışım" },
-    { label: "Kapasite", purpose: "Tank hacmi ve dolum hattı ölçeğini etkiler.", request: "Ã–rn. 5 m3/saat" },
+    { label: "Kapasite", purpose: "Tank hacmi ve dolum hattı ölçeğini etkiler.", request: "Örn. 5 m3/saat" },
     { label: "Viskozite", purpose: "Karıştırıcı ve pompa seçiminde belirleyicidir.", request: "Düşük / orta / yüksek" },
     { label: "Çözünme süresi", purpose: "Reaktör veya tankta tutulma süresini tanımlar.", request: "Dakika / saat" },
     { label: "Filtrasyon ihtiyaçı", purpose: "Dolum öncesi ürün temizliğini etkiler.", request: "Torba / kartuş / inline" },
@@ -448,7 +448,7 @@ const liquidData: BlogTechnicalArticleData = {
   factorCards: [
     { title: "Formül yoğunluğu", description: "Karıştırma ve pompa seçimini etkiler." },
     { title: "Kimyasal uyum", description: "Tank malzemesi ve conta seçimini belirler." },
-    { title: "Filtrasyon ihtiyaçı", description: "Dolum kalitesi ve hat temizliÄŸini etkiler." },
+    { title: "Filtrasyon ihtiyaçı", description: "Dolum kalitesi ve hat temizliğini etkiler." },
     { title: "Sıcaklık", description: "Çözünme ve reaksiyon hızını değiştirir." },
     { title: "Ambalaj tipi", description: "Dolum hattı geometrisini belirler." },
     { title: "Bakım temizliği", description: "CIP veya manuel temizlik kurgusunu etkiler." },
@@ -473,12 +473,12 @@ const defaultTechnicalData: BlogTechnicalArticleData = {
   requiredDataRows: [
     { label: "Kapasite", purpose: "Ekipman ölçeğini belirler.", request: "Saatlik veya günlük hedef" },
     { label: "Ürün tipi", purpose: "Ekipman ve proses yaklaşımını etkiler.", request: "Toz / granül / sıvı" },
-    { label: "YoÄŸunluk", purpose: "Hacimsel davranışı tanımlar.", request: "Yığın veya proses yoğunluğu" },
-    { label: "Nem / sıcaklık", purpose: "Enerji ve proses ihtiyacını etkiler.", request: "Mevcut ve hedef deÄŸerler" },
+    { label: "Yoğunluk", purpose: "Hacimsel davranışı tanımlar.", request: "Yığın veya proses yoğunluğu" },
+    { label: "Nem / sıcaklık", purpose: "Enerji ve proses ihtiyacını etkiler.", request: "Mevcut ve hedef değerler" },
     { label: "Saha koşulu", purpose: "Yerleşim ve bakım erişimini belirler.", request: "Alan ve çalışma düzeni" },
     { label: "Çalışma rejimi", purpose: "Motor, tank veya hat güvenliğini etkiler.", request: "Sürekli / vardiyalı çalışma" },
   ],
-  exampleTitle: "Ã–rnek Teknik DeÄŸerlendirme",
+  exampleTitle: "Örnek Teknik Değerlendirme",
   exampleDescription:
     "Aşağıdaki örnek satırlar, teknik teklif öncesinde hangi karar başlıklarının birlikte okunması gerektiğini gösterir.",
   exampleRows: [
@@ -486,7 +486,7 @@ const defaultTechnicalData: BlogTechnicalArticleData = {
     { label: "Ürün davranışı", value: "Akış / nem / yoğunluk", comment: "Makine seçimini etkiler" },
     { label: "Proses adımı", value: "Hazırlık / ana işlem / çıkış", comment: "Akış sırasını belirler" },
     { label: "Enerji", value: "Elektrik / ısı / gaz", comment: "İşletme modelini etkiler" },
-    { label: "Saha", value: "Yerleşim / bakım", comment: "UygulanabilirliÄŸi doÄŸrular" },
+    { label: "Saha", value: "Yerleşim / bakım", comment: "Uygulanabilirliği doğrular" },
     { label: "Çıkış standardı", value: "Son ürün beklentisi", comment: "Kalite hedefini belirler" },
   ],
   decisionTableTitle: "Karar Matrisi",

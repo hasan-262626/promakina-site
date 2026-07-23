@@ -111,7 +111,7 @@ export const engineeringCalculationCards: EngineeringCalculationCard[] = [
         title: "Proses Entegrasyonu ve Doğru Ekipman Kararı",
         paragraphs: [
           "Helezon konveyörler çoğu zaman tek ekipman gibi görünse de, aslında bunker, dozajlama, konveyör, elevatör ve tambur sistemlerinin arasında kritik bir bağlantı halkasıdır. Girişte ürün birikmesi, çıkışta geri basınç oluşması veya yanlış eğim seçimi tüm hattın performansını etkiler. Bu nedenle helezon hesabı yalnız taşıma değil, proses ritmi kararıdır.",
-          "Özellikle /hizmetler/gubre-tesisi-kurulumu ve /hizmetler/kompost-tesisi-kurulumu gibi tesis projelerinde helezon seçimi hattın karışım ve besleme kararlılığını doğrudan belirler. Benzer şekilde /makinalar-ekipman/tasima-ekipmanlari sayfasında görülen taşıma ekipmanı ailesi içinde helezonlar, kontrollü akış gereken uygulamalar için öne çıkar. Eğer projenize özel doğru vida çapını, motor gücünü ve genel hat yerleşimini birlikte belirlemek istiyorsanız, teknik ekibimiz saha verisine göre yönlendirme sağlayabilir.",
+          "Özellikle /sektorler/gubre-ve-granulasyon-tesisleri ve /sektorler/kompost-ve-organik-atik-tesisleri gibi tesis projelerinde helezon seçimi hattın karışım ve besleme kararlılığını doğrudan belirler. Benzer şekilde /makinalar-ekipman/tasima-ekipmanlari sayfasında görülen taşıma ekipmanı ailesi içinde helezonlar, kontrollü akış gereken uygulamalar için öne çıkar. Eğer projenize özel doğru vida çapını, motor gücünü ve genel hat yerleşimini birlikte belirlemek istiyorsanız, teknik ekibimiz saha verisine göre yönlendirme sağlayabilir.",
         ],
       },
     ],
@@ -245,7 +245,7 @@ export const engineeringCalculationCards: EngineeringCalculationCard[] = [
       {
         title: "Proses Entegrasyonu ve Yardımcı Ekipmanlar",
         paragraphs: [
-          "Bir konveyör tek başına mükemmel tasarlansa bile giriş bunkerinden dengesiz besleniyorsa veya çıkışta yanlış boşaltma düzeni varsa hat verimi düşer. Bu yüzden konveyör hesabı; bunker, helezon, elevatör, tambur, elek ve paketleme sistemleri ile birlikte okunmalıdır. Özellikle /hizmetler/gubre-tesisi-kurulumu ve /sektorler/gubre-ve-granulasyon-tesisleri gibi sahalarda konveyörler tüm hat istikrarını etkileyen ana bağlantıdır.",
+          "Bir konveyör tek başına mükemmel tasarlansa bile giriş bunkerinden dengesiz besleniyorsa veya çıkışta yanlış boşaltma düzeni varsa hat verimi düşer. Bu yüzden konveyör hesabı; bunker, helezon, elevatör, tambur, elek ve paketleme sistemleri ile birlikte okunmalıdır. Özellikle /sektorler/gubre-ve-granulasyon-tesisleri gibi sahalarda konveyörler tüm hat istikrarını etkileyen ana bağlantıdır.",
           "Doğru konveyör seçimi aynı zamanda temizlik, bakım ve güvenlik açısından da önemlidir. Sıyırıcı, kapalı gövde, yürüme platformu, sensör altyapısı ve toz kontrolü gibi unsurlar yatırım kararıyla birlikte düşünülmelidir. Mühendislik mantığında konveyör yalnız taşıma değil, işletme disiplinidir.",
         ],
       },
@@ -360,7 +360,7 @@ export const engineeringCalculationCards: EngineeringCalculationCard[] = [
       "Kurutma tamburu tasarımında su uçurma yükü, tambur geometrisi, gaz akışı ve güç ihtiyacını aynı mühendislik dilinde toplayan ön boyutlandırma sayfasıdır.",
     introParagraphs: [
       "Kurutma tamburu hesabı, endüstriyel kurutma sistemlerinde kapasiteyi belirlemenin ötesine geçen çok katmanlı bir mühendislik çalışmasıdır. Gübre, kompost, madencilik, arıtma çamuru ve farklı dökme katı malzemelerde kurutma tamburu; ürünün nemini düşürürken aynı anda enerji tüketimi, hava debisi, residence time ve son ürün kalitesi üzerinde belirleyici olur. Bu nedenle yanlış hesaplanan bir tambur; yetersiz kurutma, yüksek yakıt tüketimi, toz problemi veya gereksiz yatırım maliyeti yaratabilir.",
-      "Pro Makina, kurutma tamburu hesabını yalnız mekanik geometri olarak değil, proses mühendisliği problemi olarak ele alır. Giriş nemi, hedef çıkış nemi, ürün yoğunluğu, besleme debisi, gaz sıcaklığı ve iç flight yapısı aynı anda okunur. Özellikle /hizmetler/gubre-tesisi-kurulumu ve /hizmetler/kompost-tesisi-kurulumu gibi tesislerde kurutma ünitesi hat performansını doğrudan etkilediği için tasarım kararları bütünsel verilmelidir.",
+      "Pro Makina, kurutma tamburu hesabını yalnız mekanik geometri olarak değil, proses mühendisliği problemi olarak ele alır. Giriş nemi, hedef çıkış nemi, ürün yoğunluğu, besleme debisi, gaz sıcaklığı ve iç flight yapısı aynı anda okunur. Özellikle /sektorler/gubre-ve-granulasyon-tesisleri ve /sektorler/kompost-ve-organik-atik-tesisleri gibi tesislerde kurutma ünitesi hat performansını doğrudan etkilediği için tasarım kararları bütünsel verilmelidir.",
     ],
     sections: [
       {
@@ -457,7 +457,7 @@ export const engineeringCalculationCards: EngineeringCalculationCard[] = [
       {
         title: "Kurutma Tamburu Kapasite Hesabı",
         description: "Su uçurma yükü ve enerji omurgasını daha detaylı teknik rehberle karşılaştırın.",
-        href: "/kutuphane/blog/kurutma-tamburu-kapasite-hesabi",
+        href: "/kutuphane/blog/kurutma-tamburu-hesaplama",
       },
       {
         title: "Rotary Dryer Design",

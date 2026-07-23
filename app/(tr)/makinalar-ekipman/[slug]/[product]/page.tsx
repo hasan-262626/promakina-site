@@ -1,6 +1,6 @@
 import { trLanguageAlternates } from "../../../../i18n/routes";
 import { Metadata } from "next";
-import { notFound, redirect } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
 import { ProductDetailSystem } from "../../../components/product-detail-system";
 import { machineCategoryMap, machineCategoryPages } from "../../../components/machine-group-data";
 import { getMachineAuxiliarySystems } from "../../../lib/machine-auxiliary-systems";
@@ -84,7 +84,7 @@ export default async function MachineProductDetailPage({ params, searchParams }:
   const publicProductSlug = getPublicProductSlug(resolvedProduct);
 
   if (slug !== publicCategorySlug || product !== publicProductSlug) {
-    redirect(`/makinalar-ekipman/${publicCategorySlug}/${publicProductSlug}`);
+    permanentRedirect(`/makinalar-ekipman/${publicCategorySlug}/${publicProductSlug}`);
   }
 
   const category = machineCategoryMap[resolvedSlug];

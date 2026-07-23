@@ -4,14 +4,14 @@ import { TechnicalTopicClustersShowcase } from "../../components/technical-topic
 import { technicalTopicClusters } from "../../lib/technical-topic-cluster-data";
 
 export const metadata: Metadata = {
-  title: "Blog / Teknik Makaleler | Pro Makina Kütüphane",
+  title: "Blog ve Teknik Makaleler",
   description:
     "Gübre tesisleri, kompost sistemleri, kurutma tamburları, konveyör hatları, maden prosesleri ve endüstriyel ekipman seçimi için teknik makaleler.",
   alternates: {
     canonical: "https://www.promakina.com.tr/kutuphane/blog",
   },
   openGraph: {
-    title: "Blog / Teknik Makaleler | Pro Makina Kütüphane",
+    title: "Blog ve Teknik Makaleler | Pro Makina",
     description:
       "Gübre tesisleri, kompost sistemleri, kurutma tamburları, konveyör hatları, maden prosesleri ve endüstriyel ekipman seçimi için teknik makaleler.",
     url: "https://www.promakina.com.tr/kutuphane/blog",
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Blog / Teknik Makaleler | Pro Makina Kütüphane",
+    title: "Blog ve Teknik Makaleler | Pro Makina",
     description:
       "Gübre tesisleri, kompost sistemleri, kurutma tamburları, konveyör hatları, maden prosesleri ve endüstriyel ekipman seçimi için teknik makaleler.",
   },
@@ -30,13 +30,6 @@ export const metadata: Metadata = {
 type ArticleLink = {
   title: string;
   href: string;
-};
-
-type TopicGroup = {
-  title: string;
-  description: string;
-  primaryHref: string;
-  articles: ArticleLink[];
 };
 
 const blogCategoryHrefs = {
@@ -49,203 +42,6 @@ const blogCategoryHrefs = {
   process: "/kutuphane/blog/proses-muhendisligi",
   sectoral: "/kutuphane/blog/sektorel-makine-rehberleri",
 } as const;
-
-const topicGroups: TopicGroup[] = [
-  {
-    title: "Kurutma Tamburu ve Kurutma Sistemleri",
-    description:
-      "Kurutma tamburu seçimi, kapasite hesabı, çap-boy oranı, rotary dryer design ve endüstriyel kurutma uygulamalarını bir araya getiren ana cluster.",
-    primaryHref: blogCategoryHrefs.drying,
-    articles: [
-      { title: "Kurutma Tamburu Kapasite Hesabı", href: "/kutuphane/blog/kurutma-tamburu-kapasite-hesabi" },
-      { title: "Kurutma Tamburu Çap Boy Hesabı", href: "/kutuphane/blog/kurutma-tamburu-cap-boy-hesabi" },
-      { title: "Rotary Dryer Design", href: "/kutuphane/blog/rotary-dryer-design" },
-      { title: "Endüstriyel Kurutma Sistemleri", href: "/kutuphane/blog/endustriyel-kurutma-sistemleri" },
-      { title: "Tambur Kurutucu Nasıl Çalışır?", href: "/kutuphane/blog/tambur-kurutucu-nasil-calisir" },
-      { title: "Silis Kumu Kurutma Prosesi", href: "/kutuphane/blog/silis-kumu-kurutma-prosesi" },
-      { title: "Çamur Kurutma Tesisi Maliyeti", href: "/kutuphane/blog/camur-kurutma-tesisi-maliyeti" },
-      { title: "Kurutma Tamburu Tasarım Kriterleri", href: "/kutuphane/blog/kurutma-tamburu-tasarim-kriterleri" },
-    ],
-  },
-  {
-    title: "Tambur Sistemleri",
-    description:
-      "Granülatör, kurutma, soğutma, kaplama ve kompost tamburu gibi döner sistemlerin seçim ve tasarım mantığını bir arada inceleyin.",
-    primaryHref: blogCategoryHrefs.equipment,
-    articles: [
-      { title: "Granülatör Tamburu Seçimi", href: "/kutuphane/blog/granul-gubre-uretim-sureci" },
-      { title: "Kurutma Tamburu Seçimi", href: "/kutuphane/blog/kurutma-tamburu-hesaplama" },
-      { title: "Soğutma Tamburu Nasıl Çalışır?", href: "/kutuphane/blog/granul-gubre-uretim-sureci" },
-      { title: "Kaplama Tamburu Kullanım Alanları", href: "/kutuphane/blog/granul-gubre-uretim-sureci" },
-      { title: "Kompost Tamburu Seçim Kriterleri", href: "/kutuphane/blog/kompost-tesisi-kurulumu" },
-      { title: "Tambur Devir Hesabı", href: "/kutuphane/blog/kurutma-tamburu-cap-boy-hesabi" },
-      { title: "Tambur Eğim ve Doluluk Oranı", href: "/kutuphane/blog/kurutma-tamburu-cap-boy-hesabi" },
-      { title: "Tambur Ring ve Tahrik Sistemi", href: "/kutuphane/blog/rotary-dryer-design" },
-    ],
-  },
-  {
-    title: "Helezon & Konveyör",
-    description:
-      "Taşıma hatlarında kapasite, motor gücü, eğim etkisi, ürün yoğunluğu ve vidalı konveyör mantığını birlikte toplayan teknik bilgi ağı.",
-    primaryHref: blogCategoryHrefs.conveyor,
-    articles: [
-      { title: "Helezon Kapasite Hesabı", href: "/kutuphane/blog/helezon-kapasite-hesabi" },
-      { title: "Helezon Motor Gücü Hesabı", href: "/kutuphane/blog/helezon-motor-gucu-hesabi" },
-      { title: "Konveyör Kapasite Hesabı", href: "/kutuphane/blog/konveyor-kapasite-hesabi" },
-      { title: "Eğimli Helezon Hesabı", href: "/kutuphane/blog/egimli-helezon-hesabi" },
-      { title: "Vidalı Konveyör Hesabı", href: "/kutuphane/blog/vidali-konveyor-hesabi" },
-      { title: "Bant Konveyör Seçimi", href: "/kutuphane/blog/konveyor-kapasite-hesabi" },
-      { title: "Kovalı Elevatör Kapasite Hesabı", href: blogCategoryHrefs.conveyor },
-      { title: "Dökme Katı Malzeme Taşıma Sistemi Seçimi", href: blogCategoryHrefs.conveyor },
-    ],
-  },
-  {
-    title: "Gübre Tesisi",
-    description:
-      "Organomineral, granül, NPK ve sıvı gübre yatırımları için proses, ekipman ve ticari kararları tek cluster altında birleştirir.",
-    primaryHref: blogCategoryHrefs.fertilizer,
-    articles: [
-      { title: "Organomineral Gübre Tesisi Maliyeti", href: "/kutuphane/blog/organomineral-gubre-tesisi-maliyeti" },
-      { title: "Granül Gübre Üretim Süreci", href: "/kutuphane/blog/granul-gubre-uretim-sureci" },
-      { title: "NPK Gübre Üretimi", href: "/kutuphane/blog/npk-gubre-uretimi" },
-      { title: "Gübre Tesisi Kurulumu", href: "/kutuphane/blog/gubre-tesisi-kurulumu" },
-      { title: "Gübre Üretim Hattı", href: "/kutuphane/blog/gubre-uretim-hatti" },
-      { title: "Gübre Kurutma ve Soğutma Prosesi", href: "/kutuphane/blog/granul-gubre-uretim-sureci" },
-      { title: "Gübre Paketleme Hattı", href: "/kutuphane/blog/gubre-uretim-hatti" },
-      { title: "Granülasyon Prosesi", href: "/kutuphane/blog/granul-gubre-uretim-sureci" },
-    ],
-  },
-  {
-    title: "Sıvı Gübre ve Proses Tankları",
-    description:
-      "Sıvı organomineral, sıvı NPK, amino asitli ürünler ve biyostimülan üretimi için reaktör, tank, filtrasyon ve dolum içeriklerini inceleyin.",
-    primaryHref: blogCategoryHrefs.process,
-    articles: [
-      { title: "Sıvı Gübre Üretim Tesisi Nasıl Kurulur?", href: "/kutuphane/blog/sivi-gubre-uretim-tesisi-nasil-kurulur" },
-      { title: "Sıvı Gübre Reaktör Seçimi", href: "/kutuphane/blog/sivi-gubre-uretim-tesisi-nasil-kurulur" },
-      { title: "Karıştırıcılı Tank Tasarım Kriterleri", href: blogCategoryHrefs.process },
-      { title: "Çözündürme Tankı Kullanımı", href: blogCategoryHrefs.process },
-      { title: "Sıvı Gübre Filtrasyon Sistemi", href: "/kutuphane/blog/sivi-gubre-uretim-tesisi-nasil-kurulur" },
-      { title: "Sıvı Dolum ve Etiketleme Hattı", href: "/kutuphane/blog/sivi-gubre-uretim-tesisi-nasil-kurulur" },
-      { title: "Amino Asitli Sıvı Ürün Prosesi", href: "/kutuphane/blog/sivi-gubre-uretim-tesisi-nasil-kurulur" },
-      { title: "Biyostimülan Üretim Hattı", href: "/kutuphane/blog/sivi-gubre-uretim-tesisi-nasil-kurulur" },
-    ],
-  },
-  {
-    title: "Kompost & Atık",
-    description:
-      "Kompost, organik atık, çamur kurutma ve biyogaz ön işlem konularını aynı teknik içerik halkasında toplayan cluster yapısı.",
-    primaryHref: blogCategoryHrefs.compost,
-    articles: [
-      { title: "Kompost Tesisi Kurulumu", href: "/kutuphane/blog/kompost-tesisi-kurulumu" },
-      { title: "Organik Atık Tesisi", href: "/kutuphane/blog/organik-atik-tesisi" },
-      { title: "Çamur Kurutma Sistemi", href: "/kutuphane/blog/camur-kurutma-sistemi" },
-      { title: "Biyogaz Ön İşlem", href: "/kutuphane/blog/biyogaz-on-islem" },
-      { title: "Kompost Üretim Süreci", href: "/kutuphane/blog/kompost-uretim-sureci" },
-      { title: "Trommel Elek Seçimi", href: blogCategoryHrefs.compost },
-      { title: "Kompost Tamburu Seçim Kriterleri", href: "/kutuphane/blog/kompost-tesisi-kurulumu" },
-      { title: "Evsel Organik Atık İşleme Tesisi", href: "/kutuphane/blog/organik-atik-isleme-tesisi" },
-    ],
-  },
-  {
-    title: "Maden ve Mineral İşleme",
-    description:
-      "Silis kumu, kuvars, perlit, bentonit, kireç taşı ve benzeri mineral hammaddelerde kırma, eleme, kurutma ve taşıma içeriklerini inceleyin.",
-    primaryHref: blogCategoryHrefs.equipment,
-    articles: [
-      { title: "Silis Kumu Kurutma Tesisi", href: blogCategoryHrefs.drying },
-      { title: "Perlit Kurutma ve Eleme Tesisi", href: blogCategoryHrefs.equipment },
-      { title: "Maden Kurutma Tesisi Seçim Kriterleri", href: blogCategoryHrefs.equipment },
-      { title: "Kırıcı Seçimi Nasıl Yapılır?", href: blogCategoryHrefs.equipment },
-      { title: "Trommel Elek ve Vibrasyonlu Elek Farkı", href: blogCategoryHrefs.equipment },
-      { title: "Mineral Kurutma Tamburu", href: blogCategoryHrefs.drying },
-      { title: "Toz Toplama ve Siklon Sistemleri", href: blogCategoryHrefs.equipment },
-      { title: "Bant Konveyörlü Maden Taşıma Hatları", href: blogCategoryHrefs.conveyor },
-    ],
-  },
-  {
-    title: "Biyogaz, Digestat ve Atık Yönetimi",
-    description:
-      "Biyogaz ön işlem, organik atık besleme, digestat kurutma, RDF/SRF hazırlama ve entegre atık yönetimi içeriklerini inceleyin.",
-    primaryHref: blogCategoryHrefs.biogas,
-    articles: [
-      { title: "1 MW Biyogaz Tesisi", href: blogCategoryHrefs.biogas },
-      { title: "Biyogaz Ön İşlem Sistemleri", href: "/kutuphane/blog/biyogaz-on-islem-sistemleri" },
-      { title: "Hayvansal Atıklardan Biyogaz Tesisi", href: blogCategoryHrefs.biogas },
-      { title: "Digestat Kurutma ve Kompostlaştırma", href: blogCategoryHrefs.biogas },
-      { title: "Organik Atık Besleme Sistemleri", href: "/kutuphane/blog/biyogaz-on-islem-sistemleri" },
-      { title: "RDF / SRF Hazırlama Tesisi", href: blogCategoryHrefs.biogas },
-      { title: "Atık Kabul ve Dozajlama Sistemleri", href: "/kutuphane/blog/biyogaz-on-islem-sistemleri" },
-      { title: "Entegre Atık Yönetimi Tesisi", href: blogCategoryHrefs.biogas },
-    ],
-  },
-  {
-    title: "Reaktör, Tank ve Kimyasal Prosesler",
-    description:
-      "Kimyasal proses, çözündürme, karıştırma, reaksiyon, stoklama ve dozajlama hatları için reaktör ve tank içeriklerini inceleyin.",
-    primaryHref: blogCategoryHrefs.process,
-    articles: [
-      { title: "Reaktör ve Karıştırıcılı Tank Seçimi", href: blogCategoryHrefs.process },
-      { title: "Sıvı Kimyasal Hazırlama Tesisi", href: blogCategoryHrefs.process },
-      { title: "Çözündürme Tankı Kullanımı", href: blogCategoryHrefs.process },
-      { title: "Asit ve Baz Dozajlama Sistemleri", href: blogCategoryHrefs.process },
-      { title: "Karıştırma ve Homojenizasyon Tesisi", href: blogCategoryHrefs.process },
-      { title: "Proses Tanklarında Malzeme Seçimi", href: blogCategoryHrefs.process },
-      { title: "Reaktör Hacmi Nasıl Belirlenir?", href: blogCategoryHrefs.process },
-      { title: "Kimyasal Proses Hatlarında Güvenlik", href: blogCategoryHrefs.process },
-    ],
-  },
-  {
-    title: "Paketleme, Dolum ve Son Ürün Hazırlama",
-    description:
-      "Toz, granül, sıvı ve dökme ürünlerin ticari ürüne dönüştürülmesi için torbalama, big bag dolum, sıvı dolum ve etiketleme içeriklerini inceleyin.",
-    primaryHref: blogCategoryHrefs.equipment,
-    articles: [
-      { title: "Açık Ağız Torbalama Sistemi", href: blogCategoryHrefs.equipment },
-      { title: "Big Bag Dolum Sistemi", href: blogCategoryHrefs.equipment },
-      { title: "Gübre Paketleme Hattı", href: "/kutuphane/blog/gubre-uretim-hatti" },
-      { title: "Granül Ürün Paketleme Sistemi", href: blogCategoryHrefs.equipment },
-      { title: "Sıvı Dolum Makinesi Seçimi", href: "/kutuphane/blog/sivi-gubre-uretim-tesisi-nasil-kurulur" },
-      { title: "Şişe Etiketleme Hattı", href: "/kutuphane/blog/sivi-gubre-uretim-tesisi-nasil-kurulur" },
-      { title: "Paletleme ve Sevkiyat Sistemi", href: blogCategoryHrefs.equipment },
-      { title: "Paketleme Hattı Kapasite Planlama", href: blogCategoryHrefs.equipment },
-    ],
-  },
-  {
-    title: "Sektörel Makine Rehberleri",
-    description:
-      "Maden, gübre, kompost, çamur, biyogaz, kimya, taşıma ve paketleme hatlarında kullanılan makine gruplarını sektör bazlı okumanızı sağlayan teknik blog kümesi.",
-    primaryHref: blogCategoryHrefs.sectoral,
-    articles: [
-      { title: "Maden ve Mineral İşleme Makinaları", href: "/kutuphane/blog/maden-ve-mineral-isleme-makinalari" },
-      { title: "Sıvı Gübre Üretim Makinaları", href: "/kutuphane/blog/sivi-gubre-uretim-makinalari" },
-      { title: "Granül ve Organomineral Gübre Makinaları", href: "/kutuphane/blog/granul-ve-organomineral-gubre-makinalari" },
-      { title: "Kompost ve Organik Atık Makinaları", href: "/kutuphane/blog/kompost-ve-organik-atik-makinalari" },
-      { title: "Kurutma ve Termal Proses Makinaları", href: "/kutuphane/blog/kurutma-ve-termal-proses-makinalari" },
-      { title: "Taşıma, Dozajlama ve Depolama Ekipmanları", href: "/kutuphane/blog/tasima-dozajlama-ve-depolama-ekipmanlari" },
-      { title: "Atık Su Çamuru İşleme Makinaları", href: "/kutuphane/blog/atik-su-camuru-ve-aritma-makinalari" },
-      { title: "Biyogaz Ön İşlem ve Digestat Makinaları", href: "/kutuphane/blog/biyogaz-on-islem-ve-digestat-makinalari" },
-      { title: "Kimya ve Proses Endüstrisi Ekipmanları", href: "/kutuphane/blog/kimya-ve-proses-endustrisi-ekipmanlari" },
-      { title: "Paketleme, Dolum ve Son Ürün Hazırlama Sistemleri", href: "/kutuphane/blog/paketleme-dolum-ve-son-urun-hazirlama-sistemleri" },
-    ],
-  },
-  {
-    title: "Toz Toplama, Siklon ve Filtrasyon",
-    description:
-      "Kurutma, eleme, kırma, paketleme ve dökme ürün proseslerinde toz kontrolü, siklon, jet pulse filtre ve baca hattı seçim kriterlerini inceleyin.",
-    primaryHref: blogCategoryHrefs.equipment,
-    articles: [
-      { title: "Jet Pulse Filtre Seçimi", href: blogCategoryHrefs.equipment },
-      { title: "Siklon Ayırıcı Nasıl Çalışır?", href: blogCategoryHrefs.equipment },
-      { title: "Kurutma Hattında Toz Toplama", href: blogCategoryHrefs.equipment },
-      { title: "Eleme Hattında Toz Kontrolü", href: blogCategoryHrefs.equipment },
-      { title: "Paketleme Hattı Toz Emisyonu", href: blogCategoryHrefs.equipment },
-      { title: "Baca ve Fan Seçimi", href: blogCategoryHrefs.equipment },
-      { title: "Toz Toplama Debisi Nasıl Hesaplanır?", href: blogCategoryHrefs.equipment },
-      { title: "Endüstriyel Toz Toplama Sistemi", href: blogCategoryHrefs.equipment },
-    ],
-  },
-];
 
 const highlightedGuides: ArticleLink[] = [
   { title: "Sektörel Makine Rehberleri", href: blogCategoryHrefs.sectoral },

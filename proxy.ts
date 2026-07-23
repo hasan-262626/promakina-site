@@ -203,7 +203,9 @@ export function proxy(request: NextRequest) {
 }
 
 export const config = {
+  // robots.txt ve sitemap.xml bilinçli olarak dahil: non-www istekleri de
+  // www sürümüne 301 ile taşınmalı; canonical hostta proxy dokunmadan geçer.
   matcher: [
-    "/((?!_next/static|_next/image|favicon.ico|robots.txt|sitemap.xml).*)",
+    "/((?!_next/static|_next/image|favicon.ico).*)",
   ],
 };

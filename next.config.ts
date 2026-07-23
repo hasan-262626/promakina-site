@@ -274,8 +274,18 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
-        source: "/sektorler/atik-su-camuru-ve-aritma-cozumleri/camur-besleme",
-        destination: "/sektorler/atik-su-camuru-ve-aritma-cozumleri/kapali-sistem-camur-kurutma",
+        source: "/kutuphane/blog/kurutma-tamburu-kapasite-hesabi",
+        destination: "/kutuphane/blog/kurutma-tamburu-hesaplama",
+        permanent: true,
+      },
+      {
+        source: "/kutuphane/blog/kurutma-tamburu-cap-boy-hesabi",
+        destination: "/kutuphane/blog/kurutma-tamburu-hesaplama",
+        permanent: true,
+      },
+      {
+        source: "/kutuphane/blog/kurutma-tamburu-nasil-hesaplanir",
+        destination: "/kutuphane/blog/kurutma-tamburu-hesaplama",
         permanent: true,
       },
       {
@@ -331,6 +341,26 @@ const nextConfig: NextConfig = {
       {
         source: "/makinalar/:path*",
         destination: "/makinalar-ekipman/:path*",
+        permanent: true,
+      },
+      {
+        source: "/makinalar-ekipman/tasima-sistemleri",
+        destination: "/makinalar-ekipman/tasima-ekipmanlari",
+        permanent: true,
+      },
+      {
+        source: "/makinalar-ekipman/tasima-sistemleri/:product",
+        destination: "/makinalar-ekipman/tasima-ekipmanlari/:product",
+        permanent: true,
+      },
+      {
+        source: "/makinalar-ekipman/depolama-sistemleri",
+        destination: "/makinalar-ekipman/depolama-ve-besleme-sistemleri",
+        permanent: true,
+      },
+      {
+        source: "/makinalar-ekipman/depolama-sistemleri/:product",
+        destination: "/makinalar-ekipman/depolama-ve-besleme-sistemleri/:product",
         permanent: true,
       },
       {

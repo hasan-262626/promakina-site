@@ -4,8 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 const canonical = "https://www.promakina.com.tr/hakkimizda";
-const pageTitle =
-  "Pro Makina Hakkında | Endüstriyel Makine İmalatı ve Proses Mühendisliği";
+const pageTitle = "Hakkımızda";
 const pageDescription =
   "Pro Makina; gübre, kompost, geri dönüşüm, kimya, madencilik, atık su çamuru ve dökme katı malzeme prosesleri için endüstriyel makine imalatı, proses mühendisliği ve tesis çözümleri sunar.";
 
@@ -30,7 +29,7 @@ export const metadata: Metadata = {
     languages: trLanguageAlternates("/hakkimizda"),
   },
   openGraph: {
-    title: pageTitle,
+    title: "Hakkımızda | Pro Makina",
     description: pageDescription,
     url: canonical,
     siteName: "Pro Makina Process Engineering",
@@ -39,7 +38,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: pageTitle,
+    title: "Hakkımızda | Pro Makina",
     description: pageDescription,
   },
 };

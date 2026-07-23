@@ -68,7 +68,7 @@ const featuredGuides: GuideCard[] = [
     title: "Kurutma Tamburu Kapasite Hesabı",
     description:
       "Giriş nemi, hedef çıkış nemi, kurutulacak su miktarı, tambur ölçüsü, fan ve brülör seçimi için ön hesap mantığını açıklar.",
-    href: "/kutuphane/blog/kurutma-tamburu-kapasite-hesabi",
+    href: "/kutuphane/blog/kurutma-tamburu-hesaplama",
     tags: ["Kapasite", "Nem", "Tambur"],
     cta: "İçeriği İncele",
   },
@@ -77,7 +77,7 @@ const featuredGuides: GuideCard[] = [
     title: "Kurutma Tamburu Çap Boy Hesabı",
     description:
       "Tambur çapı, tambur boyu, doluluk oranı, ürün kalış süresi ve proses kapasitesi arasındaki ilişkiyi açıklar.",
-    href: "/kutuphane/blog/kurutma-tamburu-cap-boy-hesabi",
+    href: "/kutuphane/blog/kurutma-tamburu-hesaplama",
     tags: ["Çap-Boy", "Geometri", "Kapasite"],
     cta: "İçeriği İncele",
   },
@@ -192,7 +192,7 @@ const guideSections: GuideSection[] = [
         title: "Helezon Konveyörler",
         description:
           "Toz, granül ve kontrollü besleme gerektiren hatlarda helezon konveyör ailesini detaylı görün.",
-        href: "/makinalar-ekipman/tasima-ekipmanlari/helezon-konveyorler",
+        href: "/makinalar-ekipman/tasima-ekipmanlari/vidali-helezonlar",
         tags: ["Helezon", "Taşıma", "Besleme"],
         cta: "Sayfayı İncele",
       },
@@ -201,7 +201,7 @@ const guideSections: GuideSection[] = [
         title: "Bantlı Konveyörler",
         description:
           "Yatay ürün transferi, hat dengesi ve saha yerleşimi için bantlı konveyör ürün ailesini inceleyin.",
-        href: "/makinalar-ekipman/tasima-ekipmanlari/bant-konveyorler",
+        href: "/makinalar-ekipman/tasima-ekipmanlari/bantli-konveyorler",
         tags: ["Konveyör", "Transfer", "Hat"],
         cta: "Sayfayı İncele",
       },
