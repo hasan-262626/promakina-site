@@ -1,0 +1,482 @@
+const exactReplacements: Array<[string, string]> = [
+  ["Kurutma Tamburu Kapasite Hesabı", "Kurutma Tamburu Kapasite Hesabı"],
+  ["Kurutma Tamburu çap Boy Hesabı", "Kurutma Tamburu Çap Boy Hesabı"],
+  ["Tambur Kurutucu Nasıl çal1_1r?", "Tambur Kurutucu Nasıl Çalışır?"],
+  ["çamur Kurutma Tesisi Maliyeti", "Çamur Kurutma Tesisi Maliyeti"],
+  ["Kurutma Tamburu Tasarım Kriterleri", "Kurutma Tamburu Tasarım Kriterleri"],
+  ["Kurutma Tamburunda Brülör Seçimi", "Kurutma Tamburunda Brülör Seçimi"],
+  ["Kurutma Tamburunda Fan, Siklon ve Filtre Seçimi", "Kurutma Tamburunda Fan, Siklon ve Filtre Seçimi"],
+  ["ATIK SU ÇAMURU VE ARITMA ÇÖZÜMLERİ", "ATIK SU ÇAMURU ÇÖZÜMLERİ"],
+  ["Atık su çamuru çözümleri için sunduğumuz çözümler", "Atık su çamuru çözümleri için sunduğumuz çözümler"],
+  ["Atık su çamuru çözümlerinde kullanılan başlıca makine ve ekipmanlar", "Atık su çamuru çözümlerinde kullanılan başlıca makine ve ekipmanlar"],
+  ["Atık su çamuru çözümleri hakkında sık sorulan sorular", "Atık su çamuru çözümleri hakkında sık sorulan sorular"],
+  ["Atık Su Çamuru, Arıtma ve Kurutma", "Atık Su Çamuru Kurutma ve İşleme"],
+  ["İlgili Sektörler", "İlgili Sektörler"],
+  ["Kimya ve Proses Endüstrisi", "Kimya ve Proses Endüstrisi"],
+  ["Gübre Üretim Tesisleri", "Gübre Üretim Tesisleri"],
+  ["Madencilik ve Mineral 0?xleme", "Madencilik ve Mineral İşleme"],
+  ["Geri Dönüşüm ve Atık Yönetimi", "Geri Dönüşüm ve Atık Yönetimi"],
+  ["Atık Su Çamuru ve Arıtma Ççözümleri", "Atık Su Çamuru ve Arıtma Çözümleri"],
+  ["Atık Su Çamuru ve Arıtma Çözümleri", "Atık Su Çamuru Çözümleri"],
+  ["Atık su çamuru ve arıtma çözümleri", "Atık su çamuru çözümleri"],
+  ["Atık Su Çamuru ve Arıtma Makinaları", "Atık Su Çamuru İşleme Makinaları"],
+  ["Atık Su Çamuru ve Arıtma Rehberleri", "Atık Su Çamuru Rehberleri"],
+  ["Atık Su Çamuru ve Arıtma Çözümleri İçin Teknik İçerikler", "Atık Su Çamuru Çözümleri İçin Teknik İçerikler"],
+  ["Yem, Toz ve Dökme Katı Malzeme İşleme Sistemleri", "Yem, Toz ve Dökme Katı Malzeme İşleme Sistemleri"],
+  ["Gübre ve Granülasyon Tesisleri", "Gübre Üretim Tesisleri"],
+  ["MüÅŸteri GiriÅŸ Alanı", "Müşteri Giriş Alanı"],
+  ["Otomatik Sistem Yorumları", "Otomatik Sistem Yorumları"],
+  ["Sonuç Ekranı", "Sonuç Ekranı"],
+  ["Teknik Görüşme", "Teknik Görüşme"],
+  ["İlgili alt başlıklar", "İlgili alt başlıklar"],
+  ["Detayı İncele", "Detayı İncele"],
+  ["Tüm Çözüm Alanlarına Dön", "Tüm Çözüm Alanlarına Dön"],
+  ["Tüm Sektörlere Dön", "Tüm Sektörlere Dön"],
+  ["Seçiniz", "Seçiniz"],
+  ["Hesaba veya standarda göre otomatik gelir", "Hesaba veya standarda göre otomatik gelir"],
+  ["Bu alanı siz doldurun", "Bu alanı siz doldurun"],
+  ["Bu alanı siz seçin", "Bu alanı siz seçin"],
+  ["Kontroll? ve planlı kurulum süreci", "Kontrollü ve planlı kurulum süreci"],
+  ["Daha düşük hata riski ve daha yüksek verimlilik", "Daha düşük hata riski ve daha yüksek verimlilik"],
+];
+
+const fragmentReplacements: Array<[RegExp, string]> = [
+  [/\u0013/g, ""],
+  [/\u00bf/g, ""],
+  [/\u00bd/g, ""],
+  [/\u00a0/g, " "],
+  [/0\?xleme/gi, "İşleme"],
+  [/0\?x/gi, "İş"],
+  [/At1k/g, "Atık"],
+  [/at1k/g, "atık"],
+  [/Ar1tma/g, "Arıtma"],
+  [/ar1tma/g, "arıtma"],
+  [/Kat1/g, "Katı"],
+  [/kat1/g, "katı"],
+  [/S1v1/g, "Sıvı"],
+  [/s1v1/g, "sıvı"],
+  [/\?retiminde/gi, "üretiminde"],
+  [/\?retimi/gi, "üretimi"],
+  [/\?retime/gi, "üretime"],
+  [/\?retim/gi, "üretim"],
+  [/\?r\?n\?n/gi, "ürünün"],
+  [/\?r\?nleri/gi, "ürünleri"],
+  [/\?r\?nlere/gi, "ürünlere"],
+  [/\?r\?nler/gi, "ürünler"],
+  [/\?r\?n/gi, "ürün"],
+  [/\?\?z\?mleri/gi, "çözümleri"],
+  [/\?z\?mleri/gi, "çözümleri"],
+  [/\?\?z\?m/gi, "çözüm"],
+  [/\?z\?m/gi, "çözüm"],
+  [/\?zel/gi, "özel"],
+  [/\?evresel/gi, "çevresel"],
+  [/\?amuru/gi, "çamuru"],
+  [/\?amur/gi, "çamur"],
+  [/\?!amuru/gi, "Çamuru"],
+  [/\?!eneli/gi, "Çeneli"],
+  [/\?!al1\?xmalar1/gi, "Çalışmaları"],
+  [/\?!al1\?xma/gi, "Çalışma"],
+  [/Y\?netimi/g, "Yönetimi"],
+  [/y\?netimi/g, "yönetimi"],
+  [/dönüş\?m/gi, "dönüşüm"],
+  [/Dönüş\?m/gi, "Dönüşüm"],
+  [/dönüşx\?m/gi, "dönüşüm"],
+  [/Dönüşx\?m/gi, "Dönüşüm"],
+  [/d\?n\?\?m/gi, "dönüşüm"],
+  [/d\?n\?\?/gi, "dönüş"],
+  [/S\?re\?/g, "Süreç"],
+  [/s\?re\?/g, "süreç"],
+  [/T\?m/g, "Tüm"],
+  [/t\?m/g, "tüm"],
+  [/Y\?net/g, "Yönet"],
+  [/y\?net/g, "yönet"],
+  [/g\?bre/gi, "gübre"],
+  [/m\?hendislik/gi, "mühendislik"],
+  [/end\?strisi/gi, "endüstrisi"],
+  [/end\?stri/gi, "endüstri"],
+  [/s\?reci/gi, "süreci"],
+  [/s\?reç/gi, "süreç"],
+  [/s\?rec/gi, "süreç"],
+  [/se\?imi/gi, "seçimi"],
+  [/se\?im/gi, "seçim"],
+  [/yerle\?imi/gi, "yerleşimi"],
+  [/yerle\?im/gi, "yerleşim"],
+  [/g\?nl\?k/gi, "günlük"],
+  [/so\?utma/gi, "soğutma"],
+  [/s\?cakl\?k/gi, "sıcaklık"],
+  [/kontroll\?/gi, "kontrollü"],
+  [/d\?ş\?k/gi, "düşük"],
+  [/y\?ksek/gi, "yüksek"],
+  [/gran\?lasyon/gi, "granülasyon"],
+  [/gran\?l/gi, "granül"],
+  [/d\?kme/gi, "dökme"],
+  [/ta\?x1ma/gi, "taşıma"],
+  [/ak1\?xlar1n1/gi, "akışlarını"],
+  [/ak1\?xlar1/gi, "akışları"],
+  [/ak1\?x1/gi, "akışı"],
+  [/ak1\?x/gi, "akış"],
+  [/ba\?xlantisi/gi, "bağlantısı"],
+  [/ba\?xlanti/gi, "bağlantı"],
+  [/dan1\?xmanl1k/gi, "danışmanlık"],
+  [/kar1\?xt1r1c1l1/gi, "karıştırıcılı"],
+  [/d\?ner/gi, "döner"],
+  [/A\?1k a\?x1z/gi, "Açık ağız"],
+  [/\?xi\?xeleme/gi, "şişeleme"],
+  [/de\?xil/gi, "değil"],
+  [/de\?Yil/gi, "değil"],
+  [/de\?xerl/gi, "değerl"],
+  [/de\?Yerl/gi, "değerl"],
+  [/do\?xru/gi, "doğru"],
+  [/do\?Yru/gi, "doğru"],
+  [/ba\?Ytan/gi, "baştan"],
+  [/ba\?Yli/gi, "bağlı"],
+  [/ba\?Yar/gi, "başar"],
+  [/\?Y/g, "ş"],
+  [/sa\?Yl/gi, "sağl"],
+  [/i\?Yleme/gi, "işleme"],
+  [/i\?Ylen/gi, "işlen"],
+  [/eri\?Yim/gi, "erişim"],
+  [/olu\?Ytur/gi, "oluştur"],
+  [/iyile\?Y/gi, "iyileş"],
+  [/geli\?Ytir/gi, "geliştir"],
+  [/d\?n\?Y/gi, "dönüş"],
+  [/Arıtma \?!/g, "Arıtma Ç"],
+  [/Ihtiya\?/g, "İhtiyaç"],
+  [/ihtiya\?/g, "ihtiyaç"],
+  [/kolayli\?Yi/gi, "kolaylığı"],
+  [/standartla\?Yma/gi, "standartlaşma"],
+  [/yerle\?Yim/gi, "yerleşim"],
+  [/yerle\?Yimi/gi, "yerleşimi"],
+];
+
+const asciiWordMap: Record<string, string> = {
+  agir: "ağır",
+  agirlik: "ağırlık",
+  akim: "akım",
+  akis: "akış",
+  akislari: "akışları",
+  akislarini: "akışlarını",
+  anlasilir: "anlaşılır",
+  aritma: "arıtma",
+  atik: "atık",
+  atiklar: "atıklar",
+  atiklarin: "atıkların",
+  ayirma: "ayırma",
+  bagimli: "bağımlı",
+  bagli: "bağlı",
+  baglanti: "bağlantı",
+  baglantisi: "bağlantısı",
+  bakim: "bakım",
+  basarili: "başarılı",
+  basari: "başarı",
+  baslangic: "başlangıç",
+  baslik: "başlık",
+  butunlesik: "bütünleşik",
+  buyuk: "büyük",
+  calisir: "çalışır",
+  calisma: "çalışma",
+  camur: "çamur",
+  camuru: "çamuru",
+  cevresel: "çevresel",
+  cikar: "çıkar",
+  cikis: "çıkış",
+  cok: "çok",
+  cozum: "çözüm",
+  cozumler: "çözümler",
+  cozumleri: "çözümleri",
+  danismanlik: "danışmanlık",
+  dayanimli: "dayanımlı",
+  deger: "değer",
+  degerlendirme: "değerlendirme",
+  degerlendirerek: "değerlendirerek",
+  degil: "değil",
+  degisir: "değişir",
+  degisken: "değişken",
+  dokme: "dökme",
+  dogru: "doğru",
+  donusum: "dönüşüm",
+  dusuk: "düşük",
+  endustri: "endüstri",
+  endustrisi: "endüstrisi",
+  erisim: "erişim",
+  gecis: "geçiş",
+  gelisim: "gelişim",
+  gelistirme: "geliştirme",
+  gercek: "gerçek",
+  giris: "giriş",
+  gorsel: "görsel",
+  gorusme: "görüşme",
+  govde: "gövde",
+  granul: "granül",
+  granulasyon: "granülasyon",
+  guclendirme: "güçlendirme",
+  gunluk: "günlük",
+  gubre: "gübre",
+  guvenlik: "güvenlik",
+  guvenligi: "güvenliği",
+  hazirlama: "hazırlama",
+  hizli: "hızlı",
+  imalati: "imalatı",
+  icin: "için",
+  iletisim: "iletişim",
+  imkani: "imkânı",
+  isleme: "işleme",
+  isitma: "ısıtma",
+  iyilestirme: "iyileştirme",
+  karisim: "karışım",
+  karistirma: "karıştırma",
+  karistiricili: "karıştırıcılı",
+  kisa: "kısa",
+  kosullari: "koşulları",
+  kosullarina: "koşullarına",
+  kontrolu: "kontrolü",
+  kontrollu: "kontrollü",
+  kucuk: "küçük",
+  muhendislik: "mühendislik",
+  mumkun: "mümkün",
+  olculerde: "ölçülerde",
+  olculebilir: "ölçülebilir",
+  olcu: "ölçü",
+  olgunlastirma: "olgunlaştırma",
+  olusturma: "oluşturma",
+  olusturur: "oluşturur",
+  oncesi: "öncesi",
+  onemli: "önemli",
+  onleyici: "önleyici",
+  ongorulebilir: "öngörülebilir",
+  omru: "ömrü",
+  ozel: "özel",
+  recete: "reçete",
+  saglam: "sağlam",
+  saglar: "sağlar",
+  secenekleri: "seçenekleri",
+  secim: "seçim",
+  secimi: "seçimi",
+  sektor: "sektör",
+  sektorler: "sektörler",
+  sicaklik: "sıcaklık",
+  siniflandirma: "sınıflandırma",
+  sivi: "sıvı",
+  sogutma: "soğutma",
+  surec: "süreç",
+  sureci: "süreci",
+  surekli: "sürekli",
+  sureklilik: "süreklilik",
+  surdurulebilir: "sürdürülebilir",
+  tasarimi: "tasarımı",
+  tasima: "taşıma",
+  urun: "ürün",
+  urune: "ürüne",
+  urunu: "ürünü",
+  urunun: "ürünün",
+  urunler: "ürünler",
+  uretim: "üretim",
+  uretimi: "üretimi",
+  yapilandirma: "yapılandırma",
+  yapisi: "yapısı",
+  yapisina: "yapısına",
+  yardimci: "yardımcı",
+  yatirim: "yatırım",
+  yerlesim: "yerleşim",
+  yerlesimi: "yerleşimi",
+  yogunluk: "yoğunluk",
+  yonelik: "yönelik",
+  yonetim: "yönetim",
+  yonetimi: "yönetimi",
+  yorumlari: "yorumları",
+  yuksek: "yüksek",
+};
+
+const charLevelReplacements: Array<[RegExp, string]> = [
+  [/â€™/g, "’"],
+  [/â€œ/g, "“"],
+  [/â€/g, "”"],
+  [/â€“/g, "–"],
+  [/â€”/g, "—"],
+  [/Ä±/g, "ı"],
+  [/Ä°/g, "İ"],
+  [/Ã¼/g, "ü"],
+  [/Ãœ/g, "Ü"],
+  [/Ã¶/g, "ö"],
+  [/Ã–/g, "Ö"],
+  [/Ã§/g, "ç"],
+  [/Ã‡/g, "Ç"],
+  [/ÅŸ/g, "ş"],
+  [/Åž/g, "Ş"],
+  [/ÄŸ/g, "ğ"],
+  [/Äž/g, "Ğ"],
+];
+
+const typoReplacements: Array<[RegExp, string]> = [
+  [/\bSretim\b/g, "Üretim"],
+  [/\bsretim\b/g, "üretim"],
+  [/\bMühendislixi\b/g, "Mühendisliği"],
+  [/\bmühendislixi\b/g, "mühendisliği"],
+  [/\bBaxlayan\b/g, "Başlayan"],
+  [/\bbaxlayan\b/g, "başlayan"],
+  [/\bAnlayıxı\b/g, "Anlayışı"],
+  [/\banlayıxı\b/g, "anlayışı"],
+  [/\bÖxrenilmix\b/g, "Öğrenilmiş"],
+  [/\böxrenilmix\b/g, "öğrenilmiş"],
+  [/\bKuxak\b/g, "Kuşak"],
+  [/\bkuxak\b/g, "kuşak"],
+  [/\bdönüxmüxtür\b/g, "dönüşmüştür"],
+  [/\bTaxıyoruz\b/g, "Taşıyoruz"],
+  [/\btaxıyoruz\b/g, "taşıyoruz"],
+  [/\bgenix\b/g, "geniş"],
+  [/\bGenix\b/g, "Geniş"],
+  [/\bdexerlendirilir\b/g, "değerlendirilir"],
+  [/\bdexerlendiriyoruz\b/g, "değerlendiriyoruz"],
+  [/\bDexil\b/g, "Değil"],
+  [/\bdexil\b/g, "değil"],
+  [/\bxartları\b/g, "şartları"],
+  [/\bXartları\b/g, "Şartları"],
+  [/\bxekilde\b/g, "şekilde"],
+  [/\bXekilde\b/g, "Şekilde"],
+  [/\bçalıxıyoruz\b/g, "çalışıyoruz"],
+  [/\bçalıxması\b/g, "çalışması"],
+  [/\byaklaxımı\b/g, "yaklaşımı"],
+  [/\bYaklaxımı\b/g, "Yaklaşımı"],
+  [/\bbirlextiriyoruz\b/g, "birleştiriyoruz"],
+  [/\bnetlextirilerek\b/g, "netleştirilerek"],
+  [/\boluxturulur\b/g, "oluşturulur"],
+  [/\boluxturur\b/g, "oluşturur"],
+  [/\boluxan\b/g, "oluşan"],
+  // Türkçe ünsüz yumuşaması: "ihtiyaç" ek aldığında "ihtiyacı" olur.
+  // \b Türkçe karakterlerle çalışmadığı için global replace kullanılır.
+  [/ihtiyaçı/g, "ihtiyacı"],
+  [/ihtiyaçın/g, "ihtiyacın"],
+  [/\beriximi\b/g, "erişimi"],
+  [/\byerleximi\b/g, "yerleşimi"],
+  [/\bSretim akıxı\b/g, "Üretim akışı"],
+  [/\büretim akıxı\b/g, "üretim akışı"],
+  [/\bTaxıma\b/g, "Taşıma"],
+  [/\btaxıma\b/g, "taşıma"],
+  [/\bİxleme\b/g, "İşleme"],
+  [/\bixleme\b/g, "işleme"],
+  [/!özümleri/g, "Çözümleri"],
+  [/!özümü/g, "Çözümü"],
+  [/!amuru/g, "Çamuru"],
+  [/\bGörüxme\b/g, "Görüşme"],
+  [/\bgörüxme\b/g, "görüşme"],
+  [/\bGörüx\b/g, "Görüş"],
+  [/\bgörüx\b/g, "görüş"],
+  [/\biletixime\b/g, "iletişime"],
+  [/\biletixim\b/g, "iletişim"],
+  [/\bTeknik Görüxme\b/g, "Teknik Görüşme"],
+  [/\bWhatsApp ile Görüx\b/g, "WhatsApp ile Görüş"],
+];
+
+const mojibakeMarkerRegex = /[ÃÄÅÂ�]/g;
+
+function applyCasePattern(source: string, target: string) {
+  if (source.toLocaleUpperCase("tr-TR") === source) {
+    return target.toLocaleUpperCase("tr-TR");
+  }
+
+  if (source[0] && source[0].toLocaleUpperCase("tr-TR") === source[0]) {
+    return target.charAt(0).toLocaleUpperCase("tr-TR") + target.slice(1);
+  }
+
+  return target;
+}
+
+function countMojibakeMarkers(value: string) {
+  return (value.match(mojibakeMarkerRegex) ?? []).length;
+}
+
+const cp1252Reverse: Record<number, number> = {
+  0x20ac: 0x80, 0x201a: 0x82, 0x0192: 0x83, 0x201e: 0x84, 0x2026: 0x85,
+  0x2020: 0x86, 0x2021: 0x87, 0x02c6: 0x88, 0x2030: 0x89, 0x0160: 0x8a,
+  0x2039: 0x8b, 0x0152: 0x8c, 0x017d: 0x8e, 0x2018: 0x91, 0x2019: 0x92,
+  0x201c: 0x93, 0x201d: 0x94, 0x2022: 0x95, 0x2013: 0x96, 0x2014: 0x97,
+  0x02dc: 0x98, 0x2122: 0x99, 0x0161: 0x9a, 0x203a: 0x9b, 0x0153: 0x9c,
+  0x017e: 0x9e, 0x0178: 0x9f,
+};
+
+function decodeLatin1AsUtf8(value: string) {
+  const bytes: number[] = [];
+
+  for (const char of value) {
+    const codePoint = char.codePointAt(0) ?? 0;
+
+    if (codePoint <= 0xff) {
+      bytes.push(codePoint);
+    } else if (cp1252Reverse[codePoint] !== undefined) {
+      bytes.push(cp1252Reverse[codePoint]);
+    } else {
+      // Latin-1/cp1252 dışı karakter (ör. düzgün Türkçe harf) içeren karışık
+      // metinlerde byte-decode veri kaybettirir; bu durumda dokunma.
+      return value;
+    }
+  }
+
+  try {
+    return new TextDecoder("utf-8", { fatal: true }).decode(Uint8Array.from(bytes));
+  } catch {
+    return value;
+  }
+}
+
+function normalizeMojibake(value: string) {
+  let current = value;
+
+  for (let index = 0; index < 3; index += 1) {
+    if (!/[ÃÄÅÂ]/.test(current)) {
+      break;
+    }
+
+    const candidate = decodeLatin1AsUtf8(current);
+    if (candidate === current) {
+      break;
+    }
+
+    if (countMojibakeMarkers(candidate) <= countMojibakeMarkers(current)) {
+      current = candidate;
+      continue;
+    }
+
+    break;
+  }
+
+  return current;
+}
+
+function normalizeAsciiWords(text: string) {
+  return text.replace(/\b[A-Za-z]+\b/g, (token) => {
+    const replacement = asciiWordMap[token.toLocaleLowerCase("tr-TR")];
+    return replacement ? applyCasePattern(token, replacement) : token;
+  });
+}
+
+export function trText(text: string): string {
+  let value = text.normalize("NFC");
+
+  value = normalizeMojibake(value);
+
+  for (const [broken, fixed] of exactReplacements) {
+    value = value.split(broken).join(fixed);
+  }
+
+  for (const [pattern, replacement] of fragmentReplacements) {
+    value = value.replace(pattern, replacement);
+  }
+
+  value = normalizeMojibake(value);
+  value = normalizeAsciiWords(value);
+
+  for (const [pattern, replacement] of charLevelReplacements) {
+    value = value.replace(pattern, replacement);
+  }
+
+  for (const [pattern, replacement] of typoReplacements) {
+    value = value.replace(pattern, replacement);
+  }
+
+  return value
+    .replace(/Â/g, "")
+    .replace(/�/g, "")
+    .replace(/[ \t]{2,}/g, " ")
+    .replace(/ ?\n ?/g, "\n")
+    .trim();
+}

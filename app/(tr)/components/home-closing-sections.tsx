@@ -1,0 +1,286 @@
+import Link from "next/link";
+import { SocialIcon } from "./social-links";
+import { createWhatsAppHref, siteContact, siteSocialProfiles } from "../lib/site-contact";
+
+/**
+ * Ana sayfanın kapanış bölümleri (kütüphane vitrini, teklif bandı, sosyal medya).
+ * İçerik verilmezse Türkçe varsayılanı kullanılır; yabancı diller aynı bileşenleri
+ * kendi metin ve bağlantılarıyla besler. Tasarım tüm dillerde ortaktır.
+ */
+
+export type HomeLibraryContent = {
+  heading: string;
+  description: string;
+  filters: { label: string; href: string }[];
+  cards: { category: string; title: string; description: string; href: string }[];
+  cardCtaLabel: string;
+  viewAllLabel: string;
+  viewAllHref: string;
+};
+
+const trLibraryContent: HomeLibraryContent = {
+  heading: "Kütüphane",
+  description:
+    "Proses, ekipman ve tesis kurulumuna dair teknik içerikleri, rehberleri ve sektörel yazıları inceleyin.",
+  filters: [
+    { label: "Tüm İçerikler", href: "/kutuphane" },
+    { label: "Programlar", href: "/programlar" },
+    { label: "Blog / Makaleler", href: "/kutuphane/blog" },
+    { label: "Teknik Rehberler", href: "/kutuphane/teknik-rehberler" },
+    { label: "PDF Kataloglar", href: "/kutuphane/pdf-kataloglar" },
+    { label: "Video İçerikler", href: "/kutuphane/video-icerikler" },
+    { label: "Sık Sorulan Sorular", href: "/kutuphane/sik-sorulan-sorular" },
+    { label: "Terimler Sözlüğü", href: "/kutuphane/terimler-sozlugu" },
+  ],
+  cards: [
+    {
+      category: "Kompost & Atık",
+      title: "Kompost Tesisi Kurulumu",
+      description:
+        "Kompost yatırımında proses akışı, makine seçimi ve çevresel kontrol başlıklarını bir arada görün.",
+      href: "/kutuphane/blog/kompost-tesisi-kurulumu",
+    },
+    {
+      category: "Gübre Tesisi",
+      title: "Gübre Üretim Hattı",
+      description:
+        "Sıfırdan gübre hattı planlarken kapasite, ekipman ve saha kurgusunu birlikte okuyun.",
+      href: "/kutuphane/blog/gubre-uretim-hatti",
+    },
+    {
+      category: "Helezon & Konveyör",
+      title: "Helezon Kapasite Hesabı",
+      description:
+        "Çap, hatve, devir ve doluluk oranı üzerinden taşıma kapasitesi mantığını inceleyin.",
+      href: "/kutuphane/blog/helezon-kapasite-hesabi",
+    },
+    {
+      category: "Kurutma Sistemleri",
+      title: "Kurutma Tamburu Hesaplama",
+      description:
+        "Su uçurma yükü, hava debisi, geometri ve enerji ihtiyacını tek rehberde değerlendirin.",
+      href: "/kutuphane/blog/kurutma-tamburu-hesaplama",
+    },
+    {
+      category: "Gübre Tesisi",
+      title: "Granül Gübre Üretim Süreci",
+      description:
+        "Granülasyon, kurutma, eleme ve paketleme hattını yatırım gözüyle değerlendirin.",
+      href: "/kutuphane/blog/granul-gubre-uretim-sureci",
+    },
+    {
+      category: "Kompost & Atık",
+      title: "Biyogaz Ön İşlem",
+      description:
+        "Biyogaz besleme hattında ayırma, boyutlandırma ve dengeleme disiplinini teknik olarak okuyun.",
+      href: "/kutuphane/blog/biyogaz-on-islem",
+    },
+  ],
+  cardCtaLabel: "İçeriği İncele",
+  viewAllLabel: "Tüm kütüphaneyi görüntüle",
+  viewAllHref: "/kutuphane",
+};
+
+export function HomeLibrarySection({ content }: { content?: HomeLibraryContent }) {
+  const library = content ?? trLibraryContent;
+
+  return (
+    <section className="section-bottom-space">
+      <div className="site-container">
+        <div className="rounded-[32px] border border-slate-200 bg-[linear-gradient(135deg,rgba(39,141,192,0.1)_0%,#ffffff_55%,rgba(39,141,192,0.05)_100%)] px-6 py-8 shadow-[0_18px_45px_rgba(15,23,42,0.06)] sm:px-8 sm:py-10 lg:px-12">
+          <div className="max-w-3xl">
+            <h2 className="text-3xl font-semibold tracking-tight text-[#278DC0] md:text-4xl">
+              {library.heading}
+            </h2>
+            <p className="mt-4 text-sm leading-8 text-slate-900 sm:text-base">
+              {library.description}
+            </p>
+          </div>
+
+          <div className="mt-8 flex flex-wrap gap-3">
+            {library.filters.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="inline-flex min-h-11 items-center rounded-full border border-[#278DC0]/16 bg-white px-4 py-2 text-sm font-semibold text-[#278DC0] transition hover:-translate-y-0.5 hover:border-[#278DC0] hover:bg-[#278DC0]/10 hover:text-[#154764]"
+              >
+                {item.label}
+              </Link>
+            ))}
+          </div>
+
+          <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+            {library.cards.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="group rounded-[28px] border border-slate-200 bg-white p-6 shadow-[0_14px_40px_rgba(15,23,42,0.05)] transition hover:-translate-y-1 hover:border-[#278DC0]/16 hover:shadow-[0_22px_55px_rgba(15,23,42,0.08)]"
+              >
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#278DC0]">
+                  {item.category}
+                </p>
+                <h3 className="mt-4 text-2xl font-semibold tracking-tight text-slate-950">
+                  {item.title}
+                </h3>
+                <p className="mt-4 text-sm leading-7 text-slate-600">{item.description}</p>
+                <span className="mt-6 inline-flex text-sm font-semibold text-[#278DC0] transition group-hover:text-[#154764]">
+                  {library.cardCtaLabel}
+                </span>
+              </Link>
+            ))}
+          </div>
+
+          <div className="mt-8">
+            <Link
+              href={library.viewAllHref}
+              className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-[18px] py-[10px] text-[15px] font-semibold text-slate-800 transition hover:border-[#278DC0] hover:bg-[#278DC0]/10 hover:text-[#154764] sm:text-base"
+            >
+              {library.viewAllLabel}
+              <span aria-hidden="true" className="inline-block rtl:-scale-x-100">→</span>
+            </Link>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export type HomeQuoteBandContent = {
+  title: string;
+  text: string;
+  contactLabel: string;
+  contactHref: string;
+  callLabel: string;
+  whatsappLabel: string;
+  whatsappMessage: string;
+};
+
+const trQuoteBandContent: HomeQuoteBandContent = {
+  title: "Projeniz için teklif veya teknik görüşme talep edin",
+  text: "Kompost tesisi, gübre tesisi, makina ve ekipman, biyogaz veya teknik danışmanlık talepleriniz için bizimle iletişime geçin.",
+  contactLabel: "İletişim Sayfasına Git",
+  contactHref: "/iletisim",
+  callLabel: "Hemen Ara",
+  whatsappLabel: "WhatsApp",
+  whatsappMessage:
+    "Merhaba, Pro Makina web sitenizden ulaşıyorum. Teknik görüşme talep ediyorum.",
+};
+
+export function HomeQuoteBand({ content }: { content?: HomeQuoteBandContent }) {
+  const band = content ?? trQuoteBandContent;
+
+  return (
+    <section className="section-bottom-space">
+      <div className="site-container">
+        <div className="rounded-[28px] bg-[#278DC0] px-6 py-8 text-white shadow-[0_24px_70px_rgba(39,141,192,0.24)] sm:px-8 sm:py-10">
+          <h2 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+            {band.title}
+          </h2>
+          <p className="mt-4 max-w-3xl text-sm leading-8 text-white/88 sm:text-base">
+            {band.text}
+          </p>
+          <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+            <Link
+              href={band.contactHref}
+              data-cta-event="quote_button_click"
+              data-cta-label="home_contact_page"
+              className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-white px-6 text-sm font-semibold text-[#154764] transition hover:bg-slate-100"
+            >
+              {band.contactLabel}
+            </Link>
+            <a
+              href={siteContact.phoneHref}
+              data-cta-event="phone_click"
+              data-cta-label="home_call_now"
+              className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/25 px-6 text-sm font-semibold text-white transition hover:bg-white/10"
+            >
+              {band.callLabel}
+            </a>
+            <a
+              href={createWhatsAppHref(band.whatsappMessage)}
+              target="_blank"
+              rel="noopener noreferrer"
+              data-cta-event="whatsapp_click"
+              data-cta-label="home_cta_whatsapp"
+              className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-white/25 px-6 text-sm font-semibold text-white transition hover:bg-white/10"
+            >
+              {band.whatsappLabel}
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export type HomeSocialContent = {
+  tag: string;
+  title: string;
+  text: string;
+  cardTitles: Record<"linkedin" | "youtube" | "instagram", string>;
+  buttonLabels: Record<"linkedin" | "youtube" | "instagram", string>;
+  cardDescriptions?: Record<"linkedin" | "youtube" | "instagram", string>;
+};
+
+const trSocialContent: HomeSocialContent = {
+  tag: "TEKNİK İÇERİK VE MEDYA",
+  title: "Sosyal medya üzerinden teknik otoriteyi görünür kılan içerik katmanı",
+  text: "LinkedIn, YouTube ve Instagram kanallarımızda proses mühendisliği, makina üretimi, saha uygulamaları ve teknik rehberleri düzenli olarak görünür kılıyor; yatırımcı ve teknik ekipler için güven üreten bir medya akışı oluşturuyoruz.",
+  cardTitles: {
+    linkedin: "LinkedIn Teknik İçerikler",
+    youtube: "YouTube Proses Videoları",
+    instagram: "Instagram Proje Görselleri",
+  },
+  buttonLabels: {
+    linkedin: "LinkedIn’i İncele",
+    youtube: "YouTube’u Aç",
+    instagram: "Instagram’ı Gör",
+  },
+};
+
+export function HomeSocialSection({ content }: { content?: HomeSocialContent }) {
+  const social = content ?? trSocialContent;
+
+  return (
+    <section className="section-bottom-space">
+      <div className="site-container">
+        <div className="rounded-[32px] border border-slate-200 bg-slate-950 px-6 py-8 text-white shadow-[0_24px_70px_rgba(2,6,23,0.18)] sm:px-8 sm:py-10 lg:px-12">
+          <div className="max-w-3xl">
+            <p className="text-sm font-semibold uppercase tracking-[0.16em] text-white/80">
+              {social.tag}
+            </p>
+            <h2 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">
+              {social.title}
+            </h2>
+            <p className="mt-4 text-sm leading-8 text-white/78 sm:text-base">{social.text}</p>
+          </div>
+
+          <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+            {siteSocialProfiles.map((profile) => (
+              <a
+                key={profile.id}
+                href={profile.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group rounded-[24px] border border-white/10 bg-white/5 p-5 backdrop-blur-sm transition hover:-translate-y-1 hover:border-[#278DC0]/40 hover:bg-white/10"
+              >
+                <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-white/10 text-white">
+                  <SocialIcon id={profile.id} className="h-5 w-5" />
+                </div>
+                <h3 className="mt-5 text-xl font-semibold text-white">
+                  {social.cardTitles[profile.id]}
+                </h3>
+                <p className="mt-3 text-sm leading-7 text-white/72">
+                  {social.cardDescriptions?.[profile.id] ?? profile.description}
+                </p>
+                <span className="mt-5 inline-flex text-sm font-semibold text-white/85 transition group-hover:text-white">
+                  {social.buttonLabels[profile.id]}
+                </span>
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

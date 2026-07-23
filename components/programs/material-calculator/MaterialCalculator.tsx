@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import { trackEvent } from "@/app/lib/gtm-events";
+import { trackEvent } from "@/app/(tr)/lib/gtm-events";
 import { MaterialCategoryNav } from "./MaterialCategoryNav";
 import { MaterialInputForm } from "./MaterialInputForm";
 import { MaterialListPanel } from "./MaterialListPanel";
@@ -35,6 +35,7 @@ export function MaterialCalculator() {
   useEffect(() => {
     try {
       const raw = window.localStorage.getItem(STORAGE_KEY);
+      // eslint-disable-next-line react-hooks/set-state-in-effect -- localStorage yalnızca istemcide okunabilir
       if (raw) setItems(JSON.parse(raw) as ListItem[]);
     } catch {
       // bozuk kayıt yok sayılır

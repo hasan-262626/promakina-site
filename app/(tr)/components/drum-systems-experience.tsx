@@ -1,0 +1,45 @@
+"use client";
+
+import Link from "next/link";
+
+import { useMemo, useState } from "react";
+import { getMachineAuxiliarySystems } from "../lib/machine-auxiliary-systems";
+import { drumProductPages } from "./drum-product-data";
+import { ProductDetailSystem } from "./product-detail-system";
+
+export default function DrumSystemsExperience() {
+  const [activeSlug, setActiveSlug] = useState("granulator-tamburu");
+
+  const activeProduct = useMemo(
+    () => drumProductPages.find((product) => product.slug === activeSlug) ?? drumProductPages[0],
+    [activeSlug],
+  );
+
+  const auxiliarySystems = getMachineAuxiliarySystems({
+    categorySlug: "tambur-sistemleri",
+    productSlug: activeProduct.slug,
+    calculatorFamily: "drum",
+    title: activeProduct.title,
+  });
+
+  return (
+    <ProductDetailSystem
+      categoryLabel="Tambur Sistemleri"
+      categoryHref="/makinalar-ekipman/tambur-sistemleri"
+      title={activeProduct.title}
+      heroDescription={activeProduct.heroDescription}
+      heroImage="/images/tambur kurutma/tamkurutma1.jpg"
+      overviewParagraphs={activeProduct.overviewParagraphs}
+      highlightText={activeProduct.highlightText}
+      specs={activeProduct.specs}
+      applications={activeProduct.applications}
+      gallery={activeProduct.gallery}
+      optionalEquipment={activeProduct.optionalEquipment}
+      spareParts={activeProduct.spareParts}
+      auxiliarySystems={auxiliarySystems}
+      calculatorFamily="drum"
+      ctaTitle="Tambur sistemleri için doğru makina çözümünü birlikte netleştirelim"
+      ctaText="Granülatör tamburu, kurutma tamburu, soğutma tamburu, kaplama tamburu ve kompost tamburu için kapasite, proses ve saha verilerinize uygun teknik çözümü birlikte belirleyelim."
+    />
+  );
+}

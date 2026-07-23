@@ -1,20 +1,22 @@
 import fs from "node:fs";
 import path from "node:path";
 import type { MetadataRoute } from "next";
-import { drumProductPages } from "./components/drum-product-data";
-import { machineCategoryPages } from "./components/machine-group-data";
-import { compostSystemDetailMap } from "./lib/compost-system-detail-data";
-import { dryingSystemDetailMap } from "./lib/drying-system-detail-data";
-import { drumSystemDetailMap } from "./lib/drum-system-detail-data";
-import { fertilizerSystemDetailMap } from "./lib/fertilizer-system-detail-data";
-import { liquidFertilizerDetailMap } from "./lib/liquid-fertilizer-detail-data";
+import { drumProductPages } from "./(tr)/components/drum-product-data";
+import { machineCategoryPages } from "./(tr)/components/machine-group-data";
+import { compostSystemDetailMap } from "./(tr)/lib/compost-system-detail-data";
+import { dryingSystemDetailMap } from "./(tr)/lib/drying-system-detail-data";
+import { drumSystemDetailMap } from "./(tr)/lib/drum-system-detail-data";
+import { fertilizerSystemDetailMap } from "./(tr)/lib/fertilizer-system-detail-data";
+import { liquidFertilizerDetailMap } from "./(tr)/lib/liquid-fertilizer-detail-data";
 import {
   getMachinePublicCategorySlug,
   getMachinePublicProductSlug,
-} from "./lib/machine-route-utils";
-import { topicalBlogDynamicSlugs } from "./lib/topical-authority-blog-data";
-import { projectPages } from "./lib/project-pages-data";
-import { services } from "./data";
+} from "./(tr)/lib/machine-route-utils";
+import { topicalBlogDynamicSlugs } from "./(tr)/lib/topical-authority-blog-data";
+import { projectPages } from "./(tr)/lib/project-pages-data";
+import { services } from "./(tr)/data";
+import { intlLocales } from "./i18n/config";
+import { languageAlternates, pathFor, routeKeyByPath, routeKeys } from "./i18n/routes";
 
 const siteUrl = "https://www.promakina.com.tr";
 
@@ -26,7 +28,6 @@ const lastModified = new Date("2026-07-06");
 const redirectedRoutes = new Set([
   "/sektorler/atik-su-camuru-ve-aritma-cozumleri/susuzlastirma-destek-sistemleri",
   "/sektorler/atik-su-camuru-ve-aritma-cozumleri/son-urun-yonetimi",
-  "/sektorler/atik-su-camuru-ve-aritma-cozumleri/camur-besleme",
   "/sektorler/enerji-ve-biyogaz-sistemleri/besleme-ve-transfer-hatlari",
   "/sektorler/geri-donusum-ve-atik-yonetimi/son-urun-hazirlama-cozumleri",
   "/sektorler/geri-donusum-ve-atik-yonetimi/shredder-sistemleri",
@@ -40,6 +41,9 @@ const redirectedRoutes = new Set([
   "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburlari",
   "/makinalar-ekipman/depolama-ve-besleme-sistemleri/surgulu-klapeler",
   "/kutuphane/blog/sivi-gubre-tesisi-nasil-kurulur",
+  "/kutuphane/blog/kurutma-tamburu-kapasite-hesabi",
+  "/kutuphane/blog/kurutma-tamburu-cap-boy-hesabi",
+  "/kutuphane/blog/kurutma-tamburu-nasil-hesaplanir",
 ]);
 
 // İndekslenmesi istenmeyen sayfalar.
@@ -54,10 +58,12 @@ function collectStaticRoutes(dir: string, routePrefix: string, out: string[]) {
 
   for (const entry of entries) {
     if (!entry.isDirectory()) continue;
-    if (entry.name.startsWith("[") || entry.name === "api") continue;
+    if (entry.name.startsWith("[") || entry.name === "api" || entry.name === "i18n") continue;
+    // Route group klasörleri "(tr)" gibi URL'e yansımaz; şeffaf geçilir.
+    const isRouteGroup = entry.name.startsWith("(") && entry.name.endsWith(")");
     collectStaticRoutes(
       path.join(dir, entry.name),
-      `${routePrefix}/${entry.name}`,
+      isRouteGroup ? routePrefix : `${routePrefix}/${entry.name}`,
       out,
     );
   }
@@ -67,6 +73,9 @@ function priorityFor(route: string) {
   if (route === "/") return 1;
   const depth = route.split("/").filter(Boolean).length;
   if (route.startsWith("/hizmetler") || route.startsWith("/sektorler")) {
+    return depth === 1 ? 0.9 : 0.8;
+  }
+  if (route.startsWith("/tesisler")) {
     return depth === 1 ? 0.9 : 0.8;
   }
   if (route.startsWith("/makinalar-ekipman")) {
@@ -141,12 +150,36 @@ export default function sitemap(): MetadataRoute.Sitemap {
     routes.delete(route);
   }
 
-  return [...routes]
-    .sort()
-    .map((route) => ({
+  const entries: MetadataRoute.Sitemap = [...routes].sort().map((route) => {
+    // Çevirisi olan TR sayfalarına sitemap üzerinden karşılıklı hreflang eklenir.
+    const routeKey = routeKeyByPath("tr", route);
+    return {
       url: route === "/" ? `${siteUrl}/` : `${siteUrl}${route}`,
       lastModified,
       changeFrequency: "weekly" as const,
       priority: priorityFor(route),
-    }));
+      ...(routeKey ? { alternates: { languages: languageAlternates(routeKey) } } : {}),
+    };
+  });
+
+  // 6) Yabancı dil sayfaları (en / ru / ar) — hreflang alternatifleriyle
+  for (const key of routeKeys) {
+    const languages = languageAlternates(key);
+    for (const locale of intlLocales) {
+      const path = pathFor(key, locale);
+      entries.push({
+        url: `${siteUrl}${path}`,
+        lastModified,
+        changeFrequency: "weekly" as const,
+        priority: key === "home" ? 0.9 : priorityFor(routeMapTrPath(key)),
+        alternates: { languages },
+      });
+    }
+  }
+
+  return entries;
+}
+
+function routeMapTrPath(key: (typeof routeKeys)[number]) {
+  return pathFor(key, "tr");
 }

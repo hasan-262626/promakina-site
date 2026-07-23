@@ -1,8 +1,8 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { createMailtoHref, createWhatsAppHref } from "@/app/lib/site-contact";
-import { pushDataLayerEvent, baseEventParams, sanitizeLinkUrl } from "@/app/lib/gtm-events";
+import { createMailtoHref, createWhatsAppHref } from "@/app/(tr)/lib/site-contact";
+import { pushDataLayerEvent, baseEventParams, sanitizeLinkUrl } from "@/app/(tr)/lib/gtm-events";
 
 type ContactIntent =
   | "Teknik Teklif"

@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { siteContact } from "../../lib/site-contact";
+import { siteContact } from "../../(tr)/lib/site-contact";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
