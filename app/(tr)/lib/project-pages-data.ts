@@ -438,7 +438,7 @@ export const projectPages: ProjectPageData[] = [
       },
       {
         label: "Sıvı Gübre Üretim Tesisi Nasıl Kurulur?",
-        href: "/kutuphane/sivi-gubre-uretim-tesisi-nasil-kurulur",
+        href: "/kutuphane/blog/sivi-gubre-uretim-tesisi-nasil-kurulur",
       },
     ],
   },

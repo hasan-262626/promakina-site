@@ -104,6 +104,9 @@ export type DrumSystemDetailPageData = {
   introEyebrow?: string;
   importanceTitle?: string;
   importanceDescription?: string;
+  // Sayfaya özel "Neden Önemlidir?" kartları. Verilmezse slug bazlı varsayılan
+  // kartlar kullanılır (mevcut davranış korunur).
+  importanceCards?: { title: string; description: string }[];
   flowSectionTitle?: string;
   selectionTitle?: string;
   mistakesTitle?: string;
@@ -366,6 +369,10 @@ function getCalculatorFields(page: DrumSystemDetailPageData) {
 
 function getImportanceCards(page: DrumSystemDetailPageData) {
   const slug = page.slug;
+
+  if (page.importanceCards && page.importanceCards.length > 0) {
+    return page.importanceCards;
+  }
 
   if (slug === "kurutma-tamburu-hesaplama") {
     return [

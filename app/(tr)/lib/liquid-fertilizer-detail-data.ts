@@ -51,6 +51,30 @@ export const liquidFertilizerDetailPages: DrumSystemDetailPageData[] = [
       "Sıvı gübre üretim tesisi; hammaddelerin kontrollü şekilde çözündürülmesi, reaksiyon veya karıştırma sürecinden geçirilmesi, soğutulması, filtrelenmesi, homojen hale getirilmesi ve uygun ambalajlara doldurulmasıyla çalışan entegre bir proses hattıdır. Doğru tesis kurulumu için reaktör, tank, filtrasyon, pompa, dolum ve otomasyon sistemleri birlikte planlanmalıdır.",
     readingTime: "10-12 dk",
     heroTopic: "Kurulum planı, batch hacmi, filtrasyon ve dolum altyapısı",
+    heroImageSrc: "/images/sivi dolum/sividol1.jpg",
+    heroImageAlt: "Sıvı gübre dolum ve şişeleme hattı",
+    importanceCards: [
+      {
+        title: "Homojen Ürün Kalitesi",
+        description:
+          "Reaktör hacmi, karıştırıcı geometrisi, karıştırma süresi ve reçete sırası; ürünün homojenliği, çözünme kalitesi ve batch tekrarlanabilirliği üzerinde doğrudan etkilidir.",
+      },
+      {
+        title: "Hassas Dozajlama ve Reçete Kontrolü",
+        description:
+          "Loadcell, debimetre, dozaj pompası ve PLC tabanlı reçete yönetimi; hammaddelerin doğru miktarda ve doğru sırayla prosese alınmasını sağlar.",
+      },
+      {
+        title: "Kimyasal Dayanım ve Malzeme Seçimi",
+        description:
+          "Tank, borulama, pompa, conta ve vana malzemeleri; ürünün pH değeri, sıcaklığı, viskozitesi ve kimyasal bileşimine göre seçilmelidir.",
+      },
+      {
+        title: "Filtrasyon, Dolum ve Stok Dengesi",
+        description:
+          "Filtrasyon kapasitesi, mamul tankı hacmi ve dolum hattı hızı üretim kapasitesiyle dengelenerek bekleme, tıkanma ve sevkiyat gecikmeleri önlenmelidir.",
+      },
+    ],
     heroCtaLabel: "Sıvı Gübre Tesisi İçin Teklif Al",
     heroCtaHref: "https://wa.me/905320580104",
     heroSecondaryLabel: "Reaktör ve Tankları İncele",
@@ -151,6 +175,32 @@ export const liquidFertilizerDetailPages: DrumSystemDetailPageData[] = [
         ],
         paragraphs: [
           "Kimyasal dayanım doğru seçilmediğinde en büyük risk korozyondur. Otomasyon eksik olduğunda ise batch tekrarlanabilirliği ve ürün standardı bozulur.",
+        ],
+      }),
+      section("Dolum, Mamul Stok ve Sevkiyat Planlaması", {
+        bullets: [
+          "Dolum makinesi kapasitesinin üretim (batch) kapasitesiyle dengelenmesi",
+          "Mamul tanklarının batch ve sevkiyat programına göre boyutlandırılması",
+          "IBC, bidon veya varil dolum senaryolarına göre hat kurgusu",
+          "Dolum öncesi filtrasyon ve ürün kontrolü",
+          "Ara stoklama ve sevkiyat organizasyonu",
+        ],
+        paragraphs: [
+          "Sıvı gübre tesisinde gerçek günlük kapasite yalnız tank hacmiyle değil, dolum hattı hızıyla da belirlenir. Bir tank kısa sürede dolsa bile dolum hattı yavaşsa günlük kapasite düşer; hızlı dolum mümkün olsa bile uzun çözündürme süresi üretim ritmini bozar. Bu yüzden dolum makinesi kapasitesi ile üretim kapasitesi baştan dengelenmelidir.",
+          "Her tankın rolü net tanımlanmalıdır; ana karışım tankı, ara stok tankı ve dolum öncesi bekleme tankı aynı işlevi görmez. Mamul tankları, batch büyüklüğü ve sevkiyat programına göre seçilir. Şişe, bidon, varil veya IBC dolum senaryoları farklı debi ve hat kurgusu gerektirir; ürün çeşitliliği fazlaysa ambalaj tipleri arasında geçiş kolaylığı saha düzenini ve ilk yatırımı etkiler. Dolum öncesi filtrasyon ve ürün kontrolü, özellikle damla sulama gibi hassas uygulamalarda dolum kalitesini ve raf stabilitesini korur.",
+        ],
+      }),
+      section("Yatırım Planlaması ve Modüler Kapasite Artırımı", {
+        bullets: [
+          "İlk yatırım kapasitesinin gerçekçi belirlenmesi",
+          "Gelecekte modüler kapasite artırımına açık tasarım",
+          "Yardımcı tesis ve saha yerleşimi gereksinimleri",
+          "Otomasyon ve reçete yönetimi seviyesi",
+          "Yatırım öncesi teknik fizibilite",
+        ],
+        paragraphs: [
+          "Sıvı gübre tesisleri hızlı ürün çeşitliliği nedeniyle esnek kurulmalıdır. İlk yatırımda çok yüksek kapasite gereksiz yük getirebilirken, fazla küçük kurulan tesis kısa sürede darboğaz oluşturur. En sağlıklı yaklaşım; modüler reaktör yapıları, by-pass hatları ve ayrı çözündürme tanklarıyla gelecekte kapasite artırımına açık bir omurga kurmaktır.",
+          "Yatırım öncesi teknik fizibilite kritiktir; ürün tipi, kapasite, ambalaj yapısı, otomasyon seviyesi ve saha kısıtları netleşmeden alınan teklifler sağlıklı kıyaslanamaz. Aynı kapasitede görünen iki tesis; filtrasyon, dolum, temizlik ve stoklama kapsamı nedeniyle ciddi farklar taşıyabilir. Yardımcı tesis ihtiyaçları, otomasyon-reçete yönetimi seviyesi ve saha yerleşimi de bu aşamada tanımlanmalıdır.",
         ],
       }),
     ],

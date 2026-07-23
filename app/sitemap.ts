@@ -46,6 +46,8 @@ const redirectedRoutes = new Set([
   "/kutuphane/blog/kurutma-tamburu-nasil-hesaplanir",
   // Paket 2A: kütüphane çift içerik sürümü blog sürümüne 308 ile yönlendirildi.
   "/kutuphane/granul-gubre-uretim-sureci",
+  // Paket 2B-1: kütüphane sıvı gübre sayfası içerik aktarımı sonrası blog sürümüne yönlendirildi.
+  "/kutuphane/sivi-gubre-uretim-tesisi-nasil-kurulur",
 ]);
 
 // İndekslenmesi istenmeyen sayfalar.
