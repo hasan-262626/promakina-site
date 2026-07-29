@@ -277,7 +277,7 @@ export const glossaryTerms: Record<string, GlossaryTerm> = {
     links: [
       page("Toz Toplama Sistemleri", "/makinalar-ekipman/toz-toplama-sistemleri"),
       page("Atık Su Çamuru ve Arıtma Çözümleri", "/sektorler/atik-su-camuru-ve-aritma-cozumleri"),
-      blog("Çamur Kurutma Sistemleri", "/kutuphane/blog/camur-kurutma-sistemleri"),
+      blog("Çamur Kurutma Sistemleri", "/kutuphane/blog/camur-kurutma-sistemi"),
     ],
   }),
   "kompost-tamburu": term({
@@ -305,7 +305,7 @@ export const glossaryTerms: Record<string, GlossaryTerm> = {
     links: [
       page("Atık Su Çamuru ve Arıtma Çözümleri", "/sektorler/atik-su-camuru-ve-aritma-cozumleri"),
       page("Kurutma Tamburu", "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburu"),
-      blog("Çamur Kurutma Sistemleri", "/kutuphane/blog/camur-kurutma-sistemleri"),
+      blog("Çamur Kurutma Sistemleri", "/kutuphane/blog/camur-kurutma-sistemi"),
     ],
   }),
   "camur-kurutma": term({
@@ -319,7 +319,7 @@ export const glossaryTerms: Record<string, GlossaryTerm> = {
     links: [
       page("Çamur Kurutma Tesisi", "/sektorler/atik-su-camuru-ve-aritma-cozumleri"),
       calc("Tambur Kapasite Hesabı", "/programlar?modal=tambur-kapasite-hesabi"),
-      blog("Çamur Kurutma Sistemleri", "/kutuphane/blog/camur-kurutma-sistemleri"),
+      blog("Çamur Kurutma Sistemleri", "/kutuphane/blog/camur-kurutma-sistemi"),
     ],
   }),
   sterilizasyon: term({
@@ -336,7 +336,7 @@ export const glossaryTerms: Record<string, GlossaryTerm> = {
         "/makinalar-ekipman/tambur-sistemleri/sterilizasyon-ve-stabilizasyon-tamburu",
       ),
       page("Atık Su Çamuru ve Arıtma Çözümleri", "/sektorler/atik-su-camuru-ve-aritma-cozumleri"),
-      blog("Çamur Kurutma Sistemleri", "/kutuphane/blog/camur-kurutma-sistemleri"),
+      blog("Çamur Kurutma Sistemleri", "/kutuphane/blog/camur-kurutma-sistemi"),
     ],
   }),
   stabilizasyon: term({
@@ -353,7 +353,7 @@ export const glossaryTerms: Record<string, GlossaryTerm> = {
         "/makinalar-ekipman/tambur-sistemleri/sterilizasyon-ve-stabilizasyon-tamburu",
       ),
       page("Atık Su Çamuru ve Arıtma Çözümleri", "/sektorler/atik-su-camuru-ve-aritma-cozumleri"),
-      blog("Çamur Kurutma Sistemleri", "/kutuphane/blog/camur-kurutma-sistemleri"),
+      blog("Çamur Kurutma Sistemleri", "/kutuphane/blog/camur-kurutma-sistemi"),
     ],
   }),
   bertaraf: term({
@@ -370,7 +370,7 @@ export const glossaryTerms: Record<string, GlossaryTerm> = {
         "/sektorler/atik-su-camuru-ve-aritma-cozumleri",
       ),
       page("Geri Dönüşüm ve Atık Yönetimi", "/sektorler/geri-donusum-ve-atik-yonetimi"),
-      blog("Çamur Kurutma Sistemleri", "/kutuphane/blog/camur-kurutma-sistemleri"),
+      blog("Çamur Kurutma Sistemleri", "/kutuphane/blog/camur-kurutma-sistemi"),
     ],
   }),
   reaktor: term({
@@ -516,7 +516,7 @@ export const glossaryTerms: Record<string, GlossaryTerm> = {
         "/makinalar-ekipman/tambur-sistemleri/sterilizasyon-ve-stabilizasyon-tamburu",
       ),
       page("Atık Su Çamuru ve Arıtma Çözümleri", "/sektorler/atik-su-camuru-ve-aritma-cozumleri"),
-      blog("Çamur Kurutma Sistemleri", "/kutuphane/blog/camur-kurutma-sistemleri"),
+      blog("Çamur Kurutma Sistemleri", "/kutuphane/blog/camur-kurutma-sistemi"),
     ],
   }),
   "siklon-ayirici": term({
@@ -983,7 +983,7 @@ export const glossaryTerms: Record<string, GlossaryTerm> = {
     links: [
       page("Atık Su Çamuru ve Arıtma Çözümleri", "/sektorler/atik-su-camuru-ve-aritma-cozumleri"),
       page("Programlar", "/programlar"),
-      blog("Çamur Kurutma Sistemleri", "/kutuphane/blog/camur-kurutma-sistemleri"),
+      blog("Çamur Kurutma Sistemleri", "/kutuphane/blog/camur-kurutma-sistemi"),
     ],
   }),
   yogunluk: term({

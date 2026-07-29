@@ -92,7 +92,7 @@ export const topicalBlogCategories: TopicalCategory[] = [
       { title: "Tambur Kurutucu Nasıl Çalışır?", description: "Tambur, lifter ve gaz akışı mantığını açıklayan içerik.", href: "/kutuphane/blog/tambur-kurutucu-nasil-calisir" },
       { title: "Rotary Dryer Design", description: "Rotary dryer tasarımını uluslararası terminoloji ile ele alır.", href: "/kutuphane/blog/rotary-dryer-design" },
       { title: "Endüstriyel Kurutma Sistemleri", description: "Farklı kurutma yaklaşım ve teknolojilerini karşılaştırır.", href: "/kutuphane/blog/endustriyel-kurutma-sistemleri" },
-      { title: "Çamur Kurutma Sistemleri", description: "Yüksek nemli çamur akışlarında özel gereksinimler.", href: "/kutuphane/blog/camur-kurutma-sistemleri" },
+      { title: "Çamur Kurutma Sistemleri", description: "Yüksek nemli çamur akışlarında özel gereksinimler.", href: "/kutuphane/blog/camur-kurutma-sistemi" },
     ],
     ctaText:
       "Kurutma hattınız için kapasite hesabı, rotary dryer tasarımı ve anahtar teslim tesis çözümü almak isterseniz Pro Makina ile iletişime geçin.",
@@ -147,7 +147,7 @@ export const topicalBlogCategories: TopicalCategory[] = [
     relatedContents: [
       { title: "Kompost Tesisi Nasıl Kurulur?", description: "Kompost yatırımını proses odaklı ele alan ana makale.", href: "/kutuphane/blog/kompost-tesisi-nasil-kurulur" },
       { title: "Organik Atık İşleme Tesisi", description: "Karışık organik akışlarda tesis planlaması ve ekipman seçimi.", href: "/kutuphane/blog/organik-atik-isleme-tesisi" },
-      { title: "Çamur Kurutma Sistemleri", description: "Yüksek nemli çamur uygulamalarında tasarım yaklaşımı.", href: "/kutuphane/blog/camur-kurutma-sistemleri" },
+      { title: "Çamur Kurutma Sistemleri", description: "Yüksek nemli çamur uygulamalarında tasarım yaklaşımı.", href: "/kutuphane/blog/camur-kurutma-sistemi" },
       { title: "Kompost Üretim Süreci", description: "Reçete, olgunlaştırma ve son ürün hazırlama mantığı.", href: "/kutuphane/blog/kompost-uretim-sureci" },
       { title: "Biyogaz Ön İşlem Sistemleri", description: "Biyogaz tesisleri için besleme öncesi hazırlık omurgası.", href: "/kutuphane/blog/biyogaz-on-islem-sistemleri" },
     ],
@@ -342,7 +342,7 @@ export const topicalBlogArticles: TopicalArticle[] = [
       { question: "Direkt ve indirekt tambur kurutucu farkı nedir?", answer: "Direkt sistemde ürün sıcak gazla temas eder, indirekt sistemde arada ısı transfer yüzeyi bulunur." },
       { question: "Tambur kurutucu hangi sektörlerde kullanılır?", answer: "Gübre, kompost, madencilik, çamur kurutma ve farklı dökme katı malzeme uygulamalarında kullanılır." },
     ],
-    internalLinks: [...makeCommonLinks(), { label: "Kurutma Sistemleri", href: "/kutuphane/blog/kurutma-sistemleri" }, { label: "Çamur Kurutma Sistemleri", href: "/kutuphane/blog/camur-kurutma-sistemleri" }],
+    internalLinks: [...makeCommonLinks(), { label: "Kurutma Sistemleri", href: "/kutuphane/blog/kurutma-sistemleri" }, { label: "Çamur Kurutma Sistemleri", href: "/kutuphane/blog/camur-kurutma-sistemi" }],
     relatedContents: [
       { title: "Kurutma Tamburu Hesaplama", description: "Çalışma mantığını hesap diliyle birleştiren rehber.", href: "/kutuphane/blog/kurutma-tamburu-hesaplama" },
       { title: "Kurutma Tamburu Çap Boy Hesabı", description: "Geometri seçiminin neden önemli olduğunu görün.", href: "/kutuphane/blog/kurutma-tamburu-hesaplama" },
@@ -388,7 +388,7 @@ export const topicalBlogArticles: TopicalArticle[] = [
     relatedContents: [
       { title: "Kurutma Tamburu Kapasite Hesabı", description: "Tamburlu sistemlerin yük hesabını inceleyin.", href: "/kutuphane/blog/kurutma-tamburu-hesaplama" },
       { title: "Rotary Dryer Design", description: "Tambur tasarımını mühendislik dilinde okuyun.", href: "/kutuphane/blog/rotary-dryer-design" },
-      { title: "Çamur Kurutma Sistemleri", description: "Yüksek nemli akışlar için özel gereksinimleri görün.", href: "/kutuphane/blog/camur-kurutma-sistemleri" },
+      { title: "Çamur Kurutma Sistemleri", description: "Yüksek nemli akışlar için özel gereksinimleri görün.", href: "/kutuphane/blog/camur-kurutma-sistemi" },
     ],
     relatedServices: [
       { title: "Kurutma Sistemleri", description: "Endüstriyel kurutma hizmet yaklaşımımızı inceleyin.", href: "/makinalar-ekipman/tambur-sistemleri" },
@@ -724,7 +724,7 @@ export const topicalBlogArticles: TopicalArticle[] = [
     relatedContents: [
       { title: "Organik Atık İşleme Tesisi", description: "Biyogaz öncesi genel organik akış yönetimini görün.", href: "/kutuphane/blog/organik-atik-isleme-tesisi" },
       { title: "Kompost Tesisi Nasıl Kurulur?", description: "Biyolojik dönüşümün kompost tarafını inceleyin.", href: "/kutuphane/blog/kompost-tesisi-nasil-kurulur" },
-      { title: "Çamur Kurutma Sistemleri", description: "Yüksek nemli yan akışların termal yönetimini görün.", href: "/kutuphane/blog/camur-kurutma-sistemleri" },
+      { title: "Çamur Kurutma Sistemleri", description: "Yüksek nemli yan akışların termal yönetimini görün.", href: "/kutuphane/blog/camur-kurutma-sistemi" },
     ],
     relatedServices: [
       { title: "Enerji ve Biyogaz Sistemleri", description: "Sektörel çözüm yaklaşımımızı inceleyin.", href: "/sektorler/enerji-ve-biyogaz-sistemleri" },

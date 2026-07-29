@@ -785,7 +785,7 @@ export const plantSolutionConfigs: PlantSolutionConfig[] = [
     relatedArticles: [
       {
         title: "Çamur Kurutma Sistemlerini İnceleyin",
-        href: "/kutuphane/blog/camur-kurutma-sistemleri",
+        href: "/kutuphane/blog/camur-kurutma-sistemi",
         description: "Çamur kurutma prosesinin ana ekipman ve tasarım kararlarını görün.",
       },
       {
@@ -915,7 +915,7 @@ export const plantSolutionConfigs: PlantSolutionConfig[] = [
     relatedArticles: [
       {
         title: "Çamur Kurutma Sistemlerini İnceleyin",
-        href: "/kutuphane/blog/camur-kurutma-sistemleri",
+        href: "/kutuphane/blog/camur-kurutma-sistemi",
         description: "Çamur karakteri ve kurutma hattı için temel mühendislik kararları.",
       },
       {
@@ -1056,7 +1056,7 @@ export const plantSolutionConfigs: PlantSolutionConfig[] = [
       },
       {
         title: "Çamur Kurutma Sistemlerini İnceleyin",
-        href: "/kutuphane/blog/camur-kurutma-sistemleri",
+        href: "/kutuphane/blog/camur-kurutma-sistemi",
         description: "Yüksek nemli atık ve çamur fraksiyonlarında kurutma hattı kurgusuna bakın.",
       },
     ],

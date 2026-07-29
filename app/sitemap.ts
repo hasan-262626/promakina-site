@@ -48,6 +48,8 @@ const redirectedRoutes = new Set([
   "/kutuphane/granul-gubre-uretim-sureci",
   // Paket 2B-1: kütüphane sıvı gübre sayfası içerik aktarımı sonrası blog sürümüne yönlendirildi.
   "/kutuphane/sivi-gubre-uretim-tesisi-nasil-kurulur",
+  // Paket 2B-2: çoğul çamur kurutma sayfası içerik aktarımı sonrası tekil sürüme yönlendirildi.
+  "/kutuphane/blog/camur-kurutma-sistemleri",
 ]);
 
 // İndekslenmesi istenmeyen sayfalar.

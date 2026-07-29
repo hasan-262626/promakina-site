@@ -430,7 +430,7 @@ export default function Page() {
               {[
                 {
                   title: "Çamur Kurutma Sistemleri",
-                  href: "/kutuphane/blog/camur-kurutma-sistemleri",
+                  href: "/kutuphane/blog/camur-kurutma-sistemi",
                   description:
                     "Atık su çamurunda termal kurutma kurgusunu ve ana mühendislik kararlarını inceleyin.",
                 },

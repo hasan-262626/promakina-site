@@ -366,6 +366,28 @@ export const compostSystemDetailPages: DrumSystemDetailPageData[] = [
       "Çamur kurutma sistemi; arıtma çamuru, belediye çamuru, digestat ve yüksek nemli organik atıkların nem oranını düşürmek, hacmini azaltmak, stabil hale getirmek ve kompost, yakıt veya bertaraf öncesi uygun forma getirmek için tasarlanır.",
     readingTime: "10-12 dk",
     heroTopic: "Yüksek nem, yapışkan ürün davranışı ve koku kontrolü",
+    importanceCards: [
+      {
+        title: "Giriş Neminin Azaltılması",
+        description:
+          "Kurutmaya hangi kuru madde seviyesinde çamur girdiği termal yükü doğrudan belirler. Mekanik susuzlaştırma performansı bu yüzden kurutma projesinin parçasıdır.",
+      },
+      {
+        title: "Yapışma ve Topaklanma Kontrolü",
+        description:
+          "Çamur standart granül veya mineral gibi davranmaz; yapışma, topaklanma ve kabuk oluşumu tambur iç yapısının ve besleme düzeninin özel seçilmesini gerektirir.",
+      },
+      {
+        title: "Enerji ve Hava Hattı Dengesi",
+        description:
+          "Buharlaşacak su miktarı; brülör kapasitesi, fan debisi ve filtre hattını birlikte belirler. Gaz hattı yetersiz kaldığında sistem sahada kararsız çalışır.",
+      },
+      {
+        title: "Koku ve Emisyon Yönetimi",
+        description:
+          "Emiş hattı, filtreleme ve gerektiğinde scrubber veya biyofiltre; özellikle belediye ve arıtma uygulamalarında kurutma hattının ayrılmaz parçasıdır.",
+      },
+    ],
     heroCtaLabel: "Kompost Tesisi İçin Teklif Al",
     heroCtaHref: "https://wa.me/905320580104",
     heroSecondaryLabel: "Tambur Hesaplarını Aç",
@@ -406,6 +428,12 @@ export const compostSystemDetailPages: DrumSystemDetailPageData[] = [
           "Bu akışların ortak noktası yüksek nemdir; ancak her malzeme aynı yapışkanlık ve gaz davranışını göstermez. Bu nedenle bunker, iç flight yapısı ve gaz arıtma sistemi ayrı ayrı düşünülmelidir.",
         ],
       }),
+      section("Mekanik susuzlaştırma ile termal kurutma arasındaki bağ", {
+        paragraphs: [
+          "Birçok çamur kurutma projesinde ilk büyük hata, mekanik susuzlaştırma ile termal kurutmanın ayrı düşünülmesidir. Oysa kurutma yükünü belirleyen temel başlık, sisteme hangi kuru madde seviyesinde çamur girdiğidir. Giriş kuru maddesi birkaç puan artırıldığında termal enerji ihtiyacı ciddi biçimde düşebilir.",
+          "Bu nedenle çamur kurutma sistemi tasarlanırken dekantör, pres veya başka susuzlaştırma ekipmanlarının performansı da mühendislik kapsamına girer. Doğru ön susuzlaştırma, termal kurutmanın yatırım ve işletme maliyetini doğrudan azaltır.",
+        ],
+      }),
       section("Çamur kurutmada nem hesabı ve ürün davranışı", {
         formulas: [
           formula(
@@ -428,6 +456,25 @@ export const compostSystemDetailPages: DrumSystemDetailPageData[] = [
         ],
         paragraphs: [
           "Çamur kurutma hattında scrubber ve biyofiltre ihtiyacı, yalnız koku değil prosesin gaz yükü ve çevresel kabulü açısından da değerlendirilmelidir.",
+          "Gaz hattı ve filtreleme mantığı yetersiz kaldığında yüksek nemli çamur sistemleri sahada kararsız çalışır; bu yüzden fan, siklon, filtre ve baca birlikte çözülmelidir.",
+        ],
+      }),
+      section("Kurutma teknolojisi seçiminde ana kriterler", {
+        paragraphs: [
+          "Çamur kurutma sistemlerinde tamburlu, bantlı, indirekt veya hibrit çözümler tercih edilebilir. Seçim yapılırken günlük tonaj, enerji erişimi, emisyon limiti, ürünün son kullanım alanı ve saha kısıtı birlikte değerlendirilir. Bazı projelerde düşük yatırım öncelikliyken, bazılarında düşük koku ve düşük toz yükü daha kritik olabilir.",
+          "Teknoloji seçimi yalnız katalog avantajlarıyla değil, sahadaki gerçek operasyon modeliyle yapılmalıdır. Böylece sistem kağıt üzerinde değil, gerçek işletme şartlarında verimli hale gelir.",
+        ],
+      }),
+      section("Koku, toz ve emisyon yönetimi", {
+        paragraphs: [
+          "Çamur kurutma yatırımlarında çevresel kontrol, kararın önemli bir parçasıdır. Koku, toz ve gaz emisyonları yeterince değerlendirilmeden yapılan tasarımlar; teknik olarak çalışan ancak işletme açısından sorun çıkaran tesislere dönüşebilir.",
+          "Bu nedenle emiş sistemi, hava yönü, filtreleme ve gerekiyorsa gaz arıtma mantığı kurutma hattının ayrılmaz parçası kabul edilmelidir. Özellikle belediye ve arıtma uygulamalarında bu başlık daha da kritik hale gelir.",
+        ],
+      }),
+      section("Son ürün kullanımı ve yatırım stratejisi", {
+        paragraphs: [
+          "Kurutulan çamurun nihai kullanım senaryosu tasarımı doğrudan etkiler. Enerji geri kazanımı, depolama hacmini azaltma, granül ürün hazırlama veya ileri proses kullanımı gibi farklı hedefler farklı ekipman mantıkları doğurur.",
+          "Bu yüzden çamur kurutma sistemi yalnız atık azaltma çözümü değil, aynı zamanda proses stratejisi olarak ele alınmalıdır.",
         ],
       }),
     ],
@@ -469,6 +516,7 @@ export const compostSystemDetailPages: DrumSystemDetailPageData[] = [
     faqs: [
       faq("Çamur kurutma sistemi nasıl çalışır?", "Susuzlaştırılmış çamur beslenir, şartlandırılır, tamburda kurutulur ve çıkan sıcak gaz siklon, filtre ve gerekirse scrubber veya biyofiltre ile arıtılır."),
       faq("Çamur kurutmada en büyük maliyet nedir?", "Çoğu projede en büyük işletme gideri enerji, özellikle de buharlaşacak suya bağlı yakıt yüküdür."),
+      faq("Susuzlaştırma ile kurutma birlikte mi değerlendirilmelidir?", "Evet. Giriş kuru maddesi termal yükü doğrudan etkilediği için mekanik susuzlaştırma performansı kurutma projesinin parçasıdır."),
       faq("Arıtma çamuru hangi neme kadar kurutulur?", "Hedef nem, son kullanım amacına göre belirlenir; kompost, yakıt veya bertaraf senaryoları farklı çıkış nemi gerektirebilir."),
       faq("Çamur kurutma hattında scrubber gerekir mi?", "Yoğun koku ve gaz yükü olan uygulamalarda sıkça gerekir; proje özelinde değerlendirilmelidir."),
       faq("Kurutulmuş çamur nasıl değerlendirilir?", "Komposta, yakıt hazırlığına, hacim azaltılmış bertarafa veya başka geri kazanım senaryolarına yönlendirilebilir."),
