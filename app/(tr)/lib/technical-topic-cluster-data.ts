@@ -12,6 +12,9 @@ export type TechnicalTopicClusterArticle = {
   slug: string;
   type: "blog" | "rehber" | "hesap" | "makine" | "hizmet";
   priority: number;
+  // Varsayılan /kutuphane/blog/<slug> dışında bir hedefe bağlanması gereken
+  // içerikler için opsiyonel mutlak yol. Verilmezse mevcut davranış korunur.
+  href?: string;
   description?: string;
   linkLabel?: string;
 };
@@ -387,7 +390,7 @@ const technicalTopicClusters: TechnicalTopicCluster[] = [
       "Yatırım ölçeği, otomasyon ve genişleme ihtimali",
     ],
     articles: [
-      { title: "Organomineral Gübre Tesisi Maliyeti", slug: "organomineral-gubre-tesisi-maliyeti", type: "blog", priority: 1 },
+      { title: "Organomineral Gübre Tesisi Maliyeti", slug: "organomineral-gubre-tesisi-maliyeti", type: "blog", priority: 1, href: "/kutuphane/organomineral-gubre-tesisi-maliyeti" },
       { title: "Granül Gübre Üretim Süreci", slug: "granul-gubre-uretim-sureci", type: "blog", priority: 2 },
       { title: "NPK Gübre Üretimi", slug: "npk-gubre-uretimi", type: "blog", priority: 3 },
       { title: "Gübre Tesisi Kurulumu", slug: "gubre-tesisi-kurulumu", type: "hizmet", priority: 4 },

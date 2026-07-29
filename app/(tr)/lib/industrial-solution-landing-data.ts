@@ -140,7 +140,7 @@ export const industrialSolutionLandingConfigs: IndustrialSolutionLandingConfig[]
     relatedArticles: [
       { title: "Granül Gübre Üretim Süreci", description: "Dozajlama, granülasyon, kurutma ve eleme adımlarını teknik sırayla görün.", href: "/kutuphane/blog/granul-gubre-uretim-sureci" },
       { title: "Gübre Üretim Hattı", description: "Bir üretim hattının sıfırdan nasıl kurulduğunu yatırım mantığıyla okuyun.", href: "/kutuphane/blog/gubre-uretim-hatti" },
-      { title: "Organomineral Gübre Tesisi Maliyeti", description: "Yatırım kalemleri ve kapasite kararlarının maliyet etkisini inceleyin.", href: "/kutuphane/blog/organomineral-gubre-tesisi-maliyeti" },
+      { title: "Organomineral Gübre Tesisi Maliyeti", description: "Yatırım kalemleri ve kapasite kararlarının maliyet etkisini inceleyin.", href: "/kutuphane/organomineral-gubre-tesisi-maliyeti" },
     ],
     faqs: [
       { question: "Gübre tesisi kurulumu neye göre planlanır?", answer: "Ürün tipi, hedef kapasite, reçete, kurutma ihtiyacı ve saha yerleşimi birlikte değerlendirilir." },
@@ -528,7 +528,7 @@ export const industrialSolutionLandingConfigs: IndustrialSolutionLandingConfig[]
       { title: "Konveyör Kapasite Hesabı", description: "Hat içi transfer ve stok yönetimini senkronize düşünün.", href: "/programlar/konveyor-kapasite-hesabi" },
     ],
     relatedArticles: [
-      { title: "Organomineral Gübre Tesisi Maliyeti", description: "Yatırım kalemleri ve kapasite kararlarının finansal etkisini inceleyin.", href: "/kutuphane/blog/organomineral-gubre-tesisi-maliyeti" },
+      { title: "Organomineral Gübre Tesisi Maliyeti", description: "Yatırım kalemleri ve kapasite kararlarının finansal etkisini inceleyin.", href: "/kutuphane/organomineral-gubre-tesisi-maliyeti" },
       { title: "Granül Gübre Üretim Süreci", description: "Granülasyon ve son ürün hazırlığını süreç akışıyla görün.", href: "/kutuphane/blog/granul-gubre-uretim-sureci" },
       { title: "NPK Gübre Üretimi", description: "Mineral besleyici odaklı reçete ve proses mantığını okuyun.", href: "/kutuphane/blog/npk-gubre-uretimi" },
     ],
@@ -608,7 +608,7 @@ export const industrialSolutionLandingConfigs: IndustrialSolutionLandingConfig[]
     relatedArticles: [
       { title: "Sıvı Gübre Tesisi Nasıl Kurulur?", description: "Tank, reaktör, çözündürme ve dolum akışını teknik rehberle inceleyin.", href: "/kutuphane/blog/sivi-gubre-uretim-tesisi-nasil-kurulur" },
       { title: "Gübre Tesisi Kurulumu", description: "Daha geniş üretim sistemi perspektifiyle yatırım mantığını okuyun.", href: "/kutuphane/blog/gubre-tesisi-kurulumu" },
-      { title: "Organomineral Gübre Tesisi Maliyeti", description: "Ürün ailesi ve yatırım kalemleri arasındaki ilişkiyi görün.", href: "/kutuphane/blog/organomineral-gubre-tesisi-maliyeti" },
+      { title: "Organomineral Gübre Tesisi Maliyeti", description: "Ürün ailesi ve yatırım kalemleri arasındaki ilişkiyi görün.", href: "/kutuphane/organomineral-gubre-tesisi-maliyeti" },
     ],
     faqs: [
       { question: "Sıvı gübre üretim tesisinde hangi ekipmanlar gerekir?", answer: "Tanklar, karıştırıcılar, reaktörler, çözündürme üniteleri, transfer ekipmanları ve dolum sistemleri gerekir." },

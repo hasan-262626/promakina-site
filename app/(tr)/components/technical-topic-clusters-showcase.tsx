@@ -93,7 +93,7 @@ export function TechnicalTopicClustersShowcase({ clusters }: Props) {
                   return (
                     <Link
                       key={article.slug}
-                      href={`/kutuphane/blog/${article.slug}`}
+                      href={article.href ?? `/kutuphane/blog/${article.slug}`}
                       className={`group flex min-h-[52px] w-full items-center justify-between gap-3 rounded-xl border border-[#D8E6EF] bg-white px-4 py-3 text-sm font-semibold leading-6 text-[#0F172A] shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-[#278DC0] hover:bg-[#F1F8FC] hover:text-[#154764] hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#278DC0] ${
                         hidden ? "hidden" : ""
                       }`}

@@ -973,7 +973,7 @@ const generatedFertilizerArticles: TopicalArticle[] = [
     marketText: "stabil organik-mineral karışım, granül dayanımı ve son ürün standardı",
     ctaText: "Organomineral üretim hattınızı hammadde karakteriniz ve kapasite hedefinizle birlikte değerlendirelim.",
     relatedContents: [
-      card("Organomineral Gübre Tesisi Maliyeti", "Yatırım tarafını maliyet ve kapsam açısından görün.", "/kutuphane/blog/organomineral-gubre-tesisi-maliyeti"),
+      card("Organomineral Gübre Tesisi Maliyeti", "Yatırım tarafını maliyet ve kapsam açısından görün.", "/kutuphane/organomineral-gubre-tesisi-maliyeti"),
       card("NPK Gübre Üretimi", "Mineral ağırlıklı granül hatlarla farklarını karşılaştırın.", "/kutuphane/blog/npk-gubre-uretimi"),
       card("Granül Gübre Üretim Tesisi Nasıl Kurulur?", "Tesis kurulum mantığını bütün hat ölçeğinde inceleyin.", "/kutuphane/blog/granul-gubre-uretim-tesisi-nasil-kurulur"),
     ],

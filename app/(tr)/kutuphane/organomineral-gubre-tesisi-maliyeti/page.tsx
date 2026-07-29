@@ -254,12 +254,86 @@ const sections = [
   },
 ];
 
+// Paket 2B-3: blog sürümünden aktarılan özgün teknik değerlendirme tablosu.
+const technicalSummaryRows: [string, string, string][] = [
+  ["Kapasite", "Hat mimarisi ve ekipman ölçeğini belirler.", "İlk yatırım ve büyüme planını etkiler."],
+  [
+    "Tambur ve Proses Grubu",
+    "Granülasyon, kurutma ve soğutma omurgasını oluşturur.",
+    "Ürün kalitesi ve enerji maliyeti için kritiktir.",
+  ],
+  [
+    "Taşıma, Depolama ve Paketleme",
+    "Malzeme akışı ve ticari çıkışı destekler.",
+    "Dar boğaz ve saha verimi üzerinde belirleyicidir.",
+  ],
+  [
+    "Saha Kurulumu ve Yardımcı Sistemler",
+    "Otomasyon, çelik konstrüksiyon, filtre ve montaj kalemlerini kapsar.",
+    "Gerçek yatırım bütçesini tamamlar.",
+  ],
+];
+
+// Paket 2B-3: blog sürümündeki FAQ'lar, kullanıcıların aradığı soru biçimine göre
+// yeniden başlıklandırılarak aktarıldı; cevaplar kaynak içerikle uyumludur.
+const faqs = [
+  {
+    question: "Organomineral gübre tesisi maliyeti hangi kriterlere göre değişir?",
+    answer:
+      "Kapasite, ürün reçetesi, granülasyon-kurutma omurgası, paketleme seviyesi ve saha montaj kapsamı toplam maliyeti en çok etkileyen başlıklardır.",
+  },
+  {
+    question: "Saatlik kapasite yatırım maliyetini nasıl etkiler?",
+    answer:
+      "Kapasite ile yatırım arasında doğrusal bir ilişki yoktur. Bazı yardımcı ekipmanlar belirli ölçekte sabit kalırken, bazı proses ekipmanlarında ölçü artışı veya ikinci hat ihtiyacı doğabilir.",
+  },
+  {
+    question: "Granülasyon, kurutma ve soğutma ekipmanları birlikte mi değerlendirilmelidir?",
+    answer:
+      "Evet. Bu üçlü aynı performans zincirinin parçasıdır. Organik fraksiyonun proses davranışı nedeniyle karıştırma, granülasyon ve kurutma tarafında farklı mühendislik ihtiyaçları doğabilir; dengesiz seçim kapasite kaybı ve enerji maliyeti oluşturur.",
+  },
+  {
+    question: "Paketleme ve depolama sistemi yatırım kapsamına dahil midir?",
+    answer:
+      "Evet. Yalnızca ana makina fiyatına bakmak yanıltıcıdır; çelik konstrüksiyon, otomasyon, filtreleme, depolama, paketleme, montaj ve devreye alma kalemleri de toplam yatırımın parçasıdır.",
+  },
+  {
+    question: "Anahtar teslim tesis fiyatı nasıl belirlenir?",
+    answer:
+      "Hedef kapasite, ürün tipi, reçete yaklaşımı, saha ölçüsü ve paketleme senaryosu netleştirilerek teknik fizibilite yapılır. Kapsam tanımlanmadan alınan teklifler birbiriyle sağlıklı biçimde kıyaslanamaz.",
+  },
+];
+
 export default function Page() {
   return (
     <LibrarySeoPage
       title={title}
       description={description}
       canonical={canonical}
+      faqs={faqs}
+      extraSection={
+        <section>
+          <h2 className="text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">
+            Teknik Değerlendirme Özeti
+          </h2>
+          <div className="mt-6 overflow-x-auto">
+            <div className="min-w-[560px] overflow-hidden rounded-[24px] border border-slate-200 bg-white shadow-sm">
+              <div className="grid grid-cols-3 border-b border-slate-200 bg-slate-50 text-sm font-semibold text-slate-950">
+                <div className="px-4 py-3">Kriter</div>
+                <div className="px-4 py-3">Açıklama</div>
+                <div className="px-4 py-3">Mühendislik Önemi</div>
+              </div>
+              {technicalSummaryRows.map((row) => (
+                <div key={row[0]} className="grid grid-cols-3 border-t border-slate-200 text-sm text-slate-700">
+                  <div className="px-4 py-3 font-semibold text-slate-950">{row[0]}</div>
+                  <div className="px-4 py-3">{row[1]}</div>
+                  <div className="px-4 py-3">{row[2]}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      }
       heroDescription="Türkiye pazarı için organomineral gübre tesisi yatırımında maliyet kalemlerini, kapasite planını ve mühendislik kararlarının bütçeye etkisini detaylı biçimde ele alıyoruz."
       categoryLabel="Blog / Makaleler"
       sections={sections}

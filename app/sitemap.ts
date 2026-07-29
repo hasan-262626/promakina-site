@@ -50,6 +50,8 @@ const redirectedRoutes = new Set([
   "/kutuphane/sivi-gubre-uretim-tesisi-nasil-kurulur",
   // Paket 2B-2: çoğul çamur kurutma sayfası içerik aktarımı sonrası tekil sürüme yönlendirildi.
   "/kutuphane/blog/camur-kurutma-sistemleri",
+  // Paket 2B-3: blog organomineral maliyet sayfası içerik aktarımı sonrası kütüphane sürümüne yönlendirildi.
+  "/kutuphane/blog/organomineral-gubre-tesisi-maliyeti",
 ]);
 
 // İndekslenmesi istenmeyen sayfalar.

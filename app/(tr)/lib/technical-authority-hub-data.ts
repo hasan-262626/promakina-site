@@ -776,7 +776,7 @@ export const technicalAuthorityHubs: TechnicalAuthorityHub[] = [
         id: "program-ve-blog",
         title: "Program Ağı, Blog Ağı ve Satın Alma Niyeti",
         paragraphs: [
-          "Granül gübre konusunda sektör otoritesi kurmak için yalnız bir üretim sayfası yeterli değildir. Bu hub içinde /kutuphane/blog/granul-gubre-uretim-sureci, /kutuphane/blog/organomineral-gubre-tesisi-maliyeti, /kutuphane/blog/npk-gubre-uretimi ve /kutuphane/blog/gubre-uretim-hatti gibi içerikler aynı ağda buluşur. Aynı zamanda /programlar/kurutma-tamburu-hesabi, /programlar/helezon-kapasite-hesabi ve /programlar/konveyor-kapasite-hesabi gibi araçlar, kullanıcıyı daha teknik karar aşamasına taşır.",
+          "Granül gübre konusunda sektör otoritesi kurmak için yalnız bir üretim sayfası yeterli değildir. Bu hub içinde /kutuphane/blog/granul-gubre-uretim-sureci, /kutuphane/organomineral-gubre-tesisi-maliyeti, /kutuphane/blog/npk-gubre-uretimi ve /kutuphane/blog/gubre-uretim-hatti gibi içerikler aynı ağda buluşur. Aynı zamanda /programlar/kurutma-tamburu-hesabi, /programlar/helezon-kapasite-hesabi ve /programlar/konveyor-kapasite-hesabi gibi araçlar, kullanıcıyı daha teknik karar aşamasına taşır.",
           "Bu yaklaşım B2B satın alma niyetini yakalamada güçlüdür. Çünkü kullanıcı yalnız ne olduğunu okumaz; kendi projesi için ekipman ve kapasite mantığını düşünmeye başlar. İşte bu nokta, gerçek dönüşümün başlangıcıdır.",
         ],
       },
@@ -864,7 +864,7 @@ export const technicalAuthorityHubs: TechnicalAuthorityHub[] = [
       {
         title: "Organomineral Gübre Tesisi Maliyeti",
         description: "Yatırım kararlarını maliyet ve proses omurgası üzerinden inceleyin.",
-        href: "/kutuphane/blog/organomineral-gubre-tesisi-maliyeti",
+        href: "/kutuphane/organomineral-gubre-tesisi-maliyeti",
       },
       {
         title: "NPK Gübre Üretimi",

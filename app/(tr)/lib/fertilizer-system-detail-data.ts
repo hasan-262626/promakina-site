@@ -1165,7 +1165,7 @@ export const fertilizerSystemDetailPages: DrumSystemDetailPageData[] = [
     heroLinks: commonHeroLinks,
     introParagraphs: [
       "Organomineral gübre hatlarında doğru makine seçimi, yalnız kapasite değil ürün davranışı için de kritiktir. Organik hammadde ve mineral fraksiyon birlikte işlendiği için standart mineral hatlara göre farklı besleme ve kurutma kararları gerekebilir.",
-      "Bu yüzden makine seçimi, /sektorler/gubre-ve-granulasyon-tesisleri ve /kutuphane/blog/organomineral-gubre-tesisi-maliyeti ile birlikte okunmalıdır.",
+      "Bu yüzden makine seçimi, /sektorler/gubre-ve-granulasyon-tesisleri ve /kutuphane/organomineral-gubre-tesisi-maliyeti ile birlikte okunmalıdır.",
     ],
     flowTitle: "Organomineral Gübre Makine Akışı",
     flowSteps: [
@@ -1257,7 +1257,7 @@ export const fertilizerSystemDetailPages: DrumSystemDetailPageData[] = [
     ],
     relatedLinks: [
       { title: "Organomineral Gübre Tesisi", description: "Hizmet sayfasında bu makine zincirinin tesis çözümünü görün.", href: "/sektorler/gubre-ve-granulasyon-tesisleri" },
-      { title: "Organomineral Gübre Tesisi Maliyeti", description: "Makine seçiminin yatırım etkisini inceleyin.", href: "/kutuphane/blog/organomineral-gubre-tesisi-maliyeti" },
+      { title: "Organomineral Gübre Tesisi Maliyeti", description: "Makine seçiminin yatırım etkisini inceleyin.", href: "/kutuphane/organomineral-gubre-tesisi-maliyeti" },
       { title: "Granülatör Tamburu Seçimi", description: "Granül oluşumunu belirleyen tambur tasarımını açın.", href: "/kutuphane/blog/granulator-tamburu-secimi" },
       { title: "Gübre Kurutma ve Soğutma Prosesi", description: "Termal bölümün makine zincirindeki yerini görün.", href: "/kutuphane/blog/gubre-kurutma-ve-sogutma-prosesi" },
       { title: "Tambur Sistemleri", description: "Tambur ürün ailesini makina bazında inceleyin.", href: "/makinalar-ekipman/tambur-sistemleri" },

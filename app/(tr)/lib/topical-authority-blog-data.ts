@@ -126,7 +126,7 @@ export const topicalBlogCategories: TopicalCategory[] = [
       "Bu yüzden içeriklerimiz yalnız reçeteye değil; granülasyon, kurutma, soğutma, taşıma, paketleme ve yatırım planına birlikte odaklanır. Böylece hem teknik ekipler hem karar vericiler aynı bilgi omurgasından yararlanabilir.",
     ],
     relatedContents: [
-      { title: "Organomineral Gübre Tesisi Maliyeti", description: "Yatırım kalemleri ve proses bazlı maliyet okuması.", href: "/kutuphane/blog/organomineral-gubre-tesisi-maliyeti" },
+      { title: "Organomineral Gübre Tesisi Maliyeti", description: "Yatırım kalemleri ve proses bazlı maliyet okuması.", href: "/kutuphane/organomineral-gubre-tesisi-maliyeti" },
       { title: "Granül Gübre Üretim Süreci", description: "Granülasyon, kurutma, eleme ve paketleme adımları.", href: "/kutuphane/blog/granul-gubre-uretim-sureci" },
       { title: "Gübre Tesisi Kurulumu", description: "Anahtar teslim hat kurgusunu yatırım diliyle açıklar.", href: "/kutuphane/blog/gubre-tesisi-kurulumu" },
       { title: "NPK Gübre Üretimi", description: "NPK hatlarının reçete ve proses omurgasını anlatır.", href: "/kutuphane/blog/npk-gubre-uretimi" },
@@ -598,7 +598,7 @@ export const topicalBlogArticles: TopicalArticle[] = [
     relatedContents: [
       { title: "Gübre Tesisi Kurulumu", description: "Kurulum yaklaşımını yatırım perspektifiyle görün.", href: "/kutuphane/blog/gubre-tesisi-kurulumu" },
       { title: "Granül Gübre Üretim Süreci", description: "Granül hat adımlarını detaylı inceleyin.", href: "/kutuphane/blog/granul-gubre-uretim-sureci" },
-      { title: "Organomineral Gübre Tesisi Maliyeti", description: "Yatırım kalemlerini maliyet diliyle görün.", href: "/kutuphane/blog/organomineral-gubre-tesisi-maliyeti" },
+      { title: "Organomineral Gübre Tesisi Maliyeti", description: "Yatırım kalemlerini maliyet diliyle görün.", href: "/kutuphane/organomineral-gubre-tesisi-maliyeti" },
     ],
     relatedServices: [
       { title: "Gübre Tesisi Kurulumu", description: "Ana hizmet sayfasında kapsamı görün.", href: "/sektorler/gubre-ve-granulasyon-tesisleri" },
