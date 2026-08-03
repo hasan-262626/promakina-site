@@ -46,7 +46,7 @@ const blogCategoryHrefs = {
 const highlightedGuides: ArticleLink[] = [
   { title: "Sektörel Makine Rehberleri", href: blogCategoryHrefs.sectoral },
   { title: "Kurutma Tamburu Hesaplama", href: "/kutuphane/blog/kurutma-tamburu-hesaplama" },
-  { title: "Kurutma Tamburu Tasarım Kriterleri", href: "/kutuphane/blog/kurutma-tamburu-tasarim-kriterleri" },
+  { title: "Kurutma Tamburu Tasarım Kriterleri", href: "/kutuphane/kurutma-tamburu-tasarim-kriterleri" },
   { title: "Helezon Motor Gücü Hesabı", href: "/kutuphane/blog/helezon-motor-gucu-hesabi" },
   { title: "Bant Konveyör Seçimi", href: "/kutuphane/blog/konveyor-kapasite-hesabi" },
   { title: "Kovalı Elevatör Hesabı", href: blogCategoryHrefs.conveyor },

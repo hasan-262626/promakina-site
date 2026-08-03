@@ -52,6 +52,8 @@ const redirectedRoutes = new Set([
   "/kutuphane/blog/camur-kurutma-sistemleri",
   // Paket 2B-3: blog organomineral maliyet sayfası içerik aktarımı sonrası kütüphane sürümüne yönlendirildi.
   "/kutuphane/blog/organomineral-gubre-tesisi-maliyeti",
+  // Paket 2B-4: blog kurutma tamburu tasarım kriterleri içerik aktarımı sonrası kütüphane sürümüne yönlendirildi.
+  "/kutuphane/blog/kurutma-tamburu-tasarim-kriterleri",
 ]);
 
 // İndekslenmesi istenmeyen sayfalar.

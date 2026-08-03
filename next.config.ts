@@ -374,6 +374,13 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        // Paket 2B-4: blog sürümündeki formül, tablo ve FAQ içeriği kütüphane
+        // sürümüne aktarıldı; sıralamada olan kütüphane URL'si keeper'dır.
+        source: "/kutuphane/blog/kurutma-tamburu-tasarim-kriterleri",
+        destination: "/kutuphane/kurutma-tamburu-tasarim-kriterleri",
+        permanent: true,
+      },
+      {
         source: "/makinalar-ekipman/tasima-ekipmanlari/helezon-konveyor",
         destination: "/makinalar-ekipman/tasima-ekipmanlari/vidali-helezonlar",
         permanent: true,

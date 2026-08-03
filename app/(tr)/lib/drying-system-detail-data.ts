@@ -44,7 +44,7 @@ const MATERIAL_CRUSHER_HREF = "/makinalar-ekipman/kiricilar-ve-parcalayicilar";
 const MATERIAL_BURNER_BLOG_HREF = "/kutuphane/blog/kurutma-tamburunda-brulor-secimi";
 const MATERIAL_FAN_BLOG_HREF = "/kutuphane/blog/kurutma-tamburunda-fan-siklon-filtre-secimi";
 const MATERIAL_HESAP_BLOG_HREF = "/kutuphane/blog/kurutma-tamburu-hesaplama";
-const MATERIAL_DESIGN_BLOG_HREF = "/kutuphane/blog/kurutma-tamburu-tasarim-kriterleri";
+const MATERIAL_DESIGN_BLOG_HREF = "/kutuphane/kurutma-tamburu-tasarim-kriterleri";
 
 const kurutmaTamburuHesaplamaPage = page({
   slug: "kurutma-tamburu-hesaplama",
@@ -4537,7 +4537,7 @@ export const dryingSystemDetailPages: DrumSystemDetailPageData[] = [
     relatedLinks: [
       { title: "Tambur Brülör Seçimi Programı", description: "Brülör ön hesabını program üzerinden açın.", href: "/programlar?modal=tambur-brulor-secimi" },
       { title: "Kurutma Tamburu Kapasite Hesabı", description: "Brülör yükünün dayandığı su hesabını inceleyin.", href: "/kutuphane/blog/kurutma-tamburu-hesaplama" },
-      { title: "Kurutma Tamburu Tasarım Kriterleri", description: "Brülör kararını genel tasarım içinde görün.", href: "/kutuphane/blog/kurutma-tamburu-tasarim-kriterleri" },
+      { title: "Kurutma Tamburu Tasarım Kriterleri", description: "Brülör kararını genel tasarım içinde görün.", href: "/kutuphane/kurutma-tamburu-tasarim-kriterleri" },
       { title: "Kurutma Tamburu Seçimi", description: "Brülörü ana kurutucu ekipman seçimiyle birlikte okuyun.", href: "/kutuphane/blog/kurutma-tamburu-secimi" },
       { title: "Tambur Hesapları", description: "Isı yükü ve tambur hesabını tek merkezden açın.", href: "/programlar?modal=tambur-kapasite-hesabi" },
       { title: "İletişim", description: "Yakıt ve kapasite verinizle teknik değerlendirme isteyin.", href: "/iletisim" },

@@ -5,6 +5,9 @@ const title = "Kurutma Tamburu Tasarım Kriterleri";
 const description =
   "Kurutma tamburu tasarımında çap, boy, eğim, devir, ürün nemi, sıcak hava, kapasite, iç kanat yapısı ve enerji tüketimi nasıl değerlendirilir?";
 const canonical = "https://www.promakina.com.tr/kutuphane/kurutma-tamburu-tasarim-kriterleri";
+// LibrarySeoPage'in Hero bileşeni görseli render etmez; bu değer structured data
+// (Article.image) alanını besler, bu nedenle URL kodlanmış biçimde verilir.
+const heroImage = "/images/tambur%20kurutma/tamkurutma11.jpg";
 
 export const metadata = buildLibraryMetadata({ title, description, canonical });
 
@@ -36,6 +39,112 @@ const relatedServices = [
     title: "Gübre Tesisi Kurulumu",
     href: "/sektorler/gubre-ve-granulasyon-tesisleri",
     description: "Tambur sistemlerini genel proses içinde konumlandıran anahtar teslim çözümler.",
+  },
+];
+
+// Paket 2B-4: blog sürümünden aktarılan mühendislik formülleri ve teknik tablolar.
+// Kaynaktaki ifadeler, katsayılar ve satır içerikleri birebir korunmuştur.
+function FormulaBox({ title, formula }: { title: string; formula: string }) {
+  return (
+    <div className="rounded-[20px] border border-slate-200 bg-white px-5 py-4 shadow-sm">
+      <p className="text-xs font-semibold uppercase tracking-[0.16em] text-blue-700">Formül</p>
+      <h3 className="mt-2 text-lg font-semibold text-slate-950">{title}</h3>
+      <div className="mt-3 overflow-x-auto">
+        <p className="whitespace-nowrap font-mono text-sm text-slate-800 sm:text-base">{formula}</p>
+      </div>
+    </div>
+  );
+}
+
+function DataTable({
+  caption,
+  headers,
+  rows,
+}: {
+  caption: string;
+  headers: [string, string];
+  rows: [string, string][];
+}) {
+  return (
+    <div className="overflow-x-auto">
+      <table className="w-full min-w-[420px] border-collapse overflow-hidden rounded-[20px] border border-slate-200 bg-white text-left text-sm shadow-sm">
+        <caption className="sr-only">{caption}</caption>
+        <thead className="bg-slate-100 text-slate-950">
+          <tr>
+            <th scope="col" className="border-b border-slate-200 px-4 py-3 font-semibold">
+              {headers[0]}
+            </th>
+            <th scope="col" className="border-b border-slate-200 px-4 py-3 font-semibold">
+              {headers[1]}
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          {rows.map((row) => (
+            <tr key={row[0]} className="border-b border-slate-200 last:border-b-0">
+              <th scope="row" className="px-4 py-3 text-left font-semibold text-slate-950">
+                {row[0]}
+              </th>
+              <td className="px-4 py-3 text-slate-700">{row[1]}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+
+const generalDesignCriteriaRows: [string, string][] = [
+  ["Kapasite", "Tambur hacmi"],
+  ["Nem", "Brülör ve hava debisi"],
+  ["Yoğunluk", "Hacim hesabı"],
+  ["Tane boyutu", "İç kanat ve toz"],
+  ["Yapışkanlık", "İç yapı ve sıyırıcı"],
+  ["Aşındırıcılık", "Malzeme ve astar"],
+  ["Isıya hassasiyet", "Sıcaklık seçimi"],
+  ["Toz yükü", "Siklon ve filtre"],
+  ["Çalışma saati", "Tahrik ve servis faktörü"],
+];
+
+const selectionCriteriaRows: [string, string][] = [
+  ["Ürün karakteri", "İç yapı ve sıcaklık yaklaşımını belirler."],
+  ["Nem farkı", "Enerji ve ısı kaynağı boyutunu belirler."],
+  ["Hava debisi", "Kurutma verimi ve emisyon kontrolünü etkiler."],
+  ["Çap-boy oranı", "Residence time ve ürün hareketini belirler."],
+  ["Tahrik sistemi", "Güvenli ve uzun ömürlü işletme sağlar."],
+  ["Otomasyon", "Süreç kararlılığı ve güvenlik için kritiktir."],
+];
+
+const designMistakeRows: [string, string][] = [
+  ["Ürünü tanımadan standart tambur seçmek", "Kapasite ve kalite sorunu"],
+  ["İç kanadı ürüne göre tasarlamamak", "Yapışma veya kırılma"],
+  ["Fan basıncını hesaplamamak", "Hava akışı yetersiz"],
+  ["Aşındırıcı üründe standart sac", "Hızlı aşınma"],
+  ["Otomasyonu düşük tutmak", "Proses dalgalanması"],
+];
+
+// Paket 2B-4: blog sürümündeki 5 FAQ, soru ve cevapları korunarak aktarıldı.
+const faqs = [
+  {
+    question: "Kurutma tamburu tasarımında en önemli kriter nedir?",
+    answer:
+      "Tek bir kriter yoktur; ürün karakteri, nem yükü ve hava sistemi birlikte değerlendirilmelidir.",
+  },
+  {
+    question: "İç kanat seçimi nasıl yapılır?",
+    answer: "Ürünün kırılganlığı, yapışkanlığı ve tane boyutuna göre yapılır.",
+  },
+  {
+    question: "Kurutma tamburu malzemesi nasıl seçilir?",
+    answer: "Aşındırıcılık, korozyon ve sıcaklık koşullarına göre seçilir.",
+  },
+  {
+    question: "Ring ve tahrik sistemi neye göre belirlenir?",
+    answer: "Tambur yükü, devir, servis faktörü ve çalışma saatine göre belirlenir.",
+  },
+  {
+    question: "Kurutma tamburunda otomasyon gerekir mi?",
+    answer: "Evet; kararlı ve güvenli işletme için çoğu projede gereklidir.",
   },
 ];
 
@@ -116,6 +225,33 @@ const sections = [
     ],
   },
   {
+    title: "Kurutma Tamburu Tasarımında Temel Hesaplamalar",
+    blocks: [
+      {
+        heading: "Ön boyutlandırmada kullanılan temel bağıntılar",
+        content: (
+          <>
+            <p>
+              Ürünün tane boyutu, yapışkanlığı, aşındırıcılığı ve sıcaklığa hassasiyeti iç yapı ve sıcak hava
+              yaklaşımını değiştirir. Nem farkı ise kurutma sisteminin enerji ihtiyacını belirler. Aşağıdaki
+              bağıntılar, tambur geometrisi ve ısı yükü için ön değerlendirme yaparken kullanılan temel
+              hesaplamalardır.
+            </p>
+            <div className="grid gap-4 md:grid-cols-3">
+              <FormulaBox title="Tambur Hacmi" formula="Tambur hacmi = π × D² × L / 4" />
+              <FormulaBox title="Kritik Devir" formula="Kritik devir = 42,3 / √D" />
+              <FormulaBox title="Isı Yükü" formula="Isı yükü = Buharlaşacak su × 0,75" />
+            </div>
+            <p>
+              Bu bağıntılar ön seçim içindir; nihai tasarım, ürün davranışı ve saha verileriyle birlikte
+              doğrulanmalıdır.
+            </p>
+          </>
+        ),
+      },
+    ],
+  },
+  {
     title: "Ürün Nemi, Sıcak Hava ve İç Kanat Yapısı",
     blocks: [
       {
@@ -141,6 +277,41 @@ const sections = [
               Organomineral ve granül ürünlerde kurutma tamburu, çoğu zaman son ürün standardını belirleyen ekipmanlardan
               biridir. Bu yüzden ürün nemi, sıcak hava ve iç kanat üçlüsü birlikte modellenmeli; saha testleri veya ön
               mühendislik hesapları ile doğrulanmalıdır.
+            </p>
+          </>
+        ),
+      },
+    ],
+  },
+  {
+    title: "Hava Debisi ve Proses Basıncı",
+    blocks: [
+      {
+        heading: "Fan debisi ve basınç kaybı birlikte okunmalı",
+        content: (
+          <>
+            <p>
+              Doğru tasarımda fan debisi ve basınç kaybı birlikte okunur. Hava debisi yeterli değilse ürün kuruma
+              hızı düşer; basınç hesabı zayıfsa tambur içi akış kararsız hale gelir.
+            </p>
+          </>
+        ),
+      },
+    ],
+  },
+  {
+    title: "İç Kanat, Malzeme, Ring ve Tahrik Sistemi",
+    blocks: [
+      {
+        heading: "Termal davranış ile mekanik ömrün kesiştiği nokta",
+        content: (
+          <>
+            <p>
+              İç kanatlar ürünü hava ile temas ettirirken, gövde malzemesi ve ring-tahrik sistemi ekipmanın ömrünü
+              belirler. Aşındırıcı ürünlerde farklı sac veya astar yaklaşımı gerekebilir.
+            </p>
+            <p>
+              Ring, pinyon ve redüktör kararı, tambur ring ve tahrik sistemi içeriğiyle birlikte düşünülmelidir.
             </p>
           </>
         ),
@@ -193,6 +364,70 @@ const sections = [
     ],
   },
   {
+    title: "Tasarım Kriterleri Genel Tablosu",
+    blocks: [
+      {
+        content: (
+          <>
+            <DataTable
+              caption="Kurutma tamburu genel tasarım kriterleri"
+              headers={["Kriter", "Etkilediği alan"]}
+              rows={generalDesignCriteriaRows}
+            />
+            <p>
+              Bu tablo, kurutma tamburu tasarımının yalnız kapasite değil ürün karakteri ve mekanik ömür açısından
+              da değerlendirilmesi gerektiğini gösterir.
+            </p>
+          </>
+        ),
+      },
+    ],
+  },
+  {
+    title: "Teknik Seçim Kriterleri",
+    blocks: [
+      {
+        content: (
+          <DataTable
+            caption="Kurutma tamburu tasarımında seçim kriterleri"
+            headers={["Kriter", "Neden önemlidir?"]}
+            rows={selectionCriteriaRows}
+          />
+        ),
+      },
+    ],
+  },
+  {
+    title: "Sık Yapılan Tasarım Hataları",
+    blocks: [
+      {
+        content: (
+          <DataTable
+            caption="Kurutma tamburu tasarımında sık yapılan hatalar"
+            headers={["Hata", "Sonuç"]}
+            rows={designMistakeRows}
+          />
+        ),
+      },
+    ],
+  },
+  {
+    title: "Otomasyon ve İş Güvenliği",
+    blocks: [
+      {
+        heading: "Kararlı ve güvenli işletme için izleme altyapısı",
+        content: (
+          <>
+            <p>
+              Sıcaklık sensörleri, basınç izleme, motor akımı, emniyet interlock&apos;ları ve toz emisyon kontrolü
+              kurutma tamburunun güvenli ve tekrarlanabilir çalışmasını sağlar.
+            </p>
+          </>
+        ),
+      },
+    ],
+  },
+  {
     title: "Sonuç ve Ön Tasarım Notları",
     blocks: [
       {
@@ -228,6 +463,8 @@ export default function Page() {
       categoryLabel="Teknik Rehberler"
       sections={sections}
       relatedServices={relatedServices}
+      faqs={faqs}
+      heroImage={heroImage}
       ctaText="Projenize özel fizibilite ve teklif almak için bizimle iletişime geçin."
     />
   );

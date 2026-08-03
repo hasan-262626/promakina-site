@@ -163,6 +163,7 @@ const technicalTopicClusters: TechnicalTopicCluster[] = [
         slug: "kurutma-tamburu-tasarim-kriterleri",
         type: "rehber",
         priority: 5,
+        href: "/kutuphane/kurutma-tamburu-tasarim-kriterleri",
         description:
           "Kapasite, nem, yoğunluk, tane boyutu, yapışma, aşınma, ısı hassasiyeti, doluluk, kalış süresi, iç kanat, gövde malzemesi, tahrik, sızdırmazlık ve bakım erişimi başlıklarını tek tabloda toplayan mekanik-termal tasarım rehberi.",
         linkLabel: "Tasarım Kriterlerini İnceleyin",

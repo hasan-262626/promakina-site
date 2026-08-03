@@ -150,7 +150,7 @@ export const glossaryTerms: Record<string, GlossaryTerm> = {
     links: [
       page("Kaplama Tamburu", "/makinalar-ekipman/tambur-sistemleri/kaplama-tamburu"),
       page("Paketleme ve Dolum Sistemleri", "/makinalar-ekipman/paketleme-ve-dolum-sistemleri"),
-      blog("Kurutma Tamburu Tasarım Kriterleri", "/kutuphane/blog/kurutma-tamburu-tasarim-kriterleri"),
+      blog("Kurutma Tamburu Tasarım Kriterleri", "/kutuphane/kurutma-tamburu-tasarim-kriterleri"),
     ],
   }),
   "geri-devir": term({
@@ -688,7 +688,7 @@ export const glossaryTerms: Record<string, GlossaryTerm> = {
     links: [
       page("Kurutma Tamburu", "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburu"),
       page("Programlar", "/programlar"),
-      blog("Kurutma Tamburu Tasarım Kriterleri", "/kutuphane/blog/kurutma-tamburu-tasarim-kriterleri"),
+      blog("Kurutma Tamburu Tasarım Kriterleri", "/kutuphane/kurutma-tamburu-tasarim-kriterleri"),
     ],
   }),
   "fan-debisi": term({
@@ -716,7 +716,7 @@ export const glossaryTerms: Record<string, GlossaryTerm> = {
     links: [
       blog("Rotary Dryer Design", "/kutuphane/blog/rotary-dryer-design"),
       page("Kurutma Tamburu", "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburu"),
-      blog("Kurutma Tamburu Tasarım Kriterleri", "/kutuphane/blog/kurutma-tamburu-tasarim-kriterleri"),
+      blog("Kurutma Tamburu Tasarım Kriterleri", "/kutuphane/kurutma-tamburu-tasarim-kriterleri"),
     ],
   }),
   siklon: term({

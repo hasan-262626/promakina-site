@@ -22,7 +22,7 @@ const spotlightLinks = [
   {
     title: "Kurutma Tamburu Tasarım Kriterleri",
     description: "Tambur boyutlandırma, iç kanat ve termal proses yaklaşımını blog içeriğinde görün.",
-    href: "/kutuphane/blog/kurutma-tamburu-tasarim-kriterleri",
+    href: "/kutuphane/kurutma-tamburu-tasarim-kriterleri",
   },
   {
     title: "Teknik Teklif Al",
