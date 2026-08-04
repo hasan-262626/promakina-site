@@ -54,6 +54,31 @@ type ProductDetailSystemProps = {
   spareParts: string[];
   auxiliarySystems: AuxiliarySystemLink[];
   faqItems?: { question: string; answer: string }[];
+  // Paket 3B-1: ticari ürün sayfaları için opsiyonel zenginleştirme alanları.
+  // Verilmeyen ürünlerde hiçbir ek bölüm render edilmez; mevcut çıktı korunur.
+  headingTitle?: string;
+  technicalTable?: {
+    title: string;
+    note?: string;
+    headers: [string, string];
+    rows: [string, string][];
+  };
+  detailSections?: { title: string; paragraphs?: string[]; bullets?: string[] }[];
+  supplyScope?: {
+    title: string;
+    intro?: string;
+    coreTitle: string;
+    coreItems: string[];
+    optionalTitle: string;
+    optionalItems: string[];
+    note?: string;
+  };
+  requiredProjectData?: { title: string; intro?: string; items: string[]; note?: string };
+  relatedTechnicalLinks?: {
+    title: string;
+    intro?: string;
+    links: { label: string; href: string; description?: string }[];
+  };
   ctaTitle?: string;
   ctaText: string;
   calculatorFamily: CalculatorFamily;
@@ -714,6 +739,12 @@ export function ProductDetailSystem({
   auxiliarySystems,
   ctaText,
   faqItems,
+  headingTitle,
+  technicalTable,
+  detailSections,
+  supplyScope,
+  requiredProjectData,
+  relatedTechnicalLinks,
   calculatorFamily,
   openCalculatorOnLoad = false,
 }: ProductDetailSystemProps) {
@@ -761,7 +792,7 @@ export function ProductDetailSystem({
 
   return (
     <>
-      <MachinePageHero title={title} calculatorHref={calculatorHref} />
+      <MachinePageHero title={headingTitle ?? title} calculatorHref={calculatorHref} />
 
       <section className="section-space">
         <div className="site-container">
@@ -879,6 +910,156 @@ export function ProductDetailSystem({
                 </section>
               ) : null}
 
+              {technicalTable ? (
+                <section id="proje-parametreleri" className="scroll-mt-[210px] xl:scroll-mt-[220px]">
+                  <div className="rounded-[28px] border border-slate-200 bg-white p-6 shadow-[0_16px_46px_rgba(15,23,42,0.05)] sm:p-7">
+                    <h2 className="text-2xl font-semibold tracking-tight text-slate-950">
+                      {technicalTable.title}
+                    </h2>
+                    <div className="mt-6 overflow-x-auto">
+                      <table className="w-full min-w-[460px] border-collapse overflow-hidden rounded-[20px] border border-slate-200 text-left text-sm">
+                        <caption className="sr-only">{technicalTable.title}</caption>
+                        <thead className="bg-slate-100 text-slate-950">
+                          <tr>
+                            <th scope="col" className="border-b border-slate-200 px-4 py-3 font-semibold">
+                              {technicalTable.headers[0]}
+                            </th>
+                            <th scope="col" className="border-b border-slate-200 px-4 py-3 font-semibold">
+                              {technicalTable.headers[1]}
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {technicalTable.rows.map((row) => (
+                            <tr key={row[0]} className="border-b border-slate-200 last:border-b-0">
+                              <th scope="row" className="px-4 py-3 text-left font-semibold text-slate-950">
+                                {row[0]}
+                              </th>
+                              <td className="px-4 py-3 text-slate-700">{row[1]}</td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                    {technicalTable.note ? (
+                      <p className="mt-4 text-sm leading-7 text-slate-600">{technicalTable.note}</p>
+                    ) : null}
+                  </div>
+                </section>
+              ) : null}
+
+              {detailSections?.length ? (
+                <section id="tasarim-detaylari" className="scroll-mt-[210px] xl:scroll-mt-[220px]">
+                  <div className="space-y-6">
+                    {detailSections.map((section) => (
+                      <div
+                        key={section.title}
+                        className="rounded-[28px] border border-slate-200 bg-white p-6 shadow-[0_16px_46px_rgba(15,23,42,0.05)] sm:p-7"
+                      >
+                        <h2 className="text-2xl font-semibold tracking-tight text-slate-950">
+                          {section.title}
+                        </h2>
+                        {section.paragraphs?.length ? (
+                          <div className="mt-4 space-y-4 text-base leading-8 text-slate-600">
+                            {section.paragraphs.map((paragraph) => (
+                              <p key={paragraph}>{paragraph}</p>
+                            ))}
+                          </div>
+                        ) : null}
+                        {section.bullets?.length ? (
+                          <ul className="mt-5 grid gap-2 text-sm leading-7 text-slate-700 sm:grid-cols-2">
+                            {section.bullets.map((item) => (
+                              <li key={item} className="flex gap-2">
+                                <span aria-hidden="true" className="text-[#278DC0]">
+                                  •
+                                </span>
+                                <span>{item}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        ) : null}
+                      </div>
+                    ))}
+                  </div>
+                </section>
+              ) : null}
+
+              {supplyScope ? (
+                <section id="tedarik-kapsami" className="scroll-mt-[210px] xl:scroll-mt-[220px]">
+                  <div className="rounded-[28px] border border-slate-200 bg-white p-6 shadow-[0_16px_46px_rgba(15,23,42,0.05)] sm:p-7">
+                    <h2 className="text-2xl font-semibold tracking-tight text-slate-950">
+                      {supplyScope.title}
+                    </h2>
+                    {supplyScope.intro ? (
+                      <p className="mt-4 text-base leading-8 text-slate-600">{supplyScope.intro}</p>
+                    ) : null}
+                    <div className="mt-6 grid gap-5 lg:grid-cols-2">
+                      <div className="rounded-[22px] border border-slate-200 bg-slate-50 p-5">
+                        <h3 className="text-lg font-semibold text-slate-950">{supplyScope.coreTitle}</h3>
+                        <ul className="mt-4 space-y-2 text-sm leading-7 text-slate-700">
+                          {supplyScope.coreItems.map((item) => (
+                            <li key={item} className="flex gap-2">
+                              <span aria-hidden="true" className="text-[#278DC0]">
+                                •
+                              </span>
+                              <span>{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      <div className="rounded-[22px] border border-slate-200 bg-slate-50 p-5">
+                        <h3 className="text-lg font-semibold text-slate-950">
+                          {supplyScope.optionalTitle}
+                        </h3>
+                        <ul className="mt-4 space-y-2 text-sm leading-7 text-slate-700">
+                          {supplyScope.optionalItems.map((item) => (
+                            <li key={item} className="flex gap-2">
+                              <span aria-hidden="true" className="text-[#278DC0]">
+                                •
+                              </span>
+                              <span>{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                    {supplyScope.note ? (
+                      <p className="mt-5 text-sm leading-7 text-slate-600">{supplyScope.note}</p>
+                    ) : null}
+                  </div>
+                </section>
+              ) : null}
+
+              {requiredProjectData ? (
+                <section id="teklif-verileri" className="scroll-mt-[210px] xl:scroll-mt-[220px]">
+                  <div className="rounded-[28px] border border-slate-200 bg-white p-6 shadow-[0_16px_46px_rgba(15,23,42,0.05)] sm:p-7">
+                    <h2 className="text-2xl font-semibold tracking-tight text-slate-950">
+                      {requiredProjectData.title}
+                    </h2>
+                    {requiredProjectData.intro ? (
+                      <p className="mt-4 text-base leading-8 text-slate-600">
+                        {requiredProjectData.intro}
+                      </p>
+                    ) : null}
+                    <ul className="mt-5 grid gap-2 text-sm leading-7 text-slate-700 sm:grid-cols-2">
+                      {requiredProjectData.items.map((item) => (
+                        <li key={item} className="flex gap-2">
+                          <span aria-hidden="true" className="text-[#278DC0]">
+                            •
+                          </span>
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    {requiredProjectData.note ? (
+                      <p className="mt-5 text-sm leading-7 text-slate-600">
+                        {requiredProjectData.note}
+                      </p>
+                    ) : null}
+                  </div>
+                </section>
+              ) : null}
+
               <section id="galeri" className="scroll-mt-[210px] xl:scroll-mt-[220px]">
                 <div className="rounded-[30px] border border-slate-200 bg-white p-6 shadow-[0_18px_50px_rgba(15,23,42,0.05)] sm:p-7">
                   <h2 className="text-3xl font-semibold tracking-tight text-slate-950">Galeri</h2>
@@ -906,6 +1087,39 @@ export function ProductDetailSystem({
                   </div>
                 </div>
               </section>
+
+              {relatedTechnicalLinks?.links.length ? (
+                <section id="teknik-kaynaklar" className="scroll-mt-[210px] xl:scroll-mt-[220px]">
+                  <div className="rounded-[28px] border border-slate-200 bg-white p-6 shadow-[0_16px_46px_rgba(15,23,42,0.05)] sm:p-7">
+                    <h2 className="text-2xl font-semibold tracking-tight text-slate-950">
+                      {relatedTechnicalLinks.title}
+                    </h2>
+                    {relatedTechnicalLinks.intro ? (
+                      <p className="mt-4 text-base leading-8 text-slate-600">
+                        {relatedTechnicalLinks.intro}
+                      </p>
+                    ) : null}
+                    <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+                      {relatedTechnicalLinks.links.map((link) => (
+                        <Link
+                          key={link.href}
+                          href={link.href}
+                          className="group rounded-[24px] border border-slate-200 bg-slate-50 p-5 shadow-sm transition hover:-translate-y-1 hover:border-[#278DC0]/25 hover:bg-white hover:shadow-[0_18px_45px_rgba(15,23,42,0.08)]"
+                        >
+                          <span className="block text-base font-semibold text-slate-950 transition group-hover:text-[#154764]">
+                            {link.label}
+                          </span>
+                          {link.description ? (
+                            <span className="mt-2 block text-sm leading-7 text-slate-600">
+                              {link.description}
+                            </span>
+                          ) : null}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                </section>
+              ) : null}
 
               <section>
                 <Link

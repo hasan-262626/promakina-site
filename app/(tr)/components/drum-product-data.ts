@@ -13,6 +13,35 @@ export type DrumProductPage = {
   slug: string;
   title: string;
   shortDescription: string;
+  // Paket 3B-1: ticari ürün sayfası zenginleştirme alanları (opsiyonel).
+  // Yalnız bu alanları tanımlayan ürünlerde ek bölümler ve şema üretilir.
+  metaTitle?: string;
+  metaDescription?: string;
+  headingTitle?: string;
+  technicalTable?: {
+    title: string;
+    note?: string;
+    headers: [string, string];
+    rows: [string, string][];
+  };
+  detailSections?: { title: string; paragraphs?: string[]; bullets?: string[] }[];
+  supplyScope?: {
+    title: string;
+    intro?: string;
+    coreTitle: string;
+    coreItems: string[];
+    optionalTitle: string;
+    optionalItems: string[];
+    note?: string;
+  };
+  requiredProjectData?: { title: string; intro?: string; items: string[]; note?: string };
+  relatedTechnicalLinks?: {
+    title: string;
+    intro?: string;
+    links: { label: string; href: string; description?: string }[];
+  };
+  faqItems?: { question: string; answer: string }[];
+  productSchemaCategory?: string;
   heroDescription: string;
   ctaTitle?: string;
   ctaText?: string;
@@ -163,6 +192,178 @@ export const drumProductPages: DrumProductPage[] = [
     title: "Kurutma Tamburu",
     shortDescription:
       "Nemli ürünlerin sıcak hava ile hedef son neme düşürülmesini sağlayan endüstriyel döner kurutma ekipmanıdır.",
+    metaTitle: "Kurutma Tamburu İmalatı | Rotary Dryer Üretimi",
+    metaDescription:
+      "Endüstriyel kurutma tamburu imalatı; ürün, kapasite ve nem değerlerine göre projelendirilir. Brülör, fan, siklon, filtre ve otomasyon seçenekleriyle teklif alın.",
+    headingTitle: "Kurutma Tamburu İmalatı",
+    productSchemaCategory: "Endüstriyel Kurutma Tamburu",
+    technicalTable: {
+      title: "Kurutma Tamburu Projelendirme Parametreleri",
+      headers: ["Proje Parametresi", "Tasarımda Değerlendirilen Bilgi"],
+      rows: [
+        ["Ürün türü", "Mineral, gübre, biyokütle, çamur veya proses ürünü"],
+        ["Saatlik kapasite", "Yaş besleme ve hedef kuru ürün kapasitesi"],
+        ["Giriş nemi", "Kurutucuya giren ürünün toplam nem oranı"],
+        ["Hedef çıkış nemi", "Ürün ve sonraki proses ihtiyacına göre belirlenir"],
+        ["Tane boyutu", "Akış, sürüklenme ve iç kanat tasarımını etkiler"],
+        ["Yığın yoğunluğu", "Doluluk oranı ve tahrik hesabında kullanılır"],
+        ["Isı kaynağı", "Doğal gaz, LPG, motorin, sıcak gaz veya uygun alternatif"],
+        ["Çalışma süresi", "Günlük vardiya ve yıllık işletme saati"],
+        ["Malzeme seçimi", "ST37/S355, paslanmaz veya aşınmaya dayanıklı bölgeler"],
+        ["Otomasyon", "Sıcaklık, basınç, fan, brülör, devir ve alarm kontrolü"],
+      ],
+      note: "Bu tablo proje değerlendirmesinde hangi verilerin kullanıldığını gösterir; kesin teknik teklif yerine geçmez. Nihai ölçüler ve ekipman seçimi, projeye özel hesap ve gerekiyorsa numune testi ile belirlenir.",
+    },
+    detailSections: [
+      {
+        title: "Tambur Gövdesi, İç Kanatlar ve Malzeme Seçimi",
+        paragraphs: [
+          "Tambur gövdesi; ürün yüküne, sıcaklık rejimine ve çalışma saatine göre sac kalınlığı ve rijitlik açısından boyutlandırılır. Ring bölgeleri ile besleme ve çıkış uçları, taşıma yükünün yoğunlaştığı alanlar olarak ayrıca değerlendirilir.",
+          "İç kanatlar (lifting flight) ürünün kaldırılıp perde hâlinde düşmesini sağlar; kanat tipi ve dizilimi ürünün yapışkanlığı, kırılganlığı ve tane boyutuna göre projeye özel tasarlanır. Aşınmaya maruz bölgelerde farklı sac veya astar yaklaşımı değerlendirilebilir.",
+          "Sıcaklık ve korozyon koşullarına göre karbon çelik veya paslanmaz malzeme seçenekleri değerlendirilir. Kaynak ve imalat kontrolü, tambur eğimi, devir ayarı ile saha montajında hizalama imalatın ayrılmaz parçasıdır.",
+        ],
+      },
+      {
+        title: "Ring, Gale Tekerleri ve Tahrik Sistemi",
+        paragraphs: [
+          "Tambur; ring (bandaj) ve gale tekerleri üzerinde taşınır, ring dişli-pinyon veya uygun alternatif tahrik düzeniyle döndürülür. Motor, redüktör, kaplin ve gerektiğinde frekans invertörü bu düzenin parçasıdır.",
+          "Tahrik seçimi her projede aynı değildir; tambur çapı ve boyu, doluluk oranı, ürün ağırlığı ve hedef devir birlikte değerlendirilerek belirlenir. Yataklama, hizalama ve dişli temas ayarı, uzun ömürlü işletme için devreye alma sırasında kontrol edilir.",
+        ],
+      },
+      {
+        title: "Brülör, Fan, Siklon ve Filtre Sistemi",
+        paragraphs: [
+          "Kurutma tamburu tek başına bir proses hattı değildir. Sıcak hava üretim ünitesi, brülör, cehennemlik veya yanma odası, sıcak hava kanalları, proses fanı, siklon, jet pulse filtre ve baca; proje ihtiyacına göre birlikte değerlendirilen bileşenlerdir.",
+          "Ürün besleme ve çıkış sistemleri, eleme, soğutma, silo ve paketleme hattı da proje kapsamına göre projelendirilebilir. Bu bileşenlerin her projede standart olarak dahil olduğu varsayılmaz; kapsam teknik değerlendirme sonucunda netleşir.",
+        ],
+      },
+      {
+        title: "Otomasyon ve Proses Kontrolü",
+        paragraphs: [
+          "Kararlı bir kurutma rejimi için giriş ve çıkış sıcaklığı, negatif basınç, fan kontrolü, brülör modülasyonu, tambur devri, motor akımı ve filtre basınç farkı izlenebilir.",
+          "Alarm ve emniyet interlock'ları güvenli işletmeyi destekler. Ürün çıkış neminin online ölçümü her projede bulunmaz; ihtiyaç ve ürün davranışına göre opsiyonel olarak projelendirilebilir.",
+        ],
+      },
+    ],
+    supplyScope: {
+      title: "Kurutma Sistemi Tedarik Kapsamı",
+      intro:
+        "Kapsam projeden projeye değişir. Aşağıdaki gruplar, tipik bir kurutma projesinde nelerin değerlendirildiğini gösterir; nihai kapsam teknik teklif ile belirlenir.",
+      coreTitle: "Tipik olarak değerlendirilen ana ekipmanlar",
+      coreItems: [
+        "Kurutma tamburu gövdesi ve iç kanat düzeni",
+        "Ana şase ve taşıyıcı konstrüksiyon",
+        "Tahrik sistemi (motor, redüktör, tahrik düzeni)",
+        "Ring ve gale teker grubu",
+        "Ürün besleme ve çıkış bağlantıları",
+        "Sıcak hava giriş ve çıkış bağlantıları",
+        "Muhafaza ve bakım erişim noktaları",
+      ],
+      optionalTitle: "Proje bazında eklenebilecek yardımcı sistemler",
+      optionalItems: [
+        "Brülör ve sıcak hava üretim ünitesi",
+        "Proses fanı ve hava kanalları",
+        "Siklon",
+        "Jet pulse filtre ve baca",
+        "Konveyör ve elevatör hatları",
+        "Eleme ve soğutma üniteleri",
+        "Silo ve paketleme sistemleri",
+        "Elektrik panosu ve otomasyon",
+      ],
+      note: "Buradaki listeler bağlayıcı bir sözleşme kapsamı değildir. Dahil ve hariç kalemler, kapasite ve saha koşullarına göre hazırlanan teknik teklifte tanımlanır.",
+    },
+    requiredProjectData: {
+      title: "Teknik Teklif İçin Gerekli Bilgiler",
+      intro:
+        "Aşağıdaki verileri paylaştığınızda kurutma tamburu ve yardımcı sistemler için doğru bir ön değerlendirme yapılabilir.",
+      items: [
+        "Kurutulacak ürün",
+        "Saatlik yaş besleme kapasitesi",
+        "Giriş nemi",
+        "Hedef çıkış nemi",
+        "Tane boyutu",
+        "Yığın yoğunluğu",
+        "Ürün giriş sıcaklığı",
+        "İzin verilen ürün çıkış sıcaklığı",
+        "Günlük çalışma süresi",
+        "Kullanılacak yakıt veya mevcut sıcak gaz kaynağı",
+        "Saha rakımı ve ortam şartları",
+        "Elektrik gerilimi ve frekansı",
+        "Mevcut besleme ve çıkış ekipmanları",
+        "Toz, koku veya emisyon gereksinimleri",
+        "Montaj alanı ve yerleşim kısıtları",
+      ],
+      note: "Ürün davranışı belirsiz olduğunda laboratuvar analizi veya numune kurutma testi ile verilerin desteklenmesi gerekebilir.",
+    },
+    relatedTechnicalLinks: {
+      title: "Teknik Hesaplama ve Tasarım Kaynakları",
+      intro:
+        "Kurutma tamburunun tasarım ve hesap tarafını ayrıntılı incelemek için aşağıdaki teknik içerikleri kullanabilirsiniz.",
+      links: [
+        {
+          label: "Kurutma Tamburu Tasarım Kriterleri",
+          href: "/kutuphane/kurutma-tamburu-tasarim-kriterleri",
+          description: "Geometri, nem, hava, iç kanat ve tahrik kararlarının teknik çerçevesi.",
+        },
+        {
+          label: "Kurutma Tamburu Hesabı",
+          href: "/kutuphane/blog/kurutma-tamburu-hesaplama",
+          description: "Kapasite ve buharlaşacak su yükü üzerinden hesap yaklaşımı.",
+        },
+        {
+          label: "Kurutma Tamburu Kapasite Hesaplama Programı",
+          href: "/programlar/kurutma-tamburu-hesabi",
+          description: "Ön boyutlandırma için hesap aracını kullanın.",
+        },
+        {
+          label: "Silis Kumu Kurutma Tesisi Projesi",
+          href: "/projeler/silis-kumu-kurutma-tesisi",
+          description: "Mineral kurutma uygulamasında gerçekleştirilen saha projesi.",
+        },
+        {
+          label: "Perlit Kurutma ve Eleme Tesisi Projesi",
+          href: "/projeler/perlit-kurutma-eleme-tesisi",
+          description: "Düşük yoğunluklu mineralde kurutma ve eleme hattı.",
+        },
+        {
+          label: "Arıtma Çamuru Kurutma Tesisi Projesi",
+          href: "/projeler/aritma-camuru-kurutma-tesisi",
+          description: "Yüksek nemli akışta kurutma ve çevresel kontrol uygulaması.",
+        },
+      ],
+    },
+    faqItems: [
+      {
+        question: "Kurutma tamburu hangi ürünlerde kullanılır?",
+        answer:
+          "Gübre ve granül ürünler, kompost ve organik akışlar, silis kumu gibi mineraller, talaş ve biyokütle, arıtma çamuru ve digestat gibi yüksek nemli akışlar ile farklı dökme katı ürünlerde kullanılır. Uygunluk, ürünün nem, tane yapısı ve sıcaklık hassasiyetine göre değerlendirilir.",
+      },
+      {
+        question: "Kurutma tamburu kapasitesi nasıl belirlenir?",
+        answer:
+          "Kapasite yalnız ton/saat değeriyle değil; giriş nemi ile hedef çıkış nemi arasındaki farktan doğan buharlaşacak su miktarıyla birlikte belirlenir. Ürün yoğunluğu, çalışma süresi ve ısı kaynağı da hesaba dahil edilir.",
+      },
+      {
+        question: "Tambur çapı ve boyu hangi verilere göre seçilir?",
+        answer:
+          "Çap ve boy; kapasite, ürünün tambur içinde kalması gereken süre, doluluk oranı, hava debisi ve saha yerleşim kısıtları birlikte değerlendirilerek projeye özel belirlenir. Standart bir ölçü listesi üzerinden seçim yapılmaz.",
+      },
+      {
+        question: "Brülör, fan ve siklon sisteme dahil midir?",
+        answer:
+          "Bu bileşenler her projede standart olarak dahil değildir. Brülör ve sıcak hava ünitesi, fan, siklon, filtre ve baca proje kapsamına göre birlikte projelendirilebilir; nihai kapsam teknik teklifte tanımlanır.",
+      },
+      {
+        question: "Kurutma tamburu malzemesi nasıl seçilir?",
+        answer:
+          "Malzeme seçimi ürünün aşındırıcılığı, korozyon davranışı ve çalışma sıcaklığına göre yapılır. Karbon çelik, paslanmaz veya aşınmaya dayanıklı bölgesel çözümler projeye göre değerlendirilir.",
+      },
+      {
+        question: "Kurutma tamburu için fiyat teklifi nasıl hazırlanır?",
+        answer:
+          "Ürün tipi, kapasite, giriş ve hedef çıkış nemi, ısı kaynağı, çalışma süresi ve saha koşulları paylaşıldıktan sonra proses değerlendirmesi yapılır; kapsam netleştikten sonra projeye özel teknik teklif hazırlanır. Ürün davranışı belirsizse numune testi istenebilir.",
+      },
+    ],
     heroDescription:
       "Kurutma tamburu; gübre, kompost, çamur ve mineral ürünlerde kontrollü termal proses sağlayan endüstriyel tambur çözümüdür.",
     ctaTitle: "Kurutma tamburu kapasitesini ve prosesini birlikte netleştirelim",
@@ -196,7 +397,7 @@ export const drumProductPages: DrumProductPage[] = [
       "Hedef nem seviyesine gelen ürünün soğutma veya eleme hattına aktarılması",
     ],
     relatedSectors: [
-      { label: "Gübre Üretim Tesisleri", href: "/sektorler/gubre-uretim-tesisleri" },
+      { label: "Gübre Üretim Tesisleri", href: "/sektorler/gubre-ve-granulasyon-tesisleri" },
       { label: "Madencilik ve Mineral İşleme", href: "/sektorler/madencilik-ve-mineral-isleme" },
       {
         label: "Atık Su Çamuru ve Arıtma Çözümleri",

@@ -13,6 +13,12 @@ export const metadata = buildLibraryMetadata({ title, description, canonical });
 
 const relatedServices = [
   {
+    title: "Kurutma Tamburu İmalatı",
+    href: "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburu",
+    description:
+      "Bu tasarım kriterlerinin uygulandığı kurutma tamburu imalatı, kapasite ve tedarik kapsamını inceleyin.",
+  },
+  {
     title: "Hizmetler",
     href: "/hizmetler",
     description:

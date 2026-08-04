@@ -29,8 +29,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const canonical = `https://www.promakina.com.tr/makinalar-ekipman/tambur-sistemleri/${activeProduct.slug}`;
 
   return {
-    title: `${activeProduct.title} | Tambur Sistemleri`,
-    description: activeProduct.shortDescription,
+    title: activeProduct.metaTitle ?? `${activeProduct.title} | Tambur Sistemleri`,
+    description: activeProduct.metaDescription ?? activeProduct.shortDescription,
     alternates: {
       canonical,
       languages: trLanguageAlternates(new URL(canonical).pathname),
@@ -74,8 +74,88 @@ export default async function DrumProductDetailPage({ params, searchParams }: Pa
 
   const activeHref = `/makinalar-ekipman/tambur-sistemleri/${activeProduct.slug}`;
 
+  // Paket 3B-1: yalnızca zenginleştirilmiş ticari ürün verisi tanımlayan
+  // sayfalarda Product / BreadcrumbList / FAQPage şeması üretilir.
+  const canonicalUrl = `https://www.promakina.com.tr${activeHref}`;
+  const productSchema = activeProduct.productSchemaCategory
+    ? {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        name: activeProduct.headingTitle ?? activeProduct.title,
+        description: activeProduct.metaDescription ?? activeProduct.shortDescription,
+        image: `https://www.promakina.com.tr${encodeURI(activeProduct.mainImage)}`,
+        url: canonicalUrl,
+        category: activeProduct.productSchemaCategory,
+        brand: { "@type": "Brand", name: "Pro Makina" },
+        manufacturer: { "@type": "Organization", name: "Pro Makina" },
+        ...(activeProduct.technicalTable
+          ? {
+              additionalProperty: activeProduct.technicalTable.rows.map((row) => ({
+                "@type": "PropertyValue",
+                name: row[0],
+                value: row[1],
+              })),
+            }
+          : {}),
+      }
+    : null;
+
+  const breadcrumbSchema = productSchema
+    ? {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Ana Sayfa", item: "https://www.promakina.com.tr" },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Makinalar & Ekipman",
+            item: "https://www.promakina.com.tr/makinalar-ekipman",
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: "Tambur Sistemleri",
+            item: "https://www.promakina.com.tr/makinalar-ekipman/tambur-sistemleri",
+          },
+          { "@type": "ListItem", position: 4, name: activeProduct.title, item: canonicalUrl },
+        ],
+      }
+    : null;
+
+  const faqSchema =
+    productSchema && activeProduct.faqItems?.length
+      ? {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: activeProduct.faqItems.map((item) => ({
+            "@type": "Question",
+            name: item.question,
+            acceptedAnswer: { "@type": "Answer", text: item.answer },
+          })),
+        }
+      : null;
+
   return (
     <main className="min-h-screen bg-white text-slate-900">
+      {productSchema ? (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
+        />
+      ) : null}
+      {breadcrumbSchema ? (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+        />
+      ) : null}
+      {faqSchema ? (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      ) : null}
       <ProductDetailSystem
         categoryLabel="Tambur Sistemleri"
         categoryHref="/makinalar-ekipman/tambur-sistemleri"
@@ -98,6 +178,13 @@ export default async function DrumProductDetailPage({ params, searchParams }: Pa
         optionalEquipment={activeProduct.optionalEquipment}
         spareParts={activeProduct.spareParts}
         auxiliarySystems={auxiliarySystems}
+        headingTitle={activeProduct.headingTitle}
+        technicalTable={activeProduct.technicalTable}
+        detailSections={activeProduct.detailSections}
+        supplyScope={activeProduct.supplyScope}
+        requiredProjectData={activeProduct.requiredProjectData}
+        relatedTechnicalLinks={activeProduct.relatedTechnicalLinks}
+        faqItems={activeProduct.faqItems}
         calculatorFamily="drum"
         openCalculatorOnLoad={resolvedSearchParams.tab === "kapasite-hesabi"}
         ctaTitle={
