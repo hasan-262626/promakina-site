@@ -1,18 +1,33 @@
 import Image from "next/image";
 import Link from "next/link";
-import { homeMachineGroupCards } from "../home-machine-groups-data";
+import { homeMachineGroupCards, type HomeMachineGroupCard } from "../home-machine-groups-data";
 
-export function MachineCategoriesOverviewGrid() {
+/** Kart bağlantılarının erişilebilir etiketleri; "{title}" kategori adıyla değiştirilir. */
+export type MachineCategoriesGridLabels = { categoryAria: string; allAria: string };
+
+const trLabels: MachineCategoriesGridLabels = {
+  categoryAria: "{title} kategorisini inceleyin",
+  allAria: "{title} kategorisinin tümünü inceleyin",
+};
+
+/** Varsayılan: Türkçe kartlar. Yabancı diller aynı tasarımı kendi kart verisi ve etiketleriyle kullanır. */
+export function MachineCategoriesOverviewGrid({
+  cards = homeMachineGroupCards,
+  labels = trLabels,
+}: {
+  cards?: HomeMachineGroupCard[];
+  labels?: MachineCategoriesGridLabels;
+}) {
   return (
     <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-      {homeMachineGroupCards.map((card) => (
+      {cards.map((card) => (
         <article
           key={card.href}
           className="group relative flex h-full flex-col overflow-hidden rounded-[30px] border border-slate-200 bg-white shadow-[0_18px_50px_rgba(15,23,42,0.06)] transition duration-200 hover:-translate-y-1 hover:border-blue-200 hover:shadow-[0_24px_62px_rgba(15,23,42,0.1)]"
         >
           <Link
             href={card.href}
-            aria-label={`${card.title} kategorisini inceleyin`}
+            aria-label={labels.categoryAria.replace("{title}", card.title)}
             className="absolute inset-0 z-0 rounded-[30px]"
           />
           <div className="relative z-10 flex h-full flex-col">
@@ -46,10 +61,10 @@ export function MachineCategoriesOverviewGrid() {
                         href={product.href}
                         className="group/item relative z-20 inline-flex w-full cursor-pointer items-center justify-between rounded-xl border-b border-slate-200/90 py-2.5 text-[15px] font-medium text-slate-700 transition duration-200 hover:border-[#278DC0]/35 hover:text-[#278DC0]"
                       >
-                        <span className="transition duration-200 group-hover/item:translate-x-0.5">
+                        <span className="transition duration-200 group-hover/item:translate-x-0.5 rtl:group-hover/item:-translate-x-0.5">
                           {product.label}
                         </span>
-                        <span className="text-sm text-slate-400 transition duration-200 group-hover/item:translate-x-1 group-hover/item:text-[#278DC0]">
+                        <span className="text-sm text-slate-400 transition duration-200 group-hover/item:translate-x-1 group-hover/item:text-[#278DC0] rtl:-scale-x-100 rtl:group-hover/item:-translate-x-1">
                           &gt;
                         </span>
                       </Link>
@@ -61,7 +76,7 @@ export function MachineCategoriesOverviewGrid() {
               <div className="mt-auto pt-7">
                 <Link
                   href={card.href}
-                  aria-label={`${card.title} kategorisinin tümünü inceleyin`}
+                  aria-label={labels.allAria.replace("{title}", card.title)}
                   className="relative z-20 inline-flex min-h-[46px] items-center justify-center rounded-full border border-slate-300 px-5 text-sm font-semibold text-slate-900 transition group-hover:border-blue-200 group-hover:text-blue-700 hover:border-[#278DC0] hover:text-[#154764]"
                 >
                   {card.buttonLabel}

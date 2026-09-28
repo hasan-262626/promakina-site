@@ -2,6 +2,8 @@ import { trLanguageAlternates } from "../../../../i18n/routes";
 import { Metadata } from "next";
 import { notFound, permanentRedirect } from "next/navigation";
 import { ProductDetailSystem } from "../../../components/product-detail-system";
+import { DrumTemplatePage, drumTemplateMetadata } from "../../../components/drum-template-page";
+import { drumPageKeyBySlug } from "../../../../i18n/content/drum-pages";
 import { machineCategoryMap, machineCategoryPages } from "../../../components/machine-group-data";
 import { getMachineAuxiliarySystems } from "../../../lib/machine-auxiliary-systems";
 import {
@@ -20,6 +22,20 @@ type PageProps = {
     tab?: string;
   }>;
 };
+
+/** Premium şablona geçirilmiş makine grupları (diğer gruplar mevcut şablonla çizilir). */
+function templateKeyFor(categorySlug: string, productSlug: string) {
+  if (categorySlug === "tasima-ekipmanlari") return drumPageKeyBySlug(productSlug, "conveying");
+  if (categorySlug === "kiricilar-ve-parcalayicilar") return drumPageKeyBySlug(productSlug, "crushers");
+  if (categorySlug === "reaktorler-ve-tanklar") return drumPageKeyBySlug(productSlug, "reactorsTanks");
+  if (categorySlug === "eleme-ve-siniflandirma-sistemleri") return drumPageKeyBySlug(productSlug, "screeningSystems");
+  if (categorySlug === "toz-toplama-sistemleri") return drumPageKeyBySlug(productSlug, "dustCollection");
+  if (categorySlug === "paketleme-ve-dolum-sistemleri") return drumPageKeyBySlug(productSlug, "packagingSystems");
+  if (categorySlug === "depolama-ve-besleme-sistemleri") return drumPageKeyBySlug(productSlug, "storageSystems");
+  if (categorySlug === "yardimci-ekipmanlar-ve-akis-sistemleri") return drumPageKeyBySlug(productSlug, "auxiliaryFlow");
+  if (categorySlug === "dozajlama-sistemleri") return drumPageKeyBySlug(productSlug, "dosingSystems");
+  return undefined;
+}
 
 function getPublicCategorySlug(slug: string) {
   return getMachinePublicCategorySlug(slug);
@@ -51,6 +67,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   if (!category || !activeProduct) {
     return {};
+  }
+
+  // Taşıma ekipmanları, kırıcılar, reaktörler ve tanklar: kurutma tamburu premium şablonu, ürüne özel meta.
+  const templateKey = templateKeyFor(category.slug, activeProduct.slug);
+  if (templateKey) {
+    return drumTemplateMetadata(templateKey);
   }
 
   const publicCategorySlug = getPublicCategorySlug(category.slug);
@@ -97,6 +119,11 @@ export default async function MachineProductDetailPage({ params, searchParams }:
 
   if (!activeProduct) {
     notFound();
+  }
+
+  const templateKey = templateKeyFor(category.slug, activeProduct.slug);
+  if (templateKey) {
+    return <DrumTemplatePage pageKey={templateKey} />;
   }
 
   const auxiliarySystems = getMachineAuxiliarySystems({

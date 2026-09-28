@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useMemo, useState, useSyncExternalStore } from "react";
+import { COOKIE_PREFERENCES_STORAGE_KEY } from "../lib/cookie-consent";
 
 type CookiePreferences = {
   necessary: true;
@@ -86,7 +87,7 @@ const trCookieTexts: CookieTexts = {
   },
 };
 
-const STORAGE_KEY = "pro-makina-cookie-preferences";
+const STORAGE_KEY = COOKIE_PREFERENCES_STORAGE_KEY;
 const OPEN_EVENT = "open-cookie-preferences";
 
 const defaultPreferences: CookiePreferences = {
@@ -253,14 +254,15 @@ export function CookiePreferences({ texts }: { texts?: CookieTexts }) {
     }));
   };
 
-  if (!isMounted) {
-    return null;
-  }
+  // Bant sunucuda da çizilir; onaylı ziyaretçilerde CSS ([data-cookie-consent]) ile gizlenir,
+  // hydrate sonrası ise gerçek onay durumuna göre kaldırılır.
+  const showBanner = !isMounted || !hasConsent;
 
   return (
     <>
-      {!hasConsent ? (
+      {showBanner ? (
         <section
+          data-cookie-banner=""
           aria-label={t.bannerAria}
           className="fixed inset-x-0 bottom-0 z-[90] px-4 pb-4 sm:px-6 sm:pb-6"
         >
@@ -309,6 +311,8 @@ export function CookiePreferences({ texts }: { texts?: CookieTexts }) {
         </section>
       ) : null}
 
+      {isMounted ? (
+      <>
       <button
         type="button"
         onClick={() => setIsPanelOpen(true)}
@@ -419,6 +423,8 @@ export function CookiePreferences({ texts }: { texts?: CookieTexts }) {
             </div>
           </div>
         </div>
+      ) : null}
+      </>
       ) : null}
     </>
   );

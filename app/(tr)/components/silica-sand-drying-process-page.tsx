@@ -8,7 +8,6 @@ const DRUM_PAGE_HREF = "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburu";
 const DIAMETER_LENGTH_HREF = "/kutuphane/blog/kurutma-tamburu-hesaplama";
 const BURNER_HREF = "/kutuphane/blog/kurutma-tamburunda-brulor-secimi";
 const FILTER_HREF = "/kutuphane/blog/kurutma-tamburunda-fan-siklon-filtre-secimi";
-const SILICA_DRYER_HREF = "/kutuphane/blog/silis-kumu-kurutma-tamburu";
 const BUNKER_HREF = "/makinalar-ekipman/depolama-ve-besleme-sistemleri/bunker-ve-hazneler";
 const CONVEYOR_HREF = "/makinalar-ekipman/tasima-ekipmanlari/bantli-konveyorler";
 const SCREW_HREF = "/makinalar-ekipman/tasima-ekipmanlari/vidali-helezonlar";
@@ -240,6 +239,22 @@ const faqItems: TextFaqItem[] = [
       </>
     ),
   },
+  // Birleştirilen /kutuphane/blog/silis-kumu-kurutma-tamburu sayfasından aktarılan sorular.
+  {
+    question: "Silis kumu tamburunda aşınma nasıl azaltılır?",
+    answer:
+      "Gövde ve kanatlarda kalın sac veya aşınmaya dayanıklı malzeme kullanmak, kanatları değiştirilebilir yapmak, giriş-çıkış bölgelerine aşınma plakası uygulamak ve gaz hızını kontrol etmek aşınmayı önemli ölçüde azaltır.",
+  },
+  {
+    question: "Silis kumu tamburunda hangi iç kanat yapısı kullanılır?",
+    answer:
+      "Serbest akışlı kum için kaldırıcı (flight) kanatlar kullanılır; giriş bölgesinde spiral kanatlar, orta bölgede perde oluşturan açılı kanatlar tercih edilir. Kanat açısı ve sayısı tane boyutuna göre seçilir.",
+  },
+  {
+    question: "Tambur devri ve eğimi neye göre belirlenir?",
+    answer:
+      "Devir, kritik devrin altında ürün perdesi oluşturacak şekilde; eğim ise hedef kalış süresini sağlayacak şekilde seçilir. Kum hatlarında eğim çoğunlukla %2-4 aralığında değerlendirilir.",
+  },
 ];
 
 const breadcrumbSchema = {
@@ -434,12 +449,12 @@ export function SilicaSandDryingProcessPage() {
                 <p>
                   Pro Makina, <strong>silis kumu kurutma tesisi</strong> kurgusunda
                   kurutma tamburu, sıcak hava hattı, toz toplama, eleme, depolama ve
-                  paketleme sistemlerini bir bütün olarak tasarlar. Tambur odaklı teknik
-                  yaklaşımı daha detaylı incelemek isterseniz{" "}
-                  <Link href={SILICA_DRYER_HREF} className="font-semibold text-[#278DC0] hover:text-[#154764]">
+                  paketleme sistemlerini bir bütün olarak tasarlar. Projeye özel makine
+                  ve teknik teklif için{" "}
+                  <Link href={DRUM_PAGE_HREF} className="font-semibold text-[#278DC0] hover:text-[#154764]">
                     silis kumu kurutma tamburu
                   </Link>{" "}
-                  içeriğini de okuyabilirsiniz.
+                  çözümlerimizi ürün sayfasında inceleyebilirsiniz.
                 </p>
               </div>
 

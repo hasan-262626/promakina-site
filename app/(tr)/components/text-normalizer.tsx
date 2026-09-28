@@ -4,6 +4,14 @@ import { useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { trText } from "../lib/tr-text";
 
+// trText baş/son boşlukları kırpar; satır içi bağlantı komşusu metin düğümlerinde bu boşluklar
+// kelimeleri ayırdığı için korunur (aksi hâlde kelimeler bitişir ve metin yeniden kırılıp kayma oluşur).
+function normalizeTextValue(current: string) {
+  const leading = current.match(/^\s*/)?.[0] ?? "";
+  const trailing = current.match(/\s*$/)?.[0] ?? "";
+  return leading + trText(current) + trailing;
+}
+
 function normalizeElement(root: ParentNode) {
   const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
 
@@ -20,7 +28,7 @@ function normalizeElement(root: ParentNode) {
       continue;
     }
 
-    const normalized = trText(current);
+    const normalized = normalizeTextValue(current);
     if (normalized !== current) {
       node.nodeValue = normalized;
     }
@@ -58,7 +66,10 @@ export function TextNormalizer() {
       for (const mutation of mutations) {
         if (mutation.type === "characterData" && mutation.target.nodeValue) {
           const current = mutation.target.nodeValue;
-          const normalized = trText(current);
+          if (!current.trim()) {
+            continue;
+          }
+          const normalized = normalizeTextValue(current);
           if (normalized !== current) {
             mutation.target.nodeValue = normalized;
           }
@@ -68,7 +79,10 @@ export function TextNormalizer() {
         mutation.addedNodes.forEach((node) => {
           if (node.nodeType === Node.TEXT_NODE) {
             const current = node.nodeValue ?? "";
-            const normalized = trText(current);
+            if (!current.trim()) {
+              return;
+            }
+            const normalized = normalizeTextValue(current);
             if (normalized !== current) {
               node.nodeValue = normalized;
             }

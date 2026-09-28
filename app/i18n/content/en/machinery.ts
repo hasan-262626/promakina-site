@@ -420,6 +420,8 @@ export const dosingSystems: IntlPageContent = {
     image: { src: "/images/dozaj makro/makro1.png", alt: "Macro dosing system manufactured by Pro Makina" },
   },
   childLinks: [
+    { key: "microDosing", title: "Micro Dosing", text: "Screw-fed batch weighing of low-ratio additives and micro components." },
+    { key: "macroDosing", title: "Macro Dosing", text: "Batch weighing of high-quantity recipe ingredients from bins." },
     { key: "dosingBeltScale", title: "Weigh Belt Feeder", text: "Continuous gravimetric dosing with belt weighing for main material streams." },
   ],
   sections: [
@@ -865,7 +867,9 @@ export const storageSystems: IntlPageContent = {
     image: { src: "/images/bunker/bunker2.jpg", alt: "Storage bunker system manufactured by Pro Makina" },
   },
   childLinks: [
+    { key: "siloSystems", title: "Silo Systems", text: "Silos for stock and process storage of bulk products." },
     { key: "bunkersHoppers", title: "Bunkers & Hoppers", text: "Receiving and buffer bunkers with discharge geometry matched to the material." },
+    { key: "teremiHopper", title: "Truck Intake Hopper", text: "Grated ground-level intake for bulk product tipped from trucks." },
   ],
   sections: [
     {
@@ -970,4 +974,55 @@ export const bunkersHoppers: IntlPageContent = {
   ],
   related: ["storageSystems", "screwConveyor", "beltConveyor", "dosingSystems"],
   schemaType: "Product",
+};
+
+export const auxiliaryFlow: IntlPageContent = {
+  meta: {
+    title: "Auxiliary & Flow Equipment | Bulk Material Flow Components",
+    description:
+      "Loading bellows, rotary distributors, flap diverters, slide gates, rotary airlocks and blowers for loading, diverting and controlling bulk flow. Pro Makina.",
+  },
+  breadcrumbLabel: "Auxiliary & Flow Equipment",
+  hero: {
+    h1: "Auxiliary Equipment and Flow Systems for Bulk Materials",
+    intro:
+      "Between storage, conveying and process equipment, bulk material has to be loaded, directed, opened, shut off and separated from air. Pro Makina engineers the flow components that perform these duties and matches each one to your product and line.",
+    image: { src: "/images/surgu kapak/surgu1.jpg", alt: "Pneumatic slide gates manufactured for bulk material flow control" },
+  },
+  childLinks: [
+    { key: "loadingBellows", title: "Loading Bellows", text: "Telescopic, dust-free loading of bulk product into tankers, trucks and open trailers." },
+    { key: "distributor", title: "Distributor", text: "Multi-outlet rotary distributor directing product from one inlet to the selected silo or line." },
+    { key: "flapDiverters", title: "Flap Diverter Valves", text: "Two-way diverting of bulk material with a pivoting flap." },
+    { key: "slideGates", title: "Slide Gates", text: "Opening and shutting off flow below silos, bunkers and hoppers." },
+    { key: "rotaryAirlock", title: "Rotary Airlock Valve", text: "Product discharge below cyclones and filters with limited air leakage." },
+    { key: "blower", title: "Blower", text: "Roots-type pressurised air source for pneumatic conveying lines." },
+  ],
+  sections: [
+    {
+      type: "table",
+      heading: "Which Equipment for Which Duty",
+      columns: ["Duty", "Equipment"],
+      rows: [
+        ["Loading bulk product into vehicles without dust", "Loading bellows"],
+        ["Selecting one of many silos or lines", "Rotary distributor"],
+        ["Directing flow to one of two lines", "Flap diverter valve"],
+        ["Opening or shutting off flow at an outlet", "Slide gate"],
+        ["Discharging below cyclones and filters while limiting air leakage", "Rotary airlock valve"],
+        ["Supplying air to pneumatic conveying lines", "Blower"],
+      ],
+      note: "None of these components weighs or doses the product; where a measured feed rate is required, a dosing system is added.",
+    },
+  ],
+  faq: [
+    {
+      q: "What is the difference between a slide gate and a flap diverter?",
+      a: "A slide gate opens or shuts off the flow at a single opening. A flap diverter directs the flow to one of two outlet lines.",
+    },
+    {
+      q: "Is a rotary airlock a dosing device?",
+      a: "No. It discharges product while limiting air passage between two zones; rotor speed affects the discharged volume, but the product is not weighed.",
+    },
+  ],
+  related: ["storageSystems", "dustCollection", "conveying", "packagingSystems"],
+  schemaType: "CollectionPage",
 };

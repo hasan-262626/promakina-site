@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useSyncExternalStore, type ReactNode } from "react";
 import {
   getMachineCalculatorHref,
   getMachineCalculatorTitle,
@@ -63,7 +63,7 @@ type ProductDetailSystemProps = {
     headers: [string, string];
     rows: [string, string][];
   };
-  detailSections?: { title: string; paragraphs?: string[]; bullets?: string[] }[];
+  detailSections?: { title: string; paragraphs?: string[]; bullets?: string[]; subsections?: { title: string; paragraphs: string[] }[] }[];
   supplyScope?: {
     title: string;
     intro?: string;
@@ -83,6 +83,8 @@ type ProductDetailSystemProps = {
   ctaText: string;
   calculatorFamily: CalculatorFamily;
   openCalculatorOnLoad?: boolean;
+  // Verilirse hero ve sol menü korunur, yalnız ana içerik sütunu bu içerikle değiştirilir.
+  customContent?: ReactNode;
 };
 
 type FieldConfig = {
@@ -747,8 +749,20 @@ export function ProductDetailSystem({
   relatedTechnicalLinks,
   calculatorFamily,
   openCalculatorOnLoad = false,
+  customContent,
 }: ProductDetailSystemProps) {
-  const [isCalculatorOpen, setIsCalculatorOpen] = useState(openCalculatorOnLoad);
+  const [calculatorState, setCalculatorState] = useState<"auto" | "open" | "closed">(
+    openCalculatorOnLoad ? "open" : "auto",
+  );
+  // ?tab=kapasite-hesabi sunucuda okunmaz (sayfa statik üretilebilsin diye); tarayıcıda okunur.
+  const calculatorRequestedByUrl = useSyncExternalStore(
+    () => () => {},
+    () => new URLSearchParams(window.location.search).get("tab") === "kapasite-hesabi",
+    () => false,
+  );
+  const isCalculatorOpen =
+    calculatorState === "open" || (calculatorState === "auto" && calculatorRequestedByUrl);
+  const closeCalculator = () => setCalculatorState("closed");
   const [calculatorValues, setCalculatorValues] = useState<Record<string, string>>({});
   const [calculationSummary, setCalculationSummary] = useState("");
 
@@ -808,6 +822,9 @@ export function ProductDetailSystem({
               </div>
             ) : null}
 
+            {customContent ? (
+              <div className="min-w-0">{customContent}</div>
+            ) : (
             <div className="min-w-0 space-y-12">
               <section id="urun-detaylari" className="scroll-mt-[210px] xl:scroll-mt-[220px]">
                 <div className="overflow-hidden rounded-[30px] border border-slate-200 bg-white shadow-[0_18px_50px_rgba(15,23,42,0.05)]">
@@ -959,6 +976,14 @@ export function ProductDetailSystem({
                         <h2 className="text-2xl font-semibold tracking-tight text-slate-950">
                           {section.title}
                         </h2>
+                        {section.subsections?.map((subsection) => (
+                          <div key={subsection.title} className="mt-6">
+                            <h3 className="text-lg font-semibold text-slate-950">{subsection.title}</h3>
+                            <div className="mt-4 space-y-4 text-base leading-8 text-slate-600">
+                              {subsection.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+                            </div>
+                          </div>
+                        ))}
                         {section.paragraphs?.length ? (
                           <div className="mt-4 space-y-4 text-base leading-8 text-slate-600">
                             {section.paragraphs.map((paragraph) => (
@@ -1152,6 +1177,7 @@ export function ProductDetailSystem({
                 mailHref={mailHref}
               />
             </div>
+            )}
           </div>
         </div>
       </section>
@@ -1161,13 +1187,13 @@ export function ProductDetailSystem({
           <ProgramModal
             slug="tambur-hesabi"
             initialValues={drumProgramInitialValues}
-            onClose={() => setIsCalculatorOpen(false)}
+            onClose={closeCalculator}
           />
         ) : null
       ) : (
         <ProductCalculatorModal
           open={isCalculatorOpen}
-          onClose={() => setIsCalculatorOpen(false)}
+          onClose={closeCalculator}
           title={title}
           family={calculatorFamily}
           values={calculatorValues}

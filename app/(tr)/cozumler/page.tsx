@@ -63,7 +63,10 @@ export default function Page() {
             </div>
 
             <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-              {industrialSolutionLandingConfigs.map((item) => (
+              {industrialSolutionLandingConfigs
+                // İngilizce rotary dryer sayfası /en sürümüne yönlendirildi (TR dizininde listelenmez).
+                .filter((item) => item.slug !== "rotary-dryer-manufacturer")
+                .map((item) => (
                 <Link
                   key={item.slug}
                   href={`/cozumler/${item.slug}`}

@@ -5,6 +5,7 @@
   TopicalSection,
   TopicalSummaryRow,
 } from "./topical-authority-blog-data";
+import { isMergedBlogSlug } from "./merged-blog-slugs";
 
 const commonLinks = [
   { label: "Hizmetler", href: "/hizmetler" },
@@ -667,8 +668,8 @@ const generatedDryingArticles: TopicalArticle[] = [
     ctaText: "Brülör kapasitesi, modülasyon ve yakıt tercihini ürününüze göre birlikte değerlendirmek için Pro Makina ile görüşebilirsiniz.",
     relatedContents: [
       card("Kurutma Tamburu Kapasite Hesabı", "Isıl yükün nasıl okunduğunu ana kapasite içeriğinde görün.", "/kutuphane/blog/kurutma-tamburu-hesaplama"),
-      card("Kurutma Tamburu Fan Seçimi", "Brülör gücünü gaz hattıyla birlikte değerlendiren bağlantılı içeriği inceleyin.", "/kutuphane/blog/kurutma-tamburu-fan-secimi"),
-      card("Maden Kurutma Tamburu", "Sıcaklık ve aşındırıcılığın birlikte öne çıktığı uygulamayı görün.", "/kutuphane/blog/maden-kurutma-tamburu"),
+      card("Kurutma Tamburunda Fan, Siklon ve Filtre Seçimi", "Brülör gücünü gaz hattıyla birlikte değerlendiren bağlantılı içeriği inceleyin.", "/kutuphane/blog/kurutma-tamburunda-fan-siklon-filtre-secimi"),
+      card("Maden ve Mineral Kurutma Rehberi", "Sıcaklık ve aşındırıcılığın birlikte öne çıktığı uygulamayı görün.", "/kutuphane/blog/maden-kurutma-tamburu"),
     ],
     relatedServices: [
       card("Kurutma Tamburu İmalatı", "Brülör ve tambur omurgasını hizmet tarafında inceleyin.", "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburu"),
@@ -732,8 +733,8 @@ const generatedDryingArticles: TopicalArticle[] = [
     serviceHref: "/sektorler/madencilik-ve-mineral-isleme",
     ctaText: "Kum kurutma hattı için tambur, siklon, filtre ve stoklama omurgasını birlikte değerlendirelim.",
     relatedContents: [
-      card("Maden Kurutma Tamburu", "Mineral ürünlerde tambur seçimi mantığını detaylı görün.", "/kutuphane/blog/maden-kurutma-tamburu"),
-      card("Kurutma Tamburu Fan Seçimi", "Tozlu hatlarda hava debisi ve fan mantığını okuyun.", "/kutuphane/blog/kurutma-tamburu-fan-secimi"),
+      card("Maden ve Mineral Kurutma Rehberi", "Mineral ürünlerde tambur seçimi mantığını detaylı görün.", "/kutuphane/blog/maden-kurutma-tamburu"),
+      card("Kurutma Tamburunda Fan, Siklon ve Filtre Seçimi", "Tozlu hatlarda hava debisi ve fan mantığını okuyun.", "/kutuphane/blog/kurutma-tamburunda-fan-siklon-filtre-secimi"),
       card("Toz Toplama Sistemi Seçimi", "Siklon ve filtre tarafını daha yakından inceleyin.", "/kutuphane/blog/toz-toplama-sistemi-secimi"),
     ],
     relatedServices: [
@@ -1121,8 +1122,8 @@ const generatedProcessArticles: TopicalArticle[] = [
     machineHref: "/makinalar-ekipman/toz-toplama-sistemleri",
     ctaText: "Toz toplama hattınızı debi, ürün tipi ve emisyon hedefinizle birlikte netleştirelim.",
     relatedContents: [
-      card("Kurutma Tamburu Fan Seçimi", "Fan ve filtre hattının kurutma tarafındaki etkisini görün.", "/kutuphane/blog/kurutma-tamburu-fan-secimi"),
-      card("Maden Kurutma Tamburu", "Yüksek toz yükü taşıyan maden uygulamasını inceleyin.", "/kutuphane/blog/maden-kurutma-tamburu"),
+      card("Kurutma Tamburunda Fan, Siklon ve Filtre Seçimi", "Fan ve filtre hattının kurutma tarafındaki etkisini görün.", "/kutuphane/blog/kurutma-tamburunda-fan-siklon-filtre-secimi"),
+      card("Maden ve Mineral Kurutma Rehberi", "Yüksek toz yükü taşıyan maden uygulamasını inceleyin.", "/kutuphane/blog/maden-kurutma-tamburu"),
       card("Kum Kurutma Tesisi", "Siklon ve filtre hattının saha ölçeğindeki rolünü görün.", "/kutuphane/blog/kum-kurutma-tesisi"),
     ],
     relatedServices: [
@@ -1160,5 +1161,6 @@ export const generatedTechnicalBlogArticles: TopicalArticle[] = [
   ...generatedCompostArticles,
   ...generatedBiogasArticles,
   ...generatedProcessArticles,
-];
+  // Paket 3C: birleştirilen (308) makaleler listeden çıkarılır.
+].filter((article) => !isMergedBlogSlug(article.slug));
 

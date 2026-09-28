@@ -20,6 +20,7 @@ import {
   type IntlLocale,
 } from "../i18n/config";
 import "../(tr)/globals.css";
+import { cookieConsentBootstrapScript } from "../(tr)/lib/cookie-consent";
 
 const montserrat = Montserrat({
   subsets: ["latin", "latin-ext", "cyrillic"],
@@ -100,9 +101,12 @@ export default async function IntlLayout({
   };
 
   return (
-    <html lang={meta.lang} dir={meta.dir}>
+    <html lang={meta.lang} dir={meta.dir} suppressHydrationWarning>
       <head>
-        <Script id="gtm-script" strategy="beforeInteractive">
+        {/* Onaylı ziyaretçide çerez bandını ilk boyamadan önce gizler (bkz. lib/cookie-consent). */}
+        <script dangerouslySetInnerHTML={{ __html: cookieConsentBootstrapScript }} />
+        {/* GTM ilk boyamayı ve etkileşimi bloklamaması için hydrate sonrası yüklenir. */}
+        <Script id="gtm-script" strategy="afterInteractive">
           {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=

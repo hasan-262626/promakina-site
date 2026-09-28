@@ -82,6 +82,8 @@ export type DrumSystemDetailPageData = {
   heroTertiaryHref?: string;
   heroLinks: DrumDetailLink[];
   introParagraphs: string[];
+  // Bilgi amaçlı rehberden ticari ürün sayfasına anahtar kelimeli metin içi bağlantı (opsiyonel).
+  productCallout?: { before: string; anchor: string; after: string; href: string };
   flowTitle: string;
   flowSteps: Array<string | DrumDetailFlowStep>;
   flowNote: string;
@@ -1393,6 +1395,18 @@ export function DrumSystemDetailPage({
                   {page.introParagraphs.map((paragraph) => (
                     <p key={`intro-${paragraph}`}>{trText(paragraph)}</p>
                   ))}
+                  {page.productCallout ? (
+                    <p>
+                      {trText(page.productCallout.before)}
+                      <Link
+                        href={page.productCallout.href}
+                        className="font-semibold text-[#278DC0] underline-offset-2 hover:text-[#154764] hover:underline"
+                      >
+                        {trText(page.productCallout.anchor)}
+                      </Link>
+                      {trText(page.productCallout.after)}
+                    </p>
+                  ) : null}
                 </div>
                 <div className="mt-6 flex flex-wrap gap-3">
                   {page.heroLinks.map((link) => (

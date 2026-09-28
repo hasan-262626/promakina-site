@@ -914,13 +914,14 @@ const screeningSeed: CategorySeed = {
       title: "Trommel Elekler",
       shortDescription:
         "Organik atık ve kompost hatları için trommel elek imalatı yapıyoruz.",
-      image: "/images/elek/elek1.png",
+      // Kart görseli: trommel klasöründeki döner elek fotoğrafı (önceden titreşimli elek görseli gösteriliyordu).
+      image: "/images/trommel/tromm11.jpg",
       gallery: makeGalleryWithPrimary(
         {
-          src: "/images/elek/elek1.png",
-          alt: "Trommel elek ve sınıflandırma sistemi",
+          src: "/images/trommel/tromm11.jpg",
+          alt: "Konveyörle beslenen döner trommel elek",
         },
-        ["/images/elek/elek2.jpeg"],
+        [],
         "Trommel elekler galeri görseli",
       ),
     },
@@ -929,31 +930,33 @@ const screeningSeed: CategorySeed = {
       title: "Susuzlandırma Elekleri",
       shortDescription:
         "Yüksek nemli ürünlerde su ayrımı için susuzlandırma eleği çözümleri geliştiriyoruz.",
-      image: "/images/trommel/tromm11.jpg",
+      // Projede susuzlandırma eleği fotoğrafı yok; önceki trommel görselleri yerine örnek proses görseli (Commons, CC BY 2.0).
+      image: "/images/eleme-uygulamalari/susuzlandirilmis-cevher.webp",
       gallery: makeGalleryWithPrimary(
         {
-          src: "/images/trommel/tromm11.jpg",
-          alt: "Susuzlandırma eleği ve katı sıvı ayırma sistemi",
+          src: "/images/eleme-uygulamalari/susuzlandirilmis-cevher.webp",
+          alt: "Susuzlandırma eleği yüzeyinde yıkanmış cevher yatağı (örnek görsel)",
         },
-        [
-          "/images/trommel/tromm1.jpg",
-          "/images/trommel/tromm2.jpg",
-          "/images/trommel/tromm3.jpg",
-          "/images/trommel/tromm4.jpg",
-          "/images/trommel/tromm5.jpg",
-          "/images/trommel/tromm6.jpg",
-          "/images/trommel/tromm7.jpg",
-          "/images/trommel/tromm9.jpg",
-          "/images/trommel/tromm10.jpg",
-          "/images/trommel/tromm12.png",
-          "/images/trommel/tromm13.jpg",
-          "/images/trommel/tromm14.jpg",
-          "/images/trommel/tromm15.jpg",
-          "/images/trommel/tromm16.jpg",
-          "/images/trommel/tromm17.jpeg",
-          "/images/trommel/tromm18.jpg",
-        ],
+        [],
         "Susuzlandırma elekleri galeri görseli",
+      ),
+    },
+    {
+      slug: "sulu-elekler",
+      title: "Sulu Elekler",
+      shortDescription:
+        "Kum, agrega ve uygun mineraller için suyla desteklenen yaş eleme ve sınıflandırma çözümleri sunuyoruz.",
+      heroDescription:
+        "PRO MAKİNA, kum, agrega ve uygun mineral hammaddelerin suyla desteklenen eleme ve sınıflandırma prosesleri için projeye özel sulu elek sistemleri tasarlar ve imal eder.",
+      // Projede sulu elek fotoğrafı yok; örnek proses görseli (Commons, CC BY 2.0).
+      image: "/images/eleme-uygulamalari/sulu-elek-nozullar.webp",
+      gallery: makeGalleryWithPrimary(
+        {
+          src: "/images/eleme-uygulamalari/sulu-elek-nozullar.webp",
+          alt: "Püskürtme nozullarıyla sulu eleme yapılan elek yüzeyi (örnek görsel)",
+        },
+        [],
+        "Sulu elekler galeri görseli",
       ),
     },
   ],
@@ -1055,6 +1058,24 @@ const dustSeed: CategorySeed = {
         "Siklon ayırıcılar galeri görseli",
       ),
     },
+    {
+      slug: "baca-yikama-scrubber-sistemleri",
+      title: "Baca Yıkama (Scrubber) Sistemleri",
+      shortDescription:
+        "Proses gazlarının yıkama sıvısıyla arıtılması için projeye özel ıslak gaz yıkama (scrubber) sistemleri sunuyoruz.",
+      heroDescription:
+        "PRO MAKİNA, endüstriyel proses gazlarının özelliklerine ve arıtma ihtiyacına göre projelendirilen baca yıkama ve ıslak gaz arıtma sistemleri için mühendislik ve imalat çözümleri sunar.",
+      // Projede scrubber fotoğrafı yok; örnek görsel (Commons, CC BY-SA 4.0, başka üreticinin ürünü).
+      image: "/images/toz-uygulamalari/islak-gaz-yikayici.webp",
+      gallery: makeGalleryWithPrimary(
+        {
+          src: "/images/toz-uygulamalari/islak-gaz-yikayici.webp",
+          alt: "Sirkülasyon tanklı ıslak gaz yıkama ünitesi (örnek görsel)",
+        },
+        [],
+        "Baca yıkama sistemleri galeri görseli",
+      ),
+    },
   ],
 };
 
@@ -1103,11 +1124,11 @@ const packagingSeed: CategorySeed = {
     "Kapama ve tutucu elemanlar",
   ],
   products: [
-    { slug: "acik-agiz-torbalama", title: "Açık Ağız Torbalama", shortDescription: "Granül ve toz ürünler için açık ağız torbalama sistemleri üretiyoruz.", image: "/images/paketleme/paket4.jpg" },
+    { slug: "acik-agiz-torbalama", title: "Açık Ağız Torbalama", shortDescription: "Granül ve toz ürünler için açık ağız torbalama sistemleri üretiyoruz.", image: "/images/paketleme/paket1.jpg" },
     { slug: "big-bag-dolum", title: "Big Bag Dolum", shortDescription: "Yüksek tonajlı torbalama ihtiyaçları için big bag dolum sistemleri üretiyoruz.", image: "/images/big bag/bigdol1.jpg" },
-    { slug: "paletleme-hatlari", title: "Paletleme Hatları", shortDescription: "Dolum sonrası sevkiyat hazırlığı için paletleme hattı çözümleri geliştiriyoruz.", image: "/images/paketleme/paket1.jpg" },
-    { slug: "sivi-dolum-siseleme", title: "Sıvı Dolum Şişeleme", shortDescription: "Sıvı ürünlerin hassas dozajla doldurulması ve şişeleme hatlarında kontrollü akış için sıvı dolum şişeleme çözümleri sunuyoruz.", image: "/images/sivi dolum/sividol2.jpg" },
-    { slug: "sise-etiketleme-makinasi", title: "Şişe Etiketleme Makinası", shortDescription: "Şişe ve benzeri ambalajlarda düzgün, hızlı ve standart etiket uygulaması için şişe etiketleme makinası çözümleri sunuyoruz.", image: "/images/paketleme/paket4.jpg" },
+    { slug: "paletleme-hatlari", title: "Paletleme Hatları", shortDescription: "Dolum sonrası sevkiyat hazırlığı için paletleme hattı çözümleri geliştiriyoruz.", image: "/images/paket-uygulamalari/robotlu-paletleme.webp" },
+    { slug: "sivi-dolum-siseleme", title: "Sıvı Dolum Şişeleme", shortDescription: "Sıvı ürünlerin hassas dozajla doldurulması ve şişeleme hatlarında kontrollü akış için sıvı dolum şişeleme çözümleri sunuyoruz.", image: "/images/sivi dolum/sividol1.jpg" },
+    { slug: "sise-etiketleme-makinasi", title: "Şişe Etiketleme Makinası", shortDescription: "Şişe ve benzeri ambalajlarda düzgün, hızlı ve standart etiket uygulaması için şişe etiketleme makinası çözümleri sunuyoruz.", image: "/images/sivi dolum/sividol2.jpg" },
   ],
 };
 
@@ -1157,48 +1178,8 @@ const storageSeed: CategorySeed = {
   ],
   products: [
     { slug: "silo-sistemleri", title: "Silo Sistemleri", shortDescription: "Dökme katı ürünler için güvenli ve proses uyumlu silo sistemleri üretiyoruz.", image: "/images/silo/silo1.jpg" },
-    { slug: "bunker-ve-hazneler", title: "Bunker ve Hazneler", shortDescription: "Kontrollü ürün kabulü ve besleme için bunker ve hazne sistemleri üretiyoruz." },
-    { slug: "teremi-bunkeri", title: "Teremi Bunkeri", shortDescription: "Dökme katı ürünlerin kontrollü alınması, tamponlanması ve prosese düzenli beslenmesi için teremi bunkeri çözümleri sunuyoruz.", image: "/images/bunker/bunker4.jpg" },
-    {
-      slug: "surgulu-klapeler",
-      title: "Sürgülü Klapeler",
-      shortDescription:
-        "Silo ve bunker çıkışlarında ürün akış kontrolünü güvenli ve sürekli hale getiren sürgülü klape çözümleri sunuyoruz.",
-      image: "/images/surgu kapak/surgu1.jpg",
-      heroDescription:
-        "Sürgülü klapeler, silo ve bunker çıkışlarında ürün akışının başlatılması, durdurulması ve kontrollü yönetimi için kullanılan yardımcı ekipmanlardır.",
-      overviewParagraphs: [
-        "Sürgülü klapeler; silo, bunker, hazne ve transfer noktalarında malzeme akışının kontrollü şekilde yönetilmesini sağlar. Tozlu, granül veya dökme katı ürünlerin hatta emniyetli biçimde aktarılması için kritik destek ekipmanlarıdır.",
-        "Pro Makina sürgülü klape çözümlerini ürün tipi, akış karakteri ve saha yerleşimine göre projelendirir. Doğru gövde yapısı, sızdırmazlık seviyesi ve aktüatör seçimi ile daha kararlı proses akışına ulaşılır.",
-      ],
-      highlightText:
-        "Doğru sürgülü klape seçimi; ürün akışının hassas yönetimi, güvenli çalışma ve düşük kaçak oranı için kritik önem taşır.",
-      specs: [
-        "Ürün akış karakteri ve bulk yoğunluğuna uygun gövde tasarımı",
-        "Manuel, pnömatik veya motorlu sürüş ihtiyacına göre konfigürasyon",
-        "Sızdırmazlık seviyesi ve toz kontrol beklentisine uygun yapı",
-        "Silo, bunker veya transfer hattıyla uyumlu bağlantı geometrisi",
-        "Proses hattına özel ebat ve aktüatör seçenekleri",
-      ],
-      applications: [
-        "Silo çıkışları",
-        "Bunker boşaltmaları",
-        "Helezon ve konveyör besleme noktaları",
-        "Tozlu ve dökme katı malzeme prosesleri",
-      ],
-      optionalEquipment: [
-        "Sensörlü açık-kapalı izleme",
-        "Pnömatik veya motorlu tahrik",
-        "Aşınma plakalı kızak sistemi",
-        "Toz sızdırmaz conta paketi",
-      ],
-      spareParts: [
-        "Kızak ve sürgü parçaları",
-        "Conta setleri",
-        "Aktüatör veya motor grupları",
-        "Bağlantı ve kilitleme elemanları",
-      ],
-    },
+    { slug: "bunker-ve-hazneler", title: "Bunker ve Hazneler", shortDescription: "Kontrollü ürün kabulü ve besleme için bunker ve hazne sistemleri üretiyoruz.", image: "/images/bunker/bunker2.jpg" },
+    { slug: "teremi-bunkeri", title: "Teremi Bunkeri", shortDescription: "Dökme katı ürünlerin kontrollü alınması, tamponlanması ve prosese düzenli beslenmesi için teremi bunkeri çözümleri sunuyoruz.", image: "/images/bunker/bunker10.jpg" },
   ],
 };
 
@@ -1727,17 +1708,14 @@ const dosageSeed: CategorySeed = {
       title: "Dozaj Bant Kantarı",
       shortDescription:
         "Sürekli akış halinde çalışan üretim hatlarında hammaddeyi hassas biçimde tartmak ve kontrollü beslemek için dozaj bant kantarı çözümleri sunuyoruz.",
-      image: "/images/dozaj konveyor/dozaj1.jpg",
+      image: "/images/dozaj konveyor/dozaj4.jpg",
       gallery: makeGalleryWithPrimary(
         {
-          src: "/images/dozaj konveyor/dozaj1.jpg",
-          alt: "Dozaj bant kantarı ve kontrollü besleme sistemi",
+          src: "/images/dozaj konveyor/dozaj4.jpg",
+          alt: "Kapalı gövdeli dozaj bant kantarı",
         },
-        [
-          "/images/dozaj konveyor/dozaj2.jpg",
-          "/images/dozaj konveyor/dozaj3.png",
-          "/images/dozaj konveyor/dozaj4.jpg",
-        ],
+        // dozaj1 ve dozaj2 standart bant konveyör görünümünde olduğu için bu üründe kullanılmaz.
+        ["/images/dozaj konveyor/dozaj3.png"],
         "Dozaj bant kantarı galeri görseli",
       ),
       heroDescription:

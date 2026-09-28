@@ -7,6 +7,7 @@ import type {
   TopicalSummaryRow,
 } from "./topical-authority-blog-data";
 import { sectorMachineGuideCards } from "./sector-machine-guide-blog-data";
+import { isMergedBlogSlug } from "./merged-blog-slugs";
 
 const DEFAULT_READING_TIME = "6-8 dk";
 const CATEGORY_BADGE = "Sektörel Teknik Rehber";
@@ -193,7 +194,7 @@ function buildRelatedServiceCards(spec: ArticleSpec): TopicalBlogCard[] {
     );
 }
 
-const articleSpecs: ArticleSpec[] = [
+const allArticleSpecs: ArticleSpec[] = [
   {
     slug: "granul-gubre-uretim-tesisi-nasil-kurulur",
     title: "Granül Gübre üretim Tesisi Nasıl Kurulur?",
@@ -715,11 +716,11 @@ const articleSpecs: ArticleSpec[] = [
     slug: "maden-kurutma-ve-eleme-tesisi-secim-kriterleri",
     title: "Maden Kurutma ve Eleme Tesisi Seçim Kriterleri",
     metaTitle:
-      "Maden Kurutma ve Eleme Tesisi Seçim Kriterleri | Mineral 0_leme Ekipmanları",
+      "Maden Kurutma ve Eleme Tesisi Seçim Kriterleri | Mineral İşleme Ekipmanları",
     description:
       "Maden ve mineral işleme tesislerinde kırıcı, kurutma tamburu, elek, konveyör, siklon ve filtre sistemlerinin seçim kriterlerini inceleyin.",
     excerpt:
-      "K1rıc1, kurutma tamburu, elek ve taşıma ekipmanlarının ayn1 hatta nasıl dengeleneceini açıklayan maden prosesi rehberi.",
+      "Kırıcı, kurutma tamburu, elek ve taşıma ekipmanlarının aynı hatta nasıl dengeleneceğini açıklayan maden prosesi rehberi.",
     heroDescription:
       "Maden kurutma ve eleme tesislerinde ürün tane boyutu, nem, a_1nma ve toz yüküne göre ekipman seçim kriterlerini bir araya getiren teknik blog sayfası.",
     categorySlug: "maden-ve-mineral-isleme-rehberleri",
@@ -1118,9 +1119,9 @@ const articleSpecs: ArticleSpec[] = [
   },
   {
     slug: "aritma-camuru-kurutma-tesisi-nasil-kurulur",
-    title: "Arıtma çamuru Kurutma Tesisi Nasıl Kurulur?",
+    title: "Arıtma Çamuru Kurutma Tesisi Nasıl Kurulur?",
     metaTitle:
-      "Arıtma çamuru Kurutma Tesisi Nasıl Kurulur? | çamur Kurutma ve Stabilizasyon",
+      "Arıtma Çamuru Kurutma Tesisi Nasıl Kurulur? | Çamur Kurutma ve Stabilizasyon",
     description:
       "Arıtma çamuru ve belediye çamurunun kurutma tamburu, sterilizasyon, stabilizasyon, koku kontrolü ve ürün hazırlama proseslerini inceleyin.",
     excerpt:
@@ -1171,13 +1172,13 @@ const articleSpecs: ArticleSpec[] = [
   },
   {
     slug: "camur-kurutma-ve-koku-kontrol-sistemleri",
-    title: "çamur Kurutma ve Koku Kontrol Sistemleri",
+    title: "Çamur Kurutma ve Koku Kontrol Sistemleri",
     metaTitle:
-      "çamur Kurutma ve Koku Kontrol Sistemleri | Scrubber, Biyofiltre ve Kapalı Hat",
+      "Çamur Kurutma ve Koku Kontrol Sistemleri | Scrubber, Biyofiltre ve Kapalı Hat",
     description:
-      "çamur kurutma tesislerinde koku, gaz, buhar, toz ve emisyon kontrolü için kullanılan scrubber, biyofiltre, filtre ve kapalı transfer sistemlerini inceleyin.",
+      "Çamur kurutma tesislerinde koku, gaz, buhar, toz ve emisyon kontrolü için kullanılan scrubber, biyofiltre, filtre ve kapalı transfer sistemlerini inceleyin.",
     excerpt:
-      "çamur kurutma tesislerinde koku, gaz, toz ve buhar kontrolının nasıl kurgulanacaını anlatan çevresel kontrol rehberi.",
+      "Çamur kurutma tesislerinde koku, gaz, toz ve buhar kontrolünün nasıl kurgulanacağını anlatan çevresel kontrol rehberi.",
     heroDescription:
       "çamur kurutma hatlarında emisyon kontrolü, kapalı transfer, scrubber, biyofiltre ve filtre sistemlerinin birlikte nasıl deerlendirilmesi gerektiini anlatan teknik içerik.",
     categorySlug: "atik-su-camuru-ve-aritma-rehberleri",
@@ -1222,13 +1223,13 @@ const articleSpecs: ArticleSpec[] = [
   },
   {
     slug: "camur-kurutma-maliyeti-ve-kapasite-hesabi",
-    title: "çamur Kurutma Maliyeti ve Kapasite Hesabı",
+    title: "Çamur Kurutma Maliyeti ve Kapasite Hesabı",
     metaTitle:
-      "çamur Kurutma Maliyeti ve Kapasite Hesabı | Nem, Enerji ve Tambur Seçimi",
+      "Çamur Kurutma Maliyeti ve Kapasite Hesabı | Nem, Enerji ve Tambur Seçimi",
     description:
-      "Arıtma çamuru kurutma tesislerinde nem d?_?rme, buharla_acak su miktarı, enerji ihtiyacı, tambur kapasitesi ve i_letme maliyeti nasıl hesaplanır?",
+      "Arıtma çamuru kurutma tesislerinde nem düşürme, buharlaşacak su miktarı, enerji ihtiyacı, tambur kapasitesi ve işletme maliyeti nasıl hesaplanır?",
     excerpt:
-      "çamur kurutma projelerinde nem d?_?rme hedefi, buharla_acak su ve tambur seçiminin maliyete nasıl yansıd11n1 anlatan hesap odaklı rehber.",
+      "Çamur kurutma projelerinde nem düşürme hedefi, buharlaşacak su ve tambur seçiminin maliyete nasıl yansıdığını anlatan hesap odaklı rehber.",
     heroDescription:
       "çamur kurutma maliyeti ve kapasite hesabını; su buharla_tırma yükü, enerji ihtiyacı, tambur seçimi ve yardımcı ekipman etkisiyle birlikte deerlendiren teknik makale.",
     categorySlug: "atik-su-camuru-ve-aritma-rehberleri",
@@ -1423,6 +1424,9 @@ const articleSpecs: ArticleSpec[] = [
   },
 ];
 
+// Paket 3C: birleştirilen (308) sayfalar kart, liste ve statik üretimden çıkarılır.
+const articleSpecs = allArticleSpecs.filter((spec) => !isMergedBlogSlug(spec.slug));
+
 const articleCardMap = Object.fromEntries(
   articleSpecs.map((spec) => [
     spec.slug,
@@ -1444,7 +1448,7 @@ export const sectorTechnicalBlogArticles: TopicalArticle[] = articleSpecs.map((s
     .slice(0, 3);
 
   const relatedServices = buildRelatedServiceCards(spec);
-  const nextContent = spec.nextSlug ? articleCardMap[spec.nextSlug] : relatedContents[0];
+  const nextContent = (spec.nextSlug && articleCardMap[spec.nextSlug]) || relatedContents[0];
 
   return {
     slug: spec.slug,

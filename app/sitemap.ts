@@ -24,6 +24,20 @@ const siteUrl = "https://www.promakina.com.tr";
 // yanlış güncellik sinyali verdiği için sabit tutulur.
 const lastModified = new Date("2026-07-06");
 
+// İçeriği genel deploy tarihinden sonra değişen sayfalar için sayfa bazlı lastmod.
+const routeLastModified: Record<string, string> = {
+  "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburu": "2026-09-23",
+  "/kutuphane/blog/silis-kumu-kurutma-prosesi": "2026-09-23",
+  "/kutuphane/blog/perlit-kurutma-tamburu": "2026-09-23",
+  "/kutuphane/blog/talas-kurutma-tamburu": "2026-09-23",
+  "/kutuphane/blog/maden-kurutma-tamburu": "2026-09-23",
+  "/kutuphane/blog/gubre-kurutma-tamburu": "2026-09-23",
+  "/kutuphane/blog/maden-kurutma-ve-eleme-tesisi-secim-kriterleri": "2026-09-23",
+  "/kutuphane/blog/aritma-camuru-kurutma-tesisi-nasil-kurulur": "2026-09-23",
+  "/kutuphane/blog/camur-kurutma-ve-koku-kontrol-sistemleri": "2026-09-23",
+  "/kutuphane/blog/camur-kurutma-maliyeti-ve-kapasite-hesabi": "2026-09-23",
+};
+
 // Fiziksel sayfası olsa bile 301 ile başka adrese yönlendirilen eski rotalar.
 const redirectedRoutes = new Set([
   "/sektorler/atik-su-camuru-ve-aritma-cozumleri/susuzlastirma-destek-sistemleri",
@@ -34,7 +48,6 @@ const redirectedRoutes = new Set([
   "/sektorler/kompost-ve-organik-atik-tesisleri/hayvansal-ahir-atiklari",
   "/sektorler/kompost-ve-organik-atik-tesisleri/olgunlastirma-tamburlari",
   "/sektorler/kompost-ve-organik-atik-tesisleri/balik-atiklari",
-  "/makinalar-ekipman/kiricilar-ve-parcalayicilar/bicakli-sekonder-kiricilar",
   "/makinalar-ekipman/tasima-ekipmanlari/bant-konveyorler",
   "/makinalar-ekipman/tasima-ekipmanlari/helezon-konveyorler",
   "/makinalar-ekipman/tasima-ekipmanlari/kovali-elevatorler",
@@ -54,10 +67,18 @@ const redirectedRoutes = new Set([
   "/kutuphane/blog/organomineral-gubre-tesisi-maliyeti",
   // Paket 2B-4: blog kurutma tamburu tasarım kriterleri içerik aktarımı sonrası kütüphane sürümüne yönlendirildi.
   "/kutuphane/blog/kurutma-tamburu-tasarim-kriterleri",
+  // Paket 3C: kurutma blog kümesi birleştirmeleri ve TR ağacındaki İngilizce sayfa.
+  "/kutuphane/blog/silis-kumu-kurutma-tamburu",
+  "/kutuphane/blog/silis-kumu-kurutma-tesisi-nasil-tasarlanir",
+  "/kutuphane/blog/kurutma-tamburu-brulor-secimi",
+  "/kutuphane/blog/kurutma-tamburu-fan-secimi",
+  "/kutuphane/blog/digestat-kurutma-ve-kompostlastirma-sistemi",
+  "/kutuphane/blog/kurutma-tamburu-ve-kurutma-sistemleri",
+  "/cozumler/rotary-dryer-manufacturer",
 ]);
 
 // İndekslenmesi istenmeyen sayfalar.
-const excludedRoutes = new Set(["/tesekkurler", "/kutuphane/sss"]);
+const excludedRoutes = new Set(["/tesekkurler", "/kutuphane/sss", "/gorsel-kaynaklari"]);
 
 function collectStaticRoutes(dir: string, routePrefix: string, out: string[]) {
   const entries = fs.readdirSync(dir, { withFileTypes: true });
@@ -165,7 +186,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     const routeKey = routeKeyByPath("tr", route);
     return {
       url: route === "/" ? `${siteUrl}/` : `${siteUrl}${route}`,
-      lastModified,
+      lastModified: routeLastModified[route] ? new Date(routeLastModified[route]) : lastModified,
       changeFrequency: "weekly" as const,
       priority: priorityFor(route),
       ...(routeKey ? { alternates: { languages: languageAlternates(routeKey) } } : {}),

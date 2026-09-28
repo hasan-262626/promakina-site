@@ -376,10 +376,10 @@ const guideSections: GuideSection[] = [
       },
       {
         badge: "TEKNİK REHBER",
-        title: "Silis Kumu Kurutma Tamburu",
+        title: "Silis Kumu Kurutma Prosesi",
         description:
           "Silis kumu gibi aşındırıcı minerallerde tambur seçimi ve proses dengesi kararlarını açıklayan rehber.",
-        href: "/kutuphane/blog/silis-kumu-kurutma-tamburu",
+        href: "/kutuphane/blog/silis-kumu-kurutma-prosesi",
         tags: ["Silis", "Tambur", "Aşındırıcılık"],
         cta: "İçeriği İncele",
       },

@@ -1,7 +1,9 @@
-import { CrusherProductDetailRoute, getCrusherProductMetadata } from "../../../components/crusher-product-detail-route";
+import type { Metadata } from "next";
+import { DrumTemplatePage, drumTemplateMetadata } from "../../../components/drum-template-page";
 
-export const metadata = getCrusherProductMetadata("ceneli-kiricilar");
+// Kırıcılar ve Parçalayıcılar: kurutma tamburu premium şablonu (içerik: i18n/content/drum-pages/crushers).
+export const metadata: Metadata = drumTemplateMetadata("jawCrusher");
 
 export default function Page() {
-  return <CrusherProductDetailRoute publicSlug="ceneli-kiricilar" />;
+  return <DrumTemplatePage pageKey="jawCrusher" />;
 }

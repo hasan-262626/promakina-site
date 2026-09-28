@@ -193,7 +193,7 @@ function DesktopDropdownTrigger({
   showChevron?: boolean;
 }) {
   return (
-    <Link
+    <Link prefetch={false}
       href={href}
       className="inline-flex items-center gap-1.5 whitespace-nowrap text-[14px] font-semibold text-slate-800 transition hover:text-[#278DC0] 2xl:text-[15px]"
     >
@@ -241,7 +241,7 @@ function DesktopMegaMenu({
                 {entry.panelTitle}
               </h2>
               <p className="mt-4 text-sm leading-7 text-slate-200">{entry.panelText}</p>
-              <Link
+              <Link prefetch={false}
                 href={entry.href}
                 className="mt-6 inline-flex min-h-[46px] items-center justify-center rounded-full bg-white px-5 text-sm font-semibold text-slate-950 transition hover:bg-[#278DC0]/10 hover:text-[#154764]"
               >
@@ -261,7 +261,7 @@ function DesktopMegaMenu({
                   const isActive = item.id === currentGroup?.id;
 
                   return (
-                    <Link
+                    <Link prefetch={false}
                       key={item.id}
                       href={item.href}
                       onMouseEnter={() => setActiveGroupId(item.id)}
@@ -296,7 +296,7 @@ function DesktopMegaMenu({
               </div>
               <div className="grid gap-3">
                 {currentGroup?.items.map((item) => (
-                  <Link
+                  <Link prefetch={false}
                     key={`${currentGroup.id}-${item.label}`}
                     href={item.href}
                     className="rounded-[20px] border border-slate-200 bg-slate-50 px-4 py-3 transition hover:border-[#278DC0]/16 hover:bg-white hover:shadow-[0_12px_30px_rgba(11,27,53,0.08)]"
@@ -351,7 +351,7 @@ export function SiteHeader({ model }: { model?: SiteHeaderModel }) {
               {siteContact.phoneDisplay}
             </a>
             {nav.topLinks.map((item) => (
-              <Link key={item.href} href={item.href} className="transition hover:text-[#278DC0]">
+              <Link prefetch={false} key={item.href} href={item.href} className="transition hover:text-[#278DC0]">
                 {item.label}
               </Link>
             ))}
@@ -367,7 +367,7 @@ export function SiteHeader({ model }: { model?: SiteHeaderModel }) {
 
       <div className="border-b border-slate-200/80 bg-white/96">
         <div className="site-container flex items-center justify-between gap-4 py-4 lg:gap-5 lg:py-5 xl:gap-6 2xl:gap-8">
-          <Link href={nav.homeHref} className="flex shrink-0 items-center">
+          <Link prefetch={false} href={nav.homeHref} className="flex shrink-0 items-center">
             <div className="min-w-0 leading-none">
               <div className="text-[20px] font-bold uppercase tracking-[0.08em] text-slate-950 lg:text-[22px]">
                 PRO MAKINA
@@ -385,7 +385,7 @@ export function SiteHeader({ model }: { model?: SiteHeaderModel }) {
                   if (entry.type === "link") {
                     return (
                       <li key={entry.label}>
-                        <Link
+                        <Link prefetch={false}
                           href={entry.href}
                           className="whitespace-nowrap text-[14px] transition hover:text-[#278DC0] 2xl:text-[15px]"
                         >
@@ -410,7 +410,7 @@ export function SiteHeader({ model }: { model?: SiteHeaderModel }) {
                           >
                             <div className="grid gap-1 text-[15px] text-slate-700">
                               {entry.items.map((item) => (
-                                <Link
+                                <Link prefetch={false}
                                   key={item.href}
                                   href={item.href}
                                   className="rounded-xl px-4 py-3 transition hover:bg-slate-50 hover:text-[#278DC0]"
@@ -431,7 +431,7 @@ export function SiteHeader({ model }: { model?: SiteHeaderModel }) {
             </nav>
 
             <div className="flex shrink-0 items-center gap-2 pl-1 xl:pl-2 2xl:pl-3">
-              <Link
+              <Link prefetch={false}
                 href={nav.quoteHref}
                 data-cta-event="quote_button_click"
                 data-cta-label="header_quote_button"
@@ -482,7 +482,7 @@ export function SiteHeader({ model }: { model?: SiteHeaderModel }) {
                 </div>
                 <div className="grid gap-1">
                   {nav.mobile.links.slice(0, 1).map((item) => (
-                    <Link
+                    <Link prefetch={false}
                       key={item.label}
                       href={item.href}
                       className="rounded-2xl px-4 py-3 text-sm font-semibold text-slate-900 transition hover:bg-slate-50 hover:text-[#278DC0]"
@@ -507,7 +507,7 @@ export function SiteHeader({ model }: { model?: SiteHeaderModel }) {
                     </button>
                     {mobileMachinesOpen ? (
                       <div className="border-t border-slate-200 px-3 pb-3 pt-2">
-                        <Link
+                        <Link prefetch={false}
                           href={nav.mobile.machinesHref}
                           className="mb-2 flex rounded-2xl bg-[#0B0F14] px-4 py-3 text-sm font-semibold text-white"
                         >
@@ -515,7 +515,7 @@ export function SiteHeader({ model }: { model?: SiteHeaderModel }) {
                         </Link>
                         <div className="grid gap-2">
                           {nav.mobile.machineGroups.map((item) => (
-                            <Link
+                            <Link prefetch={false}
                               key={item.href}
                               href={item.href}
                               className="rounded-2xl border border-transparent px-3 py-3 text-sm font-semibold text-slate-800 transition hover:border-[#278DC0]/16 hover:bg-white hover:text-[#278DC0]"
@@ -529,7 +529,7 @@ export function SiteHeader({ model }: { model?: SiteHeaderModel }) {
                   </div>
 
                   {nav.mobile.links.slice(1, 3).map((item) => (
-                    <Link
+                    <Link prefetch={false}
                       key={item.label}
                       href={item.href}
                       className="rounded-2xl px-4 py-3 text-sm font-semibold text-slate-900 transition hover:bg-slate-50 hover:text-[#278DC0]"
@@ -539,7 +539,7 @@ export function SiteHeader({ model }: { model?: SiteHeaderModel }) {
                   ))}
 
                   {nav.mobile.links.slice(3).map((item) => (
-                    <Link
+                    <Link prefetch={false}
                       key={item.label}
                       href={item.href}
                       className="rounded-2xl px-4 py-3 text-sm font-semibold text-slate-900 transition hover:bg-slate-50 hover:text-[#278DC0]"
@@ -559,7 +559,7 @@ export function SiteHeader({ model }: { model?: SiteHeaderModel }) {
                   >
                     {siteContact.phoneDisplay}
                   </a>
-                  <Link
+                  <Link prefetch={false}
                     href={nav.mobile.quoteHref}
                     data-cta-event="quote_button_click"
                     data-cta-label="mobile_header_quote_button"

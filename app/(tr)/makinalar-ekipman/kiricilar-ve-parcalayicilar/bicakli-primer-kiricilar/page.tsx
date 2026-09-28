@@ -1,7 +1,9 @@
-import { CrusherProductDetailRoute, getCrusherProductMetadata } from "../../../components/crusher-product-detail-route";
+import type { Metadata } from "next";
+import { DrumTemplatePage, drumTemplateMetadata } from "../../../components/drum-template-page";
 
-export const metadata = getCrusherProductMetadata("bicakli-primer-kiricilar");
+// Kırıcılar ve Parçalayıcılar: kurutma tamburu premium şablonu (içerik: i18n/content/drum-pages/crushers).
+export const metadata: Metadata = drumTemplateMetadata("primaryImpactCrusher");
 
 export default function Page() {
-  return <CrusherProductDetailRoute publicSlug="bicakli-primer-kiricilar" />;
+  return <DrumTemplatePage pageKey="primaryImpactCrusher" />;
 }

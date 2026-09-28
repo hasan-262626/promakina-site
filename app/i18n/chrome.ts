@@ -359,12 +359,13 @@ const machineMegaStructure: { category: RouteKey; products: RouteKey[] }[] = [
   { category: "drumSystems", products: ["rotaryDryer", "granulatorDrum", "coolingDrum", "coatingDrum", "compostDrum"] },
   { category: "conveying", products: ["beltConveyor", "screwConveyor", "chainConveyor", "bucketElevator"] },
   { category: "crushers", products: ["crushers"] },
-  { category: "dosingSystems", products: ["dosingBeltScale"] },
+  { category: "dosingSystems", products: ["microDosing", "macroDosing", "dosingBeltScale"] },
   { category: "reactorsTanks", products: ["reactorsTanks"] },
   { category: "screeningSystems", products: ["screeningSystems"] },
   { category: "dustCollection", products: ["cyclones"] },
   { category: "packagingSystems", products: ["packagingSystems"] },
-  { category: "storageSystems", products: ["bunkersHoppers"] },
+  { category: "storageSystems", products: ["siloSystems", "bunkersHoppers", "teremiHopper"] },
+  { category: "auxiliaryFlow", products: ["loadingBellows", "distributor", "flapDiverters", "slideGates", "rotaryAirlock", "blower"] },
 ];
 
 const sectorKeys: RouteKey[] = [

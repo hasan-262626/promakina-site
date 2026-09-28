@@ -6,6 +6,7 @@ import type {
   TopicalSection,
   TopicalSummaryRow,
 } from "./topical-authority-blog-data";
+import { isMergedBlogSlug } from "./merged-blog-slugs";
 
 export type TechnicalTopicClusterArticle = {
   title: string;
@@ -205,7 +206,7 @@ const technicalTopicClusters: TechnicalTopicCluster[] = [
         linkLabel: "Kum Kurutma Tamburunu İnceleyin",
       },
       {
-        title: "Perlit Kurutma Tamburu",
+        title: "Perlit Kurutma Prosesi ve Tasarım Rehberi",
         slug: "perlit-kurutma-tamburu",
         type: "blog",
         priority: 10,
@@ -223,7 +224,7 @@ const technicalTopicClusters: TechnicalTopicCluster[] = [
         linkLabel: "Kalsit Kurutma Hattını İnceleyin",
       },
       {
-        title: "Maden Kurutma Tamburu",
+        title: "Maden ve Mineral Kurutma Prosesi Rehberi",
         slug: "maden-kurutma-tamburu",
         type: "blog",
         priority: 12,
@@ -232,7 +233,7 @@ const technicalTopicClusters: TechnicalTopicCluster[] = [
         linkLabel: "Maden Kurutma Rehberini İnceleyin",
       },
       {
-        title: "Gübre Kurutma Tamburu",
+        title: "Gübre Kurutma Prosesi ve Granül Kalitesi Rehberi",
         slug: "gubre-kurutma-tamburu",
         type: "blog",
         priority: 13,
@@ -286,7 +287,7 @@ const technicalTopicClusters: TechnicalTopicCluster[] = [
         linkLabel: "Maliyet Analizini İnceleyin",
       },
       {
-        title: "Talaş Kurutma Tamburu",
+        title: "Talaş Kurutma Prosesi ve Güvenlik Rehberi",
         slug: "talas-kurutma-tamburu",
         type: "blog",
         priority: 19,
@@ -749,7 +750,7 @@ const existingSlugs = new Set([
 ]);
 
 function buildClusterCards(cluster: TechnicalTopicCluster) {
-  return cluster.articles.map((item) =>
+  return cluster.articles.filter((item) => !isMergedBlogSlug(item.slug)).map((item) =>
     card(
       item.title,
       item.description ??
@@ -925,7 +926,10 @@ function buildGeneratedArticle(
   };
 }
 
-export const technicalTopicClusterCategories: TopicalCategory[] = technicalTopicClusters.map(
+// Paket 3C: birleştirilen (308) kategori sayfaları üretilmez.
+export const technicalTopicClusterCategories: TopicalCategory[] = technicalTopicClusters
+  .filter((cluster) => !isMergedBlogSlug(cluster.slug))
+  .map(
   (cluster) => ({
     slug: cluster.slug,
     title: cluster.title,
@@ -944,8 +948,14 @@ export const technicalTopicClusterCategories: TopicalCategory[] = technicalTopic
 export const technicalTopicClusterArticles: TopicalArticle[] = technicalTopicClusters.flatMap(
   (cluster) =>
     cluster.articles
-      .filter((article) => !existingSlugs.has(article.slug))
+      .filter((article) => !existingSlugs.has(article.slug) && !isMergedBlogSlug(article.slug))
       .map((article) => buildGeneratedArticle(cluster, article)),
 );
 
-export { technicalTopicClusters };
+// Blog vitrininde birleştirilen (308) makale girişleri gösterilmez; kümeler korunur.
+const visibleTechnicalTopicClusters: TechnicalTopicCluster[] = technicalTopicClusters.map((cluster) => ({
+  ...cluster,
+  articles: cluster.articles.filter((article) => !isMergedBlogSlug(article.slug)),
+}));
+
+export { visibleTechnicalTopicClusters as technicalTopicClusters };

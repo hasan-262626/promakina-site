@@ -1,4 +1,5 @@
 import type { DrumSystemDetailPageData } from "../components/drum-system-detail-page";
+import { isMergedBlogSlug } from "./merged-blog-slugs";
 
 function section(
   title: string,
@@ -629,13 +630,14 @@ const materialDryingPages: DrumSystemDetailPageData[] = [
   }),
   page({
     slug: "perlit-kurutma-tamburu",
-    title: "Perlit Kurutma Tamburu",
+    // Paket 3C: bilgi amaçlı rehber; ticari "perlit kurutma tamburu" sorgusu ürün sayfasına bırakıldı.
+    title: "Perlit Kurutma Prosesi ve Tasarım Rehberi",
     badgeLabel: "Kurutma Sistemleri",
-    metaTitle: "Perlit Kurutma Tamburu | Düşük Yoğunluklu Mineral Kurutma",
+    metaTitle: "Perlit Kurutma Rehberi | Sürüklenme ve Toz Kontrolü",
     description:
       "Perlit kurutma tamburunda düşük yığın yoğunluğu, hava ile sürüklenme, kırılganlık, fan debisi, siklon ve filtre yükü ile düşük gaz hızı tasarımını teknik olarak inceleyin.",
     canonical: "https://www.promakina.com.tr/kutuphane/blog/perlit-kurutma-tamburu",
-    openGraphTitle: "Perlit Kurutma Tamburu",
+    openGraphTitle: "Perlit Kurutma Prosesi ve Tasarım Rehberi",
     openGraphDescription:
       "Perlit kurutmada sürüklenme kontrolü, kırılganlık, düşük gaz hızı ve toz toplama hattı tasarımını inceleyin.",
     heroDescription:
@@ -649,6 +651,12 @@ const materialDryingPages: DrumSystemDetailPageData[] = [
     heroLinks: commonHeroLinks,
     introEyebrow: "Perlit Kurutma",
     introTitle: "Perlit Kurutmada Sürüklenme ve Kırılganlık Dengesi",
+    productCallout: {
+      before: "Perlit hattınız için projeye özel makine ve teknik teklif arıyorsanız ",
+      anchor: "perlit kurutma tamburu",
+      after: " çözümlerimizi ürün sayfasında inceleyebilirsiniz.",
+      href: MATERIAL_DRUM_HREF,
+    },
     introParagraphs: [
       "Perlit kurutma hattındaki en kritik soru kapasite değil, üründen ne kadarının hava hattına kaçacağıdır. Yoğunluğu düşük perlit taneleri, yüksek gaz hızında kolayca sürüklenir; bu hem ürün kaybı hem de siklon-filtre hattında aşırı yük anlamına gelir.",
       "İkinci kritik başlık kırılganlıktır. Perlit tanesi mekanik darbeye hassastır; agresif kanat geometrisi ve yüksek düşme mesafesi, ürünün toz fraksiyonunu artırır. Bu yüzden perlit kurutma tamburu, ürünü ezmeden ve savurmadan kurutacak şekilde tasarlanmalıdır.",
@@ -804,7 +812,7 @@ const materialDryingPages: DrumSystemDetailPageData[] = [
       { title: "Kurutma Tamburu Hesaplama", description: "Su yükü, hava debisi ve tambur geometrisi hesabını okuyun.", href: MATERIAL_HESAP_BLOG_HREF },
       { title: "Fan, Siklon ve Filtre Seçimi", description: "Perlit hattının en kritik yardımcı ekipman kararlarını inceleyin.", href: MATERIAL_FAN_BLOG_HREF },
       { title: "Eleme ve Sınıflandırma Sistemleri", description: "Kurutma sonrası fraksiyon ayrımı için ekipmanları görün.", href: MATERIAL_SCREENING_HREF },
-      { title: "Maden Kurutma Tamburu", description: "Genel mineral kurutma yaklaşımıyla karşılaştırın.", href: "/kutuphane/blog/maden-kurutma-tamburu" },
+      { title: "Maden ve Mineral Kurutma Rehberi", description: "Genel mineral kurutma yaklaşımıyla karşılaştırın.", href: "/kutuphane/blog/maden-kurutma-tamburu" },
     ],
     ctaTitle: "Perlit Kurutma Hattınızı Birlikte Planlayalım",
     ctaDescription:
@@ -986,7 +994,7 @@ const materialDryingPages: DrumSystemDetailPageData[] = [
       ),
     ],
     relatedLinks: [
-      { title: "Maden Kurutma Tamburu", description: "Genel mineral kurutma yaklaşımını karşılaştırmalı okuyun.", href: "/kutuphane/blog/maden-kurutma-tamburu" },
+      { title: "Maden ve Mineral Kurutma Rehberi", description: "Genel mineral kurutma yaklaşımını karşılaştırmalı okuyun.", href: "/kutuphane/blog/maden-kurutma-tamburu" },
       { title: "Kurutma Tamburu", description: "Ana kurutma ekipmanını ürün sayfasında inceleyin.", href: MATERIAL_DRUM_HREF },
       { title: "Kurutma Tamburu Hesaplama", description: "Su yükü ve tambur geometrisi hesabını adım adım görün.", href: MATERIAL_HESAP_BLOG_HREF },
       { title: "Fan, Siklon ve Filtre Seçimi", description: "İnce toz hattının boyutlandırma mantığını inceleyin.", href: MATERIAL_FAN_BLOG_HREF },
@@ -1009,13 +1017,14 @@ const materialDryingPages: DrumSystemDetailPageData[] = [
   }),
   page({
     slug: "maden-kurutma-tamburu",
-    title: "Maden Kurutma Tamburu",
+    // Paket 3C: bilgi amaçlı rehber; ticari "maden kurutma tamburu" sorgusu ürün sayfasına bırakıldı.
+    title: "Maden ve Mineral Kurutma Prosesi Rehberi",
     badgeLabel: "Kurutma Sistemleri",
-    metaTitle: "Maden Kurutma Tamburu | Kırma-Eleme-Kurutma Entegrasyonu",
+    metaTitle: "Maden Kurutma Rehberi | Kırma, Eleme ve Kurutma",
     description:
       "Maden kurutma tamburunda mineral türüne göre değişen ürün davranışı, aşındırıcılık, kırma-eleme entegrasyonu ve tane sınıflandırması için teknik tasarım kriterleri.",
     canonical: "https://www.promakina.com.tr/kutuphane/blog/maden-kurutma-tamburu",
-    openGraphTitle: "Maden Kurutma Tamburu",
+    openGraphTitle: "Maden ve Mineral Kurutma Prosesi Rehberi",
     openGraphDescription:
       "Mineral türüne göre kurutma davranışı, aşınma koruması ve kırma-eleme-kurutma entegrasyonunu inceleyin.",
     heroDescription:
@@ -1029,6 +1038,12 @@ const materialDryingPages: DrumSystemDetailPageData[] = [
     heroLinks: commonHeroLinks,
     introEyebrow: "Maden Kurutma",
     introTitle: "Mineral Türüne Göre Değişen Kurutma Yaklaşımı",
+    productCallout: {
+      before: "Mineral hattınız için projeye özel makine ve teknik teklif arıyorsanız ",
+      anchor: "maden kurutma tamburu",
+      after: " çözümlerimizi ürün sayfasında inceleyebilirsiniz.",
+      href: MATERIAL_DRUM_HREF,
+    },
     introParagraphs: [
       "Maden kurutma projelerinde ilk soru 'hangi tambur' değil 'hangi mineral' olmalıdır. Kuvars gibi yüksek aşındırıcı bir ürünle, bentonit gibi su tutan ve yapışan bir ürün aynı iç yapıyla kurutulamaz. Tane boyutu dağılımı, sertlik, nem bağlama karakteri ve toz üretimi; tambur geometrisinden filtre alanına kadar bütün kararları değiştirir.",
       "İkinci belirleyici başlık hat entegrasyonudur. Maden sahalarında kurutma çoğu zaman kırma ve eleme ile aynı hattın parçasıdır; tamburun kapasitesi ve çıkış nemi, elek verimi ve ürün sınıflandırmasıyla birlikte planlanmalıdır.",
@@ -1179,7 +1194,7 @@ const materialDryingPages: DrumSystemDetailPageData[] = [
       { title: "Madencilik ve Mineral İşleme", description: "Sektör çözümlerini bütünsel olarak görün.", href: "/sektorler/madencilik-ve-mineral-isleme" },
       { title: "Kırıcılar ve Parçalayıcılar", description: "Kurutma öncesi boyut küçültme ekipmanlarını inceleyin.", href: MATERIAL_CRUSHER_HREF },
       { title: "Kurutma Tamburu Hesaplama", description: "Su yükü ve tambur geometrisi hesabını okuyun.", href: MATERIAL_HESAP_BLOG_HREF },
-      { title: "Silis Kumu Kurutma Tamburu", description: "Aşındırıcı kum örneğinde makine tasarımını görün.", href: "/kutuphane/blog/silis-kumu-kurutma-tamburu" },
+      { title: "Silis Kumu Kurutma Tamburu", description: "Aşındırıcı kum için projeye özel makine çözümünü ürün sayfasında görün.", href: "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburu" },
       { title: "Bentonit Kurutma Tamburu", description: "Su tutan mineral örneğinde tasarım farklarını okuyun.", href: "/kutuphane/blog/bentonit-kurutma-tamburu" },
     ],
     ctaTitle: "Maden Kurutma Hattınız İçin Teknik Değerlendirme Alın",
@@ -1198,13 +1213,14 @@ const materialDryingPages: DrumSystemDetailPageData[] = [
   }),
   page({
     slug: "gubre-kurutma-tamburu",
-    title: "Gübre Kurutma Tamburu",
+    // Paket 3C: bilgi amaçlı rehber; ticari "gübre kurutma tamburu" sorgusu ürün sayfasına bırakıldı.
+    title: "Gübre Kurutma Prosesi ve Granül Kalitesi Rehberi",
     badgeLabel: "Kurutma Sistemleri",
-    metaTitle: "Gübre Kurutma Tamburu | Granül Mukavemeti ve Kurutma-Soğutma Dengesi",
+    metaTitle: "Gübre Kurutma Rehberi | Granül Kalitesi ve Soğutma",
     description:
       "Gübre kurutma tamburunda granül mukavemeti, yapışma kontrolü, proses gazları, kurutma-soğutma dengesi ve eleme ile geri dönüş hattının teknik tasarımı.",
     canonical: "https://www.promakina.com.tr/kutuphane/blog/gubre-kurutma-tamburu",
-    openGraphTitle: "Gübre Kurutma Tamburu",
+    openGraphTitle: "Gübre Kurutma Prosesi ve Granül Kalitesi Rehberi",
     openGraphDescription:
       "Granül gübre kurutmada mukavemet koruması, yapışma kontrolü ve kurutma-soğutma-eleme dengesini inceleyin.",
     heroDescription:
@@ -1218,6 +1234,12 @@ const materialDryingPages: DrumSystemDetailPageData[] = [
     heroLinks: commonHeroLinks,
     introEyebrow: "Gübre Kurutma",
     introTitle: "Granül Kalitesini Koruyan Kurutma Yaklaşımı",
+    productCallout: {
+      before: "Gübre hattınız için projeye özel makine ve teknik teklif arıyorsanız ",
+      anchor: "gübre kurutma tamburu",
+      after: " çözümlerimizi ürün sayfasında inceleyebilirsiniz.",
+      href: MATERIAL_DRUM_HREF,
+    },
     introParagraphs: [
       "Gübre kurutmada başarı ölçüsü yalnız çıkış nemi değildir; granülün kırılmadan, tozlaşmadan ve topaklanmadan hedef neme inmesidir. Aşırı sıcaklık granül yüzeyini sertleştirip iç nemi hapsedebilir, agresif iç kanatlar granülü kırarak elek altı oranını yükseltebilir.",
       "NPK, DAP bazlı ve organomineral reçetelerde amonyak ve diğer proses gazlarının yönetimi de tasarımın parçasıdır. Gaz hattı; koku, korozyon ve emisyon açısından reçeteye göre değerlendirilmelidir.",
@@ -1551,7 +1573,7 @@ const materialDryingPages: DrumSystemDetailPageData[] = [
       ),
     ],
     relatedLinks: [
-      { title: "Gübre Kurutma Tamburu", description: "Genel granül gübre kurutma yaklaşımıyla karşılaştırın.", href: "/kutuphane/blog/gubre-kurutma-tamburu" },
+      { title: "Gübre Kurutma Rehberi", description: "Genel granül gübre kurutma yaklaşımıyla karşılaştırın.", href: "/kutuphane/blog/gubre-kurutma-tamburu" },
       { title: "10 Ton/Saat Organomineral Gübre Tesisi", description: "Gerçekleştirilen organomineral tesis projesini inceleyin.", href: "/projeler/10-ton-saat-organomineral-gubre-tesisi" },
       { title: "Kompost Kurutma Tamburu", description: "Organik hammadde tarafının kurutma davranışını okuyun.", href: "/kutuphane/blog/kompost-kurutma-tamburu" },
       { title: "Kurutma Tamburu Hesaplama", description: "Su yükü ve tambur geometrisi hesabını inceleyin.", href: MATERIAL_HESAP_BLOG_HREF },
@@ -2142,13 +2164,14 @@ const materialDryingPages: DrumSystemDetailPageData[] = [
   }),
   page({
     slug: "talas-kurutma-tamburu",
-    title: "Talaş Kurutma Tamburu",
+    // Paket 3C: bilgi amaçlı rehber; ticari "talaş kurutma tamburu" sorgusu ürün sayfasına bırakıldı.
+    title: "Talaş Kurutma Prosesi ve Güvenlik Rehberi",
     badgeLabel: "Kurutma Sistemleri",
-    metaTitle: "Talaş Kurutma Tamburu | Pelet Öncesi Güvenli Talaş Kurutma",
+    metaTitle: "Talaş Kurutma Rehberi | Nem ve Yangın Güvenliği",
     description:
       "Talaş kurutma tamburunda düşük yığın yoğunluğu, yanıcılık, toz patlaması riski, kıvılcım kontrolü, hava sürüklenmesi ve yangın güvenliği için teknik tasarım kriterleri.",
     canonical: "https://www.promakina.com.tr/kutuphane/blog/talas-kurutma-tamburu",
-    openGraphTitle: "Talaş Kurutma Tamburu",
+    openGraphTitle: "Talaş Kurutma Prosesi ve Güvenlik Rehberi",
     openGraphDescription:
       "Talaş kurutmada yangın güvenliği, kıvılcım kontrolü, sürüklenme ve pelet öncesi nem hedefini inceleyin.",
     heroDescription:
@@ -2162,6 +2185,12 @@ const materialDryingPages: DrumSystemDetailPageData[] = [
     heroLinks: commonHeroLinks,
     introEyebrow: "Talaş Kurutma",
     introTitle: "Talaş Kurutmada Güvenlik Odaklı Tasarım",
+    productCallout: {
+      before: "Talaş ve biyokütle hattınız için projeye özel makine ve teknik teklif arıyorsanız ",
+      anchor: "talaş kurutma tamburu",
+      after: " çözümlerimizi ürün sayfasında inceleyebilirsiniz.",
+      href: MATERIAL_DRUM_HREF,
+    },
     introParagraphs: [
       "Talaş kurutma hattında ilk mühendislik sorusu kapasite değil güvenliktir. Kuru talaş tozu, uygun koşullarda patlayıcı atmosfer oluşturabilir; sıcak yüzeyler ve kıvılcım, hattın en önemli risk kaynaklarıdır. Bu nedenle gaz sıcaklığı sınırlandırılır, ürünle alev teması kontrol edilir ve hatta kıvılcım söndürme önlemleri planlanır.",
       "İkinci başlık hafifliktir: talaşın yığın yoğunluğu düşüktür ve tambur içindeki gaz hızı yanlış seçilirse ürün hava hattına sürüklenir. Kapasite hesabı ton yerine hacim üzerinden de doğrulanmalıdır.",
@@ -2493,7 +2522,7 @@ const materialDryingPages: DrumSystemDetailPageData[] = [
       ),
     ],
     relatedLinks: [
-      { title: "Talaş Kurutma Tamburu", description: "İnce biyokütle fraksiyonunun kurutma yaklaşımını okuyun.", href: "/kutuphane/blog/talas-kurutma-tamburu" },
+      { title: "Talaş Kurutma Rehberi", description: "İnce biyokütle fraksiyonunun kurutma yaklaşımını okuyun.", href: "/kutuphane/blog/talas-kurutma-tamburu" },
       { title: "Kurutma Tamburu", description: "Ana kurutma ekipmanını ürün sayfasında inceleyin.", href: MATERIAL_DRUM_HREF },
       { title: "Kurutma Tamburu Hesaplama", description: "Hacimsel kapasite ve su yükü hesabını görün.", href: MATERIAL_HESAP_BLOG_HREF },
       { title: "Eleme ve Sınıflandırma Sistemleri", description: "Ön ve nihai eleme ekipmanlarını inceleyin.", href: MATERIAL_SCREENING_HREF },
@@ -2868,7 +2897,7 @@ const materialDryingPages: DrumSystemDetailPageData[] = [
     ],
     relatedLinks: [
       { title: "Kedi Kumu Kurutma Tamburu", description: "Bentonitin ana kullanım alanındaki granül kurutmayı okuyun.", href: "/kutuphane/blog/kedi-kumu-kurutma-tamburu" },
-      { title: "Maden Kurutma Tamburu", description: "Genel mineral kurutma yaklaşımıyla karşılaştırın.", href: "/kutuphane/blog/maden-kurutma-tamburu" },
+      { title: "Maden ve Mineral Kurutma Rehberi", description: "Genel mineral kurutma yaklaşımıyla karşılaştırın.", href: "/kutuphane/blog/maden-kurutma-tamburu" },
       { title: "Kurutma Tamburu Hesaplama", description: "Su yükü ve ısı kapasitesi hesabını inceleyin.", href: MATERIAL_HESAP_BLOG_HREF },
       { title: "Kırıcılar ve Parçalayıcılar", description: "Ön kırma ve topak kırma ekipmanlarını görün.", href: MATERIAL_CRUSHER_HREF },
       { title: "Fan, Siklon ve Filtre Seçimi", description: "İnce toz hattının boyutlandırmasını okuyun.", href: MATERIAL_FAN_BLOG_HREF },
@@ -3055,7 +3084,7 @@ const materialDryingPages: DrumSystemDetailPageData[] = [
     ],
     relatedLinks: [
       { title: "Silis Kumu Kurutma Prosesi", description: "Genel kum kurutma tesisi akışını proses odağıyla okuyun.", href: "/kutuphane/blog/silis-kumu-kurutma-prosesi" },
-      { title: "Silis Kumu Kurutma Tamburu", description: "Kum kurutma makinasının tasarım detaylarını görün.", href: "/kutuphane/blog/silis-kumu-kurutma-tamburu" },
+      { title: "Silis Kumu Kurutma Tamburu", description: "Kum kurutma makinasını ürün sayfasında inceleyin.", href: "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburu" },
       { title: "Feldspat Kurutma Tamburu", description: "Seramik sektörünün diğer hammaddesini inceleyin.", href: "/kutuphane/blog/feldspat-kurutma-tamburu" },
       { title: "Kurutma Tamburu Hesaplama", description: "Su yükü ve tambur geometrisi hesabını okuyun.", href: MATERIAL_HESAP_BLOG_HREF },
       { title: "Eleme ve Sınıflandırma Sistemleri", description: "Dar aralıklı hassas eleme ekipmanlarını görün.", href: MATERIAL_SCREENING_HREF },
@@ -3243,7 +3272,7 @@ const materialDryingPages: DrumSystemDetailPageData[] = [
     relatedLinks: [
       { title: "Kuvars Kumu Kurutma Tamburu", description: "Seramik sektörünün diğer ana hammaddesini inceleyin.", href: "/kutuphane/blog/kuvars-kumu-kurutma-tamburu" },
       { title: "Kalsit Kurutma Tamburu", description: "Öğütme öncesi mineral kurutmanın benzer örneğini okuyun.", href: "/kutuphane/blog/kalsit-kurutma-tamburu" },
-      { title: "Maden Kurutma Tamburu", description: "Genel mineral kurutma yaklaşımıyla karşılaştırın.", href: "/kutuphane/blog/maden-kurutma-tamburu" },
+      { title: "Maden ve Mineral Kurutma Rehberi", description: "Genel mineral kurutma yaklaşımıyla karşılaştırın.", href: "/kutuphane/blog/maden-kurutma-tamburu" },
       { title: "Kurutma Tamburu Hesaplama", description: "Su yükü ve tambur geometrisi hesabını görün.", href: MATERIAL_HESAP_BLOG_HREF },
       { title: "Kırıcılar ve Parçalayıcılar", description: "Ön kırma ekipmanlarını ürün sayfasında inceleyin.", href: MATERIAL_CRUSHER_HREF },
       { title: "Madencilik ve Mineral İşleme", description: "Sektör çözümlerini bütünsel inceleyin.", href: "/sektorler/madencilik-ve-mineral-isleme" },
@@ -4051,8 +4080,8 @@ export const dryingSystemDetailPages: DrumSystemDetailPageData[] = [
       },
       {
         title: "Silis Kumu Kurutma Tamburu",
-        description: "Tambur odaklı detay yazı ile proses odaklı bu sayfayı birlikte değerlendirin.",
-        href: "/kutuphane/blog/silis-kumu-kurutma-tamburu",
+        description: "Projeye özel silis kumu kurutma tamburu çözümlerini ürün sayfasında inceleyin.",
+        href: "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburu",
       },
       {
         title: "Kurutma Tamburu Kapasite Hesabı",
@@ -4708,5 +4737,8 @@ export const dryingSystemDetailPages: DrumSystemDetailPageData[] = [
 ];
 
 export const dryingSystemDetailMap = Object.fromEntries(
-  dryingSystemDetailPages.map((entry) => [entry.slug, entry]),
+  dryingSystemDetailPages
+    // Paket 3C: birleştirilen (308) sayfalar render ve site haritasından çıkarılır.
+    .filter((entry) => !isMergedBlogSlug(entry.slug))
+    .map((entry) => [entry.slug, entry]),
 ) as Record<string, DrumSystemDetailPageData>;

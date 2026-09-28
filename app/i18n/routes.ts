@@ -24,21 +24,60 @@ export type RouteKey =
   | "coolingDrum"
   | "coatingDrum"
   | "compostDrum"
+  | "mixingDrum"
+  | "sterilizationDrum"
+  | "customDrum"
   | "crushers"
+  | "hammerCrusher"
+  | "jawCrusher"
+  | "vsiCrusher"
+  | "chainCrusher"
+  | "shredderSystems"
+  | "primaryImpactCrusher"
+  | "secondaryImpactCrusher"
   | "conveying"
   | "beltConveyor"
   | "screwConveyor"
   | "chainConveyor"
   | "bucketElevator"
+  | "tripperConveyor"
+  | "beltBucketElevator"
   | "dosingSystems"
   | "dosingBeltScale"
+  | "microDosing"
+  | "macroDosing"
   | "reactorsTanks"
+  | "coolingTank"
+  | "agitatedReactor"
+  | "pressureReactor"
+  | "dissolutionTank"
+  | "storageTank"
   | "screeningSystems"
+  | "vibratingScreen"
+  | "trommelScreen"
+  | "dewateringScreen"
+  | "wetScreen"
   | "dustCollection"
   | "cyclones"
+  | "pulseJetFilter"
+  | "wetScrubber"
   | "packagingSystems"
+  | "openMouthBagging"
+  | "bigBagFilling"
+  | "palletizingLines"
+  | "liquidFilling"
+  | "bottleLabeling"
   | "storageSystems"
   | "bunkersHoppers"
+  | "siloSystems"
+  | "teremiHopper"
+  | "auxiliaryFlow"
+  | "loadingBellows"
+  | "distributor"
+  | "flapDiverters"
+  | "slideGates"
+  | "rotaryAirlock"
+  | "blower"
   | "sectors"
   | "fertilizerPlants"
   | "compostPlants"
@@ -159,11 +198,71 @@ export const routeMap: Readonly<Record<RouteKey, RoutePaths>> = {
     ru: "/ru/oborudovanie/barabannye-sistemy/kompostnyy-baraban",
     ar: "/ar/machines-equipment/drum-systems/compost-drum",
   },
+  mixingDrum: {
+    tr: "/makinalar-ekipman/tambur-sistemleri/karistirma-tamburu",
+    en: "/en/machines-equipment/drum-systems/mixing-drum",
+    ru: "/ru/oborudovanie/barabannye-sistemy/smesitelnyy-baraban",
+    ar: "/ar/machines-equipment/drum-systems/mixing-drum",
+  },
+  sterilizationDrum: {
+    tr: "/makinalar-ekipman/tambur-sistemleri/sterilizasyon-ve-stabilizasyon-tamburu",
+    en: "/en/machines-equipment/drum-systems/sterilization-stabilization-drum",
+    ru: "/ru/oborudovanie/barabannye-sistemy/baraban-sterilizatsii-i-stabilizatsii",
+    ar: "/ar/machines-equipment/drum-systems/sterilization-stabilization-drum",
+  },
+  customDrum: {
+    tr: "/makinalar-ekipman/tambur-sistemleri/ozel-tambur",
+    en: "/en/machines-equipment/drum-systems/custom-drum",
+    ru: "/ru/oborudovanie/barabannye-sistemy/spetsialnyy-baraban",
+    ar: "/ar/machines-equipment/drum-systems/custom-drum",
+  },
   crushers: {
     tr: "/makinalar-ekipman/kiricilar-ve-parcalayicilar",
     en: "/en/machines-equipment/crushers-shredders",
     ru: "/ru/oborudovanie/drobilki-i-shredery",
     ar: "/ar/machines-equipment/crushers-shredders",
+  },
+  hammerCrusher: {
+    tr: "/makinalar-ekipman/kiricilar-ve-parcalayicilar/cekicli-kiricilar",
+    en: "/en/machines-equipment/crushers-shredders/hammer-crusher",
+    ru: "/ru/oborudovanie/drobilki-i-shredery/molotkovaya-drobilka",
+    ar: "/ar/machines-equipment/crushers-shredders/hammer-crusher",
+  },
+  jawCrusher: {
+    tr: "/makinalar-ekipman/kiricilar-ve-parcalayicilar/ceneli-kiricilar",
+    en: "/en/machines-equipment/crushers-shredders/jaw-crusher",
+    ru: "/ru/oborudovanie/drobilki-i-shredery/shchekovaya-drobilka",
+    ar: "/ar/machines-equipment/crushers-shredders/jaw-crusher",
+  },
+  vsiCrusher: {
+    tr: "/makinalar-ekipman/kiricilar-ve-parcalayicilar/dik-milli-kiricilar",
+    en: "/en/machines-equipment/crushers-shredders/vertical-shaft-impact-crusher",
+    ru: "/ru/oborudovanie/drobilki-i-shredery/tsentrobezhno-udarnaya-drobilka",
+    ar: "/ar/machines-equipment/crushers-shredders/vertical-shaft-impact-crusher",
+  },
+  chainCrusher: {
+    tr: "/makinalar-ekipman/kiricilar-ve-parcalayicilar/zincirli-kiricilar",
+    en: "/en/machines-equipment/crushers-shredders/chain-crusher",
+    ru: "/ru/oborudovanie/drobilki-i-shredery/tsepnaya-drobilka",
+    ar: "/ar/machines-equipment/crushers-shredders/chain-crusher",
+  },
+  shredderSystems: {
+    tr: "/makinalar-ekipman/kiricilar-ve-parcalayicilar/shredder-sistemleri",
+    en: "/en/machines-equipment/crushers-shredders/shredder-systems",
+    ru: "/ru/oborudovanie/drobilki-i-shredery/promyshlennye-shredery",
+    ar: "/ar/machines-equipment/crushers-shredders/shredder-systems",
+  },
+  primaryImpactCrusher: {
+    tr: "/makinalar-ekipman/kiricilar-ve-parcalayicilar/bicakli-primer-kiricilar",
+    en: "/en/machines-equipment/crushers-shredders/primary-impact-crusher",
+    ru: "/ru/oborudovanie/drobilki-i-shredery/rotornaya-drobilka-pervichnogo-drobleniya",
+    ar: "/ar/machines-equipment/crushers-shredders/primary-impact-crusher",
+  },
+  secondaryImpactCrusher: {
+    tr: "/makinalar-ekipman/kiricilar-ve-parcalayicilar/bicakli-sekonder-kiricilar",
+    en: "/en/machines-equipment/crushers-shredders/secondary-impact-crusher",
+    ru: "/ru/oborudovanie/drobilki-i-shredery/rotornaya-drobilka-vtorichnogo-drobleniya",
+    ar: "/ar/machines-equipment/crushers-shredders/secondary-impact-crusher",
   },
   conveying: {
     tr: "/makinalar-ekipman/tasima-ekipmanlari",
@@ -195,6 +294,18 @@ export const routeMap: Readonly<Record<RouteKey, RoutePaths>> = {
     ru: "/ru/oborudovanie/transportnye-sistemy/kovshovyy-elevator",
     ar: "/ar/machines-equipment/conveying-systems/bucket-elevator",
   },
+  tripperConveyor: {
+    tr: "/makinalar-ekipman/tasima-ekipmanlari/tripper-arabali-konveyor",
+    en: "/en/machines-equipment/conveying-systems/tripper-conveyor",
+    ru: "/ru/oborudovanie/transportnye-sistemy/konveyer-s-razgruzochnoy-telezhkoy",
+    ar: "/ar/machines-equipment/conveying-systems/tripper-conveyor",
+  },
+  beltBucketElevator: {
+    tr: "/makinalar-ekipman/tasima-ekipmanlari/bantli-elevatorler",
+    en: "/en/machines-equipment/conveying-systems/belt-bucket-elevator",
+    ru: "/ru/oborudovanie/transportnye-sistemy/lentochnyy-kovshovyy-elevator",
+    ar: "/ar/machines-equipment/conveying-systems/belt-bucket-elevator",
+  },
   dosingSystems: {
     tr: "/makinalar-ekipman/dozajlama-sistemleri",
     en: "/en/machines-equipment/dosing-systems",
@@ -207,17 +318,83 @@ export const routeMap: Readonly<Record<RouteKey, RoutePaths>> = {
     ru: "/ru/oborudovanie/sistemy-dozirovaniya/lentochnyy-dozator",
     ar: "/ar/machines-equipment/dosing-systems/weigh-belt-feeder",
   },
+  microDosing: {
+    tr: "/makinalar-ekipman/dozajlama-sistemleri/mikro-dozajlama",
+    en: "/en/machines-equipment/dosing-systems/micro-dosing-system",
+    ru: "/ru/oborudovanie/sistemy-dozirovaniya/mikrodozirovanie",
+    ar: "/ar/machines-equipment/dosing-systems/micro-dosing-system",
+  },
+  macroDosing: {
+    tr: "/makinalar-ekipman/dozajlama-sistemleri/makro-dozajlama",
+    en: "/en/machines-equipment/dosing-systems/macro-dosing-system",
+    ru: "/ru/oborudovanie/sistemy-dozirovaniya/makrodozirovanie",
+    ar: "/ar/machines-equipment/dosing-systems/macro-dosing-system",
+  },
   reactorsTanks: {
     tr: "/makinalar-ekipman/reaktorler-ve-tanklar",
     en: "/en/machines-equipment/reactors-process-tanks",
     ru: "/ru/oborudovanie/reaktory-i-emkosti",
     ar: "/ar/machines-equipment/reactors-process-tanks",
   },
+  coolingTank: {
+    tr: "/makinalar-ekipman/reaktorler-ve-tanklar/sogutma-tanklari",
+    en: "/en/machines-equipment/reactors-process-tanks/cooling-tank",
+    ru: "/ru/oborudovanie/reaktory-i-emkosti/emkost-okhlazhdeniya",
+    ar: "/ar/machines-equipment/reactors-process-tanks/cooling-tank",
+  },
+  agitatedReactor: {
+    tr: "/makinalar-ekipman/reaktorler-ve-tanklar/karistiricili-reaktorler",
+    en: "/en/machines-equipment/reactors-process-tanks/agitated-reactor",
+    ru: "/ru/oborudovanie/reaktory-i-emkosti/reaktor-s-meshalkoy",
+    ar: "/ar/machines-equipment/reactors-process-tanks/agitated-reactor",
+  },
+  pressureReactor: {
+    tr: "/makinalar-ekipman/reaktorler-ve-tanklar/basincli-reaktorler",
+    en: "/en/machines-equipment/reactors-process-tanks/pressure-reactor",
+    ru: "/ru/oborudovanie/reaktory-i-emkosti/reaktor-pod-davleniem",
+    ar: "/ar/machines-equipment/reactors-process-tanks/pressure-reactor",
+  },
+  dissolutionTank: {
+    tr: "/makinalar-ekipman/reaktorler-ve-tanklar/cozundurme-tanklari",
+    en: "/en/machines-equipment/reactors-process-tanks/dissolution-tank",
+    ru: "/ru/oborudovanie/reaktory-i-emkosti/emkost-rastvoreniya",
+    ar: "/ar/machines-equipment/reactors-process-tanks/dissolution-tank",
+  },
+  storageTank: {
+    tr: "/makinalar-ekipman/reaktorler-ve-tanklar/stok-tanklari",
+    en: "/en/machines-equipment/reactors-process-tanks/storage-tank",
+    ru: "/ru/oborudovanie/reaktory-i-emkosti/emkost-khraneniya",
+    ar: "/ar/machines-equipment/reactors-process-tanks/storage-tank",
+  },
   screeningSystems: {
     tr: "/makinalar-ekipman/eleme-ve-siniflandirma-sistemleri",
     en: "/en/machines-equipment/screening-systems",
     ru: "/ru/oborudovanie/grokhoty",
     ar: "/ar/machines-equipment/screening-systems",
+  },
+  vibratingScreen: {
+    tr: "/makinalar-ekipman/eleme-ve-siniflandirma-sistemleri/vibrasyonlu-elekler",
+    en: "/en/machines-equipment/screening-systems/vibrating-screen",
+    ru: "/ru/oborudovanie/grokhoty/vibratsionnyy-grokhot",
+    ar: "/ar/machines-equipment/screening-systems/vibrating-screen",
+  },
+  trommelScreen: {
+    tr: "/makinalar-ekipman/eleme-ve-siniflandirma-sistemleri/trommel-elekler",
+    en: "/en/machines-equipment/screening-systems/trommel-screen",
+    ru: "/ru/oborudovanie/grokhoty/barabannyy-grokhot",
+    ar: "/ar/machines-equipment/screening-systems/trommel-screen",
+  },
+  dewateringScreen: {
+    tr: "/makinalar-ekipman/eleme-ve-siniflandirma-sistemleri/susuzlandirma-elekleri",
+    en: "/en/machines-equipment/screening-systems/dewatering-screen",
+    ru: "/ru/oborudovanie/grokhoty/obezvozhivayushchiy-grokhot",
+    ar: "/ar/machines-equipment/screening-systems/dewatering-screen",
+  },
+  wetScreen: {
+    tr: "/makinalar-ekipman/eleme-ve-siniflandirma-sistemleri/sulu-elekler",
+    en: "/en/machines-equipment/screening-systems/wet-screen",
+    ru: "/ru/oborudovanie/grokhoty/grokhot-mokrogo-grokhocheniya",
+    ar: "/ar/machines-equipment/screening-systems/wet-screen",
   },
   dustCollection: {
     tr: "/makinalar-ekipman/toz-toplama-sistemleri",
@@ -231,11 +408,53 @@ export const routeMap: Readonly<Record<RouteKey, RoutePaths>> = {
     ru: "/ru/oborudovanie/sistemy-pyleulavlivaniya/tsiklonnyy-separator",
     ar: "/ar/machines-equipment/dust-collection-systems/cyclone-separator",
   },
+  pulseJetFilter: {
+    tr: "/makinalar-ekipman/toz-toplama-sistemleri/pulse-jet-filtreler",
+    en: "/en/machines-equipment/dust-collection-systems/pulse-jet-dust-collector",
+    ru: "/ru/oborudovanie/sistemy-pyleulavlivaniya/rukavnyy-filtr-s-impulsnoy-produvkoy",
+    ar: "/ar/machines-equipment/dust-collection-systems/pulse-jet-dust-collector",
+  },
+  wetScrubber: {
+    tr: "/makinalar-ekipman/toz-toplama-sistemleri/baca-yikama-scrubber-sistemleri",
+    en: "/en/machines-equipment/dust-collection-systems/wet-scrubber",
+    ru: "/ru/oborudovanie/sistemy-pyleulavlivaniya/skrubber-mokroy-ochistki-gaza",
+    ar: "/ar/machines-equipment/dust-collection-systems/wet-scrubber",
+  },
   packagingSystems: {
     tr: "/makinalar-ekipman/paketleme-ve-dolum-sistemleri",
     en: "/en/machines-equipment/packaging-bagging-systems",
     ru: "/ru/oborudovanie/sistemy-upakovki-i-fasovki",
     ar: "/ar/machines-equipment/packaging-bagging-systems",
+  },
+  openMouthBagging: {
+    tr: "/makinalar-ekipman/paketleme-ve-dolum-sistemleri/acik-agiz-torbalama",
+    en: "/en/machines-equipment/packaging-bagging-systems/open-mouth-bagging-system",
+    ru: "/ru/oborudovanie/sistemy-upakovki-i-fasovki/fasovka-v-otkrytye-meshki",
+    ar: "/ar/machines-equipment/packaging-bagging-systems/open-mouth-bagging-system",
+  },
+  bigBagFilling: {
+    tr: "/makinalar-ekipman/paketleme-ve-dolum-sistemleri/big-bag-dolum",
+    en: "/en/machines-equipment/packaging-bagging-systems/big-bag-filling-system",
+    ru: "/ru/oborudovanie/sistemy-upakovki-i-fasovki/napolnenie-big-begov",
+    ar: "/ar/machines-equipment/packaging-bagging-systems/big-bag-filling-system",
+  },
+  palletizingLines: {
+    tr: "/makinalar-ekipman/paketleme-ve-dolum-sistemleri/paletleme-hatlari",
+    en: "/en/machines-equipment/packaging-bagging-systems/palletizing-lines",
+    ru: "/ru/oborudovanie/sistemy-upakovki-i-fasovki/liniya-paletirovaniya",
+    ar: "/ar/machines-equipment/packaging-bagging-systems/palletizing-lines",
+  },
+  liquidFilling: {
+    tr: "/makinalar-ekipman/paketleme-ve-dolum-sistemleri/sivi-dolum-siseleme",
+    en: "/en/machines-equipment/packaging-bagging-systems/liquid-filling-bottling",
+    ru: "/ru/oborudovanie/sistemy-upakovki-i-fasovki/rozliv-zhidkostey",
+    ar: "/ar/machines-equipment/packaging-bagging-systems/liquid-filling-bottling",
+  },
+  bottleLabeling: {
+    tr: "/makinalar-ekipman/paketleme-ve-dolum-sistemleri/sise-etiketleme-makinasi",
+    en: "/en/machines-equipment/packaging-bagging-systems/bottle-labeling-machine",
+    ru: "/ru/oborudovanie/sistemy-upakovki-i-fasovki/etiketirovochnaya-mashina",
+    ar: "/ar/machines-equipment/packaging-bagging-systems/bottle-labeling-machine",
   },
   storageSystems: {
     tr: "/makinalar-ekipman/depolama-ve-besleme-sistemleri",
@@ -248,6 +467,60 @@ export const routeMap: Readonly<Record<RouteKey, RoutePaths>> = {
     en: "/en/machines-equipment/silo-storage-feeding-systems/bunkers-hoppers",
     ru: "/ru/oborudovanie/silosy-i-sistemy-podachi/bunkery",
     ar: "/ar/machines-equipment/silo-storage-feeding-systems/bunkers-hoppers",
+  },
+  siloSystems: {
+    tr: "/makinalar-ekipman/depolama-ve-besleme-sistemleri/silo-sistemleri",
+    en: "/en/machines-equipment/silo-storage-feeding-systems/silo-systems",
+    ru: "/ru/oborudovanie/silosy-i-sistemy-podachi/silosnye-sistemy",
+    ar: "/ar/machines-equipment/silo-storage-feeding-systems/silo-systems",
+  },
+  teremiHopper: {
+    tr: "/makinalar-ekipman/depolama-ve-besleme-sistemleri/teremi-bunkeri",
+    en: "/en/machines-equipment/silo-storage-feeding-systems/truck-intake-hopper",
+    ru: "/ru/oborudovanie/silosy-i-sistemy-podachi/priemnyy-bunker-dlya-razgruzki-avtomobiley",
+    ar: "/ar/machines-equipment/silo-storage-feeding-systems/truck-intake-hopper",
+  },
+  auxiliaryFlow: {
+    tr: "/makinalar-ekipman/yardimci-ekipmanlar-ve-akis-sistemleri",
+    en: "/en/machines-equipment/auxiliary-flow-equipment",
+    ru: "/ru/oborudovanie/vspomogatelnoe-oborudovanie",
+    ar: "/ar/machines-equipment/auxiliary-flow-equipment",
+  },
+  loadingBellows: {
+    tr: "/makinalar-ekipman/yardimci-ekipmanlar-ve-akis-sistemleri/yukleme-korugu",
+    en: "/en/machines-equipment/auxiliary-flow-equipment/loading-bellows",
+    ru: "/ru/oborudovanie/vspomogatelnoe-oborudovanie/zagruzochnye-rukava",
+    ar: "/ar/machines-equipment/auxiliary-flow-equipment/loading-bellows",
+  },
+  distributor: {
+    tr: "/makinalar-ekipman/yardimci-ekipmanlar-ve-akis-sistemleri/distributor",
+    en: "/en/machines-equipment/auxiliary-flow-equipment/distributor",
+    ru: "/ru/oborudovanie/vspomogatelnoe-oborudovanie/raspredeliteli",
+    ar: "/ar/machines-equipment/auxiliary-flow-equipment/distributor",
+  },
+  flapDiverters: {
+    tr: "/makinalar-ekipman/yardimci-ekipmanlar-ve-akis-sistemleri/klapeler",
+    en: "/en/machines-equipment/auxiliary-flow-equipment/flap-diverter-valves",
+    ru: "/ru/oborudovanie/vspomogatelnoe-oborudovanie/perekidnye-klapany",
+    ar: "/ar/machines-equipment/auxiliary-flow-equipment/flap-diverter-valves",
+  },
+  slideGates: {
+    tr: "/makinalar-ekipman/yardimci-ekipmanlar-ve-akis-sistemleri/surgulu-kapaklar",
+    en: "/en/machines-equipment/auxiliary-flow-equipment/slide-gates",
+    ru: "/ru/oborudovanie/vspomogatelnoe-oborudovanie/shibernye-zadvizhki",
+    ar: "/ar/machines-equipment/auxiliary-flow-equipment/slide-gates",
+  },
+  rotaryAirlock: {
+    tr: "/makinalar-ekipman/yardimci-ekipmanlar-ve-akis-sistemleri/hava-kilidi",
+    en: "/en/machines-equipment/auxiliary-flow-equipment/rotary-airlock-valve",
+    ru: "/ru/oborudovanie/vspomogatelnoe-oborudovanie/shlyuzovye-zatvory",
+    ar: "/ar/machines-equipment/auxiliary-flow-equipment/rotary-airlock-valve",
+  },
+  blower: {
+    tr: "/makinalar-ekipman/yardimci-ekipmanlar-ve-akis-sistemleri/blower",
+    en: "/en/machines-equipment/auxiliary-flow-equipment/blower",
+    ru: "/ru/oborudovanie/vspomogatelnoe-oborudovanie/vozdukhoduvki",
+    ar: "/ar/machines-equipment/auxiliary-flow-equipment/blower",
   },
   sectors: {
     tr: "/sektorler",

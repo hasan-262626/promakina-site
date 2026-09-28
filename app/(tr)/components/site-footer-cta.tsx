@@ -42,6 +42,8 @@ export type SiteFooterModel = {
   followTitle: string;
   followText: string;
   rights: string;
+  /** Telif satırının yanında gösterilen sade bağlantılar (ör. görsel lisansları). */
+  legalLinks?: FooterLink[];
   floating: { whatsappAria: string };
   mobileSticky: {
     hideOnExact: string[];
@@ -106,7 +108,7 @@ const trFooterModel: SiteFooterModel = {
       links: [
         { label: "Blog / Makaleler", href: "/kutuphane/blog" },
         { label: "Teknik Rehberler", href: "/kutuphane/teknik-rehberler" },
-        { label: "Kurutma Tamburu", href: "/kutuphane/blog/kurutma-tamburu-hesaplama" },
+        { label: "Kurutma Tamburu Hesaplama", href: "/kutuphane/blog/kurutma-tamburu-hesaplama" },
         { label: "Helezon Kapasite", href: "/kutuphane/blog/helezon-kapasite-hesabi" },
         { label: "Granül Gübre Süreci", href: "/kutuphane/blog/granul-gubre-uretim-sureci" },
         { label: "Kompost Tesisi", href: "/kutuphane/blog/kompost-tesisi-kurulumu" },
@@ -140,6 +142,7 @@ const trFooterModel: SiteFooterModel = {
   followText:
     "Proses mühendisliği, makina üretimi, teknik rehberler ve proje içerikleri için sosyal medya hesaplarımızı takip edin.",
   rights: "© 2026 Pro Makina. Tüm hakları saklıdır.",
+  legalLinks: [{ label: "Görsel Kaynakları ve Lisanslar", href: "/gorsel-kaynaklari" }],
   floating: { whatsappAria: "WhatsApp ile iletişime geç" },
   mobileSticky: {
     hideOnExact: ["/iletisim"],
@@ -194,7 +197,7 @@ export function SiteFooterCta({ model }: { model?: SiteFooterModel }) {
                   </>
                 ) : (
                   <>
-                    <Link
+                    <Link prefetch={false}
                       href={footer.cta.contactHref}
                       data-cta-event="quote_button_click"
                       data-cta-label="footer_global_quote"
@@ -242,7 +245,7 @@ export function SiteFooterCta({ model }: { model?: SiteFooterModel }) {
                           {link.label}
                         </a>
                       ) : (
-                        <Link href={link.href} className="transition hover:text-white">
+                        <Link prefetch={false} href={link.href} className="transition hover:text-white">
                           {link.label}
                         </Link>
                       )}
@@ -290,8 +293,19 @@ export function SiteFooterCta({ model }: { model?: SiteFooterModel }) {
             </div>
           </div>
 
-          <div className="mt-12 border-t border-white/10 pt-6">
+          <div className="mt-12 flex flex-col gap-3 border-t border-white/10 pt-6 sm:flex-row sm:items-center sm:justify-between">
             <p className="text-sm text-white/55">{trText(footer.rights)}</p>
+            {footer.legalLinks?.length ? (
+              <ul className="flex flex-wrap gap-x-5 gap-y-2 text-sm text-white/55">
+                {footer.legalLinks.map((link) => (
+                  <li key={link.href}>
+                    <Link prefetch={false} href={link.href} className="transition hover:text-white">
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            ) : null}
           </div>
         </div>
       </footer>
@@ -328,7 +342,7 @@ export function MobileStickyCta({ model }: { model?: SiteFooterModel }) {
     <div className="fixed inset-x-4 bottom-20 z-[69] sm:hidden">
       <div className="rounded-full border border-slate-200 bg-white/95 p-2 shadow-[0_16px_48px_rgba(15,23,42,0.18)] backdrop-blur">
         <div className="grid grid-cols-2 gap-2">
-          <Link
+          <Link prefetch={false}
             href={footer.mobileSticky.quoteHref}
             data-cta-event="quote_button_click"
             data-cta-label="mobile_sticky_quote"
@@ -336,7 +350,7 @@ export function MobileStickyCta({ model }: { model?: SiteFooterModel }) {
           >
             {footer.mobileSticky.quoteLabel}
           </Link>
-          <Link
+          <Link prefetch={false}
             href={footer.mobileSticky.secondaryHref}
             className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-slate-200 px-4 text-xs font-semibold text-slate-900 transition hover:border-[#278DC0] hover:text-[#278DC0]"
           >

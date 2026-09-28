@@ -222,7 +222,7 @@ export const sectorMachineGuideDetailPages: SectorMachineGuidePageData[] = [
       {
         title: "Silis Kumu Kurutma Tesisi Nasıl Tasarlanır?",
         description: "Maden kurutma özelinde detaylı teknik makaleyi inceleyin.",
-        href: "/kutuphane/blog/silis-kumu-kurutma-tesisi-nasil-tasarlanir",
+        href: "/kutuphane/blog/silis-kumu-kurutma-prosesi",
       },
     ],
   }),
@@ -1390,7 +1390,7 @@ export const sectorMachineGuideDetailPages: SectorMachineGuidePageData[] = [
       {
         title: "Digestat Kurutma ve Kompostlaştırma",
         description: "Digestat tarafını daha detaylı anlatan blog içeriğine gidin.",
-        href: "/kutuphane/blog/digestat-kurutma-ve-kompostlastirma-sistemi",
+        href: "/kutuphane/blog/digestat-kurutma-ve-kompostlastirma",
       },
       {
         title: "Hayvansal Atıklardan Biyogaz Tesisi",

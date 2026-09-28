@@ -12,6 +12,7 @@ import { SiteHeader } from "./components/site-header";
 import { TextNormalizer } from "./components/text-normalizer";
 import { siteContact, siteSocialSameAs } from "./lib/site-contact";
 import "./globals.css";
+import { cookieConsentBootstrapScript } from "./lib/cookie-consent";
 
 const montserrat = Montserrat({
   subsets: ["latin", "latin-ext"],
@@ -113,9 +114,12 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="tr">
+    <html lang="tr" suppressHydrationWarning>
       <head>
-        <Script id="gtm-script" strategy="beforeInteractive">
+        {/* Onaylı ziyaretçide çerez bandını ilk boyamadan önce gizler (bkz. lib/cookie-consent). */}
+        <script dangerouslySetInnerHTML={{ __html: cookieConsentBootstrapScript }} />
+        {/* GTM ilk boyamayı ve etkileşimi bloklamaması için hydrate sonrası yüklenir. */}
+        <Script id="gtm-script" strategy="afterInteractive">
           {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=

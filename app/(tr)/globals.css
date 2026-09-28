@@ -177,3 +177,13 @@ a {
     padding-bottom: 96px;
   }
 }
+
+/* Çerez bandı sunucuda çizilir; onayı kayıtlı ziyaretçide ilk boyamadan önce gizlenir. */
+html[data-cookie-consent] [data-cookie-banner] {
+  display: none;
+}
+
+/* Arapça (RTL) kurutma tamburu sayfası: harf aralığı Arapça harflerin bağlantısını bozduğu için sıfırlanır. */
+[dir="rtl"] [data-dryer-page] * {
+  letter-spacing: 0 !important;
+}

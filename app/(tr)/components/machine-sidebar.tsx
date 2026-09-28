@@ -11,6 +11,8 @@ type MachineSidebarProps = {
   href: string;
   items: MachineSidebarItem[];
   activeHref: string;
+  /** Üst etiket; verilmezse Türkçe "Makine Grubu" kullanılır (yabancı diller kendi metnini verir). */
+  eyebrow?: string;
 };
 
 export function MachineSidebar({
@@ -18,6 +20,7 @@ export function MachineSidebar({
   href,
   items,
   activeHref,
+  eyebrow = "Makine Grubu",
 }: MachineSidebarProps) {
   return (
     <aside className="overflow-hidden rounded-[28px] bg-[#154764] text-white shadow-[0_20px_50px_rgba(21,71,100,0.22)]">
@@ -26,7 +29,7 @@ export function MachineSidebar({
         className="block border-b border-white/15 px-5 py-5 transition hover:bg-white/5"
       >
         <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-white/70">
-          {trText("Makine Grubu")}
+          {trText(eyebrow)}
         </p>
         <h2 className="mt-2 text-xl font-bold uppercase leading-snug tracking-[0.04em] text-white">
           {trText(title)}
@@ -50,10 +53,10 @@ export function MachineSidebar({
             >
               <span className="leading-6">{trText(item.label)}</span>
               <span
-                className={`text-base transition-transform duration-200 ${
+                className={`inline-block text-base transition-transform duration-200 rtl:-scale-x-100 ${
                   isActive
                     ? "text-white"
-                    : "text-white/70 group-hover:translate-x-1 group-hover:text-white"
+                    : "text-white/70 group-hover:translate-x-1 group-hover:text-white rtl:group-hover:-translate-x-1"
                 }`}
               >
                 →

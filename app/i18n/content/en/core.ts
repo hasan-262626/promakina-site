@@ -220,6 +220,7 @@ export const machines: IntlPageContent = {
     { key: "dustCollection", title: "Dust Collection Systems", text: "Cyclones and pulse-jet filters for process air cleaning and product recovery." },
     { key: "packagingSystems", title: "Packaging & Bagging", text: "Open-mouth bagging, big-bag filling and palletizing lines for final product handling." },
     { key: "storageSystems", title: "Silos, Bunkers & Feeding", text: "Silos, bunkers, hoppers and controlled discharge systems for bulk storage and feeding." },
+    { key: "auxiliaryFlow", title: "Auxiliary & Flow Equipment", text: "Loading bellows, distributors, flap diverters, slide gates, rotary airlocks and blowers for bulk material flow." },
   ],
   sections: [
     {

@@ -100,7 +100,7 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/makinalar-ekipman/kırıcılar-ve-parcalayicilar/bicakli-sekonder-kırıcılar",
-        destination: "/makinalar-ekipman/kiricilar-ve-parcalayicilar",
+        destination: "/makinalar-ekipman/kiricilar-ve-parcalayicilar/bicakli-sekonder-kiricilar",
         permanent: true,
       },
       {
@@ -176,11 +176,6 @@ const nextConfig: NextConfig = {
       {
         source: "/makinalar/dozajlama-sistemleri/mikro-dozajlama",
         destination: "/makinalar-ekipman/dozajlama-sistemleri/mikro-dozajlama",
-        permanent: true,
-      },
-      {
-        source: "/makinalar-ekipman/kiricilar-ve-parcalayicilar/bicakli-sekonder-kiricilar",
-        destination: "/makinalar-ekipman/kiricilar-ve-parcalayicilar",
         permanent: true,
       },
       {
@@ -378,6 +373,44 @@ const nextConfig: NextConfig = {
         // sürümüne aktarıldı; sıralamada olan kütüphane URL'si keeper'dır.
         source: "/kutuphane/blog/kurutma-tamburu-tasarim-kriterleri",
         destination: "/kutuphane/kurutma-tamburu-tasarim-kriterleri",
+        permanent: true,
+      },
+      // Paket 3C: kurutma blog kümesindeki kopya/çakışan sayfalar keeper sürümlerine birleştirildi.
+      {
+        // Tambur odaklı SSS'ler proses sayfasına aktarıldı; ticari sorgu ürün sayfasına bırakıldı.
+        source: "/kutuphane/blog/silis-kumu-kurutma-tamburu",
+        destination: "/kutuphane/blog/silis-kumu-kurutma-prosesi",
+        permanent: true,
+      },
+      {
+        source: "/kutuphane/blog/silis-kumu-kurutma-tesisi-nasil-tasarlanir",
+        destination: "/kutuphane/blog/silis-kumu-kurutma-prosesi",
+        permanent: true,
+      },
+      {
+        source: "/kutuphane/blog/kurutma-tamburu-brulor-secimi",
+        destination: "/kutuphane/blog/kurutma-tamburunda-brulor-secimi",
+        permanent: true,
+      },
+      {
+        source: "/kutuphane/blog/kurutma-tamburu-fan-secimi",
+        destination: "/kutuphane/blog/kurutma-tamburunda-fan-siklon-filtre-secimi",
+        permanent: true,
+      },
+      {
+        source: "/kutuphane/blog/digestat-kurutma-ve-kompostlastirma-sistemi",
+        destination: "/kutuphane/blog/digestat-kurutma-ve-kompostlastirma",
+        permanent: true,
+      },
+      {
+        source: "/kutuphane/blog/kurutma-tamburu-ve-kurutma-sistemleri",
+        destination: "/kutuphane/blog/kurutma-sistemleri",
+        permanent: true,
+      },
+      {
+        // İngilizce içerik TR ağacında lang="tr" ile yayındaydı; İngilizce sürüme taşındı.
+        source: "/cozumler/rotary-dryer-manufacturer",
+        destination: "/en/machines-equipment/drum-systems/rotary-dryer",
         permanent: true,
       },
       {

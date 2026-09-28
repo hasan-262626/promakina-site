@@ -24,7 +24,7 @@ export type DrumProductPage = {
     headers: [string, string];
     rows: [string, string][];
   };
-  detailSections?: { title: string; paragraphs?: string[]; bullets?: string[] }[];
+  detailSections?: { title: string; paragraphs?: string[]; bullets?: string[]; subsections?: { title: string; paragraphs: string[] }[] }[];
   supplyScope?: {
     title: string;
     intro?: string;
@@ -99,6 +99,33 @@ function buildGallery(primarySrc: string, primaryAlt: string): GalleryItem[] {
     caption: index === 0 ? "Ürün ana görseli" : `Tambur sistemleri galeri görseli ${index + 1}`,
   }));
 }
+
+// Kurutma tamburu sayfası için seçilmiş gerçek saha ve imalat fotoğrafları.
+// Render görünümlü tamkurutma24.png ve düşük çözünürlüklü tamkurutma28.jpg bilinçli olarak dışarıda bırakıldı.
+// Sayfa bölümlerinde gösterilen kareler (ana görsel, uygulama kartları, tasarım ve imalat) galeride tekrarlanmaz.
+const dryerDrumImage = (file: string, alt: string, caption: string): GalleryItem => ({
+  src: `/images/tambur kurutma/${file}`,
+  alt,
+  caption,
+});
+
+const dryerDrumGallery: GalleryItem[] = [
+  dryerDrumImage("tamkurutma1.jpg", "Kurutma tamburu, siklon ve sıcak gaz kanallarından oluşan kurutma hattı", "Tambur, siklon ve gaz kanalları"),
+  dryerDrumImage("tamkurutma12.jpg", "Brülör ve yanma odası bağlantılı kurutma tamburu ile besleme konveyörü", "Brülör, yanma odası ve besleme"),
+  dryerDrumImage("tamkurutma4.jpg", "Kurutma tamburu besleme ucunda brülör ve yanma odası (cehennemlik)", "Brülör ve yanma odası"),
+  dryerDrumImage("tamkurutma22.jpg", "Açık sahada kurulu kurutma tamburu ve egzoz gaz kanalı", "Saha kurulumu"),
+  dryerDrumImage("tamkurutma29.jpg", "Kurutma tamburu, siklon ve toz toplama ünitesi ile saha kurulumu", "Tambur ve toz toplama ünitesi"),
+  dryerDrumImage("tamkurutma5.jpg", "Servis platformlu kurutma tamburu ve brülör grubu", "Servis platformu ve brülör grubu"),
+  dryerDrumImage("tamkurutma27.jpg", "Kurutma tamburu, besleme konveyörü ve sıcak gaz kanalı", "Besleme konveyörü ve gaz kanalı"),
+  dryerDrumImage("tamkurutma30.jpg", "Toz toplama ünitesi ve egzoz kanalıyla kurutma tamburu", "Egzoz kanalı ve toz toplama"),
+  dryerDrumImage("tamkurutma10.jpg", "Kurutma tamburu, filtre ve ürün konveyörleriyle kurutma tesisi", "Filtre ve ürün konveyörleri"),
+  dryerDrumImage("tamkurutma6.jpg", "Kurutma tamburu ve kovalı elevatörle ürün aktarımı", "Tambur ve kovalı elevatör"),
+  dryerDrumImage("tamkurutma11.jpg", "Kapalı alanda kurutma tamburu, siklon ve servis platformları", "Kapalı alan kurulumu"),
+  dryerDrumImage("tamkurutma7.jpg", "Kurutma tamburu bandaj (ring) bölgesi ve gaz besleme hattı", "Bandaj bölgesi ve gaz hattı"),
+  dryerDrumImage("tamkurutma16.jpg", "Gale tekeri ve yatak gövdeleri montaj öncesi", "Gale tekeri detayı"),
+  dryerDrumImage("tamkurutma20.jpg", "Tambur içinde çevresel ve eksenel kaldırıcı kanat düzeni", "İç kanat düzeni"),
+  dryerDrumImage("tamkurutma18.jpg", "Kurutma tamburu çıkış davlumbazı ve çelik servis platformu", "Çıkış davlumbazı ve platform"),
+];
 
 const commonRelatedMachines: RelatedLink[] = [
   { label: "Taşıma Ekipmanları", href: "/makinalar-ekipman/tasima-ekipmanlari" },
@@ -192,29 +219,64 @@ export const drumProductPages: DrumProductPage[] = [
     title: "Kurutma Tamburu",
     shortDescription:
       "Nemli ürünlerin sıcak hava ile hedef son neme düşürülmesini sağlayan endüstriyel döner kurutma ekipmanıdır.",
-    metaTitle: "Kurutma Tamburu İmalatı | Rotary Dryer Üretimi",
+    metaTitle: "Kurutma Tamburu İmalatı | Silis, Perlit, Talaş | PRO MAKİNA",
     metaDescription:
-      "Endüstriyel kurutma tamburu imalatı; ürün, kapasite ve nem değerlerine göre projelendirilir. Brülör, fan, siklon, filtre ve otomasyon seçenekleriyle teklif alın.",
-    headingTitle: "Kurutma Tamburu İmalatı",
+      "Silis kumu, perlit, talaş, maden ve gübre için endüstriyel kurutma tamburu imalatı. PRO MAKİNA döner tamburlu kurutucu ve komple kurutma sistemi çözümleri.",
+    headingTitle: "Kurutma Tamburu – Endüstriyel Döner Tamburlu Kurutucu İmalatı",
     productSchemaCategory: "Endüstriyel Kurutma Tamburu",
     technicalTable: {
-      title: "Kurutma Tamburu Projelendirme Parametreleri",
-      headers: ["Proje Parametresi", "Tasarımda Değerlendirilen Bilgi"],
+      title: "Kurutma Tamburu Teknik Özellikleri",
+      headers: ["Teknik parametre", "Açıklama"],
       rows: [
-        ["Ürün türü", "Mineral, gübre, biyokütle, çamur veya proses ürünü"],
-        ["Saatlik kapasite", "Yaş besleme ve hedef kuru ürün kapasitesi"],
-        ["Giriş nemi", "Kurutucuya giren ürünün toplam nem oranı"],
-        ["Hedef çıkış nemi", "Ürün ve sonraki proses ihtiyacına göre belirlenir"],
-        ["Tane boyutu", "Akış, sürüklenme ve iç kanat tasarımını etkiler"],
-        ["Yığın yoğunluğu", "Doluluk oranı ve tahrik hesabında kullanılır"],
-        ["Isı kaynağı", "Doğal gaz, LPG, motorin, sıcak gaz veya uygun alternatif"],
-        ["Çalışma süresi", "Günlük vardiya ve yıllık işletme saati"],
-        ["Malzeme seçimi", "ST37/S355, paslanmaz veya aşınmaya dayanıklı bölgeler"],
-        ["Otomasyon", "Sıcaklık, basınç, fan, brülör, devir ve alarm kontrolü"],
+        ["Makine tipi", "Endüstriyel döner tamburlu kurutucu"],
+        ["Kapasite", "Hammadde ile başlangıç ve hedef nem değerlerine göre projelendirilir; yaş besleme ve net kuru ürün debisi ayrı belirtilir"],
+        ["Tambur çapı", "Buharlaşma yükü ve hava debisine göre proses hesabıyla belirlenir"],
+        ["Tambur uzunluğu", "Kurutma yükü, doluluk ve kalış süresine göre belirlenir"],
+        ["Gövde malzemesi", "Proje şartlarına göre karbon çelik (ST37/S355), paslanmaz veya aşınmaya dayanıklı özel malzeme"],
+        ["Kaldırıcı kanatlar", "Malzeme özelliklerine göre özel tasarım"],
+        ["Isıtma sistemi", "Doğrudan veya dolaylı ısıtma seçenekleri"],
+        ["Yakıt", "Doğal gaz, LPG, motorin, mevcut sıcak gaz veya prosese uygun diğer ısı kaynakları"],
+        ["Tahrik sistemi", "Motor, redüktör ve uygun mekanik tahrik grubu"],
+        ["Taşıyıcı sistem", "Bandaj, gale ve uygun yataklama grupları"],
+        ["Toz toplama", "Projeye göre siklon ve filtre entegrasyonu"],
+        ["Otomasyon", "Proses ihtiyacına göre sıcaklık, fan, brülör, besleme ve tahrik kontrolü"],
       ],
-      note: "Bu tablo proje değerlendirmesinde hangi verilerin kullanıldığını gösterir; kesin teknik teklif yerine geçmez. Nihai ölçüler ve ekipman seçimi, projeye özel hesap ve gerekiyorsa numune testi ile belirlenir.",
+      note: "Tablo, kurutma tamburunun genel yapısını gösterir; kesin teknik teklif yerine geçmez. Nihai ölçüler ve ekipman seçimi, projeye özel hesap ve gerekiyorsa numune testi ile belirlenir.",
     },
     detailSections: [
+      {
+        title: "Kurutma Tamburu Uygulama Alanları",
+        subsections: [
+          {
+            title: "Silis Kumu Kurutma Tamburu",
+            paragraphs: ["Silis kumu kurutma tamburu; başlangıç ve hedef nem, tane boyutu, saatlik kapasite ve aşındırıcılığa göre tasarlanır. Kum kurutma tamburunda kaldırıcı kanatlar, devir, sıcak hava akışı, toz toplama ve ürün çıkış sıcaklığı birlikte değerlendirilir. Silis kumu kurutma tesisi kapsamında kurutulan ürün, proses ihtiyacına göre eleme, sınıflandırma, depolama ve paketlemeye aktarılır."],
+          },
+          {
+            title: "Perlit Kurutma Tamburu",
+            paragraphs: ["Perlit kurutma tamburunda başlangıç nemi, tane boyutu, kırılganlık ve sonraki işlem dikkate alınır. Ürün hareketi ve kaldırıcı kanatlar gereksiz tane kırılmasını ve toz oluşumunu sınırlayacak şekilde seçilir. Perlit kurutma tesisi; eleme, sınıflandırma, genleştirme öncesi hazırlık ve depolama ile birlikte projelendirilebilir. Kurutma nem uzaklaştırma işlemidir; perlit genleştirme ayrı bir termal prosestir."],
+          },
+          {
+            title: "Talaş Kurutma Tamburu",
+            paragraphs: ["Talaş kurutma tamburu, ahşap talaşı ve kurutmaya uygun biyokütle hammaddelerinin nemini düşürmek için projelendirilir. Talaş kurutma makinesi seçiminde başlangıç ve hedef nem, parça boyutu, yığın yoğunluğu ve termal hassasiyet belirleyicidir.", "Talaş yanıcı toz oluşturabilir. Sıcaklık kontrolü, toz toplama, yangın ve patlama risk değerlendirmesi ile gerekli algılama, durdurma ve koruma sistemleri birlikte ele alınır. Mineral kurutmadaki sıcaklıklar ve ekipman seçimleri talaşa doğrudan uygulanmaz; emniyet düzeni malzeme ve saha koşullarına göre belirlenir."],
+          },
+          {
+            title: "Maden ve Mineral Kurutma Tamburu",
+            paragraphs: ["Maden kurutma tamburu; mineralojik yapı, tane boyutu, yoğunluk, başlangıç nemi ve aşındırıcılığa göre boyutlandırılır. Mineral kurutma sistemleri için silis kumu, barit, kireç taşı ve kurutmaya uygun diğer hammaddeler değerlendirilebilir. Sac kalınlığı, iç aşınma koruması, kaldırıcı kanatlar, besleme ve toz toplama ekipmanları ürüne göre seçilir. Her mineral aynı sıcaklığa veya proses koşullarına uygun değildir."],
+          },
+          {
+            title: "Gübre Kurutma Tamburu",
+            paragraphs: ["Organik, organomineral, granül ve kurutmaya uygun mineral gübrelerde hedef nem ve kapasite kadar ürünün sıcaklığa duyarlılığı da önemlidir. Organik gübre kurutma tamburu ve granül gübre uygulamalarında ürün bileşimi, yapışma eğilimi ve granül dayanımı incelenir. İç kanat düzeni ve kalış süresi granül boyutunun korunması gözetilerek belirlenir; çıkış sıcaklığı sonraki soğutma, eleme ve paketleme işlemleriyle birlikte değerlendirilir."],
+          },
+        ],
+      },
+      {
+        title: "Kapasite, Isı Dengesi ve Isıtma Seçenekleri",
+        paragraphs: [
+          "Saatlik yaş besleme, hedef nemde çıkan net ürün ve kuru katı madde debileri ayrı tanımlanır. Başlangıç ve hedef nemin yaş veya kuru bazda ifade edildiği netleştirilerek kütle dengesi kurulur. Buharlaştırılacak su, ürünün ısınması ve ısı kayıpları üzerinden ısı yükü değerlendirilir; tek bir ton/saat değeri tüm ürünler için kapasite garantisi değildir.",
+          "Tambur çapı ve uzunluğu; doluluk, hava debisi ve gerekli kalış süresine göre belirlenir. Eğim, devir ve kaldırıcı kanatlar ürünün ilerleme ve sıcak gazla temas biçimini etkiler. Gaz giriş-çıkış sıcaklıkları ile ürün sıcaklığı birbirinden ayrılır; çıkışta soğutma gereksinimi sonraki prosese göre belirlenir.",
+          "Doğrudan ısıtmada sıcak gaz ürünle temas eder. Dolaylı ısıtmada ısı bir yüzey üzerinden aktarılır; uygunluk ürünün kirlenme riski ve termal gereksinimleriyle değerlendirilir. Doğal gaz, LPG veya uygun diğer ısı kaynakları; ürün, emisyon, saha altyapısı ve proses emniyetine göre seçilir. Isıtma yöntemi ve yakıt tüketimi projeye özel hesapla netleşir.",
+        ],
+      },
       {
         title: "Tambur Gövdesi, İç Kanatlar ve Malzeme Seçimi",
         paragraphs: [
@@ -234,6 +296,7 @@ export const drumProductPages: DrumProductPage[] = [
         title: "Brülör, Fan, Siklon ve Filtre Sistemi",
         paragraphs: [
           "Kurutma tamburu tek başına bir proses hattı değildir. Sıcak hava üretim ünitesi, brülör, cehennemlik veya yanma odası, sıcak hava kanalları, proses fanı, siklon, jet pulse filtre ve baca; proje ihtiyacına göre birlikte değerlendirilen bileşenlerdir.",
+          "Fan; gerekli hava debisi ve tambur, kanal, siklon ile filtrede oluşan toplam basınç kaybına göre seçilir. Siklon ön ayırma için değerlendirilirken filtre ortamı gaz sıcaklığı, nem, toz özellikleri ve emisyon ihtiyacına uygun olmalıdır; yanıcı toz bulunan uygulamalar ayrıca risk değerlendirmesi gerektirir.",
           "Ürün besleme ve çıkış sistemleri, eleme, soğutma, silo ve paketleme hattı da proje kapsamına göre projelendirilebilir. Bu bileşenlerin her projede standart olarak dahil olduğu varsayılmaz; kapsam teknik değerlendirme sonucunda netleşir.",
         ],
       },
@@ -300,6 +363,13 @@ export const drumProductPages: DrumProductPage[] = [
       intro:
         "Kurutma tamburunun tasarım ve hesap tarafını ayrıntılı incelemek için aşağıdaki teknik içerikleri kullanabilirsiniz.",
       links: [
+        { label: "Silis kumu kurutma prosesi hakkında teknik bilgi", href: "/kutuphane/blog/silis-kumu-kurutma-prosesi", description: "Beslemeden eleme ve depolamaya kadar tesis akışı." },
+        { label: "Perlit kurutma sistemleri", href: "/kutuphane/blog/perlit-kurutma-tamburu", description: "Kırılgan tane yapısına uygun kurutma yaklaşımı." },
+        { label: "Talaş ve biyokütle kurutma", href: "/kutuphane/blog/talas-kurutma-tamburu", description: "Nem, sıcaklık ve ürün davranışına yönelik teknik rehber." },
+        { label: "Maden ve mineral kurutma sistemleri", href: "/kutuphane/blog/maden-kurutma-tamburu", description: "Mineral özelliklerine göre proses değerlendirmesi." },
+        { label: "Gübre kurutma sistemleri", href: "/kutuphane/blog/gubre-kurutma-tamburu", description: "Granül ürünün nem ve sıcaklık gereksinimleri." },
+        { label: "Endüstriyel siklon ayırıcı sistemleri", href: "/makinalar-ekipman/toz-toplama-sistemleri/siklon-ayiricilar", description: "Gaz hattında partikül ön ayırma ekipmanları." },
+        { label: "Jet pulse filtreler", href: "/makinalar-ekipman/toz-toplama-sistemleri/pulse-jet-filtreler", description: "Proses koşullarına uygun toz toplama çözümleri." },
         {
           label: "Kurutma Tamburu Tasarım Kriterleri",
           href: "/kutuphane/kurutma-tamburu-tasarim-kriterleri",
@@ -365,29 +435,32 @@ export const drumProductPages: DrumProductPage[] = [
       },
     ],
     heroDescription:
-      "Kurutma tamburu; gübre, kompost, çamur ve mineral ürünlerde kontrollü termal proses sağlayan endüstriyel tambur çözümüdür.",
+      "Silis kumu, perlit, talaş, maden, mineral ve gübre için projeye özel endüstriyel döner tamburlu kurutucu tasarımı ve imalatı.",
     ctaTitle: "Kurutma tamburu kapasitesini ve prosesini birlikte netleştirelim",
     ctaText:
       "Kurutma tamburu için giriş-çıkış nemi, ürün tipi, ısı kaynağı, kapasite ve saha kısıtlarına göre size uygun teknik çözümü birlikte belirleyebiliriz.",
     overviewParagraphs: [
-      "Kurutma tamburu, nemli veya termal işlem gerektiren ürünlerin kontrollü sıcak hava teması ile hedef neme düşürülmesini sağlar.",
-      "Brülör tipi, hava debisi, iç kanat yapısı, ürünün kalış süresi ve toz yönetimi birlikte değerlendirilerek proses verimi optimize edilir.",
+      "PRO MAKİNA; silis kumu, perlit, talaş, maden ve mineral hammaddeler, organik gübre, granül gübre ve kurutmaya uygun farklı dökme katı malzemelerin nemini kontrollü şekilde düşürmek için endüstriyel kurutma tamburu tasarlar ve imal eder. Döner tamburlu kurutucu (rotary dryer), ürün özelliklerine göre projelendirilir.",
+      "Başlangıç ve hedef nem, kapasite, tane boyutu, yığın yoğunluğu, aşındırıcılık ve termal hassasiyet tasarımın temel girdileridir. Brülör tipi, hava debisi, iç kanat yapısı, ürünün kalış süresi ve toz yönetimi birlikte değerlendirilir.",
+      "Besleme sistemi, ısı üretim ünitesi, kurutma tamburu, fan, siklon, filtre, ürün tahliyesi ve elektrik-otomasyon ekipmanları proses ihtiyacına göre birlikte ele alınır. Komple kurutma sistemi kapsamı, sonraki soğutma, eleme ve depolama aşamalarıyla uyumlu olarak teknik teklifte belirlenir.",
     ],
     highlightText:
       "Kurutma tamburu tasarımında yalnız tambur ölçüsü değil; ısı transferi, hava akışı, ürün perdeleme davranışı ve emisyon kontrolü de belirleyicidir.",
     specs: [
       "Projeye özel tambur çapı ve boyu",
-      "Yüksek verimli lifting flight tasarımı",
+      "Ürüne özel kaldırıcı kanat (lifting flight) tasarımı",
       "Brülör ve sıcak gaz hattına uygun gövde yapısı",
       "Ayarlanabilir devir ve tahrik sistemi",
       "Toz toplama ve hava hattı entegrasyonu",
       "Bakım dostu yürüyüş yolu ve servis platformu",
     ],
     applications: [
-      "Granül gübre kurutma hatları",
+      "Silis kumu ve mineral kurutma hatları",
+      "Perlit kurutma ve eleme öncesi hazırlık",
+      "Talaş ve uygun biyokütle hammaddeleri",
+      "Organik, organomineral ve granül gübre kurutma hatları",
       "Kompost ve organik ürün kurutma",
       "Atık su çamuru kurutma prosesleri",
-      "Silis kumu ve mineral kurutma hatları",
       "Özel termal proses uygulamaları",
     ],
     processFlow: [
@@ -432,8 +505,8 @@ export const drumProductPages: DrumProductPage[] = [
       "Sızdırmazlık parçaları",
     ],
     mainImage: "/images/tambur kurutma/tamkurutma25.jpg",
-    mainImageAlt: "Kurutma tamburu",
-    gallery: buildGallery("/images/tambur kurutma/tamkurutma25.jpg", "Kurutma tamburu"),
+    mainImageAlt: "PRO MAKİNA endüstriyel kurutma tamburu ve tesis ekipmanları",
+    gallery: dryerDrumGallery,
   },
   {
     slug: "sogutma-tamburu",
