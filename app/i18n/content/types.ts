@@ -1,4 +1,4 @@
-import type { RouteKey } from "../routes";
+import type { RouteKey, SectorDetailKey } from "../routes";
 import type { HomeHeroContent } from "../../(tr)/components/home-hero-slider";
 import type { HomeQuickAccessContent } from "../../(tr)/components/home-quick-access-section";
 import type { HomeMachineGroupsContent } from "../../(tr)/components/home-machine-groups-section";
@@ -81,7 +81,7 @@ export type IntlContactContent = Omit<IntlPageContent, "schemaType"> & {
 };
 
 /** Çeviri kapsamındaki sayfa anahtarları — contact özel şablon kullanır. */
-export type LandingKey = Exclude<RouteKey, "contact">;
+export type LandingKey = Exclude<RouteKey, "contact" | SectorDetailKey>;
 
 export type LocaleContent = {
   pages: Record<LandingKey, IntlPageContent>;

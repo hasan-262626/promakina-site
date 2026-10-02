@@ -85,6 +85,28 @@ export const routeParents: Record<RouteKey, RouteKey | null> = {
   sludgeDrying: "sectors",
   chemicalProcess: "sectors",
   recycling: "sectors",
+  sectorLiquidOrganomineral: "fertilizerPlants",
+  sectorLiquidNpk: "fertilizerPlants",
+  sectorLiquidAminoAcid: "fertilizerPlants",
+  sectorOrganicLiquid: "fertilizerPlants",
+  sectorOrganicBiostimulant: "fertilizerPlants",
+  sectorGranularOrganomineral: "fertilizerPlants",
+  sectorGranularNpk: "fertilizerPlants",
+  sectorGranularCompost: "fertilizerPlants",
+  sectorPowderOrganomineral: "fertilizerPlants",
+  sectorPowderNpk: "fertilizerPlants",
+  sectorHouseholdCompost: "compostPlants",
+  sectorAnimalCompost: "compostPlants",
+  sectorAgriculturalCompost: "compostPlants",
+  sectorSlaughterhouseCompost: "compostPlants",
+  sectorFoodCompost: "compostPlants",
+  sectorParkGardenCompost: "compostPlants",
+  // Enerji ve biyogaz ana sektörünün EN/RU/AR sürümü yok; üst adım sektörler sayfasıdır.
+  sectorAgriculturalBiogas: "sectors",
+  sectorAnimalBiogas: "sectors",
+  sectorFoodBiogas: "sectors",
+  sectorBiomassEnergy: "sectors",
+  sectorBiomethane: "sectors",
 };
 
 export function breadcrumbTrail(key: RouteKey): RouteKey[] {

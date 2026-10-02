@@ -17,6 +17,7 @@ import { projectPages } from "./(tr)/lib/project-pages-data";
 import { services } from "./(tr)/data";
 import { intlLocales } from "./i18n/config";
 import { languageAlternates, pathFor, routeKeyByPath, routeKeys } from "./i18n/routes";
+import { sectorDetailKeys } from "./i18n/sector-details/registry";
 
 const siteUrl = "https://www.promakina.com.tr";
 
@@ -157,6 +158,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // 3b) Hizmet sayfaları (dinamik [slug] üzerinden render edilir)
   for (const service of services) {
     routes.add(`/hizmetler/${service.slug}`);
+  }
+
+  // 3c) Sektör alt çözüm sayfaları (dinamik [slug]/[subsector] üzerinden render edilir; dört dilli)
+  for (const key of sectorDetailKeys) {
+    routes.add(pathFor(key, "tr"));
   }
 
   // 4) Blog dinamik içerikleri

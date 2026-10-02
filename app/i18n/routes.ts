@@ -85,7 +85,32 @@ export type RouteKey =
   | "sludgeDrying"
   | "chemicalProcess"
   | "recycling"
+  | SectorDetailKey
   | "contact";
+
+/** Sektör alt çözüm (tesis detay) sayfaları: gübre, kompost ve enerji/biyogaz. */
+export type SectorDetailKey =
+  | "sectorLiquidOrganomineral"
+  | "sectorLiquidNpk"
+  | "sectorLiquidAminoAcid"
+  | "sectorOrganicLiquid"
+  | "sectorOrganicBiostimulant"
+  | "sectorGranularOrganomineral"
+  | "sectorGranularNpk"
+  | "sectorGranularCompost"
+  | "sectorPowderOrganomineral"
+  | "sectorPowderNpk"
+  | "sectorHouseholdCompost"
+  | "sectorAnimalCompost"
+  | "sectorAgriculturalCompost"
+  | "sectorSlaughterhouseCompost"
+  | "sectorFoodCompost"
+  | "sectorParkGardenCompost"
+  | "sectorAgriculturalBiogas"
+  | "sectorAnimalBiogas"
+  | "sectorFoodBiogas"
+  | "sectorBiomassEnergy"
+  | "sectorBiomethane";
 
 type RoutePaths = Readonly<Record<Locale, string>>;
 
@@ -563,6 +588,132 @@ export const routeMap: Readonly<Record<RouteKey, RoutePaths>> = {
     en: "/en/industries/recycling-waste-management",
     ru: "/ru/otrasli/pererabotka-otkhodov",
     ar: "/ar/industries/recycling-waste-management",
+  },
+  sectorLiquidOrganomineral: {
+    tr: "/sektorler/gubre-ve-granulasyon-tesisleri/sivi-organomineral",
+    en: "/en/industries/fertilizer-production-plants/liquid-organomineral-fertilizer",
+    ru: "/ru/otrasli/zavody-po-proizvodstvu-udobreniy/zhidkie-organomineralnye-udobreniya",
+    ar: "/ar/industries/fertilizer-production-plants/liquid-organomineral-fertilizer",
+  },
+  sectorLiquidNpk: {
+    tr: "/sektorler/gubre-ve-granulasyon-tesisleri/sivi-npk",
+    en: "/en/industries/fertilizer-production-plants/liquid-npk-fertilizer",
+    ru: "/ru/otrasli/zavody-po-proizvodstvu-udobreniy/zhidkie-npk-udobreniya",
+    ar: "/ar/industries/fertilizer-production-plants/liquid-npk-fertilizer",
+  },
+  sectorLiquidAminoAcid: {
+    tr: "/sektorler/gubre-ve-granulasyon-tesisleri/sivi-amino-asit",
+    en: "/en/industries/fertilizer-production-plants/liquid-amino-acid-fertilizer",
+    ru: "/ru/otrasli/zavody-po-proizvodstvu-udobreniy/zhidkie-udobreniya-s-aminokislotami",
+    ar: "/ar/industries/fertilizer-production-plants/liquid-amino-acid-fertilizer",
+  },
+  sectorOrganicLiquid: {
+    tr: "/sektorler/gubre-ve-granulasyon-tesisleri/organik-sivi-gubre",
+    en: "/en/industries/fertilizer-production-plants/organic-liquid-fertilizer",
+    ru: "/ru/otrasli/zavody-po-proizvodstvu-udobreniy/organicheskie-zhidkie-udobreniya",
+    ar: "/ar/industries/fertilizer-production-plants/organic-liquid-fertilizer",
+  },
+  sectorOrganicBiostimulant: {
+    tr: "/sektorler/gubre-ve-granulasyon-tesisleri/organik-biyostimulan",
+    en: "/en/industries/fertilizer-production-plants/organic-biostimulant",
+    ru: "/ru/otrasli/zavody-po-proizvodstvu-udobreniy/organicheskie-biostimulyatory",
+    ar: "/ar/industries/fertilizer-production-plants/organic-biostimulant",
+  },
+  sectorGranularOrganomineral: {
+    tr: "/sektorler/gubre-ve-granulasyon-tesisleri/granul-organomineral",
+    en: "/en/industries/fertilizer-production-plants/granular-organomineral-fertilizer",
+    ru: "/ru/otrasli/zavody-po-proizvodstvu-udobreniy/granulirovannye-organomineralnye-udobreniya",
+    ar: "/ar/industries/fertilizer-production-plants/granular-organomineral-fertilizer",
+  },
+  sectorGranularNpk: {
+    tr: "/sektorler/gubre-ve-granulasyon-tesisleri/granul-npk",
+    en: "/en/industries/fertilizer-production-plants/granular-npk-fertilizer",
+    ru: "/ru/otrasli/zavody-po-proizvodstvu-udobreniy/granulirovannye-npk-udobreniya",
+    ar: "/ar/industries/fertilizer-production-plants/granular-npk-fertilizer",
+  },
+  sectorGranularCompost: {
+    tr: "/sektorler/gubre-ve-granulasyon-tesisleri/granul-kompost-tesisleri",
+    en: "/en/industries/fertilizer-production-plants/granular-compost-plants",
+    ru: "/ru/otrasli/zavody-po-proizvodstvu-udobreniy/granulirovannyy-kompost",
+    ar: "/ar/industries/fertilizer-production-plants/granular-compost-plants",
+  },
+  sectorPowderOrganomineral: {
+    tr: "/sektorler/gubre-ve-granulasyon-tesisleri/toz-organomineral",
+    en: "/en/industries/fertilizer-production-plants/powder-organomineral-fertilizer",
+    ru: "/ru/otrasli/zavody-po-proizvodstvu-udobreniy/poroshkovye-organomineralnye-udobreniya",
+    ar: "/ar/industries/fertilizer-production-plants/powder-organomineral-fertilizer",
+  },
+  sectorPowderNpk: {
+    tr: "/sektorler/gubre-ve-granulasyon-tesisleri/toz-npk",
+    en: "/en/industries/fertilizer-production-plants/powder-npk-fertilizer",
+    ru: "/ru/otrasli/zavody-po-proizvodstvu-udobreniy/poroshkovye-npk-udobreniya",
+    ar: "/ar/industries/fertilizer-production-plants/powder-npk-fertilizer",
+  },
+  sectorHouseholdCompost: {
+    tr: "/sektorler/kompost-ve-organik-atik-tesisleri/evsel-atiklardan-kompost-tesisi",
+    en: "/en/industries/compost-organic-waste-plants/household-waste-compost-plant",
+    ru: "/ru/otrasli/kompostnye-zavody/kompostirovanie-bytovykh-otkhodov",
+    ar: "/ar/industries/compost-organic-waste-plants/household-waste-compost-plant",
+  },
+  sectorAnimalCompost: {
+    tr: "/sektorler/kompost-ve-organik-atik-tesisleri/hayvansal-atiklardan-kompost-tesisi",
+    en: "/en/industries/compost-organic-waste-plants/animal-waste-compost-plant",
+    ru: "/ru/otrasli/kompostnye-zavody/kompostirovanie-otkhodov-zhivotnovodstva",
+    ar: "/ar/industries/compost-organic-waste-plants/animal-waste-compost-plant",
+  },
+  sectorAgriculturalCompost: {
+    tr: "/sektorler/kompost-ve-organik-atik-tesisleri/tarimsal-atiklardan-kompost-tesisi",
+    en: "/en/industries/compost-organic-waste-plants/agricultural-waste-compost-plant",
+    ru: "/ru/otrasli/kompostnye-zavody/kompostirovanie-rastitelnykh-otkhodov",
+    ar: "/ar/industries/compost-organic-waste-plants/agricultural-waste-compost-plant",
+  },
+  sectorSlaughterhouseCompost: {
+    tr: "/sektorler/kompost-ve-organik-atik-tesisleri/mezbaha-atiklarindan-kompost-tesisi",
+    en: "/en/industries/compost-organic-waste-plants/slaughterhouse-waste-compost-plant",
+    ru: "/ru/otrasli/kompostnye-zavody/kompostirovanie-otkhodov-boen",
+    ar: "/ar/industries/compost-organic-waste-plants/slaughterhouse-waste-compost-plant",
+  },
+  sectorFoodCompost: {
+    tr: "/sektorler/kompost-ve-organik-atik-tesisleri/gida-atiklarindan-kompost-tesisi",
+    en: "/en/industries/compost-organic-waste-plants/food-waste-compost-plant",
+    ru: "/ru/otrasli/kompostnye-zavody/kompostirovanie-pishchevykh-otkhodov",
+    ar: "/ar/industries/compost-organic-waste-plants/food-waste-compost-plant",
+  },
+  sectorParkGardenCompost: {
+    tr: "/sektorler/kompost-ve-organik-atik-tesisleri/park-ve-bahce-atiklarindan-kompost-tesisi",
+    en: "/en/industries/compost-organic-waste-plants/park-garden-waste-compost-plant",
+    ru: "/ru/otrasli/kompostnye-zavody/kompostirovanie-parkovykh-i-sadovykh-otkhodov",
+    ar: "/ar/industries/compost-organic-waste-plants/park-garden-waste-compost-plant",
+  },
+  sectorAgriculturalBiogas: {
+    tr: "/sektorler/enerji-ve-biyogaz-sistemleri/tarimsal-atik-biyogaz-tesisleri",
+    en: "/en/industries/energy-biogas-systems/agricultural-waste-biogas-plants",
+    ru: "/ru/otrasli/energetika-i-biogaz/biogaz-iz-selskokhozyaystvennykh-otkhodov",
+    ar: "/ar/industries/energy-biogas-systems/agricultural-waste-biogas-plants",
+  },
+  sectorAnimalBiogas: {
+    tr: "/sektorler/enerji-ve-biyogaz-sistemleri/hayvansal-atik-biyogaz-tesisleri",
+    en: "/en/industries/energy-biogas-systems/animal-waste-biogas-plants",
+    ru: "/ru/otrasli/energetika-i-biogaz/biogaz-iz-otkhodov-zhivotnovodstva",
+    ar: "/ar/industries/energy-biogas-systems/animal-waste-biogas-plants",
+  },
+  sectorFoodBiogas: {
+    tr: "/sektorler/enerji-ve-biyogaz-sistemleri/gida-atiklarindan-biyogaz-tesisleri",
+    en: "/en/industries/energy-biogas-systems/food-waste-biogas-plants",
+    ru: "/ru/otrasli/energetika-i-biogaz/biogaz-iz-pishchevykh-otkhodov",
+    ar: "/ar/industries/energy-biogas-systems/food-waste-biogas-plants",
+  },
+  sectorBiomassEnergy: {
+    tr: "/sektorler/enerji-ve-biyogaz-sistemleri/biyokutle-enerji-tesisleri",
+    en: "/en/industries/energy-biogas-systems/biomass-energy-plants",
+    ru: "/ru/otrasli/energetika-i-biogaz/energeticheskie-ustanovki-na-biomasse",
+    ar: "/ar/industries/energy-biogas-systems/biomass-energy-plants",
+  },
+  sectorBiomethane: {
+    tr: "/sektorler/enerji-ve-biyogaz-sistemleri/biyometan-gaz-aritma-cozumleri",
+    en: "/en/industries/energy-biogas-systems/biomethane-gas-upgrading",
+    ru: "/ru/otrasli/energetika-i-biogaz/biometan-i-ochistka-biogaza",
+    ar: "/ar/industries/energy-biogas-systems/biomethane-gas-upgrading",
   },
   contact: {
     tr: "/iletisim",

@@ -1,8 +1,8 @@
 import type { MachinesOverviewContent } from "../(tr)/components/machines-overview-page";
+import { intlRouteLabel } from "./route-label";
 import { homeMachineGroupCards } from "../(tr)/home-machine-groups-data";
 import { getHeroLabels } from "./chrome";
 import { absoluteUrl, type IntlLocale } from "./config";
-import { getContent } from "./content";
 import { getDrumPageTexts, groupOf, isDrumPageKey } from "./content/drum-pages";
 import { pathFor, routeKeys, type RouteKey } from "./routes";
 
@@ -801,8 +801,7 @@ export function getMachinesOverviewTexts(locale: IntlLocale) {
 
 export function buildMachinesOverviewContent(locale: IntlLocale): MachinesOverviewContent {
   const t = texts[locale];
-  const content = getContent(locale);
-  const labelFor = (key: RouteKey) => (key === "contact" ? content.contact.breadcrumbLabel : content.pages[key].breadcrumbLabel);
+  const labelFor = (key: RouteKey) => (intlRouteLabel(locale, key));
   const keyOf = (trHref: string) => {
     const key = trKeyByPath.get(trHref);
     if (!key) throw new Error(`Makinalar sayfası: ${trHref} için rota anahtarı yok`);

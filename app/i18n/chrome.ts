@@ -1,9 +1,9 @@
 import type { HeaderNavEntry, SiteHeaderModel } from "../(tr)/components/site-header";
+import { intlRouteLabel } from "./route-label";
 import type { SiteFooterModel } from "../(tr)/components/site-footer-cta";
 import type { CookieTexts } from "../(tr)/components/cookie-preferences";
 import type { IntlLocale } from "./config";
 import { pathFor, type RouteKey } from "./routes";
-import { getContent } from "./content";
 
 /**
  * Yabancı dil sayfalarının site iskeleti (header, footer, çerez) TR bileşenlerini
@@ -379,9 +379,8 @@ const sectorKeys: RouteKey[] = [
 
 export function buildHeaderModel(locale: IntlLocale): SiteHeaderModel {
   const s = chromeStrings[locale];
-  const content = getContent(locale);
   const label = (key: RouteKey) =>
-    key === "contact" ? content.contact.breadcrumbLabel : content.pages[key].breadcrumbLabel;
+    intlRouteLabel(locale, key);
   const href = (key: RouteKey) => pathFor(key, locale);
 
   const machineGroups = machineMegaStructure.map((group) => ({
@@ -461,9 +460,8 @@ export function buildHeaderModel(locale: IntlLocale): SiteHeaderModel {
 
 export function buildFooterModel(locale: IntlLocale): SiteFooterModel {
   const s = chromeStrings[locale];
-  const content = getContent(locale);
   const label = (key: RouteKey) =>
-    key === "contact" ? content.contact.breadcrumbLabel : content.pages[key].breadcrumbLabel;
+    intlRouteLabel(locale, key);
   const href = (key: RouteKey) => pathFor(key, locale);
   const localePrefix = `/${locale}`;
 

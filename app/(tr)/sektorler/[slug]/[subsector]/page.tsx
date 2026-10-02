@@ -1,9 +1,16 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getSectorDetailConfig } from "../../../components/sector-detail-config";
+import { SectorDetailPage } from "../../../components/sector-detail-page";
 import { SectorDetailTemplate } from "../../../components/sector-detail-template";
 import { getSectorCardBySlug, sectorCards } from "../../../components/sector-subsectors-data";
 import { trText } from "../../../lib/tr-text";
+import {
+  buildSectorDetailModel,
+  buildSectorDetailSchema,
+  findSectorDetailByTrSlugs,
+} from "../../../../i18n/sector-details";
+import { languageAlternates } from "../../../../i18n/routes";
 
 type PageProps = {
   params: Promise<{
@@ -30,6 +37,33 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     return {};
   }
 
+  const canonical = `https://www.promakina.com.tr/sektorler/${slug}/${subsector}`;
+
+  // Gübre, kompost ve enerji/biyogaz alt çözümleri: dört dilli şablon ve sayfaya özel meta.
+  const detail = findSectorDetailByTrSlugs(slug, subsector);
+  if (detail) {
+    const model = buildSectorDetailModel("tr", detail.key);
+    const { title, description } = model.text.meta;
+    const image = `https://www.promakina.com.tr${encodeURI(model.images[0].src)}`;
+    return {
+      title,
+      description,
+      alternates: {
+        canonical,
+        languages: languageAlternates(detail.key),
+      },
+      openGraph: {
+        title,
+        description,
+        url: canonical,
+        siteName: "Pro Makina",
+        locale: "tr_TR",
+        type: "website",
+        images: [{ url: image, alt: model.images[0].alt }],
+      },
+    };
+  }
+
   const config = getSectorDetailConfig(sector, current);
   const sectorTitle = trText(sector.title);
   const heroTitle = trText(config.heroTitle);
@@ -38,7 +72,6 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     current.description ||
       `${sectorTitle} içinde ${heroTitle.toLocaleLowerCase("tr-TR")} için proses, ekipman ve mühendislik çözümleri.`,
   );
-  const canonical = `https://www.promakina.com.tr/sektorler/${slug}/${subsector}`;
 
   return {
     title,
@@ -64,6 +97,20 @@ export default async function SectorSubsectorPage({ params }: PageProps) {
 
   if (!sector || !current) {
     notFound();
+  }
+
+  const detail = findSectorDetailByTrSlugs(slug, subsector);
+  if (detail) {
+    const model = buildSectorDetailModel("tr", detail.key);
+    return (
+      <>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(buildSectorDetailSchema(model)).replace(/</g, "\\u003c") }}
+        />
+        <SectorDetailPage model={model} />
+      </>
+    );
   }
 
   const config = getSectorDetailConfig(sector, current);

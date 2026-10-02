@@ -9,6 +9,22 @@ import { getDryerPageTexts } from "../../i18n/content/dryer-page";
 import { drumProductPages } from "../../(tr)/components/drum-product-data";
 import { getContent } from "../../i18n/content";
 import { MachinesOverviewPage } from "../../(tr)/components/machines-overview-page";
+import { DrumSystemsCategoryPage } from "../../(tr)/components/drum-systems-category-page";
+import {
+  buildDrumSystemsCategoryContent,
+  buildDrumSystemsCategorySchema,
+  getDrumSystemsCategoryTexts,
+} from "../../i18n/drum-systems-category";
+import {
+  buildIntlMachineCategoryContent,
+  buildIntlMachineCategorySchema,
+  isMachineCategoryKey,
+} from "../../i18n/machine-category-pages";
+import { SectorsHubPage } from "../../(tr)/components/sectors-hub-page";
+import { SectorDetailPage } from "../../(tr)/components/sector-detail-page";
+import { buildSectorDetailModel, buildSectorDetailSchema, isSectorDetailKey } from "../../i18n/sector-details";
+import { intlRouteLabel } from "../../i18n/route-label";
+import { buildSectorsHubContent, getSectorsHubTexts } from "../../i18n/sectors-hub";
 import {
   buildMachinesOverviewContent,
   buildMachinesOverviewSchema,
@@ -79,6 +95,24 @@ export async function generateMetadata({ params }: { params: PageParams }): Prom
       hero: { h1: t.hero.title, intro: t.meta.description, image: { src: "/images/01-genel/makinalar1.png", alt: t.ogImageAlt } },
     });
   }
+  if (resolved.key === "sectors") {
+    // Sektörler hub: TR /sektorler şablonu; meta bu sayfanın çevrilmiş metinlerinden gelir.
+    const t = getSectorsHubTexts(resolved.locale);
+    return buildIntlMetadata(resolved.locale, resolved.key, { meta: t.meta, hero: { h1: t.h1, intro: t.meta.description } });
+  }
+  if (resolved.key === "drumSystems") {
+    // Tambur Sistemleri: TR /makinalar-ekipman/tambur-sistemleri şablonu; meta bu sayfanın çevrilmiş metinlerinden gelir.
+    const t = getDrumSystemsCategoryTexts(resolved.locale);
+    return buildIntlMetadata(resolved.locale, resolved.key, { meta: t.meta, hero: { h1: t.title, intro: t.meta.description } });
+  }
+  if (isSectorDetailKey(resolved.key)) {
+    // Sektör alt çözüm sayfaları: TR sayfasıyla aynı şablon; meta sayfanın kendi dilindeki metinlerinden gelir.
+    const model = buildSectorDetailModel(resolved.locale, resolved.key);
+    return buildIntlMetadata(resolved.locale, resolved.key, {
+      meta: model.text.meta,
+      hero: { h1: model.text.h1, intro: model.text.lead, image: model.images[0] },
+    });
+  }
   const content = getContent(resolved.locale);
   const pageContent =
     resolved.key === "contact" ? content.contact : content.pages[resolved.key];
@@ -95,10 +129,7 @@ export default async function IntlSlugPage({ params }: { params: PageParams }) {
   const { locale, key } = resolved;
   const content = getContent(locale);
   const dict = getDictionary(locale);
-  const labelFor = (routeKey: RouteKey) =>
-    routeKey === "contact"
-      ? content.contact.breadcrumbLabel
-      : content.pages[routeKey].breadcrumbLabel;
+  const labelFor = (routeKey: RouteKey) => intlRouteLabel(locale, routeKey);
 
   if (key === "rotaryDryer") {
     return <IntlRotaryDryerPage locale={locale} dict={dict} labelFor={labelFor} />;
@@ -117,10 +148,60 @@ export default async function IntlSlugPage({ params }: { params: PageParams }) {
         structuredData={
           <script
             type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\u003c") }}
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }}
           />
         }
       />
+    );
+  }
+
+  if (key === "drumSystems") {
+    const category = buildDrumSystemsCategoryContent(locale);
+    const schema = buildDrumSystemsCategorySchema(locale, category);
+    return (
+      <DrumSystemsCategoryPage
+        content={category}
+        structuredData={
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }}
+          />
+        }
+      />
+    );
+  }
+
+  if (key === "sectors") {
+    return <SectorsHubPage content={buildSectorsHubContent(locale)} />;
+  }
+
+  if (isMachineCategoryKey(key)) {
+    // Diğer makine kategorileri: Tambur Sistemleri şablonu; meta mevcut kategori içeriğinden gelir.
+    const category = buildIntlMachineCategoryContent(locale, key);
+    const schema = buildIntlMachineCategorySchema(locale, key, category);
+    return (
+      <DrumSystemsCategoryPage
+        content={category}
+        structuredData={
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }}
+          />
+        }
+      />
+    );
+  }
+
+  if (isSectorDetailKey(key)) {
+    const model = buildSectorDetailModel(locale, key);
+    return (
+      <>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(buildSectorDetailSchema(model)).replace(/</g, "\\u003c") }}
+        />
+        <SectorDetailPage model={model} />
+      </>
     );
   }
 
