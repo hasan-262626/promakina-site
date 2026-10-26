@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { siteContact } from "../../(tr)/lib/site-contact";
+import { sendSiteNotification } from "@/lib/forms/site-mail";
 import { allowFormSubmission, clientIp, matchesFileSignature, recordLead, sourcePageFrom } from "@/lib/forms/public-forms";
 
 export const runtime = "nodejs";
@@ -155,31 +155,20 @@ export async function POST(request: NextRequest) {
       attachmentSize: attachment instanceof File && attachment.size > 0 ? attachment.size : undefined,
     });
 
-    const resendApiKey = process.env.RESEND_API_KEY;
-    if (!resendApiKey) {
+    const mail = await sendSiteNotification({
+      subject: `[Teklif Formu] ${fieldValue(data, "machine")} — ${fieldValue(data, "country")}`,
+      text,
+      html,
+      replyTo: email,
+      attachments,
+    });
+
+    if (!mail.ok && mail.reason === "not_configured") {
       return NextResponse.json({ error: "mail_not_configured" }, { status: 500 });
     }
 
-    const resendResponse = await fetch("https://api.resend.com/emails", {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${resendApiKey}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        from: "Pro Makina <onay@promakina.com.tr>",
-        to: [siteContact.email],
-        reply_to: email,
-        subject: `[Teklif Formu] ${fieldValue(data, "machine")} — ${fieldValue(data, "country")}`.replace(/[\r\n]+/g, " ").slice(0, 200),
-        text,
-        html,
-        ...(attachments.length > 0 ? { attachments } : {}),
-      }),
-      cache: "no-store",
-    });
-
-    if (!resendResponse.ok) {
-      console.error("quote: mail sağlayıcısı hata döndü", resendResponse.status);
+    if (!mail.ok) {
+      // Talep yukarıda kaydedildi; sağlayıcı hatasının ayrıntısı istemciye dönmez.
       return NextResponse.json({ error: "send_failed" }, { status: 502 });
     }
 

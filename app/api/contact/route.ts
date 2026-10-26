@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { siteContact } from "../../(tr)/lib/site-contact";
+import { sendSiteNotification } from "@/lib/forms/site-mail";
 import { allowFormSubmission, clientIp, recordLead, sourcePageFrom } from "@/lib/forms/public-forms";
 
 export const runtime = "nodejs";
@@ -152,35 +152,22 @@ export async function POST(request: NextRequest) {
       locale: "tr",
     });
 
-    const resendApiKey = process.env.RESEND_API_KEY;
+    const mail = await sendSiteNotification({
+      subject: `[Web Formu] ${payload.subject}`,
+      text: buildPlainText(payload),
+      html: buildHtml(payload),
+      replyTo: payload.email,
+    });
 
-    if (!resendApiKey) {
+    if (!mail.ok && mail.reason === "not_configured") {
       return NextResponse.json(
         { error: "Mail servisi henüz yapılandırılmadı." },
         { status: 500 },
       );
     }
 
-    const resendResponse = await fetch("https://api.resend.com/emails", {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${resendApiKey}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        from: "Pro Makina <onay@promakina.com.tr>",
-        to: [siteContact.email],
-        reply_to: payload.email,
-        subject: `[Web Formu] ${payload.subject.replace(/[\r\n]+/g, " ")}`,
-        text: buildPlainText(payload),
-        html: buildHtml(payload),
-      }),
-      cache: "no-store",
-    });
-
-    if (!resendResponse.ok) {
-      // Sağlayıcının hata gövdesi istemciye dönmez (iç yapı ve yapılandırma bilgisi sızabilir).
-      console.error("contact: mail sağlayıcısı hata döndü", resendResponse.status);
+    if (!mail.ok) {
+      // Sağlayıcının hata ayrıntısı istemciye dönmez; talep yukarıda kaydedildiği için kaybolmaz.
       return NextResponse.json({ error: "Mesaj gönderilemedi. Lütfen tekrar deneyin." }, { status: 502 });
     }
 
