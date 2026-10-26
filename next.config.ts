@@ -40,6 +40,10 @@ const nextConfig: NextConfig = {
   productionBrowserSourceMaps: false,
   // Yerel (native/WASM) sunucu paketleri paketlenmeden node_modules'tan yüklenir.
   serverExternalPackages: ["@node-rs/argon2", "@electric-sql/pglite", "pg"],
+  // Metadata her istemciye <head> içinde, engelleyici olarak verilir. Varsayılan "streaming metadata" yalnız
+  // Next'in bot listesindekilere (Bingbot vb.) <head> verir; diğerlerine (Googlebot, Ahrefs, site sağlığı taraması)
+  // CMS/veritabanı geç yanıt verdiğinde title, description, canonical ve hreflang <body>'ye düşer.
+  htmlLimitedBots: /.*/,
   experimental: {
     // Admin yetkisiz erişimde gerçek 403 (forbidden) yanıtı için.
     authInterrupts: true,
