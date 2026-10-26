@@ -1,4 +1,5 @@
 ﻿import type { Metadata } from "next";
+import { serializeJsonLd } from "@/lib/json-ld";
 import Link from "next/link";
 import { Hero } from "./Hero";
 import type { TechnicalAuthorityHub } from "../lib/technical-authority-hub-data";
@@ -113,23 +114,23 @@ export function TechnicalAuthorityHubPage({ hub }: TechnicalAuthorityHubPageProp
     <main className="min-h-screen overflow-x-hidden bg-white text-slate-900">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(organizationSchema) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(localBusinessSchema) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(breadcrumbSchema) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(webPageSchema) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(faqSchema) }}
       />
 
       <Hero title={hub.title} description={hub.heroDescription} image={hub.image}>
@@ -168,9 +169,10 @@ export function TechnicalAuthorityHubPage({ hub }: TechnicalAuthorityHubPageProp
                 <p className="mt-4 text-sm font-semibold uppercase tracking-[0.18em] text-[#278DC0]">
                   TOPICAL AUTHORITY HUB
                 </p>
-                <h1 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950 md:text-4xl">
+                {/* Sayfanın tek H1'i Hero'dadır; bu başlık görsel olarak aynı kalarak H2 oldu. */}
+                <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950 md:text-4xl">
                   {hub.title}
-                </h1>
+                </h2>
                 <div className="mt-6 space-y-5 text-sm leading-8 text-slate-600 sm:text-base">
                   {hub.introParagraphs.map((paragraph) => (
                     <p key={paragraph}>{paragraph}</p>

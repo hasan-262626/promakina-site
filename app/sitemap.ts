@@ -15,6 +15,7 @@ import {
 import { topicalBlogDynamicSlugs } from "./(tr)/lib/topical-authority-blog-data";
 import { projectPages } from "./(tr)/lib/project-pages-data";
 import { services } from "./(tr)/data";
+import { sectorCards } from "./(tr)/components/sector-subsectors-data";
 import { intlLocales } from "./i18n/config";
 import { languageAlternates, pathFor, routeKeyByPath, routeKeys } from "./i18n/routes";
 import { sectorDetailKeys } from "./i18n/sector-details/registry";
@@ -90,7 +91,8 @@ function collectStaticRoutes(dir: string, routePrefix: string, out: string[]) {
 
   for (const entry of entries) {
     if (!entry.isDirectory()) continue;
-    if (entry.name.startsWith("[") || entry.name === "api" || entry.name === "i18n") continue;
+    // admin: yönetim paneli asla sitemap'e girmez (noindex).
+    if (entry.name.startsWith("[") || entry.name === "api" || entry.name === "i18n" || entry.name === "admin") continue;
     // Route group klasörleri "(tr)" gibi URL'e yansımaz; şeffaf geçilir.
     const isRouteGroup = entry.name.startsWith("(") && entry.name.endsWith(")");
     collectStaticRoutes(
@@ -157,7 +159,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // 3b) Hizmet sayfaları (dinamik [slug] üzerinden render edilir)
   for (const service of services) {
-    routes.add(`/hizmetler/${service.slug}`);
+    // Bakım hizmeti iki adresten açılır; canonical olan kamuya açık adres listelenir.
+    routes.add(service.slug === "bakim-ve-servis" ? "/hizmetler/bakim-servis-ve-teknik-destek" : `/hizmetler/${service.slug}`);
+  }
+
+  // 3b-2) Ana sektör sayfaları ve tüm alt sektör sayfaları (dinamik [slug] ve [slug]/[subsector] rotaları).
+  // Hepsi 200, indekslenebilir ve kendine canonical; yönlendirilen eski yollar 5. adımda çıkarılır.
+  for (const sector of sectorCards) {
+    routes.add(`/sektorler/${sector.slug}`);
+    for (const sub of sector.subLinks) routes.add(`/sektorler/${sector.slug}/${sub.slug}`);
   }
 
   // 3c) Sektör alt çözüm sayfaları (dinamik [slug]/[subsector] üzerinden render edilir; dört dilli)

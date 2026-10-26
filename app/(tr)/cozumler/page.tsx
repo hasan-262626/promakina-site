@@ -52,9 +52,10 @@ export default function Page() {
               <p className="text-sm font-semibold uppercase tracking-[0.16em] text-blue-700">
                 INDUSTRIAL SEO LANDING PAGE SYSTEM
               </p>
-              <h1 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950 md:text-4xl">
+              {/* Sayfanın tek H1'i Hero'dadır; bu başlık görsel olarak aynı kalarak H2 oldu. */}
+              <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950 md:text-4xl">
                 Yatırım niyetini güçlü teknik içerikle buluşturan çözüm merkezi
-              </h1>
+              </h2>
               <p className="mt-4 text-sm leading-8 text-slate-600 sm:text-base">
                 Her çözüm sayfası; hero, teknik giriş, kullanım alanları, proses akışı, ilgili
                 makinalar, ilgili hesaplama araçları, ilgili teknik makaleler, FAQ ve güçlü CTA

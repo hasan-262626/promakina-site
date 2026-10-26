@@ -1,4 +1,5 @@
 ﻿import Link from "next/link";
+import { serializeJsonLd } from "@/lib/json-ld";
 import { Hero } from "./Hero";
 import { createWhatsAppHref, siteContact } from "../lib/site-contact";
 
@@ -133,15 +134,15 @@ export function SeoRichLandingPage({
     <main className="min-h-screen overflow-x-hidden bg-white text-slate-900">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(serviceSchema) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(breadcrumbSchema) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(faqSchema) }}
       />
 
       <Hero title={heroTitle} description={heroDescription} image={image}>

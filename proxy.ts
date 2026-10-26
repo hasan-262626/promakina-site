@@ -1,94 +1,10 @@
 import type { NextRequest } from "next/server";
 import { NextResponse } from "next/server";
+import { LEGACY_PATH_REDIRECTS } from "./lib/legacy-redirects";
+import { getDbRedirect } from "./lib/admin/redirect-runtime";
 
 const CANONICAL_HOST = "www.promakina.com.tr";
 const ROOT_HOST = "promakina.com.tr";
-const LEGACY_PATH_REDIRECTS: Record<string, string> = {
-  "/kutuphane/blog/sivi-gubre-tesisi-nasil-kurulur":
-    "/kutuphane/blog/sivi-gubre-uretim-tesisi-nasil-kurulur",
-  "/makinalar/tasima-ekipmanlari/vidali-helezonlar":
-    "/makinalar-ekipman/tasima-ekipmanlari/vidali-helezonlar",
-  "/makinalar/tambur-sistemleri":
-    "/makinalar-ekipman/tambur-sistemleri",
-  "/makinalar/reaktorler-ve-tanklar":
-    "/makinalar-ekipman/reaktorler-ve-tanklar",
-  "/makinalar/yardimci-ekipmanlar-ve-akis-sistemleri/klapeler":
-    "/makinalar-ekipman/yardimci-ekipmanlar-ve-akis-sistemleri/klapeler",
-  "/makinalar/kiricilar-ve-parcalayicilar/ceneli-kÄ±rÄ±cÄ±lar":
-    "/makinalar-ekipman/kiricilar-ve-parcalayicilar/ceneli-kiricilar",
-  "/makinalar/kiricilar-ve-parcalayicilar/ceneli-kırıcılar":
-    "/makinalar-ekipman/kiricilar-ve-parcalayicilar/ceneli-kiricilar",
-  "/makinalar/tasima-ekipmanlari/kovali-elevatorler":
-    "/makinalar-ekipman/tasima-ekipmanlari/zincirli-elevatorler",
-  "/makinalar/dozajlama-ve-tartim-sistemleri":
-    "/makinalar-ekipman/dozajlama-sistemleri",
-  "/makinalar/yardimci-ekipmanlar-ve-akis-sistemleri/distributor":
-    "/makinalar-ekipman/yardimci-ekipmanlar-ve-akis-sistemleri/distributor",
-  "/makinalar-ekipman/kÄ±rÄ±cÄ±lar-ve-parcalayicilar":
-    "/makinalar-ekipman/kiricilar-ve-parcalayicilar",
-  "/makinalar-ekipman/kırıcılar-ve-parcalayicilar":
-    "/makinalar-ekipman/kiricilar-ve-parcalayicilar",
-  "/makinalar-ekipman/kÄ±rÄ±cÄ±lar-ve-parcalayicilar/bicakli-primer-kÄ±rÄ±cÄ±lar":
-    "/makinalar-ekipman/kiricilar-ve-parcalayicilar/bicakli-primer-kiricilar",
-  "/makinalar-ekipman/kırıcılar-ve-parcalayicilar/bicakli-primer-kırıcılar":
-    "/makinalar-ekipman/kiricilar-ve-parcalayicilar/bicakli-primer-kiricilar",
-  "/makinalar-ekipman/kÄ±rÄ±cÄ±lar-ve-parcalayicilar/bicakli-sekonder-kÄ±rÄ±cÄ±lar":
-    "/makinalar-ekipman/kiricilar-ve-parcalayicilar/bicakli-sekonder-kiricilar",
-  "/makinalar-ekipman/kırıcılar-ve-parcalayicilar/bicakli-sekonder-kırıcılar":
-    "/makinalar-ekipman/kiricilar-ve-parcalayicilar/bicakli-sekonder-kiricilar",
-  "/makinalar-ekipman/kÄ±rÄ±cÄ±lar-ve-parcalayicilar/cekicli-kÄ±rÄ±cÄ±lar":
-    "/makinalar-ekipman/kiricilar-ve-parcalayicilar/cekicli-kiricilar",
-  "/makinalar-ekipman/kırıcılar-ve-parcalayicilar/cekicli-kırıcılar":
-    "/makinalar-ekipman/kiricilar-ve-parcalayicilar/cekicli-kiricilar",
-  "/makinalar-ekipman/kÄ±rÄ±cÄ±lar-ve-parcalayicilar/ceneli-kÄ±rÄ±cÄ±lar":
-    "/makinalar-ekipman/kiricilar-ve-parcalayicilar/ceneli-kiricilar",
-  "/makinalar-ekipman/kırıcılar-ve-parcalayicilar/ceneli-kırıcılar":
-    "/makinalar-ekipman/kiricilar-ve-parcalayicilar/ceneli-kiricilar",
-  "/makinalar-ekipman/kÄ±rÄ±cÄ±lar-ve-parcalayicilar/dik-milli-kÄ±rÄ±cÄ±lar":
-    "/makinalar-ekipman/kiricilar-ve-parcalayicilar/dik-milli-kiricilar",
-  "/makinalar-ekipman/kırıcılar-ve-parcalayicilar/dik-milli-kırıcılar":
-    "/makinalar-ekipman/kiricilar-ve-parcalayicilar/dik-milli-kiricilar",
-  "/makinalar-ekipman/kÄ±rÄ±cÄ±lar-ve-parcalayicilar/shredder-sistemleri":
-    "/makinalar-ekipman/kiricilar-ve-parcalayicilar/shredder-sistemleri",
-  "/makinalar-ekipman/kırıcılar-ve-parcalayicilar/shredder-sistemleri":
-    "/makinalar-ekipman/kiricilar-ve-parcalayicilar/shredder-sistemleri",
-  "/makinalar-ekipman/kÄ±rÄ±cÄ±lar-ve-parcalayicilar/zincirli-kÄ±rÄ±cÄ±lar":
-    "/makinalar-ekipman/kiricilar-ve-parcalayicilar/zincirli-kiricilar",
-  "/makinalar-ekipman/kırıcılar-ve-parcalayicilar/zincirli-kırıcılar":
-    "/makinalar-ekipman/kiricilar-ve-parcalayicilar/zincirli-kiricilar",
-  "/makinalar/dozajlama-sistemleri/dozaj-bant-kantari":
-    "/makinalar-ekipman/dozajlama-sistemleri/dozaj-bant-kantari",
-  "/makinalar/yardimci-ekipmanlar-ve-akis-sistemleri/yukleme-korugu":
-    "/makinalar-ekipman/yardimci-ekipmanlar-ve-akis-sistemleri/yukleme-korugu",
-  "/makinalar/dozajlama-sistemleri/makro-dozajlama":
-    "/makinalar-ekipman/dozajlama-sistemleri/makro-dozajlama",
-  "/makinalar/depolama-ve-besleme-sistemleri/bunker-ve-hazneler":
-    "/makinalar-ekipman/depolama-ve-besleme-sistemleri/bunker-ve-hazneler",
-  "/makinalar/kiricilar-ve-parcalayicilar/dik-milli-kÄ±rÄ±cÄ±lar":
-    "/makinalar-ekipman/kiricilar-ve-parcalayicilar/dik-milli-kiricilar",
-  "/makinalar/kiricilar-ve-parcalayicilar/dik-milli-kırıcılar":
-    "/makinalar-ekipman/kiricilar-ve-parcalayicilar/dik-milli-kiricilar",
-  "/makinalar/kiricilar-ve-parcalayicilar/cekicli-kÄ±rÄ±cÄ±lar":
-    "/makinalar-ekipman/kiricilar-ve-parcalayicilar/cekicli-kiricilar",
-  "/makinalar/kiricilar-ve-parcalayicilar/cekicli-kırıcılar":
-    "/makinalar-ekipman/kiricilar-ve-parcalayicilar/cekicli-kiricilar",
-  "/makinalar/tasima-ekipmanlari/bant-konveyorler":
-    "/makinalar-ekipman/tasima-ekipmanlari/bantli-konveyorler",
-  "/makinalar-ekipman/tambur-sistemleri/granulator-tamburlari":
-    "/makinalar-ekipman/tambur-sistemleri/granulator-tamburu",
-  "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburlari":
-    "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburu",
-  "/makinalar-ekipman/tambur-sistemleri/sogutma-tamburlari":
-    "/makinalar-ekipman/tambur-sistemleri/sogutma-tamburu",
-  "/makinalar-ekipman/tambur-sistemleri/kaplama-tamburlari":
-    "/makinalar-ekipman/tambur-sistemleri/kaplama-tamburu",
-  "/makinalar-ekipman/tambur-sistemleri/kompost-tamburlari":
-    "/makinalar-ekipman/tambur-sistemleri/kompost-tamburu",
-  "/sektorler/gubre-ve-granulasyon-tesisleri/granul-kompost":
-    "/sektorler/gubre-ve-granulasyon-tesisleri/granul-kompost-tesisleri",
-  "/makinalar/dozajlama-sistemleri/mikro-dozajlama":
-    "/makinalar-ekipman/dozajlama-sistemleri/mikro-dozajlama",
-};
 
 function normalizePathname(pathname: string) {
   if (pathname.length > 1 && pathname.endsWith("/")) {
@@ -168,12 +84,71 @@ function getLegacyPathRedirect(pathname: string) {
   return undefined;
 }
 
-export function proxy(request: NextRequest) {
+/** Admin oturum çerezinin adları (lib/admin/server.ts ile aynı). Burada yalnız varlığı kontrol edilir; geçerliliği sunucu doğrular. */
+const ADMIN_COOKIES = ["__Host-pm_admin", "pm_admin"];
+
+/**
+ * /admin ve /admin/*: nonce tabanlı sıkı CSP, indekslenmeme ve önbelleğe alınmama başlıkları.
+ * Oturum çerezi yoksa sayfa istekleri giriş ekranına, admin API istekleri 401'e yönlenir.
+ * Bu yalnız ilk savunma hattıdır; yetki her sayfada ve işlemde sunucu tarafında yeniden doğrulanır.
+ */
+function handleAdmin(request: NextRequest, pathname: string) {
+  // Giriş, ikinci adım (2FA) ve önizleme kapatma oturum çerezi olmadan açılabilir.
+  const isLogin = pathname === "/admin/login" || pathname === "/admin/login/2fa" || pathname === "/admin/api/preview/exit";
+  const isApi = pathname.startsWith("/admin/api/");
+  const hasSession = ADMIN_COOKIES.some((name) => request.cookies.has(name));
+
+  if (!hasSession && !isLogin) {
+    if (isApi) {
+      return withAdminHeaders(NextResponse.json({ error: "unauthorized" }, { status: 401 }));
+    }
+    const loginUrl = request.nextUrl.clone();
+    loginUrl.pathname = "/admin/login";
+    loginUrl.search = "";
+    return withAdminHeaders(NextResponse.redirect(loginUrl, 307));
+  }
+
+  const nonce = Buffer.from(crypto.randomUUID()).toString("base64");
+  const csp = [
+    "default-src 'self'",
+    `script-src 'self' 'nonce-${nonce}' 'strict-dynamic'${process.env.NODE_ENV === "development" ? " 'unsafe-eval'" : ""}`,
+    `style-src 'self' 'nonce-${nonce}'`,
+    "style-src-attr 'unsafe-inline'",
+    "img-src 'self' data: blob:",
+    "font-src 'self'",
+    "connect-src 'self'",
+    "object-src 'none'",
+    "base-uri 'self'",
+    "form-action 'self'",
+    "frame-ancestors 'none'",
+  ].join("; ");
+
+  const requestHeaders = new Headers(request.headers);
+  requestHeaders.set("x-nonce", nonce);
+  requestHeaders.set("Content-Security-Policy", csp);
+  const response = NextResponse.next({ request: { headers: requestHeaders } });
+  response.headers.set("Content-Security-Policy", csp);
+  return withAdminHeaders(response);
+}
+
+function withAdminHeaders(response: NextResponse) {
+  response.headers.set("X-Robots-Tag", "noindex, nofollow, noarchive");
+  response.headers.set("Cache-Control", "no-store, max-age=0");
+  response.headers.set("X-Frame-Options", "DENY");
+  response.headers.set("Referrer-Policy", "same-origin");
+  return response;
+}
+
+export async function proxy(request: NextRequest) {
   const forwardedHost = request.headers.get("x-forwarded-host");
   const forwardedProto = request.headers.get("x-forwarded-proto");
   const host = (forwardedHost ?? request.headers.get("host") ?? "").toLowerCase();
   const protocol = (forwardedProto ?? request.nextUrl.protocol.replace(":", "")).toLowerCase();
   const pathname = normalizePathname(request.nextUrl.pathname);
+
+  if (pathname === "/admin" || pathname.startsWith("/admin/")) {
+    return handleAdmin(request, pathname);
+  }
 
   const shouldRedirectHost = host !== CANONICAL_HOST;
   const isLocalHost =
@@ -183,6 +158,22 @@ export function proxy(request: NextRequest) {
     host.startsWith("::1");
   const shouldRedirectProtocol = !isLocalHost && protocol !== "https";
   const legacyPathRedirect = getLegacyPathRedirect(pathname);
+
+  // Admin'den yönetilen yönlendirmeler: hedef doğrulamadan geçmiş site içi yoldur (açık yönlendirme olamaz).
+  if (!legacyPathRedirect && !pathname.startsWith("/api/")) {
+    const managed = await getDbRedirect(pathname);
+    if (managed) {
+      const target = request.nextUrl.clone();
+      const [targetPath, targetQuery] = managed.destination.split("?");
+      target.pathname = targetPath;
+      target.search = targetQuery ? `?${targetQuery}` : "";
+      if (!isLocalHost) {
+        target.protocol = "https";
+        target.host = CANONICAL_HOST;
+      }
+      return NextResponse.redirect(target, managed.statusCode);
+    }
+  }
 
   if (!shouldRedirectHost && !shouldRedirectProtocol && !legacyPathRedirect) {
     return NextResponse.next();

@@ -102,7 +102,7 @@ export const homeServiceCards: HomeServiceCard[] = [
     description:
       "Ekipman ömrünü uzatmak ve plansız duruşları azaltmak için bakım ve teknik servis desteği sağlıyoruz.",
     buttonLabel: "Bakım ve Servis",
-    href: "/hizmetler/bakim-ve-servis",
+    href: "/hizmetler/bakim-servis-ve-teknik-destek",
     image: "/images/bakim/bakim1.webp",
     imageAlt: "Bakım servis ve teknik destek hizmeti",
   },

@@ -1,3 +1,4 @@
+import { serializeJsonLd } from "@/lib/json-ld";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { IntlContactPage } from "../../i18n/components/intl-contact-page";
@@ -22,7 +23,9 @@ import {
 } from "../../i18n/machine-category-pages";
 import { SectorsHubPage } from "../../(tr)/components/sectors-hub-page";
 import { SectorDetailPage } from "../../(tr)/components/sector-detail-page";
-import { buildSectorDetailModel, buildSectorDetailSchema, isSectorDetailKey } from "../../i18n/sector-details";
+import { buildSectorDetailSchema, isSectorDetailKey } from "../../i18n/sector-details";
+import { loadDrumPageOverride, loadMachineCategoryOverride, loadSectorDetailModel } from "@/lib/cms/public-content";
+import { applyMachineCategoryOverride } from "@/lib/cms/adapters/machine-category";
 import { intlRouteLabel } from "../../i18n/route-label";
 import { buildSectorsHubContent, getSectorsHubTexts } from "../../i18n/sectors-hub";
 import {
@@ -77,13 +80,14 @@ export async function generateMetadata({ params }: { params: PageParams }): Prom
   }
   if (isDrumPageKey(resolved.key)) {
     // Diğer tambur ürünleri: kurutma tamburu şablonu, ürüne özel meta.
-    const texts = getDrumPageTexts(resolved.key, resolved.locale);
+    const override = await loadDrumPageOverride(resolved.key, resolved.locale);
+    const texts = override.texts ?? getDrumPageTexts(resolved.key, resolved.locale);
     return buildIntlMetadata(resolved.locale, resolved.key, {
       meta: texts.meta,
       hero: {
         h1: texts.h1,
         intro: texts.meta.description,
-        image: { src: getDrumPageConfig(resolved.key).mainImage, alt: texts.overview.imageAlt },
+        image: { src: override.images?.mainImage ?? getDrumPageConfig(resolved.key).mainImage, alt: texts.overview.imageAlt },
       },
     });
   }
@@ -107,7 +111,7 @@ export async function generateMetadata({ params }: { params: PageParams }): Prom
   }
   if (isSectorDetailKey(resolved.key)) {
     // Sektör alt çözüm sayfaları: TR sayfasıyla aynı şablon; meta sayfanın kendi dilindeki metinlerinden gelir.
-    const model = buildSectorDetailModel(resolved.locale, resolved.key);
+    const model = await loadSectorDetailModel(resolved.locale, resolved.key);
     return buildIntlMetadata(resolved.locale, resolved.key, {
       meta: model.text.meta,
       hero: { h1: model.text.h1, intro: model.text.lead, image: model.images[0] },
@@ -116,6 +120,11 @@ export async function generateMetadata({ params }: { params: PageParams }): Prom
   const content = getContent(resolved.locale);
   const pageContent =
     resolved.key === "contact" ? content.contact : content.pages[resolved.key];
+  if (isMachineCategoryKey(resolved.key)) {
+    // Makina kategorileri: panelde yayınlanmış meta varsa o kullanılır.
+    const override = await loadMachineCategoryOverride(resolved.key, resolved.locale);
+    if (override) return buildIntlMetadata(resolved.locale, resolved.key, { ...pageContent, meta: { ...pageContent.meta, ...override.meta } });
+  }
   return buildIntlMetadata(resolved.locale, resolved.key, pageContent);
 }
 
@@ -148,7 +157,7 @@ export default async function IntlSlugPage({ params }: { params: PageParams }) {
         structuredData={
           <script
             type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }}
+            dangerouslySetInnerHTML={{ __html: serializeJsonLd(schema) }}
           />
         }
       />
@@ -164,7 +173,7 @@ export default async function IntlSlugPage({ params }: { params: PageParams }) {
         structuredData={
           <script
             type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }}
+            dangerouslySetInnerHTML={{ __html: serializeJsonLd(schema) }}
           />
         }
       />
@@ -177,7 +186,7 @@ export default async function IntlSlugPage({ params }: { params: PageParams }) {
 
   if (isMachineCategoryKey(key)) {
     // Diğer makine kategorileri: Tambur Sistemleri şablonu; meta mevcut kategori içeriğinden gelir.
-    const category = buildIntlMachineCategoryContent(locale, key);
+    const category = applyMachineCategoryOverride(buildIntlMachineCategoryContent(locale, key), await loadMachineCategoryOverride(key, locale));
     const schema = buildIntlMachineCategorySchema(locale, key, category);
     return (
       <DrumSystemsCategoryPage
@@ -185,7 +194,7 @@ export default async function IntlSlugPage({ params }: { params: PageParams }) {
         structuredData={
           <script
             type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }}
+            dangerouslySetInnerHTML={{ __html: serializeJsonLd(schema) }}
           />
         }
       />
@@ -193,12 +202,12 @@ export default async function IntlSlugPage({ params }: { params: PageParams }) {
   }
 
   if (isSectorDetailKey(key)) {
-    const model = buildSectorDetailModel(locale, key);
+    const model = await loadSectorDetailModel(locale, key);
     return (
       <>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(buildSectorDetailSchema(model)).replace(/</g, "\\u003c") }}
+          dangerouslySetInnerHTML={{ __html: serializeJsonLd(buildSectorDetailSchema(model)) }}
         />
         <SectorDetailPage model={model} />
       </>

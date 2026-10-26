@@ -32,6 +32,11 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+# Yalnız değişken adlarını içeren örnek dosya izlenir.
+!.env.example
+
+# yerel gömülü admin veritabanı (pglite)
+/.data/
 
 # vercel
 .vercel

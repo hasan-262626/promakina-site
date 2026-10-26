@@ -1,4 +1,5 @@
 ﻿import type { Metadata } from "next";
+import { serializeJsonLd } from "@/lib/json-ld";
 import Link from "next/link";
 import { siteContact, siteSocialSameAs } from "../lib/site-contact";
 import type { ReactNode } from "react";
@@ -185,24 +186,24 @@ export function LibrarySeoPage({
     <main className="min-h-screen overflow-x-hidden bg-white text-slate-900">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(organizationSchema) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(localBusinessSchema) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(breadcrumbSchema) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(articleSchema) }}
       />
       {faqSchema ? (
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+          dangerouslySetInnerHTML={{ __html: serializeJsonLd(faqSchema) }}
         />
       ) : null}
 
@@ -248,7 +249,8 @@ export function LibrarySeoPage({
               })}
             </nav>
             <p className="text-sm font-semibold uppercase tracking-[0.16em] text-blue-700">{categoryLabel}</p>
-            <h1 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950 md:text-4xl">{title}</h1>
+            {/* Sayfanın tek H1'i Hero'dadır; bu başlık görsel olarak aynı kalarak H2 oldu. */}
+            <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950 md:text-4xl">{title}</h2>
             <p className="mt-5 text-sm leading-8 text-slate-600 sm:text-base">{description}</p>
             {internalLinks.length ? (
               <div className="mt-6 flex flex-wrap gap-3">

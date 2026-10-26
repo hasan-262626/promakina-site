@@ -152,8 +152,28 @@ const hubToolSeeds: HubToolSeed[] = [
   { slug: "kompost-son-urun-hesaplama", category: "atik", usedFor: "Girdi karışımına göre kompost son ürün miktarı.", keywords: "kompost son ürün" },
 ];
 
+/** Modal ile açılan ama ayrıca kendi sayfası da bulunan araçlar (app/(tr)/programlar/<slug>). */
+const STANDALONE_PROGRAM_PAGES = new Set([
+  "donusum-araclari",
+  "duz-helis-disli-hesabi",
+  "iso-gecme-toleranslari",
+  "kama-kanali-acim-olculeri",
+  "kaplin-secimi-on-hesabi",
+  "kayis-kasnak-oran-hesabi",
+  "kremayer-disli-hesabi",
+  "mil-capi-hesabi",
+  "motor-gucu-on-hesabi",
+  "sac-kaynak-hesaplari",
+  "segman-ve-kanal-olculeri",
+  "talasli-imalat-hesaplari",
+  "tambur-hesaplari",
+  "zincir-disli-hesabi",
+]);
+
 export type HubTool = {
   href?: string;
+  /** Aracın ayrı sayfası: kart başlığı bu sayfaya bağlanır; "Hesapla" modalı açmaya devam eder. */
+  pageHref?: string;
   slug: string;
   category: HubCategoryId;
   title: string;
@@ -174,6 +194,7 @@ export function buildHubTools(): HubTool[] {
     const required = seed.required ?? "Kapasite, ürün tipi ve temel proses bilgileri.";
     return {
       href: seed.href,
+      pageHref: !seed.href && STANDALONE_PROGRAM_PAGES.has(seed.slug) ? `/programlar/${seed.slug}` : undefined,
       slug: seed.slug,
       category: seed.category,
       title,

@@ -170,9 +170,25 @@ export function getDrumPageTexts(key: ProductPageKey, locale: Locale): DrumPageT
   return configs[key].texts[locale];
 }
 
-/** Ürün şeması görselleri: ana görsel, galeri ve uygulama görselleri (en fazla 6). */
-export function drumSchemaImages(key: ProductPageKey) {
+/** Admin panelinde yayınlanmış ortak görseller (tüm dillerde aynı). Uzunluklar kod yapılandırmasıyla aynıdır. */
+export type DrumPageImagesOverride = { mainImage: string; applications: string[]; gallery: string[]; figure?: string };
+
+/** Yapılandırmanın görsellerini panel içeriğiyle değiştirir; bağlantı, sıra ve diğer alanlar koddan gelir. */
+function configWithImages(key: ProductPageKey, images?: DrumPageImagesOverride | null) {
   const config = configs[key];
+  if (!images) return config;
+  return {
+    ...config,
+    mainImage: images.mainImage,
+    applications: config.applications.map((item, index) => ({ ...item, image: images.applications[index] ?? item.image })),
+    gallery: config.gallery ? config.gallery.map((src, index) => images.gallery[index] ?? src) : config.gallery,
+    figure: config.figure ? (images.figure ?? config.figure) : config.figure,
+  };
+}
+
+/** Ürün şeması görselleri: ana görsel, galeri ve uygulama görselleri (en fazla 6). */
+export function drumSchemaImages(key: ProductPageKey, images?: DrumPageImagesOverride | null) {
+  const config = configWithImages(key, images);
   // Örnek (üçüncü taraf) ana görsel ürün görseli olarak şemaya eklenmez.
   const main = config.illustrativeMainImage ? [] : [config.mainImage];
   return [...main, ...(config.gallery ?? []), ...config.applications.map((item) => item.image)].slice(0, 6);
@@ -208,6 +224,8 @@ type BuildOptions = {
   homeLabel?: string;
   /** Yalnız TR: kapasite ön hesabı bağlantısı. */
   calculatorHref?: string;
+  /** Admin panelinde yayınlanmış metin ve görseller (yoksa koddaki içerik). */
+  override?: { texts?: DrumPageTexts | null; images?: DrumPageImagesOverride | null };
 };
 
 type DrumChrome = Omit<typeof trDrumChrome, "calculatorLabel" | "routeLabels" | "galleryLabels" | "galleryNav"> & {
@@ -241,9 +259,9 @@ export function getDrumChrome(locale: Locale) {
 }
 
 export function buildDrumPageContent(key: ProductPageKey, locale: Locale, options: BuildOptions = {}): DryerPageContent {
-  const config = configs[key];
+  const config = configWithImages(key, options.override?.images);
   const group = groupOf(key);
-  const t = config.texts[locale];
+  const t = options.override?.texts ?? config.texts[locale];
   const chrome = localeChrome(locale);
   const labelFor = (routeKey: RouteKey) => {
     const label = options.labelFor ? options.labelFor(routeKey) : chrome.routeLabels?.[routeKey];

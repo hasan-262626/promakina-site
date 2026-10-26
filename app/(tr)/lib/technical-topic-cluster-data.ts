@@ -755,7 +755,8 @@ function buildClusterCards(cluster: TechnicalTopicCluster) {
       item.title,
       item.description ??
         `${item.title} konusunu; kapasite, ekipman seçimi, proses akışı ve saha kararları açısından ${cluster.title} kümesi içinde teknik olarak inceleyin.`,
-      articleLink(item.slug),
+      // Tanımlı href (ör. taşınmış/birleştirilmiş içeriğin son adresi) slug'dan üretilen yola tercih edilir.
+      item.href ?? articleLink(item.slug),
       cluster.category,
       item.linkLabel,
     ),

@@ -219,7 +219,7 @@ export const technicalAuthorityHubs: TechnicalAuthorityHub[] = [
     title: "Tambur Sistemleri",
     metaTitle: "Tambur Sistemleri | Kurutma ve Rotary Dryer Teknik Merkezi",
     description:
-      "Tambur sistemleri, rotary dryer design, kurutma tamburu hesabı, çap-boy seçimi ve endüstriyel kurutma teknolojileri için premium teknik hub.",
+      "Tambur sistemleri rehberi: kurutma tamburu tasarımı ve hesabı, çap-boy seçimi ve endüstriyel kurutma teknolojileri tek sayfada.",
     heroDescription:
       "Kurutma, soğutma, granülasyon ve kompost proseslerinde kullanılan tambur sistemlerini hesap, blog ve makina ağıyla bir araya getiren mühendislik merkezi.",
     image: "/images/tambur kurutma/tamkurutma1.jpg",
@@ -394,7 +394,7 @@ export const technicalAuthorityHubs: TechnicalAuthorityHub[] = [
     title: "Konveyör Sistemleri",
     metaTitle: "Konveyör Sistemleri | Kapasite, Taşıma ve Hat Tasarımı",
     description:
-      "Konveyör sistemleri için kapasite, hat boyu, bant hızı, entegrasyon ve ilgili blog-program ağıyla sektör odaklı premium teknik hub.",
+      "Konveyör sistemleri rehberi: kapasite, hat boyu, bant hızı ve hat entegrasyonu; ilgili teknik yazılar ve hesaplama programlarıyla.",
     heroDescription:
       "Bantlı, zincirli ve yardımcı taşıma sistemlerinde kapasite hesabı, hat entegrasyonu ve saha kurgusunu birlikte ele alan mühendislik merkezi.",
     image: "/images/konveyor/konvey1.jpeg",
@@ -739,7 +739,7 @@ export const technicalAuthorityHubs: TechnicalAuthorityHub[] = [
     title: "Granül Gübre Üretim Sistemleri",
     metaTitle: "Granül Gübre Üretim Sistemleri | Gübre Hub ve Teknik Rehber",
     description:
-      "Granül gübre üretim sistemleri için üretim hattı, granülasyon, kurutma, NPK, organomineral ve ilgili hesaplama ağına sahip ultra premium SEO hub.",
+      "Granül gübre üretim sistemleri rehberi: üretim hattı, granülasyon, kurutma, NPK ve organomineral gübre; ilgili hesaplama araçlarıyla.",
     heroDescription:
       "Granül gübre üretimi, organomineral yatırım planı, NPK prosesleri ve ilgili makina-program ağıyla birbirine bağlanan sektör otoritesi sayfası.",
     image: "/images/01-genel/hizmetler1.png",

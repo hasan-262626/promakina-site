@@ -837,7 +837,7 @@ export const glossaryTerms: Record<string, GlossaryTerm> = {
     description:
       "Hava kilidi, ürün geçişine izin verirken basınç farkını koruyan ve hat içinde kontrollü akış sağlayan yardımcı ekipmandır. Filtre altı boşaltma, silo çıkışı ve pnömatik taşıma geçişlerinde sık kullanılır.",
     area: "Taşıma ve Depolama",
-    tags: ["Hava Kilidi", "Akış Kontrolü", "Pnomatik Hat"],
+    tags: ["Hava Kilidi", "Akış Kontrolü", "Pnömatik Hat"],
     filters: ["transport", "machine", "process"],
     links: [
       page("Hava Kilidi", "/makinalar-ekipman/yardimci-ekipmanlar-ve-akis-sistemleri/hava-kilidi"),

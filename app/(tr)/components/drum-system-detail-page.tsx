@@ -1,3 +1,4 @@
+import { serializeJsonLd } from "@/lib/json-ld";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -1175,16 +1176,16 @@ export function DrumSystemDetailPage({
     <main className="min-h-screen overflow-x-hidden bg-slate-50 text-slate-900">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(buildArticleSchema(page)) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(buildArticleSchema(page)) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(buildFaqSchema(page)) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(buildFaqSchema(page)) }}
       />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(buildBreadcrumbSchema(page)),
+          __html: serializeJsonLd(buildBreadcrumbSchema(page)),
         }}
       />
 

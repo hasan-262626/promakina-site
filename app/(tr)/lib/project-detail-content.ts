@@ -872,7 +872,8 @@ const projectDetailOverrides: Record<string, ProjectDetailContent> = {
 projectDetailOverrides["evsel-atiklardan-kompost-tesisi"] = {
   eyebrow: "Belediye ve Organik Atık Geri Kazanım Projesi",
   title: "Evsel Atıklardan Kompost Tesisi",
-  seoTitle: "Evsel Atıklardan Kompost Tesisi | Pro Makina",
+  // Sektör sayfasıyla (aynı konu, çözüm niyeti) çakışmaması için proje/referans niyeti başlıkta belirtilir.
+  seoTitle: "Evsel Atık Kompost Tesisi Projesi ve Kapsamı | Pro Makina",
   seoDescription:
     "Belediye ve evsel organik atıklar için ayrıştırma, kompostlaştırma, kurutma, eleme ve koku kontrolünü kapsayan kompost tesisi projeleri.",
   ogTitle: "Evsel Atıklardan Kompost Tesisi Projesi | Pro Makina",

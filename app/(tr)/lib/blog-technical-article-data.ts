@@ -540,7 +540,6 @@ const slugFamilies: Record<string, BlogTechnicalArticleData> = {
 
   "helezon-konveyor-kapasite-hesabi": screwData,
   "helezon-kapasite-hesabi": screwData,
-  "helezyon-konveyor-kapasite-hesabi": screwData,
   "helezon-motor-gucu-hesabi": screwData,
   "egimli-helezon-hesabi": screwData,
   "vidali-konveyor-hesabi": screwData,

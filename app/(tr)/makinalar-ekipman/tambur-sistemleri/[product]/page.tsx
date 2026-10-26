@@ -1,3 +1,4 @@
+import { serializeJsonLd } from "@/lib/json-ld";
 import { trLanguageAlternates } from "../../../../i18n/routes";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
@@ -213,19 +214,19 @@ export default async function DrumProductDetailPage({ params }: PageProps) {
       {productSchema ? (
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
+          dangerouslySetInnerHTML={{ __html: serializeJsonLd(productSchema) }}
         />
       ) : null}
       {breadcrumbSchema ? (
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+          dangerouslySetInnerHTML={{ __html: serializeJsonLd(breadcrumbSchema) }}
         />
       ) : null}
       {faqSchema ? (
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+          dangerouslySetInnerHTML={{ __html: serializeJsonLd(faqSchema) }}
         />
       ) : null}
       <ProductDetailSystem

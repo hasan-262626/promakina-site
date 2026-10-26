@@ -185,13 +185,6 @@ const blogArticleCtaMap: Record<string, BlogArticleCtaConfig> = {
     buttonLabel: "Helezon Kapasite Hesapla",
     buttonHref: screwCalculatorHref,
   },
-  "helezyon-konveyor-kapasite-hesabi": {
-    title: "Helezon Kapasite Hesabını Yapın",
-    description:
-      "Vidalı helezonlarda çap, hatve, devir, ürün yoğunluğu ve doluluk oranına göre kapasite yaklaşımını inceleyin.",
-    buttonLabel: "Helezon Kapasite Hesapla",
-    buttonHref: screwCalculatorHref,
-  },
   "helezon-motor-gucu-hesabi": {
     title: "Helezon Motor Gücü Ön Hesabını Yapın",
     description:

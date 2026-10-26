@@ -1,3 +1,4 @@
+import { serializeJsonLd } from "@/lib/json-ld";
 import type { Metadata } from "next";
 import { DrumCapacityProgramPage } from "../../components/drum-capacity-program-page";
 import { faqItems, type DrumType } from "../../lib/drum-capacity-program";
@@ -70,7 +71,7 @@ export default async function DrumEngineeringToolkitRoute({ searchParams }: Page
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(faqSchema) }}
       />
       <DrumCapacityProgramPage initialDrumType={initialDrumType} />
     </>

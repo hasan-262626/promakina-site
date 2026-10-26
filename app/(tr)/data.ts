@@ -105,7 +105,7 @@ export const services: ServiceItem[] = [
       "Mühendislikten imalata, saha kurulumundan devreye almaya kadar tüm tesis sürecini tek elden yönetiyoruz.",
     heroTitle: "Anahtar Teslim Tesis Kurulumu",
     heroDescription:
-      "Anahtar teslim tesis kurulumunda tüm süreci tek bir koordinasyonla yönetiyoruz. Kompost, gübre, geri dönüşüm ve proses tesisleri için planlama, imalat, montaj ve devreye alma adımlarını tek ?at1 altında topluyoruz.",
+      "Anahtar teslim tesis kurulumunda tüm süreci tek bir koordinasyonla yönetiyoruz. Kompost, gübre, geri dönüşüm ve proses tesisleri için planlama, imalat, montaj ve devreye alma adımlarını tek çatı altında topluyoruz.",
     image:
       "/images/01-genel/fabrika1.jpg",
     scope: [
@@ -131,11 +131,11 @@ export const services: ServiceItem[] = [
       "Gübre Üretim Tesisleri",
       "Kompost ve Organik Atik Tesisleri",
       "Atık Su çamuru ve Arıtma çözümleri",
-      "Geri Dönü_?m ve Atık Yönetimi",
+      "Geri Dönüşüm ve Atık Yönetimi",
       "Enerji ve Biyogaz Sistemleri",
-      "Madencilik ve Mineral 0_leme",
+      "Madencilik ve Mineral İşleme",
       "Kimya ve Proses Endüstrisi",
-      "Yem, Toz ve Dökme Katı Malzeme 0_leme Sistemleri",
+      "Yem, Toz ve Dökme Katı Malzeme İşleme Sistemleri",
     ],
     relatedMachines: ["Tambur Sistemleri", "Taşıma Ekipmanlari", "Depolama ve Besleme Sistemleri"],
     relatedProjects: ["Kompost Tesisi Projeleri", "Organomineral Gübre Tesisi Projeleri"],
@@ -172,17 +172,17 @@ export const services: ServiceItem[] = [
       "Verim odakli kurgu",
       "Sahaya uygunluk",
       "Kapasite uyumu",
-      "Gelecek büyümeye a?ik altyapi",
+      "Gelecek büyümeye açık altyapı",
     ],
     relatedSectors: [
       "Gübre üretim Tesisleri",
       "Kompost ve Organik Atik Tesisleri",
       "Atık Su çamuru ve Arıtma çözümleri",
-      "Geri Dönü_?m ve Atık Yönetimi",
+      "Geri Dönüşüm ve Atık Yönetimi",
       "Enerji ve Biyogaz Sistemleri",
-      "Madencilik ve Mineral 0_leme",
+      "Madencilik ve Mineral İşleme",
       "Kimya ve Proses Endüstrisi",
-      "Yem, Toz ve Dökme Katı Malzeme 0_leme Sistemleri",
+      "Yem, Toz ve Dökme Katı Malzeme İşleme Sistemleri",
     ],
     relatedMachines: ["Reaktorler ve Tanklar", "Eleme ve Siniflandirma Sistemleri", "Toz Toplama Sistemleri"],
     relatedProjects: ["Özel Proses ve Makine İmalatı"],
@@ -200,7 +200,7 @@ export const services: ServiceItem[] = [
       {
         question: "Bu hizmet yalnizca yeni tesisler için mi uygundur?",
         answer:
-          "Hayır. Yeni yatırımların yan1 sıra mevcut tesislerin revizyonu, kapasite artışı ve proses iyileştirme çalışmaları için de uygundur.",
+          "Hayır. Yeni yatırımların yanı sıra mevcut tesislerin revizyonu, kapasite artışı ve proses iyileştirme çalışmaları için de uygundur.",
       },
     ],
   },
@@ -217,7 +217,7 @@ export const services: ServiceItem[] = [
     scope: ["Özel ölçü imalat", "Malzeme seçimi", "Atölye üretimi", "Kalite kontrol"],
     outputs: ["Sahaya uygun ekipman", "Uzun omurlu kullanim", "Teknik uyum"],
     advantages: ["özel imalat", "Dayanikli yapi", "Hatla uyum", "Bakim kolayligi"],
-    relatedSectors: ["Madencilik ve Mineral 0_leme", "Geri Dönü_?m ve Atık Yönetimi"],
+    relatedSectors: ["Madencilik ve Mineral İşleme", "Geri Dönüşüm ve Atık Yönetimi"],
     relatedMachines: ["Kiricilar ve Parcalayicilar", "Tambur Sistemleri", "Taşıma Ekipmanlari"],
     relatedProjects: ["Özel Proses ve Makine İmalatı"],
     faqs: [
@@ -240,7 +240,7 @@ export const services: ServiceItem[] = [
       "/images/01-genel/hizmetler1.png",
     scope: ["Montaj planlama", "Saha kurulum", "Test calismalari", "Ilk calistirma"],
     outputs: ["Daha hızlı devreye alma", "Daha düşük saha riski", "Çalışır teslim"],
-    advantages: ["Saha koordinasyonu", "Surekli takip", "Performans kontrol?", "Ekip egitimi"],
+    advantages: ["Saha koordinasyonu", "Sürekli takip", "Performans kontrolü", "Ekip eğitimi"],
     relatedSectors: ["Enerji ve Biyogaz Sistemleri", "Atık Su çamuru ve Arıtma çözümleri"],
     relatedMachines: ["Depolama ve Besleme Sistemleri", "Paketleme ve Dolum Sistemleri"],
     relatedProjects: ["Kompost Tesisi Projeleri"],
@@ -289,7 +289,7 @@ export const services: ServiceItem[] = [
     scope: ["Teknik analiz", "Yatirim degerlendirme", "Ekipman seçim destegi", "Süreç yonlendirme"],
     outputs: ["Daha net karar süreci", "Yanlis ekipman riskinin azalmasi", "Proje netligi"],
     advantages: ["Uzman bakis", "Karar destegi", "Risk azaltma", "Süreç netligi"],
-    relatedSectors: ["Madencilik ve Mineral 0_leme", "Geri Dönü_?m ve Atık Yönetimi"],
+    relatedSectors: ["Madencilik ve Mineral İşleme", "Geri Dönüşüm ve Atık Yönetimi"],
     relatedMachines: ["Tambur Sistemleri", "Kiricilar ve Parcalayicilar"],
     relatedProjects: ["Özel Proses ve Makine İmalatı"],
     faqs: [
@@ -312,8 +312,8 @@ export const services: ServiceItem[] = [
       "/images/bakim/bakim1.webp",
     scope: ["Periyodik kontrol", "Yedek parca", "Ariza tespiti", "Saha servis destegi"],
     outputs: ["Daha az plansiz durus", "Daha yüksek ekipman ömrü", "Daha güvenli isletme"],
-    advantages: ["Hizli mudahale", "Onleyici bakim", "Parca takibi", "0?xletme surekliligi"],
-    relatedSectors: ["Kompost ve Organik Atik Tesisleri", "Yem, Toz ve Dökme Katı Malzeme 0_leme Sistemleri"],
+    advantages: ["Hizli mudahale", "Onleyici bakim", "Parca takibi", "İşletme sürekliliği"],
+    relatedSectors: ["Kompost ve Organik Atik Tesisleri", "Yem, Toz ve Dökme Katı Malzeme İşleme Sistemleri"],
     relatedMachines: ["Taşıma Ekipmanlari", "Reaktorler ve Tanklar"],
     relatedProjects: ["Kompost Tesisi Projeleri"],
     faqs: [
@@ -334,7 +334,7 @@ export const services: ServiceItem[] = [
       "Malzeme davranışı, ürün kalitesi ve proses parametrelerini pilot çalışmalarıyla daha net görerek ana yatırımı daha sağlıklı planlıyoruz.",
     image:
       "/images/bakim/bakim2.webp",
-    scope: ["Numune testleri", "Pilot denemeler", "Parametre analizi", "Sonu? raporlama"],
+    scope: ["Numune testleri", "Pilot denemeler", "Parametre analizi", "Sonuç raporlama"],
     outputs: ["Yatirim oncesi veri", "Malzeme davranisi analizi", "Daha doğru ekipman seçimi"],
     advantages: ["Risk azaltma", "Veriye dayali karar", "Rakiplerden ayrisan uzmanlik"],
     relatedSectors: ["Gübre üretim Tesisleri", "Atık Su çamuru ve Arıtma çözümleri"],
@@ -361,7 +361,7 @@ export const services: ServiceItem[] = [
     scope: ["Takvim yonetimi", "Saha koordinasyonu", "Tedarik takibi", "Ekip senkronizasyonu"],
     outputs: ["Daha kontrollü ilerleme", "Daha net saha düzeni", "Süre ve kapsam takibi"],
     advantages: ["Tek merkezli koordinasyon", "Daha az saha karisiklisi", "Güven veren proje yönetimi"],
-    relatedSectors: ["Enerji ve Biyogaz Sistemleri", "Geri Dönü_?m ve Atık Yönetimi"],
+    relatedSectors: ["Enerji ve Biyogaz Sistemleri", "Geri Dönüşüm ve Atık Yönetimi"],
     relatedMachines: ["Depolama ve Besleme Sistemleri", "Paketleme ve Dolum Sistemleri"],
     relatedProjects: ["Kompost Tesisi Projeleri", "Özel Proses ve Makine İmalatı"],
     faqs: [
@@ -441,10 +441,10 @@ export const projects: ProjectItem[] = [
   },
   {
     slug: "deri-atik-isleme-tesisi-projeleri",
-    title: "Deri Atık 0_leme Tesisi Projeleri",
+    title: "Deri Atık İşleme Tesisi Projeleri",
     summary:
       "Deri endüstrisi kaynakli atıkların ayrisma, taşıma ve geri kazanima uygun sekilde islenmesi için tesis kurgusu.",
-    projectName: "Deri Atık Hazırlama ve 0_leme Tesisi",
+    projectName: "Deri Atık Hazırlama ve İşleme Tesisi",
     location: "Türkiye / Marmara",
     capacity: "8 ton/saat",
     customerType: "Sanayi tesisi",
@@ -464,9 +464,9 @@ export const projects: ProjectItem[] = [
       "Daha güvenli işleme adimlari",
       "Sonraki geri kazanim sürecine uygun malzeme hazirligi",
     ],
-    similarProject: "Geri Dönü_?m ve Atık Yönetimi Projeleri",
+    similarProject: "Geri Dönüşüm ve Atık Yönetimi Projeleri",
     relatedMachines: ["Kiricilar ve Parcalayicilar", "Toz Toplama Sistemleri"],
-    relatedSector: "Geri Dönü_?m ve Atık Yönetimi",
+    relatedSector: "Geri Dönüşüm ve Atık Yönetimi",
     relatedSolutions: ["Teknik Danışmanlık", "Proje Yönetimi ve Saha Koordinasyonu"],
     image:
       "/images/01-genel/geridonusum1.jpg",
@@ -537,10 +537,10 @@ export const projects: ProjectItem[] = [
   },
   {
     slug: "mineral-ve-dokme-kati-isleme-projeleri",
-    title: "Mineral ve Dökme Katı 0_leme Projeleri",
+    title: "Mineral ve Dökme Katı İşleme Projeleri",
     summary:
       "Kirma, eleme, taşıma, kurutma, sınıflandırma ve stoklama süreçlerine uygun mineral ve dökme kati malzeme proje çözümleri.",
-    projectName: "Mineral ve Dökme Katı 0_leme Projesi",
+    projectName: "Mineral ve Dökme Katı İşleme Projesi",
     location: "Türkiye / Farkli saha senaryolari",
     capacity: "Projeye gore özel",
     customerType: "Madencilik ve proses yatirimlari",
@@ -553,7 +553,7 @@ export const projects: ProjectItem[] = [
     processSummary:
       "Mineral ve dokme kati malzemenin kabulunden kirma, eleme, kurutma, siniflandirma ve stoklamaya kadar uzanan hat yapisi proses ve saha verilerine gore kurgulanir.",
     technicalScope: [
-      "Ür?n karakterizasyonu ve proses analizi",
+      "Ürün karakterizasyonu ve proses analizi",
       "Kirma, eleme ve siniflandirma kurgusu",
       "Taşıma, stoklama ve transfer altyapisi",
       "Toz, asinma ve kapasite yonetimi",
@@ -571,7 +571,7 @@ export const projects: ProjectItem[] = [
       "Eleme ve Siniflandirma Sistemleri",
       "Taşıma Ekipmanlari",
     ],
-    relatedSector: "Madencilik ve Mineral 0_leme",
+    relatedSector: "Madencilik ve Mineral İşleme",
     relatedSolutions: [
       "Proses Tasarımı ve Mühendislik",
       "Makine Imalati",
@@ -616,20 +616,20 @@ export const librarySections: { title: LibraryCategory; description: string }[] 
 export const libraryItems: LibraryItem[] = [
   {
     slug: "kompost-tesisi-nasil-kurulur",
-    title: "Kompost Tesisi Nasil Kurulur",
+    title: "Kompost Tesisi Nasıl Kurulur",
     category: "Blog / Makaleler",
-    summary: "Kompost tesisi kurulumunda saha, proses, ekipman ve kapasite planlamasinin temel adimlari.",
-    heroTitle: "Kompost tesisi kurulumunda doğru başlangıç nasil yapilir?",
+    summary: "Kompost tesisi kurulumunda saha, proses, ekipman ve kapasite planlamasının temel adımları.",
+    heroTitle: "Kompost tesisi kurulumunda doğru başlangıç nasıl yapılır?",
     heroDescription:
       "Kompost tesisi kurmak isteyen yatırımcılar için saha seçimi, ekipman yapısı, proses akışı ve kapasite planlamasını sade ama güçlü şekilde açıklıyoruz.",
     sections: [
       {
-        heading: "Kurulum mantigi",
+        heading: "Kurulum mantığı",
         text: "Kompost tesisleri yalnızca ekipman seçimiyle değil; kabul alanı, malzeme akışı, ön hazırlama, kompostlama ve son ürün yönetimiyle birlikte ele alınmalıdır.",
       },
       {
         heading: "Ekipman seçimi",
-        text: "Tambur sistemleri, tasima ekipmanlari ve eleme sistemleri malzeme karakterine gore birlikte degerlendirilmelidir.",
+        text: "Tambur sistemleri, taşıma ekipmanları ve eleme sistemleri malzeme karakterine göre birlikte değerlendirilmelidir.",
       },
     ],
     relatedLinks: ["Kompost Üretiminde Tambur Sistemleri", "Organik Atıkların Geri Kazanımı"],
@@ -638,58 +638,58 @@ export const libraryItems: LibraryItem[] = [
     slug: "kompost-uretiminde-tambur-sistemleri",
     title: "Kompost Üretiminde Tambur Sistemleri",
     category: "Teknik Rehberler",
-    summary: "Kompost tamburlarinin neden tercih edildigi, hangi asamada kullanildigi ve seçim kriterleri.",
+    summary: "Kompost tamburlarının neden tercih edildiği, hangi aşamada kullanıldığı ve seçim kriterleri.",
     heroTitle: "Kompost üretiminde tambur sistemleri neden kritik rol oynar?",
     heroDescription:
-      "Kompost proseslerinde tambur yapisinin sure, karisim, havalandirma ve verim acisindan sagladigi farklari teknik olarak ele aliyoruz.",
+      "Kompost proseslerinde tambur yapısının süre, karışım, havalandırma ve verim açısından sağladığı farkları teknik olarak ele alıyoruz.",
     sections: [
       {
-        heading: "Tambur ne saglar",
-        text: "Kompost tamburu süreci hizlandirabilir, homojenligi artirabilir ve saha operasyonunu daha kontrollü hale getirebilir.",
+        heading: "Tambur ne sağlar",
+        text: "Kompost tamburu süreci hızlandırabilir, homojenliği artırabilir ve saha operasyonunu daha kontrollü hale getirebilir.",
       },
       {
-        heading: "seçim kriterleri",
-        text: "Malzeme tipi, nem, hedef kapasite ve beklenen olgunlasma mantigi secimde belirleyici olur.",
+        heading: "Seçim kriterleri",
+        text: "Malzeme tipi, nem, hedef kapasite ve beklenen olgunlaşma mantığı seçimde belirleyici olur.",
       },
     ],
-    relatedLinks: ["Kompost Tamburu Nedir", "Kompost Tesisi Nasil Kurulur"],
+    relatedLinks: ["Kompost Tamburu Nedir", "Kompost Tesisi Nasıl Kurulur"],
   },
   {
     slug: "organik-atiklarin-geri-kazanimi",
-    title: "Organik Atiklarin Geri Kazanimi",
+    title: "Organik Atıkların Geri Kazanımı",
     category: "Blog / Makaleler",
-    summary: "Organik atiklarin ekonomik ve cevresel deger uretecek sekilde nasil geri kazanilabilecegi.",
-    heroTitle: "Organik atıklar nasil ekonomik değer ureten bir süreçe donusebilir?",
+    summary: "Organik atıkların ekonomik ve çevresel değer üretecek şekilde nasıl geri kazanılabileceği.",
+    heroTitle: "Organik atıklar nasıl ekonomik değer üreten bir sürece dönüşebilir?",
     heroDescription:
-      "Kompost, biyogaz ve farkli proses modelleriyle organik atiklarin geri kazanimi icin uygulanabilir yol haritalarini anlatiyoruz.",
+      "Kompost, biyogaz ve farklı proses modelleriyle organik atıkların geri kazanımı için uygulanabilir yol haritalarını anlatıyoruz.",
     sections: [
       {
-        heading: "Geri kazanim modelleri",
-        text: "Kompostlama, biyogaz ve farkli on isleme yontemleri atik karakterine gore secilir.",
+        heading: "Geri kazanım modelleri",
+        text: "Kompostlama, biyogaz ve farklı ön işleme yöntemleri atık karakterine göre seçilir.",
       },
       {
         heading: "Tesis etkisi",
-        text: "Doğru ekipman ve süreç tasarımı geri kazanım oranini doğrudan etkiler.",
+        text: "Doğru ekipman ve süreç tasarımı geri kazanım oranını doğrudan etkiler.",
       },
     ],
-    relatedLinks: ["Biyogaz ve Atık Yönetimi Projeleri", "Kompost Tesisi Nasil Kurulur"],
+    relatedLinks: ["Biyogaz ve Atık Yönetimi Projeleri", "Kompost Tesisi Nasıl Kurulur"],
   },
   {
     slug: "organomineral-gubre-uretim-sureci",
     title: "Organomineral Gübre Üretim Süreci",
     category: "Blog / Makaleler",
-    summary: "Organomineral gübre üretiminde hammadde, karışım, granülasyon ve son ürün adimlari.",
-    heroTitle: "Organomineral gübre üretim süreci hangi adimlardan olusur?",
+    summary: "Organomineral gübre üretiminde hammadde, karışım, granülasyon ve son ürün adımları.",
+    heroTitle: "Organomineral gübre üretim süreci hangi adımlardan oluşur?",
     heroDescription:
-      "Hammadde seciminden granülasyon ve paketlemeye kadar organomineral gübre üretiminin temel proses yapisini acikliyoruz.",
+      "Hammadde seçiminden granülasyon ve paketlemeye kadar organomineral gübre üretiminin temel proses yapısını açıklıyoruz.",
     sections: [
       {
         heading: "Üretim adımları",
-        text: "Karıştırma, dozajlama, granülasyon, kurutma, eleme ve paketleme süreci birlikte planlanir.",
+        text: "Karıştırma, dozajlama, granülasyon, kurutma, eleme ve paketleme süreci birlikte planlanır.",
       },
       {
         heading: "Kritik noktalar",
-        text: "Nem kontrolü, ürün homojenligi ve granül kalitesi sistem secimini doğrudan etkiler.",
+        text: "Nem kontrolü, ürün homojenliği ve granül kalitesi sistem seçimini doğrudan etkiler.",
       },
     ],
     relatedLinks: ["Granülasyon Nedir", "Gübre Granülasyon Hattı Nasıl Çalışır"],
@@ -698,38 +698,38 @@ export const libraryItems: LibraryItem[] = [
     slug: "gubre-granulasyon-hatti-nasil-calisir",
     title: "Gübre Granülasyon Hattı Nasıl Çalışır",
     category: "Teknik Rehberler",
-    summary: "Granülasyon hattinin tambur, eleme, geri donus ve paketleme mantigi.",
-    heroTitle: "Gübre granülasyon hatti hangi ekipmanlarla ve nasil çalışır?",
+    summary: "Granülasyon hattının tambur, eleme, geri dönüş ve paketleme mantığı.",
+    heroTitle: "Gübre granülasyon hattı hangi ekipmanlarla ve nasıl çalışır?",
     heroDescription:
       "Granül oluşturma, kurutma, sınıflandırma ve geri dönüş akışını sistem bazında anlatıyoruz.",
     sections: [
       {
-        heading: "Hat yapisi",
-        text: "Granülasyon hattinda hammadde hazırlama, tambur, eleme, geri donus ve paketleme istasyonlari birlikte ele alinmalidir.",
+        heading: "Hat yapısı",
+        text: "Granülasyon hattında hammadde hazırlama, tambur, eleme, geri dönüş ve paketleme istasyonları birlikte ele alınmalıdır.",
       },
       {
-        heading: "Verim unsurlari",
-        text: "Kapasite seçimi, ürün nemi ve geri donus orani hat verimi uzerinde belirleyicidir.",
+        heading: "Verim unsurları",
+        text: "Kapasite seçimi, ürün nemi ve geri dönüş oranı hat verimi üzerinde belirleyicidir.",
       },
     ],
     relatedLinks: ["Organomineral Gübre Üretim Süreci", "Tambur Kurutma Sistemleri Nasıl Çalışır"],
   },
   {
     slug: "gubre-fabrikasi-maliyeti-2026",
-    title: "Gübre Fabrikasi Maliyeti 2026",
+    title: "Gübre Fabrikası Maliyeti 2026",
     category: "Blog / Makaleler",
-    summary: "Gübre fabrikasi yatiriminda maliyeti etkileyen ekipman, kapasite ve proses basliklari.",
-    heroTitle: "Gübre fabrikasi maliyeti 2026 yilinda hangi kalemlere gore değişir?",
+    summary: "Gübre fabrikası yatırımında maliyeti etkileyen ekipman, kapasite ve proses başlıkları.",
+    heroTitle: "Gübre fabrikası maliyeti 2026 yılında hangi kalemlere göre değişir?",
     heroDescription:
-      "Kapasite, ürün tipi, otomasyon seviyesi ve ekipman yapisinin yatırım maliyetine etkisini ana basliklar halinde ele aliyoruz.",
+      "Kapasite, ürün tipi, otomasyon seviyesi ve ekipman yapısının yatırım maliyetine etkisini ana başlıklar halinde ele alıyoruz.",
     sections: [
       {
         heading: "Maliyet kalemleri",
-        text: "Ekipman, kurulum, otomasyon, enerji ve saha altyapisi toplam yatirim icinde belirleyici rol oynar.",
+        text: "Ekipman, kurulum, otomasyon, enerji ve saha altyapısı toplam yatırım içinde belirleyici rol oynar.",
       },
       {
         heading: "Doğru planlama",
-        text: "Pilot test, proses tasarımı ve doğru ekipman seçimi gereksiz yatırım risklerini azaltir.",
+        text: "Pilot test, proses tasarımı ve doğru ekipman seçimi gereksiz yatırım risklerini azaltır.",
       },
     ],
     relatedLinks: ["Teknik Danışmanlık", "Anahtar Teslim Tesis Kurulumu Nedir"],
@@ -738,118 +738,118 @@ export const libraryItems: LibraryItem[] = [
     slug: "tambur-kurutma-sistemleri-nasil-calisir",
     title: "Tambur Kurutma Sistemleri Nasıl Çalışır",
     category: "Teknik Rehberler",
-    summary: "Tambur kurutucularin çalışma prensibi, kullanim alanlari ve seçim kriterleri.",
-    heroTitle: "Tambur kurutma sistemleri nasil calisir ve nerelerde kullanilir?",
+    summary: "Tambur kurutucuların çalışma prensibi, kullanım alanları ve seçim kriterleri.",
+    heroTitle: "Tambur kurutma sistemleri nasıl çalışır ve nerelerde kullanılır?",
     heroDescription:
-      "Tambur kurutucularin isi transferi, ürün hareketi ve kapasite mantigini sade ama teknik bir dille anlatiyoruz.",
+      "Tambur kurutucuların ısı transferi, ürün hareketi ve kapasite mantığını sade ama teknik bir dille anlatıyoruz.",
     sections: [
       {
-        heading: "Çalışma mantigi",
-        text: "Malzeme tambur icinde ilerlerken sicak hava ile temas eder ve istenen neme doğru ilerler.",
+        heading: "Çalışma mantığı",
+        text: "Malzeme tambur içinde ilerlerken sıcak hava ile temas eder ve istenen neme doğru ilerler.",
       },
       {
-        heading: "seçim kriterleri",
-        text: "Malzemenin nemi, tane yapisi, sicaklik hassasiyeti ve hedef kapasite kritik rol oynar.",
+        heading: "Seçim kriterleri",
+        text: "Malzemenin nemi, tane yapısı, sıcaklık hassasiyeti ve hedef kapasite kritik rol oynar.",
       },
     ],
     relatedLinks: ["Tambur Sistemleri", "Granülasyon Nedir"],
   },
   {
     slug: "bant-konveyor-secimi-nasil-yapilir",
-    title: "Bant Konveyor seçimi Nasil Yapilir",
+    title: "Bant Konveyör Seçimi Nasıl Yapılır",
     category: "Teknik Rehberler",
-    summary: "Mesafe, egim, kapasite ve malzeme tipine gore bant konveyor seçim kriterleri.",
-    heroTitle: "Bant konveyor seçimi yaparken hangi kriterlere dikkat edilmeli?",
+    summary: "Mesafe, eğim, kapasite ve malzeme tipine göre bant konveyör seçim kriterleri.",
+    heroTitle: "Bant konveyör seçimi yaparken hangi kriterlere dikkat edilmeli?",
     heroDescription:
-      "Hat uzunlugu, ürün tipi, taşıma hizi ve saha koşullarına gore bant konveyor seciminin temel mantigini acikliyoruz.",
+      "Hat uzunluğu, ürün tipi, taşıma hızı ve saha koşullarına göre bant konveyör seçiminin temel mantığını açıklıyoruz.",
     sections: [
       {
-        heading: "Tasarim kriterleri",
-        text: "Kapasite, bant genisligi, tasima mesafesi ve yukleme bosaltma noktasi ilk belirleyicilerdir.",
+        heading: "Tasarım kriterleri",
+        text: "Kapasite, bant genişliği, taşıma mesafesi ve yükleme boşaltma noktası ilk belirleyicilerdir.",
       },
       {
         heading: "Saha uyumu",
-        text: "Yukseklik farki, toz kontrol? ve hat ici baglantilar tasarim kararlarini etkiler.",
+        text: "Yükseklik farkı, toz kontrolü ve hat içi bağlantılar tasarım kararlarını etkiler.",
       },
     ],
-    relatedLinks: ["Taşıma Ekipmanlari", "Toz Toplama Sistemleri Neden Onemlidir"],
+    relatedLinks: ["Taşıma Ekipmanları", "Toz Toplama Sistemleri Neden Önemlidir"],
   },
   {
     slug: "endustriyel-kirici-tipleri-ve-kullanim-alanlari",
-    title: "Endustriyel Kirici Tipleri ve Kullanim Alanlari",
+    title: "Endüstriyel Kırıcı Tipleri ve Kullanım Alanları",
     category: "Blog / Makaleler",
-    summary: "Çekiçli degirmen, ceneli kırıcı, zincirli kırıcı ve parcalayici tiplerinin kullanim farklari.",
-    heroTitle: "Endustriyel kirici tipleri ve kullanim alanlari nasil ayrisir?",
+    summary: "Çekiçli değirmen, çeneli kırıcı, zincirli kırıcı ve parçalayıcı tiplerinin kullanım farkları.",
+    heroTitle: "Endüstriyel kırıcı tipleri ve kullanım alanları nasıl ayrışır?",
     heroDescription:
-      "Farkli malzemeler icin kullanilan kirici ve parcalayici tiplerini proses mantigina gore karsilastiriyoruz.",
+      "Farklı malzemeler için kullanılan kırıcı ve parçalayıcı tiplerini proses mantığına göre karşılaştırıyoruz.",
     sections: [
       {
-        heading: "Kirici tipleri",
-        text: "Malzemenin sertligi, nemi ve hedef parcacik boyutu kirici seciminde ana parametrelerdir.",
+        heading: "Kırıcı tipleri",
+        text: "Malzemenin sertliği, nemi ve hedef parçacık boyutu kırıcı seçiminde ana parametrelerdir.",
       },
       {
-        heading: "Kullanim senaryolari",
-        text: "Mineral, organik atık ve geri dönüşüm malzemelerinde farkli kirici tipleri one çıkar.",
+        heading: "Kullanım senaryoları",
+        text: "Mineral, organik atık ve geri dönüşüm malzemelerinde farklı kırıcı tipleri öne çıkar.",
       },
     ],
-    relatedLinks: ["Kiricilar ve Parcalayicilar", "Madencilik ve Mineral 0_leme"],
+    relatedLinks: ["Kırıcılar ve Parçalayıcılar", "Madencilik ve Mineral İşleme"],
   },
   {
     slug: "anahtar-teslim-tesis-kurulumu-nedir",
     title: "Anahtar Teslim Tesis Kurulumu Nedir",
     category: "Sik Sorulan Sorular",
-    summary: "Anahtar teslim modelin ne oldugu, neleri kapsadigi ve neden tercih edildigi.",
+    summary: "Anahtar teslim modelin ne olduğu, neleri kapsadığı ve neden tercih edildiği.",
     heroTitle: "Anahtar teslim tesis kurulumu ne anlama gelir?",
     heroDescription:
-      "Tek muhatapla yurutulen tesis kurulum modelinin kapsamini, avantajlarini ve proje yonetim etkisini acikliyoruz.",
+      "Tek muhatapla yürütülen tesis kurulum modelinin kapsamını, avantajlarını ve proje yönetim etkisini açıklıyoruz.",
     sections: [
       {
         heading: "Kapsam",
-        text: "Mühendislikten saha kurulumuna kadar birçok adim ayni koordinasyon yapısı altinda toplanir.",
+        text: "Mühendislikten saha kurulumuna kadar birçok adım aynı koordinasyon yapısı altında toplanır.",
       },
       {
         heading: "Avantaj",
-        text: "Süreç butunlugu, zaman kontrolü ve daha net sorumluluk dagilimi sağlar.",
+        text: "Süreç bütünlüğü, zaman kontrolü ve daha net sorumluluk dağılımı sağlar.",
       },
     ],
     relatedLinks: ["Anahtar Teslim Tesis Kurulumu", "Proje Yönetimi ve Saha Koordinasyonu"],
   },
   {
     slug: "endustriyel-proses-tasariminda-dikkat-edilecekler",
-    title: "Endustriyel Proses Tasariminda Dikkat Edilecekler",
+    title: "Endüstriyel Proses Tasarımında Dikkat Edilecekler",
     category: "Teknik Rehberler",
-    summary: "Kapasite, akış, enerji, güvenlik ve işletme mantigi acisindan proses tasarımı notlari.",
-    heroTitle: "Endustriyel proses tasariminda hangi basliklar kritik oneme sahiptir?",
+    summary: "Kapasite, akış, enerji, güvenlik ve işletme mantığı açısından proses tasarımı notları.",
+    heroTitle: "Endüstriyel proses tasarımında hangi başlıklar kritik öneme sahiptir?",
     heroDescription:
-      "Tesis yatiriminin erken asamasinda doğru proses kararlarini vermek için temel teknik basliklari bir araya getiriyoruz.",
+      "Tesis yatırımının erken aşamasında doğru proses kararlarını vermek için temel teknik başlıkları bir araya getiriyoruz.",
     sections: [
       {
-        heading: "Baslangic verisi",
-        text: "Malzeme tipi, kapasite ihtiyaci, ürün hedefi ve saha gercegi ayni tabloda degerlendirilmelidir.",
+        heading: "Başlangıç verisi",
+        text: "Malzeme tipi, kapasite ihtiyacı, ürün hedefi ve saha gerçeği aynı tabloda değerlendirilmelidir.",
       },
       {
-        heading: "0?xletme etkisi",
-        text: "Doğru proses tasarımı sadece yatirimi değil, uzun vadeli isletme maliyetlerini de belirler.",
+        heading: "İşletme etkisi",
+        text: "Doğru proses tasarımı sadece yatırımı değil, uzun vadeli işletme maliyetlerini de belirler.",
       },
     ],
     relatedLinks: ["Proses Tasarımı ve Mühendislik", "Pilot Tesis ve Proses Test Çalışmaları"],
   },
   {
     slug: "toz-toplama-sistemleri-neden-onemlidir",
-    title: "Toz Toplama Sistemleri Neden Onemlidir",
+    title: "Toz Toplama Sistemleri Neden Önemlidir",
     category: "Sik Sorulan Sorular",
-    summary: "Toz toplama sistemlerinin is güvenligi, ekipman korumasi ve kalite uzerindeki etkisi.",
+    summary: "Toz toplama sistemlerinin iş güvenliği, ekipman koruması ve kalite üzerindeki etkisi.",
     heroTitle: "Toz toplama sistemleri neden sadece ek ekipman değil, ana proses unsurudur?",
     heroDescription:
-      "Toz kontrolunun saha temizligi, ürün kaybi, is güvenligi ve ekipman ömrü acisindan neden kritik oldugunu anlatiyoruz.",
+      "Toz kontrolünün saha temizliği, ürün kaybı, iş güvenliği ve ekipman ömrü açısından neden kritik olduğunu anlatıyoruz.",
     sections: [
       {
         heading: "Operasyon etkisi",
-        text: "Toz kontrol? olmayan sistemlerde ekipman asinmasi, saha kirliligi ve kayiplar daha hizli artar.",
+        text: "Toz kontrolü olmayan sistemlerde ekipman aşınması, saha kirliliği ve kayıplar daha hızlı artar.",
       },
       {
         heading: "Sistem seçimi",
-        text: "Jet pulse, siklon ve torba filtre seçimi hava debisi ve toz karakterine gore yapilmalidir.",
+        text: "Jet pulse, siklon ve torba filtre seçimi hava debisi ve toz karakterine göre yapılmalıdır.",
       },
     ],
     relatedLinks: ["Toz Toplama Sistemleri", "Kimya ve Proses Endüstrisi"],
@@ -858,18 +858,18 @@ export const libraryItems: LibraryItem[] = [
     slug: "granulasyon-nedir",
     title: "Granülasyon Nedir",
     category: "Terimler Sozlugu",
-    summary: "Toz veya ince malzemenin belirli boyutta granül forma getirilme sürecinin tanimi.",
+    summary: "Toz veya ince malzemenin belirli boyutta granül forma getirilme sürecinin tanımı.",
     heroTitle: "Granülasyon nedir?",
     heroDescription:
-      "Granülasyon; ince taneli veya toz formdaki malzemenin, proses yardimiyla daha duzenli ve kullanilabilir granül forma donüst?rulmesidir.",
+      "Granülasyon; ince taneli veya toz formdaki malzemenin, proses yardımıyla daha düzenli ve kullanılabilir granül forma dönüştürülmesidir.",
     sections: [
       {
-        heading: "Neden kullanilir",
-        text: "Depolama, taşıma, uygulama kolayligi ve ürün standardi saglamak için granülasyon tercih edilir.",
+        heading: "Neden kullanılır",
+        text: "Depolama, taşıma, uygulama kolaylığı ve ürün standardı sağlamak için granülasyon tercih edilir.",
       },
       {
-        heading: "Hangi alanlarda gorulur",
-        text: "Gübre, kimya ve dökme kati malzeme proseslerinde sik kullanilir.",
+        heading: "Hangi alanlarda görülür",
+        text: "Gübre, kimya ve dökme katı malzeme proseslerinde sık kullanılır.",
       },
     ],
     relatedLinks: ["Gübre Granülasyon Hattı Nasıl Çalışır", "Organomineral Gübre Nedir"],
@@ -878,18 +878,18 @@ export const libraryItems: LibraryItem[] = [
     slug: "trommel-nedir",
     title: "Trommel Nedir",
     category: "Terimler Sozlugu",
-    summary: "Doner elek mantigiyla calisan, malzemeyi boyuta gore ayiran siniflandirma ekipmani.",
+    summary: "Döner elek mantığıyla çalışan, malzemeyi boyuta göre ayıran sınıflandırma ekipmanı.",
     heroTitle: "Trommel nedir?",
     heroDescription:
-      "Trommel; doner elek prensibiyle calisan ve malzemeyi farkli tane boylarina gore ayirmaya yarayan bir siniflandirma sistemidir.",
+      "Trommel; döner elek prensibiyle çalışan ve malzemeyi farklı tane boylarına göre ayırmaya yarayan bir sınıflandırma sistemidir.",
     sections: [
       {
-        heading: "Çalışma mantigi",
-        text: "Malzeme donen govde icinde ilerlerken goz acikligina gore ayrisir.",
+        heading: "Çalışma mantığı",
+        text: "Malzeme dönen gövde içinde ilerlerken göz açıklığına göre ayrışır.",
       },
       {
-        heading: "Nerede kullanilir",
-        text: "Kompost, geri dönüşüm ve dökme kati malzeme sınıflandırma hatlarinda yaygindir.",
+        heading: "Nerede kullanılır",
+        text: "Kompost, geri dönüşüm ve dökme katı malzeme sınıflandırma hatlarında yaygındır.",
       },
     ],
     relatedLinks: ["Eleme ve Sınıflandırma Sistemleri", "Kompost Üretiminde Tambur Sistemleri"],
@@ -898,18 +898,18 @@ export const libraryItems: LibraryItem[] = [
     slug: "organomineral-gubre-nedir",
     title: "Organomineral Gübre Nedir",
     category: "Terimler Sozlugu",
-    summary: "Organik ve mineral bilesenleri bir araya getiren gübre tür?nun temel tanimi.",
+    summary: "Organik ve mineral bileşenleri bir araya getiren gübre türünün temel tanımı.",
     heroTitle: "Organomineral gübre nedir?",
     heroDescription:
-      "Organomineral gübre, organik kaynakli maddeler ile mineral besin elementlerinin birlikte bulundugu gübre turudur.",
+      "Organomineral gübre, organik kaynaklı maddeler ile mineral besin elementlerinin birlikte bulunduğu gübre türüdür.",
     sections: [
       {
-        heading: "Yapi",
-        text: "Organik icerik ile mineral besin elementlerini ayni ürün yapisinda birlestirir.",
+        heading: "Yapı",
+        text: "Organik içerik ile mineral besin elementlerini aynı ürün yapısında birleştirir.",
       },
       {
         heading: "Üretim süreci",
-        text: "Karıştırma, granülasyon ve kurutma gibi proses adimlariyla nihai ürün haline gelir.",
+        text: "Karıştırma, granülasyon ve kurutma gibi proses adımlarıyla nihai ürün haline gelir.",
       },
     ],
     relatedLinks: ["Organomineral Gübre Üretim Süreci", "Granülasyon Nedir"],
@@ -925,58 +925,58 @@ export const libraryItems: LibraryItem[] = [
     sections: [
       {
         heading: "Fonksiyon",
-        text: "Homojenligi artirir, süreci hizlandirabilir ve saha operasyonunu daha duzenli hale getirir.",
+        text: "Homojenliği artırır, süreci hızlandırabilir ve saha operasyonunu daha düzenli hale getirir.",
       },
       {
-        heading: "Kullanim alani",
-        text: "Kompost tesislerinde farkli organik atiklarin on isleme ve kompostlama asamalarinda kullanilir.",
+        heading: "Kullanım alanı",
+        text: "Kompost tesislerinde farklı organik atıkların ön işleme ve kompostlama aşamalarında kullanılır.",
       },
     ],
-    relatedLinks: ["Kompost Üretiminde Tambur Sistemleri", "Kompost Tesisi Nasil Kurulur"],
+    relatedLinks: ["Kompost Üretiminde Tambur Sistemleri", "Kompost Tesisi Nasıl Kurulur"],
   },
   {
     slug: "organomineral-gubre-tesisi-maliyeti",
     title: "Organomineral Gübre Tesisi Maliyeti",
     category: "Blog / Makaleler",
-    summary: "Organomineral gübre tesisi maliyeti, kapasite planı ve yatırım yakla_1m1 hakkında kapsamlı içerik.",
+    summary: "Organomineral gübre tesisi maliyeti, kapasite planı ve yatırım yaklaşımı hakkında kapsamlı içerik.",
     heroTitle: "Organomineral gübre tesisi maliyeti nasıl planlanır?",
     heroDescription:
-      "Türkiye pazarı için organomineral gübre tesisi yatırımında ekipman, proses ve saha maliyetlerini deerlendiren uzun form makale.",
+      "Türkiye pazarı için organomineral gübre tesisi yatırımında ekipman, proses ve saha maliyetlerini değerlendiren uzun form makale.",
     sections: [
       {
-        heading: "Yatırım ?er?evesi",
+        heading: "Yatırım çerçevesi",
         text: "Kapasite, ürün tipi, granülasyon ihtiyacı ve saha kurgusu toplam yatırım planını belirler.",
       },
       {
         heading: "Maliyet kalemleri",
-        text: "Makina imalatı, çelik konstr?ksiyon, otomasyon, montaj ve devreye alma toplam maliyetin ana parçalarıdır.",
+        text: "Makina imalatı, çelik konstrüksiyon, otomasyon, montaj ve devreye alma toplam maliyetin ana parçalarıdır.",
       },
     ],
     relatedLinks: ["Gübre Tesisi Kurulumu", "Organomineral Gübre Tesisi Kurulumu"],
   },
   {
     slug: "granul-gubre-uretim-sureci",
-    title: "Granül Gübre üretim Süreci",
+    title: "Granül Gübre Üretim Süreci",
     category: "Blog / Makaleler",
-    summary: "Granül gübre üretim süreci, kullanılan makinalar ve yatırım mant11n1 anlatan teknik makale.",
-    heroTitle: "Granül gübre üretim süreci nasıl çal1_1r?",
+    summary: "Granül gübre üretim süreci, kullanılan makinalar ve yatırım mantığını anlatan teknik makale.",
+    heroTitle: "Granül gübre üretim süreci nasıl çalışır?",
     heroDescription:
       "Granülasyon, kurutma, soutma, eleme ve paketleme adımlarını Türkiye pazarı odaında açıklayan detaylı içerik.",
     sections: [
       {
         heading: "Proses yapısı",
-        text: "Hammadde hazırlama, granülasyon, kurutma ve son ürün hazırlama adımları ayn1 hat dengesi içinde ele alınır.",
+        text: "Hammadde hazırlama, granülasyon, kurutma ve son ürün hazırlama adımları aynı hat dengesi içinde ele alınır.",
       },
       {
         heading: "Makina grupları",
         text: "Granülatür tamburu, kurutma tamburu, soutma tamburu ve elek sistemleri ana ekipman grubunu oluşturur.",
       },
     ],
-    relatedLinks: ["Granül Gübre üretim Tesisi", "Gübre Tesisi Kurulumu"],
+    relatedLinks: ["Granül Gübre Üretim Tesisi", "Gübre Tesisi Kurulumu"],
   },
   {
     slug: "sivi-gubre-uretim-tesisi-nasil-kurulur",
-    title: "Sıvı Gübre üretim Tesisi Nasıl Kurulur",
+    title: "Sıvı Gübre Üretim Tesisi Nasıl Kurulur",
     category: "Blog / Makaleler",
     summary: "Sıvı gübre üretim tesisi kurulumunda proses, ekipman, kapasite ve yatırım adımlarını anlatan rehber makale.",
     heroTitle: "Sıvı gübre üretim tesisi nasıl kurulur?",
@@ -984,15 +984,15 @@ export const libraryItems: LibraryItem[] = [
       "Sıvı organomineral, amino asitli ve NPK ürünler için proses ve ekipman kurgusunu detaylandıran kapsamlı içerik.",
     sections: [
       {
-        heading: "Kurulum mant11",
-        text: "ürün tipi, tank yapısı, çözündürme, filtrasyon ve dolum planı proje ba_langıcında birlikte deerlendirilir.",
+        heading: "Kurulum mantığı",
+        text: "Ürün tipi, tank yapısı, çözündürme, filtrasyon ve dolum planı proje başlangıcında birlikte değerlendirilir.",
       },
       {
         heading: "Kapasite ve stok",
-        text: "Parti büyükl??, dolum hız1 ve stok senaryosu sıvı gübre tesislerinde gerçek kapasiteyi belirler.",
+        text: "Parti büyüklüğü, dolum hızı ve stok senaryosu sıvı gübre tesislerinde gerçek kapasiteyi belirler.",
       },
     ],
-    relatedLinks: ["Sıvı Gübre üretim Tesisi", "Gübre Tesisi Kurulumu"],
+    relatedLinks: ["Sıvı Gübre Üretim Tesisi", "Gübre Tesisi Kurulumu"],
   },
   {
     slug: "kurutma-tamburu-tasarim-kriterleri",
@@ -1001,58 +1001,58 @@ export const libraryItems: LibraryItem[] = [
     summary: "Kurutma tamburu tasarımında çap, boy, eim, devir ve enerji tüketimi kriterlerini anlatan teknik rehber.",
     heroTitle: "Kurutma tamburu tasarım kriterleri nelerdir?",
     heroDescription:
-      "Tambur ?ap1, boyu, i? kanat yapısı, ürün nemi ve sıcak hava dengesini mühendislik perspektifiyle açıklayan rehber içerik.",
+      "Tambur çapı, boyu, iç kanat yapısı, ürün nemi ve sıcak hava dengesini mühendislik perspektifiyle açıklayan rehber içerik.",
     sections: [
       {
         heading: "Geometri ve devir",
-        text: "çap, boy, eim ve devir malzemenin tambur içinde ilerleme süresini ve 1s1 temasını belirler.",
+        text: "Çap, boy, eğim ve devir malzemenin tambur içinde ilerleme süresini ve ısı temasını belirler.",
       },
       {
         heading: "Enerji ve proses",
-        text: "Nem yükü, sıcak hava ve ürün davran1_1 birlikte ele alınmadan salıklı kurutma hesabı yapılamaz.",
+        text: "Nem yükü, sıcak hava ve ürün davranışı birlikte ele alınmadan sağlıklı kurutma hesabı yapılamaz.",
       },
     ],
-    relatedLinks: ["Granül Gübre üretim Tesisi", "Tambur Sistemleri"],
+    relatedLinks: ["Granül Gübre Üretim Tesisi", "Tambur Sistemleri"],
   },
   {
     slug: "sik-sorulan-sorular",
-    title: "S1k Sorulan Sorular",
+    title: "Sık Sorulan Sorular",
     category: "Sik Sorulan Sorular",
     summary: "Gübre, kompost, proses ekipmanları ve tesis yatırımları hakkında en çok sorulan soruların kısa cevapları.",
-    heroTitle: "S1k sorulan sorular",
+    heroTitle: "Sık sorulan sorular",
     heroDescription:
       "Gübre tesisi kurulumu, ekipman seçimi, kapasite hesabı ve yatırım planlaması hakkında hızlı yanıtlar sunan sayfa.",
     sections: [
       {
-        heading: "H1zl1 yanıtlar",
+        heading: "Hızlı yanıtlar",
         text: "Yatırım ve teknik karar sürecinde en sık sorulan sorular tek sayfada toplandı.",
       },
       {
-        heading: "0lgili balantılar",
-        text: "Gerekli durumlarda hizmet sayfalarına geçi_ yaparak daha detaylı içeriklere ula_abilirsiniz.",
+        heading: "İlgili bağlantılar",
+        text: "Gerekli durumlarda hizmet sayfalarına geçiş yaparak daha detaylı içeriklere ulaşabilirsiniz.",
       },
     ],
-    relatedLinks: ["Gübre Tesisi Kurulumu", "Sıvı Gübre üretim Tesisi"],
+    relatedLinks: ["Gübre Tesisi Kurulumu", "Sıvı Gübre Üretim Tesisi"],
   },
   {
     slug: "terimler-sozlugu",
-    title: "Endüstriyel Proses ve Makina Terimleri S?zl??",
+    title: "Endüstriyel Proses ve Makina Terimleri Sözlüğü",
     category: "Terimler Sozlugu",
-    summary: "Granülasyon, kurutma tamburu, reaktör ve kapasite gibi temel kavramları açıklayan s?zl?k sayfası.",
-    heroTitle: "Endüstriyel proses ve makina terimleri s?zl??",
+    summary: "Granülasyon, kurutma tamburu, reaktör ve kapasite gibi temel kavramları açıklayan sözlük sayfası.",
+    heroTitle: "Endüstriyel proses ve makina terimleri sözlüğü",
     heroDescription:
       "Gübre, kompost, taşıma ve proses ekipmanlarında kullanılan temel terimleri kısa tanım ve kullanım alanıyla açıklıyoruz.",
     sections: [
       {
-        heading: "K1sa tanımlar",
+        heading: "Kısa tanımlar",
         text: "Sektörde sık kullanılan teknik terimler sade ama doru mühendislik diliyle açıklanır.",
       },
       {
         heading: "Kullanım alanları",
-        text: "Her terim için hangi proseslerde ve hangi ekipman ailelerinde kullanıld11 özetlenir.",
+        text: "Her terim için hangi proseslerde ve hangi ekipman ailelerinde kullanıldığı özetlenir.",
       },
     ],
-    relatedLinks: ["Granül Gübre üretim Süreci", "Kurutma Tamburu Tasarım Kriterleri"],
+    relatedLinks: ["Granül Gübre Üretim Süreci", "Kurutma Tamburu Tasarım Kriterleri"],
   },
 ];
 

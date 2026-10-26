@@ -55,6 +55,13 @@ export function isMachineCategoryKey(key: RouteKey): key is MachineCategoryKey {
   return key in spotlightKeys;
 }
 
+/** TR Kırıcılar ve Parçalayıcılar sayfasının meta verisi (sayfa ve CMS varsayılanı aynı kaynaktan okur). */
+export const CRUSHERS_TR_META = {
+  title: "Kırıcılar ve Parçalayıcılar",
+  description:
+    "Çekiçli kırıcı, zincirli kırıcı, shredder, bıçaklı primer kırıcı, bıçaklı sekonder kırıcı, çeneli kırıcı ve dik milli kırıcı çözümlerini inceleyin.",
+};
+
 /** TR spotlight "Teknik Teklif Al" kartı; Tambur Sistemleri sayfasındakiyle aynı metin. */
 const trQuoteLink = {
   title: "Teknik Teklif Al",

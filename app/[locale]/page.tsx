@@ -1,3 +1,4 @@
+import { serializeJsonLd } from "@/lib/json-ld";
 import type { Metadata } from "next";
 import ReactDOM from "react-dom";
 import { notFound } from "next/navigation";
@@ -59,8 +60,8 @@ export default async function IntlHomePage({
 
   return (
     <main className="min-h-screen overflow-x-hidden bg-white text-slate-900">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webSiteSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(pageSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(webSiteSchema) }} />
 
       <HomeHeroSlider content={home.hero} />
 

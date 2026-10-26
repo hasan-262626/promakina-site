@@ -113,7 +113,8 @@ const trHeaderModel: SiteHeaderModel = {
       width: 340,
       items: menuServices.map((service) => ({
         label: trText(service.title),
-        href: `/hizmetler/${service.slug}`,
+        // Bakım hizmetinin canonical (kamuya açık) adresi farklıdır; menü doğrudan canonical URL'ye bağlanır.
+        href: service.slug === "bakim-ve-servis" ? "/hizmetler/bakim-servis-ve-teknik-destek" : `/hizmetler/${service.slug}`,
       })),
     },
     {

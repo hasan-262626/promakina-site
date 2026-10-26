@@ -7,10 +7,10 @@ const config = {
   sectorSlug: "enerji-ve-biyogaz-sistemleri",
   subsector: {
     slug: "besleme-ve-transfer-hatlari",
-    label: "Besleme ve Transfer Hatlari",
-    title: "Besleme ve Transfer Hatlari",
+    label: "Besleme ve Transfer Hatları",
+    title: "Besleme ve Transfer Hatları",
     description:
-      "Biyogaz tesislerinde organik girdilerin kontrollu kabul, dozaj ve hat ici transferi icin destek sistemleri.",
+      "Biyogaz tesislerinde organik girdilerin kontrollü kabul, dozaj ve hat içi transferi için destek sistemleri.",
   },
 } as const;
 

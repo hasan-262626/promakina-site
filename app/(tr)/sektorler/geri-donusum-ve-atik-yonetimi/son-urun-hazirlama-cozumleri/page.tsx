@@ -7,10 +7,10 @@ const config = {
   sectorSlug: "geri-donusum-ve-atik-yonetimi",
   subsector: {
     slug: "son-urun-hazirlama-cozumleri",
-    label: "Son Urun Hazirlama Cozumleri",
-    title: "Son Urun Hazirlama Cozumleri",
+    label: "Son Ürün Hazırlama Çözümleri",
+    title: "Son Ürün Hazırlama Çözümleri",
     description:
-      "Geri kazanim sonrasi fraksiyonlarin stok, sevkiyat ve nihai urun cikisina hazirlanmasi icin destek sistemleri.",
+      "Geri kazanım sonrası fraksiyonların stok, sevkiyat ve nihai ürün çıkışına hazırlanması için destek sistemleri.",
   },
 } as const;
 

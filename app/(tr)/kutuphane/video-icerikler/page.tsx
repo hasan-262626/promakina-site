@@ -23,7 +23,8 @@ export default function VideoContentsPage() {
       <section className="section-space">
         <div className="site-container">
           <div className="rounded-[32px] border border-slate-200 bg-slate-50 px-6 py-8 shadow-[0_18px_45px_rgba(15,23,42,0.06)] sm:px-8 sm:py-10 lg:px-12">
-            <h1 className="text-3xl font-semibold tracking-tight text-slate-950 md:text-4xl">Video İçerikler</h1>
+            {/* Sayfanın tek H1'i Hero'dadır; bu başlık görsel olarak aynı kalarak H2 oldu. */}
+            <h2 className="text-3xl font-semibold tracking-tight text-slate-950 md:text-4xl">Video İçerikler</h2>
             <p className="mt-5 max-w-3xl text-sm leading-8 text-slate-600 sm:text-base">
               Bu kategori, ilerleyen adımda makina çalışma videoları, proses akış anlatımları ve saha uygulama
               içerikleri için kullanılacaktır. Böylece kullanıcılar teknik içeriği görsel anlatımla birlikte

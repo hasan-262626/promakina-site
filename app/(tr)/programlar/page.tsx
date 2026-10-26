@@ -1,3 +1,4 @@
+import { serializeJsonLd } from "@/lib/json-ld";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Suspense } from "react";
@@ -30,6 +31,7 @@ export const metadata: Metadata = {
 
 const heroCtas = [
   { href: "/programlar?modal=tambur-kapasite-hesabi", label: "Tambur Kapasite Hesabı", primary: true },
+  { href: "/programlar/tambur-hesaplari", label: "Tüm Tambur Hesapları", primary: false },
   { href: "#kategori-tasima", label: "Makine Kapasite Hesapları", primary: false },
   { href: "#kategori-malzeme", label: "Malzeme / Ağırlık Hesapları", primary: false },
   { href: "/iletisim", label: "Teknik Teklif Al", primary: false },
@@ -101,7 +103,7 @@ export default function ProgramsPage() {
     <main className="min-h-screen overflow-x-hidden bg-white text-slate-900">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(programsSchema) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(programsSchema) }}
       />
 
       {/* Hero */}
@@ -156,6 +158,26 @@ export default function ProgramsPage() {
           <Suspense fallback={null}>
             <ProgramsHub categories={hubCategories} tools={tools} />
           </Suspense>
+
+          {/* Sunucuda render edilen araç dizini: kart arayüzü istemcide yüklendiği için ayrı sayfaları olan
+              araçlara arama motorlarının da izleyebileceği doğrudan bağlantılar. */}
+          <nav aria-label="Ayrı sayfası olan hesaplama araçları" className="mt-10 border-t border-slate-200 pt-6">
+            <h2 className="text-base font-semibold text-slate-950">Ayrı sayfada açılan hesaplama araçları</h2>
+            <ul className="mt-3 flex flex-wrap gap-2">
+              {tools
+                .filter((tool) => tool.href || tool.pageHref)
+                .map((tool) => (
+                  <li key={tool.slug}>
+                    <Link
+                      href={(tool.href ?? tool.pageHref) as string}
+                      className="inline-flex rounded-full border border-slate-200 bg-white px-3 py-1.5 text-sm text-slate-700 transition hover:border-[#278DC0] hover:text-[#278DC0]"
+                    >
+                      {tool.title}
+                    </Link>
+                  </li>
+                ))}
+            </ul>
+          </nav>
         </div>
       </section>
 

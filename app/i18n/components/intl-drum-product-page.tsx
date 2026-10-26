@@ -1,3 +1,5 @@
+import { loadDrumPageOverride } from "@/lib/cms/public-content";
+import { serializeJsonLd } from "@/lib/json-ld";
 import { DryerDrumProductContent } from "../../(tr)/components/dryer-drum-product-content";
 import { MachinePageHero } from "../../(tr)/components/machine-page-hero";
 import { MachineSidebar } from "../../(tr)/components/machine-sidebar";
@@ -20,7 +22,7 @@ import { pathFor, type RouteKey } from "../routes";
  * Tambur ürünleri (granülatör, soğutma, kaplama, kompost, karıştırma, sterilizasyon, özel)
  * yabancı dil sayfası: kurutma tamburu sayfasıyla aynı düzen, ürüne özel içerik.
  */
-export function IntlDrumProductPage({
+export async function IntlDrumProductPage({
   locale,
   routeKey,
   dict,
@@ -31,9 +33,10 @@ export function IntlDrumProductPage({
   dict: UiDictionary;
   labelFor: (key: RouteKey) => string;
 }) {
-  const texts = getDrumPageTexts(routeKey, locale);
+  const override = await loadDrumPageOverride(routeKey, locale);
+  const texts = override.texts ?? getDrumPageTexts(routeKey, locale);
   const chrome = getDrumChrome(locale);
-  const content = buildDrumPageContent(routeKey, locale, { labelFor, homeLabel: dict.breadcrumbHome });
+  const content = buildDrumPageContent(routeKey, locale, { labelFor, homeLabel: dict.breadcrumbHome, override });
   const canonicalUrl = absoluteUrl(pathFor(routeKey, locale));
   const group = groupOf(routeKey);
 
@@ -44,7 +47,7 @@ export function IntlDrumProductPage({
     "@id": `${canonicalUrl}#product`,
     name: texts.h1,
     description: texts.meta.description,
-    image: drumSchemaImages(routeKey).map((src) => `${SITE_URL}${encodeURI(src)}`),
+    image: drumSchemaImages(routeKey, override.images).map((src) => `${SITE_URL}${encodeURI(src)}`),
     url: canonicalUrl,
     category: texts.productCategory,
     inLanguage: localeMeta[locale].lang,
@@ -66,9 +69,9 @@ export function IntlDrumProductPage({
 
   return (
     <main data-dryer-page="" className="min-h-screen bg-white text-slate-900">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(productSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(faqSchema) }} />
 
       <MachinePageHero
         title={texts.h1}

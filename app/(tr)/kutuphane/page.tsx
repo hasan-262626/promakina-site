@@ -1,3 +1,4 @@
+import { serializeJsonLd } from "@/lib/json-ld";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Hero } from "../components/Hero";
@@ -76,6 +77,15 @@ const libraryCategories: LibraryCategoryCard[] = [
   },
 ];
 
+/** Kütüphane içindeki teknik rehber merkezleri (hub) ve yatırım analizleri. */
+const guideHubs = [
+  { title: "Tambur Sistemleri", description: "Kurutma tamburu tasarımı, çap-boy seçimi ve tambur hesaplarını bir arada inceleyin.", href: "/kutuphane/tambur-sistemleri" },
+  { title: "Konveyör Sistemleri", description: "Konveyör kapasitesi, hat boyu, bant hızı ve hat entegrasyonu rehberleri.", href: "/kutuphane/konveyor-sistemleri" },
+  { title: "Granül Gübre Üretim Sistemleri", description: "Granülasyon, kurutma, NPK ve organomineral üretim hattı rehberleri.", href: "/kutuphane/granul-gubre-uretim-sistemleri" },
+  { title: "Gübre Tesisi Kurmak Karlı mı?", description: "Yatırım maliyeti, kapasite planı ve ürün çeşitliliği açısından gübre tesisi değerlendirmesi.", href: "/kutuphane/gubre-tesisi-kurmak-karli-mi" },
+  { title: "Kompost Tesisi Yatırım Analizi", description: "Kapasite planlaması, atık karakteri, işletme giderleri ve karlılık yaklaşımı.", href: "/kutuphane/kompost-tesisi-yatirim-analizi" },
+];
+
 const highlights = [
   {
     title: "Mühendislik Hesapları",
@@ -135,11 +145,11 @@ export default function LibraryPage() {
     <main className="min-h-screen overflow-x-hidden bg-white text-slate-900">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(breadcrumbSchema) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionPageSchema) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(collectionPageSchema) }}
       />
 
       <Hero
@@ -195,6 +205,23 @@ export default function LibraryPage() {
                 tecrübelerimizden ve mühendislik yaklaşımımızdan faydalanarak projeniz için daha
                 doğru ön değerlendirme yapabilirsiniz.
               </p>
+            </div>
+
+            <h3 className="mt-10 text-2xl font-semibold tracking-tight text-slate-950">Teknik Rehber Merkezleri</h3>
+            <div className="mt-5 grid gap-5 md:grid-cols-3">
+              {guideHubs.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="group rounded-[24px] border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:border-[#278DC0]/16 hover:shadow-[0_18px_45px_rgba(15,23,42,0.08)]"
+                >
+                  <h4 className="text-xl font-semibold tracking-tight text-slate-950">{item.title}</h4>
+                  <p className="mt-3 text-sm leading-7 text-slate-600">{item.description}</p>
+                  <span className="mt-5 inline-flex text-sm font-semibold text-[#278DC0] transition group-hover:text-[#154764]">
+                    Rehberi İncele
+                  </span>
+                </Link>
+              ))}
             </div>
 
             <div className="mt-8 grid gap-5 md:grid-cols-3">

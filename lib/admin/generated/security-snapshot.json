@@ -1,0 +1,48 @@
+{
+  "generatedAt": "2026-10-06T05:16:31.734Z",
+  "counts": {
+    "info": 0,
+    "low": 0,
+    "moderate": 0,
+    "high": 5,
+    "critical": 0,
+    "total": 5
+  },
+  "packages": [
+    {
+      "name": "@next/eslint-plugin-next",
+      "severity": "high",
+      "range": ">=14.3.0-canary.0",
+      "direct": false,
+      "fixAvailable": "eslint-config-next@14.2.35 (major)"
+    },
+    {
+      "name": "braces",
+      "severity": "high",
+      "range": "*",
+      "direct": false,
+      "fixAvailable": "eslint-config-next@14.2.35 (major)"
+    },
+    {
+      "name": "eslint-config-next",
+      "severity": "high",
+      "range": ">=14.3.0-canary.0",
+      "direct": true,
+      "fixAvailable": "eslint-config-next@14.2.35 (major)"
+    },
+    {
+      "name": "fast-glob",
+      "severity": "high",
+      "range": "*",
+      "direct": false,
+      "fixAvailable": "eslint-config-next@14.2.35 (major)"
+    },
+    {
+      "name": "micromatch",
+      "severity": "high",
+      "range": ">=0.2.0",
+      "direct": false,
+      "fixAvailable": "eslint-config-next@14.2.35 (major)"
+    }
+  ]
+}

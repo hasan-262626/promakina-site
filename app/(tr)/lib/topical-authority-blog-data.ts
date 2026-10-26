@@ -610,7 +610,8 @@ export const topicalBlogArticles: TopicalArticle[] = [
   {
     slug: "organik-atik-isleme-tesisi",
     title: "Organik Atık İşleme Tesisi",
-    metaTitle: "Organik Atık İşleme Tesisi",
+    // Bilgilendirici rehber niyeti; ticari çözüm sayfası /tesisler/organik-atik-isleme-tesisi ile başlık çakışmaz.
+    metaTitle: "Organik Atık İşleme Tesisi Nedir? Proses Rehberi",
     description: "Organik atık işleme tesisi için kabul, ayrıştırma, taşıma, kompost, biyogaz ve son ürün hazırlama rehberi.",
     heroDescription: "Organik atık akışlarını kompost, biyogaz veya son ürün hazırlığı yönünde değerlendiren tesis kurgusu rehberi.",
     categorySlug: "kompost-ve-atik",
@@ -636,7 +637,7 @@ export const topicalBlogArticles: TopicalArticle[] = [
       { question: "Koku kontrolü proje başında mı düşünülmelidir?", answer: "Evet. Koku ve çevresel kontrol tasarımın baştan parçası olmalıdır." },
       { question: "İlk fizibilite için hangi veri gerekir?", answer: "Günlük tonaj, atık tipi, nem seviyesi ve hedef değerlendirme modeli iyi başlangıç verileridir." },
     ],
-    internalLinks: [...makeCommonLinks(), { label: "Kompost ve Atık", href: "/kutuphane/blog/kompost-ve-atik" }, { label: "Kompost ve Organik Atık Tesisleri", href: "/sektorler/kompost-ve-organik-atik-tesisleri" }],
+    internalLinks: [...makeCommonLinks(), { label: "Kompost ve Atık", href: "/kutuphane/blog/kompost-ve-atik" }, { label: "Kompost ve Organik Atık Tesisleri", href: "/sektorler/kompost-ve-organik-atik-tesisleri" }, { label: "Organik Atık İşleme Tesisi Çözümü", href: "/tesisler/organik-atik-isleme-tesisi" }],
     relatedContents: [
       { title: "Kompost Tesisi Nasıl Kurulur?", description: "Kompost odaklı kurulum mantığını görün.", href: "/kutuphane/blog/kompost-tesisi-nasil-kurulur" },
       { title: "Biyogaz Ön İşlem Sistemleri", description: "Biyogaz besleme hazırlığını inceleyin.", href: "/kutuphane/blog/biyogaz-on-islem-sistemleri" },

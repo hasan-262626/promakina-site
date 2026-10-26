@@ -1,3 +1,5 @@
+import { loadSectorDetailModel } from "@/lib/cms/public-content";
+import { serializeJsonLd } from "@/lib/json-ld";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getSectorDetailConfig } from "../../../components/sector-detail-config";
@@ -6,7 +8,6 @@ import { SectorDetailTemplate } from "../../../components/sector-detail-template
 import { getSectorCardBySlug, sectorCards } from "../../../components/sector-subsectors-data";
 import { trText } from "../../../lib/tr-text";
 import {
-  buildSectorDetailModel,
   buildSectorDetailSchema,
   findSectorDetailByTrSlugs,
 } from "../../../../i18n/sector-details";
@@ -42,7 +43,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   // Gübre, kompost ve enerji/biyogaz alt çözümleri: dört dilli şablon ve sayfaya özel meta.
   const detail = findSectorDetailByTrSlugs(slug, subsector);
   if (detail) {
-    const model = buildSectorDetailModel("tr", detail.key);
+    const model = await loadSectorDetailModel("tr", detail.key);
     const { title, description } = model.text.meta;
     const image = `https://www.promakina.com.tr${encodeURI(model.images[0].src)}`;
     return {
@@ -101,12 +102,12 @@ export default async function SectorSubsectorPage({ params }: PageProps) {
 
   const detail = findSectorDetailByTrSlugs(slug, subsector);
   if (detail) {
-    const model = buildSectorDetailModel("tr", detail.key);
+    const model = await loadSectorDetailModel("tr", detail.key);
     return (
       <>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(buildSectorDetailSchema(model)).replace(/</g, "\\u003c") }}
+          dangerouslySetInnerHTML={{ __html: serializeJsonLd(buildSectorDetailSchema(model)) }}
         />
         <SectorDetailPage model={model} />
       </>

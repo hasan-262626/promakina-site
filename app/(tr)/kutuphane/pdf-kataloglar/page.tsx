@@ -23,7 +23,8 @@ export default function PdfCatalogsPage() {
       <section className="section-space">
         <div className="site-container">
           <div className="rounded-[32px] border border-slate-200 bg-slate-50 px-6 py-8 shadow-[0_18px_45px_rgba(15,23,42,0.06)] sm:px-8 sm:py-10 lg:px-12">
-            <h1 className="text-3xl font-semibold tracking-tight text-slate-950 md:text-4xl">PDF Kataloglar</h1>
+            {/* Sayfanın tek H1'i Hero'dadır; bu başlık görsel olarak aynı kalarak H2 oldu. */}
+            <h2 className="text-3xl font-semibold tracking-tight text-slate-950 md:text-4xl">PDF Kataloglar</h2>
             <p className="mt-5 max-w-3xl text-sm leading-8 text-slate-600 sm:text-base">
               Bu alan, PDF katalog içeriklerinin düzenli bir liste halinde yayınlanacağı kategori sayfasıdır.
               İstersen bir sonraki adımda makina ailelerine göre indirilebilir katalog yapısını da birlikte

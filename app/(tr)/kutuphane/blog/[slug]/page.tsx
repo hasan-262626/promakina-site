@@ -1,4 +1,6 @@
 ﻿import type { Metadata } from "next";
+import { loadBlogArticle } from "@/lib/cms/public-content";
+import { serializeJsonLd } from "@/lib/json-ld";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Hero } from "../../../components/Hero";
@@ -101,7 +103,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 
   if (topicalBlogArticleMap[slug]) {
-    const article = topicalBlogArticleMap[slug];
+    const article = await loadBlogArticle(slug, topicalBlogArticleMap[slug]);
 
     return buildLibraryMetadata({
       title: trText(article.metaTitle),
@@ -177,15 +179,15 @@ function CategoryPage({ slug }: { slug: string }) {
     <main className="min-h-screen overflow-x-hidden bg-white text-slate-900">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(organizationSchema) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(localBusinessSchema) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(breadcrumbSchema) }}
       />
 
       <Hero
@@ -292,7 +294,14 @@ function CategoryPage({ slug }: { slug: string }) {
               tasarımı açısından daha doğru bir mühendislik çerçevesi sağlar.
             </p>
             <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-              {category.relatedContents.map((content) => (
+              {[
+                ...category.relatedContents,
+                // Bu kategoriye ait olup yukarıdaki listede yer almayan yazılar (yetim kalmaması için).
+                ...Object.values(topicalBlogArticleMap)
+                  // Listede aynı yazı başka (taşınmış) adresiyle varsa tekrar eklenmez: eşleşme slug ile yapılır.
+                  .filter((article) => article.categorySlug === slug && !category.relatedContents.some((item) => item.href.endsWith(`/${article.slug}`)))
+                  .map((article) => ({ title: article.title, description: article.description, href: `/kutuphane/blog/${article.slug}`, eyebrow: undefined as string | undefined, readingTime: article.readingTime, linkLabel: undefined as string | undefined })),
+              ].map((content) => (
                 <Link
                   key={content.href}
                   href={content.href}
@@ -415,11 +424,11 @@ export default async function Page({ params }: PageProps) {
     return <CategoryPage slug={slug} />;
   }
 
-  const article = topicalBlogArticleMap[slug];
-
-  if (!article) {
+  if (!topicalBlogArticleMap[slug]) {
     notFound();
   }
+
+  const article = await loadBlogArticle(slug, topicalBlogArticleMap[slug]);
 
   return (
     <BlogArticleTemplate

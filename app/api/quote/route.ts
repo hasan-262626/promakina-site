@@ -1,12 +1,11 @@
 import { NextRequest, NextResponse } from "next/server";
 import { siteContact } from "../../(tr)/lib/site-contact";
+import { allowFormSubmission, clientIp, matchesFileSignature, recordLead, sourcePageFrom } from "@/lib/forms/public-forms";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-const RATE_LIMIT_WINDOW_MS = 15 * 60 * 1000;
-const RATE_LIMIT_MAX_REQUESTS = 5;
 const MAX_FILE_SIZE = 10 * 1024 * 1024;
 const ALLOWED_FILE_TYPES = new Map<string, string>([
   ["application/pdf", ".pdf"],
@@ -15,34 +14,6 @@ const ALLOWED_FILE_TYPES = new Map<string, string>([
   ["application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", ".xlsx"],
   ["application/vnd.openxmlformats-officedocument.wordprocessingml.document", ".docx"],
 ]);
-
-type RateLimitEntry = { count: number; resetAt: number };
-
-declare global {
-  var __promakinaQuoteRateLimit: Map<string, RateLimitEntry> | undefined;
-}
-
-const rateLimitStore =
-  globalThis.__promakinaQuoteRateLimit ?? new Map<string, RateLimitEntry>();
-globalThis.__promakinaQuoteRateLimit = rateLimitStore;
-
-function getClientIdentifier(request: NextRequest) {
-  const forwardedFor = request.headers.get("x-forwarded-for");
-  const realIp = request.headers.get("x-real-ip");
-  return forwardedFor?.split(",")[0]?.trim() || realIp || "unknown";
-}
-
-function isRateLimited(identifier: string) {
-  const now = Date.now();
-  const current = rateLimitStore.get(identifier);
-  if (!current || current.resetAt <= now) {
-    rateLimitStore.set(identifier, { count: 1, resetAt: now + RATE_LIMIT_WINDOW_MS });
-    return false;
-  }
-  if (current.count >= RATE_LIMIT_MAX_REQUESTS) return true;
-  rateLimitStore.set(identifier, { ...current, count: current.count + 1 });
-  return false;
-}
 
 function sanitizeFileName(name: string) {
   return name.replace(/[^\w.\-]+/g, "_").slice(0, 80) || "attachment";
@@ -84,6 +55,10 @@ function escapeHtml(value: string) {
 
 export async function POST(request: NextRequest) {
   try {
+    // Dosya sınırı (10 MB) + form alanları için üst sınır.
+    if (Number(request.headers.get("content-length") ?? 0) > MAX_FILE_SIZE + 256 * 1024) {
+      return NextResponse.json({ error: "file_too_large" }, { status: 413 });
+    }
     const data = await request.formData();
 
     // Honeypot: bot doldurduysa sessizce kabul edilmiş gibi yanıtla.
@@ -92,8 +67,7 @@ export async function POST(request: NextRequest) {
     }
 
     const email = fieldValue(data, "email");
-    const identifier = `${getClientIdentifier(request)}:${email || "anonymous"}`;
-    if (isRateLimited(identifier)) {
+    if (!(await allowFormSubmission("quote", clientIp(request)))) {
       return NextResponse.json({ error: "rate_limited" }, { status: 429 });
     }
 
@@ -118,6 +92,10 @@ export async function POST(request: NextRequest) {
         return NextResponse.json({ error: "file_too_large" }, { status: 400 });
       }
       const buffer = Buffer.from(await file.arrayBuffer());
+      // Bildirilen MIME türü istemciden gelir; dosyanın gerçek imzası da eşleşmeli.
+      if (!matchesFileSignature(file.type, buffer.subarray(0, 8))) {
+        return NextResponse.json({ error: "invalid_file_type" }, { status: 400 });
+      }
       attachments.push({
         filename: sanitizeFileName(file.name),
         content: buffer.toString("base64"),
@@ -158,6 +136,25 @@ export async function POST(request: NextRequest) {
       </div>
     `;
 
+    // Talep, e-posta gönderiminden önce kaydedilir; mail servisi hata verse de kaybolmaz.
+    const attachment = data.get("file");
+    await recordLead({
+      kind: "rfq",
+      fullName: fieldValue(data, "fullName"),
+      company: fieldValue(data, "company"),
+      email,
+      phone: fieldValue(data, "phone"),
+      country: fieldValue(data, "country"),
+      product: fieldValue(data, "machine"),
+      message: description,
+      sourcePage: sourcePageFrom(request),
+      locale: fieldValue(data, "formLanguage").slice(0, 8),
+      details: Object.fromEntries(rows.map(([label, value]) => [label, value])),
+      // Dosyanın kendisi saklanmaz; yalnız adı ve boyutu kaydedilir.
+      attachmentName: attachment instanceof File && attachment.size > 0 ? sanitizeFileName(attachment.name) : undefined,
+      attachmentSize: attachment instanceof File && attachment.size > 0 ? attachment.size : undefined,
+    });
+
     const resendApiKey = process.env.RESEND_API_KEY;
     if (!resendApiKey) {
       return NextResponse.json({ error: "mail_not_configured" }, { status: 500 });
@@ -173,7 +170,7 @@ export async function POST(request: NextRequest) {
         from: "Pro Makina <onay@promakina.com.tr>",
         to: [siteContact.email],
         reply_to: email,
-        subject: `[Teklif Formu] ${fieldValue(data, "machine")} — ${fieldValue(data, "country")}`,
+        subject: `[Teklif Formu] ${fieldValue(data, "machine")} — ${fieldValue(data, "country")}`.replace(/[\r\n]+/g, " ").slice(0, 200),
         text,
         html,
         ...(attachments.length > 0 ? { attachments } : {}),
@@ -182,6 +179,7 @@ export async function POST(request: NextRequest) {
     });
 
     if (!resendResponse.ok) {
+      console.error("quote: mail sağlayıcısı hata döndü", resendResponse.status);
       return NextResponse.json({ error: "send_failed" }, { status: 502 });
     }
 

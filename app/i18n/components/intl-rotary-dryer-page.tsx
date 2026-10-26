@@ -1,3 +1,4 @@
+import { serializeJsonLd } from "@/lib/json-ld";
 import { DryerDrumProductContent } from "../../(tr)/components/dryer-drum-product-content";
 import { MachinePageHero } from "../../(tr)/components/machine-page-hero";
 import { MachineSidebar } from "../../(tr)/components/machine-sidebar";
@@ -55,9 +56,9 @@ export function IntlRotaryDryerPage({
 
   return (
     <main data-dryer-page="" className="min-h-screen bg-white text-slate-900">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(productSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(faqSchema) }} />
 
       <MachinePageHero
         title={texts.h1}

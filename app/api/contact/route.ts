@@ -1,59 +1,14 @@
 import { NextRequest, NextResponse } from "next/server";
 import { siteContact } from "../../(tr)/lib/site-contact";
+import { allowFormSubmission, clientIp, recordLead, sourcePageFrom } from "@/lib/forms/public-forms";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-const RATE_LIMIT_WINDOW_MS = 15 * 60 * 1000;
-const RATE_LIMIT_MAX_REQUESTS = 5;
 
-type RateLimitEntry = {
-  count: number;
-  resetAt: number;
-};
-
-declare global {
-  // eslint-disable-next-line no-var
-  var __promakinaContactRateLimit: Map<string, RateLimitEntry> | undefined;
-}
-
-const rateLimitStore =
-  globalThis.__promakinaContactRateLimit ?? new Map<string, RateLimitEntry>();
-
-globalThis.__promakinaContactRateLimit = rateLimitStore;
-
-function getClientIdentifier(request: NextRequest) {
-  const forwardedFor = request.headers.get("x-forwarded-for");
-  const realIp = request.headers.get("x-real-ip");
-  const ip = forwardedFor?.split(",")[0]?.trim() || realIp || "unknown";
-
-  return ip;
-}
-
-function isRateLimited(identifier: string) {
-  const now = Date.now();
-  const current = rateLimitStore.get(identifier);
-
-  if (!current || current.resetAt <= now) {
-    rateLimitStore.set(identifier, {
-      count: 1,
-      resetAt: now + RATE_LIMIT_WINDOW_MS,
-    });
-    return false;
-  }
-
-  if (current.count >= RATE_LIMIT_MAX_REQUESTS) {
-    return true;
-  }
-
-  rateLimitStore.set(identifier, {
-    ...current,
-    count: current.count + 1,
-  });
-
-  return false;
-}
+/** Alan başına üst sınırlar: aşırı büyük yük ve e-posta içeriğine enjeksiyon denemeleri sınırlanır. */
+const MAX_LENGTHS = { fullName: 120, company: 160, phone: 40, email: 254, subject: 200, message: 5000 } as const;
 
 function buildPlainText(payload: {
   fullName: string;
@@ -114,8 +69,16 @@ function buildHtml(payload: {
   `;
 }
 
+function text(value: unknown) {
+  return typeof value === "string" ? value.trim() : "";
+}
+
 export async function POST(request: NextRequest) {
   try {
+    if (Number(request.headers.get("content-length") ?? 0) > 64 * 1024) {
+      return NextResponse.json({ error: "İstek çok büyük." }, { status: 413 });
+    }
+
     const body = (await request.json()) as {
       fullName?: string;
       company?: string;
@@ -127,22 +90,20 @@ export async function POST(request: NextRequest) {
     };
 
     const payload = {
-      fullName: body.fullName?.trim() || "",
-      company: body.company?.trim() || "",
-      phone: body.phone?.trim() || "",
-      email: body.email?.trim() || "",
-      subject: body.subject?.trim() || "",
-      message: body.message?.trim() || "",
-      website: body.website?.trim() || "",
+      fullName: text(body.fullName),
+      company: text(body.company),
+      phone: text(body.phone),
+      email: text(body.email),
+      subject: text(body.subject),
+      message: text(body.message),
+      website: text(body.website),
     };
 
     if (payload.website) {
       return NextResponse.json({ ok: true, message: "Mesajınız alındı." });
     }
 
-    const identifier = `${getClientIdentifier(request)}:${payload.email || "anonymous"}`;
-
-    if (isRateLimited(identifier)) {
+    if (!(await allowFormSubmission("contact", clientIp(request)))) {
       return NextResponse.json(
         {
           error:
@@ -166,12 +127,30 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    const tooLong = (Object.keys(MAX_LENGTHS) as (keyof typeof MAX_LENGTHS)[]).some((key) => payload[key].length > MAX_LENGTHS[key]);
+    if (tooLong) {
+      return NextResponse.json({ error: "Girilen bilgiler izin verilen uzunluğu aşıyor." }, { status: 400 });
+    }
+
     if (!EMAIL_REGEX.test(payload.email)) {
       return NextResponse.json(
         { error: "Lütfen geçerli bir e-posta adresi girin." },
         { status: 400 },
       );
     }
+
+    // Talep, e-posta gönderiminden önce kaydedilir; mail servisi hata verse de kaybolmaz.
+    await recordLead({
+      kind: "contact",
+      fullName: payload.fullName,
+      company: payload.company,
+      email: payload.email,
+      phone: payload.phone,
+      subject: payload.subject,
+      message: payload.message,
+      sourcePage: sourcePageFrom(request),
+      locale: "tr",
+    });
 
     const resendApiKey = process.env.RESEND_API_KEY;
 
@@ -192,7 +171,7 @@ export async function POST(request: NextRequest) {
         from: "Pro Makina <onay@promakina.com.tr>",
         to: [siteContact.email],
         reply_to: payload.email,
-        subject: `[Web Formu] ${payload.subject}`,
+        subject: `[Web Formu] ${payload.subject.replace(/[\r\n]+/g, " ")}`,
         text: buildPlainText(payload),
         html: buildHtml(payload),
       }),
@@ -200,15 +179,9 @@ export async function POST(request: NextRequest) {
     });
 
     if (!resendResponse.ok) {
-      const resendError = await resendResponse.text();
-
-      return NextResponse.json(
-        {
-          error: "Mesaj gönderilemedi. Lütfen tekrar deneyin.",
-          detail: resendError,
-        },
-        { status: 502 },
-      );
+      // Sağlayıcının hata gövdesi istemciye dönmez (iç yapı ve yapılandırma bilgisi sızabilir).
+      console.error("contact: mail sağlayıcısı hata döndü", resendResponse.status);
+      return NextResponse.json({ error: "Mesaj gönderilemedi. Lütfen tekrar deneyin." }, { status: 502 });
     }
 
     return NextResponse.json({

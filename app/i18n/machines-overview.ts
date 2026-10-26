@@ -23,7 +23,7 @@ const fallbackKeyByTrPath: Record<string, RouteKey> = {
   "/hizmetler/makine-imalati": "services",
   "/hizmetler/anahtar-teslim-tesis-kurulumu": "services",
   "/hizmetler/kurulum-ve-devreye-alma": "services",
-  "/hizmetler/bakim-ve-servis": "services",
+  "/hizmetler/bakim-servis-ve-teknik-destek": "services",
   "/sektorler/enerji-ve-biyogaz-sistemleri": "sectors",
   "/sektorler/yem-toz-ve-dokme-kati-malzeme-isleme-sistemleri": "sectors",
 };
@@ -96,7 +96,7 @@ const manufacturingStepHrefs: Array<string | undefined> = [
   "/hizmetler/makine-imalati",
   "/hizmetler/anahtar-teslim-tesis-kurulumu",
   "/hizmetler/kurulum-ve-devreye-alma",
-  "/hizmetler/bakim-ve-servis",
+  "/hizmetler/bakim-servis-ve-teknik-destek",
 ];
 
 /** "Referans Projeler" ve "Teknik Makaleler" için yabancı dil sayfası yoktur; mevcut sayfalara bağlanır. */

@@ -1,3 +1,5 @@
+import { applyMachineCategoryOverride, machineCategoryKeyByTrSlug } from "@/lib/cms/adapters/machine-category";
+import { loadMachineCategoryOverride } from "@/lib/cms/public-content";
 import { trLanguageAlternates } from "../../../i18n/routes";
 import { Metadata } from "next";
 import { notFound, permanentRedirect } from "next/navigation";
@@ -40,18 +42,23 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     return {};
   }
 
-  const canonical = `https://www.promakina.com.tr/makinalar-ekipman/${getPublicCategorySlug(category.slug)}`;
+  const publicSlug = getPublicCategorySlug(category.slug);
+  const canonical = `https://www.promakina.com.tr/makinalar-ekipman/${publicSlug}`;
+  const cmsKey = machineCategoryKeyByTrSlug(publicSlug);
+  const override = cmsKey ? await loadMachineCategoryOverride(cmsKey, "tr") : null;
+  const title = override?.meta.title ?? category.title;
+  const description = override?.meta.description ?? category.shortDescription;
 
   return {
-    title: `${category.title}`,
-    description: category.shortDescription,
+    title: `${title}`,
+    description,
     alternates: {
       canonical,
       languages: trLanguageAlternates(new URL(canonical).pathname),
     },
     openGraph: {
-      title: `${category.title}`,
-      description: category.shortDescription,
+      title: `${title}`,
+      description,
       url: canonical,
       siteName: "Pro Makina",
       locale: "tr_TR",
@@ -84,5 +91,8 @@ export default async function MachineCategoryPage({ params }: PageProps) {
     }),
   });
 
-  return <DrumSystemsCategoryPage content={content} />;
+  const cmsKey = machineCategoryKeyByTrSlug(publicCategorySlug);
+  const override = cmsKey ? await loadMachineCategoryOverride(cmsKey, "tr") : null;
+
+  return <DrumSystemsCategoryPage content={applyMachineCategoryOverride(content, override)} />;
 }

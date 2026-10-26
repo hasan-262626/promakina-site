@@ -1,3 +1,4 @@
+import { serializeJsonLd } from "@/lib/json-ld";
 import type { Metadata } from "next";
 import { trLanguageAlternates } from "../../i18n/routes";
 import { MachinesOverviewPage, type MachinesOverviewContent } from "../components/machines-overview-page";
@@ -102,7 +103,7 @@ const manufacturingSteps = [
   { title: "İmalat ve kalite kontrol", href: "/hizmetler/makine-imalati" },
   { title: "Montaj planı", href: "/hizmetler/anahtar-teslim-tesis-kurulumu" },
   { title: "Kurulum ve devreye alma", href: "/hizmetler/kurulum-ve-devreye-alma" },
-  { title: "Bakım, revizyon ve yedek parça", href: "/hizmetler/bakim-ve-servis" },
+  { title: "Bakım, revizyon ve yedek parça", href: "/hizmetler/bakim-servis-ve-teknik-destek" },
 ];
 
 const quoteChecklist = [
@@ -279,7 +280,7 @@ function JsonLd() {
     <script
       type="application/ld+json"
       dangerouslySetInnerHTML={{
-        __html: JSON.stringify(structuredData).replace(/</g, "\\u003c"),
+        __html: serializeJsonLd(structuredData),
       }}
     />
   );

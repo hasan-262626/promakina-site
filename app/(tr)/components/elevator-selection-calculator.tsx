@@ -39,25 +39,8 @@ import {
   type BucketMaterial,
   type BucketOption,
 } from "./elevator-selection-data";
-import {
-  evaluateBucketSelection,
-  estimateMotorPower,
-  formatNumber,
-  getBucketOptions,
-  getBucketSpacing,
-  getChainPitchRecommendation,
-  getCorrosionRecommendation,
-  getRecommendedBucketMaterial,
-  getRecommendedDischargeType,
-  getRecommendedElevatorType,
-  getSafetyFactor,
-  getSpeedRange,
-  getSystemClass,
-  getWarnings,
-  isPlasticAllowed,
-  num,
-  pickBucketByCapacity,
-} from "./elevator-selection-utils";
+import { ELEVATOR_VALUES, computeElevatorModel } from "./elevator-selection-model";
+import { formatNumber, isPlasticAllowed, num } from "./elevator-selection-utils";
 
 function SuggestionCard({ title, value, tone = "slate" }: { title: string; value: string; tone?: "slate" | "blue" | "amber" }) {
   const toneClass =
@@ -104,7 +87,7 @@ function BucketTable({ material, rows }: { material: BucketMaterial; rows: Bucke
               <th className="px-3 py-2">A</th>
               <th className="px-3 py-2">B</th>
               <th className="px-3 py-2">C</th>
-              <th className="px-3 py-2">Baglanti</th>
+              <th className="px-3 py-2">Bağlantı</th>
               <th className="px-3 py-2">Derinlik</th>
               <th className="px-3 py-2">Hacim</th>
             </tr>
@@ -170,7 +153,7 @@ export function ElevatorSelectionCalculator() {
   const [density, setDensity] = useState(String(PRODUCT_DENSITIES["Organomineral granül"]));
   const [grain, setGrain] = useState("Granül");
   const [moisture, setMoisture] = useState("Hafif nemli");
-  const [temperatureBand, setTemperatureBand] = useState("Ortam sicakligi");
+  const [temperatureBand, setTemperatureBand] = useState("Ortam sıcaklığı");
   const [temperatureValue, setTemperatureValue] = useState("35");
   const [corrosion, setCorrosion] = useState("Hafif korozif");
   const [usage, setUsage] = useState("Gübre tesisi");
@@ -182,21 +165,21 @@ export function ElevatorSelectionCalculator() {
   const [dischargeType, setDischargeType] = useState("Sistem önerisiyle seç");
   const [bucketMaterial, setBucketMaterial] = useState("Sistem seçsin");
   const [fillRatio, setFillRatio] = useState("%85");
-  const [spacingMode, setSpacingMode] = useState("Sistem hesaplasin");
+  const [spacingMode, setSpacingMode] = useState("Sistem hesaplasın");
   const [manualSpacing, setManualSpacing] = useState("260");
   const [bucketCode, setBucketCode] = useState("");
   const [beltType, setBeltType] = useState("Standart EP bant");
   const [beltClass, setBeltClass] = useState("EP500");
-  const [beltSpeedMode, setBeltSpeedMode] = useState("Sistem hesaplasin");
+  const [beltSpeedMode, setBeltSpeedMode] = useState("Sistem hesaplasın");
   const [manualBeltSpeed, setManualBeltSpeed] = useState("1.15");
-  const [drumCover, setDrumCover] = useState("Lastik kapli");
-  const [chainType, setChainType] = useState("Tek sira zincir");
+  const [drumCover, setDrumCover] = useState("Lastik kaplı");
+  const [chainType, setChainType] = useState("Tek sıra zincir");
   const [chainPitchMode, setChainPitchMode] = useState("Sistem önerisiyle seç");
   const [manualChainPitch, setManualChainPitch] = useState("100");
   const [chainMaterial, setChainMaterial] = useState("Standart");
   const [driveType, setDriveType] = useState("Sistem önerisiyle seç");
   const [workingTime, setWorkingTime] = useState("2 vardiya");
-  const [accessories, setAccessories] = useState<string[]>(["Hiz sensörü", "Geri dönüs önleyici", "Bakım kapagi"]);
+  const [accessories, setAccessories] = useState<string[]>(["Hız sensörü", "Geri dönüş önleyici", "Bakım kapağı"]);
 
   const plasticAllowed = isPlasticAllowed(temperatureBand);
 
@@ -207,76 +190,24 @@ export function ElevatorSelectionCalculator() {
 
   const errors = useMemo(() => {
     const next: Record<string, string> = {};
-    if (num(capacity) <= 0) next.capacity = "Bu alan bos birakilamaz ve sifirdan büyük olmalidir";
-    if (num(liftHeight) <= 0) next.liftHeight = "Bu alan bos birakilamaz ve sifirdan büyük olmalidir";
-    if (num(density) <= 0) next.density = "Bu deger 0'dan büyük olmalidir";
-    if (spacingMode === "Manuel girilsin" && num(manualSpacing) <= 0) next.manualSpacing = "Bu deger 0'dan büyük olmalidir";
-    if (beltSpeedMode === "Manuel girilsin" && num(manualBeltSpeed) <= 0) next.manualBeltSpeed = "Bu deger 0'dan büyük olmalidir";
-    if (chainPitchMode === "Manuel giris" && num(manualChainPitch) <= 0) next.manualChainPitch = "Bu deger 0'dan büyük olmalidir";
+    if (num(capacity) <= 0) next.capacity = "Bu alan boş bırakılamaz ve sıfırdan büyük olmalıdır";
+    if (num(liftHeight) <= 0) next.liftHeight = "Bu alan boş bırakılamaz ve sıfırdan büyük olmalıdır";
+    if (num(density) <= 0) next.density = "Bu değer 0'dan büyük olmalıdır";
+    if (spacingMode === "Manuel girilsin" && num(manualSpacing) <= 0) next.manualSpacing = "Bu değer 0'dan büyük olmalıdır";
+    if (beltSpeedMode === "Manuel girilsin" && num(manualBeltSpeed) <= 0) next.manualBeltSpeed = "Bu değer 0'dan büyük olmalıdır";
+    if (chainPitchMode === ELEVATOR_VALUES.manualChainPitch && num(manualChainPitch) <= 0) next.manualChainPitch = "Bu değer 0'dan büyük olmalıdır";
     return next;
   }, [capacity, density, liftHeight, spacingMode, manualSpacing, beltSpeedMode, manualBeltSpeed, chainPitchMode, manualChainPitch]);
 
-  const model = useMemo(() => {
-    const densityValue = Math.max(num(density), 1);
-    const netCapacity = Math.max(num(capacity), 0);
-    const safetyFactor = getSafetyFactor(safety);
-    const designCapacity = netCapacity * safetyFactor;
-    const volumetricCapacity = (designCapacity * 1000) / densityValue;
-    const recommendedElevatorType = getRecommendedElevatorType({ selectedType: elevatorType, grain, moisture, product, temperatureBand, corrosion });
-    const recommendedBucketMaterial = getRecommendedBucketMaterial({ selectedMaterial: bucketMaterial, temperatureBand, grain, product });
-    const activeBucketMaterial = recommendedBucketMaterial;
-    const discharge = getRecommendedDischargeType(dischargeType, grain, moisture);
-    const speedRange = getSpeedRange({ elevatorType: recommendedElevatorType, grain, moisture, dischargeType: discharge });
-    const fillRatioValue = num(fillRatio.replace("%", "")) / 100;
-    const activeBucketOptions = getBucketOptions(activeBucketMaterial);
-    const recommendedBucket = pickBucketByCapacity(activeBucketMaterial, volumetricCapacity, fillRatioValue, speedRange, spacingMode === "Manuel girilsin" ? num(manualSpacing) : undefined);
-    const selectedBucket = activeBucketOptions.find((bucket) => bucket.code === bucketCode) ?? recommendedBucket;
-    const spacingMm = getBucketSpacing(selectedBucket, spacingMode, num(manualSpacing));
-    const speedValue = recommendedElevatorType === "Bantli elevatör" && beltSpeedMode === "Manuel girilsin" ? num(manualBeltSpeed) : (speedRange.min + speedRange.max) / 2;
-    const suitability = evaluateBucketSelection({ bucket: selectedBucket, fillRatio: fillRatioValue, spacingMm, designVolumetricCapacity: volumetricCapacity, speed: speedValue });
-    const heavyDuty = getSystemClass({ designCapacity, density: densityValue, grain, moisture, workingTime }) === "Ağır hizmet";
-    const motorPower = estimateMotorPower({ designCapacity, liftHeight: Math.max(num(liftHeight), 1), density: densityValue, elevatorType: recommendedElevatorType, heavyDuty });
-    const chainPitch = chainPitchMode === "Manuel giris" ? `${num(manualChainPitch)} mm` : getChainPitchRecommendation(selectedBucket.width, heavyDuty);
-    const chosenBeltType = temperatureBand === "Sicak" || temperatureBand === "Çok sicak" ? "Isiya dayanıml? bant" : usage === "Gida ortami" ? "Gida tipi bant" : usage === "Kimyasal ortam" ? "Kimyasala dayanıml? bant" : beltType;
-    const beltClassRecommendation = heavyDuty || designCapacity > 25 ? "EP630" : chosenBeltType === "Gida tipi bant" ? "EP500" : beltClass;
-    const selectedDriveType = driveType === "Sistem önerisiyle seç" ? (heavyDuty ? "Agir hizmet redüktörlü" : "Standart redüktörlü") : driveType;
-    const selectedChainMaterial = corrosion === "Korozif" || corrosion === "Çok korozif" ? "Paslanmaz" : grain === "Asindirici" ? "Asinma dayanıml?" : chainMaterial;
-    const bodyRecommendation = getCorrosionRecommendation(usage, corrosion);
-    const warnings = getWarnings({ plasticAllowed, selectedBucketMaterial: bucketMaterial, recommendedBucketMaterial, moisture, grain, corrosion, usage, temperatureBand, suitability: suitability.statusLabel });
-
-    return {
-      densityValue,
-      netCapacity,
-      designCapacity,
-      volumetricCapacity,
-      recommendedElevatorType,
-      recommendedBucketMaterial,
-      activeBucketMaterial,
-      discharge,
-      speedRange,
-      activeBucketOptions,
-      selectedBucket,
-      spacingMm,
-      speedValue,
-      suitability,
-      heavyDuty,
-      systemClass: heavyDuty ? "Agir hizmet" : "Standart",
-      motorPower,
-      chainPitch,
-      chosenBeltType,
-      beltClassRecommendation,
-      selectedDriveType,
-      selectedChainMaterial,
-      bodyRecommendation,
-      warnings,
-      plasticAllowed,
-      headType: discharge === "Santrifüj bosaltma" ? "Yüksek hizli santrifüj kafa" : "Sürekli bosaltmali kontrollü kafa",
-      bootType: inletType === "düzensiz besleme" ? "Genis ayak + akis yönlendirmeli giris" : "Standart ayak ve servis kapakli giris",
-      productRisk: grain === "Asindirici" ? "Asinma riski yüksek" : moisture === "Yapiskan nemli" || moisture === "Çamurumsu" ? "Yapisma ve geri dökülme riski yüksek" : grain === "Kirilgan" ? "Kirilma riski kontrollü hiz gerektirir" : "Standart ürün davranisi",
-      corrosionRisk: corrosion === "Çok korozif" || usage === "Kimyasal ortam" ? "Yüksek korozyon korumasi gerekir" : corrosion === "Korozif" || usage === "Gübre tesisi" ? "Orta / yüksek korozyon korumasi önerilir" : "Standart koruma yeterli olabilir",
-      fillRatioLabel: fillRatio,
-    };
-  }, [beltClass, beltSpeedMode, beltType, bucketCode, bucketMaterial, capacity, chainMaterial, chainPitchMode, corrosion, density, dischargeType, driveType, elevatorType, fillRatio, grain, inletType, liftHeight, manualBeltSpeed, manualChainPitch, manualSpacing, moisture, plasticAllowed, product, safety, spacingMode, temperatureBand, usage, workingTime]);
+  const model = useMemo(
+    () =>
+      computeElevatorModel({
+        elevatorType, product, density, grain, moisture, temperatureBand, corrosion, usage, capacity, safety, liftHeight, inletType,
+        dischargeType, bucketMaterial, fillRatio, spacingMode, manualSpacing, bucketCode, beltType, beltClass, beltSpeedMode,
+        manualBeltSpeed, chainPitchMode, manualChainPitch, chainMaterial, driveType, workingTime,
+      }),
+    [beltClass, beltSpeedMode, beltType, bucketCode, bucketMaterial, capacity, chainMaterial, chainPitchMode, corrosion, density, dischargeType, driveType, elevatorType, fillRatio, grain, inletType, liftHeight, manualBeltSpeed, manualChainPitch, manualSpacing, moisture, product, safety, spacingMode, temperatureBand, usage, workingTime],
+  );
 
   const activeBucketSelectValue = bucketCode || model.selectedBucket.code;
 
@@ -287,93 +218,93 @@ export function ElevatorSelectionCalculator() {
           <div className="space-y-6">
             <div className="rounded-[32px] border border-blue-100 bg-white p-6 shadow-[0_20px_60px_rgba(15,23,42,0.08)]">
               <h2 className="text-2xl font-semibold text-slate-950">Müşteri Giriş Alanı</h2>
-              <p className="mt-3 text-sm leading-7 text-slate-600">Gerekli seçim ve girisleri bu bölümde tamamlayin. Sistem elevatör tipi, kova seçimi, hiz ve ön mekanik önerileri anlik olarak olüstürur.</p>
+              <p className="mt-3 text-sm leading-7 text-slate-600">Gerekli seçim ve girişleri bu bölümde tamamlayın. Sistem elevatör tipi, kova seçimi, hız ve ön mekanik önerileri anlık olarak oluşturur.</p>
 
               <div className="mt-5 grid gap-x-4 gap-y-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
-                <ToolkitInput label="Müsteri adi" value={customerName} onChange={setCustomerName} helperText="Teklif özeti için kullanilir" limitText="Opsiyoneldir" tip="Müsteri veya firma adini rapor çiktisinda göstermek için kullanabilirsiniz." tipId="elevator-customer" openTip={openTip} setOpenTip={setOpenTip} />
-                <ToolkitInput label="Proje adı" value={projectName} onChange={setProjectName} helperText="Teknik rapor basligi" limitText="Opsiyoneldir" tip="Proje veya hat ismi olarak rapora tasinir." tipId="elevator-project" openTip={openTip} setOpenTip={setOpenTip} />
-                <ToolkitInput label="Tarih" value={dateValue} onChange={setDateValue} helperText="Rapor tarihi" limitText="Opsiyoneldir" tip="Teklif veya seçim raporuna yazdirilacak tarihtir." tipId="elevator-date" openTip={openTip} setOpenTip={setOpenTip} />
+                <ToolkitInput label="Müşteri adı" value={customerName} onChange={setCustomerName} helperText="Teklif özeti için kullanılır" limitText="Opsiyoneldir" tip="Müşteri veya firma adını rapor çıktısında göstermek için kullanabilirsiniz." tipId="elevator-customer" openTip={openTip} setOpenTip={setOpenTip} />
+                <ToolkitInput label="Proje adı" value={projectName} onChange={setProjectName} helperText="Teknik rapor başlığı" limitText="Opsiyoneldir" tip="Proje veya hat ismi olarak rapora taşınır." tipId="elevator-project" openTip={openTip} setOpenTip={setOpenTip} />
+                <ToolkitInput label="Tarih" value={dateValue} onChange={setDateValue} helperText="Rapor tarihi" limitText="Opsiyoneldir" tip="Teklif veya seçim raporuna yazdırılacak tarihtir." tipId="elevator-date" openTip={openTip} setOpenTip={setOpenTip} />
               </div>
 
               <div className="mt-8 rounded-3xl border border-slate-200 bg-slate-50 p-5">
                 <h3 className="text-lg font-semibold text-slate-950">1. Temel Seçim</h3>
                 <div className="mt-4 grid gap-x-4 gap-y-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
-                  <ToolkitSelect label="Elevatör tipi" value={elevatorType} onChange={setElevatorType} options={[...ELEVATOR_TYPE_OPTIONS]} helperText="Bantli, zincirli veya sistem önerisi" limitText="Ürün yapisina göre uygun sistem belirlenir" tip="Tasinacak ürünün yapisina, sicakligina, kapasitesine ve çalisma sartlarina göre bantli veya zincirli elevatör seçimi yapilir." tipId="elevator-type" openTip={openTip} setOpenTip={setOpenTip} />
+                  <ToolkitSelect label="Elevatör tipi" value={elevatorType} onChange={setElevatorType} options={[...ELEVATOR_TYPE_OPTIONS]} helperText="Bantlı, zincirli veya sistem önerisi" limitText="Ürün yapısına göre uygun sistem belirlenir" tip="Taşınacak ürünün yapısına, sıcaklığına, kapasitesine ve çalışma şartlarına göre bantlı veya zincirli elevatör seçimi yapılır." tipId="elevator-type" openTip={openTip} setOpenTip={setOpenTip} />
                 </div>
               </div>
 
               <div className="mt-6 rounded-3xl border border-slate-200 bg-slate-50 p-5">
                 <h3 className="text-lg font-semibold text-slate-950">2. Ürün Bilgileri</h3>
                 <div className="mt-4 grid gap-x-4 gap-y-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
-                  <ToolkitSelect label="Tasinacak ürün" value={product} onChange={(value) => { setProduct(value); setDensity(String(PRODUCT_DENSITIES[value] ?? 900)); }} options={[...PRODUCT_OPTIONS]} helperText="Ürün tipi yogunlugu ve mekanik tavsiyeleri etkiler" limitText="Yogunluk otomatik gelir, isterseniz degistirebilirsiniz" tip="Tasinacak ürün tipi; yogunluk, kova seçimi, elevatör tipi, hiz ve mekanik yapi üzerinde doğrudan etkilidir." tipId="elevator-product" openTip={openTip} setOpenTip={setOpenTip} />
-                  <ToolkitInput label="Yigin yogunlugu" value={density} onChange={setDensity} unit="kg/m³" error={errors.density} helperText="Ürün seçildiginde otomatik gelir" limitText="Kova hacmi ve kapasite hesabinda kullanilir" tip="Ürünün hacim basina agirligidir. Kova hacmi ve kapasite hesabinda kullanilir." tipId="elevator-density" openTip={openTip} setOpenTip={setOpenTip} />
-                  <ToolkitSelect label="Ürün tane yapisi" value={grain} onChange={setGrain} options={[...GRAIN_OPTIONS]} helperText="Bosaltma tipi ve hiz tavsiyesini etkiler" limitText="Ürün formu kapasite davranisini degistirir" tip="Ürün formu; bosaltma tipi, hiz, kova yapisi ve uygun elevatör tipini etkiler." tipId="elevator-grain" openTip={openTip} setOpenTip={setOpenTip} />
-                  <ToolkitSelect label="Nem durumu" value={moisture} onChange={setMoisture} options={[...MOISTURE_OPTIONS]} helperText="Yapisma ve geri dökülme riskini etkiler" limitText="Nem arttikça bosaltma davranisi degisir" tip="Nem arttikça ürünün kovaya yapisma, geri dökülme ve bosaltma davranisi degisir." tipId="elevator-moisture" openTip={openTip} setOpenTip={setOpenTip} />
-                  <ToolkitSelect label="Ürün sicakligi" value={temperatureBand} onChange={setTemperatureBand} options={[...TEMPERATURE_OPTIONS]} helperText="Kova malzemesi için kritiktir" limitText="Sicak ürünlerde plastik kova uygun olmayabilir" tip="Ürün sicakligi kova malzemesi ve elevatör tipini etkiler. Sicak ürünlerde plastik kova uygun olmayabilir." tipId="elevator-temp-band" openTip={openTip} setOpenTip={setOpenTip} />
-                  <ToolkitInput label="Sicaklik" value={temperatureValue} onChange={setTemperatureValue} unit="°C" helperText="Istege bagli sayisal sicaklik" limitText="Opsiyoneldir" tip="Gerçek ürün sicakligini derece cinsinden girebilirsiniz." tipId="elevator-temp-value" openTip={openTip} setOpenTip={setOpenTip} />
-                  <ToolkitSelect label="Korozyon durumu" value={corrosion} onChange={setCorrosion} options={[...CORROSION_OPTIONS]} helperText="Malzeme seçimini etkiler" limitText="Gövde ve baglanti malzemeleri buna göre degerlendirilir" tip="Korozif ürün veya ortam; gövde, baglanti, kova ve mekanik eleman malzeme seçimini etkiler." tipId="elevator-corrosion" openTip={openTip} setOpenTip={setOpenTip} />
-                  <ToolkitSelect label="Kullanim yeri" value={usage} onChange={setUsage} options={[...USAGE_OPTIONS]} helperText="Ortam kosullari koruma seviyesini belirler" limitText="Kapak, boya, galvaniz ve paslanmaz önerileri otomatik olusur" tip="Çalisma ortami; gövde kaplamasi, sizdirmazlik, bakım kapaklari ve koruma detaylarini etkiler." tipId="elevator-usage" openTip={openTip} setOpenTip={setOpenTip} />
+                  <ToolkitSelect label="Taşınacak ürün" value={product} onChange={(value) => { setProduct(value); setDensity(String(PRODUCT_DENSITIES[value] ?? 900)); }} options={[...PRODUCT_OPTIONS]} helperText="Ürün tipi yoğunluğu ve mekanik tavsiyeleri etkiler" limitText="Yoğunluk otomatik gelir, isterseniz değiştirebilirsiniz" tip="Taşınacak ürün tipi; yoğunluk, kova seçimi, elevatör tipi, hız ve mekanik yapı üzerinde doğrudan etkilidir." tipId="elevator-product" openTip={openTip} setOpenTip={setOpenTip} />
+                  <ToolkitInput label="Yığın yoğunluğu" value={density} onChange={setDensity} unit="kg/m³" error={errors.density} helperText="Ürün seçildiğinde otomatik gelir" limitText="Kova hacmi ve kapasite hesabında kullanılır" tip="Ürünün hacim başına ağırlığıdır. Kova hacmi ve kapasite hesabında kullanılır." tipId="elevator-density" openTip={openTip} setOpenTip={setOpenTip} />
+                  <ToolkitSelect label="Ürün tane yapısı" value={grain} onChange={setGrain} options={[...GRAIN_OPTIONS]} helperText="Boşaltma tipi ve hız tavsiyesini etkiler" limitText="Ürün formu kapasite davranışını değiştirir" tip="Ürün formu; boşaltma tipi, hız, kova yapısı ve uygun elevatör tipini etkiler." tipId="elevator-grain" openTip={openTip} setOpenTip={setOpenTip} />
+                  <ToolkitSelect label="Nem durumu" value={moisture} onChange={setMoisture} options={[...MOISTURE_OPTIONS]} helperText="Yapışma ve geri dökülme riskini etkiler" limitText="Nem arttıkça boşaltma davranışı değişir" tip="Nem arttıkça ürünün kovaya yapışma, geri dökülme ve boşaltma davranışı değişir." tipId="elevator-moisture" openTip={openTip} setOpenTip={setOpenTip} />
+                  <ToolkitSelect label="Ürün sıcaklığı" value={temperatureBand} onChange={setTemperatureBand} options={[...TEMPERATURE_OPTIONS]} helperText="Kova malzemesi için kritiktir" limitText="Sıcak ürünlerde plastik kova uygun olmayabilir" tip="Ürün sıcaklığı kova malzemesi ve elevatör tipini etkiler. Sıcak ürünlerde plastik kova uygun olmayabilir." tipId="elevator-temp-band" openTip={openTip} setOpenTip={setOpenTip} />
+                  <ToolkitInput label="Sıcaklık" value={temperatureValue} onChange={setTemperatureValue} unit="°C" helperText="İsteğe bağlı sayısal sıcaklık" limitText="Opsiyoneldir" tip="Gerçek ürün sıcaklığını derece cinsinden girebilirsiniz." tipId="elevator-temp-value" openTip={openTip} setOpenTip={setOpenTip} />
+                  <ToolkitSelect label="Korozyon durumu" value={corrosion} onChange={setCorrosion} options={[...CORROSION_OPTIONS]} helperText="Malzeme seçimini etkiler" limitText="Gövde ve bağlantı malzemeleri buna göre değerlendirilir" tip="Korozif ürün veya ortam; gövde, bağlantı, kova ve mekanik eleman malzeme seçimini etkiler." tipId="elevator-corrosion" openTip={openTip} setOpenTip={setOpenTip} />
+                  <ToolkitSelect label="Kullanım yeri" value={usage} onChange={setUsage} options={[...USAGE_OPTIONS]} helperText="Ortam koşulları koruma seviyesini belirler" limitText="Kapak, boya, galvaniz ve paslanmaz önerileri otomatik oluşur" tip="Çalışma ortamı; gövde kaplaması, sızdırmazlık, bakım kapakları ve koruma detaylarını etkiler." tipId="elevator-usage" openTip={openTip} setOpenTip={setOpenTip} />
                 </div>
               </div>
 
               <div className="mt-6 rounded-3xl border border-slate-200 bg-slate-50 p-5">
                 <h3 className="text-lg font-semibold text-slate-950">3. Kapasite Bilgileri</h3>
                 <div className="mt-4 grid gap-x-4 gap-y-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
-                  <ToolkitInput label="Kapasite" value={capacity} onChange={setCapacity} unit="ton/saat" error={errors.capacity} helperText="Net kapasite giriniz" limitText="Müsterinin istedigi net tasima kapasitesidir" tip="Müsterinin istedigi net tasima kapasitesidir." tipId="elevator-capacity" openTip={openTip} setOpenTip={setOpenTip} />
-                  <ToolkitSelect label="Taşıma güvenlik payi" value={safety} onChange={setSafety} options={[...SAFETY_OPTIONS]} helperText="Tasarim kapasitesine eklenir" limitText="Ani yük degisimleri için emniyet payidir" tip="Ani yük degisimleri ve isletme emniyeti için net kapasiteye eklenen tasarim payidir." tipId="elevator-safety" openTip={openTip} setOpenTip={setOpenTip} />
+                  <ToolkitInput label="Kapasite" value={capacity} onChange={setCapacity} unit="ton/saat" error={errors.capacity} helperText="Net kapasite giriniz" limitText="Müşterinin istediği net taşıma kapasitesidir" tip="Müşterinin istediği net taşıma kapasitesidir." tipId="elevator-capacity" openTip={openTip} setOpenTip={setOpenTip} />
+                  <ToolkitSelect label="Taşıma güvenlik payı" value={safety} onChange={setSafety} options={[...SAFETY_OPTIONS]} helperText="Tasarım kapasitesine eklenir" limitText="Ani yük değişimleri için emniyet payıdır" tip="Ani yük değişimleri ve işletme emniyeti için net kapasiteye eklenen tasarım payıdır." tipId="elevator-safety" openTip={openTip} setOpenTip={setOpenTip} />
                 </div>
               </div>
 
               <div className="mt-6 rounded-3xl border border-slate-200 bg-slate-50 p-5">
                 <h3 className="text-lg font-semibold text-slate-950">4. Geometrik Bilgiler</h3>
                 <div className="mt-4 grid gap-x-4 gap-y-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
-                  <ToolkitInput label="Malzemeyi kaç metre yukari çikaracak?" value={liftHeight} onChange={setLiftHeight} unit="m" error={errors.liftHeight} helperText="Taşıma yüksekligi" limitText="Toplam gövde boyu ve güç hesabini etkiler" tip="Elevatörün tasima yüksekligidir. Toplam gövde boyu, zincir/bant boyu ve güç hesabini etkiler." tipId="elevator-height" openTip={openTip} setOpenTip={setOpenTip} />
-                  <ToolkitSelect label="Ürün giris sekli" value={inletType} onChange={setInletType} options={[...INLET_OPTIONS]} helperText="Besleme karakteri ayak tasarımıni etkiler" limitText="Düzensiz besleme daha emniyetli giris ister" tip="Besleme tipi, ayak yapisi ve doluluk davranisini etkiler." tipId="elevator-inlet" openTip={openTip} setOpenTip={setOpenTip} />
-                  <ToolkitSelect label="Ürün çikis sekli" value={outletType} onChange={setOutletType} options={[...OUTLET_OPTIONS]} helperText="Kafa tasarımıni etkiler" limitText="Bosaltma yönüne göre kapak ve oluk degisebilir" tip="Bosaltma yönü ve çikis düzeni kafa tasarımıni etkiler." tipId="elevator-outlet" openTip={openTip} setOpenTip={setOpenTip} />
-                  <ToolkitSelect label="Bosaltma tipi" value={dischargeType} onChange={setDischargeType} options={[...DISCHARGE_OPTIONS]} helperText="Sistem önerisi seçilebilir" limitText="Ürün yapisina göre uygun bosaltma tipi belirlenir" tip="Ürünün yapisina ve elevatör tipine göre uygun bosaltma tipi seçilir." tipId="elevator-discharge" openTip={openTip} setOpenTip={setOpenTip} />
+                  <ToolkitInput label="Malzemeyi kaç metre yukarı çıkaracak?" value={liftHeight} onChange={setLiftHeight} unit="m" error={errors.liftHeight} helperText="Taşıma yüksekliği" limitText="Toplam gövde boyu ve güç hesabını etkiler" tip="Elevatörün taşıma yüksekliğidir. Toplam gövde boyu, zincir/bant boyu ve güç hesabını etkiler." tipId="elevator-height" openTip={openTip} setOpenTip={setOpenTip} />
+                  <ToolkitSelect label="Ürün giriş şekli" value={inletType} onChange={setInletType} options={[...INLET_OPTIONS]} helperText="Besleme karakteri ayak tasarımını etkiler" limitText="Düzensiz besleme daha emniyetli giriş ister" tip="Besleme tipi, ayak yapısı ve doluluk davranışını etkiler." tipId="elevator-inlet" openTip={openTip} setOpenTip={setOpenTip} />
+                  <ToolkitSelect label="Ürün çıkış şekli" value={outletType} onChange={setOutletType} options={[...OUTLET_OPTIONS]} helperText="Kafa tasarımını etkiler" limitText="Boşaltma yönüne göre kapak ve oluk değişebilir" tip="Boşaltma yönü ve çıkış düzeni kafa tasarımını etkiler." tipId="elevator-outlet" openTip={openTip} setOpenTip={setOpenTip} />
+                  <ToolkitSelect label="Boşaltma tipi" value={dischargeType} onChange={setDischargeType} options={[...DISCHARGE_OPTIONS]} helperText="Sistem önerisi seçilebilir" limitText="Ürün yapısına göre uygun boşaltma tipi belirlenir" tip="Ürünün yapısına ve elevatör tipine göre uygun boşaltma tipi seçilir." tipId="elevator-discharge" openTip={openTip} setOpenTip={setOpenTip} />
                 </div>
               </div>
 
               <div className="mt-6 rounded-3xl border border-slate-200 bg-slate-50 p-5">
                 <h3 className="text-lg font-semibold text-slate-950">5. Kova Bilgileri</h3>
-                {!plasticAllowed ? <div className="mb-4 rounded-2xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm leading-7 text-amber-900">Sicak ürün nedeniyle plastik kova kullanimi uygun değildir.</div> : null}
+                {!plasticAllowed ? <div className="mb-4 rounded-2xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm leading-7 text-amber-900">Sıcak ürün nedeniyle plastik kova kullanımı uygun değildir.</div> : null}
                 <div className="grid gap-x-4 gap-y-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
-                  <ToolkitSelect label="Kova malzemesi" value={bucketMaterial} onChange={setBucketMaterial} options={plasticAllowed ? [...BUCKET_MATERIAL_OPTIONS] : ["Metal kova", "Sistem seçsin"]} helperText="Kova malzemesi ürün karakterine göre seçilir" limitText="Sicak ürünlerde plastik kova otomatik iptal edilir" tip="Kova malzemesi ürünün sicakligina, asindiriciligina ve nemine göre seçilir." tipId="elevator-bucket-material" openTip={openTip} setOpenTip={setOpenTip} />
-                  <ToolkitSelect label="Kova doluluk orani" value={fillRatio} onChange={setFillRatio} options={[...FILL_OPTIONS]} helperText="Efektif kova hacmini belirler" limitText="Nominal hacmin ne kadarinin ürünle dolu kabul edilecegini belirtir" tip="Kovanin nominal hacminin ne kadarinin ürünle dolu kabul edilecegini belirtir." tipId="elevator-fill" openTip={openTip} setOpenTip={setOpenTip} />
-                  <ToolkitSelect label="Kova araligi" value={spacingMode} onChange={setSpacingMode} options={[...SPACING_MODE_OPTIONS]} helperText="Sistem veya manuel deger" limitText="Kovalar arasindaki mesafe kapasiteyi doğrudan etkiler" tip="Kovalar arasindaki mesafedir. Kapasiteyi doğrudan etkiler." tipId="elevator-spacing-mode" openTip={openTip} setOpenTip={setOpenTip} />
-                  {spacingMode === "Manuel girilsin" ? <ToolkitInput label="Kova araligi" value={manualSpacing} onChange={setManualSpacing} unit="mm" error={errors.manualSpacing} helperText="Manuel aralik giriniz" limitText="Kovalar arasindaki merkezden merkeze mesafe" tip="Kovalar arasindaki merkezden merkeze mesafeyi mm cinsinden girin." tipId="elevator-spacing" openTip={openTip} setOpenTip={setOpenTip} /> : <ToolkitReadonly label="Önerilen kova araligi" value={`${formatNumber(model.spacingMm, 0)} mm`} helperText="Seçilen kovaya göre sistem hesapladi" />}
-                  <ToolkitSelect label="Kova ölçüsü" value={activeBucketSelectValue} onChange={setBucketCode} options={model.activeBucketOptions.map((bucket) => bucket.code)} helperText={`${model.activeBucketMaterial} tablosundan seçilir`} limitText="Seçilen kovanin bilgileri otomatik dolacaktir" tip="Aktif kova malzemesine göre kullanilabilir standart kova ölçüsünü seçin." tipId="elevator-bucket-code" openTip={openTip} setOpenTip={setOpenTip} />
+                  <ToolkitSelect label="Kova malzemesi" value={bucketMaterial} onChange={setBucketMaterial} options={plasticAllowed ? [...BUCKET_MATERIAL_OPTIONS] : ["Metal kova", "Sistem seçsin"]} helperText="Kova malzemesi ürün karakterine göre seçilir" limitText="Sıcak ürünlerde plastik kova otomatik iptal edilir" tip="Kova malzemesi ürünün sıcaklığına, aşındırıcılığına ve nemine göre seçilir." tipId="elevator-bucket-material" openTip={openTip} setOpenTip={setOpenTip} />
+                  <ToolkitSelect label="Kova doluluk oranı" value={fillRatio} onChange={setFillRatio} options={[...FILL_OPTIONS]} helperText="Efektif kova hacmini belirler" limitText="Nominal hacmin ne kadarının ürünle dolu kabul edileceğini belirtir" tip="Kovanın nominal hacminin ne kadarının ürünle dolu kabul edileceğini belirtir." tipId="elevator-fill" openTip={openTip} setOpenTip={setOpenTip} />
+                  <ToolkitSelect label="Kova aralığı" value={spacingMode} onChange={setSpacingMode} options={[...SPACING_MODE_OPTIONS]} helperText="Sistem veya manuel değer" limitText="Kovalar arasındaki mesafe kapasiteyi doğrudan etkiler" tip="Kovalar arasındaki mesafedir. Kapasiteyi doğrudan etkiler." tipId="elevator-spacing-mode" openTip={openTip} setOpenTip={setOpenTip} />
+                  {spacingMode === "Manuel girilsin" ? <ToolkitInput label="Kova aralığı" value={manualSpacing} onChange={setManualSpacing} unit="mm" error={errors.manualSpacing} helperText="Manuel aralık giriniz" limitText="Kovalar arasındaki merkezden merkeze mesafe" tip="Kovalar arasındaki merkezden merkeze mesafeyi mm cinsinden girin." tipId="elevator-spacing" openTip={openTip} setOpenTip={setOpenTip} /> : <ToolkitReadonly label="Önerilen kova aralığı" value={`${formatNumber(model.spacingMm, 0)} mm`} helperText="Seçilen kovaya göre sistem hesapladı" />}
+                  <ToolkitSelect label="Kova ölçüsü" value={activeBucketSelectValue} onChange={setBucketCode} options={model.activeBucketOptions.map((bucket) => bucket.code)} helperText={`${model.activeBucketMaterial} tablosundan seçilir`} limitText="Seçilen kovanın bilgileri otomatik dolacaktır" tip="Aktif kova malzemesine göre kullanılabilir standart kova ölçüsünü seçin." tipId="elevator-bucket-code" openTip={openTip} setOpenTip={setOpenTip} />
                 </div>
               </div>
 
-              {model.recommendedElevatorType === "Bantli elevatör" ? (
+              {model.recommendedElevatorType === ELEVATOR_VALUES.beltElevator ? (
                 <div className="mt-6 rounded-3xl border border-slate-200 bg-slate-50 p-5">
-                  <h3 className="text-lg font-semibold text-slate-950">Bantli Elevatör Parametreleri</h3>
+                  <h3 className="text-lg font-semibold text-slate-950">Bantlı Elevatör Parametreleri</h3>
                   <div className="mt-4 grid gap-x-4 gap-y-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
-                    <ToolkitSelect label="Bant tipi" value={beltType} onChange={setBeltType} options={[...BELT_TYPE_OPTIONS]} helperText="Ortam ve sicakliga göre önerilir" limitText="Sistem önerisi sonuç panelinde de gösterilir" tip="Bantli elevatörlerde bant tipi sicaklik, gida uygunlugu ve kimyasal dayanim açisindan seçilir." tipId="elevator-belt-type" openTip={openTip} setOpenTip={setOpenTip} />
-                    <ToolkitSelect label="Bant dayanim sinifi" value={beltClass} onChange={setBeltClass} options={[...BELT_CLASS_OPTIONS]} helperText="Servis faktörü ve yük durumuna göre degerlendirilir" limitText="Agir hizmette daha yüksek sinif önerilir" tip="Bant dayanim sinifi çekme yükü ve servis emniyeti için önemlidir." tipId="elevator-belt-class" openTip={openTip} setOpenTip={setOpenTip} />
-                    <ToolkitSelect label="Bant hizi" value={beltSpeedMode} onChange={setBeltSpeedMode} options={[...BELT_SPEED_MODE_OPTIONS]} helperText="Sistem veya manuel hiz girisi" limitText="Kirilgan ürünlerde daha düsük hiz önerilir" tip="Bant hizi sistem tarafindan önerilebilir veya manuel girilebilir." tipId="elevator-belt-speed-mode" openTip={openTip} setOpenTip={setOpenTip} />
-                    {beltSpeedMode === "Manuel girilsin" ? <ToolkitInput label="Bant hizi" value={manualBeltSpeed} onChange={setManualBeltSpeed} unit="m/sn" error={errors.manualBeltSpeed} helperText="Manuel hiz girisi" limitText="Yüksek hiz kirilgan ürünlerde uygun olmayabilir" tip="Elevatör bandinin çevresel hizini m/sn cinsinden girin." tipId="elevator-belt-speed" openTip={openTip} setOpenTip={setOpenTip} /> : <ToolkitReadonly label="Önerilen hiz araligi" value={`${formatNumber(model.speedRange.min, 2)} - ${formatNumber(model.speedRange.max, 2)} m/sn`} helperText="Sistem ürün karakterine göre belirledi" />}
-                    <ToolkitSelect label="Tambur kaplamasi" value={drumCover} onChange={setDrumCover} options={[...DRUM_COVER_OPTIONS]} helperText="Kayma kontrolü için" limitText="Nemli ürünlerde lastik kaplama öne çikar" tip="Tambur kaplamasi kaymayi azaltir ve tutunmayi artirir." tipId="elevator-drum-cover" openTip={openTip} setOpenTip={setOpenTip} />
+                    <ToolkitSelect label="Bant tipi" value={beltType} onChange={setBeltType} options={[...BELT_TYPE_OPTIONS]} helperText="Ortam ve sıcaklığa göre önerilir" limitText="Sistem önerisi sonuç panelinde de gösterilir" tip="Bantlı elevatörlerde bant tipi sıcaklık, gıda uygunluğu ve kimyasal dayanım açısından seçilir." tipId="elevator-belt-type" openTip={openTip} setOpenTip={setOpenTip} />
+                    <ToolkitSelect label="Bant dayanım sınıfı" value={beltClass} onChange={setBeltClass} options={[...BELT_CLASS_OPTIONS]} helperText="Servis faktörü ve yük durumuna göre değerlendirilir" limitText="Ağır hizmette daha yüksek sınıf önerilir" tip="Bant dayanım sınıfı çekme yükü ve servis emniyeti için önemlidir." tipId="elevator-belt-class" openTip={openTip} setOpenTip={setOpenTip} />
+                    <ToolkitSelect label="Bant hızı" value={beltSpeedMode} onChange={setBeltSpeedMode} options={[...BELT_SPEED_MODE_OPTIONS]} helperText="Sistem veya manuel hız girişi" limitText="Kırılgan ürünlerde daha düşük hız önerilir" tip="Bant hızı sistem tarafından önerilebilir veya manuel girilebilir." tipId="elevator-belt-speed-mode" openTip={openTip} setOpenTip={setOpenTip} />
+                    {beltSpeedMode === "Manuel girilsin" ? <ToolkitInput label="Bant hızı" value={manualBeltSpeed} onChange={setManualBeltSpeed} unit="m/sn" error={errors.manualBeltSpeed} helperText="Manuel hız girişi" limitText="Yüksek hız kırılgan ürünlerde uygun olmayabilir" tip="Elevatör bandının çevresel hızını m/sn cinsinden girin." tipId="elevator-belt-speed" openTip={openTip} setOpenTip={setOpenTip} /> : <ToolkitReadonly label="Önerilen hız aralığı" value={`${formatNumber(model.speedRange.min, 2)} - ${formatNumber(model.speedRange.max, 2)} m/sn`} helperText="Sistem ürün karakterine göre belirledi" />}
+                    <ToolkitSelect label="Tambur kaplaması" value={drumCover} onChange={setDrumCover} options={[...DRUM_COVER_OPTIONS]} helperText="Kayma kontrolü için" limitText="Nemli ürünlerde lastik kaplama öne çıkar" tip="Tambur kaplaması kaymayı azaltır ve tutunmayı artırır." tipId="elevator-drum-cover" openTip={openTip} setOpenTip={setOpenTip} />
                   </div>
                 </div>
               ) : (
                 <div className="mt-6 rounded-3xl border border-slate-200 bg-slate-50 p-5">
                   <h3 className="text-lg font-semibold text-slate-950">Zincirli Elevatör Parametreleri</h3>
                   <div className="mt-4 grid gap-x-4 gap-y-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
-                    <ToolkitSelect label="Zincir tipi" value={chainType} onChange={setChainType} options={[...CHAIN_TYPE_OPTIONS]} helperText="Tek, çift veya agir hizmet" limitText="Agir ürünlerde çift sira veya agir hizmet tavsiye edilir" tip="Zincirli elevatörlerde zincir tipi yük ve servis sinifini etkiler." tipId="elevator-chain-type" openTip={openTip} setOpenTip={setOpenTip} />
-                    <ToolkitSelect label="Zincir hatvesi" value={chainPitchMode} onChange={setChainPitchMode} options={[...CHAIN_PITCH_OPTIONS]} helperText="Sistem önerisi veya manuel giris" limitText="Kova genisligi ve duty sinifina göre belirlenir" tip="Zincir hatvesi kova baglantisini ve tahrik geometrisini etkiler." tipId="elevator-chain-pitch-mode" openTip={openTip} setOpenTip={setOpenTip} />
-                    {chainPitchMode === "Manuel giris" ? <ToolkitInput label="Zincir hatvesi" value={manualChainPitch} onChange={setManualChainPitch} unit="mm" error={errors.manualChainPitch} helperText="Manuel hatve degeri" limitText="Sifirdan büyük olmalidir" tip="Zincir hatvesini mm cinsinden manuel olarak girin." tipId="elevator-chain-pitch" openTip={openTip} setOpenTip={setOpenTip} /> : <ToolkitReadonly label="Önerilen zincir hatvesi" value={model.chainPitch} helperText="Sistem önerisi" />}
-                    <ToolkitSelect label="Zincir malzemesi" value={chainMaterial} onChange={setChainMaterial} options={[...CHAIN_MATERIAL_OPTIONS]} helperText="Ürün ve ortama göre belirlenir" limitText="Korozif veya asindirici ürünlerde yükselir" tip="Zincir malzemesi, asinma ve korozyon riskine göre seçilir." tipId="elevator-chain-material" openTip={openTip} setOpenTip={setOpenTip} />
-                    <ToolkitSelect label="Tahrik tipi" value={driveType} onChange={setDriveType} options={[...DRIVE_TYPE_OPTIONS]} helperText="Sistem önerisi yapilabilir" limitText="Agir hizmette redüktörlü çözüm öne çikar" tip="Tahrik tipi motor-redüktör yapisinin hizmet sinifina göre degerlendirilmesini saglar." tipId="elevator-drive-type" openTip={openTip} setOpenTip={setOpenTip} />
+                    <ToolkitSelect label="Zincir tipi" value={chainType} onChange={setChainType} options={[...CHAIN_TYPE_OPTIONS]} helperText="Tek, çift veya ağır hizmet" limitText="Ağır ürünlerde çift sıra veya ağır hizmet tavsiye edilir" tip="Zincirli elevatörlerde zincir tipi yük ve servis sınıfını etkiler." tipId="elevator-chain-type" openTip={openTip} setOpenTip={setOpenTip} />
+                    <ToolkitSelect label="Zincir hatvesi" value={chainPitchMode} onChange={setChainPitchMode} options={[...CHAIN_PITCH_OPTIONS]} helperText="Sistem önerisi veya manuel giriş" limitText="Kova genişliği ve duty sınıfına göre belirlenir" tip="Zincir hatvesi kova bağlantısını ve tahrik geometrisini etkiler." tipId="elevator-chain-pitch-mode" openTip={openTip} setOpenTip={setOpenTip} />
+                    {chainPitchMode === ELEVATOR_VALUES.manualChainPitch ? <ToolkitInput label="Zincir hatvesi" value={manualChainPitch} onChange={setManualChainPitch} unit="mm" error={errors.manualChainPitch} helperText="Manuel hatve değeri" limitText="Sıfırdan büyük olmalıdır" tip="Zincir hatvesini mm cinsinden manuel olarak girin." tipId="elevator-chain-pitch" openTip={openTip} setOpenTip={setOpenTip} /> : <ToolkitReadonly label="Önerilen zincir hatvesi" value={model.chainPitch} helperText="Sistem önerisi" />}
+                    <ToolkitSelect label="Zincir malzemesi" value={chainMaterial} onChange={setChainMaterial} options={[...CHAIN_MATERIAL_OPTIONS]} helperText="Ürün ve ortama göre belirlenir" limitText="Korozif veya aşındırıcı ürünlerde yükselir" tip="Zincir malzemesi, aşınma ve korozyon riskine göre seçilir." tipId="elevator-chain-material" openTip={openTip} setOpenTip={setOpenTip} />
+                    <ToolkitSelect label="Tahrik tipi" value={driveType} onChange={setDriveType} options={[...DRIVE_TYPE_OPTIONS]} helperText="Sistem önerisi yapılabilir" limitText="Ağır hizmette redüktörlü çözüm öne çıkar" tip="Tahrik tipi motor-redüktör yapısının hizmet sınıfına göre değerlendirilmesini sağlar." tipId="elevator-drive-type" openTip={openTip} setOpenTip={setOpenTip} />
                   </div>
                 </div>
               )}
 
               <div className="mt-6 rounded-3xl border border-slate-200 bg-slate-50 p-5">
-                <h3 className="text-lg font-semibold text-slate-950">6. Çalisma Bilgileri</h3>
+                <h3 className="text-lg font-semibold text-slate-950">6. Çalışma Bilgileri</h3>
                 <div className="mt-4 grid gap-x-4 gap-y-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
-                  <ToolkitSelect label="Çalisma süresi" value={workingTime} onChange={setWorkingTime} options={[...WORKING_TIME_OPTIONS]} helperText="Servis faktörü ve duty sinifini etkiler" limitText="Yogun çalismada daha emniyetli öneri verilir" tip="Çalisma süresi motor, redüktör ve servis faktörü seçiminde önemlidir." tipId="elevator-working-time" openTip={openTip} setOpenTip={setOpenTip} />
+                  <ToolkitSelect label="Çalışma süresi" value={workingTime} onChange={setWorkingTime} options={[...WORKING_TIME_OPTIONS]} helperText="Servis faktörü ve duty sınıfını etkiler" limitText="Yoğun çalışmada daha emniyetli öneri verilir" tip="Çalışma süresi motor, redüktör ve servis faktörü seçiminde önemlidir." tipId="elevator-working-time" openTip={openTip} setOpenTip={setOpenTip} />
                 </div>
               </div>
 
@@ -387,23 +318,23 @@ export function ElevatorSelectionCalculator() {
 
             <div className="rounded-[32px] border border-slate-200 bg-white p-6 shadow-[0_18px_50px_rgba(15,23,42,0.06)]">
               <h2 className="text-2xl font-semibold text-slate-950">Otomatik Seçim ve Sistem Önerileri</h2>
-              <p className="mt-3 text-sm leading-7 text-slate-600">Bu alan, formu doldururken olusan canli ara degerlendirmeleri gösterir. Nihai sonuçlar sagdaki teklif seviyesindeki özet panelindedir.</p>
+              <p className="mt-3 text-sm leading-7 text-slate-600">Bu alan, formu doldururken oluşan canlı ara değerlendirmeleri gösterir. Nihai sonuçlar sağdaki teklif seviyesindeki özet panelindedir.</p>
               <div className="mt-6 grid gap-4 md:grid-cols-2">
                 <SuggestionCard title="Önerilen elevatör tipi" value={model.recommendedElevatorType} tone="blue" />
                 <SuggestionCard title="Önerilen kova malzemesi" value={model.recommendedBucketMaterial} tone="blue" />
                 <SuggestionCard title="Plastik kova uygun mu?" value={model.plasticAllowed ? "Uygun olabilir" : "Uygun değil"} tone={model.plasticAllowed ? "slate" : "amber"} />
-                <SuggestionCard title="Önerilen bosaltma tipi" value={model.discharge} />
-                <SuggestionCard title="Önerilen hiz araligi" value={`${formatNumber(model.speedRange.min, 2)} - ${formatNumber(model.speedRange.max, 2)} m/sn`} />
-                <SuggestionCard title="Ürün risk degerlendirmesi" value={model.productRisk} tone={model.productRisk.includes("yüksek") ? "amber" : "slate"} />
+                <SuggestionCard title="Önerilen boşaltma tipi" value={model.discharge} />
+                <SuggestionCard title="Önerilen hız aralığı" value={`${formatNumber(model.speedRange.min, 2)} - ${formatNumber(model.speedRange.max, 2)} m/sn`} />
+                <SuggestionCard title="Ürün risk değerlendirmesi" value={model.productRisk} tone={model.productRisk.includes("yüksek") ? "amber" : "slate"} />
                 <SuggestionCard title="Korozyon risk önerisi" value={model.corrosionRisk} tone={model.corrosionRisk.includes("Yüksek") ? "amber" : "slate"} />
-                <SuggestionCard title="Sicaklik malzeme uyarisi" value={model.plasticAllowed ? "Standart kova malzemeleri degerlendirilebilir" : "Sicak ürün nedeniyle metal kova tercih edilmelidir"} tone={model.plasticAllowed ? "slate" : "amber"} />
-                <SuggestionCard title="Nem / yapisma uyarisi" value={moisture === "Çok nemli" || moisture === "Yapiskan nemli" || moisture === "Çamurumsu" ? "Düsük hiz, kontrollü bosaltma ve zincirli yapi öne çikar" : "Standart bosaltma davranisi beklenir"} tone={moisture === "Çok nemli" || moisture === "Yapiskan nemli" || moisture === "Çamurumsu" ? "amber" : "slate"} />
-                <SuggestionCard title="Asindirici ürün tavsiyesi" value={grain === "Asindirici" ? "Metal kova, asinma plakasi ve agir hizmet zincir tavsiye edilir" : "Standart asinma seviyesi"} tone={grain === "Asindirici" ? "amber" : "slate"} />
+                <SuggestionCard title="Sıcaklık malzeme uyarısı" value={model.plasticAllowed ? "Standart kova malzemeleri değerlendirilebilir" : "Sıcak ürün nedeniyle metal kova tercih edilmelidir"} tone={model.plasticAllowed ? "slate" : "amber"} />
+                <SuggestionCard title="Nem / yapışma uyarısı" value={moisture === ELEVATOR_VALUES.veryMoist || moisture === ELEVATOR_VALUES.stickyMoist || moisture === ELEVATOR_VALUES.muddy ? "Düşük hız, kontrollü boşaltma ve zincirli yapı öne çıkar" : "Standart boşaltma davranışı beklenir"} tone={moisture === ELEVATOR_VALUES.veryMoist || moisture === ELEVATOR_VALUES.stickyMoist || moisture === ELEVATOR_VALUES.muddy ? "amber" : "slate"} />
+                <SuggestionCard title="Aşındırıcı ürün tavsiyesi" value={grain === ELEVATOR_VALUES.abrasive ? "Metal kova, aşınma plakası ve ağır hizmet zincir tavsiye edilir" : "Standart aşınma seviyesi"} tone={grain === ELEVATOR_VALUES.abrasive ? "amber" : "slate"} />
               </div>
             </div>
 
             <BucketTable material={model.activeBucketMaterial} rows={model.activeBucketOptions} />
-            <ToolkitInfo title="Teknik Bilgi" text="Bu program, elevatör seçiminde ön teklif ve ön mühendislik seviyesinde karar destegi üretir. Kova hacmi, doluluk orani, hiz, tasima yüksekligi, ürün karakteri ve çalisma ortami birlikte degerlendirilir." />
+            <ToolkitInfo title="Teknik Bilgi" text="Bu program, elevatör seçiminde ön teklif ve ön mühendislik seviyesinde karar desteği üretir. Kova hacmi, doluluk oranı, hız, taşıma yüksekliği, ürün karakteri ve çalışma ortamı birlikte değerlendirilir." />
           </div>
 
           <div className="space-y-6">
@@ -411,77 +342,77 @@ export function ElevatorSelectionCalculator() {
               <div className="flex flex-wrap items-center justify-between gap-3">
                 <div>
                   <h2 className="text-2xl font-semibold text-slate-950">Sonuç Ekranı</h2>
-                  <p className="mt-2 text-sm leading-7 text-slate-600">Teknik özet, teklif hazirlamaya uygun biçimde kutular halinde sunulur.</p>
+                  <p className="mt-2 text-sm leading-7 text-slate-600">Teknik özet, teklif hazırlamaya uygun biçimde kutular halinde sunulur.</p>
                 </div>
                 <div className="flex gap-2">
                   <button type="button" onClick={() => window.print()} className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-blue-200 hover:text-blue-700">PDF indir</button>
-                  <button type="button" onClick={() => window.print()} className="rounded-full bg-slate-950 px-4 py-2 text-sm font-semibold text-white transition hover:bg-slate-800">Yazdir</button>
+                  <button type="button" onClick={() => window.print()} className="rounded-full bg-slate-950 px-4 py-2 text-sm font-semibold text-white transition hover:bg-slate-800">Yazdır</button>
                 </div>
               </div>
 
               <div className="mt-6 grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
                 <ToolkitResult label="Net kapasite" value={`${formatNumber(model.netCapacity, 2)} ton/saat`} />
-                <ToolkitResult label="Güvenlik payi" value={safety} tone="info" />
-                <ToolkitResult label="Tasarim kapasitesi" value={`${formatNumber(model.designCapacity, 2)} ton/saat`} tone="info" />
+                <ToolkitResult label="Güvenlik payı" value={safety} tone="info" />
+                <ToolkitResult label="Tasarım kapasitesi" value={`${formatNumber(model.designCapacity, 2)} ton/saat`} tone="info" />
                 <ToolkitResult label="Elevatör tipi" value={model.recommendedElevatorType} tone="info" />
                 <ToolkitResult label="Kova uygunluk durumu" value={model.suitability.statusLabel} tone={model.suitability.statusTone} />
-                <ToolkitResult label="Sistem sinifi" value={model.systemClass} tone={model.heavyDuty ? "warning" : "info"} />
+                <ToolkitResult label="Sistem sınıfı" value={model.systemClass} tone={model.heavyDuty ? "warning" : "info"} />
               </div>
             </div>
 
             <ResultSection title="A) Kapasite Özeti" items={[
               { label: "Net kapasite", value: `${formatNumber(model.netCapacity, 2)} ton/saat` },
-              { label: "Güvenlik payi", value: safety },
-              { label: "Tasarim kapasitesi", value: `${formatNumber(model.designCapacity, 2)} ton/saat` },
-              { label: "Yogunluk", value: `${formatNumber(model.densityValue, 0)} kg/m³` },
+              { label: "Güvenlik payı", value: safety },
+              { label: "Tasarım kapasitesi", value: `${formatNumber(model.designCapacity, 2)} ton/saat` },
+              { label: "Yoğunluk", value: `${formatNumber(model.densityValue, 0)} kg/m³` },
               { label: "Hacimsel kapasite", value: `${formatNumber(model.volumetricCapacity, 2)} m³/saat` },
-              { label: "Kova doluluk orani", value: model.fillRatioLabel },
+              { label: "Kova doluluk oranı", value: model.fillRatioLabel },
               { label: "Efektif kova hacmi", value: `${formatNumber(model.suitability.effectiveVolume, 5)} m³` },
             ]} />
 
             <ResultSection title="B) Elevatör Tipi ve Genel Seçim" items={[
               { label: "Elevatör tipi", value: model.recommendedElevatorType },
-              { label: "Seçim uygunlugu", value: model.suitability.statusLabel },
-              { label: "Ürüne göre degerlendirme", value: model.productRisk },
-              { label: "Önerilen sistem sinifi", value: model.systemClass },
+              { label: "Seçim uygunluğu", value: model.suitability.statusLabel },
+              { label: "Ürüne göre değerlendirme", value: model.productRisk },
+              { label: "Önerilen sistem sınıfı", value: model.systemClass },
             ]} />
 
-            <ResultSection title="C) Kova Sonuçlari" items={[
+            <ResultSection title="C) Kova Sonuçları" items={[
               { label: "Kova malzemesi", value: model.activeBucketMaterial },
               { label: "Kova ölçüsü", value: `${model.selectedBucket.code} / ${model.selectedBucket.width} mm` },
               { label: "Nominal kova hacmi", value: `${model.selectedBucket.volumeG} g` },
               { label: "Efektif kova hacmi", value: `${formatNumber(model.suitability.effectiveVolume, 5)} m³` },
-              { label: "Kova araligi", value: `${formatNumber(model.spacingMm, 0)} mm` },
+              { label: "Kova aralığı", value: `${formatNumber(model.spacingMm, 0)} mm` },
               { label: "Metrede kova adedi", value: `${formatNumber(model.suitability.bucketsPerMeter, 2)} adet/m` },
-              { label: "Saatte tahmini kova sayisi", value: `${formatNumber(model.suitability.bucketsPerHour, 0)} adet/saat` },
+              { label: "Saatte tahmini kova sayısı", value: `${formatNumber(model.suitability.bucketsPerHour, 0)} adet/saat` },
               { label: "Kapasite uygunluk durumu", value: model.suitability.statusLabel },
             ]} />
 
-            <ResultSection title="D) Hiz ve Tahrik" items={[
-              { label: "Önerilen elevatör hizi", value: `${formatNumber(model.speedValue, 2)} m/sn` },
-              { label: "Hiz araligi", value: `${formatNumber(model.speedRange.min, 2)} - ${formatNumber(model.speedRange.max, 2)} m/sn` },
+            <ResultSection title="D) Hız ve Tahrik" items={[
+              { label: "Önerilen elevatör hızı", value: `${formatNumber(model.speedValue, 2)} m/sn` },
+              { label: "Hız aralığı", value: `${formatNumber(model.speedRange.min, 2)} - ${formatNumber(model.speedRange.max, 2)} m/sn` },
               { label: "Tahmini motor gücü", value: `${formatNumber(model.motorPower, 2)} kW` },
               { label: "Redüktör ön seçimi", value: model.selectedDriveType },
-              { label: model.recommendedElevatorType === "Bantli elevatör" ? "Bant tipi ve sinifi" : "Zincir tipi ve malzemesi", value: model.recommendedElevatorType === "Bantli elevatör" ? `${model.chosenBeltType} / ${model.beltClassRecommendation}` : `${chainType} / ${model.selectedChainMaterial}` },
-              { label: model.recommendedElevatorType === "Zincirli elevatör" ? "Zincir hatvesi" : "Tambur kaplamasi", value: model.recommendedElevatorType === "Zincirli elevatör" ? model.chainPitch : drumCover },
+              { label: model.recommendedElevatorType === ELEVATOR_VALUES.beltElevator ? "Bant tipi ve sınıfı" : "Zincir tipi ve malzemesi", value: model.recommendedElevatorType === ELEVATOR_VALUES.beltElevator ? `${model.chosenBeltType} / ${model.beltClassRecommendation}` : `${chainType} / ${model.selectedChainMaterial}` },
+              { label: model.recommendedElevatorType === ELEVATOR_VALUES.chainElevator ? "Zincir hatvesi" : "Tambur kaplaması", value: model.recommendedElevatorType === ELEVATOR_VALUES.chainElevator ? model.chainPitch : drumCover },
             ]} />
 
             <ResultSection title="E) Gövde ve Mekanik" items={[
               { label: "Gövde malzemesi önerisi", value: model.bodyRecommendation },
               { label: "Kafa tipi", value: model.headType },
               { label: "Ayak tipi", value: model.bootType },
-              { label: "Bakım kapagi ihtiyaci", value: accessories.includes("Bakım kapagi") ? "Seçildi" : "Önerilir" },
-              { label: "Agir hizmet / standart", value: model.systemClass },
-              { label: "Korozyona göre yapi önerisi", value: model.corrosionRisk },
+              { label: "Bakım kapağı ihtiyacı", value: accessories.includes(ELEVATOR_VALUES.maintenanceDoor) ? "Seçildi" : "Önerilir" },
+              { label: "Ağır hizmet / standart", value: model.systemClass },
+              { label: "Korozyona göre yapı önerisi", value: model.corrosionRisk },
             ]} />
 
             <div className="rounded-3xl border border-slate-200 bg-white p-5">
-              <h3 className="text-lg font-semibold text-slate-950">F) Uyarilar</h3>
+              <h3 className="text-lg font-semibold text-slate-950">F) Uyarılar</h3>
               <ul className="mt-4 grid gap-3">
                 {model.warnings.map((warning) => (
                   <li key={warning} className="rounded-2xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm leading-7 text-amber-900">{warning}</li>
                 ))}
-                <li className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm leading-7 text-slate-700">Bu sonuçlar ön mühendislik ve teklif hazirlama amaçlidir. Nihai imalat öncesinde detayli mekanik kontrol yapilmalidir.</li>
+                <li className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm leading-7 text-slate-700">Bu sonuçlar ön mühendislik ve teklif hazırlama amaçlıdır. Nihai imalat öncesinde detaylı mekanik kontrol yapılmalıdır.</li>
               </ul>
             </div>
 

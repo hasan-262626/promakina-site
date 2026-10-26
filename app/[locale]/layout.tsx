@@ -1,3 +1,4 @@
+import { serializeJsonLd } from "@/lib/json-ld";
 import type { Metadata } from "next";
 import { Montserrat, Noto_Sans_Arabic } from "next/font/google";
 import Script from "next/script";
@@ -136,7 +137,7 @@ gtag('config', '${GA_MEASUREMENT_ID}');`}
       >
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+          dangerouslySetInnerHTML={{ __html: serializeJsonLd(organizationSchema) }}
         />
         <noscript>
           <iframe

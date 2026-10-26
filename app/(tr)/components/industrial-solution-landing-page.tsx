@@ -1,4 +1,5 @@
 ﻿import type { Metadata } from "next";
+import { serializeJsonLd } from "@/lib/json-ld";
 import Link from "next/link";
 import { Hero } from "./Hero";
 import type { IndustrialSolutionLandingConfig } from "../lib/industrial-solution-landing-data";
@@ -107,19 +108,19 @@ export function IndustrialSolutionLandingPage({
     <main className="min-h-screen overflow-x-hidden bg-white text-slate-900">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(organizationSchema) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(serviceSchema) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(breadcrumbSchema) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(faqSchema) }}
       />
 
       <Hero title={config.title} description={config.heroDescription} image={config.image}>
@@ -152,9 +153,10 @@ export function IndustrialSolutionLandingPage({
             <p className="mt-4 text-sm font-semibold uppercase tracking-[0.18em] text-blue-700">
               {config.eyebrow}
             </p>
-            <h1 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950 md:text-4xl">
+            {/* Sayfanın tek H1'i Hero'dadır; bu başlık görsel olarak aynı kalarak H2 oldu. */}
+            <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950 md:text-4xl">
               {config.title}
-            </h1>
+            </h2>
             <p className="mt-4 text-base leading-8 text-slate-600">{config.trustNote}</p>
             <div className="mt-6 space-y-5 text-sm leading-8 text-slate-600 sm:text-base">
               {config.introParagraphs.map((paragraph) => (

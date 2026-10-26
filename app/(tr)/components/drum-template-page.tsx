@@ -1,3 +1,5 @@
+import { loadDrumPageOverride } from "@/lib/cms/public-content";
+import { serializeJsonLd } from "@/lib/json-ld";
 import type { Metadata } from "next";
 import {
   buildDrumPageContent,
@@ -39,12 +41,13 @@ function trGroup(group: ProductPageGroup) {
 }
 
 /** Kurutma tamburu şablonuna geçirilen TR tambur ürün sayfalarının metadata'sı. */
-export function drumTemplateMetadata(pageKey: DrumPageKey): Metadata {
-  const texts = getDrumPageTexts(pageKey, "tr");
-  const config = getDrumPageConfig(pageKey);
+export async function drumTemplateMetadata(pageKey: DrumPageKey): Promise<Metadata> {
+  const override = await loadDrumPageOverride(pageKey, "tr");
+  const texts = override.texts ?? getDrumPageTexts(pageKey, "tr");
+  const mainImage = override.images?.mainImage ?? getDrumPageConfig(pageKey).mainImage;
   const path = pathFor(pageKey, "tr");
   const canonical = `${SITE}${path}`;
-  const images = [{ url: `${SITE}${encodeURI(config.mainImage)}`, alt: texts.overview.imageAlt }];
+  const images = [{ url: `${SITE}${encodeURI(mainImage)}`, alt: texts.overview.imageAlt }];
 
   return {
     title: { absolute: texts.meta.title },
@@ -69,9 +72,10 @@ export function drumTemplateMetadata(pageKey: DrumPageKey): Metadata {
 }
 
 /** TR tambur ürün sayfası: mevcut hero ve sol menü korunur, ana içerik ortak premium şablondan gelir. */
-export function DrumTemplatePage({ pageKey }: { pageKey: DrumPageKey }) {
+export async function DrumTemplatePage({ pageKey }: { pageKey: DrumPageKey }) {
   const config = getDrumPageConfig(pageKey);
-  const texts = getDrumPageTexts(pageKey, "tr");
+  const override = await loadDrumPageOverride(pageKey, "tr");
+  const texts = override.texts ?? getDrumPageTexts(pageKey, "tr");
   const group = trGroup(groupOf(pageKey));
   const product = group.products.find((item) => item.slug === config.trSlug);
   const path = pathFor(pageKey, "tr");
@@ -79,6 +83,7 @@ export function DrumTemplatePage({ pageKey }: { pageKey: DrumPageKey }) {
   const title = product?.title ?? texts.breadcrumbLabel;
   const content = buildDrumPageContent(pageKey, "tr", {
     calculatorHref: getMachineCalculatorHref({ family: group.family, title }),
+    override,
   });
 
   // Fiyat, stok veya değerlendirme bilgisi eklenmez; yalnız sayfada görünen veriler kullanılır.
@@ -88,7 +93,7 @@ export function DrumTemplatePage({ pageKey }: { pageKey: DrumPageKey }) {
     "@id": `${canonicalUrl}#product`,
     name: texts.h1,
     description: texts.meta.description,
-    image: drumSchemaImages(pageKey).map((src) => `${SITE}${encodeURI(src)}`),
+    image: drumSchemaImages(pageKey, override.images).map((src) => `${SITE}${encodeURI(src)}`),
     url: canonicalUrl,
     category: texts.productCategory,
     brand: { "@type": "Brand", name: "Pro Makina" },
@@ -121,9 +126,9 @@ export function DrumTemplatePage({ pageKey }: { pageKey: DrumPageKey }) {
 
   return (
     <main className="min-h-screen bg-white text-slate-900">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(productSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(faqSchema) }} />
       {/* Ana içerik customContent ile çizildiği için şablonun varsayılan içerik alanları boş geçilir. */}
       <ProductDetailSystem
         categoryLabel={group.label}
@@ -132,7 +137,7 @@ export function DrumTemplatePage({ pageKey }: { pageKey: DrumPageKey }) {
         activeSidebarHref={path}
         title={title}
         heroDescription={product?.heroDescription ?? texts.meta.description}
-        heroImage={config.mainImage}
+        heroImage={content.overview.image.src}
         headingTitle={texts.h1}
         galleryLayout="grid"
         overviewParagraphs={[]}

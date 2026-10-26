@@ -917,27 +917,6 @@ const generatedTransportArticles: TopicalArticle[] = [
       card("Depolama ve Besleme Sistemleri", "Besleme tarafındaki tamamlayıcı sistemleri görün.", "/makinalar-ekipman/depolama-ve-besleme-sistemleri"),
     ],
   }),
-  createTransportArticle({
-    slug: "helezyon-konveyor-kapasite-hesabi",
-    title: "Helezon Konveyör Kapasite Hesabı",
-    metaTitle: "Helezon Konveyör Kapasite Hesabı",
-    description: "Helezon konveyör kapasite hesabı; çap, hatve, devir, ürün yoğunluğu ve motor yükü açısından teknik seçim rehberi.",
-    heroDescription: "Helezon kapasite hesabı aramasında aynı teknik içeriğe alternatif slug ile erişmek isteyen kullanıcılar için hazırlanmış eşdeğer teknik sayfa.",
-    equipmentName: "helezon konveyör",
-    processText: "kapalı transfer, dozajlı besleme ve kompakt taşıma hatları",
-    machineHref: "/makinalar-ekipman/tasima-ekipmanlari/vidali-helezonlar",
-    programHref: "/programlar/helezon-kapasite-hesabi",
-    ctaText: "Helezon konveyör kapasitesi ve mekanik seçimini birlikte değerlendirelim.",
-    relatedContents: [
-      card("Helezon Konveyör Kapasite Hesabı", "Aynı konunun ana slug altındaki detaylı sürümünü inceleyin.", "/kutuphane/blog/helezon-konveyor-kapasite-hesabi"),
-      card("Helezon Motor Gücü Hesabı", "Tahrik tarafını daha detaylı görün.", "/kutuphane/blog/helezon-motor-gucu-hesabi"),
-      card("Eğimli Helezon Hesabı", "Yükselen hatlarda kapasite etkisini okuyun.", "/kutuphane/blog/egimli-helezon-hesabi"),
-    ],
-    relatedServices: [
-      card("Vidalı Helezonlar", "Ürün ailesini makina kategorisinde görün.", "/makinalar-ekipman/tasima-ekipmanlari/vidali-helezonlar"),
-      card("Taşıma Ekipmanları", "Diğer taşıma sistemlerini aynı ailede inceleyin.", "/makinalar-ekipman/tasima-ekipmanlari"),
-    ],
-  }),
 ];
 
 const generatedFertilizerArticles: TopicalArticle[] = [

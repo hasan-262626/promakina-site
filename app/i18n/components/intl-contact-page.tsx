@@ -1,3 +1,4 @@
+import { serializeJsonLd } from "@/lib/json-ld";
 import Link from "next/link";
 import { MachinePageHero } from "../../(tr)/components/machine-page-hero";
 import { createWhatsAppHref, siteContact } from "../../(tr)/lib/site-contact";
@@ -51,8 +52,8 @@ export function IntlContactPage({ locale, content, dict, labelFor }: IntlContact
 
   return (
     <main className="min-h-screen overflow-x-hidden bg-white text-slate-900">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(pageSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(breadcrumbSchema) }} />
 
       <nav aria-label="Breadcrumb" className="border-b border-slate-200 bg-slate-50/60">
         <ol className="site-container flex flex-wrap items-center gap-1.5 py-3 text-xs text-slate-500 sm:text-[13px]">

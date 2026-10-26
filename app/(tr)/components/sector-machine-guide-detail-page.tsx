@@ -1,4 +1,5 @@
 ﻿import type { Metadata } from "next";
+import { serializeJsonLd } from "@/lib/json-ld";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { GlobalBottomCta } from "./global-bottom-cta";
@@ -448,16 +449,16 @@ export function SectorMachineGuideDetailPage({
     <main className="min-h-screen overflow-x-hidden bg-slate-50 text-slate-900">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(buildArticleSchema(normalizedGuide)) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(buildArticleSchema(normalizedGuide)) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(buildFaqSchema(normalizedGuide)) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(buildFaqSchema(normalizedGuide)) }}
       />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(buildBreadcrumbSchema(normalizedGuide)),
+          __html: serializeJsonLd(buildBreadcrumbSchema(normalizedGuide)),
         }}
       />
 

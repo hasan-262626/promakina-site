@@ -61,10 +61,16 @@ export type SectorDetailPageModel = {
 };
 
 /** Şablonun ihtiyaç duyduğu tüm veriyi tek dilde üretir; TR ve EN/RU/AR aynı modeli kullanır. */
-export function buildSectorDetailModel(locale: Locale, key: SectorDetailKey): SectorDetailPageModel {
+export function buildSectorDetailModel(
+  locale: Locale,
+  key: SectorDetailKey,
+  /** Admin panelinde yayınlanmış içerik (yoksa koddaki metin ve görseller kullanılır). */
+  override?: { text?: SectorDetailText | null; images?: string[] | null },
+): SectorDetailPageModel {
   const definition = getSectorDetailDefinition(key);
   const texts = textsByLocale[locale];
-  const text = texts.pages[key];
+  const text = override?.text ?? texts.pages[key];
+  const imageSrcs = override?.images ?? definition.images;
   const labelOf = (routeKey: RouteKey) => {
     const label = texts.routeLabels[routeKey] ?? intlLabel(locale, routeKey);
     if (!label) throw new Error(`Sektör detay: ${locale} için ${routeKey} etiketi eksik`);
@@ -98,7 +104,7 @@ export function buildSectorDetailModel(locale: Locale, key: SectorDetailKey): Se
       label: texts.pages[item.key].label,
       href: pathFor(item.key, locale),
     })),
-    images: definition.images.map((src, index) => ({ src, alt: text.imageAlts[index] })),
+    images: imageSrcs.map((src, index) => ({ src, alt: text.imageAlts[index] })),
     machines: definition.machines.map((machine) => ({
       key: machine,
       title: labelOf(machine),

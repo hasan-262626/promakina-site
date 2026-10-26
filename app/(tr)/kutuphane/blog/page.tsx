@@ -1,7 +1,9 @@
+import { serializeJsonLd } from "@/lib/json-ld";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { TechnicalTopicClustersShowcase } from "../../components/technical-topic-clusters-showcase";
 import { technicalTopicClusters } from "../../lib/technical-topic-cluster-data";
+import { topicalBlogCategories } from "../../lib/topical-authority-blog-data";
 
 export const metadata: Metadata = {
   title: "Blog ve Teknik Makaleler",
@@ -107,11 +109,11 @@ export default function BlogPage() {
     <main className="min-h-screen overflow-x-hidden bg-white text-slate-900">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(breadcrumbSchema) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionPageSchema) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(collectionPageSchema) }}
       />
 
       <section className="hero-section border-b border-slate-200 bg-[linear-gradient(135deg,#07152b_0%,#10325f_52%,#d8e4f2_180%)] text-white">
@@ -159,6 +161,30 @@ export default function BlogPage() {
                   className="flex min-h-[58px] items-center rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm font-semibold leading-6 text-slate-800 transition hover:border-[#278DC0] hover:bg-white hover:text-[#278DC0]"
                 >
                   {guide.title}
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-bottom-space">
+        <div className="site-container">
+          <div className="rounded-[32px] border border-slate-200 bg-white px-6 py-8 shadow-[0_18px_45px_rgba(15,23,42,0.06)] sm:px-8 sm:py-10 lg:px-12">
+            <div className="max-w-3xl">
+              <h2 className="text-3xl font-semibold tracking-tight text-slate-950">Konu Kategorileri</h2>
+              <p className="mt-4 text-sm leading-8 text-slate-600 sm:text-base">
+                Teknik içerikleri proses ve ekipman başlıklarına göre gruplanmış kategoriler üzerinden inceleyin.
+              </p>
+            </div>
+            <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+              {topicalBlogCategories.map((category) => (
+                <Link
+                  key={category.slug}
+                  href={`/kutuphane/blog/${category.slug}`}
+                  className="flex min-h-[58px] items-center rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm font-semibold leading-6 text-slate-800 transition hover:border-[#278DC0] hover:bg-white hover:text-[#278DC0]"
+                >
+                  {category.title}
                 </Link>
               ))}
             </div>

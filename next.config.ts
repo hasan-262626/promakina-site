@@ -1,8 +1,68 @@
 import type { NextConfig } from "next";
 
+/**
+ * Public site CSP'si rapor modunda (Content-Security-Policy-Report-Only) kalır; zorunlu moda geçilmedi çünkü:
+ * - GTM kapsayıcısına kod dışından eklenen her yeni etiket (piksel, ısı haritası vb.) zorunlu CSP'de sessizce engellenir;
+ * - GA4 ülke uzantılı google.<tld> adreslerine istek atar, bunların tamamı listelenemez;
+ * - 798 statik sayfada nonce kullanılamadığı için script-src 'unsafe-inline' gerekir; zorunlu modun XSS kazancı sınırlıdır.
+ * İhlaller /api/csp-report ile toplanır (Admin → Güvenlik). Birkaç hafta beklenmeyen rapor görülmezse zorunlu moda geçilebilir.
+ * /admin için daha sıkı, nonce tabanlı ve zorunlu CSP proxy.ts içinde üretilir.
+ */
+const publicCsp = [
+  "default-src 'self'",
+  "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com",
+  "style-src 'self' 'unsafe-inline'",
+  // GA4 (Google Signals) ölçümünde görülen hedefler: analytics.google.com, *.g.doubleclick.net ve ülke uzantılı
+  // google.<tld>/ads/ga-audiences (TR ziyaretçide google.com.tr). Ülke uzantılarının tamamı listelenemez.
+  "img-src 'self' data: blob: https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://*.g.doubleclick.net https://*.google.com https://www.google.com.tr https://images.unsplash.com",
+  "font-src 'self' data:",
+  "connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://analytics.google.com https://*.analytics.google.com https://*.g.doubleclick.net https://*.google.com https://www.googletagmanager.com",
+  "frame-src https://www.googletagmanager.com https://www.google.com",
+  "object-src 'none'",
+  "base-uri 'self'",
+  "form-action 'self'",
+  "frame-ancestors 'self'",
+  // İhlaller /api/csp-report adresine gruplanmış olarak kaydedilir (Admin → Güvenlik).
+  "report-uri /api/csp-report",
+].join("; ");
+
+const securityHeaders = [
+  { key: "X-Content-Type-Options", value: "nosniff" },
+  { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+  { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=(), payment=(), usb=(), browsing-topics=()" },
+  { key: "X-Frame-Options", value: "SAMEORIGIN" },
+  // HSTS yalnız HTTPS yanıtlarında tarayıcı tarafından dikkate alınır; preload bilinçli olarak eklenmedi.
+  { key: "Strict-Transport-Security", value: "max-age=63072000; includeSubDomains" },
+];
+
 const nextConfig: NextConfig = {
+  poweredByHeader: false,
+  productionBrowserSourceMaps: false,
+  // Yerel (native/WASM) sunucu paketleri paketlenmeden node_modules'tan yüklenir.
+  serverExternalPackages: ["@node-rs/argon2", "@electric-sql/pglite", "pg"],
+  experimental: {
+    // Admin yetkisiz erişimde gerçek 403 (forbidden) yanıtı için.
+    authInterrupts: true,
+  },
+  async headers() {
+    return [
+      { source: "/:path*", headers: securityHeaders },
+      {
+        // Admin kendi zorunlu CSP'sini proxy'de alır; rapor modundaki public CSP admin dışına uygulanır.
+        source: "/((?!admin(?:/|$)).*)",
+        headers: [{ key: "Content-Security-Policy-Report-Only", value: publicCsp }],
+      },
+      { source: "/api/:path*", headers: [{ key: "X-Robots-Tag", value: "noindex" }, { key: "Cache-Control", value: "no-store" }] },
+    ];
+  },
   async redirects() {
     return [
+      {
+        // Yazım hatalı eşdeğer sayfa doğru adresle birleştirildi (tek adım, 308).
+        source: "/kutuphane/blog/helezyon-konveyor-kapasite-hesabi",
+        destination: "/kutuphane/blog/helezon-konveyor-kapasite-hesabi",
+        permanent: true,
+      },
       {
         source: "/sektorler/atik-su-camuru-ve-aritma-cozumleri/susuzlastirma-destek-sistemleri",
         destination: "/sektorler/atik-su-camuru-ve-aritma-cozumleri",

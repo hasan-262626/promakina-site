@@ -17,7 +17,15 @@ function ToolCard({ tool, onOpen }: { tool: HubTool; onOpen: (slug: string) => v
   return (
     <article className="flex h-full flex-col rounded-[22px] border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-[#278DC0]/40 hover:shadow-[0_16px_40px_rgba(15,23,42,0.08)]">
       <div className="flex items-start justify-between gap-2">
-        <h3 className="text-base font-bold leading-6 text-slate-950">{tool.title}</h3>
+        <h3 className="text-base font-bold leading-6 text-slate-950">
+          {tool.pageHref ? (
+            <Link href={tool.pageHref} className="transition hover:text-[#278DC0]">
+              {tool.title}
+            </Link>
+          ) : (
+            tool.title
+          )}
+        </h3>
         {tool.quoteReady ? (
           <span className="shrink-0 rounded-full bg-[#eef6fb] px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-[#154764]">
             Teklife esas
