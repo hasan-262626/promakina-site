@@ -33,6 +33,13 @@ function guide(
 export const sectorMachineGuideDetailPages: SectorMachineGuidePageData[] = [
   guide({
     slug: "maden-ve-mineral-isleme-makinalari",
+    inlineLinks: [
+      {
+        text: "döner kurutucu",
+        href: "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburu",
+        section: "Kurutma tamburları ve termal proses",
+      },
+    ],
     title: "Maden ve Mineral İşleme Makinaları",
     metaTitle:
       "Maden ve Mineral İşleme Makinaları | Kırma, Eleme, Kurutma ve Taşıma Sistemleri",
@@ -432,6 +439,13 @@ export const sectorMachineGuideDetailPages: SectorMachineGuidePageData[] = [
   }),
   guide({
     slug: "granul-ve-organomineral-gubre-makinalari",
+    inlineLinks: [
+      {
+        text: "Kurutma tamburu",
+        href: "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburu",
+        section: "Kurutma ve soğutma tamburları",
+      },
+    ],
     title: "Granül ve Organomineral Gübre Makinaları",
     metaTitle:
       "Granül ve Organomineral Gübre Makinaları | Granülasyon, Kurutma ve Paketleme Hatları",
@@ -618,6 +632,13 @@ export const sectorMachineGuideDetailPages: SectorMachineGuidePageData[] = [
   }),
   guide({
     slug: "kompost-ve-organik-atik-makinalari",
+    inlineLinks: [
+      {
+        text: "Kurutma tamburu",
+        href: "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburu",
+        section: "Kurutma, trommel eleme ve son ürün hazırlama",
+      },
+    ],
     title: "Kompost ve Organik Atık Makinaları",
     metaTitle:
       "Kompost ve Organik Atık Makinaları | Shredder, Kompost Tamburu ve Kurutma Sistemleri",
@@ -1090,6 +1111,13 @@ export const sectorMachineGuideDetailPages: SectorMachineGuidePageData[] = [
   }),
   guide({
     slug: "atik-su-camuru-ve-aritma-makinalari",
+    inlineLinks: [
+      {
+        text: "Kurutma tamburu",
+        href: "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburu",
+        section: "Kurutma, sterilizasyon ve stabilizasyon tamburları",
+      },
+    ],
     title: "Atık Su Çamuru İşleme Makinaları",
     metaTitle:
       "Atık Su Çamuru İşleme Makinaları | Çamur Kurutma, Stabilizasyon ve Koku Kontrol",

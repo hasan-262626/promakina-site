@@ -3,6 +3,7 @@ import { serializeJsonLd } from "@/lib/json-ld";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { GlobalBottomCta } from "./global-bottom-cta";
+import { createInlineLinker, type InlineLink } from "../lib/inline-links";
 import { trText } from "../lib/tr-text";
 
 export type SectorGuideTable = {
@@ -77,6 +78,8 @@ export type SectorMachineGuidePageData = {
   approachBullets: string[];
   faqs: SectorGuideFaq[];
   relatedLinks: SectorGuideRelatedLink[];
+  /** Giriş, bölüm ve alt bölüm paragraflarındaki mevcut ifadelere eklenen metin içi bağlantılar. */
+  inlineLinks?: InlineLink[];
   ctaTitle?: string;
   ctaDescription?: string;
 };
@@ -444,6 +447,7 @@ export function SectorMachineGuideDetailPage({
   guide: SectorMachineGuidePageData;
 }) {
   const normalizedGuide = normalizeGuide(guide);
+  const linkify = createInlineLinker(normalizedGuide.inlineLinks);
 
   return (
     <main className="min-h-screen overflow-x-hidden bg-slate-50 text-slate-900">
@@ -542,7 +546,7 @@ export function SectorMachineGuideDetailPage({
           <div className="grid gap-8">
             <SectionCard title="Giriş">
               {normalizedGuide.introParagraphs.map((paragraph) => (
-                <p key={paragraph}>{paragraph}</p>
+                <p key={paragraph}>{linkify(paragraph, "Giriş")}</p>
               ))}
             </SectionCard>
 
@@ -553,7 +557,7 @@ export function SectorMachineGuideDetailPage({
 
             {normalizedGuide.sections.map((section) => (
               <SectionCard key={section.title} title={section.title}>
-                {section.paragraphs?.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+                {section.paragraphs?.map((paragraph) => <p key={paragraph}>{linkify(paragraph, section.title)}</p>)}
 
                 {section.bullets?.length ? (
                   <ul className="space-y-3">
@@ -586,7 +590,7 @@ export function SectorMachineGuideDetailPage({
                     </h3>
                     <div className="mt-4 space-y-4 text-sm leading-7 text-slate-700 sm:text-base">
                       {subsection.paragraphs?.map((paragraph) => (
-                        <p key={paragraph}>{paragraph}</p>
+                        <p key={paragraph}>{linkify(paragraph, subsection.title)}</p>
                       ))}
                       {subsection.bullets?.length ? (
                         <ul className="space-y-3">
