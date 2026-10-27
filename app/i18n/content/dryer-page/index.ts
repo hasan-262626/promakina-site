@@ -1,6 +1,6 @@
 import { drumProductPages } from "../../../(tr)/components/drum-product-data";
-import { dryerApplications, dryerDesignSection } from "../../../(tr)/components/dryer-drum-content";
-import type { DryerGalleryLabels, DryerPageContent } from "../../../(tr)/components/dryer-drum-types";
+import { buildTrDryerTechnical, dryerApplications, dryerDesignSection } from "../../../(tr)/components/dryer-drum-content";
+import type { DryerGalleryLabels, DryerPageContent, DryerTechnical } from "../../../(tr)/components/dryer-drum-types";
 import { createMailtoHref, createWhatsAppHref, siteContact } from "../../../(tr)/lib/site-contact";
 import type { IntlLocale } from "../../config";
 import { pathFor, type RouteKey } from "../../routes";
@@ -31,6 +31,8 @@ export type DryerLocaleTexts = {
     contactLinkLabel: string;
   };
   design: Omit<DryerPageContent["design"], "figure"> & { figureAlt: string };
+  /** Teknik özellikler bölümünün çevirisi. Yoksa bölüm bu dilde çizilmez (panelde boş çeviri alanı olarak görünür). */
+  technical?: DryerTechnical;
   gallery: { title: string; items: { alt: string; caption: string }[]; labels: DryerGalleryLabels };
   faq: DryerPageContent["faq"];
   resources: { title: string; descriptions: Partial<Record<RouteKey, string>> };
@@ -62,6 +64,20 @@ const sectionIds = ["genel-bakis", "proses-akisi", "uygulama-alanlari", "tasarim
 const resourceKeys: RouteKey[] = ["cyclones", "sludgeDryingPlantSolution", "coolingDrum", "granulatorDrum", "bunkersHoppers", "bucketElevator"];
 const machineKeys: RouteKey[] = ["conveying", "dosingSystems", "screeningSystems", "dustCollection", "packagingSystems"];
 const sectorKeys: RouteKey[] = ["fertilizerPlants", "mining", "sludgeDrying", "compostPlants"];
+
+/** Çevirisi girilmemiş teknik bölüm: TR yapısında boş metinler (sayfada çizilmez, panelde çeviri alanıdır). */
+function untranslatedTechnical(): DryerTechnical | undefined {
+  const tr = buildTrDryerTechnical(trDryerProduct());
+  const blank = (value: unknown): unknown =>
+    typeof value === "string"
+      ? ""
+      : Array.isArray(value)
+        ? value.map(blank)
+        : value && typeof value === "object"
+          ? Object.fromEntries(Object.entries(value).map(([k, v]) => [k, blank(v)]))
+          : value;
+  return tr ? (blank(tr) as DryerTechnical) : undefined;
+}
 
 function trDryerProduct() {
   const product = drumProductPages.find((item) => item.slug === "kurutma-tamburu");
@@ -130,6 +146,7 @@ export function buildIntlDryerContent(
       dataItems: t.design.dataItems,
       dataNote: t.design.dataNote,
     },
+    technical: t.technical ?? untranslatedTechnical(),
     gallery: {
       title: t.gallery.title,
       images: product.gallery.map((image, index) => ({ src: image.src, ...t.gallery.items[index] })),

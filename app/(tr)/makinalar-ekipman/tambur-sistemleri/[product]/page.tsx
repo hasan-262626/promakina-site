@@ -1,4 +1,4 @@
-import { dryerDocumentTitle } from "@/app/i18n/content/dryer-page/editable";
+import { dryerDocumentTitle, dryerSchemaProperties } from "@/app/i18n/content/dryer-page/editable";
 import { loadDryerPage } from "@/lib/cms/public-content";
 import { serializeJsonLd } from "@/lib/json-ld";
 import { trLanguageAlternates } from "../../../../i18n/routes";
@@ -114,6 +114,7 @@ export default async function DrumProductDetailPage({ params }: PageProps) {
   const isDryer = activeProduct.slug === "kurutma-tamburu";
   // Kurutma tamburu: görünür içerik, H1 ve şema metinleri panelden (yayın yoksa koddan) aynı kaynaktan gelir.
   const dryer = isDryer ? await loadDryerPage("tr") : null;
+  const dryerProperties = dryer ? dryerSchemaProperties(dryer.content) : undefined;
   const toAbsoluteImage = (src: string) => `https://www.promakina.com.tr${encodeURI(src)}`;
   // Fiyat, stok veya değerlendirme bilgisi bilinçli olarak eklenmez; yalnız sayfada görünen gerçek veriler kullanılır.
   const productSchema = activeProduct.productSchemaCategory
@@ -130,7 +131,8 @@ export default async function DrumProductDetailPage({ params }: PageProps) {
         manufacturer: isDryer
           ? { "@type": "Organization", name: "Pro Makina", url: "https://www.promakina.com.tr" }
           : { "@type": "Organization", name: "Pro Makina" },
-        // Kurutma tamburu sayfasında teknik tablo gösterilmediği için şemaya da eklenmez.
+        // Kurutma tamburu: sayfada görünen teknik parametre tablosu (panel metni) şemaya eklenir.
+        ...(dryerProperties ? { additionalProperty: dryerProperties } : {}),
         ...(activeProduct.technicalTable && !isDryer
           ? {
               additionalProperty: activeProduct.technicalTable.rows.map((row) => ({

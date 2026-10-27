@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { DryerDrumGallery } from "./dryer-drum-gallery";
-import type { DrumFlowSpec, DryerDiagramLabels, DryerLink, DryerNodeLabel, DryerPageContent } from "./dryer-drum-types";
+import type { DrumFlowSpec, DryerDiagramLabels, DryerLink, DryerNodeLabel, DryerPageContent, DryerTechnical } from "./dryer-drum-types";
 
 const sectionClass = "scroll-mt-[210px] xl:scroll-mt-[220px]";
 const arrowClass = "inline-block rtl:-scale-x-100";
@@ -322,13 +322,124 @@ function ChipLinks({ label, links }: { label: string; links: DryerLink[] }) {
   );
 }
 
+/** Boş metinli satır/öğeler çizilmez (çevirisi kısmen girilmiş içerik). */
+const filled = (value: string) => value.trim().length > 0;
+
+function TechnicalSection({ index, technical }: { index: string; technical: DryerTechnical }) {
+  const rows = technical.table.rows.filter((row) => filled(row.name) && filled(row.value));
+  const sections = technical.sections
+    .map((section) => ({ ...section, paragraphs: section.paragraphs.filter(filled) }))
+    .filter((section) => filled(section.title) && section.paragraphs.length);
+  const { scope } = technical;
+  const coreItems = scope.coreItems.filter(filled);
+  const optionalItems = scope.optionalItems.filter(filled);
+
+  return (
+    <section id="teknik-ozellikler" className={sectionClass}>
+      <SectionHeading index={index} eyebrow={technical.eyebrow} title={technical.title} intro={technical.intro || undefined} />
+
+      {rows.length ? (
+        <div className="mt-8 overflow-hidden rounded-[24px] border border-slate-200 bg-white shadow-[0_12px_32px_rgba(15,23,42,0.04)]">
+          <h3 className="border-b border-slate-200 bg-slate-50 px-5 py-4 text-lg font-semibold text-[#0b2233] sm:px-6">{technical.table.title}</h3>
+          {/* Mobilde etiket ve değer alt alta, geniş ekranda iki sütun (etiket sütunu %30). */}
+          <table className="block w-full border-collapse text-start text-sm sm:table sm:table-fixed">
+            <caption className="sr-only">{technical.table.title}</caption>
+            <colgroup>
+              <col className="sm:w-[30%]" />
+              <col />
+            </colgroup>
+            <thead className="sr-only">
+              <tr>
+                <th scope="col">{technical.table.headers[0]}</th>
+                <th scope="col">{technical.table.headers[1]}</th>
+              </tr>
+            </thead>
+            <tbody className="block divide-y divide-slate-100 sm:table-row-group">
+              {rows.map((row) => (
+                <tr key={row.name} className="block px-5 py-3.5 align-top sm:table-row sm:p-0">
+                  <th scope="row" className="block break-words text-start font-semibold text-[#154764] sm:table-cell sm:px-6 sm:py-3.5">
+                    {row.name}
+                  </th>
+                  <td className="mt-1 block break-words leading-6 text-slate-600 sm:mt-0 sm:table-cell sm:px-6 sm:py-3.5">{row.value}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          {filled(technical.table.note) ? (
+            <p className="border-t border-slate-200 px-5 py-4 text-xs leading-6 text-slate-500 sm:px-6">{technical.table.note}</p>
+          ) : null}
+        </div>
+      ) : null}
+
+      {sections.length ? (
+        <div className="mt-6 divide-y divide-slate-200 overflow-hidden rounded-[24px] border border-slate-200 bg-white">
+          {sections.map((section, i) => (
+            <details key={section.title} open={i === 0} className="group px-5 py-1 sm:px-7">
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 py-4 text-base font-semibold text-slate-950 [&::-webkit-details-marker]:hidden">
+                <h3 className="text-base font-semibold sm:text-lg">{section.title}</h3>
+                <span
+                  aria-hidden="true"
+                  className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-slate-200 text-lg text-[#154764] transition group-open:rotate-45 group-open:border-[#278DC0]"
+                >
+                  +
+                </span>
+              </summary>
+              <div className="space-y-4 pb-5 pe-2 text-[15px] leading-7 text-slate-600 sm:pe-10">
+                {section.paragraphs.map((paragraph) => (
+                  <p key={paragraph}>{paragraph}</p>
+                ))}
+              </div>
+            </details>
+          ))}
+        </div>
+      ) : null}
+
+      {filled(scope.title) && (coreItems.length || optionalItems.length) ? (
+        <div className="mt-6 rounded-[28px] bg-[#0b2233] p-6 text-white sm:p-8">
+          <h3 className="text-xl font-semibold tracking-tight sm:text-2xl">{scope.title}</h3>
+          {filled(scope.intro) ? <p className="mt-3 text-sm leading-7 text-white/75">{scope.intro}</p> : null}
+          <div className="mt-6 grid gap-4 lg:grid-cols-2">
+            {[
+              { title: scope.coreTitle, items: coreItems, marker: "✓" },
+              { title: scope.optionalTitle, items: optionalItems, marker: "+" },
+            ]
+              .filter((group) => group.items.length)
+              .map((group) => (
+                <div key={group.title} className="rounded-[20px] border border-white/10 bg-white/[0.04] p-5">
+                  <h4 className="font-semibold leading-6">{group.title}</h4>
+                  <ul className="mt-3 space-y-2 text-sm leading-6 text-white/85">
+                    {group.items.map((item) => (
+                      <li key={item} className="flex gap-2.5">
+                        <span aria-hidden="true" className="text-[#7cc4e6]">{group.marker}</span>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+          </div>
+          {filled(scope.note) ? <p className="mt-5 text-xs leading-6 text-white/55">{scope.note}</p> : null}
+        </div>
+      ) : null}
+    </section>
+  );
+}
+
 export function DryerDrumProductContent({ content }: { content: DryerPageContent }) {
   const { labels, overview, process, applications, design, gallery, faq, resources, cta } = content;
+  // Teknik bölüm yalnız başlığı girilmiş dilde çizilir (çevirisi olmayan dilde başka dil gösterilmez).
+  const technical = content.technical && filled(content.technical.title) ? content.technical : undefined;
+  const sectionNav = technical
+    ? content.sectionNav.flatMap((item) =>
+        item.id === "tasarim-imalat" ? [item, { id: "teknik-ozellikler", label: technical.navLabel || technical.title }] : [item],
+      )
+    : content.sectionNav;
   let sectionCounter = 0;
   const nextIndex = () => String(++sectionCounter).padStart(2, "0");
   const processIndex = nextIndex();
   const applicationsIndex = nextIndex();
   const designIndex = nextIndex();
+  const technicalIndex = technical ? nextIndex() : "";
   const galleryIndex = gallery ? nextIndex() : "";
   const faqIndex = faq.items.length ? nextIndex() : "";
   const resourcesIndex = resources?.links.length ? nextIndex() : "";
@@ -361,7 +472,7 @@ export function DryerDrumProductContent({ content }: { content: DryerPageContent
 
       <nav aria-label={labels.sectionNav} className="mb-6 sm:mb-8">
         <ul className="no-scrollbar flex gap-2 overflow-x-auto pb-1">
-          {content.sectionNav.map((item) => (
+          {sectionNav.map((item) => (
             <li key={item.id} className="shrink-0">
               <a
                 href={`#${item.id}`}
@@ -541,6 +652,9 @@ export function DryerDrumProductContent({ content }: { content: DryerPageContent
             <p className="mt-5 text-xs leading-6 text-white/55">{design.dataNote}</p>
           </div>
         </section>
+
+        {/* Teknik özellikler, mekanik tasarım ve tedarik kapsamı */}
+        {technical ? <TechnicalSection index={technicalIndex} technical={technical} /> : null}
 
         {/* Galeri */}
         {gallery ? (

@@ -78,6 +78,44 @@ describe("kurutma tamburu içerik modeli", () => {
   });
 });
 
+describe("kurutma tamburu teknik bölümü (82ee073 öncesi içerik)", () => {
+  it("TR: parametre tablosu, 5 teknik alt bölüm ve tedarik kapsamı ürün verisiyle birebir aynı", async () => {
+    const { drumProductPages } = await import("@/app/(tr)/components/drum-product-data");
+    const product = drumProductPages.find((p) => p.slug === "kurutma-tamburu")!;
+    const technical = buildDryerBase("tr").content.technical!;
+    expect(technical.sections.map((s) => s.title)).toEqual([
+      "Kapasite, Isı Dengesi ve Isıtma Seçenekleri",
+      "Tambur Gövdesi, İç Kanatlar ve Malzeme Seçimi",
+      "Ring, Gale Tekerleri ve Tahrik Sistemi",
+      "Brülör, Fan, Siklon ve Filtre Sistemi",
+      "Otomasyon ve Proses Kontrolü",
+    ]);
+    const source = product.detailSections!.filter((s) => s.paragraphs?.length);
+    expect(technical.sections.map((s) => s.paragraphs)).toEqual(source.map((s) => s.paragraphs));
+    // "Makine tipi" satırı H1 ile aynı olduğundan çıkarılır; diğer 11 satır aynen gelir.
+    expect(technical.table.rows.map((r) => [r.name, r.value])).toEqual(product.technicalTable!.rows.filter(([n]) => n !== "Makine tipi"));
+    expect(technical.scope.coreItems).toEqual(product.supplyScope!.coreItems);
+    expect(technical.scope.optionalItems).toEqual(product.supplyScope!.optionalItems);
+    // Uygulama alanı anlatımı ayrı bölümde olduğundan tekrarlanmaz.
+    expect(technical.sections.some((s) => /Uygulama Alanları/.test(s.title))).toBe(false);
+  });
+
+  it("EN/RU/AR: çeviri girilmeden bölüm boş çeviri alanıdır (çizilmez, şemaya eklenmez)", async () => {
+    const { dryerSchemaProperties } = await import("@/app/i18n/content/dryer-page/editable");
+    const tr = buildDryerBase("tr").content.technical!;
+    for (const locale of ["en", "ru", "ar"] as const) {
+      const content = buildDryerBase(locale).content;
+      expect(content.technical!.title).toBe("");
+      const strings: string[] = [];
+      JSON.stringify(content.technical, (_k, v) => (typeof v === "string" && strings.push(v), v));
+      expect(strings.every((s) => s === ""), locale).toBe(true);
+      expect(content.technical!.sections).toHaveLength(tr.sections.length);
+      expect(dryerSchemaProperties(content), locale).toBeUndefined();
+    }
+    expect(dryerSchemaProperties(buildDryerBase("tr").content)).toHaveLength(11);
+  });
+});
+
 describe("kurutma tamburu panel yayını → public içerik", () => {
   it("kayıt yokken yükleyici kod içeriğini döner", async () => {
     for (const locale of LOCALES) {
@@ -142,6 +180,26 @@ describe("kurutma tamburu panel yayını → public içerik", () => {
     const base = buildDryerBase("ru");
     expect(page.h1).toBe(base.h1);
     expect(page.content.gallery?.images.map((i) => i.caption)).toEqual(base.content.gallery?.images.map((i) => i.caption));
+  });
+
+  it("EN teknik bölüm çevirisi panelden girilince yalnız EN sayfasında görünür", async () => {
+    const en = clone(rotaryDryerAdapter.getDefault(DRYER_DOC_ID, "en")) as DryerEditable;
+    en.technical.title = "Rotary Dryer Technical Specifications";
+    en.technical.navLabel = "Specifications";
+    en.technical.table.title = "Key Design Parameters";
+    en.technical.table.headers = ["Parameter", "Description"];
+    en.technical.table.rows = [
+      { name: "Drum diameter", value: "Set by evaporation load and gas flow" },
+      { name: "Drum length", value: "Set by drying load, filling and retention time" },
+      { name: "Drive", value: "Motor, gearbox and drive group" },
+    ];
+    await saveDraft(db, { ...target("en"), value: en });
+    await publish(db, target("en"));
+    const page = await loadDryerPage("en");
+    expect(page.content.technical?.title).toBe("Rotary Dryer Technical Specifications");
+    expect(page.content.technical?.table.rows).toHaveLength(3);
+    expect((await loadDryerPage("ar")).content.technical?.title).toBe("");
+    await revertToDefault(db, target("en"));
   });
 
   it("koda dön: yayın kaldırılınca kod içeriğine dönülür", async () => {

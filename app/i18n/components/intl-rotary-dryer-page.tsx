@@ -6,6 +6,7 @@ import { MachineSidebar } from "../../(tr)/components/machine-sidebar";
 import { getHeroLabels } from "../chrome";
 import { absoluteUrl, localeMeta, SITE_URL, type IntlLocale } from "../config";
 import { getDryerPageTexts } from "../content/dryer-page";
+import { dryerSchemaProperties } from "../content/dryer-page/editable";
 import { drumSidebarKeys } from "../content/drum-pages";
 import type { UiDictionary } from "../dictionaries";
 import { buildBreadcrumbSchema } from "../metadata";
@@ -28,6 +29,7 @@ export async function IntlRotaryDryerPage({
   const texts = getDryerPageTexts(locale);
   const dryer = await loadDryerPage(locale);
   const { content } = dryer;
+  const properties = dryerSchemaProperties(content);
   const canonicalUrl = absoluteUrl(pathFor("rotaryDryer", locale));
 
   // Fiyat, stok veya değerlendirme bilgisi eklenmez; yalnız sayfada görünen veriler kullanılır.
@@ -43,6 +45,7 @@ export async function IntlRotaryDryerPage({
     inLanguage: localeMeta[locale].lang,
     brand: { "@type": "Brand", name: "Pro Makina" },
     manufacturer: { "@type": "Organization", name: "Pro Makina", url: SITE_URL },
+    ...(properties ? { additionalProperty: properties } : {}),
   };
   const breadcrumbSchema = buildBreadcrumbSchema(locale, "rotaryDryer", (key) =>
     key === "home" ? dict.breadcrumbHome : labelFor(key),

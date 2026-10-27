@@ -1,6 +1,6 @@
 import { drumProductPages } from "../../../(tr)/components/drum-product-data";
 import { buildTrDryerContent } from "../../../(tr)/components/dryer-drum-content";
-import type { DryerPageContent } from "../../../(tr)/components/dryer-drum-types";
+import type { DryerPageContent, DryerTechnical } from "../../../(tr)/components/dryer-drum-types";
 import { getMachineCalculatorHref } from "../../../(tr)/lib/machine-calculator-link";
 import type { Locale } from "../../config";
 import { getDictionary } from "../../dictionaries";
@@ -41,6 +41,8 @@ export type DryerEditable = {
     dataItems: Line[];
     dataNote: string;
   };
+  /** Teknik özellikler, parametre tablosu ve tedarik kapsamı (başlık boşsa bölüm çizilmez). */
+  technical: DryerTechnical;
   gallery: { title: string; items: { alt: string; caption: string }[] };
   faq: { title: string; items: { question: string; answer: string }[] };
   resources: { title: string; links: { label: string; description: string }[] };
@@ -130,6 +132,7 @@ export function dryerEditableFrom(base: DryerBase): DryerEditable {
       dataItems: c.design.dataItems.map((item) => ({ ...item })),
       dataNote: c.design.dataNote,
     },
+    technical: structuredClone(requireTechnical(c)),
     gallery: {
       title: c.gallery?.title ?? "",
       items: (c.gallery?.images ?? []).map((image) => ({ alt: image.alt, caption: image.caption })),
@@ -149,6 +152,11 @@ export function dryerEditableFrom(base: DryerBase): DryerEditable {
       requiredNote: c.cta.requiredNote ?? "",
     },
   };
+}
+
+function requireTechnical(content: DryerPageContent): DryerTechnical {
+  if (!content.technical) throw new Error("Kurutma tamburu teknik bölüm verisi bulunamadı");
+  return content.technical;
 }
 
 export function dryerSharedFrom(content: DryerPageContent): DryerSharedImages {
@@ -202,6 +210,7 @@ export function applyDryerOverrides(content: DryerPageContent, texts: DryerEdita
       dataItems: texts.design.dataItems,
       dataNote: texts.design.dataNote,
     },
+    technical: content.technical ? texts.technical : undefined,
     gallery: content.gallery
       ? {
           ...content.gallery,
@@ -240,6 +249,14 @@ export function applyDryerOverrides(content: DryerPageContent, texts: DryerEdita
  */
 export function dryerDocumentTitle(title: string): string | { absolute: string } {
   return /pro\s+mak[iıİI]na\s*$/i.test(title) ? { absolute: title } : title;
+}
+
+/** Product şeması ek özellikleri: yalnız sayfada görünen teknik parametre satırları (çevirisi yoksa eklenmez). */
+export function dryerSchemaProperties(content: DryerPageContent) {
+  const technical = content.technical;
+  if (!technical?.title.trim()) return undefined;
+  const rows = technical.table.rows.filter((row) => row.name.trim() && row.value.trim());
+  return rows.length ? rows.map((row) => ({ "@type": "PropertyValue", name: row.name, value: row.value })) : undefined;
 }
 
 /** Product şeması görselleri: ana görsel + galeriden en fazla 5 farklı görsel (sayfada görünen sırayla). */

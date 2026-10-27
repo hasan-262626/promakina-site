@@ -3,7 +3,7 @@
 // burada yalnız bu sayfanın kısa katalog anlatımı ve görsel eşleşmeleri bulunur.
 
 import type { DrumProductPage } from "./drum-product-data";
-import type { DryerGalleryLabels, DryerPageContent } from "./dryer-drum-types";
+import type { DryerGalleryLabels, DryerPageContent, DryerTechnical } from "./dryer-drum-types";
 import { createMailtoHref, createWhatsAppHref, siteContact } from "../lib/site-contact";
 
 export type DryerFigure = { src: string; alt: string; caption: string };
@@ -121,6 +121,42 @@ export const dryerDesignSection = {
   },
 };
 
+/**
+ * Teknik özellikler ve mekanik tasarım bölümü: ürün verisindeki parametre tablosu, teknik alt bölümler ve tedarik
+ * kapsamı (82ee073 şablon geçişinde sayfadan düşen içerik). Uygulama alanı anlatımı ve teklif için gerekli bilgiler
+ * sayfanın kendi bölümlerinde yer aldığından burada tekrarlanmaz; "Makine tipi" satırı H1 ile aynı olduğundan çıkarılır.
+ */
+export function buildTrDryerTechnical(product: DrumProductPage): DryerTechnical | undefined {
+  const table = product.technicalTable;
+  const scope = product.supplyScope;
+  if (!table || !scope) return undefined;
+  return {
+    navLabel: "Teknik Özellikler",
+    eyebrow: "Teknik Özellikler",
+    title: table.title,
+    intro:
+      "Tambur ölçüleri, gövde malzemesi, tahrik düzeni ve yardımcı sistemler her projede proses hesabıyla belirlenir. Aşağıdaki parametreler ve başlıklar, bir kurutma tamburu projesinde netleştirilen mühendislik kararlarını özetler.",
+    table: {
+      title: "Temel Tasarım Parametreleri",
+      headers: table.headers,
+      rows: table.rows.filter(([name]) => name !== "Makine tipi").map(([name, value]) => ({ name, value })),
+      note: table.note ?? "",
+    },
+    sections: (product.detailSections ?? [])
+      .filter((section) => section.paragraphs?.length)
+      .map((section) => ({ title: section.title, paragraphs: section.paragraphs ?? [] })),
+    scope: {
+      title: scope.title,
+      intro: scope.intro ?? "",
+      coreTitle: scope.coreTitle,
+      coreItems: scope.coreItems,
+      optionalTitle: scope.optionalTitle,
+      optionalItems: scope.optionalItems,
+      note: scope.note ?? "",
+    },
+  };
+}
+
 export function buildDryerInquiryMessage() {
   return [
     "Merhaba, kurutma tamburu için teknik teklif almak istiyorum.",
@@ -227,6 +263,7 @@ export function buildTrDryerContent(product: DrumProductPage, calculatorHref: st
       dataItems: dryerDesignSection.designData.items,
       dataNote: dryerDesignSection.designData.note,
     },
+    technical: buildTrDryerTechnical(product),
     gallery: {
       title: "Kurutma Tamburu Fotoğraf Galerisi",
       images: product.gallery,

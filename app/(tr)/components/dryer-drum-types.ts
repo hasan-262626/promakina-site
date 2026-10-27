@@ -57,6 +57,28 @@ export type DryerGalleryLabels = {
   dialog: string;
 };
 
+/**
+ * Teknik özellikler ve mekanik tasarım bölümü (yalnız Kurutma Tamburu). Başlığı boşsa bölüm çizilmez; böylece
+ * çevirisi henüz girilmemiş dillerde başka dilde içerik gösterilmez. Sayısal değer içermez.
+ */
+export type DryerTechnical = {
+  navLabel: string;
+  eyebrow: string;
+  title: string;
+  intro: string;
+  table: { title: string; headers: [string, string]; rows: { name: string; value: string }[]; note: string };
+  sections: { title: string; paragraphs: string[] }[];
+  scope: {
+    title: string;
+    intro: string;
+    coreTitle: string;
+    coreItems: string[];
+    optionalTitle: string;
+    optionalItems: string[];
+    note: string;
+  };
+};
+
 export type DryerPageContent = {
   breadcrumb: { items: DryerLink[]; current: string };
   labels: {
@@ -114,6 +136,7 @@ export type DryerPageContent = {
     dataItems: { title: string; text: string }[];
     dataNote: string;
   };
+  technical?: DryerTechnical;
   gallery?: {
     title: string;
     images: { src: string; alt: string; caption: string }[];
