@@ -1,6 +1,6 @@
 import { drumProductPages } from "../../../(tr)/components/drum-product-data";
 import { buildTrDryerContent } from "../../../(tr)/components/dryer-drum-content";
-import type { DryerPageContent, DryerTechnical } from "../../../(tr)/components/dryer-drum-types";
+import type { DryerEvidence, DryerPageContent, DryerTechnical } from "../../../(tr)/components/dryer-drum-types";
 import { getMachineCalculatorHref } from "../../../(tr)/lib/machine-calculator-link";
 import type { Locale } from "../../config";
 import { getDictionary } from "../../dictionaries";
@@ -43,6 +43,20 @@ export type DryerEditable = {
   };
   /** Teknik özellikler, parametre tablosu ve tedarik kapsamı (başlık boşsa bölüm çizilmez). */
   technical: DryerTechnical;
+  /**
+   * Üretici kanıtları: varsayılan boştur (doğrulanmış bilgi kodda yoktur). Bir öğe yalnız ortak sekmedeki ilgili
+   * onay işaretlenince ve bu dilde metni girilince yayınlanır.
+   */
+  evidence: {
+    navLabel: string;
+    eyebrow: string;
+    title: string;
+    intro: string;
+    videoTitle: string;
+    videoCaption: string;
+    facts: { label: string; value: string }[];
+    references: { name: string; location: string; year: string; scope: string }[];
+  };
   gallery: { title: string; items: { alt: string; caption: string }[] };
   faq: { title: string; items: { question: string; answer: string }[] };
   resources: { title: string; links: { label: string; description: string }[] };
@@ -63,7 +77,26 @@ export type DryerSharedImages = {
   applicationImages: string[];
   figure: string;
   gallery: string[];
+  /** Yayın onayları (tüm diller): sahiplik, yayın hakkı ve müşteri izni doğrulanmadan açılmamalı. */
+  verified: { showVideo: boolean; showFacts: boolean; showReferences: boolean };
 };
+
+/**
+ * Arşivdeki imalat videosu (kurutma tamburu içi, yanma odası tarafından). Sahipliği ve yayın hakkı doğrulanana kadar
+ * sayfada gösterilmez; panelde "İmalat videosunu yayınla" onayı ile açılır.
+ */
+export const DRYER_EVIDENCE_VIDEO = "/images/kurutma tamburu cehennemlik.mp4";
+
+const emptyEvidence = (): DryerEditable["evidence"] => ({
+  navLabel: "",
+  eyebrow: "",
+  title: "",
+  intro: "",
+  videoTitle: "",
+  videoCaption: "",
+  facts: [{ label: "", value: "" }],
+  references: [{ name: "", location: "", year: "", scope: "" }],
+});
 
 /** Koddaki (panelden bağımsız) sayfa verisi. */
 export type DryerBase = {
@@ -133,6 +166,7 @@ export function dryerEditableFrom(base: DryerBase): DryerEditable {
       dataNote: c.design.dataNote,
     },
     technical: structuredClone(requireTechnical(c)),
+    evidence: emptyEvidence(),
     gallery: {
       title: c.gallery?.title ?? "",
       items: (c.gallery?.images ?? []).map((image) => ({ alt: image.alt, caption: image.caption })),
@@ -165,7 +199,20 @@ export function dryerSharedFrom(content: DryerPageContent): DryerSharedImages {
     applicationImages: content.applications.items.map((item) => item.image.src),
     figure: content.design.figure?.src ?? "",
     gallery: (content.gallery?.images ?? []).map((image) => image.src),
+    verified: { showVideo: false, showFacts: false, showReferences: false },
   };
+}
+
+const filled = (value: string) => value.trim().length > 0;
+
+/** Yalnız onaylı ve bu dilde metni girilmiş kanıtlar; gösterilecek öğe yoksa bölüm yoktur. */
+function buildEvidence(texts: DryerEditable["evidence"], verified: DryerSharedImages["verified"]): DryerEvidence | undefined {
+  if (!filled(texts.title)) return undefined;
+  const video = verified.showVideo && filled(texts.videoTitle) ? { src: DRYER_EVIDENCE_VIDEO, title: texts.videoTitle, caption: texts.videoCaption } : undefined;
+  const facts = verified.showFacts ? texts.facts.filter((f) => filled(f.label) && filled(f.value)) : [];
+  const references = verified.showReferences ? texts.references.filter((r) => filled(r.name) && filled(r.scope)) : [];
+  if (!video && !facts.length && !references.length) return undefined;
+  return { navLabel: texts.navLabel, eyebrow: texts.eyebrow, title: texts.title, intro: texts.intro, video, facts, references };
 }
 
 /** Panel metinlerini ve ortak görselleri koddaki içeriğe uygular. Bağlantılar ve şablon alanları değişmez. */
@@ -211,6 +258,7 @@ export function applyDryerOverrides(content: DryerPageContent, texts: DryerEdita
       dataNote: texts.design.dataNote,
     },
     technical: content.technical ? texts.technical : undefined,
+    evidence: buildEvidence(texts.evidence, images.verified),
     gallery: content.gallery
       ? {
           ...content.gallery,

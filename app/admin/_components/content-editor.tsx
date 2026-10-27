@@ -76,6 +76,16 @@ const LABELS: Record<string, string> = {
   cards: "Kartlar",
   images: "Görseller",
   label: "Menü etiketi",
+  technical: "Teknik özellikler",
+  evidence: "Üretici kanıtları ve referanslar",
+  verified: "Doğrulanmış içerik onayları",
+  showVideo: "İmalat videosunu yayınla (PRO MAKİNA'ya ait ve yayın hakkı doğrulandı)",
+  showFacts: "Firma bilgilerini yayınla (her bilgi doğrulandı)",
+  showReferences: "Referansları yayınla (tamamlanmış proje, müşteri izni alındı)",
+  facts: "Doğrulanmış firma bilgileri",
+  references: "Tamamlanmış proje referansları",
+  navLabel: "Sayfa içi menü etiketi",
+  eyebrow: "Üst etiket",
 };
 const labelOf = (key: string) => (/^\d+$/.test(key) ? `#${Number(key) + 1}` : (LABELS[key] ?? key.replace(/([a-z])([A-Z])/g, "$1 $2")));
 
@@ -247,6 +257,26 @@ function Field({ def, value, path, ctx }: { def: Json; value: Json; path: string
         <legend className="px-1 text-xs font-semibold text-slate-700">{labelOf(key)}</legend>
         {content}
       </fieldset>
+    );
+  }
+
+  if (typeof def === "boolean" && !isLocked) {
+    // Onay anahtarları (ör. doğrulanmış içeriği yayınla): yalnız açık/kapalı değer kaydedilir.
+    return (
+      <div>
+        <label htmlFor={id} className="flex items-start gap-2.5 text-sm text-slate-700">
+          <input
+            id={id}
+            type="checkbox"
+            checked={value === true}
+            onChange={(e) => ctx.onChange(path, e.target.checked)}
+            aria-invalid={Boolean(messages)}
+            className="mt-0.5 h-4 w-4 flex-none rounded border-slate-300"
+          />
+          <span>{labelOf(key)}</span>
+        </label>
+        <FieldErrors messages={messages} />
+      </div>
     );
   }
 

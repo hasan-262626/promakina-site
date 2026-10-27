@@ -505,7 +505,7 @@ export const drumProductPages: DrumProductPage[] = [
       "Sızdırmazlık parçaları",
     ],
     mainImage: "/images/tambur kurutma/tamkurutma25.jpg",
-    mainImageAlt: "PRO MAKİNA endüstriyel kurutma tamburu ve tesis ekipmanları",
+    mainImageAlt: "Endüstriyel kurutma tamburu ve tesis ekipmanları",
     gallery: dryerDrumGallery,
   },
   {

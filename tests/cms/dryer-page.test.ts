@@ -116,6 +116,52 @@ describe("kurutma tamburu teknik bölümü (82ee073 öncesi içerik)", () => {
   });
 });
 
+describe("kurutma tamburu üretici kanıtları ve görsel sahipliği", () => {
+  const evidenceTexts = (locale: (typeof LOCALES)[number]) => {
+    const texts = clone(rotaryDryerAdapter.getDefault(DRYER_DOC_ID, locale)) as DryerEditable;
+    texts.evidence.title = "İmalat ve Referanslar";
+    texts.evidence.videoTitle = "Kurutma tamburu içi";
+    texts.evidence.facts = [{ label: "Doğrulanmış bilgi", value: "Değer" }, { label: "", value: "" }];
+    texts.evidence.references = [{ name: "Tamamlanmış proje", location: "Eskişehir", year: "2025", scope: "Kurutma hattı" }];
+    return texts;
+  };
+  const sharedDefault = () => clone(rotaryDryerAdapter.shared!.getDefault(DRYER_DOC_ID)) as ReturnType<typeof dryerSharedFrom>;
+
+  it("varsayılan: kanıt bölümü yok, tüm yayın onayları kapalı (doğrulanmamış bilgi yayınlanmaz)", () => {
+    const shared = sharedDefault();
+    expect(shared.verified).toEqual({ showVideo: false, showFacts: false, showReferences: false });
+    for (const locale of LOCALES) expect(buildDryerBase(locale).content.evidence).toBeUndefined();
+  });
+
+  it("metin girilse bile onay işaretlenmeden hiçbir kanıt gösterilmez", () => {
+    const base = buildDryerBase("tr");
+    expect(applyDryerOverrides(base.content, evidenceTexts("tr"), sharedDefault()).evidence).toBeUndefined();
+  });
+
+  it("onaylı öğeler ayrı ayrı açılır; boş satırlar ve onaysız türler gösterilmez", () => {
+    const base = buildDryerBase("tr");
+    const shared = { ...sharedDefault(), verified: { showVideo: true, showFacts: true, showReferences: false } };
+    const evidence = applyDryerOverrides(base.content, evidenceTexts("tr"), shared).evidence!;
+    expect(evidence.video?.src).toBe("/images/kurutma tamburu cehennemlik.mp4");
+    expect(evidence.facts).toEqual([{ label: "Doğrulanmış bilgi", value: "Değer" }]);
+    expect(evidence.references).toEqual([]);
+  });
+
+  it("onay açık ama bu dilde metin yoksa bölüm o dilde gösterilmez", () => {
+    const base = buildDryerBase("en");
+    const shared = { ...sharedDefault(), verified: { showVideo: true, showFacts: true, showReferences: true } };
+    expect(applyDryerOverrides(base.content, dryerEditableFrom(base), shared).evidence).toBeUndefined();
+  });
+
+  it("görsel alt metinleri doğrulanmamış sahiplik iddia etmez (4 dil)", () => {
+    for (const locale of LOCALES) {
+      const c = buildDryerBase(locale).content;
+      const alts = [c.overview.image.alt, ...c.applications.items.map((i) => i.image.alt), c.design.figure?.alt ?? "", ...(c.gallery?.images ?? []).map((i) => i.alt)];
+      expect(alts.filter((a) => /pro\s*mak/i.test(a)), locale).toEqual([]);
+    }
+  });
+});
+
 describe("kurutma tamburu panel yayını → public içerik", () => {
   it("kayıt yokken yükleyici kod içeriğini döner", async () => {
     for (const locale of LOCALES) {

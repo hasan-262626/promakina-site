@@ -28,7 +28,7 @@ export const dryerPageEn: DryerLocaleTexts = {
   },
   sectionNav: ["Overview", "Process Flow", "Applications", "Design & Manufacturing", "Gallery", "FAQ", "Get a Quote"],
   overview: {
-    imageAlt: "PRO MAKINA industrial rotary dryer and plant equipment",
+    imageAlt: "Industrial rotary dryer and plant equipment",
     brand: "PRO MAKINA",
     tagline: "Rotary Drum Dryer",
     keyFacts: [
@@ -111,7 +111,7 @@ export const dryerPageEn: DryerLocaleTexts = {
       {
         title: "Custom Drum Solutions",
         text: "Project-specific drum design and manufacturing for industrial materials and special process needs beyond standard applications. Engineering solutions are developed according to material properties, capacity and operating conditions.",
-        imageAlt: "PRO MAKINA rotary dryer being lifted into place by crane on site",
+        imageAlt: "Rotary dryer being lifted into place by crane on site",
       },
     ],
     contactLinkLabel: "Discuss your application",

@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { DryerDrumGallery } from "./dryer-drum-gallery";
-import type { DrumFlowSpec, DryerDiagramLabels, DryerLink, DryerNodeLabel, DryerPageContent, DryerTechnical } from "./dryer-drum-types";
+import type { DrumFlowSpec, DryerDiagramLabels, DryerLink, DryerNodeLabel, DryerEvidence, DryerPageContent, DryerTechnical } from "./dryer-drum-types";
 
 const sectionClass = "scroll-mt-[210px] xl:scroll-mt-[220px]";
 const arrowClass = "inline-block rtl:-scale-x-100";
@@ -425,21 +425,82 @@ function TechnicalSection({ index, technical }: { index: string; technical: Drye
   );
 }
 
+/** Üretici kanıtları: yalnız panelde onaylanmış video, firma bilgileri ve tamamlanmış proje referansları. */
+function EvidenceSection({ index, evidence }: { index: string; evidence: DryerEvidence }) {
+  return (
+    <section id="imalat-ve-referanslar" className={sectionClass}>
+      <SectionHeading index={index} eyebrow={evidence.eyebrow} title={evidence.title} intro={evidence.intro || undefined} />
+      <div className={`mt-8 grid gap-6 ${evidence.video ? "lg:grid-cols-[minmax(0,320px)_minmax(0,1fr)]" : ""}`}>
+        {evidence.video ? (
+          <figure className="mx-auto w-full max-w-[320px]">
+            <video
+              controls
+              playsInline
+              preload="metadata"
+              title={evidence.video.title}
+              aria-label={evidence.video.title}
+              className="aspect-[352/640] w-full rounded-[24px] bg-[#0b2233] object-cover"
+            >
+              {/* #t=0.5: önizleme karesi olarak videonun ilk aydınlık karesi gösterilir (ayrı poster dosyası gerekmez). */}
+              <source src={`${encodeURI(evidence.video.src)}#t=0.5`} type="video/mp4" />
+            </video>
+            <figcaption className="mt-3 text-sm leading-6 text-slate-600">
+              <span className="font-semibold text-[#0b2233]">{evidence.video.title}</span>
+              {evidence.video.caption ? <span className="block">{evidence.video.caption}</span> : null}
+            </figcaption>
+          </figure>
+        ) : null}
+        <div className="space-y-6">
+          {evidence.facts.length ? (
+            <dl className="grid gap-px overflow-hidden rounded-[24px] border border-slate-200 bg-slate-200 sm:grid-cols-2">
+              {evidence.facts.map((fact, i) => (
+                <div
+                  key={fact.label}
+                  className={`bg-white px-5 py-4 ${evidence.facts.length % 2 === 1 && i === evidence.facts.length - 1 ? "sm:col-span-2" : ""}`}
+                >
+                  <dt className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#278DC0]">{fact.label}</dt>
+                  <dd className="mt-1.5 text-[15px] font-semibold leading-6 text-[#0b2233]">{fact.value}</dd>
+                </div>
+              ))}
+            </dl>
+          ) : null}
+          {evidence.references.length ? (
+            <ul className="grid gap-4 md:grid-cols-2">
+              {evidence.references.map((reference) => (
+                <li key={reference.name} className="rounded-[24px] border border-slate-200 bg-white p-5 shadow-[0_12px_32px_rgba(15,23,42,0.04)]">
+                  <h3 className="text-base font-semibold leading-snug text-[#0b2233]">{reference.name}</h3>
+                  {reference.location || reference.year ? (
+                    <p className="mt-1 text-[13px] font-medium text-slate-500">{[reference.location, reference.year].filter(Boolean).join(" · ")}</p>
+                  ) : null}
+                  <p className="mt-3 text-[14.5px] leading-7 text-slate-600">{reference.scope}</p>
+                </li>
+              ))}
+            </ul>
+          ) : null}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export function DryerDrumProductContent({ content }: { content: DryerPageContent }) {
   const { labels, overview, process, applications, design, gallery, faq, resources, cta } = content;
   // Teknik bölüm yalnız başlığı girilmiş dilde çizilir (çevirisi olmayan dilde başka dil gösterilmez).
   const technical = content.technical && filled(content.technical.title) ? content.technical : undefined;
-  const sectionNav = technical
-    ? content.sectionNav.flatMap((item) =>
-        item.id === "tasarim-imalat" ? [item, { id: "teknik-ozellikler", label: technical.navLabel || technical.title }] : [item],
-      )
-    : content.sectionNav;
+  const { evidence } = content;
+  // Ek bölümler sayfa içi menüde "Tasarım ve İmalat" çipinin ardından gelir.
+  const extraNav = [
+    ...(technical ? [{ id: "teknik-ozellikler", label: technical.navLabel || technical.title }] : []),
+    ...(evidence ? [{ id: "imalat-ve-referanslar", label: evidence.navLabel || evidence.title }] : []),
+  ];
+  const sectionNav = content.sectionNav.flatMap((item) => (item.id === "tasarim-imalat" ? [item, ...extraNav] : [item]));
   let sectionCounter = 0;
   const nextIndex = () => String(++sectionCounter).padStart(2, "0");
   const processIndex = nextIndex();
   const applicationsIndex = nextIndex();
   const designIndex = nextIndex();
   const technicalIndex = technical ? nextIndex() : "";
+  const evidenceIndex = evidence ? nextIndex() : "";
   const galleryIndex = gallery ? nextIndex() : "";
   const faqIndex = faq.items.length ? nextIndex() : "";
   const resourcesIndex = resources?.links.length ? nextIndex() : "";
@@ -655,6 +716,9 @@ export function DryerDrumProductContent({ content }: { content: DryerPageContent
 
         {/* Teknik özellikler, mekanik tasarım ve tedarik kapsamı */}
         {technical ? <TechnicalSection index={technicalIndex} technical={technical} /> : null}
+
+        {/* Üretici kanıtları (yalnız panelde onaylanmış içerik) */}
+        {evidence ? <EvidenceSection index={evidenceIndex} evidence={evidence} /> : null}
 
         {/* Galeri */}
         {gallery ? (

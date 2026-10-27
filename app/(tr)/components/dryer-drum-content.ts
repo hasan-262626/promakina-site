@@ -90,7 +90,7 @@ export const dryerApplications = {
       text: "Standart uygulamalar dışındaki endüstriyel hammaddeler ve özel proses ihtiyaçları için projeye özel tambur tasarımı ve imalatı. Malzeme özellikleri, kapasite ve çalışma koşullarına göre mühendislik çözümleri geliştirilir.",
       image: {
         src: "/images/tambur kurutma/tamkurutma19.jpg",
-        alt: "PRO MAKİNA kurutma tamburunun sahada vinçle yerine montajı",
+        alt: "Kurutma tamburunun sahada vinçle yerine montajı",
       },
       link: { label: "Özel Tambur Çözümleri", href: "/makinalar-ekipman/tambur-sistemleri/ozel-tambur" },
     },
@@ -101,8 +101,15 @@ export const dryerApplications = {
 export const dryerDesignSection = {
   title: "Projeye Özel Kurutma Tamburu Tasarımı ve İmalatı",
   intro:
-    "PRO MAKİNA, kurutma tamburlarını hammadde özellikleri, saatlik kapasite, başlangıç ve hedef nem değerleri ile tesisin proses gereksinimlerine göre projelendirir. Tambur gövdesi, kaldırıcı kanatlar, tahrik sistemi ve yardımcı ekipmanlar bir bütün olarak değerlendirilir; kurutma tamburu imalatı bu proje verilerine göre yürütülür.",
-  highlights: ["Projeye özel ölçülendirme", "Ürüne uygun kaldırıcı kanat", "Doğrudan veya dolaylı ısıtma", "Ağır hizmet mekanik yapı"],
+    "PRO MAKİNA, kurutma tamburunu proses hesabından mekanik tasarıma, gövde, iç kanat ve tahrik grubunun imalatından brülör, fan, siklon ve filtre entegrasyonuna kadar tek bir mühendislik kapsamında projelendirir ve imal eder. Hammadde özellikleri, saatlik kapasite, başlangıç ve hedef nem değerleri ile tesisin proses gereksinimleri tasarımın temel girdileridir; saha montajında hizalama ve devreye alma kontrolleri imalatın tamamlayıcı adımlarıdır.",
+  highlights: [
+    "Proses hesabı ve boyutlandırma",
+    "Mekanik tasarım",
+    "Ürüne uygun kaldırıcı kanat",
+    "Gövde ve tahrik grubu imalatı",
+    "Brülör, fan ve filtre entegrasyonu",
+    "Montaj ve devreye alma kontrolleri",
+  ],
   figure: dryerImage(
     "tamkurutma21.jpg",
     "Proses binasında kurutma tamburu, brülör davlumbazı ve sıcak gaz kanalı",

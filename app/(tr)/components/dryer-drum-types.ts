@@ -79,6 +79,20 @@ export type DryerTechnical = {
   };
 };
 
+/**
+ * Üretici kanıtları (imalat videosu, doğrulanmış firma bilgileri, tamamlanmış proje referansları). Yalnız panelde
+ * ilgili onay işaretlenmiş ve o dilde metni girilmiş öğeler bu modele girer; hiçbiri yoksa bölüm çizilmez.
+ */
+export type DryerEvidence = {
+  navLabel: string;
+  eyebrow: string;
+  title: string;
+  intro: string;
+  video?: { src: string; title: string; caption: string };
+  facts: { label: string; value: string }[];
+  references: { name: string; location: string; year: string; scope: string }[];
+};
+
 export type DryerPageContent = {
   breadcrumb: { items: DryerLink[]; current: string };
   labels: {
@@ -137,6 +151,7 @@ export type DryerPageContent = {
     dataNote: string;
   };
   technical?: DryerTechnical;
+  evidence?: DryerEvidence;
   gallery?: {
     title: string;
     images: { src: string; alt: string; caption: string }[];
