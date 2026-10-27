@@ -1,4 +1,5 @@
-﻿import { miningTechnicalData } from "./mining-technical-articles";
+﻿import { fertilizerTechnicalData } from "./fertilizer-technical-articles";
+import { miningTechnicalData } from "./mining-technical-articles";
 
 export type BlogTechnicalRequiredRow = {
   label: string;
@@ -591,6 +592,6 @@ export function getBlogTechnicalArticleData(slug?: string): BlogTechnicalArticle
     return defaultTechnicalData;
   }
 
-  return miningTechnicalData[slug] ?? slugFamilies[slug] ?? defaultTechnicalData;
+  return miningTechnicalData[slug] ?? fertilizerTechnicalData[slug] ?? slugFamilies[slug] ?? defaultTechnicalData;
 }
 
