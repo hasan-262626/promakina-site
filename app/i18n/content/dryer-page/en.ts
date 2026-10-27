@@ -3,9 +3,9 @@ import { dryerTechnicalEn } from "./technical-en";
 
 export const dryerPageEn: DryerLocaleTexts = {
   meta: {
-    title: "Rotary Dryer Manufacturer | Sand, Perlite, Sawdust",
+    title: "Rotary Drum Dryer Manufacturer in Turkey | Sand & Minerals",
     description:
-      "Industrial rotary dryer manufacturing for silica sand, perlite, sawdust, minerals and fertilizer. PRO MAKINA rotary drum dryers and complete drying systems.",
+      "Turkey-based rotary drum dryer manufacturer: dryers and complete drying plants for silica sand, perlite, bentonite, kaolin, barite, other minerals and fertilizer.",
   },
   h1: "Rotary Dryer – Industrial Rotary Drum Dryer Manufacturing",
   sidebarEyebrow: "Machine Group",
@@ -40,7 +40,7 @@ export const dryerPageEn: DryerLocaleTexts = {
     ],
     title: "Industrial Rotary Dryer Engineered for Your Material",
     paragraphs: [
-      "PRO MAKINA designs and manufactures industrial rotary dryers to reduce the moisture of silica sand, perlite, sawdust, mining and mineral raw materials, organic fertilizer, granular fertilizer and other suitable bulk solids in a controlled way. Each rotary drum dryer is engineered around the properties of the product.",
+      "PRO MAKINA, based in Eskişehir, Turkey, designs and manufactures industrial rotary dryers to reduce the moisture of silica sand, perlite, sawdust, mining and mineral raw materials, organic fertilizer, granular fertilizer and other suitable bulk solids in a controlled way. Each rotary drum dryer is engineered around the properties of the product.",
       "Initial and target moisture, capacity, particle size, bulk density, abrasiveness and thermal sensitivity are the core design inputs. Burner type, airflow, internal flight design, residence time and dust management are evaluated together.",
       "The feed system, heat generation unit, drying drum, fan, cyclone, filter, product discharge and electrical and automation equipment are considered together according to the process. The scope of a complete drying system is defined in the technical quotation in line with the downstream cooling, screening and storage stages.",
     ],
@@ -101,7 +101,7 @@ export const dryerPageEn: DryerLocaleTexts = {
       },
       {
         title: "Mining and Mineral Rotary Dryer",
-        text: "Project-specific mining rotary dryer solutions for barite, limestone and other industrial minerals suitable for drying. Designed around the material's density, abrasiveness, initial moisture and target product properties.",
+        text: "Project-specific mineral drying equipment for bentonite, kaolin, barite, zeolite, limestone and other industrial minerals suitable for drying. Designed around the material's density, abrasiveness, initial moisture and target product properties.",
         imageAlt: "Piles of crushed limestone at a quarry",
       },
       {
@@ -196,6 +196,11 @@ export const dryerPageEn: DryerLocaleTexts = {
         question: "How is a price quotation for a rotary dryer prepared?",
         answer:
           "Once the product type, capacity, inlet and target outlet moisture, heat source, operating hours and site conditions are shared, a process evaluation is carried out; after the scope is clarified, a project-specific technical quotation is prepared. If product behaviour is uncertain, a sample test may be requested.",
+      },
+      {
+        question: "Is perlite expanded in the rotary dryer?",
+        answer:
+          "No. The rotary dryer removes free moisture from crushed raw perlite before grinding and screening. Expansion is a separate high-temperature furnace process at the expansion plant, in which the combined water in the grain turns to steam and the particle expands.",
       },
     ],
   },

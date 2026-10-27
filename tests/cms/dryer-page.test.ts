@@ -100,13 +100,16 @@ describe("kurutma tamburu teknik bölümü (82ee073 öncesi içerik)", () => {
     expect(technical.sections.some((s) => /Uygulama Alanları/.test(s.title))).toBe(false);
   });
 
-  it("EN/RU/AR: TR ile aynı kapsam (11 satır, 5 bölüm, aynı paragraf sayıları, 7+8 kapsam kalemi), boş metin yok", () => {
+  it("EN/RU/AR: TR ile aynı kapsam (11 satır, 5 bölüm + yalnız yabancı dillerde mineral bölümü, 7+8 kapsam kalemi), boş metin yok", () => {
     const tr = buildDryerBase("tr").content.technical!;
-    const script = { en: /^[ -~’–—()/]+$/, ru: /[Ѐ-ӿ]/, ar: /[؀-ۿ]/ };
+    const script = { en: /^[ -~’–—()/³]+$/, ru: /[Ѐ-ӿ]/, ar: /[؀-ۿ]/ };
     for (const locale of ["en", "ru", "ar"] as const) {
       const t = buildDryerBase(locale).content.technical!;
       expect(t.table.rows, locale).toHaveLength(tr.table.rows.length);
-      expect(t.sections.map((x) => x.paragraphs.length), locale).toEqual(tr.sections.map((x) => x.paragraphs.length));
+      // İlk bölümler TR'nin birebir karşılığıdır; sonuncusu uluslararası pazar için eklenen "mineral bazında kurutma" bölümüdür.
+      expect(t.sections, locale).toHaveLength(tr.sections.length + 1);
+      expect(t.sections.slice(0, tr.sections.length).map((x) => x.paragraphs.length), locale).toEqual(tr.sections.map((x) => x.paragraphs.length));
+      expect(t.sections.at(-1)!.paragraphs, locale).toHaveLength(6);
       expect(t.scope.coreItems, locale).toHaveLength(tr.scope.coreItems.length);
       expect(t.scope.optionalItems, locale).toHaveLength(tr.scope.optionalItems.length);
       const strings: string[] = [];
@@ -116,8 +119,12 @@ describe("kurutma tamburu teknik bölümü (82ee073 öncesi içerik)", () => {
     }
   });
 
-  it("çeviriler TR'de olmayan sayısal değer eklemez (yalnız ST37/S355 malzeme sınıfları)", () => {
-    const numbers = (locale: (typeof LOCALES)[number]) => new Set(JSON.stringify(buildDryerBase(locale).content.technical).match(/d+/g) ?? []);
+  it("çeviriler TR karşılığı olan bölümlerde TR'de olmayan sayısal değer eklemez (yalnız ST37/S355 malzeme sınıfları)", () => {
+    const trSectionCount = buildDryerBase("tr").content.technical!.sections.length;
+    const numbers = (locale: (typeof LOCALES)[number]) => {
+      const t = buildDryerBase(locale).content.technical!;
+      return new Set(JSON.stringify({ ...t, sections: t.sections.slice(0, trSectionCount) }).match(/\d+/g) ?? []);
+    };
     const allowed = numbers("tr");
     for (const locale of ["en", "ru", "ar"] as const) expect([...numbers(locale)].filter((n) => !allowed.has(n)), locale).toEqual([]);
   });

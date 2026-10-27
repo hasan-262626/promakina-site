@@ -64,6 +64,17 @@ export const dryerTechnicalEn: DryerTechnical = {
         "Alarms and safety interlocks support safe operation. Online measurement of product outlet moisture is not included in every project; it can be engineered as an option depending on the requirement and product behaviour.",
       ],
     },
+    {
+      title: "Drying Conditions by Mineral",
+      paragraphs: [
+        "Silica and quartz sand, feldspar and calcite: free-flowing, heat-tolerant minerals usually dried in a direct-fired rotary dryer to a low, stable moisture. Silica and quartz sand are highly abrasive, so flights, chutes and the feed end need wear protection; for glass and ceramic grades of silica sand and feldspar, iron pick-up from worn steel surfaces must be limited. Calcite is softer but produces more fines and is valued for whiteness. Hot sand is often cooled before bagging. Final design values are confirmed from sample analysis on every project.",
+        "Raw perlite: the dryer only removes free moisture from crushed ore before grinding, screening and shipment to an expansion plant. Expansion is a separate high-temperature furnace process in which the combined water in the glassy grain flashes to steam, so product temperature in the dryer is controlled to avoid needlessly reducing that water. Published process descriptions (US EPA AP-42) cite crude perlite being dried from about 4–10 % to below 1 % moisture; these are literature values, not a guarantee for a specific ore. Low gas velocity and cyclone recovery limit the loss of light fines.",
+        "Bentonite: raw bentonite can contain 25–35 % moisture and passes through a sticky range while drying, so feed-end design, flight layout and, where needed, chains are selected to prevent build-up. Co-current flow and a limited product temperature help preserve swelling capacity and water absorption. The target moisture is set by the end use, such as grinding, drilling, foundry or cat litter production.",
+        "Bentonite-based cat litter: the granules are dried within a narrow moisture band. Over-drying weakens clumping and absorbency and makes granules brittle; under-drying causes problems in the bag. Gentle flights and moderate drum speed limit breakage, and screening and dust removal after the dryer define the commercial grain sizes.",
+        "Kaolin: a plastic clay that often arrives as filter cake from wet beneficiation. Lump breaking or mixing with dry product helps it through the sticky phase. Kaolin is dried for shipment or before calcination, which is a separate higher-temperature process; contamination and colour are monitored for white grades.",
+        "Barite and zeolite: barite has a high density of about 4.3–4.5 g/cm³, so drive power, flights and conveyors are sized by mass rather than volume, and fineness specifications (for example for drilling-grade barite) govern the downstream grinding and dust system. Zeolite holds water in its porous channels; product temperature is limited to protect its adsorption and ion-exchange properties, and the target moisture follows the agricultural, feed-additive or water-treatment application.",
+      ],
+    },
   ],
   scope: {
     title: "Drying System Scope of Supply",
