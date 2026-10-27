@@ -710,7 +710,7 @@ const materialDryingPages: DrumSystemDetailPageData[] = [
       section("Perlit Neden Kurutulur?", {
         paragraphs: [
           "Ham perlit, genleştirme (expanding) fırınına beslenmeden önce düşük ve stabil nem değerine getirilmelidir; tanenin yüzeyindeki serbest nem fırında ek enerji tüketir, ince fraksiyonun topaklanmasına yol açar ve genleşme davranışını dengesizleştirir. Kurutma ayrıca kırma sonrası eleme ve sınıflandırmanın verimli yapılmasını sağlar.",
-          "Kaynaklarda ham perlit cevheri için kurutucu giriş nemi tipik olarak %4–10, kurutucu çıkışı ise %1'in altı olarak verilir. Projeye esas değer, ocaktan alınan numunenin nem ve tane dağılımı analiziyle belirlenir.",
+          "ABD Çevre Koruma Ajansı'nın (EPA) AP-42 perlit işleme bölümünde, kırılmış ham perlit cevherinin döner kurutucuda %4–10 nemden %1'in altına indirildiği belirtilir. Bu değerler kaynakta tarif edilen proses değerleridir; Pro Makina'nın her perlit tesisi için taahhüt ettiği işletme değerleri değildir. Projeye esas değer, ocaktan alınan numunenin nem ve tane dağılımı analiziyle belirlenir.",
         ],
       }),
       section("Ham Perlit Kurutma ile Perlit Genleştirme Aynı İşlem Değildir", {

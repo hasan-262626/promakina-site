@@ -572,8 +572,8 @@ export function SilicaSandDryingProcessPage() {
                   {[
                     ["Yaş besleme ve giriş nemi", "20 t/saat, %6 nem", "—"],
                     ["Kuru katı miktarı", "20 × (1 − 0,06)", "18,80 t/saat"],
-                    ["Hedef çıkış nemi %0,5 iken kuru ürün", "18,80 / (1 − 0,005)", "≈ 18,89 t/saat"],
-                    ["Buharlaştırılacak su", "20 − 18,89", "≈ 1,11 t/saat (≈ 1.110 kg/saat)"],
+                    ["Hedef çıkış nemi %0,5 iken kuru ürün", "18,80 / (1 − 0,005)", "≈ 18,894 t/saat"],
+                    ["Teorik buharlaştırılacak su", "20 − 18,894", "≈ 1,106 t/saat (≈ 1.106 kg/saat)"],
                   ].map((row) => (
                     <tr key={row[0]} className="align-top">
                       <td className="px-4 py-4 font-semibold text-slate-950">{row[0]}</td>
@@ -587,7 +587,7 @@ export function SilicaSandDryingProcessPage() {
             <div className="mt-5 space-y-5 text-base leading-8 text-slate-700">
               <p className="text-sm leading-7 text-slate-600">
                 Değerler yalnız hesap yöntemini göstermek için seçilmiş bir tasarım örneğidir; gerçek tesis
-                verisi veya performans taahhüdü değildir. Isıl ihtiyaç; buharlaşma enerjisine ek olarak
+                verisi, kapasite garantisi veya performans taahhüdü değildir. Isıl ihtiyaç; buharlaşma enerjisine ek olarak
                 kumun ısıtılması, gövde ve egzoz kayıpları eklenerek hesaplanır.
               </p>
               <p>
