@@ -64,7 +64,7 @@ export function IndustrialSolutionLandingPage({
       name: "Pro Makina",
       url: "https://www.promakina.com.tr",
     },
-    areaServed: ["Türkiye", "Avrupa", "Orta DoÄŸu", "Kuzey Afrika"],
+    areaServed: ["Türkiye", "Avrupa", "Orta Doğu", "Kuzey Afrika"],
     url: canonical,
   };
 

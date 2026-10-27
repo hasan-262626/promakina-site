@@ -188,7 +188,7 @@ export function MachineSeoLandingPage({
     description: trText(description),
     serviceType: `${trText(categoryName)} - ${trText(productName)}`,
     category: trText(categoryName),
-    areaServed: ["Türkiye", "Avrupa", "Orta DoÄŸu", "Kuzey Afrika"],
+    areaServed: ["Türkiye", "Avrupa", "Orta Doğu", "Kuzey Afrika"],
     url: canonical,
   };
 

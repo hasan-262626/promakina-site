@@ -147,7 +147,7 @@ export function ServiceSeoPage({
       name: siteName,
       url: "https://www.promakina.com.tr",
     },
-    areaServed: ["Türkiye", "Avrupa", "Orta DoÄŸu", "Kuzey Afrika"],
+    areaServed: ["Türkiye", "Avrupa", "Orta Doğu", "Kuzey Afrika"],
     serviceType: serviceName,
     url: canonical,
   };
