@@ -27,7 +27,13 @@ export type HomeExperienceContent = {
 
 /** Esnek bölüm modeli: tek şablon tüm sayfa türlerini (makine/kategori/sektör/kurumsal) render eder. */
 export type IntlSection =
-  | { type: "paragraphs"; heading: string; paragraphs: string[] }
+  | {
+      type: "paragraphs";
+      heading: string;
+      paragraphs: string[];
+      /** Paragraflardaki mevcut ifadelere eklenen metin içi bağlantılar; hedef dile göre rota anahtarından üretilir. */
+      links?: { text: string; to: RouteKey }[];
+    }
   | { type: "bullets"; heading: string; intro?: string; items: string[] }
   | { type: "cards"; heading: string; intro?: string; items: { title: string; text: string }[] }
   | {

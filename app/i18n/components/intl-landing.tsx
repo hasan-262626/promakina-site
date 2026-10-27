@@ -12,6 +12,7 @@ import { whatsappMessageFor } from "../dictionaries";
 import { buildBreadcrumbSchema, buildFaqSchema, buildPageSchema, breadcrumbTrail } from "../metadata";
 import { pathFor, type RouteKey } from "../routes";
 import type { IntlPageContent, IntlSection } from "../content/types";
+import { createInlineLinker } from "../../(tr)/lib/inline-links";
 
 /**
  * Yabancı dil iç sayfa şablonu. Türkçe makine/sektör sayfalarının tasarım dilini
@@ -37,21 +38,25 @@ function SectionHeading({ title, description }: { title: string; description?: s
   );
 }
 
-function SectionRenderer({ section }: { section: IntlSection }) {
+function SectionRenderer({ section, locale }: { section: IntlSection; locale: IntlLocale }) {
   switch (section.type) {
-    case "paragraphs":
+    case "paragraphs": {
+      const linkify = createInlineLinker(
+        section.links?.map((link) => ({ text: link.text, href: pathFor(link.to, locale) })),
+      );
       return (
         <section className="section-bottom-space">
           <div className="site-container">
             <SectionHeading title={section.heading} />
             <div className="mt-6 max-w-4xl space-y-4 text-sm leading-8 text-slate-600 sm:text-base">
               {section.paragraphs.map((paragraph) => (
-                <p key={paragraph.slice(0, 48)}>{paragraph}</p>
+                <p key={paragraph.slice(0, 48)}>{linkify(paragraph)}</p>
               ))}
             </div>
           </div>
         </section>
       );
+    }
     case "bullets":
       return (
         <section className="section-bottom-space">
@@ -234,7 +239,7 @@ export function IntlLanding({ locale, routeKey, content, dict, labelFor }: IntlL
 
       {/* İçerik bölümleri */}
       {content.sections.map((section) => (
-        <SectionRenderer key={section.heading} section={section} />
+        <SectionRenderer key={section.heading} section={section} locale={locale} />
       ))}
 
       {/* Güven bloğu */}
