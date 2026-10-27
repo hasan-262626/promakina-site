@@ -1,4 +1,5 @@
 import type { DryerLocaleTexts } from "./index";
+import { dryerTechnicalEn } from "./technical-en";
 
 export const dryerPageEn: DryerLocaleTexts = {
   meta: {
@@ -133,6 +134,7 @@ export const dryerPageEn: DryerLocaleTexts = {
     dataNote:
       "For combustible products such as sawdust, fire and dust explosion risks are assessed separately at the design stage; if product behaviour is uncertain, a sample test can be carried out.",
   },
+  technical: dryerTechnicalEn,
   gallery: {
     title: "Rotary Dryer Photo Gallery",
     items: [

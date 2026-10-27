@@ -57,7 +57,14 @@ export const loadDryerPage = cache(async (locale: Locale) => {
     loadCmsContent("dryerPage", DRYER_DOC_ID, locale),
     loadCmsContent("dryerPage", DRYER_DOC_ID, "shared"),
   ]);
-  const texts = (resolvePublished(toJson(defaultTexts), textsRaw, rotaryDryerAdapter.rules) as DryerEditable | null) ?? defaultTexts;
+  // Teknik bölüm çevirisi eklenmeden önce yayınlanmış bir kayıtta bölüm boş olabilir: boş bölüm yeni çeviriyi
+  // gizlemesin ve kaydın diğer düzenlenmiş alanları korunsun (yalnız teknik bölüm koddan alınır).
+  const published = textsRaw as Partial<DryerEditable> | null;
+  const textsInput =
+    published?.technical && !published.technical.title?.trim() && defaultTexts.technical.title.trim()
+      ? { ...published, technical: defaultTexts.technical }
+      : published;
+  const texts = (resolvePublished(toJson(defaultTexts), textsInput, rotaryDryerAdapter.rules) as DryerEditable | null) ?? defaultTexts;
   const images =
     (resolvePublished(toJson(defaultImages), imagesRaw, rotaryDryerAdapter.shared?.rules) as DryerSharedImages | null) ?? defaultImages;
   return {

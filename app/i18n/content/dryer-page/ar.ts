@@ -1,4 +1,5 @@
 import type { DryerLocaleTexts } from "./index";
+import { dryerTechnicalAr } from "./technical-ar";
 
 export const dryerPageAr: DryerLocaleTexts = {
   meta: {
@@ -133,6 +134,7 @@ export const dryerPageAr: DryerLocaleTexts = {
     dataNote:
       "في المنتجات القابلة للاشتعال مثل نشارة الخشب، تُقيَّم مخاطر الحريق وانفجار الغبار بشكل منفصل في مرحلة التصميم؛ وإذا كان سلوك المنتج غير واضح يمكن إجراء اختبار على عينة.",
   },
+  technical: dryerTechnicalAr,
   gallery: {
     title: "معرض صور المجففات الدوارة",
     items: [

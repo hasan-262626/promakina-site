@@ -1,4 +1,5 @@
 import type { DryerLocaleTexts } from "./index";
+import { dryerTechnicalRu } from "./technical-ru";
 
 export const dryerPageRu: DryerLocaleTexts = {
   meta: {
@@ -133,6 +134,7 @@ export const dryerPageRu: DryerLocaleTexts = {
     dataNote:
       "Для горючих продуктов, таких как древесная стружка, риски пожара и взрыва пыли оцениваются отдельно на этапе проектирования; если поведение продукта неясно, может быть проведено испытание пробы.",
   },
+  technical: dryerTechnicalRu,
   gallery: {
     title: "Фотогалерея сушильных барабанов",
     items: [

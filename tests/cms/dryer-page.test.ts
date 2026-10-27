@@ -100,19 +100,37 @@ describe("kurutma tamburu teknik bölümü (82ee073 öncesi içerik)", () => {
     expect(technical.sections.some((s) => /Uygulama Alanları/.test(s.title))).toBe(false);
   });
 
-  it("EN/RU/AR: çeviri girilmeden bölüm boş çeviri alanıdır (çizilmez, şemaya eklenmez)", async () => {
-    const { dryerSchemaProperties } = await import("@/app/i18n/content/dryer-page/editable");
+  it("EN/RU/AR: TR ile aynı kapsam (11 satır, 5 bölüm, aynı paragraf sayıları, 7+8 kapsam kalemi), boş metin yok", () => {
     const tr = buildDryerBase("tr").content.technical!;
+    const script = { en: /^[ -~’–—()/]+$/, ru: /[Ѐ-ӿ]/, ar: /[؀-ۿ]/ };
     for (const locale of ["en", "ru", "ar"] as const) {
-      const content = buildDryerBase(locale).content;
-      expect(content.technical!.title).toBe("");
+      const t = buildDryerBase(locale).content.technical!;
+      expect(t.table.rows, locale).toHaveLength(tr.table.rows.length);
+      expect(t.sections.map((x) => x.paragraphs.length), locale).toEqual(tr.sections.map((x) => x.paragraphs.length));
+      expect(t.scope.coreItems, locale).toHaveLength(tr.scope.coreItems.length);
+      expect(t.scope.optionalItems, locale).toHaveLength(tr.scope.optionalItems.length);
       const strings: string[] = [];
-      JSON.stringify(content.technical, (_k, v) => (typeof v === "string" && strings.push(v), v));
-      expect(strings.every((s) => s === ""), locale).toBe(true);
-      expect(content.technical!.sections).toHaveLength(tr.sections.length);
-      expect(dryerSchemaProperties(content), locale).toBeUndefined();
+      JSON.stringify(t, (_k, v) => (typeof v === "string" && strings.push(v), v));
+      expect(strings.every((x) => x.trim().length > 0), locale).toBe(true);
+      expect(strings.filter((x) => !script[locale].test(x)), locale).toEqual([]);
     }
-    expect(dryerSchemaProperties(buildDryerBase("tr").content)).toHaveLength(11);
+  });
+
+  it("çeviriler TR'de olmayan sayısal değer eklemez (yalnız ST37/S355 malzeme sınıfları)", () => {
+    const numbers = (locale: (typeof LOCALES)[number]) => new Set(JSON.stringify(buildDryerBase(locale).content.technical).match(/d+/g) ?? []);
+    const allowed = numbers("tr");
+    for (const locale of ["en", "ru", "ar"] as const) expect([...numbers(locale)].filter((n) => !allowed.has(n)), locale).toEqual([]);
+  });
+
+  it("Product additionalProperty her dilde görünür tablo satırlarıyla birebir aynı (4 dil, 11 satır)", async () => {
+    const { dryerSchemaProperties } = await import("@/app/i18n/content/dryer-page/editable");
+    for (const locale of LOCALES) {
+      const content = buildDryerBase(locale).content;
+      expect(dryerSchemaProperties(content), locale).toEqual(
+        content.technical!.table.rows.map((r) => ({ "@type": "PropertyValue", name: r.name, value: r.value })),
+      );
+      expect(dryerSchemaProperties(content), locale).toHaveLength(11);
+    }
   });
 });
 
@@ -228,7 +246,7 @@ describe("kurutma tamburu panel yayını → public içerik", () => {
     expect(page.content.gallery?.images.map((i) => i.caption)).toEqual(base.content.gallery?.images.map((i) => i.caption));
   });
 
-  it("EN teknik bölüm çevirisi panelden girilince yalnız EN sayfasında görünür", async () => {
+  it("EN teknik bölüm panelden değiştirilince yalnız EN sayfası değişir", async () => {
     const en = clone(rotaryDryerAdapter.getDefault(DRYER_DOC_ID, "en")) as DryerEditable;
     en.technical.title = "Rotary Dryer Technical Specifications";
     en.technical.navLabel = "Specifications";
@@ -244,8 +262,25 @@ describe("kurutma tamburu panel yayını → public içerik", () => {
     const page = await loadDryerPage("en");
     expect(page.content.technical?.title).toBe("Rotary Dryer Technical Specifications");
     expect(page.content.technical?.table.rows).toHaveLength(3);
-    expect((await loadDryerPage("ar")).content.technical?.title).toBe("");
+    expect((await loadDryerPage("ar")).content.technical?.title).toBe(buildDryerBase("ar").content.technical?.title);
     await revertToDefault(db, target("en"));
+  });
+
+  it("çeviri öncesi yayınlanmış (teknik bölümü boş) kayıt yeni çeviriyi silmez, diğer alanlar korunur", async () => {
+    const old = clone(rotaryDryerAdapter.getDefault(DRYER_DOC_ID, "ru")) as DryerEditable;
+    old.h1 = "Сушильный барабан – панельный заголовок";
+    const blank = (v: unknown): unknown =>
+      typeof v === "string" ? "" : Array.isArray(v) ? v.map(blank) : v && typeof v === "object" ? Object.fromEntries(Object.entries(v).map(([k, x]) => [k, blank(x)])) : v;
+    old.technical = blank(old.technical) as DryerEditable["technical"];
+    await db.query(
+      "insert into content_documents (type, doc_id, locale, published, published_at) values ('dryerPage', $1, 'ru', $2, now()) on conflict (type, doc_id, locale) do update set published = excluded.published",
+      [DRYER_DOC_ID, JSON.stringify(old)],
+    );
+    const page = await loadDryerPage("ru");
+    expect(page.h1).toBe("Сушильный барабан – панельный заголовок");
+    expect(page.content.technical?.title).toBe(buildDryerBase("ru").content.technical?.title);
+    expect(page.content.technical?.table.rows).toHaveLength(11);
+    await db.query("delete from content_documents where type = 'dryerPage' and locale = 'ru'");
   });
 
   it("koda dön: yayın kaldırılınca kod içeriğine dönülür", async () => {
