@@ -1,4 +1,5 @@
 import { generatedTechnicalBlogArticles } from "./generated-technical-blog-articles";
+import { fertilizerHandwrittenArticles } from "./fertilizer-technical-articles";
 import { miningHandwrittenArticles } from "./mining-technical-articles";
 import {
   sectorMachineGuideArticles,
@@ -742,11 +743,13 @@ export const topicalBlogArticles: TopicalArticle[] = [
 
 const allTopicalBlogArticles = [...topicalBlogArticles, ...generatedTechnicalBlogArticles];
 
-// Elle yazılmış maden makaleleri, şablonla üretilen bölüm/SSS/açıklama alanlarının yerine geçer.
+const handwrittenArticles = { ...miningHandwrittenArticles, ...fertilizerHandwrittenArticles };
+
+// Elle yazılmış maden ve gübre makaleleri, şablonla üretilen bölüm/SSS/açıklama alanlarının yerine geçer.
 export const topicalBlogArticleMap = Object.fromEntries(
   allTopicalBlogArticles.map((article) => [
     article.slug,
-    miningHandwrittenArticles[article.slug] ? { ...article, ...miningHandwrittenArticles[article.slug] } : article,
+    handwrittenArticles[article.slug] ? { ...article, ...handwrittenArticles[article.slug] } : article,
   ]),
 ) as Record<string, TopicalArticle>;
 
