@@ -1133,7 +1133,7 @@ const materialDryingPages: DrumSystemDetailPageData[] = [
       }),
       section("Mineral Bazında Kurutma Farkları", {
         paragraphs: [
-          "Aynı döner kurutucu prensibi farklı minerallerde farklı tasarım kararları gerektirir. Aşağıdaki rehberler her mineralin kurutmada öne çıkan teknik konusunu ayrıntılı ele alır.",
+          "Aynı döner kurutucu prensibi farklı minerallerde farklı tasarım kararları gerektirir. Aşağıda her mineralin kurutmada öne çıkan teknik konusu özetlenmiştir; ayrıntılı rehberi bulunan mineraller ilgili sayfaya bağlanır.",
         ],
         subsections: [
           {
@@ -1177,6 +1177,18 @@ const materialDryingPages: DrumSystemDetailPageData[] = [
             paragraphs: ["Öğütme öncesi kurutulur; beyazlığın korunması ve ince tozun geri kazanımı kurutma hattının kararlarını etkiler."],
             href: "/kutuphane/blog/kalsit-kurutma-tamburu",
             linkLabel: "Kalsit kurutma tamburu",
+          },
+          {
+            title: "Barit",
+            paragraphs: ["Yoğunluğu yaklaşık 4,3–4,5 g/cm³ olan ağır bir mineraldir; tambur yükü, tahrik gücü ve taşıma ekipmanları hacme göre değil kütleye göre boyutlandırılır. Sondaj çamuru ağırlaştırıcısı olarak kullanımda tane inceliği ve nem şartnamesi belirleyicidir."],
+          },
+          {
+            title: "Kaolin",
+            paragraphs: ["Plastik bir kildir; ıslak zenginleştirme sonrası filtre keki olarak yüksek nemle gelebilir. Yapışkan faz, kanat düzeni ve gerektiğinde kuru ürünle geri karıştırma tasarımı belirler; kalsinasyon öncesi kurutma ayrı bir sıcaklık rejimi gerektirir."],
+          },
+          {
+            title: "Zeolit",
+            paragraphs: ["Gözenekli yapısı suyu yüzeyde ve kanallarında tutar. Adsorpsiyon ve iyon değişim özelliğini korumak için ürün sıcaklığı sınırlanır; hedef nem tarım, yem katkısı veya su arıtma kullanımına göre belirlenir."],
           },
         ],
       }),
