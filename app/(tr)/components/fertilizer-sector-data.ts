@@ -1,6 +1,10 @@
+import type { InlineLink } from "../lib/inline-links";
+
 export type PlantCard = {
   title: string;
   text: string;
+  /** Kart metnindeki mevcut ifadeye eklenen metin içi bağlantılar. */
+  inlineLinks?: InlineLink[];
   href: string;
   links: Array<{
     label: string;
@@ -33,7 +37,8 @@ export const fertilizerPlantCards: PlantCard[] = [
   },
   {
     title: "Granül Gübre Tesisleri",
-    text: "Granül gübre üretimi için ilgili alt çözüm başlıklarını doğrudan seçebilirsiniz.",
+    text: "Granül hatlarda granülasyon sonrası ürün nemi, kurutma tamburunda depolama ve paketlemeye uygun seviyeye indirilir. İlgili alt çözüm başlıklarını doğrudan seçebilirsiniz.",
+    inlineLinks: [{ text: "kurutma tamburunda", href: "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburu" }],
     href: "/sektorler/gubre-ve-granulasyon-tesisleri/granul-organomineral",
     links: [
       { label: "Granül Organomineral", href: "/sektorler/gubre-ve-granulasyon-tesisleri/granul-organomineral" },

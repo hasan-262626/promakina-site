@@ -3,6 +3,7 @@ import { serializeJsonLd } from "@/lib/json-ld";
 import Link from "next/link";
 import { Hero } from "./Hero";
 import type { IndustrialSolutionLandingConfig } from "../lib/industrial-solution-landing-data";
+import { createInlineLinker } from "../lib/inline-links";
 import { siteContact, siteSocialSameAs } from "../lib/site-contact";
 import { SocialFollowPanel } from "./social-follow-panel";
 
@@ -39,6 +40,7 @@ export function IndustrialSolutionLandingPage({
   config: IndustrialSolutionLandingConfig;
 }) {
   const canonical = `https://www.promakina.com.tr/cozumler/${config.slug}`;
+  const linkify = createInlineLinker(config.inlineLinks);
 
   const organizationSchema = {
     "@context": "https://schema.org",
@@ -196,7 +198,7 @@ export function IndustrialSolutionLandingPage({
               </h2>
               <div className="mt-5 space-y-5 text-sm leading-8 text-slate-600 sm:text-base">
                 {config.sections[0]?.paragraphs.map((paragraph) => (
-                  <p key={paragraph}>{paragraph}</p>
+                  <p key={paragraph}>{linkify(paragraph, config.sections[0].title)}</p>
                 ))}
               </div>
             </div>
@@ -287,7 +289,7 @@ export function IndustrialSolutionLandingPage({
                   </h2>
                   <div className="mt-5 space-y-5 text-sm leading-8 text-slate-700 sm:text-base">
                     {section.paragraphs.map((paragraph) => (
-                      <p key={paragraph}>{paragraph}</p>
+                      <p key={paragraph}>{linkify(paragraph, section.title)}</p>
                     ))}
                   </div>
                 </article>

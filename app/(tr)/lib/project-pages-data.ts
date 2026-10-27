@@ -15,6 +15,8 @@ export type ProjectPageData = {
   metadataDescription: string;
   projectScope: string[];
   machineGroups: string[];
+  /** Ekipman kartını ilgili makine sayfasına bağlar (anahtar: machineGroups öğesi). */
+  machineGroupLinks?: Record<string, string>;
   processFlow: string[];
   investorBenefits: string[];
   quoteRequirements: string[];
@@ -570,8 +572,12 @@ export const projectPages: ProjectPageData[] = [
     machineGroups: [
       "Çeneli, çekiçli ve dik milli kırıcılar",
       "Trommel ve vibrasyonlu elekler",
-      "Kurutma tamburu, konveyör ve stoklama ekipmanları",
+      "Kurutma tamburu ve sıcak hava ekipmanları",
+      "Konveyör ve stoklama ekipmanları",
     ],
+    machineGroupLinks: {
+      "Kurutma tamburu ve sıcak hava ekipmanları": "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburu",
+    },
     processFlow: [
       "Kırma ve boyutlandırma",
       "Eleme ve gerekirse kurutma",

@@ -26,6 +26,8 @@ import {
   topicalBlogCategoryMap,
   topicalBlogDynamicSlugs,
 } from "../../../lib/topical-authority-blog-data";
+import { blogInlineLinks } from "../../../lib/blog-inline-links";
+import { createInlineLinker } from "../../../lib/inline-links";
 import { trText } from "../../../lib/tr-text";
 
 type PageProps = {
@@ -125,6 +127,8 @@ function CategoryPage({ slug }: { slug: string }) {
   if (!category) {
     notFound();
   }
+
+  const linkify = createInlineLinker(blogInlineLinks[slug]);
 
   const organizationSchema = {
     "@context": "https://schema.org",
@@ -259,7 +263,7 @@ function CategoryPage({ slug }: { slug: string }) {
             </h2>
             <div className="mt-5 space-y-5 text-sm leading-8 text-slate-600 sm:text-base">
               {category.introParagraphs.map((paragraph) => (
-                <p key={paragraph}>{paragraph}</p>
+                <p key={paragraph}>{linkify(paragraph)}</p>
               ))}
             </div>
             <div className="mt-6 flex flex-wrap gap-3">

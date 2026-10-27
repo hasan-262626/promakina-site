@@ -33,6 +33,8 @@ export type TechnicalTopicCluster = {
   processFlow: string;
   selectionCriteria: string[];
   articles: TechnicalTopicClusterArticle[];
+  // Kategori sayfasının girişine eklenen, kümeye özgü opsiyonel teknik paragraf.
+  categoryNote?: string;
 };
 
 const DEFAULT_READING_TIME = "6-8 dk";
@@ -514,6 +516,8 @@ const technicalTopicClusters: TechnicalTopicCluster[] = [
       "Sterilizasyon veya stabilizasyon hedefi",
       "Enerji yükü ve yardımcı ekipman seçimi",
     ],
+    categoryNote:
+      "Arıtma çamurunda kurutma hattının boyutunu giriş kuru madde oranı, hedef kuruluk, buharlaşacak su miktarı ve çamurun yapışkan faza girdiği nem aralığı belirler. Döner tip kurutucularda bu aralık çoğu uygulamada kuru ürünün yaş çamurla geri karıştırılmasıyla aşılır; gövde, iç kanat, tahrik ve brülör seçenekleri için kurutma tamburu teknik özelliklerini inceleyebilirsiniz.",
     articles: [
       { title: "Arıtma Çamuru Kurutma Tesisi Nasıl Kurulur?", slug: "aritma-camuru-kurutma-tesisi-nasil-kurulur", type: "blog", priority: 1 },
       { title: "Çamur Kurutma ve Koku Kontrol Sistemleri", slug: "camur-kurutma-ve-koku-kontrol-sistemleri", type: "blog", priority: 2 },
@@ -938,6 +942,7 @@ export const technicalTopicClusterCategories: TopicalCategory[] = technicalTopic
     introParagraphs: [
       `${cluster.description} Bu kategori sayfası, konu başlığına göre gruplanmış teknik içerikleri tek merkezden okumak isteyen kullanıcılar için hazırlanmıştır.`,
       "Bu kümede kapasite, nem, yoğunluk, proses akışı, otomasyon, bakım ve ekipman eşleşmesi gibi karar başlıkları bir arada değerlendirilir. Böylece aynı konudaki farklı içerikler arasında daha güçlü bir iç bağlantı yapısı kurulur.",
+      ...(cluster.categoryNote ? [cluster.categoryNote] : []),
     ],
     relatedContents: buildClusterCards(cluster),
     ctaText:

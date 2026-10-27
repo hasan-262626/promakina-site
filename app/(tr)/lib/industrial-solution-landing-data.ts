@@ -1,3 +1,5 @@
+import type { InlineLink } from "./inline-links";
+
 export type IndustrialSolutionLandingConfig = {
   slug: string;
   title: string;
@@ -24,6 +26,8 @@ export type IndustrialSolutionLandingConfig = {
     title: string;
     paragraphs: string[];
   }[];
+  /** Bölüm paragraflarındaki mevcut ifadelere eklenen metin içi bağlantılar. */
+  inlineLinks?: InlineLink[];
   relatedMachines: {
     title: string;
     description: string;
@@ -154,6 +158,13 @@ export const industrialSolutionLandingConfigs: IndustrialSolutionLandingConfig[]
   },
   {
     slug: "kompost-tesisi-kurulumu",
+    inlineLinks: [
+      {
+        text: "kurutma tamburu",
+        href: "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburu",
+        section: "Kapasite, Son Ürün ve İşletme Yaklaşımı",
+      },
+    ],
     title: "Kompost Tesisi Kurulumu",
     metaTitle: "Kompost Tesisi Kurulumu | Organik Atık İşleme ve Kompost Çözümleri",
     description:
@@ -193,7 +204,7 @@ export const industrialSolutionLandingConfigs: IndustrialSolutionLandingConfig[]
       {
         title: "Kapasite, Son Ürün ve İşletme Yaklaşımı",
         paragraphs: [
-          "Kompost tesislerinde kapasite hesabı çoğu zaman yalnız günlük tonaja indirgenir; oysa gerçek ihtiyaç, bekleme süresi, olgunlaştırma alanı, eleme kapasitesi ve son ürün lojistiğiyle birlikte okunmalıdır. Örneğin yüksek nemli bir akış için daha büyük kurutma ve eleme altyapısı gerekirken, lifli akışlarda parçalayıcı ve karıştırma omurgası öne çıkabilir.",
+          "Kompost tesislerinde kapasite hesabı çoğu zaman yalnız günlük tonaja indirgenir; oysa gerçek ihtiyaç, bekleme süresi, olgunlaştırma alanı, eleme kapasitesi ve son ürün lojistiğiyle birlikte okunmalıdır. Örneğin yüksek nemli bir akış için daha büyük bir kurutma tamburu ve eleme altyapısı gerekirken, lifli akışlarda parçalayıcı ve karıştırma omurgası öne çıkabilir.",
           "Bu nedenle yatırımın ilk aşamasında son ürün beklentisi netleşmelidir. Tarımsal kullanım için hazırlanan ürün ile peyzaj veya belediye kullanımına gidecek ürün aynı son hazırlık yaklaşımını gerektirmez. Teknik kurgu, ticari hedefle aynı çizgide kurulmalıdır.",
         ],
       },

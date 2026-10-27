@@ -8,6 +8,7 @@ import {
   fertilizerServiceCards,
 } from "./fertilizer-sector-data";
 import { SectorInquiryForm } from "./sector-inquiry-form";
+import { createInlineLinker } from "../lib/inline-links";
 import { trText } from "../lib/tr-text";
 
 function SectionHeading({
@@ -77,7 +78,7 @@ export default function FertilizerSectorExperience() {
               className="flex h-full flex-col rounded-[28px] border border-slate-200 bg-white p-6 shadow-sm transition duration-200 hover:-translate-y-1 hover:border-blue-200 hover:bg-blue-50/70 hover:shadow-[0_18px_40px_rgba(15,23,42,0.08)]"
             >
               <h3 className="text-xl font-semibold tracking-tight text-slate-950">{trText(item.title)}</h3>
-              <p className="mt-3 text-sm leading-7 text-slate-600">{trText(item.text)}</p>
+              <p className="mt-3 text-sm leading-7 text-slate-600">{createInlineLinker(item.inlineLinks)(trText(item.text))}</p>
               <div className="mt-5 space-y-2.5">
                 {item.links.map((link) => (
                   <Link

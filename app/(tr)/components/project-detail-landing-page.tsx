@@ -43,6 +43,7 @@ export default function ProjectDetailLandingPage({
     project.machineGroups.map((item) => ({
       title: trText(item),
       description: "Proje özelinde kullanılan başlıca makine veya ekipman grubudur.",
+      href: project.machineGroupLinks?.[item],
     }));
   const technicalHighlights =
     detail?.technicalHighlights ??
