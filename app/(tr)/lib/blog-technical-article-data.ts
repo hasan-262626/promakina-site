@@ -1,4 +1,6 @@
-﻿export type BlogTechnicalRequiredRow = {
+﻿import { miningTechnicalData } from "./mining-technical-articles";
+
+export type BlogTechnicalRequiredRow = {
   label: string;
   purpose: string;
   request: string;
@@ -589,6 +591,6 @@ export function getBlogTechnicalArticleData(slug?: string): BlogTechnicalArticle
     return defaultTechnicalData;
   }
 
-  return slugFamilies[slug] ?? defaultTechnicalData;
+  return miningTechnicalData[slug] ?? slugFamilies[slug] ?? defaultTechnicalData;
 }
 
