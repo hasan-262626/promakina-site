@@ -149,34 +149,62 @@ export const compostPlants: IntlPageContent = {
 
 export const mining: IntlPageContent = {
   meta: {
-    title: "Mining & Mineral Processing Plants | Drying, Screening, Handling",
-    description:
-      "Drying, screening, crushing and handling plants for silica sand, calcite, perlite and feldspar. Process lines engineered by Pro Makina, Turkey.",
+    title: "Mining & Mineral Processing Plants | Crushing, Screening, Drying",
+    description: "Crushing, screening, drying and handling plants for silica sand, perlite, feldspar, calcite, bentonite, kaolin and barite. Engineered by Pro Makina, Turkey.",
   },
   breadcrumbLabel: "Mining & Mineral Processing",
   hero: {
     h1: "Mining and Mineral Processing Plants",
-    intro:
-      "For industrial minerals the margin sits in preparation: drying to specification, sharp classification and contamination-free handling. Pro Makina builds drying, screening, crushing and conveying lines for silica sand, calcite, perlite, feldspar and similar minerals — engineered from your ore data and product specifications.",
-    image: { src: "/images/maden/maden1.jpg", alt: "Mineral processing plant equipment by Pro Makina" },
+    intro: "For industrial minerals, value is created in preparation: drying to specification, sharp classification and contamination-free handling. Pro Makina, an equipment manufacturer based in Eskişehir, Turkey, engineers crushing, screening, drying and conveying lines for silica sand, perlite, feldspar, calcite, bentonite, kaolin, barite and similar minerals, designed from your ore data and product specifications.",
+    image: { src: "/images/maden/maden1.jpg", alt: "Crushing and screening plant at a quarry (representative image)" },
   },
   sections: [
     {
       type: "cards",
       heading: "Typical Plant Scopes",
       items: [
-        { title: "Sand drying plants", text: "Rotary dryer lines bringing silica and foundry sand to specification moisture." },
+        { title: "Sand drying plants", text: "Rotary dryer lines that bring silica and foundry sand to specification moisture." },
         { title: "Crushing and screening", text: "Jaw and impact crushing with multi-deck classification into product fractions." },
         { title: "Mineral handling", text: "Conveying, elevating, storage and loading systems for abrasive materials." },
-        { title: "Dust management", text: "Cyclone and filter systems recovering fines and protecting the site environment." },
+        { title: "Dust management", text: "Cyclone and filter systems that recover fines and protect the site environment." },
+      ],
+    },
+    {
+      type: "cards",
+      heading: "Process Focus by Mineral",
+      intro: "The same equipment families are combined differently for each mineral. Suitability and design values are confirmed from sample data on every project.",
+      items: [
+        {
+          title: "Silica and quartz sand",
+          text: "Washing, dewatering, drying and fraction screening, with wear protection and iron-contamination control for glass and foundry grades.",
+        },
+        {
+          title: "Raw perlite",
+          text: "Closed-circuit crushing, drying and air classification into grades shipped to expansion plants; management of light fines.",
+        },
+        {
+          title: "Feldspar",
+          text: "Crushing and drying ahead of dry magnetic separation or grinding, with attention to product cleanliness for glass and ceramics.",
+        },
+        { title: "Calcite", text: "Crushing and drying before grinding and classification; whiteness protection and recovery of fines as product." },
+        {
+          title: "Bentonite and cat litter",
+          text: "Drying through the sticky phase, followed by grinding or by granule screening and dedusting for litter grades.",
+        },
+        { title: "Kaolin", text: "Handling of filter cake from wet beneficiation and drying for shipment or before calcination." },
+        { title: "Barite", text: "Handling of a high-density mineral, drying and grinding to the fineness required by the end use." },
+        { title: "Zeolite", text: "Crushing, gentle drying and screening into agricultural, feed-additive and water-treatment grades." },
       ],
     },
     {
       type: "paragraphs",
-      heading: "Engineering for Abrasive Reality",
+      heading: "Engineering for Abrasive Minerals",
       paragraphs: [
-        "Minerals punish equipment: quartz sand wears flights, chutes and cyclones; hot products stress bearings and belts. Our mineral lines are specified with wear plates, hardfaced components and generous drive reserves — decisions taken at design time from the ore's abrasiveness, not discovered after the first liner failure.",
-        "Drying minerals is thermally straightforward but economically sensitive: fuel is the dominant operating cost. We size dryers from measured moisture data and design heat recovery and insulation so specification moisture is reached at the lowest sustainable fuel consumption.",
+        "Quartz sand wears flights, chutes and cyclones, and hot products stress bearings and belts. Mineral lines are therefore specified with wear plates, replaceable wear parts and adequate drive reserves, decided at design stage from the abrasiveness of the ore.",
+        "Drying is usually the largest energy consumer in a mineral line, so dryers are sized from measured moisture data, and insulation and, where justified, heat recovery are evaluated to reach specification moisture at a sustainable fuel consumption. Mineral-specific drying conditions are described on the rotary drum dryer page.",
+      ],
+      links: [
+        { text: "rotary drum dryer", to: "rotaryDryer" },
       ],
     },
     {
@@ -186,6 +214,10 @@ export const mining: IntlPageContent = {
       rows: [
         ["Mineral type and abrasiveness", "Wear protection specification"],
         ["Feed moisture and target moisture", "Dryer heat balance"],
+        [
+          "Clay content and stickiness",
+          "Feed, flight and screening design",
+        ],
         ["Product fractions required", "Screening configuration"],
         ["Capacity (t/h)", "Line and equipment sizing"],
         ["Fuel available at site", "Burner and energy concept"],
@@ -195,16 +227,16 @@ export const mining: IntlPageContent = {
   ],
   faq: [
     {
-      q: "Which minerals do you have experience with?",
-      a: "Silica sand, calcite, perlite and feldspar lines are our core references in mineral processing, alongside general crushed stone and recycled mineral applications.",
+      q: "Which minerals can a Pro Makina line be engineered for?",
+      a: "Lines are engineered for silica and quartz sand, perlite, feldspar, calcite, bentonite, kaolin, barite, zeolite and similar industrial minerals. Suitability and design values are confirmed from sample data for each project.",
     },
     {
-      q: "Can you dry sand to very low moisture for glass or foundry use?",
-      a: "Yes — the dryer and cooling/handling chain are designed for the specification your customer requires; the target moisture is a design input we commit to.",
+      q: "Can sand be dried to very low moisture for glass or foundry use?",
+      a: "Yes. The dryer and the cooling and handling chain are designed for the specification your customer requires; the target moisture is a design input confirmed in the technical proposal.",
     },
     {
-      q: "How do you handle the dust side of mineral drying?",
-      a: "With cyclone pre-separation and pulse-jet filters sized for the dryer's air data; recovered fines are returned or collected as a by-product depending on your product rules.",
+      q: "How is the dust side of mineral drying handled?",
+      a: "With cyclone pre-separation and pulse-jet filters sized from the dryer air data; recovered fines are returned to the product or collected separately, depending on the product specification.",
     },
   ],
   related: ["rotaryDryer", "screeningSystems", "crushers", "chainConveyor", "dustCollection"],
