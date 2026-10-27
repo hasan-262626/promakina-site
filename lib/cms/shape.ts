@@ -132,6 +132,17 @@ export function applyLocked(def: Json, value: Json, rules: ShapeRules, path = ""
   return value;
 }
 
+/**
+ * Yayındaki kaydı güncel kod şablonuyla birleştirir (public sayfada kullanım için): kayıtta olmayan yeni alanlar ve
+ * kilitli alanlar koddan gelir, şablonda artık olmayan alanlar düşer. Sonuç şablona uymuyorsa (ör. liste uzunluğu
+ * değişmiş) null döner; sayfa koddaki içerikle çizilir. Kayıt sırasında doğrulanmış görseller burada yeniden denetlenmez.
+ */
+export function resolvePublished(def: Json, value: unknown, rules: ShapeRules = {}): Json | null {
+  if (value === null || value === undefined) return null;
+  const merged = applyLocked(def, value as Json, rules);
+  return validateShape(def, merged, rules).length ? null : merged;
+}
+
 /** Satır sonlarını normalize eder, baştaki/sondaki boşlukları kırpar (anlamı değiştirmeden). */
 export function normalizeText(value: Json): Json {
   if (typeof value === "string") return value.replace(/\r\n?/g, "\n").trim();

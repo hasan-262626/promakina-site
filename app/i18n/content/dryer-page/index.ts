@@ -154,9 +154,3 @@ export function buildIntlDryerContent(
     },
   };
 }
-
-/** Ürün şemasında kullanılan görseller (TR sayfasıyla aynı seçim). */
-export function dryerSchemaImages() {
-  const product = trDryerProduct();
-  return [product.mainImage, ...product.gallery.map((item) => item.src).filter((src) => src !== product.mainImage).slice(0, 5)];
-}

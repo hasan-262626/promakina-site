@@ -1,3 +1,5 @@
+import { dryerDocumentTitle } from "@/app/i18n/content/dryer-page/editable";
+import { loadDryerPage } from "@/lib/cms/public-content";
 import { serializeJsonLd } from "@/lib/json-ld";
 import { trLanguageAlternates } from "../../../../i18n/routes";
 import type { Metadata } from "next";
@@ -5,11 +7,9 @@ import { notFound } from "next/navigation";
 import { ProductDetailSystem } from "../../../components/product-detail-system";
 import { drumProductPages } from "../../../components/drum-product-data";
 import { DryerDrumProductContent } from "../../../components/dryer-drum-product-content";
-import { buildTrDryerContent } from "../../../components/dryer-drum-content";
 import { DrumTemplatePage, drumTemplateMetadata } from "../../../components/drum-template-page";
 import { drumPageKeyBySlug } from "../../../../i18n/content/drum-pages";
 import { getMachineAuxiliarySystems } from "../../../lib/machine-auxiliary-systems";
-import { getMachineCalculatorHref } from "../../../lib/machine-calculator-link";
 
 type PageProps = {
   params: Promise<{
@@ -36,24 +36,36 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 
   const canonical = `https://www.promakina.com.tr/makinalar-ekipman/tambur-sistemleri/${activeProduct.slug}`;
-  const isDryer = activeProduct.slug === "kurutma-tamburu";
-  const socialImage = isDryer
-    ? [{ url: new URL(activeProduct.mainImage, canonical).href, alt: activeProduct.mainImageAlt }]
-    : undefined;
+  const alternates = { canonical, languages: trLanguageAlternates(new URL(canonical).pathname) };
+
+  if (activeProduct.slug === "kurutma-tamburu") {
+    // Kurutma tamburu: SEO metni ve ana görsel panelden (yayın yoksa koddan) gelir.
+    const dryer = await loadDryerPage("tr");
+    const images = [{ url: new URL(dryer.mainImage, canonical).href, alt: dryer.mainImageAlt }];
+    return {
+      title: dryerDocumentTitle(dryer.meta.title),
+      description: dryer.meta.description,
+      alternates,
+      openGraph: {
+        title: dryer.meta.title,
+        description: dryer.meta.description,
+        images,
+        url: canonical,
+        siteName: "Pro Makina",
+        locale: "tr_TR",
+        type: "website",
+      },
+      twitter: { card: "summary_large_image", title: dryer.meta.title, description: dryer.meta.description, images },
+    };
+  }
 
   return {
-    title: isDryer && activeProduct.metaTitle
-      ? { absolute: activeProduct.metaTitle }
-      : activeProduct.metaTitle ?? `${activeProduct.title} | Tambur Sistemleri`,
+    title: activeProduct.metaTitle ?? `${activeProduct.title} | Tambur Sistemleri`,
     description: activeProduct.metaDescription ?? activeProduct.shortDescription,
-    alternates: {
-      canonical,
-      languages: trLanguageAlternates(new URL(canonical).pathname),
-    },
+    alternates,
     openGraph: {
-      title: isDryer ? activeProduct.metaTitle : activeProduct.title,
-      description: isDryer ? activeProduct.metaDescription : activeProduct.shortDescription,
-      ...(socialImage ? { images: socialImage } : {}),
+      title: activeProduct.title,
+      description: activeProduct.shortDescription,
       url: canonical,
       siteName: "Pro Makina",
       locale: "tr_TR",
@@ -61,9 +73,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     },
     twitter: {
       card: "summary_large_image",
-      title: isDryer ? activeProduct.metaTitle : activeProduct.title,
-      description: isDryer ? activeProduct.metaDescription : activeProduct.shortDescription,
-      ...(socialImage ? { images: socialImage } : {}),
+      title: activeProduct.title,
+      description: activeProduct.shortDescription,
     },
   };
 }
@@ -101,6 +112,8 @@ export default async function DrumProductDetailPage({ params }: PageProps) {
   // sayfalarda Product / BreadcrumbList / FAQPage şeması üretilir.
   const canonicalUrl = `https://www.promakina.com.tr${activeHref}`;
   const isDryer = activeProduct.slug === "kurutma-tamburu";
+  // Kurutma tamburu: görünür içerik, H1 ve şema metinleri panelden (yayın yoksa koddan) aynı kaynaktan gelir.
+  const dryer = isDryer ? await loadDryerPage("tr") : null;
   const toAbsoluteImage = (src: string) => `https://www.promakina.com.tr${encodeURI(src)}`;
   // Fiyat, stok veya değerlendirme bilgisi bilinçli olarak eklenmez; yalnız sayfada görünen gerçek veriler kullanılır.
   const productSchema = activeProduct.productSchemaCategory
@@ -108,19 +121,11 @@ export default async function DrumProductDetailPage({ params }: PageProps) {
         "@context": "https://schema.org",
         "@type": "Product",
         ...(isDryer ? { "@id": `${canonicalUrl}#product` } : {}),
-        name: activeProduct.headingTitle ?? activeProduct.title,
-        description: activeProduct.metaDescription ?? activeProduct.shortDescription,
-        image: isDryer
-          ? [
-              activeProduct.mainImage,
-              ...activeProduct.gallery
-                .map((item) => item.src)
-                .filter((src) => src !== activeProduct.mainImage)
-                .slice(0, 5),
-            ].map(toAbsoluteImage)
-          : toAbsoluteImage(activeProduct.mainImage),
+        name: dryer?.h1 ?? activeProduct.headingTitle ?? activeProduct.title,
+        description: dryer?.meta.description ?? activeProduct.metaDescription ?? activeProduct.shortDescription,
+        image: dryer ? dryer.schemaImages.map(toAbsoluteImage) : toAbsoluteImage(activeProduct.mainImage),
         url: canonicalUrl,
-        category: activeProduct.productSchemaCategory,
+        category: dryer?.productCategory ?? activeProduct.productSchemaCategory,
         brand: { "@type": "Brand", name: "Pro Makina" },
         manufacturer: isDryer
           ? { "@type": "Organization", name: "Pro Makina", url: "https://www.promakina.com.tr" }
@@ -161,12 +166,14 @@ export default async function DrumProductDetailPage({ params }: PageProps) {
       }
     : null;
 
+  // SSS şeması sayfada görünen sorularla aynı olmalıdır (kurutma tamburunda panel metni).
+  const faqItems = dryer ? dryer.content.faq.items : activeProduct.faqItems;
   const faqSchema =
-    productSchema && activeProduct.faqItems?.length
+    productSchema && faqItems?.length
       ? {
           "@context": "https://schema.org",
           "@type": "FAQPage",
-          mainEntity: activeProduct.faqItems.map((item) => ({
+          mainEntity: faqItems.map((item) => ({
             "@type": "Question",
             name: item.question,
             acceptedAnswer: { "@type": "Answer", text: item.answer },
@@ -236,21 +243,12 @@ export default async function DrumProductDetailPage({ params }: PageProps) {
         activeSidebarHref={activeHref}
         title={activeProduct.title}
         heroDescription={activeProduct.heroDescription}
-        heroImage={activeProduct.mainImage}
-        headingTitle={activeProduct.headingTitle}
+        heroImage={dryer?.mainImage ?? activeProduct.mainImage}
+        headingTitle={dryer?.h1 ?? activeProduct.headingTitle}
         galleryLayout="grid"
         {...templateContent}
         calculatorFamily="drum"
-        customContent={
-          isDryer ? (
-            <DryerDrumProductContent
-              content={buildTrDryerContent(
-                activeProduct,
-                getMachineCalculatorHref({ family: "drum", title: activeProduct.title }),
-              )}
-            />
-          ) : undefined
-        }
+        customContent={dryer ? <DryerDrumProductContent content={dryer.content} /> : undefined}
         ctaTitle={
           activeProduct.ctaTitle ?? "Tambur sistemleri için doğru makina çözümünü birlikte netleştirelim"
         }

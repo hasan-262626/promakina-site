@@ -6,8 +6,6 @@ import { IntlLanding } from "../../i18n/components/intl-landing";
 import { IntlDrumProductPage } from "../../i18n/components/intl-drum-product-page";
 import { IntlRotaryDryerPage } from "../../i18n/components/intl-rotary-dryer-page";
 import { getDrumPageConfig, getDrumPageTexts, isDrumPageKey } from "../../i18n/content/drum-pages";
-import { getDryerPageTexts } from "../../i18n/content/dryer-page";
-import { drumProductPages } from "../../(tr)/components/drum-product-data";
 import { getContent } from "../../i18n/content";
 import { MachinesOverviewPage } from "../../(tr)/components/machines-overview-page";
 import { DrumSystemsCategoryPage } from "../../(tr)/components/drum-systems-category-page";
@@ -24,7 +22,7 @@ import {
 import { SectorsHubPage } from "../../(tr)/components/sectors-hub-page";
 import { SectorDetailPage } from "../../(tr)/components/sector-detail-page";
 import { buildSectorDetailSchema, isSectorDetailKey } from "../../i18n/sector-details";
-import { loadDrumPageOverride, loadMachineCategoryOverride, loadSectorDetailModel } from "@/lib/cms/public-content";
+import { loadDrumPageOverride, loadDryerPage, loadMachineCategoryOverride, loadSectorDetailModel } from "@/lib/cms/public-content";
 import { applyMachineCategoryOverride } from "@/lib/cms/adapters/machine-category";
 import { intlRouteLabel } from "../../i18n/route-label";
 import { buildSectorsHubContent, getSectorsHubTexts } from "../../i18n/sectors-hub";
@@ -33,6 +31,7 @@ import {
   buildMachinesOverviewSchema,
   getMachinesOverviewTexts,
 } from "../../i18n/machines-overview";
+import { dryerDocumentTitle } from "../../i18n/content/dryer-page/editable";
 import { getDictionary } from "../../i18n/dictionaries";
 import { intlLocales, isIntlLocale, type IntlLocale } from "../../i18n/config";
 import { buildIntlMetadata } from "../../i18n/metadata";
@@ -66,17 +65,13 @@ export async function generateMetadata({ params }: { params: PageParams }): Prom
   const resolved = resolve(localeRaw, slug);
   if (!resolved) return {};
   if (resolved.key === "rotaryDryer") {
-    // Kurutma tamburu: TR ürün sayfasıyla aynı şablon; meta bu sayfanın görünür içeriğinden gelir.
-    const texts = getDryerPageTexts(resolved.locale);
-    const mainImage = drumProductPages.find((item) => item.slug === "kurutma-tamburu")?.mainImage;
-    return buildIntlMetadata(resolved.locale, resolved.key, {
-      meta: texts.meta,
-      hero: {
-        h1: texts.h1,
-        intro: texts.meta.description,
-        image: mainImage ? { src: mainImage, alt: texts.overview.imageAlt } : undefined,
-      },
+    // Kurutma tamburu: TR ürün sayfasıyla aynı şablon; meta, H1 ve ana görsel panelden (yayın yoksa koddan) gelir.
+    const dryer = await loadDryerPage(resolved.locale);
+    const metadata = buildIntlMetadata(resolved.locale, resolved.key, {
+      meta: dryer.meta,
+      hero: { h1: dryer.h1, intro: dryer.meta.description, image: { src: dryer.mainImage, alt: dryer.mainImageAlt } },
     });
+    return { ...metadata, title: dryerDocumentTitle(dryer.meta.title) };
   }
   if (isDrumPageKey(resolved.key)) {
     // Diğer tambur ürünleri: kurutma tamburu şablonu, ürüne özel meta.

@@ -1,6 +1,7 @@
 import { blogArticleAdapter } from "./adapters/blog-article";
 import { machineCategoryAdapter } from "./adapters/machine-category";
 import { machineProductAdapter } from "./adapters/machine-product";
+import { rotaryDryerAdapter } from "./adapters/rotary-dryer";
 import { sectorDetailAdapter } from "./adapters/sector-detail";
 import type { ContentAdapter } from "./types";
 
@@ -8,7 +9,13 @@ import type { ContentAdapter } from "./types";
  * CMS'e bağlı içerik türleri. Yeni tür = yeni adaptör + bu listeye bir satır (ör. sektör ana sayfaları,
  * Kurutma Tamburu, özel şablonlu bloglar). Çekirdek kod (store, editör, yayın, revizyon) değişmez.
  */
-export const contentAdapters: ContentAdapter[] = [sectorDetailAdapter, machineProductAdapter, machineCategoryAdapter, blogArticleAdapter];
+export const contentAdapters: ContentAdapter[] = [
+  sectorDetailAdapter,
+  rotaryDryerAdapter,
+  machineProductAdapter,
+  machineCategoryAdapter,
+  blogArticleAdapter,
+];
 
 const byType = new Map(contentAdapters.map((a) => [a.type, a]));
 
