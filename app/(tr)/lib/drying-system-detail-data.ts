@@ -46,6 +46,9 @@ const MATERIAL_BURNER_BLOG_HREF = "/kutuphane/blog/kurutma-tamburunda-brulor-sec
 const MATERIAL_FAN_BLOG_HREF = "/kutuphane/blog/kurutma-tamburunda-fan-siklon-filtre-secimi";
 const MATERIAL_HESAP_BLOG_HREF = "/kutuphane/blog/kurutma-tamburu-hesaplama";
 const MATERIAL_DESIGN_BLOG_HREF = "/kutuphane/kurutma-tamburu-tasarim-kriterleri";
+const GRANULATOR_DRUM_HREF = "/makinalar-ekipman/tambur-sistemleri/granulator-tamburu";
+const COOLING_DRUM_HREF = "/makinalar-ekipman/tambur-sistemleri/sogutma-tamburu";
+const COATING_DRUM_HREF = "/makinalar-ekipman/tambur-sistemleri/kaplama-tamburu";
 
 const kurutmaTamburuHesaplamaPage = page({
   slug: "kurutma-tamburu-hesaplama",
@@ -1366,8 +1369,8 @@ const materialDryingPages: DrumSystemDetailPageData[] = [
       {
         title: "Granülatörden Besleme",
         description: "Nemli granül, granülasyon tamburundan kurutucuya sürekli akışla verilir.",
-        href: MATERIAL_DRUM_CATEGORY_HREF,
-        linkLabel: "Tambur sistemlerini incele",
+        href: GRANULATOR_DRUM_HREF,
+        linkLabel: "Granülatör tamburunu incele",
       },
       {
         title: "Kurutma Tamburu",
@@ -1384,7 +1387,7 @@ const materialDryingPages: DrumSystemDetailPageData[] = [
       {
         title: "Soğutma Tamburu",
         description: "Sıcak granül; depolama ve paketleme öncesi kontrollü şekilde soğutulur.",
-        href: MATERIAL_DRUM_CATEGORY_HREF,
+        href: COOLING_DRUM_HREF,
         linkLabel: "Soğutma tamburunu incele",
       },
       {
@@ -1433,6 +1436,75 @@ const materialDryingPages: DrumSystemDetailPageData[] = [
           "Kurutma sonrası elek; ürünü ticari fraksiyona ayırır. Elek üstü iri granül kırıcıdan geçirilerek, elek altı ince fraksiyon ise doğrudan granülatöre geri beslenir. Geri dönüş oranının yükselmesi; granülasyon, kurutma veya eleme dengesinde bir soruna işaret eder.",
         ],
       }),
+      section("Granülatör Sonrası Kurutma ve Granül NPK", {
+        paragraphs: [
+          "Granülatör çıkışındaki nem; granülasyon yöntemine (su, buhar veya bulamaç ile granülasyon), reçeteye ve geri dönüş oranına göre değişir. Bu nedenle kurutucu tasarımı tipik bir değerle değil, granülatör çıkışından alınan numunenin nem ve tane dağılımı verisiyle yapılır.",
+          "Granül NPK ürünlerde kurutucu, granülün dış kabuğunu sertleştirirken içteki nemin de dışarı çıkabileceği kalış süresini sağlamalıdır. Hızlı ve yüksek sıcaklıkla yapılan kurutma yüzeyde kabuk oluşturup içte nem bırakabilir; ürün depoda geri nemlenir ve kekleşir.",
+        ],
+      }),
+      section("Yaş/Kuru Baz ve Su Buharlaştırma Hesabı", {
+        paragraphs: [
+          "Gübre hatlarında nem çoğunlukla yaş bazda (suyun toplam kütleye oranı) verilir; laboratuvar raporlarında kuru baz (suyun kuru katıya oranı) da kullanılabilir. Hesap öncesinde verilen değerin hangi bazda olduğu netleştirilmelidir. Kurutucuya giren akış yalnız net ürün değil, geri dönüş malzemesini de içerir; tambur, brülör ve fan bu toplam akışa göre boyutlandırılır.",
+          "Örnek: Net ürünü yaklaşık 10 t/saat olan ve geri dönüş oranı 1:1 alınan bir hatta kurutucu beslemesi yaklaşık 20 t/saattir. Geri dönüş oranı reçeteye ve granülasyon yöntemine göre değişir; örnekte yalnız hesap yöntemini göstermek için 1:1 alınmıştır.",
+        ],
+        table: table(
+          "Örnek Su Buharlaştırma Hesabı (yaş baz)",
+          ["Adım", "Hesap", "Sonuç"],
+          [
+            ["Kurutucu beslemesi (geri dönüş dahil)", "20 t/saat, %4 nem (yaş baz)", "Kuru bazda ≈ %4,17"],
+            ["Kuru katı", "20 × (1 − 0,04)", "19,20 t/saat"],
+            ["Hedef çıkış %1,5 (yaş baz) iken kuru ürün", "19,20 / (1 − 0,015)", "≈ 19,492 t/saat (kuru bazda ≈ %1,52)"],
+            ["Buharlaştırılacak su", "20 − 19,492", "≈ 0,508 t/saat (≈ 508 kg/saat)"],
+            ["Kuru baz ile kontrol", "19,20 × (0,0417 − 0,0152)", "≈ 0,508 t/saat"],
+          ],
+          "Değerler hesap yöntemini göstermek için seçilmiş bir tasarım örneğidir; gerçek tesis verisi, kapasite garantisi veya performans taahhüdü değildir.",
+        ),
+      }),
+      section("Ürün Sıcaklığı, Granül Dayanımı, Yapışma ve Toz", {
+        paragraphs: [
+          "Gübrede kurutma kalitesini gaz sıcaklığından çok ürün sıcaklığı belirler. Ürün sıcaklığının üst sınırı reçeteye göre belirlenir; bu sınır aşıldığında erime, yüzey camlaşması, besin kaybı veya granül dayanımında düşüş görülebilir. Ürün sıcaklığı tambur çıkışında ölçülerek brülör gücü buna göre ayarlanır.",
+          "Granül dayanımı kurutma sırasında gelişir; bu yüzden giriş bölgesinde granül henüz zayıfken düşme mesafesi kısa tutulur. Yapışma eğilimi yüksek reçetelerde giriş bölgesinde kuru geri dönüş tozu ile ön kaplama ve kendini temizleyen kanatlar kullanılır. Kırılan granül toz olarak egzoz hattına geçer; siklon bu ürünü geri kazanır, jet pulse filtre ince tozu tutar.",
+        ],
+      }),
+      section("Amonyum Nitrat İçeren Ürünlerde Proses Güvenliği", {
+        paragraphs: [
+          "Amonyum nitrat içeren NPK ve benzeri gübreler ısıl olarak hassastır; belirli reçetelerde, özellikle organik madde, klorür veya bazı metal safsızlıkları bulunduğunda, termal bozunma ve kendiliğinden ilerleyen bozunma riski oluşabilir. Bu nedenle standart bir döner kurutucunun bu ürünler için otomatik olarak uygun olduğu varsayılmaz.",
+          "Kurutma yöntemi, izin verilen ürün ve gaz sıcaklıkları, sıcak nokta ve birikinti oluşumunu önleyen tasarım, sıcaklık izleme, kilitlemeler ve acil durum prosedürleri; reçeteye özel güvenlik değerlendirmesiyle belirlenir. Kendiliğinden ilerleyen bozunma eğilimi, uluslararası test yöntemleriyle (ör. BM Test ve Kriterler El Kitabı'ndaki tekne/trough testi) değerlendirilir. Bu sayfa bir güvenlik değerlendirmesinin yerini tutmaz.",
+        ],
+      }),
+      section("Organik Madde İçeren Gübrelerde Riskler", {
+        paragraphs: [
+          "Organik madde içeren gübrelerde kuru organik toz yanıcıdır; tambur, kanal ve filtrede biriken toz için için yanabilir. Koku ve amonyak egzoz hattında yönetilmelidir. Organik faza özgü sıcaklık limiti, yangın ve koku önlemleri organomineral gübre kurutma rehberinde ayrıntılı ele alınmıştır.",
+        ],
+      }),
+      section("Granülasyon, Soğutma, Eleme ve Kaplama Bağlantısı", {
+        paragraphs: [
+          "Kurutma tamburu, gübre hattında granülatör ile soğutma tamburu arasında yer alır ve her iki ekipmanın kapasitesi kurutucuyla birlikte hesaplanır. Kaplama yapılacaksa ürün, kaplama ajanının uygulanabileceği sıcaklığa soğutulduktan sonra kaplama tamburuna alınır.",
+        ],
+        subsections: [
+          { title: "Granülatör Tamburu", paragraphs: ["Granül çekirdeğini oluşturur; çıkış nemi ve geri dönüş oranı kurutucunun su yükünü belirler."], href: GRANULATOR_DRUM_HREF, linkLabel: "Granülatör tamburu" },
+          { title: "Soğutma Tamburu", paragraphs: ["Kurutucudan sıcak çıkan granülü depolama, eleme ve kaplama için uygun sıcaklığa indirir."], href: COOLING_DRUM_HREF, linkLabel: "Soğutma tamburu" },
+          { title: "Kaplama Tamburu", paragraphs: ["Soğutulmuş granüle kekleşme önleyici veya yüzey kaplaması uygular."], href: COATING_DRUM_HREF, linkLabel: "Kaplama tamburu" },
+        ],
+      }),
+      section("Komple Gübre Kurutma Hattı Tedarik Kapsamı", {
+        paragraphs: [
+          "Aşağıdaki kalemler projeye göre teklif kapsamına alınabilir; kesin kapsam ve sınırlar teknik ön değerlendirme sonunda netleştirilir.",
+        ],
+        table: table(
+          "Projeye Göre Kapsama Alınabilen Kalemler",
+          ["Kalem", "İçerik"],
+          [
+            ["Kurutma tamburu", "Gövde, iç kanatlar, ring, gale, tahrik, giriş ve çıkış davlumbazları"],
+            ["Isı üretimi", "Modülasyonlu brülör veya sıcak hava jeneratörü, yakıt hattı, sıcaklık kontrolü"],
+            ["Gaz hattı", "Siklon, jet pulse filtre, fan, kanal ve baca; reçeteye göre gaz yıkama (scrubber)"],
+            ["Bağlı ekipmanlar", "Granülatör tamburu, soğutma tamburu, elek, kırıcı, geri dönüş konveyörleri, kaplama tamburu"],
+            ["Otomasyon", "PLC, ürün ve gaz sıcaklığı ölçümü, fan ve brülör kontrolü, kilitlemeler"],
+            ["Saha işleri", "Montaj, devreye alma ve operatör bilgilendirmesi"],
+          ],
+          "İnşaat, enerji altyapısı ve izin süreçlerinin hangi tarafta olacağı her projede ayrıca belirlenir.",
+        ),
+      }),
     ],
     selectionCriteria: table(
       "Gübre Kurutma Tamburu İçin Temel Proje Verileri",
@@ -1461,7 +1533,7 @@ const materialDryingPages: DrumSystemDetailPageData[] = [
     ),
     approachParagraphs: [
       "Pro Makina gübre kurutma tamburunu granülasyon, soğutma, eleme ve geri dönüş hattıyla birlikte tek denge halkası olarak tasarlar. Sıcaklık profili, reçetenin kimyasal hassasiyetine göre sınırlandırılır.",
-      "10 ton/saat organomineral gübre tesisi gibi gerçekleştirilen projelerden gelen saha verisi; kanat düzeni, geri dönüş oranı ve gaz yönetimi kararlarında referans olarak kullanılır.",
+      "Kanat düzeni, geri dönüş oranı ve gaz yönetimi kararları; reçete, granülatör çıkış verisi ve numune davranışı üzerinden her proje için ayrıca belirlenir.",
     ],
     approachBullets: [
       "Granül mukavemeti koruması",
@@ -1496,14 +1568,19 @@ const materialDryingPages: DrumSystemDetailPageData[] = [
         "Teknik teklif için hangi bilgiler gerekir?",
         "Reçete tipi, kapasite, giriş ve hedef nem, granül boyutu, sıcaklık limiti, yakıt tipi ve hat yerleşim bilgisi teklif için temel verilerdir.",
       ),
+      faq(
+        "Amonyum nitrat içeren NPK standart döner kurutucuda kurutulabilir mi?",
+        "Bu otomatik olarak varsayılmaz. Amonyum nitrat içeren ürünlerde termal bozunma riski reçeteye bağlıdır; kurutma yöntemi, izin verilen sıcaklıklar ve güvenlik önlemleri reçeteye özel güvenlik değerlendirmesiyle belirlenir.",
+      ),
     ],
     relatedLinks: [
       { title: "Organomineral Gübre Kurutma Tamburu", description: "Organik-mineral karışım reçetelerin kurutma farklarını okuyun.", href: "/kutuphane/blog/organomineral-gubre-kurutma-tamburu" },
-      { title: "10 Ton/Saat Organomineral Gübre Tesisi", description: "Gerçekleştirilen gübre tesisi projesini inceleyin.", href: "/projeler/10-ton-saat-organomineral-gubre-tesisi" },
+      { title: "10 Ton/Saat Organomineral Gübre Tesisi", description: "Organomineral gübre tesisi proje sayfasını inceleyin.", href: "/projeler/10-ton-saat-organomineral-gubre-tesisi" },
       { title: "Granül Gübre Üretim Tesisi Projesi", description: "Granül gübre hattının tamamını proje üzerinden görün.", href: "/projeler/granul-gubre-uretim-tesisi" },
       { title: "Kurutma Tamburu Hesaplama", description: "Su yükü ve tambur geometrisi hesabını inceleyin.", href: MATERIAL_HESAP_BLOG_HREF },
       { title: "Brülör Seçimi", description: "Sıcaklık limiti olan ürünlerde ısı kaynağı seçimini okuyun.", href: MATERIAL_BURNER_BLOG_HREF },
       { title: "Gübre ve Granülasyon Tesisleri", description: "Sektör çözümlerini bütünsel olarak inceleyin.", href: "/sektorler/gubre-ve-granulasyon-tesisleri" },
+      { title: "Gübre Kurutma ve Soğutma Prosesi", description: "Granülatörden kaplamaya kadar nem ve sıcaklık zincirini okuyun.", href: "/kutuphane/blog/gubre-kurutma-ve-sogutma-prosesi" },
     ],
     ctaTitle: "Gübre Kurutma Tamburu İçin Teknik Teklif Alın",
     ctaDescription:
