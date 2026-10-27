@@ -366,7 +366,7 @@ export const sectorCategoryConfigs: Record<string, SectorCategoryConfig> = {
     machinesEyebrow: "Kullanılan Makinalar",
     machinesTitle: "Madencilik ve Mineral İşleme İçin Kullanılan Makinalar",
     machinesDescription:
-      "Kırma, eleme, kurutma ve transfer ekipmanları aynı kapasite mantığında seçildiğinde tesis dengeli ve sürdürülebilir çalığır.",
+      "Kırma, eleme, kurutma ve transfer ekipmanları aynı kapasite mantığında seçildiğinde tesis dengeli ve sürdürülebilir çalışır.",
     machineCards: [
       { title: "Kırıcılar ve Parçalayıcılar", text: "Primer ve sekonder küçültme adımlarında malzemeyi hedef fraksiyona hazırlar.", href: "/makinalar-ekipman/kiricilar-ve-parcalayicilar" },
       { title: "Eleme ve Sınıflandırma Sistemleri", text: "Ürünü istenen boyutlara ayırarak kalite standardını destekler.", href: "/makinalar-ekipman/eleme-ve-siniflandirma-sistemleri" },
@@ -378,7 +378,7 @@ export const sectorCategoryConfigs: Record<string, SectorCategoryConfig> = {
     faqEyebrow: "SSS",
     faqTitle: "Madencilik ve Mineral İşleme Hakkında Sık Sorulan Sorular",
     faqDescription:
-      "Maden tesislerinde kapasite, ürün fraksiyonu, toz kontrolü ve kurutma gereksinimleriyle ilgili en sık sorulan bağlıkları topladık.",
+      "Maden tesislerinde kapasite, ürün fraksiyonu, toz kontrolü ve kurutma gereksinimleriyle ilgili en sık sorulan başlıkları topladık.",
     faqs: [
       { question: "Maden işleme tesisi kapasitesi nasıl belirlenir?", answer: "Kapasite; giriş tane boyutu, ürün fraksiyonu, çalışma süresi ve saha besleme modeline göre belirlenir." },
       { question: "Primer ve sekonder kırıcı seçimi neye göre yapılır?", answer: "Malzeme sertliği, aşındırıcılık, giriş boyutu ve hedef çıkış ölçüsü birlikte değerlendirilir." },
@@ -389,7 +389,7 @@ export const sectorCategoryConfigs: Record<string, SectorCategoryConfig> = {
     ],
     formTitle: "Madencilik ve Mineral İşleme için teklif veya teknik görüşme talep edin",
     formDescription:
-      "Seçtişiniz malzeme tipi, hedef fraksiyon, nem oranı ve saha ihtiyacına göre size uygun maden işleme hattını birlikte netleştirelim.",
+      "Seçtiğiniz malzeme tipi, hedef fraksiyon, nem oranı ve saha ihtiyacına göre size uygun maden işleme hattını birlikte netleştirelim.",
   },
   "kimya-ve-proses-endustrisi": {
     overviewEyebrow: "Kimya ve Proses Endüstrisi",

@@ -108,7 +108,7 @@ function createDryingArticle(config: DryingArticleConfig): TopicalArticle {
         title: "Pro Makina ile teknik değerlendirme yaklaşımı",
         paragraphs: [
           `Pro Makina, ${config.title.toLocaleLowerCase("tr-TR")} konusunu saha gerçekleriyle birlikte ele alır. İlk aşamada ürün davranışı, nem yükü ve kapasite ritmi okunur; ikinci aşamada tambur, fan, filtre, brülör ve transfer omurgası birlikte doğrulanır.`,
-          `EÄŸer siz de ${config.serviceLabel.toLocaleLowerCase("tr-TR")} veya ilgili proses yatırımınız için net bir ön değerlendirme almak istiyorsanız ${config.serviceHref} ve /iletişim üzerinden teknik ekibimizle görüşebilirsiniz.`,
+          `Eğer siz de ${config.serviceLabel.toLocaleLowerCase("tr-TR")} veya ilgili proses yatırımınız için net bir ön değerlendirme almak istiyorsanız ${config.serviceHref} ve /iletişim üzerinden teknik ekibimizle görüşebilirsiniz.`,
         ],
       },
     ]),
