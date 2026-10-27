@@ -219,7 +219,7 @@ export const drumProductPages: DrumProductPage[] = [
     title: "Kurutma Tamburu",
     shortDescription:
       "Nemli ürünlerin sıcak hava ile hedef son neme düşürülmesini sağlayan endüstriyel döner kurutma ekipmanıdır.",
-    metaTitle: "Kurutma Tamburu İmalatı | Silis, Perlit, Talaş | PRO MAKİNA",
+    metaTitle: "Kurutma Tamburu İmalatı | Döner Kurutucu | PRO MAKİNA",
     metaDescription:
       "Silis kumu, perlit, talaş, maden ve gübre için endüstriyel kurutma tamburu imalatı. PRO MAKİNA döner tamburlu kurutucu ve komple kurutma sistemi çözümleri.",
     headingTitle: "Kurutma Tamburu – Endüstriyel Döner Tamburlu Kurutucu İmalatı",
