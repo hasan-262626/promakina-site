@@ -342,7 +342,7 @@ export const miningHandwrittenArticles: Record<string, HandwrittenArticle> = {
   },
 
   "kum-kurutma-tesisi": {
-    metaTitle: "Kum Kurutma Tesisi Kurulumu | Ekipman, Kapasite ve Anahtar Teslim Kapsam",
+    metaTitle: "Kum Kurutma Tesisi Kurulumu | Ekipman ve Kapasite",
     description:
       "Kum kurutma tesisi kurulumu: çalışma prensibi, makine listesi, kurutma tamburu, brülör, fan-siklon-filtre, eleme, konveyör ve silo, otomasyon, kapasite-enerji değerlendirmesi ve imalat-montaj kapsamı.",
     heroDescription:
