@@ -1580,6 +1580,7 @@ const materialDryingPages: DrumSystemDetailPageData[] = [
       { title: "Kurutma Tamburu Hesaplama", description: "Su yükü ve tambur geometrisi hesabını inceleyin.", href: MATERIAL_HESAP_BLOG_HREF },
       { title: "Brülör Seçimi", description: "Sıcaklık limiti olan ürünlerde ısı kaynağı seçimini okuyun.", href: MATERIAL_BURNER_BLOG_HREF },
       { title: "Gübre ve Granülasyon Tesisleri", description: "Sektör çözümlerini bütünsel olarak inceleyin.", href: "/sektorler/gubre-ve-granulasyon-tesisleri" },
+      { title: "Tambur Sistemleri", description: "Granülatör, kurutma, soğutma ve kaplama tamburlarını birlikte görün.", href: MATERIAL_DRUM_CATEGORY_HREF },
       { title: "Gübre Kurutma ve Soğutma Prosesi", description: "Granülatörden kaplamaya kadar nem ve sıcaklık zincirini okuyun.", href: "/kutuphane/blog/gubre-kurutma-ve-sogutma-prosesi" },
     ],
     ctaTitle: "Gübre Kurutma Tamburu İçin Teknik Teklif Alın",
@@ -1785,6 +1786,7 @@ const materialDryingPages: DrumSystemDetailPageData[] = [
       { title: "Kurutma Tamburu Hesaplama", description: "Su yükü ve tambur geometrisi hesabını inceleyin.", href: MATERIAL_HESAP_BLOG_HREF },
       { title: "Brülör Seçimi", description: "Sıcaklık limitli ürünlerde ısı kaynağı yaklaşımını okuyun.", href: MATERIAL_BURNER_BLOG_HREF },
       { title: "Gübre ve Granülasyon Tesisleri", description: "Sektör çözümlerini bütünsel inceleyin.", href: "/sektorler/gubre-ve-granulasyon-tesisleri" },
+      { title: "Tambur Sistemleri", description: "Granülatör, kurutma, soğutma ve kaplama tamburlarını birlikte görün.", href: MATERIAL_DRUM_CATEGORY_HREF },
     ],
     ctaTitle: "Organomineral Gübre Kurutma Tamburu İçin Teknik Teklif Alın",
     ctaDescription:
