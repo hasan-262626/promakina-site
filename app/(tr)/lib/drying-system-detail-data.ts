@@ -635,13 +635,13 @@ const materialDryingPages: DrumSystemDetailPageData[] = [
     badgeLabel: "Kurutma Sistemleri",
     metaTitle: "Perlit Kurutma Rehberi | Sürüklenme ve Toz Kontrolü",
     description:
-      "Perlit kurutma tamburunda düşük yığın yoğunluğu, hava ile sürüklenme, kırılganlık, fan debisi, siklon ve filtre yükü ile düşük gaz hızı tasarımını teknik olarak inceleyin.",
+      "Ham perlit kurutma tamburunda serbest nemin giderilmesi, ince fraksiyonun hava ile sürüklenmesi, kırılganlık, fan debisi, siklon ve filtre yükü ile perlit genleştirmeden farkını teknik olarak inceleyin.",
     canonical: "https://www.promakina.com.tr/kutuphane/blog/perlit-kurutma-tamburu",
     openGraphTitle: "Perlit Kurutma Prosesi ve Tasarım Rehberi",
     openGraphDescription:
       "Perlit kurutmada sürüklenme kontrolü, kırılganlık, düşük gaz hızı ve toz toplama hattı tasarımını inceleyin.",
     heroDescription:
-      "Perlit; yığın yoğunluğu çok düşük, kırılgan ve hava akımıyla kolay sürüklenen bir mineraldir. Perlit kurutma tamburu bu nedenle standart mineral kurutucularından farklı tasarlanır: gaz hızı düşük tutulur, iç kanatlar ürünü ezmeden taşır, siklon ve jet pulse filtre hattı yüksek toz yüküne göre boyutlandırılır.",
+      "Ham perlit, genleştirme tesisine gönderilmeden önce kırılır, kurutulur ve elenir. Camsı yapıdaki tane kırılgandır; kırma sonrası oluşan ince fraksiyon hava akımıyla kolay sürüklenir. Perlit kurutma tamburu bu nedenle standart mineral kurutucularından farklı tasarlanır: gaz hızı sınırlanır, iç kanatlar ürünü ezmeden taşır, siklon ve jet pulse filtre hattı yüksek toz yüküne göre boyutlandırılır.",
     readingTime: "8-10 dk",
     heroTopic: "Düşük yoğunluk, sürüklenme kontrolü, kırılganlık ve toz hattı",
     heroCtaLabel: "Teknik Teklif Al",
@@ -658,7 +658,7 @@ const materialDryingPages: DrumSystemDetailPageData[] = [
       href: MATERIAL_DRUM_HREF,
     },
     introParagraphs: [
-      "Perlit kurutma hattındaki en kritik soru kapasite değil, üründen ne kadarının hava hattına kaçacağıdır. Yoğunluğu düşük perlit taneleri, yüksek gaz hızında kolayca sürüklenir; bu hem ürün kaybı hem de siklon-filtre hattında aşırı yük anlamına gelir.",
+      "Perlit kurutma hattındaki en kritik soru kapasite değil, üründen ne kadarının hava hattına kaçacağıdır. Ham perlitin ince fraksiyonu yüksek gaz hızında kolayca sürüklenir; bu hem ürün kaybı hem de siklon-filtre hattında aşırı yük anlamına gelir.",
       "İkinci kritik başlık kırılganlıktır. Perlit tanesi mekanik darbeye hassastır; agresif kanat geometrisi ve yüksek düşme mesafesi, ürünün toz fraksiyonunu artırır. Bu yüzden perlit kurutma tamburu, ürünü ezmeden ve savurmadan kurutacak şekilde tasarlanmalıdır.",
     ],
     importanceTitle: "Perlit Kurutmada Neden Özel Tasarım Gerekir?",
@@ -709,20 +709,37 @@ const materialDryingPages: DrumSystemDetailPageData[] = [
     sections: [
       section("Perlit Neden Kurutulur?", {
         paragraphs: [
-          "Ham perlit, genleşme (expanding) fırınına beslenmeden önce düşük ve stabil nem değerine getirilmelidir; aksi halde fırın verimi düşer ve genleşme kalitesi bozulur. Genleşmiş perlitte ise kurutma; paketleme, agro-perlit ve yapı uygulamalarında ürün stabilitesi için gerekir.",
-          "Her iki senaryoda da hedef nem, ürünün kullanılacağı prosese göre belirlenir ve kurutma hattı bu hedefe göre boyutlandırılır.",
+          "Ham perlit, genleştirme (expanding) fırınına beslenmeden önce düşük ve stabil nem değerine getirilmelidir; tanenin yüzeyindeki serbest nem fırında ek enerji tüketir, ince fraksiyonun topaklanmasına yol açar ve genleşme davranışını dengesizleştirir. Kurutma ayrıca kırma sonrası eleme ve sınıflandırmanın verimli yapılmasını sağlar.",
+          "Kaynaklarda ham perlit cevheri için kurutucu giriş nemi tipik olarak %4–10, kurutucu çıkışı ise %1'in altı olarak verilir. Projeye esas değer, ocaktan alınan numunenin nem ve tane dağılımı analiziyle belirlenir.",
         ],
+      }),
+      section("Ham Perlit Kurutma ile Perlit Genleştirme Aynı İşlem Değildir", {
+        paragraphs: [
+          "Kurutma tamburunun görevi ham perlitin serbest nemini uzaklaştırmaktır. Perliti hafif ve hacimli hale getiren genleştirme ise ayrı bir yüksek sıcaklık prosesidir: tanenin camsı yapısındaki bağlı su ani ısıtmayla buharlaşır ve tane birkaç katına genleşir. Bu nedenle kurutucuda ürün sıcaklığı, serbest nemi alacak fakat genleşme için gereken bağlı suyu gereksiz yere azaltmayacak şekilde kontrol edilir.",
+        ],
+        table: table(
+          "Ham Perlit Kurutma ve Perlit Genleştirme Karşılaştırması",
+          ["Başlık", "Ham perlit kurutma", "Perlit genleştirme"],
+          [
+            ["Amaç", "Serbest nemi gidermek; eleme ve sevkiyata hazırlamak", "Taneyi genleştirerek hafif ürün elde etmek"],
+            ["Ekipman", "Döner kurutma tamburu, siklon, jet pulse filtre, elek", "Dikey veya yatay genleştirme fırını"],
+            ["Uzaklaştırılan su", "Tane yüzeyindeki ve gözeneklerdeki serbest nem", "Camsı yapıdaki bağlı su (genleşmeyi sağlayan su)"],
+            ["Ürün yoğunluğu", "Kırılmış cevher; yoğun camsı tane", "Çok düşük yığın yoğunluklu, hacimli ürün"],
+            ["Tasarımın kritik noktası", "İnce fraksiyonun sürüklenmesi, aşınma ve toz yükü", "Ani ısı transferi, kalış süresi ve hafif ürünün havayla taşınması"],
+          ],
+          "Bu sayfa ham perlit kurutma hattını kapsar; genleştirme fırını ayrı bir ekipman ve proses tasarımı gerektirir.",
+        ),
       }),
       section("Perlitin Tambur Tasarımına Etkisi", {
         table: table(
           "Malzeme Özelliği ve Tasarım Karşılığı",
           ["Malzeme özelliği", "Olası proses problemi", "Makina tasarımına etkisi", "Önerilen yaklaşım"],
           [
-            ["Çok düşük yığın yoğunluğu", "Hava ile kolay sürüklenme", "Gaz hızı düşük tutulur, tambur çapı büyür", "Debi-hız dengesi hesapla doğrulanır"],
+            ["İnce fraksiyonun düşük kütlesi", "Hava ile kolay sürüklenme", "Gaz hızı düşük tutulur, tambur çapı büyür", "Debi-hız dengesi hesapla doğrulanır"],
             ["Kırılgan tane yapısı", "Toz fraksiyonu artışı, ürün kaybı", "Kanat geometrisi yumuşatılır", "Düşük düşme mesafeli kanat düzeni"],
             ["Yüksek toz oluşumu", "Filtre yükü ve emisyon riski", "Siklon + geniş filtre alanı", "Toz geri kazanım hattı planlanır"],
             ["Hacimsel akış değişkenliği", "Dengesiz besleme, dalgalı nem", "Hacimsel dozajlama kullanılır", "Besleme otomasyonu ile debi sabitlenir"],
-            ["Isıya karşı dayanıklı mineral yapı", "Aşırı sıcaklıkta enerji israfı", "Gaz sıcaklığı ekonomik aralıkta tutulur", "Modülasyonlu brülör kontrolü"],
+            ["Genleşmeyi sağlayan bağlı su", "Aşırı ürün sıcaklığında genleşme davranışının değişmesi", "Ürün çıkış sıcaklığı sınırlanır", "Modülasyonlu brülör ve ürün sıcaklığı izleme"],
           ],
         ),
       }),
@@ -747,7 +764,7 @@ const materialDryingPages: DrumSystemDetailPageData[] = [
       "Perlit Kurutma Tamburu İçin Temel Proje Verileri",
       ["Kriter", "Değerlendirme"],
       [
-        ["Ürün", "Ham perlit veya genleşmiş perlit"],
+        ["Ürün", "Ham perlit (genleştirme öncesi); genleşmiş perlit ayrıca değerlendirilir"],
         ["Yığın yoğunluğu", "Fraksiyona göre; hacimsel tasarımın ana verisi"],
         ["Giriş nemi", "Proje verisine göre belirlenir"],
         ["Hedef çıkış nemi", "Genleşme fırını veya son kullanım şartına göre"],
@@ -783,7 +800,7 @@ const materialDryingPages: DrumSystemDetailPageData[] = [
     faqs: [
       faq(
         "Perlit kurutma sırasında neden kolay sürüklenir?",
-        "Perlitin yığın yoğunluğu çok düşüktür ve tane terminal hızı küçüktür. Tambur içindeki gaz hızı bu sınırın üzerine çıktığında ürün hava akımıyla siklon ve filtre hattına taşınır.",
+        "Kırma sonrası oluşan ince perlit fraksiyonunun kütlesi ve terminal hızı küçüktür. Tambur içindeki gaz hızı bu sınırın üzerine çıktığında ürün hava akımıyla siklon ve filtre hattına taşınır.",
       ),
       faq(
         "Perlit kurutma tamburunda fan debisi nasıl belirlenir?",
@@ -807,7 +824,7 @@ const materialDryingPages: DrumSystemDetailPageData[] = [
       ),
     ],
     relatedLinks: [
-      { title: "Perlit Kurutma ve Eleme Tesisi Projesi", description: "Gerçekleştirilen perlit kurutma ve eleme tesisi projesini inceleyin.", href: "/projeler/perlit-kurutma-eleme-tesisi" },
+      { title: "Perlit Kurutma ve Eleme Tesisi Projesi", description: "Perlit kurutma ve eleme tesisi proje kapsamını inceleyin.", href: "/projeler/perlit-kurutma-eleme-tesisi" },
       { title: "Kurutma Tamburu", description: "Ana kurutma ekipmanını ürün sayfasında inceleyin.", href: MATERIAL_DRUM_HREF },
       { title: "Kurutma Tamburu Hesaplama", description: "Su yükü, hava debisi ve tambur geometrisi hesabını okuyun.", href: MATERIAL_HESAP_BLOG_HREF },
       { title: "Fan, Siklon ve Filtre Seçimi", description: "Perlit hattının en kritik yardımcı ekipman kararlarını inceleyin.", href: MATERIAL_FAN_BLOG_HREF },
@@ -1108,7 +1125,7 @@ const materialDryingPages: DrumSystemDetailPageData[] = [
             ["Yüksek aşındırıcılık (kuvars, silis)", "Gövde ve kanat aşınması", "Kalın sac, aşınma plakası", "Değiştirilebilir kanat ve plaka sistemi"],
             ["Su tutan yapı (bentonit, kil)", "Yapışma ve topaklanma", "Kendini temizleyen kanat düzeni", "Zincir perde veya çarpma barları"],
             ["İnce toz üretimi (kalsit, feldspat)", "Filtre yükü ve ürün kaybı", "Geniş filtre alanı", "Siklon ön ayırma + toz geri kazanımı"],
-            ["Düşük yoğunluk (perlit)", "Hava ile sürüklenme", "Düşük gaz hızı, büyük çap", "Debi-hız dengesi hesapla doğrulanır"],
+            ["İnce ve hafif fraksiyon (ham perlit)", "Hava ile sürüklenme", "Düşük gaz hızı, büyük çap", "Debi-hız dengesi hesapla doğrulanır"],
             ["Karışık fraksiyon", "Homojen olmayan kuruma", "Ön eleme ve kontrollü besleme", "Fraksiyon bazlı kurutma planı"],
           ],
         ),
@@ -1122,8 +1139,42 @@ const materialDryingPages: DrumSystemDetailPageData[] = [
       section("Kırma, Eleme ve Kurutma Senkronizasyonu", {
         paragraphs: [
           "Entegre maden hatlarında kırıcı kapasitesi, elek verimi ve tambur kapasitesi birlikte hesaplanmalıdır. Kurutma tamburu hattın en yavaş ekipmanıysa kırma-eleme kapasitesi boşa çıkar; tersi durumda tambur verimsiz yükte çalışır.",
-          "Pro Makina'nın maden kırma, eleme ve kurutma tesisi projelerinde bu senkronizasyon, hat otomasyonu ve ara stok bunkerleriyle birlikte kurulur.",
+          "Pro Makina'nın entegre maden hattı tasarımlarında bu senkronizasyon, hat otomasyonu ve ara stok bunkerleriyle birlikte kurulur.",
         ],
+      }),
+      section("Doğrudan ve Dolaylı Isıtma Seçimi", {
+        paragraphs: [
+          "Mineral kurutmada en yaygın çözüm, brülör gazının ürünle doğrudan temas ettiği direkt ısıtmalı döner kurutucudur; ısı transferi yüksek, yatırım maliyeti düşüktür. Akış yönü ürüne göre seçilir: ısıya duyarlı veya su tutan minerallerde paralel akış ürün sıcaklığını sınırlar, çok düşük son nem istenen ve ısıya dayanıklı minerallerde ters akış daha düşük nem sağlayabilir.",
+          "Yanma gazının ürünle temasının istenmediği, ürün saflığının veya atmosferin kontrol edilmesi gereken uygulamalarda dolaylı ısıtma değerlendirilir. Dolaylı sistemlerde ısı gövde yüzeyinden aktarıldığı için aynı su yükü için daha büyük ekipman ve daha yüksek yatırım gerekir.",
+        ],
+        table: table(
+          "Isıtma Düzeni Seçimi",
+          ["Düzen", "Uygun olduğu durum", "Dikkat edilecek nokta"],
+          [
+            ["Direkt, paralel akış", "Bentonit, kil ve ısıya duyarlı mineraller; yüksek giriş nemi", "Son nem hedefi çok düşükse kalış süresi uzar"],
+            ["Direkt, ters akış", "Silis kumu, kuvars gibi ısıya dayanıklı ve çok düşük son nem istenen ürünler", "Ürün çıkış sıcaklığı yüksek; soğutma ihtiyacı doğabilir"],
+            ["Dolaylı ısıtma", "Yanma gazıyla temasın istenmediği özel ürünler", "Daha büyük ısı transfer yüzeyi ve yatırım maliyeti"],
+          ],
+        ),
+      }),
+      section("Komple Maden Kurutma Tesisi Tedarik Kapsamı", {
+        paragraphs: [
+          "Maden kurutma yatırımında tambur tek başına değil, besleme, ısı üretimi, toz toplama ve son ürün hazırlama ekipmanlarıyla birlikte projelendirilir. Aşağıdaki kalemler proje ihtiyacına göre teklif kapsamına alınabilir; kapsam ve sınırlar teknik ön değerlendirme sonunda netleştirilir.",
+        ],
+        table: table(
+          "Projeye Göre Kapsama Alınabilen Kalemler",
+          ["Kalem", "İçerik"],
+          [
+            ["Besleme", "Yaş ürün bunkeri, dozajlı besleyici, bantlı konveyör veya helezon"],
+            ["Kurutma tamburu", "Gövde, iç kanatlar, aşınma elemanları, ring, gale, tahrik ve sızdırmazlık"],
+            ["Isı üretimi", "Brülör veya sıcak hava jeneratörü, yakıt hattı ve sıcaklık kontrolü"],
+            ["Gaz hattı ve toz toplama", "Siklon, jet pulse filtre, fan, kanal ve baca"],
+            ["Son ürün hazırlama", "Soğutma, eleme, elevatör, silo, big-bag veya torbalama"],
+            ["Otomasyon", "PLC, sıcaklık ve basınç ölçümü, brülör ve fan hız kontrolü"],
+            ["Saha işleri", "Montaj, devreye alma ve operatör bilgilendirmesi"],
+          ],
+          "İnşaat, enerji altyapısı ve izin süreçlerinin kimde olacağı her projede ayrıca belirlenir.",
+        ),
       }),
     ],
     selectionCriteria: table(
@@ -3900,6 +3951,23 @@ export const dryingSystemDetailPages: DrumSystemDetailPageData[] = [
             ],
           ),
         ],
+      }),
+      section("Isıtma Yöntemi, Örnek Su Yükü ve Kuru Kum Sıcaklığı", {
+        paragraphs: [
+          "Silis kumu ısıya dayanıklı ve kimyasal olarak kararlı olduğundan çoğu tesiste brülör gazının ürünle doğrudan temas ettiği direkt ısıtmalı döner kurutucu kullanılır. Gaz ve kumun aynı yönde ilerlediği paralel akışta en sıcak gaz en nemli kumla karşılaşır ve egzoz sıcaklığı daha düşük kalır. Ters akışta kum çıkışa yaklaştıkça daha sıcak gazla karşılaştığı için çok düşük son nem hedeflerinde avantaj sağlayabilir; buna karşılık ürün çıkış sıcaklığı yükselir. Yanma gazının ürünle temasının istenmediği özel uygulamalarda dolaylı ısıtma değerlendirilir; bu durumda ısı transfer yüzeyi ve yatırım maliyeti belirgin şekilde artar.",
+          "Kurutucudan çıkan kum sıcaktır. Big-bag, torba veya plastik içeren ambalajlara ve bazı silo uygulamalarına alınmadan önce ürünün soğutulması gerekebilir; soğutma ihtiyacı kapasite, çıkış sıcaklığı ve ambalaj tipine göre proje başında belirlenir.",
+        ],
+        table: table(
+          "Örnek Su Yükü Hesabı",
+          ["Adım", "Hesap", "Sonuç"],
+          [
+            ["Yaş besleme ve giriş nemi", "20 t/saat, %6 nem", "—"],
+            ["Kuru katı miktarı", "20 × (1 − 0,06)", "18,80 t/saat"],
+            ["Hedef çıkış nemi %0,5 iken kuru ürün", "18,80 / (1 − 0,005)", "≈ 18,89 t/saat"],
+            ["Buharlaştırılacak su", "20 − 18,89", "≈ 1,11 t/saat (≈ 1.110 kg/saat)"],
+          ],
+          "Değerler yalnız hesap yöntemini göstermek için seçilmiş bir tasarım örneğidir; gerçek tesis verisi veya performans taahhüdü değildir. Isıl ihtiyaç; buharlaşma enerjisine ek olarak kumun ısıtılması, gövde ve egzoz kayıpları eklenerek hesaplanır.",
+        ),
       }),
       section("Silis Kumu Kurutma Tamburu Tasarımında Dikkat Edilen Kriterler", {
         paragraphs: [
