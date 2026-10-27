@@ -1,3 +1,5 @@
+import type { InlineLink } from "../lib/inline-links";
+
 export type SectorCategoryInfoCard = {
   title: string;
   text: string;
@@ -32,6 +34,8 @@ export type SectorCategoryConfig = {
   faqs: SectorCategoryFaqItem[];
   formTitle: string;
   formDescription: string;
+  /** SSS cevaplarındaki mevcut ifadelere eklenen metin içi bağlantılar (`section`: soru metni). */
+  inlineLinks?: InlineLink[];
 };
 
 const sharedSolutionCards = {
@@ -382,7 +386,7 @@ export const sectorCategoryConfigs: Record<string, SectorCategoryConfig> = {
     faqs: [
       { question: "Maden işleme tesisi kapasitesi nasıl belirlenir?", answer: "Kapasite; giriş tane boyutu, ürün fraksiyonu, çalışma süresi ve saha besleme modeline göre belirlenir." },
       { question: "Primer ve sekonder kırıcı seçimi neye göre yapılır?", answer: "Malzeme sertliği, aşındırıcılık, giriş boyutu ve hedef çıkış ölçüsü birlikte değerlendirilir." },
-      { question: "Kurutma her mineral hattında gerekli midir?", answer: "Hayır, kurutma ihtiyaçı malzeme nemi, stoklama koşulları ve son ürün hedeflerine göre belirlenir." },
+      { question: "Kurutma her mineral hattında gerekli midir?", answer: "Hayır, kurutma ihtiyacı malzeme nemi, stoklama koşulları ve son ürün hedeflerine göre belirlenir. Silis kumu kurutma prosesinde eleme ve torbalama öncesi düşük ve kararlı nem istenir; ham perlit kurutmada genleştirme öncesi yalnız serbest nem alınır; bentonit kurutmada ise şişme ve su tutma özelliğini korumak için ürün sıcaklığı sınırlanır. Mineral bazında karşılaştırma için maden ve mineral kurutma rehberine bakabilirsiniz." },
       { question: "Toz toplama sistemi neden kritik hale gelir?", answer: "İnce ürün ve kapalı alan uygulamalarında emisyon kontrolü hem çevresel uyum hem de bakım güvenliği için önemlidir." },
       { question: "Mevcut kırma-eleme hattı modernize edilebilir mi?", answer: "Evet, mevcut ekipman parkı analiz edilerek kapasite ve ürün kalitesi odaklı revizyon planı hazırlanabilir." },
       { question: "Anahtar teslim maden işleme hattı kuruyor musunuz?", answer: "Evet, kırıcıdan toz toplama sistemine kadar tüm makine gruplarını aynı proses mantığında kurabiliyoruz." },
@@ -390,6 +394,12 @@ export const sectorCategoryConfigs: Record<string, SectorCategoryConfig> = {
     formTitle: "Madencilik ve Mineral İşleme için teklif veya teknik görüşme talep edin",
     formDescription:
       "Seçtiğiniz malzeme tipi, hedef fraksiyon, nem oranı ve saha ihtiyacına göre size uygun maden işleme hattını birlikte netleştirelim.",
+    inlineLinks: [
+      { text: "Silis kumu kurutma prosesinde", href: "/kutuphane/blog/silis-kumu-kurutma-prosesi", section: "Kurutma her mineral hattında gerekli midir?" },
+      { text: "ham perlit kurutmada", href: "/kutuphane/blog/perlit-kurutma-tamburu", section: "Kurutma her mineral hattında gerekli midir?" },
+      { text: "bentonit kurutmada", href: "/kutuphane/blog/bentonit-kurutma-tamburu", section: "Kurutma her mineral hattında gerekli midir?" },
+      { text: "maden ve mineral kurutma rehberine", href: "/kutuphane/blog/maden-kurutma-tamburu", section: "Kurutma her mineral hattında gerekli midir?" },
+    ],
   },
   "kimya-ve-proses-endustrisi": {
     overviewEyebrow: "Kimya ve Proses Endüstrisi",

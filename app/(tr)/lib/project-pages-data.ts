@@ -549,6 +549,10 @@ export const projectPages: ProjectPageData[] = [
         label: "Kurutma Tamburları",
         href: "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburu",
       },
+      {
+        label: "Perlit Kurutma Rehberi",
+        href: "/kutuphane/blog/perlit-kurutma-tamburu",
+      },
     ],
   },
   {
@@ -606,6 +610,10 @@ export const projectPages: ProjectPageData[] = [
       {
         label: "Trommel Elekler",
         href: "/makinalar-ekipman/eleme-ve-siniflandirma-sistemleri/trommel-elekler",
+      },
+      {
+        label: "Maden ve Mineral Kurutma Rehberi",
+        href: "/kutuphane/blog/maden-kurutma-tamburu",
       },
     ],
   },

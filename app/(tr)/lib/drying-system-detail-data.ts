@@ -830,6 +830,7 @@ const materialDryingPages: DrumSystemDetailPageData[] = [
       { title: "Fan, Siklon ve Filtre Seçimi", description: "Perlit hattının en kritik yardımcı ekipman kararlarını inceleyin.", href: MATERIAL_FAN_BLOG_HREF },
       { title: "Eleme ve Sınıflandırma Sistemleri", description: "Kurutma sonrası fraksiyon ayrımı için ekipmanları görün.", href: MATERIAL_SCREENING_HREF },
       { title: "Maden ve Mineral Kurutma Rehberi", description: "Genel mineral kurutma yaklaşımıyla karşılaştırın.", href: "/kutuphane/blog/maden-kurutma-tamburu" },
+      { title: "Madencilik ve Mineral İşleme", description: "Perlit dahil mineral işleme hatları için sektör çözümlerini görün.", href: "/sektorler/madencilik-ve-mineral-isleme" },
     ],
     ctaTitle: "Perlit Kurutma Hattınızı Birlikte Planlayalım",
     ctaDescription:
@@ -1129,6 +1130,55 @@ const materialDryingPages: DrumSystemDetailPageData[] = [
             ["Karışık fraksiyon", "Homojen olmayan kuruma", "Ön eleme ve kontrollü besleme", "Fraksiyon bazlı kurutma planı"],
           ],
         ),
+      }),
+      section("Mineral Bazında Kurutma Farkları", {
+        paragraphs: [
+          "Aynı döner kurutucu prensibi farklı minerallerde farklı tasarım kararları gerektirir. Aşağıdaki rehberler her mineralin kurutmada öne çıkan teknik konusunu ayrıntılı ele alır.",
+        ],
+        subsections: [
+          {
+            title: "Silis Kumu",
+            paragraphs: ["Isıya dayanıklı ve aşındırıcıdır; çok düşük son nem, ters veya paralel akış seçimi ve sıcak kumun soğutulması tasarımın ana konularıdır."],
+            href: "/kutuphane/blog/silis-kumu-kurutma-prosesi",
+            linkLabel: "Silis kumu kurutma prosesi",
+          },
+          {
+            title: "Kuvars Kumu",
+            paragraphs: ["Cam ve seramik kalitesinde demir kirlenmesinin önlenmesi ve tane dağılımının korunması öne çıkar."],
+            href: "/kutuphane/blog/kuvars-kumu-kurutma-tamburu",
+            linkLabel: "Kuvars kumu kurutma tamburu",
+          },
+          {
+            title: "Ham Perlit",
+            paragraphs: ["Genleştirme öncesi yalnız serbest nem alınır; ince fraksiyonun sürüklenmesi ve toz geri kazanımı kontrol edilir."],
+            href: "/kutuphane/blog/perlit-kurutma-tamburu",
+            linkLabel: "Perlit kurutma rehberi",
+          },
+          {
+            title: "Bentonit",
+            paragraphs: ["Kritik nem aralığında yapışkan faza geçer; kanat düzeni ve ürün sıcaklığı şişme ile su tutma özelliğini koruyacak şekilde seçilir."],
+            href: "/kutuphane/blog/bentonit-kurutma-tamburu",
+            linkLabel: "Bentonit kurutma tamburu",
+          },
+          {
+            title: "Kedi Kumu Granülü",
+            paragraphs: ["Topaklanma performansı ve granül dayanımı dar bir nem bandında korunur; toz alma ve eleme ticari kaliteyi belirler."],
+            href: "/kutuphane/blog/kedi-kumu-kurutma-tamburu",
+            linkLabel: "Kedi kumu kurutma tamburu",
+          },
+          {
+            title: "Feldspat",
+            paragraphs: ["Seramik ve cam hammaddesi olarak ince fraksiyon kaybı, ürün temizliği ve öğütme öncesi nem hedefi birlikte değerlendirilir."],
+            href: "/kutuphane/blog/feldspat-kurutma-tamburu",
+            linkLabel: "Feldspat kurutma tamburu",
+          },
+          {
+            title: "Kalsit",
+            paragraphs: ["Öğütme öncesi kurutulur; beyazlığın korunması ve ince tozun geri kazanımı kurutma hattının kararlarını etkiler."],
+            href: "/kutuphane/blog/kalsit-kurutma-tamburu",
+            linkLabel: "Kalsit kurutma tamburu",
+          },
+        ],
       }),
       section("Aşınma Yönetimi ve Mekanik Dayanım", {
         paragraphs: [
@@ -2766,6 +2816,8 @@ const materialDryingPages: DrumSystemDetailPageData[] = [
       { title: "Eleme ve Sınıflandırma Sistemleri", description: "Tane sınıflandırma ve toz alma ekipmanlarını inceleyin.", href: MATERIAL_SCREENING_HREF },
       { title: "Paketleme ve Dolum Sistemleri", description: "Tüketici ambalajı ve big-bag hattını görün.", href: MATERIAL_PACKAGING_HREF },
       { title: "Fan, Siklon ve Filtre Seçimi", description: "Toz hattının boyutlandırma mantığını okuyun.", href: MATERIAL_FAN_BLOG_HREF },
+      { title: "Maden ve Mineral Kurutma Rehberi", description: "Kedi kumu granülünü diğer mineral kurutma uygulamalarıyla karşılaştırın.", href: "/kutuphane/blog/maden-kurutma-tamburu" },
+      { title: "Madencilik ve Mineral İşleme", description: "Bentonit ve mineral işleme hatları için sektör çözümlerini görün.", href: "/sektorler/madencilik-ve-mineral-isleme" },
     ],
     ctaTitle: "Kedi Kumu Üretim Hattınız İçin Teknik Teklif Alın",
     ctaDescription:
@@ -4170,6 +4222,21 @@ export const dryingSystemDetailPages: DrumSystemDetailPageData[] = [
         title: "Fan, Siklon ve Filtre Seçimi",
         description: "Gaz hattı, toz kontrolü ve emisyon tarafını birlikte değerlendirin.",
         href: "/kutuphane/blog/kurutma-tamburunda-fan-siklon-filtre-secimi",
+      },
+      {
+        title: "Silis Kumu Kurutma Tesisi Projesi",
+        description: "Besleme, kurutma, toz toplama, eleme ve stoklama adımlarını proje sayfasında inceleyin.",
+        href: "/projeler/silis-kumu-kurutma-tesisi",
+      },
+      {
+        title: "Kuvars Kumu Kurutma Tamburu",
+        description: "Cam ve seramik kalitesinde kum kurutmanın farklarını okuyun.",
+        href: "/kutuphane/blog/kuvars-kumu-kurutma-tamburu",
+      },
+      {
+        title: "Madencilik ve Mineral İşleme",
+        description: "Kırma, eleme ve kurutmayı birlikte ele alan sektör çözümlerini görün.",
+        href: "/sektorler/madencilik-ve-mineral-isleme",
       },
       {
         title: "İletişim",

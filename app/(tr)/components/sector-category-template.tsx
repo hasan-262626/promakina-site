@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { createInlineLinker } from "../lib/inline-links";
 import { trText } from "../lib/tr-text";
 import { SectorInquiryForm } from "./sector-inquiry-form";
 import type { SectorCategoryConfig } from "./sector-category-config";
@@ -31,6 +32,7 @@ export function SectorCategoryTemplate({
   config: SectorCategoryConfig;
 }) {
   const isSludgeSector = sector.slug === "atik-su-camuru-ve-aritma-cozumleri";
+  const linkify = createInlineLinker(config.inlineLinks);
 
   return (
     <main className="min-h-screen bg-white text-slate-900">
@@ -161,7 +163,7 @@ export function SectorCategoryTemplate({
               <summary className="cursor-pointer list-none text-base font-semibold text-slate-950 [&::-webkit-details-marker]:hidden">
                 {trText(item.question)}
               </summary>
-              <p className="mt-3 text-sm leading-7 text-slate-600">{trText(item.answer)}</p>
+              <p className="mt-3 text-sm leading-7 text-slate-600">{linkify(trText(item.answer), item.question)}</p>
             </details>
           ))}
         </div>
