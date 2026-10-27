@@ -248,6 +248,99 @@ export const miningHandwrittenArticles: Record<string, HandwrittenArticle> = {
     ],
   },
 
+  "maden-kurutma-ve-eleme-tesisi-secim-kriterleri": {
+    description:
+      "Maden kurutma ve eleme tesislerinde proses akışı, kırıcı seçimi, kurutma tamburu kapasitesi, elek açıklığı, konveyör-bunker entegrasyonu, toz toplama ve aşınma yönetimi için seçim kriterlerini inceleyin.",
+    heroDescription:
+      "Maden kurutma ve eleme tesislerinde ürün tane boyutu, nem, aşınma ve toz yüküne göre ekipman seçim kriterlerini bir araya getiren teknik blog sayfası.",
+    sections: [
+      {
+        title: "Maden tesislerinde ana proses akışı nasıl kurulur?",
+        paragraphs: [
+          "Tipik akış kabul bunkeri, kırma, ön eleme, kurutma, son eleme ve stoklama sırasıyla ilerler. Kurutmanın kırmadan önce mi sonra mı yapılacağı nemli malzemenin kırıcıda yapışma eğilimine ve kurutucuya beslenebilecek en büyük tane boyutuna göre belirlenir.",
+          "Ürün fraksiyonlarından biri kuru sevk edilmiyorsa yalnız o fraksiyonun kurutulması, kurutucu boyutunu ve enerji ihtiyacını belirgin şekilde azaltır.",
+        ],
+      },
+      {
+        title: "Kırıcı seçimi ve besleme boyutu ilişkisi",
+        paragraphs: [
+          "Kırıcı seçimi malzemenin sertliği, aşındırıcılığı, en büyük giriş boyutu ve istenen küçültme oranıyla yapılır. Primer kademede çeneli kırıcı, sonraki kademelerde darbeli veya dik milli kırıcılar hedef boyuta yaklaşır.",
+          "Kurutucuya giden malzemenin üst tane boyutu, tambur içindeki kalış süresini ve kurumanın homojenliğini etkiler; bu nedenle kırma çıkış boyutu kurutucu tasarımının bir girdisidir.",
+        ],
+      },
+      {
+        title: "Kurutma tamburu kapasitesi ve nem yönetimi",
+        paragraphs: [
+          "Kurutma tamburu ton/saat ürüne göre değil, buharlaşacak su miktarına göre boyutlandırılır. Giriş nemi mevsimden mevsime değişiyorsa tasarım, en yüksek beklenen nem için yapılır; aksi halde yağışlı dönemlerde kapasite düşer.",
+          "Açık stok alanlarında ham malzemenin yağıştan korunması kurutma yükünü azaltmanın düşük maliyetli yollarından biridir.",
+        ],
+      },
+      {
+        title: "Elek tipi, açıklık ve sınıflandırma standardı",
+        paragraphs: [
+          "Elek tipi ve açıklıkları ürün şartnamesine göre seçilir. İnce fraksiyonlarda kuru eleme kurutma sonrasında yapılır; nemli besleme elek gözlerini tıkar ve ayırma verimini düşürür.",
+          "Kapasite elek alanı, açıklık, açık alan oranı ve tabaka kalınlığıyla birlikte değerlendirilir; aşındırıcı malzemede elek yüzeyi malzemesi bakım periyodunu belirler.",
+        ],
+      },
+      {
+        title: "Konveyör, elevatör ve bunker entegrasyonu",
+        paragraphs: [
+          "Kırıcı, kurutucu ve elek arasında ara bunkerler, ekipmanların birbirinin duruşundan etkilenmeden çalışmasını sağlar. Kurutucunun önündeki besleme bunkeri, kurutucuya sabit debi verilmesi için özellikle önemlidir.",
+          "Kuru ve sıcak ürün taşınan hatlarda kovalı elevatör ve kapalı konveyörler toz kaçağını sınırlar; aktarma yükseklikleri aşınmayı ve tane kırılmasını azaltacak şekilde düşük tutulur.",
+        ],
+      },
+      {
+        title: "Toz yükü, siklon ve filtre sistemleri",
+        paragraphs: [
+          "Kurutucu egzozu ve kuru eleme noktaları hattın en yüksek toz yükünü oluşturur. Siklon iri tozu ve sürüklenen ürünü geri kazanır, jet pulse filtre ince tozu tutar.",
+          "Kurutucu egzozu nemli olduğu için filtre giriş sıcaklığı çiğ noktasının üzerinde tutulur; kuru eleme emişleri ayrı bir filtreye veya aynı filtreye bağlanacaksa gaz sıcaklığı ve nem karışımı hesaba katılır.",
+        ],
+      },
+      {
+        title: "Bakım planı ve aşınma yönetimi",
+        paragraphs: [
+          "Aşındırıcı minerallerde kırıcı aşınma parçaları, tambur kanatları, şutlar, elek yüzeyleri ve siklon gövdesi düzenli kontrol gerektirir. Değiştirilebilir aşınma elemanları bakım süresini kısaltır.",
+          "Tambur ring ve gale tekerleklerinin hizası, tahrik dişlisi ve sızdırmazlıklar periyodik kontrol listesinde yer alır; filtre diferansiyel basıncı torba durumunun en erken göstergesidir.",
+        ],
+      },
+      {
+        title: "Pro Makina ile maden tesislerinde ön mühendislik",
+        paragraphs: [
+          "Ön mühendislik aşamasında numunenin nem ve tane dağılımı analizi, buharlaşacak su hesabı, kırma ve eleme kademelerinin kapasite dengesi ve toz toplama noktaları birlikte değerlendirilir.",
+          "Bu değerlendirme sonunda ekipman listesi, ön yerleşim ve tedarik kapsamı netleştirilerek teknik teklif hazırlanır.",
+        ],
+      },
+    ],
+    summaryRows: [
+      { criterion: "Kurutma konumu", description: "Kırmadan önce veya sonra kurutma kararı.", importance: "Kırıcı yapışmasını ve kurutucu boyutunu belirler." },
+      { criterion: "En yüksek giriş nemi", description: "Mevsimsel değişim dahil tasarım nemi.", importance: "Kurutucunun yıl boyu kapasitesini korur." },
+      { criterion: "Ara bunkerler", description: "Ekipmanlar arasındaki tampon kapasite.", importance: "Duruşların hattı durdurmasını önler." },
+      { criterion: "Aşınma noktaları", description: "Kanat, şut, elek ve siklon yüzeyleri.", importance: "Bakım süresini ve maliyetini belirler." },
+    ],
+    faqs: [
+      {
+        question: "Kurutma kırmadan önce mi sonra mı yapılmalıdır?",
+        answer: "Nemli malzeme kırıcıda yapışıyorsa veya kurutucuya beslenebilecek boyut sınırlıysa sıralama buna göre seçilir. Yalnız belirli bir fraksiyon kuru sevk edilecekse sadece o fraksiyonun kurutulması enerji ihtiyacını azaltır.",
+      },
+      {
+        question: "Kurutma tamburu neye göre boyutlandırılır?",
+        answer: "Ton/saat ürüne göre değil, buharlaşacak su miktarına göre boyutlandırılır. Mevsimsel nem değişimi varsa en yüksek beklenen nem esas alınır.",
+      },
+      {
+        question: "Ara bunker neden gereklidir?",
+        answer: "Kırıcı, kurutucu ve elek arasında tampon kapasite oluşturarak bir ekipmanın kısa duruşunun tüm hattı durdurmasını önler ve kurutucuya sabit debi verilmesini sağlar.",
+      },
+      {
+        question: "Toz toplama hattı nasıl planlanır?",
+        answer: "Kurutucu egzozu ve kuru eleme noktaları başta olmak üzere emiş noktaları belirlenir; siklon ve jet pulse filtre, gaz sıcaklığı ve nem dikkate alınarak boyutlandırılır.",
+      },
+      {
+        question: "Teknik teklif için hangi bilgiler gerekir?",
+        answer: "Malzeme tipi, en büyük giriş boyutu, saatlik kapasite, mevsimsel nem aralığı, istenen fraksiyonlar, hangi fraksiyonların kuru sevk edileceği ve saha yerleşimi temel verilerdir.",
+      },
+    ],
+  },
+
 };
 
 const sharedRelatedLinks = [
