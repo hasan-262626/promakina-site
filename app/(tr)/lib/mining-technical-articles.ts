@@ -192,7 +192,7 @@ export const miningHandwrittenArticles: Record<string, HandwrittenArticle> = {
       {
         title: "Kanal tasarımı",
         paragraphs: [
-          "Kanal içi hız, tozun kanalda çökmesini önleyecek kadar yüksek, aşınmayı ve basınç kaybını artırmayacak kadar düşük seçilir. Mineral tozları için endüstriyel havalandırma kaynaklarında yaklaşık 18–23 m/s aralığı verilir; nemli ve ağır tozlarda üst sınıra yaklaşılır.",
+          "Kanal içi hız, tozun kanalda çökmesini önleyecek kadar yüksek, aşınmayı ve basınç kaybını artırmayacak kadar düşük seçilir. Endüstriyel havalandırma kaynakları mineral tozları için çoğunlukla yaklaşık 18–23 m/s aralığını referans gösterir; bu bir başlangıç değeridir, kesin hız tozun tane boyutu, yoğunluğu ve nemine göre her sistemde ayrıca belirlenir.",
           "Aşındırıcı kuvars tozunda dirseklerde geniş yarıçap ve aşınma plakası, yatay kanallarda temizleme kapakları kullanılır. Kurutucu egzozunun bağlandığı hatlarda yoğuşmayı önlemek için yalıtım değerlendirilir.",
         ],
       },
@@ -235,7 +235,7 @@ export const miningHandwrittenArticles: Record<string, HandwrittenArticle> = {
       },
       {
         question: "Kanal hızı nasıl seçilir?",
-        answer: "Tozun çökmeyeceği kadar yüksek, aşınma ve basınç kaybını artırmayacak kadar düşük seçilir. Mineral tozları için endüstriyel havalandırma kaynaklarında yaklaşık 18–23 m/s aralığı verilir.",
+        answer: "Tozun çökmeyeceği kadar yüksek, aşınma ve basınç kaybını artırmayacak kadar düşük seçilir. Kaynaklarda mineral tozları için verilen yaklaşık 18–23 m/s aralığı bir referanstır; kesin değer tozun özelliklerine göre projede belirlenir.",
       },
       {
         question: "Kuvars tozu neden ayrıca önemlidir?",
