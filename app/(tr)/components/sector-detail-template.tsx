@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { createInlineLinker } from "../lib/inline-links";
 import { trText } from "../lib/tr-text";
 import { SectorInquiryForm } from "./sector-inquiry-form";
 import { SectorSideMenu } from "./sector-side-menu";
@@ -60,6 +61,8 @@ export function SectorDetailTemplate({
   relatedLinks: SectorSubsectorItem[];
   config: SectorDetailTemplateConfig;
 }) {
+  const linkify = createInlineLinker(config.inlineLinks);
+
   return (
     <main className="min-h-screen overflow-x-hidden bg-white text-slate-900">
       <section className="relative isolate overflow-hidden border-b border-slate-200 bg-gradient-to-br from-white via-sky-50 to-[#eef6fb]">
@@ -114,7 +117,7 @@ export function SectorDetailTemplate({
                 <SectionHeading title={config.introTitle} />
                 <div className="mt-6 space-y-4 text-sm leading-8 text-slate-600 sm:text-base">
                   {config.introParagraphs.map((paragraph) => (
-                    <p key={paragraph}>{trText(paragraph)}</p>
+                    <p key={paragraph}>{linkify(trText(paragraph), "intro")}</p>
                   ))}
                 </div>
               </section>
@@ -179,7 +182,7 @@ export function SectorDetailTemplate({
                         {trText(item.question)}
                       </summary>
                       <p className="mt-3 text-sm leading-7 text-slate-600">
-                        {trText(item.answer)}
+                        {linkify(trText(item.answer), item.question)}
                       </p>
                     </details>
                   ))}

@@ -1,5 +1,6 @@
 import type { FieldDefinition, ProductOptionDefinition } from "./sector-inquiry-form";
 import type { SectorCardItem, SectorSubsectorItem } from "./sector-subsectors-data";
+import type { InlineLink } from "../lib/inline-links";
 
 export type SectorDetailCard = {
   title: string;
@@ -51,6 +52,8 @@ export type SectorDetailTemplateConfig = {
   faqTitle: string;
   faqs: SectorDetailFaq[];
   offerForm: SectorDetailOfferConfig;
+  /** Giriş ve SSS metinlerindeki mevcut ifadelere eklenen metin içi bağlantılar (`section`: SSS sorusu). */
+  inlineLinks?: InlineLink[];
 };
 
 type DetailFamily =
@@ -572,6 +575,237 @@ const sludgeDetailOverrides: Record<string, SludgeDetailOverride> = {
         answer: "Stoklama bunkerleri, helezonlar, konveyörler, paketleme veya yükleme ekipmanları sevkiyat modeline göre seçilir.",
       },
     ],
+  },
+};
+
+type MiningDetailOverride = SludgeDetailOverride & {
+  machines: SectorDetailMachineCard[];
+  inlineLinks?: InlineLink[];
+};
+
+const MINING_FAQ_DRYING = "Kurutma bu hatta neden gereklidir?";
+
+/** Maden alt sektörleri: mineral veya prosese özgü teknik içerik (ortak maden şablonunun yerine). */
+const miningDetailOverrides: Record<string, MiningDetailOverride> = {
+  "silis-maden-tesisleri": {
+    introParagraphs: [
+      "Silis kumu ve kuvars kumu; yüksek silisyum dioksit içeriği, sertliği ve aşındırıcılığıyla öne çıkan bir hammaddedir. Cam, döküm, seramik, filtrasyon ve yapı kimyasalları sektörleri tane dağılımı, kil ve demir oksit içeriği ile nem için farklı şartnameler ister; tesis kurgusu bu şartnameden geriye doğru planlanır.",
+      "Tipik akışta ham kum yıkanır ve sınıflandırılır, susuzlandırma eleğiyle serbest suyu alınır, ardından kurutma tamburunda düşük ve kararlı neme getirilir. Kurutma sonrası eleme ile fraksiyonlara ayrılan ürün silo, big-bag veya dökme sevkiyata hazırlanır. Kurutucunun su yükünü büyük ölçüde susuzlandırma sonrası kalan nem belirler.",
+      "Kumun aşındırıcılığı nedeniyle şut, kanat ve transfer noktalarında değiştirilebilir aşınma elemanları kullanılır. Cam ve seramik kalitesinde ürünün demirle kirlenmesini sınırlayan malzeme seçimi, kapasite kadar önemli bir tasarım girdisidir.",
+    ],
+    solutionsDescription:
+      "Silis kumu tesislerinde yıkama, susuzlandırma, kurutma ve sınıflandırma adımlarını müşteri şartnamesindeki tane dağılımı ve nem hedefine göre birlikte kurguluyoruz.",
+    solutions: [
+      { title: "Yıkama ve Sınıflandırma", description: "Kil ve ince fraksiyonun yaş eleme ile ayrılmasını hedef tane dağılımına göre planlıyoruz." },
+      { title: "Susuzlandırma", description: "Kurutucuya giden kumun serbest suyunu susuzlandırma eleğiyle düşürerek kurutma yükünü azaltıyoruz." },
+      { title: "Kurutma ve Soğutma", description: "Direkt ısıtmalı kurutma tamburuyla düşük son nem sağlıyor, ambalaj tipine göre soğutma ihtiyacını değerlendiriyoruz." },
+      { title: "Eleme ve Fraksiyonlama", description: "Kuru kumu şartnamedeki fraksiyonlara ayıran eleme, silo ve dolum düzenini kuruyoruz." },
+      { title: "Aşınma ve Kirlenme Kontrolü", description: "Ürünle temas eden yüzeylerde aşınma elemanı ve malzeme seçimini ürün kalitesine göre belirliyoruz." },
+      { title: "Kristal Silika Tozu Kontrolü", description: "Kurutma, eleme ve dolum noktalarını kapalı tutarak siklon ve jet pulse filtreyle tozu kaynağında topluyoruz." },
+    ],
+    machines: [
+      makeMachine("Sulu Elekler", "Yıkama sırasında kil ve ince fraksiyonu kumdan ayırır.", "/makinalar-ekipman/eleme-ve-siniflandirma-sistemleri/sulu-elekler"),
+      makeMachine("Susuzlandırma Elekleri", "Yıkanmış kumun serbest suyunu alarak kurutma yükünü düşürür.", "/makinalar-ekipman/eleme-ve-siniflandirma-sistemleri/susuzlandirma-elekleri"),
+      makeMachine("Kurutma Tamburu", "Kumu eleme ve paketleme için düşük ve kararlı neme getirir.", "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburu"),
+      makeMachine("Eleme ve Sınıflandırma Sistemleri", "Kuru kumu şartnamedeki fraksiyonlara ayırır.", "/makinalar-ekipman/eleme-ve-siniflandirma-sistemleri"),
+      makeMachine("Bantlı Konveyörler", "Yaş ve kuru kum hatlarında aşınmaya dayanıklı transfer sağlar.", "/makinalar-ekipman/tasima-ekipmanlari/bantli-konveyorler"),
+      makeMachine("Toz Toplama Sistemleri", "Kristal silika tozunu kurutma ve eleme noktalarında kaynağında toplar.", "/makinalar-ekipman/toz-toplama-sistemleri"),
+    ],
+    faqs: [
+      {
+        question: MINING_FAQ_DRYING,
+        answer: "Cam, döküm ve yapı kimyasalları uygulamaları çoğunlukla kuru ve serbest akışlı kum ister. Nemli kum elekte topaklanır, silolarda köprü kurar ve dozajlamayı bozar. Hedef nem müşteri şartnamesine göre belirlenir; proses adımları ve örnek su yükü hesabı silis kumu kurutma prosesi rehberinde anlatılmıştır.",
+      },
+      {
+        question: "Yıkanmış kumun kurutma yükünü ne belirler?",
+        answer: "Susuzlandırma sonrası kumda kalan serbest nem, kurutucunun buharlaştıracağı su miktarını doğrudan belirler. Susuzlandırma veriminin artırılması brülör, fan ve tambur boyutunu küçültmenin en etkili yollarından biridir.",
+      },
+      {
+        question: "Kristal silika tozu için hangi önlemler alınır?",
+        answer: "Solunabilir kristal silika iş sağlığı açısından sınırlandırılan bir tozdur. Kurutma, eleme ve dolum noktaları kapalı tutulur, siklon ve jet pulse filtreyle emiş yapılır; toz toplama hattı proses ekipmanıyla birlikte tasarlanır.",
+      },
+      {
+        question: "Teknik teklif için hangi bilgiler gerekir?",
+        answer: "Ham kumun kaynağı (doğal kum veya kırılmış cevher), saatlik kapasite, yıkama ihtiyacı, susuzlandırma sonrası nem, hedef çıkış nemi, istenen fraksiyonlar, yakıt tipi ve paketleme şekli teklif için temel verilerdir.",
+      },
+    ],
+    inlineLinks: [{ text: "silis kumu kurutma prosesi rehberinde", href: "/kutuphane/blog/silis-kumu-kurutma-prosesi", section: MINING_FAQ_DRYING }],
+  },
+  "perlit-isleme-tesisleri": {
+    introParagraphs: [
+      "Perlit, yapısında bağlı su bulunan camsı bir volkanik kayaçtır. Ham perlit tesisinin görevi cevheri genleştirme tesislerinin istediği tane aralıklarına kırmak, kurutmak ve sınıflandırmaktır; perliti hafifleten genleştirme ise ayrı bir yüksek sıcaklık prosesidir.",
+      "Tipik ham perlit hattında cevher primer kırıcıdan geçer, döner kurutucuda serbest neminden arındırılır, ardından kapalı devre kırma, eleme ve hava sınıflandırma ile sıva, beton agregası, tarım ve filtrasyon gibi kullanım alanlarına uygun fraksiyonlara ayrılır. Proses boyunca oluşan ince fraksiyonun yönetimi tesis veriminin ana belirleyicisidir.",
+      "Camsı tane kırılgan olduğu için kırma oranı ve eleme düzeni gereksiz ince üretmeyecek şekilde seçilir. Kurutucuda gaz hızı ince fraksiyonu sürüklemeyecek seviyede tutulur; sürüklenen ürün siklonda geri kazanılır, en ince toz filtrede tutulur.",
+    ],
+    solutionsDescription:
+      "Ham perlit tesislerinde kırma, kurutma, eleme ve hava sınıflandırma adımlarını ince fraksiyon kaybını sınırlayacak şekilde birlikte planlıyoruz.",
+    solutions: [
+      { title: "Kırma ve Kapalı Devre Boyutlandırma", description: "İri tanenin kırıcıya geri döndüğü kapalı devre ile hedef fraksiyona gereksiz ince üretmeden yaklaşıyoruz." },
+      { title: "Ham Perlit Kurutma", description: "Serbest nemi alan, genleşme için önemli bağlı suyu gereksiz yere azaltmayan kontrollü kurutma kurguluyoruz." },
+      { title: "Eleme ve Hava Sınıflandırma", description: "Kullanım alanına göre fraksiyonları eleme ve hava sınıflandırmayla ayırıyoruz." },
+      { title: "İnce Fraksiyon Yönetimi", description: "Siklon ve filtrede toplanan ince ürünün ayrı ürün veya bertaraf akışını projeye göre belirliyoruz." },
+      { title: "Stoklama ve Sevkiyat", description: "Sınıflandırılmış ham perlitin silo, big-bag veya dökme olarak genleştirme tesisine sevkini planlıyoruz." },
+      { title: "Toz Toplama", description: "Kırma, kurutma ve eleme noktalarındaki yüksek toz yükü için siklon ve jet pulse filtre hattı boyutlandırıyoruz." },
+    ],
+    machines: [
+      makeMachine("Çeneli Kırıcılar", "Ocaktan gelen perlit cevherini primer kademede ön boyutlandırır.", "/makinalar-ekipman/kiricilar-ve-parcalayicilar/ceneli-kiricilar"),
+      makeMachine("Kurutma Tamburu", "Ham perlitin serbest nemini düşük gaz hızında alır.", "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburu"),
+      makeMachine("Eleme ve Sınıflandırma Sistemleri", "Kırılgan taneyi ezmeden kullanım alanına göre fraksiyonlara ayırır.", "/makinalar-ekipman/eleme-ve-siniflandirma-sistemleri"),
+      makeMachine("Siklon Ayırıcılar", "Kurutucudan sürüklenen ince perliti geri kazanır.", "/makinalar-ekipman/toz-toplama-sistemleri/siklon-ayiricilar"),
+      makeMachine("Toz Toplama Sistemleri", "En ince perlit tozunu filtrede tutar.", "/makinalar-ekipman/toz-toplama-sistemleri"),
+      makeMachine("Bunker ve Besleme Sistemleri", "Kurutucu ve kırıcılara kararlı besleme sağlar.", "/makinalar-ekipman/depolama-ve-besleme-sistemleri"),
+    ],
+    faqs: [
+      {
+        question: "Perlit işleme tesisi ile perlit genleştirme tesisi aynı mıdır?",
+        answer: "Hayır. Ham perlit tesisi cevheri kırar, kurutur ve sınıflandırır. Genleştirme tesisinde ise hazırlanan ham perlit yüksek sıcaklıktaki fırında ani ısıtılır; tanedeki bağlı su buhara dönüşerek taneyi genleştirir.",
+      },
+      {
+        question: MINING_FAQ_DRYING,
+        answer: "Ham perlitin yüzeyindeki serbest nem eleme ve hava sınıflandırma verimini düşürür, genleştirme fırınında da ek enerji tüketir. Kurutucuda yalnız serbest nem alınır; ham perlit kurutma ile genleştirme arasındaki fark perlit kurutma rehberinde ayrıntılı anlatılmıştır.",
+      },
+      {
+        question: "İnce fraksiyon nasıl değerlendirilir?",
+        answer: "Siklon ve filtrede toplanan ince perlit, tane aralığına ve yerel talebe göre ayrı ürün olarak değerlendirilebilir veya bertaraf edilir. Bu karar tesisin kütle dengesini etkilediği için proje başında netleştirilir.",
+      },
+      {
+        question: "Teknik teklif için hangi bilgiler gerekir?",
+        answer: "Cevher giriş boyutu, saatlik kapasite, giriş nemi, istenen fraksiyonlar ve oranları, ince fraksiyonun değerlendirme şekli, yakıt tipi ve sevkiyat şekli teklif için temel verilerdir.",
+      },
+    ],
+    inlineLinks: [{ text: "perlit kurutma rehberinde", href: "/kutuphane/blog/perlit-kurutma-tamburu", section: MINING_FAQ_DRYING }],
+  },
+  "feldspat-isleme-tesisleri": {
+    introParagraphs: [
+      "Feldspat; seramik bünye ve sırlarında eritici, cam üretiminde alümina kaynağı olarak kullanılan bir mineraldir. Ticari değerini büyük ölçüde demir ve titan oksit içeriği ile tane dağılımı belirler; bu nedenle tesis tasarımında ürün temizliği kapasite kadar önemlidir.",
+      "Zenginleştirme yapılan tesislerde cevher kırma ve öğütme sonrası flotasyon gibi sulu proseslerden geçer; susuzlandırılan ürün kuru manyetik ayırma, öğütme veya sevkiyat öncesi kurutulur. Doğrudan kuru işlenen yataklarda kırma, kurutma, eleme ve öğütme tek bir hatta toplanır.",
+      "Cam sektörü genellikle belirli tane aralığında kuru ürün, seramik sektörü ise çoğunlukla öğütülmüş ince ürün ister. Kurutma ve taşıma ekipmanlarında aşınmadan kaynaklanan demir kirlenmesi ürün kalitesini etkileyebileceği için ürünle temas eden yüzeylerde malzeme seçimi proje başında belirlenir.",
+    ],
+    solutionsDescription:
+      "Feldspat tesislerinde kırma, kurutma, manyetik ayırma öncesi hazırlık, eleme ve öğütme adımlarını ürün temizliği ve tane dağılımı hedefine göre kurguluyoruz.",
+    solutions: [
+      { title: "Kırma ve Ön Boyutlandırma", description: "Cevheri öğütme veya zenginleştirme hattının istediği giriş boyutuna getiriyoruz." },
+      { title: "Susuzlandırma Sonrası Kurutma", description: "Sulu proses çıkışındaki ürünü kuru manyetik ayırma ve öğütme için kararlı neme getiriyoruz." },
+      { title: "Ürün Temizliği", description: "Ürünle temas eden yüzeylerde demir kirlenmesini sınırlayan malzeme ve aşınma elemanı seçimi yapıyoruz." },
+      { title: "Eleme ve Fraksiyonlama", description: "Cam ve seramik şartnamelerine göre tane aralıklarını ayıran eleme düzeni kuruyoruz." },
+      { title: "Toz Geri Kazanımı", description: "Kurutma ve eleme noktalarındaki ince ürünü siklon ve filtreyle geri kazanıyoruz." },
+      { title: "Stoklama ve Sevkiyat", description: "Kalite sınıflarına göre ayrı silo, big-bag veya dökme sevkiyat düzeni planlıyoruz." },
+    ],
+    machines: [
+      makeMachine("Kırıcılar ve Parçalayıcılar", "Feldspat cevherini öğütme ve zenginleştirme öncesi boyutlandırır.", "/makinalar-ekipman/kiricilar-ve-parcalayicilar"),
+      makeMachine("Kurutma Tamburu", "Sulu proses çıkışındaki veya ocak nemli ürünü kararlı neme getirir.", "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburu"),
+      makeMachine("Eleme ve Sınıflandırma Sistemleri", "Cam ve seramik şartnamelerine göre tane aralıklarını ayırır.", "/makinalar-ekipman/eleme-ve-siniflandirma-sistemleri"),
+      makeMachine("Bantlı Konveyörler", "Kırma, kurutma ve stok alanları arasında transfer sağlar.", "/makinalar-ekipman/tasima-ekipmanlari/bantli-konveyorler"),
+      makeMachine("Bunker ve Besleme Sistemleri", "Kalite sınıflarının ayrı stoklanması ve kontrollü besleme için kullanılır.", "/makinalar-ekipman/depolama-ve-besleme-sistemleri"),
+      makeMachine("Toz Toplama Sistemleri", "İnce feldspat tozunu geri kazanır ve emisyonu sınırlar.", "/makinalar-ekipman/toz-toplama-sistemleri"),
+    ],
+    faqs: [
+      {
+        question: MINING_FAQ_DRYING,
+        answer: "Kuru manyetik ayırma ve kuru öğütme, nemli besleme ile verimli çalışmaz; sevkiyatta da ton başına taşınan suyun azaltılması gerekir. Kurutma tamburunun tasarım kriterleri feldspat kurutma tamburu rehberinde anlatılmıştır.",
+      },
+      {
+        question: "Ürün temizliği tesis tasarımını nasıl etkiler?",
+        answer: "Feldspatın kalite sınıfını demir ve titan oksit içeriği belirlediği için ürünle temas eden şut, kanat ve elek yüzeylerinde malzeme seçimi önemlidir. Aşınmaya dayanıklı ve kirlenmeyi sınırlayan yüzeyler ürün kalitesinin korunmasına yardımcı olur.",
+      },
+      {
+        question: "Cam ve seramik için aynı hat kullanılabilir mi?",
+        answer: "Kırma ve kurutma ortak olabilir; ancak cam için tane aralığına göre elenmiş ürün, seramik için ise öğütülmüş ince ürün istendiğinden son hat ve stoklama düzeni ürün sınıflarına göre ayrılır.",
+      },
+      {
+        question: "Teknik teklif için hangi bilgiler gerekir?",
+        answer: "Cevher tipi ve giriş boyutu, zenginleştirme yapılıp yapılmadığı, kurutucu giriş ve hedef nemi, saatlik kapasite, istenen ürün sınıfları, kalite şartnamesi ve sevkiyat şekli teklif için temel verilerdir.",
+      },
+    ],
+    inlineLinks: [{ text: "feldspat kurutma tamburu rehberinde", href: "/kutuphane/blog/feldspat-kurutma-tamburu", section: MINING_FAQ_DRYING }],
+  },
+  "kalsit-isleme-tesisleri": {
+    introParagraphs: [
+      "Kalsit; kağıt, plastik, boya ve yapı kimyasallarında dolgu olarak kullanılan, beyazlığı ve tane inceliğiyle değerlenen bir kalsiyum karbonat mineralidir. Sertliği düşük olduğu için kuvarsa göre daha az aşındırıcıdır; ancak ince öğütme ve yüzey kaplama prosesleri kuru ve kararlı nemli besleme ister.",
+      "Tipik kalsit hattında cevher kırılır, gerekirse yıkanır, kurutulur, değirmende öğütülür ve hava sınıflandırma ile istenen inceliğe ayrılır. Plastik uygulamalarına yönelik ürünlerde öğütme sonrası yüzey kaplama yapılabilir; ürün silo veya big-bag ile sevk edilir.",
+      "Beyazlık, ürünün ana kalite ölçütü olduğundan yabancı madde, demir kirlenmesi ve kurutma havasındaki yanma ürünleri dikkate alınır. Beyazlık hassasiyeti olan ürünlerde temiz yanan yakıtlar ve kontrollü brülör ayarı tercih edilir.",
+    ],
+    solutionsDescription:
+      "Kalsit tesislerinde kırma, kurutma, öğütme öncesi hazırlık ve toz geri kazanımını beyazlık ve incelik hedefine göre birlikte planlıyoruz.",
+    solutions: [
+      { title: "Kırma ve Ön Hazırlık", description: "Cevheri değirmen besleme boyutuna getiren kırma ve eleme kademelerini planlıyoruz." },
+      { title: "Öğütme Öncesi Kurutma", description: "Değirmen ve sınıflandırıcı verimi için ürünü kararlı ve düşük neme getiriyoruz." },
+      { title: "Beyazlığın Korunması", description: "Yakıt, brülör ve ürünle temas eden yüzeyleri beyazlık kaybını sınırlayacak şekilde seçiyoruz." },
+      { title: "Toz Geri Kazanımı", description: "İnce kalsit tozunu siklon ve filtreyle ürün olarak geri kazanıyoruz." },
+      { title: "Silo ve Dolum", description: "Kalite sınıflarına göre silo, big-bag ve torba dolum düzenini kuruyoruz." },
+      { title: "Kapasite Artırımı", description: "Mevcut hatlarda kurutma ve besleme darboğazlarını değirmen kapasitesiyle birlikte değerlendiriyoruz." },
+    ],
+    machines: [
+      makeMachine("Kırıcılar ve Parçalayıcılar", "Kalsit cevherini değirmen besleme boyutuna getirir.", "/makinalar-ekipman/kiricilar-ve-parcalayicilar"),
+      makeMachine("Kurutma Tamburu", "Öğütme ve kaplama öncesi kararlı ve düşük nem sağlar.", "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburu"),
+      makeMachine("Eleme ve Sınıflandırma Sistemleri", "Değirmen öncesi iri tane ve yabancı maddeyi ayırır.", "/makinalar-ekipman/eleme-ve-siniflandirma-sistemleri"),
+      makeMachine("Bunker ve Besleme Sistemleri", "Değirmene kararlı besleme ve ara stok sağlar.", "/makinalar-ekipman/depolama-ve-besleme-sistemleri"),
+      makeMachine("Toz Toplama Sistemleri", "İnce kalsit tozunu ürün olarak geri kazanır.", "/makinalar-ekipman/toz-toplama-sistemleri"),
+      makeMachine("Big-Bag Dolum", "Toz ve granül kalsitin big-bag ile sevkiyatını sağlar.", "/makinalar-ekipman/paketleme-ve-dolum-sistemleri/big-bag-dolum"),
+    ],
+    faqs: [
+      {
+        question: MINING_FAQ_DRYING,
+        answer: "Nemli kalsit değirmende topaklanır, sınıflandırıcı verimini düşürür ve yüzey kaplamanın homojenliğini bozar. Öğütme öncesi kurutmanın tasarım kriterleri kalsit kurutma tamburu rehberinde anlatılmıştır.",
+      },
+      {
+        question: "Kalsit kurutmada beyazlık nasıl korunur?",
+        answer: "Ürünle temas eden yüzeylerde kirlenmeyi sınırlayan malzeme seçimi, temiz yanan yakıt ve kontrollü brülör ayarı birlikte değerlendirilir. Kurutma sonrası toz geri kazanımı da kaliteli ince ürünün kaybını önler.",
+      },
+      {
+        question: "Kalsit kuvarsa göre daha az aşındırıcı mıdır?",
+        answer: "Evet, kalsitin sertliği kuvarstan düşüktür. Bu nedenle aşınma yükü daha düşüktür; ancak ince toz üretimi fazladır ve toz toplama hattı buna göre boyutlandırılır.",
+      },
+      {
+        question: "Teknik teklif için hangi bilgiler gerekir?",
+        answer: "Cevher giriş boyutu, saatlik kapasite, giriş ve hedef nem, değirmen tipi ve hedef incelik, beyazlık şartnamesi, yüzey kaplama ihtiyacı ve sevkiyat şekli teklif için temel verilerdir.",
+      },
+    ],
+    inlineLinks: [{ text: "kalsit kurutma tamburu rehberinde", href: "/kutuphane/blog/kalsit-kurutma-tamburu", section: MINING_FAQ_DRYING }],
+  },
+  "kirma-eleme-ve-siniflandirma-tesisleri": {
+    introParagraphs: [
+      "Kırma-eleme tesisleri; ocaktan gelen cevheri istenen fraksiyonlara kontrollü şekilde küçültmek ve ayırmak için kurulur. Tesis tasarımında malzemenin sertliği, aşındırıcılığı, nemi ve kil içeriği ile ürün fraksiyonlarının pazar talebi birlikte değerlendirilir.",
+      "Kırma kademeleri küçültme oranına göre planlanır: primer kademede çeneli kırıcı iri cevheri ön boyutlandırır, sonraki kademelerde darbeli veya dik milli kırıcılar hedef fraksiyona yaklaşır. Kapalı devre eleme, iri ürünü kırıcıya geri döndürerek fraksiyon kontrolünü sağlar.",
+      "Nemli ve killi malzemede elek gözleri tıkanır, ince fraksiyonda ayırma verimi düşer. Bu durumda ön eleme ile kilin ayrılması, yaş eleme veya ince ürün için kurutma devreye girer; hangisinin seçileceği ürünün kullanım alanına göre belirlenir.",
+    ],
+    solutionsDescription:
+      "Kırma-eleme tesislerinde kırıcı kademelerini, kapalı devre elemeyi ve stok planını malzeme sertliği ve ürün fraksiyonlarına göre birlikte boyutlandırıyoruz.",
+    solutions: [
+      { title: "Kırma Kademelerinin Planlanması", description: "Küçültme oranı ve malzeme sertliğine göre primer ve sonraki kırıcı kademelerini belirliyoruz." },
+      { title: "Kapalı Devre Eleme", description: "İri tanenin kırıcıya geri döndüğü eleme devresiyle fraksiyon kontrolü sağlıyoruz." },
+      { title: "Fraksiyon ve Stok Planı", description: "Ürün fraksiyonlarının oranına göre stok alanı, bunker ve sevkiyat düzenini planlıyoruz." },
+      { title: "Nemli ve Killi Malzeme", description: "Elek tıkanmasına karşı ön eleme, yaş eleme veya kurutma seçeneklerini değerlendiriyoruz." },
+      { title: "Toz Kontrolü", description: "Kırıcı ve elek transfer noktalarında toz toplama ve emisyon kontrolü kuruyoruz." },
+      { title: "Kapasite Artırımı ve Revizyon", description: "Mevcut hatlarda darboğaz kademesini tespit ederek kırıcı, elek veya transfer revizyonu öneriyoruz." },
+    ],
+    machines: [
+      makeMachine("Çeneli Kırıcılar", "Primer kademede iri cevheri ön boyutlandırır.", "/makinalar-ekipman/kiricilar-ve-parcalayicilar/ceneli-kiricilar"),
+      makeMachine("Dik Milli Kırıcılar", "İnce agrega ve kum üretiminde kübik tane şekli sağlar.", "/makinalar-ekipman/kiricilar-ve-parcalayicilar/dik-milli-kiricilar"),
+      makeMachine("Eleme ve Sınıflandırma Sistemleri", "Kapalı devrede ürünü fraksiyonlara ayırır, iri taneyi geri döndürür.", "/makinalar-ekipman/eleme-ve-siniflandirma-sistemleri"),
+      makeMachine("Trommel Elekler", "Killi ve yapışkan malzemede ön eleme ve kaba ayrım yapar.", "/makinalar-ekipman/eleme-ve-siniflandirma-sistemleri/trommel-elekler"),
+      makeMachine("Bantlı Konveyörler", "Kırıcı, elek ve stok alanları arasında transferi sağlar.", "/makinalar-ekipman/tasima-ekipmanlari/bantli-konveyorler"),
+      makeMachine("Kurutma Tamburu", "Nemli ince üründe eleme ve sevkiyat öncesi nemi düşürür.", "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburu"),
+    ],
+    faqs: [
+      {
+        question: "Kırıcı kademe sayısı nasıl belirlenir?",
+        answer: "Giriş boyutunun hedef ürün boyutuna oranı, malzemenin sertliği ve aşındırıcılığı ile her kırıcı tipinin verimli çalıştığı küçültme oranı birlikte değerlendirilerek kademe sayısı belirlenir.",
+      },
+      {
+        question: "Kapalı devre eleme ne sağlar?",
+        answer: "Elekte kalan iri tane kırıcıya geri döndürülür; böylece ürün fraksiyonu kontrol altında tutulur ve tek geçişte gereksiz ince üretimi sınırlanır.",
+      },
+      {
+        question: MINING_FAQ_DRYING,
+        answer: "Kırma-eleme hatlarının çoğunda kurutma gerekmez. Ancak nemli ve killi malzemede elek tıkanıyorsa veya ince ürün kuru sevk edilecekse kurutma devreye girer; mineral bazında farklar maden ve mineral kurutma rehberinde anlatılmıştır.",
+      },
+      {
+        question: "Teknik teklif için hangi bilgiler gerekir?",
+        answer: "Malzeme tipi ve sertliği, maksimum giriş boyutu, saatlik kapasite, istenen ürün fraksiyonları ve oranları, nem ve kil içeriği, saha yerleşimi ve enerji altyapısı teklif için temel verilerdir.",
+      },
+    ],
+    inlineLinks: [{ text: "maden ve mineral kurutma rehberinde", href: "/kutuphane/blog/maden-kurutma-tamburu", section: MINING_FAQ_DRYING }],
   },
 };
 
@@ -1226,22 +1460,26 @@ export function getSectorDetailConfig(
     sector.slug === "atik-su-camuru-ve-aritma-cozumleri"
       ? sludgeDetailOverrides[current.slug]
       : undefined;
+  const miningOverride =
+    sector.slug === "madencilik-ve-mineral-isleme" ? miningDetailOverrides[current.slug] : undefined;
+  const override = sludgeOverride ?? miningOverride;
 
   return {
     heroTitle: displayTitle,
     introTitle: displayTitle,
-    introParagraphs: sludgeOverride?.introParagraphs ?? getIntroParagraphs(displayTitle, family),
+    introParagraphs: override?.introParagraphs ?? getIntroParagraphs(displayTitle, family),
     imageOne: images.imageOne,
     imageOneAlt: images.imageOneAlt,
     imageTwo: images.imageTwo,
     imageTwoAlt: images.imageTwoAlt,
     solutionsTitle,
-    solutionsDescription: sludgeOverride?.solutionsDescription ?? getSolutionsDescription(family),
-    solutions: sludgeOverride?.solutions ?? buildSolutionCards(family),
+    solutionsDescription: override?.solutionsDescription ?? getSolutionsDescription(family),
+    solutions: override?.solutions ?? buildSolutionCards(family),
     machinesTitle,
-    machines: buildMachines(family, current.slug),
+    machines: miningOverride?.machines ?? buildMachines(family, current.slug),
     faqTitle: `${displayTitle} Hakkında Sık Sorulan Sorular`,
-    faqs: sludgeOverride?.faqs ?? buildFaqs(displayTitle, family),
+    faqs: override?.faqs ?? buildFaqs(displayTitle, family),
     offerForm,
+    inlineLinks: miningOverride?.inlineLinks,
   };
 }
