@@ -4004,23 +4004,6 @@ export const dryingSystemDetailPages: DrumSystemDetailPageData[] = [
           ),
         ],
       }),
-      section("Isıtma Yöntemi, Örnek Su Yükü ve Kuru Kum Sıcaklığı", {
-        paragraphs: [
-          "Silis kumu ısıya dayanıklı ve kimyasal olarak kararlı olduğundan çoğu tesiste brülör gazının ürünle doğrudan temas ettiği direkt ısıtmalı döner kurutucu kullanılır. Gaz ve kumun aynı yönde ilerlediği paralel akışta en sıcak gaz en nemli kumla karşılaşır ve egzoz sıcaklığı daha düşük kalır. Ters akışta kum çıkışa yaklaştıkça daha sıcak gazla karşılaştığı için çok düşük son nem hedeflerinde avantaj sağlayabilir; buna karşılık ürün çıkış sıcaklığı yükselir. Yanma gazının ürünle temasının istenmediği özel uygulamalarda dolaylı ısıtma değerlendirilir; bu durumda ısı transfer yüzeyi ve yatırım maliyeti belirgin şekilde artar.",
-          "Kurutucudan çıkan kum sıcaktır. Big-bag, torba veya plastik içeren ambalajlara ve bazı silo uygulamalarına alınmadan önce ürünün soğutulması gerekebilir; soğutma ihtiyacı kapasite, çıkış sıcaklığı ve ambalaj tipine göre proje başında belirlenir.",
-        ],
-        table: table(
-          "Örnek Su Yükü Hesabı",
-          ["Adım", "Hesap", "Sonuç"],
-          [
-            ["Yaş besleme ve giriş nemi", "20 t/saat, %6 nem", "—"],
-            ["Kuru katı miktarı", "20 × (1 − 0,06)", "18,80 t/saat"],
-            ["Hedef çıkış nemi %0,5 iken kuru ürün", "18,80 / (1 − 0,005)", "≈ 18,89 t/saat"],
-            ["Buharlaştırılacak su", "20 − 18,89", "≈ 1,11 t/saat (≈ 1.110 kg/saat)"],
-          ],
-          "Değerler yalnız hesap yöntemini göstermek için seçilmiş bir tasarım örneğidir; gerçek tesis verisi veya performans taahhüdü değildir. Isıl ihtiyaç; buharlaşma enerjisine ek olarak kumun ısıtılması, gövde ve egzoz kayıpları eklenerek hesaplanır.",
-        ),
-      }),
       section("Silis Kumu Kurutma Tamburu Tasarımında Dikkat Edilen Kriterler", {
         paragraphs: [
           "Silis kumu kurutma tamburu boyutlandırılırken kapasite, nem yükü, ürün davranışı ve kurutma sonrasındaki ekipmanlar birlikte değerlendirilmelidir. Aşağıdaki tablo, tasarımı etkileyen ana kriterleri özetler.",
@@ -4222,21 +4205,6 @@ export const dryingSystemDetailPages: DrumSystemDetailPageData[] = [
         title: "Fan, Siklon ve Filtre Seçimi",
         description: "Gaz hattı, toz kontrolü ve emisyon tarafını birlikte değerlendirin.",
         href: "/kutuphane/blog/kurutma-tamburunda-fan-siklon-filtre-secimi",
-      },
-      {
-        title: "Silis Kumu Kurutma Tesisi Projesi",
-        description: "Besleme, kurutma, toz toplama, eleme ve stoklama adımlarını proje sayfasında inceleyin.",
-        href: "/projeler/silis-kumu-kurutma-tesisi",
-      },
-      {
-        title: "Kuvars Kumu Kurutma Tamburu",
-        description: "Cam ve seramik kalitesinde kum kurutmanın farklarını okuyun.",
-        href: "/kutuphane/blog/kuvars-kumu-kurutma-tamburu",
-      },
-      {
-        title: "Madencilik ve Mineral İşleme",
-        description: "Kırma, eleme ve kurutmayı birlikte ele alan sektör çözümlerini görün.",
-        href: "/sektorler/madencilik-ve-mineral-isleme",
       },
       {
         title: "İletişim",

@@ -540,6 +540,74 @@ export function SilicaSandDryingProcessPage() {
             </div>
           </SectionShell>
 
+          <SectionShell title="Isıtma Yöntemi, Örnek Su Yükü ve Kuru Kum Sıcaklığı">
+            <div className="space-y-5 text-base leading-8 text-slate-700">
+              <p>
+                Silis kumu ısıya dayanıklı ve kimyasal olarak kararlı olduğundan çoğu tesiste brülör
+                gazının ürünle doğrudan temas ettiği direkt ısıtmalı döner kurutucu kullanılır. Gaz ve
+                kumun aynı yönde ilerlediği paralel akışta en sıcak gaz en nemli kumla karşılaşır ve
+                egzoz sıcaklığı daha düşük kalır. Ters akışta kum çıkışa yaklaştıkça daha sıcak gazla
+                karşılaştığı için çok düşük son nem hedeflerinde avantaj sağlayabilir; buna karşılık ürün
+                çıkış sıcaklığı yükselir. Yanma gazının ürünle temasının istenmediği özel uygulamalarda
+                dolaylı ısıtma değerlendirilir; bu durumda ısı transfer yüzeyi ve yatırım maliyeti
+                belirgin şekilde artar.
+              </p>
+              <p>
+                Kurutucudan çıkan kum sıcaktır. Big-bag, torba veya plastik içeren ambalajlara ve bazı
+                silo uygulamalarına alınmadan önce ürünün soğutulması gerekebilir; soğutma ihtiyacı
+                kapasite, çıkış sıcaklığı ve ambalaj tipine göre proje başında belirlenir.
+              </p>
+            </div>
+            <div className="mt-6 overflow-x-auto rounded-[24px] border border-slate-200">
+              <table className="min-w-[640px] divide-y divide-slate-200 bg-white text-left text-sm text-slate-700">
+                <caption className="sr-only">Örnek su yükü hesabı</caption>
+                <thead className="bg-slate-50 text-slate-950">
+                  <tr>
+                    <th className="px-4 py-4 font-semibold">Adım</th>
+                    <th className="px-4 py-4 font-semibold">Hesap</th>
+                    <th className="px-4 py-4 font-semibold">Sonuç</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-200">
+                  {[
+                    ["Yaş besleme ve giriş nemi", "20 t/saat, %6 nem", "—"],
+                    ["Kuru katı miktarı", "20 × (1 − 0,06)", "18,80 t/saat"],
+                    ["Hedef çıkış nemi %0,5 iken kuru ürün", "18,80 / (1 − 0,005)", "≈ 18,89 t/saat"],
+                    ["Buharlaştırılacak su", "20 − 18,89", "≈ 1,11 t/saat (≈ 1.110 kg/saat)"],
+                  ].map((row) => (
+                    <tr key={row[0]} className="align-top">
+                      <td className="px-4 py-4 font-semibold text-slate-950">{row[0]}</td>
+                      <td className="px-4 py-4">{row[1]}</td>
+                      <td className="px-4 py-4">{row[2]}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <div className="mt-5 space-y-5 text-base leading-8 text-slate-700">
+              <p className="text-sm leading-7 text-slate-600">
+                Değerler yalnız hesap yöntemini göstermek için seçilmiş bir tasarım örneğidir; gerçek tesis
+                verisi veya performans taahhüdü değildir. Isıl ihtiyaç; buharlaşma enerjisine ek olarak
+                kumun ısıtılması, gövde ve egzoz kayıpları eklenerek hesaplanır.
+              </p>
+              <p>
+                Bu adımların bir tesis kurgusundaki karşılığı için{" "}
+                <Link href="/projeler/silis-kumu-kurutma-tesisi" className="font-semibold text-[#278DC0] hover:text-[#154764]">
+                  silis kumu kurutma tesisi proje sayfasını
+                </Link>
+                , cam ve seramik kalitesindeki farklar için{" "}
+                <Link href="/kutuphane/blog/kuvars-kumu-kurutma-tamburu" className="font-semibold text-[#278DC0] hover:text-[#154764]">
+                  kuvars kumu kurutma tamburu
+                </Link>{" "}
+                rehberini, kırma ve eleme ile birlikte kurulan hatlar için{" "}
+                <Link href="/sektorler/madencilik-ve-mineral-isleme" className="font-semibold text-[#278DC0] hover:text-[#154764]">
+                  madencilik ve mineral işleme çözümlerini
+                </Link>{" "}
+                inceleyebilirsiniz.
+              </p>
+            </div>
+          </SectionShell>
+
           <SectionShell title="Silis Kumu Kurutma Tamburu Tasarım Kriterleri">
             <div className="overflow-x-auto rounded-[24px] border border-slate-200">
               <table className="min-w-[760px] divide-y divide-slate-200 bg-white text-left text-sm text-slate-700">
