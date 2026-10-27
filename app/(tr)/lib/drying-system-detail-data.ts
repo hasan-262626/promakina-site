@@ -1631,8 +1631,8 @@ const materialDryingPages: DrumSystemDetailPageData[] = [
       {
         title: "Granülatörden Nemli Granül",
         description: "Organik-mineral karışım granül, kurutucuya sürekli akışla beslenir.",
-        href: MATERIAL_DRUM_CATEGORY_HREF,
-        linkLabel: "Tambur sistemlerini incele",
+        href: GRANULATOR_DRUM_HREF,
+        linkLabel: "Granülatör tamburunu incele",
       },
       {
         title: "Kurutma Tamburu",
@@ -1649,7 +1649,7 @@ const materialDryingPages: DrumSystemDetailPageData[] = [
       {
         title: "Soğutma Tamburu",
         description: "Granül; depolama stabilitesi için ortam sıcaklığına yaklaştırılır.",
-        href: MATERIAL_DRUM_CATEGORY_HREF,
+        href: COOLING_DRUM_HREF,
         linkLabel: "Soğutma tamburunu incele",
       },
       {
@@ -1698,6 +1698,18 @@ const materialDryingPages: DrumSystemDetailPageData[] = [
           "Kompost, tavuk gübresi veya leonardit bazlı organik hammaddenin nemi partiden partiye değişir. Kurutma hattı; besleme debisi, gaz sıcaklığı ve tambur devri üzerinden bu değişkenliği karşılayacak kontrol aralığına sahip olmalıdır.",
         ],
       }),
+      section("Kuru Ürünün Tozlanması, Yangın ve Koku", {
+        paragraphs: [
+          "Kuru organik faz yanıcı bir tozdur. Tambur içinde, kanallarda ve filtre torbalarında biriken organik toz sıcak gazla temas ettiğinde için için yanabilir; bu nedenle organomineral hatlarda birikinti oluşturmayan kanal ve davlumbaz tasarımı, düzenli temizlik, ürün ve egzoz sıcaklığının izlenmesi ve filtre girişinde sıcaklık takibi tasarımın parçasıdır. Toz patlama riski, reçeteye ve toz özelliklerine göre ayrıca değerlendirilir.",
+          "Organik hammaddeden gelen amonyak ve koku bileşenleri egzoz gazına geçer. Siklon ve jet pulse filtre tozu tutar ancak gaz fazındaki amonyağı ve kokuyu gidermez; gerektiğinde asidik gaz yıkama (scrubber) ve biyofiltre gibi egzoz gazı arıtım üniteleri eklenir. Yoğuşmanın önlenmesi için filtre ve kanal sıcaklıkları çiğ noktasının üzerinde tutulur.",
+          "Kurutucudan çıkan kuru granülün yüzeyinden kopan ince organik toz, eleme ve paketlemede de toz yükü oluşturur. Bu noktalar emişle toz toplama hattına bağlanır; toplanan toz granülatöre geri dönüş malzemesi olarak beslenebilir.",
+        ],
+      }),
+      section("Ürün Kalitesinin Korunması", {
+        paragraphs: [
+          "Organomineral üründe kalite yalnız nemle ölçülmez; organik madde içeriği, granül dayanımı ve depoda topaklanmama birlikte değerlendirilir. Bu nedenle kapasite artışı gaz sıcaklığını yükselterek değil, kalış süresi ve tambur boyutuyla sağlanır; geri dönüş oranındaki artış granülasyon ve kurutma dengesinin bozulduğunu gösteren erken bir işarettir.",
+        ],
+      }),
     ],
     selectionCriteria: table(
       "Organomineral Gübre Kurutma Tamburu İçin Temel Proje Verileri",
@@ -1725,7 +1737,7 @@ const materialDryingPages: DrumSystemDetailPageData[] = [
       ],
     ),
     approachParagraphs: [
-      "Pro Makina organomineral kurutma hatlarını, kendi granülasyon ve kompost proses tecrübesiyle birlikte tasarlar. Sıcaklık limiti, kalış süresi ve kanat düzeni; reçetenin organik karakterine göre belirlenir.",
+      "Pro Makina organomineral kurutma hatlarını, granülasyon ve kompost prosesleriyle birlikte tasarlar. Sıcaklık limiti, kalış süresi ve kanat düzeni; reçetenin organik karakterine göre belirlenir.",
       "10 ton/saat organomineral gübre tesisi projesinde uygulanan kurutma-soğutma-eleme dengesi, yeni projelerde referans mühendislik çerçevesi olarak kullanılır.",
     ],
     approachBullets: [
@@ -1758,13 +1770,17 @@ const materialDryingPages: DrumSystemDetailPageData[] = [
         "Organomineral üründe evet; sıcak granül depoda terleyerek topaklanır. Soğutma tamburu paketleme stabilitesinin ön şartıdır.",
       ),
       faq(
+        "Organomineral kurutmada koku ve amonyak nasıl yönetilir?",
+        "Siklon ve filtre tozu tutar, gaz fazındaki amonyak ve kokuyu gidermez. Gerektiğinde asidik gaz yıkama ve biyofiltre eklenir; filtre ve kanal sıcaklıkları yoğuşmayı önleyecek şekilde tutulur.",
+      ),
+      faq(
         "Teknik teklif için hangi bilgiler gerekir?",
         "Reçete (organik/mineral oranı), kapasite, giriş ve hedef nem, granül boyutu, sıcaklık limiti, yakıt tipi ve saha bilgisi teklif için temel verilerdir.",
       ),
     ],
     relatedLinks: [
       { title: "Gübre Kurutma Rehberi", description: "Genel granül gübre kurutma yaklaşımıyla karşılaştırın.", href: "/kutuphane/blog/gubre-kurutma-tamburu" },
-      { title: "10 Ton/Saat Organomineral Gübre Tesisi", description: "Gerçekleştirilen organomineral tesis projesini inceleyin.", href: "/projeler/10-ton-saat-organomineral-gubre-tesisi" },
+      { title: "10 Ton/Saat Organomineral Gübre Tesisi", description: "Organomineral gübre tesisi proje sayfasını inceleyin.", href: "/projeler/10-ton-saat-organomineral-gubre-tesisi" },
       { title: "Kompost Kurutma Tamburu", description: "Organik hammadde tarafının kurutma davranışını okuyun.", href: "/kutuphane/blog/kompost-kurutma-tamburu" },
       { title: "Kurutma Tamburu Hesaplama", description: "Su yükü ve tambur geometrisi hesabını inceleyin.", href: MATERIAL_HESAP_BLOG_HREF },
       { title: "Brülör Seçimi", description: "Sıcaklık limitli ürünlerde ısı kaynağı yaklaşımını okuyun.", href: MATERIAL_BURNER_BLOG_HREF },
