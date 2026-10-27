@@ -17,6 +17,8 @@ export type ProjectPageData = {
   machineGroups: string[];
   /** Ekipman kartını ilgili makine sayfasına bağlar (anahtar: machineGroups öğesi). */
   machineGroupLinks?: Record<string, string>;
+  /** Doğrulanmış tamamlanmış proje değil; sayfa "Örnek Proses Konfigürasyonu" diliyle gösterilir. */
+  exampleConfiguration?: boolean;
   processFlow: string[];
   investorBenefits: string[];
   quoteRequirements: string[];
@@ -447,16 +449,17 @@ export const projectPages: ProjectPageData[] = [
   {
     slug: "silis-kumu-kurutma-tesisi",
     aliases: ["kurutma-tamburu-ve-termal-proses-projeleri"],
-    title: "Silis Kumu Kurutma Tesisi Projesi",
+    exampleConfiguration: true,
+    title: "Silis Kumu Kurutma Tesisi",
     cardDescription:
-      "Silis kumu ve kuvars kumu proseslerinde besleme, kurutma tamburu, sıcak gaz hattı, siklon, fan, toz toplama, eleme ve stoklama ekipmanlarını birlikte projelendiriyoruz.",
+      "Silis ve kuvars kumunda besleme, kurutma tamburu, sıcak gaz hattı, siklon, fan, toz toplama, eleme ve stoklama adımlarını gösteren örnek proses konfigürasyonu.",
     heroDescription:
-      "Silis kumu kurutma tesislerinde kurutma yükü, ürün akışı, toz kontrolü ve stoklama ihtiyaçlarını aynı termal proses kurgusu içinde ele alıyoruz.",
+      "Silis kumu kurutma tesislerinde kurutma yükü, ürün akışı, toz kontrolü ve stoklama ihtiyaçlarının aynı termal proses kurgusu içinde nasıl ele alınabileceğini gösteren örnek konfigürasyon.",
     image: "/images/maden/maden1.jpg",
-    imageAlt: "Silis kumu kurutma tesisi projesi",
-    metadataTitle: "Silis Kumu Kurutma Tesisi Projesi",
+    imageAlt: "Taş ocağında kırma-eleme tesisi (temsili görsel)",
+    metadataTitle: "Silis Kumu Kurutma Tesisi | Örnek Proses Konfigürasyonu",
     metadataDescription:
-      "Silis kumu ve kuvars kumu için kurutma tamburu, sıcak gaz hattı, eleme ve toz toplama odaklı tesis projesini inceleyin.",
+      "Silis kumu kurutma tesisi için örnek proses konfigürasyonu: kurutma tamburu, sıcak gaz hattı, eleme ve toz toplama adımları.",
     projectScope: [
       "Giriş-çıkış nem hedeflerine göre kurutma yükünün belirlenmesi",
       "Kurutma tamburu, sıcak gaz, fan ve filtre yapısının ölçeklenmesi",
@@ -500,16 +503,17 @@ export const projectPages: ProjectPageData[] = [
   },
   {
     slug: "perlit-kurutma-eleme-tesisi",
-    title: "Perlit Kurutma ve Eleme Tesisi Projesi",
+    exampleConfiguration: true,
+    title: "Perlit Kurutma ve Eleme Tesisi",
     cardDescription:
-      "Perlit ve benzeri hafif mineral hammaddelerde kontrollü kurutma, eleme, taşıma, toz toplama ve ürün sınıflandırma süreçlerini kapsayan tesis projeleri hazırlıyoruz.",
+      "Ham perlitte kontrollü kurutma, eleme, taşıma, toz toplama ve ürün sınıflandırma adımlarını gösteren örnek proses konfigürasyonu.",
     heroDescription:
-      "Perlit gibi hafif ve hassas mineral hammaddelerde ürün kaybını azaltan, sınıflandırmayı netleştiren ve termal süreci kontrollü kılan proje kurguları geliştiriyoruz.",
+      "Ham perlitin kurutulması, sınıflandırılması ve ince fraksiyonun geri kazanılmasının tek hatta nasıl kurgulanabileceğini gösteren örnek proses konfigürasyonu. Gerçekleştirilmiş bir tesisin işletme verisi değildir.",
     image: "/images/maden/maden1.jpg",
-    imageAlt: "Perlit kurutma ve eleme tesisi projesi",
-    metadataTitle: "Perlit Kurutma ve Eleme Tesisi Projesi",
+    imageAlt: "Taş ocağında kırma-eleme tesisi (temsili görsel)",
+    metadataTitle: "Perlit Kurutma ve Eleme Tesisi | Örnek Proses Konfigürasyonu",
     metadataDescription:
-      "Perlit kurutma ve eleme tesisleri için kontrollü kurutma, sınıflandırma, taşıma ve toz toplama odaklı proje yapısını inceleyin.",
+      "Perlit kurutma ve eleme tesisi için örnek proses konfigürasyonu: ham perlit kurutma, eleme, sınıflandırma, taşıma ve toz toplama adımları.",
     projectScope: [
       "Perlitin yoğunluk ve ürün davranışına uygun kurutma yaklaşımının belirlenmesi",
       "Eleme, taşıma ve sınıflandırma adımlarının kapasiteye göre kurgulanması",
@@ -526,7 +530,7 @@ export const projectPages: ProjectPageData[] = [
       "Stoklama ve ürün hazırlama",
     ],
     investorBenefits: [
-      "Hafif mineral ürünlerde ürün kaybı riski azaltılır",
+      "İnce perlit fraksiyonunun sürüklenmesinden doğan ürün kaybı riski azaltılır",
       "Eleme hassasiyeti ve kapasite birlikte optimize edilir",
       "Toz kontrolüyle daha temiz ve sürdürülebilir saha akışı sağlanır",
     ],

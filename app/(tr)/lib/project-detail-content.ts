@@ -613,28 +613,28 @@ const projectDetailOverrides: Record<string, ProjectDetailContent> = {
     ],
   },
   "silis-kumu-kurutma-tesisi": {
-    eyebrow: "PROJE REFERANSI",
+    eyebrow: "ÖRNEK PROSES KONFİGÜRASYONU",
     title: "Silis Kumu Kurutma Tesisi",
-    seoTitle: "Silis Kumu Kurutma Tesisi | Proje Referansı - Pro Makina",
+    seoTitle: "Silis Kumu Kurutma Tesisi | Örnek Proses Konfigürasyonu - Pro Makina",
     seoDescription:
-      "Silis kumu kurutma tesisi projesi; besleme, kurutma tamburu, sıcak hava, siklon-filtre, eleme ve stoklama adımlarını kapsar.",
+      "Silis kumu kurutma tesisi için örnek proses konfigürasyonu: besleme, kurutma tamburu, sıcak hava, siklon-filtre, eleme ve stoklama adımları.",
     heroDescription:
-      "Mineral ürünlerde kurutma, eleme, taşıma ve stoklama kurgusunu proses odaklı ele alan silis kumu kurutma tesisi proje referansı.",
+      "Silis kumunda kurutma, eleme, taşıma ve stoklama adımlarının tek hatta nasıl kurgulanabileceğini gösteren örnek proses konfigürasyonu. Gerçekleştirilmiş bir tesisin işletme verisi değildir.",
     heroImage: "/images/PROSES/silis1.png",
-    heroImageAlt: "Silis kumu kurutma ve eleme tesisi",
+    heroImageAlt: "Silis kumu kurutma prosesi akış şeması",
     heroActions: [
       { label: "Teknik Teklif Al", href: "/iletisim" },
       { label: "Madencilik Çözümlerini İncele", href: "/sektorler/madencilik-ve-mineral-isleme" },
-      { label: "WhatsApp ile Bilgi Gönder", href: whatsappHref("Merhaba, Silis Kumu Kurutma Tesisi projesi için bilgi almak istiyorum."), external: true },
+      { label: "WhatsApp ile Bilgi Gönder", href: whatsappHref("Merhaba, silis kumu kurutma tesisi için bilgi almak istiyorum."), external: true },
     ],
     overviewTitle: "Mineral Ürünlerde Kontrollü Kurutma ve Sınıflandırma Yaklaşımı",
     overviewParagraphs: [
-      "Silis kumu kurutma projelerinde hedef yalnızca nem azaltmak değildir. Aynı zamanda ürün tane boyutu, sıcaklık dengesi, toz yükü, depolama davranışı ve son kullanım senaryosu birlikte düşünülmelidir.",
-      "Bu proje; kurutma tamburu, sıcak hava sistemi, siklon-filtre altyapısı ve eleme ekipmanlarını tek akışta bir araya getiren maden proses yaklaşımını temsil eder.",
+      "Silis kumu kurutma tesislerinde hedef yalnızca nem azaltmak değildir. Aynı zamanda ürün tane boyutu, sıcaklık dengesi, toz yükü, depolama davranışı ve son kullanım senaryosu birlikte düşünülmelidir.",
+      "Bu örnek konfigürasyon; kurutma tamburu, sıcak hava sistemi, siklon-filtre altyapısı ve eleme ekipmanlarını tek akışta bir araya getiren proses yaklaşımını gösterir. Kapasite ve ekipman ölçüleri her projede ürün verisine göre ayrıca belirlenir.",
     ],
     overviewImage: "/images/maden/maden2.webp",
-    overviewImageAlt: "Maden ve mineral kurutma prosesi",
-    scopeTitle: "Proje Kapsamı",
+    overviewImageAlt: "Mineral eleme kulesi ve konveyörler (temsili görsel)",
+    scopeTitle: "Konfigürasyon Kapsamı",
     scopeCards: [
       { title: "Hammadde besleme", description: "Silis kumu hattın kapasitesine uygun bunker ve transfer sistemiyle alınır." },
       { title: "Kurutma tamburu", description: "Ürünün hedef nem değerine kontrollü ulaşması sağlanır.", href: "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburu" },
@@ -668,7 +668,7 @@ const projectDetailOverrides: Record<string, ProjectDetailContent> = {
       { label: "Yardımcı sistemler", value: "Brülör, fan, siklon, filtre, silo" },
       { label: "Son ürün senaryosu", value: "Dökme stok, big-bag veya sevkiyat" },
     ],
-    promakinaTitle: "Bu Projede Pro Makina’nın Sağladıkları",
+    promakinaTitle: "Pro Makina’nın Mühendislik Kapsamı",
     promakinaCards: [
       { title: "Termal yük analizi", description: "Silis kumu için gerekli kurutma yükünün ürün davranışıyla birlikte değerlendirilmesi." },
       { title: "Toz kontrol kurgusu", description: "Siklon ve filtre sistemlerinin kurutma hattına uygun planlanması." },

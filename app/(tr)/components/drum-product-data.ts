@@ -386,14 +386,14 @@ export const drumProductPages: DrumProductPage[] = [
           description: "Ön boyutlandırma için hesap aracını kullanın.",
         },
         {
-          label: "Silis Kumu Kurutma Tesisi Projesi",
+          label: "Silis Kumu Kurutma – Örnek Proses Konfigürasyonu",
           href: "/projeler/silis-kumu-kurutma-tesisi",
-          description: "Mineral kurutma uygulamasında gerçekleştirilen saha projesi.",
+          description: "Besleme, kurutma, toz toplama ve eleme adımlarını gösteren örnek konfigürasyon.",
         },
         {
-          label: "Perlit Kurutma ve Eleme Tesisi Projesi",
+          label: "Perlit Kurutma ve Eleme – Örnek Proses Konfigürasyonu",
           href: "/projeler/perlit-kurutma-eleme-tesisi",
-          description: "Düşük yoğunluklu mineralde kurutma ve eleme hattı.",
+          description: "Ham perlitte kurutma, sınıflandırma ve toz geri kazanımını gösteren örnek konfigürasyon.",
         },
         {
           label: "Arıtma Çamuru Kurutma Tesisi Projesi",

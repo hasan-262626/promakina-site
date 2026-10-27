@@ -612,7 +612,7 @@ const materialDryingPages: DrumSystemDetailPageData[] = [
       { title: "Kurutma Tamburu Hesaplama", description: "Kapasite, su yükü ve çap-boy hesabını tek rehberde inceleyin.", href: MATERIAL_HESAP_BLOG_HREF },
       { title: "Kurutma Tamburu Tasarım Kriterleri", description: "Genel tambur tasarım kriterlerini ayrı rehberde okuyun.", href: MATERIAL_DESIGN_BLOG_HREF },
       { title: "Fan, Siklon ve Filtre Seçimi", description: "Kum hattında toz kontrolünün nasıl boyutlandırıldığını görün.", href: MATERIAL_FAN_BLOG_HREF },
-      { title: "Silis Kumu Kurutma Tesisi Projesi", description: "Gerçekleştirilen silis kumu kurutma tesisi projesini inceleyin.", href: "/projeler/silis-kumu-kurutma-tesisi" },
+      { title: "Silis Kumu Kurutma – Örnek Proses Konfigürasyonu", description: "Silis kumu kurutma tesisi için örnek proses konfigürasyonunu inceleyin.", href: "/projeler/silis-kumu-kurutma-tesisi" },
     ],
     ctaTitle: "Silis Kumu Kurutma Tamburu İçin Teknik Teklif Alın",
     ctaDescription:
@@ -824,7 +824,7 @@ const materialDryingPages: DrumSystemDetailPageData[] = [
       ),
     ],
     relatedLinks: [
-      { title: "Perlit Kurutma ve Eleme Tesisi Projesi", description: "Perlit kurutma ve eleme tesisi proje kapsamını inceleyin.", href: "/projeler/perlit-kurutma-eleme-tesisi" },
+      { title: "Perlit Kurutma ve Eleme – Örnek Proses Konfigürasyonu", description: "Ham perlit kurutma ve eleme için örnek proses konfigürasyonunu inceleyin.", href: "/projeler/perlit-kurutma-eleme-tesisi" },
       { title: "Kurutma Tamburu", description: "Ana kurutma ekipmanını ürün sayfasında inceleyin.", href: MATERIAL_DRUM_HREF },
       { title: "Kurutma Tamburu Hesaplama", description: "Su yükü, hava debisi ve tambur geometrisi hesabını okuyun.", href: MATERIAL_HESAP_BLOG_HREF },
       { title: "Fan, Siklon ve Filtre Seçimi", description: "Perlit hattının en kritik yardımcı ekipman kararlarını inceleyin.", href: MATERIAL_FAN_BLOG_HREF },
