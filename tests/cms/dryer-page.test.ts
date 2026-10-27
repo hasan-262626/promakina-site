@@ -100,16 +100,17 @@ describe("kurutma tamburu teknik bölümü (82ee073 öncesi içerik)", () => {
     expect(technical.sections.some((s) => /Uygulama Alanları/.test(s.title))).toBe(false);
   });
 
-  it("EN/RU/AR: TR ile aynı kapsam (11 satır, 5 bölüm + yalnız yabancı dillerde mineral bölümü, 7+8 kapsam kalemi), boş metin yok", () => {
+  it("EN/RU/AR: TR ile aynı kapsam (11 satır, 5 bölüm + yalnız yabancı dillerde mineral ve gübre bölümleri, 7+8 kapsam kalemi), boş metin yok", () => {
     const tr = buildDryerBase("tr").content.technical!;
     const script = { en: /^[ -~’–—()/³]+$/, ru: /[Ѐ-ӿ]/, ar: /[؀-ۿ]/ };
     for (const locale of ["en", "ru", "ar"] as const) {
       const t = buildDryerBase(locale).content.technical!;
       expect(t.table.rows, locale).toHaveLength(tr.table.rows.length);
-      // İlk bölümler TR'nin birebir karşılığıdır; sonuncusu uluslararası pazar için eklenen "mineral bazında kurutma" bölümüdür.
-      expect(t.sections, locale).toHaveLength(tr.sections.length + 1);
+      // İlk bölümler TR'nin birebir karşılığıdır; ardından uluslararası pazar için "mineral bazında kurutma" (6 paragraf)
+      // ve "gübre granülü kurutma" (4 paragraf) bölümleri gelir.
+      expect(t.sections, locale).toHaveLength(tr.sections.length + 2);
       expect(t.sections.slice(0, tr.sections.length).map((x) => x.paragraphs.length), locale).toEqual(tr.sections.map((x) => x.paragraphs.length));
-      expect(t.sections.at(-1)!.paragraphs, locale).toHaveLength(6);
+      expect(t.sections.slice(tr.sections.length).map((x) => x.paragraphs.length), locale).toEqual([6, 4]);
       expect(t.scope.coreItems, locale).toHaveLength(tr.scope.coreItems.length);
       expect(t.scope.optionalItems, locale).toHaveLength(tr.scope.optionalItems.length);
       const strings: string[] = [];

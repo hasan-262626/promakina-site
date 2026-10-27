@@ -106,7 +106,7 @@ export const dryerPageEn: DryerLocaleTexts = {
       },
       {
         title: "Fertilizer Rotary Dryer",
-        text: "Rotary drum systems for the controlled drying of organic, organomineral and suitable granular fertilizers. Product temperature, granule strength and post-drying cooling and screening requirements are taken into account.",
+        text: "Rotary drum systems for the controlled drying of granular NPK, organomineral and organic fertilizers. Product temperature, granule strength and post-drying cooling and screening requirements are taken into account.",
         imageAlt: "Granular fertilizer (calcium ammonium nitrate) pellets",
       },
       {

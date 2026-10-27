@@ -75,6 +75,15 @@ export const dryerTechnicalEn: DryerTechnical = {
         "Barite and zeolite: barite has a high density of about 4.3–4.5 g/cm³, so drive power, flights and conveyors are sized by mass rather than volume, and fineness specifications (for example for drilling-grade barite) govern the downstream grinding and dust system. Zeolite holds water in its porous channels; product temperature is limited to protect its adsorption and ion-exchange properties, and the target moisture follows the agricultural, feed-additive or water-treatment application.",
       ],
     },
+    {
+      title: "Fertilizer Granule Drying",
+      paragraphs: [
+        "A fertilizer rotary drum dryer sits between the granulator and the rotary cooler. For granular NPK, organomineral and organic fertilizers it reduces the moisture of the granules coming from the granulator, together with the recycle stream, while their strength develops; the dryer, cooler and screen are therefore sized together for the total flow.",
+        "Product temperature, not gas temperature, decides granule quality. Its upper limit is set by the formulation: urea-containing products soften at relatively low temperatures, and excessive heat can cause melting, surface glazing, nutrient loss or brittle granules. When an NPK fertilizer dryer is specified, it is agreed before the evaporation calculation whether moisture values are given on a wet or a dry basis.",
+        "Fertilizers containing ammonium nitrate are thermally sensitive; depending on the formulation and impurities, thermal or self-sustaining decomposition can occur. A standard rotary dryer is not assumed to be suitable for such products; the drying method, permitted temperatures and safety measures are defined by a formulation-specific safety assessment.",
+        "Organic fertilizer drying equipment must also handle ammonia, odour and combustible dust. Filters do not remove gas-phase ammonia, so acid scrubbing and biofiltration are added where required, while deposit-free ducts and temperature monitoring reduce the fire risk.",
+      ],
+    },
   ],
   scope: {
     title: "Drying System Scope of Supply",
