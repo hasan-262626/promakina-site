@@ -341,6 +341,111 @@ export const miningHandwrittenArticles: Record<string, HandwrittenArticle> = {
     ],
   },
 
+  "kum-kurutma-tesisi": {
+    metaTitle: "Kum Kurutma Tesisi Kurulumu | Ekipman, Kapasite ve Anahtar Teslim Kapsam",
+    description:
+      "Kum kurutma tesisi kurulumu: çalışma prensibi, makine listesi, kurutma tamburu, brülör, fan-siklon-filtre, eleme, konveyör ve silo, otomasyon, kapasite-enerji değerlendirmesi ve imalat-montaj kapsamı.",
+    heroDescription:
+      "Kum kurutma tesisi; yaş kumun beslenmesinden kuru ve sınıflandırılmış ürünün silo veya ambalaja alınmasına kadar tüm ekipmanları kapsayan bir yatırımdır. Bu sayfa tesisin makine listesini, kapasite ve enerji değerlendirmesini ve tedarik kapsamını özetler.",
+    sections: [
+      {
+        title: "Tesisin çalışma prensibi",
+        paragraphs: [
+          "Yaş kum besleme bunkerinden dozajlı olarak kurutma tamburuna verilir. Brülör veya sıcak hava jeneratöründen gelen gaz tambur içinde kumla temas ederek nemi buharlaştırır; nemli egzoz gazı siklon ve jet pulse filtreden geçerek fanla bacaya atılır.",
+          "Kuru kum gerekirse soğutulur, eleme ile fraksiyonlara ayrılır ve kovalı elevatör veya konveyörle silolara, big-bag veya torba dolum hattına taşınır. Tesisin kapasitesi bu zincirin en yavaş halkasıyla sınırlıdır.",
+        ],
+      },
+      {
+        title: "Ekipman ve makine listesi",
+        paragraphs: [
+          "Tipik bir kum kurutma tesisinde yaş kum bunkeri ve besleyici, besleme konveyörü, kurutma tamburu, brülör veya sıcak hava jeneratörü, siklon, jet pulse filtre, emiş fanı ve baca, kuru ürün elevatörü, elek, ürün siloları, dolum ekipmanları ve elektrik-otomasyon panosu bulunur.",
+          "Hangi kalemlerin teklif kapsamında olacağı; mevcut ekipmanlar, saha altyapısı ve ürünün sevk şekline göre proje başında belirlenir.",
+        ],
+        subsections: [
+          {
+            heading: "Kurutma tamburu",
+            paragraphs: [
+              "Tesisin ana ekipmanıdır; çap, boy, eğim ve devir su yüküne ve kalış süresine göre seçilir. Kumun aşındırıcılığı nedeniyle giriş bölgesi, kanatlar ve çıkış oluğunda değiştirilebilir aşınma elemanları kullanılır.",
+            ],
+          },
+          {
+            heading: "Brülör ve sıcak hava sistemi",
+            paragraphs: [
+              "Isıl güç su yükü ve kayıplara göre belirlenir; yakıt tipi (doğalgaz, LPG, motorin veya alternatif kaynaklar) saha altyapısına göre seçilir. Modülasyonlu brülör, giriş nemindeki değişime göre ısıl gücü ayarlar.",
+            ],
+          },
+          {
+            heading: "Fan, siklon ve jet pulse filtre",
+            paragraphs: [
+              "Fan debisi buharlaşan su, yanma gazı ve sızıntı havasına; basıncı ise tambur, siklon, filtre ve kanal kayıplarına göre seçilir. Siklon iri tozu geri kazanır, filtre ince tozu tutar; filtre giriş sıcaklığı yoğuşmayı önleyecek şekilde kontrol edilir.",
+            ],
+          },
+          {
+            heading: "Eleme ve sınıflandırma",
+            paragraphs: [
+              "Kuru kum çok katlı titreşimli elekte müşteri şartnamesindeki fraksiyonlara ayrılır; elek altı ince toz toz toplama hattına veya ayrı ürün akışına yönlendirilir.",
+            ],
+          },
+          {
+            heading: "Konveyör, elevatör ve silo",
+            paragraphs: [
+              "Her fraksiyon için ayrı silo veya stok alanı planlanır. Kapalı taşıma ekipmanları toz kaçağını sınırlar; silo çıkışlarında segregasyon ve köprüleşme riskine göre boşaltma düzeni seçilir.",
+            ],
+          },
+          {
+            heading: "Otomasyon",
+            paragraphs: [
+              "PLC tabanlı kontrol; besleme debisi, brülör gücü, egzoz ve ürün sıcaklığı, fan hızı ve filtre basıncını izler. Ekipmanlar arasında kilitleme ile toz toplama ve fan çalışmadan brülörün ve beslemenin devreye girmesi önlenir.",
+            ],
+          },
+        ],
+      },
+      {
+        title: "Kapasite ve enerji değerlendirmesi",
+        paragraphs: [
+          "Tesis kapasitesi ton/saat kuru ürün olarak tanımlansa da kurutucu, buharlaşacak su miktarına göre boyutlandırılır. Bu nedenle aynı ton/saat kapasite için giriş nemi yüksek olan bir tesis daha büyük tambur, brülör ve fan gerektirir.",
+          "Enerji değerlendirmesinde buharlaşacak su, kumun ısıtılması, egzoz ve gövde kayıpları birlikte hesaplanır; yakıt tüketimi ve yakıt tipi işletme maliyetinin ana kalemidir. Hesap yöntemi ve örnek su yükü hesabı silis kumu kurutma prosesi rehberinde ayrıntılı anlatılmıştır.",
+        ],
+      },
+      {
+        title: "İmalat, montaj ve devreye alma kapsamı",
+        paragraphs: [
+          "Tedarik kapsamı projeye göre ekipman imalatı, çelik konstrüksiyon ve platformlar, kanal ve baca, elektrik ve otomasyon, saha montajı, soğuk ve sıcak devreye alma ile operatör bilgilendirmesini içerebilir.",
+          "İnşaat işleri, enerji ve yakıt altyapısı ile çevre izinlerinin hangi tarafta olacağı her projede ayrıca belirlenir.",
+        ],
+      },
+      {
+        title: "Teknik teklif için gerekli bilgiler",
+        paragraphs: [
+          "Teklifin doğru hazırlanması için kumun tipi ve kaynağı, saatlik kapasite, giriş nemi (mevsimsel aralık dahil) ve hedef çıkış nemi, istenen fraksiyonlar, yakıt tipi, ürünün sevk şekli (dökme, big-bag, torba), mevcut ekipmanlar ve saha ölçüleri gereklidir.",
+        ],
+      },
+    ],
+    summaryRows: [
+      { criterion: "Buharlaşacak su", description: "Tambur, brülör ve fan boyutunun temelidir.", importance: "Yatırım ve yakıt maliyetini belirler." },
+      { criterion: "Tedarik kapsamı", description: "Makine, çelik konstrüksiyon, otomasyon ve montaj sınırları.", importance: "Teklifin karşılaştırılabilirliğini sağlar." },
+      { criterion: "Fraksiyon ve sevk şekli", description: "Elek, silo ve dolum ekipmanlarını belirler.", importance: "Son hattın yerleşimini yönlendirir." },
+      { criterion: "Yakıt ve enerji altyapısı", description: "Brülör tipi ve işletme maliyeti.", importance: "Saha koşuluna göre seçilir." },
+    ],
+    faqs: [
+      {
+        question: "Kum kurutma tesisinde hangi makineler bulunur?",
+        answer: "Yaş kum bunkeri ve besleyici, konveyör, kurutma tamburu, brülör, siklon, jet pulse filtre, fan ve baca, elevatör, elek, silolar, dolum ekipmanları ve otomasyon panosu tipik makine listesidir.",
+      },
+      {
+        question: "Tesis kapasitesi nasıl belirlenir?",
+        answer: "Kapasite kuru ürün olarak tanımlanır, ancak kurutucu buharlaşacak suya göre boyutlandırılır. Giriş nemi yükseldikçe aynı kapasite için daha büyük kurutma ekipmanı gerekir.",
+      },
+      {
+        question: "Anahtar teslim kapsamda neler yer alabilir?",
+        answer: "Ekipman imalatı, çelik konstrüksiyon, kanal ve baca, elektrik-otomasyon, montaj ve devreye alma kapsama alınabilir; inşaat, enerji altyapısı ve izinlerin sorumluluğu proje başında belirlenir.",
+      },
+      {
+        question: "Teknik teklif için hangi bilgiler gerekir?",
+        answer: "Kum tipi, saatlik kapasite, giriş ve hedef nem, istenen fraksiyonlar, yakıt tipi, sevk şekli, mevcut ekipmanlar ve saha ölçüleri gereklidir.",
+      },
+    ],
+  },
 };
 
 const sharedRelatedLinks = [
@@ -477,6 +582,50 @@ export const miningTechnicalData: Record<string, BlogTechnicalArticleData> = {
     relatedLinks: [
       { title: "Toz Toplama Sistemleri", description: "Siklon ve filtre ekipmanlarını görün.", href: "/makinalar-ekipman/toz-toplama-sistemleri" },
       { title: "Mineral Toz Kurutma Sistemi", description: "Kurutucu egzozunda toz ve ürün dengesini okuyun.", href: "/kutuphane/blog/mineral-toz-kurutma-sistemi" },
+      ...sharedRelatedLinks,
+    ],
+  },
+  "kum-kurutma-tesisi": {
+    requiredDataTitle: "Kum Kurutma Tesisi Teklifi İçin Gerekli Veriler",
+    requiredDataDescription: "Teklif kapsamı ve ekipman boyutu bu verilerle belirlenir.",
+    requiredDataRows: [
+      { label: "Kum tipi ve kaynağı", purpose: "Aşınma ve toz yükünü belirler.", request: "Doğal / yıkanmış / kırılmış" },
+      { label: "Kapasite", purpose: "Tesis ölçeğini belirler.", request: "Ton/saat kuru ürün" },
+      { label: "Giriş ve hedef nem", purpose: "Su yükü ve yakıt tüketimini belirler.", request: "Mevsimsel aralık dahil" },
+      { label: "Fraksiyonlar", purpose: "Elek ve silo sayısını belirler.", request: "Şartname" },
+      { label: "Yakıt tipi", purpose: "Brülör seçimini belirler.", request: "Doğalgaz / LPG / motorin / diğer" },
+      { label: "Sevk şekli ve saha", purpose: "Dolum ve yerleşimi belirler.", request: "Dökme / big-bag / torba; saha ölçüleri" },
+    ],
+    exampleTitle: "Tipik Tedarik Kapsamı",
+    exampleDescription: "Projeye göre kapsama alınabilen kalemlerdir; kesin kapsam teknik değerlendirme sonunda belirlenir.",
+    exampleRows: [
+      { label: "Besleme", value: "Bunker, besleyici, konveyör", comment: "Sabit debi" },
+      { label: "Kurutma", value: "Tambur, brülör / sıcak hava", comment: "Su yüküne göre" },
+      { label: "Gaz hattı", value: "Siklon, jet pulse filtre, fan, baca", comment: "Emisyon kontrolü" },
+      { label: "Son hat", value: "Elevatör, elek, silo, dolum", comment: "Fraksiyon başına" },
+      { label: "Otomasyon ve saha", value: "PLC, montaj, devreye alma", comment: "Kapsam sınırları ayrıca belirlenir" },
+    ],
+    decisionTableTitle: "Yatırım Kararları",
+    decisionTableDescription: "Tesis yatırımını belirleyen başlıca kararlar.",
+    decisionTableRows: [
+      { criterion: "Su yükü", description: "Kapasite × nem farkı", importance: "Ekipman boyutu", effect: "Yatırım ve yakıt maliyeti" },
+      { criterion: "Yakıt", description: "Saha altyapısı", importance: "İşletme maliyeti", effect: "Brülör tipi" },
+      { criterion: "Son hat", description: "Fraksiyon ve sevk şekli", importance: "Yerleşim", effect: "Silo ve dolum sayısı" },
+      { criterion: "Kapsam sınırı", description: "Anahtar teslim veya makine tedariki", importance: "Teklif karşılaştırması", effect: "Sorumluluk dağılımı" },
+    ],
+    factorCardsTitle: "Tesis Yatırımında Kritik Faktörler",
+    factorCardsDescription: "Kurutma, gaz hattı ve son hat birlikte planlanır.",
+    factorCards: [
+      { title: "Mevsimsel nem", description: "Yıl boyu kapasiteyi belirler." },
+      { title: "Darboğaz", description: "Zincirin en yavaş halkası kapasiteyi sınırlar." },
+      { title: "Toz kontrolü", description: "Emisyon ve iş sağlığı gerekliliğidir." },
+      { title: "Bakım erişimi", description: "Aşınma parçalarının değişim süresini kısaltır." },
+    ],
+    relatedLinksTitle: "İlgili Teknik İçerikler",
+    relatedLinksDescription: "Kum kurutma tesisini tamamlayan sayfalar.",
+    relatedLinks: [
+      { title: "Silis Kumu Kurutma Prosesi ve Hesabı", description: "Isıtma yöntemi ve örnek su yükü hesabını okuyun.", href: "/kutuphane/blog/silis-kumu-kurutma-prosesi" },
+      { title: "Kuvars ve Silis Kumu Eleme Hattı", description: "Fraksiyonlama ve elek seçimini inceleyin.", href: "/kutuphane/blog/kuvars-ve-silis-kumu-eleme-hatti" },
       ...sharedRelatedLinks,
     ],
   },

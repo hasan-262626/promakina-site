@@ -3873,10 +3873,9 @@ export const dryingSystemDetailPages: DrumSystemDetailPageData[] = [
     slug: "silis-kumu-kurutma-prosesi",
     title: "Silis Kumu Kurutma Prosesi",
     badgeLabel: "KURUTMA SİSTEMLERİ",
-    metaTitle:
-      "Silis Kumu Kurutma Prosesi | Kurutma Tamburu ve Kum Kurutma Tesisi",
+    metaTitle: "Silis Kumu Kurutma Prosesi ve Hesabı",
     description:
-      "Silis kumu kurutma prosesi; kurutma tamburu, brülör, fan, siklon, filtre, eleme ve silo sistemleriyle birlikte tasarlanır. Pro Makina’dan silis kumu kurutma tesisi için teknik teklif alın.",
+      "Silis kumu kurutma prosesi için mühendislik rehberi: ısıtma yöntemi seçimi, su buharlaştırma hesabı, tambur tasarım kriterleri, toz toplama ve kurutma sonrası eleme.",
     canonical:
       "https://www.promakina.com.tr/kutuphane/blog/silis-kumu-kurutma-prosesi",
     openGraphTitle: "Silis Kumu Kurutma Prosesi",
