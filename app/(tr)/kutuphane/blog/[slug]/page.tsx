@@ -433,6 +433,7 @@ export default async function Page({ params }: PageProps) {
   }
 
   const article = await loadBlogArticle(slug, topicalBlogArticleMap[slug]);
+  const linkify = createInlineLinker(blogInlineLinks[slug]);
 
   return (
     <BlogArticleTemplate
@@ -445,14 +446,14 @@ export default async function Page({ params }: PageProps) {
         title: section.title,
         blocks: [
           ...section.paragraphs.map((paragraph) => ({
-            content: <p>{paragraph}</p>,
+            content: <p>{linkify(paragraph, section.title)}</p>,
           })),
           ...(section.subsections ?? []).map((subsection) => ({
             heading: subsection.heading,
             content: (
               <>
                 {subsection.paragraphs.map((paragraph) => (
-                  <p key={`${subsection.heading}-${paragraph.slice(0, 24)}`}>{paragraph}</p>
+                  <p key={`${subsection.heading}-${paragraph.slice(0, 24)}`}>{linkify(paragraph, section.title)}</p>
                 ))}
               </>
             ),

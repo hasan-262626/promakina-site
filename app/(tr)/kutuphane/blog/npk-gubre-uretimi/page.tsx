@@ -95,8 +95,11 @@ const sections = [
         content: (
           <>
             <p>
-              NPK gübre üretiminde granülasyon adımı ürünün ticari formunu belirler. Ardından gelen kurutma ve
-              soğutma bölümleri, granülün depolama ve sevkiyat kararlılığını oluşturur. Bu üçlü birbiriyle uyumlu
+              NPK gübre üretiminde granülasyon adımı ürünün ticari formunu belirler. Ardından gelen{" "}
+              <Link href="/makinalar-ekipman/tambur-sistemleri/kurutma-tamburu" className="font-semibold text-blue-700 transition hover:text-blue-800">
+                gübre kurutma tamburu
+              </Link>{" "}
+              ve soğutma bölümü, granülün depolama ve sevkiyat kararlılığını oluşturur. Bu üçlü birbiriyle uyumlu
               seçilmediğinde ürün ya zayıf kalır ya da fazla toz üretir.
             </p>
             <p>

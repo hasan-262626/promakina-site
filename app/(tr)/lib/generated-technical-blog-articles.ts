@@ -355,7 +355,7 @@ function createFertilizerArticle(config: FertilizerArticleConfig): TopicalArticl
     summaryRows: [
       summaryRow("Ürün formu", "Toz, granül veya sıvı üretim senaryosunu belirler.", "Hat mimarisinin ana girdisidir."),
       summaryRow("Kapasite ve reçete", "Saatlik hedef ile hammadde dengesini tanımlar.", "Makine ölçeğini ve stok hacimlerini belirler."),
-      summaryRow("Nem ve termal ihtiyaç", "Kurutma ve soÄŸutma gereksinimini etkiler.", "Enerji modeli ve tambur seçimini yönlendirir."),
+      summaryRow("Nem ve termal ihtiyaç", "Kurutma ve soğutma gereksinimini etkiler.", "Enerji modeli ve tambur seçimini yönlendirir."),
       summaryRow("Son ürün hazırlığı", "Eleme, kaplama ve paketleme disiplinini kapsar.", "Ticari kaliteyi belirleyen son aşamadır."),
     ],
     faqs: [

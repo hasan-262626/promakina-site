@@ -86,7 +86,8 @@ const sections = [
             <p>
               Organomineral gübre tesisi maliyeti içinde en büyük paylardan biri makine grubuna aittir. Ancak burada
               belirleyici olan yalnızca ekipman sayısı değil, her ekipmanın proses içindeki görevinin ne kadar doğru
-              tanımlandığıdır. Aşırı büyük seçilmiş bir granülatör tamburu veya yetersiz seçilmiş bir kurutma grubu,
+              tanımlandığıdır. Aşırı büyük seçilmiş bir granülatör tamburu veya yetersiz seçilmiş bir{" "}
+              <Link href="/makinalar-ekipman/tambur-sistemleri/kurutma-tamburu" className="font-semibold text-blue-700 hover:text-blue-800">kurutma grubu</Link>,
               ilk yatırım ile birlikte işletme maliyetini de bozabilir. Bu nedenle yatırım planlaması yapılırken
               mekanik ekipmanlar, birbirinden bağımsız fiyat kalemleri gibi değil, aynı performans zincirinin parçaları
               gibi okunmalıdır.

@@ -117,6 +117,12 @@ const sections = [
             <p>
               Nihai ürünün pazarlanabilir hale gelmesi için eleme, gerekiyorsa kurutma ve ürün hazırlama
               adımları devreye girer. Eleme sistemi iri parçaları ve geri dönmesi gereken fraksiyonu ayırır.
+              Torbalı satış veya granül organik gübre hedefinde ürün nemi depolama sınırının üzerinde kalıyorsa
+              nem düşürme adımı{" "}
+              <Link href="/makinalar-ekipman/tambur-sistemleri/kurutma-tamburu" className="font-semibold text-blue-700 transition hover:text-blue-800">
+                döner tip kurutma tamburu
+              </Link>{" "}
+              ile yapılır.
             </p>
             <p>
               Özellikle torbalı satış veya granül kompost hazırlığı hedefleniyorsa{" "}
