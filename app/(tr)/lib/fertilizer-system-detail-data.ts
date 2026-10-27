@@ -772,7 +772,7 @@ export const fertilizerSystemDetailPages: DrumSystemDetailPageData[] = [
     heroLinks: commonHeroLinks,
     introParagraphs: [
       "Granül ürünün ticari başarısı çoğu zaman kurutma ve soğutma bölümünde belirlenir. Ürün yeterince kurutulmazsa torbada bozulabilir; yeterince soğutulmazsa paket içinde terleme görülebilir.",
-      "Bu yüzden /kutuphane/blog/kurutma-tamburu-hesaplama, /kutuphane/blog/sogutma-tamburu-nasil-calisir ve bu sayfadaki gübre prosesi birlikte okunmalıdır.",
+      "Bu sayfa granülatörden kaplamaya kadar zincirin nem ve sıcaklık profilini ele alır. Kurutma tamburunun kapasite hesabı ve soğutma tamburunun çalışma prensibi ayrı teknik rehberlerde ayrıntılı anlatılır.",
     ],
     flowTitle: "Gübre Kurutma ve Soğutma Prosesi",
     flowSteps: [
@@ -813,6 +813,41 @@ export const fertilizerSystemDetailPages: DrumSystemDetailPageData[] = [
             "Soğutma Yükü",
             "Soğutma yükü = Kapasite × 1000 × Özgül ısı × Sıcaklık farkı / 3600",
           ),
+        ],
+      }),
+      section("Granülatörden kaplamaya proses zinciri", {
+        paragraphs: [
+          "Granül gübre hattında granülatör, kurutma tamburu, soğutma tamburu, elek ve kaplama tamburu birbirine bağlı bir zincir oluşturur. Bir halkadaki sapma sonraki halkaların yükünü değiştirir: granülatörden fazla nemli çıkan ürün kurutucuyu, yetersiz soğutulan ürün eleme ve kaplamayı zorlar.",
+        ],
+        subsections: [
+          { title: "Granülatör Tamburu", paragraphs: ["Granül çekirdeğini oluşturur; çıkış nemi ve geri dönüş oranı zincirin geri kalanının yükünü belirler."], href: "/makinalar-ekipman/tambur-sistemleri/granulator-tamburu", linkLabel: "Granülatör tamburu" },
+          { title: "Kurutma Tamburu", paragraphs: ["Granülü hedef neme indirir ve dayanımını geliştirir; ürün çıkış sıcaklığı reçeteye göre sınırlanır."], href: "/makinalar-ekipman/tambur-sistemleri/kurutma-tamburu", linkLabel: "Kurutma tamburu" },
+          { title: "Soğutma Tamburu", paragraphs: ["Sıcak granülü depolama, eleme ve kaplama için uygun sıcaklığa indirir; torbada terlemeyi önler."], href: "/makinalar-ekipman/tambur-sistemleri/sogutma-tamburu", linkLabel: "Soğutma tamburu" },
+          { title: "Elek ve Geri Dönüş", paragraphs: ["Ürünü ticari fraksiyona ayırır; elek üstü kırılarak, elek altı doğrudan granülatöre geri döner."], href: "/makinalar-ekipman/eleme-ve-siniflandirma-sistemleri", linkLabel: "Eleme sistemleri" },
+          { title: "Kaplama Tamburu", paragraphs: ["Soğutulmuş granüle kekleşme önleyici veya yüzey kaplaması uygular."], href: "/makinalar-ekipman/tambur-sistemleri/kaplama-tamburu", linkLabel: "Kaplama tamburu" },
+        ],
+      }),
+      section("Zincir boyunca nem ve sıcaklık profili", {
+        table: table(
+          "Aşamalara Göre Kontrol Noktaları",
+          ["Aşama", "Ürün durumu", "Kontrol edilen değişken", "Sapma olursa"],
+          [
+            ["Granülatör çıkışı", "Nemli, plastik granül", "Nem ve geri dönüş oranı", "Kurutucu yükü ve yapışma artar"],
+            ["Kurutma tamburu çıkışı", "Hedef nemde, sıcak granül", "Ürün nemi ve çıkış sıcaklığı", "Kabuklaşma, içte nem, kırılma"],
+            ["Soğutma tamburu çıkışı", "Soğumuş granül", "Ürün sıcaklığı", "Torbada terleme ve kekleşme"],
+            ["Elek", "Fraksiyonlara ayrılmış ürün", "Elek üstü / altı oranı", "Geri dönüş artar, net kapasite düşer"],
+            ["Kaplama tamburu", "Kaplanmış ürün", "Ürün sıcaklığı ve kaplama dozajı", "Kaplama tutunmaz veya homojen dağılmaz"],
+          ],
+        ),
+      }),
+      section("Eleme soğutmadan önce mi sonra mı?", {
+        paragraphs: [
+          "Eleme kurutucudan hemen sonra yapılırsa soğutucuya yalnız ürün fraksiyonu gider ve soğutucu daha küçük seçilebilir; ancak sıcak granül elekte yapışma ve kırılmaya daha yatkın olabilir. Eleme soğutmadan sonra yapılırsa elek daha kararlı çalışır, buna karşılık soğutucu geri dönüş dahil toplam akışa göre boyutlandırılır. Sıralama reçeteye, granül dayanımına ve yerleşime göre seçilir.",
+        ],
+      }),
+      section("Kurutucu ve soğutucu kapasite dengesi", {
+        paragraphs: [
+          "Kurutucu ve soğutucu aynı akışı taşıdığı için kapasiteleri birlikte hesaplanır. Örnek olarak 20 t/saat granülün 40 °C soğutulmasında ürün özgül ısısı 1,0 kJ/kg·K kabul edilirse soğutma yükü 20 × 1000 × 1,0 × 40 / 3600 ≈ 222 kW olur. Özgül ısı ürün analizinden alınır; değerler yalnız hesap yöntemini gösteren bir örnektir, tesis performansı değildir.",
         ],
       }),
       section("Fan, siklon ve filtre sistemleri", {
@@ -881,6 +916,7 @@ export const fertilizerSystemDetailPages: DrumSystemDetailPageData[] = [
       { title: "Soğutma Tamburu Nasıl Çalışır?", description: "Soğutma bölümünü detay teknik makaleyle tamamlayın.", href: "/kutuphane/blog/sogutma-tamburu-nasil-calisir" },
       { title: "Granül Gübre Üretim Süreci", description: "Kurutma-soğutma bölümünün bağlı olduğu ana hat akışını görün.", href: "/kutuphane/blog/granul-gubre-uretim-sureci" },
       { title: "Tambur Sistemleri", description: "Kurutma ve soğutma tamburlarını ürün bazında inceleyin.", href: "/makinalar-ekipman/tambur-sistemleri" },
+      { title: "Gübre Kurutma Rehberi", description: "Kurutma tamburunda granül kalitesi, su hesabı ve güvenlik konularını okuyun.", href: "/kutuphane/blog/gubre-kurutma-tamburu" },
       { title: "Tambur Hesapları", description: "Kurutma ve soğutma tarafını programlarla değerlendirin.", href: "/programlar?modal=tambur-kapasite-hesabi" },
       { title: "İletişim", description: "Ürün nem ve sıcaklık hedefiniz için teknik görüşme alın.", href: "/iletisim" },
     ],
