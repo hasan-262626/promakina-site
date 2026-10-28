@@ -847,7 +847,7 @@ export const fertilizerSystemDetailPages: DrumSystemDetailPageData[] = [
       }),
       section("Kurutucu ve soğutucu kapasite dengesi", {
         paragraphs: [
-          "Kurutucu ve soğutucu aynı akışı taşıdığı için kapasiteleri birlikte hesaplanır. Örnek olarak 20 t/saat granülün 40 °C soğutulmasında ürün özgül ısısı 1,0 kJ/kg·K kabul edilirse soğutma yükü 20 × 1000 × 1,0 × 40 / 3600 ≈ 222 kW olur. Özgül ısı ürün analizinden alınır; değerler yalnız hesap yöntemini gösteren bir örnektir, tesis performansı değildir.",
+          "Kurutucu ve soğutucu kapasiteleri birlikte hesaplanır; soğutucuya giren akış, eleme soğutmadan önce yapılıyorsa net ürün, sonra yapılıyorsa geri dönüş dahil toplam akıştır. Bu ayrım yapılmadan kurutucu besleme kapasitesi nihai ürün kapasitesi gibi okunmamalıdır. Örnek olarak soğutucuya giren 20 t/saat granülün sıcaklığı 40 K düşürülürse ve ürün özgül ısısı 1,0 kJ/kg·K kabul edilirse teorik ürün soğutma yükü 20 × 1000 × 1,0 × 40 / 3600 ≈ 222 kW olur. Isı kayıpları ve soğutma havasının nem durumu bu değere dahil değildir; özgül ısı ürün analizinden alınır. Değerler hesap yöntemini gösteren bir tasarım örneğidir, tesis performansı veya garanti değildir.",
         ],
       }),
       section("Fan, siklon ve filtre sistemleri", {

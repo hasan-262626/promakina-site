@@ -1454,10 +1454,10 @@ const materialDryingPages: DrumSystemDetailPageData[] = [
             ["Kurutucu beslemesi (geri dönüş dahil)", "20 t/saat, %4 nem (yaş baz)", "Kuru bazda ≈ %4,17"],
             ["Kuru katı", "20 × (1 − 0,04)", "19,20 t/saat"],
             ["Hedef çıkış %1,5 (yaş baz) iken kuru ürün", "19,20 / (1 − 0,015)", "≈ 19,492 t/saat (kuru bazda ≈ %1,52)"],
-            ["Buharlaştırılacak su", "20 − 19,492", "≈ 0,508 t/saat (≈ 508 kg/saat)"],
+            ["Buharlaştırılacak su (teorik)", "20 − 19,492", "≈ 0,508 t/saat (≈ 508 kg/saat)"],
             ["Kuru baz ile kontrol", "19,20 × (0,0417 − 0,0152)", "≈ 0,508 t/saat"],
           ],
-          "Değerler hesap yöntemini göstermek için seçilmiş bir tasarım örneğidir; gerçek tesis verisi, kapasite garantisi veya performans taahhüdü değildir.",
+          "Değerler hesap yöntemini göstermek için seçilmiş bir tasarım örneğidir; 20 t/saat geri dönüş dahil kurutucu beslemesidir, nihai ürün kapasitesi değildir. Gerçek tesis verisi, kapasite garantisi veya performans taahhüdü değildir.",
         ),
       }),
       section("Ürün Sıcaklığı, Granül Dayanımı, Yapışma ve Toz", {
