@@ -1382,7 +1382,7 @@ export function DrumSystemDetailPage({
         </section>
 
         <div className="site-container mt-8">
-          <div className="grid gap-8">
+          <div className="grid grid-cols-[minmax(0,1fr)] gap-8">
             <section className="grid gap-6 lg:grid-cols-[minmax(0,1.1fr)_minmax(320px,0.9fr)]">
               <div className="rounded-[30px] border border-slate-200 bg-white p-6 shadow-sm md:p-8">
                 <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[#278DC0]">
